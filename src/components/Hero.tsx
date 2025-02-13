@@ -39,14 +39,18 @@ const Hero = () => {
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
-              Start Building
+              <a href="https://hanzo.app">
+              Launch App
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10"
             >
-              Watch Demo
+              <a href="https://docs.hanzo.ai">
+                Read Docs
+              </a>
             </Button>
           </motion.div>
         </div>
