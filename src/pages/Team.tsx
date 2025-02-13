@@ -1,8 +1,9 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, Scale, DollarSign, ChartBar, Palette, Music, Calculator } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import TeamGroup from "@/components/team/TeamGroup";
+import PlatformCard from "@/components/team/PlatformCard";
+import CallToAction from "@/components/team/CallToAction";
 
 const Team = () => {
   const teamGroups = [
@@ -145,29 +146,8 @@ const Team = () => {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          {teamGroups.map((group, index) => (
-            <div key={group.title} className="mb-16">
-              <h3 className="text-2xl font-bold mb-6 text-center text-purple-400">{group.title}</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {group.members.map((member) => {
-                  const Icon = member.icon;
-                  return (
-                    <div
-                      key={member.name}
-                      className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out" />
-                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${member.gradient} mb-4`}>
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                      <p className="text-purple-400 font-medium mb-3">{member.role}</p>
-                      <p className="text-gray-400">{member.description}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+          {teamGroups.map((group) => (
+            <TeamGroup key={group.title} {...group} />
           ))}
 
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -179,50 +159,12 @@ const Team = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {platformAgents.map((agent) => {
-              const Icon = agent.icon;
-              return (
-                <div
-                  key={agent.name}
-                  className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out" />
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${agent.gradient} mb-4`}>
-                    <Icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{agent.name}</h3>
-                  <p className="text-purple-400 font-medium mb-3">{agent.role}</p>
-                  <p className="text-gray-400">{agent.description}</p>
-                </div>
-              );
-            })}
+            {platformAgents.map((agent) => (
+              <PlatformCard key={agent.name} {...agent} />
+            ))}
           </div>
 
-          <div className="mt-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-transparent opacity-50" />
-            <div className="relative text-center max-w-4xl mx-auto bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8">
-              <h2 className="text-3xl font-bold mb-4">You + AI Team = Infinite Possibilities</h2>
-              <p className="text-gray-400 mb-8">
-                Work alongside our AI team to bring your vision to life. From development to design, 
-                marketing to operations - we're here to help you build anything imaginable.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button 
-                  className="bg-purple-500 hover:bg-purple-600"
-                  onClick={() => window.location.href = "/case-studies"}
-                >
-                  Read Case Studies
-                </Button>
-                <Button 
-                  variant="outline"
-                  className="border-purple-500 text-purple-500 hover:bg-purple-500/10"
-                  onClick={() => window.location.href = "/contact"}
-                >
-                  Contact Sales
-                </Button>
-              </div>
-            </div>
-          </div>
+          <CallToAction />
         </div>
       </main>
 
