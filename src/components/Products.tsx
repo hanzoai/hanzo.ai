@@ -6,7 +6,7 @@ const products = [
   {
     icon: <Database className="h-8 w-8" />,
     title: "Hanzo Base",
-    description: "A one-file backend with real-time DB, auth, and file storage—built for next-gen AI applications.",
+    description: "A one-file backend with real-time DB, auth, and vector search for next-gen AI applications.",
     code: "import { createClient } from '@hanzo/base';",
     features: [
       { icon: <Zap className="h-4 w-4" />, text: "One-Line Spin-Up – Paste a single import, get an entire backend" },
@@ -15,7 +15,7 @@ const products = [
       { icon: <Github className="h-4 w-4" />, text: "Open Source – No vendor lock-in, self-host or let us do it" }
     ],
     productUrl: "https://docs.hanzo.ai/products/base",
-    github: "https://github.com/hanzo-ai/hanzo-base"
+    github: "https://github.com/hanzoai/hanzo-base"
   },
   {
     icon: <Brain className="h-8 w-8" />,
@@ -29,7 +29,7 @@ const products = [
       { icon: <Target className="h-4 w-4" />, text: "Easy SDK – Seamlessly integrate advanced AI calls in your code" }
     ],
     productUrl: "https://docs.hanzo.ai/products/ai",
-    github: "https://github.com/hanzo-ai/hanzo-ai"
+    github: "https://github.com/hanzoai/hanzoai"
   },
   {
     icon: <ShoppingCart className="h-8 w-8" />,
@@ -43,7 +43,7 @@ const products = [
       { icon: <Github className="h-4 w-4" />, text: "Web2 & Web3 – Plug into traditional or decentralized payment rails" }
     ],
     productUrl: "https://docs.hanzo.ai/products/commerce",
-    github: "https://github.com/hanzo-ai/hanzo-commerce"
+    github: "https://github.com/hanzoai/hanzo-commerce"
   },
   {
     icon: <CreditCard className="h-8 w-8" />,
@@ -56,7 +56,7 @@ const products = [
       { icon: <BarChart className="h-4 w-4" />, text: "Flexible Pricing – Transparent pay-as-you-grow structure" }
     ],
     productUrl: "https://docs.hanzo.ai/products/payments",
-    github: "https://github.com/hanzo-ai/hanzo-payments"
+    github: "https://github.com/hanzoai/hanzo-payments"
   },
   {
     icon: <Megaphone className="h-8 w-8" />,
@@ -69,7 +69,7 @@ const products = [
       { icon: <Target className="h-4 w-4" />, text: "Affiliate & Referral Modules – Tap into influencer networks" }
     ],
     productUrl: "https://docs.hanzo.ai/products/marketing",
-    github: "https://github.com/hanzo-ai/hanzo-marketing"
+    github: "https://github.com/hanzoai/hanzo-marketing"
   },
   {
     icon: <Share2 className="h-8 w-8" />,
@@ -82,7 +82,7 @@ const products = [
       { icon: <Github className="h-4 w-4" />, text: "Community Building – Chat & moderation tools in one place" }
     ],
     productUrl: "https://docs.hanzo.ai/products/social",
-    github: "https://github.com/hanzo-ai/hanzo-social"
+    github: "https://github.com/hanzoai/hanzo-social"
   },
   {
     icon: <Users className="h-8 w-8" />,
@@ -95,11 +95,11 @@ const products = [
       { icon: <BarChart className="h-4 w-4" />, text: "Flexible Plans – Start small, scale to millions of users" }
     ],
     productUrl: "https://docs.hanzo.ai/products/people",
-    github: "https://github.com/hanzo-ai/hanzo-people"
+    github: "https://github.com/hanzoai/hanzo-people"
   },
   {
     icon: <Rocket className="h-8 w-8" />,
-    title: "Hanzo Deploy",
+    title: "Hanzo Ops",
     description: "One-click deployment for your AI applications across any infrastructure.",
     features: [
       { icon: <Zap className="h-4 w-4" />, text: "Multi-Cloud Support – Deploy to AWS, GCP, Azure, or on-prem" },
@@ -108,7 +108,7 @@ const products = [
       { icon: <BarChart className="h-4 w-4" />, text: "Infrastructure as Code – Version control your deployments" }
     ],
     productUrl: "https://docs.hanzo.ai/products/deploy",
-    github: "https://github.com/hanzo-ai/hanzo-deploy"
+    github: "https://github.com/hanzoai/hanzo-deploy"
   },
   {
     icon: <Globe className="h-8 w-8" />,
@@ -120,8 +120,8 @@ const products = [
       { icon: <Blocks className="h-4 w-4" />, text: "Mesh Network – Resilient and unstoppable" },
       { icon: <Target className="h-4 w-4" />, text: "Green Energy – Sustainable compute at scale" }
     ],
-    productUrl: "https://network.hanzo.ai",
-    github: "https://github.com/hanzo-ai/hanzo-network"
+    productUrl: "https://hanzo.network",
+    github: "https://github.com/hanzoai/network"
   }
 ];
 
@@ -130,7 +130,7 @@ const Products = () => {
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -138,7 +138,7 @@ const Products = () => {
           >
             The Last Software You'll Ever Use
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -164,9 +164,9 @@ const Products = () => {
                   {product.icon}
                 </div>
                 {product.github && (
-                  <a 
-                    href={product.github} 
-                    target="_blank" 
+                  <a
+                    href={product.github}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/50 hover:text-white transition-colors"
                   >
@@ -189,14 +189,14 @@ const Products = () => {
                   </li>
                 ))}
               </ul>
-              <motion.div 
+              <motion.div
                 className="mt-6"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
                 <a href={product.productUrl} target="_blank" rel="noopener noreferrer">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="w-full bg-white text-black hover:bg-gray-100 border-2 border-white group-hover:translate-y-[-2px] transition-transform duration-300"
                   >
                     Learn More
@@ -225,8 +225,8 @@ const Products = () => {
                 transition={{ duration: 0.2 }}
               >
                 <a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="w-full sm:w-auto bg-transparent text-white hover:bg-white hover:text-black border-2 border-white group-hover:translate-y-[-2px] transition-transform duration-300"
                   >
                     Read the Docs
@@ -238,7 +238,7 @@ const Products = () => {
                 transition={{ duration: 0.2 }}
               >
                 <a href="https://app.hanzo.ai/signup" target="_blank" rel="noopener noreferrer">
-                  <Button 
+                  <Button
                     className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 group-hover:translate-y-[-2px] transition-transform duration-300"
                   >
                     Get Started Free

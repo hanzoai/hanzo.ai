@@ -28,8 +28,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Build, deploy, and manage AI-powered applications with our comprehensive platform.
-            From code assistance to autonomous agents, on top of our green AI cloud.
+            Design, Engineer, and Market AI-powered applications with our comprehensive AI first platform.
+            From code assistance to frontier models, build anything as fast as you can dream up your next big idea.
           </motion.p>
 
           <motion.div
