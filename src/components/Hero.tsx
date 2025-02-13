@@ -16,9 +16,9 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight text-white"
           >
-            The Vercel for AI
+            Build AI Native
             <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
-              Developer-First DX Platform
+              Unstoppable Apps
             </span>
           </motion.h1>
 
@@ -28,8 +28,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Build, deploy, and manage AI-powered applications with our comprehensive platform. 
-            From code assistance to autonomous agents, powered by 100% green energy.
+            Build, deploy, and manage AI-powered applications with our comprehensive platform.
+            From code assistance to autonomous agents, on top of our green AI cloud.
           </motion.p>
 
           <motion.div
@@ -75,7 +75,7 @@ const Hero = () => {
               <span className="text-blue-400">await</span>{" "}
               editor.improveCode(myCode)
               {"\n\n"}
-              <span className="text-gray-500">// The AI understands your code</span>
+              <span className="text-gray-500">// AI that understands you</span>
               {"\n"}console.<span className="text-blue-400">log</span>(result)
             </code>
           </pre>
