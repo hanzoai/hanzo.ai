@@ -37,8 +37,8 @@ export const resources = [
   {
     title: "Documentation",
     items: [
-      { name: "Documentation", url: "/docs" },
-      { name: "API Reference", url: "/api" },
+      { name: "Documentation", url: "https://docs.hanzo.ai" },
+      { name: "API Reference", url: "https://docs.hanzo.ai" },
       { name: "Examples", url: "/examples" }
     ]
   }
