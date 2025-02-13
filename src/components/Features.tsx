@@ -74,7 +74,7 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto"
           >
-            Hanzo AI is the Vercel for AI—a developer-first DX platform bringing advanced AI directly into your workflow with open, private, and decentralized solutions.
+            Hanzo is a developer-first AI platform bringing frontier research directly into your workflow with open, private, and decentralized solutions.
           </motion.p>
         </div>
 
