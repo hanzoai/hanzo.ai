@@ -29,7 +29,7 @@ const Hero = () => {
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Design, Engineer, and Market AI-powered applications with our comprehensive AI first platform.
-            From code assistance to frontier models, build anything as fast as you can dream up your next big idea.
+            From code assistance to frontier models, build everything you imagine as fast as you can dream.
           </motion.p>
 
           <motion.div
