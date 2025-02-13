@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, BookOpen, Scale, DollarSign, ChartBar, Palette, Music, Calculator } from "lucide-react";
+import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, Scale, DollarSign, ChartBar, Palette, Music, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Team = () => {
@@ -47,13 +47,6 @@ const Team = () => {
       description: "Your innovative AI visionary leader, guiding the team towards excellence.",
       icon: Lightbulb,
       gradient: "from-indigo-500 to-purple-500"
-    },
-    {
-      name: "Pat",
-      role: "Patent Specialist",
-      description: "Handles intellectual property protection and patent strategies.",
-      icon: BookOpen,
-      gradient: "from-emerald-500 to-teal-500"
     },
     {
       name: "Le",
@@ -179,19 +172,30 @@ const Team = () => {
             })}
           </div>
 
-          <div className="mt-20 text-center">
-            <h2 className="text-2xl font-semibold mb-4">
-              Ready to work with our AI team?
-            </h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Get started with Hanzo Chat and experience the power of AI-driven collaboration.
-            </p>
-            <Button 
-              className="bg-purple-500 hover:bg-purple-600"
-              onClick={() => window.location.href = "https://chat.hanzo.ai"}
-            >
-              Start Collaborating
-            </Button>
+          <div className="mt-20 relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-transparent opacity-50" />
+            <div className="relative text-center max-w-4xl mx-auto bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8">
+              <h2 className="text-3xl font-bold mb-4">You + AI Team = Infinite Possibilities</h2>
+              <p className="text-gray-400 mb-8">
+                Work alongside our AI team to bring your vision to life. From development to design, 
+                marketing to operations - we're here to help you build anything imaginable.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button 
+                  className="bg-purple-500 hover:bg-purple-600"
+                  onClick={() => window.location.href = "/case-studies"}
+                >
+                  Read Case Studies
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-purple-500 text-purple-500 hover:bg-purple-500/10"
+                  onClick={() => window.location.href = "/contact"}
+                >
+                  Contact Sales
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </main>
