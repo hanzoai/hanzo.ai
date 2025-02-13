@@ -5,7 +5,7 @@ import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, Mes
 import { Button } from "@/components/ui/button";
 
 const Team = () => {
-  const teamMembers = [
+  const coreTechTeam = [
     {
       name: "Dev",
       role: "AI Developer",
@@ -19,7 +19,10 @@ const Team = () => {
       description: "Your creative AI designer, crafting beautiful and intuitive user experiences.",
       icon: Paintbrush,
       gradient: "from-purple-500 to-pink-500"
-    },
+    }
+  ];
+
+  const operationsTeam = [
     {
       name: "Mark",
       role: "AI Marketing Director",
@@ -40,14 +43,27 @@ const Team = () => {
       description: "Your efficient AI operations engineer, maintaining system reliability and performance.",
       icon: Settings,
       gradient: "from-yellow-500 to-orange-500"
+    }
+  ];
+
+  const creativeTeam = [
+    {
+      name: "Art",
+      role: "Creative Director",
+      description: "Leads art direction and video production initiatives.",
+      icon: Palette,
+      gradient: "from-rose-500 to-pink-500"
     },
     {
-      name: "Vi",
-      role: "Visionary Leader",
-      description: "Your innovative AI visionary leader, guiding the team towards excellence.",
-      icon: Lightbulb,
-      gradient: "from-indigo-500 to-purple-500"
-    },
+      name: "Mu",
+      role: "Music Producer",
+      description: "Creates and curates audio experiences and soundscapes.",
+      icon: Music,
+      gradient: "from-amber-500 to-orange-500"
+    }
+  ];
+
+  const businessTeam = [
     {
       name: "Le",
       role: "Legal Counsel",
@@ -70,25 +86,21 @@ const Team = () => {
       gradient: "from-violet-500 to-purple-500"
     },
     {
-      name: "Art",
-      role: "Creative Director",
-      description: "Leads art direction and video production initiatives.",
-      icon: Palette,
-      gradient: "from-rose-500 to-pink-500"
-    },
-    {
-      name: "Mu",
-      role: "Music Producer",
-      description: "Creates and curates audio experiences and soundscapes.",
-      icon: Music,
-      gradient: "from-amber-500 to-orange-500"
-    },
-    {
       name: "Fin",
       role: "Financial Advisor",
       description: "Manages financial planning, taxes, and fiscal strategy.",
       icon: Calculator,
       gradient: "from-blue-500 to-indigo-500"
+    }
+  ];
+
+  const leadershipTeam = [
+    {
+      name: "Vi",
+      role: "Visionary Leader",
+      description: "Your innovative AI visionary leader, guiding the team towards excellence.",
+      icon: Lightbulb,
+      gradient: "from-indigo-500 to-purple-500"
     }
   ];
 
@@ -103,11 +115,36 @@ const Team = () => {
     {
       name: "Hanzo Bot",
       role: "AI Framework",
-      description: "Our advanced Agentic Framework that powers the entire AI team, enabling intelligent automation and collaboration.",
+      description: "Our advanced Agentic Framework that powers your AI team. Perfect for enterprises looking to augment their workforce with AI clones.",
       icon: Bot,
       gradient: "from-pink-500 to-rose-500"
     }
   ];
+
+  const renderTeamSection = (title: string, members: typeof coreTechTeam) => (
+    <div className="mb-16">
+      <h3 className="text-2xl font-bold mb-6 text-center text-purple-400">{title}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {members.map((member) => {
+          const Icon = member.icon;
+          return (
+            <div
+              key={member.name}
+              className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out" />
+              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${member.gradient} mb-4`}>
+                <Icon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+              <p className="text-purple-400 font-medium mb-3">{member.role}</p>
+              <p className="text-gray-400">{member.description}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -119,36 +156,23 @@ const Team = () => {
             Meet Your AI Team
           </h1>
           <p className="text-gray-400 text-lg">
-            Powered by elizaOS, our AI team members work together seamlessly through Hanzo Chat
-            to bring your projects to life.
+            Powered by Hanzo Bot, your AI team members work seamlessly with you on Hanzo App 
+            and through Hanzo Chat to bring your ideas to life.
           </p>
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {teamMembers.map((member) => {
-              const Icon = member.icon;
-              return (
-                <div
-                  key={member.name}
-                  className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out" />
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${member.gradient} mb-4`}>
-                    <Icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                  <p className="text-purple-400 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-400">{member.description}</p>
-                </div>
-              );
-            })}
-          </div>
+          {renderTeamSection("Core Tech Team", coreTechTeam)}
+          {renderTeamSection("Operations", operationsTeam)}
+          {renderTeamSection("Creative Studio", creativeTeam)}
+          {renderTeamSection("Business & Analytics", businessTeam)}
+          {renderTeamSection("Leadership", leadershipTeam)}
 
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Platform</h2>
-            <p className="text-gray-400">
-              The powerful platforms that enable our AI team to work together efficiently.
+            <p className="text-gray-400 mb-8">
+              Hanzo Works enables enterprises to create AI-powered clones of their workforce, 
+              enhancing productivity and innovation through our powerful platform.
             </p>
           </div>
 
