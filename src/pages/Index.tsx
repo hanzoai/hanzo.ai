@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -13,8 +12,22 @@ import Dev from "@/components/sections/Dev";
 import Products from "@/components/Products";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import HeroPoem from "@/components/HeroPoem";
+import TeamSlack from "@/components/TeamSlack";
+import LastSupper from "@/components/LastSupper";
+import Code2 from "@/components/sections/Code";
 
 const Index = () => {
+  const teamMembers = [
+    {
+      name: "Dev",
+      role: "Developer",
+      icon: Code2,
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    // ... add all team members in a single row
+  ];
+
   useEffect(() => {
     // Smooth scroll behavior
     const smoothScroll = (e: MouseEvent) => {
@@ -43,9 +56,11 @@ const Index = () => {
     <div className="min-h-screen bg-black">
       <Navbar />
       <main>
+        <HeroPoem />
         <Hero />
         <QuickStart />
         <Features />
+        <TeamSlack />
         <Analytics />
         <Base />
         <Commerce />
@@ -53,6 +68,7 @@ const Index = () => {
         <Code />
         <Dev />
         <Products />
+        <LastSupper members={teamMembers} />
         <Testimonials />
       </main>
       <Footer />
