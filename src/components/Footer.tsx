@@ -1,4 +1,3 @@
-
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products, solutions, resources, company } from "@/constants/navigation";
@@ -93,7 +92,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {company.map(item => (
                 <li key={item}>
-                  <a href="#" className="text-gray-500 hover:text-white text-sm">
+                  <a 
+                    href={item === "Team" ? "/team" : "#"} 
+                    className="text-gray-500 hover:text-white text-sm"
+                  >
                     {item}
                   </a>
                 </li>
