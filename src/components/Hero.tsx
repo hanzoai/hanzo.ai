@@ -16,9 +16,9 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight text-white"
           >
-            Build AI Native
+            Build as fast
             <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
-              Unstoppable Apps
+              as you think
             </span>
           </motion.h1>
 
