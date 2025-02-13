@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare } from "lucide-react";
+import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, BookOpen, Scale, DollarSign, ChartBar, Palette, Music, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Team = () => {
@@ -47,21 +47,70 @@ const Team = () => {
       description: "Your innovative AI visionary leader, guiding the team towards excellence.",
       icon: Lightbulb,
       gradient: "from-indigo-500 to-purple-500"
+    },
+    {
+      name: "Pat",
+      role: "Patent Specialist",
+      description: "Handles intellectual property protection and patent strategies.",
+      icon: BookOpen,
+      gradient: "from-emerald-500 to-teal-500"
+    },
+    {
+      name: "Le",
+      role: "Legal Counsel",
+      description: "Provides comprehensive legal guidance and compliance oversight.",
+      icon: Scale,
+      gradient: "from-sky-500 to-blue-500"
+    },
+    {
+      name: "Sal",
+      role: "Sales Director",
+      description: "Drives revenue growth and builds strategic partnerships.",
+      icon: DollarSign,
+      gradient: "from-green-500 to-lime-500"
+    },
+    {
+      name: "Data",
+      role: "Data Scientist",
+      description: "Analyzes complex data sets to drive informed decision-making.",
+      icon: ChartBar,
+      gradient: "from-violet-500 to-purple-500"
+    },
+    {
+      name: "Art",
+      role: "Creative Director",
+      description: "Leads art direction and video production initiatives.",
+      icon: Palette,
+      gradient: "from-rose-500 to-pink-500"
+    },
+    {
+      name: "Mu",
+      role: "Music Producer",
+      description: "Creates and curates audio experiences and soundscapes.",
+      icon: Music,
+      gradient: "from-amber-500 to-orange-500"
+    },
+    {
+      name: "Fin",
+      role: "Financial Advisor",
+      description: "Manages financial planning, taxes, and fiscal strategy.",
+      icon: Calculator,
+      gradient: "from-blue-500 to-indigo-500"
     }
   ];
 
-  const additionalAgents = [
+  const platformAgents = [
     {
-      name: "Chat",
-      role: "Communication Specialist",
-      description: "Facilitates seamless team communication through Hanzo Chat platform.",
+      name: "Hanzo Chat",
+      role: "Team Communication Platform",
+      description: "Our Slack-like chat platform where all AI team members collaborate seamlessly. Features channels, direct messaging, and integrated AI workflows.",
       icon: MessagesSquare,
       gradient: "from-teal-500 to-blue-500"
     },
     {
-      name: "Assistant",
-      role: "Project Coordinator",
-      description: "Coordinates tasks and ensures smooth collaboration across the team.",
+      name: "Hanzo Bot",
+      role: "AI Framework",
+      description: "Our advanced Agentic Framework that powers the entire AI team, enabling intelligent automation and collaboration.",
       icon: Bot,
       gradient: "from-pink-500 to-rose-500"
     }
@@ -104,14 +153,14 @@ const Team = () => {
           </div>
 
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">Additional Team Members</h2>
+            <h2 className="text-3xl font-bold mb-4">Our Platform</h2>
             <p className="text-gray-400">
-              Meet our specialized AI agents that enhance team collaboration and productivity.
+              The powerful platforms that enable our AI team to work together efficiently.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {additionalAgents.map((agent) => {
+            {platformAgents.map((agent) => {
               const Icon = agent.icon;
               return (
                 <div

@@ -48,5 +48,6 @@ export const company = [
   "About",
   "Blog",
   "Careers",
+  "Team",
   "Contact"
 ];
