@@ -32,14 +32,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png" 
-              alt="Hanzo" 
+            <img
+              src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png"
+              alt="Hanzo"
               className="h-8 w-8"
             />
             <span className="text-white font-bold text-xl">Hanzo</span>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
             <Popover>
               <PopoverTrigger asChild>
@@ -118,9 +118,9 @@ const Navbar = () => {
                                      item.name.includes('Help') ? HelpCircle :
                                      item.name.includes('Documentation') ? Book :
                                      item.name.includes('API') ? Code : Globe;
-                          
+
                           return (
-                            <a 
+                            <a
                               key={item.name}
                               href={item.url}
                               target={item.url.startsWith('http') ? '_blank' : undefined}
@@ -142,13 +142,13 @@ const Navbar = () => {
               </PopoverContent>
             </Popover>
 
-            <a href="/docs" className="text-gray-300 hover:text-white transition-colors">
+            <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
               Docs
             </a>
             <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
               Pricing
             </a>
-            
+
             <div className="flex items-center space-x-4">
               <Button variant="ghost" className="text-white hover:bg-white/10">
                 Login
@@ -194,7 +194,7 @@ const Navbar = () => {
               Resources
             </a>
             <a
-              href="/docs"
+              href="https://docs.hanzo.ai"
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
             >
               Docs
