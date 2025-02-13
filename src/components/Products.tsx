@@ -170,6 +170,7 @@ const Products = () => {
             </div>
           </div>
         </motion.div>
+      </div>
     </section>
   );
 };
