@@ -151,10 +151,14 @@ const Navbar = () => {
 
             <div className="flex items-center space-x-4">
               <Button variant="ghost" className="text-white hover:bg-white/10">
-                Login
+                <a href="https://auth.hanzo.ai">
+                  Login
+                </a>
               </Button>
               <Button className="bg-white text-black hover:bg-gray-100">
-                Signup
+                <a href="https://auth.hanzo.ai/">
+                  Signup
+                </a>
               </Button>
             </div>
           </div>
