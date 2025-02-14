@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import HeroPoem from "@/components/HeroPoem";
 import TeamSlack from "@/components/TeamSlack";
 import LastSupper from "@/components/LastSupper";
-import Code2 from "@/components/sections/Code";
+import { Code2 } from "lucide-react";
 
 const Index = () => {
   const teamMembers = [
@@ -24,8 +24,7 @@ const Index = () => {
       role: "Developer",
       icon: Code2,
       gradient: "from-blue-500 to-cyan-500"
-    },
-    // ... add all team members in a single row
+    }
   ];
 
   useEffect(() => {
@@ -56,7 +55,6 @@ const Index = () => {
     <div className="min-h-screen bg-black">
       <Navbar />
       <main>
-        <HeroPoem />
         <Hero />
         <QuickStart />
         <Features />
@@ -70,6 +68,7 @@ const Index = () => {
         <Products />
         <LastSupper members={teamMembers} />
         <Testimonials />
+        <HeroPoem />
       </main>
       <Footer />
     </div>
