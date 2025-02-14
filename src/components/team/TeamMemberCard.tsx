@@ -3,6 +3,7 @@ import { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface TeamMemberCardProps {
   name: string;
@@ -14,6 +15,7 @@ interface TeamMemberCardProps {
 
 const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamMemberCardProps) => {
   const subdomain = name.toLowerCase();
+  const navigate = useNavigate();
   
   return (
     <motion.div
@@ -39,7 +41,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <Button 
           variant="outline" 
           size="sm"
-          onClick={() => window.location.href = `/team/${subdomain}`}
+          onClick={() => navigate(`/team/${subdomain}`)}
           className="w-full"
         >
           Learn More
@@ -52,7 +54,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
           onClick={() => window.open(`https://github.com/hanzo-ai/${subdomain}`, '_blank')}
           className="w-full"
         >
-          View Code
+          Fork Bot
           <Github className="ml-2 h-4 w-4" />
         </Button>
       </div>
