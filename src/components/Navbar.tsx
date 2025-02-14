@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Popover } from "@/components/ui/popover";
 import { ProductsMenu } from "./navigation/ProductsMenu";
 import { SolutionsMenu } from "./navigation/SolutionsMenu";
 import { ResourcesMenu } from "./navigation/ResourcesMenu";
@@ -39,17 +38,9 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Popover>
-              <ProductsMenu />
-            </Popover>
-
-            <Popover>
-              <SolutionsMenu />
-            </Popover>
-
-            <Popover>
-              <ResourcesMenu />
-            </Popover>
+            <ProductsMenu />
+            <SolutionsMenu />
+            <ResourcesMenu />
 
             <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
               Docs

@@ -15,11 +15,8 @@ export const ProductsMenu = () => {
         <NavigationButton>Products</NavigationButton>
       </PopoverTrigger>
       <PopoverContent 
-        onMouseLeave={(e) => {
-          const trigger = document.activeElement as HTMLElement;
-          trigger?.blur();
-        }}
         className="w-[720px] p-6 bg-black/95 backdrop-blur-xl border-gray-800"
+        sideOffset={8}
       >
         <div className="grid grid-cols-3 gap-8">
           {products.map(category => (
