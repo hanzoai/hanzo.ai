@@ -7,8 +7,11 @@ import {
   Popover
 } from "@/components/ui/popover";
 import { NavigationButton } from "./NavigationButton";
+import { useState } from "react";
 
 export const SolutionsMenu = () => {
+  const [open, setOpen] = useState(false);
+
   const getIcon = (name: string) => {
     const iconMap: Record<string, any> = {
       "Cloud": Globe,
@@ -24,16 +27,15 @@ export const SolutionsMenu = () => {
   };
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <NavigationButton>Solutions</NavigationButton>
       </PopoverTrigger>
       <PopoverContent 
-        onMouseLeave={(e) => {
-          const trigger = document.activeElement as HTMLElement;
-          trigger?.blur();
-        }}
-        className="w-[800px] p-6 bg-black/95 backdrop-blur-xl border-gray-800"
+        className="w-[800px] p-6 bg-black border-gray-800"
+        sideOffset={8}
+        onPointerEnter={() => setOpen(true)}
+        onPointerLeave={() => setOpen(false)}
       >
         <div className="grid grid-cols-4 gap-8">
           {solutions.map(category => (

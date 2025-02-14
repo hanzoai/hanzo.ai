@@ -7,16 +7,21 @@ import {
   Popover
 } from "@/components/ui/popover";
 import { NavigationButton } from "./NavigationButton";
+import { useState } from "react";
 
 export const ProductsMenu = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <NavigationButton>Products</NavigationButton>
       </PopoverTrigger>
       <PopoverContent 
-        className="w-[720px] p-6 bg-black/95 backdrop-blur-xl border-gray-800"
+        className="w-[720px] p-6 bg-black border-gray-800"
         sideOffset={8}
+        onPointerEnter={() => setOpen(true)}
+        onPointerLeave={() => setOpen(false)}
       >
         <div className="grid grid-cols-3 gap-8">
           {products.map(category => (
