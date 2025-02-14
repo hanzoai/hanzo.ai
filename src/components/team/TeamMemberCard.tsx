@@ -1,7 +1,8 @@
 
 import { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface TeamMemberCardProps {
   name: string;
@@ -24,7 +25,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         href={`https://${subdomain}.hanzo.ai`}
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className="block mb-4"
       >
         <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${gradient} mb-4`}>
           <Icon className="h-6 w-6 text-white" />
@@ -33,15 +34,28 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <p className="text-purple-400 font-medium mb-3">{role}</p>
         <p className="text-gray-400 mb-4">{description}</p>
       </a>
-      <a
-        href={`https://github.com/hanzo-ai/${subdomain}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-purple-400 transition-colors"
-      >
-        <Github className="h-4 w-4" />
-        <span>View on GitHub</span>
-      </a>
+
+      <div className="flex flex-col space-y-3">
+        <a
+          href={`https://github.com/hanzo-ai/${subdomain}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-purple-400 transition-colors"
+        >
+          <Github className="h-4 w-4" />
+          <span>View on GitHub</span>
+        </a>
+
+        <Button 
+          variant="outline" 
+          size="sm"
+          className="w-full"
+          onClick={() => window.location.href = `/team/${subdomain}`}
+        >
+          Learn More About {name}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
     </motion.div>
   );
 };
