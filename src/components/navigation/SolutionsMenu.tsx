@@ -30,6 +30,28 @@ export const SolutionsMenu = () => {
     window.location.href = "https://sensei.group";
   };
 
+  // Split solutions items into 4 columns
+  const columns = solutions.reduce((acc: any[], category) => {
+    const itemsPerColumn = Math.ceil(category.items.length / 4);
+    const columns = [];
+    
+    for (let i = 0; i < 4; i++) {
+      const start = i * itemsPerColumn;
+      const end = start + itemsPerColumn;
+      const columnItems = category.items.slice(start, end);
+      
+      if (columnItems.length > 0) {
+        columns.push({
+          title: i === 0 ? category.title : "",
+          items: columnItems,
+          showViewAll: i === 0, // Only show "View All" on first column
+        });
+      }
+    }
+    
+    return [...acc, ...columns];
+  }, []);
+
   return (
     <div onMouseLeave={() => setOpen(false)}>
       <Popover open={open} onOpenChange={setOpen}>
@@ -42,19 +64,23 @@ export const SolutionsMenu = () => {
         >
           <div className="flex gap-6">
             <div className="flex-1 grid grid-cols-4 gap-8">
-              {solutions.map(category => (
-                <div key={category.title} className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-white">{category.title}</h3>
-                    <a 
-                      href={`/solutions#${category.title.toLowerCase()}`} 
-                      className="text-sm text-purple-400 hover:text-purple-300"
-                    >
-                      View All
-                    </a>
-                  </div>
+              {columns.map((column, idx) => (
+                <div key={idx} className="space-y-4">
+                  {column.title && (
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-white">{column.title}</h3>
+                      {column.showViewAll && (
+                        <a 
+                          href={`/solutions#${column.title.toLowerCase()}`} 
+                          className="text-sm text-purple-400 hover:text-purple-300"
+                        >
+                          View All
+                        </a>
+                      )}
+                    </div>
+                  )}
                   <div className="space-y-4">
-                    {category.items.slice(0, 4).map(item => {
+                    {column.items.map((item: string) => {
                       const Icon = getIcon(item);
                       return (
                         <a href="#" key={item} className="flex items-start space-x-3 group">

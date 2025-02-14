@@ -70,17 +70,41 @@ export const resources = [
   {
     title: "Community",
     items: [
-      { name: "Hanzo Forum", url: "https://hanzo.forum" },
-      { name: "Hanzo Community", url: "https://hanzo.community" },
-      { name: "Hanzo Help", url: "https://hanzo.help" }
+      { 
+        name: "Hanzo Forum",
+        url: "https://hanzo.forum",
+        description: "Join discussions with developers and AI experts"
+      },
+      { 
+        name: "Hanzo Community",
+        url: "https://hanzo.community",
+        description: "Connect with the broader Hanzo ecosystem"
+      },
+      { 
+        name: "Hanzo Help",
+        url: "https://hanzo.help",
+        description: "Get support and troubleshooting assistance"
+      }
     ]
   },
   {
     title: "Documentation",
     items: [
-      { name: "Documentation", url: "https://docs.hanzo.ai" },
-      { name: "API Reference", url: "https://docs.hanzo.ai" },
-      { name: "Examples", url: "/examples" }
+      { 
+        name: "Documentation",
+        url: "https://docs.hanzo.ai",
+        description: "Comprehensive guides and tutorials"
+      },
+      { 
+        name: "API Reference",
+        url: "https://docs.hanzo.ai",
+        description: "Detailed API documentation and examples"
+      },
+      { 
+        name: "Examples",
+        url: "/examples",
+        description: "Sample projects and code snippets"
+      }
     ]
   }
 ];

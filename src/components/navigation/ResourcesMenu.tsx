@@ -46,7 +46,7 @@ export const ResourcesMenu = () => {
                       <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
                       <div>
                         <div className="text-gray-300 group-hover:text-white font-medium">{item.name}</div>
-                        <div className="text-sm text-gray-500">Description for {item.name}</div>
+                        <div className="text-sm text-gray-500">{item.description}</div>
                       </div>
                     </a>
                   );
