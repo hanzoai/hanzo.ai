@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { solutions } from "@/constants/navigation";
 import { Globe2, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const Solutions = () => {
@@ -40,39 +40,52 @@ const Solutions = () => {
               <div key={section.title} className="mb-20">
                 <h2 className="text-3xl font-bold mb-8 text-center">{section.title}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {displayItems.map((item) => (
-                    <motion.div
-                      key={item}
-                      whileHover={{ y: -5 }}
-                      className="relative group rounded-xl border border-gray-800 bg-black/50 p-6 backdrop-blur-sm overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative">
-                        <div className="flex items-center justify-between mb-4">
-                          <Globe2 className="h-6 w-6 text-purple-400" />
-                          <ChevronRight className="h-5 w-5 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                  <AnimatePresence initial={false}>
+                    {displayItems.map((item, index) => (
+                      <motion.div
+                        key={item}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2, delay: index * 0.1 }}
+                        whileHover={{ y: -5 }}
+                        className="relative group rounded-xl border border-gray-800 bg-black/50 p-6 backdrop-blur-sm overflow-hidden"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative">
+                          <div className="flex items-center justify-between mb-4">
+                            <Globe2 className="h-6 w-6 text-purple-400" />
+                            <ChevronRight className="h-5 w-5 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                          </div>
+                          <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                            {item}
+                          </h3>
+                          <p className="text-gray-400 text-sm">
+                            Explore our solutions for {item.toLowerCase()} and discover how we can 
+                            help transform your business.
+                          </p>
                         </div>
-                        <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
-                          {item}
-                        </h3>
-                        <p className="text-gray-400 text-sm">
-                          Explore our solutions for {item.toLowerCase()} and discover how we can 
-                          help transform your business.
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
                 </div>
                 {section.items.length > 3 && (
-                  <div className="text-center mt-8">
+                  <motion.div 
+                    className="text-center mt-8"
+                    initial={false}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <button
                       onClick={() => toggleSection(section.title)}
                       className="inline-flex items-center px-6 py-3 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-colors"
                     >
                       {isExpanded ? 'Show Less' : `View All ${section.title}`}
-                      <ChevronRight className={`ml-2 h-5 w-5 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
+                      <ChevronRight 
+                        className={`ml-2 h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} 
+                      />
                     </button>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             );
