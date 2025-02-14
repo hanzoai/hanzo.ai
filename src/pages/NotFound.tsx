@@ -7,11 +7,18 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
+type MessageRole = "user" | "assistant";
+
+interface Message {
+  role: MessageRole;
+  content: string;
+}
+
 const NotFound = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant", content: string }>>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -24,22 +31,22 @@ const NotFound = () => {
   const handleSendMessage = async () => {
     if (!message.trim()) return;
 
-    const newMessages = [
-      ...messages,
-      { role: "user", content: message }
-    ];
+    const userMessage: Message = {
+      role: "user",
+      content: message
+    };
+
+    const newMessages = [...messages, userMessage];
     setMessages(newMessages);
     setMessage("");
 
     // Simulate AI response - Replace with actual AI integration
     setTimeout(() => {
-      setMessages([
-        ...newMessages,
-        { 
-          role: "assistant", 
-          content: `I noticed you're trying to access ${location.pathname}. This page doesn't exist, but I can help you find what you're looking for! What were you trying to find?` 
-        }
-      ]);
+      const aiMessage: Message = {
+        role: "assistant",
+        content: `I noticed you're trying to access ${location.pathname}. This page doesn't exist, but I can help you find what you're looking for! What were you trying to find?`
+      };
+      setMessages([...newMessages, aiMessage]);
     }, 1000);
 
     toast({
