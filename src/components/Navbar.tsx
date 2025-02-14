@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Brain, Database, ShoppingCart, Code, Settings, Globe, Book, MessageSquare, HelpCircle, Users } from "lucide-react";
@@ -148,6 +147,9 @@ const Navbar = () => {
             <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
               Pricing
             </a>
+            <a href="/team" className="text-gray-300 hover:text-white transition-colors">
+              Team
+            </a>
 
             <div className="flex items-center space-x-4">
               <Button variant="ghost" className="text-white hover:bg-white/10">
@@ -208,6 +210,12 @@ const Navbar = () => {
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
             >
               Pricing
+            </a>
+            <a
+              href="/team"
+              className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
+            >
+              Team
             </a>
             <div className="px-3 py-2 space-y-2">
               <Button variant="ghost" className="w-full text-white hover:bg-white/10">
