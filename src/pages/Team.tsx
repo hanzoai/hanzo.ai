@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, Scale, DollarSign, ChartBar, Palette, Music, Calculator } from "lucide-react";
+import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, Scale, DollarSign, ChartBar, Palette, Music, Calculator, Binary, Database } from "lucide-react";
 import TeamMemberCard from "@/components/team/TeamMemberCard";
 import PlatformCard from "@/components/team/PlatformCard";
 import CallToAction from "@/components/team/CallToAction";
@@ -70,6 +70,55 @@ const Team = () => {
       description: "Your innovative AI visionary leader, guiding the team towards excellence.",
       icon: Lightbulb,
       gradient: "from-indigo-500 to-purple-500"
+    },
+    {
+      name: "Fin",
+      role: "Financial Analyst",
+      description: "Manages financial strategies and optimizes resource allocation.",
+      icon: DollarSign,
+      gradient: "from-green-500 to-teal-500"
+    },
+    {
+      name: "Sec",
+      role: "Security Expert",
+      description: "Ensures robust security protocols and system protection.",
+      icon: Scale,
+      gradient: "from-red-500 to-pink-500"
+    },
+    {
+      name: "Algo",
+      role: "Algorithm Specialist",
+      description: "Develops and optimizes AI algorithms and models.",
+      icon: Binary,
+      gradient: "from-blue-500 to-indigo-500"
+    },
+    {
+      name: "DB",
+      role: "Database Architect",
+      description: "Designs and maintains efficient database systems.",
+      icon: Database,
+      gradient: "from-cyan-500 to-blue-500"
+    },
+    {
+      name: "Cal",
+      role: "Systems Analyst",
+      description: "Analyzes and optimizes system performance metrics.",
+      icon: Calculator,
+      gradient: "from-purple-500 to-indigo-500"
+    },
+    {
+      name: "Chat",
+      role: "Conversation Designer",
+      description: "Crafts natural and engaging AI conversations.",
+      icon: MessagesSquare,
+      gradient: "from-teal-500 to-green-500"
+    },
+    {
+      name: "Core",
+      role: "Core Systems Engineer",
+      description: "Maintains and enhances core AI infrastructure.",
+      icon: Bot,
+      gradient: "from-pink-500 to-purple-500"
     }
   ];
 
@@ -106,7 +155,7 @@ const Team = () => {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
             {teamMembers.map((member) => (
               <TeamMemberCard key={member.name} {...member} />
             ))}
