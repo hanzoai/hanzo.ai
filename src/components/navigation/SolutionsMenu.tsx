@@ -37,54 +37,57 @@ export const SolutionsMenu = () => {
           <NavigationButton onHoverStart={() => setOpen(true)}>Solutions</NavigationButton>
         </PopoverTrigger>
         <PopoverContent 
-          className="w-[1000px] p-6 bg-black border-gray-800"
+          className="w-[1200px] p-6 bg-black border-gray-800"
           sideOffset={8}
         >
-          <div className="grid grid-cols-4 gap-8">
-            {solutions.map(category => (
-              <div key={category.title} className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-white">{category.title}</h3>
-                  <a 
-                    href={`/solutions#${category.title.toLowerCase()}`} 
-                    className="text-sm text-purple-400 hover:text-purple-300"
-                  >
-                    View All
-                  </a>
+          <div className="flex gap-6">
+            <div className="flex-1 grid grid-cols-4 gap-8">
+              {solutions.map(category => (
+                <div key={category.title} className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                    <a 
+                      href={`/solutions#${category.title.toLowerCase()}`} 
+                      className="text-sm text-purple-400 hover:text-purple-300"
+                    >
+                      View All
+                    </a>
+                  </div>
+                  <div className="space-y-4">
+                    {category.items.slice(0, 4).map(item => {
+                      const Icon = getIcon(item);
+                      return (
+                        <a href="#" key={item} className="flex items-start space-x-3 group">
+                          <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
+                          <div>
+                            <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
+                            <div className="text-sm text-gray-500">Solutions for {item}</div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="space-y-4">
-                  {category.items.slice(0, 4).map(item => {
-                    const Icon = getIcon(item);
-                    return (
-                      <a href="#" key={item} className="flex items-start space-x-3 group">
-                        <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
-                        <div>
-                          <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
-                          <div className="text-sm text-gray-500">Solutions for {item}</div>
-                        </div>
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
 
-            {/* Sensei Block */}
+            {/* Sensei Column */}
             <div 
               onClick={handleSenseiClick}
-              className="col-span-4 mt-6 p-6 rounded-xl bg-gradient-to-r from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors"
+              className="w-64 rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-6 flex flex-col"
             >
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-lg bg-purple-500/20">
-                  <Shield className="h-6 w-6 text-purple-400" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Execute with Sensei</h3>
-                  <p className="text-gray-400">
-                    Need expert guidance? Partner with Sensei Group to implement enterprise AI solutions 
-                    and transform your business.
-                  </p>
-                </div>
+              <div className="p-3 rounded-lg bg-purple-500/20 self-start mb-4">
+                <Shield className="h-6 w-6 text-purple-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-3">Execute with Sensei</h3>
+              <p className="text-gray-400 text-sm">
+                Need expert guidance? Partner with Sensei Group to implement enterprise AI solutions 
+                and transform your business.
+              </p>
+              <div className="mt-auto pt-4">
+                <span className="text-purple-400 text-sm hover:text-purple-300 flex items-center">
+                  Contact Sensei Group →
+                </span>
               </div>
             </div>
           </div>
