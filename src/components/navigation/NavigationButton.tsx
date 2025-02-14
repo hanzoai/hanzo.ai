@@ -4,14 +4,16 @@ import { type ReactNode, forwardRef } from "react";
 
 interface NavigationButtonProps {
   children: ReactNode;
+  onHoverStart?: () => void;
 }
 
 export const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, onHoverStart, ...props }, ref) => {
     return (
       <button 
         ref={ref}
         className="text-gray-300 hover:text-white transition-colors inline-flex items-center"
+        onMouseEnter={onHoverStart}
         {...props}
       >
         {children}
