@@ -7,12 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const Solutions = () => {
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [expandedSections, setExpandedSections] = useState<Record<string, number>>({});
 
   const toggleSection = (title: string) => {
     setExpandedSections(prev => ({
       ...prev,
-      [title]: !prev[title]
+      [title]: (prev[title] || 6) + 6 // Show 6 more items each time
     }));
   };
 
@@ -33,8 +33,9 @@ const Solutions = () => {
           </div>
 
           {solutions.map((section) => {
-            const isExpanded = expandedSections[section.title];
-            const displayItems = isExpanded ? section.items : section.items.slice(0, 3);
+            const displayCount = expandedSections[section.title] || 6;
+            const hasMore = section.items.length > displayCount;
+            const displayItems = section.items.slice(0, displayCount);
 
             return (
               <div key={section.title} className="mb-20">
@@ -69,7 +70,7 @@ const Solutions = () => {
                     ))}
                   </AnimatePresence>
                 </div>
-                {section.items.length > 3 && (
+                {hasMore && (
                   <motion.div 
                     className="text-center mt-8"
                     initial={false}
@@ -80,10 +81,8 @@ const Solutions = () => {
                       onClick={() => toggleSection(section.title)}
                       className="inline-flex items-center px-6 py-3 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-colors"
                     >
-                      {isExpanded ? 'Show Less' : `View All ${section.title}`}
-                      <ChevronRight 
-                        className={`ml-2 h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} 
-                      />
+                      View More {section.title}
+                      <ChevronRight className="ml-2 h-5 w-5" />
                     </button>
                   </motion.div>
                 )}
