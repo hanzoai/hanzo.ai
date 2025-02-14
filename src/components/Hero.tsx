@@ -1,13 +1,12 @@
-import { Button } from "@/components/ui/button";
+
+import { Button } from "@hanzo/ui";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           <motion.h1
@@ -28,8 +27,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Design, Engineer, and Market AI-powered applications with our comprehensive AI first platform.
-            From code assistance to frontier models, build everything you imagine as fast as you can dream.
+            Design, Engineer, and Market AI-powered applications with our unified platform.
+            Featuring streaming AI, UI components, and a real-time database - everything you need to build modern apps.
           </motion.p>
 
           <motion.div
@@ -39,23 +38,18 @@ const Hero = () => {
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
-              <a href="https://hanzo.app">
-              Launch App
-              </a>
+              <a href="https://hanzo.app">Launch App</a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10"
             >
-              <a href="https://docs.hanzo.ai">
-                Read Docs
-              </a>
+              <a href="https://docs.hanzo.ai">Read Docs</a>
             </Button>
           </motion.div>
         </div>
 
-        {/* Code preview */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,22 +59,34 @@ const Hero = () => {
           <pre className="overflow-x-auto">
             <code className="text-sm sm:text-base text-gray-300">
               <span className="text-blue-400">import</span>{" "}
-              <span className="text-green-400">{"{ AI }"}</span>{" "}
+              <span className="text-purple-400">{"{ createAI }"}</span>{" "}
               <span className="text-blue-400">from</span>{" "}
-              <span className="text-yellow-300">'hanzo/ai'</span>
-              {"\n\n"}
-              <span className="text-purple-400">const</span> editor{" "}
-              <span className="text-gray-400">=</span>{" "}
-              <span className="text-blue-400">new</span>{" "}
-              <span className="text-green-400">AI.CodeEditor</span>
+              <span className="text-yellow-300">'@hanzo/ai'</span>
               {"\n"}
-              <span className="text-purple-400">const</span> result{" "}
-              <span className="text-gray-400">=</span>{" "}
-              <span className="text-blue-400">await</span>{" "}
-              editor.improveCode(myCode)
+              <span className="text-blue-400">import</span>{" "}
+              <span className="text-purple-400">{"{ Button }"}</span>{" "}
+              <span className="text-blue-400">from</span>{" "}
+              <span className="text-yellow-300">'@hanzo/ui'</span>
+              {"\n"}
+              <span className="text-blue-400">import</span>{" "}
+              <span className="text-purple-400">{"{ createClient }"}</span>{" "}
+              <span className="text-blue-400">from</span>{" "}
+              <span className="text-yellow-300">'@hanzo/base'</span>
               {"\n\n"}
-              <span className="text-gray-500">// AI that understands you</span>
-              {"\n"}console.<span className="text-blue-400">log</span>(result)
+              <span className="text-purple-400">const</span> ai{" "}
+              <span className="text-gray-400">=</span>{" "}
+              <span className="text-blue-400">createAI</span>()
+              {"\n"}
+              <span className="text-purple-400">const</span> db{" "}
+              <span className="text-gray-400">=</span>{" "}
+              <span className="text-blue-400">createClient</span>()
+              {"\n\n"}
+              <span className="text-gray-500">// Stream AI responses in real-time</span>
+              {"\n"}
+              <span className="text-blue-400">await</span> ai.chat.completions.create({"{\n"}
+              {"  "}messages: [{"{ role: 'user', content: 'Hello!' }"}],{"\n"}
+              {"  "}stream: true{"\n"}
+              {"}"})
             </code>
           </pre>
         </motion.div>

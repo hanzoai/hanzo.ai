@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Code as CodeIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const Code = () => {
   return (
@@ -15,11 +15,11 @@ const Code = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-1 rounded-full mb-6">
             <CodeIcon className="h-4 w-4 text-white" />
-            <span className="text-sm text-white">Development Environment</span>
+            <span className="text-sm text-white">Modern Development Stack</span>
           </div>
           <h2 className="text-4xl font-display text-white mb-4">Code with Confidence</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A powerful development environment built for the AI era.
+            A modern development stack with real-time AI, beautiful UI components, and a powerful database.
           </p>
         </motion.div>
 
@@ -47,13 +47,32 @@ const Code = () => {
                   <span className="text-gray-300">{"}"}</span>{" "}
                   <span className="text-purple-400">from</span>{" "}
                   <span className="text-green-400">'@hanzo/ai'</span>
-                  <br />
-                  <br />
+                  {"\n"}
+                  <span className="text-purple-400">import</span>{" "}
+                  <span className="text-gray-300">{"{"}</span>{" "}
+                  <span className="text-blue-400">Button</span>{" "}
+                  <span className="text-gray-300">{"}"}</span>{" "}
+                  <span className="text-purple-400">from</span>{" "}
+                  <span className="text-green-400">'@hanzo/ui'</span>
+                  {"\n"}
+                  <span className="text-purple-400">import</span>{" "}
+                  <span className="text-gray-300">{"{"}</span>{" "}
+                  <span className="text-blue-400">createClient</span>{" "}
+                  <span className="text-gray-300">{"}"}</span>{" "}
+                  <span className="text-purple-400">from</span>{" "}
+                  <span className="text-green-400">'@hanzo/base'</span>
+                  {"\n\n"}
                   <span className="text-purple-400">const</span>{" "}
                   <span className="text-blue-400">ai</span>{" "}
                   <span className="text-gray-300">=</span>{" "}
                   <span className="text-blue-400">createAI</span>
-                  <span className="text-gray-300">{"()"}</span>
+                  <span className="text-gray-300">()</span>
+                  {"\n"}
+                  <span className="text-purple-400">const</span>{" "}
+                  <span className="text-blue-400">db</span>{" "}
+                  <span className="text-gray-300">=</span>{" "}
+                  <span className="text-blue-400">createClient</span>
+                  <span className="text-gray-300">()</span>
                 </code>
               </pre>
             </div>
