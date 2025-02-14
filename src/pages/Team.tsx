@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, Scale, DollarSign, ChartBar, Palette, Music, Calculator, Binary, Database } from "lucide-react";
@@ -65,11 +64,11 @@ const Team = () => {
       gradient: "from-violet-500 to-purple-500"
     },
     {
-      name: "Vi",
-      role: "Visionary Leader",
-      description: "Your innovative AI visionary leader, guiding the team towards excellence.",
-      icon: Lightbulb,
-      gradient: "from-indigo-500 to-purple-500"
+      name: "Core",
+      role: "Core Systems Engineer",
+      description: "Maintains and enhances core AI infrastructure.",
+      icon: Bot,
+      gradient: "from-pink-500 to-purple-500"
     },
     {
       name: "Fin",
@@ -114,11 +113,11 @@ const Team = () => {
       gradient: "from-teal-500 to-green-500"
     },
     {
-      name: "Core",
-      role: "Core Systems Engineer",
-      description: "Maintains and enhances core AI infrastructure.",
-      icon: Bot,
-      gradient: "from-pink-500 to-purple-500"
+      name: "Vi",
+      role: "Visionary Leader",
+      description: "Your innovative AI visionary leader, guiding the team towards excellence.",
+      icon: Lightbulb,
+      gradient: "from-indigo-500 to-purple-500"
     }
   ];
 
