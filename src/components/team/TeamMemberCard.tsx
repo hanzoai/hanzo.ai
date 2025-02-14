@@ -23,19 +23,14 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
       className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out" />
-      <a 
-        href={`https://${subdomain}.hanzo.ai`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block mb-4"
-      >
+      <div className="block mb-4">
         <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${gradient} mb-4`}>
           <Icon className="h-6 w-6 text-white" />
         </div>
         <h3 className="text-xl font-semibold mb-2 hover:text-purple-400 transition-colors">{name}</h3>
         <p className="text-purple-400 font-medium mb-3">{role}</p>
         <p className="text-gray-400 mb-4">{description}</p>
-      </a>
+      </div>
 
       <div className="grid grid-cols-2 gap-3">
         <Button 
