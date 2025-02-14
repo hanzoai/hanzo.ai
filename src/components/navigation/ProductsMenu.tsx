@@ -4,12 +4,13 @@ import { products } from "@/constants/navigation";
 import {
   PopoverContent,
   PopoverTrigger,
+  Popover
 } from "@/components/ui/popover";
 import { NavigationButton } from "./NavigationButton";
 
 export const ProductsMenu = () => {
   return (
-    <>
+    <Popover>
       <PopoverTrigger asChild>
         <NavigationButton>Products</NavigationButton>
       </PopoverTrigger>
@@ -39,6 +40,6 @@ export const ProductsMenu = () => {
           ))}
         </div>
       </PopoverContent>
-    </>
+    </Popover>
   );
 };

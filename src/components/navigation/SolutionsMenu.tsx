@@ -4,6 +4,7 @@ import { solutions } from "@/constants/navigation";
 import {
   PopoverContent,
   PopoverTrigger,
+  Popover
 } from "@/components/ui/popover";
 import { NavigationButton } from "./NavigationButton";
 
@@ -23,7 +24,7 @@ export const SolutionsMenu = () => {
   };
 
   return (
-    <>
+    <Popover>
       <PopoverTrigger asChild>
         <NavigationButton>Solutions</NavigationButton>
       </PopoverTrigger>
@@ -56,6 +57,6 @@ export const SolutionsMenu = () => {
           ))}
         </div>
       </PopoverContent>
-    </>
+    </Popover>
   );
 };

@@ -4,12 +4,13 @@ import { resources } from "@/constants/navigation";
 import {
   PopoverContent,
   PopoverTrigger,
+  Popover
 } from "@/components/ui/popover";
 import { NavigationButton } from "./NavigationButton";
 
 export const ResourcesMenu = () => {
   return (
-    <>
+    <Popover>
       <PopoverTrigger asChild>
         <NavigationButton>Resources</NavigationButton>
       </PopoverTrigger>
@@ -53,6 +54,6 @@ export const ResourcesMenu = () => {
           ))}
         </div>
       </PopoverContent>
-    </>
+    </Popover>
   );
 };
