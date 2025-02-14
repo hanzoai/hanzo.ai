@@ -1,7 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Code as CodeIcon } from "lucide-react";
-import { Button } from "@hanzo/ui";
+import { Button } from "@/components/ui/button";
 
 const Code = () => {
   return (
