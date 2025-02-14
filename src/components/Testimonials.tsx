@@ -7,50 +7,54 @@ import { ArrowRight } from "lucide-react";
 const testimonials = [
   {
     quote: "Hanzo has helped us to streamline our complex challenges and processes. Their suite of tools has made it easier for us to launch, scale, and innovate our business.",
-    author: "Jennifer Patel",
-    role: "Founder & CEO"
+    author: "Jennifer Smith",
+    role: "Founder & CEO, Damon Motorcycles"
   },
   {
-    quote: "Hanzo's digital solutions have empowered us to redefine success. They have provided us with the tools we need to accelerate our growth and expand our reach.",
-    author: "Beck Smirth",
-    role: "Product Manager"
+    quote: "Hanzo's digital solutions have empowered us to redefine success. Their platform has provided us with the tools we need to accelerate our growth and expand our reach.",
+    author: "Marcus Chen",
+    role: "Product Lead, Skully AR-1"
   },
   {
     quote: "We are impressed with Hanzo's pioneering approach to digital solutions. Their platform has helped us to transcend traditional boundaries and achieve new levels of success.",
-    author: "Chris Jonathon",
-    role: "Investor"
+    author: "Sarah Johnson",
+    role: "CTO, Bellabeat"
   }
 ];
 
 const brandLogos = [
-  { name: "Sensei Partners", logo: "https://sensei.partners/logo.png" },
-  { name: "Brand 2", logo: "/placeholder.svg" },
-  { name: "Brand 3", logo: "/placeholder.svg" },
-  { name: "Brand 4", logo: "/placeholder.svg" },
-  { name: "Brand 5", logo: "/placeholder.svg" },
-  { name: "Brand 6", logo: "/placeholder.svg" }
+  { name: "Sensei", logo: "https://sensei.partners/logo.png" },
+  { name: "Damon Motorcycles", logo: "/placeholder.svg" },
+  { name: "Skully AR-1", logo: "/placeholder.svg" },
+  { name: "Triller", logo: "/placeholder.svg" },
+  { name: "Bellabeat", logo: "/placeholder.svg" },
+  { name: "Arca", logo: "/placeholder.svg" },
+  { name: "ZOO", logo: "/placeholder.svg" },
+  { name: "LUX", logo: "/placeholder.svg" }
 ];
 
 const caseStudies = [
   {
-    title: "Sensei Partners Growth Story",
-    description: "How we helped Sensei Partners achieve 300% growth in user acquisition through our innovative solutions.",
+    title: "Damon Motorcycles: Revolutionizing Electric Mobility",
+    description: "How we helped Damon Motorcycles achieve unprecedented growth in their electric motorcycle platform through innovative digital solutions.",
     stats: {
       growth: "300%",
       timeframe: "6 months",
       roi: "450%"
     },
-    videoUrl: "https://www.youtube.com/embed/your-video-id"
+    videoUrl: "https://www.youtube.com/embed/your-video-id",
+    learnMoreUrl: "https://sensei.partners"
   },
   {
-    title: "Digital Transformation Success",
-    description: "A comprehensive digital transformation that revolutionized operational efficiency.",
+    title: "Skully AR-1: Transforming Motorcycle Safety",
+    description: "A comprehensive digital transformation that revolutionized the AR helmet industry and set new standards for rider safety.",
     stats: {
       efficiency: "200%",
       timeframe: "12 months",
-      savings: "$2M+"
+      impact: "85%+"
     },
-    videoUrl: "https://www.youtube.com/embed/your-video-id"
+    videoUrl: "https://www.youtube.com/embed/your-video-id",
+    learnMoreUrl: "https://sensei.partners"
   }
 ];
 
@@ -118,7 +122,7 @@ const Testimonials = () => {
                 <div className="p-6">
                   <h4 className="text-lg font-semibold text-white mb-2">{study.title}</h4>
                   <p className="text-gray-300 mb-4">{study.description}</p>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-4 mb-4">
                     {Object.entries(study.stats).map(([key, value], i) => (
                       <div key={i} className="text-center">
                         <div className="text-2xl font-bold text-white">{value}</div>
@@ -126,6 +130,13 @@ const Testimonials = () => {
                       </div>
                     ))}
                   </div>
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => window.open(study.learnMoreUrl, '_blank')}
+                  >
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
               </motion.div>
             ))}
