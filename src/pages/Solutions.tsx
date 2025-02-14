@@ -4,8 +4,18 @@ import Footer from "@/components/Footer";
 import { solutions } from "@/constants/navigation";
 import { Globe2, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Solutions = () => {
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (title: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -22,35 +32,51 @@ const Solutions = () => {
             </p>
           </div>
 
-          {solutions.map((section) => (
-            <div key={section.title} className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center">{section.title}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {section.items.map((item) => (
-                  <motion.div
-                    key={item}
-                    whileHover={{ y: -5 }}
-                    className="relative group rounded-xl border border-gray-800 bg-black/50 p-6 backdrop-blur-sm overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative">
-                      <div className="flex items-center justify-between mb-4">
-                        <Globe2 className="h-6 w-6 text-purple-400" />
-                        <ChevronRight className="h-5 w-5 text-gray-500 group-hover:text-purple-400 transition-colors" />
+          {solutions.map((section) => {
+            const isExpanded = expandedSections[section.title];
+            const displayItems = isExpanded ? section.items : section.items.slice(0, 3);
+
+            return (
+              <div key={section.title} className="mb-20">
+                <h2 className="text-3xl font-bold mb-8 text-center">{section.title}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {displayItems.map((item) => (
+                    <motion.div
+                      key={item}
+                      whileHover={{ y: -5 }}
+                      className="relative group rounded-xl border border-gray-800 bg-black/50 p-6 backdrop-blur-sm overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative">
+                        <div className="flex items-center justify-between mb-4">
+                          <Globe2 className="h-6 w-6 text-purple-400" />
+                          <ChevronRight className="h-5 w-5 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                          {item}
+                        </h3>
+                        <p className="text-gray-400 text-sm">
+                          Explore our solutions for {item.toLowerCase()} and discover how we can 
+                          help transform your business.
+                        </p>
                       </div>
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
-                        {item}
-                      </h3>
-                      <p className="text-gray-400 text-sm">
-                        Explore our solutions for {item.toLowerCase()} and discover how we can 
-                        help transform your business.
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
+                {section.items.length > 3 && (
+                  <div className="text-center mt-8">
+                    <button
+                      onClick={() => toggleSection(section.title)}
+                      className="inline-flex items-center px-6 py-3 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-colors"
+                    >
+                      {isExpanded ? 'Show Less' : `View All ${section.title}`}
+                      <ChevronRight className={`ml-2 h-5 w-5 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
+                    </button>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
 
           <div className="mt-20 text-center">
             <div className="max-w-3xl mx-auto">
