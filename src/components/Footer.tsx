@@ -1,3 +1,4 @@
+
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products, solutions, resources, company } from "@/constants/navigation";
@@ -29,7 +30,7 @@ const Footer = () => {
                 <li key={category.title}>
                   <span className="text-gray-400 font-medium">{category.title}</span>
                   <ul className="mt-1 space-y-1">
-                    {category.items.map(item => (
+                    {category.items.slice(0, 4).map(item => (
                       <li key={item}>
                         <a href="#" className="text-gray-500 hover:text-white text-sm">
                           {item}
@@ -49,14 +50,22 @@ const Footer = () => {
                 <li key={category.title}>
                   <span className="text-gray-400 font-medium">{category.title}</span>
                   <ul className="mt-1 space-y-1">
-                    {category.items.map(item => (
+                    {category.items.slice(0, 4).map(item => (
                       <li key={item}>
-                        <a href="#" className="text-gray-500 hover:text-white text-sm">
+                        <a href="/solutions" className="text-gray-500 hover:text-white text-sm">
                           {item}
                         </a>
                       </li>
                     ))}
                   </ul>
+                  {category.items.length > 4 && (
+                    <a 
+                      href="/solutions" 
+                      className="inline-block mt-2 text-sm text-purple-400 hover:text-purple-300"
+                    >
+                      View all {category.title.toLowerCase()} →
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -69,7 +78,7 @@ const Footer = () => {
                 <li key={category.title}>
                   <span className="text-gray-400 font-medium">{category.title}</span>
                   <ul className="mt-1 space-y-1">
-                    {category.items.map(item => (
+                    {category.items.slice(0, 4).map(item => (
                       <li key={item.name}>
                         <a 
                           href={item.url} 
@@ -90,7 +99,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-3">Company</h3>
             <ul className="space-y-2">
-              {company.map(item => (
+              {company.slice(0, 4).map(item => (
                 <li key={item}>
                   <a 
                     href={item === "Team" ? "/team" : "#"} 
