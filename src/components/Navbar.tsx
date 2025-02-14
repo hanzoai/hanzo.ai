@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Brain, Database, ShoppingCart, Code, Settings, Globe, Book, MessageSquare, HelpCircle, Users } from "lucide-react";
+import { Menu, X, ChevronDown, Brain, Database, ShoppingCart, Code, Settings, Globe, Book, MessageSquare, HelpCircle, Users, Building, Tool, Network, DollarSign, Shield, Rocket } from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -19,6 +19,21 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const getIcon = (name: string) => {
+    const iconMap: Record<string, any> = {
+      "Cloud": Globe,
+      "Cybersecurity": Shield,
+      "Data and Artificial Intelligence": Brain,
+      "Digital Engineering": Code,
+      "Banking": DollarSign,
+      "Healthcare": Building,
+      "Technology": Tool,
+      "Infrastructure": Network,
+      // Add more mappings as needed
+    };
+    return iconMap[name] || Globe;
+  };
 
   return (
     <nav
@@ -42,18 +57,30 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Popover>
               <PopoverTrigger asChild>
-                <button className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                <button 
+                  onMouseEnter={(e) => {
+                    const trigger = e.currentTarget;
+                    trigger.click();
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors inline-flex items-center"
+                >
                   Products
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-[720px] p-6 bg-black/95 backdrop-blur-xl border-gray-800">
+              <PopoverContent 
+                onMouseLeave={(e) => {
+                  const trigger = document.activeElement as HTMLElement;
+                  trigger?.blur();
+                }}
+                className="w-[720px] p-6 bg-black/95 backdrop-blur-xl border-gray-800"
+              >
                 <div className="grid grid-cols-3 gap-8">
                   {products.map(category => (
                     <div key={category.title}>
                       <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
                       <div className="space-y-4">
-                        {category.items.map(item => (
+                        {category.items.slice(0, 4).map(item => (
                           <a href="#" key={item} className="flex items-start space-x-3 group">
                             <Brain className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
                             <div>
@@ -71,26 +98,41 @@ const Navbar = () => {
 
             <Popover>
               <PopoverTrigger asChild>
-                <button className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                <button 
+                  onMouseEnter={(e) => {
+                    const trigger = e.currentTarget;
+                    trigger.click();
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors inline-flex items-center"
+                >
                   Solutions
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-[480px] p-6 bg-black/95 backdrop-blur-xl border-gray-800">
-                <div className="grid grid-cols-2 gap-8">
+              <PopoverContent 
+                onMouseLeave={(e) => {
+                  const trigger = document.activeElement as HTMLElement;
+                  trigger?.blur();
+                }}
+                className="w-[800px] p-6 bg-black/95 backdrop-blur-xl border-gray-800"
+              >
+                <div className="grid grid-cols-4 gap-8">
                   {solutions.map(category => (
                     <div key={category.title}>
                       <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
                       <div className="space-y-4">
-                        {category.items.map(item => (
-                          <a href="#" key={item} className="flex items-start space-x-3 group">
-                            <Globe className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
-                            <div>
-                              <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
-                              <div className="text-sm text-gray-500">Description for {item}</div>
-                            </div>
-                          </a>
-                        ))}
+                        {category.items.slice(0, 4).map(item => {
+                          const Icon = getIcon(item);
+                          return (
+                            <a href="#" key={item} className="flex items-start space-x-3 group">
+                              <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
+                              <div>
+                                <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
+                                <div className="text-sm text-gray-500">Description for {item}</div>
+                              </div>
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
                   ))}
@@ -100,18 +142,30 @@ const Navbar = () => {
 
             <Popover>
               <PopoverTrigger asChild>
-                <button className="text-gray-300 hover:text-white transition-colors inline-flex items-center">
+                <button 
+                  onMouseEnter={(e) => {
+                    const trigger = e.currentTarget;
+                    trigger.click();
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors inline-flex items-center"
+                >
                   Resources
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-[480px] p-6 bg-black/95 backdrop-blur-xl border-gray-800">
+              <PopoverContent 
+                onMouseLeave={(e) => {
+                  const trigger = document.activeElement as HTMLElement;
+                  trigger?.blur();
+                }}
+                className="w-[480px] p-6 bg-black/95 backdrop-blur-xl border-gray-800"
+              >
                 <div className="grid grid-cols-2 gap-8">
                   {resources.map(category => (
                     <div key={category.title}>
                       <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
                       <div className="space-y-4">
-                        {category.items.map(item => {
+                        {category.items.slice(0, 4).map(item => {
                           const Icon = item.name.includes('Forum') ? MessageSquare :
                                      item.name.includes('Community') ? Users :
                                      item.name.includes('Help') ? HelpCircle :
