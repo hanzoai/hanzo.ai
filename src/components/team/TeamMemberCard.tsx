@@ -17,6 +17,14 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
   const subdomain = name.toLowerCase();
   const navigate = useNavigate();
   
+  const handleLearnMore = () => {
+    navigate(`/team/${subdomain}`);
+  };
+
+  const handleForkBot = () => {
+    window.open(`https://github.com/hanzo-ai/${subdomain}`, '_blank');
+  };
+  
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -36,7 +44,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <Button 
           variant="outline" 
           size="sm"
-          onClick={() => navigate(`/team/${subdomain}`)}
+          onClick={handleLearnMore}
           className="w-full"
         >
           Learn More
@@ -46,7 +54,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <Button 
           variant="outline" 
           size="sm"
-          onClick={() => window.open(`https://github.com/hanzo-ai/${subdomain}`, '_blank')}
+          onClick={handleForkBot}
           className="w-full"
         >
           Fork Bot
