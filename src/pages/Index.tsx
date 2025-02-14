@@ -9,25 +9,14 @@ import Base from "@/components/sections/Base";
 import Commerce from "@/components/sections/Commerce";
 import Network from "@/components/sections/Network";
 import Code from "@/components/sections/Code";
-import Dev from "@/components/sections/Dev";
 import Products from "@/components/Products";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import HeroPoem from "@/components/HeroPoem";
 import TeamSlack from "@/components/TeamSlack";
 import LastSupper from "@/components/LastSupper";
-import { Code2 } from "lucide-react";
 
 const Index = () => {
-  const teamMembers = [
-    {
-      name: "Dev",
-      role: "Developer",
-      icon: Code2,
-      gradient: "from-blue-500 to-cyan-500"
-    }
-  ];
-
   useEffect(() => {
     // Smooth scroll behavior
     const smoothScroll = (e: MouseEvent) => {
@@ -65,9 +54,8 @@ const Index = () => {
         <Commerce />
         <Network />
         <Code />
-        <Dev />
         <Testimonials />
-        <LastSupper members={teamMembers} />
+        <LastSupper members={[]} />
         <Products />
         <HeroPoem />
       </main>
