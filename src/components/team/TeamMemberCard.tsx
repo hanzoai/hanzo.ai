@@ -35,25 +35,25 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <p className="text-gray-400 mb-4">{description}</p>
       </a>
 
-      <div className="flex flex-col space-y-3">
-        <a
-          href={`https://github.com/hanzo-ai/${subdomain}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-purple-400 transition-colors"
+      <div className="grid grid-cols-2 gap-3">
+        <Button 
+          variant="outline" 
+          size="sm"
+          onClick={() => window.location.href = `/team/${subdomain}`}
+          className="w-full"
         >
-          <Github className="h-4 w-4" />
-          <span>View on GitHub</span>
-        </a>
+          Learn More
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
 
         <Button 
           variant="outline" 
           size="sm"
+          onClick={() => window.open(`https://github.com/hanzo-ai/${subdomain}`, '_blank')}
           className="w-full"
-          onClick={() => window.location.href = `/team/${subdomain}`}
         >
-          Learn More About {name}
-          <ArrowRight className="ml-2 h-4 w-4" />
+          View Code
+          <Github className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </motion.div>
