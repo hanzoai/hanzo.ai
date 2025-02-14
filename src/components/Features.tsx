@@ -1,8 +1,9 @@
 
 import { motion } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf } from "lucide-react";
+import { Button } from "./ui/button";
 
-const features = [
+const allFeatures = [
   {
     icon: <Wand2 className="h-8 w-8" />,
     title: "Hanzo App",
@@ -54,6 +55,10 @@ const features = [
 ];
 
 const Features = () => {
+  // Display only first 16 items (4 rows of 4)
+  const displayedFeatures = allFeatures.slice(0, 16);
+  const hasMoreFeatures = allFeatures.length > 16;
+
   return (
     <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +84,7 @@ const Features = () => {
         </div>
 
         <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
+          {displayedFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
@@ -98,6 +103,25 @@ const Features = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* View All Link */}
+        {hasMoreFeatures && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-12 text-center"
+          >
+            <Button
+              variant="ghost"
+              onClick={() => window.location.href = '/solutions'}
+              className="text-white hover:text-purple-400 transition-colors"
+            >
+              View All Solutions
+            </Button>
+          </motion.div>
+        )}
 
         {/* Market Stats */}
         <div className="mt-20">
