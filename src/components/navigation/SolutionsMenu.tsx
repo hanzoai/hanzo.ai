@@ -1,5 +1,5 @@
 
-import { Globe, Shield, Brain, Code, Building, Network, DollarSign } from "lucide-react";
+import { Globe, Shield, Brain, Code, Building, Network, DollarSign, Wrench } from "lucide-react";
 import { solutions } from "@/constants/navigation";
 import {
   PopoverContent,
@@ -16,6 +16,7 @@ export const SolutionsMenu = () => {
       "Digital Engineering": Code,
       "Banking": DollarSign,
       "Healthcare": Building,
+      "Technology": Wrench,
       "Infrastructure": Network,
     };
     return iconMap[name] || Globe;
