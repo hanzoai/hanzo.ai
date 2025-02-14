@@ -45,17 +45,17 @@ const Navbar = () => {
             <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
               Docs
             </a>
-            <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
-              Pricing
-            </a>
             <a href="/team" className="text-gray-300 hover:text-white transition-colors">
               Team
+            </a>
+            <a href="https://bot.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
+              Hanzo Bot
             </a>
 
             <div className="flex items-center space-x-4">
               <Button variant="ghost" className="text-white hover:bg-white/10">
-                <a href="https://auth.hanzo.ai">
-                  Login
+                <a href="https://console.hanzo.ai">
+                  Console
                 </a>
               </Button>
               <Button className="bg-white text-black hover:bg-gray-100">
