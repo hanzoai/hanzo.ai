@@ -2,7 +2,12 @@
 export const products = [
   {
     title: "DX Platform",
-    items: ["AI", "Base", "Commerce"]
+    items: [
+      "Hanzo App",
+      "Hanzo Code",
+      "Hanzo Bot",
+      "Hanzo Works"
+    ]
   },
   {
     title: "Managed Infrastructure",

@@ -48,9 +48,6 @@ const Navbar = () => {
             <a href="/team" className="text-gray-300 hover:text-white transition-colors">
               Team
             </a>
-            <a href="https://bot.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
-              Hanzo Bot
-            </a>
 
             <div className="flex items-center space-x-4">
               <Button variant="ghost" className="text-white hover:bg-white/10">
