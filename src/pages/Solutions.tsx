@@ -12,7 +12,7 @@ const Solutions = () => {
   const toggleSection = (title: string) => {
     setExpandedSections(prev => ({
       ...prev,
-      [title]: (prev[title] || 4) + 4 // Show 4 more items each time
+      [title]: (prev[title] || 6) + 6 // Show 6 more items each time
     }));
   };
 
@@ -33,7 +33,7 @@ const Solutions = () => {
           </div>
 
           {solutions.map((section) => {
-            const displayCount = expandedSections[section.title] || 4;
+            const displayCount = expandedSections[section.title] || 6;
             const hasMore = section.items.length > displayCount;
             const displayItems = section.items.slice(0, displayCount);
 
