@@ -18,7 +18,7 @@ export const SolutionsMenu = () => {
   };
 
   const renderSolutionItems = (category: { title: string; items: string[] }) => {
-    const displayItems = category.items.slice(0, 6); // Show only first 6 items
+    const displayItems = category.items.slice(0, 6);
 
     return (
       <div className="grid grid-cols-2 gap-4">
@@ -39,14 +39,48 @@ export const SolutionsMenu = () => {
   };
 
   return (
-    <div onMouseLeave={() => setOpen(false)}>
+    <div className="relative">
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <NavigationButton onHoverStart={() => setOpen(true)}>Solutions</NavigationButton>
-        </PopoverTrigger>
+        <div 
+          className="relative" 
+          onMouseEnter={() => setOpen(true)} 
+          onMouseLeave={(e) => {
+            // Create virtual boundary box that includes the gap between trigger and content
+            const elem = e.currentTarget;
+            const rect = elem.getBoundingClientRect();
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            // If mouse is within the extended boundary, don't close
+            if (
+              x >= rect.left &&
+              x <= rect.right &&
+              y >= rect.top &&
+              y <= rect.bottom + 20 // Add extra space below trigger
+            ) {
+              return;
+            }
+            setOpen(false);
+          }}
+        >
+          <PopoverTrigger asChild>
+            <NavigationButton>Solutions</NavigationButton>
+          </PopoverTrigger>
+          
+          {/* Add invisible extension between trigger and content */}
+          {open && (
+            <div 
+              className="absolute left-0 w-full h-5 -bottom-5"
+              onMouseEnter={() => setOpen(true)}
+            />
+          )}
+        </div>
+        
         <PopoverContent 
           className="w-[1200px] p-6 bg-black border-gray-800"
           sideOffset={8}
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
         >
           <div className="flex gap-6">
             <div className="flex-1 grid grid-cols-2 gap-12">
