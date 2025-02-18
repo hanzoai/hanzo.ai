@@ -45,7 +45,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
             size="sm"
             className="w-full"
           >
-            Learn More
+            Deploy
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </Link>
@@ -56,7 +56,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
           onClick={handleForkBot}
           className="w-full"
         >
-          Fork Bot
+          Fork
           <Github className="ml-2 h-4 w-4" />
         </Button>
       </div>

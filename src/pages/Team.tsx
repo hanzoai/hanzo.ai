@@ -1,6 +1,7 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, Scale, DollarSign, ChartBar, Palette, Music, Calculator, Binary, Database } from "lucide-react";
+import { Code2, Paintbrush, Megaphone, HelpCircle, Settings, Lightbulb, Bot, MessagesSquare, DollarSign, ChartBar, Palette, Music, Calculator } from "lucide-react";
 import TeamMemberCard from "@/components/team/TeamMemberCard";
 import PlatformCard from "@/components/team/PlatformCard";
 import CallToAction from "@/components/team/CallToAction";
@@ -64,39 +65,11 @@ export default function Team() {
       gradient: "from-violet-500 to-purple-500"
     },
     {
-      name: "Core",
-      role: "Core Systems Engineer",
-      description: "Maintains and enhances core AI infrastructure.",
-      icon: Bot,
-      gradient: "from-pink-500 to-purple-500"
-    },
-    {
       name: "Fin",
       role: "Financial Analyst",
       description: "Manages financial strategies and optimizes resource allocation.",
       icon: DollarSign,
       gradient: "from-green-500 to-teal-500"
-    },
-    {
-      name: "Sec",
-      role: "Security Expert",
-      description: "Ensures robust security protocols and system protection.",
-      icon: Scale,
-      gradient: "from-red-500 to-pink-500"
-    },
-    {
-      name: "Algo",
-      role: "Algorithm Specialist",
-      description: "Develops and optimizes AI algorithms and models.",
-      icon: Binary,
-      gradient: "from-blue-500 to-indigo-500"
-    },
-    {
-      name: "DB",
-      role: "Database Architect",
-      description: "Designs and maintains efficient database systems.",
-      icon: Database,
-      gradient: "from-cyan-500 to-blue-500"
     },
     {
       name: "Cal",
