@@ -9,12 +9,18 @@ import {
 } from "@/components/ui/popover";
 import { NavigationButton } from "./NavigationButton";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const SolutionsMenu = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSenseiClick = () => {
     window.location.href = "https://sensei.group";
+  };
+
+  const handleSolutionsClick = () => {
+    navigate('/solutions');
   };
 
   const renderSolutionItems = (category: { title: string; items: string[] }) => {
@@ -45,18 +51,16 @@ export const SolutionsMenu = () => {
           className="relative" 
           onMouseEnter={() => setOpen(true)} 
           onMouseLeave={(e) => {
-            // Create virtual boundary box that includes the gap between trigger and content
             const elem = e.currentTarget;
             const rect = elem.getBoundingClientRect();
             const x = e.clientX;
             const y = e.clientY;
             
-            // If mouse is within the extended boundary, don't close
             if (
               x >= rect.left &&
               x <= rect.right &&
               y >= rect.top &&
-              y <= rect.bottom + 20 // Add extra space below trigger
+              y <= rect.bottom + 20
             ) {
               return;
             }
@@ -64,10 +68,9 @@ export const SolutionsMenu = () => {
           }}
         >
           <PopoverTrigger asChild>
-            <NavigationButton>Solutions</NavigationButton>
+            <NavigationButton onClick={handleSolutionsClick}>Solutions</NavigationButton>
           </PopoverTrigger>
           
-          {/* Add invisible extension between trigger and content */}
           {open && (
             <div 
               className="absolute left-0 w-full h-5 -bottom-5"
@@ -102,7 +105,6 @@ export const SolutionsMenu = () => {
               ))}
             </div>
 
-            {/* Sensei Column */}
             <div 
               onClick={handleSenseiClick}
               className="w-64 rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-6 flex flex-col"
