@@ -28,14 +28,14 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <img
               src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png"
               alt="Hanzo"
               className="h-8 w-8"
             />
             <span className="text-white font-bold text-xl">Hanzo</span>
-          </div>
+          </a>
 
           <div className="hidden md:flex items-center space-x-6">
             <ProductsMenu />
