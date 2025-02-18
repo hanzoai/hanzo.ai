@@ -34,7 +34,7 @@ export const SolutionsMenu = () => {
     const displayItems = category.items.slice(0, 6); // Show only first 6 items
 
     return (
-      <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-4">
         {displayItems.map((item: string) => {
           const Icon = getIcon(item);
           return (
@@ -47,15 +47,6 @@ export const SolutionsMenu = () => {
             </a>
           );
         })}
-        {category.items.length > 6 && (
-          <a 
-            href="/solutions" 
-            className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 mt-2"
-          >
-            <span>View all {category.title}</span>
-            <Globe className="h-4 w-4" />
-          </a>
-        )}
       </div>
     );
   };
@@ -71,10 +62,21 @@ export const SolutionsMenu = () => {
           sideOffset={8}
         >
           <div className="flex gap-6">
-            <div className="flex-1 grid grid-cols-4 gap-8">
+            <div className="flex-1 grid grid-cols-2 gap-12">
               {solutions.map((category, idx) => (
-                <div key={idx} className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
+                <div key={idx} className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                    {category.items.length > 6 && (
+                      <a 
+                        href="/solutions" 
+                        className="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2"
+                      >
+                        View all
+                        <Globe className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                   {renderSolutionItems(category)}
                 </div>
               ))}
