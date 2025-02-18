@@ -1,5 +1,5 @@
 
-import { Brain, Code2, Bot, Blocks } from "lucide-react";
+import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale } from "lucide-react";
 import { products } from "@/constants/navigation";
 import {
   PopoverContent,
@@ -22,10 +22,36 @@ export const ProductsMenu = () => {
           return <Code2 className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
         case "Hanzo Bot":
           return <Bot className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
-        default:
+        case "Hanzo Works":
           return <Brain className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
       }
     }
+    
+    // Managed Infrastructure icons
+    if (categoryTitle === "Managed Infrastructure") {
+      switch (item) {
+        case "Analytics":
+          return <ChartBar className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+        case "Marketing":
+          return <Scale className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+        case "Payments":
+          return <Calculator className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+      }
+    }
+
+    // OpenSource icons
+    if (categoryTitle === "OpenSource") {
+      switch (item) {
+        case "Hanzo.js":
+          return <Code2 className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+        case "Engine":
+          return <Database className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+        case "Shop.js":
+          return <Scale className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+      }
+    }
+
+    // Default fallback icon
     return <Brain className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
   };
 
