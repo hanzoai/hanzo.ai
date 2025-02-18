@@ -30,27 +30,35 @@ export const SolutionsMenu = () => {
     window.location.href = "https://sensei.group";
   };
 
-  // Split solutions items into 4 columns
-  const columns = solutions.reduce((acc: any[], category) => {
-    const itemsPerColumn = Math.ceil(category.items.length / 4);
-    const columns = [];
-    
-    for (let i = 0; i < 4; i++) {
-      const start = i * itemsPerColumn;
-      const end = start + itemsPerColumn;
-      const columnItems = category.items.slice(start, end);
-      
-      if (columnItems.length > 0) {
-        columns.push({
-          title: i === 0 ? category.title : "",
-          items: columnItems,
-          showViewAll: i === 0, // Only show "View All" on first column
-        });
-      }
-    }
-    
-    return [...acc, ...columns];
-  }, []);
+  const renderSolutionItems = (category: { title: string; items: string[] }) => {
+    const displayItems = category.items.slice(0, 6); // Show only first 6 items
+
+    return (
+      <div className="space-y-4">
+        {displayItems.map((item: string) => {
+          const Icon = getIcon(item);
+          return (
+            <a href="#" key={item} className="flex items-start space-x-3 group">
+              <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
+              <div>
+                <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
+                <div className="text-sm text-gray-500">Solutions for {item}</div>
+              </div>
+            </a>
+          );
+        })}
+        {category.items.length > 6 && (
+          <a 
+            href="/solutions" 
+            className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 mt-2"
+          >
+            <span>View all {category.title}</span>
+            <Globe className="h-4 w-4" />
+          </a>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div onMouseLeave={() => setOpen(false)}>
@@ -64,35 +72,10 @@ export const SolutionsMenu = () => {
         >
           <div className="flex gap-6">
             <div className="flex-1 grid grid-cols-4 gap-8">
-              {columns.map((column, idx) => (
+              {solutions.map((category, idx) => (
                 <div key={idx} className="space-y-4">
-                  {column.title && (
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-white">{column.title}</h3>
-                      {column.showViewAll && (
-                        <a 
-                          href={`/solutions#${column.title.toLowerCase()}`} 
-                          className="text-sm text-purple-400 hover:text-purple-300"
-                        >
-                          View All
-                        </a>
-                      )}
-                    </div>
-                  )}
-                  <div className="space-y-4">
-                    {column.items.map((item: string) => {
-                      const Icon = getIcon(item);
-                      return (
-                        <a href="#" key={item} className="flex items-start space-x-3 group">
-                          <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
-                          <div>
-                            <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
-                            <div className="text-sm text-gray-500">Solutions for {item}</div>
-                          </div>
-                        </a>
-                      );
-                    })}
-                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
+                  {renderSolutionItems(category)}
                 </div>
               ))}
             </div>
