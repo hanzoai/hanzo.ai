@@ -1,5 +1,5 @@
 
-import { Globe, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
 import { solutions } from "@/constants/navigation";
 import { getIcon } from "@/constants/iconMappings";
 import {
@@ -91,10 +91,9 @@ export const SolutionsMenu = () => {
                     {category.items.length > 6 && (
                       <a 
                         href="/solutions" 
-                        className="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2"
+                        className="text-purple-400 hover:text-purple-300 text-sm"
                       >
                         View all
-                        <Globe className="h-4 w-4" strokeWidth={1.5} />
                       </a>
                     )}
                   </div>
