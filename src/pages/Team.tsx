@@ -73,15 +73,15 @@ export default function Team() {
     },
     {
       name: "Cal",
-      role: "Systems Analyst",
-      description: "Analyzes and optimizes system performance metrics.",
+      role: "Calendaring & Scheduling",
+      description: "Manages calendars, schedules meetings, and optimizes time management.",
       icon: Calculator,
       gradient: "from-purple-500 to-indigo-500"
     },
     {
-      name: "Chat",
-      role: "Conversation Designer",
-      description: "Crafts natural and engaging AI conversations.",
+      name: "Note",
+      role: "Note Taking & Tasks",
+      description: "Captures, organizes, and manages notes and tasks efficiently.",
       icon: MessagesSquare,
       gradient: "from-teal-500 to-green-500"
     },
