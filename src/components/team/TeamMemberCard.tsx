@@ -31,25 +31,37 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <Button 
-          variant="outline" 
-          size="sm"
+        <a 
+          href={`https://bot.hanzo.ai/${memberRoute}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full"
-          onClick={() => window.open(`https://bot.hanzo.ai/${memberRoute}`, '_blank')}
         >
-          Deploy
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="w-full"
+          >
+            Deploy
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </a>
 
-        <Button 
-          variant="outline" 
-          size="sm"
+        <a 
+          href="https://github.com/hanzoai/bot"
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full"
-          onClick={() => window.open('https://github.com/hanzoai/bot', '_blank')}
         >
-          Fork
-          <Github className="ml-2 h-4 w-4" />
-        </Button>
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="w-full"
+          >
+            Fork
+            <Github className="ml-2 h-4 w-4" />
+          </Button>
+        </a>
       </div>
     </motion.div>
   );
