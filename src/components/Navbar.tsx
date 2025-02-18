@@ -37,7 +37,7 @@ const Navbar = () => {
             <span className="text-white font-bold text-xl">Hanzo</span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <ProductsMenu />
             <SolutionsMenu />
             <ResourcesMenu />
@@ -49,13 +49,20 @@ const Navbar = () => {
               Team
             </a>
 
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" className="text-white hover:bg-white/10">
+            <div className="flex items-center space-x-3">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="text-white border-white hover:bg-white/10"
+              >
                 <a href="https://console.hanzo.ai">
                   Console
                 </a>
               </Button>
-              <Button className="bg-white text-black hover:bg-gray-100">
+              <Button 
+                size="sm" 
+                className="bg-white text-black hover:bg-gray-100"
+              >
                 <a href="https://auth.hanzo.ai/">
                   Signup
                 </a>
