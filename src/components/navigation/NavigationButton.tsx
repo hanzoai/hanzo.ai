@@ -12,7 +12,7 @@ export const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonPr
     return (
       <button 
         ref={ref}
-        className="text-gray-300 hover:text-white transition-colors inline-flex items-center"
+        className="text-gray-300 hover:text-white transition-colors inline-flex items-center outline-none focus:outline-none"
         onMouseEnter={onHoverStart}
         {...props}
       >
