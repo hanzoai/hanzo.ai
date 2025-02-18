@@ -16,10 +16,6 @@ interface TeamMemberCardProps {
 const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamMemberCardProps) => {
   const memberRoute = name.toLowerCase();
   
-  const handleForkBot = () => {
-    window.open('https://github.com/hanzoai/bot', '_blank');
-  };
-  
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -36,8 +32,10 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <Link 
-          to={`/team/${memberRoute}`}
+        <a 
+          href={`https://bot.hanzo.ai/${memberRoute}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full"
         >
           <Button 
@@ -48,17 +46,23 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
             Deploy
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-        </Link>
+        </a>
 
-        <Button 
-          variant="outline" 
-          size="sm"
-          onClick={handleForkBot}
+        <a 
+          href="https://github.com/hanzoai/bot"
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full"
         >
-          Fork
-          <Github className="ml-2 h-4 w-4" />
-        </Button>
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="w-full"
+          >
+            Fork
+            <Github className="ml-2 h-4 w-4" />
+          </Button>
+        </a>
       </div>
     </motion.div>
   );

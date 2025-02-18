@@ -72,9 +72,9 @@ export default function Team() {
       gradient: "from-green-500 to-teal-500"
     },
     {
-      name: "Cal",
-      role: "Calendaring & Scheduling",
-      description: "Manages calendars, schedules meetings, and optimizes time management.",
+      name: "Sal",
+      role: "Sales and Lead Generation",
+      description: "Drives sales growth and generates high-quality leads through AI-powered strategies.",
       icon: Calculator,
       gradient: "from-purple-500 to-indigo-500"
     },
