@@ -65,6 +65,13 @@ export default function Team() {
       gradient: "from-violet-500 to-purple-500"
     },
     {
+      name: "Biz",
+      role: "BizDev and Partnerships",
+      description: "Drives business development and strategic partnerships to fuel growth.",
+      icon: MessagesSquare,
+      gradient: "from-teal-500 to-green-500"
+    },
+    {
       name: "Fin",
       role: "Financial Analyst",
       description: "Manages financial strategies and optimizes resource allocation.",
@@ -77,13 +84,6 @@ export default function Team() {
       description: "Drives sales growth and generates high-quality leads through AI-powered strategies.",
       icon: Calculator,
       gradient: "from-purple-500 to-indigo-500"
-    },
-    {
-      name: "Note",
-      role: "Note Taking & Tasks",
-      description: "Captures, organizes, and manages notes and tasks efficiently.",
-      icon: MessagesSquare,
-      gradient: "from-teal-500 to-green-500"
     },
     {
       name: "Vi",
