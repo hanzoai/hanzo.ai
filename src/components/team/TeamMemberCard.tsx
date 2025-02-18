@@ -20,8 +20,8 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
       whileHover={{ y: -5 }}
       className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out" />
-      <div className="block mb-4">
+      <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out -z-10" />
+      <div className="block mb-4 relative z-10">
         <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${gradient} mb-4`}>
           <Icon className="h-6 w-6 text-white" />
         </div>
@@ -30,7 +30,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <p className="text-gray-400 mb-4">{description}</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3 relative z-10">
         <a 
           href={`https://bot.hanzo.ai/${memberRoute}`}
           target="_blank"
