@@ -3,7 +3,7 @@ import { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface TeamMemberCardProps {
   name: string;
@@ -14,17 +14,10 @@ interface TeamMemberCardProps {
 }
 
 const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamMemberCardProps) => {
-  const navigate = useNavigate();
+  const memberRoute = name.toLowerCase();
   
-  const handleLearnMore = () => {
-    // Convert name to lowercase and navigate to the team member's page
-    const memberRoute = name.toLowerCase();
-    navigate(`/team/${memberRoute}`);
-  };
-
   const handleForkBot = () => {
-    const subdomain = name.toLowerCase();
-    window.open(`https://github.com/hanzo-ai/${subdomain}`, '_blank');
+    window.open(`https://github.com/hanzo-ai/${memberRoute}`, '_blank');
   };
   
   return (
@@ -43,15 +36,19 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <Button 
-          variant="outline" 
-          size="sm"
-          onClick={handleLearnMore}
+        <Link 
+          to={`/team/${memberRoute}`}
           className="w-full"
         >
-          Learn More
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="w-full"
+          >
+            Learn More
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
 
         <Button 
           variant="outline" 
