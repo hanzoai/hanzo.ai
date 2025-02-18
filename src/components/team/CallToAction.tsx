@@ -1,31 +1,31 @@
 
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <div className="mt-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-transparent opacity-50" />
-      <div className="relative text-center max-w-4xl mx-auto bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8">
-        <h2 className="text-3xl font-bold mb-4">You + AI Team = Infinite Possibilities</h2>
-        <p className="text-gray-400 mb-8">
-          Work alongside our AI team to bring your vision to life. From development to design, 
-          marketing to operations - we're here to help you build anything imaginable.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button 
-            className="bg-purple-500 hover:bg-purple-600"
-            onClick={() => window.location.href = "/case-studies"}
-          >
-            Read Case Studies
-          </Button>
-          <Button 
-            variant="outline"
-            className="border-purple-500 text-purple-500 hover:bg-purple-500/10"
-            onClick={() => window.location.href = "/contact"}
-          >
-            Contact Sales
-          </Button>
-        </div>
+    <div className="mt-16 text-center">
+      <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+        Join our community of innovators and start building with your AI team today.
+      </p>
+      <div className="flex flex-wrap justify-center gap-4">
+        <Button 
+          size="lg" 
+          className="bg-purple-600 hover:bg-purple-700"
+          onClick={() => window.open('https://hanzo.chat', '_blank')}
+        >
+          Try Hanzo Chat
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+        <Button 
+          size="lg" 
+          className="bg-blue-600 hover:bg-blue-700"
+          onClick={() => window.open('https://hanzo.bot', '_blank')}
+        >
+          Try Hanzo Bot
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
       </div>
     </div>
   );
