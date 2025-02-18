@@ -14,14 +14,16 @@ interface TeamMemberCardProps {
 }
 
 const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamMemberCardProps) => {
-  const subdomain = name.toLowerCase();
   const navigate = useNavigate();
   
   const handleLearnMore = () => {
-    navigate(`/team/${subdomain}`);
+    // Convert name to lowercase and navigate to the team member's page
+    const memberRoute = name.toLowerCase();
+    navigate(`/team/${memberRoute}`);
   };
 
   const handleForkBot = () => {
+    const subdomain = name.toLowerCase();
     window.open(`https://github.com/hanzo-ai/${subdomain}`, '_blank');
   };
   
