@@ -56,12 +56,13 @@ const Index = () => {
         <Code />
         <Testimonials />
         <LastSupper members={[]} />
-        <Products />
         <HeroPoem />
       </main>
       <Footer />
+      <Products />
     </div>
   );
 };
 
 export default Index;
+
