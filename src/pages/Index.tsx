@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -57,12 +56,11 @@ const Index = () => {
         <Testimonials />
         <LastSupper members={[]} />
         <HeroPoem />
+        <Products />
       </main>
       <Footer />
-      <Products />
     </div>
   );
 };
 
 export default Index;
-
