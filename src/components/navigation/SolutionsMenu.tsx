@@ -1,5 +1,28 @@
 
-import { Globe, Shield, Brain, Code, Building, Network, DollarSign, Wrench } from "lucide-react";
+import { 
+  Globe, 
+  Shield, 
+  Brain, 
+  Code, 
+  Building2, 
+  Network, 
+  DollarSign, 
+  Wrench,
+  Rocket,
+  Factory,
+  Buildings,
+  Car,
+  Newspaper,
+  Shopping,
+  Truck,
+  Laptop,
+  Plane,
+  Bank,
+  Heart,
+  Leaf,
+  GraduationCap,
+  LineChart
+} from "lucide-react";
 import { solutions } from "@/constants/navigation";
 import {
   PopoverContent,
@@ -14,12 +37,43 @@ export const SolutionsMenu = () => {
 
   const getIcon = (name: string) => {
     const iconMap: Record<string, any> = {
+      // Capabilities
       "Cloud": Globe,
       "Cybersecurity": Shield,
       "Data and Artificial Intelligence": Brain,
-      "Digital Engineering": Code,
+      "Digital Engineering and Manufacturing": Code,
+      "Emerging Technology": Rocket,
+      "Ecosystem Partners": Network,
+      "Finance and Risk Management": Bank,
+      "Infrastructure and Capital Projects": Building2,
+      "Learning": GraduationCap,
+      "Marketing and Experience": Newspaper,
+      "Metaverse": LineChart,
+      "Sales and Commerce": Shopping,
+      
+      // Industries
+      "Aerospace and Defense": Plane,
+      "Automotive": Car,
       "Banking": DollarSign,
-      "Healthcare": Building,
+      "Chemicals": Factory,
+      "Communications and Media": Laptop,
+      "Consumer Goods and Services": Shopping,
+      "Energy": Leaf,
+      "Health": Heart,
+      "High Tech": Rocket,
+      "Industrial": Factory,
+      "Insurance": Shield,
+      "Life Sciences": Heart,
+      "Natural Resources": Leaf,
+      "Public Service": Buildings,
+      "Private Equity": Bank,
+      "Retail": Shopping,
+      "Software and Platforms": Code,
+      "Travel": Plane,
+      "US Federal Government": Buildings,
+      "Utilities": Network,
+      
+      // Default
       "Technology": Wrench,
       "Infrastructure": Network,
     };
@@ -39,7 +93,7 @@ export const SolutionsMenu = () => {
           const Icon = getIcon(item);
           return (
             <a href="#" key={item} className="flex items-start space-x-3 group">
-              <Icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
+              <Icon className="h-5 w-5 text-gray-400 group-hover:text-white mt-1" strokeWidth={1.5} />
               <div>
                 <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
                 <div className="text-sm text-gray-500">Solutions for {item}</div>
@@ -73,7 +127,7 @@ export const SolutionsMenu = () => {
                         className="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2"
                       >
                         View all
-                        <Globe className="h-4 w-4" />
+                        <Globe className="h-4 w-4" strokeWidth={1.5} />
                       </a>
                     )}
                   </div>
@@ -88,7 +142,7 @@ export const SolutionsMenu = () => {
               className="w-64 rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-6 flex flex-col"
             >
               <div className="p-3 rounded-lg bg-purple-500/20 self-start mb-4">
-                <Shield className="h-6 w-6 text-purple-400" />
+                <Shield className="h-5 w-5 text-purple-400" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-semibold text-white mb-3">Execute with Sensei</h3>
               <p className="text-gray-400 text-sm">
