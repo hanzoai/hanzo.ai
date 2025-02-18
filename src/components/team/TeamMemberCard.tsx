@@ -17,7 +17,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
   const memberRoute = name.toLowerCase();
   
   const handleForkBot = () => {
-    window.open(`https://github.com/hanzo-ai/${memberRoute}`, '_blank');
+    window.open('https://github.com/hanzoai/bot', '_blank');
   };
   
   return (
