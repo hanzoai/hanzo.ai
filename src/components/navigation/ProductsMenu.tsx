@@ -23,7 +23,7 @@ export const ProductsMenu = () => {
         case "Hanzo Bot":
           return <Bot className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
         case "Hanzo Works":
-          return <Brain className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
+          return <Bot className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />;
       }
     }
     
