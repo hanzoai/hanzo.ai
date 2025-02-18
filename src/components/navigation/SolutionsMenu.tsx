@@ -21,7 +21,8 @@ import {
   Heart,
   Leaf,
   GraduationCap,
-  LineChart
+  LineChart,
+  Users
 } from "lucide-react";
 import { solutions } from "@/constants/navigation";
 import {
@@ -50,6 +51,7 @@ export const SolutionsMenu = () => {
       "Marketing and Experience": Newspaper,
       "Metaverse": LineChart,
       "Sales and Commerce": ShoppingCart,
+      "Hanzo Works": Users,  // Added this line
       
       // Industries
       "Aerospace and Defense": Plane,
