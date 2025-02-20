@@ -90,7 +90,7 @@ const Hero = () => {
           </div>
           <div className="bg-black/50 rounded-lg p-4 mb-4 flex items-center justify-between group">
             <pre className="overflow-x-auto">
-              <code className="text-gray-300">curl -sL <a href="https://hanzo.sh" className="text-blue-400 hover:underline">hanzo.sh</a> | sudo sh</code>
+              <code className="text-gray-300">curl -sL hanzo.sh | sudo sh</code>
             </pre>
             <button
               onClick={handleCopy}
