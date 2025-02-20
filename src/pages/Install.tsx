@@ -41,7 +41,7 @@ const Install = () => {
 
       <div class="bg-black/50 rounded-lg p-8 mb-12 border border-purple-500/20 backdrop-blur">
         <div class="flex items-center gap-3 mb-4">
-          <Terminal className="text-purple-400" size={20} />
+          <Terminal class="text-purple-400" size="20" />
           <h2 class="text-xl font-semibold text-purple-400">Quick Install</h2>
         </div>
         <pre class="bg-black rounded-lg p-4 overflow-x-auto border border-purple-500/10"><code>curl -sL hanzo.sh | sh</code></pre>
@@ -72,7 +72,7 @@ const Install = () => {
       </div>
 
       <footer class="mt-16 text-center text-gray-500 border-t border-gray-800 pt-8">
-        <p>© 2024 Hanzo. All rights reserved.</p>
+        <p>&copy; 2024 Hanzo. All rights reserved.</p>
       </footer>
     </div>
   </body>
@@ -149,7 +149,7 @@ install_hanzo() {
     echo "$ip"
   }
 
-  advertise_addr="${ADVERTISE_ADDR:-$(get_ip)}"
+  advertise_addr="\${ADVERTISE_ADDR:-\$(get_ip)}"
   echo "Using advertise address: $advertise_addr"
 
   docker swarm init --advertise-addr $advertise_addr
