@@ -3,8 +3,15 @@ import { useEffect } from 'react';
 
 const Install = () => {
   useEffect(() => {
-    // Set the content-type header when this page is loaded
-    document.contentType = 'text/plain';
+    // Instead of trying to modify document.contentType, we'll set a meta tag
+    const meta = document.createElement('meta');
+    meta.httpEquiv = 'Content-Type';
+    meta.content = 'text/plain';
+    document.head.appendChild(meta);
+
+    return () => {
+      document.head.removeChild(meta);
+    };
   }, []);
 
   return (
