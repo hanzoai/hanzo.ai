@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Terminal } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -45,7 +46,7 @@ const Hero = () => {
               variant="outline"
               className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10"
             >
-              <a href="https://docs.hanzo.ai">Read Docs</a>
+              <a href="https://docs.hanzo.sh">Read Docs</a>
             </Button>
           </motion.div>
         </div>
@@ -54,41 +55,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-20 rounded-xl bg-gray-900/50 p-4 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl"
+          className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl"
         >
-          <pre className="overflow-x-auto">
-            <code className="text-sm sm:text-base text-gray-300">
-              <span className="text-blue-400">import</span>{" "}
-              <span className="text-purple-400">{"{ createAI }"}</span>{" "}
-              <span className="text-blue-400">from</span>{" "}
-              <span className="text-yellow-300">'@hanzo/ai'</span>
-              {"\n"}
-              <span className="text-blue-400">import</span>{" "}
-              <span className="text-purple-400">{"{ Button }"}</span>{" "}
-              <span className="text-blue-400">from</span>{" "}
-              <span className="text-yellow-300">'@hanzo/ui'</span>
-              {"\n"}
-              <span className="text-blue-400">import</span>{" "}
-              <span className="text-purple-400">{"{ createClient }"}</span>{" "}
-              <span className="text-blue-400">from</span>{" "}
-              <span className="text-yellow-300">'@hanzo/base'</span>
-              {"\n\n"}
-              <span className="text-purple-400">const</span> ai{" "}
-              <span className="text-gray-400">=</span>{" "}
-              <span className="text-blue-400">createAI</span>()
-              {"\n"}
-              <span className="text-purple-400">const</span> db{" "}
-              <span className="text-gray-400">=</span>{" "}
-              <span className="text-blue-400">createClient</span>()
-              {"\n\n"}
-              <span className="text-gray-500">// Stream AI responses in real-time</span>
-              {"\n"}
-              <span className="text-blue-400">await</span> ai.chat.completions.create({"{\n"}
-              {"  "}messages: [{"{ role: 'user', content: 'Hello!' }"}],{"\n"}
-              {"  "}stream: true{"\n"}
-              {"}"})
-            </code>
-          </pre>
+          <div className="flex items-center gap-3 mb-4">
+            <Terminal className="text-blue-400" size={20} />
+            <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
+          </div>
+          <div className="bg-black/50 rounded-lg p-4 mb-4">
+            <pre className="overflow-x-auto">
+              <code className="text-gray-300">curl -sL hanzo.sh | sh</code>
+            </pre>
+          </div>
+          <p className="text-sm text-gray-400">One command to install the complete Hanzo development platform.</p>
         </motion.div>
       </div>
     </div>
