@@ -124,36 +124,36 @@ install_hanzo() {
   get_ip() {
     local ip=""
     # Try IPv4 first
-    ip=$(curl -4s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
-    if [ -z "$ip" ]; then
-      ip=$(curl -4s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+    ip=\$(curl -4s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+    if [ -z "\$ip" ]; then
+      ip=\$(curl -4s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
     fi
-    if [ -z "$ip" ]; then
-      ip=$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+    if [ -z "\$ip" ]; then
+      ip=\$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
     fi
     # If no IPv4, try IPv6
-    if [ -z "$ip" ]; then
-      ip=$(curl -6s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
-      if [ -z "$ip" ]; then
-        ip=$(curl -6s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+    if [ -z "\$ip" ]; then
+      ip=\$(curl -6s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+      if [ -z "\$ip" ]; then
+        ip=\$(curl -6s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
       fi
-      if [ -z "$ip" ]; then
-        ip=$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+      if [ -z "\$ip" ]; then
+        ip=\$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
       fi
     fi
-    if [ -z "$ip" ]; then
+    if [ -z "\$ip" ]; then
       echo "Error: Could not determine server IP address automatically." >&2
       echo "Please set the ADVERTISE_ADDR environment variable manually." >&2
       exit 1
     fi
-    echo "$ip"
+    echo "\$ip"
   }
 
   advertise_addr="\${ADVERTISE_ADDR:-\$(get_ip)}"
-  echo "Using advertise address: $advertise_addr"
+  echo "Using advertise address: \$advertise_addr"
 
-  docker swarm init --advertise-addr $advertise_addr
-  if [ $? -ne 0 ]; then
+  docker swarm init --advertise-addr \$advertise_addr
+  if [ \$? -ne 0 ]; then
     echo "Error: Failed to initialize Docker Swarm" >&2
     exit 1
   fi
@@ -183,28 +183,28 @@ install_hanzo() {
     --update-parallelism 1 \\
     --update-order stop-first \\
     --constraint 'node.role == manager' \\
-    -e ADVERTISE_ADDR=$advertise_addr \\
+    -e ADVERTISE_ADDR=\$advertise_addr \\
     hanzo/platform:latest
 
-  GREEN="\\033[0;32m"
-  YELLOW="\\033[1;33m"
-  BLUE="\\033[0;34m"
-  NC="\\033[0m" # No Color
+  GREEN="\\\\033[0;32m"
+  YELLOW="\\\\033[1;33m"
+  BLUE="\\\\033[0;34m"
+  NC="\\\\033[0m" # No Color
 
   format_ip_for_url() {
-    local ip="$1"
-    if echo "$ip" | grep -q ':'; then
-      echo "[${ip}]"
+    local ip="\$1"
+    if echo "\$ip" | grep -q ':'; then
+      echo "[\${ip}]"
     else
-      echo "${ip}"
+      echo "\${ip}"
     fi
   }
 
-  formatted_addr=$(format_ip_for_url "$advertise_addr")
+  formatted_addr=\$(format_ip_for_url "\$advertise_addr")
   echo ""
-  printf "${GREEN}Congratulations, hanzo is installed!${NC}\\n"
-  printf "${BLUE}Wait 15 seconds for the server to start${NC}\\n"
-  printf "${YELLOW}Please go to http://${formatted_addr}:3000${NC}\\n\\n"
+  printf "\${GREEN}Congratulations, hanzo is installed!\${NC}\\n"
+  printf "\${BLUE}Wait 15 seconds for the server to start\${NC}\\n"
+  printf "\${YELLOW}Please go to http://\${formatted_addr}:3000\${NC}\\n\\n"
 }
 
 update_hanzo() {
@@ -215,7 +215,7 @@ update_hanzo() {
 }
 
 # Main script execution
-if [ "$1" = "update" ]; then
+if [ "\$1" = "update" ]; then
   update_hanzo
 else
   install_hanzo
