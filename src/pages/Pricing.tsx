@@ -7,45 +7,78 @@ import { Check } from "lucide-react";
 const PricingPlans = () => {
   const plans = [
     {
-      name: "Starter",
-      price: "Free",
-      description: "Best for hobby projects and small teams",
+      name: "Dev",
+      price: "$10",
+      billingPeriod: "/bot/month",
+      description: "Explore how to build with Hanzo AI",
       features: [
-        "2 team members",
-        "2 GB storage",
-        "Basic analytics",
-        "Basic support",
-        "Community access"
+        "Access to latest AI models",
+        "Limited API calls per month",
+        "Access to Hanzo Code and Hanzo Dev",
+        "Limited access to file uploads",
+        "Use custom Apps",
+        "Basic support"
+      ]
+    },
+    {
+      name: "Duo",
+      price: "$30",
+      billingPeriod: "/month",
+      description: "Level up productivity and creativity with expanded access",
+      popular: true,
+      features: [
+        "Double Everything in Dev",
+        "Extended limits on messaging",
+        "Standard and advanced voice mode",
+        "Limited access to oT and oT-mini",
+        "Opportunities to test new features",
+        "Create and use custom GPTs",
+        "Priority support"
       ]
     },
     {
       name: "Pro",
-      price: "$29",
+      price: "$90",
       billingPeriod: "/month",
-      description: "Best for professional developers and growing teams",
+      description: "Get the best of Hanzo with the highest level of access",
       features: [
-        "Unlimited team members",
-        "20 GB storage",
-        "Advanced analytics",
-        "Priority support",
-        "API access",
-        "Custom integrations",
-        "Deployment automation"
-      ],
-      popular: true
+        "Triple Everything in Duo",
+        "Unlimited* access to oT, oT-mini, GPT-4x",
+        "Higher limits for video and screensharing",
+        "Access to oT pro mode",
+        "Extended access to Sora video generation",
+        "Access to Operator research preview (U.S. only)",
+        "24/7 premium support"
+      ]
+    }
+  ];
+
+  const enterprisePlans = [
+    {
+      name: "Team",
+      price: "$500",
+      billingPeriod: "/dev/month",
+      description: "Supercharge your team's work with a secure, collaborative workspace",
+      features: [
+        "Higher message limits than Plus",
+        "Limited access to oT and oT-mini",
+        "Standard and advanced voice mode",
+        "Create and share GPTs with workspace",
+        "Admin console for workspace management",
+        "Team data excluded from training"
+      ]
     },
     {
       name: "Enterprise",
       price: "Custom",
-      description: "Best for large organizations with specific needs",
+      description: "Enable your workforce with enterprise-grade AI",
       features: [
-        "Everything in Pro",
-        "Unlimited storage",
-        "24/7 premium support",
-        "SLA guarantee",
-        "Custom contracts",
-        "Dedicated account manager",
-        "On-premise deployment"
+        "Everything in Team",
+        "High speed access to GPT-4, GPT-4x",
+        "Expanded context window",
+        "Enterprise data excluded from training",
+        "Admin controls and analytics",
+        "Enhanced support & account management"
       ]
     }
   ];
@@ -64,7 +97,8 @@ const PricingPlans = () => {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Individual Plans */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -101,6 +135,42 @@ const PricingPlans = () => {
                 }`}
               >
                 {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+              </Button>
+
+              <ul className="space-y-4">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Enterprise Plans */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {enterprisePlans.map((plan) => (
+            <div
+              key={plan.name}
+              className="rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm"
+            >
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold">{plan.price}</span>
+                  {plan.billingPeriod && (
+                    <span className="text-gray-400">{plan.billingPeriod}</span>
+                  )}
+                </div>
+                <p className="text-gray-400 mt-2">{plan.description}</p>
+              </div>
+
+              <Button
+                className="w-full mb-8 bg-white text-black hover:bg-gray-100"
+              >
+                {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
               </Button>
 
               <ul className="space-y-4">
