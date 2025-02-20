@@ -72,11 +72,13 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl"
+          className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl relative"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <Terminal className="text-blue-400" size={20} />
-            <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <Terminal className="text-blue-400" size={20} />
+              <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
+            </div>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -100,9 +102,8 @@ const Hero = () => {
               <ClipboardCopy size={20} />
             </button>
           </div>
-          <div className="space-y-2 text-sm text-gray-400">
-            <p>One command to install the complete Hanzo development platform.</p>
-            <p>Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
+          <div className="text-sm text-gray-400">
+            <p>One command to install the complete Hanzo development platform. Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
           </div>
         </motion.div>
       </div>
