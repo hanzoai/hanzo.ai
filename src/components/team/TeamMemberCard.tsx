@@ -32,7 +32,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
 
       <div className="grid grid-cols-2 gap-3 relative z-10">
         <a 
-          href={`https://bot.hanzo.ai/${memberRoute}`}
+          href={`https://hanzo.ai/bot/${memberRoute}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full"
