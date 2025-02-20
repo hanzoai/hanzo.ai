@@ -1,9 +1,20 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Terminal } from "lucide-react";
+import { Terminal, ClipboardCopy } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const Hero = () => {
+  const { toast } = useToast();
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
+    toast({
+      description: "Command copied to clipboard!",
+      duration: 2000,
+    });
+  };
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900" />
@@ -61,10 +72,17 @@ const Hero = () => {
             <Terminal className="text-blue-400" size={20} />
             <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
           </div>
-          <div className="bg-black/50 rounded-lg p-4 mb-4">
+          <div className="bg-black/50 rounded-lg p-4 mb-4 flex items-center justify-between group">
             <pre className="overflow-x-auto">
-              <code className="text-gray-300">curl -sL hanzo.sh | sh</code>
+              <code className="text-gray-300">curl -sL <a href="https://hanzo.sh" className="text-blue-400 hover:underline">hanzo.sh</a> | sh</code>
             </pre>
+            <button
+              onClick={handleCopy}
+              className="text-gray-400 hover:text-blue-400 transition-colors opacity-0 group-hover:opacity-100"
+              aria-label="Copy to clipboard"
+            >
+              <ClipboardCopy size={20} />
+            </button>
           </div>
           <p className="text-sm text-gray-400">One command to install the complete Hanzo development platform.</p>
         </motion.div>
