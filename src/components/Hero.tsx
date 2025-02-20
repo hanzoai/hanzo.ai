@@ -14,7 +14,7 @@ const Hero = () => {
   const { toast } = useToast();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("curl -sL hanzo.sh | sudo sh");
+    navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
     toast({
       description: "Command copied to clipboard!",
       duration: 2000,
@@ -92,7 +92,7 @@ const Hero = () => {
           </div>
           <div className="bg-black/50 rounded-lg p-4 mb-4 flex items-center justify-between group">
             <pre className="overflow-x-auto">
-              <code className="text-gray-300">curl -sL hanzo.sh | sudo sh</code>
+              <code className="text-gray-300">curl -sL hanzo.sh | sh</code>
             </pre>
             <button
               onClick={handleCopy}
