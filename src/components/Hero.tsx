@@ -1,14 +1,20 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Terminal, ClipboardCopy } from "lucide-react";
+import { Terminal, ClipboardCopy, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Hero = () => {
   const { toast } = useToast();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
+    navigator.clipboard.writeText("curl -sL hanzo.sh | sudo sh");
     toast({
       description: "Command copied to clipboard!",
       duration: 2000,
@@ -71,10 +77,20 @@ const Hero = () => {
           <div className="flex items-center gap-3 mb-4">
             <Terminal className="text-blue-400" size={20} />
             <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Info className="text-gray-400 hover:text-blue-400 cursor-help w-4 h-4" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Docker will be automatically installed if not present on your system. Cannot be run inside a container.</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div className="bg-black/50 rounded-lg p-4 mb-4 flex items-center justify-between group">
             <pre className="overflow-x-auto">
-              <code className="text-gray-300">curl -sL <a href="https://hanzo.sh" className="text-blue-400 hover:underline">hanzo.sh</a> | sh</code>
+              <code className="text-gray-300">curl -sL <a href="https://hanzo.sh" className="text-blue-400 hover:underline">hanzo.sh</a> | sudo sh</code>
             </pre>
             <button
               onClick={handleCopy}
@@ -84,7 +100,10 @@ const Hero = () => {
               <ClipboardCopy size={20} />
             </button>
           </div>
-          <p className="text-sm text-gray-400">One command to install the complete Hanzo development platform.</p>
+          <div className="space-y-2 text-sm text-gray-400">
+            <p>One command to install the complete Hanzo development platform.</p>
+            <p>Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
+          </div>
         </motion.div>
       </div>
     </div>
