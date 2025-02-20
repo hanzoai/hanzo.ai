@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,22 +8,7 @@ import Pricing from "./pages/Pricing";
 import Team from "./pages/Team";
 import Solutions from "./pages/Solutions";
 import NotFound from "./pages/NotFound";
-import TeamDev from "./pages/TeamDev";
-import TeamDes from "./pages/TeamDes";
-import TeamOpera from "./pages/TeamOpera";
-import TeamMark from "./pages/TeamMark";
-import TeamSu from "./pages/TeamSu";
-import TeamArt from "./pages/TeamArt";
-import TeamMu from "./pages/TeamMu";
-import TeamData from "./pages/TeamData";
-import TeamCore from "./pages/TeamCore";
-import TeamFin from "./pages/TeamFin";
-import TeamSec from "./pages/TeamSec";
-import TeamAlgo from "./pages/TeamAlgo";
-import TeamDb from "./pages/TeamDb";
-import TeamCal from "./pages/TeamCal";
-import TeamChat from "./pages/TeamChat";
-import TeamVi from "./pages/TeamVi";
+import Install from "./pages/Install";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +23,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/team" element={<Team />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/install" element={<Install />} />
           <Route path="/team/dev" element={<TeamDev />} />
           <Route path="/team/des" element={<TeamDes />} />
           <Route path="/team/opera" element={<TeamOpera />} />
