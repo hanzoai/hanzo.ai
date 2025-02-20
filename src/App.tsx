@@ -25,6 +25,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/install" element={<Install />} />
+          <Route path="/install.sh" element={<Install />} />
           <Route path="/index.html" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
