@@ -24,7 +24,7 @@ const Install = () => {
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>hanzo.sh | Install Hanzo Platform</title>
-    <link rel="stylesheet" href="https://hanzo.ai/styles.css"/>
+    <link rel="stylesheet" href="https://hanzo.sh/styles.css"/>
   </head>
   <body class="bg-[#1A1F2C] text-white min-h-screen">
     <div class="max-w-4xl mx-auto p-8">
@@ -71,7 +71,7 @@ const Install = () => {
         <div class="bg-black/30 rounded-lg p-6">
           <h2 class="text-2xl font-semibold mb-4 text-purple-400">Documentation</h2>
           <p class="text-gray-400">
-            Visit <a href="https://docs.hanzo.ai" class="text-purple-400 hover:text-purple-300 underline">docs.hanzo.ai</a> for complete documentation and guides
+            Visit <a href="https://docs.hanzo.sh" class="text-purple-400 hover:text-purple-300 underline">docs.hanzo.sh</a> for complete documentation and guides
           </p>
         </div>
       </div>
@@ -96,7 +96,7 @@ done
 
 # Download and execute the full installer
 echo "Installing Hanzo Platform..."
-curl -sL https://raw.githubusercontent.com/hanzoai/platform/main/scripts/install.sh > install-$$.sh
+curl -sL https://hanzo.sh/install.sh > install-$$.sh
 sh install-$$.sh
 
 # Clean up
