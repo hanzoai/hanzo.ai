@@ -52,27 +52,22 @@ const Install = () => {
         <div class="bg-black/30 rounded-lg p-6">
           <h2 class="text-2xl font-semibold mb-4 text-purple-400">Requirements</h2>
           <ul class="list-disc list-inside text-gray-400 space-y-2">
-            <li>Node.js 18 or later</li>
-            <li>Git (any recent version)</li>
-            <li>Curl for downloading the installer</li>
+            <li>Root access (sudo)</li>
+            <li>Linux operating system</li>
+            <li>Docker support</li>
+            <li>Ports 80, 443, and 3000 available</li>
           </ul>
         </div>
 
         <div class="bg-black/30 rounded-lg p-6">
           <h2 class="text-2xl font-semibold mb-4 text-purple-400">What's Included</h2>
           <ul class="list-disc list-inside text-gray-400 space-y-2">
-            <li>Hanzo CLI - Command line interface for managing your projects</li>
-            <li>Hanzo Bot - AI-powered development assistant</li>
-            <li>Hanzo Chat - Team collaboration tools</li>
-            <li>Development dependencies and tools</li>
+            <li>Docker Swarm initialization</li>
+            <li>Hanzo Platform container</li>
+            <li>PostgreSQL 16 database</li>
+            <li>Redis 7 cache</li>
+            <li>Traefik v3.1.2 proxy</li>
           </ul>
-        </div>
-
-        <div class="bg-black/30 rounded-lg p-6">
-          <h2 class="text-2xl font-semibold mb-4 text-purple-400">Documentation</h2>
-          <p class="text-gray-400">
-            Visit <a href="https://docs.hanzo.sh" class="text-purple-400 hover:text-purple-300 underline">docs.hanzo.sh</a> for complete documentation and guides
-          </p>
         </div>
       </div>
 
@@ -84,27 +79,147 @@ const Install = () => {
 </html>
 EOF
 
-# Ensure dependencies are installed
-deps="curl git node npm"
+install_hanzo() {
+  if [ "$(id -u)" != "0" ]; then
+    echo "This script must be run as root" >&2
+    exit 1
+  fi
 
-for dep in $deps; do
-    if ! command -v $dep >/dev/null 2>&1; then
-        echo "Error: $dep is required but not installed."
-        exit 1
+  # check if is Mac OS
+  if [ "$(uname)" = "Darwin" ]; then
+    echo "This script must be run on Linux" >&2
+    exit 1
+  fi
+
+  # check if is running inside a container
+  if [ -f /.dockerenv ]; then
+    echo "This script must be run on Linux" >&2
+    exit 1
+  fi
+
+  # check if something is running on port 80
+  if ss -tulnp | grep ':80 ' >/dev/null; then
+    echo "Error: something is already running on port 80" >&2
+    exit 1
+  fi
+
+  # check if something is running on port 443
+  if ss -tulnp | grep ':443 ' >/dev/null; then
+    echo "Error: something is already running on port 443" >&2
+    exit 1
+  fi
+
+  command_exists() {
+    command -v "$@" > /dev/null 2>&1
+  }
+
+  if command_exists docker; then
+    echo "Docker already installed"
+  else
+    curl -sSL https://get.docker.com | sh
+  fi
+
+  docker swarm leave --force 2>/dev/null
+
+  get_ip() {
+    local ip=""
+    # Try IPv4 first
+    ip=$(curl -4s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+    if [ -z "$ip" ]; then
+      ip=$(curl -4s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
     fi
-done
+    if [ -z "$ip" ]; then
+      ip=$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+    fi
+    # If no IPv4, try IPv6
+    if [ -z "$ip" ]; then
+      ip=$(curl -6s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+      if [ -z "$ip" ]; then
+        ip=$(curl -6s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+      fi
+      if [ -z "$ip" ]; then
+        ip=$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+      fi
+    fi
+    if [ -z "$ip" ]; then
+      echo "Error: Could not determine server IP address automatically." >&2
+      echo "Please set the ADVERTISE_ADDR environment variable manually." >&2
+      exit 1
+    fi
+    echo "$ip"
+  }
 
-# Download and execute the full installer
-echo "Installing Hanzo Platform..."
-curl -sL https://hanzo.sh/install.sh > install-$$.sh
-sh install-$$.sh
+  advertise_addr="${ADVERTISE_ADDR:-$(get_ip)}"
+  echo "Using advertise address: $advertise_addr"
 
-# Clean up
-rm install-$$.sh
+  docker swarm init --advertise-addr $advertise_addr
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to initialize Docker Swarm" >&2
+    exit 1
+  fi
 
-echo "Hanzo Platform installed successfully!"
-echo "Run 'hanzo --help' to get started"
-`}
+  echo "Swarm initialized"
+  docker network rm -f hanzo-network 2>/dev/null
+  docker network create --driver overlay --attachable hanzo-network
+  echo "Network created"
+
+  mkdir -p /etc/hanzo
+  chmod 777 /etc/hanzo
+
+  docker pull postgres:16
+  docker pull redis:7
+  docker pull traefik:v3.1.2
+  docker pull hanzo/platform:latest
+
+  # Installation
+  docker service create \\
+    --name hanzo \\
+    --replicas 1 \\
+    --network hanzo-network \\
+    --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \\
+    --mount type=bind,source=/etc/hanzo,target=/etc/hanzo \\
+    --mount type=volume,source=hanzo-docker-config,target=/root/.docker \\
+    --publish published=3000,target=3000,mode=host \\
+    --update-parallelism 1 \\
+    --update-order stop-first \\
+    --constraint 'node.role == manager' \\
+    -e ADVERTISE_ADDR=$advertise_addr \\
+    hanzo/platform:latest
+
+  GREEN="\\033[0;32m"
+  YELLOW="\\033[1;33m"
+  BLUE="\\033[0;34m"
+  NC="\\033[0m" # No Color
+
+  format_ip_for_url() {
+    local ip="$1"
+    if echo "$ip" | grep -q ':'; then
+      echo "[${ip}]"
+    else
+      echo "${ip}"
+    fi
+  }
+
+  formatted_addr=$(format_ip_for_url "$advertise_addr")
+  echo ""
+  printf "${GREEN}Congratulations, hanzo is installed!${NC}\\n"
+  printf "${BLUE}Wait 15 seconds for the server to start${NC}\\n"
+  printf "${YELLOW}Please go to http://${formatted_addr}:3000${NC}\\n\\n"
+}
+
+update_hanzo() {
+  echo "Updating Hanzo Platform..."
+  docker pull hanzo/platform:latest
+  docker service update --image hanzo/platform:latest hanzo
+  echo "Hanzo Platform has been updated to the latest version."
+}
+
+# Main script execution
+if [ "$1" = "update" ]; then
+  update_hanzo
+else
+  install_hanzo
+fi`}
     </pre>
   );
 };
