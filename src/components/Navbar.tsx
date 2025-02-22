@@ -32,7 +32,7 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png"
               alt="Hanzo"
-              className="h-8 w-8"
+              className="h-10 w-10"
             />
             <span className="text-white font-bold text-xl">Hanzo</span>
           </a>
