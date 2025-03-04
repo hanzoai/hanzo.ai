@@ -53,7 +53,7 @@ const PricingPlan = ({
             }
           }}
         >
-          Configure Team Plan
+          Configure Plan
         </Button>
       );
     } else if (name === "Pro" && showDetails) {
@@ -63,7 +63,6 @@ const PricingPlan = ({
           onClick={() => {
             const teamConfigSection = document.getElementById('team-config-section');
             if (teamConfigSection) {
-              // Set a query parameter to indicate we're coming from Pro plan
               window.history.pushState({}, '', window.location.pathname + '?from=pro');
               teamConfigSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -72,11 +71,24 @@ const PricingPlan = ({
           Get Started
         </Button>
       );
-    } else {
+    } else if (name === "Dev") {
       return (
         <Button
           className={`w-full mb-8 ${buttonClass}`}
+          onClick={() => {
+            const teamConfigSection = document.getElementById('team-config-section');
+            if (teamConfigSection) {
+              window.history.pushState({}, '', window.location.pathname + '?from=dev');
+              teamConfigSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
         >
+          Configure Plan
+        </Button>
+      );
+    } else {
+      return (
+        <Button className={`w-full mb-8 ${buttonClass}`}>
           Get Started
         </Button>
       );

@@ -14,10 +14,14 @@ const BillingManagement = () => {
         Manage your subscription easily. Need assistance? Join our Discord server for immediate support.
       </p>
       <div className="flex flex-wrap gap-4">
-        <Button className="bg-indigo-600 hover:bg-indigo-700">
+        <Button className="bg-white hover:bg-gray-200 text-black">
           Manage Subscription
         </Button>
-        <Button variant="outline" className="border-gray-700">
+        <Button 
+          variant="outline" 
+          className="border-gray-700"
+          onClick={() => window.open('https://discord.com/invite/XthHQQj', '_blank')}
+        >
           Join Discord
         </Button>
       </div>
