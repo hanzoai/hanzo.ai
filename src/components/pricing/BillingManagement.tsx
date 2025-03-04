@@ -5,9 +5,9 @@ import { CreditCard } from "lucide-react";
 
 const BillingManagement = () => {
   return (
-    <div className="max-w-4xl mx-auto mb-16 p-6 rounded-xl border border-gray-800 bg-gray-900/50">
+    <div className="max-w-4xl mx-auto mb-16 p-6 rounded-xl border border-[#333] bg-gray-900/50 hover:border-gray-700">
       <div className="flex items-center gap-4 mb-4">
-        <CreditCard className="h-8 w-8 text-purple-500" />
+        <CreditCard className="h-8 w-8 text-white" />
         <h2 className="text-2xl font-bold">Billing Management</h2>
       </div>
       <p className="text-gray-300 mb-4">
@@ -19,7 +19,7 @@ const BillingManagement = () => {
         </Button>
         <Button 
           variant="outline" 
-          className="border-gray-700"
+          className="border-[#333] hover:border-gray-700"
           onClick={() => window.open('https://discord.com/invite/XthHQQj', '_blank')}
         >
           Join Discord
