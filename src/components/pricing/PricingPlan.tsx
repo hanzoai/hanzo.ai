@@ -2,6 +2,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Drawer, DrawerTrigger } from "@/components/ui/drawer";
+import TeamPlanDetails from "./TeamPlanDetails";
 
 interface PricingPlanProps {
   name: string;
@@ -40,6 +42,31 @@ const PricingPlan = ({
     ? "bg-white hover:bg-gray-200 text-black" 
     : "bg-gray-800 hover:bg-gray-700 text-white";
 
+  const renderButton = () => {
+    if (name === "Team" && showDetails) {
+      return (
+        <Drawer>
+          <DrawerTrigger asChild>
+            <Button
+              className={`w-full mb-8 ${buttonClass}`}
+            >
+              Get Started
+            </Button>
+          </DrawerTrigger>
+          <TeamPlanDetails />
+        </Drawer>
+      );
+    } else {
+      return (
+        <Button
+          className={`w-full mb-8 ${buttonClass}`}
+        >
+          Get Started
+        </Button>
+      );
+    }
+  };
+
   return (
     <div 
       className={`relative rounded-2xl border ${borderColor} ${bgColor} p-8 backdrop-blur-sm transition-all duration-300 hover:border-gray-700 hover:bg-gray-900/20`}
@@ -67,11 +94,7 @@ const PricingPlan = ({
         <p className="text-gray-400">{description}</p>
       </div>
 
-      <Button
-        className={`w-full mb-8 ${buttonClass}`}
-      >
-        Get Started
-      </Button>
+      {renderButton()}
 
       <ul className="space-y-4">
         {features.map((feature) => (
