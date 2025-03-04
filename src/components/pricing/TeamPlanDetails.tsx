@@ -2,7 +2,12 @@
 import React, { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Cpu, Zap, Server, Users } from "lucide-react";
-import { DrawerContent, DrawerHeader, DrawerTitle, DrawerFooter } from "@/components/ui/drawer";
+import { 
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 const TeamPlanDetails = () => {
@@ -16,12 +21,10 @@ const TeamPlanDetails = () => {
   const totalCost = totalMonthlyPrice + additionalAICost + additionalComputeCost;
 
   return (
-    <DrawerContent className="bg-black text-white border-t border-gray-800 p-0">
-      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-gray-800" />
-      
-      <DrawerHeader className="border-b border-gray-800/40 px-6 py-4">
-        <DrawerTitle className="text-xl font-bold">Configure Team Plan</DrawerTitle>
-      </DrawerHeader>
+    <DialogContent className="bg-black text-white border border-gray-800 p-0 sm:max-w-4xl">
+      <DialogHeader className="border-b border-gray-800/40 px-6 py-4">
+        <DialogTitle className="text-xl font-bold">Configure Team Plan</DialogTitle>
+      </DialogHeader>
       
       <div className="p-6 max-w-5xl mx-auto w-full">
         <div className="flex items-center justify-between mb-8">
@@ -146,7 +149,7 @@ const TeamPlanDetails = () => {
               <Zap className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
               <div>
                 <p className="font-medium">Enhanced Performance</p>
-                <p className="text-gray-400 text-sm">Priority access to all Hanzo services</p>
+                <p className="text-gray-400 text-sm">Priority access to all platform services</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -160,12 +163,12 @@ const TeamPlanDetails = () => {
         </div>
       </div>
 
-      <DrawerFooter className="border-t border-gray-800/40 px-6 py-4">
+      <DialogFooter className="border-t border-gray-800/40 px-6 py-4">
         <Button size="lg" className="bg-white hover:bg-gray-200 text-black w-full sm:w-auto px-8 py-6 text-lg">
           Start with Team Plan
         </Button>
-      </DrawerFooter>
-    </DrawerContent>
+      </DialogFooter>
+    </DialogContent>
   );
 };
 

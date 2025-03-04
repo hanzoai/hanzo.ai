@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import { Drawer, DrawerTrigger } from "@/components/ui/drawer";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import TeamPlanDetails from "./TeamPlanDetails";
 
 interface PricingPlanProps {
@@ -45,16 +45,16 @@ const PricingPlan = ({
   const renderButton = () => {
     if (name === "Team" && showDetails) {
       return (
-        <Drawer>
-          <DrawerTrigger asChild>
+        <Dialog>
+          <DialogTrigger asChild>
             <Button
               className={`w-full mb-8 ${buttonClass}`}
             >
               Get Started
             </Button>
-          </DrawerTrigger>
+          </DialogTrigger>
           <TeamPlanDetails />
-        </Drawer>
+        </Dialog>
       );
     } else {
       return (
