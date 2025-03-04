@@ -12,6 +12,7 @@ interface PricingPlanProps {
   features: string[];
   popular?: boolean;
   customColor?: string;
+  showDetails?: boolean;
 }
 
 const PricingPlan = ({
@@ -22,7 +23,8 @@ const PricingPlan = ({
   description,
   features,
   popular = false,
-  customColor
+  customColor,
+  showDetails = false
 }: PricingPlanProps) => {
   // Determine border and background color based on popular status or custom color
   const borderColor = customColor 
@@ -79,7 +81,7 @@ const PricingPlan = ({
       <Button
         className={`w-full mb-8 ${buttonClass}`}
       >
-        {name === "Team" || name === "Enterprise" ? "Contact Sales" : "Get Started"}
+        {name === "Enterprise" ? "Contact Sales" : "Get Started"}
       </Button>
 
       <ul className="space-y-4">

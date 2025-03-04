@@ -2,6 +2,7 @@
 import React from "react";
 import PricingPlan from "./PricingPlan";
 import { Code, Users, Zap } from "lucide-react";
+import TeamPlanDetails from "./TeamPlanDetails";
 
 const IndividualPlans = () => {
   const plans = [
@@ -59,24 +60,30 @@ const IndividualPlans = () => {
         "Custom GPT creation and sharing",
         "Up to 10 AI Units per user (Adjustable)",
         "Up to 10 Compute Units per user (Adjustable)"
-      ]
+      ],
+      showDetails: true
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      {plans.map((plan) => (
-        <PricingPlan
-          key={plan.name}
-          name={plan.name}
-          icon={plan.icon}
-          price={plan.price}
-          billingPeriod={plan.billingPeriod}
-          description={plan.description}
-          features={plan.features}
-          popular={plan.popular}
-        />
-      ))}
+    <div className="max-w-7xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        {plans.map((plan) => (
+          <PricingPlan
+            key={plan.name}
+            name={plan.name}
+            icon={plan.icon}
+            price={plan.price}
+            billingPeriod={plan.billingPeriod}
+            description={plan.description}
+            features={plan.features}
+            popular={plan.popular}
+            showDetails={plan.showDetails}
+          />
+        ))}
+      </div>
+      
+      <TeamPlanDetails />
     </div>
   );
 };
