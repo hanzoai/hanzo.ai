@@ -1,13 +1,25 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Cpu, Zap, Server, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const TeamPlanDetails = () => {
+interface TeamPlanDetailsProps {
+  fromProPlan?: boolean;
+}
+
+const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
   const [aiUnits, setAiUnits] = useState<number>(5);
   const [computeUnits, setComputeUnits] = useState<number>(5);
-  const [teamSize, setTeamSize] = useState<number>(5);
+  const [teamSize, setTeamSize] = useState<number>(1);
+  
+  // Set AI and Compute units to 10 if coming from Pro plan
+  useEffect(() => {
+    if (fromProPlan) {
+      setAiUnits(10);
+      setComputeUnits(10);
+    }
+  }, [fromProPlan]);
   
   const totalMonthlyPrice = teamSize * 30;
   const additionalAICost = aiUnits > 5 ? (aiUnits - 5) * 10 : 0;
@@ -18,7 +30,7 @@ const TeamPlanDetails = () => {
     <section id="team-config-section" className="max-w-7xl mx-auto mb-16 mt-24 scroll-mt-24">
       <div className="bg-black border border-gray-800 rounded-2xl p-6 backdrop-blur-sm">
         <div className="border-b border-gray-800/40 px-2 py-4 mb-6">
-          <h2 className="text-2xl font-bold">Configure Your Team Plan</h2>
+          <h2 className="text-2xl font-bold">Configure Plan</h2>
           <p className="text-gray-400 mt-2">Scale resources to match your team's exact needs</p>
         </div>
         
@@ -33,7 +45,7 @@ const TeamPlanDetails = () => {
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold">${totalCost}/mo</div>
-              <div className="text-gray-400 text-sm">Total for {teamSize} team members</div>
+              <div className="text-gray-400 text-sm">Total for {teamSize} team member{teamSize !== 1 ? 's' : ''}</div>
             </div>
           </div>
 
@@ -45,7 +57,7 @@ const TeamPlanDetails = () => {
                     <Users className="h-5 w-5 text-gray-400" />
                     Team Size
                   </label>
-                  <span className="text-xl font-semibold">{teamSize} members</span>
+                  <span className="text-xl font-semibold">{teamSize} member{teamSize !== 1 ? 's' : ''}</span>
                 </div>
                 <Slider 
                   className="mt-4" 

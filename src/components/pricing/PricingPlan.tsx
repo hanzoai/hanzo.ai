@@ -3,7 +3,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import TeamPlanDetails from "./TeamPlanDetails";
 
 interface PricingPlanProps {
   name: string;
@@ -55,6 +54,22 @@ const PricingPlan = ({
           }}
         >
           Configure Team Plan
+        </Button>
+      );
+    } else if (name === "Pro" && showDetails) {
+      return (
+        <Button
+          className={`w-full mb-8 ${buttonClass}`}
+          onClick={() => {
+            const teamConfigSection = document.getElementById('team-config-section');
+            if (teamConfigSection) {
+              // Set a query parameter to indicate we're coming from Pro plan
+              window.history.pushState({}, '', window.location.pathname + '?from=pro');
+              teamConfigSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          Get Started
         </Button>
       );
     } else {

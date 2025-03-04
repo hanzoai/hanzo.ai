@@ -1,10 +1,22 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
 import { Code, Users, Zap } from "lucide-react";
 import TeamPlanDetails from "./TeamPlanDetails";
 
 const IndividualPlans = () => {
+  const [fromProPlan, setFromProPlan] = useState(false);
+
+  useEffect(() => {
+    // Check if we're coming from the Pro plan
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('from') === 'pro') {
+      setFromProPlan(true);
+      // Remove the query parameter to avoid confusion on refresh
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
+
   const plans = [
     {
       name: "Dev",
@@ -42,7 +54,8 @@ const IndividualPlans = () => {
         "Access to deep research models",
         "Up to 10 AI Units (Adjustable)",
         "Up to 10 Compute Units (Adjustable)"
-      ]
+      ],
+      showDetails: true
     },
     {
       name: "Team",
@@ -83,7 +96,7 @@ const IndividualPlans = () => {
         ))}
       </div>
       
-      <TeamPlanDetails />
+      <TeamPlanDetails fromProPlan={fromProPlan} />
     </div>
   );
 };
