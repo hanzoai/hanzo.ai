@@ -7,13 +7,10 @@ const PricingHeader = () => {
   return (
     <div className="text-center max-w-3xl mx-auto mb-8">
       <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-        Hanzo Pricing Overview
+        Pricing
       </h1>
-      <p className="text-gray-400 text-lg mb-8">
-        Choose the plan that best fits your needs. All paid plans include a 14-day free trial.
-      </p>
       
-      <Alert variant="destructive" className="bg-red-900/20 border-red-800 text-white mb-8 mx-auto max-w-2xl">
+      <Alert variant="destructive" className="bg-gray-900/20 border-gray-800 text-white mb-8 mx-auto max-w-2xl">
         <AlertCircle className="h-4 w-4" />
         <AlertTitle>Something went wrong</AlertTitle>
         <AlertDescription>

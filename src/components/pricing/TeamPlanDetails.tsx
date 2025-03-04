@@ -16,10 +16,10 @@ const TeamPlanDetails = () => {
   const totalCost = totalMonthlyPrice + additionalAICost + additionalComputeCost;
 
   return (
-    <div className="bg-gray-900/50 rounded-2xl border border-blue-900/50 p-8 backdrop-blur-sm transition-all duration-300">
+    <div className="bg-gray-900/50 rounded-2xl border border-gray-800 p-8 backdrop-blur-sm transition-all duration-300">
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-3">
-          <Users className="h-8 w-8 text-blue-400" />
+          <Users className="h-8 w-8 text-gray-400" />
           <h2 className="text-2xl font-bold">Team Plan Details</h2>
         </div>
         <div className="text-right">
@@ -33,7 +33,7 @@ const TeamPlanDetails = () => {
           <div className="mb-4">
             <div className="flex items-center justify-between mb-2">
               <label className="text-lg font-medium flex items-center gap-2">
-                <Users className="h-5 w-5 text-blue-400" />
+                <Users className="h-5 w-5 text-gray-400" />
                 Team Size
               </label>
               <span className="text-xl font-semibold">{teamSize} users</span>
@@ -61,7 +61,7 @@ const TeamPlanDetails = () => {
           <div className="mb-4">
             <div className="flex items-center justify-between mb-2">
               <label className="text-lg font-medium flex items-center gap-2">
-                <Zap className="h-5 w-5 text-amber-400" />
+                <Zap className="h-5 w-5 text-gray-400" />
                 AI Units
               </label>
               <span className="text-xl font-semibold">{aiUnits} units per user</span>
@@ -116,7 +116,7 @@ const TeamPlanDetails = () => {
           <div className="mb-4">
             <div className="flex items-center justify-between mb-2">
               <label className="text-lg font-medium flex items-center gap-2">
-                <Server className="h-5 w-5 text-green-400" />
+                <Server className="h-5 w-5 text-gray-400" />
                 Compute Units
               </label>
               <span className="text-xl font-semibold">{computeUnits} units per user</span>
@@ -169,32 +169,32 @@ const TeamPlanDetails = () => {
         </div>
       </div>
 
-      <div className="bg-blue-900/20 rounded-xl p-6 border border-blue-800/50">
+      <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50">
         <h3 className="text-xl font-semibold mb-3">Team Plan Highlights</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex items-start gap-3">
-            <Cpu className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+            <Cpu className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
             <div>
               <p className="font-medium">Dedicated Resources</p>
               <p className="text-gray-400 text-sm">Scale AI and compute resources based on your exact needs</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Users className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+            <Users className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
             <div>
               <p className="font-medium">Team Management</p>
               <p className="text-gray-400 text-sm">Centralized billing and user administration</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Zap className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+            <Zap className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
             <div>
               <p className="font-medium">Enhanced Performance</p>
               <p className="text-gray-400 text-sm">Priority access to all Hanzo services</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Server className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+            <Server className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
             <div>
               <p className="font-medium">Flexible Scaling</p>
               <p className="text-gray-400 text-sm">Adjust resources month-to-month based on project needs</p>
@@ -204,7 +204,7 @@ const TeamPlanDetails = () => {
       </div>
 
       <div className="mt-8 flex justify-center">
-        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
+        <Button size="lg" className="bg-white hover:bg-gray-200 text-black px-8 py-6 text-lg">
           Start with Team Plan
         </Button>
       </div>
