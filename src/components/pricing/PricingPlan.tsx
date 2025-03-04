@@ -45,16 +45,17 @@ const PricingPlan = ({
   const renderButton = () => {
     if (name === "Team" && showDetails) {
       return (
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button
-              className={`w-full mb-8 ${buttonClass}`}
-            >
-              Get Started
-            </Button>
-          </DialogTrigger>
-          <TeamPlanDetails />
-        </Dialog>
+        <Button
+          className={`w-full mb-8 ${buttonClass}`}
+          onClick={() => {
+            const teamConfigSection = document.getElementById('team-config-section');
+            if (teamConfigSection) {
+              teamConfigSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          Configure Team Plan
+        </Button>
       );
     } else {
       return (

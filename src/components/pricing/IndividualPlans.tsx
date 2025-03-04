@@ -2,6 +2,7 @@
 import React from "react";
 import PricingPlan from "./PricingPlan";
 import { Code, Users, Zap } from "lucide-react";
+import TeamPlanDetails from "./TeamPlanDetails";
 
 const IndividualPlans = () => {
   const plans = [
@@ -81,6 +82,8 @@ const IndividualPlans = () => {
           />
         ))}
       </div>
+      
+      <TeamPlanDetails />
     </div>
   );
 };
