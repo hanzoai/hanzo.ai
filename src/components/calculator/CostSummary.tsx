@@ -9,6 +9,8 @@ interface CostSummaryProps {
     replicas: number;
     storage: number;
     bandwidth: number;
+    analytics: number;
+    observability: number;
     compliance: number;
     support: number;
     total: number;
@@ -35,7 +37,9 @@ const CostSummary = ({
           { label: "Compute", cost: costs.compute },
           { label: "Hanzo Base", cost: costs.replicas },
           { label: "Storage", cost: costs.storage },
-          { label: "Bandwidth", cost: costs.bandwidth }
+          { label: "Bandwidth", cost: costs.bandwidth },
+          { label: "Analytics Events", cost: costs.analytics },
+          { label: "Observability", cost: costs.observability }
         ].map(({ label, cost }) => (
           <div key={label} className="flex justify-between items-center">
             <span className="text-gray-400">{label}</span>
