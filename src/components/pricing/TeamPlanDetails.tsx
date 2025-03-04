@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Cpu, Zap, Server, Users } from "lucide-react";
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerTrigger } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 
 const TeamPlanDetails = () => {
@@ -85,31 +85,6 @@ const TeamPlanDetails = () => {
                 `+$${additionalAICost}/mo for ${aiUnits - 5} additional units`}
             </div>
           </div>
-
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button variant="outline" size="sm" className="w-full">
-                What are AI Units?
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="bg-gray-950 text-white border-gray-800">
-              <DrawerHeader>
-                <DrawerTitle>About AI Units</DrawerTitle>
-                <DrawerDescription className="text-gray-400">
-                  AI Units represent computational resources allocated for AI-powered features.
-                </DrawerDescription>
-              </DrawerHeader>
-              <div className="px-4 pb-4">
-                <p className="mb-4">Each AI Unit provides:</p>
-                <ul className="list-disc pl-5 space-y-2 text-gray-300">
-                  <li>10,000 tokens of AI processing</li>
-                  <li>Access to advanced language models</li>
-                  <li>Image generation capabilities (100 images per unit)</li>
-                  <li>Real-time collaborative AI assistance</li>
-                </ul>
-              </div>
-            </DrawerContent>
-          </Drawer>
         </div>
 
         <div className="space-y-6">
@@ -140,32 +115,6 @@ const TeamPlanDetails = () => {
                 `+$${additionalComputeCost}/mo for ${computeUnits - 5} additional units`}
             </div>
           </div>
-
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button variant="outline" size="sm" className="w-full">
-                What are Compute Units?
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="bg-gray-950 text-white border-gray-800">
-              <DrawerHeader>
-                <DrawerTitle>About Compute Units</DrawerTitle>
-                <DrawerDescription className="text-gray-400">
-                  Compute Units represent server resources allocated to your team.
-                </DrawerDescription>
-              </DrawerHeader>
-              <div className="px-4 pb-4">
-                <p className="mb-4">Each Compute Unit provides:</p>
-                <ul className="list-disc pl-5 space-y-2 text-gray-300">
-                  <li>2 vCPUs of dedicated processing power</li>
-                  <li>4GB of RAM</li>
-                  <li>100GB of SSD storage</li>
-                  <li>Unlimited outbound data transfer</li>
-                  <li>Dedicated IP address</li>
-                </ul>
-              </div>
-            </DrawerContent>
-          </Drawer>
         </div>
       </div>
 
