@@ -16,10 +16,10 @@ const PricingPlans = () => {
       
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <PricingHeader />
-        <BillingManagement />
         <StripePricingTable />
         <IndividualPlans />
         <EnterpriseFreePlans />
+        <BillingManagement />
         <PricingFooterLinks />
       </main>
 
