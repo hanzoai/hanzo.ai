@@ -102,13 +102,21 @@ const Footer = () => {
               {company.slice(0, 4).map(item => (
                 <li key={item}>
                   <a 
-                    href={item === "Team" ? "/team" : "#"} 
+                    href={
+                      item === "Team" ? "/team" : 
+                      item === "Pricing" ? "/pricing" : "#"
+                    } 
                     className="text-gray-500 hover:text-white text-sm"
                   >
                     {item}
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/pricing" className="text-gray-500 hover:text-white text-sm">
+                  Pricing
+                </a>
+              </li>
             </ul>
           </div>
         </div>

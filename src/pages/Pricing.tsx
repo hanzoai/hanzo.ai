@@ -147,10 +147,18 @@ const PricingPlans = () => {
         {/* Stripe Pricing Table */}
         <div className="max-w-6xl mx-auto mb-16">
           <div className="stripe-pricing-table">
-            <stripe-pricing-table
-              pricing-table-id="prctbl_1OuWBqCXWvTtjTI7GiQiLlhq"
-              publishable-key="pk_live_51OIbM0CXWvTtjTI7mbcOsQiQxciFdRhW4lOmW7rIIxZRQn5hNUlSJLNHes0nWTmwkR2bYlQ6SNeTiYxOAd7JOgbJ00bF3H5rCM"
-            ></stripe-pricing-table>
+            {/* Using a div with dangerouslySetInnerHTML instead of the custom element */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+                  <stripe-pricing-table
+                    pricing-table-id="prctbl_1OuWBqCXWvTtjTI7GiQiLlhq"
+                    publishable-key="pk_live_51OIbM0CXWvTtjTI7mbcOsQiQxciFdRhW4lOmW7rIIxZRQn5hNUlSJLNHes0nWTmwkR2bYlQ6SNeTiYxOAd7JOgbJ00bF3H5rCM"
+                  ></stripe-pricing-table>
+                `
+              }}
+            />
           </div>
         </div>
 
