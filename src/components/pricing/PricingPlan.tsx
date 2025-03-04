@@ -37,10 +37,10 @@ const PricingPlan = ({
     ? "bg-gray-900/30" 
     : "bg-black/50";
 
-  // Button color - monochrome
+  // Button color - updated to use #1f1f1f background and #333 border
   const buttonClass = popular 
     ? "bg-white hover:bg-gray-200 text-black" 
-    : "bg-gray-800 hover:bg-gray-700 text-white";
+    : "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white border border-[#333]";
 
   const renderButton = () => {
     if (name === "Team" && showDetails) {
