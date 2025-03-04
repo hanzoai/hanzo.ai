@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 
 interface TeamPlanDetailsProps {
   fromProPlan?: boolean;
+  fromDevPlan?: boolean;
 }
 
-const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
+const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanDetailsProps) => {
   const [aiUnits, setAiUnits] = useState<number>(5);
   const [computeUnits, setComputeUnits] = useState<number>(5);
   const [teamSize, setTeamSize] = useState<number>(1);
@@ -26,12 +27,22 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
   const additionalComputeCost = computeUnits > 5 ? (computeUnits - 5) * 15 : 0;
   const totalCost = totalMonthlyPrice + additionalAICost + additionalComputeCost;
 
+  // Determine title based on where user is coming from
+  const getTitle = () => {
+    if (fromDevPlan) {
+      return "Dev Plan Configuration";
+    } else if (teamSize > 1 || fromProPlan) {
+      return "Team Plan Configuration";
+    }
+    return "Configure Plan";
+  };
+
   return (
     <section id="team-config-section" className="max-w-7xl mx-auto mb-16 mt-24 scroll-mt-24">
       <div className="bg-black border border-gray-800 rounded-2xl p-6 backdrop-blur-sm">
         <div className="border-b border-gray-800/40 px-2 py-4 mb-6">
-          <h2 className="text-2xl font-bold">Configure Plan</h2>
-          <p className="text-gray-400 mt-2">Scale resources to match your team's exact needs</p>
+          <h2 className="text-2xl font-bold">{getTitle()}</h2>
+          <p className="text-gray-400 mt-2">Scale resources to match your exact needs</p>
         </div>
         
         <div className="p-2 max-w-5xl mx-auto w-full">
@@ -39,13 +50,17 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
             <div className="flex items-center gap-3">
               <Users className="h-8 w-8 text-gray-400" />
               <div>
-                <h3 className="text-xl font-bold">Team Plan</h3>
-                <p className="text-gray-400">Custom resources for your entire team</p>
+                <h3 className="text-xl font-bold">{fromDevPlan ? "Dev Plan" : "Team Plan"}</h3>
+                <p className="text-gray-400">Custom resources for {fromDevPlan ? "your projects" : "your entire team"}</p>
               </div>
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold">${totalCost}/mo</div>
-              <div className="text-gray-400 text-sm">Total for {teamSize} team member{teamSize !== 1 ? 's' : ''}</div>
+              <div className="text-gray-400 text-sm">
+                {teamSize > 1 
+                  ? `Total for ${teamSize} team member${teamSize !== 1 ? 's' : ''}` 
+                  : "Base price"}
+              </div>
             </div>
           </div>
 
@@ -55,9 +70,9 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-lg font-medium flex items-center gap-2">
                     <Users className="h-5 w-5 text-gray-400" />
-                    Team Size
+                    {fromDevPlan ? "Developer Accounts" : "Team Size"}
                   </label>
-                  <span className="text-xl font-semibold">{teamSize} member{teamSize !== 1 ? 's' : ''}</span>
+                  <span className="text-xl font-semibold">{teamSize} {teamSize === 1 ? (fromDevPlan ? "account" : "member") : (fromDevPlan ? "accounts" : "members")}</span>
                 </div>
                 <Slider 
                   className="mt-4" 
@@ -73,7 +88,7 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
                   <span>50</span>
                 </div>
                 <div className="text-gray-400 mt-2">
-                  ${teamSize * 30}/mo (${30}/user)
+                  ${teamSize * 30}/mo (${30}/{fromDevPlan ? "account" : "user"})
                 </div>
               </div>
             </div>
@@ -85,7 +100,7 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
                     <Zap className="h-5 w-5 text-gray-400" />
                     AI Processing
                   </label>
-                  <span className="text-xl font-semibold">{aiUnits} per member</span>
+                  <span className="text-xl font-semibold">{aiUnits} per {fromDevPlan ? "account" : "member"}</span>
                 </div>
                 <Slider 
                   className="mt-4" 
@@ -115,7 +130,7 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
                     <Server className="h-5 w-5 text-gray-400" />
                     Compute Power
                   </label>
-                  <span className="text-xl font-semibold">{computeUnits} per member</span>
+                  <span className="text-xl font-semibold">{computeUnits} per {fromDevPlan ? "account" : "member"}</span>
                 </div>
                 <Slider 
                   className="mt-4" 
@@ -140,7 +155,7 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
           </div>
 
           <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50 mb-8">
-            <h3 className="text-xl font-semibold mb-4">Team Plan Benefits</h3>
+            <h3 className="text-xl font-semibold mb-4">{fromDevPlan ? "Dev Plan Benefits" : "Team Plan Benefits"}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-3">
                 <Cpu className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
@@ -152,8 +167,8 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
               <div className="flex items-start gap-3">
                 <Users className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Centralized Management</p>
-                  <p className="text-gray-400 text-sm">Single dashboard for user administration, permissions, and unified billing</p>
+                  <p className="font-medium">{fromDevPlan ? "Developer Flexibility" : "Centralized Management"}</p>
+                  <p className="text-gray-400 text-sm">{fromDevPlan ? "Configure your development environment to your exact specifications" : "Single dashboard for user administration, permissions, and unified billing"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -167,7 +182,7 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
                 <Server className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Flexible Scaling</p>
-                  <p className="text-gray-400 text-sm">Adjust resources month-to-month as your team and project needs evolve</p>
+                  <p className="text-gray-400 text-sm">Adjust resources month-to-month as your {fromDevPlan ? "project" : "team and project"} needs evolve</p>
                 </div>
               </div>
             </div>
@@ -175,7 +190,7 @@ const TeamPlanDetails = ({ fromProPlan = false }: TeamPlanDetailsProps) => {
 
           <div className="flex justify-center">
             <Button size="lg" className="bg-white hover:bg-gray-200 text-black px-10 py-6 text-lg">
-              Get Started with Team Plan
+              Get Started with {fromDevPlan ? "Dev" : "Team"} Plan
             </Button>
           </div>
         </div>
