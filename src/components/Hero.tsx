@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -110,16 +111,16 @@ const Hero = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.5
-        }} className="mt-20 rounded-xl bg-[#F1F1F1] p-8 backdrop-blur-xl ring-1 ring-black/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)] relative">
+        }} className="mt-20 rounded-xl bg-[#454545] p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)] relative">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <Terminal className="text-gray-700" size={20} />
-                <h2 className="text-xl font-semibold text-gray-700">Quick Install</h2>
+                <Terminal className="text-gray-200" size={20} />
+                <h2 className="text-xl font-semibold text-gray-200">Quick Install</h2>
               </div>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="text-gray-600 hover:text-gray-800 cursor-help w-4 h-4" />
+                    <Info className="text-gray-300 hover:text-white cursor-help w-4 h-4" />
                   </TooltipTrigger>
                   <TooltipContent className="max-w-xs">
                     <p>Docker will be automatically installed if not present on your system. Cannot be run inside a container.</p>
@@ -127,15 +128,15 @@ const Hero = () => {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            <div className="bg-[#e3e3e3] rounded-lg p-4 mb-4 flex items-center justify-between group">
+            <div className="bg-[#333333] rounded-lg p-4 mb-4 flex items-center justify-between group">
               <pre className="overflow-x-auto">
-                <code className="text-gray-700">curl -sL hanzo.sh | sh</code>
+                <code className="text-gray-200">curl -sL hanzo.sh | sh</code>
               </pre>
-              <button onClick={handleCopy} className="text-gray-500 hover:text-gray-800 transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
+              <button onClick={handleCopy} className="text-gray-300 hover:text-white transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
                 <ClipboardCopy size={20} />
               </button>
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-300">
               <p>One command to install the complete Hanzo development platform. Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
             </div>
           </motion.div>
