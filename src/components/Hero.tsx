@@ -14,6 +14,7 @@ import { useState } from "react";
 const Hero = () => {
   const { toast } = useToast();
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
@@ -76,6 +77,7 @@ const Hero = () => {
               initial="hidden"
               animate={animationComplete ? "visible" : "hidden"}
               variants={titleVariants}
+              onAnimationComplete={() => setTitleAnimationComplete(true)}
             >
               {titleLetters2.map((letter, index) => (
                 <motion.span key={index} variants={letterVariants} className="inline-block">
@@ -87,8 +89,8 @@ const Hero = () => {
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.5 }}
+            animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Design, Engineer, and Market AI-powered applications with our unified platform.
@@ -97,8 +99,8 @@ const Hero = () => {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.8 }}
+            animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
@@ -116,8 +118,8 @@ const Hero = () => {
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 40 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
           className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl relative"
         >
           <div className="flex items-center justify-between mb-4">
