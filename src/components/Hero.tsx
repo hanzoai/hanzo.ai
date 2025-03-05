@@ -30,8 +30,8 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05, // Increased from 0.04
-        delayChildren: 0.15, // Increased from 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.15,
       },
     },
   };
@@ -41,7 +41,7 @@ const Hero = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.25, ease: "easeOut" } // Increased from 0.2
+      transition: { duration: 0.25, ease: "easeOut" }
     },
   };
 
@@ -73,7 +73,7 @@ const Hero = () => {
             </motion.span>
             
             <motion.span 
-              className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
+              className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent overflow-visible py-2"
               initial="hidden"
               animate={animationComplete ? "visible" : "hidden"}
               variants={titleVariants}
