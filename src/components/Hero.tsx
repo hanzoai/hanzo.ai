@@ -24,14 +24,14 @@ const Hero = () => {
     });
   };
 
-  // Animation variants for the text
+  // Animation variants for the text with faster timing
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.3,
+        staggerChildren: 0.04, // Reduced from 0.08
+        delayChildren: 0.1, // Reduced from 0.3
       },
     },
   };
@@ -41,7 +41,7 @@ const Hero = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.4, ease: "easeOut" }
+      transition: { duration: 0.2, ease: "easeOut" } // Reduced from 0.4
     },
   };
 
@@ -90,7 +90,7 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }} // Faster animation
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Design, Engineer, and Market AI-powered applications with our unified platform.
@@ -100,7 +100,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.3 }} // Faster animation
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
@@ -119,7 +119,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 40 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
+          transition={{ duration: 0.4, delay: 0.4 }} // Faster animation
           className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl relative"
         >
           <div className="flex items-center justify-between mb-4">
