@@ -52,7 +52,7 @@ const Hero = () => {
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 bg-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 bg-black">
         <div className="text-center">
