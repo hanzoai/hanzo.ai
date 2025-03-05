@@ -17,20 +17,20 @@
     --primary: #F0F7FF;
     --primary-foreground: #000000;
 
-    --secondary: #000000;
+    --secondary: #FFFFFF;
     --secondary-foreground: #F0F7FF;
 
-    --muted: #1E293B;
-    --muted-foreground: #94A3B8;
+    --muted: #FFFFFF;
+    --muted-foreground: #FFFFFF;
 
-    --accent: #1E293B;
+    --accent: #FFFFFF;
     --accent-foreground: #F0F7FF;
 
     --destructive: #991B1B;
     --destructive-foreground: #F0F7FF;
 
-    --border: #1E293B;
-    --input: #1E293B;
+    --border: #FFFFFF;
+    --input: #FFFFFF;
     --ring: #454545;
 
     --radius: 0.5rem;
