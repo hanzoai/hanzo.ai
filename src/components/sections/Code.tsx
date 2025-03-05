@@ -41,34 +41,34 @@ const Code = () => {
             <div className="bg-black p-6">
               <pre className="text-sm">
                 <code className="text-gray-300">
-                  <span className="text-gray-400">import</span>{" "}
+                  <span className="text-purple-400">import</span>{" "}
                   <span className="text-gray-300">{"{"}</span>{" "}
                   <span className="text-gray-400">createAI</span>{" "}
                   <span className="text-gray-300">{"}"}</span>{" "}
-                  <span className="text-gray-400">from</span>{" "}
+                  <span className="text-purple-400">from</span>{" "}
                   <span className="text-green-400">'@hanzo/ai'</span>
                   {"\n"}
-                  <span className="text-gray-400">import</span>{" "}
+                  <span className="text-purple-400">import</span>{" "}
                   <span className="text-gray-300">{"{"}</span>{" "}
                   <span className="text-gray-400">Button</span>{" "}
                   <span className="text-gray-300">{"}"}</span>{" "}
-                  <span className="text-gray-400">from</span>{" "}
+                  <span className="text-purple-400">from</span>{" "}
                   <span className="text-green-400">'@hanzo/ui'</span>
                   {"\n"}
-                  <span className="text-gray-400">import</span>{" "}
+                  <span className="text-purple-400">import</span>{" "}
                   <span className="text-gray-300">{"{"}</span>{" "}
                   <span className="text-gray-400">createClient</span>{" "}
                   <span className="text-gray-300">{"}"}</span>{" "}
-                  <span className="text-gray-400">from</span>{" "}
+                  <span className="text-purple-400">from</span>{" "}
                   <span className="text-green-400">'@hanzo/base'</span>
                   {"\n\n"}
-                  <span className="text-gray-400">const</span>{" "}
+                  <span className="text-purple-400">const</span>{" "}
                   <span className="text-gray-400">ai</span>{" "}
                   <span className="text-gray-300">=</span>{" "}
                   <span className="text-gray-400">createAI</span>
                   <span className="text-gray-300">()</span>
                   {"\n"}
-                  <span className="text-gray-400">const</span>{" "}
+                  <span className="text-purple-400">const</span>{" "}
                   <span className="text-gray-400">db</span>{" "}
                   <span className="text-gray-300">=</span>{" "}
                   <span className="text-gray-400">createClient</span>

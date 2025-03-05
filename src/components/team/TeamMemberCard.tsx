@@ -25,8 +25,8 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${gradient} mb-4`}>
           <Icon className="h-6 w-6 text-white" />
         </div>
-        <h3 className="text-xl font-semibold mb-2 hover:text-gray-400 transition-colors">{name}</h3>
-        <p className="text-gray-400 font-medium mb-3">{role}</p>
+        <h3 className="text-xl font-semibold mb-2 hover:text-purple-400 transition-colors">{name}</h3>
+        <p className="text-purple-400 font-medium mb-3">{role}</p>
         <p className="text-gray-400 mb-4">{description}</p>
       </div>
 

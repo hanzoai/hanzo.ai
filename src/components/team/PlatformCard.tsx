@@ -17,7 +17,7 @@ const PlatformCard = ({ name, role, description, icon: Icon, gradient }: Platfor
         <Icon className="h-6 w-6 text-white" />
       </div>
       <h3 className="text-xl font-semibold mb-2">{name}</h3>
-      <p className="text-gray-400 font-medium mb-3">{role}</p>
+      <p className="text-purple-400 font-medium mb-3">{role}</p>
       <p className="text-gray-400">{description}</p>
     </div>
   );
