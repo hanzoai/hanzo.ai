@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Terminal, ClipboardCopy, Info, Sparkles } from "lucide-react";
+import { Terminal, ClipboardCopy, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import {
   Tooltip,
@@ -9,7 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Hero = () => {
   const { toast } = useToast();
@@ -45,8 +45,10 @@ const Hero = () => {
   };
 
   // Split text for individual letter animations
-  const titleText = "Build as fast";
-  const titleLetters = titleText.split("");
+  const titleText1 = "Build as fast";
+  const titleText2 = "as you think";
+  const titleLetters1 = titleText1.split("");
+  const titleLetters2 = titleText2.split("");
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -62,30 +64,24 @@ const Hero = () => {
             onAnimationComplete={() => setAnimationComplete(true)}
           >
             <motion.span className="inline-flex items-center">
-              {titleLetters.map((letter, index) => (
+              {titleLetters1.map((letter, index) => (
                 <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>
               ))}
-              {animationComplete && (
-                <motion.span
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                  className="ml-2"
-                >
-                  <Sparkles className="w-6 h-6 text-blue-400 inline-block" />
-                </motion.span>
-              )}
             </motion.span>
             
             <motion.span 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
               className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
+              initial="hidden"
+              animate={animationComplete ? "visible" : "hidden"}
+              variants={titleVariants}
             >
-              as you think
+              {titleLetters2.map((letter, index) => (
+                <motion.span key={index} variants={letterVariants} className="inline-block">
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
             </motion.span>
           </motion.h1>
 
