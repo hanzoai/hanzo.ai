@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Terminal, ClipboardCopy, Info } from "lucide-react";
+import { Terminal, ClipboardCopy, Info, Sparkles } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import {
   Tooltip,
@@ -9,9 +9,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const { toast } = useToast();
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
@@ -21,6 +23,31 @@ const Hero = () => {
     });
   };
 
+  // Animation variants for the text
+  const titleVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" }
+    },
+  };
+
+  // Split text for individual letter animations
+  const titleText = "Build as fast";
+  const titleLetters = titleText.split("");
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900" />
@@ -28,21 +55,44 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight text-white"
+            initial="hidden"
+            animate="visible"
+            variants={titleVariants}
+            onAnimationComplete={() => setAnimationComplete(true)}
           >
-            Build as fast
-            <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            <motion.span className="inline-flex items-center">
+              {titleLetters.map((letter, index) => (
+                <motion.span key={index} variants={letterVariants} className="inline-block">
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
+              {animationComplete && (
+                <motion.span
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.4 }}
+                  className="ml-2"
+                >
+                  <Sparkles className="w-6 h-6 text-blue-400 inline-block" />
+                </motion.span>
+              )}
+            </motion.span>
+            
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+              className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
+            >
               as you think
-            </span>
+            </motion.span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
             className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Design, Engineer, and Market AI-powered applications with our unified platform.
@@ -52,7 +102,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 1.8 }}
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
