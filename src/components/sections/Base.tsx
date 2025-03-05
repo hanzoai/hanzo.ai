@@ -14,8 +14,8 @@ const Base = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-1 rounded-full mb-6">
-            <Database className="h-4 w-4 text-purple-400" />
-            <span className="text-sm text-purple-400">The Modern Backend Platform</span>
+            <Database className="h-4 w-4 text-gray-400" />
+            <span className="text-sm text-gray-400">The Modern Backend Platform</span>
           </div>
           <h2 className="text-4xl font-display text-white mb-4">Everything You Need to Build at Scale</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -28,7 +28,7 @@ const Base = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-purple-900/20 to-transparent p-8 rounded-xl ring-1 ring-white/10"
+            className="bg-gradient-to-br from-gray-900/20 to-transparent p-8 rounded-xl ring-1 ring-white/10"
           >
             <h3 className="text-2xl font-semibold text-white mb-6">One-Line Backend</h3>
             <div className="bg-black/50 p-6 rounded-lg mb-6">
@@ -48,23 +48,23 @@ const client = createClient();`}</code>
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
-            <div className="p-6 bg-gradient-to-br from-purple-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Lock className="h-8 w-8 text-purple-400 mb-4" />
+            <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
+              <Lock className="h-8 w-8 text-gray-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Authentication</h4>
               <p className="text-gray-300">Multi-provider auth with social logins and enterprise SSO</p>
             </div>
-            <div className="p-6 bg-gradient-to-br from-purple-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Database className="h-8 w-8 text-purple-400 mb-4" />
+            <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
+              <Database className="h-8 w-8 text-gray-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Database</h4>
               <p className="text-gray-300">Real-time database with powerful querying and indexing</p>
             </div>
-            <div className="p-6 bg-gradient-to-br from-purple-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Cloud className="h-8 w-8 text-purple-400 mb-4" />
+            <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
+              <Cloud className="h-8 w-8 text-gray-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Storage</h4>
               <p className="text-gray-300">Secure file storage with CDN and image transformations</p>
             </div>
-            <div className="p-6 bg-gradient-to-br from-purple-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Settings className="h-8 w-8 text-purple-400 mb-4" />
+            <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
+              <Settings className="h-8 w-8 text-gray-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Functions</h4>
               <p className="text-gray-300">Serverless functions with automatic scaling</p>
             </div>
@@ -75,28 +75,28 @@ const client = createClient();`}</code>
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-purple-900/20 via-black to-purple-900/20 rounded-xl p-8 mb-16"
+          className="bg-gradient-to-r from-gray-900/20 via-black to-gray-900/20 rounded-xl p-8 mb-16"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-4">Built for Scale</h3>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
-                  <Globe className="h-6 w-6 text-purple-400 mt-1" />
+                  <Globe className="h-6 w-6 text-gray-400 mt-1" />
                   <div>
                     <h4 className="text-white font-semibold">Global by Default</h4>
                     <p className="text-gray-300">Multi-region deployments with automatic failover</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Zap className="h-6 w-6 text-purple-400 mt-1" />
+                  <Zap className="h-6 w-6 text-gray-400 mt-1" />
                   <div>
                     <h4 className="text-white font-semibold">Enterprise Ready</h4>
                     <p className="text-gray-300">SOC2, GDPR, and HIPAA compliant infrastructure</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Settings className="h-6 w-6 text-purple-400 mt-1" />
+                  <Settings className="h-6 w-6 text-gray-400 mt-1" />
                   <div>
                     <h4 className="text-white font-semibold">Full Control</h4>
                     <p className="text-gray-300">Custom domains, edge functions, and more</p>
@@ -117,7 +117,7 @@ const client = createClient();`}</code>
 
         <div className="text-center">
           <Button 
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-xl"
+            className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-6 text-lg rounded-xl"
           >
             Start Building with Base
           </Button>

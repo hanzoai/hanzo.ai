@@ -66,7 +66,7 @@ const Hero = () => {
             </motion.span>
             
             {/* Reduced the margin-top (mt) value by 25% from the default spacing */}
-            <motion.span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent pb-3 overflow-visible mt-[-0.5rem]" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
+            <motion.span className="block bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent pb-3 overflow-visible mt-[-0.5rem]" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
               {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>)}
@@ -117,13 +117,13 @@ const Hero = () => {
         }} className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl relative">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <Terminal className="text-blue-400" size={20} />
-                <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
+                <Terminal className="text-gray-400" size={20} />
+                <h2 className="text-xl font-semibold text-gray-400">Quick Install</h2>
               </div>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="text-gray-400 hover:text-blue-400 cursor-help w-4 h-4" />
+                    <Info className="text-gray-400 hover:text-gray-300 cursor-help w-4 h-4" />
                   </TooltipTrigger>
                   <TooltipContent className="max-w-xs">
                     <p>Docker will be automatically installed if not present on your system. Cannot be run inside a container.</p>
@@ -135,7 +135,7 @@ const Hero = () => {
               <pre className="overflow-x-auto">
                 <code className="text-gray-300">curl -sL hanzo.sh | sh</code>
               </pre>
-              <button onClick={handleCopy} className="text-gray-400 hover:text-blue-400 transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
+              <button onClick={handleCopy} className="text-gray-400 hover:text-gray-300 transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
                 <ClipboardCopy size={20} />
               </button>
             </div>

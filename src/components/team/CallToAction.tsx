@@ -12,7 +12,7 @@ const CallToAction = () => {
       <div className="flex flex-wrap justify-center gap-4">
         <Button 
           size="lg" 
-          className="bg-purple-600 hover:bg-purple-700"
+          className="bg-gray-600 hover:bg-gray-700"
           onClick={() => window.open('https://hanzo.chat', '_blank')}
         >
           Try Hanzo Chat
@@ -20,7 +20,7 @@ const CallToAction = () => {
         </Button>
         <Button 
           size="lg" 
-          className="bg-blue-600 hover:bg-blue-700"
+          className="bg-gray-600 hover:bg-gray-700"
           onClick={() => window.open('https://hanzo.bot', '_blank')}
         >
           Try Hanzo Bot

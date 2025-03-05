@@ -38,7 +38,7 @@ const CRM = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
           >
-            <Users className="w-12 h-12 text-blue-400 mb-4" />
+            <Users className="w-12 h-12 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Contact Management</h3>
             <p className="text-gray-400">Organize and track customer interactions with AI-enhanced contact profiles</p>
           </motion.div>
@@ -50,7 +50,7 @@ const CRM = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
           >
-            <MessageSquare className="w-12 h-12 text-blue-400 mb-4" />
+            <MessageSquare className="w-12 h-12 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Smart Communication</h3>
             <p className="text-gray-400">Automated messaging and follow-ups powered by contextual AI understanding</p>
           </motion.div>
@@ -62,7 +62,7 @@ const CRM = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
           >
-            <BarChart className="w-12 h-12 text-blue-400 mb-4" />
+            <BarChart className="w-12 h-12 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Analytics Dashboard</h3>
             <p className="text-gray-400">Real-time insights and predictive analytics to optimize customer relationships</p>
           </motion.div>
@@ -74,7 +74,7 @@ const CRM = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
           >
-            <Calendar className="w-12 h-12 text-blue-400 mb-4" />
+            <Calendar className="w-12 h-12 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Smart Scheduling</h3>
             <p className="text-gray-400">AI-powered meeting scheduling and follow-up management</p>
           </motion.div>

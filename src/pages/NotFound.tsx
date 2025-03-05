@@ -60,7 +60,7 @@ const NotFound = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">404</h1>
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
+        <a href="/" className="text-gray-500 hover:text-gray-700 underline">
           Return to Home
         </a>
       </div>
@@ -78,7 +78,7 @@ const NotFound = () => {
           <div className="flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
-                <Bot className="h-6 w-6 text-blue-500" />
+                <Bot className="h-6 w-6 text-gray-500" />
                 <h2 className="text-lg font-semibold">AI Assistant</h2>
               </div>
               <Button 
@@ -97,7 +97,7 @@ const NotFound = () => {
                   className={cn(
                     "p-3 rounded-lg max-w-[80%]",
                     msg.role === "user" 
-                      ? "bg-blue-500 text-white ml-auto" 
+                      ? "bg-gray-500 text-white ml-auto" 
                       : "bg-gray-100 text-gray-800"
                   )}
                 >
@@ -113,7 +113,7 @@ const NotFound = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                 placeholder="Ask me anything..."
-                className="flex-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
               />
               <Button onClick={handleSendMessage} size="icon">
                 <Send className="h-4 w-4" />
