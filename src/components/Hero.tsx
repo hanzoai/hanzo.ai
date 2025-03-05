@@ -1,15 +1,16 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useState } from "react";
+
 const Hero = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [animationComplete, setAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
     toast({
@@ -51,6 +52,7 @@ const Hero = () => {
   const titleText2 = "as you think";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
+
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 bg-black" />
 
@@ -63,7 +65,8 @@ const Hero = () => {
                 </motion.span>)}
             </motion.span>
             
-            <motion.span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
+            {/* Reduced the margin-top (mt) value by 25% from the default spacing */}
+            <motion.span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent pb-3 overflow-visible mt-[-0.5rem]" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
               {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>)}
@@ -144,4 +147,5 @@ const Hero = () => {
       </div>
     </div>;
 };
+
 export default Hero;
