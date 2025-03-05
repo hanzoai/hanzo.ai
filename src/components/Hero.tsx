@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -19,7 +18,6 @@ const Hero = () => {
     });
   };
 
-  // Animation variants for the text with moderate timing
   const titleVariants = {
     hidden: {
       opacity: 0
@@ -47,7 +45,6 @@ const Hero = () => {
     }
   };
 
-  // Split text for individual letter animations
   const titleText1 = "Build as fast";
   const titleText2 = "as you think";
   const titleLetters1 = titleText1.split("");
@@ -65,7 +62,6 @@ const Hero = () => {
                 </motion.span>)}
             </motion.span>
             
-            {/* Reduced the margin-top (mt) value by 25% from the default spacing */}
             <motion.span className="block bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent pb-3 overflow-visible mt-[-0.5rem]" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
               {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
@@ -114,16 +110,16 @@ const Hero = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.5
-        }} className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl relative">
+        }} className="mt-20 rounded-xl bg-[#F1F1F1] p-8 backdrop-blur-xl ring-1 ring-black/10 shadow-[0_10px_30px_rgba(0,0,0,0.2)] relative">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <Terminal className="text-gray-400" size={20} />
-                <h2 className="text-xl font-semibold text-gray-400">Quick Install</h2>
+                <Terminal className="text-gray-700" size={20} />
+                <h2 className="text-xl font-semibold text-gray-700">Quick Install</h2>
               </div>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="text-gray-400 hover:text-gray-300 cursor-help w-4 h-4" />
+                    <Info className="text-gray-600 hover:text-gray-800 cursor-help w-4 h-4" />
                   </TooltipTrigger>
                   <TooltipContent className="max-w-xs">
                     <p>Docker will be automatically installed if not present on your system. Cannot be run inside a container.</p>
@@ -131,15 +127,15 @@ const Hero = () => {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            <div className="bg-black/50 rounded-lg p-4 mb-4 flex items-center justify-between group">
+            <div className="bg-[#e3e3e3] rounded-lg p-4 mb-4 flex items-center justify-between group">
               <pre className="overflow-x-auto">
-                <code className="text-gray-300">curl -sL hanzo.sh | sh</code>
+                <code className="text-gray-700">curl -sL hanzo.sh | sh</code>
               </pre>
-              <button onClick={handleCopy} className="text-gray-400 hover:text-gray-300 transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
+              <button onClick={handleCopy} className="text-gray-500 hover:text-gray-800 transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
                 <ClipboardCopy size={20} />
               </button>
             </div>
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-gray-600">
               <p>One command to install the complete Hanzo development platform. Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
             </div>
           </motion.div>
