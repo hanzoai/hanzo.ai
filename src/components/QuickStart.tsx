@@ -1,7 +1,7 @@
-
 import { motion } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const quickApps = [{
   icon: <Bot className="h-6 w-6" />,
   title: "AI Chat Assistant",
@@ -27,6 +27,7 @@ const quickApps = [{
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",
   borderColor: "group-hover:border-orange-400/30"
 }];
+
 const QuickStart = () => {
   return <section className="py-12 bg-gradient-to-b from-black via-gray-900/50 to-black bg-[#000a00]/0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +44,7 @@ const QuickStart = () => {
             Explore Launch Apps
           </h2>
           <p className="text-lg text-gray-400">
-            Get started quickly with our pre-built templates
+            Click any of our pre-built templates below to get started
           </p>
         </motion.div>
 
