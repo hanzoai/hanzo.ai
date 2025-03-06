@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,17 +48,27 @@ const QuickStart = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {quickApps.map((app, index) => <motion.div key={app.title} initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          delay: index * 0.1
-        }} className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
+          {quickApps.map((app, index) => <motion.div 
+            key={app.title} 
+            initial={{
+              opacity: 0,
+              y: 20
+            }} 
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }} 
+            viewport={{
+              once: true
+            }} 
+            transition={{
+              delay: index * 0.1
+            }}
+            whileHover={{
+              scale: 1.05,
+              transition: { type: "spring", stiffness: 300, damping: 10 }
+            }}
+            className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
                 border border-white/5 transition-all duration-300 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
               <div className="p-3 rounded-lg w-fit bg-white/5 text-white mx-auto">
                 {app.icon}
