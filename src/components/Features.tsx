@@ -157,7 +157,8 @@ const Features = () => {
   const industriesDescriptionY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const industriesCarouselY = useTransform(scrollYProgress, [0, 1], [50, -20]);
 
-  return <section id="features" className="py-20 bg-black">
+  return (
+    <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center">
           <motion.h2 initial={{
@@ -337,7 +338,9 @@ const Features = () => {
                   <div className="group h-[400px] relative overflow-hidden rounded-xl">
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
                     <img 
-                      src={industry.image} 
+                      src={industry.image === "/public/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png" 
+                        ? "/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png" 
+                        : industry.image} 
                       alt={industry.name}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -354,7 +357,8 @@ const Features = () => {
           </Carousel>
         </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Features;
