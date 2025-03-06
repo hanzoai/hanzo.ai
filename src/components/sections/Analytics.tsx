@@ -294,10 +294,8 @@ const Analytics = () => {
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300 flex flex-col items-center text-center"
+            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center"
           >
-            <Activity className="h-8 w-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">Real-time Events</h3>
             <p className="text-gray-300">Track user behavior, system events, and business metrics in real-time with millisecond latency.</p>
           </motion.div>
 
@@ -305,10 +303,8 @@ const Analytics = () => {
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300 flex flex-col items-center text-center"
+            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center"
           >
-            <Users className="h-8 w-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">User Insights</h3>
             <p className="text-gray-300">Understand user journeys, cohorts, and behavior patterns with AI-powered analytics.</p>
           </motion.div>
 
@@ -316,10 +312,8 @@ const Analytics = () => {
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300 flex flex-col items-center text-center"
+            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center"
           >
-            <Brain className="h-8 w-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">AI Analytics</h3>
             <p className="text-gray-300">Leverage machine learning to predict trends, detect anomalies, and optimize performance.</p>
           </motion.div>
         </motion.div>
@@ -569,4 +563,3 @@ await analytics.track({
 };
 
 export default Analytics;
-
