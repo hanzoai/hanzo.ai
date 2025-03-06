@@ -55,7 +55,7 @@ const caseStudies = [{
   learnMoreUrl: "https://sensei.partners"
 }, {
   title: "Skully AR-1: Transforming Motorcycle Safety",
-  description: "A comprehensive digital transformation that revolutionized the AR helmet industry and set new as well as a record breaking crowdfunding campaign in first 24 hours standards for rider safety.",
+  description: "A comprehensive digital transformation that revolutionized the AR helmet industry and set new as well as a record breaking crowdfunding campaign in first 24 hours.",
   stats: {
     efficiency: "200%",
     timeframe: "12 months",
