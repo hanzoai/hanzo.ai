@@ -59,6 +59,30 @@ const Features = () => {
     "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }
+    }
+  };
+
   return <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
         <div className="text-center">
@@ -193,17 +217,26 @@ const Features = () => {
         <div className="relative z-20 p-8 bg-transparent">
           <h3 className="text-white mb-6 font-normal text-3xl bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Industries We Transform</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map((industry, index) => (
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-5 gap-4"
+          >
+            {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map((industry) => (
               <motion.div 
                 key={industry} 
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                variants={itemVariants}
                 whileHover={{ 
                   y: -5, 
                   scale: 1.05,
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)" 
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+                  transition: {
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10
+                  }
                 }}
                 className="group"
               >
@@ -215,7 +248,7 @@ const Features = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </div>
