@@ -39,7 +39,6 @@ const allFeatures = [
 ];
 
 const Features = () => {
-  // Display only first 16 items (4 rows of 4)
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
 
@@ -98,7 +97,6 @@ const Features = () => {
             </motion.div>)}
         </div>
 
-        {/* View All Link */}
         {hasMoreFeatures && <motion.div initial={{
         opacity: 0,
         y: 20
@@ -115,7 +113,6 @@ const Features = () => {
             </Button>
           </motion.div>}
 
-        {/* Market Stats */}
         <div className="mt-20">
           <motion.div initial={{
             opacity: 0,
@@ -159,7 +156,6 @@ const Features = () => {
           </motion.div>
         </div>
 
-        {/* Industries */}
         <motion.div initial={{
         opacity: 0,
         y: 20
