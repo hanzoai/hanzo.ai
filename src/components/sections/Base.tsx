@@ -1,18 +1,18 @@
-
 import { motion } from "framer-motion";
 import { Database, Lock, Zap, Cloud, Settings, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Base = () => {
-  return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+  return <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#000a00]/0">
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-1 rounded-full mb-6">
             <Database className="h-4 w-4 text-gray-400" />
             <span className="text-sm text-gray-400">The Modern Backend Platform</span>
@@ -24,12 +24,15 @@ const Base = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-gray-900/20 to-transparent p-8 rounded-xl ring-1 ring-white/10"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="bg-gradient-to-br from-gray-900/20 to-transparent p-8 rounded-xl ring-1 ring-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">One-Line Backend</h3>
             <div className="bg-black/50 p-6 rounded-lg mb-6">
               <pre className="text-sm text-gray-300">
@@ -42,12 +45,15 @@ const client = createClient();`}</code>
             <p className="text-gray-300">Get a complete backend with just one line of code. Includes database, auth, storage, and more.</p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="grid grid-cols-2 gap-4">
             <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
               <Lock className="h-8 w-8 text-gray-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Authentication</h4>
@@ -71,12 +77,15 @@ const client = createClient();`}</code>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-gray-900/20 via-black to-gray-900/20 rounded-xl p-8 mb-16"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} className="bg-gradient-to-r from-gray-900/20 via-black to-gray-900/20 rounded-xl p-8 mb-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-4">Built for Scale</h3>
@@ -116,15 +125,11 @@ const client = createClient();`}</code>
         </motion.div>
 
         <div className="text-center">
-          <Button 
-            className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-6 text-lg rounded-xl"
-          >
+          <Button className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-6 text-lg rounded-xl">
             Start Building with Base
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Base;
