@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { 
   Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, 
@@ -79,6 +80,37 @@ const Features = () => {
         type: "spring",
         stiffness: 260,
         damping: 20
+      }
+    }
+  };
+
+  // Text animation for testimonial section
+  const testimonialText = "We've helped businesses and individuals harness the power of AI to drive growth, efficiency, and innovation.";
+  
+  // Create an array of the text characters for animation
+  const testimonialCharacters = testimonialText.split("");
+
+  // Configure the text animation to ensure it stays contained
+  const textContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.02,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const characterVariants = {
+    hidden: { opacity: 0, y: 5 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 150,
+        damping: 15
       }
     }
   };
@@ -167,8 +199,18 @@ const Features = () => {
             duration: 0.5
           }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
-              <div className="max-w-md">
-                <p className="text-lg text-gray-300">We've helped businesses and individuals harness the <span className="text-white font-bold">power of AI</span> to drive growth, efficiency, and innovation.</p>
+              <div className="max-w-md overflow-hidden">
+                <motion.div
+                  variants={textContainerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.8 }}
+                  className="text-lg text-gray-300 overflow-hidden"
+                >
+                  <span>We've helped businesses and individuals harness the </span>
+                  <span className="text-white font-bold">power of AI</span>
+                  <span> to drive growth, efficiency, and innovation.</span>
+                </motion.div>
                 <Button variant="outline" className="mt-6 bg-white text-black border-white hover:bg-gray-100 hover:text-black">
                   Our Testimonial
                 </Button>
