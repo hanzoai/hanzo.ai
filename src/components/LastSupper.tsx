@@ -1,7 +1,6 @@
 
 import { motion } from "framer-motion";
-import { LucideIcon, Sparkles, Zap, Flame } from "lucide-react";
-import { useState, useEffect } from "react";
+import { LucideIcon } from "lucide-react";
 
 interface TeamMember {
   name: string;
@@ -9,71 +8,6 @@ interface TeamMember {
   icon: LucideIcon;
   gradient: string;
 }
-
-const Firework = () => {
-  const [visible, setVisible] = useState(true);
-  const [particles, setParticles] = useState<number[]>([]);
-  
-  useEffect(() => {
-    // Toggle main sparkle visibility
-    const interval = setInterval(() => {
-      setVisible(prev => !prev);
-      
-      // Generate new particles on each pulse
-      if (particles.length < 8) {
-        setParticles(prev => [...prev, Date.now()]);
-      } else {
-        setParticles(prev => {
-          const newParticles = [...prev];
-          newParticles.shift();
-          return [...newParticles, Date.now()];
-        });
-      }
-    }, 700);
-    
-    return () => clearInterval(interval);
-  }, [particles]);
-  
-  return (
-    <div className="absolute z-10">
-      {/* Main sparkle */}
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ 
-          scale: visible ? 1.5 : 0.9, 
-          opacity: visible ? 1 : 0.7,
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        <Sparkles className="h-14 w-14 text-purple-500" />
-      </motion.div>
-      
-      {/* Particle explosions */}
-      {particles.map((id, index) => (
-        <motion.div
-          key={id}
-          initial={{ scale: 0.2, opacity: 0, x: 0, y: 0 }}
-          animate={{ 
-            scale: 1,
-            opacity: [0, 1, 0],
-            x: [0, (index % 2 === 0 ? 1 : -1) * (20 + Math.random() * 30)],
-            y: [0, (index % 3 === 0 ? 1 : -1) * (20 + Math.random() * 30)]
-          }}
-          transition={{ duration: 1.2 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        >
-          {index % 3 === 0 ? (
-            <Flame className={`h-8 w-8 text-orange-500`} />
-          ) : index % 3 === 1 ? (
-            <Zap className={`h-8 w-8 text-amber-400`} />
-          ) : (
-            <Sparkles className={`h-6 w-6 text-fuchsia-500`} />
-          )}
-        </motion.div>
-      ))}
-    </div>
-  );
-};
 
 const LastSupper = ({ members }: { members: TeamMember[] }) => {
   return (
@@ -85,8 +19,17 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
           transition={{ duration: 1 }}
           className="relative h-48 flex items-center justify-center gap-4 overflow-x-auto"
         >
-          {/* Fireworks animation in the middle */}
-          <Firework />
+          {/* Fireworks GIF animation in the middle */}
+          <div className="absolute z-10">
+            <motion.img 
+              src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZocTBtcnY4bGVodG8xeDZidW04MXlmZWUyY2FjaG5iODd3cmdiNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c1R3XcUXVWAFy/giphy.gif" 
+              alt="Fireworks animation"
+              className="w-24 h-24 object-cover"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            />
+          </div>
           
           {members.map((member, index) => {
             const Icon = member.icon;
