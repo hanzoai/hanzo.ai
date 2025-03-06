@@ -102,14 +102,44 @@ const Hero = () => {
         
         .vercel-button:hover::before {
           opacity: 1;
-          filter: brightness(0.7);
+          filter: brightness(0.3);
           background: linear-gradient(
             90deg,
-            rgb(100, 103, 110),
-            rgb(210, 210, 210),
-            rgb(160, 162, 165),
-            rgb(100, 103, 110)
+            rgb(60, 62, 66),
+            rgb(100, 100, 100),
+            rgb(80, 82, 85),
+            rgb(60, 62, 66)
           );
+        }
+
+        .docs-button {
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+        }
+        
+        .docs-button::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            90deg,
+            rgb(70, 70, 70),
+            rgb(120, 120, 120),
+            rgb(90, 90, 90),
+            rgb(70, 70, 70)
+          );
+          background-size: 300% 100%;
+          z-index: -1;
+          transition: opacity 0.3s ease;
+          opacity: 0;
+        }
+        
+        .docs-button:hover::before {
+          opacity: 1;
         }
 
         .gradient-text {
@@ -195,7 +225,7 @@ const Hero = () => {
             >
               <a href="https://hanzo.app">Start building</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
+            <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10 docs-button">
               <a href="https://docs.hanzo.sh" className="gradient-text">Read Docs →</a>
             </Button>
           </motion.div>
