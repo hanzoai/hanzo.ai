@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -288,7 +289,7 @@ const Analytics = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 mt-10"
         >
           <motion.div 
             variants={itemVariants}
