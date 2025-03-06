@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,7 +62,7 @@ const QuickStart = () => {
           delay: index * 0.1
         }} className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
                 border border-white/5 transition-all duration-300 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
-              <div className="p-3 w-fit bg-white/5 text-white rounded-md">
+              <div className="p-3 w-fit bg-white/5 text-white rounded-md flex items-center justify-center">
                 {app.icon}
               </div>
               
