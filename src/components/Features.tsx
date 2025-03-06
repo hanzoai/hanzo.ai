@@ -137,22 +137,22 @@ const Features = () => {
             
             <div className="grid grid-cols-2 gap-8 md:col-span-2">
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-5xl font-bold text-white">1M<sup>+</sup></h3>
+                <h3 className="text-4xl font-medium text-white">1M<sup>+</sup></h3>
                 <p className="mt-2 text-gray-300">Users benefiting from our AI-powered solutions</p>
               </div>
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-5xl font-bold text-white">4.9<span className="text-3xl">/5</span></h3>
+                <h3 className="text-4xl font-medium text-white">4.9<span className="text-2xl">/5</span></h3>
                 <p className="mt-2 text-gray-300">Average rating across all AI-driven applications</p>
               </div>
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-5xl font-bold text-white">80<sup>%</sup></h3>
+                <h3 className="text-4xl font-medium text-white">80<sup>%</sup></h3>
                 <p className="mt-2 text-gray-300">Faster decision-making with AI recommendations</p>
               </div>
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-5xl font-bold text-white">99<sup>%</sup></h3>
+                <h3 className="text-4xl font-medium text-white">99<sup>%</sup></h3>
                 <p className="mt-2 text-gray-300">Uptime guarantee for seamless AI experience</p>
               </div>
             </div>
