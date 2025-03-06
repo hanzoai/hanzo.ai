@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -110,7 +111,7 @@ const Analytics = () => {
       opacity: 1,
       transition: { 
         duration: 0.5, 
-        delay: i * 3,
+        delay: i * 4, // Increased delay between steps for better visibility
         type: "spring",
         stiffness: 200,
         damping: 10
@@ -118,14 +119,14 @@ const Analytics = () => {
     })
   };
 
-  // Animation variants for the milestone line - animates after circle is highlighted
+  // Animation variants for the milestone line - only animates after circle is highlighted
   const milestoneLineVariants = {
     hidden: { width: 0 },
     visible: (i: number) => ({
       width: "100%",
       transition: { 
         duration: 1.5,
-        delay: i * 3 + 0.7, // Line animates AFTER the circle is highlighted
+        delay: i * 4 + 0.7, // Line animates AFTER the circle is highlighted
         ease: "easeInOut"
       }
     })
@@ -138,7 +139,7 @@ const Analytics = () => {
       scale: 1,
       transition: { 
         duration: 0.5,
-        delay: i * 3 + 2.3, // Fill circle after the line completes
+        delay: i * 4 + 2.3, // Fill circle after the line completes
         type: "spring",
         stiffness: 300,
         damping: 15
