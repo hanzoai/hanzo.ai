@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf } from "lucide-react";
+import { 
+  Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, 
+  Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, 
+  Bot as BotIcon, Monitor
+} from "lucide-react";
 import { Button } from "./ui/button";
 
 const allFeatures = [
@@ -41,6 +45,19 @@ const allFeatures = [
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
+
+  const industryIcons = {
+    "Artificial Intelligence": <Brain className="h-5 w-5 text-purple-400 mb-2" />,
+    "Adtech": <Target className="h-5 w-5 text-blue-400 mb-2" />,
+    "Blockchain": <Blocks className="h-5 w-5 text-orange-400 mb-2" />,
+    "Cloud Computing": <Cloud className="h-5 w-5 text-cyan-400 mb-2" />,
+    "GPU": <Cpu className="h-5 w-5 text-red-400 mb-2" />,
+    "Hardware": <HardDrive className="h-5 w-5 text-gray-400 mb-2" />,
+    "Machine Learning": <Brain className="h-5 w-5 text-green-400 mb-2" />,
+    "Software": <Code className="h-5 w-5 text-yellow-400 mb-2" />,
+    "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
+    "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
+  };
 
   return <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
@@ -191,6 +208,7 @@ const Features = () => {
                 className="group"
               >
                 <div className="px-4 py-3 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 transition-all duration-300 transform hover:border-purple-500/40 flex flex-col items-center text-center h-full justify-center">
+                  {industryIcons[industry]}
                   <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
                     {industry}
                   </span>
