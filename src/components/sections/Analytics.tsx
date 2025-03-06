@@ -185,7 +185,7 @@ const Analytics = () => {
         </motion.div>
 
         {/* Milestone Progress Indicator - Moved to appear directly above the feature grid */}
-        <div className="relative mb-12 flex justify-center">
+        <div className="relative mb-4 flex justify-center">
           <div className="relative w-full max-w-4xl">
             {/* Background line */}
             <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
