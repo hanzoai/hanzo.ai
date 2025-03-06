@@ -71,9 +71,9 @@ const QuickStart = () => {
               rotate: 2,
               transition: { 
                 type: "spring", 
-                stiffness: 500, 
+                stiffness: 2500, 
                 damping: 8,
-                duration: 0.1 
+                duration: 0.02 
               }
             }}
             whileTap={{
@@ -81,13 +81,13 @@ const QuickStart = () => {
               rotate: -2,
               transition: { 
                 type: "spring", 
-                stiffness: 500, 
+                stiffness: 2500, 
                 damping: 8,
-                duration: 0.1
+                duration: 0.02
               }
             }}
             className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
-                border border-white/5 transition-all duration-200 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
+                border border-white/5 transition-all duration-50 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
               <div className="p-3 rounded-lg w-fit bg-white/5 text-white mx-auto">
                 {app.icon}
               </div>
