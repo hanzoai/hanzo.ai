@@ -2,39 +2,41 @@ import { motion } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor } from "lucide-react";
 import { Button } from "./ui/button";
 
-const allFeatures = [{
-  icon: <Wand2 className="h-6 w-6" />,
-  title: "Hanzo App",
-  description: "Design, build, and launch full-featured applications with our generative App Builder. Native analytics and platform API integration."
-}, {
-  icon: <Bot className="h-6 w-6" />,
-  title: "Hanzo Bot",
-  description: "Launch agentic frameworks effortlessly using our drag-and-drop GUI to build and iterate on scalable agentic workflows."
-}, {
-  icon: <Code2 className="h-6 w-6" />,
-  title: "Hanzo Code",
-  description: "Open Source IDE that embeds AI agents directly into your coding workflow, accelerating development and deployment."
-}, {
-  icon: <Cpu className="h-6 w-6" />,
-  title: "Hanzo Dev",
-  description: "24/7 AI engineers that ingest your data and code to build, refine, test, and engineer alongside you autonomously."
-}, {
-  icon: <Network className="h-6 w-6" />,
-  title: "Hanzo Router",
-  description: "Access hosted and private models with dynamic routing, fallback systems, and advanced caching through our scalable AI platform."
-}, {
-  icon: <BarChart3 className="h-6 w-6" />,
-  title: "Deep Learning Cloud",
-  description: "Cloud orchestration with rapid deployment, auto-scaling, and NVIDIA hardware access through NVIDIA Inception Program."
-}, {
-  icon: <Leaf className="h-6 w-6" />,
-  title: "Green Infrastructure",
-  description: "1 Gigawatt of green energy secured at industry-leading prices, powering sustainable AI development and deployment."
-}, {
-  icon: <CreditCard className="h-6 w-6" />,
-  title: "Hanzo Network",
-  description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
-}];
+const allFeatures = [
+  {
+    icon: <Wand2 className="h-6 w-6" />,
+    title: "Hanzo App",
+    description: "Design, build, and launch full-featured applications with our generative App Builder. Native analytics and platform API integration."
+  }, {
+    icon: <Bot className="h-6 w-6" />,
+    title: "Hanzo Bot",
+    description: "Launch agentic frameworks effortlessly using our drag-and-drop GUI to build and iterate on scalable agentic workflows."
+  }, {
+    icon: <Code2 className="h-6 w-6" />,
+    title: "Hanzo Code",
+    description: "Open Source IDE that embeds AI agents directly into your coding workflow, accelerating development and deployment."
+  }, {
+    icon: <Cpu className="h-6 w-6" />,
+    title: "Hanzo Dev",
+    description: "24/7 AI engineers that ingest your data and code to build, refine, test, and engineer alongside you autonomously."
+  }, {
+    icon: <Network className="h-6 w-6" />,
+    title: "Hanzo Router",
+    description: "Access hosted and private models with dynamic routing, fallback systems, and advanced caching through our scalable AI platform."
+  }, {
+    icon: <BarChart3 className="h-6 w-6" />,
+    title: "Deep Learning Cloud",
+    description: "Cloud orchestration with rapid deployment, auto-scaling, and NVIDIA hardware access through NVIDIA Inception Program."
+  }, {
+    icon: <Leaf className="h-6 w-6" />,
+    title: "Green Infrastructure",
+    description: "1 Gigawatt of green energy secured at industry-leading prices, powering sustainable AI development and deployment."
+  }, {
+    icon: <CreditCard className="h-6 w-6" />,
+    title: "Hanzo Network",
+    description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
+  }
+];
 
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
@@ -115,7 +117,7 @@ const Features = () => {
   };
 
   return <section id="features" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[128px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center">
           <motion.h2 initial={{
           opacity: 0,
@@ -184,9 +186,10 @@ const Features = () => {
               View All Solutions
             </Button>
           </motion.div>}
+      </div>
 
-        <div className="mt-20">
-          <motion.div initial={{
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
+        <motion.div initial={{
           opacity: 0,
           y: 20
         }} whileInView={{
@@ -235,8 +238,9 @@ const Features = () => {
               </div>
             </div>
           </motion.div>
-        </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
         <motion.div initial={{
         opacity: 0,
         y: 20
@@ -247,7 +251,7 @@ const Features = () => {
         once: true
       }} transition={{
         duration: 0.5
-      }} className="mt-20 relative overflow-hidden rounded-xl">
+      }} className="relative overflow-hidden rounded-xl">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-700/20 to-transparent z-0"></div>
           <div className="absolute inset-0 backdrop-blur-sm bg-black/40 z-10"></div>
           
