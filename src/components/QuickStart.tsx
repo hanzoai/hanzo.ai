@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ const QuickStart = () => {
         once: true
       }} className="text-center mb-12">
           <h2 className="font-display text-white mb-4 text-3xl">
-            Quick Launch Apps
+            Explore Launch Apps
           </h2>
           <p className="text-lg text-gray-400">
             Get started quickly with our pre-built templates
