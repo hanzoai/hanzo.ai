@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -108,21 +109,22 @@ const Analytics = () => {
     visible: (custom: number) => ({
       width: `${custom}%`,
       transition: { 
-        duration: 1.5,
-        delay: custom === 50 ? 2.5 : custom === 100 ? 5 : 0,
+        duration: 1,
+        delay: custom === 25 ? 0 : custom === 50 ? 2 : custom === 75 ? 4 : 6,
         ease: "easeInOut"
       }
     })
   };
 
   const milestoneCircleVariants = {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: { scale: 0.8, opacity: 0.5, borderColor: "#4B5563" },
     visible: (custom: number) => ({
       scale: 1, 
       opacity: 1,
+      borderColor: "#FFFFFF",
       transition: { 
         duration: 0.5, 
-        delay: custom === 1 ? 0 : custom === 2 ? 2.5 : 5,
+        delay: custom === 1 ? 1 : custom === 2 ? 3 : custom === 3 ? 5 : 0,
         type: "spring",
         stiffness: 200,
         damping: 10
@@ -130,17 +132,13 @@ const Analytics = () => {
     })
   };
 
-  const checkmarkVariants = {
-    hidden: { scale: 0, opacity: 0 },
+  const iconVariants = {
+    hidden: { color: custom => custom === 1 ? "#9333EA" : custom === 2 ? "#3B82F6" : "#06B6D4" },
     visible: (custom: number) => ({
-      scale: 1,
-      opacity: 1,
+      color: "#FFFFFF",
       transition: { 
         duration: 0.3,
-        delay: custom === 1 ? 0.5 : custom === 2 ? 3 : 5.5,
-        type: "spring",
-        stiffness: 300,
-        damping: 15
+        delay: custom === 1 ? 1 : custom === 2 ? 3 : custom === 3 ? 5 : 0,
       }
     })
   };
@@ -190,23 +188,41 @@ const Analytics = () => {
             {/* Background line */}
             <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
             
-            {/* Animated progress line */}
+            {/* Animated progress lines in segments */}
             <motion.div
-              className="absolute top-6 left-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full origin-left"
+              className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left"
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              custom={50}
+              custom={25}
             ></motion.div>
             
             <motion.div
-              className="absolute top-6 left-[50%] h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full origin-left"
+              className="absolute top-6 left-[25%] h-1 bg-white rounded-full origin-left"
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              custom={50}
+              custom={25}
+            ></motion.div>
+            
+            <motion.div
+              className="absolute top-6 left-[50%] h-1 bg-white rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={25}
+            ></motion.div>
+            
+            <motion.div
+              className="absolute top-6 left-[75%] h-1 bg-white rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={25}
             ></motion.div>
             
             {/* Milestone Points */}
@@ -222,13 +238,13 @@ const Analytics = () => {
                   custom={1}
                 >
                   <motion.div
-                    variants={checkmarkVariants}
+                    variants={iconVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     custom={1}
                   >
-                    <Activity className="h-6 w-6 text-purple-400" />
+                    <Activity className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
                 <p className="mt-2 font-medium text-white">Real-time Events</p>
@@ -245,13 +261,13 @@ const Analytics = () => {
                   custom={2}
                 >
                   <motion.div
-                    variants={checkmarkVariants}
+                    variants={iconVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     custom={2}
                   >
-                    <Users className="h-6 w-6 text-blue-400" />
+                    <Users className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
                 <p className="mt-2 font-medium text-white">User Insights</p>
@@ -268,13 +284,13 @@ const Analytics = () => {
                   custom={3}
                 >
                   <motion.div
-                    variants={checkmarkVariants}
+                    variants={iconVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     custom={3}
                   >
-                    <Brain className="h-6 w-6 text-cyan-400" />
+                    <Brain className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
                 <p className="mt-2 font-medium text-white">AI Analytics</p>
