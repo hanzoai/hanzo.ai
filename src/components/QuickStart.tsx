@@ -4,25 +4,25 @@ import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const quickApps = [{
-  icon: <Bot className="h-6 w-6" />,
+  icon: <Bot className="h-6 w-6 text-white" />,
   title: "AI Chat Assistant",
   description: "Launch your own ChatGPT-style AI assistant",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(96,165,250,0.3)]",
   borderColor: "group-hover:border-blue-400/30"
 }, {
-  icon: <ShoppingCart className="h-6 w-6" />,
+  icon: <ShoppingCart className="h-6 w-6 text-white" />,
   title: "E-commerce Store",
   description: "Start selling products online in minutes",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(74,222,128,0.3)]",
   borderColor: "group-hover:border-green-400/30"
 }, {
-  icon: <AppWindow className="h-6 w-6" />,
+  icon: <AppWindow className="h-6 w-6 text-white" />,
   title: "Web3 dApp",
   description: "Build a decentralized application",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.3)]",
   borderColor: "group-hover:border-purple-400/30"
 }, {
-  icon: <Rocket className="h-6 w-6" />,
+  icon: <Rocket className="h-6 w-6 text-white" />,
   title: "Custom App",
   description: "Start from scratch with our App Builder",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",

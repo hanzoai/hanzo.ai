@@ -5,49 +5,49 @@ import { Button } from "./ui/button";
 
 const allFeatures = [
   {
-    icon: <Wand2 className="h-8 w-8" />,
+    icon: <Wand2 className="h-6 w-6" />,
     title: "Hanzo App",
     description:
       "Design, build, and launch full-featured applications with our generative App Builder. Native analytics and platform API integration.",
   },
   {
-    icon: <Bot className="h-8 w-8" />,
+    icon: <Bot className="h-6 w-6" />,
     title: "Hanzo Bot",
     description:
       "Launch agentic frameworks effortlessly using our drag-and-drop GUI to build and iterate on scalable agentic workflows.",
   },
   {
-    icon: <Code2 className="h-8 w-8" />,
+    icon: <Code2 className="h-6 w-6" />,
     title: "Hanzo Code",
     description:
       "Open Source IDE that embeds AI agents directly into your coding workflow, accelerating development and deployment.",
   },
   {
-    icon: <Cpu className="h-8 w-8" />,
+    icon: <Cpu className="h-6 w-6" />,
     title: "Hanzo Dev",
     description:
       "24/7 AI engineers that ingest your data and code to build, refine, test, and engineer alongside you autonomously.",
   },
   {
-    icon: <Network className="h-8 w-8" />,
+    icon: <Network className="h-6 w-6" />,
     title: "Hanzo Router",
     description:
       "Access hosted and private models with dynamic routing, fallback systems, and advanced caching through our scalable AI platform.",
   },
   {
-    icon: <BarChart3 className="h-8 w-8" />,
+    icon: <BarChart3 className="h-6 w-6" />,
     title: "Deep Learning Cloud",
     description:
       "Cloud orchestration with rapid deployment, auto-scaling, and NVIDIA hardware access through NVIDIA Inception Program.",
   },
   {
-    icon: <Leaf className="h-8 w-8" />,
+    icon: <Leaf className="h-6 w-6" />,
     title: "Green Infrastructure",
     description:
       "1 Gigawatt of green energy secured at industry-leading prices, powering sustainable AI development and deployment.",
   },
   {
-    icon: <CreditCard className="h-8 w-8" />,
+    icon: <CreditCard className="h-6 w-6" />,
     title: "Hanzo Network",
     description:
       "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open.",
@@ -93,7 +93,7 @@ const Features = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all flex flex-col items-center text-center"
             >
-              <div className="p-2 bg-white/10 w-fit rounded-lg text-blue-400">
+              <div className="p-2 bg-white/10 w-fit rounded-lg text-white">
                 {feature.icon}
               </div>
               <h3 className="mt-4 text-xl font-semibold text-white">
