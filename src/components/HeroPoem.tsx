@@ -11,7 +11,7 @@ const HeroPoem = () => {
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-display tracking-tight text-white leading-tight">
         In the age of endless dreams,
-        <span className="block bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+        <span className="block bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent py-1 leading-relaxed">
           Ideas take flight on digital wings
         </span>
       </h1>
