@@ -199,6 +199,22 @@ const Features = () => {
           once: true
         }} transition={{
           duration: 0.5
+        }} className="text-center mb-12">
+          <h2 className="text-3xl font-display text-white bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Hanzo has an impressive track record...
+          </h2>
+        </motion.div>
+        
+        <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5
         }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
               <div className="max-w-md overflow-hidden">
