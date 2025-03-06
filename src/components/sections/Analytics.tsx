@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -108,87 +109,61 @@ const Analytics = () => {
     visible: (custom: number) => ({
       width: `${custom}%`,
       transition: { 
-        duration: 1.2,
-        delay: custom === 25 ? 0.2 : custom === 50 ? 2 : custom === 75 ? 3.8 : 5.6,
-        ease: "easeOut"
+        duration: 1,
+        delay: custom === 25 ? 0 : custom === 50 ? 2 : custom === 75 ? 4 : 6,
+        ease: "easeInOut"
       }
     })
   };
 
   const milestoneCircleVariants = {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: { scale: 0.8, opacity: 0.5, borderColor: "#4B5563" },
     visible: (custom: number) => ({
-      scale: [0, 1.2, 1],
+      scale: 1, 
       opacity: 1,
+      borderColor: "#FFFFFF",
       transition: { 
-        duration: 0.8, 
+        duration: 0.5, 
         delay: custom === 1 ? 1 : custom === 2 ? 3 : custom === 3 ? 5 : 0,
         type: "spring",
-        stiffness: 300,
-        damping: 15
+        stiffness: 200,
+        damping: 10
       }
     })
   };
 
-  // Fixed icon variants with improved animations
+  // Fixed icon variants - now using predefined color states rather than functions in the hidden state
   const iconVariantsFirst = {
-    hidden: { color: "#9333EA", opacity: 0, y: 10 },
+    hidden: { color: "#9333EA" },
     visible: {
       color: "#FFFFFF",
-      opacity: 1,
-      y: 0,
       transition: { 
-        duration: 0.5,
-        delay: 1.3,
-        type: "spring",
-        stiffness: 200
+        duration: 0.3,
+        delay: 1,
       }
     }
   };
 
   const iconVariantsSecond = {
-    hidden: { color: "#3B82F6", opacity: 0, y: 10 },
+    hidden: { color: "#3B82F6" },
     visible: {
       color: "#FFFFFF",
-      opacity: 1,
-      y: 0,
       transition: { 
-        duration: 0.5,
-        delay: 3.3,
-        type: "spring",
-        stiffness: 200
+        duration: 0.3,
+        delay: 3,
       }
     }
   };
 
   const iconVariantsThird = {
-    hidden: { color: "#06B6D4", opacity: 0, y: 10 },
+    hidden: { color: "#06B6D4" },
     visible: {
       color: "#FFFFFF",
-      opacity: 1,
-      y: 0,
       transition: { 
-        duration: 0.5,
-        delay: 5.3,
-        type: "spring",
-        stiffness: 200
+        duration: 0.3,
+        delay: 5,
       }
     }
-  };
-
-  // Enhanced text animation for milestone labels
-  const milestoneLabelVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: custom === 1 ? 1.5 : custom === 2 ? 3.5 : custom === 3 ? 5.5 : 0,
-        type: "spring",
-        stiffness: 150
-      }
-    })
   };
 
   return <section className="py-20 bg-black">
@@ -230,27 +205,15 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="relative mb-4 flex justify-center"
-        >
+        {/* Milestone Progress Indicator - Moved to appear directly above the feature grid */}
+        <div className="relative mb-4 flex justify-center">
           <div className="relative w-full max-w-4xl">
-            <div className="absolute top-6 left-0 w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: [0, 0.5, 1] }}
-                viewport={{ once: true }}
-                transition={{ duration: 2, delay: 0.1 }}
-                className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 opacity-50"
-                style={{ width: "100%" }}
-              ></motion.div>
-            </div>
+            {/* Background line */}
+            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
             
+            {/* Animated progress lines in segments */}
             <motion.div
-              className="absolute top-6 left-0 h-1.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full origin-left shadow-[0_0_10px_rgba(168,85,247,0.5)]"
+              className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left"
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
@@ -259,7 +222,7 @@ const Analytics = () => {
             ></motion.div>
             
             <motion.div
-              className="absolute top-6 left-[25%] h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full origin-left shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+              className="absolute top-6 left-[25%] h-1 bg-white rounded-full origin-left"
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
@@ -268,7 +231,7 @@ const Analytics = () => {
             ></motion.div>
             
             <motion.div
-              className="absolute top-6 left-[50%] h-1.5 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full origin-left shadow-[0_0_10px_rgba(6,182,212,0.5)]"
+              className="absolute top-6 left-[50%] h-1 bg-white rounded-full origin-left"
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
@@ -277,7 +240,7 @@ const Analytics = () => {
             ></motion.div>
             
             <motion.div
-              className="absolute top-6 left-[75%] h-1.5 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full origin-left shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+              className="absolute top-6 left-[75%] h-1 bg-white rounded-full origin-left"
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
@@ -285,120 +248,76 @@ const Analytics = () => {
               custom={25}
             ></motion.div>
             
+            {/* Milestone Points */}
             <div className="flex justify-between relative">
+              {/* First Milestone */}
               <div className="text-center relative">
                 <motion.div 
-                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative overflow-hidden"
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative"
                   variants={milestoneCircleVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                   custom={1}
                 >
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-transparent"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
-                    viewport={{ once: true }}
-                  ></motion.div>
                   <motion.div
                     variants={iconVariantsFirst}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    <Activity className="h-6 w-6 relative z-10" />
+                    <Activity className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <motion.p 
-                  className="mt-2 font-medium text-white"
-                  variants={milestoneLabelVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={1}
-                >
-                  Real-time Events
-                </motion.p>
+                <p className="mt-2 font-medium text-white">Real-time Events</p>
               </div>
               
+              {/* Second Milestone */}
               <div className="text-center relative">
                 <motion.div 
-                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto overflow-hidden"
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto"
                   variants={milestoneCircleVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                   custom={2}
                 >
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-transparent"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 3.2, duration: 0.5 }}
-                    viewport={{ once: true }}
-                  ></motion.div>
                   <motion.div
                     variants={iconVariantsSecond}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    <Users className="h-6 w-6 relative z-10" />
+                    <Users className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <motion.p 
-                  className="mt-2 font-medium text-white"
-                  variants={milestoneLabelVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={2}
-                >
-                  User Insights
-                </motion.p>
+                <p className="mt-2 font-medium text-white">User Insights</p>
               </div>
               
+              {/* Third Milestone */}
               <div className="text-center relative">
                 <motion.div 
-                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto overflow-hidden"
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto"
                   variants={milestoneCircleVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                   custom={3}
                 >
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-transparent"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 5.2, duration: 0.5 }}
-                    viewport={{ once: true }}
-                  ></motion.div>
                   <motion.div
                     variants={iconVariantsThird}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    <Brain className="h-6 w-6 relative z-10" />
+                    <Brain className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <motion.p 
-                  className="mt-2 font-medium text-white"
-                  variants={milestoneLabelVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={3}
-                >
-                  AI Analytics
-                </motion.p>
+                <p className="mt-2 font-medium text-white">AI Analytics</p>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         <motion.div 
           variants={containerVariants}
@@ -526,6 +445,7 @@ await analytics.track({
           </div>
         </motion.div>
 
+        {/* User Insights Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -588,6 +508,7 @@ await analytics.track({
           </motion.div>
         </motion.div>
 
+        {/* AI Analytics Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -678,4 +599,3 @@ await analytics.track({
 };
 
 export default Analytics;
-
