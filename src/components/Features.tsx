@@ -1,6 +1,9 @@
-import { motion } from "framer-motion";
-import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import { useRef } from "react";
+
 const allFeatures = [{
   icon: <Wand2 className="h-6 w-6" />,
   title: "Hanzo App",
@@ -34,9 +37,44 @@ const allFeatures = [{
   title: "Hanzo Network",
   description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
 }];
+
+const industriesSectors = [
+  {
+    name: "Artificial Intelligence",
+    image: "/public/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png",
+    description: "Cutting-edge AI solutions for business transformation"
+  },
+  {
+    name: "Financial Services",
+    image: "/placeholder.svg",
+    description: "Innovative solutions for banking and finance sectors"
+  },
+  {
+    name: "Manufacturing & Mobility",
+    image: "/placeholder.svg",
+    description: "Optimizing operations and driving innovation in manufacturing"
+  },
+  {
+    name: "Healthcare",
+    image: "/placeholder.svg",
+    description: "Digital transformation for healthcare providers"
+  },
+  {
+    name: "Retail & Consumer",
+    image: "/placeholder.svg",
+    description: "Creating exceptional customer experiences"
+  },
+  {
+    name: "Technology",
+    image: "/placeholder.svg",
+    description: "Empowering the tech industry with advanced solutions"
+  }
+];
+
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
+  
   const industryIcons = {
     "Artificial Intelligence": <Brain className="h-5 w-5 text-purple-400 mb-2" />,
     "Adtech": <Target className="h-5 w-5 text-blue-400 mb-2" />,
@@ -49,6 +87,7 @@ const Features = () => {
     "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
     "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
   };
+
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -61,6 +100,7 @@ const Features = () => {
       }
     }
   };
+
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -76,6 +116,7 @@ const Features = () => {
       }
     }
   };
+
   const testimonialText = "We've helped businesses and individuals harness the power of AI to drive growth, efficiency, and innovation.";
   const testimonialCharacters = testimonialText.split("");
   const textContainerVariants = {
@@ -105,6 +146,17 @@ const Features = () => {
       }
     }
   };
+
+  const industriesSectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: industriesSectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const industriesTitleY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const industriesDescriptionY = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const industriesCarouselY = useTransform(scrollYProgress, [0, 1], [50, -20]);
+
   return <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center">
@@ -245,50 +297,64 @@ const Features = () => {
           </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }} className="relative overflow-hidden rounded-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-700/20 to-transparent z-0"></div>
-          <div className="absolute inset-0 backdrop-blur-sm bg-black/40 z-10"></div>
-          
-          <div className="relative z-20 p-8 bg-transparent">
-            <div className="industries-container">
-              <h3 className="text-white mb-6 font-normal text-3xl bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Industries We Transform</h3>
-              
-              <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
-              once: true
-            }} className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map(industry => <motion.div key={industry} variants={itemVariants} whileHover={{
-                y: -5,
-                scale: 1.05,
-                boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 10
-                }
-              }} className="group">
-                    <div className="px-4 py-3 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 transition-all duration-300 transform hover:border-purple-500/40 flex flex-col items-center text-center h-full justify-center">
-                      {industryIcons[industry]}
-                      <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
-                        {industry}
-                      </span>
+      <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
+        <div className="text-center mb-12">
+          <motion.h3 
+            style={{ y: industriesTitleY }}
+            className="text-[#de8e3d] font-medium text-lg mb-4"
+          >
+            Industries we serve
+          </motion.h3>
+          <motion.h2 
+            style={{ y: industriesTitleY }}
+            className="text-4xl font-display text-white mb-4"
+          >
+            We deliver impact in various industries
+          </motion.h2>
+          <motion.p 
+            style={{ y: industriesDescriptionY }}
+            className="text-gray-300 max-w-3xl mx-auto mb-16"
+          >
+            We have a proven track record of delivering impactful solutions tailored to various industries, 
+            driving success and innovation across diverse business sectors.
+          </motion.p>
+        </div>
+        
+        <motion.div 
+          style={{ y: industriesCarouselY }}
+          className="relative z-20 py-8"
+        >
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {industriesSectors.map((industry, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="group h-[400px] relative overflow-hidden rounded-xl">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                    <img 
+                      src={industry.image} 
+                      alt={industry.name}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                      <h3 className="text-xl font-medium text-white mb-2">{industry.name}</h3>
+                      <p className="text-gray-300">{industry.description}</p>
                     </div>
-                  </motion.div>)}
-              </motion.div>
-            </div>
-          </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none" />
+            <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none" />
+          </Carousel>
         </motion.div>
       </div>
     </section>;
 };
+
 export default Features;
