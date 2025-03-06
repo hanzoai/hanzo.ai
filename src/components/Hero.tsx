@@ -188,7 +188,7 @@ const Hero = () => {
               <a href="https://hanzo.app">Start building</a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
-              <a href="https://docs.hanzo.sh" className="gradient-text">Introducing Customer Requests →</a>
+              <a href="https://docs.hanzo.sh" className="gradient-text">Read Docs →</a>
             </Button>
           </motion.div>
         </div>
