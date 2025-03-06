@@ -102,19 +102,7 @@ const Analytics = () => {
     }
   };
 
-  // Animation variants for the milestone progress - updated for sequential filling
-  const milestoneLineVariants = {
-    hidden: { width: 0 },
-    visible: (i: number) => ({
-      width: "100%",
-      transition: { 
-        duration: 1.5,
-        delay: i * 3, // Each section starts after the previous one
-        ease: "easeInOut"
-      }
-    })
-  };
-
+  // Animation variants for the milestone circles - circle highlights first
   const milestoneCircleVariants = {
     hidden: { scale: 0.9, opacity: 0.7 },
     visible: (i: number) => ({
@@ -130,13 +118,27 @@ const Analytics = () => {
     })
   };
 
+  // Animation variants for the milestone line - animates after circle is highlighted
+  const milestoneLineVariants = {
+    hidden: { width: 0 },
+    visible: (i: number) => ({
+      width: "100%",
+      transition: { 
+        duration: 1.5,
+        delay: i * 3 + 0.7, // Line animates AFTER the circle is highlighted
+        ease: "easeInOut"
+      }
+    })
+  };
+
+  // Animation variants for the fill circle - fills after the line completes
   const fillCircleVariants = {
     hidden: { scale: 0 },
     visible: (i: number) => ({
       scale: 1,
       transition: { 
         duration: 0.5,
-        delay: i * 3 + 1.2, // Fill circle after the outline appears
+        delay: i * 3 + 2.3, // Fill circle after the line completes
         type: "spring",
         stiffness: 300,
         damping: 15
@@ -183,13 +185,13 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
-        {/* Milestone Progress Indicator - Updated for sequential filling */}
+        {/* Milestone Progress Indicator - Fixed animation sequence */}
         <div className="relative mb-12 flex justify-center">
           <div className="relative w-full max-w-4xl">
             {/* Background line */}
             <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
             
-            {/* First segment line */}
+            {/* First segment line - only animates after first circle is highlighted */}
             <motion.div
               className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left"
               style={{ width: "0%", right: "66.7%" }}
@@ -200,9 +202,9 @@ const Analytics = () => {
               custom={0}
             ></motion.div>
             
-            {/* Second segment line */}
+            {/* Second segment line - only animates after second circle is highlighted */}
             <motion.div
-              className="absolute top-6 left-33.3% h-1 bg-white rounded-full origin-left"
+              className="absolute top-6 h-1 bg-white rounded-full origin-left"
               style={{ width: "0%", left: "33.3%", right: "33.3%" }}
               variants={milestoneLineVariants}
               initial="hidden"
@@ -211,10 +213,10 @@ const Analytics = () => {
               custom={1}
             ></motion.div>
             
-            {/* Third segment line */}
+            {/* Third segment line - only animates after third circle is highlighted */}
             <motion.div
-              className="absolute top-6 left-66.7% h-1 bg-white rounded-full origin-left"
-              style={{ width: "0%", left: "66.7%" }}
+              className="absolute top-6 h-1 bg-white rounded-full origin-left"
+              style={{ width: "0%", left: "66.7%", right: "0%" }}
               variants={milestoneLineVariants}
               initial="hidden"
               whileInView="visible"
@@ -431,7 +433,6 @@ await analytics.track({
           </div>
         </motion.div>
 
-        {/* User Insights Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -494,7 +495,6 @@ await analytics.track({
           </motion.div>
         </motion.div>
 
-        {/* AI Analytics Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
