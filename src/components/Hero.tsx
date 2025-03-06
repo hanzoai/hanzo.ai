@@ -50,7 +50,7 @@ const Hero = () => {
   };
 
   const titleText1 = "Build as fast";
-  const titleText2 = "as you Dream";
+  const titleText2 = "as you Dream 🚀";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   
