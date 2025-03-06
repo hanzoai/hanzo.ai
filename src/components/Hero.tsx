@@ -51,8 +51,8 @@ const Hero = () => {
   };
 
   // Split text for individual letter animations
-  const titleText1 = "Build as fast";
-  const titleText2 = "as you think";
+  const titleText1 = "Plan and build";
+  const titleText2 = "your product";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   
@@ -80,11 +80,10 @@ const Hero = () => {
           bottom: 0;
           background: linear-gradient(
             90deg,
-            #007cf0,
-            #00dfd8,
-            #ff0080,
-            #7928ca,
-            #ff4d4d
+            rgb(139, 143, 152),
+            rgb(247, 248, 248),
+            rgb(201, 203, 207),
+            rgb(139, 143, 152)
           );
           background-size: 300% 100%;
           z-index: -1;
@@ -113,14 +112,14 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center bg-black/0">
-          <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setAnimationComplete(true)}>
+          <motion.h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setAnimationComplete(true)}>
             <motion.span className="inline-flex items-center">
               {titleLetters1.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>)}
             </motion.span>
             
-            <motion.span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
+            <motion.span className="block bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 bg-clip-text text-transparent pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
               {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>)}
@@ -142,10 +141,11 @@ const Hero = () => {
               duration: 0.4,
               delay: 0.25
             }} 
-            className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
+            className="mt-6 text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Design, Engineer, and Market AI-powered applications with our unified platform.
-            Featuring streaming AI, UI components, and a real-time database - everything you need to build modern apps.
+            Linear is a purpose-built tool for modern 
+            product development. Streamline issues, 
+            projects, and product roadmaps.
           </motion.p>
 
           <motion.div 
@@ -171,10 +171,10 @@ const Hero = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <a href="https://hanzo.app">Launch App</a>
+              <a href="https://hanzo.app">Start building</a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
-              <a href="https://docs.hanzo.sh">Read Docs</a>
+              <a href="https://docs.hanzo.sh">Introducing Customer Requests →</a>
             </Button>
           </motion.div>
         </div>
