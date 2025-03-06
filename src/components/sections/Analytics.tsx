@@ -132,15 +132,38 @@ const Analytics = () => {
     })
   };
 
-  const iconVariants = {
-    hidden: { color: custom => custom === 1 ? "#9333EA" : custom === 2 ? "#3B82F6" : "#06B6D4" },
-    visible: (custom: number) => ({
+  // Fixed icon variants - now using predefined color states rather than functions in the hidden state
+  const iconVariantsFirst = {
+    hidden: { color: "#9333EA" },
+    visible: {
       color: "#FFFFFF",
       transition: { 
         duration: 0.3,
-        delay: custom === 1 ? 1 : custom === 2 ? 3 : custom === 3 ? 5 : 0,
+        delay: 1,
       }
-    })
+    }
+  };
+
+  const iconVariantsSecond = {
+    hidden: { color: "#3B82F6" },
+    visible: {
+      color: "#FFFFFF",
+      transition: { 
+        duration: 0.3,
+        delay: 3,
+      }
+    }
+  };
+
+  const iconVariantsThird = {
+    hidden: { color: "#06B6D4" },
+    visible: {
+      color: "#FFFFFF",
+      transition: { 
+        duration: 0.3,
+        delay: 5,
+      }
+    }
   };
 
   return <section className="py-20 bg-black">
@@ -238,11 +261,10 @@ const Analytics = () => {
                   custom={1}
                 >
                   <motion.div
-                    variants={iconVariants}
+                    variants={iconVariantsFirst}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    custom={1}
                   >
                     <Activity className="h-6 w-6" />
                   </motion.div>
@@ -261,11 +283,10 @@ const Analytics = () => {
                   custom={2}
                 >
                   <motion.div
-                    variants={iconVariants}
+                    variants={iconVariantsSecond}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    custom={2}
                   >
                     <Users className="h-6 w-6" />
                   </motion.div>
@@ -284,11 +305,10 @@ const Analytics = () => {
                   custom={3}
                 >
                   <motion.div
-                    variants={iconVariants}
+                    variants={iconVariantsThird}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    custom={3}
                   >
                     <Brain className="h-6 w-6" />
                   </motion.div>
