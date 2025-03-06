@@ -1,15 +1,17 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useState } from "react";
+
 const Hero = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [animationComplete, setAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
     toast({
@@ -51,8 +53,26 @@ const Hero = () => {
   const titleText2 = "as you think";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
+  
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 bg-black" />
+
+      {/* Add the keyframes animation here but using style jsx syntax without the global attribute */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes rainbowGradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        .rainbow-btn:hover {
+          background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+          background-size: 200% 200%;
+          animation: rainbowGradient 3s ease infinite;
+          color: white;
+          border: none;
+        }
+      `}} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 bg-black">
         <div className="text-center bg-black/0">
@@ -94,51 +114,17 @@ const Hero = () => {
           duration: 0.4,
           delay: 0.35
         }} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
+            <Button 
+              size="lg" 
+              className={`text-lg px-8 bg-white text-black hover:bg-gray-200 rainbow-btn`}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               <a href="https://hanzo.app">Launch App</a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
               <a href="https://docs.hanzo.sh">Read Docs</a>
             </Button>
-          </motion.div>
-
-          <motion.div initial={{
-          opacity: 0,
-          y: 40
-        }} animate={{
-          opacity: titleAnimationComplete ? 1 : 0,
-          y: titleAnimationComplete ? 0 : 40
-        }} transition={{
-          duration: 0.5,
-          delay: 0.5
-        }} className="mt-20 rounded-xl bg-gray-900/50 p-8 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl relative">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <Terminal className="text-blue-400" size={20} />
-                <h2 className="text-xl font-semibold text-blue-400">Quick Install</h2>
-              </div>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Info className="text-gray-400 hover:text-blue-400 cursor-help w-4 h-4" />
-                  </TooltipTrigger>
-                  <TooltipContent className="max-w-xs">
-                    <p>Docker will be automatically installed if not present on your system. Cannot be run inside a container.</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-            <div className="bg-black/50 rounded-lg p-4 mb-4 flex items-center justify-between group">
-              <pre className="overflow-x-auto">
-                <code className="text-gray-300">curl -sL hanzo.sh | sh</code>
-              </pre>
-              <button onClick={handleCopy} className="text-gray-400 hover:text-blue-400 transition-colors opacity-0 group-hover:opacity-100" aria-label="Copy to clipboard">
-                <ClipboardCopy size={20} />
-              </button>
-            </div>
-            <div className="text-sm text-gray-400">
-              <p>One command to install the complete Hanzo development platform. Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
-            </div>
           </motion.div>
         </div>
       </div>
