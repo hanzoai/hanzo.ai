@@ -145,7 +145,7 @@ const Features = () => {
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
               <div className="max-w-md">
                 <p className="text-lg text-gray-300">We've helped businesses and individuals harness the <span className="text-orange-500 font-semibold">power of AI</span> to drive growth, efficiency, and innovation.</p>
-                <Button variant="outline" className="mt-6 bg-orange-500 text-white border-orange-500 hover:bg-orange-600 hover:text-white">
+                <Button variant="outline" className="mt-6 bg-white text-black border-white hover:bg-gray-100 hover:text-black">
                   Our Testimonial
                 </Button>
               </div>
