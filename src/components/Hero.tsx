@@ -55,7 +55,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 bg-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 bg-black">
-        <div className="text-center">
+        <div className="text-center pt-8 md:pt-12">
           <motion.h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setAnimationComplete(true)}>
             <motion.span className="inline-flex items-center">
               {titleLetters1.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
@@ -92,7 +92,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.4,
           delay: 0.35
-        }} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        }} className="mt-10 mb-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 bg-white text-black hover:bg-gray-200">
               <a href="https://hanzo.app">Launch App</a>
             </Button>
