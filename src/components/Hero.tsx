@@ -49,15 +49,15 @@ const Hero = () => {
     }
   };
 
-  const titleText1 = "build as fast";
-  const titleText2 = "as you think";
+  const titleText1 = "Build as fast";
+  const titleText2 = "as you Dream";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
 
-      <style jsx={true} dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{ __html: `
         .vercel-button {
           background: white;
           color: black;
