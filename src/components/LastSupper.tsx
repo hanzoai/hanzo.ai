@@ -22,9 +22,9 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
           {/* Fireworks GIF animation in the middle */}
           <div className="absolute z-10">
             <motion.img 
-              src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZocTBtcnY4bGVodG8xeDZidW04MXlmZWUyY2FjaG5iODd3cmdiNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c1R3XcUXVWAFy/giphy.gif" 
+              src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnBuZzFlZWxzNnN3dzVzZzBqbTB2eHMxd2IzMjIwMG03eWN3MWZreiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/odsNxyQQDb29O/giphy.gif" 
               alt="Fireworks animation"
-              className="w-24 h-24 object-cover"
+              className="w-48 h-48 object-cover" 
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
