@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { 
   Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, 
@@ -83,18 +82,6 @@ const Features = () => {
       }
     }
   };
-
-  const textCharacterVariants = {
-    hidden: { opacity: 0 },
-    visible: (i: number) => ({
-      opacity: 1,
-      transition: {
-        delay: i * 0.03,
-      },
-    }),
-  };
-
-  const testimonialText = "We've helped businesses and individuals harness the power of AI to drive growth, efficiency, and innovation.";
 
   return <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
@@ -181,33 +168,7 @@ const Features = () => {
           }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
               <div className="max-w-md">
-                <motion.p 
-                  className="text-lg text-gray-300"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.8 }}
-                >
-                  {testimonialText.split('').map((char, index) => {
-                    if (char === ' ') {
-                      return <span key={index}>&nbsp;</span>;
-                    }
-                    
-                    const isPowerOfAI = 
-                      index >= testimonialText.indexOf('power of') && 
-                      index < testimonialText.indexOf('power of') + 'power of AI'.length;
-                    
-                    return (
-                      <motion.span
-                        key={index}
-                        custom={index}
-                        variants={textCharacterVariants}
-                        className={isPowerOfAI && char === 'A' ? "text-white font-bold" : ""}
-                      >
-                        {char}
-                      </motion.span>
-                    );
-                  })}
-                </motion.p>
+                <p className="text-lg text-gray-300">We've helped businesses and individuals harness the <span className="text-white font-bold">power of AI</span> to drive growth, efficiency, and innovation.</p>
                 <Button variant="outline" className="mt-6 bg-white text-black border-white hover:bg-gray-100 hover:text-black">
                   Our Testimonial
                 </Button>
