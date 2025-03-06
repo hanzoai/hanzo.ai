@@ -47,16 +47,16 @@ const Features = () => {
   const hasMoreFeatures = allFeatures.length > 16;
 
   const industryIcons = {
-    "Artificial Intelligence": <Brain className="h-6 w-6 text-white" />,
-    "Adtech": <Target className="h-6 w-6 text-white" />,
-    "Blockchain": <Blocks className="h-6 w-6 text-white" />,
-    "Cloud Computing": <Cloud className="h-6 w-6 text-white" />,
-    "GPU": <Cpu className="h-6 w-6 text-white" />,
-    "Hardware": <HardDrive className="h-6 w-6 text-white" />,
-    "Machine Learning": <Brain className="h-6 w-6 text-white" />,
-    "Software": <Code className="h-6 w-6 text-white" />,
-    "Cyber Security": <Shield className="h-6 w-6 text-white" />,
-    "Confidential Computing": <KeyRound className="h-6 w-6 text-white" />
+    "Artificial Intelligence": <Brain className="h-5 w-5 text-purple-400 mb-2" />,
+    "Adtech": <Target className="h-5 w-5 text-blue-400 mb-2" />,
+    "Blockchain": <Blocks className="h-5 w-5 text-orange-400 mb-2" />,
+    "Cloud Computing": <Cloud className="h-5 w-5 text-cyan-400 mb-2" />,
+    "GPU": <Cpu className="h-5 w-5 text-red-400 mb-2" />,
+    "Hardware": <HardDrive className="h-5 w-5 text-gray-400 mb-2" />,
+    "Machine Learning": <Brain className="h-5 w-5 text-green-400 mb-2" />,
+    "Software": <Code className="h-5 w-5 text-yellow-400 mb-2" />,
+    "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
+    "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
   };
 
   return <section id="features" className="py-20 bg-black">
@@ -208,9 +208,7 @@ const Features = () => {
                 className="group"
               >
                 <div className="px-4 py-3 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 transition-all duration-300 transform hover:border-purple-500/40 flex flex-col items-center text-center h-full justify-center">
-                  <div className="bg-white/10 p-2 rounded-lg mb-2 w-10 h-10 flex items-center justify-center">
-                    {industryIcons[industry]}
-                  </div>
+                  {industryIcons[industry]}
                   <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
                     {industry}
                   </span>
