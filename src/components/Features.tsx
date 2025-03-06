@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf } from "lucide-react";
 import { Button } from "./ui/button";
@@ -169,16 +168,40 @@ const Features = () => {
         once: true
       }} transition={{
         duration: 0.5
-      }} className="mt-20 p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-          <h3 className="text-white mb-4 font-normal text-3xl">Industries</h3>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map(industry => <span key={industry} className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-300">
-                {industry}
-              </span>)}
+      }} className="mt-20 relative overflow-hidden rounded-xl"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-700/20 to-transparent z-0"></div>
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/40 z-10"></div>
+        
+        <div className="relative z-20 p-8">
+          <h3 className="text-white mb-6 font-normal text-3xl bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Industries We Transform</h3>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map((industry, index) => (
+              <motion.div 
+                key={industry} 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                whileHover={{ 
+                  y: -5, 
+                  scale: 1.05,
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)" 
+                }}
+                className="group"
+              >
+                <div className="px-4 py-3 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 transition-all duration-300 transform hover:border-purple-500/40 flex flex-col items-center text-center h-full justify-center">
+                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                    {industry}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      </div>
-    </section>;
+        </div>
+      </motion.div>
+    </div>
+  </section>;
 };
 
 export default Features;
