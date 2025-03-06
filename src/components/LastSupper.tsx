@@ -11,7 +11,7 @@ interface TeamMember {
 
 const LastSupper = ({ members }: { members: TeamMember[] }) => {
   return (
-    <div className="py-20 bg-gradient-to-b from-transparent to-purple-900/20">
+    <div className="py-20">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
