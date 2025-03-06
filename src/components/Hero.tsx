@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info, Rocket, Zap } from "lucide-react";
@@ -110,7 +109,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.5,
           delay: 0.5
-        }} className="mt-20 rounded-xl bg-gradient-to-br from-black to-gray-800 p-8 backdrop-blur-xl ring-1 ring-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
+        }} className="mt-30 rounded-xl bg-gradient-to-br from-black to-gray-800 p-8 backdrop-blur-xl ring-1 ring-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
             <motion.div 
               className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-white/5 to-white/2 rounded-full blur-3xl border border-white/10"
               animate={{ 
