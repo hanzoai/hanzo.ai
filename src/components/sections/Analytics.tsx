@@ -184,6 +184,105 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
+        {/* Milestone Progress Indicator - Moved to appear directly above the feature grid */}
+        <div className="relative mb-12 flex justify-center">
+          <div className="relative w-full max-w-4xl">
+            {/* Background line */}
+            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
+            
+            {/* Animated progress line */}
+            <motion.div
+              className="absolute top-6 left-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={50}
+            ></motion.div>
+            
+            <motion.div
+              className="absolute top-6 left-[50%] h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={50}
+            ></motion.div>
+            
+            {/* Milestone Points */}
+            <div className="flex justify-between relative">
+              {/* First Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={1}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={1}
+                  >
+                    <Activity className="h-6 w-6 text-purple-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">Real-time Events</p>
+              </div>
+              
+              {/* Second Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={2}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={2}
+                  >
+                    <Users className="h-6 w-6 text-blue-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">User Insights</p>
+              </div>
+              
+              {/* Third Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={3}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={3}
+                  >
+                    <Brain className="h-6 w-6 text-cyan-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">AI Analytics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -315,105 +414,6 @@ await analytics.track({
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Milestone Progress Indicator */}
-        <div className="relative mb-20 flex justify-center">
-          <div className="relative w-full max-w-4xl">
-            {/* Background line */}
-            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
-            
-            {/* Animated progress line */}
-            <motion.div
-              className="absolute top-6 left-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full origin-left"
-              variants={milestoneLineVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={50}
-            ></motion.div>
-            
-            <motion.div
-              className="absolute top-6 left-[50%] h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full origin-left"
-              variants={milestoneLineVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={50}
-            ></motion.div>
-            
-            {/* Milestone Points */}
-            <div className="flex justify-between relative">
-              {/* First Milestone */}
-              <div className="text-center relative">
-                <motion.div 
-                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative"
-                  variants={milestoneCircleVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={1}
-                >
-                  <motion.div
-                    variants={checkmarkVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    custom={1}
-                  >
-                    <Activity className="h-6 w-6 text-purple-400" />
-                  </motion.div>
-                </motion.div>
-                <p className="mt-2 font-medium text-white">Real-time Events</p>
-              </div>
-              
-              {/* Second Milestone */}
-              <div className="text-center relative">
-                <motion.div 
-                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto"
-                  variants={milestoneCircleVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={2}
-                >
-                  <motion.div
-                    variants={checkmarkVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    custom={2}
-                  >
-                    <Users className="h-6 w-6 text-blue-400" />
-                  </motion.div>
-                </motion.div>
-                <p className="mt-2 font-medium text-white">User Insights</p>
-              </div>
-              
-              {/* Third Milestone */}
-              <div className="text-center relative">
-                <motion.div 
-                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto"
-                  variants={milestoneCircleVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={3}
-                >
-                  <motion.div
-                    variants={checkmarkVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    custom={3}
-                  >
-                    <Brain className="h-6 w-6 text-cyan-400" />
-                  </motion.div>
-                </motion.div>
-                <p className="mt-2 font-medium text-white">AI Analytics</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* User Insights Section */}
         <motion.div 
@@ -569,3 +569,4 @@ await analytics.track({
 };
 
 export default Analytics;
+
