@@ -190,7 +190,7 @@ const Features = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-700/20 to-transparent z-0"></div>
         <div className="absolute inset-0 backdrop-blur-sm bg-black/40 z-10"></div>
         
-        <div className="relative z-20 p-8">
+        <div className="relative z-20 p-8 bg-transparent">
           <h3 className="text-white mb-6 font-normal text-3xl bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Industries We Transform</h3>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
