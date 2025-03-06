@@ -1,6 +1,5 @@
-
 import { motion } from "framer-motion";
-import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain } from "lucide-react";
+import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Analytics = () => {
@@ -103,6 +102,49 @@ const Analytics = () => {
     }
   };
 
+  // Animation variants for the milestone progress
+  const milestoneLineVariants = {
+    hidden: { width: 0 },
+    visible: (custom: number) => ({
+      width: `${custom}%`,
+      transition: { 
+        duration: 1.5,
+        delay: custom === 50 ? 2.5 : custom === 100 ? 5 : 0,
+        ease: "easeInOut"
+      }
+    })
+  };
+
+  const milestoneCircleVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (custom: number) => ({
+      scale: 1, 
+      opacity: 1,
+      transition: { 
+        duration: 0.5, 
+        delay: custom === 1 ? 0 : custom === 2 ? 2.5 : 5,
+        type: "spring",
+        stiffness: 200,
+        damping: 10
+      }
+    })
+  };
+
+  const checkmarkVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (custom: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: { 
+        duration: 0.3,
+        delay: custom === 1 ? 0.5 : custom === 2 ? 3 : 5.5,
+        type: "spring",
+        stiffness: 300,
+        damping: 15
+      }
+    })
+  };
+
   return <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -153,7 +195,7 @@ const Analytics = () => {
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300"
+            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300 flex flex-col items-center text-center"
           >
             <Activity className="h-8 w-8 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Real-time Events</h3>
@@ -164,7 +206,7 @@ const Analytics = () => {
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300"
+            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300 flex flex-col items-center text-center"
           >
             <Users className="h-8 w-8 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">User Insights</h3>
@@ -175,7 +217,7 @@ const Analytics = () => {
             variants={itemVariants}
             whileHover="hover"
             whileTap="tap"
-            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300"
+            className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10 transition-all duration-300 flex flex-col items-center text-center"
           >
             <Brain className="h-8 w-8 text-gray-400 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">AI Analytics</h3>
@@ -274,6 +316,105 @@ await analytics.track({
           </div>
         </motion.div>
 
+        {/* Milestone Progress Indicator */}
+        <div className="relative mb-20 flex justify-center">
+          <div className="relative w-full max-w-4xl">
+            {/* Background line */}
+            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
+            
+            {/* Animated progress line */}
+            <motion.div
+              className="absolute top-6 left-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={50}
+            ></motion.div>
+            
+            <motion.div
+              className="absolute top-6 left-[50%] h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={50}
+            ></motion.div>
+            
+            {/* Milestone Points */}
+            <div className="flex justify-between relative">
+              {/* First Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={1}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={1}
+                  >
+                    <Activity className="h-6 w-6 text-purple-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">Real-time Events</p>
+              </div>
+              
+              {/* Second Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={2}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={2}
+                  >
+                    <Users className="h-6 w-6 text-blue-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">User Insights</p>
+              </div>
+              
+              {/* Third Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={3}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={3}
+                  >
+                    <Brain className="h-6 w-6 text-cyan-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">AI Analytics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* User Insights Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -302,7 +443,7 @@ await analytics.track({
             <motion.div 
               variants={userInsightItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10"
+              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center"
             >
               <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
                 <Users className="h-7 w-7 text-purple-300" />
@@ -314,7 +455,7 @@ await analytics.track({
             <motion.div 
               variants={userInsightItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10"
+              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center"
             >
               <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
                 <LineChart className="h-7 w-7 text-blue-300" />
@@ -326,7 +467,7 @@ await analytics.track({
             <motion.div 
               variants={userInsightItemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10"
+              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center"
             >
               <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
                 <PieChart className="h-7 w-7 text-cyan-300" />
@@ -370,7 +511,7 @@ await analytics.track({
               <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-lg p-3">
                 <Brain className="h-6 w-6 text-indigo-300" />
               </div>
-              <div>
+              <div className="flex-1 text-center">
                 <h3 className="text-lg font-medium text-white mb-2">Predictive Analysis</h3>
                 <p className="text-gray-300">Forecast future trends and user behaviors with advanced machine learning algorithms.</p>
               </div>
@@ -384,7 +525,7 @@ await analytics.track({
               <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-lg p-3">
                 <Activity className="h-6 w-6 text-blue-300" />
               </div>
-              <div>
+              <div className="flex-1 text-center">
                 <h3 className="text-lg font-medium text-white mb-2">Anomaly Detection</h3>
                 <p className="text-gray-300">Automatically identify unusual patterns and potential issues in your application.</p>
               </div>
@@ -398,7 +539,7 @@ await analytics.track({
               <div className="bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-lg p-3">
                 <BarChart className="h-6 w-6 text-emerald-300" />
               </div>
-              <div>
+              <div className="flex-1 text-center">
                 <h3 className="text-lg font-medium text-white mb-2">Intelligent Recommendations</h3>
                 <p className="text-gray-300">Get actionable insights and recommendations to optimize your business metrics.</p>
               </div>
