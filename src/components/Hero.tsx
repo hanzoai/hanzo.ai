@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info, Rocket, Zap } from "lucide-react";
@@ -81,7 +80,6 @@ const Hero = () => {
           delay: 0.25
         }} className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Design, Engineer, and Market AI-powered applications with our unified platform.
-            Featuring streaming AI, UI components, and a real-time database - everything you need to build modern apps.
           </motion.p>
 
           <motion.div initial={{
