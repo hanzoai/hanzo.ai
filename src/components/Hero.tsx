@@ -55,7 +55,8 @@ const Hero = () => {
   const titleLetters2 = titleText2.split("");
   
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 bg-black" />
+      {/* Changed from gradient to solid black to prevent flash */}
+      <div className="absolute inset-0 bg-black" />
 
       {/* Add the keyframes animation here but using style jsx syntax without the global attribute */}
       <style dangerouslySetInnerHTML={{ __html: `
