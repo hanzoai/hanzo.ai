@@ -17,14 +17,14 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative flex items-center justify-center gap-4 overflow-x-auto"
+          className="relative h-48 flex items-center justify-center gap-4 overflow-x-auto"
         >
           {/* Fireworks GIF animation in the middle */}
           <div className="absolute z-10">
             <motion.img 
               src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnBuZzFlZWxzNnN3dzVzZzBqbTB2eHMxd2IzMjIwMG03eWN3MWZreiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/odsNxyQQDb29O/giphy.gif" 
               alt="Fireworks animation"
-              className="w-96 h-96 object-cover" 
+              className="w-48 h-48 object-cover" 
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
