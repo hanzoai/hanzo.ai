@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -48,8 +49,8 @@ const Hero = () => {
     }
   };
 
-  const titleText1 = "Plan and build";
-  const titleText2 = "your product";
+  const titleText1 = "build as fast";
+  const titleText2 = "as you think";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   
@@ -97,11 +98,18 @@ const Hero = () => {
         .vercel-button:hover {
           color: white;
           box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-          transform: translateY(-2px);
         }
         
         .vercel-button:hover::before {
           opacity: 1;
+          filter: brightness(0.7);
+          background: linear-gradient(
+            90deg,
+            rgb(100, 103, 110),
+            rgb(210, 210, 210),
+            rgb(160, 162, 165),
+            rgb(100, 103, 110)
+          );
         }
 
         .gradient-text {
