@@ -9,7 +9,7 @@ const HeroPoem = () => {
       transition={{ duration: 0.8 }}
       className="text-center max-w-4xl mx-auto mb-16 space-y-6"
     >
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-display tracking-tight text-white leading-tight">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-display tracking-tight text-white leading-tight relative z-50">
         In the age of endless dreams,
         <span className="block bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent py-1 leading-relaxed">
           Ideas take flight on digital wings
