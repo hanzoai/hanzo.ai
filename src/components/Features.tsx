@@ -125,8 +125,8 @@ const Features = () => {
             once: true
           }} transition={{
             duration: 0.5
-          }} className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 lg:col-span-2">
+          }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
               <div className="max-w-md">
                 <p className="text-lg text-gray-300">We've helped businesses and individuals harness the <span className="text-orange-500 font-semibold">power of AI</span> to drive growth, efficiency, and innovation.</p>
                 <Button variant="outline" className="mt-6 bg-orange-500 text-white border-orange-500 hover:bg-orange-600 hover:text-white">
@@ -135,7 +135,7 @@ const Features = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 md:col-span-2">
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
                 <h3 className="text-5xl font-bold text-white">1M<sup>+</sup></h3>
                 <p className="mt-2 text-gray-300">Users benefiting from our AI-powered solutions</p>
