@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -103,43 +102,39 @@ const Analytics = () => {
     }
   };
 
-  // Animation variants for the milestone circles - circle highlights first
+  // Animation variants for the milestone circles - all circles visible initially
   const milestoneCircleVariants = {
-    hidden: { scale: 0.9, opacity: 0.7 },
+    hidden: { opacity: 1 },
     visible: (i: number) => ({
-      scale: 1, 
       opacity: 1,
       transition: { 
-        duration: 0.5, 
-        delay: i * 4, // Increased delay between steps for better visibility
-        type: "spring",
-        stiffness: 200,
-        damping: 10
+        duration: 0.5,
+        delay: i * 3,
       }
     })
   };
 
-  // Animation variants for the milestone line - only animates after circle is highlighted
+  // Animation variants for the milestone line - reveals from left to right
   const milestoneLineVariants = {
     hidden: { width: 0 },
     visible: (i: number) => ({
       width: "100%",
       transition: { 
-        duration: 1.5,
-        delay: i * 4 + 0.7, // Line animates AFTER the circle is highlighted
+        duration: 1.2,
+        delay: i * 3,
         ease: "easeInOut"
       }
     })
   };
 
-  // Animation variants for the fill circle - fills after the line completes
+  // Animation for the icon inversion - only happens when line reaches circle
   const fillCircleVariants = {
     hidden: { scale: 0 },
     visible: (i: number) => ({
       scale: 1,
       transition: { 
         duration: 0.5,
-        delay: i * 4 + 2.3, // Fill circle after the line completes
+        delay: i * 3 + 1.2,
         type: "spring",
         stiffness: 300,
         damping: 15
@@ -186,15 +181,15 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
-        {/* Milestone Progress Indicator - Fixed animation sequence */}
+        {/* Milestone Progress Indicator - Revised animation sequence */}
         <div className="relative mb-12 flex justify-center">
-          <div className="relative w-full max-w-4xl">
-            {/* Background line */}
-            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
+          <div className="relative w-full max-w-4xl flex items-center justify-center">
+            {/* Background line - always visible */}
+            <div className="absolute top-6 left-0 right-0 mx-auto w-full h-1 bg-gray-800 rounded-full"></div>
             
-            {/* First segment line - only animates after first circle is highlighted */}
+            {/* First segment line - animates after first circle is highlighted */}
             <motion.div
-              className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left"
+              className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left z-10"
               style={{ width: "0%", right: "66.7%" }}
               variants={milestoneLineVariants}
               initial="hidden"
@@ -203,9 +198,9 @@ const Analytics = () => {
               custom={0}
             ></motion.div>
             
-            {/* Second segment line - only animates after second circle is highlighted */}
+            {/* Second segment line - animates after second circle is highlighted */}
             <motion.div
-              className="absolute top-6 h-1 bg-white rounded-full origin-left"
+              className="absolute top-6 h-1 bg-white rounded-full origin-left z-10"
               style={{ width: "0%", left: "33.3%", right: "33.3%" }}
               variants={milestoneLineVariants}
               initial="hidden"
@@ -214,9 +209,9 @@ const Analytics = () => {
               custom={1}
             ></motion.div>
             
-            {/* Third segment line - only animates after third circle is highlighted */}
+            {/* Third segment line - animates after third circle is highlighted */}
             <motion.div
-              className="absolute top-6 h-1 bg-white rounded-full origin-left"
+              className="absolute top-6 h-1 bg-white rounded-full origin-left z-10"
               style={{ width: "0%", left: "66.7%", right: "0%" }}
               variants={milestoneLineVariants}
               initial="hidden"
@@ -226,11 +221,11 @@ const Analytics = () => {
             ></motion.div>
             
             {/* Milestone Points */}
-            <div className="flex justify-between relative">
+            <div className="flex justify-between relative w-full">
               {/* First Milestone */}
               <div className="text-center relative">
                 <motion.div 
-                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto relative"
+                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto relative z-20"
                   variants={milestoneCircleVariants}
                   initial="hidden"
                   whileInView="visible"
@@ -251,10 +246,10 @@ const Analytics = () => {
                 <p className="mt-2 font-medium text-white">Real-time Events</p>
               </div>
               
-              {/* Second Milestone */}
+              {/* Second Milestone - centered exactly */}
               <div className="text-center relative">
                 <motion.div 
-                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto"
+                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto z-20"
                   variants={milestoneCircleVariants}
                   initial="hidden"
                   whileInView="visible"
@@ -278,7 +273,7 @@ const Analytics = () => {
               {/* Third Milestone */}
               <div className="text-center relative">
                 <motion.div 
-                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto"
+                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto z-20"
                   variants={milestoneCircleVariants}
                   initial="hidden"
                   whileInView="visible"
