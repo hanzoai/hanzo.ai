@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor } from "lucide-react";
 import { Button } from "./ui/button";
+
 const allFeatures = [{
   icon: <Wand2 className="h-6 w-6" />,
   title: "Hanzo App",
@@ -34,6 +35,7 @@ const allFeatures = [{
   title: "Hanzo Network",
   description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
 }];
+
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
@@ -49,6 +51,7 @@ const Features = () => {
     "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
     "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
   };
+
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -61,6 +64,7 @@ const Features = () => {
       }
     }
   };
+
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -77,13 +81,10 @@ const Features = () => {
     }
   };
 
-  // Text animation for testimonial section
   const testimonialText = "We've helped businesses and individuals harness the power of AI to drive growth, efficiency, and innovation.";
 
-  // Create an array of the text characters for animation
   const testimonialCharacters = testimonialText.split("");
 
-  // Configure the text animation to ensure it stays contained
   const textContainerVariants = {
     hidden: {
       opacity: 0
@@ -96,6 +97,7 @@ const Features = () => {
       }
     }
   };
+
   const characterVariants = {
     hidden: {
       opacity: 0,
@@ -111,6 +113,7 @@ const Features = () => {
       }
     }
   };
+
   return <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[128px]">
         <div className="text-center">
@@ -245,36 +248,39 @@ const Features = () => {
       }} transition={{
         duration: 0.5
       }} className="mt-20 relative overflow-hidden rounded-xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-700/20 to-transparent z-0"></div>
-        <div className="absolute inset-0 backdrop-blur-sm bg-black/40 z-10"></div>
-        
-        <div className="relative z-20 p-8 bg-transparent">
-          <h3 className="text-white mb-6 font-normal text-3xl bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Industries We Transform</h3>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-700/20 to-transparent z-0"></div>
+          <div className="absolute inset-0 backdrop-blur-sm bg-black/40 z-10"></div>
           
-          <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
-            once: true
-          }} className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map(industry => <motion.div key={industry} variants={itemVariants} whileHover={{
-              y: -5,
-              scale: 1.05,
-              boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-              transition: {
-                type: "spring",
-                stiffness: 400,
-                damping: 10
-              }
-            }} className="group">
-                <div className="px-4 py-3 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 transition-all duration-300 transform hover:border-purple-500/40 flex flex-col items-center text-center h-full justify-center">
-                  {industryIcons[industry]}
-                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
-                    {industry}
-                  </span>
-                </div>
-              </motion.div>)}
-          </motion.div>
-        </div>
-      </motion.div>
-    </div>
-  </section>;
+          <div className="relative z-20 p-8 bg-transparent">
+            <div className="industries-container">
+              <h3 className="text-white mb-6 font-normal text-3xl bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Industries We Transform</h3>
+              
+              <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
+                once: true
+              }} className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                {["Artificial Intelligence", "Adtech", "Blockchain", "Cloud Computing", "GPU", "Hardware", "Machine Learning", "Software", "Cyber Security", "Confidential Computing"].map(industry => <motion.div key={industry} variants={itemVariants} whileHover={{
+                  y: -5,
+                  scale: 1.05,
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+                  transition: {
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10
+                  }
+                }} className="group">
+                    <div className="px-4 py-3 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 transition-all duration-300 transform hover:border-purple-500/40 flex flex-col items-center text-center h-full justify-center">
+                      {industryIcons[industry]}
+                      <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                        {industry}
+                      </span>
+                    </div>
+                  </motion.div>)}
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>;
 };
+
 export default Features;
