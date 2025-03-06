@@ -60,18 +60,17 @@ const Hero = () => {
 
       {/* Add the keyframes animation here but using style jsx syntax without the global attribute */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes rainbowGradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+        @keyframes softGlow {
+          0% { box-shadow: 0 0 5px rgba(211, 228, 253, 0.3); }
+          50% { box-shadow: 0 0 15px rgba(211, 228, 253, 0.5); }
+          100% { box-shadow: 0 0 5px rgba(211, 228, 253, 0.3); }
         }
         
-        .rainbow-btn:hover {
-          background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
-          background-size: 200% 200%;
-          animation: rainbowGradient 3s ease infinite;
-          color: white;
-          border: none;
+        .elegant-btn:hover {
+          background: linear-gradient(to right, #D3E4FD, #E5DEFF);
+          color: #403E43;
+          animation: softGlow 3s ease infinite;
+          transition: all 0.3s ease;
         }
       `}} />
 
@@ -117,7 +116,7 @@ const Hero = () => {
         }} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className={`text-lg px-8 bg-white text-black hover:bg-gray-200 rainbow-btn`}
+              className={`text-lg px-8 bg-slate-800 text-white hover:bg-slate-700 elegant-btn`}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
