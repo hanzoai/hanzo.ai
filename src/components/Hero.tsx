@@ -60,24 +60,51 @@ const Hero = () => {
 
       {/* Add the keyframes animation here but using style jsx syntax without the global attribute */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes coolGradient {
+        .vercel-button {
+          background: white;
+          color: black;
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          transition: color 0.3s ease;
+        }
+        
+        .vercel-button::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            90deg,
+            #007cf0,
+            #00dfd8,
+            #ff0080,
+            #7928ca,
+            #ff4d4d
+          );
+          background-size: 300% 100%;
+          z-index: -1;
+          transition: opacity 0.3s ease;
+          opacity: 0;
+          animation: vercelGradient 4s ease alternate infinite;
+        }
+        
+        @keyframes vercelGradient {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
         
-        .cool-gradient-btn {
-          background: linear-gradient(90deg, #243949 0%, #517fa4 100%);
-          background-size: 200% 200%;
-          animation: coolGradient 5s ease infinite;
+        .vercel-button:hover {
           color: white;
-          border: none;
-          transition: transform 0.3s ease;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+          transform: translateY(-2px);
         }
         
-        .cool-gradient-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(36, 57, 73, 0.3);
+        .vercel-button:hover::before {
+          opacity: 1;
         }
       `}} />
 
@@ -123,7 +150,7 @@ const Hero = () => {
         }} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="text-lg px-8 cool-gradient-btn"
+              className="text-lg px-8 vercel-button"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
