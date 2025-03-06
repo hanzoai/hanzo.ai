@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { 
   Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, 
@@ -180,25 +181,33 @@ const Features = () => {
           }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
               <div className="max-w-md">
-                <p className="text-lg text-gray-300">
-                  {testimonialText.split('').map((char, index) => (
-                    char === ' ' ? (
-                      <span key={index}>&nbsp;</span>
-                    ) : (
+                <motion.p 
+                  className="text-lg text-gray-300"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.8 }}
+                >
+                  {testimonialText.split('').map((char, index) => {
+                    if (char === ' ') {
+                      return <span key={index}>&nbsp;</span>;
+                    }
+                    
+                    const isPowerOfAI = 
+                      index >= testimonialText.indexOf('power of') && 
+                      index < testimonialText.indexOf('power of') + 'power of AI'.length;
+                    
+                    return (
                       <motion.span
                         key={index}
                         custom={index}
                         variants={textCharacterVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.8 }}
-                        className={char === 'A' && index > testimonialText.indexOf('power of') ? "text-white font-bold" : ""}
+                        className={isPowerOfAI && char === 'A' ? "text-white font-bold" : ""}
                       >
                         {char}
                       </motion.span>
-                    )
-                  ))}
-                </p>
+                    );
+                  })}
+                </motion.p>
                 <Button variant="outline" className="mt-6 bg-white text-black border-white hover:bg-gray-100 hover:text-black">
                   Our Testimonial
                 </Button>
