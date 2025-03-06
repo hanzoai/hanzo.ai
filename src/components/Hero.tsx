@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -20,7 +19,6 @@ const Hero = () => {
     });
   };
 
-  // Animation variants for the text with moderate timing
   const titleVariants = {
     hidden: {
       opacity: 0
@@ -50,17 +48,14 @@ const Hero = () => {
     }
   };
 
-  // Split text for individual letter animations
   const titleText1 = "Plan and build";
   const titleText2 = "your product";
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Changed from gradient to solid black to prevent flash */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* Add the keyframes animation here but using style jsx syntax without the global attribute */}
       <style dangerouslySetInnerHTML={{ __html: `
         .vercel-button {
           background: white;
@@ -164,8 +159,7 @@ const Hero = () => {
             }} 
             className="mt-6 text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Design, Engineer, and Market AI-powered applications with our unified platform.
-            Featuring streaming AI, UI components, and a real-time database - everything you need to build modern apps.
+            Build as fast as you think. Design, Engineer, and Market AI-powered applications with our unified platform.
           </motion.p>
 
           <motion.div 
