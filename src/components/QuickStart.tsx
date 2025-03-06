@@ -1,6 +1,8 @@
+
 import { motion } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const quickApps = [{
   icon: <Bot className="h-6 w-6" />,
   title: "AI Chat Assistant",
@@ -26,8 +28,9 @@ const quickApps = [{
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",
   borderColor: "group-hover:border-orange-400/30"
 }];
+
 const QuickStart = () => {
-  return <section className="py-12 bg-gradient-to-b from-black via-gray-900/50 to-black bg-[#000a00]/[0.12]">
+  return <section className="py-12 bg-gradient-to-b from-black via-gray-900/50 to-black bg-[#000a00]/0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{
         opacity: 0,
@@ -38,11 +41,11 @@ const QuickStart = () => {
       }} viewport={{
         once: true
       }} className="text-center mb-12">
-          <h2 className="text-3xl font-display text-white mb-4">
-            Quick Launch Apps
+          <h2 className="font-display text-white mb-4 text-3xl">
+            Explore Launch Apps
           </h2>
           <p className="text-lg text-gray-400">
-            Get started quickly with our pre-built templates
+            Click any of our pre-built templates below to get started
           </p>
         </motion.div>
 
@@ -59,12 +62,10 @@ const QuickStart = () => {
           delay: index * 0.1
         }} className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
                 border border-white/5 transition-all duration-300 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
-              <div className="p-3 rounded-lg w-fit bg-white/5 text-white">
+              <div className="p-3 w-10 h-10 bg-white/5 text-white rounded-md flex items-center justify-center mx-auto">
                 {app.icon}
               </div>
-              <h3 className="mt-4 font-normal text-base text-center text-gray-300">
-                {app.title}
-              </h3>
+              
               <p className="mt-2 text-gray-400">{app.description}</p>
               <Button className="mt-4 w-full bg-white/5 hover:bg-white/10 text-white border border-white/10
                   transition-all duration-300 hover:border-white/20" variant="outline">
