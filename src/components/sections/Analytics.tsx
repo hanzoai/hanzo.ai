@@ -102,39 +102,42 @@ const Analytics = () => {
     }
   };
 
-  // Animation variants for the milestone circles - all circles visible initially
-  const milestoneCircleVariants = {
-    hidden: { opacity: 1 },
-    visible: (i: number) => ({
-      opacity: 1,
-      transition: { 
-        duration: 0.5,
-        delay: i * 3,
-      }
-    })
-  };
-
-  // Animation variants for the milestone line - reveals from left to right
+  // Animation variants for the milestone progress
   const milestoneLineVariants = {
     hidden: { width: 0 },
-    visible: (i: number) => ({
-      width: "100%",
+    visible: (custom: number) => ({
+      width: `${custom}%`,
       transition: { 
-        duration: 1.2,
-        delay: i * 3,
+        duration: 1.5,
+        delay: custom === 50 ? 2.5 : custom === 100 ? 5 : 0,
         ease: "easeInOut"
       }
     })
   };
 
-  // Animation for the icon inversion - only happens when line reaches circle
-  const fillCircleVariants = {
-    hidden: { scale: 0 },
-    visible: (i: number) => ({
-      scale: 1,
+  const milestoneCircleVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (custom: number) => ({
+      scale: 1, 
+      opacity: 1,
       transition: { 
-        duration: 0.5,
-        delay: i * 3 + 1.2,
+        duration: 0.5, 
+        delay: custom === 1 ? 0 : custom === 2 ? 2.5 : 5,
+        type: "spring",
+        stiffness: 200,
+        damping: 10
+      }
+    })
+  };
+
+  const checkmarkVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (custom: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: { 
+        duration: 0.3,
+        delay: custom === 1 ? 0.5 : custom === 2 ? 3 : 5.5,
         type: "spring",
         stiffness: 300,
         damping: 15
@@ -180,122 +183,6 @@ const Analytics = () => {
             Enterprise-grade analytics built for the AI era. Track, analyze, and optimize your application with our powerful analytics suite.
           </motion.p>
         </motion.div>
-
-        {/* Milestone Progress Indicator - Revised animation sequence */}
-        <div className="relative mb-12 flex justify-center">
-          <div className="relative w-full max-w-4xl flex items-center justify-center">
-            {/* Background line - always visible */}
-            <div className="absolute top-6 left-0 right-0 mx-auto w-full h-1 bg-gray-800 rounded-full"></div>
-            
-            {/* First segment line - animates after first circle is highlighted */}
-            <motion.div
-              className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left z-10"
-              style={{ width: "0%", right: "66.7%" }}
-              variants={milestoneLineVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={0}
-            ></motion.div>
-            
-            {/* Second segment line - animates after second circle is highlighted */}
-            <motion.div
-              className="absolute top-6 h-1 bg-white rounded-full origin-left z-10"
-              style={{ width: "0%", left: "33.3%", right: "33.3%" }}
-              variants={milestoneLineVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={1}
-            ></motion.div>
-            
-            {/* Third segment line - animates after third circle is highlighted */}
-            <motion.div
-              className="absolute top-6 h-1 bg-white rounded-full origin-left z-10"
-              style={{ width: "0%", left: "66.7%", right: "0%" }}
-              variants={milestoneLineVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={2}
-            ></motion.div>
-            
-            {/* Milestone Points */}
-            <div className="flex justify-between relative w-full">
-              {/* First Milestone */}
-              <div className="text-center relative">
-                <motion.div 
-                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto relative z-20"
-                  variants={milestoneCircleVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={0}
-                >
-                  <motion.div
-                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center"
-                    variants={fillCircleVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    custom={0}
-                  >
-                    <Activity className="h-6 w-6 text-black" />
-                  </motion.div>
-                </motion.div>
-                <p className="mt-2 font-medium text-white">Real-time Events</p>
-              </div>
-              
-              {/* Second Milestone - centered exactly */}
-              <div className="text-center relative">
-                <motion.div 
-                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto z-20"
-                  variants={milestoneCircleVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={1}
-                >
-                  <motion.div
-                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center"
-                    variants={fillCircleVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    custom={1}
-                  >
-                    <Users className="h-6 w-6 text-black" />
-                  </motion.div>
-                </motion.div>
-                <p className="mt-2 font-medium text-white">User Insights</p>
-              </div>
-              
-              {/* Third Milestone */}
-              <div className="text-center relative">
-                <motion.div 
-                  className="w-12 h-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center mx-auto z-20"
-                  variants={milestoneCircleVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  custom={2}
-                >
-                  <motion.div
-                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center"
-                    variants={fillCircleVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    custom={2}
-                  >
-                    <Brain className="h-6 w-6 text-black" />
-                  </motion.div>
-                </motion.div>
-                <p className="mt-2 font-medium text-white">AI Analytics</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <motion.div 
           variants={containerVariants}
@@ -429,6 +316,106 @@ await analytics.track({
           </div>
         </motion.div>
 
+        {/* Milestone Progress Indicator */}
+        <div className="relative mb-20 flex justify-center">
+          <div className="relative w-full max-w-4xl">
+            {/* Background line */}
+            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
+            
+            {/* Animated progress line */}
+            <motion.div
+              className="absolute top-6 left-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={50}
+            ></motion.div>
+            
+            <motion.div
+              className="absolute top-6 left-[50%] h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full origin-left"
+              variants={milestoneLineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={50}
+            ></motion.div>
+            
+            {/* Milestone Points */}
+            <div className="flex justify-between relative">
+              {/* First Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={1}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={1}
+                  >
+                    <Activity className="h-6 w-6 text-purple-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">Real-time Events</p>
+              </div>
+              
+              {/* Second Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={2}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={2}
+                  >
+                    <Users className="h-6 w-6 text-blue-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">User Insights</p>
+              </div>
+              
+              {/* Third Milestone */}
+              <div className="text-center relative">
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto"
+                  variants={milestoneCircleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={3}
+                >
+                  <motion.div
+                    variants={checkmarkVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    custom={3}
+                  >
+                    <Brain className="h-6 w-6 text-cyan-400" />
+                  </motion.div>
+                </motion.div>
+                <p className="mt-2 font-medium text-white">AI Analytics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* User Insights Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -491,6 +478,7 @@ await analytics.track({
           </motion.div>
         </motion.div>
 
+        {/* AI Analytics Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
