@@ -108,6 +108,27 @@ const Hero = () => {
         .vercel-button:hover::before {
           opacity: 1;
         }
+
+        .gradient-text {
+          background: linear-gradient(
+            90deg,
+            #f5f5f5,
+            #ffffff,
+            #e0e0e0,
+            #f5f5f5
+          );
+          background-size: 300% 100%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          animation: textGradient 8s ease infinite;
+        }
+        
+        @keyframes textGradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
       `}} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -143,9 +164,8 @@ const Hero = () => {
             }} 
             className="mt-6 text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Linear is a purpose-built tool for modern 
-            product development. Streamline issues, 
-            projects, and product roadmaps.
+            Design, Engineer, and Market AI-powered applications with our unified platform.
+            Featuring streaming AI, UI components, and a real-time database - everything you need to build modern apps.
           </motion.p>
 
           <motion.div 
@@ -174,7 +194,7 @@ const Hero = () => {
               <a href="https://hanzo.app">Start building</a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
-              <a href="https://docs.hanzo.sh">Introducing Customer Requests →</a>
+              <a href="https://docs.hanzo.sh" className="gradient-text">Introducing Customer Requests →</a>
             </Button>
           </motion.div>
         </div>
