@@ -91,7 +91,7 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all"
+              className="relative p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all flex flex-col items-center text-center"
             >
               <div className="p-2 bg-white/10 w-fit rounded-lg text-blue-400">
                 {feature.icon}
@@ -132,15 +132,15 @@ const Features = () => {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
+            <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
               <h3 className="text-3xl font-bold text-white">$2T+</h3>
               <p className="mt-2 text-gray-300">Projected AI software market by 2030</p>
             </div>
-            <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
+            <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
               <h3 className="text-3xl font-bold text-white">70%</h3>
               <p className="mt-2 text-gray-300">Enterprises adopting AI solutions by 2025</p>
             </div>
-            <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
+            <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
               <h3 className="text-3xl font-bold text-white">1GW</h3>
               <p className="mt-2 text-gray-300">Green energy secured at 3.0 cent/kWh</p>
             </div>
@@ -153,10 +153,10 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-20 p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10"
+          className="mt-20 p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center"
         >
           <h3 className="text-xl font-semibold text-white mb-4">Industries</h3>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 justify-center">
             {[
               "Artificial Intelligence",
               "Adtech",
