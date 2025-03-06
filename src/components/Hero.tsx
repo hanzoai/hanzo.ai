@@ -57,7 +57,7 @@ const Hero = () => {
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style jsx={true} dangerouslySetInnerHTML={{ __html: `
         .vercel-button {
           background: white;
           color: black;
@@ -143,7 +143,7 @@ const Hero = () => {
                 </motion.span>)}
             </motion.span>
             
-            <motion.span className="block bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 bg-clip-text text-transparent pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
+            <motion.span className="block text-white pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
               {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>)}
