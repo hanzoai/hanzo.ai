@@ -62,9 +62,7 @@ const QuickStart = () => {
               <div className="p-3 w-fit bg-white/5 text-white rounded-md">
                 {app.icon}
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-white">
-                {app.title}
-              </h3>
+              
               <p className="mt-2 text-gray-400">{app.description}</p>
               <Button className="mt-4 w-full bg-white/5 hover:bg-white/10 text-white border border-white/10
                   transition-all duration-300 hover:border-white/20" variant="outline">
