@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
@@ -53,7 +52,7 @@ const caseStudies = [{
     roi: "450%"
   },
   videoUrl: "https://www.youtube.com/embed/your-video-id",
-  learnMoreUrl: "https://sensei.partners"
+  learnMoreUrl: "https://sensei.group"
 }, {
   title: "Skully AR-1: Transforming Motorcycle Safety",
   description: "A comprehensive digital transformation that revolutionized the AR helmet industry and had a record breaking crowdfunding campaign in first 24 hours.",
@@ -63,7 +62,7 @@ const caseStudies = [{
     impact: "85%+"
   },
   videoUrl: "https://www.youtube.com/embed/your-video-id",
-  learnMoreUrl: "https://sensei.partners"
+  learnMoreUrl: "https://sensei.group"
 }];
 
 const Testimonials = () => {
