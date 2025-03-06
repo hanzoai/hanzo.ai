@@ -19,7 +19,7 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative mb-[-5%] z-10" // Negative margin for overlap
+            className="relative mb-[-5%] z-0" // Changed z-index to 0 to be behind text
           >
             <motion.img 
               src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnBuZzFlZWxzNnN3dzVzZzBqbTB2eHMxd2IzMjIwMG03eWN3MWZreiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/odsNxyQQDb29O/giphy.gif" 
@@ -36,7 +36,7 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="flex items-center justify-center gap-4 overflow-x-auto"
+            className="flex items-center justify-center gap-4 overflow-x-auto z-20" // Added z-index to ensure it's above the GIF
           >
             {members.map((member, index) => {
               const Icon = member.icon;
@@ -46,7 +46,7 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex-shrink-0 text-center"
+                  className="flex-shrink-0 text-center relative z-20" // Added relative and z-index to ensure text is on top
                 >
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.gradient} p-4 mx-auto mb-2`}>
                     <Icon className="w-full h-full text-white" />
