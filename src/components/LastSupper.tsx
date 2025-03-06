@@ -51,8 +51,10 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.gradient} p-4 mx-auto mb-2`}>
                     <Icon className="w-full h-full text-white" />
                   </div>
-                  <p className="text-white font-medium">{member.name}</p>
-                  <p className="text-purple-400 text-sm">{member.role}</p>
+                  <div className="mt-5"> {/* Added 20px top margin to push text down */}
+                    <p className="text-white font-medium">{member.name}</p>
+                    <p className="text-purple-400 text-sm">{member.role}</p>
+                  </div>
                 </motion.div>
               );
             })}
