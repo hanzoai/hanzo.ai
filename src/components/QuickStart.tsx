@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const quickApps = [{
   icon: <Bot className="h-6 w-6" />,
   title: "AI Chat Assistant",
@@ -27,6 +28,7 @@ const quickApps = [{
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",
   borderColor: "group-hover:border-orange-400/30"
 }];
+
 const QuickStart = () => {
   return <section className="py-12 bg-gradient-to-b from-black via-gray-900/50 to-black bg-[#000a00]/[0.12]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,9 +66,25 @@ const QuickStart = () => {
             transition={{
               delay: index * 0.1
             }}
-            whileHover={{
-              scale: 1.05,
-              transition: { type: "spring", stiffness: 300, damping: 10 }
+            whileHover={[
+              {
+                scale: 1.08,
+                rotate: 2,
+                transition: { 
+                  type: "spring", 
+                  stiffness: 400, 
+                  damping: 10 
+                }
+              }
+            ]}
+            whileTap={{
+              scale: 0.95,
+              rotate: -2,
+              transition: { 
+                type: "spring", 
+                stiffness: 400, 
+                damping: 10 
+              }
             }}
             className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
                 border border-white/5 transition-all duration-300 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
@@ -85,4 +103,5 @@ const QuickStart = () => {
       </div>
     </section>;
 };
+
 export default QuickStart;
