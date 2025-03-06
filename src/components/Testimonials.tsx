@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+
 const testimonials = [{
   quote: "Hanzo has helped us to streamline our complex challenges and processes. Their suite of tools has made it easier for us to launch, scale, and innovate our business.",
   author: "Jennifer Smith",
@@ -15,6 +16,7 @@ const testimonials = [{
   author: "Sarah Johnson",
   role: "CTO, Bellabeat"
 }];
+
 const brandLogos = [{
   name: "Sensei",
   logo: "https://sensei.partners/logo.png"
@@ -40,6 +42,7 @@ const brandLogos = [{
   name: "LUX",
   logo: "/placeholder.svg"
 }];
+
 const caseStudies = [{
   title: "Damon Motorcycles: Revolutionizing Electric Mobility",
   description: "How we helped Damon Motorcycles achieve unprecedented growth in their electric motorcycle platform through innovative digital solutions.",
@@ -52,7 +55,7 @@ const caseStudies = [{
   learnMoreUrl: "https://sensei.partners"
 }, {
   title: "Skully AR-1: Transforming Motorcycle Safety",
-  description: "A comprehensive digital transformation that revolutionized the AR helmet industry and set new standards for rider safety.",
+  description: "A comprehensive digital transformation that revolutionized the AR helmet industry and set new as well as a record breaking crowdfunding campaign in first 24 hours standards for rider safety.",
   stats: {
     efficiency: "200%",
     timeframe: "12 months",
@@ -61,6 +64,7 @@ const caseStudies = [{
   videoUrl: "https://www.youtube.com/embed/your-video-id",
   learnMoreUrl: "https://sensei.partners"
 }];
+
 const Testimonials = () => {
   return <section className="py-20 bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,4 +162,5 @@ const Testimonials = () => {
       </div>
     </section>;
 };
+
 export default Testimonials;
