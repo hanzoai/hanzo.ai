@@ -36,11 +36,13 @@ const Hero = () => {
   const letterVariants = {
     hidden: {
       opacity: 0,
-      y: 20
+      y: 20,
+      filter: "blur(8px)"
     },
     visible: {
       opacity: 1,
       y: 0,
+      filter: "blur(0px)",
       transition: {
         duration: 0.25,
         ease: "easeOut"
@@ -89,11 +91,12 @@ const Hero = () => {
           transition: opacity 0.3s ease;
           opacity: 0;
           animation: vercelGradient 4s ease alternate infinite;
+          filter: blur(0px);
         }
         
         @keyframes vercelGradient {
           0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
+          50% { background-position: 100% 50%; filter: blur(2px); }
           100% { background-position: 0% 50%; }
         }
         
@@ -124,30 +127,44 @@ const Hero = () => {
             </motion.span>
           </motion.h1>
 
-          <motion.p initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: titleAnimationComplete ? 1 : 0,
-          y: titleAnimationComplete ? 0 : 20
-        }} transition={{
-          duration: 0.4,
-          delay: 0.25
-        }} className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <motion.p 
+            initial={{
+              opacity: 0,
+              y: 20,
+              filter: "blur(8px)"
+            }} 
+            animate={{
+              opacity: titleAnimationComplete ? 1 : 0,
+              y: titleAnimationComplete ? 0 : 20,
+              filter: titleAnimationComplete ? "blur(0px)" : "blur(8px)"
+            }} 
+            transition={{
+              duration: 0.4,
+              delay: 0.25
+            }} 
+            className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
+          >
             Design, Engineer, and Market AI-powered applications with our unified platform.
             Featuring streaming AI, UI components, and a real-time database - everything you need to build modern apps.
           </motion.p>
 
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: titleAnimationComplete ? 1 : 0,
-          y: titleAnimationComplete ? 0 : 20
-        }} transition={{
-          duration: 0.4,
-          delay: 0.35
-        }} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div 
+            initial={{
+              opacity: 0,
+              y: 20,
+              filter: "blur(8px)"
+            }} 
+            animate={{
+              opacity: titleAnimationComplete ? 1 : 0,
+              y: titleAnimationComplete ? 0 : 20,
+              filter: titleAnimationComplete ? "blur(0px)" : "blur(8px)"
+            }} 
+            transition={{
+              duration: 0.4,
+              delay: 0.35
+            }} 
+            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Button 
               size="lg" 
               className="text-lg px-8 vercel-button"
