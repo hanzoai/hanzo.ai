@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { LucideIcon, Sparkles } from "lucide-react";
+import { LucideIcon, Sparkles, Zap, Flame } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface TeamMember {
@@ -12,27 +12,66 @@ interface TeamMember {
 
 const Firework = () => {
   const [visible, setVisible] = useState(true);
+  const [particles, setParticles] = useState<number[]>([]);
   
   useEffect(() => {
+    // Toggle main sparkle visibility
     const interval = setInterval(() => {
       setVisible(prev => !prev);
+      
+      // Generate new particles on each pulse
+      if (particles.length < 8) {
+        setParticles(prev => [...prev, Date.now()]);
+      } else {
+        setParticles(prev => {
+          const newParticles = [...prev];
+          newParticles.shift();
+          return [...newParticles, Date.now()];
+        });
+      }
     }, 700);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [particles]);
   
   return (
-    <motion.div
-      initial={{ scale: 0.5, opacity: 0 }}
-      animate={{ 
-        scale: visible ? 1.2 : 0.8, 
-        opacity: visible ? 1 : 0.7,
-      }}
-      transition={{ duration: 0.5 }}
-      className="absolute z-10"
-    >
-      <Sparkles className="h-12 w-12 text-purple-500" />
-    </motion.div>
+    <div className="absolute z-10">
+      {/* Main sparkle */}
+      <motion.div
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ 
+          scale: visible ? 1.5 : 0.9, 
+          opacity: visible ? 1 : 0.7,
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <Sparkles className="h-14 w-14 text-purple-500" />
+      </motion.div>
+      
+      {/* Particle explosions */}
+      {particles.map((id, index) => (
+        <motion.div
+          key={id}
+          initial={{ scale: 0.2, opacity: 0, x: 0, y: 0 }}
+          animate={{ 
+            scale: 1,
+            opacity: [0, 1, 0],
+            x: [0, (index % 2 === 0 ? 1 : -1) * (20 + Math.random() * 30)],
+            y: [0, (index % 3 === 0 ? 1 : -1) * (20 + Math.random() * 30)]
+          }}
+          transition={{ duration: 1.2 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          {index % 3 === 0 ? (
+            <Flame className={`h-8 w-8 text-orange-500`} />
+          ) : index % 3 === 1 ? (
+            <Zap className={`h-8 w-8 text-amber-400`} />
+          ) : (
+            <Sparkles className={`h-6 w-6 text-fuchsia-500`} />
+          )}
+        </motion.div>
+      ))}
+    </div>
   );
 };
 
