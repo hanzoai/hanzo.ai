@@ -112,7 +112,7 @@ const Hero = () => {
                 animation: isButtonHovered ? 'gradient-animation 2s ease infinite' : 'none'
               }}
               />
-              <style jsx global>{`
+              <style global>{`
                 @keyframes gradient-animation {
                   0% { background-position: 0% 50%; }
                   50% { background-position: 100% 50%; }
@@ -126,102 +126,6 @@ const Hero = () => {
             <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
               <a href="https://docs.hanzo.sh">Read Docs</a>
             </Button>
-          </motion.div>
-
-          <motion.div initial={{
-          opacity: 0,
-          y: 40
-        }} animate={{
-          opacity: titleAnimationComplete ? 1 : 0,
-          y: titleAnimationComplete ? 0 : 40
-        }} transition={{
-          duration: 0.5,
-          delay: 0.5
-        }} className="mt-30 rounded-xl bg-gradient-to-br from-black to-gray-800 p-8 backdrop-blur-xl ring-1 ring-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
-            <motion.div 
-              className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-white/5 to-white/2 rounded-full blur-3xl border border-white/10"
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-            <motion.div 
-              className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-white/5 to-white/2 rounded-full blur-3xl border border-white/10"
-              animate={{ 
-                scale: [1, 1.3, 1],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 9,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-            
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-gradient-to-br from-gray-700 to-black rounded-lg">
-                  <Rocket className="text-white" size={24} />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-semibold text-white">Quick Install</h2>
-                  <p className="text-gray-300 text-sm">Get started in seconds</p>
-                </div>
-              </div>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Info className="text-gray-300 hover:text-white cursor-help w-5 h-5" />
-                  </TooltipTrigger>
-                  <TooltipContent className="max-w-xs bg-gray-800 text-white border-gray-700">
-                    <p>Docker will be automatically installed if not present on your system. Cannot be run inside a container.</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-            
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg p-4 mb-6 flex items-center justify-between group border border-gray-700 relative overflow-hidden"
-            >
-              <pre className="overflow-x-auto w-full">
-                <code className="text-gray-200 font-mono flex items-center">
-                  <Zap className="mr-2 text-yellow-400 inline-block" size={18} />
-                  curl -sL hanzo.sh | sh
-                </code>
-              </pre>
-              <motion.button 
-                onClick={handleCopy} 
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-gray-300 hover:text-white transition-colors opacity-0 group-hover:opacity-100 bg-gray-700/50 p-2 rounded-md" 
-                aria-label="Copy to clipboard"
-              >
-                <ClipboardCopy size={18} />
-              </motion.button>
-            </motion.div>
-            
-            <div className="text-sm text-gray-300 flex items-start space-x-2">
-              <div className="min-w-4 pt-1">
-                <motion.div 
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }}
-                  className="w-2 h-2 rounded-full bg-green-400"
-                />
-              </div>
-              <p>One command to install the complete Hanzo development platform. Compatible with Mac (Intel & Apple Silicon) and Linux systems.</p>
-            </div>
           </motion.div>
         </div>
       </div>
