@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface TeamMember {
   name: string;
@@ -8,6 +9,32 @@ interface TeamMember {
   icon: LucideIcon;
   gradient: string;
 }
+
+const Firework = () => {
+  const [visible, setVisible] = useState(true);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(prev => !prev);
+    }, 700);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <motion.div
+      initial={{ scale: 0.5, opacity: 0 }}
+      animate={{ 
+        scale: visible ? 1.2 : 0.8, 
+        opacity: visible ? 1 : 0.7,
+      }}
+      transition={{ duration: 0.5 }}
+      className="absolute z-10"
+    >
+      <Sparkles className="h-12 w-12 text-purple-500" />
+    </motion.div>
+  );
+};
 
 const LastSupper = ({ members }: { members: TeamMember[] }) => {
   return (
@@ -19,6 +46,9 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
           transition={{ duration: 1 }}
           className="relative h-48 flex items-center justify-center gap-4 overflow-x-auto"
         >
+          {/* Fireworks animation in the middle */}
+          <Firework />
+          
           {members.map((member, index) => {
             const Icon = member.icon;
             return (
