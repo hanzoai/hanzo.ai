@@ -51,6 +51,58 @@ const Analytics = () => {
     }
   };
 
+  // User Insights section animation variants
+  const userInsightsVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const userInsightItemVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: { 
+        type: "spring", 
+        stiffness: 100, 
+        damping: 12 
+      }
+    }
+  };
+
+  // AI Analytics section animation variants
+  const aiAnalyticsVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const aiAnalyticsItemVariants = {
+    hidden: { opacity: 0, x: -15, scale: 0.98 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      scale: 1,
+      transition: { 
+        type: "spring", 
+        stiffness: 120, 
+        damping: 14 
+      }
+    }
+  };
+
   return <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -220,6 +272,138 @@ await analytics.track({
               </motion.div>
             </motion.div>
           </div>
+        </motion.div>
+
+        {/* User Insights Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, type: "spring", stiffness: 90 }}
+          className="mb-16"
+        >
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-3xl font-semibold text-white text-center mb-12"
+          >
+            Powerful User Insights for Growth
+          </motion.h2>
+
+          <motion.div 
+            variants={userInsightsVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <motion.div 
+              variants={userInsightItemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10"
+            >
+              <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
+                <Users className="h-7 w-7 text-purple-300" />
+              </div>
+              <h3 className="text-xl font-medium text-white mb-3">Cohort Analysis</h3>
+              <p className="text-gray-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
+            </motion.div>
+
+            <motion.div 
+              variants={userInsightItemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10"
+            >
+              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
+                <LineChart className="h-7 w-7 text-blue-300" />
+              </div>
+              <h3 className="text-xl font-medium text-white mb-3">User Journeys</h3>
+              <p className="text-gray-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
+            </motion.div>
+
+            <motion.div 
+              variants={userInsightItemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10"
+            >
+              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
+                <PieChart className="h-7 w-7 text-cyan-300" />
+              </div>
+              <h3 className="text-xl font-medium text-white mb-3">Engagement Metrics</h3>
+              <p className="text-gray-300">Capture and analyze key engagement metrics to improve user retention.</p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* AI Analytics Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, type: "spring", stiffness: 85 }}
+          className="bg-gradient-to-r from-gray-900/20 via-black to-gray-900/20 rounded-xl p-8 mb-16"
+        >
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-3xl font-semibold text-white text-center mb-10"
+          >
+            AI-Powered Analytics
+          </motion.h2>
+
+          <motion.div
+            variants={aiAnalyticsVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <motion.div 
+              variants={aiAnalyticsItemVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+              className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4"
+            >
+              <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-lg p-3">
+                <Brain className="h-6 w-6 text-indigo-300" />
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-white mb-2">Predictive Analysis</h3>
+                <p className="text-gray-300">Forecast future trends and user behaviors with advanced machine learning algorithms.</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              variants={aiAnalyticsItemVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+              className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4"
+            >
+              <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-lg p-3">
+                <Activity className="h-6 w-6 text-blue-300" />
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-white mb-2">Anomaly Detection</h3>
+                <p className="text-gray-300">Automatically identify unusual patterns and potential issues in your application.</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              variants={aiAnalyticsItemVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+              className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4"
+            >
+              <div className="bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-lg p-3">
+                <BarChart className="h-6 w-6 text-emerald-300" />
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-white mb-2">Intelligent Recommendations</h3>
+                <p className="text-gray-300">Get actionable insights and recommendations to optimize your business metrics.</p>
+              </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         <motion.div 
