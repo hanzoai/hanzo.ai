@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf } from "lucide-react";
 import { Button } from "./ui/button";
@@ -124,7 +125,7 @@ const Features = () => {
             once: true
           }} transition={{
             duration: 0.5
-          }} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          }} className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 lg:col-span-2">
               <div className="max-w-md">
                 <p className="text-lg text-gray-300">We've helped businesses and individuals harness the <span className="text-orange-500 font-semibold">power of AI</span> to drive growth, efficiency, and innovation.</p>
@@ -134,24 +135,26 @@ const Features = () => {
               </div>
             </div>
             
-            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-              <h3 className="text-5xl font-bold text-white">1M<sup>+</sup></h3>
-              <p className="mt-2 text-gray-300">Users benefiting from our AI-powered solutions</p>
-            </div>
-            
-            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-              <h3 className="text-5xl font-bold text-white">4.9<span className="text-3xl">/5</span></h3>
-              <p className="mt-2 text-gray-300">Average rating across all AI-driven applications</p>
-            </div>
-            
-            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-              <h3 className="text-5xl font-bold text-white">80<sup>%</sup></h3>
-              <p className="mt-2 text-gray-300">Faster decision-making with AI recommendations</p>
-            </div>
-            
-            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-              <h3 className="text-5xl font-bold text-white">99<sup>%</sup></h3>
-              <p className="mt-2 text-gray-300">Uptime guarantee for seamless AI experience</p>
+            <div className="grid grid-cols-2 gap-8">
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+                <h3 className="text-5xl font-bold text-white">1M<sup>+</sup></h3>
+                <p className="mt-2 text-gray-300">Users benefiting from our AI-powered solutions</p>
+              </div>
+              
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+                <h3 className="text-5xl font-bold text-white">4.9<span className="text-3xl">/5</span></h3>
+                <p className="mt-2 text-gray-300">Average rating across all AI-driven applications</p>
+              </div>
+              
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+                <h3 className="text-5xl font-bold text-white">80<sup>%</sup></h3>
+                <p className="mt-2 text-gray-300">Faster decision-making with AI recommendations</p>
+              </div>
+              
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+                <h3 className="text-5xl font-bold text-white">99<sup>%</sup></h3>
+                <p className="mt-2 text-gray-300">Uptime guarantee for seamless AI experience</p>
+              </div>
             </div>
           </motion.div>
         </div>
