@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -385,7 +384,7 @@ const Analytics = () => {
                 whileTap={{ scale: 0.98 }}
                 className="bg-black/50 p-6 rounded-lg"
               >
-                <pre className="text-sm text-gray-300">
+                <pre className="text-sm text-gray-300 overflow-x-auto whitespace-pre">
                   <code>{`// Track events with one line
 await analytics.track({
   event: "purchase",
