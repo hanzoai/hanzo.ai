@@ -43,7 +43,7 @@ const industriesData = [
   {
     name: "Cloud",
     icon: <Globe className="h-5 w-5 text-blue-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
     description: "Cloud orchestration with rapid deployment"
   },
   {
