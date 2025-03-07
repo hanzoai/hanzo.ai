@@ -79,7 +79,7 @@ const industriesData = [
   {
     name: "Finance and Risk Management",
     icon: <DollarSign className="h-5 w-5 text-green-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/22f3cbb5-8cd9-48e2-92bc-8b084da1f4ff.png",
     description: "Financial solutions and risk assessment"
   },
   {
