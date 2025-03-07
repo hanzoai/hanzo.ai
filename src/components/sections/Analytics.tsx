@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart, Activity, Users, Globe, Zap, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const Analytics = () => {
   // Container animation variants
   const containerVariants = {
@@ -187,6 +188,7 @@ const Analytics = () => {
       }
     }
   };
+
   return <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{
@@ -227,7 +229,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.2,
           duration: 0.4
-        }} className="text-4xl font-display text-white mb-4">
+        }} className="text-3xl md:text-4xl font-display text-white mb-4">
             Scale from Zero to One Billion Users
           </motion.h2>
           <motion.p initial={{
@@ -241,7 +243,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.3,
           duration: 0.4
-        }} className="text-xl text-gray-300 max-w-3xl mx-auto py-0">
+        }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto py-0">
             Enterprise-grade analytics built for the AI era. Track, analyze, and optimize your application with our powerful analytics suite.
           </motion.p>
         </motion.div>
@@ -329,17 +331,17 @@ const Analytics = () => {
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
         once: true,
         margin: "-50px"
-      }} className="grid grid-cols-3 gap-8 mb-16 mt-10">
+      }} className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16 mt-10">
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-gray-300">Track user behavior, system events, and business metrics in real-time with millisecond latency.</p>
+            <p className="text-sm sm:text-base text-gray-300">Track user behavior, system events, and business metrics in real-time with millisecond latency.</p>
           </motion.div>
 
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-gray-300">Understand user journeys, cohorts, and behavior patterns with AI-powered analytics.</p>
+            <p className="text-sm sm:text-base text-gray-300">Understand user journeys, cohorts, and behavior patterns with AI-powered analytics.</p>
           </motion.div>
 
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-gray-300">Leverage machine learning to predict trends, detect anomalies, and optimize performance.</p>
+            <p className="text-sm sm:text-base text-gray-300">Leverage machine learning to predict trends, detect anomalies, and optimize performance.</p>
           </motion.div>
         </motion.div>
 
@@ -370,29 +372,29 @@ const Analytics = () => {
             delay: 0.3,
             duration: 0.5
           }}>
-              <h3 className="text-2xl font-semibold text-white mb-4">Planetary-Scale Infrastructure</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Planetary-Scale Infrastructure</h3>
               <motion.ul variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
               once: true
             }} className="space-y-4">
                 <motion.li variants={itemVariants} className="flex items-start space-x-3">
-                  <Zap className="h-6 w-6 text-gray-400 mt-1" />
+                  <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Global Edge Network</h4>
-                    <p className="text-gray-300">200+ data centers worldwide ensuring sub-50ms latency for 99% of users</p>
+                    <h4 className="text-sm sm:text-base text-white font-semibold">Global Edge Network</h4>
+                    <p className="text-xs sm:text-sm text-gray-300">200+ data centers worldwide ensuring sub-50ms latency for 99% of users</p>
                   </div>
                 </motion.li>
                 <motion.li variants={itemVariants} className="flex items-start space-x-3">
-                  <Globe className="h-6 w-6 text-gray-400 mt-1" />
+                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Infinite Scale</h4>
-                    <p className="text-gray-300">Handle billions of events per day with automatic scaling and zero maintenance</p>
+                    <h4 className="text-sm sm:text-base text-white font-semibold">Infinite Scale</h4>
+                    <p className="text-xs sm:text-sm text-gray-300">Handle billions of events per day with automatic scaling and zero maintenance</p>
                   </div>
                 </motion.li>
                 <motion.li variants={itemVariants} className="flex items-start space-x-3">
-                  <Brain className="h-6 w-6 text-gray-400 mt-1" />
+                  <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">AI-Powered Insights</h4>
-                    <p className="text-gray-300">Automatic anomaly detection, trend analysis, and predictive analytics</p>
+                    <h4 className="text-sm sm:text-base text-white font-semibold">AI-Powered Insights</h4>
+                    <p className="text-xs sm:text-sm text-gray-300">Automatic anomaly detection, trend analysis, and predictive analytics</p>
                   </div>
                 </motion.li>
               </motion.ul>
@@ -427,7 +429,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.2,
           duration: 0.5
-        }} className="text-3xl font-semibold text-white text-center mb-12">
+        }} className="text-2xl sm:text-3xl font-semibold text-white text-center mb-12">
             Powerful User Insights for Growth
           </motion.h2>
 
@@ -440,11 +442,11 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-                <Users className="h-7 w-7 text-purple-300" />
+              <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-3 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-4">
+                <Users className="h-6 w-6 sm:h-7 sm:w-7 text-purple-300" />
               </div>
-              <h3 className="text-xl font-medium text-white mb-3">Cohort Analysis</h3>
-              <p className="text-gray-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
+              <h3 className="text-lg sm:text-xl font-medium text-white mb-3">Cohort Analysis</h3>
+              <p className="text-xs sm:text-sm text-gray-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
             </motion.div>
 
             <motion.div variants={userInsightItemVariants} whileHover={{
@@ -453,11 +455,11 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-                <LineChart className="h-7 w-7 text-blue-300" />
+              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-3 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-4">
+                <LineChart className="h-6 w-6 sm:h-7 sm:w-7 text-blue-300" />
               </div>
-              <h3 className="text-xl font-medium text-white mb-3">User Journeys</h3>
-              <p className="text-gray-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
+              <h3 className="text-lg sm:text-xl font-medium text-white mb-3">User Journeys</h3>
+              <p className="text-xs sm:text-sm text-gray-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
             </motion.div>
 
             <motion.div variants={userInsightItemVariants} whileHover={{
@@ -466,11 +468,11 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-                <PieChart className="h-7 w-7 text-cyan-300" />
+              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-3 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-4">
+                <PieChart className="h-6 w-6 sm:h-7 sm:w-7 text-cyan-300" />
               </div>
-              <h3 className="text-xl font-medium text-white mb-3">Engagement Metrics</h3>
-              <p className="text-gray-300">Capture and analyze key engagement metrics to improve user retention.</p>
+              <h3 className="text-lg sm:text-xl font-medium text-white mb-3">Engagement Metrics</h3>
+              <p className="text-xs sm:text-sm text-gray-300">Capture and analyze key engagement metrics to improve user retention.</p>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -501,7 +503,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.2,
           duration: 0.5
-        }} className="text-3xl font-semibold text-white text-center mb-10">
+        }} className="text-2xl sm:text-3xl font-semibold text-white text-center mb-10">
             AI-Powered Analytics
           </motion.h2>
 
@@ -515,11 +517,11 @@ const Analytics = () => {
             }
           }} className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4">
               <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-lg p-3">
-                <Brain className="h-6 w-6 text-indigo-300" />
+                <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-300" />
               </div>
               <div className="flex-1 text-center">
-                <h3 className="text-lg font-medium text-white mb-2">Predictive Analysis</h3>
-                <p className="text-gray-300">Forecast future trends and user behaviors with advanced machine learning algorithms.</p>
+                <h3 className="text-base sm:text-lg font-medium text-white mb-2">Predictive Analysis</h3>
+                <p className="text-xs sm:text-sm text-gray-300">Forecast future trends and user behaviors with advanced machine learning algorithms.</p>
               </div>
             </motion.div>
 
@@ -530,11 +532,11 @@ const Analytics = () => {
             }
           }} className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4">
               <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-lg p-3">
-                <Activity className="h-6 w-6 text-blue-300" />
+                <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300" />
               </div>
               <div className="flex-1 text-center">
-                <h3 className="text-lg font-medium text-white mb-2">Anomaly Detection</h3>
-                <p className="text-gray-300">Automatically identify unusual patterns and potential issues in your application.</p>
+                <h3 className="text-base sm:text-lg font-medium text-white mb-2">Anomaly Detection</h3>
+                <p className="text-xs sm:text-sm text-gray-300">Automatically identify unusual patterns and potential issues in your application.</p>
               </div>
             </motion.div>
 
@@ -545,11 +547,11 @@ const Analytics = () => {
             }
           }} className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4">
               <div className="bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-lg p-3">
-                <BarChart className="h-6 w-6 text-emerald-300" />
+                <BarChart className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-300" />
               </div>
               <div className="flex-1 text-center">
-                <h3 className="text-lg font-medium text-white mb-2">Intelligent Recommendations</h3>
-                <p className="text-gray-300">Get actionable insights and recommendations to optimize your business metrics.</p>
+                <h3 className="text-base sm:text-lg font-medium text-white mb-2">Intelligent Recommendations</h3>
+                <p className="text-xs sm:text-sm text-gray-300">Get actionable insights and recommendations to optimize your business metrics.</p>
               </div>
             </motion.div>
           </motion.div>
@@ -576,7 +578,7 @@ const Analytics = () => {
           stiffness: 400,
           damping: 10
         }}>
-            <Button className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-6 text-lg rounded-xl">
+            <Button className="bg-gray-600 hover:bg-gray-700 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-xl">
               Get Started with Analytics
             </Button>
           </motion.div>
@@ -585,4 +587,3 @@ const Analytics = () => {
     </section>;
 };
 export default Analytics;
-
