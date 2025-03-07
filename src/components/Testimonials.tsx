@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
@@ -103,6 +104,36 @@ const Testimonials = () => {
             <Button variant="ghost" className="text-white">
               View All Case Studies <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+          </div>
+          
+          {/* Number milestone section - modified to use numbers and responsive layout */}
+          <div className="flex flex-col md:flex-row justify-between mb-8">
+            <div className="flex md:items-center md:space-x-6 mb-6 md:mb-0">
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="flex items-center mb-4 md:mb-0">
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white font-semibold mr-3">1</div>
+                  <h4 className="text-lg font-medium text-white">Analyze</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex md:items-center md:space-x-6 mb-6 md:mb-0">
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="flex items-center mb-4 md:mb-0">
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white font-semibold mr-3">2</div>
+                  <h4 className="text-lg font-medium text-white">Optimize</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex md:items-center md:space-x-6">
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white font-semibold mr-3">3</div>
+                  <h4 className="text-lg font-medium text-white">Scale</h4>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
