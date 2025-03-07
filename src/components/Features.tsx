@@ -245,8 +245,8 @@ const Features = () => {
             className="w-full overflow-hidden rounded-xl"
           >
             <img 
-              src="/lovable-uploads/fd154f76-a7a9-4b99-ac2b-e1eb589ec4da.png" 
-              alt="AI Visualization" 
+              src="/lovable-uploads/684632bf-21ce-4823-b54d-aad69037446f.png" 
+              alt="AI Human Interface Visualization" 
               className="w-full h-auto object-cover"
             />
           </motion.div>
