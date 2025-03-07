@@ -1,4 +1,3 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight, Globe, LineChart, Building2, GraduationCap, Newspaper, ShoppingCart, Users, DollarSign, Wrench } from "lucide-react";
 import { Button } from "./ui/button";
@@ -74,7 +73,7 @@ const industriesData = [
   {
     name: "Ecosystem Partners",
     icon: <Network className="h-5 w-5 text-indigo-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
     description: "Collaborative partnership networks"
   },
   {
