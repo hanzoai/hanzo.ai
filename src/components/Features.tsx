@@ -1,3 +1,4 @@
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
@@ -41,7 +42,7 @@ const allFeatures = [{
 const industriesSectors = [
   {
     name: "Artificial Intelligence",
-    image: "/public/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png",
+    image: "/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png",
     description: "Cutting-edge AI solutions for business transformation"
   },
   {
@@ -68,6 +69,26 @@ const industriesSectors = [
     name: "Technology",
     image: "/placeholder.svg",
     description: "Empowering the tech industry with advanced solutions"
+  },
+  {
+    name: "Energy & Utilities",
+    image: "/placeholder.svg",
+    description: "Smart solutions for sustainable energy management"
+  },
+  {
+    name: "Telecommunications",
+    image: "/placeholder.svg",
+    description: "Next-generation communication infrastructure"
+  },
+  {
+    name: "Education",
+    image: "/placeholder.svg",
+    description: "Digital learning platforms and educational technology"
+  },
+  {
+    name: "Government",
+    image: "/placeholder.svg",
+    description: "Digital transformation for public services"
   }
 ];
 
@@ -298,7 +319,7 @@ const Features = () => {
           </motion.div>
       </div>
 
-      <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
+      <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5 relative">
         <div className="text-center mb-12">
           <motion.h3 
             style={{ y: industriesTitleY }}
@@ -338,9 +359,7 @@ const Features = () => {
                   <div className="group h-[400px] relative overflow-hidden rounded-xl">
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
                     <img 
-                      src={industry.image === "/public/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png" 
-                        ? "/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png" 
-                        : industry.image} 
+                      src={industry.image} 
                       alt={industry.name}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -352,8 +371,8 @@ const Features = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none" />
-            <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none" />
+            <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+            <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
           </Carousel>
         </motion.div>
       </div>
