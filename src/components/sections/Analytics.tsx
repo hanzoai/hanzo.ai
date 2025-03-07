@@ -329,7 +329,7 @@ const Analytics = () => {
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
         once: true,
         margin: "-50px"
-      }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 mt-10">
+      }} className="grid grid-cols-3 gap-8 mb-16 mt-10">
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
             <p className="text-gray-300">Track user behavior, system events, and business metrics in real-time with millisecond latency.</p>
           </motion.div>
@@ -585,3 +585,4 @@ const Analytics = () => {
     </section>;
 };
 export default Analytics;
+
