@@ -1,11 +1,9 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight, Globe, LineChart, Building2, GraduationCap, Newspaper, ShoppingCart, Users, DollarSign, Wrench } from "lucide-react";
 import { Button } from "./ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { useEffect, useRef, useState } from "react";
 import { getIcon } from "@/constants/iconMappings";
-
 const allFeatures = [{
   icon: <Wand2 className="h-6 w-6" />,
   title: "Hanzo App",
@@ -39,139 +37,111 @@ const allFeatures = [{
   title: "Hanzo Network",
   description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
 }];
-
-const industriesData = [
-  {
-    name: "Cloud",
-    icon: <Globe className="h-5 w-5 text-blue-400 mb-2" />,
-    image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
-    description: "Cloud orchestration with rapid deployment"
-  },
-  {
-    name: "Cybersecurity",
-    icon: <Shield className="h-5 w-5 text-red-400 mb-2" />,
-    image: "/lovable-uploads/97902904-f9ea-475e-9c65-5664eab422e5.png",
-    description: "Advanced security solutions for business"
-  },
-  {
-    name: "Data and Artificial Intelligence",
-    icon: <Brain className="h-5 w-5 text-purple-400 mb-2" />,
-    image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
-    description: "Cutting-edge AI solutions for business transformation"
-  },
-  {
-    name: "Digital Engineering and Manufacturing",
-    icon: <Code className="h-5 w-5 text-green-400 mb-2" />,
-    image: "/lovable-uploads/a1e0f18b-41a7-4f58-ac3b-7272aa8e7a77.png",
-    description: "Engineering solutions for manufacturing"
-  },
-  {
-    name: "Emerging Technology",
-    icon: <Cpu className="h-5 w-5 text-yellow-400 mb-2" />,
-    image: "/lovable-uploads/41fa31ba-8c5b-4553-afeb-ba51591f7024.png",
-    description: "Frontier technology solutions"
-  },
-  {
-    name: "Ecosystem Partners",
-    icon: <Network className="h-5 w-5 text-indigo-400 mb-2" />,
-    image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
-    description: "Collaborative partnership networks"
-  },
-  {
-    name: "Finance and Risk Management",
-    icon: <DollarSign className="h-5 w-5 text-green-400 mb-2" />,
-    image: "/lovable-uploads/22f3cbb5-8cd9-48e2-92bc-8b084da1f4ff.png",
-    description: "Financial solutions and risk assessment"
-  },
-  {
-    name: "Infrastructure and Capital Projects",
-    icon: <Building2 className="h-5 w-5 text-gray-400 mb-2" />,
-    image: "/lovable-uploads/f1241c85-7df8-45b5-a92a-263554ff10cd.png",
-    description: "Infrastructure development and capital management"
-  },
-  {
-    name: "Learning",
-    icon: <GraduationCap className="h-5 w-5 text-blue-400 mb-2" />,
-    image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
-    description: "Educational technology and learning solutions"
-  },
-  {
-    name: "Marketing and Experience",
-    icon: <Newspaper className="h-5 w-5 text-pink-400 mb-2" />,
-    image: "/lovable-uploads/96d1e3da-614a-4809-98e4-30d8a868dc11.png",
-    description: "Marketing solutions and experience design"
-  },
-  {
-    name: "Metaverse",
-    icon: <LineChart className="h-5 w-5 text-cyan-400 mb-2" />,
-    image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
-    description: "Metaverse development and integration"
-  },
-  {
-    name: "Sales and Commerce",
-    icon: <ShoppingCart className="h-5 w-5 text-orange-400 mb-2" />,
-    image: "/lovable-uploads/fd154f76-a7a9-4b99-ac2b-e1eb589ec4da.png",
-    description: "Sales enablement and commerce solutions"
-  }
-];
-
-const industriesSectors = [
-  {
-    name: "Artificial Intelligence",
-    image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
-    description: "Cutting-edge AI solutions for business transformation"
-  },
-  {
-    name: "Financial Services",
-    image: "/placeholder.svg",
-    description: "Innovative solutions for banking and finance sectors"
-  },
-  {
-    name: "Manufacturing & Mobility",
-    image: "/placeholder.svg",
-    description: "Optimizing operations and driving innovation in manufacturing"
-  },
-  {
-    name: "Healthcare",
-    image: "/placeholder.svg",
-    description: "Digital transformation for healthcare providers"
-  },
-  {
-    name: "Retail & Consumer",
-    image: "/placeholder.svg",
-    description: "Creating exceptional customer experiences"
-  },
-  {
-    name: "Technology",
-    image: "/placeholder.svg",
-    description: "Empowering the tech industry with advanced solutions"
-  },
-  {
-    name: "Energy & Utilities",
-    image: "/placeholder.svg",
-    description: "Smart solutions for sustainable energy management"
-  },
-  {
-    name: "Telecommunications",
-    image: "/placeholder.svg",
-    description: "Next-generation communication infrastructure"
-  },
-  {
-    name: "Education",
-    image: "/placeholder.svg",
-    description: "Digital learning platforms and educational technology"
-  },
-  {
-    name: "Government",
-    image: "/placeholder.svg",
-    description: "Digital transformation for public services"
-  }
-];
-
+const industriesData = [{
+  name: "Cloud",
+  icon: <Globe className="h-5 w-5 text-blue-400 mb-2" />,
+  image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
+  description: "Cloud orchestration with rapid deployment"
+}, {
+  name: "Cybersecurity",
+  icon: <Shield className="h-5 w-5 text-red-400 mb-2" />,
+  image: "/lovable-uploads/97902904-f9ea-475e-9c65-5664eab422e5.png",
+  description: "Advanced security solutions for business"
+}, {
+  name: "Data and Artificial Intelligence",
+  icon: <Brain className="h-5 w-5 text-purple-400 mb-2" />,
+  image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
+  description: "Cutting-edge AI solutions for business transformation"
+}, {
+  name: "Digital Engineering and Manufacturing",
+  icon: <Code className="h-5 w-5 text-green-400 mb-2" />,
+  image: "/lovable-uploads/a1e0f18b-41a7-4f58-ac3b-7272aa8e7a77.png",
+  description: "Engineering solutions for manufacturing"
+}, {
+  name: "Emerging Technology",
+  icon: <Cpu className="h-5 w-5 text-yellow-400 mb-2" />,
+  image: "/lovable-uploads/41fa31ba-8c5b-4553-afeb-ba51591f7024.png",
+  description: "Frontier technology solutions"
+}, {
+  name: "Ecosystem Partners",
+  icon: <Network className="h-5 w-5 text-indigo-400 mb-2" />,
+  image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
+  description: "Collaborative partnership networks"
+}, {
+  name: "Finance and Risk Management",
+  icon: <DollarSign className="h-5 w-5 text-green-400 mb-2" />,
+  image: "/lovable-uploads/22f3cbb5-8cd9-48e2-92bc-8b084da1f4ff.png",
+  description: "Financial solutions and risk assessment"
+}, {
+  name: "Infrastructure and Capital Projects",
+  icon: <Building2 className="h-5 w-5 text-gray-400 mb-2" />,
+  image: "/lovable-uploads/f1241c85-7df8-45b5-a92a-263554ff10cd.png",
+  description: "Infrastructure development and capital management"
+}, {
+  name: "Learning",
+  icon: <GraduationCap className="h-5 w-5 text-blue-400 mb-2" />,
+  image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
+  description: "Educational technology and learning solutions"
+}, {
+  name: "Marketing and Experience",
+  icon: <Newspaper className="h-5 w-5 text-pink-400 mb-2" />,
+  image: "/lovable-uploads/96d1e3da-614a-4809-98e4-30d8a868dc11.png",
+  description: "Marketing solutions and experience design"
+}, {
+  name: "Metaverse",
+  icon: <LineChart className="h-5 w-5 text-cyan-400 mb-2" />,
+  image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
+  description: "Metaverse development and integration"
+}, {
+  name: "Sales and Commerce",
+  icon: <ShoppingCart className="h-5 w-5 text-orange-400 mb-2" />,
+  image: "/placeholder.svg",
+  description: "Sales enablement and commerce solutions"
+}];
+const industriesSectors = [{
+  name: "Artificial Intelligence",
+  image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
+  description: "Cutting-edge AI solutions for business transformation"
+}, {
+  name: "Financial Services",
+  image: "/placeholder.svg",
+  description: "Innovative solutions for banking and finance sectors"
+}, {
+  name: "Manufacturing & Mobility",
+  image: "/placeholder.svg",
+  description: "Optimizing operations and driving innovation in manufacturing"
+}, {
+  name: "Healthcare",
+  image: "/placeholder.svg",
+  description: "Digital transformation for healthcare providers"
+}, {
+  name: "Retail & Consumer",
+  image: "/placeholder.svg",
+  description: "Creating exceptional customer experiences"
+}, {
+  name: "Technology",
+  image: "/placeholder.svg",
+  description: "Empowering the tech industry with advanced solutions"
+}, {
+  name: "Energy & Utilities",
+  image: "/placeholder.svg",
+  description: "Smart solutions for sustainable energy management"
+}, {
+  name: "Telecommunications",
+  image: "/placeholder.svg",
+  description: "Next-generation communication infrastructure"
+}, {
+  name: "Education",
+  image: "/placeholder.svg",
+  description: "Digital learning platforms and educational technology"
+}, {
+  name: "Government",
+  image: "/placeholder.svg",
+  description: "Digital transformation for public services"
+}];
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
-  
   const industryIcons = {
     "Artificial Intelligence": <Brain className="h-5 w-5 text-purple-400 mb-2" />,
     "Adtech": <Target className="h-5 w-5 text-blue-400 mb-2" />,
@@ -184,7 +154,6 @@ const Features = () => {
     "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
     "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
   };
-
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -197,7 +166,6 @@ const Features = () => {
       }
     }
   };
-
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -213,7 +181,6 @@ const Features = () => {
       }
     }
   };
-
   const testimonialText = "We've helped businesses and individuals harness the power of AI to drive growth, efficiency, and innovation.";
   const testimonialCharacters = testimonialText.split("");
   const textContainerVariants = {
@@ -243,33 +210,29 @@ const Features = () => {
       }
     }
   };
-
   const industriesSectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const {
+    scrollYProgress
+  } = useScroll({
     target: industriesSectionRef,
     offset: ["start end", "end start"]
   });
-
   const industriesTitleY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const industriesDescriptionY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const industriesCarouselY = useTransform(scrollYProgress, [0, 1], [50, -20]);
-
   const [api, setApi] = useState<any>(null);
-  
   useEffect(() => {
     if (!api) return;
-    
+
     // Start auto-scrolling
     const interval = setInterval(() => {
       api.scrollNext();
     }, 3000);
-    
+
     // Clean up interval
     return () => clearInterval(interval);
   }, [api]);
-
-  return (
-    <section id="features" className="py-20 bg-black">
+  return <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center">
           <motion.h2 initial={{
@@ -411,49 +374,36 @@ const Features = () => {
 
       <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5 relative">
         <div className="text-center mb-12">
-          <motion.h3 
-            style={{ y: industriesTitleY }}
-            className="text-[#de8e3d] font-medium text-lg mb-4"
-          >
+          <motion.h3 style={{
+          y: industriesTitleY
+        }} className="text-[#de8e3d] font-medium text-lg mb-4">
             Industries we serve
           </motion.h3>
-          <motion.h2 
-            style={{ y: industriesTitleY }}
-            className="text-4xl font-display text-white mb-4"
-          >
+          <motion.h2 style={{
+          y: industriesTitleY
+        }} className="text-4xl font-display text-white mb-4">
             We deliver impact in various industries
           </motion.h2>
-          <motion.p 
-            style={{ y: industriesDescriptionY }}
-            className="text-gray-300 max-w-3xl mx-auto mb-16"
-          >
+          <motion.p style={{
+          y: industriesDescriptionY
+        }} className="text-gray-300 max-w-3xl mx-auto mb-16">
             We have a proven track record of delivering impactful solutions tailored to various industries, 
             driving success and innovation across diverse business sectors.
           </motion.p>
         </div>
         
-        <motion.div 
-          style={{ y: industriesCarouselY }}
-          className="relative z-20 py-8"
-        >
-          <Carousel 
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-            setApi={setApi}
-          >
+        <motion.div style={{
+        y: industriesCarouselY
+      }} className="relative z-20 py-0">
+          <Carousel opts={{
+          align: "start",
+          loop: true
+        }} className="w-full" setApi={setApi}>
             <CarouselContent className="-ml-2 md:-ml-4">
-              {industriesData.map((industry, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              {industriesData.map((industry, index) => <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="group h-[400px] relative overflow-hidden rounded-xl">
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-                    <img 
-                      src={industry.image} 
-                      alt={industry.name}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                    <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                       <div className="flex items-center mb-2">
                         {industry.icon}
@@ -462,16 +412,13 @@ const Features = () => {
                       <p className="text-gray-300">{industry.description}</p>
                     </div>
                   </div>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
             <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
           </Carousel>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Features;
