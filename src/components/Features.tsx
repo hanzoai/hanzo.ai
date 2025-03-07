@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { useEffect, useRef, useState } from "react";
 import { getIcon } from "@/constants/iconMappings";
+
 const allFeatures = [{
   icon: <Wand2 className="h-6 w-6" />,
   title: "Hanzo App",
@@ -37,6 +38,7 @@ const allFeatures = [{
   title: "Hanzo Network",
   description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
 }];
+
 const industriesData = [{
   name: "Cloud",
   icon: <Globe className="h-5 w-5 text-blue-400 mb-2" />,
@@ -98,6 +100,7 @@ const industriesData = [{
   image: "/placeholder.svg",
   description: "Sales enablement and commerce solutions"
 }];
+
 const industriesSectors = [{
   name: "Artificial Intelligence",
   image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
@@ -139,6 +142,7 @@ const industriesSectors = [{
   image: "/placeholder.svg",
   description: "Digital transformation for public services"
 }];
+
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
@@ -224,12 +228,10 @@ const Features = () => {
   useEffect(() => {
     if (!api) return;
 
-    // Start auto-scrolling
     const interval = setInterval(() => {
       api.scrollNext();
     }, 3000);
 
-    // Clean up interval
     return () => clearInterval(interval);
   }, [api]);
   return <section id="features" className="py-20 bg-black">
@@ -373,20 +375,20 @@ const Features = () => {
       </div>
 
       <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5 relative">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <motion.h3 style={{
           y: industriesTitleY
-        }} className="text-[#de8e3d] font-medium text-lg mb-4">
+        }} className="text-[#de8e3d] font-medium text-lg mb-2">
             Industries we serve
           </motion.h3>
           <motion.h2 style={{
           y: industriesTitleY
-        }} className="text-4xl font-display text-white mb-4">
+        }} className="text-4xl font-display text-white mb-3">
             We deliver impact in various industries
           </motion.h2>
           <motion.p style={{
           y: industriesDescriptionY
-        }} className="text-gray-300 max-w-3xl mx-auto mb-16">
+        }} className="text-gray-300 max-w-3xl mx-auto mb-8">
             We have a proven track record of delivering impactful solutions tailored to various industries, 
             driving success and innovation across diverse business sectors.
           </motion.p>
@@ -421,4 +423,5 @@ const Features = () => {
       </div>
     </section>;
 };
+
 export default Features;
