@@ -248,7 +248,7 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
-        {/* Milestone Progress Indicator - Improved for even spacing */}
+        {/* Milestone Progress Indicator - With numbered circles instead of icons */}
         <div className="relative mb-4 flex justify-center">
           <div className="relative w-full max-w-4xl">
             {/* Background line */}
@@ -270,7 +270,7 @@ const Analytics = () => {
             margin: "-100px"
           }} custom={33.34}></motion.div>
             
-            {/* Milestone Points - with exactly equal spacing */}
+            {/* Milestone Points - with numbers instead of icons */}
             <div className="flex justify-between items-center relative w-full">
               {/* First Milestone */}
               <div className="text-center relative w-1/3 pr-4">
@@ -282,7 +282,7 @@ const Analytics = () => {
                   once: true,
                   margin: "-100px"
                 }}>
-                    <Activity className="h-6 w-6" />
+                    <span className="text-xl font-bold">1</span>
                   </motion.div>
                 </motion.div>
                 <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">Real-time Events</p>
@@ -298,7 +298,7 @@ const Analytics = () => {
                   once: true,
                   margin: "-100px"
                 }}>
-                    <Users className="h-6 w-6" />
+                    <span className="text-xl font-bold">2</span>
                   </motion.div>
                 </motion.div>
                 <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">User Insights</p>
@@ -314,7 +314,7 @@ const Analytics = () => {
                   once: true,
                   margin: "-100px"
                 }}>
-                    <Brain className="h-6 w-6" />
+                    <span className="text-xl font-bold">3</span>
                   </motion.div>
                 </motion.div>
                 <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">AI Analytics</p>
@@ -438,7 +438,7 @@ const Analytics = () => {
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
               <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
-                <Users className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-purple-300" />
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-purple-300" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">Cohort Analysis</h3>
               <p className="text-xs sm:text-sm text-gray-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
@@ -451,7 +451,7 @@ const Analytics = () => {
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
               <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
-                <LineChart className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-blue-300" />
+                <LineChart className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">User Journeys</h3>
               <p className="text-xs sm:text-sm text-gray-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
@@ -464,7 +464,7 @@ const Analytics = () => {
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
               <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
-                <PieChart className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-cyan-300" />
+                <PieChart className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-300" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">Engagement Metrics</h3>
               <p className="text-xs sm:text-sm text-gray-300">Capture and analyze key engagement metrics to improve user retention.</p>
