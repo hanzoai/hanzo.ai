@@ -55,7 +55,7 @@ const industriesData = [
   {
     name: "Data and Artificial Intelligence",
     icon: <Brain className="h-5 w-5 text-purple-400 mb-2" />,
-    image: "/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png",
+    image: "/lovable-uploads/257a8dd2-b17d-45fb-9c46-cfc369ba2edd.png",
     description: "Cutting-edge AI solutions for business transformation"
   },
   {
@@ -117,7 +117,7 @@ const industriesData = [
 const industriesSectors = [
   {
     name: "Artificial Intelligence",
-    image: "/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png",
+    image: "/lovable-uploads/257a8dd2-b17d-45fb-9c46-cfc369ba2edd.png",
     description: "Cutting-edge AI solutions for business transformation"
   },
   {
