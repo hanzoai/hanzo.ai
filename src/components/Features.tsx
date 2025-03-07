@@ -1,9 +1,9 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight } from "lucide-react";
+import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight, Globe, LineChart, Building2, GraduationCap, Newspaper, ShoppingCart, Users, DollarSign, Wrench } from "lucide-react";
 import { Button } from "./ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { getIcon } from "@/constants/iconMappings";
 
 const allFeatures = [{
   icon: <Wand2 className="h-6 w-6" />,
@@ -38,6 +38,81 @@ const allFeatures = [{
   title: "Hanzo Network",
   description: "Decentralized compute fabric allocating half its capacity to building next-gen frontier models in the open."
 }];
+
+const industriesData = [
+  {
+    name: "Cloud",
+    icon: <Globe className="h-5 w-5 text-blue-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Cloud orchestration with rapid deployment"
+  },
+  {
+    name: "Cybersecurity",
+    icon: <Shield className="h-5 w-5 text-red-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Advanced security solutions for business"
+  },
+  {
+    name: "Data and Artificial Intelligence",
+    icon: <Brain className="h-5 w-5 text-purple-400 mb-2" />,
+    image: "/lovable-uploads/e332d06b-4969-42fe-92be-6166f326edb2.png",
+    description: "Cutting-edge AI solutions for business transformation"
+  },
+  {
+    name: "Digital Engineering and Manufacturing",
+    icon: <Code className="h-5 w-5 text-green-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Engineering solutions for manufacturing"
+  },
+  {
+    name: "Emerging Technology",
+    icon: <Cpu className="h-5 w-5 text-yellow-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Frontier technology solutions"
+  },
+  {
+    name: "Ecosystem Partners",
+    icon: <Network className="h-5 w-5 text-indigo-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Collaborative partnership networks"
+  },
+  {
+    name: "Finance and Risk Management",
+    icon: <DollarSign className="h-5 w-5 text-green-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Financial solutions and risk assessment"
+  },
+  {
+    name: "Infrastructure and Capital Projects",
+    icon: <Building2 className="h-5 w-5 text-gray-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Infrastructure development and capital management"
+  },
+  {
+    name: "Learning",
+    icon: <GraduationCap className="h-5 w-5 text-blue-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Educational technology and learning solutions"
+  },
+  {
+    name: "Marketing and Experience",
+    icon: <Newspaper className="h-5 w-5 text-pink-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Marketing solutions and experience design"
+  },
+  {
+    name: "Metaverse",
+    icon: <LineChart className="h-5 w-5 text-cyan-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Metaverse development and integration"
+  },
+  {
+    name: "Sales and Commerce",
+    icon: <ShoppingCart className="h-5 w-5 text-orange-400 mb-2" />,
+    image: "/placeholder.svg",
+    description: "Sales enablement and commerce solutions"
+  }
+];
 
 const industriesSectors = [
   {
@@ -178,6 +253,20 @@ const Features = () => {
   const industriesDescriptionY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const industriesCarouselY = useTransform(scrollYProgress, [0, 1], [50, -20]);
 
+  const [api, setApi] = useState<any>(null);
+  
+  useEffect(() => {
+    if (!api) return;
+    
+    // Start auto-scrolling
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+    
+    // Clean up interval
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section id="features" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -285,7 +374,7 @@ const Features = () => {
               once: true,
               amount: 0.8
             }} className="text-lg text-gray-300 overflow-hidden">
-                  <span>We've helped businesses and individuals harness the </span>
+                  <span>We've helped businesses and individuals harness the </span> 
                   <span className="text-white font-bold">power of AI</span>
                   <span> to drive growth, efficiency, and innovation.</span>
                 </motion.div>
@@ -352,9 +441,10 @@ const Features = () => {
               loop: true,
             }}
             className="w-full"
+            setApi={setApi}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {industriesSectors.map((industry, index) => (
+              {industriesData.map((industry, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="group h-[400px] relative overflow-hidden rounded-xl">
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
@@ -364,7 +454,10 @@ const Features = () => {
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                      <h3 className="text-xl font-medium text-white mb-2">{industry.name}</h3>
+                      <div className="flex items-center mb-2">
+                        {industry.icon}
+                        <h3 className="text-xl font-medium text-white ml-2">{industry.name}</h3>
+                      </div>
                       <p className="text-gray-300">{industry.description}</p>
                     </div>
                   </div>
