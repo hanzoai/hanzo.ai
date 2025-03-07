@@ -104,7 +104,7 @@ const industriesData = [
   {
     name: "Metaverse",
     icon: <LineChart className="h-5 w-5 text-cyan-400 mb-2" />,
-    image: "/your-uploaded-metaverse-image.png", // This will need to be updated with your actual uploaded image path
+    image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
     description: "Metaverse development and integration"
   },
   {
