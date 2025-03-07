@@ -234,106 +234,125 @@ const Features = () => {
 
     return () => clearInterval(interval);
   }, [api]);
-  return <section id="features" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="text-center">
-          <motion.h2 initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5
-        }} className="text-3xl sm:text-4xl font-display text-white">
-            Leading the Fourth Industrial Revolution
-          </motion.h2>
-          <motion.p initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: 0.1
-        }} className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-            Hanzo is a developer-first AI platform bringing frontier research directly into your workflow with open, private, and decentralized solutions.
-          </motion.p>
+  return (
+    <>
+      <div className="w-full bg-black py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="w-full overflow-hidden rounded-xl"
+          >
+            <img 
+              src="/lovable-uploads/c8563a79-3822-4fae-bc0c-1b06659707ca.png" 
+              alt="AI Duality Visualization" 
+              className="w-full h-auto object-cover"
+            />
+          </motion.div>
         </div>
+      </div>
+      
+      <section id="features" className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="text-center">
+            <motion.h2 initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5
+            }} className="text-3xl sm:text-4xl font-display text-white">
+              Leading the Fourth Industrial Revolution
+            </motion.h2>
+            <motion.p initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: 0.1
+            }} className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+              Hanzo is a developer-first AI platform bringing frontier research directly into your workflow with open, private, and decentralized solutions.
+            </motion.p>
+          </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {displayedFeatures.map((feature, index) => <motion.div key={feature.title} initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }} className="relative p-6 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all flex flex-col items-center text-center my-0">
-              <div className="p-2 bg-white/10 w-fit rounded-lg text-white">
-                {feature.icon}
-              </div>
-              <h3 className="mt-4 text-xl font-semibold text-white">
-                {feature.title}
-              </h3>
-              <p className="mt-2 text-gray-300">{feature.description}</p>
-            </motion.div>)}
-        </div>
+          <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {displayedFeatures.map((feature, index) => <motion.div key={feature.title} initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} className="relative p-6 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all flex flex-col items-center text-center my-0">
+                <div className="p-2 bg-white/10 w-fit rounded-lg text-white">
+                  {feature.icon}
+                </div>
+                <h3 className="mt-4 text-xl font-semibold text-white">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-gray-300">{feature.description}</p>
+              </motion.div>)}
+          </div>
 
-        {hasMoreFeatures && <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }} className="mt-12 text-center">
+          {hasMoreFeatures && <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5
+          }} className="mt-12 text-center">
             <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-white hover:text-purple-400 transition-colors">
               View All Solutions
             </Button>
           </motion.div>}
-      </div>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }} className="text-center mb-12">
-          <h2 className="font-display text-white bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-4xl">
-            Hanzo has an impressive track record...
-          </h2>
-        </motion.div>
-        
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
+          <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5
+          }} className="text-center mb-12">
+            <h2 className="font-display text-white bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-4xl">
+              Hanzo has an impressive track record...
+            </h2>
+          </motion.div>
+          
+          <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5
+          }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
               <div className="max-w-md overflow-hidden">
                 <motion.div variants={textContainerVariants} initial="hidden" whileInView="visible" viewport={{
@@ -372,56 +391,58 @@ const Features = () => {
               </div>
             </div>
           </motion.div>
-      </div>
-
-      <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5 relative">
-        <div className="text-center mb-6">
-          <motion.h3 style={{
-          y: industriesTitleY
-        }} className="text-[#de8e3d] font-medium text-lg mb-2">
-            Industries we serve
-          </motion.h3>
-          <motion.h2 style={{
-          y: industriesTitleY
-        }} className="text-4xl font-display text-white mb-3">
-            We deliver impact in various industries
-          </motion.h2>
-          <motion.p style={{
-          y: industriesDescriptionY
-        }} className="text-gray-300 max-w-3xl mx-auto mb-8">
-            We have a proven track record of delivering impactful solutions tailored to various industries, 
-            driving success and innovation across diverse business sectors.
-          </motion.p>
         </div>
-        
-        <motion.div style={{
-        y: industriesCarouselY
-      }} className="relative z-20 py-0">
-          <Carousel opts={{
-          align: "start",
-          loop: true
-        }} className="w-full" setApi={setApi}>
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {industriesData.map((industry, index) => <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="group h-[400px] relative overflow-hidden rounded-xl">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-                    <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                      <div className="flex items-center mb-2">
-                        {industry.icon}
-                        <h3 className="text-xl font-medium text-white ml-2">{industry.name}</h3>
+
+        <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5 relative">
+          <div className="text-center mb-6">
+            <motion.h3 style={{
+              y: industriesTitleY
+            }} className="text-[#de8e3d] font-medium text-lg mb-2">
+              Industries we serve
+            </motion.h3>
+            <motion.h2 style={{
+              y: industriesTitleY
+            }} className="text-4xl font-display text-white mb-3">
+              We deliver impact in various industries
+            </motion.h2>
+            <motion.p style={{
+              y: industriesDescriptionY
+            }} className="text-gray-300 max-w-3xl mx-auto mb-8">
+              We have a proven track record of delivering impactful solutions tailored to various industries, 
+              driving success and innovation across diverse business sectors.
+            </motion.p>
+          </div>
+          
+          <motion.div style={{
+            y: industriesCarouselY
+          }} className="relative z-20 py-0">
+            <Carousel opts={{
+              align: "start",
+              loop: true
+            }} className="w-full" setApi={setApi}>
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {industriesData.map((industry, index) => <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="group h-[400px] relative overflow-hidden rounded-xl">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                      <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                        <div className="flex items-center mb-2">
+                          {industry.icon}
+                          <h3 className="text-xl font-medium text-white ml-2">{industry.name}</h3>
+                        </div>
+                        <p className="text-gray-300">{industry.description}</p>
                       </div>
-                      <p className="text-gray-300">{industry.description}</p>
                     </div>
-                  </div>
-                </CarouselItem>)}
-            </CarouselContent>
-            <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-            <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-          </Carousel>
-        </motion.div>
-      </div>
-    </section>;
+                  </CarouselItem>)}
+              </CarouselContent>
+              <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+              <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+            </Carousel>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Features;
