@@ -61,7 +61,7 @@ const industriesData = [
   {
     name: "Digital Engineering and Manufacturing",
     icon: <Code className="h-5 w-5 text-green-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/a1e0f18b-41a7-4f58-ac3b-7272aa8e7a77.png",
     description: "Engineering solutions for manufacturing"
   },
   {
