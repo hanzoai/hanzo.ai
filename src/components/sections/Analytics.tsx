@@ -270,7 +270,7 @@ const Analytics = () => {
             margin: "-100px"
           }} custom={33.34}></motion.div>
             
-            {/* Milestone Points - with numbers instead of icons */}
+            {/* Milestone Points - with numbers clearly visible */}
             <div className="flex justify-between items-center relative w-full">
               {/* First Milestone */}
               <div className="text-center relative w-1/3 pr-4">
@@ -278,12 +278,7 @@ const Analytics = () => {
                 once: true,
                 margin: "-100px"
               }} custom={1}>
-                  <motion.div variants={iconVariantsFirst} initial="hidden" whileInView="visible" viewport={{
-                  once: true,
-                  margin: "-100px"
-                }}>
-                    <span className="text-xl font-bold">1</span>
-                  </motion.div>
+                  <motion.span className="text-xl font-bold text-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>1</motion.span>
                 </motion.div>
                 <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">Real-time Events</p>
               </div>
@@ -294,12 +289,7 @@ const Analytics = () => {
                 once: true,
                 margin: "-100px"
               }} custom={2}>
-                  <motion.div variants={iconVariantsSecond} initial="hidden" whileInView="visible" viewport={{
-                  once: true,
-                  margin: "-100px"
-                }}>
-                    <span className="text-xl font-bold">2</span>
-                  </motion.div>
+                  <motion.span className="text-xl font-bold text-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }}>2</motion.span>
                 </motion.div>
                 <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">User Insights</p>
               </div>
@@ -310,12 +300,7 @@ const Analytics = () => {
                 once: true,
                 margin: "-100px"
               }} custom={3}>
-                  <motion.div variants={iconVariantsThird} initial="hidden" whileInView="visible" viewport={{
-                  once: true,
-                  margin: "-100px"
-                }}>
-                    <span className="text-xl font-bold">3</span>
-                  </motion.div>
+                  <motion.span className="text-xl font-bold text-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 5 }}>3</motion.span>
                 </motion.div>
                 <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">AI Analytics</p>
               </div>
