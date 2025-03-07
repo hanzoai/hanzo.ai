@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -48,8 +49,10 @@ const Hero = () => {
     }
   };
 
-  const titleText = "Build as fast as you Dream";
-  const titleLetters = titleText.split("");
+  const titleText1 = "Build as fast";
+  const titleText2 = "as you Dream";
+  const titleLetters1 = titleText1.split("");
+  const titleLetters2 = titleText2.split("");
   
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
@@ -162,27 +165,19 @@ const Hero = () => {
       `}} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="mb-12 flex justify-center"
-        >
-          <img 
-            src="/lovable-uploads/fc34bb67-77b6-46c0-8ee4-3568db0a2ece.png" 
-            alt="AI Faces with Digital Code" 
-            className="max-w-full h-auto border-0"
-            style={{ maxHeight: '360px', border: 'none' }}
-          />
-        </motion.div>
-        
         <div className="text-center bg-black/0">
-          <motion.h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
-            {titleLetters.map((letter, index) => (
-              <motion.span key={index} variants={letterVariants} className="inline-block">
-                {letter === " " ? "\u00A0" : letter}
-              </motion.span>
-            ))}
+          <motion.h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setAnimationComplete(true)}>
+            <motion.span className="inline-flex items-center">
+              {titleLetters1.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>)}
+            </motion.span>
+            
+            <motion.span className="block text-white pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
+              {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>)}
+            </motion.span>
           </motion.h1>
 
           <motion.p 
