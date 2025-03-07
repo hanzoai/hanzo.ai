@@ -248,35 +248,35 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
-        {/* Milestone Progress Indicator - Moved to appear directly above the feature grid */}
+        {/* Milestone Progress Indicator - Modified for better alignment */}
         <div className="relative mb-4 flex justify-center">
           <div className="relative w-full max-w-4xl">
-            {/* Background line */}
-            <div className="absolute top-6 left-0 w-full h-1 bg-gray-800 rounded-full"></div>
+            {/* Background line - made slightly thicker for better visibility */}
+            <div className="absolute top-6 left-0 w-full h-1.5 bg-gray-800 rounded-full"></div>
             
-            {/* Animated progress lines in segments */}
-            <motion.div className="absolute top-6 left-0 h-1 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            {/* Animated progress lines in segments - adjusted position and width calculation */}
+            <motion.div className="absolute top-6 left-0 h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={25}></motion.div>
             
-            <motion.div className="absolute top-6 left-[25%] h-1 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[25%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={25}></motion.div>
             
-            <motion.div className="absolute top-6 left-[50%] h-1 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[50%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={25}></motion.div>
             
-            <motion.div className="absolute top-6 left-[75%] h-1 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[75%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={25}></motion.div>
             
-            {/* Milestone Points */}
-            <div className="flex justify-between relative">
+            {/* Milestone Points - enhanced positioning for consistent spacing */}
+            <div className="flex justify-between items-center relative w-full">
               {/* First Milestone */}
               <div className="text-center relative">
                 <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
@@ -290,7 +290,7 @@ const Analytics = () => {
                     <Activity className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <p className="mt-2 font-medium text-white">Real-time Events</p>
+                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base">Real-time Events</p>
               </div>
               
               {/* Second Milestone */}
@@ -306,7 +306,7 @@ const Analytics = () => {
                     <Users className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <p className="mt-2 font-medium text-white">User Insights</p>
+                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base">User Insights</p>
               </div>
               
               {/* Third Milestone */}
@@ -322,7 +322,7 @@ const Analytics = () => {
                     <Brain className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <p className="mt-2 font-medium text-white">AI Analytics</p>
+                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base">AI Analytics</p>
               </div>
             </div>
           </div>
@@ -403,7 +403,7 @@ const Analytics = () => {
           </div>
         </motion.div>
 
-        {/* User Insights Section */}
+        {/* User Insights Section - Enhanced centering */}
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -417,7 +417,7 @@ const Analytics = () => {
         duration: 0.6,
         type: "spring",
         stiffness: 90
-      }} className="mb-16">
+      }} className="mb-16 mx-auto">
           <motion.h2 initial={{
           opacity: 0,
           y: 15
@@ -435,17 +435,17 @@ const Analytics = () => {
 
           <motion.div variants={userInsightsVariants} initial="hidden" whileInView="visible" viewport={{
           once: true
-        }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        }} className="grid grid-cols-3 gap-4 md:gap-8">
             <motion.div variants={userInsightItemVariants} whileHover={{
             y: -5,
             transition: {
               duration: 0.2
             }
-          }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-3 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 sm:h-7 sm:w-7 text-purple-300" />
+          }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-purple-300" />
               </div>
-              <h3 className="text-lg sm:text-xl font-medium text-white mb-3">Cohort Analysis</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">Cohort Analysis</h3>
               <p className="text-xs sm:text-sm text-gray-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
             </motion.div>
 
@@ -454,11 +454,11 @@ const Analytics = () => {
             transition: {
               duration: 0.2
             }
-          }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-3 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-4">
-                <LineChart className="h-6 w-6 sm:h-7 sm:w-7 text-blue-300" />
+          }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
+                <LineChart className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-blue-300" />
               </div>
-              <h3 className="text-lg sm:text-xl font-medium text-white mb-3">User Journeys</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">User Journeys</h3>
               <p className="text-xs sm:text-sm text-gray-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
             </motion.div>
 
@@ -467,17 +467,16 @@ const Analytics = () => {
             transition: {
               duration: 0.2
             }
-          }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-3 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-4">
-                <PieChart className="h-6 w-6 sm:h-7 sm:w-7 text-cyan-300" />
+          }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
+                <PieChart className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-cyan-300" />
               </div>
-              <h3 className="text-lg sm:text-xl font-medium text-white mb-3">Engagement Metrics</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">Engagement Metrics</h3>
               <p className="text-xs sm:text-sm text-gray-300">Capture and analyze key engagement metrics to improve user retention.</p>
             </motion.div>
           </motion.div>
         </motion.div>
 
-        {/* AI Analytics Section */}
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -587,3 +586,4 @@ const Analytics = () => {
     </section>;
 };
 export default Analytics;
+
