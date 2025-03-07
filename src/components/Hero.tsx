@@ -165,6 +165,20 @@ const Hero = () => {
       `}} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-12 flex justify-center"
+        >
+          <img 
+            src="/lovable-uploads/fc34bb67-77b6-46c0-8ee4-3568db0a2ece.png" 
+            alt="AI Faces with Digital Code" 
+            className="max-w-full h-auto rounded-lg shadow-lg"
+            style={{ maxHeight: '400px' }}
+          />
+        </motion.div>
+        
         <div className="text-center bg-black/0">
           <motion.h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setAnimationComplete(true)}>
             <motion.span className="inline-flex items-center">
