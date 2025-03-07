@@ -49,7 +49,7 @@ const industriesData = [
   {
     name: "Cybersecurity",
     icon: <Shield className="h-5 w-5 text-red-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/97902904-f9ea-475e-9c65-5664eab422e5.png",
     description: "Advanced security solutions for business"
   },
   {
