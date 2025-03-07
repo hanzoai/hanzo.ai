@@ -92,7 +92,7 @@ const industriesData = [
   {
     name: "Learning",
     icon: <GraduationCap className="h-5 w-5 text-blue-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
     description: "Educational technology and learning solutions"
   },
   {
