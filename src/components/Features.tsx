@@ -1,3 +1,4 @@
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Code2, BarChart3, CreditCard, Wand2, Bot, Network, Cpu, Leaf, Brain, Target, Blocks, Cloud, HardDrive, Code, Shield, KeyRound, Bot as BotIcon, Monitor, ChevronLeft, ChevronRight, Globe, LineChart, Building2, GraduationCap, Newspaper, ShoppingCart, Users, DollarSign, Wrench } from "lucide-react";
 import { Button } from "./ui/button";
@@ -67,7 +68,7 @@ const industriesData = [
   {
     name: "Emerging Technology",
     icon: <Cpu className="h-5 w-5 text-yellow-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/41fa31ba-8c5b-4553-afeb-ba51591f7024.png",
     description: "Frontier technology solutions"
   },
   {
