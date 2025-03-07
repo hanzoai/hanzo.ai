@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -174,8 +173,8 @@ const Hero = () => {
           <img 
             src="/lovable-uploads/fc34bb67-77b6-46c0-8ee4-3568db0a2ece.png" 
             alt="AI Faces with Digital Code" 
-            className="max-w-full h-auto rounded-lg shadow-lg"
-            style={{ maxHeight: '400px' }}
+            className="max-w-full h-auto"
+            style={{ maxHeight: '240px' }}
           />
         </motion.div>
         
