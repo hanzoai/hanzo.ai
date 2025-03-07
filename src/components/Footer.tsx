@@ -124,7 +124,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-500 text-sm">
-              © 2016-2025 Hanzo AI Inc. All rights reserved.
+              © 2016-2025 Hanzo Industries, Inc. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <a href="/privacy" className="text-gray-500 hover:text-white text-sm">
