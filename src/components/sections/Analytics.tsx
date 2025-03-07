@@ -248,37 +248,32 @@ const Analytics = () => {
           </motion.p>
         </motion.div>
 
-        {/* Milestone Progress Indicator - Modified for better alignment */}
+        {/* Milestone Progress Indicator - Improved for even spacing */}
         <div className="relative mb-4 flex justify-center">
           <div className="relative w-full max-w-4xl">
-            {/* Background line - made slightly thicker for better visibility */}
+            {/* Background line */}
             <div className="absolute top-6 left-0 w-full h-1.5 bg-gray-800 rounded-full"></div>
             
-            {/* Animated progress lines in segments - adjusted position and width calculation */}
+            {/* Animated progress lines in segments - with fixed percentages for equal spacing */}
             <motion.div className="absolute top-6 left-0 h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
-          }} custom={25}></motion.div>
+          }} custom={33.33}></motion.div>
             
-            <motion.div className="absolute top-6 left-[25%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[33.33%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
-          }} custom={25}></motion.div>
+          }} custom={33.33}></motion.div>
             
-            <motion.div className="absolute top-6 left-[50%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[66.66%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
-          }} custom={25}></motion.div>
+          }} custom={33.34}></motion.div>
             
-            <motion.div className="absolute top-6 left-[75%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
-            once: true,
-            margin: "-100px"
-          }} custom={25}></motion.div>
-            
-            {/* Milestone Points - enhanced positioning for consistent spacing */}
+            {/* Milestone Points - with exactly equal spacing */}
             <div className="flex justify-between items-center relative w-full">
               {/* First Milestone */}
-              <div className="text-center relative">
+              <div className="text-center relative w-1/3 pr-4">
                 <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
                 once: true,
                 margin: "-100px"
@@ -290,11 +285,11 @@ const Analytics = () => {
                     <Activity className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base">Real-time Events</p>
+                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">Real-time Events</p>
               </div>
               
-              {/* Second Milestone */}
-              <div className="text-center relative">
+              {/* Second Milestone - Center */}
+              <div className="text-center relative w-1/3 px-2">
                 <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
                 once: true,
                 margin: "-100px"
@@ -306,11 +301,11 @@ const Analytics = () => {
                     <Users className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base">User Insights</p>
+                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">User Insights</p>
               </div>
               
               {/* Third Milestone */}
-              <div className="text-center relative">
+              <div className="text-center relative w-1/3 pl-4">
                 <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
                 once: true,
                 margin: "-100px"
@@ -322,7 +317,7 @@ const Analytics = () => {
                     <Brain className="h-6 w-6" />
                   </motion.div>
                 </motion.div>
-                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base">AI Analytics</p>
+                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">AI Analytics</p>
               </div>
             </div>
           </div>
@@ -586,4 +581,3 @@ const Analytics = () => {
     </section>;
 };
 export default Analytics;
-
