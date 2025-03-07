@@ -98,7 +98,7 @@ const industriesData = [
   {
     name: "Marketing and Experience",
     icon: <Newspaper className="h-5 w-5 text-pink-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/96d1e3da-614a-4809-98e4-30d8a868dc11.png",
     description: "Marketing solutions and experience design"
   },
   {
