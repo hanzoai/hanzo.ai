@@ -85,7 +85,7 @@ const industriesData = [
   {
     name: "Infrastructure and Capital Projects",
     icon: <Building2 className="h-5 w-5 text-gray-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/f1241c85-7df8-45b5-a92a-263554ff10cd.png",
     description: "Infrastructure development and capital management"
   },
   {
