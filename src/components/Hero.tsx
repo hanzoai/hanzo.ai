@@ -174,8 +174,8 @@ const Hero = () => {
           <img 
             src="/lovable-uploads/fc34bb67-77b6-46c0-8ee4-3568db0a2ece.png" 
             alt="AI Faces with Digital Code" 
-            className="max-w-full h-auto"
-            style={{ maxHeight: '360px' }}
+            className="max-w-full h-auto border-0"
+            style={{ maxHeight: '360px', border: 'none' }}
           />
         </motion.div>
         
