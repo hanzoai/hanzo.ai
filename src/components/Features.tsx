@@ -110,7 +110,7 @@ const industriesData = [
   {
     name: "Sales and Commerce",
     icon: <ShoppingCart className="h-5 w-5 text-orange-400 mb-2" />,
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/fd154f76-a7a9-4b99-ac2b-e1eb589ec4da.png",
     description: "Sales enablement and commerce solutions"
   }
 ];
