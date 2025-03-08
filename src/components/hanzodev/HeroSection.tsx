@@ -58,7 +58,9 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      {/* Instead of using <style jsx>, we'll use a regular <style> tag */}
+      <style>
+        {`
         .text-gradient-steel {
           background: linear-gradient(
             90deg,
@@ -78,7 +80,8 @@ const HeroSection = () => {
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
