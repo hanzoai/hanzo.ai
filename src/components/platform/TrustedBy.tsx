@@ -88,7 +88,14 @@ const TrustedBy = () => {
               className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
             >
               <div className="mb-4">
-                <h3 className="text-xl font-bold">{testimonial.company}</h3>
+                <h3 
+                  className="text-xl font-bold text-gradient-steel"
+                  style={{
+                    backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
+                  }}
+                >
+                  {testimonial.company}
+                </h3>
               </div>
               
               <p className="text-gray-300 mb-6">"{testimonial.quote}"</p>

@@ -1,12 +1,32 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Apple, Chrome, Terminal } from "lucide-react";
 
 const CallToAction = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -19,7 +39,12 @@ const CallToAction = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+          <h2 
+            className="text-3xl md:text-5xl font-bold mb-6 text-gradient-steel"
+            style={{
+              backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
+            }}
+          >
             Do everything 100x faster
           </h2>
           
@@ -87,6 +112,31 @@ const CallToAction = () => {
           </div>
         </motion.div>
       </div>
+
+      <style>
+        {`
+        .text-gradient-steel {
+          background: linear-gradient(
+            90deg,
+            rgb(180, 180, 180),
+            rgb(240, 240, 240),
+            rgb(180, 180, 180)
+          );
+          background-size: 200% 100%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          animation: shimmer 6s ease infinite;
+          transition: background-position 0.3s ease;
+        }
+        
+        @keyframes shimmer {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        `}
+      </style>
     </section>
   );
 };
