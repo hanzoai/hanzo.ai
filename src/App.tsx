@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import Install from "./pages/Install";
 import Calculator from "./pages/Calculator";
 import HanzoDev from "./pages/HanzoDev";
+import Cloud from "./pages/Cloud";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/index.html" element={<Navigate to="/" replace />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/dev" element={<HanzoDev />} />
+            <Route path="/cloud" element={<Cloud />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
