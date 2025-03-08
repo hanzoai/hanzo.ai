@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download, Monitor, Apple, Terminal } from "lucide-react";
+import { Download, Monitor, Apple } from "lucide-react";
 
 const DownloadHero = () => {
   return (
@@ -27,7 +27,7 @@ const DownloadHero = () => {
             Your AI workspace for building AI products and AI-powered companies. Available on PC and Mac. Mobile coming soon.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
             <Button 
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
@@ -42,16 +42,6 @@ const DownloadHero = () => {
               <Apple className="mr-2 h-5 w-5" />
               Download (Intel Mac)
             </Button>
-          </div>
-          
-          <div className="flex justify-center mb-16">
-            <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-4 flex items-center">
-              <Terminal className="h-5 w-5 text-purple-500 mr-3" />
-              <code className="text-gray-300 font-mono">pip install hanzo-dev</code>
-              <Button variant="ghost" size="sm" className="ml-4 text-gray-400 hover:text-white">
-                Copy
-              </Button>
-            </div>
           </div>
           
           <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-800">

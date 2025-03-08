@@ -12,6 +12,7 @@ import Integrations from "@/components/download/Integrations";
 import Extensions from "@/components/download/Extensions";
 import FAQ from "@/components/download/FAQ";
 import CallToAction from "@/components/download/CallToAction";
+import HanzoDev from "@/components/download/HanzoDev";
 
 const Download = () => {
   return (
@@ -27,6 +28,7 @@ const Download = () => {
         <Extensions />
         <Integrations />
         <FAQ />
+        <HanzoDev />
         <CallToAction />
       </main>
       <Footer />
