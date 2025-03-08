@@ -48,6 +48,12 @@ const Navbar = () => {
             <a href="/cloud" className="text-gray-300 hover:text-white transition-colors">
               Cloud
             </a>
+            <a href="/platform" className="text-gray-300 hover:text-white transition-colors">
+              Platform
+            </a>
+            <a href="/download" className="text-gray-300 hover:text-white transition-colors">
+              Download
+            </a>
             <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
               Docs
             </a>
