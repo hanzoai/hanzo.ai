@@ -43,12 +43,6 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
               Resources
             </a>
             <a
-              href="/dev"
-              className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
-            >
-              Dev
-            </a>
-            <a
               href="https://docs.hanzo.ai"
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
             >

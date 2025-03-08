@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Apple, Chrome } from "lucide-react";
+import { ArrowDown, Apple, Chrome, Terminal } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -49,6 +49,16 @@ const CallToAction = () => {
               <ArrowDown className="mr-2 h-5 w-5" />
               Download for Windows
             </Button>
+          </div>
+          
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-4 flex items-center">
+              <Terminal className="h-5 w-5 text-purple-500 mr-3" />
+              <code className="text-gray-300 font-mono">pip install hanzo-dev</code>
+              <Button variant="ghost" size="sm" className="ml-4 text-gray-400 hover:text-white">
+                Copy
+              </Button>
+            </div>
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
