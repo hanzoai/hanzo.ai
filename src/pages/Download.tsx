@@ -9,6 +9,7 @@ import TextInteraction from "@/components/download/TextInteraction";
 import ScreenCapture from "@/components/download/ScreenCapture";
 import Customization from "@/components/download/Customization";
 import Integrations from "@/components/download/Integrations";
+import Extensions from "@/components/download/Extensions";
 import FAQ from "@/components/download/FAQ";
 import CallToAction from "@/components/download/CallToAction";
 
@@ -23,6 +24,7 @@ const Download = () => {
         <TextInteraction />
         <ScreenCapture />
         <Customization />
+        <Extensions />
         <Integrations />
         <FAQ />
         <CallToAction />

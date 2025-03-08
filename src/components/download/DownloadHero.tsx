@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { AppleLogo, MonitorDown } from "lucide-react";
+import { Download, Monitor, Apple } from "lucide-react";
 
 const DownloadHero = () => {
   return (
@@ -32,14 +32,14 @@ const DownloadHero = () => {
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
-              <AppleLogo className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-5 w-5" />
               Download (Apple Silicon)
             </Button>
             <Button 
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
-              <AppleLogo className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-5 w-5" />
               Download (Intel Mac)
             </Button>
           </div>
@@ -47,7 +47,7 @@ const DownloadHero = () => {
           <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-800">
             <div className="relative pb-[56.25%] h-0 bg-gray-900">
               <div className="absolute inset-0 flex items-center justify-center">
-                <MonitorDown className="h-16 w-16 text-gray-500" />
+                <Monitor className="h-16 w-16 text-gray-500" />
                 <span className="ml-2 text-gray-400">Video preview</span>
               </div>
             </div>

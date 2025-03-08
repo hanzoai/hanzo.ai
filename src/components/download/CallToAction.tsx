@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, AppleLogo } from "lucide-react";
+import { ArrowDown, Apple, Chrome } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -20,11 +20,11 @@ const CallToAction = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            Do everything 10x faster
+            Do everything 100x faster
           </h2>
           
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Hanzo AI lets models understand your desktop activity. Get stuff done faster.
+            Hanzo AI lets models understand your desktop activity. Build faster.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
@@ -32,14 +32,14 @@ const CallToAction = () => {
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
-              <AppleLogo className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-5 w-5" />
               Download (Apple Silicon)
             </Button>
             <Button 
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
-              <AppleLogo className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-5 w-5" />
               Download (Intel Mac)
             </Button>
             <Button 
@@ -51,7 +51,34 @@ const CallToAction = () => {
             </Button>
           </div>
           
-          <div className="flex justify-center space-x-8 text-gray-400">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-gray-700 text-white hover:bg-gray-800"
+            >
+              <Chrome className="mr-2 h-5 w-5" />
+              Chrome Extension
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-gray-700 text-white hover:bg-gray-800"
+            >
+              <Chrome className="mr-2 h-5 w-5" />
+              Firefox Add-on
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-gray-700 text-white hover:bg-gray-800"
+            >
+              <Chrome className="mr-2 h-5 w-5" />
+              Edge Extension
+            </Button>
+          </div>
+          
+          <div className="flex justify-center space-x-8 text-gray-400 mt-8">
             <a href="#" className="hover:text-white transition-colors">Discord</a>
             <a href="#" className="hover:text-white transition-colors">X</a>
           </div>

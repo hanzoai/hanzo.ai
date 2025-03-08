@@ -41,7 +41,7 @@ const Integrations = () => {
           <IntegrationCard 
             icon={<Github className="h-8 w-8 text-purple-500" />}
             title="GitHub"
-            description="Automatically review PRs and more"
+            description="Automatically manage development work and more"
           />
           
           <IntegrationCard 

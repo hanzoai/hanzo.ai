@@ -12,7 +12,11 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What platforms does the Hanzo desktop app support?",
-      answer: "Currently, the Hanzo desktop app supports macOS (both Apple Silicon and Intel) and Windows. Mobile support for iOS and Android is coming soon."
+      answer: "Currently, the Hanzo desktop app supports macOS (both Apple Silicon and Intel) and Windows. Mobile support for iOS and Android is coming soon. We also offer browser extensions for Chrome, Firefox, and Edge, as well as a VS Code extension."
+    },
+    {
+      question: "How do the browser extensions differ from the desktop app?",
+      answer: "The browser extensions provide core Hanzo functionality within your browser, while the desktop app offers system-wide capabilities including screen capture, voice commands, and integration with all applications on your computer. For the most complete experience, we recommend using the desktop app."
     },
     {
       question: "Is my data kept private?",
@@ -29,6 +33,10 @@ const FAQ = () => {
     {
       question: "Do I need a subscription to use the desktop app?",
       answer: "The basic features of the desktop app are free to use. Premium features require a Hanzo subscription, which you can manage through your account settings."
+    },
+    {
+      question: "How does the VS Code extension work with Hanzo?",
+      answer: "The Hanzo VS Code extension brings AI-powered code assistance directly into your development environment. It works alongside the desktop app to provide contextual code generation, refactoring, and documentation based on your project context."
     }
   ];
 
