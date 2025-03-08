@@ -41,7 +41,10 @@ const Navbar = () => {
             <ProductsMenu />
             <SolutionsMenu />
             <ResourcesMenu />
-
+            
+            <a href="/dev" className="text-gray-300 hover:text-white transition-colors">
+              Dev
+            </a>
             <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
               Docs
             </a>

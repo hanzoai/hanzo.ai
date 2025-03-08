@@ -4,13 +4,16 @@ import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Hero = () => {
   const { toast } = useToast();
   const [animationComplete, setAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("curl -sL hanzo.sh | sh");
@@ -19,6 +22,23 @@ const Hero = () => {
       duration: 2000
     });
   };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   const titleVariants = {
     hidden: {
@@ -54,7 +74,7 @@ const Hero = () => {
   const titleLetters1 = titleText1.split("");
   const titleLetters2 = titleText2.split("");
   
-  return <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
 
       <style dangerouslySetInnerHTML={{ __html: `
@@ -162,21 +182,97 @@ const Hero = () => {
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
+        
+        .chrome-text {
+          position: relative;
+          background: linear-gradient(
+            135deg,
+            #e6e6e6 0%,
+            #ffffff 25%,
+            #e6e6e6 50%,
+            #cccccc 75%,
+            #e6e6e6 100%
+          );
+          background-size: 200% 200%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          transition: all 0.2s ease;
+        }
+        
+        .underline-you {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .underline-you::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            #e6e6e6,
+            #ffffff,
+            #e6e6e6
+          );
+          transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .underline-you.active::after {
+          width: 100%;
+        }
       `}} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center bg-black/0">
-          <motion.h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" initial="hidden" animate="visible" variants={titleVariants} onAnimationComplete={() => setAnimationComplete(true)}>
-            <motion.span className="inline-flex items-center">
+          <motion.h1 
+            ref={headingRef}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" 
+            initial="hidden" 
+            animate="visible" 
+            variants={titleVariants} 
+            onAnimationComplete={() => setAnimationComplete(true)}
+            style={{
+              backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
+            }}
+          >
+            <motion.span className="inline-flex items-center chrome-text">
               {titleLetters1.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>)}
             </motion.span>
             
-            <motion.span className="block text-white pb-3 overflow-visible" initial="hidden" animate={animationComplete ? "visible" : "hidden"} variants={titleVariants} onAnimationComplete={() => setTitleAnimationComplete(true)}>
-              {titleLetters2.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
-                  {letter === " " ? "\u00A0" : letter}
-                </motion.span>)}
+            <motion.span 
+              className="block text-white pb-3 overflow-visible chrome-text" 
+              initial="hidden" 
+              animate={animationComplete ? "visible" : "hidden"} 
+              variants={titleVariants} 
+              onAnimationComplete={() => setTitleAnimationComplete(true)}
+            >
+              {titleLetters2.map((letter, index) => {
+                if (letter === "y" && titleLetters2[index+1] === "o" && titleLetters2[index+2] === "u") {
+                  return (
+                    <motion.span 
+                      key={index} 
+                      variants={letterVariants} 
+                      className={`inline-block underline-you ${titleAnimationComplete ? 'active' : ''}`}
+                    >
+                      you
+                    </motion.span>
+                  );
+                } else if ((letter === "o" || letter === "u") && titleLetters2[index-1] === "y" && titleLetters2[index-2] !== " ") {
+                  return null;
+                } else {
+                  return (
+                    <motion.span key={index} variants={letterVariants} className="inline-block">
+                      {letter === " " ? "\u00A0" : letter}
+                    </motion.span>
+                  );
+                }
+              })}
             </motion.span>
           </motion.h1>
 

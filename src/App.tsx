@@ -11,6 +11,7 @@ import Solutions from "./pages/Solutions";
 import NotFound from "./pages/NotFound";
 import Install from "./pages/Install";
 import Calculator from "./pages/Calculator";
+import HanzoDev from "./pages/HanzoDev";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/install.sh" element={<Install />} />
             <Route path="/index.html" element={<Navigate to="/" replace />} />
             <Route path="/calculator" element={<Calculator />} />
+            <Route path="/dev" element={<HanzoDev />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
