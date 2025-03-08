@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Apple, Chrome, Terminal, Safari } from "lucide-react";
+import { ArrowDown, Apple, Chrome, Terminal } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -65,7 +65,7 @@ const CallToAction = () => {
               variant="outline"
               className="border-gray-700 text-white hover:bg-gray-800"
             >
-              <Safari className="mr-2 h-5 w-5" />
+              <Chrome className="mr-2 h-5 w-5" />
               Safari Extension
             </Button>
             <Button 

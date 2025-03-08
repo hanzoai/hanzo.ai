@@ -1,11 +1,31 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
       <div className="absolute inset-0 bg-black" />
       
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -20,7 +40,12 @@ const HeroSection = () => {
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             A Public Cloud Built For
-            <span className="text-gradient-steel block mt-2">Developers Who Ship</span>
+            <span 
+              className="text-gradient-steel block mt-2"
+              style={{
+                backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
+              }}
+            >Developers Who Ship</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Over 100 award winning, best selling products have launched on Hanzo Cloud, leveraging global load-balancing, zero-config private networking, hardware isolation, and instant WireGuard VPN connections, with push-button deployments scaling to thousands of instances.
@@ -67,6 +92,7 @@ const HeroSection = () => {
           -webkit-background-clip: text;
           color: transparent;
           animation: shimmer 6s ease infinite;
+          transition: background-position 0.3s ease;
         }
         
         @keyframes shimmer {
