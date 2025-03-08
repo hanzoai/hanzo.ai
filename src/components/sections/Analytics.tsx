@@ -483,7 +483,7 @@ const Analytics = () => {
           delay: 0.2,
           duration: 0.5
         }} className="text-2xl sm:text-3xl font-semibold text-white text-center mb-10">
-            AI-Powered Analytics
+            Easily Integrate Hanzo AI-Powered Analytics
           </motion.h2>
 
           <motion.div variants={aiAnalyticsVariants} initial="hidden" whileInView="visible" viewport={{
