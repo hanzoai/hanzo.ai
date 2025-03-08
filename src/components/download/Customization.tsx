@@ -51,7 +51,7 @@ const Customization = () => {
             <p className="text-gray-300">
               Apply feedback from your last meeting to your code
             </p>
-          </div>
+          </motion.div>
           
           <motion.div 
             className="bg-gray-900/50 p-8 rounded-xl border border-gray-800"
@@ -64,8 +64,8 @@ const Customization = () => {
             <p className="text-gray-300">
               Create code snippets in any application with the power of Hanzo
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
