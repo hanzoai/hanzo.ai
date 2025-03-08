@@ -416,7 +416,8 @@ const Index2 = () => {
       
       <Footer />
       
-      <style jsx>{`
+      <style>
+        {`
         .text-gradient-steel {
           background: linear-gradient(
             90deg,
@@ -430,7 +431,8 @@ const Index2 = () => {
           color: transparent;
           transition: background-position 0.3s ease;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
