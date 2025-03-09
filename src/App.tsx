@@ -33,6 +33,11 @@ import Vector from "./pages/Vector";
 import HanzoBot from "./pages/HanzoBot";
 import Extension from "./pages/Extension";
 import About from "./pages/About";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Security from "./pages/Security";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +79,11 @@ const App = () => {
             <Route path="/bot" element={<HanzoBot />} />
             <Route path="/extension" element={<Extension />} />
             <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
