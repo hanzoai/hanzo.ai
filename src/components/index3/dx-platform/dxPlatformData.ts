@@ -147,6 +147,19 @@ export const dxPlatformData: DXPlatformItem[] = [
     color: "cyan"
   },
   {
+    id: "terminal",
+    title: "Terminal",
+    description: "Intelligent terminal with AI built-in.",
+    icon: Terminal,
+    features: [
+      "AI-powered command suggestions and explanations",
+      "Natural language to command translation",
+      "Automatic error detection and correction",
+      "Context-aware history and command completion"
+    ],
+    color: "gray"
+  },
+  {
     id: "zen",
     title: "Zen",
     description: "Simplicity, clarity, elegance—our AI engineering manifesto guiding every decision we make.",
