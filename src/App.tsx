@@ -24,6 +24,7 @@ import HanzoApp from "./pages/HanzoApp";
 import HanzoCode from "./pages/HanzoCode";
 import Operator from "./pages/Operator";
 import HanzoBalancer from "./pages/HanzoBalancer";
+import ZenOfHanzo from "./pages/ZenOfHanzo";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => {
             <Route path="/code" element={<HanzoCode />} />
             <Route path="/operator" element={<Operator />} />
             <Route path="/balancer" element={<HanzoBalancer />} />
+            <Route path="/zen" element={<ZenOfHanzo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>

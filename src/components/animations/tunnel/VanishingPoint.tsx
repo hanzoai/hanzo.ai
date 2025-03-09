@@ -9,6 +9,11 @@ const VanishingPoint: React.FC = () => {
       animate={{
         opacity: [0.3, 0.8, 0.3],
         scale: [1, 1.5, 1],
+        boxShadow: [
+          "0 0 5px 0px rgba(139, 92, 246, 0.3)",
+          "0 0 20px 10px rgba(139, 92, 246, 0.7)",
+          "0 0 5px 0px rgba(139, 92, 246, 0.3)"
+        ]
       }}
       transition={{
         duration: 4,
