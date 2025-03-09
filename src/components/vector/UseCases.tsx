@@ -1,113 +1,112 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, Image, FileText, Brain, MessageSquare, FileCode } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Bot, Search, BrainCircuit, Image, FileText, Tag } from "lucide-react";
+import ChromeText from "@/components/ui/chrome-text";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
+import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+
+const useCaseVariant = createAnimationVariant("fadeInBlur", {
+  duration: 0.35,
+  curve: curves.smooth,
+  distance: 15,
+  blur: 5
+});
+
+const iconVariant = createAnimationVariant("popIn", {
+  duration: 0.35,
+  curve: curves.bouncy,
+  blur: 3
+});
+
+interface UseCaseProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const UseCase = ({ icon, title, description }: UseCaseProps) => (
+  <motion.div
+    variants={useCaseVariant}
+    className="p-6"
+    whileHover={{ scale: 1.02 }}
+    transition={{ duration: 0.2 }}
+  >
+    <motion.div 
+      variants={iconVariant}
+      className="h-14 w-14 rounded-full bg-indigo-900/30 border border-indigo-500/30 flex items-center justify-center mb-4 mx-auto"
+    >
+      {icon}
+    </motion.div>
+    <h3 className="text-xl font-bold text-white text-center mb-2">{title}</h3>
+    <p className="text-gray-400 text-center">{description}</p>
+  </motion.div>
+);
 
 const UseCases = () => {
   const useCases = [
     {
-      icon: Search,
+      icon: <Bot className="h-6 w-6 text-indigo-400" />,
+      title: "Chatbots & RAG",
+      description: "Build powerful retrieval-augmented generation systems that search across your knowledge base."
+    },
+    {
+      icon: <Search className="h-6 w-6 text-indigo-400" />,
       title: "Semantic Search",
-      description: "Build powerful search experiences that understand user intent beyond keywords.",
-      cta: "Try Now",
-      color: "blue"
+      description: "Implement intuitive search that understands user intent beyond simple keyword matching."
     },
     {
-      icon: FileText,
-      title: "RAG Applications",
-      description: "Create retrieval-augmented generation systems for grounded AI responses.",
-      cta: "Try Now",
-      color: "indigo"
+      icon: <BrainCircuit className="h-6 w-6 text-indigo-400" />,
+      title: "Recommendation Systems",
+      description: "Create personalized recommendations based on user preferences and behavior."
     },
     {
-      icon: Image,
-      title: "Image Search",
-      description: "Find visually similar images based on content rather than metadata alone.",
-      cta: "Try Now",
-      color: "purple"
+      icon: <Image className="h-6 w-6 text-indigo-400" />,
+      title: "Visual Search",
+      description: "Enable users to search for visually similar images or products in your catalog."
     },
     {
-      icon: Brain,
-      title: "Hybrid Search",
-      description: "Combine vector and keyword search for comprehensive information retrieval.",
-      cta: "Try Now",
-      color: "teal"
+      icon: <FileText className="h-6 w-6 text-indigo-400" />,
+      title: "Document Intelligence",
+      description: "Extract insights from documents and connect related information across sources."
     },
     {
-      icon: MessageSquare,
-      title: "Conversational Memory",
-      description: "Store conversation history as embeddings for more contextual AI interactions.",
-      cta: "Try Now",
-      color: "cyan"
-    },
-    {
-      icon: FileCode,
-      title: "Code Search",
-      description: "Find similar code snippets and patterns across your codebase.",
-      cta: "Try Now",
-      color: "amber"
+      icon: <Tag className="h-6 w-6 text-indigo-400" />,
+      title: "Automated Tagging",
+      description: "Automatically categorize and tag content based on semantic understanding."
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap: Record<string, { bg: string, text: string }> = {
-      blue: { bg: "bg-blue-900/30", text: "text-blue-400" },
-      indigo: { bg: "bg-indigo-900/30", text: "text-indigo-400" },
-      purple: { bg: "bg-purple-900/30", text: "text-purple-400" },
-      teal: { bg: "bg-teal-900/30", text: "text-teal-400" },
-      cyan: { bg: "bg-cyan-900/30", text: "text-cyan-400" },
-      amber: { bg: "bg-amber-900/30", text: "text-amber-400" }
-    };
-
-    return colorMap[color] || colorMap.indigo;
-  };
-
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-950 relative overflow-hidden">
+    <AnimatedSection 
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 to-black"
+      viewportAmount={0.1}
+    >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Start Building Your GenAI App
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore use cases with guided notebooks developed by our team and community
+        <AnimatedHeading className="text-center mb-16">
+          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-4">
+            Use Cases
+          </ChromeText>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Powering AI applications across industries
           </p>
-        </motion.div>
+        </AnimatedHeading>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {useCases.map((useCase, index) => {
-            const { bg, text } = getColorClasses(useCase.color);
-            
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 hover:bg-gray-900/50 transition-colors"
-              >
-                <div className={`h-16 w-16 ${bg} rounded-xl flex items-center justify-center mb-6`}>
-                  <useCase.icon className={`h-8 w-8 ${text}`} />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{useCase.title}</h3>
-                <p className="text-gray-400 mb-6">{useCase.description}</p>
-                <Button variant="outline" className={`${text} border-gray-700 hover:bg-gray-800`}>
-                  {useCase.cta}
-                </Button>
-              </motion.div>
-            );
-          })}
-        </div>
+        <AnimatedStaggerContainer 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
+          delayFactor={0.07}
+        >
+          {useCases.map((useCase, index) => (
+            <UseCase
+              key={index}
+              icon={useCase.icon}
+              title={useCase.title}
+              description={useCase.description}
+            />
+          ))}
+        </AnimatedStaggerContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

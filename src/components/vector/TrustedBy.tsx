@@ -1,6 +1,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
+import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+
+const companyItemVariant = createAnimationVariant("fadeInBlur", {
+  duration: 0.3,
+  curve: curves.snappy,
+  distance: 10,
+  blur: 4
+});
 
 const TrustedBy = () => {
   const companies = [
@@ -10,37 +19,32 @@ const TrustedBy = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-950">
+    <AnimatedSection 
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-950"
+      viewportAmount={0.3}
+    >
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
-        >
+        <AnimatedHeading className="text-center mb-10">
           <h2 className="text-2xl font-semibold text-white mb-2">Trusted By AI Innovators</h2>
           <div className="w-20 h-1 bg-indigo-500 mx-auto"></div>
-        </motion.div>
+        </AnimatedHeading>
         
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-x-8 gap-y-6"
-        >
+        <AnimatedStaggerContainer className="flex flex-wrap justify-center gap-x-8 gap-y-6" delayFactor={0.03}>
           {companies.map((company, index) => (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
+              variants={companyItemVariant}
               className="text-gray-400 font-medium text-lg transition-colors hover:text-indigo-400"
+              whileHover={{ scale: 1.05, color: "#818cf8" }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
             >
               {company}
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </AnimatedStaggerContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 
