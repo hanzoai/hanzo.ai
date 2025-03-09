@@ -1,7 +1,8 @@
 
-import { Check } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products, solutions, resources, company } from "@/constants/navigation";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,7 +29,20 @@ const Footer = () => {
             <ul className="space-y-2">
               {products.map(category => (
                 <li key={category.title}>
-                  <span className="text-gray-400 font-medium">{category.title}</span>
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-gray-400 font-medium">{category.title}</span>
+                    <Link 
+                      to={category.title === "AI Cloud" ? "/platform" : category.title === "Cloud" ? "/cloud" : "#"} 
+                      className={`inline-flex items-center text-xs ${category.title === "OpenSource" ? "opacity-0" : "text-purple-400 hover:text-purple-300"}`}
+                    >
+                      {category.title !== "OpenSource" && (
+                        <>
+                          View All 
+                          <ChevronRight className="h-3 w-3 ml-0.5" />
+                        </>
+                      )}
+                    </Link>
+                  </div>
                   <ul className="mt-1 space-y-1">
                     {category.items.slice(0, 4).map(item => (
                       <li key={item}>
@@ -59,12 +73,13 @@ const Footer = () => {
                     ))}
                   </ul>
                   {category.items.length > 4 && (
-                    <a 
-                      href="/solutions" 
-                      className="inline-block mt-2 text-sm text-purple-400 hover:text-purple-300"
+                    <Link 
+                      to="/solutions" 
+                      className="inline-flex items-center mt-2 text-sm text-purple-400 hover:text-purple-300"
                     >
-                      View all {category.title.toLowerCase()} →
-                    </a>
+                      View all {category.title.toLowerCase()} 
+                      <ChevronRight className="h-4 w-4 ml-0.5" />
+                    </Link>
                   )}
                 </li>
               ))}

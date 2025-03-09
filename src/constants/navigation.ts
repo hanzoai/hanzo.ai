@@ -1,7 +1,7 @@
 
 export const products = [
   {
-    title: "DX Platform",
+    title: "AI Cloud",
     items: [
       "AI",
       "Bot",

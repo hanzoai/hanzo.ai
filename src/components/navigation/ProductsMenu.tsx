@@ -1,5 +1,5 @@
 
-import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale, User, BarChart, LucideIcon, Bot as BotIcon, CodepenIcon, Server, Globe, Network, Activity, Zap, RefreshCw } from "lucide-react";
+import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale, User, BarChart, LucideIcon, Bot as BotIcon, CodepenIcon, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight } from "lucide-react";
 import { products } from "@/constants/navigation";
 import {
   PopoverContent,
@@ -146,11 +146,17 @@ export const ProductsMenu = () => {
         >
           <div className="grid grid-cols-2 gap-8">
             <div>
-              <Link to="/platform">
-                <h3 className="text-lg font-semibold text-white mb-4 hover:text-gray-300 transition-colors">
-                  DX Platform
-                </h3>
-              </Link>
+              <div className="flex items-center justify-between mb-4">
+                <Link to="/platform">
+                  <h3 className="text-lg font-semibold text-white hover:text-gray-300 transition-colors">
+                    AI Cloud
+                  </h3>
+                </Link>
+                <Link to="/platform" className="text-sm text-purple-400 hover:text-purple-300 flex items-center group">
+                  View All
+                  <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              </div>
               <div className="grid grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
                 {dxPlatformItems.map((item) => (
                   <Link to={item.link} key={item.name} className="flex items-start space-x-3 group">
@@ -165,11 +171,17 @@ export const ProductsMenu = () => {
             </div>
             
             <div>
-              <Link to="/cloud">
-                <h3 className="text-lg font-semibold text-white mb-4 hover:text-gray-300 transition-colors">
-                  Cloud
-                </h3>
-              </Link>
+              <div className="flex items-center justify-between mb-4">
+                <Link to="/cloud">
+                  <h3 className="text-lg font-semibold text-white hover:text-gray-300 transition-colors">
+                    Cloud
+                  </h3>
+                </Link>
+                <Link to="/cloud" className="text-sm text-purple-400 hover:text-purple-300 flex items-center group">
+                  View All
+                  <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              </div>
               <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
                 {cloudItems.map((item) => (
                   <Link to={item.link} key={item.name} className="flex items-start space-x-3 group">
