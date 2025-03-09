@@ -244,7 +244,7 @@ const AIPlatformSection = () => {
         </motion.div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         .text-gradient-steel {
           background: linear-gradient(
             90deg,

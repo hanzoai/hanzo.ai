@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Cloud, Database, BarChart, Server, Box, Users, CreditCard, Cpu, Shield, Globe, Network, Lock } from "lucide-react";
@@ -27,7 +26,6 @@ const CloudServices = () => {
     };
   }, []);
 
-  // Cloud network visualization
   const CloudNetworkGraphic = () => {
     return (
       <div className="relative h-48 w-full overflow-hidden rounded-xl bg-black/40 mb-8">
@@ -37,9 +35,7 @@ const CloudServices = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {/* Cloud network visualization */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Central cloud node */}
             <motion.div 
               className="h-16 w-16 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center z-10"
               animate={{ 
@@ -54,7 +50,6 @@ const CloudServices = () => {
               <Cloud className="h-8 w-8 text-purple-400" />
             </motion.div>
             
-            {/* Connection lines and nodes */}
             {[...Array(8)].map((_, i) => {
               const angle = (i * Math.PI * 2) / 8;
               const x = Math.cos(angle) * 100;
@@ -62,7 +57,6 @@ const CloudServices = () => {
               
               return (
                 <motion.div key={i} className="absolute" style={{ left: '50%', top: '50%' }}>
-                  {/* Connection line */}
                   <motion.div 
                     className="absolute h-0.5 bg-gradient-to-r from-purple-500/60 to-purple-500/0 origin-left"
                     style={{ 
@@ -77,7 +71,6 @@ const CloudServices = () => {
                     }}
                   />
                   
-                  {/* Node */}
                   <motion.div 
                     className="absolute h-8 w-8 rounded-full bg-gray-800/80 flex items-center justify-center border border-purple-500/30"
                     style={{ transform: `translate(${x}px, ${y}px) translate(-50%, -50%)` }}
@@ -101,7 +94,6 @@ const CloudServices = () => {
               );
             })}
             
-            {/* Data particles flowing through connections */}
             {[...Array(5)].map((_, i) => {
               const angle = ((i * Math.PI * 2) / 5) + (Math.PI / 6);
               const pathLength = 100;
@@ -137,7 +129,6 @@ const CloudServices = () => {
 
   return (
     <section ref={containerRef} className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/50 relative overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute top-40 right-20 w-64 h-64 bg-purple-900/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl"></div>
       
@@ -231,7 +222,6 @@ const CloudServices = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* AI Compute */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -270,7 +260,6 @@ const CloudServices = () => {
             </ul>
           </motion.div>
           
-          {/* Analytics */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -309,7 +298,6 @@ const CloudServices = () => {
             </ul>
           </motion.div>
           
-          {/* Security */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -348,7 +336,6 @@ const CloudServices = () => {
             </ul>
           </motion.div>
           
-          {/* Base */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -387,7 +374,6 @@ const CloudServices = () => {
             </ul>
           </motion.div>
           
-          {/* Commerce */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -426,7 +412,6 @@ const CloudServices = () => {
             </ul>
           </motion.div>
           
-          {/* Database */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

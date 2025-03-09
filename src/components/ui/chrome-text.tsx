@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef, ElementType } from "react";
+import React, { useState, useEffect, useRef, ElementType, CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 interface ChromeTextProps {
@@ -8,6 +8,7 @@ interface ChromeTextProps {
   className?: string;
   preHeading?: string;
   preHeadingClassName?: string;
+  style?: CSSProperties;
 }
 
 const ChromeText = ({ 
@@ -15,7 +16,8 @@ const ChromeText = ({
   as: Component = "h1", 
   className,
   preHeading,
-  preHeadingClassName 
+  preHeadingClassName,
+  style
 }: ChromeTextProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   // Use a more generic ref type that works with any HTML element
@@ -53,6 +55,7 @@ const ChromeText = ({
           className={cn("chrome-gradient", className)}
           style={{
             backgroundPosition: `${(mousePosition.x / (textRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (textRef.current?.offsetHeight || 1)) * 100}%`,
+            ...style
           }}
         >
           {children}

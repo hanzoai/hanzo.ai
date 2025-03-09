@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Bot, Terminal, Code, Braces, Server, Blocks, Globe, Network, Activity, Zap, RefreshCw, Workflow, GitBranch, Cpu } from "lucide-react";
@@ -27,19 +26,16 @@ const DXPlatform = () => {
     };
   }, []);
 
-  // DX Platform modular graphic
   const DxPlatformGraphic = () => {
     return (
       <div className="relative h-64 w-full overflow-hidden rounded-xl bg-black/40 mb-8">
         <div className="absolute inset-0">
-          {/* Background grid pattern */}
           <div className="absolute inset-0" style={{
             backgroundImage: "radial-gradient(rgba(128, 90, 213, 0.1) 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}></div>
           
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Central hub */}
             <motion.div 
               className="relative h-24 w-24 rounded-xl bg-gray-900/70 border border-purple-500/30 flex items-center justify-center z-30"
               initial={{ scale: 0 }}
@@ -60,7 +56,6 @@ const DXPlatform = () => {
               />
             </motion.div>
             
-            {/* Surrounding modules */}
             {[...Array(8)].map((_, i) => {
               const angle = (i * Math.PI * 2) / 8;
               const distance = 120;
@@ -107,7 +102,6 @@ const DXPlatform = () => {
               );
             })}
             
-            {/* Connection lines */}
             {[...Array(8)].map((_, i) => {
               const angle = (i * Math.PI * 2) / 8;
               const distance = 120;
@@ -138,7 +132,6 @@ const DXPlatform = () => {
               );
             })}
             
-            {/* Animated particles */}
             {[...Array(8)].map((_, i) => {
               const angle = (i * Math.PI * 2) / 8;
               const distance = 120;
@@ -169,7 +162,6 @@ const DXPlatform = () => {
 
   return (
     <section ref={containerRef} id="platform" className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute top-20 left-20 w-64 h-64 bg-purple-900/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl"></div>
       
@@ -263,7 +255,6 @@ const DXPlatform = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Hanzo AI */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -302,7 +293,6 @@ const DXPlatform = () => {
             </ul>
           </motion.div>
           
-          {/* Hanzo Bot */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -341,7 +331,6 @@ const DXPlatform = () => {
             </ul>
           </motion.div>
           
-          {/* Hanzo Code */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -380,7 +369,6 @@ const DXPlatform = () => {
             </ul>
           </motion.div>
           
-          {/* Hanzo Dev */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -419,7 +407,6 @@ const DXPlatform = () => {
             </ul>
           </motion.div>
           
-          {/* Hanzo Deploy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -458,7 +445,6 @@ const DXPlatform = () => {
             </ul>
           </motion.div>
           
-          {/* Hanzo Monitor */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
