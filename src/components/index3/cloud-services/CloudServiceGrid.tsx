@@ -1,7 +1,7 @@
 
 import React from "react";
 import { 
-  Cloud, Database, BarChart, Server, Box, Shield, Cpu
+  Cloud, Database, BarChart, Server, Box, Shield, Cpu, Braces
 } from "lucide-react";
 import CloudServiceCard from "./CloudServiceCard";
 
@@ -12,6 +12,18 @@ interface CloudServiceGridProps {
 
 const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHovered }) => {
   const serviceData = [
+    {
+      id: "ai",
+      title: "AI",
+      description: "The intelligence engine behind every Hanzo product.",
+      icon: Braces,
+      features: [
+        "Frontier LLMs, vector search, and advanced reasoning models",
+        "Autonomous workflows that continuously learn and improve",
+        "Accessible via the intuitive @hanzo/ai SDK",
+        "Fine-tuning and custom model deployment capabilities"
+      ]
+    },
     {
       id: "ai-compute",
       title: "AI Compute",

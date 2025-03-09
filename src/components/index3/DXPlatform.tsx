@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Bot, Terminal, Code, Braces, Server, Blocks, Globe, Network, Activity, Zap, RefreshCw, Workflow, GitBranch, Cpu, Github, ExternalLink } from "lucide-react";
@@ -392,46 +391,46 @@ const DXPlatform = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
             className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
-            onMouseEnter={() => setIsHovered("hanzo-ai")}
+            onMouseEnter={() => setIsHovered("hanzo-app")}
             onMouseLeave={() => setIsHovered(null)}
           >
-            <div className={`h-14 w-14 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "hanzo-ai" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
-              <Braces className={`h-7 w-7 transition-colors duration-300 ${isHovered === "hanzo-ai" ? "text-purple-300" : "text-purple-400"}`} />
+            <div className={`h-14 w-14 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "hanzo-app" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Blocks className={`h-7 w-7 transition-colors duration-300 ${isHovered === "hanzo-app" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             
             <div className="flex items-center justify-between mb-4">
               <ChromeText as="h3" className="text-2xl font-bold">
-                Hanzo AI
+                Hanzo App
               </ChromeText>
               <div className="flex space-x-3">
-                <a href="https://github.com/hanzoai/ai" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
+                <a href="https://github.com/hanzoai/app" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
                   <Github className="h-5 w-5" />
                 </a>
-                <a href="/platform#ai" className="text-gray-500 hover:text-purple-400">
+                <a href="/platform#app" className="text-gray-500 hover:text-purple-400">
                   <ExternalLink className="h-5 w-5" />
                 </a>
               </div>
             </div>
             
             <p className="text-gray-300 mb-4 text-lg">
-              The intelligence engine behind every Hanzo product.
+              Build and deploy apps with integrated AI capabilities.
             </p>
             <ul className="text-gray-400 space-y-3 text-base">
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Frontier LLMs, vector search, and advanced reasoning models</span>
+                <span>One-command app creation with integrated AI features</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Autonomous workflows that continuously learn and improve</span>
+                <span>Automatic code generation for common patterns</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Accessible via the intuitive @hanzo/ai SDK</span>
+                <span>Built-in authentication, database, and hosting</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Fine-tuning and custom model deployment capabilities</span>
+                <span>Pre-configured templates for rapid development</span>
               </li>
             </ul>
           </motion.div>
@@ -642,46 +641,46 @@ const DXPlatform = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.6 }}
             className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
-            onMouseEnter={() => setIsHovered("hanzo-observability")}
+            onMouseEnter={() => setIsHovered("hanzo-ai")}
             onMouseLeave={() => setIsHovered(null)}
           >
-            <div className={`h-14 w-14 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "hanzo-observability" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
-              <Activity className={`h-7 w-7 transition-colors duration-300 ${isHovered === "hanzo-observability" ? "text-purple-300" : "text-purple-400"}`} />
+            <div className={`h-14 w-14 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "hanzo-ai" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Braces className={`h-7 w-7 transition-colors duration-300 ${isHovered === "hanzo-ai" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             
             <div className="flex items-center justify-between mb-4">
               <ChromeText as="h3" className="text-2xl font-bold">
-                Hanzo Observability
+                Hanzo AI
               </ChromeText>
               <div className="flex space-x-3">
-                <a href="https://github.com/hanzoai/observability" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
+                <a href="https://github.com/hanzoai/ai" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-300">
                   <Github className="h-5 w-5" />
                 </a>
-                <a href="/platform#observability" className="text-gray-500 hover:text-purple-400">
+                <a href="/ai" className="text-gray-500 hover:text-purple-400">
                   <ExternalLink className="h-5 w-5" />
                 </a>
               </div>
             </div>
             
             <p className="text-gray-300 mb-4 text-lg">
-              Intelligent monitoring and observability platform.
+              The intelligence engine behind every Hanzo product.
             </p>
             <ul className="text-gray-400 space-y-3 text-base">
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>AI-powered anomaly detection and root cause analysis</span>
+                <span>Frontier LLMs, vector search, and advanced reasoning models</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Real-time performance metrics and system health dashboards</span>
+                <span>Autonomous workflows that continuously learn and improve</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Predictive alerts before issues impact end users</span>
+                <span>Accessible via the intuitive @hanzo/ai SDK</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Comprehensive tracing and logging capabilities</span>
+                <span>Fine-tuning and custom model deployment capabilities</span>
               </li>
             </ul>
           </motion.div>
