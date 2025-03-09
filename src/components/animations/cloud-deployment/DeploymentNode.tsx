@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { NodeType } from "./types";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/radix-tooltip";
+import { renderIcon } from "./utils/iconUtils";
 
 interface DeploymentNodeProps {
   node: NodeType;
@@ -48,7 +49,7 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
       onClick={() => onClick(node)}
     >
       <div className={`flex h-14 w-14 items-center justify-center rounded-lg ${getNodeBackgroundClass()}`}>
-        {node.icon}
+        {renderIcon(node.iconType, node.iconProps)}
         {node.status && (
           <div className="absolute -right-1 -bottom-1 rounded-full bg-gray-800 border border-gray-700 p-0.5">
             {node.status === 'deployed' && <Check className="h-3 w-3 text-green-400" />}
