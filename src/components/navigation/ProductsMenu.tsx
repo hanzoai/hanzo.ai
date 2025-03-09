@@ -17,123 +17,6 @@ interface ProductItem {
   link: string;
 }
 
-// DX Platform modular graphic
-const DxPlatformGraphic = () => {
-  return (
-    <div className="relative h-40 w-full overflow-hidden rounded-md bg-gradient-to-br from-black to-gray-900 mb-6 hidden lg:block">
-      <div className="absolute inset-0" style={{
-        backgroundImage: "radial-gradient(rgba(128, 90, 213, 0.08) 1px, transparent 1px)",
-        backgroundSize: "20px 20px",
-      }}></div>
-      
-      <div className="absolute inset-0 flex items-center justify-center">
-        {/* Grid of modular packages */}
-        <motion.div 
-          className="grid grid-cols-3 gap-3 w-4/5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          {[...Array(6)].map((_, i) => {
-            const icons = [
-              <Code2 key={1} className="h-5 w-5" />, 
-              <Bot key={2} className="h-5 w-5" />, 
-              <Activity key={3} className="h-5 w-5" />, 
-              <Globe key={4} className="h-5 w-5" />, 
-              <Server key={5} className="h-5 w-5" />, 
-              <Zap key={6} className="h-5 w-5" />
-            ];
-            
-            return (
-              <motion.div 
-                key={i}
-                className="flex items-center justify-center h-14 w-full rounded-md border border-gray-700 bg-black/80"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ 
-                  duration: 0.4, 
-                  delay: 0.1 * i,
-                }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  borderColor: "rgba(168, 85, 247, 0.5)",
-                  backgroundColor: "rgba(20, 20, 20, 0.9)",
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div 
-                  className="text-gray-400"
-                  whileHover={{ color: "#a855f7" }}
-                >
-                  {icons[i]}
-                </motion.div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        {/* Connection lines */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(3)].map((_, i) => {
-            const startX = 33 + (i * 33);
-            
-            return (
-              <motion.div 
-                key={`vline-${i}`}
-                className="absolute w-px bg-gray-700/50 top-1/4 h-1/2"
-                style={{ left: `${startX}%` }}
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 1 }}
-                transition={{ duration: 0.6, delay: 0.5 + (i * 0.1) }}
-              />
-            );
-          })}
-          
-          {[...Array(1)].map((_, i) => {
-            const startY = 50;
-            
-            return (
-              <motion.div 
-                key={`hline-${i}`}
-                className="absolute h-px bg-gray-700/50 left-1/4 w-1/2"
-                style={{ top: `${startY}%` }}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              />
-            );
-          })}
-          
-          {/* Active data signals */}
-          {[...Array(3)].map((_, i) => {
-            return (
-              <motion.div 
-                key={`signal-${i}`}
-                className="absolute h-1.5 w-1.5 rounded-full bg-purple-400"
-                style={{ 
-                  left: `${33 + ((i % 3) * 33)}%`,
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)'
-                }}
-                animate={{
-                  y: [0, -30, 30, 0],
-                  opacity: [0, 1, 1, 0]
-                }}
-                transition={{
-                  duration: 3,
-                  delay: i * 1.5,
-                  repeat: Infinity,
-                  repeatType: "loop"
-                }}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export const ProductsMenu = () => {
   const [open, setOpen] = useState(false);
   const [clickedOpen, setClickedOpen] = useState(false);
@@ -231,7 +114,7 @@ export const ProductsMenu = () => {
       name: "Code",
       icon: Code2,
       description: "Powerful code generation and analysis",
-      link: "/platform#code"
+      link: "/code"
     },
     {
       name: "Dev",
@@ -307,6 +190,7 @@ export const ProductsMenu = () => {
           onInteractOutside={handleOutsideClick}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* AI Cloud Column */}
             <div>
               <div className="flex items-center justify-between mb-4">
                 <Link to="/cloud">
@@ -319,11 +203,123 @@ export const ProductsMenu = () => {
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
+              
+              {/* AI Cloud visualization */}
+              <div className="relative h-40 w-full overflow-hidden rounded-md bg-gradient-to-br from-black to-gray-900 mb-6 hidden lg:block">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: "radial-gradient(rgba(128, 90, 213, 0.08) 1px, transparent 1px)",
+                  backgroundSize: "20px 20px",
+                }}></div>
+                
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div 
+                    className="grid grid-cols-3 gap-3 w-4/5"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {aiCloudItems.slice(0, 6).map((item, i) => {
+                      return (
+                        <motion.div 
+                          key={i}
+                          className="flex items-center justify-center h-14 w-full rounded-md border border-gray-700 bg-black/80"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ 
+                            duration: 0.4, 
+                            delay: 0.1 * i,
+                          }}
+                          whileHover={{ 
+                            scale: 1.05, 
+                            borderColor: "rgba(168, 85, 247, 0.5)",
+                            backgroundColor: "rgba(20, 20, 20, 0.9)",
+                            transition: { duration: 0.2 }
+                          }}
+                        >
+                          <motion.div 
+                            className="text-gray-400"
+                            whileHover={{ color: "#a855f7" }}
+                          >
+                            <item.icon className="h-5 w-5" />
+                          </motion.div>
+                        </motion.div>
+                      );
+                    })}
+                  </motion.div>
 
-              <div className="space-y-4 max-h-[360px] overflow-y-auto pr-2">
+                  {/* Connection lines */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {[...Array(3)].map((_, i) => {
+                      const startX = 33 + (i * 33);
+                      
+                      return (
+                        <motion.div 
+                          key={`vline-${i}`}
+                          className="absolute w-px bg-gray-700/50 top-1/4 h-1/2"
+                          style={{ left: `${startX}%` }}
+                          initial={{ scaleY: 0 }}
+                          animate={{ scaleY: 1 }}
+                          transition={{ duration: 0.6, delay: 0.5 + (i * 0.1) }}
+                        />
+                      );
+                    })}
+                    
+                    {[...Array(1)].map((_, i) => {
+                      const startY = 50;
+                      
+                      return (
+                        <motion.div 
+                          key={`hline-${i}`}
+                          className="absolute h-px bg-gray-700/50 left-1/4 w-1/2"
+                          style={{ top: `${startY}%` }}
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 1 }}
+                          transition={{ duration: 0.6, delay: 0.5 }}
+                        />
+                      );
+                    })}
+                    
+                    {/* Active data signals */}
+                    {[...Array(3)].map((_, i) => {
+                      return (
+                        <motion.div 
+                          key={`signal-${i}`}
+                          className="absolute h-1.5 w-1.5 rounded-full bg-purple-400"
+                          style={{ 
+                            left: `${33 + ((i % 3) * 33)}%`,
+                            top: '50%',
+                            transform: 'translate(-50%, -50%)'
+                          }}
+                          animate={{
+                            y: [0, -30, 30, 0],
+                            opacity: [0, 1, 1, 0]
+                          }}
+                          transition={{
+                            duration: 3,
+                            delay: i * 1.5,
+                            repeat: Infinity,
+                            repeatType: "loop"
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-2">
                 {aiCloudItems.map((item) => (
-                  <div key={item.name} className="flex items-start space-x-3 group">
-                    <item.icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
+                  <div
+                    key={item.name}
+                    className="flex items-start space-x-3 group"
+                    onMouseEnter={() => setHoveredItem(item.name)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                  >
+                    <item.icon 
+                      className={`h-6 w-6 mt-1 transition-colors duration-200 ${
+                        hoveredItem === item.name ? 'text-purple-400' : 'text-gray-400 group-hover:text-white'
+                      }`} 
+                    />
                     <div className="flex-1">
                       <Link to={item.link} className="text-gray-300 group-hover:text-white font-medium">
                         {item.name}
@@ -335,6 +331,7 @@ export const ProductsMenu = () => {
               </div>
             </div>
             
+            {/* DX Platform Column */}
             <div>
               <div className="flex items-center justify-between mb-4">
                 <Link to="/platform">
@@ -348,7 +345,108 @@ export const ProductsMenu = () => {
                 </Link>
               </div>
               
-              <DxPlatformGraphic />
+              {/* DX Platform visualization */}
+              <div className="relative h-40 w-full overflow-hidden rounded-md bg-gradient-to-br from-black to-gray-900 mb-6 hidden lg:block">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: "radial-gradient(rgba(128, 90, 213, 0.08) 1px, transparent 1px)",
+                  backgroundSize: "20px 20px",
+                }}></div>
+                
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div 
+                    className="grid grid-cols-3 gap-3 w-4/5"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {dxPlatformItems.slice(0, 6).map((item, i) => {
+                      return (
+                        <motion.div 
+                          key={i}
+                          className="flex items-center justify-center h-14 w-full rounded-md border border-gray-700 bg-black/80"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ 
+                            duration: 0.4, 
+                            delay: 0.1 * i,
+                          }}
+                          whileHover={{ 
+                            scale: 1.05, 
+                            borderColor: "rgba(168, 85, 247, 0.5)",
+                            backgroundColor: "rgba(20, 20, 20, 0.9)",
+                            transition: { duration: 0.2 }
+                          }}
+                        >
+                          <motion.div 
+                            className="text-gray-400"
+                            whileHover={{ color: "#a855f7" }}
+                          >
+                            <item.icon className="h-5 w-5" />
+                          </motion.div>
+                        </motion.div>
+                      );
+                    })}
+                  </motion.div>
+
+                  {/* Connection lines */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {[...Array(3)].map((_, i) => {
+                      const startX = 33 + (i * 33);
+                      
+                      return (
+                        <motion.div 
+                          key={`vline-${i}`}
+                          className="absolute w-px bg-gray-700/50 top-1/4 h-1/2"
+                          style={{ left: `${startX}%` }}
+                          initial={{ scaleY: 0 }}
+                          animate={{ scaleY: 1 }}
+                          transition={{ duration: 0.6, delay: 0.5 + (i * 0.1) }}
+                        />
+                      );
+                    })}
+                    
+                    {[...Array(1)].map((_, i) => {
+                      const startY = 50;
+                      
+                      return (
+                        <motion.div 
+                          key={`hline-${i}`}
+                          className="absolute h-px bg-gray-700/50 left-1/4 w-1/2"
+                          style={{ top: `${startY}%` }}
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 1 }}
+                          transition={{ duration: 0.6, delay: 0.5 }}
+                        />
+                      );
+                    })}
+                    
+                    {/* Active data signals */}
+                    {[...Array(3)].map((_, i) => {
+                      return (
+                        <motion.div 
+                          key={`signal-${i}`}
+                          className="absolute h-1.5 w-1.5 rounded-full bg-purple-400"
+                          style={{ 
+                            left: `${33 + ((i % 3) * 33)}%`,
+                            top: '50%',
+                            transform: 'translate(-50%, -50%)'
+                          }}
+                          animate={{
+                            y: [0, -30, 30, 0],
+                            opacity: [0, 1, 1, 0]
+                          }}
+                          transition={{
+                            duration: 3,
+                            delay: i * 1.5,
+                            repeat: Infinity,
+                            repeatType: "loop"
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-2">
                 {dxPlatformItems.map((item) => (
