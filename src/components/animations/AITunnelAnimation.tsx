@@ -1,9 +1,9 @@
 
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
 import AITunnelGrid from "./AITunnelGrid";
 import AITunnelParticles from "./AITunnelParticles";
 import AITunnelContent from "./AITunnelContent";
+import TunnelContainer from "./tunnel/TunnelContainer";
 
 interface AITunnelAnimationProps {
   title?: string;
@@ -25,23 +25,7 @@ const AITunnelAnimation: React.FC<AITunnelAnimationProps> = ({
       style={{ border: "none" }} // Explicitly remove any border
     >
       {/* 3D Container */}
-      <motion.div 
-        className="absolute inset-0 w-full h-full"
-        style={{ 
-          transformStyle: "preserve-3d",
-          perspective: "1000px",
-        }}
-        animate={{ 
-          rotateX: [0, 3, 0, -3, 0],
-          rotateY: [0, -3, 0, 3, 0]
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: "mirror",
-          ease: "easeInOut"
-        }}
-      >
+      <TunnelContainer>
         {/* Background Grid */}
         <AITunnelGrid mousePosition={{ x: 0.5, y: 0.5 }} />
         
@@ -54,7 +38,7 @@ const AITunnelAnimation: React.FC<AITunnelAnimationProps> = ({
           subtitle={subtitle}
           showButtons={showButtons}
         />
-      </motion.div>
+      </TunnelContainer>
     </div>
   );
 };
