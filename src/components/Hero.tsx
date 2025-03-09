@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Terminal, ClipboardCopy, Info } from "lucide-react";
@@ -6,6 +5,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useState, useEffect, useRef } from "react";
 import ChromeText from "@/components/ui/chrome-text";
+import AITunnelAnimation from "@/components/animations/AITunnelAnimation";
 
 const Hero = () => {
   const { toast } = useToast();
@@ -73,11 +73,12 @@ const Hero = () => {
   return <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
 
-      {/* Decorative light beams */}
-      <div className="absolute top-0 left-1/4 w-px h-1/3 bg-gradient-to-b from-purple-500/10 to-transparent"></div>
-      <div className="absolute top-0 right-1/4 w-px h-1/3 bg-gradient-to-b from-blue-500/10 to-transparent"></div>
-      <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent to-purple-500/10"></div>
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-px bg-gradient-to-l from-transparent to-blue-500/10"></div>
+      {/* Replace decorative light beams with the AI Tunnel Animation */}
+      <AITunnelAnimation 
+        title="Accelerating AI"
+        subtitle="For a Better Future"
+        showButtons={false}
+      />
 
       <style dangerouslySetInnerHTML={{ __html: `
         .vercel-button {
@@ -355,4 +356,5 @@ const Hero = () => {
       </div>
     </div>;
 };
+
 export default Hero;
