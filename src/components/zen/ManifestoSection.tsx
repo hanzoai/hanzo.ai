@@ -1,7 +1,8 @@
 
 import React from "react";
-import { motion } from "framer-motion";
-import ZenPrincipleCard, { ZenPrinciple } from "./ZenPrincipleCard";
+import { ZenPrinciple } from "./ZenPrincipleCard";
+import SectionHeader from "./SectionHeader";
+import ZenPrinciplesList from "./ZenPrinciplesList";
 
 // Define the principles data
 const principles: ZenPrinciple[] = [
@@ -79,31 +80,21 @@ const principles: ZenPrinciple[] = [
   }
 ];
 
+const manifestoDescription = 
+  "The Zen of Hanzo is not just philosophy—it's our operating system. Our guiding principles " +
+  "are practical laws born from rigorous experimentation, engineered to create profound impact " +
+  "and exponential growth.";
+
 const ManifestoSection = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-purple-900/10">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our Manifesto</h2>
-          <div className="h-1 w-20 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-gray-300 md:text-lg max-w-3xl mx-auto">
-            The Zen of Hanzo is not just philosophy—it's our operating system. Our guiding principles 
-            are practical laws born from rigorous experimentation, engineered to create profound impact 
-            and exponential growth.
-          </p>
-        </motion.div>
+        <SectionHeader 
+          title="Our Manifesto" 
+          description={manifestoDescription}
+        />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {principles.map((principle, index) => (
-            <ZenPrincipleCard key={principle.title} principle={principle} index={index} />
-          ))}
-        </div>
+        <ZenPrinciplesList principles={principles} />
       </div>
     </section>
   );
