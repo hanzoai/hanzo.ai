@@ -53,16 +53,21 @@ const OpenSource = () => {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={(viewport) => {
-                    if (!isInView && viewport.isInView) {
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: index * 0.1
+                    }
+                  }}
+                  viewport={{ once: true }}
+                  className="text-center p-4"
+                  onViewportEnter={() => {
+                    if (!isInView) {
                       setIsInView(true);
                     }
-                    return {};
                   }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center p-4"
                 >
                   <div className="flex justify-center mb-2">{item.icon}</div>
                   <div className="flex justify-center items-baseline">

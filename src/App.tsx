@@ -17,6 +17,7 @@ import Database from "./pages/Database";
 import Leadership from "./pages/Leadership";
 import Careers from "./pages/Careers";
 import Analytics from "./pages/Analytics";
+import Observability from "./pages/Observability";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/leadership" element={<Leadership />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/observability" element={<Observability />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
