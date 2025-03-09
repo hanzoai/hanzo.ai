@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CloudServices from "@/components/index3/CloudServices";
+import CloudServices from "@/components/index3/cloud-services";
 import DXPlatform from "@/components/index3/DXPlatform";
 import AIPlatformSection from "@/components/AIPlatformSection";
 import CallToAction from "@/components/index3/CallToAction";
