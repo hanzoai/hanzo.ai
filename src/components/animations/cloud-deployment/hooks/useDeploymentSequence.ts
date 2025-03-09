@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { NodeType, ConnectionType } from "../types";
 import { initialNodes, sequenceTimings } from "../data/deploymentSequence";
@@ -23,6 +24,8 @@ export const useDeploymentSequence = () => {
   const [nodes, setNodes] = useState<NodeType[]>([]);
   const [connections, setConnections] = useState<ConnectionType[]>([]);
   const [notifications, setNotifications] = useState<any[]>([]);
+  
+  // Use the refactored useScanPoints hook with default parameters
   const { scanPoints } = useScanPoints();
 
   useEffect(() => {
