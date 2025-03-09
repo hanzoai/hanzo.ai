@@ -14,6 +14,11 @@ const PerspectiveRays: React.FC<PerspectiveRaysProps> = ({ lineCount = 24 }) => 
   // Create rays emanating from the center (vanishing point)
   for (let i = 0; i < lineCount; i++) {
     const angle = (i / lineCount) * Math.PI * 2;
+    const distance = 100; // Distance from center to edge
+    
+    // Calculate end point coordinates based on angle
+    const endX = centerX + Math.cos(angle) * distance;
+    const endY = centerY + Math.sin(angle) * distance;
     
     perspectiveLines.push(
       <motion.div
@@ -21,13 +26,14 @@ const PerspectiveRays: React.FC<PerspectiveRaysProps> = ({ lineCount = 24 }) => 
         className="absolute bg-purple-500/10"
         style={{
           height: "1px",
-          width: "1px",
+          width: "0", // Start with zero width, will animate to full length
           left: `${centerX}%`,
           top: `${centerY}%`,
-          transformOrigin: "0 0",
-          transform: `rotate(${angle}rad) scale(150)`,
+          transformOrigin: "left center",
+          transform: `rotate(${angle}rad)`,
         }}
         animate={{
+          width: "150%", // Extend beyond the viewport
           opacity: [0.05, 0.2, 0.05],
         }}
         transition={{

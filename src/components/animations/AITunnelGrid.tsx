@@ -12,14 +12,14 @@ interface AITunnelGridProps {
 const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
-      {/* Perspective rays */}
-      <PerspectiveRays lineCount={24} />
+      {/* Perspective rays - now horizontal converging to center */}
+      <PerspectiveRays lineCount={36} />
       
       {/* Moving tunnel rings */}
       <TunnelSegments />
       
       {/* Stars flowing to center */}
-      <TunnelStars starCount={60} />
+      <TunnelStars starCount={80} />
       
       {/* Glowing center point (vanishing point) */}
       <VanishingPoint />
