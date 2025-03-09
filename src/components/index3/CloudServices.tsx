@@ -190,7 +190,7 @@ const CloudServices = () => {
             >
               <h3 className="text-2xl font-bold mb-4 text-white">Global Network</h3>
               <p className="text-gray-300 mb-6">
-                Deploy AI workloads across our planetary-scale infrastructure with over 200 global locations, ensuring low-latency access and regional data compliance.
+                Deploy AI workloads across our planetary-scale infrastructure with over 36 global locations, ensuring low-latency access and regional data compliance.
               </p>
               <ul className="space-y-3 text-gray-400">
                 <li className="flex items-start">
@@ -289,7 +289,7 @@ const CloudServices = () => {
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Planetary-scale infrastructure (200+ global locations)</span>
+                <span>Planetary-scale infrastructure (36+ global locations)</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
