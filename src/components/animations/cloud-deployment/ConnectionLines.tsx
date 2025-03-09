@@ -1,6 +1,5 @@
 
 import React from "react";
-import { motion } from "framer-motion";
 import { NodeType, ConnectionType } from "./types";
 
 interface ConnectionLinesProps {

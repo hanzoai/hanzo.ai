@@ -1,14 +1,11 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useCanvasContext } from "./CanvasContext";
-import Canvas from "./Canvas";
-import ConnectionAnimation from "./ConnectionAnimation";
+import GlobeThreeJs from "./GlobeThreeJs";
 
 const GlobeContainer: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const { generateConnectionPoints, drawGlobe } = useCanvasContext();
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -18,7 +15,6 @@ const GlobeContainer: React.FC = () => {
       
       const { width, height } = containerRef.current.getBoundingClientRect();
       setDimensions({ width, height });
-      generateConnectionPoints(width, height);
     };
     
     updateDimensions();
@@ -27,21 +23,7 @@ const GlobeContainer: React.FC = () => {
     return () => {
       window.removeEventListener('resize', updateDimensions);
     };
-  }, [generateConnectionPoints]);
-
-  // Start animation loop
-  useEffect(() => {
-    const animate = () => {
-      drawGlobe();
-      requestAnimationFrame(animate);
-    };
-    
-    const animationId = requestAnimationFrame(animate);
-    
-    return () => {
-      cancelAnimationFrame(animationId);
-    };
-  }, [drawGlobe]);
+  }, []);
 
   return (
     <motion.div
@@ -56,10 +38,8 @@ const GlobeContainer: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 opacity-50"></div>
       
       {dimensions.width > 0 && dimensions.height > 0 && (
-        <Canvas width={dimensions.width} height={dimensions.height} />
+        <GlobeThreeJs width={dimensions.width} height={dimensions.height} />
       )}
-      
-      <ConnectionAnimation />
       
       <div className="absolute inset-0 flex items-center justify-center text-center p-4">
         <div className="mt-8">
