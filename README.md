@@ -1,69 +1,122 @@
-# hanzo.ai
 
-## Project info
+# Hanzo AI Website
 
-**URL**: https://hanzo.app/projects/ee887e68-a27e-43a1-88d1-813320af7a8c
+A modern, responsive website for Hanzo AI built with React, TypeScript, and Tailwind CSS.
 
-## How can I edit this code?
+## Project Structure
 
-There are several ways of editing your application.
+The project follows a component-based architecture with the following structure:
 
-**Use Lovable**
-
-Simply visit the [Hanzo App](https://hanzo.app/projects/ee887e68-a27e-43a1-88d1-813320af7a8c) and start prompting.
-
-Changes made via Hanzo will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Hanzo.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+  ├── components/      # React components
+  │   ├── ui/          # UI components (buttons, cards, etc.)
+  │   ├── platform/    # Platform-specific components
+  │   ├── cloud/       # Cloud-specific components
+  │   └── index3/      # Homepage components
+  ├── constants/       # Constants and configuration
+  ├── hooks/           # React hooks
+  ├── lib/             # Utility functions
+  └── pages/           # Page components
 ```
 
-**Edit a file directly in GitHub**
+## Styling and Layout Guidelines
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Typography
 
-**Use GitHub Codespaces**
+- We use a consistent typographic scale across all pages
+- Main headings: `text-5xl md:text-6xl lg:text-7xl` with `font-bold tracking-tight`
+- Secondary headings: `text-3xl md:text-5xl` with `font-bold`
+- Body text: `text-lg` for normal text, `text-xl` for emphasized text
+- Every page should have a pre-heading with the format:
+  ```jsx
+  <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium">
+    AI Engineering Platform
+  </span>
+  ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Layout and Spacing
 
-## What technologies are used for this project?
+- Every section should have consistent vertical padding: `py-32`
+- Use a max-width container for content: `max-w-7xl mx-auto`
+- Maintain consistent horizontal padding with: `px-4 sm:px-6 lg:px-8`
+- Use the grid system with responsive breakpoints:
+  ```jsx
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  ```
+- Always include sufficient whitespace between sections (min 8rem)
 
-This project is built with .
+### Chrome Text Component
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The `ChromeText` component is used for headings with a metallic gradient effect:
 
-## How can I deploy this project?
+```jsx
+<ChromeText 
+  as="h2" 
+  className="text-3xl md:text-5xl font-bold mb-4"
+  preHeading="Optional Pre-Heading"
+  preHeadingClassName="optional-additional-classes"
+  style={{
+    backgroundPosition: `${mouseX}% ${mouseY}%`,
+  }}
+>
+  Your Heading Text
+</ChromeText>
+```
 
-Simply open [Hanzo](https://hanzo.app/projects/ee887e68-a27e-43a1-88d1-813320af7a8c) and click on Share -> Publish.
+### Mockup Components
 
-## I want to use a custom domain - is that possible?
+When adding UI mockups:
 
-Yes! If you want this let us know. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+1. Create self-contained components for mockups
+2. Use responsive design patterns
+3. Add subtle animations to enhance visual appeal
+4. Include realistic-looking data and UI elements
+
+For cloud console mockups, follow the style in `AIPlatformSection.tsx`.
+For platform mockups, follow the style in `DXPlatform.tsx`.
+
+## Making Updates
+
+When making updates to the website:
+
+1. Keep styling consistent across all pages
+2. Maintain proper spacing between elements
+3. Ensure all components are responsive
+4. Keep large components refactored into smaller, focused pieces
+5. Follow the established UI patterns and color schemes
+6. Use the Chrome Text component for main headings
+7. Add appropriate pre-headings to each major section
+
+## Adding New Pages
+
+When adding new pages:
+
+1. Create a new page component in the `src/pages` directory
+2. Include the proper pre-heading and ChromeText heading
+3. Add the page to the appropriate routes in `App.tsx`
+4. Follow the established layout patterns
+5. Ensure the page is fully responsive
+
+## Animations
+
+The website uses Framer Motion for animations. When adding new animations:
+
+1. Use consistent animation patterns:
+   ```jsx
+   <motion.div
+     initial={{ opacity: 0, y: 20 }}
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ duration: 0.5 }}
+   >
+   ```
+2. Stagger animations for related elements
+3. Use viewport animations for scrolling sections:
+   ```jsx
+   <motion.div
+     initial={{ opacity: 0, y: 20 }}
+     whileInView={{ opacity: 1, y: 0 }}
+     viewport={{ once: true }}
+     transition={{ duration: 0.5 }}
+   >
+   ```

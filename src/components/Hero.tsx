@@ -230,6 +230,16 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center bg-black/0">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+              AI Engineering Platform
+            </div>
+          </motion.div>
           <motion.h1 
             ref={headingRef}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" 
@@ -314,7 +324,7 @@ const Hero = () => {
               y: titleAnimationComplete ? 0 : 20 
             }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto"
+            className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto"
           >
             <div className="text-center">
               <p className="text-sm font-medium text-purple-400">Customizable</p>

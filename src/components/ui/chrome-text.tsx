@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef, ElementType, CSSProperties } from "react";
+import React, { useState, useEffect, useRef, CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 interface ChromeTextProps {

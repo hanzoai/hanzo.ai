@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Bot, Terminal, Code, Braces, Server, Blocks, Globe, Network, Activity, Zap, RefreshCw, Workflow, GitBranch, Cpu } from "lucide-react";
@@ -25,6 +26,97 @@ const DXPlatform = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+  // Platform Mockup Component
+  const PlatformMockup = () => (
+    <div className="relative w-full h-72 rounded-xl overflow-hidden border border-gray-800 shadow-xl mb-8">
+      <div className="absolute inset-0 bg-gray-900 p-3">
+        <div className="h-8 bg-gray-800/50 rounded-t-lg flex items-center px-4 mb-2">
+          <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+          <div className="text-xs text-gray-400 ml-2">Hanzo Developer Platform</div>
+        </div>
+        
+        <div className="grid grid-cols-12 gap-2 h-[calc(100%-2rem)]">
+          <div className="col-span-3 bg-gray-800/30 rounded-l p-2">
+            <div className="text-xs text-purple-400 mb-3">Projects</div>
+            {[...Array(5)].map((_, i) => (
+              <div 
+                key={i} 
+                className={`flex items-center mb-2 p-1.5 rounded text-xs transition-colors ${i === 0 ? 'bg-purple-900/40 text-purple-200' : 'text-gray-400 hover:bg-gray-800/40'}`}
+              >
+                <Code className="h-3 w-3 mr-2" />
+                project-{i + 1}
+              </div>
+            ))}
+            
+            <div className="mt-4 text-xs text-purple-400 mb-3">Templates</div>
+            {[...Array(3)].map((_, i) => (
+              <div 
+                key={i} 
+                className="flex items-center mb-2 p-1.5 rounded text-xs text-gray-400 hover:bg-gray-800/40 transition-colors"
+              >
+                <Blocks className="h-3 w-3 mr-2" />
+                template-{i + 1}
+              </div>
+            ))}
+          </div>
+          
+          <div className="col-span-9 bg-gray-800/30 rounded-r p-2 overflow-hidden">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-xs text-purple-400">Developer Dashboard</div>
+              <div className="flex space-x-2">
+                <div className="px-2 py-0.5 bg-purple-900/40 rounded text-purple-200 text-xs flex items-center">
+                  <Terminal className="h-3 w-3 mr-1" />
+                  Console
+                </div>
+                <div className="px-2 py-0.5 bg-gray-800/80 rounded text-gray-400 text-xs flex items-center">
+                  <Activity className="h-3 w-3 mr-1" />
+                  Metrics
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              <div className="bg-gray-800/80 p-2 rounded">
+                <div className="text-xs text-gray-400 mb-1">AI Models</div>
+                <div className="h-4 w-3/4 bg-gray-700/50 rounded"></div>
+                <div className="h-4 w-1/2 bg-gray-700/50 rounded mt-1"></div>
+              </div>
+              <div className="bg-gray-800/80 p-2 rounded">
+                <div className="text-xs text-gray-400 mb-1">API Keys</div>
+                <div className="h-4 w-3/4 bg-gray-700/50 rounded"></div>
+                <div className="h-4 w-2/3 bg-gray-700/50 rounded mt-1"></div>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800/80 p-2 rounded">
+              <div className="text-xs text-gray-400 mb-1">Development Activity</div>
+              <div className="grid grid-cols-7 gap-1 h-16">
+                {[...Array(7)].map((_, i) => (
+                  <div key={i} className="flex flex-col justify-end">
+                    {[...Array(7)].map((_, j) => {
+                      const opacity = Math.random();
+                      return opacity > 0.5 ? (
+                        <div 
+                          key={j} 
+                          className="w-full h-2 mb-1 rounded-sm" 
+                          style={{ 
+                            backgroundColor: `rgba(139, 92, 246, ${opacity})`,
+                          }}
+                        ></div>
+                      ) : null;
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   const DxPlatformGraphic = () => {
     return (
@@ -76,25 +168,26 @@ const DXPlatform = () => {
                 <motion.div 
                   key={i}
                   className="absolute h-14 w-14 rounded-lg bg-gray-900/70 border border-gray-700 flex items-center justify-center"
-                  style={{ 
-                    left: "50%",
-                    top: "50%",
-                    transform: "translate(-50%, -50%)"
-                  }}
                   initial={{ 
                     x: 0,
                     y: 0,
                     opacity: 0
                   }}
                   animate={{ 
-                    x: x,
-                    y: y,
+                    x,
+                    y,
                     opacity: 1
                   }}
                   transition={{
                     duration: 0.8,
                     delay: 0.6 + (i * 0.1),
                     ease: "easeOut"
+                  }}
+                  style={{
+                    left: "50%",
+                    top: "50%",
+                    marginLeft: -28,
+                    marginTop: -28
                   }}
                 >
                   {icons[i]}
@@ -104,17 +197,17 @@ const DXPlatform = () => {
             
             {[...Array(8)].map((_, i) => {
               const angle = (i * Math.PI * 2) / 8;
-              const distance = 120;
-              const x2 = Math.cos(angle) * distance;
-              const y2 = Math.sin(angle) * distance;
               
               return (
                 <motion.div
                   key={`line-${i}`}
-                  className="absolute left-1/2 top-1/2 origin-left h-0.5 bg-gradient-to-r from-purple-500/50 to-purple-500/10"
+                  className="absolute h-0.5 bg-gradient-to-r from-purple-500/50 to-purple-500/10"
                   style={{
-                    width: distance,
-                    transform: `rotate(${angle}rad)`,
+                    width: 120,
+                    transformOrigin: "left center",
+                    left: "50%",
+                    top: "50%",
+                    transform: `translateY(-0.5px) rotate(${angle}rad)`,
                   }}
                   initial={{
                     scaleX: 0,
@@ -139,7 +232,11 @@ const DXPlatform = () => {
               return (
                 <motion.div
                   key={`particle-${i}`}
-                  className="absolute left-1/2 top-1/2 h-1.5 w-1.5 rounded-full bg-purple-400"
+                  className="absolute h-1.5 w-1.5 rounded-full bg-purple-400"
+                  style={{
+                    left: "50%",
+                    top: "50%",
+                  }}
                   animate={{
                     x: [0, Math.cos(angle) * distance],
                     y: [0, Math.sin(angle) * distance],
@@ -176,7 +273,7 @@ const DXPlatform = () => {
               className="mb-4"
             >
               <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium">
-                Integrated Developer Experience
+                AI Engineering Platform
               </span>
             </motion.div>
             <motion.div
@@ -212,6 +309,17 @@ const DXPlatform = () => {
             </Button>
           </motion.div>
         </div>
+
+        {/* Platform Mockup */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-16"
+        >
+          <PlatformMockup />
+        </motion.div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           <div className="lg:col-span-1 flex flex-col justify-center">

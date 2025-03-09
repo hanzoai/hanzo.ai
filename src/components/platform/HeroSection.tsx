@@ -1,12 +1,35 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
 
 const HeroSection = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section 
+      ref={containerRef}
+      className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-30"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -14,12 +37,29 @@ const HeroSection = () => {
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
+        >
+          <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium">
+            AI Engineering Platform
+          </span>
+        </motion.div>
+        
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
+          <ChromeText 
+            as="h1" 
+            className="text-4xl md:text-6xl font-bold mb-6"
+            style={{
+              backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
+            }}
+          >
             Hanzo Platform
           </ChromeText>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">

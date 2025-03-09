@@ -27,6 +27,65 @@ const AIPlatformSection = () => {
     };
   }, []);
 
+  // Cloud Console Mock Component
+  const CloudConsoleMock = () => (
+    <div className="relative w-full h-64 overflow-hidden rounded-lg border border-gray-800 shadow-xl">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black p-4">
+        <div className="flex items-center space-x-2 border-b border-gray-800 pb-3 mb-4">
+          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <div className="ml-4 text-sm text-gray-400">hanzo-console-01.cloud.ai</div>
+        </div>
+        
+        <div className="grid grid-cols-12 gap-3">
+          <div className="col-span-3 h-48 bg-gray-800/30 rounded p-2">
+            <div className="text-xs text-purple-400 mb-2">Projects</div>
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="flex items-center mb-2 p-1 rounded hover:bg-purple-900/20 transition-colors">
+                <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                <div className="text-xs text-gray-300">project-{i + 1}</div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="col-span-9 h-48 bg-gray-800/30 rounded p-2">
+            <div className="text-xs text-purple-400 mb-2">Deployment Stats</div>
+            <div className="grid grid-cols-3 gap-2 mb-3">
+              <div className="bg-gray-900/50 p-2 rounded">
+                <div className="text-xs text-gray-400">CPU</div>
+                <div className="text-sm text-white">12%</div>
+              </div>
+              <div className="bg-gray-900/50 p-2 rounded">
+                <div className="text-xs text-gray-400">Memory</div>
+                <div className="text-sm text-white">1.2GB</div>
+              </div>
+              <div className="bg-gray-900/50 p-2 rounded">
+                <div className="text-xs text-gray-400">Requests</div>
+                <div className="text-sm text-white">235/min</div>
+              </div>
+            </div>
+            
+            <div className="h-20 relative">
+              <div className="absolute bottom-0 left-0 right-0 h-16 flex items-end">
+                {[...Array(24)].map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="w-full bg-purple-500/60"
+                    style={{ 
+                      height: `${Math.max(10, Math.min(100, Math.random() * 100))}%`,
+                      opacity: 0.5 + (Math.random() * 0.5)
+                    }}
+                  ></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const features = {
     platform: [
       {
@@ -121,7 +180,7 @@ const AIPlatformSection = () => {
               className="mb-4"
             >
               <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium">
-                Vertically Integrated Ecosystem
+                AI Engineering Platform
               </span>
             </motion.div>
             <motion.div
@@ -157,6 +216,17 @@ const AIPlatformSection = () => {
             </Button>
           </motion.div>
         </div>
+        
+        {/* Cloud Console Mockup */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-16"
+        >
+          <CloudConsoleMock />
+        </motion.div>
         
         {/* Tabs */}
         <div className="mb-12">
@@ -244,7 +314,8 @@ const AIPlatformSection = () => {
         </motion.div>
       </div>
       
-      <style>{`
+      <style>
+        {`
         .text-gradient-steel {
           background: linear-gradient(
             90deg,
@@ -264,7 +335,8 @@ const AIPlatformSection = () => {
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-      `}</style>
+      `}
+      </style>
     </section>
   );
 };

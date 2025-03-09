@@ -1,5 +1,5 @@
 
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, Cpu, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products, solutions, resources, company } from "@/constants/navigation";
 import { Link } from "react-router-dom";
@@ -22,6 +22,17 @@ const Footer = () => {
               <Check className="h-4 w-4 text-green-500" />
               <span>All systems operational</span>
             </a>
+            <div className="flex items-center mt-4 space-x-1 text-gray-500 text-xs">
+              <span className="inline-flex items-center px-2 py-1 rounded-md bg-gray-800/50 hover:bg-gray-800 transition-colors duration-200 cursor-pointer group">
+                <Cpu className="h-3 w-3 mr-1 text-purple-400 group-hover:text-purple-300" />
+                <span className="group-hover:text-gray-300">ai</span>
+              </span>
+              <span className="text-gray-500">/</span>
+              <span className="inline-flex items-center px-2 py-1 rounded-md bg-gray-800/50 hover:bg-gray-800 transition-colors duration-200 cursor-pointer group">
+                <Rocket className="h-3 w-3 mr-1 text-blue-400 group-hover:text-blue-300" />
+                <span className="group-hover:text-gray-300">acc</span>
+              </span>
+            </div>
           </div>
 
           <div>
