@@ -11,11 +11,11 @@ import Network from "@/components/sections/Network";
 import Code from "@/components/sections/Code";
 import CRM from "@/components/sections/CRM";
 import Products from "@/components/Products";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import HeroPoem from "@/components/HeroPoem";
 import TeamSlack from "@/components/TeamSlack";
 import LastSupper from "@/components/LastSupper";
+import TrustedBy from "@/components/platform/TrustedBy";
 
 const Index = () => {
   useEffect(() => {
@@ -56,7 +56,7 @@ const Index = () => {
         <Network />
         <Code />
         <CRM />
-        <Testimonials />
+        <TrustedBy />
         <LastSupper members={[]} />
         <HeroPoem />
         <Products />

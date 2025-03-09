@@ -1,3 +1,4 @@
+
 export const products = [
   {
     title: "DX Platform",
@@ -5,7 +6,13 @@ export const products = [
       "AI",
       "Bot",
       "Code",
-      "Dev"
+      "Dev",
+      "Runtime",
+      "Deploy",
+      "Network",
+      "Scale",
+      "Monitor",
+      "Evolve"
     ]
   },
   {

@@ -4,31 +4,38 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    company: "Arcol",
-    quote: "Hanzo is where we host all of our backend services along with our databases. It's been an integral part of our infrastructure since the very beginning.",
-    author: "Paul O'Carroll",
-    role: "Founder & CEO at Arcol",
+    company: "Damon Motorcycles",
+    quote: "Hanzo has revolutionized our approach to electric motorcycle development. Their platform gives us the tools to innovate at a pace that would be impossible with traditional infrastructure.",
+    author: "Jay Giraud",
+    role: "Founder & CEO at Damon Motorcycles",
     avatar: "/placeholder.svg"
   },
   {
-    company: "Resend",
-    quote: "Hanzo is a game changer for us. We're currently serving more than 80,000 developers with a small team... every minute spent on infrastructure is a minute we're not building the best email product in the world. If it wasn't for Hanzo, I don't think we would be able to grow as fast as we are today.",
-    author: "Zeno Rocha",
-    role: "Founder & CEO at Resend",
+    company: "SKULLY",
+    quote: "Working with Hanzo has transformed our ability to integrate AR technology into our helmets. Their DX platform streamlines our development processes while maintaining the highest standards of quality and safety.",
+    author: "Ivan Contreras",
+    role: "CEO at SKULLY",
     avatar: "/placeholder.svg"
   },
   {
-    company: "Drifting in Space",
-    quote: "Even though we already have an internal Kubernetes cluster and infrastructure-as-code setup, we decided to go with Hanzo so that we weren't spending time writing YAML files when we could be working on the product.",
-    author: "Paul Butler",
-    role: "Founder, Drifting in Space",
+    company: "Bellabeat",
+    quote: "As a company focused on women's health technology, we need partners who understand both tech and human needs. Hanzo has been instrumental in helping us scale our infrastructure while maintaining the personal touch our customers expect.",
+    author: "Urška Sršen",
+    role: "Co-founder & CEO at Bellabeat",
     avatar: "/placeholder.svg"
   },
   {
-    company: "Paloma",
-    quote: "The flexibility and ability for automation with Hanzo helps us move fast and continuously deploy to production with confidence.",
-    author: "Saurabh Bhatia",
-    role: "Engineering Manager at Paloma Group",
+    company: "Triller",
+    quote: "In the fast-moving world of social media and entertainment, Hanzo gives us the agility we need. Their platform has been key to our ability to scale rapidly while delivering exceptional user experiences.",
+    author: "Mahi de Silva",
+    role: "CEO at Triller",
+    avatar: "/placeholder.svg"
+  },
+  {
+    company: "ZOO",
+    quote: "Hanzo's platform has been a game-changer for us at ZOO. The combination of power and flexibility they provide has allowed us to focus on innovation rather than infrastructure concerns.",
+    author: "Logan Paul",
+    role: "Founder at ZOO",
     avatar: "/placeholder.svg"
   }
 ];
@@ -73,11 +80,11 @@ const TrustedBy = () => {
             Trusted by the best in business
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Hanzo supports great software teams wherever they are. Hear from some of the teams building their products on Hanzo.
+            Industry leaders across various sectors rely on Hanzo for their technological needs. Here's what they have to say.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.company}

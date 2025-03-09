@@ -1,5 +1,5 @@
 
-import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale, User, BarChart, LucideIcon, Bot as BotIcon, CodepenIcon } from "lucide-react";
+import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale, User, BarChart, LucideIcon, Bot as BotIcon, CodepenIcon, Server, Globe, Network, Activity, Zap, RefreshCw } from "lucide-react";
 import { products } from "@/constants/navigation";
 import {
   PopoverContent,
@@ -44,6 +44,42 @@ export const ProductsMenu = () => {
       icon: CodepenIcon,
       description: "Developer tools and productivity enhancers",
       link: "/dev"
+    },
+    {
+      name: "Runtime",
+      icon: Server,
+      description: "Virtual machine and container runtime solutions",
+      link: "/platform#runtime"
+    },
+    {
+      name: "Deploy",
+      icon: Zap,
+      description: "Simple deployment to any environment",
+      link: "/platform#deploy"
+    },
+    {
+      name: "Network",
+      icon: Globe,
+      description: "Secure networking and connectivity",
+      link: "/platform#network"
+    },
+    {
+      name: "Scale",
+      icon: Scale,
+      description: "Seamlessly scale your applications",
+      link: "/platform#scale"
+    },
+    {
+      name: "Monitor",
+      icon: Activity,
+      description: "Real-time application monitoring",
+      link: "/platform#monitor"
+    },
+    {
+      name: "Evolve",
+      icon: RefreshCw,
+      description: "Continuous improvement and adaptation",
+      link: "/platform#evolve"
     }
   ];
 
@@ -105,7 +141,7 @@ export const ProductsMenu = () => {
           <NavigationButton onHoverStart={() => setOpen(true)}>Products</NavigationButton>
         </PopoverTrigger>
         <PopoverContent 
-          className="w-[720px] p-6 bg-black border-gray-800"
+          className="w-[880px] p-6 bg-black border-gray-800"
           sideOffset={8}
         >
           <div className="grid grid-cols-2 gap-8">
@@ -115,7 +151,7 @@ export const ProductsMenu = () => {
                   DX Platform
                 </h3>
               </Link>
-              <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
                 {dxPlatformItems.map((item) => (
                   <Link to={item.link} key={item.name} className="flex items-start space-x-3 group">
                     <item.icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
@@ -134,7 +170,7 @@ export const ProductsMenu = () => {
                   Cloud
                 </h3>
               </Link>
-              <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2">
+              <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
                 {cloudItems.map((item) => (
                   <Link to={item.link} key={item.name} className="flex items-start space-x-3 group">
                     <item.icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
