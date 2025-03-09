@@ -1,8 +1,9 @@
 
 import React from "react";
 import { 
-  Brain, Database, Bot, Server, ShoppingCart, UserCircle, CreditCard, Workflow,
-  Cloud, Network, HardDrive, Activity, ExternalLink, Code, Zap, Share, Box, Plus
+  Brain, Database, Server, ShoppingCart, UserCircle, CreditCard, Workflow,
+  Cloud, Network, HardDrive, Activity, ExternalLink, Share, Box, Plus,
+  Cpu, BarChart, LineChart
 } from "lucide-react";
 import CloudServiceCard from "./CloudServiceCard";
 import { Button } from "@/components/ui/button";
@@ -70,7 +71,7 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
     {
       id: "edge",
       title: "Edge",
-      description: "Instant global edge deployments, ultra-low latency compute.",
+      description: "Instant global edge deployments, ultra-low latency compute and distributed serverless compute.",
       icon: Share,
       features: [
         "Deploy to 200+ edge locations in seconds",
@@ -79,19 +80,6 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
         "Integrated with Hanzo AI for edge intelligence"
       ],
       color: "cyan"
-    },
-    {
-      id: "functions",
-      title: "Functions",
-      description: "Globally distributed serverless compute for AI-driven event handling.",
-      icon: Code,
-      features: [
-        "Event-driven execution with zero infrastructure management",
-        "Automatic scaling based on demand",
-        "Native integration with all Hanzo services",
-        "Support for multiple runtimes (Node.js, Python, etc.)"
-      ],
-      color: "green"
     },
     {
       id: "machines",
@@ -107,6 +95,19 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
       color: "green"
     },
     {
+      id: "metrics",
+      title: "Metrics",
+      description: "Planetary-scale monitoring, observability, predictive analytics.",
+      icon: BarChart,
+      features: [
+        "Real-time monitoring and alerting across all services",
+        "AI-powered anomaly detection and predictive insights",
+        "Comprehensive logging and distributed tracing",
+        "Custom dashboards and visualization tools"
+      ],
+      color: "indigo"
+    },
+    {
       id: "payments",
       title: "Payments",
       description: "Integrated payments infrastructure with subscriptions and usage-based billing.",
@@ -118,19 +119,6 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
         "Real-time financial reporting and analytics"
       ],
       color: "rose"
-    },
-    {
-      id: "observability",
-      title: "Observability",
-      description: "Planetary-scale monitoring, observability, predictive analytics.",
-      icon: Activity,
-      features: [
-        "Real-time monitoring and alerting across all services",
-        "AI-powered anomaly detection and predictive insights",
-        "Comprehensive logging and distributed tracing",
-        "Custom dashboards and visualization tools"
-      ],
-      color: "indigo"
     },
     {
       id: "storage",
@@ -186,13 +174,10 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
     }
   ];
 
-  // For mobile view, limit the number of items
-  const displayData = window.innerWidth < 1024 ? serviceData.slice(0, 8) : serviceData;
-
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-        {displayData.map((service) => (
+        {serviceData.map((service) => (
           <CloudServiceCard
             key={service.id}
             id={service.id}

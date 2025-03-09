@@ -2,8 +2,8 @@
 import React from "react";
 import { 
   AppWindow, Database, Code, Terminal, Puzzle, 
-  Cpu, Bot, Layers, User, Activity, Share, Zap,
-  FileCode, Star, Monitor, Plus, ExternalLink
+  Bot, User, Activity, Zap, Star, 
+  Monitor, Plus, ExternalLink, EyeIcon, LineChart, Blocks
 } from "lucide-react";
 import DXPlatformCard from "./DXPlatformCard";
 import { Button } from "@/components/ui/button";
@@ -69,19 +69,6 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       color: "green"
     },
     {
-      id: "edge",
-      title: "Edge",
-      description: "Lightweight runtime for global edge-optimized applications.",
-      icon: Share,
-      features: [
-        "Deploy to hundreds of edge locations globally",
-        "Minimal footprint for resource-efficient operation",
-        "Seamless integration with Hanzo services",
-        "Built-in CDN capabilities for static assets"
-      ],
-      color: "cyan"
-    },
-    {
       id: "extension",
       title: "Extension",
       description: "Marketplace for AI-powered IDE extensions compatible with VS Code.",
@@ -93,19 +80,6 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
         "Extension development SDK with built-in testing"
       ],
       color: "amber"
-    },
-    {
-      id: "functions",
-      title: "Functions",
-      description: "Scalable, event-driven serverless compute with built-in AI integration.",
-      icon: Zap,
-      features: [
-        "Event-driven execution with zero infrastructure",
-        "Integrated with Hanzo AI for intelligent processing",
-        "Automatic scaling based on workload",
-        "Multiple runtime environments supported"
-      ],
-      color: "rose"
     },
     {
       id: "identity",
@@ -121,8 +95,8 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       color: "indigo"
     },
     {
-      id: "observability",
-      title: "Observability",
+      id: "monitoring",
+      title: "Monitoring",
       description: "Intelligent tracing, logging, real-time monitoring of AI systems.",
       icon: Activity,
       features: [
@@ -147,10 +121,10 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       color: "rose"
     },
     {
-      id: "virtual-machine",
-      title: "Virtual Machine",
-      description: "AI-enabled local virtual machine for unified development environments.",
-      icon: Monitor,
+      id: "runtime",
+      title: "Runtime",
+      description: "AI-enabled container runtime for unified development environments.",
+      icon: Blocks,
       features: [
         "Consistent development environment across teams",
         "AI-assisted configuration and optimization",
@@ -158,6 +132,19 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
         "Automatic synchronization with cloud environments"
       ],
       color: "blue"
+    },
+    {
+      id: "studio",
+      title: "Studio",
+      description: "Visual no-code IDE for AI applications and workflows.",
+      icon: Monitor,
+      features: [
+        "Drag-and-drop interface for building AI applications",
+        "Visual workflow editor for complex AI pipelines",
+        "Built-in templates for common AI use cases",
+        "Real-time collaboration for team development"
+      ],
+      color: "cyan"
     },
     {
       id: "zen",
@@ -187,13 +174,10 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
     }
   ];
 
-  // For mobile view, limit the number of items
-  const displayData = window.innerWidth < 1024 ? platformData.slice(0, 8) : platformData;
-
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-        {displayData.map((platform) => (
+        {platformData.map((platform) => (
           <DXPlatformCard
             key={platform.id}
             id={platform.id}

@@ -1,119 +1,108 @@
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 interface TrailProps {
   index: number;
 }
 
 const Trail: React.FC<TrailProps> = ({ index }) => {
-  const [position, setPosition] = useState({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
+  const [style, setStyle] = useState({
+    left: '50%',
+    top: '50%',
+    width: '1px',
+    height: '1px',
+    opacity: 0,
+    transform: 'translateX(-50%) translateY(-50%)',
+    background: 'transparent',
+    boxShadow: 'none',
+    transition: 'all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)',
   });
-  
-  const [size, setSize] = useState({
-    width: Math.random() * 2 + 1,
-    length: Math.random() * 100 + 50,
-  });
-  
-  const [color, setColor] = useState(() => {
-    const colors = ["#9370DB", "#8A2BE2", "#9400D3", "#8B008B", "#4B0082"];
-    return colors[Math.floor(Math.random() * colors.length)];
-  });
-  
-  const [opacity, setOpacity] = useState(Math.random() * 0.5 + 0.2);
-  const [angle, setAngle] = useState(Math.random() * 360);
-  const [speed, setSpeed] = useState(Math.random() * 2 + 1);
-  
+
   useEffect(() => {
-    const updatePosition = () => {
-      // Calculate center of screen
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      
-      // Calculate vector from current position to center
-      const dx = centerX - position.x;
-      const dy = centerY - position.y;
-      
-      // Normalize the vector
-      const length = Math.sqrt(dx * dx + dy * dy);
-      const normalizedDx = dx / length;
-      const normalizedDy = dy / length;
-      
-      // Update position based on direction to center
-      setPosition(prev => ({
-        x: prev.x + normalizedDx * speed,
-        y: prev.y + normalizedDy * speed,
+    // Create randomized trail
+    const randomBrightness = 80 + Math.floor(Math.random() * 20);
+    const baseColor = `hsl(260, 100%, ${randomBrightness}%)`;
+    const boxShadowColor = `hsl(260, 100%, ${randomBrightness + 10}%)`;
+    
+    // Angles for trails, converging to center
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 70 + Math.random() * 30; // Starting point distance from center
+    
+    // Calculate start point (outer edge of screen)
+    const startX = 50 + Math.cos(angle) * distance;
+    const startY = 50 + Math.sin(angle) * distance;
+    
+    // Trail length and size
+    const trailWidth = 1 + Math.random() * 2;
+    const trailLength = 5 + Math.random() * 15;
+    
+    // Duration for animation
+    const duration = 2 + Math.random() * 2;
+    
+    // Define the trail initial position (off-screen)
+    setStyle({
+      left: `${startX}%`,
+      top: `${startY}%`,
+      width: `${trailWidth}px`,
+      height: `${trailLength}px`,
+      opacity: 0,
+      transform: `translateX(-50%) translateY(-50%) rotate(${angle + Math.PI/2}rad)`,
+      background: baseColor,
+      boxShadow: `0 0 10px 2px ${boxShadowColor}`,
+      transition: `all ${duration}s cubic-bezier(0.165, 0.84, 0.44, 1)`,
+    });
+    
+    // Start animation after initial setup
+    const timer1 = setTimeout(() => {
+      setStyle(prev => ({
+        ...prev,
+        opacity: 0.7 + Math.random() * 0.3,
       }));
       
-      // Calculate angle to center (in degrees)
-      const angleToCenter = Math.atan2(dy, dx) * (180 / Math.PI);
-      setAngle(angleToCenter);
+      // Animate to center
+      const timer2 = setTimeout(() => {
+        setStyle(prev => ({
+          ...prev,
+          left: '50%',
+          top: '50%',
+          opacity: 0,
+        }));
+        
+        // Reset and restart animation
+        const timer3 = setTimeout(() => {
+          const newAngle = Math.random() * Math.PI * 2;
+          const newDistance = 70 + Math.random() * 30;
+          const newStartX = 50 + Math.cos(newAngle) * newDistance;
+          const newStartY = 50 + Math.sin(newAngle) * newDistance;
+          const newTrailWidth = 1 + Math.random() * 2;
+          const newTrailLength = 5 + Math.random() * 15;
+          
+          setStyle({
+            left: `${newStartX}%`,
+            top: `${newStartY}%`,
+            width: `${newTrailWidth}px`,
+            height: `${newTrailLength}px`,
+            opacity: 0,
+            transform: `translateX(-50%) translateY(-50%) rotate(${newAngle + Math.PI/2}rad)`,
+            background: baseColor,
+            boxShadow: `0 0 10px 2px ${boxShadowColor}`,
+            transition: `all ${duration}s cubic-bezier(0.165, 0.84, 0.44, 1)`,
+          });
+        }, 100);
+        
+        return () => clearTimeout(timer3);
+      }, duration * 1000);
       
-      // If trail reaches close to center, reset it to a random edge position
-      if (length < 20) {
-        resetTrail();
-      }
-    };
+      return () => clearTimeout(timer2);
+    }, 100);
     
-    const resetTrail = () => {
-      // Place at random position on the edge of the screen
-      const side = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
-      let x, y;
-      
-      switch (side) {
-        case 0: // top
-          x = Math.random() * window.innerWidth;
-          y = -size.length;
-          break;
-        case 1: // right
-          x = window.innerWidth + size.length;
-          y = Math.random() * window.innerHeight;
-          break;
-        case 2: // bottom
-          x = Math.random() * window.innerWidth;
-          y = window.innerHeight + size.length;
-          break;
-        case 3: // left
-          x = -size.length;
-          y = Math.random() * window.innerHeight;
-          break;
-        default:
-          x = 0;
-          y = 0;
-      }
-      
-      setPosition({ x, y });
-      setSize({
-        width: Math.random() * 2 + 1,
-        length: Math.random() * 100 + 50,
-      });
-      setOpacity(Math.random() * 0.5 + 0.2);
-      setSpeed(Math.random() * 2 + 1);
-    };
-    
-    const interval = setInterval(updatePosition, 16); // approx 60fps
-    
-    return () => clearInterval(interval);
-  }, [position, size.length, speed]);
-  
+    return () => clearTimeout(timer1);
+  }, [index]);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity }}
-      style={{
-        position: "absolute",
-        left: position.x,
-        top: position.y,
-        width: size.length,
-        height: size.width,
-        backgroundColor: color,
-        boxShadow: `0 0 10px ${color}, 0 0 20px ${color}`,
-        transform: `rotate(${angle}deg)`,
-        transformOrigin: "left center",
-        zIndex: 1,
-      }}
+    <div 
+      className="absolute rounded-full" 
+      style={style}
     />
   );
 };
