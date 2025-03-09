@@ -1,12 +1,13 @@
 
 import React from "react";
-import { motion, MotionProps } from "framer-motion";
+import { motion, MotionProps, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { sectionAnimation, headingAnimation, staggerContainer } from "./animation-variants";
 
-interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement> {
-  as?: React.ElementType;
+interface AnimatedSectionProps {
+  as?: keyof JSX.IntrinsicElements;
   children: React.ReactNode;
+  className?: string;
   motionProps?: MotionProps;
   animationVariant?: "default" | "fadeIn" | "fadeInBlur" | "popIn";
   delay?: number;
@@ -25,7 +26,8 @@ const AnimatedSection = ({
   once = true,
   ...props
 }: AnimatedSectionProps) => {
-  const Component = motion[as as keyof typeof motion] || motion.section;
+  // Use the correct type for the dynamic component
+  const Component = motion[as as keyof typeof motion];
   
   return (
     <Component
@@ -43,30 +45,37 @@ const AnimatedSection = ({
   );
 };
 
+interface AnimatedTextProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
 export const AnimatedHeading = ({
   children,
   className,
-  ...props
-}: React.HTMLAttributes<HTMLHeadingElement>) => (
+}: AnimatedTextProps) => (
   <motion.div
     variants={headingAnimation}
     className={className}
-    {...props}
   >
     {children}
   </motion.div>
 );
 
+interface AnimatedStaggerProps {
+  children: React.ReactNode;
+  className?: string;
+  delayFactor?: number;
+}
+
 export const AnimatedStaggerContainer = ({
   children,
   className,
   delayFactor = 0.05,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement> & { delayFactor?: number }) => (
+}: AnimatedStaggerProps) => (
   <motion.div
     variants={staggerContainer(delayFactor)}
     className={className}
-    {...props}
   >
     {children}
   </motion.div>
