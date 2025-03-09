@@ -3,8 +3,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/radix-tooltip";
 import Index from "./pages/Index";
-import Index2 from "./pages/Index2";
-import Index3 from "./pages/Index3";
 import Pricing from "./pages/Pricing";
 import Team from "./pages/Team";
 import Solutions from "./pages/Solutions";
@@ -25,10 +23,7 @@ const App = () => {
       <BrowserRouter>
         <TooltipProvider>
           <Routes>
-            <Route path="/" element={<Index3 />} />
-            <Route path="/index-old" element={<Index />} />
-            <Route path="/index2" element={<Index2 />} />
-            <Route path="/index3" element={<Index3 />} />
+            <Route path="/" element={<Index />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/team" element={<Team />} />
             <Route path="/solutions" element={<Solutions />} />

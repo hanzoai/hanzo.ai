@@ -1,23 +1,19 @@
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import QuickStart from "@/components/QuickStart";
 import Features from "@/components/Features";
-import Analytics from "@/components/sections/Analytics";
-import Base from "@/components/sections/Base";
-import Commerce from "@/components/sections/Commerce";
-import Network from "@/components/sections/Network";
-import Code from "@/components/sections/Code";
-import CRM from "@/components/sections/CRM";
+import CloudServices from "@/components/index3/CloudServices";
+import DXPlatform from "@/components/index3/DXPlatform";
+import WhyHanzo from "@/components/index3/WhyHanzo";
+import CallToAction from "@/components/index3/CallToAction";
 import Products from "@/components/Products";
-import Footer from "@/components/Footer";
-import HeroPoem from "@/components/HeroPoem";
 import TeamSlack from "@/components/TeamSlack";
 import LastSupper from "@/components/LastSupper";
 import TrustedBy from "@/components/platform/TrustedBy";
-import CloudServices from "@/components/index3/CloudServices";
-import DXPlatform from "@/components/index3/DXPlatform";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
@@ -46,18 +42,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black">
+      <Helmet>
+        <title>Hanzo AI - Empowering the Next Era of Intelligent Applications</title>
+        <meta name="description" content="Reimagine What's Possible with AI - Hanzo is pioneering the future of software development and operational intelligence with an integrated suite of autonomous AI-powered tools." />
+      </Helmet>
       <Navbar />
       <main>
         <Hero />
-        <QuickStart />
-        <Features />
         <CloudServices />
         <DXPlatform />
-        <TeamSlack />
+        <Features />
+        <WhyHanzo />
         <TrustedBy />
-        <LastSupper members={[]} />
-        <HeroPoem />
+        <TeamSlack />
         <Products />
+        <CallToAction />
       </main>
       <Footer />
     </div>
