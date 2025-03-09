@@ -35,19 +35,19 @@ const Hero = () => {
     <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
 
-      {/* Architectural grid background */}
-      <GridLines spacing={50} opacity={0.15} />
+      {/* Architectural grid background with reduced opacity */}
+      <GridLines spacing={50} opacity={0.08} />
       
-      {/* Blueprint lines */}
-      <BlueprintLine orientation="horizontal" position="15%" />
-      <BlueprintLine orientation="horizontal" position="85%" />
-      <BlueprintLine orientation="vertical" position="15%" />
-      <BlueprintLine orientation="vertical" position="85%" />
+      {/* Blueprint lines with reduced opacity */}
+      <BlueprintLine orientation="horizontal" position="15%" color="rgba(100, 149, 237, 0.1)" />
+      <BlueprintLine orientation="horizontal" position="85%" color="rgba(100, 149, 237, 0.1)" />
+      <BlueprintLine orientation="vertical" position="15%" color="rgba(100, 149, 237, 0.1)" />
+      <BlueprintLine orientation="vertical" position="85%" color="rgba(100, 149, 237, 0.1)" />
       
-      {/* Background gradient effects */}
+      {/* Background gradient effects - subtle */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -56,7 +56,7 @@ const Hero = () => {
           showCorners={true}
           showGrid={false}
           cornerSize={40}
-          cornerColor="rgba(147, 51, 234, 0.3)"
+          cornerColor="rgba(147, 51, 234, 0.15)"
         >
           <HeroTitle 
             mousePosition={mousePosition}

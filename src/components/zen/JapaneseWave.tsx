@@ -36,6 +36,7 @@ const JapaneseWave: React.FC<JapaneseWaveProps> = ({
           ease: "linear",
           delay
         }}
+        style={{ willChange: "transform" }} // Improves performance
       >
         <path
           fill={color}

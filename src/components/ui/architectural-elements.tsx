@@ -10,9 +10,9 @@ interface GridLinesProps {
 
 export const GridLines: React.FC<GridLinesProps> = ({ 
   className = "",
-  color = "rgba(255, 255, 255, 0.1)",
+  color = "rgba(255, 255, 255, 0.05)", // Reduced opacity
   spacing = 40,
-  opacity = 0.2
+  opacity = 0.15 // Lower default opacity
 }) => {
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
@@ -47,7 +47,7 @@ export const BlueprintLine: React.FC<BlueprintLineProps> = ({
   position = "center",
   width = "1px",
   length = "100%",
-  color = "rgba(100, 149, 237, 0.3)",
+  color = "rgba(100, 149, 237, 0.15)", // Reduced opacity
   dashed = false
 }) => {
   const isHorizontal = orientation === "horizontal";
@@ -94,7 +94,7 @@ export const ArchitecturalCorner: React.FC<ArchitecturalCornerProps> = ({
   className = "",
   position = "top-left",
   size = 40,
-  color = "rgba(100, 149, 237, 0.5)",
+  color = "rgba(100, 149, 237, 0.25)", // Reduced opacity
   thickness = 1
 }) => {
   const getPositionClasses = () => {
@@ -144,10 +144,10 @@ export const ArchitecturalBox: React.FC<{
   showCorners = true,
   showGrid = false,
   cornerSize = 20,
-  cornerColor = "rgba(100, 149, 237, 0.5)",
+  cornerColor = "rgba(100, 149, 237, 0.25)", // Reduced opacity
   gridSpacing = 30,
-  gridColor = "rgba(255, 255, 255, 0.1)",
-  gridOpacity = 0.2,
+  gridColor = "rgba(255, 255, 255, 0.05)", // Reduced opacity
+  gridOpacity = 0.12, // Lower opacity
   onMouseEnter,
   onMouseLeave,
   onClick

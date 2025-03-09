@@ -9,16 +9,16 @@ const ZenBackground = () => {
       <JapaneseWave 
         color="#9b87f5" 
         height={600} 
-        opacity={0.02} 
-        speed={45} 
+        opacity={0.01} 
+        speed={60} 
         className="absolute bottom-0"
       />
       <JapaneseWave 
         color="#6E59A5" 
         height={600} 
         delay={2} 
-        opacity={0.015} 
-        speed={50} 
+        opacity={0.008} 
+        speed={65} 
         className="absolute bottom-40"
       />
     </div>

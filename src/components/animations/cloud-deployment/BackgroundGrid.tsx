@@ -8,18 +8,18 @@ interface BackgroundGridProps {
 }
 
 const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
-  // Create pairs of scan points for connection lines
-  const activePoints = scanPoints.filter(point => point.active);
+  // Create pairs of scan points for connection lines - reduced number for performance
+  const activePoints = scanPoints.filter(point => point.active).slice(0, 15); // Limit to 15 active points
   const connectionPairs: {from: ScanPointType, to: ScanPointType}[] = [];
   
-  // Create connections between some active points
+  // Create connections between some active points - fewer connections
   if (activePoints.length >= 2) {
-    for (let i = 0; i < activePoints.length; i++) {
-      // Connect each point to 1-2 other points
-      const numConnections = Math.floor(Math.random() * 2) + 1;
+    for (let i = 0; i < activePoints.length; i += 2) { // Process every other point
+      // Connect each point to 1 other point instead of 1-2
+      const numConnections = 1;
       for (let j = 0; j < numConnections; j++) {
         // Find a different point to connect to
-        const targetIndex = (i + j + 1 + Math.floor(Math.random() * (activePoints.length - 2))) % activePoints.length;
+        const targetIndex = (i + j + 1) % activePoints.length;
         if (targetIndex !== i) {
           connectionPairs.push({
             from: activePoints[i],
@@ -32,35 +32,36 @@ const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
   
   return (
     <>
-      {/* Grid points */}
+      {/* Grid points - reduced opacity */}
       {scanPoints.map((point, idx) => (
         <motion.div
           key={`point-${idx}`}
-          className="absolute h-1 w-1 rounded-full bg-blue-500/20"
+          className="absolute h-1 w-1 rounded-full bg-blue-500/10" // Reduced opacity
           style={{ 
             left: `${point.x}%`, 
-            top: `${point.y}%` 
+            top: `${point.y}%`,
+            willChange: "opacity, transform" // Performance optimization
           }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ 
-            opacity: point.active ? [0, 0.5, 0.3] : 0,
+            opacity: point.active ? [0, 0.3, 0.2] : 0, // Reduced opacity
             scale: point.active ? [0, 1, 1] : 0
           }}
           transition={{ 
-            duration: 2,
+            duration: 2.5, // Slower animation
             repeat: point.active ? Infinity : 0,
             repeatType: "loop",
-            repeatDelay: 3
+            repeatDelay: 4 // Longer delay between animations
           }}
         />
       ))}
       
-      {/* Connection lines with animated traffic */}
+      {/* Connection lines with animated traffic - reduced opacity */}
       {connectionPairs.map((pair, idx) => (
         <React.Fragment key={`connection-${idx}`}>
-          {/* Static connection line */}
+          {/* Static connection line - more subtle */}
           <div
-            className="absolute h-px bg-blue-400/10"
+            className="absolute h-px bg-blue-400/5" // Reduced opacity
             style={{
               left: `${pair.from.x}%`,
               top: `${pair.from.y}%`,
@@ -70,22 +71,23 @@ const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
             }}
           />
           
-          {/* Animated traffic pulse */}
+          {/* Animated traffic pulse - less frequent */}
           <motion.div
-            className="absolute h-1.5 w-1.5 rounded-full bg-blue-400/50"
+            className="absolute h-1 w-1 rounded-full bg-blue-400/30" // Smaller and reduced opacity
             style={{
               left: `${pair.from.x}%`,
               top: `${pair.from.y}%`,
+              willChange: "left, top, opacity" // Performance optimization
             }}
             animate={{
               left: [`${pair.from.x}%`, `${pair.to.x}%`],
               top: [`${pair.from.y}%`, `${pair.to.y}%`],
-              opacity: [0, 0.8, 0]
+              opacity: [0, 0.5, 0] // Reduced peak opacity
             }}
             transition={{
-              duration: Math.random() * 3 + 2, // Random duration between 2-5 seconds
+              duration: Math.random() * 4 + 3, // Slower animation (3-7s)
               repeat: Infinity,
-              repeatDelay: Math.random() * 2, // Random delay between pulses
+              repeatDelay: Math.random() * 3 + 2, // Longer delay (2-5s)
               ease: "linear"
             }}
           />
