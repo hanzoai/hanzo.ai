@@ -18,6 +18,7 @@ import Leadership from "./pages/Leadership";
 import Careers from "./pages/Careers";
 import Analytics from "./pages/Analytics";
 import Observability from "./pages/Observability";
+import AI from "./pages/AI";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/careers" element={<Careers />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/observability" element={<Observability />} />
+            <Route path="/ai" element={<AI />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
