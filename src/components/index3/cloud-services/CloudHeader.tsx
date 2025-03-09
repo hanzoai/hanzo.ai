@@ -32,7 +32,7 @@ const CloudHeader: React.FC<CloudHeaderProps> = ({ mousePosition, containerRef }
         >
           <ChromeText 
             as="h2" 
-            className="text-3xl md:text-5xl font-bold mb-4"
+            className="text-3xl md:text-5xl font-bold mb-4 text-left"
             style={{
               backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
             }}
