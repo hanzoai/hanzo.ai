@@ -8,17 +8,17 @@ export const latLongToPosition = (
   centerX: number, 
   centerY: number, 
   radius: number,
-  verticalScale: number = 1 // Added parameter for vertical scaling
+  verticalScale: number = 1 // For controlling sphere vs ellipse shape
 ): {x: number, y: number} => {
   // Convert to radians
   const latRad = (lat * Math.PI) / 180;
   const lonRad = (lon * Math.PI) / 180;
   
-  // X coordinate - making visible half of longitude (-90 to +90 degrees)
-  // This creates a half-globe effect viewed from one side
-  const x = centerX + (radius * Math.cos(latRad) * Math.sin(lonRad * 0.5));
+  // Calculate positions with perfect circle proportions
+  // Using full lon range (-180 to +180) for proper hemisphere view
+  const x = centerX + (radius * Math.cos(latRad) * Math.sin(lonRad));
   
-  // Y coordinate with vertical scaling for elliptical effect
+  // Y coordinate with vertical scaling - when verticalScale is 1, it's a perfect circle
   const y = centerY - (radius * Math.sin(latRad) * verticalScale);
   
   return { x, y };
