@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -21,6 +22,13 @@ const testimonials = [
     quote: "As a company focused on women's health technology, we need partners who understand both tech and human needs. Hanzo has been instrumental in helping us scale our infrastructure while maintaining the personal touch our customers expect.",
     author: "Sandro Mur",
     role: "Co-founder & CEO at Bellabeat",
+    avatar: "/placeholder.svg"
+  },
+  {
+    company: "Karma",
+    quote: "Hanzo's platform revolutionized our growth strategy and catalyzed sales for our crowdfunding campaign. Their AI-driven insights helped us connect with our audience in ways we never thought possible, making our latest collection launch our most successful to date.",
+    author: "Antje Worring",
+    role: "CEO at Karma Fashion",
     avatar: "/placeholder.svg"
   },
   {
