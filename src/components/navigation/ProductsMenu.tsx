@@ -1,4 +1,3 @@
-
 import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale, User, BarChart, LucideIcon, Bot as BotIcon, CodepenIcon, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight } from "lucide-react";
 import { products } from "@/constants/navigation";
 import {
@@ -193,6 +192,37 @@ const DxPlatformGraphic = () => {
 
 export const ProductsMenu = () => {
   const [open, setOpen] = useState(false);
+  const [clickedOpen, setClickedOpen] = useState(false);
+  
+  let closeTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = null;
+    }
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!clickedOpen) {
+      closeTimeout = setTimeout(() => {
+        setOpen(false);
+      }, 300);
+    }
+  };
+
+  const handleClick = () => {
+    setClickedOpen(!clickedOpen);
+    setOpen(!open);
+  };
+
+  const handleOutsideClick = () => {
+    if (clickedOpen) {
+      setClickedOpen(false);
+      setOpen(false);
+    }
+  };
 
   const aiCloudItems: ProductItem[] = [
     {
@@ -303,14 +333,39 @@ export const ProductsMenu = () => {
   ];
 
   return (
-    <div onMouseLeave={() => setOpen(false)}>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <NavigationButton onHoverStart={() => setOpen(true)}>Products</NavigationButton>
-        </PopoverTrigger>
+    <div>
+      <Popover 
+        open={open || clickedOpen} 
+        onOpenChange={(newOpen) => {
+          if (!newOpen) {
+            setClickedOpen(false);
+            setOpen(false);
+          }
+        }}
+      >
+        <div 
+          className="relative"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <PopoverTrigger asChild>
+            <NavigationButton onClick={handleClick}>Products</NavigationButton>
+          </PopoverTrigger>
+          
+          {open && !clickedOpen && (
+            <div 
+              className="absolute left-0 w-full h-10 -bottom-10"
+              onMouseEnter={handleMouseEnter}
+            />
+          )}
+        </div>
+        
         <PopoverContent 
           className="w-[880px] p-6 bg-black border-gray-800"
           sideOffset={8}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onInteractOutside={handleOutsideClick}
         >
           <div className="grid grid-cols-2 gap-8">
             <div>
@@ -321,7 +376,7 @@ export const ProductsMenu = () => {
                   </h3>
                 </Link>
                 <Link to="/cloud" className="text-sm text-purple-400 hover:text-purple-300 flex items-center group">
-                  View All
+                  View Cloud
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
@@ -349,7 +404,7 @@ export const ProductsMenu = () => {
                   </h3>
                 </Link>
                 <Link to="/platform" className="text-sm text-purple-400 hover:text-purple-300 flex items-center group">
-                  View All
+                  View Platform
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
