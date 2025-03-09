@@ -5,7 +5,68 @@ type ConnectionPoint = {
   x: number;
   y: number;
   active: boolean;
+  size?: number; // For city lights of varying sizes
+  intensity?: number; // For pulsing effect
 };
+
+// Major city coordinates (simplified for visualization)
+const majorCities = [
+  { lat: 40.7128, lon: -74.0060, name: "New York", size: 4 },
+  { lat: 51.5074, lon: -0.1278, name: "London", size: 4 },
+  { lat: 35.6762, lon: 139.6503, name: "Tokyo", size: 4 },
+  { lat: 22.3193, lon: 114.1694, name: "Hong Kong", size: 3 },
+  { lat: 19.0760, lon: 72.8777, name: "Mumbai", size: 3 },
+  { lat: -33.8688, lon: 151.2093, name: "Sydney", size: 3 },
+  { lat: 1.3521, lon: 103.8198, name: "Singapore", size: 3 },
+  { lat: 55.7558, lon: 37.6173, name: "Moscow", size: 3 },
+  { lat: -23.5505, lon: -46.6333, name: "São Paulo", size: 3 },
+  { lat: 48.8566, lon: 2.3522, name: "Paris", size: 3 },
+  { lat: 37.7749, lon: -122.4194, name: "San Francisco", size: 2 },
+  { lat: 39.9042, lon: 116.4074, name: "Beijing", size: 3 },
+  { lat: 34.0522, lon: -118.2437, name: "Los Angeles", size: 3 },
+  { lat: 41.9028, lon: 12.4964, name: "Rome", size: 2 },
+  { lat: 52.5200, lon: 13.4050, name: "Berlin", size: 2 },
+  { lat: -34.6037, lon: -58.3816, name: "Buenos Aires", size: 2 },
+  { lat: 25.2048, lon: 55.2708, name: "Dubai", size: 3 },
+  { lat: -6.2088, lon: 106.8456, name: "Jakarta", size: 2 },
+  { lat: 30.0444, lon: 31.2357, name: "Cairo", size: 2 },
+  { lat: 31.2304, lon: 121.4737, name: "Shanghai", size: 3 }
+];
+
+// Simplified continent outlines for visualization
+const continents = [
+  // North America (simplified outline)
+  [
+    { lat: 60, lon: -130 }, { lat: 70, lon: -90 }, { lat: 50, lon: -60 },
+    { lat: 30, lon: -80 }, { lat: 25, lon: -100 }, { lat: 35, lon: -120 },
+    { lat: 60, lon: -130 }
+  ],
+  // South America (simplified outline)
+  [
+    { lat: 10, lon: -80 }, { lat: 0, lon: -60 }, { lat: -20, lon: -40 },
+    { lat: -40, lon: -70 }, { lat: -20, lon: -80 }, { lat: 10, lon: -80 }
+  ],
+  // Europe (simplified outline)
+  [
+    { lat: 60, lon: -10 }, { lat: 70, lon: 30 }, { lat: 45, lon: 40 },
+    { lat: 35, lon: 30 }, { lat: 35, lon: -10 }, { lat: 60, lon: -10 }
+  ],
+  // Africa (simplified outline)
+  [
+    { lat: 35, lon: -10 }, { lat: 35, lon: 50 }, { lat: 0, lon: 50 },
+    { lat: -35, lon: 20 }, { lat: 0, lon: -10 }, { lat: 35, lon: -10 }
+  ],
+  // Asia (simplified outline)
+  [
+    { lat: 70, lon: 30 }, { lat: 70, lon: 180 }, { lat: 0, lon: 110 },
+    { lat: 0, lon: 50 }, { lat: 45, lon: 40 }, { lat: 70, lon: 30 }
+  ],
+  // Australia (simplified outline)
+  [
+    { lat: -10, lon: 110 }, { lat: -10, lon: 155 }, { lat: -40, lon: 155 },
+    { lat: -40, lon: 110 }, { lat: -10, lon: 110 }
+  ]
+];
 
 interface CanvasContextProps {
   connectionPoints: ConnectionPoint[];
@@ -28,6 +89,21 @@ export const useCanvasContext = () => {
   return context;
 };
 
+// Helper to convert lat/lon to x,y on the globe
+const latLongToPosition = (lat: number, lon: number, centerX: number, centerY: number, radius: number): {x: number, y: number} => {
+  // Convert to radians
+  const latRad = (lat * Math.PI) / 180;
+  const lonRad = (lon * Math.PI) / 180;
+  
+  // X coordinate
+  const x = centerX + (radius * Math.cos(latRad) * Math.sin(lonRad * 0.5));
+  
+  // Y coordinate (we're viewing from above, so flatten the view)
+  const y = centerY - (radius * Math.sin(latRad) * 0.5);
+  
+  return { x, y };
+};
+
 export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | null>(null);
   const [connectionPoints, setConnectionPoints] = useState<ConnectionPoint[]>([]);
@@ -35,8 +111,8 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   
   // These values will be recalculated when dimensions change
   const centerX = dimensions.width / 2;
-  const globeRadius = Math.min(dimensions.width / 2, dimensions.height * 3);
-  const centerY = dimensions.height + (globeRadius * 0.6);
+  const centerY = dimensions.height / 2;
+  const globeRadius = Math.min(dimensions.width / 2, dimensions.height / 2) * 0.9;
 
   const setCanvasContext = useCallback((context: CanvasRenderingContext2D) => {
     setCtx(context);
@@ -47,76 +123,124 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     
     ctx.clearRect(0, 0, dimensions.width, dimensions.height);
     
-    ctx.strokeStyle = '#8a50ff';
-    ctx.lineWidth = 0.5;
-    
-    // Draw main globe circle
+    // Draw main globe circle - more subtle blue for better visibility
     ctx.beginPath();
+    ctx.strokeStyle = 'rgba(100, 120, 255, 0.4)';
+    ctx.lineWidth = 1;
     ctx.arc(centerX, centerY, globeRadius, 0, 2 * Math.PI);
     ctx.stroke();
     
-    // Draw latitude lines - only a few at the top of the globe
-    for (let i = 0; i < 3; i++) {
-      ctx.beginPath();
-      const latRadius = globeRadius * (0.9 - i * 0.15);
-      // Ensure radius is always positive
-      if (latRadius > 0) {
-        ctx.ellipse(centerX, centerY, latRadius, Math.max(0.1, latRadius * 0.2), 0, -Math.PI, 0);
-        ctx.stroke();
-      }
-    }
+    // Draw continents with subtle outlines
+    ctx.strokeStyle = 'rgba(180, 190, 255, 0.3)';
+    ctx.lineWidth = 1;
     
-    // Draw longitude lines - only visible at the top
-    for (let i = 0; i < 12; i++) {
-      ctx.beginPath();
-      const angle = (i / 12) * Math.PI;
-      const cosAngle = Math.cos(angle);
-      // Ensure both radiuses are positive
-      const xRadius = Math.max(0.1, globeRadius * cosAngle);
-      const yRadius = Math.max(0.1, globeRadius);
-      
-      ctx.ellipse(
-        centerX, 
-        centerY, 
-        xRadius, 
-        yRadius, 
-        0, 
-        -Math.PI/2, 
-        Math.PI/2
-      );
-      ctx.stroke();
-    }
-    
-    // Draw connection points
-    connectionPoints.forEach(point => {
-      if (point.active) {
+    continents.forEach(continent => {
+      if (continent.length > 0) {
         ctx.beginPath();
-        ctx.fillStyle = '#9b87f5';
-        ctx.arc(point.x, point.y, 3, 0, 2 * Math.PI);
+        
+        // Move to first point
+        const firstPoint = latLongToPosition(
+          continent[0].lat, 
+          continent[0].lon, 
+          centerX, 
+          centerY, 
+          globeRadius
+        );
+        
+        ctx.moveTo(firstPoint.x, firstPoint.y);
+        
+        // Draw lines to remaining points
+        for (let i = 1; i < continent.length; i++) {
+          const point = latLongToPosition(
+            continent[i].lat, 
+            continent[i].lon, 
+            centerX, 
+            centerY, 
+            globeRadius
+          );
+          ctx.lineTo(point.x, point.y);
+        }
+        
+        ctx.stroke();
+        
+        // Fill with very subtle color
+        ctx.fillStyle = 'rgba(100, 120, 255, 0.05)';
         ctx.fill();
       }
     });
     
-    // Draw connections between active points
-    const activePoints = connectionPoints.filter(p => p.active);
+    // Draw latitude lines - subtle
+    for (let i = 0; i < 5; i++) {
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(100, 120, 255, 0.2)';
+      ctx.lineWidth = 0.5;
+      const latRadius = globeRadius * Math.cos((i * 15 * Math.PI) / 180);
+      ctx.arc(centerX, centerY, latRadius, 0, 2 * Math.PI);
+      ctx.stroke();
+    }
     
-    ctx.strokeStyle = '#9b87f5';
-    ctx.lineWidth = 1;
-    ctx.setLineDash([2, 2]);
+    // Draw longitude lines - subtle
+    for (let i = 0; i < 12; i++) {
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(100, 120, 255, 0.2)';
+      ctx.lineWidth = 0.5;
+      const angle = (i * Math.PI) / 6;
+      ctx.moveTo(centerX, centerY);
+      const endX = centerX + globeRadius * Math.cos(angle);
+      const endY = centerY + globeRadius * Math.sin(angle);
+      ctx.lineTo(endX, endY);
+      ctx.stroke();
+    }
     
-    for (let i = 0; i < activePoints.length; i++) {
-      for (let j = i + 1; j < activePoints.length; j++) {
-        const dx = activePoints[i].x - activePoints[j].x;
-        const dy = activePoints[i].y - activePoints[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+    // Draw city lights with pulsing effect
+    connectionPoints.forEach(point => {
+      if (point.active) {
+        const size = point.size || 2;
+        const intensity = point.intensity || 1;
         
-        if (distance < globeRadius) {
-          ctx.beginPath();
-          ctx.moveTo(activePoints[i].x, activePoints[i].y);
-          ctx.lineTo(activePoints[j].x, activePoints[j].y);
-          ctx.stroke();
+        // Outer glow
+        const gradient = ctx.createRadialGradient(
+          point.x, point.y, 0,
+          point.x, point.y, size * 3
+        );
+        gradient.addColorStop(0, `rgba(180, 200, 255, ${0.7 * intensity})`);
+        gradient.addColorStop(1, 'rgba(100, 120, 255, 0)');
+        
+        ctx.beginPath();
+        ctx.fillStyle = gradient;
+        ctx.arc(point.x, point.y, size * 3, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Center point
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(220, 230, 255, ${0.9 * intensity})`;
+        ctx.arc(point.x, point.y, size * 0.7, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    });
+    
+    // Draw connection lines between some points
+    if (connectionPoints.filter(p => p.active).length >= 2) {
+      const activePoints = connectionPoints.filter(p => p.active);
+      
+      ctx.strokeStyle = 'rgba(140, 180, 255, 0.3)';
+      ctx.lineWidth = 0.5;
+      ctx.setLineDash([2, 3]);
+      
+      // Create a pattern of connections
+      for (let i = 0; i < activePoints.length; i++) {
+        for (let j = i + 1; j < activePoints.length; j++) {
+          // Only connect some points (not all-to-all)
+          if ((i + j) % 3 === 0) {
+            ctx.beginPath();
+            ctx.moveTo(activePoints[i].x, activePoints[i].y);
+            ctx.lineTo(activePoints[j].x, activePoints[j].y);
+            ctx.stroke();
+          }
         }
       }
+      
+      ctx.setLineDash([]);
     }
   }, [ctx, centerX, centerY, globeRadius, connectionPoints, dimensions.width, dimensions.height]);
 
@@ -124,29 +248,49 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setDimensions({ width, height });
     
     const newCenterX = width / 2;
-    const newGlobeRadius = Math.min(width / 2, height * 3);
-    const newCenterY = height + (newGlobeRadius * 0.6);
+    const newCenterY = height / 2;
+    const newGlobeRadius = Math.min(width / 2, height / 2) * 0.9;
     
-    const numPoints = 24;
-    const newPoints: ConnectionPoint[] = [];
-    
-    // Create points only in the visible top portion of the globe
-    for (let i = 0; i < numPoints; i++) {
-      // Limit angle to the top portion of the circle (-π/2 to π/2)
-      const angle = (Math.random() * Math.PI) - Math.PI/2;
-      // Limit to the top portion of the visible globe area
-      const r = Math.random() * newGlobeRadius * 0.5;
-      const x = newCenterX + r * Math.cos(angle);
-      const y = newCenterY + r * Math.sin(angle);
+    // Create points based on major cities
+    const newPoints: ConnectionPoint[] = majorCities.map(city => {
+      const position = latLongToPosition(
+        city.lat, 
+        city.lon, 
+        newCenterX, 
+        newCenterY, 
+        newGlobeRadius
+      );
       
-      // Only add points that would be visible
-      if (y > 0 && y < height) {
-        newPoints.push({
-          x, 
-          y,
-          active: false
-        });
-      }
+      return {
+        x: position.x,
+        y: position.y,
+        active: false,
+        size: city.size,
+        intensity: Math.random() * 0.5 + 0.5 // Random initial intensity
+      };
+    });
+    
+    // Add some random points for smaller cities
+    for (let i = 0; i < 30; i++) {
+      // Random lat/lon
+      const lat = (Math.random() * 140) - 70; // -70 to 70
+      const lon = (Math.random() * 360) - 180; // -180 to 180
+      
+      const position = latLongToPosition(
+        lat, 
+        lon, 
+        newCenterX, 
+        newCenterY, 
+        newGlobeRadius
+      );
+      
+      newPoints.push({
+        x: position.x,
+        y: position.y,
+        active: false,
+        size: Math.random() * 1.5 + 0.5, // Random size for smaller cities
+        intensity: Math.random() * 0.5 + 0.5
+      });
     }
     
     setConnectionPoints(newPoints);
