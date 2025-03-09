@@ -26,7 +26,7 @@ const JapaneseWave: React.FC<JapaneseWaveProps> = ({
         initial={{ x: -1440 }}
         animate={{ x: 0 }}
         transition={{
-          duration: a20,
+          duration: 20, // Fixed: replaced undefined variable a20 with a numeric value 20
           repeat: Infinity,
           repeatType: "loop",
           ease: "linear",
