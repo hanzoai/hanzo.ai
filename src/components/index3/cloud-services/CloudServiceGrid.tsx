@@ -4,6 +4,7 @@ import CloudServiceCard from "./CloudServiceCard";
 import { cloudServiceData } from "./cloudServiceData";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ArchitecturalBox, GridLines } from "@/components/ui/architectural-elements";
 
 interface CloudServiceGridProps {
   isHovered: string | null;
@@ -15,7 +16,12 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
   const mainServices = cloudServiceData.slice(0, 11);
   
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 relative">
+      {/* Add architectural grid lines */}
+      <div className="absolute inset-0 -z-10">
+        <GridLines spacing={60} opacity={0.15} color="rgba(59, 130, 246, 0.2)" />
+      </div>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
         {/* Regular service cards */}
         {mainServices.map((service) => (
@@ -33,8 +39,11 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
         ))}
         
         {/* Special "Learn More" card as the last item */}
-        <div 
+        <ArchitecturalBox
           className="flex flex-col justify-center items-center p-6 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-xl border border-blue-500/20 h-full min-h-[240px] hover:border-blue-500/40 transition-all duration-300"
+          showCorners={true}
+          cornerSize={20}
+          cornerColor="rgba(59, 130, 246, 0.3)"
           onMouseEnter={() => setIsHovered("learn-more")}
           onMouseLeave={() => setIsHovered(null)}
         >
@@ -50,7 +59,7 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
               <Link to="/cloud">View All Services</Link>
             </Button>
           </div>
-        </div>
+        </ArchitecturalBox>
       </div>
     </div>
   );
