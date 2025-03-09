@@ -15,6 +15,7 @@ interface CloudServicesProps {
 const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
   const [scanPoints, setScanPoints] = useState<Array<{ x: number; y: number; active: boolean }>>([]);
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const containerRef = useRef<HTMLElement>(null);
   const { toast } = useToast();
 
@@ -45,6 +46,24 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
         });
       }, 300 * index);
     });
+  }, []);
+
+  // Track mouse position for header effects
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const { left, top } = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - left,
+          y: e.clientY - top
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   // Show deployment notifications
@@ -108,7 +127,7 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
       <BackgroundEffects scanPoints={scanPoints} />
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <CloudHeader />
+        <CloudHeader mousePosition={mousePosition} containerRef={containerRef} />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <motion.div
