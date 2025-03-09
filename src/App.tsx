@@ -19,6 +19,7 @@ import Careers from "./pages/Careers";
 import Analytics from "./pages/Analytics";
 import Observability from "./pages/Observability";
 import AI from "./pages/AI";
+import Payments from "./pages/Payments";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/observability" element={<Observability />} />
             <Route path="/ai" element={<AI />} />
+            <Route path="/payments" element={<Payments />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
