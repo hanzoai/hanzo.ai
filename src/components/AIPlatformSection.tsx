@@ -7,50 +7,8 @@ import ChromeText from "@/components/ui/chrome-text";
 import { MasonryGrid, MasonryItem } from "@/components/ui/masonry-grid";
 import { ArchitecturalBox, GridLines } from "@/components/ui/architectural-elements";
 import AITunnelParticles from "./animations/AITunnelParticles";
-
-// Platform cards data
-const platformCards = [
-  {
-    title: "Inference API",
-    description: "Flexible inference API across all ML models with a single unified interface.",
-    icon: "💬",
-  },
-  {
-    title: "Vector Engine",
-    description: "Blazing fast similarity searches across billions of vectors.",
-    icon: "📊",
-  },
-  {
-    title: "AI Code Engine",
-    description: "Code generation, editing, and analysis powered by LLMs.",
-    icon: "🧩",
-  },
-  {
-    title: "Agent Framework",
-    description: "Build autonomous AI agents that can reason and take actions.",
-    icon: "🤖",
-  },
-  {
-    title: "Reasoning",
-    description: "Context-aware reasoning with logic, math, and spatial understanding.",
-    icon: "🧠",
-  },
-  {
-    title: "Workflow Automation",
-    description: "Sequence multiple models with logic to create complete workflows.",
-    icon: "⚙️",
-  },
-  {
-    title: "Vision & Audio",
-    description: "Process and understand images, video, and audio content.",
-    icon: "👁️",
-  },
-  {
-    title: "Safety & Ethics",
-    description: "Ensure responsible AI with content moderation and bias detection.",
-    icon: "🛡️",
-  },
-];
+import { aiPlatformFeatures } from "./data/ai-platform-data";
+import { getColorClasses } from "./utils/tailwind-helpers";
 
 const AIPlatformSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -92,31 +50,39 @@ const AIPlatformSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <MasonryGrid columns={4} gap={20} className="mb-12">
-            {platformCards.map((card, index) => (
-              <MasonryItem key={index}>
-                <motion.div
-                  onMouseEnter={() => setHovered(index)}
-                  onMouseLeave={() => setHovered(null)}
-                  whileHover={{ scale: 1.03, y: -5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ArchitecturalBox
-                    className={`h-full bg-gradient-to-br ${
-                      hovered === index
-                        ? "from-purple-900/30 to-blue-900/30 border-purple-500/20"
-                        : "from-gray-900/30 to-gray-800/30 border-gray-700/20"
-                    } backdrop-blur-sm border p-6 rounded-lg transition-colors duration-300`}
-                    showCorners={true}
-                    cornerSize={16}
-                    cornerColor={hovered === index ? "rgba(147, 51, 234, 0.4)" : "rgba(147, 51, 234, 0.2)"}
+            {aiPlatformFeatures.map((feature, index) => {
+              const isFeatureHovered = hovered === index;
+              const gradientClasses = getColorClasses(feature.color, 'gradient', isFeatureHovered);
+              const borderClasses = getColorClasses(feature.color, 'border', isFeatureHovered);
+              const textColorClass = getColorClasses(feature.color, 'text', isFeatureHovered);
+              
+              return (
+                <MasonryItem key={feature.id}>
+                  <motion.div
+                    onMouseEnter={() => setHovered(index)}
+                    onMouseLeave={() => setHovered(null)}
+                    whileHover={{ scale: 1.03, y: -5 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    <div className="text-4xl mb-4">{card.icon}</div>
-                    <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
-                    <p className="text-gray-400">{card.description}</p>
-                  </ArchitecturalBox>
-                </motion.div>
-              </MasonryItem>
-            ))}
+                    <ArchitecturalBox
+                      className={`h-full bg-gradient-to-br ${gradientClasses} ${borderClasses} backdrop-blur-sm border p-6 rounded-lg transition-colors duration-300`}
+                      showCorners={true}
+                      cornerSize={16}
+                      cornerColor={isFeatureHovered ? `rgba(147, 51, 234, 0.4)` : "rgba(147, 51, 234, 0.2)"}
+                    >
+                      <div className="mb-4">
+                        {React.createElement(feature.icon, { 
+                          size: 32, 
+                          className: textColorClass
+                        })}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                      <p className="text-gray-400">{feature.description}</p>
+                    </ArchitecturalBox>
+                  </motion.div>
+                </MasonryItem>
+              );
+            })}
           </MasonryGrid>
         </motion.div>
 
