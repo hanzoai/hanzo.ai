@@ -1,21 +1,30 @@
 
-import { ReactNode } from "react";
-import { LucideIcon } from "lucide-react";
+export interface Position {
+  x: number;
+  y: number;
+}
+
+export type IconType = 
+  | "cloud" 
+  | "database" 
+  | "github" 
+  | "server" 
+  | "hardDrive" 
+  | "boxes" 
+  | "box" 
+  | "network" 
+  | "link2";
 
 export interface NodeType {
   id: string;
-  type: "app" | "database" | "github" | "volume" | "container" | "redis" | "postgres" | "network";
-  position: { x: number; y: number };
-  iconType: string;
-  iconProps?: {
-    className?: string;
-    size?: number;
-    color?: string;
-  };
+  type: string;
+  position: Position;
+  iconType: IconType;
+  iconProps: { className: string };
   label: string;
   active: boolean;
-  status?: "deployed" | "pending" | "failed";
-  statusMessage?: string;
+  status: "pending" | "deployed" | "error";
+  statusMessage: string;
 }
 
 export interface ConnectionType {

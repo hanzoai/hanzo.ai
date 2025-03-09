@@ -7,7 +7,7 @@ export const useScanPoints = () => {
 
   // Initialize grid points for the scanning effect
   useEffect(() => {
-    const points = [];
+    const points: ScanPointType[] = [];
     const gridSize = 8;
     const cellSize = 100 / gridSize;
     
@@ -25,29 +25,24 @@ export const useScanPoints = () => {
     }
     
     setScanPoints(points);
+    
+    // Activate points gradually
+    const activatePoints = () => {
+      setScanPoints(prev => {
+        const inactiveIndex = prev.findIndex(p => !p.active);
+        if (inactiveIndex === -1) return prev;
+        
+        return prev.map((point, idx) => 
+          idx === inactiveIndex ? { ...point, active: true } : point
+        );
+      });
+    };
+    
+    // Activate points at intervals
+    const interval = setInterval(activatePoints, 500);
+    
+    return () => clearInterval(interval);
   }, []);
 
-  const activateScanPoints = (count: number) => {
-    setScanPoints(prev => 
-      prev.map((point, idx) => ({
-        ...point,
-        active: idx < count ? true : point.active
-      }))
-    );
-  };
-
-  const activateAllScanPoints = () => {
-    setScanPoints(prev => 
-      prev.map(point => ({
-        ...point,
-        active: true
-      }))
-    );
-  };
-
-  return {
-    scanPoints,
-    activateScanPoints,
-    activateAllScanPoints
-  };
+  return { scanPoints };
 };
