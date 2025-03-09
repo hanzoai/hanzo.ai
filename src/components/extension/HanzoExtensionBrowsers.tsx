@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Chrome, Firefox, Compass, LayoutGrid } from "lucide-react";
+import { Chrome, Compass, LayoutGrid, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BrowserCard = ({ icon: Icon, title, description, buttonText }) => {
@@ -54,7 +54,7 @@ const HanzoExtensionBrowsers = () => {
           />
           
           <BrowserCard 
-            icon={Firefox}
+            icon={Globe}
             title="Firefox"
             description="Fully compatible with Mozilla Firefox for privacy-conscious users."
             buttonText="Get Firefox Add-on"

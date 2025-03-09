@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Chrome, Firefox } from "lucide-react";
+import { ArrowRight, Chrome, Globe } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 
 const HanzoExtensionHero = () => {
@@ -46,7 +46,7 @@ const HanzoExtensionHero = () => {
               className="border-purple-600 text-white hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#browsers" className="flex items-center">
-                <Firefox className="mr-2 h-5 w-5" />
+                <Globe className="mr-2 h-5 w-5" />
                 Get Firefox Add-on
               </a>
             </Button>
