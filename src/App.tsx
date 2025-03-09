@@ -26,7 +26,7 @@ const App = () => {
         <TooltipProvider>
           <Routes>
             <Route path="/" element={<Index3 />} />
-            <Route path="/index" element={<Index />} />
+            <Route path="/index-old" element={<Index />} />
             <Route path="/index2" element={<Index2 />} />
             <Route path="/index3" element={<Index3 />} />
             <Route path="/pricing" element={<Pricing />} />
