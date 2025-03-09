@@ -28,21 +28,21 @@ const GlobeContainer: React.FC = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="relative w-full h-[400px] bg-black rounded-lg overflow-hidden mt-8 mb-12"
+      className="relative w-full h-[500px] bg-black rounded-lg overflow-hidden mt-8 mb-12 border border-blue-900/20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      {/* Background gradient - using blue tones */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 opacity-50"></div>
       
       {dimensions.width > 0 && dimensions.height > 0 && (
         <GlobeThreeJs width={dimensions.width} height={dimensions.height} />
       )}
       
-      <div className="absolute inset-0 flex items-center justify-center text-center p-4">
-        <div className="mt-8">
+      <div className="absolute inset-0 flex items-center justify-center text-center p-4 pointer-events-none">
+        <div className="mt-8 bg-black/30 backdrop-blur-sm rounded-xl p-4 border border-blue-900/20">
           <h3 className="text-2xl font-semibold text-white mb-2">Global Network</h3>
           <p className="text-gray-300 text-sm max-w-md mx-auto">
             Deploy to 35+ regions around the world with 99.99% uptime SLA and automatic failover.
