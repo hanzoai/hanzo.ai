@@ -1,13 +1,13 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Cloud, Database, Github, Server, HardDrive, Boxes, Box, Check, X } from "lucide-react";
+import { Cloud, Database, Github, Server, HardDrive, Boxes, Box, Check, X, Network, Link2 } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/radix-dialog";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/radix-tooltip";
 
 interface NodeType {
   id: string;
-  type: "app" | "database" | "github" | "volume" | "container" | "redis" | "postgres";
+  type: "app" | "database" | "github" | "volume" | "container" | "redis" | "postgres" | "network";
   position: { x: number; y: number };
   icon: React.ReactNode;
   label: string;
@@ -133,7 +133,7 @@ const CloudDeploymentAnimation = () => {
         action: () => {
           setNodes(prev => prev.map(node => 
             node.id === "github-1" 
-              ? { ...node, status: "deployed", statusMessage: "Just deployed via GitHub" } 
+              ? { ...node, status: "deployed", statusMessage: "Backend service deployed" } 
               : node
           ));
           
@@ -142,6 +142,37 @@ const CloudDeploymentAnimation = () => {
       },
       {
         delay: 3000,
+        action: () => {
+          // Add private network
+          setNodes(prev => [
+            ...prev,
+            {
+              id: "network-1",
+              type: "network",
+              position: { x: 50, y: 30 },
+              icon: <Network className="h-5 w-5 text-blue-300" />,
+              label: "private-network",
+              active: true,
+              status: "deployed",
+              statusMessage: "Private network active"
+            }
+          ]);
+          
+          setConnections(prev => [
+            ...prev,
+            {
+              id: "conn-net-1",
+              source: "github-1",
+              target: "network-1",
+              active: true
+            }
+          ]);
+          
+          addNotification("Network Ready", "Private network established");
+        }
+      },
+      {
+        delay: 4000,
         action: () => {
           setNodes(prev => [
             ...prev,
@@ -161,7 +192,7 @@ const CloudDeploymentAnimation = () => {
             ...prev,
             {
               id: "conn-1",
-              source: "github-1",
+              source: "network-1",
               target: "redis-1",
               active: true
             }
@@ -171,12 +202,12 @@ const CloudDeploymentAnimation = () => {
         }
       },
       {
-        delay: 4500,
+        delay: 5500,
         action: () => {
           // Set Redis as deployed
           setNodes(prev => prev.map(node => 
             node.id === "redis-1" 
-              ? { ...node, status: "deployed", statusMessage: "Just deployed" } 
+              ? { ...node, status: "deployed", statusMessage: "Redis service active" } 
               : node
           ));
           
@@ -192,8 +223,9 @@ const CloudDeploymentAnimation = () => {
         }
       },
       {
-        delay: 5000,
+        delay: 6000,
         action: () => {
+          // Add storage volume that will slide into Redis
           setNodes(prev => [
             ...prev,
             {
@@ -201,25 +233,25 @@ const CloudDeploymentAnimation = () => {
               type: "volume",
               position: { x: 85, y: 40 },
               icon: <HardDrive className="h-5 w-5 text-green-300" />,
-              label: "redis-volume",
-              active: false,
+              label: "redis-data",
+              active: true,
               status: "pending",
-              statusMessage: "Creating volume"
+              statusMessage: "Preparing persistent storage"
             }
           ]);
         }
       },
       {
-        delay: 6000,
+        delay: 6500,
         action: () => {
-          // Activate the volume
+          // Move volume closer to Redis to simulate "sliding in"
           setNodes(prev => 
             prev.map(node => 
               node.id === "redis-volume" ? { 
                 ...node, 
-                active: true,
-                status: "deployed", 
-                statusMessage: "Volume attached" 
+                position: { x: 77, y: 32 },
+                status: "deployed",
+                statusMessage: "Volume attached to Redis" 
               } : node
             )
           );
@@ -238,7 +270,7 @@ const CloudDeploymentAnimation = () => {
         }
       },
       {
-        delay: 7000,
+        delay: 7500,
         action: () => {
           setNodes(prev => [
             ...prev,
@@ -258,7 +290,7 @@ const CloudDeploymentAnimation = () => {
             ...prev,
             {
               id: "conn-3",
-              source: "github-1",
+              source: "network-1",
               target: "postgres-1",
               active: true
             }
@@ -268,12 +300,12 @@ const CloudDeploymentAnimation = () => {
         }
       },
       {
-        delay: 8500,
+        delay: 9000,
         action: () => {
           // Set Postgres as deployed
           setNodes(prev => prev.map(node => 
             node.id === "postgres-1" 
-              ? { ...node, status: "deployed", statusMessage: "Just deployed" } 
+              ? { ...node, status: "deployed", statusMessage: "PostgreSQL database active" } 
               : node
           ));
           
@@ -289,8 +321,9 @@ const CloudDeploymentAnimation = () => {
         }
       },
       {
-        delay: 9000,
+        delay: 9500,
         action: () => {
+          // Add storage volume that will slide into Postgres
           setNodes(prev => [
             ...prev,
             {
@@ -299,9 +332,9 @@ const CloudDeploymentAnimation = () => {
               position: { x: 20, y: 85 },
               icon: <HardDrive className="h-5 w-5 text-green-300" />,
               label: "pg-data",
-              active: false,
+              active: true,
               status: "pending",
-              statusMessage: "Creating volume"
+              statusMessage: "Preparing persistent storage"
             }
           ]);
         }
@@ -309,14 +342,14 @@ const CloudDeploymentAnimation = () => {
       {
         delay: 10000,
         action: () => {
-          // Activate pg-data volume
+          // Move volume closer to Postgres to simulate "sliding in"
           setNodes(prev => 
             prev.map(node => 
               node.id === "pg-data" ? { 
                 ...node, 
-                active: true,
+                position: { x: 30, y: 78 },
                 status: "deployed", 
-                statusMessage: "Volume attached" 
+                statusMessage: "Volume attached to PostgreSQL" 
               } : node
             )
           );
@@ -332,6 +365,52 @@ const CloudDeploymentAnimation = () => {
           ]);
           
           addNotification("Storage Ready", "Persistent volume attached to PostgreSQL");
+        }
+      },
+      {
+        delay: 11000,
+        action: () => {
+          // Add external network for public access
+          setNodes(prev => [
+            ...prev,
+            {
+              id: "network-public",
+              type: "network",
+              position: { x: 18, y: 40 },
+              icon: <Link2 className="h-5 w-5 text-yellow-300" />,
+              label: "public-network",
+              active: true,
+              status: "pending",
+              statusMessage: "Configuring public access"
+            }
+          ]);
+          
+          setConnections(prev => [
+            ...prev,
+            {
+              id: "conn-net-2",
+              source: "github-1",
+              target: "network-public",
+              active: true
+            }
+          ]);
+        }
+      },
+      {
+        delay: 12000,
+        action: () => {
+          // Deploy the public network
+          setNodes(prev => 
+            prev.map(node => 
+              node.id === "network-public" ? { 
+                ...node,
+                status: "deployed", 
+                statusMessage: "Public network configured" 
+              } : node
+            )
+          );
+          
+          addNotification("Network Ready", "Public access configured with port 443 exposed");
         }
       },
     ];
@@ -422,6 +501,7 @@ const CloudDeploymentAnimation = () => {
           
           if (!source || !target) return null;
           
+          // Direct connection line
           return (
             <motion.line
               key={connection.id}
@@ -476,6 +556,8 @@ const CloudDeploymentAnimation = () => {
                   node.type === 'postgres' ? 'bg-blue-500/20 border border-blue-500/30' :
                   node.type === 'github' ? 'bg-gray-500/20 border border-gray-500/30' :
                   node.type === 'volume' ? 'bg-green-500/20 border border-green-500/30' :
+                  node.type === 'network' && node.id === 'network-public' ? 'bg-yellow-500/20 border border-yellow-500/30' :
+                  node.type === 'network' ? 'bg-blue-500/20 border border-blue-500/30' :
                   'bg-purple-500/20 border border-purple-500/30'
                 }`}>
                   {node.icon}
@@ -503,18 +585,6 @@ const CloudDeploymentAnimation = () => {
               </TooltipContent>
             </Tooltip>
             <span className="mt-2 text-xs text-gray-300 whitespace-nowrap">{node.label}</span>
-            
-            {/* Status message */}
-            {node.status === 'deployed' && (
-              <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-1 text-xs text-green-400 flex items-center"
-              >
-                <Check className="h-3 w-3 mr-1" />
-                Just deployed
-              </motion.div>
-            )}
           </motion.div>
         ))}
       </TooltipProvider>

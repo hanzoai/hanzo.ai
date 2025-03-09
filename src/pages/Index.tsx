@@ -1,7 +1,6 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { ToastProvider } from "@radix-ui/react-toast";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CloudServices from "@/components/index3/cloud-services";
@@ -14,8 +13,6 @@ import Karma from "@/components/index3/Karma";
 import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
-  const [deploymentToasts, setDeploymentToasts] = useState<string[]>([]);
-
   useEffect(() => {
     // Smooth scroll behavior
     const smoothScroll = (e: MouseEvent) => {
@@ -40,10 +37,6 @@ const Index = () => {
     };
   }, []);
 
-  const addDeploymentToast = (message: string) => {
-    setDeploymentToasts(prev => [...prev, message]);
-  };
-
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
@@ -54,7 +47,7 @@ const Index = () => {
       <main>
         <Hero />
         <AIPlatformSection />
-        <CloudServices onDeploymentEvent={addDeploymentToast} />
+        <CloudServices />
         <DXPlatform />
         <Karma />
         <TrustedBy />

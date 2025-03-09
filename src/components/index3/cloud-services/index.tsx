@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useToast } from "@/hooks/use-toast";
 import CloudHeader from "./CloudHeader";
 import CloudServiceGrid from "./CloudServiceGrid";
 import GlobalNetwork from "./GlobalNetwork";
@@ -17,7 +16,6 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
   const [scanPoints, setScanPoints] = useState<Array<{ x: number; y: number; active: boolean }>>([]);
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const containerRef = useRef<HTMLElement>(null);
-  const { toast } = useToast();
 
   // Initialize grid points
   useEffect(() => {
@@ -65,58 +63,6 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-
-  // Show deployment notifications
-  useEffect(() => {
-    const deploymentEvents = [
-      { 
-        message: "Backend service deployed via GitHub", 
-        delay: 3000,
-        title: "Deployment Success" 
-      },
-      { 
-        message: "Redis cache initialized", 
-        delay: 5500,
-        title: "Service Started" 
-      },
-      { 
-        message: "PostgreSQL database provisioned", 
-        delay: 8000,
-        title: "Database Ready" 
-      },
-      { 
-        message: "Auto-scaling rules configured",
-        delay: 11000,
-        title: "Configuration Complete" 
-      },
-      { 
-        message: "Persistent volumes attached",
-        delay: 14000,
-        title: "Storage Ready" 
-      }
-    ];
-
-    const timeouts: NodeJS.Timeout[] = [];
-
-    deploymentEvents.forEach(event => {
-      const timeout = setTimeout(() => {
-        toast({
-          title: event.title,
-          description: event.message,
-          variant: "default",
-        });
-        if (onDeploymentEvent) {
-          onDeploymentEvent(event.message);
-        }
-      }, event.delay);
-      
-      timeouts.push(timeout);
-    });
-
-    return () => {
-      timeouts.forEach(timeout => clearTimeout(timeout));
-    };
-  }, [toast, onDeploymentEvent]);
 
   return (
     <section 
