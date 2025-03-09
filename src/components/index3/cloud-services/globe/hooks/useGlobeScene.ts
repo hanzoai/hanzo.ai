@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { globeData } from '../globeData';
+import { majorCities, continents } from '../globeData';
 
 export interface GlobeSceneRef {
   scene: THREE.Scene;
