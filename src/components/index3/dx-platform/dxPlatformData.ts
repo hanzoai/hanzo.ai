@@ -27,7 +27,7 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Built-in CI/CD pipelines",
       "Automatic scaling and load balancing"
     ],
-    color: "indigo"
+    color: "blue"
   },
   {
     id: "bot",
@@ -40,7 +40,7 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Customizable personalities and domain knowledge",
       "Memory management and conversation history"
     ],
-    color: "violet"
+    color: "cyan"
   },
   {
     id: "code",
@@ -66,7 +66,7 @@ export const dxPlatformData: DXPlatformItem[] = [
       "AI-assisted documentation generation",
       "Integrated testing and profiling tools"
     ],
-    color: "green"
+    color: "teal"
   },
   {
     id: "extension",
@@ -105,7 +105,7 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Advanced task automation for repeated workflows",
       "Compatible with various multimodal AI models"
     ],
-    color: "rose"
+    color: "cyan"
   },
   {
     id: "studio",
@@ -131,7 +131,7 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Compliance with global identity regulations and standards",
       "Identity analytics and anomaly detection"
     ],
-    color: "indigo"
+    color: "blue"
   },
   {
     id: "monitoring",

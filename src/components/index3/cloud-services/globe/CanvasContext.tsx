@@ -123,15 +123,15 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     
     ctx.clearRect(0, 0, dimensions.width, dimensions.height);
     
-    // Draw main globe circle - more subtle blue for better visibility
+    // Draw main globe circle - using soft blue instead of purple
     ctx.beginPath();
-    ctx.strokeStyle = 'rgba(100, 120, 255, 0.4)';
+    ctx.strokeStyle = 'rgba(100, 150, 200, 0.4)';
     ctx.lineWidth = 1;
     ctx.arc(centerX, centerY, globeRadius, 0, 2 * Math.PI);
     ctx.stroke();
     
-    // Draw continents with subtle outlines
-    ctx.strokeStyle = 'rgba(180, 190, 255, 0.3)';
+    // Draw continents with subtle outlines - using a neutral gray-blue
+    ctx.strokeStyle = 'rgba(140, 160, 190, 0.3)';
     ctx.lineWidth = 1;
     
     continents.forEach(continent => {
@@ -163,26 +163,26 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         
         ctx.stroke();
         
-        // Fill with very subtle color
-        ctx.fillStyle = 'rgba(100, 120, 255, 0.05)';
+        // Fill with very subtle blue-gray color instead of purple
+        ctx.fillStyle = 'rgba(120, 140, 180, 0.05)';
         ctx.fill();
       }
     });
     
-    // Draw latitude lines - subtle
+    // Draw latitude lines - subtle gray-blue
     for (let i = 0; i < 5; i++) {
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(100, 120, 255, 0.2)';
+      ctx.strokeStyle = 'rgba(130, 150, 180, 0.2)';
       ctx.lineWidth = 0.5;
       const latRadius = globeRadius * Math.cos((i * 15 * Math.PI) / 180);
       ctx.arc(centerX, centerY, latRadius, 0, 2 * Math.PI);
       ctx.stroke();
     }
     
-    // Draw longitude lines - subtle
+    // Draw longitude lines - subtle gray-blue
     for (let i = 0; i < 12; i++) {
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(100, 120, 255, 0.2)';
+      ctx.strokeStyle = 'rgba(130, 150, 180, 0.2)';
       ctx.lineWidth = 0.5;
       const angle = (i * Math.PI) / 6;
       ctx.moveTo(centerX, centerY);
@@ -192,38 +192,38 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       ctx.stroke();
     }
     
-    // Draw city lights with pulsing effect
+    // Draw city lights with pulsing effect - using cyan-blue instead of purple
     connectionPoints.forEach(point => {
       if (point.active) {
         const size = point.size || 2;
         const intensity = point.intensity || 1;
         
-        // Outer glow
+        // Outer glow - blue instead of purple
         const gradient = ctx.createRadialGradient(
           point.x, point.y, 0,
           point.x, point.y, size * 3
         );
-        gradient.addColorStop(0, `rgba(180, 200, 255, ${0.7 * intensity})`);
-        gradient.addColorStop(1, 'rgba(100, 120, 255, 0)');
+        gradient.addColorStop(0, `rgba(140, 200, 230, ${0.7 * intensity})`);
+        gradient.addColorStop(1, 'rgba(100, 150, 200, 0)');
         
         ctx.beginPath();
         ctx.fillStyle = gradient;
         ctx.arc(point.x, point.y, size * 3, 0, 2 * Math.PI);
         ctx.fill();
         
-        // Center point
+        // Center point - brighter blue
         ctx.beginPath();
-        ctx.fillStyle = `rgba(220, 230, 255, ${0.9 * intensity})`;
+        ctx.fillStyle = `rgba(160, 220, 255, ${0.9 * intensity})`;
         ctx.arc(point.x, point.y, size * 0.7, 0, 2 * Math.PI);
         ctx.fill();
       }
     });
     
-    // Draw connection lines between some points
+    // Draw connection lines between some points - using blue instead of purple
     if (connectionPoints.filter(p => p.active).length >= 2) {
       const activePoints = connectionPoints.filter(p => p.active);
       
-      ctx.strokeStyle = 'rgba(140, 180, 255, 0.3)';
+      ctx.strokeStyle = 'rgba(120, 170, 210, 0.3)';
       ctx.lineWidth = 0.5;
       ctx.setLineDash([2, 3]);
       

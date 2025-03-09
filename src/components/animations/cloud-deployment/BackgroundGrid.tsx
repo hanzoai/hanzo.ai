@@ -13,7 +13,7 @@ const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
       {scanPoints.map((point, idx) => (
         <motion.div
           key={`point-${idx}`}
-          className="absolute h-1 w-1 rounded-full bg-purple-500/20"
+          className="absolute h-1 w-1 rounded-full bg-blue-500/20"
           style={{ 
             left: `${point.x}%`, 
             top: `${point.y}%` 
