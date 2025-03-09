@@ -54,12 +54,6 @@ const Index = () => {
         <CloudServices />
         <DXPlatform />
         <TeamSlack />
-        <Analytics />
-        <Base />
-        <Commerce />
-        <Network />
-        <Code />
-        <CRM />
         <TrustedBy />
         <LastSupper members={[]} />
         <HeroPoem />
