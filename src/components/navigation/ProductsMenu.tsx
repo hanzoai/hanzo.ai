@@ -1,3 +1,4 @@
+
 import { Brain, Code2, Bot, Blocks, ChartBar, Database, Calculator, Scale, User, BarChart, LucideIcon, Bot as BotIcon, CodepenIcon, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight } from "lucide-react";
 import { products } from "@/constants/navigation";
 import {
@@ -193,6 +194,7 @@ const DxPlatformGraphic = () => {
 export const ProductsMenu = () => {
   const [open, setOpen] = useState(false);
   const [clickedOpen, setClickedOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   
   let closeTimeout: ReturnType<typeof setTimeout> | null = null;
 
@@ -413,8 +415,18 @@ export const ProductsMenu = () => {
               
               <div className="grid grid-cols-2 gap-4 max-h-[360px] overflow-y-auto pr-2">
                 {dxPlatformItems.map((item) => (
-                  <Link to={item.link} key={item.name} className="flex items-start space-x-3 group">
-                    <item.icon className="h-6 w-6 text-gray-400 group-hover:text-white mt-1" />
+                  <Link 
+                    to={item.link} 
+                    key={item.name} 
+                    className="flex items-start space-x-3 group"
+                    onMouseEnter={() => setHoveredItem(item.name)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                  >
+                    <item.icon 
+                      className={`h-6 w-6 mt-1 transition-colors duration-200 ${
+                        hoveredItem === item.name ? 'text-purple-400' : 'text-gray-400 group-hover:text-white'
+                      }`} 
+                    />
                     <div>
                       <div className="text-gray-300 group-hover:text-white font-medium">{item.name}</div>
                       <div className="text-sm text-gray-500">{item.description}</div>
