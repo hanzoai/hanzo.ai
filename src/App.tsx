@@ -32,6 +32,7 @@ import Base from "./pages/Base";
 import Vector from "./pages/Vector";
 import HanzoBot from "./pages/HanzoBot";
 import Extension from "./pages/Extension";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/vector" element={<Vector />} />
             <Route path="/bot" element={<HanzoBot />} />
             <Route path="/extension" element={<Extension />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
