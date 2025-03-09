@@ -22,6 +22,7 @@ import AI from "./pages/AI";
 import Payments from "./pages/Payments";
 import HanzoApp from "./pages/HanzoApp";
 import HanzoCode from "./pages/HanzoCode";
+import Operator from "./pages/Operator";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => {
             <Route path="/payments" element={<Payments />} />
             <Route path="/app" element={<HanzoApp />} />
             <Route path="/code" element={<HanzoCode />} />
+            <Route path="/operator" element={<Operator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
