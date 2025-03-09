@@ -7,17 +7,19 @@ export const latLongToPosition = (
   lon: number, 
   centerX: number, 
   centerY: number, 
-  radius: number
+  radius: number,
+  verticalScale: number = 1 // Added parameter for vertical scaling
 ): {x: number, y: number} => {
   // Convert to radians
   const latRad = (lat * Math.PI) / 180;
   const lonRad = (lon * Math.PI) / 180;
   
-  // X coordinate
+  // X coordinate - making visible half of longitude (-90 to +90 degrees)
+  // This creates a half-globe effect viewed from one side
   const x = centerX + (radius * Math.cos(latRad) * Math.sin(lonRad * 0.5));
   
-  // Y coordinate (we're viewing from above, so flatten the view)
-  const y = centerY - (radius * Math.sin(latRad) * 0.5);
+  // Y coordinate with vertical scaling for elliptical effect
+  const y = centerY - (radius * Math.sin(latRad) * verticalScale);
   
   return { x, y };
 };

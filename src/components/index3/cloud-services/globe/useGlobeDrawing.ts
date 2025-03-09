@@ -18,11 +18,12 @@ export function useGlobeDrawing() {
     
     ctx.clearRect(0, 0, dimensions.width, dimensions.height);
     
-    // Draw main globe circle - using soft blue
+    // Draw main globe circle with only half visible (viewed from angle)
     ctx.beginPath();
     ctx.strokeStyle = 'rgba(100, 150, 200, 0.4)';
     ctx.lineWidth = 1;
-    ctx.arc(centerX, centerY, globeRadius, 0, 2 * Math.PI);
+    // Draw ellipse to represent 3D perspective of a globe
+    ctx.ellipse(centerX, centerY, globeRadius, globeRadius * 0.6, 0, 0, Math.PI * 2);
     ctx.stroke();
     
     // Draw continents with subtle outlines - using a neutral gray-blue
@@ -39,7 +40,8 @@ export function useGlobeDrawing() {
           continent[0].lon, 
           centerX, 
           centerY, 
-          globeRadius
+          globeRadius,
+          0.6 // Add vertical scale factor to create ellipse effect
         );
         
         ctx.moveTo(firstPoint.x, firstPoint.y);
@@ -51,7 +53,8 @@ export function useGlobeDrawing() {
             continent[i].lon, 
             centerX, 
             centerY, 
-            globeRadius
+            globeRadius,
+            0.6 // Add vertical scale factor to create ellipse effect
           );
           ctx.lineTo(point.x, point.y);
         }
@@ -64,25 +67,27 @@ export function useGlobeDrawing() {
       }
     });
     
-    // Draw latitude lines - subtle gray-blue
-    for (let i = 0; i < 5; i++) {
+    // Draw fewer latitude lines for cleaner look
+    for (let i = 0; i < 3; i++) {
       ctx.beginPath();
       ctx.strokeStyle = 'rgba(130, 150, 180, 0.2)';
       ctx.lineWidth = 0.5;
-      const latRadius = globeRadius * Math.cos((i * 15 * Math.PI) / 180);
-      ctx.arc(centerX, centerY, latRadius, 0, 2 * Math.PI);
+      const latRadius = globeRadius * Math.cos((i * 25 * Math.PI) / 180);
+      ctx.ellipse(centerX, centerY, latRadius, latRadius * 0.6, 0, 0, Math.PI * 2);
       ctx.stroke();
     }
     
-    // Draw longitude lines - subtle gray-blue
-    for (let i = 0; i < 12; i++) {
+    // Draw fewer longitude lines for cleaner look
+    for (let i = 0; i < 8; i++) {
       ctx.beginPath();
       ctx.strokeStyle = 'rgba(130, 150, 180, 0.2)';
       ctx.lineWidth = 0.5;
-      const angle = (i * Math.PI) / 6;
-      ctx.moveTo(centerX, centerY);
-      const endX = centerX + globeRadius * Math.cos(angle);
-      const endY = centerY + globeRadius * Math.sin(angle);
+      const angle = (i * Math.PI) / 4;
+      const startX = centerX + globeRadius * Math.cos(angle);
+      const startY = centerY + (globeRadius * 0.6) * Math.sin(angle);
+      const endX = centerX - globeRadius * Math.cos(angle);
+      const endY = centerY - (globeRadius * 0.6) * Math.sin(angle);
+      ctx.moveTo(startX, startY);
       ctx.lineTo(endX, endY);
       ctx.stroke();
     }
@@ -114,10 +119,13 @@ export function useGlobeDrawing() {
       }
     });
     
-    // Draw traffic lines between cities
+    // Draw traffic lines between cities - reduced number and improved graphics
     connectionPoints.forEach(point => {
       if (point.connections && point.connections.length > 0) {
-        point.connections.forEach(conn => {
+        // Limit to fewer visible connections at once
+        const visibleConnections = point.connections.slice(0, 2);
+        
+        visibleConnections.forEach(conn => {
           const target = findPointById(connectionPoints, conn.targetId);
           if (!target) return;
           
@@ -128,7 +136,7 @@ export function useGlobeDrawing() {
           const currentX = point.x + (target.x - point.x) * conn.progress;
           const currentY = point.y + (target.y - point.y) * conn.progress;
           
-          // Draw trail
+          // Draw trail with improved opacity
           const trailLength = Math.min(conn.progress, 0.2); // Trail length is 20% of the total line
           const trailStartProgress = Math.max(0, conn.progress - trailLength);
           const trailStartX = point.x + (target.x - point.x) * trailStartProgress;
@@ -151,9 +159,9 @@ export function useGlobeDrawing() {
           ctx.arc(currentX, currentY, (conn.size || 1) * 1.5, 0, 2 * Math.PI);
           ctx.fill();
           
-          // Draw faint line for the full path
+          // Draw very faint line for the full path - reduced opacity
           ctx.beginPath();
-          ctx.strokeStyle = 'rgba(130, 150, 180, 0.1)';
+          ctx.strokeStyle = 'rgba(130, 150, 180, 0.05)';
           ctx.lineWidth = 0.5;
           ctx.moveTo(point.x, point.y);
           ctx.lineTo(target.x, target.y);

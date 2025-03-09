@@ -19,22 +19,33 @@ const ConnectionAnimation = () => {
       let activationIndex = 0;
       const totalPoints = connectionPoints.length;
       
+      // Limit total number of active points to prevent overcrowding
+      const maxActivePoints = Math.min(10, totalPoints);
+      let activeCount = 0;
+      
       const activateNextBatch = () => {
-        // Activate points in small batches
-        const batchSize = Math.floor(Math.random() * 3) + 1;
+        if (activeCount >= maxActivePoints) {
+          // When we reach max active points, just maintain and pulse them
+          animationRef.current = setTimeout(activateNextBatch, 1000) as unknown as number;
+          return;
+        }
+        
+        // Activate one point at a time for cleaner appearance
+        const batchSize = 1;
         
         setConnectionPoints(prevPoints => {
           const newPoints = [...prevPoints];
           
           for (let i = 0; i < batchSize; i++) {
             const pointIndex = (activationIndex + i) % totalPoints;
-            if (newPoints[pointIndex]) {
+            if (newPoints[pointIndex] && !newPoints[pointIndex].active) {
               newPoints[pointIndex] = { 
                 ...newPoints[pointIndex], 
                 active: true,
                 // Initialize connection properties for the point
                 connections: newPoints[pointIndex].connections || []
               };
+              activeCount++;
             }
           }
           
@@ -43,8 +54,8 @@ const ConnectionAnimation = () => {
         
         activationIndex = (activationIndex + batchSize) % totalPoints;
         
-        // Continue activation with varied timing
-        const nextDelay = Math.random() * 200 + 100;
+        // Continue activation with consistent timing
+        const nextDelay = 300;
         animationRef.current = setTimeout(activateNextBatch, nextDelay) as unknown as number;
       };
       
@@ -70,8 +81,7 @@ const ConnectionAnimation = () => {
           if (!point.active) return point;
           
           // Create subtle pulsing effect by varying intensity
-          const newIntensity = point.intensity || 1;
-          const variation = (Math.sin(Date.now() / 1000 * (Math.random() + 0.5)) + 1) * 0.25 + 0.5;
+          const variation = (Math.sin(Date.now() / 1000 * (Math.random() * 0.3 + 0.3)) + 1) * 0.25 + 0.5;
           
           return {
             ...point,
@@ -92,7 +102,7 @@ const ConnectionAnimation = () => {
     };
   }, [setConnectionPoints]);
 
-  // Create traffic animation between cities
+  // Create traffic animation between cities - reduced frequency
   useEffect(() => {
     // Only start traffic animation when we have at least a few active points
     if (connectionPoints.filter(p => p.active).length < 3) return;
@@ -103,8 +113,8 @@ const ConnectionAnimation = () => {
         const activePoints = prevPoints.filter(p => p.active);
         if (activePoints.length < 3) return prevPoints;
         
-        // Randomly create new connections
-        if (Math.random() < 0.05) { // 5% chance each frame to create a new connection
+        // Randomly create new connections - reduced probability
+        if (Math.random() < 0.02) { // 2% chance each frame to create a new connection
           // Select random source and target
           const sourceIndex = Math.floor(Math.random() * activePoints.length);
           let targetIndex;
@@ -115,18 +125,22 @@ const ConnectionAnimation = () => {
           const source = activePoints[sourceIndex];
           const target = activePoints[targetIndex];
           
+          // Limit maximum connections per point to prevent overcrowding
+          if (source.connections && source.connections.length >= 2) {
+            return prevPoints;
+          }
+          
           // Create a new traffic particle with blue colors
           const newTraffic = {
             id: `traffic-${Date.now()}-${Math.random()}`,
             sourceId: source.id,
             targetId: target.id,
             progress: 0,
-            speed: Math.random() * 0.01 + 0.005, // Random speed
-            // Using blue colors instead of purple
+            speed: Math.random() * 0.008 + 0.004, // Slightly slower for smoother animation
             color: Math.random() > 0.5 
               ? 'rgba(120, 180, 230, 0.7)' // Light blue
               : 'rgba(100, 170, 255, 0.7)',  // Bright blue
-            size: Math.random() * 1.2 + 0.8
+            size: Math.random() * 1 + 0.6
           };
           
           // Add traffic to the source point's connections

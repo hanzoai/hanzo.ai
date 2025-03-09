@@ -46,7 +46,7 @@ const GlobeContainer: React.FC = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="relative w-full h-[500px] bg-black rounded-lg overflow-hidden mt-8 mb-12"
+      className="relative w-full h-[400px] bg-black rounded-lg overflow-hidden mt-8 mb-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -62,9 +62,9 @@ const GlobeContainer: React.FC = () => {
       <ConnectionAnimation />
       
       <div className="absolute inset-0 flex items-center justify-center text-center p-4">
-        <div className="mt-16">
+        <div className="mt-8">
           <h3 className="text-2xl font-semibold text-white mb-2">Global Network</h3>
-          <p className="text-gray-300 text-sm max-w-sm mx-auto">
+          <p className="text-gray-300 text-sm max-w-md mx-auto">
             Deploy to 35+ regions around the world with 99.99% uptime SLA and automatic failover.
           </p>
         </div>

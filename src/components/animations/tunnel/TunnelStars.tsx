@@ -15,7 +15,7 @@ const TunnelStars: React.FC<TunnelStarsProps> = ({ starCount = 60 }) => {
     const initialX = Math.random() * 100;
     const initialY = Math.random() * 100;
     const size = Math.random() * 2 + 1;
-    const speed = Math.random() * 5 + 3;
+    const speed = Math.random() * 5 + 5; // Increased speed for smoother animation
     
     stars.push(
       <motion.div
@@ -44,8 +44,8 @@ const TunnelStars: React.FC<TunnelStarsProps> = ({ starCount = 60 }) => {
           duration: speed,
           repeat: Infinity,
           repeatType: "loop",
-          delay: i * 0.2,
-          ease: "linear"
+          delay: i * 0.1, // Reduced delay for more consistency
+          ease: "easeOut" // Changed to easeOut for smoother motion
         }}
       />
     );

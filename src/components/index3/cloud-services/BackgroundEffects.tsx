@@ -7,28 +7,25 @@ interface BackgroundEffectsProps {
 }
 
 const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ scanPoints }) => {
-  // Generate connection lines between active points
+  // Generate fewer connection lines between active points for cleaner look
   const connections = useMemo(() => {
     const result = [];
     const activePoints = scanPoints.filter(p => p.active);
     
     if (activePoints.length >= 2) {
-      // Create connections between some active points
-      for (let i = 0; i < activePoints.length; i++) {
-        // Connect each point to 1-2 other points
-        const numConnections = 1; // Limit to 1 connection per point to avoid overcrowding
-        for (let j = 0; j < numConnections; j++) {
-          // Find a different point to connect to
-          const targetIndex = (i + 1 + Math.floor(Math.random() * (activePoints.length - 1))) % activePoints.length;
-          if (targetIndex !== i) {
-            result.push({
-              id: `conn-${i}-${targetIndex}`,
-              source: activePoints[i],
-              target: activePoints[targetIndex],
-              speed: Math.random() * 3 + 2 // Random speed between 2-5 seconds
-            });
-          }
-        }
+      // Only create a few strategic connections
+      const maxConnections = Math.min(8, Math.floor(activePoints.length / 2));
+      
+      for (let i = 0; i < maxConnections; i++) {
+        const sourceIndex = Math.floor(i * (activePoints.length / maxConnections));
+        const targetIndex = (sourceIndex + Math.floor(activePoints.length / 2)) % activePoints.length;
+        
+        result.push({
+          id: `conn-${sourceIndex}-${targetIndex}`,
+          source: activePoints[sourceIndex],
+          target: activePoints[targetIndex],
+          speed: Math.random() * 2 + 3 // Random speed between 3-5 seconds
+        });
       }
     }
     
@@ -37,45 +34,45 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ scanPoints }) => 
   
   return (
     <>
-      {/* Background blur elements - changed from purple to blue/cyan */}
+      {/* Background blur elements - subtle blue/cyan */}
       <div className="absolute top-40 right-20 w-64 h-64 bg-blue-900/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-cyan-900/5 rounded-full blur-3xl"></div>
       
-      {/* Grid pattern - changed from purple to blue */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: "radial-gradient(rgba(100, 150, 200, 0.15) 1px, transparent 1px)",
-        backgroundSize: "24px 24px",
+      {/* Grid pattern - very subtle */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: "radial-gradient(rgba(100, 150, 200, 0.1) 1px, transparent 1px)",
+        backgroundSize: "30px 30px",
       }}></div>
       
-      {/* Background grid points - changed from purple to blue */}
-      {scanPoints.map((point, idx) => (
+      {/* Background grid points - less of them */}
+      {scanPoints.filter((_, idx) => idx % 2 === 0).map((point, idx) => (
         <motion.div
           key={`point-${idx}`}
-          className="absolute h-1.5 w-1.5 rounded-full bg-blue-500/40"
+          className="absolute h-1.5 w-1.5 rounded-full bg-blue-500/30"
           style={{ 
             left: `${point.x}%`, 
             top: `${point.y}%` 
           }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ 
-            opacity: point.active ? [0, 0.7, 0.5] : 0,
-            scale: point.active ? [0, 1.2, 1] : 0
+            opacity: point.active ? [0, 0.5, 0.3] : 0,
+            scale: point.active ? [0, 1.1, 1] : 0
           }}
           transition={{ 
             duration: 2,
             repeat: point.active ? Infinity : 0,
             repeatType: "loop",
-            repeatDelay: 3
+            repeatDelay: 4
           }}
         />
       ))}
       
-      {/* Connection lines */}
-      {connections.map((conn) => (
+      {/* Limit connection lines for cleaner display */}
+      {connections.slice(0, 5).map((conn) => (
         <React.Fragment key={conn.id}>
-          {/* Static connection line */}
+          {/* Static connection line - more transparent */}
           <div
-            className="absolute h-px bg-blue-400/10"
+            className="absolute h-px bg-blue-400/5"
             style={{
               left: `${conn.source.x}%`,
               top: `${conn.source.y}%`,
@@ -87,7 +84,7 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ scanPoints }) => 
           
           {/* Animated network packet */}
           <motion.div
-            className="absolute h-1 w-2 rounded-full bg-blue-400/70 shadow-sm shadow-blue-300/50"
+            className="absolute h-1 w-1.5 rounded-full bg-blue-400/50 shadow-sm shadow-blue-300/30"
             style={{
               left: `${conn.source.x}%`,
               top: `${conn.source.y}%`,
@@ -95,12 +92,12 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ scanPoints }) => 
             animate={{
               left: [`${conn.source.x}%`, `${conn.target.x}%`],
               top: [`${conn.source.y}%`, `${conn.target.y}%`],
-              opacity: [0, 1, 0]
+              opacity: [0, 0.7, 0]
             }}
             transition={{
               duration: conn.speed,
               repeat: Infinity,
-              repeatDelay: Math.random() * 2, // Random delay between pulses
+              repeatDelay: Math.random() * 3 + 1, // Longer delay between pulses for less clutter
               ease: "linear"
             }}
           />

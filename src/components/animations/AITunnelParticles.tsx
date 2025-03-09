@@ -4,9 +4,9 @@ import TrailGenerator from "./tunnel/TrailGenerator";
 import ParticleGenerator from "./tunnel/ParticleGenerator";
 
 const AITunnelParticles: React.FC = () => {
-  // Configuration values - increased for more dramatic effect
-  const trailCount = 250; // More trails for denser laser-like effect
-  const particleCount = 180; // More particles
+  // Adjusted configuration values for better performance and smoother rendering
+  const trailCount = 200; // Slightly reduced for better performance
+  const particleCount = 140; // Slightly reduced for better performance
   
   return (
     <div className="absolute inset-0 w-full h-full">
