@@ -29,6 +29,7 @@ import ZenOfHanzo from "./pages/ZenOfHanzo";
 import AIAcceleration from "./pages/AIAcceleration";
 import Commerce from "./pages/Commerce";
 import Base from "./pages/Base";
+import Vector from "./pages/Vector";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => {
             <Route path="/ai-acc" element={<AIAcceleration />} />
             <Route path="/commerce" element={<Commerce />} />
             <Route path="/base" element={<Base />} />
+            <Route path="/vector" element={<Vector />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
