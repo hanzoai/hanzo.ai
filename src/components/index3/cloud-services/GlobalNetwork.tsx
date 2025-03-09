@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -19,31 +20,42 @@ const GlobalNetwork = () => {
     ctx.strokeStyle = '#8a50ff';
     ctx.lineWidth = 0.5;
     
+    // Only show the top 33% of the globe by positioning it lower
     const centerX = canvasRef.current.width / 2;
-    const globeRadius = Math.min(canvasRef.current.width / 3, canvasRef.current.height * 1.5);
-    const centerY = canvasRef.current.height + globeRadius * 0.65;
+    const globeRadius = Math.min(canvasRef.current.width / 2, canvasRef.current.height * 3);
+    // Position globe lower to only show top portion
+    const centerY = canvasRef.current.height + (globeRadius * 0.6);
     
+    // Draw main globe circle
     ctx.beginPath();
     ctx.arc(centerX, centerY, globeRadius, 0, 2 * Math.PI);
     ctx.stroke();
     
-    for (let i = 0; i < 5; i++) {
+    // Draw latitude lines - only a few at the top of the globe
+    for (let i = 0; i < 3; i++) {
       ctx.beginPath();
-      const latRadius = globeRadius * (0.75 - i * 0.15);
+      const latRadius = globeRadius * (0.9 - i * 0.15);
+      // Ensure radius is always positive
       if (latRadius > 0) {
-        ctx.ellipse(centerX, centerY, latRadius, latRadius * 0.3, 0, -Math.PI, 0);
+        ctx.ellipse(centerX, centerY, latRadius, Math.max(0.1, latRadius * 0.2), 0, -Math.PI, 0);
         ctx.stroke();
       }
     }
     
-    for (let i = 0; i < 8; i++) {
+    // Draw longitude lines - only visible at the top
+    for (let i = 0; i < 12; i++) {
       ctx.beginPath();
-      const angle = (i / 8) * Math.PI;
+      const angle = (i / 12) * Math.PI;
+      const cosAngle = Math.cos(angle);
+      // Ensure both radiuses are positive
+      const xRadius = Math.max(0.1, globeRadius * cosAngle);
+      const yRadius = Math.max(0.1, globeRadius);
+      
       ctx.ellipse(
         centerX, 
         centerY, 
-        globeRadius * Math.cos(angle), 
-        globeRadius, 
+        xRadius, 
+        yRadius, 
         0, 
         -Math.PI/2, 
         Math.PI/2
@@ -51,6 +63,7 @@ const GlobalNetwork = () => {
       ctx.stroke();
     }
     
+    // Draw connection points
     connectionPoints.forEach(point => {
       if (point.active) {
         ctx.beginPath();
@@ -60,6 +73,7 @@ const GlobalNetwork = () => {
       }
     });
     
+    // Draw connections between active points
     const activePoints = connectionPoints.filter(p => p.active);
     
     ctx.strokeStyle = '#9b87f5';
@@ -72,7 +86,7 @@ const GlobalNetwork = () => {
         const dy = activePoints[i].y - activePoints[j].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < globeRadius * 0.8) {
+        if (distance < globeRadius) {
           ctx.beginPath();
           ctx.moveTo(activePoints[i].x, activePoints[i].y);
           ctx.lineTo(activePoints[j].x, activePoints[j].y);
@@ -90,19 +104,25 @@ const GlobalNetwork = () => {
     canvasRef.current.width = width;
     canvasRef.current.height = height;
     
-    const numPoints = 12;
+    const numPoints = 24; // More connection points for a busier network
     const newPoints = [];
     
     const centerX = width / 2;
-    const globeRadius = Math.min(width / 3, height * 1.5);
-    const centerY = height + globeRadius * 0.65;
+    // Larger globe radius to ensure it fills the width
+    const globeRadius = Math.min(width / 2, height * 3);
+    // Position globe lower to only show top portion
+    const centerY = height + (globeRadius * 0.6);
     
+    // Create points only in the visible top portion of the globe
     for (let i = 0; i < numPoints; i++) {
+      // Limit angle to the top portion of the circle (-π/2 to π/2)
       const angle = (Math.random() * Math.PI) - Math.PI/2;
-      const r = Math.random() * globeRadius * 0.75;
+      // Limit to the top portion of the visible globe area
+      const r = Math.random() * globeRadius * 0.5;
       const x = centerX + r * Math.cos(angle);
       const y = centerY + r * Math.sin(angle);
       
+      // Only add points that would be visible
       if (y > 0 && y < height) {
         newPoints.push({
           x, 
@@ -130,7 +150,7 @@ const GlobalNetwork = () => {
         });
         
         activationIndex++;
-        animationRef.current = setTimeout(activatePoints, 300) as unknown as number;
+        animationRef.current = setTimeout(activatePoints, 200) as unknown as number;
       } else {
         setTimeout(() => {
           setConnectionPoints(prevPoints => prevPoints.map(p => ({ ...p, active: false })));
@@ -157,6 +177,14 @@ const GlobalNetwork = () => {
     
     animateConnections();
     
+    // Animation loop to continuously redraw
+    const animate = () => {
+      drawGlobe();
+      requestAnimationFrame(animate);
+    };
+    
+    requestAnimationFrame(animate);
+    
     return () => {
       window.removeEventListener('resize', handleResize);
       if (animationRef.current !== null) {
@@ -173,7 +201,7 @@ const GlobalNetwork = () => {
     <div className="my-16">
       <motion.div
         ref={containerRef}
-        className="relative h-48 w-full bg-black rounded-lg overflow-hidden"
+        className="relative h-56 w-full bg-black rounded-lg overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

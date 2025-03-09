@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const AITunnelParticles: React.FC = () => {
   // Create hyper speed trails
   const trails = [];
-  const trailCount = 45; // Increased number of trails for denser effect
+  const trailCount = 80; // Increased number of trails for denser effect
   
   for (let i = 0; i < trailCount; i++) {
     const startX = Math.random() * 100;
@@ -22,9 +22,9 @@ const AITunnelParticles: React.FC = () => {
       Math.pow((startY - 50), 2)
     );
     
-    const length = 80 + distanceFromCenter * 1.5;
-    const opacity = 0.1 + Math.random() * 0.5;
-    const width = Math.random() * 1.5 + 0.5; // Varying widths
+    const length = 100 + distanceFromCenter * 2; // Longer trails
+    const opacity = 0.2 + Math.random() * 0.6; // Brighter trails
+    const width = Math.random() * 2 + 0.5; // Varying widths
     
     trails.push(
       <motion.div
@@ -45,11 +45,11 @@ const AITunnelParticles: React.FC = () => {
           opacity: [opacity, 0],
         }}
         transition={{
-          duration: 4 + Math.random() * 6,
+          duration: 3 + Math.random() * 5,
           repeat: Infinity,
           repeatType: "loop",
           ease: "linear",
-          delay: i * 0.1,
+          delay: i * 0.05,
         }}
       />
     );
@@ -57,14 +57,14 @@ const AITunnelParticles: React.FC = () => {
   
   // Create bright particles that fly through the tunnel
   const particles = [];
-  const particleCount = 25;
+  const particleCount = 40; // More particles
   
   for (let i = 0; i < particleCount; i++) {
     const x = Math.random() * 100;
     const y = Math.random() * 100;
     const z = -2000 - (Math.random() * 1000);
     const size = Math.random() * 2 + 1;
-    const brightness = 0.7 + Math.random() * 0.3;
+    const brightness = 0.8 + Math.random() * 0.2; // Brighter particles
     
     particles.push(
       <motion.div
@@ -74,7 +74,7 @@ const AITunnelParticles: React.FC = () => {
           width: `${size}px`,
           height: `${size}px`,
           backgroundColor: `rgba(255, 255, 255, ${brightness})`,
-          boxShadow: `0 0 ${size * 3}px rgba(255, 255, 255, ${brightness * 0.8})`,
+          boxShadow: `0 0 ${size * 4}px rgba(255, 255, 255, ${brightness * 0.8})`,
           left: `${x}%`,
           top: `${y}%`,
           transform: `translateZ(${z}px)`,
@@ -84,11 +84,11 @@ const AITunnelParticles: React.FC = () => {
           scale: [1, 0.2],
         }}
         transition={{
-          duration: 5 + Math.random() * 5,
+          duration: 4 + Math.random() * 4,
           repeat: Infinity,
           repeatType: "loop",
           ease: "linear",
-          delay: i * 0.2,
+          delay: i * 0.1,
         }}
       />
     );
