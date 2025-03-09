@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import DXPlatformCard from "./DXPlatformCard";
 import { dxPlatformData } from "./dxPlatformData";
+import { Link } from "react-router-dom";
+import ChromeText from "@/components/ui/chrome-text";
 
 interface DXPlatformGridProps {
   isHovered: string | null;
