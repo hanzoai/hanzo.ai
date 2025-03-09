@@ -1,7 +1,6 @@
 
 import React from "react";
 import DXPlatformCard from "./DXPlatformCard";
-import ExploreAllButton from "./ExploreAllButton";
 import { dxPlatformData } from "./dxPlatformData";
 
 interface DXPlatformGridProps {
@@ -27,8 +26,6 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           />
         ))}
       </div>
-      
-      <ExploreAllButton />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 interface CloudServiceCardProps {
   id: string;
@@ -93,17 +94,9 @@ const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
 }) => {
   const isHoveredState = isHovered === id;
   const { bgClass, textClass } = getColorClasses(color, isHoveredState);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: 0.1 }}
-      className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 group hover:bg-gray-900/30 transition-colors h-full flex flex-col"
-      onMouseEnter={() => setIsHovered(id)}
-      onMouseLeave={() => setIsHovered(null)}
-    >
+  
+  const CardContent = (
+    <>
       <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 ${bgClass}`}>
         <Icon className={`h-6 w-6 transition-colors duration-300 ${textClass}`} />
       </div>
@@ -121,6 +114,29 @@ const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
           </li>
         ))}
       </ul>
+    </>
+  );
+
+  const containerClasses = "bg-gray-900/20 border border-gray-800 rounded-xl p-6 group hover:bg-gray-900/30 transition-colors h-full flex flex-col";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: 0.1 }}
+      onMouseEnter={() => setIsHovered(id)}
+      onMouseLeave={() => setIsHovered(null)}
+    >
+      {id === "more" ? (
+        <Link to="/cloud" className={containerClasses}>
+          {CardContent}
+        </Link>
+      ) : (
+        <div className={containerClasses}>
+          {CardContent}
+        </div>
+      )}
     </motion.div>
   );
 };

@@ -1,8 +1,8 @@
 
 import React from "react";
 import CloudServiceCard from "./CloudServiceCard";
-import ExploreAllButton from "./ExploreAllButton";
 import { cloudServiceData } from "./cloudServiceData";
+import { Link } from "react-router-dom";
 
 interface CloudServiceGridProps {
   isHovered: string | null;
@@ -27,8 +27,6 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
           />
         ))}
       </div>
-      
-      <ExploreAllButton />
     </div>
   );
 };

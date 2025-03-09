@@ -160,19 +160,6 @@ export const dxPlatformData: DXPlatformItem[] = [
     color: "gray"
   },
   {
-    id: "zen",
-    title: "Zen",
-    description: "Simplicity, clarity, elegance—our AI engineering manifesto guiding every decision we make.",
-    icon: Star,
-    features: [
-      "Design principles for building AI systems",
-      "Focus on simplicity, clarity, and elegance",
-      "Opinionated best practices for AI engineering",
-      "Community-driven philosophy for modern software"
-    ],
-    color: "amber"
-  },
-  {
     id: "more",
     title: "More Tools",
     description: "Discover additional developer tools in our ecosystem.",
