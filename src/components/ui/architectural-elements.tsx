@@ -135,6 +135,9 @@ export const ArchitecturalBox: React.FC<{
   gridSpacing?: number;
   gridColor?: string;
   gridOpacity?: number;
+  onMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
+  onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }> = ({
   children,
   className = "",
@@ -144,10 +147,18 @@ export const ArchitecturalBox: React.FC<{
   cornerColor = "rgba(100, 149, 237, 0.5)",
   gridSpacing = 30,
   gridColor = "rgba(255, 255, 255, 0.1)",
-  gridOpacity = 0.2
+  gridOpacity = 0.2,
+  onMouseEnter,
+  onMouseLeave,
+  onClick
 }) => {
   return (
-    <div className={`relative ${className}`}>
+    <div 
+      className={`relative ${className}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}
+    >
       {showGrid && (
         <GridLines 
           spacing={gridSpacing} 
