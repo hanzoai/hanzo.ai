@@ -8,7 +8,7 @@ const Features = () => {
     {
       icon: Brain,
       title: 'AI Model Hub',
-      description: 'Access a catalog of state-of-the-art foundation models from leading providers and Hanzo's specialized models.'
+      description: 'Access a catalog of state-of-the-art foundation models from leading providers and Hanzo\'s specialized models.'
     },
     {
       icon: Bot,
