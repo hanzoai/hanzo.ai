@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 
-interface CloudServiceCardProps {
+interface DXPlatformCardProps {
   id: string;
   title: string;
   description: string;
@@ -81,7 +81,7 @@ const getColorClasses = (color: string = "purple", isHovered: boolean) => {
   };
 };
 
-const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
+const DXPlatformCard: React.FC<DXPlatformCardProps> = ({
   id,
   title,
   description,
@@ -125,4 +125,4 @@ const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
   );
 };
 
-export default CloudServiceCard;
+export default DXPlatformCard;

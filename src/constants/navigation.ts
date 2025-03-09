@@ -1,21 +1,19 @@
 export const products = [
   {
     title: "AI Cloud",
-    items: ["AI Compute", "Analytics", "Base", "Commerce", "Identity", "Scale", "Payments", "Database"]
+    items: ["AI", "Bots", "Compute", "Databases", "Ecommerce", "Identity", "Payments", "Works"]
   },
   {
     title: "DX Platform",
     items: [
-      "AI",
-      "Bot",
+      "App",
+      "Base",
       "Code",
       "Dev",
+      "Extension",
       "Runtime",
-      "Deploy",
-      "Network",
-      "Scale",
-      "Monitor",
-      "Evolve"
+      "Operator",
+      "Platform"
     ]
   }
 ];

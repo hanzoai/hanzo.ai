@@ -35,9 +35,9 @@ const Footer = () => {
           </div>
           
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 xl:mt-0 xl:col-span-4">
-            {/* Products Column */}
+            {/* AI Cloud Column */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Products</h3>
+              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">AI Cloud</h3>
               <ul className="mt-4 space-y-3">
                 {products[0].items.map((item, index) => (
                   <li key={`cloud-${index}`}>
@@ -53,7 +53,7 @@ const Footer = () => {
             <div>
               <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">DX Platform</h3>
               <ul className="mt-4 space-y-3">
-                {products[1].items.slice(0, 6).map((item, index) => (
+                {products[1].items.map((item, index) => (
                   <li key={`platform-${index}`}>
                     <Link to={`/platform#${item.toLowerCase()}`} className="text-base text-gray-400 hover:text-gray-300">
                       {item}
@@ -63,7 +63,7 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* Solutions Column */}
+            {/* Resources Column */}
             <div>
               <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Resources</h3>
               <ul className="mt-4 space-y-3">
