@@ -63,7 +63,7 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
                 </svg>
               </motion.div>
             )}
-            {node.status === 'failed' && <X className="h-3 w-3 text-red-400" />}
+            {node.status === 'error' && <X className="h-3 w-3 text-red-400" />}
           </div>
         )}
       </div>
@@ -75,17 +75,19 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
 // Wrapped version with tooltip
 const DeploymentNodeWithTooltip: React.FC<DeploymentNodeProps> = (props) => {
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <span>
-          <DeploymentNode {...props} />
-        </span>
-      </TooltipTrigger>
-      <TooltipContent side="top">
-        <p>{props.node.label}</p>
-        {props.node.statusMessage && <p className="text-xs opacity-80">{props.node.statusMessage}</p>}
-      </TooltipContent>
-    </Tooltip>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <span>
+            <DeploymentNode {...props} />
+          </span>
+        </TooltipTrigger>
+        <TooltipContent side="top">
+          <p>{props.node.label}</p>
+          {props.node.statusMessage && <p className="text-xs opacity-80">{props.node.statusMessage}</p>}
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 
