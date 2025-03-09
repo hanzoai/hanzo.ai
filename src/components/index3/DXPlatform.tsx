@@ -9,7 +9,11 @@ const DXPlatform = () => {
     <section id="platform" className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
+          <ChromeText 
+            as="h2" 
+            className="text-3xl md:text-5xl font-bold mb-6"
+            preHeading="Integrated Developer Experience"
+          >
             Hanzo DX Platform
           </ChromeText>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

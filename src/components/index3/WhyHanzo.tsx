@@ -37,7 +37,11 @@ const WhyHanzo = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
+          <ChromeText 
+            as="h2" 
+            className="text-3xl md:text-5xl font-bold mb-6"
+            preHeading="Innovative Technology"
+          >
             Why Visionary Teams Choose Hanzo
           </ChromeText>
         </div>

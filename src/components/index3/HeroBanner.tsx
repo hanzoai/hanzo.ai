@@ -19,10 +19,11 @@ const HeroBanner = () => {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-            AI-Native Platform for Building the Future
-          </div>
-          <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
+          <ChromeText 
+            as="h1" 
+            className="text-4xl md:text-6xl font-bold mb-6"
+            preHeading="AI-Native Platform for Building the Future"
+          >
             Accelerate your vision.<br />Scale without limits.
           </ChromeText>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6">
