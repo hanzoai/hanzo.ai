@@ -9,6 +9,7 @@ import AIPlatformSection from "@/components/AIPlatformSection";
 import CallToAction from "@/components/index3/CallToAction";
 import TrustedBy from "@/components/platform/TrustedBy";
 import Footer from "@/components/Footer";
+import Karma from "@/components/index3/Karma";
 
 const Index = () => {
   useEffect(() => {
@@ -47,6 +48,7 @@ const Index = () => {
         <AIPlatformSection />
         <CloudServices />
         <DXPlatform />
+        <Karma />
         <TrustedBy />
         <CallToAction />
       </main>
