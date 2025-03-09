@@ -2,11 +2,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
-import { Infinity, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JapaneseWave from "@/components/zen/JapaneseWave";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const ZenOfHanzo = () => {
