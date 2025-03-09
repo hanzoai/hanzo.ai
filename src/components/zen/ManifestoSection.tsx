@@ -6,304 +6,304 @@ import ZenPrinciplesList from "./ZenPrinciplesList";
 
 // Define the principles data - 36 principles in 6 disciplines
 const principles: ZenPrinciple[] = [
-  // Design Discipline
+  // Empathy Discipline
   {
     number: "1",
-    emoji: "⚙️",
-    title: "Orthogonality",
-    japaneseSymbol: "直交性",
-    description: "One piece, one job. Every tool does one thing exceptionally well.",
-    discipline: "Design"
+    emoji: "🦅",
+    title: "Autonomy",
+    japaneseSymbol: "自律性",
+    description: "Trust fully; freedom fuels genius.",
+    discipline: "Empathy"
   },
   {
     number: "2",
-    emoji: "🪶",
-    title: "Simplicity",
-    japaneseSymbol: "簡素",
-    description: "Subtract until essential. Minimal components, maximum flexibility.",
-    discipline: "Design"
+    emoji: "⚖️",
+    title: "Balance",
+    japaneseSymbol: "均衡",
+    description: "Steady wins; burnout loses every time.",
+    discipline: "Empathy"
   },
   {
     number: "3",
-    emoji: "🔍",
-    title: "Clarity",
-    japaneseSymbol: "明晰",
-    description: "Intuitive, plain-spoken design. Clear code, concise interfaces, no friction.",
-    discipline: "Design"
+    emoji: "🎓",
+    title: "Customer Obsession",
+    japaneseSymbol: "顧客中心主義",
+    description: "Coach relentlessly; their victories yours.",
+    discipline: "Empathy"
   },
   {
     number: "4",
-    emoji: "🧩",
-    title: "Composability",
-    japaneseSymbol: "構成性",
-    description: "Modular elements scale exponentially. Design for recombination.",
-    discipline: "Design"
+    emoji: "🧘",
+    title: "Humility",
+    japaneseSymbol: "謙虚",
+    description: "Speak softly; let results roar.",
+    discipline: "Empathy"
   },
   {
     number: "5",
-    emoji: "📐",
-    title: "Dimensionality",
-    japaneseSymbol: "次元性",
-    description: "Simple abstractions over hidden complexity. Accessible simplicity with depth.",
-    discipline: "Design"
+    emoji: "🛡️",
+    title: "Integrity",
+    japaneseSymbol: "誠実",
+    description: "Principles never break; reputation never fades.",
+    discipline: "Empathy"
   },
   {
     number: "6",
+    emoji: "🤝",
+    title: "Selflessness",
+    japaneseSymbol: "無私",
+    description: "Lift others; personal success follows.",
+    discipline: "Empathy"
+  },
+  
+  // Science Discipline
+  {
+    number: "7",
+    emoji: "🌱",
+    title: "Curiosity",
+    japaneseSymbol: "好奇心",
+    description: "Question always; truth never ends.",
+    discipline: "Science"
+  },
+  {
+    number: "8",
+    emoji: "🔬",
+    title: "Empiricism",
+    japaneseSymbol: "経験主義",
+    description: "Hypothesize, test; data settles debates.",
+    discipline: "Science"
+  },
+  {
+    number: "9",
+    emoji: "🎯",
+    title: "Precision",
+    japaneseSymbol: "精度",
+    description: "Measure twice; guess never.",
+    discipline: "Science"
+  },
+  {
+    number: "10",
+    emoji: "✅",
+    title: "Validation",
+    japaneseSymbol: "検証",
+    description: "Test assumptions hard; illusions crumble fast.",
+    discipline: "Science"
+  },
+  {
+    number: "11",
+    emoji: "🧊",
+    title: "Objectivity",
+    japaneseSymbol: "客観性",
+    description: "Ego out; results speak plainly.",
+    discipline: "Science"
+  },
+  {
+    number: "12",
+    emoji: "🔄",
+    title: "Repeatability",
+    japaneseSymbol: "再現性",
+    description: "Do it again; success repeats systematically.",
+    discipline: "Science"
+  },
+  
+  // Design Discipline
+  {
+    number: "13",
+    emoji: "🌐",
+    title: "Accessibility",
+    japaneseSymbol: "アクセス性",
+    description: "Open doors wide; adoption thrives naturally.",
+    discipline: "Design"
+  },
+  {
+    number: "14",
     emoji: "🎨",
-    title: "Design Excellence",
-    japaneseSymbol: "デザイン卓越",
-    description: "Beauty enhances usability. Aesthetics and function in harmony.",
+    title: "Beauty",
+    japaneseSymbol: "美",
+    description: "Form speaks louder; aesthetics lift utility.",
+    discipline: "Design"
+  },
+  {
+    number: "15",
+    emoji: "🔍",
+    title: "Clarity",
+    japaneseSymbol: "明晰",
+    description: "Obvious is perfect; complexity hidden cleanly.",
+    discipline: "Design"
+  },
+  {
+    number: "16",
+    emoji: "🎯",
+    title: "Consistency",
+    japaneseSymbol: "一貫性",
+    description: "Uniform patterns; predictable results always.",
+    discipline: "Design"
+  },
+  {
+    number: "17",
+    emoji: "📐",
+    title: "Dimensionality",
+    japaneseSymbol: "次元性",
+    description: "Abstract artfully; complexity unseen.",
+    discipline: "Design"
+  },
+  {
+    number: "18",
+    emoji: "🪶",
+    title: "Simplicity",
+    japaneseSymbol: "簡素",
+    description: "Cut ruthlessly; essential alone remains.",
     discipline: "Design"
   },
   
   // Engineering Discipline
   {
-    number: "7",
-    emoji: "🔋",
-    title: "Completeness",
-    japaneseSymbol: "完全性",
-    description: "Batteries included; ready-to-use solutions. Robust and fully integrated.",
-    discipline: "Engineering"
-  },
-  {
-    number: "8",
-    emoji: "🎯",
-    title: "Consistency",
-    japaneseSymbol: "一貫性",
-    description: "Uniform interfaces, predictable behaviors. No surprises, just reliability.",
-    discipline: "Engineering"
-  },
-  {
-    number: "9",
-    emoji: "⚡",
-    title: "Concurrency",
-    japaneseSymbol: "並行性",
-    description: "Parallel execution with trust. Fewer roadblocks, maximum productivity.",
-    discipline: "Engineering"
-  },
-  {
-    number: "10",
-    emoji: "📈",
-    title: "Scalability",
-    japaneseSymbol: "拡張性",
-    description: "Build for exponential growth early. Solutions that evolve gracefully.",
-    discipline: "Engineering"
-  },
-  {
-    number: "11",
-    emoji: "🔗",
-    title: "Interoperability",
-    japaneseSymbol: "相互運用性",
-    description: "Seamless integration multiplies value. Connect with existing systems.",
-    discipline: "Engineering"
-  },
-  {
-    number: "12",
-    emoji: "⏳",
-    title: "Longevity",
-    japaneseSymbol: "長寿",
-    description: "Solutions for decades, anticipate evolution. Think long-term.",
-    discipline: "Engineering"
-  },
-  
-  // Science Discipline
-  {
-    number: "13",
-    emoji: "📊",
-    title: "Data Dominance",
-    japaneseSymbol: "データ支配",
-    description: "Decisions driven by evidence. Let data guide your path.",
-    discipline: "Science"
-  },
-  {
-    number: "14",
-    emoji: "🧪",
-    title: "Experimentation",
-    japaneseSymbol: "実験",
-    description: "Measure, learn, iterate scientifically. Test hypotheses rigorously.",
-    discipline: "Science"
-  },
-  {
-    number: "15",
-    emoji: "🔬",
-    title: "Empiricism",
-    japaneseSymbol: "経験主義",
-    description: "Evidence-based hypotheses, rigorous analysis. Truth through observation.",
-    discipline: "Science"
-  },
-  {
-    number: "16",
-    emoji: "🗡️",
-    title: "Precision",
-    japaneseSymbol: "精度",
-    description: "Data-driven choices, no guesswork. Meticulous, decisive execution.",
-    discipline: "Science"
-  },
-  {
-    number: "17",
-    emoji: "🔄",
-    title: "Repeatability",
-    japaneseSymbol: "再現性",
-    description: "Processes reliably replicate success. Consistent, predictable outcomes.",
-    discipline: "Science"
-  },
-  {
-    number: "18",
-    emoji: "✅",
-    title: "Validation",
-    japaneseSymbol: "検証",
-    description: "Rigorously test assumptions against reality. Confirm before committing.",
-    discipline: "Science"
-  },
-  
-  // Philosophy Discipline
-  {
     number: "19",
-    emoji: "🧊",
-    title: "Objectivity",
-    japaneseSymbol: "客観性",
-    description: "Decisions driven by data, ego aside. Remove personal bias.",
-    discipline: "Philosophy"
+    emoji: "🔋",
+    title: "Batteries Included",
+    japaneseSymbol: "完全同梱",
+    description: "Ready instantly; everything you need to start.",
+    discipline: "Engineering"
   },
   {
     number: "20",
-    emoji: "📚",
-    title: "Depth",
-    japaneseSymbol: "深さ",
-    description: "Master underlying fundamentals deeply. Build on solid foundations.",
-    discipline: "Philosophy"
+    emoji: "⚡",
+    title: "Concurrency",
+    japaneseSymbol: "並行性",
+    description: "Parallel flows; frictionless scale.",
+    discipline: "Engineering"
   },
   {
     number: "21",
-    emoji: "🌱",
-    title: "Continuous Learning",
-    japaneseSymbol: "継続的学習",
-    description: "Curiosity-driven growth. Never stop expanding knowledge.",
-    discipline: "Philosophy"
+    emoji: "🧩",
+    title: "Composable",
+    japaneseSymbol: "構成性",
+    description: "Modular magic; pieces multiply power.",
+    discipline: "Engineering"
   },
   {
     number: "22",
-    emoji: "🌟",
-    title: "Bold Ambition",
-    japaneseSymbol: "大志",
-    description: "Aim high for lasting impact. Pursue audacious goals.",
-    discipline: "Philosophy"
+    emoji: "🔗",
+    title: "Interoperable",
+    japaneseSymbol: "相互運用性",
+    description: "Integrate effortlessly; value compounds infinitely.",
+    discipline: "Engineering"
   },
   {
     number: "23",
-    emoji: "📈",
-    title: "Exponential Mindset",
-    japaneseSymbol: "指数的思考",
-    description: "Geometric, compounding outcomes. Think beyond linear progress.",
-    discipline: "Philosophy"
+    emoji: "⚙️",
+    title: "Orthogonal",
+    japaneseSymbol: "直交性",
+    description: "Each tool exact; no overlap, no waste.",
+    discipline: "Engineering"
   },
   {
     number: "24",
-    emoji: "💥",
-    title: "Disruptive Innovation",
-    japaneseSymbol: "破壊的革新",
-    description: "Create new fields, don't compete. Redefine what's possible.",
-    discipline: "Philosophy"
+    emoji: "📈",
+    title: "Scalable",
+    japaneseSymbol: "拡張性",
+    description: "Growth limitless; obstacles removed at inception.",
+    discipline: "Engineering"
   },
   
-  // Leadership Discipline
+  // Scale Discipline
   {
     number: "25",
-    emoji: "🦅",
-    title: "Autonomy",
-    japaneseSymbol: "自律性",
-    description: "Empowered teams, minimal hierarchy. Trust in capable individuals.",
-    discipline: "Leadership"
+    emoji: "💥",
+    title: "Disrupt",
+    japaneseSymbol: "破壊的革新",
+    description: "Invent boldly; competition irrelevant.",
+    discipline: "Scale"
   },
   {
     number: "26",
-    emoji: "🎯",
-    title: "Focus",
-    japaneseSymbol: "集中",
-    description: "Solve one problem deeply. Concentrated effort beats scattered attention.",
-    discipline: "Leadership"
+    emoji: "🧪",
+    title: "Experiment",
+    japaneseSymbol: "実験",
+    description: "Test quickly; iterate endlessly.",
+    discipline: "Scale"
   },
   {
     number: "27",
-    emoji: "⏱️",
-    title: "Urgency",
-    japaneseSymbol: "緊急性",
-    description: "Decisive, immediate action. Speed as competitive advantage.",
-    discipline: "Leadership"
+    emoji: "📈",
+    title: "Exponential",
+    japaneseSymbol: "指数的成長",
+    description: "Compound constantly; incremental fades.",
+    discipline: "Scale"
   },
   {
     number: "28",
-    emoji: "🚀",
-    title: "Iteration Velocity",
-    japaneseSymbol: "反復速度",
-    description: "Ship fast, learn faster. Rapid cycles of improvement.",
-    discipline: "Leadership"
-  },
-  {
-    number: "29",
-    emoji: "🌊",
-    title: "Adaptability",
-    japaneseSymbol: "適応性",
-    description: "Pivot purposefully; failure as feedback. Embrace change as opportunity.",
-    discipline: "Leadership"
-  },
-  {
-    number: "30",
-    emoji: "🎓",
-    title: "Customer Obsession",
-    japaneseSymbol: "顧客中心主義",
-    description: "Client outcomes first; coach like Sensei. Success through others' success.",
-    discipline: "Leadership"
-  },
-  
-  // Innovation Discipline
-  {
-    number: "31",
-    emoji: "⚖️",
-    title: "Compound Efficiency",
-    japaneseSymbol: "複合効率",
-    description: "Early investment for exponential payoff. Small improvements compound.",
-    discipline: "Innovation"
-  },
-  {
-    number: "32",
     emoji: "🌐",
     title: "Network Effects",
     japaneseSymbol: "ネットワーク効果",
-    description: "Build ecosystems, multiply influence. Value increases with each connection.",
-    discipline: "Innovation"
+    description: "Build ecosystems; influence spreads exponentially.",
+    discipline: "Scale"
+  },
+  {
+    number: "29",
+    emoji: "⏱️",
+    title: "Urgency",
+    japaneseSymbol: "緊急性",
+    description: "Act now; delays destroy opportunity.",
+    discipline: "Scale"
+  },
+  {
+    number: "30",
+    emoji: "🚀",
+    title: "Velocity",
+    japaneseSymbol: "速度",
+    description: "Ship fast; refine faster.",
+    discipline: "Scale"
+  },
+  
+  // Wisdom Discipline
+  {
+    number: "31",
+    emoji: "🌊",
+    title: "Adaptability",
+    japaneseSymbol: "適応性",
+    description: "Pivot sharply; failure fuels growth.",
+    discipline: "Wisdom"
+  },
+  {
+    number: "32",
+    emoji: "🕸️",
+    title: "Decentralization",
+    japaneseSymbol: "分散化",
+    description: "Distribute power; resilience born from autonomy.",
+    discipline: "Wisdom"
   },
   {
     number: "33",
-    emoji: "🤖",
-    title: "Creative Leverage",
-    japaneseSymbol: "創造的レバレッジ",
-    description: "Combine human creativity and AI. Amplify human potential with technology.",
-    discipline: "Innovation"
+    emoji: "🗽",
+    title: "Freedom",
+    japaneseSymbol: "自由",
+    description: "Tools unlocked; gatekeepers forgotten.",
+    discipline: "Wisdom"
   },
   {
     number: "34",
-    emoji: "📦",
-    title: "Completeness",
-    japaneseSymbol: "完全性",
-    description: "Self-contained, ready from day one. Full solutions, not partial answers.",
-    discipline: "Innovation"
+    emoji: "⏳",
+    title: "Longevity",
+    japaneseSymbol: "長寿",
+    description: "Build timelessly; greatness endures beyond lifetimes.",
+    discipline: "Wisdom"
   },
   {
     number: "35",
-    emoji: "🌐",
-    title: "Accessibility",
-    japaneseSymbol: "アクセス性",
-    description: "Open ecosystems drive adoption. Shared knowledge accelerates progress.",
-    discipline: "Innovation"
+    emoji: "🔐",
+    title: "Security",
+    japaneseSymbol: "セキュリティ",
+    description: "Encryption first; privacy non-negotiable.",
+    discipline: "Wisdom"
   },
   {
     number: "36",
-    emoji: "🧠",
-    title: "Cognitive Efficiency",
-    japaneseSymbol: "認知効率",
-    description: "Optimized for human understanding. Interfaces that extend natural thought.",
-    discipline: "Innovation"
+    emoji: "☯️",
+    title: "Zen",
+    japaneseSymbol: "禅",
+    description: "Calm mastery; effortless excellence every moment.",
+    discipline: "Wisdom"
   }
 ];
 
