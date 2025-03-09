@@ -1,33 +1,15 @@
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Terminal, Server, Blocks, Database, Network, Workflow, Bot, Code, Lock, Globe, Cpu, GitBranch } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 import { Button } from "@/components/ui/button";
+import AITunnelAnimation from "@/components/animations/AITunnelAnimation";
 
 const AIPlatformSection = () => {
   const [activeTab, setActiveTab] = useState("platform");
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        });
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  // Cloud Console Mock Component
+  // Cloud Console Mock Component - keeping as a reference but not using it anymore
   const CloudConsoleMock = () => (
     <div className="relative w-full h-64 overflow-hidden rounded-lg border border-gray-800 shadow-xl">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black p-4">
@@ -192,9 +174,6 @@ const AIPlatformSection = () => {
               <ChromeText 
                 as="h2" 
                 className="text-3xl md:text-5xl font-bold mb-4"
-                style={{
-                  backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
-                }}
               >
                 Your AI future belongs to you
               </ChromeText>
@@ -217,7 +196,7 @@ const AIPlatformSection = () => {
           </motion.div>
         </div>
         
-        {/* Cloud Console Mockup */}
+        {/* AI Tunnel Animation (replacing Cloud Console Mockup) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -225,7 +204,11 @@ const AIPlatformSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-16"
         >
-          <CloudConsoleMock />
+          <AITunnelAnimation 
+            title="Accelerating AI Future"
+            subtitle="The platform for modern AI applications"
+            showButtons={false}
+          />
         </motion.div>
         
         {/* Tabs */}
