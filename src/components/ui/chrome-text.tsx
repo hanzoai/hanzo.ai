@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ElementType } from "react";
 import { cn } from "@/lib/utils";
 
 interface ChromeTextProps {
@@ -14,7 +14,8 @@ const ChromeText = ({
   className 
 }: ChromeTextProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const textRef = useRef<HTMLElement>(null);
+  // Use a more generic ref type that works with any HTML element
+  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -34,15 +35,16 @@ const ChromeText = ({
   }, []);
 
   return (
-    <Component
-      ref={textRef}
-      className={cn("chrome-gradient", className)}
-      style={{
-        backgroundPosition: `${(mousePosition.x / (textRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (textRef.current?.offsetHeight || 1)) * 100}%`,
-      }}
-    >
-      {children}
-      <style jsx>{`
+    <div ref={textRef} className="inline-block">
+      <Component
+        className={cn("chrome-gradient", className)}
+        style={{
+          backgroundPosition: `${(mousePosition.x / (textRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (textRef.current?.offsetHeight || 1)) * 100}%`,
+        }}
+      >
+        {children}
+      </Component>
+      <style>{`
         .chrome-gradient {
           background: linear-gradient(
             90deg,
@@ -57,7 +59,7 @@ const ChromeText = ({
           transition: background-position 0.3s ease;
         }
       `}</style>
-    </Component>
+    </div>
   );
 };
 
