@@ -10,7 +10,7 @@ const CloudServices = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
-            Hanzo Cloud
+            AI Cloud
           </ChromeText>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Global, infinitely scalable, sustainable compute infrastructure specifically optimized for AI applications

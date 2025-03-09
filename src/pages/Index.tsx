@@ -16,6 +16,8 @@ import HeroPoem from "@/components/HeroPoem";
 import TeamSlack from "@/components/TeamSlack";
 import LastSupper from "@/components/LastSupper";
 import TrustedBy from "@/components/platform/TrustedBy";
+import CloudServices from "@/components/index3/CloudServices";
+import DXPlatform from "@/components/index3/DXPlatform";
 
 const Index = () => {
   useEffect(() => {
@@ -49,6 +51,8 @@ const Index = () => {
         <Hero />
         <QuickStart />
         <Features />
+        <CloudServices />
+        <DXPlatform />
         <TeamSlack />
         <Analytics />
         <Base />
