@@ -68,7 +68,7 @@ export const ProductsMenu = () => {
       name: "Datastore",
       icon: Database,
       description: "Scalable data storage for AI applications",
-      link: "/cloud#datastore"
+      link: "/datastore"
     },
     {
       name: "Edge",

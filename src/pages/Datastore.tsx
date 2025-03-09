@@ -15,7 +15,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChromeText from "@/components/ui/chrome-text";
 
-const Database = () => {
+const Datastore = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -35,13 +35,13 @@ const Database = () => {
               className="mb-8"
             >
               <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-                Hanzo Database
+                Hanzo Datastore
               </div>
               <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
-                The Fastest Open-Source Planet Scale Database
+                The Fastest Open-Source Planet Scale Datastore
               </ChromeText>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6">
-                Hanzo Database is a column-oriented database that enables its users to generate powerful analytics, 
+                Hanzo Datastore is a column-oriented data store that enables its users to generate powerful analytics, 
                 using SQL queries, in real-time.
               </p>
             </motion.div>
@@ -84,7 +84,7 @@ const Database = () => {
                 Key Features
               </ChromeText>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                A powerful database built for modern analytical applications
+                A powerful datastore built for modern analytical applications
               </p>
             </div>
             
@@ -180,7 +180,7 @@ const Database = () => {
                   Feature-rich
                 </ChromeText>
                 <p className="text-gray-400">
-                  The most complete analytical database with support for joins, federated queries, and more.
+                  The most complete analytical datastore with support for joins, federated queries, and more.
                 </p>
               </motion.div>
               
@@ -206,12 +206,12 @@ const Database = () => {
           </div>
         </section>
         
-        {/* Database Efficiency */}
+        {/* Datastore Efficiency */}
         <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
-                Database Efficiency
+                Datastore Efficiency
               </ChromeText>
             </div>
             
@@ -228,7 +228,7 @@ const Database = () => {
                   Hardware Efficient
                 </ChromeText>
                 <p className="text-gray-300 mb-4">
-                  Database processes analytical queries 100-1000x faster than traditional row-oriented systems with the same available I/O throughput and CPU capacity.
+                  Datastore processes analytical queries 100-1000x faster than traditional row-oriented systems with the same available I/O throughput and CPU capacity.
                 </p>
                 <p className="text-gray-400">
                   Columnar storage format allows fitting more hot data in RAM, which leads to shorter response times.
@@ -266,7 +266,7 @@ const Database = () => {
                   Optimizes Disk Access
                 </ChromeText>
                 <p className="text-gray-300 mb-4">
-                  Database minimizes the number of seeks for range queries to increase efficiency of using disk drives.
+                  Datastore minimizes the number of seeks for range queries to increase efficiency of using disk drives.
                 </p>
                 <p className="text-gray-400">
                   Maintains locality of reference for continually stored data.
@@ -285,7 +285,7 @@ const Database = () => {
                   Minimizes Data Transfers
                 </ChromeText>
                 <p className="text-gray-300 mb-4">
-                  Database enables companies to manage their data and create reports without using specialized networks.
+                  Datastore enables companies to manage their data and create reports without using specialized networks.
                 </p>
                 <p className="text-gray-400">
                   Perfect for high-performance computing at any scale.
@@ -302,10 +302,10 @@ const Database = () => {
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-16">
               <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
-                Database at Scale
+                Datastore at Scale
               </ChromeText>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Database is used in a variety of industries for a broad set of use cases on top of both customer-facing and internally-facing workloads.
+                Datastore is used in a variety of industries for a broad set of use cases on top of both customer-facing and internally-facing workloads.
               </p>
             </div>
             
@@ -349,14 +349,14 @@ const Database = () => {
               transition={{ duration: 0.6 }}
             >
               <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
-                Start Using Database in Minutes
+                Start Using Datastore in Minutes
               </ChromeText>
               <p className="text-lg text-gray-300 mb-10">
-                Install Database for MacOS, Linux, and FreeBSD.
+                Install Datastore for MacOS, Linux, and FreeBSD.
               </p>
               
               <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800 mb-8 inline-block text-left">
-                <code className="text-gray-300 font-mono">curl https://clickhouse.com/ | sh</code>
+                <code className="text-gray-300 font-mono">curl https://datastore.hanzo.ai/ | sh</code>
               </div>
               
               <p className="text-gray-400 mb-10">
@@ -379,4 +379,4 @@ const Database = () => {
   );
 };
 
-export default Database;
+export default Datastore;

@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import Cloud from "./pages/Cloud";
 import Pricing from "./pages/Pricing";
 import Platform from "./pages/Platform";
-import Database from "./pages/Database";
+import Datastore from "./pages/Datastore";
 import Commerce from "./pages/Commerce";
 import Solutions from "./pages/Solutions";
 import Analytics from "./pages/Analytics";
@@ -67,7 +67,7 @@ function App() {
         <Route path="/cloud" element={<Cloud />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/platform" element={<Platform />} />
-        <Route path="/database" element={<Database />} />
+        <Route path="/datastore" element={<Datastore />} />
         <Route path="/commerce" element={<Commerce />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/analytics" element={<Analytics />} />
