@@ -55,10 +55,16 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
               Pricing
             </a>
             <a
-              href="/team"
+              href="/operator"
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
             >
-              Team
+              Operator
+            </a>
+            <a
+              href="/balancer"
+              className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
+            >
+              Balancer
             </a>
             <div className="px-3 py-2 space-y-2">
               <Button variant="ghost" className="w-full text-white hover:bg-white/10">
