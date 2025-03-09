@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Cloud, Database, BarChart, Server, Box, Users, CreditCard, Cpu, Shield, Globe, Network, Lock } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 import { Button } from "@/components/ui/button";
+import CloudDeploymentAnimation from "@/components/animations/CloudDeploymentAnimation";
 
 const CloudServices = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -26,115 +27,14 @@ const CloudServices = () => {
     };
   }, []);
 
-  const CloudNetworkGraphic = () => {
-    return (
-      <div className="relative h-48 w-full overflow-hidden rounded-xl bg-black/40 mb-8">
-        <motion.div 
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div 
-              className="h-16 w-16 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center z-10"
-              animate={{ 
-                boxShadow: ["0 0 0 0px rgba(168, 85, 247, 0.1)", "0 0 0 15px rgba(168, 85, 247, 0)"],
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity,
-                repeatType: "loop"
-              }}
-            >
-              <Cloud className="h-8 w-8 text-purple-400" />
-            </motion.div>
-            
-            {[...Array(8)].map((_, i) => {
-              const angle = (i * Math.PI * 2) / 8;
-              const x = Math.cos(angle) * 100;
-              const y = Math.sin(angle) * 60;
-              
-              return (
-                <motion.div key={i} className="absolute" style={{ left: '50%', top: '50%' }}>
-                  <motion.div 
-                    className="absolute h-0.5 bg-gradient-to-r from-purple-500/60 to-purple-500/0 origin-left"
-                    style={{ 
-                      width: 100, 
-                      transform: `translate(0, -50%) rotate(${angle}rad)`,
-                    }}
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: i * 0.1,
-                    }}
-                  />
-                  
-                  <motion.div 
-                    className="absolute h-8 w-8 rounded-full bg-gray-800/80 flex items-center justify-center border border-purple-500/30"
-                    style={{ transform: `translate(${x}px, ${y}px) translate(-50%, -50%)` }}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: [0, 1.2, 1] }}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: 0.8 + i * 0.1,
-                    }}
-                  >
-                    {i === 0 && <Database className="h-4 w-4 text-purple-400" />}
-                    {i === 1 && <BarChart className="h-4 w-4 text-purple-400" />}
-                    {i === 2 && <Server className="h-4 w-4 text-purple-400" />}
-                    {i === 3 && <Box className="h-4 w-4 text-purple-400" />}
-                    {i === 4 && <Cpu className="h-4 w-4 text-purple-400" />}
-                    {i === 5 && <Globe className="h-4 w-4 text-purple-400" />}
-                    {i === 6 && <Network className="h-4 w-4 text-purple-400" />}
-                    {i === 7 && <Lock className="h-4 w-4 text-purple-400" />}
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-            
-            {[...Array(5)].map((_, i) => {
-              const angle = ((i * Math.PI * 2) / 5) + (Math.PI / 6);
-              const pathLength = 100;
-              
-              return (
-                <motion.div 
-                  key={`particle-${i}`}
-                  className="absolute h-1.5 w-1.5 rounded-full bg-white"
-                  style={{ 
-                    left: '50%', 
-                    top: '50%', 
-                  }}
-                  animate={{
-                    x: [0, Math.cos(angle) * pathLength],
-                    y: [0, Math.sin(angle) * pathLength],
-                    opacity: [0, 1, 0]
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    delay: i * 0.5,
-                    repeatType: "loop",
-                    times: [0, 0.5, 1]
-                  }}
-                />
-              );
-            })}
-          </div>
-        </motion.div>
-      </div>
-    );
-  };
-
   return (
     <section ref={containerRef} className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/50 relative overflow-hidden">
       <div className="absolute top-40 right-20 w-64 h-64 bg-purple-900/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
-          <div>
+        <div className="flex flex-col md:flex-row justify-between items-start mb-16">
+          <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +61,7 @@ const CloudServices = () => {
               >
                 AI Cloud
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-2xl">
+              <p className="text-xl text-gray-300 mt-4">
                 Global, infinitely scalable, sustainable compute infrastructure specifically optimized for AI applications
               </p>
             </motion.div>
@@ -174,7 +74,7 @@ const CloudServices = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-8 md:mt-0"
           >
-            <Button size="lg" variant="outline" className="text-white">
+            <Button size="lg" variant="outline" className="text-white whitespace-nowrap">
               <a href="/cloud">Explore Cloud</a>
             </Button>
           </motion.div>
@@ -216,7 +116,7 @@ const CloudServices = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <CloudNetworkGraphic />
+              <CloudDeploymentAnimation />
             </motion.div>
           </div>
         </div>
