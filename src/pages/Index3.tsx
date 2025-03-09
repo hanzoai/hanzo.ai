@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import ChromeText from "@/components/ui/chrome-text";
 import HeroBanner from "@/components/index3/HeroBanner";
 import DXPlatform from "@/components/index3/DXPlatform";
-import CloudServices from "@/components/index3/CloudServices";
+import CloudServices from "@/components/index3/cloud-services"; // Updated import path
 import TrustedBy from "@/components/platform/TrustedBy";
 import WhyHanzo from "@/components/index3/WhyHanzo";
 import CallToAction from "@/components/index3/CallToAction";
