@@ -5,6 +5,7 @@ import { Terminal, ClipboardCopy, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useState, useEffect, useRef } from "react";
+import ChromeText from "@/components/ui/chrome-text";
 
 const Hero = () => {
   const { toast } = useToast();
@@ -68,14 +69,15 @@ const Hero = () => {
       }
     }
   };
-
-  const titleText1 = "Build as fast";
-  const titleText2 = "as you Dream";
-  const titleLetters1 = titleText1.split("");
-  const titleLetters2 = titleText2.split("");
   
   return <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
+
+      {/* Decorative light beams */}
+      <div className="absolute top-0 left-1/4 w-px h-1/3 bg-gradient-to-b from-purple-500/10 to-transparent"></div>
+      <div className="absolute top-0 right-1/4 w-px h-1/3 bg-gradient-to-b from-blue-500/10 to-transparent"></div>
+      <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent to-purple-500/10"></div>
+      <div className="absolute bottom-1/4 right-0 w-1/3 h-px bg-gradient-to-l from-transparent to-blue-500/10"></div>
 
       <style dangerouslySetInnerHTML={{ __html: `
         .vercel-button {
@@ -240,9 +242,7 @@ const Hero = () => {
             }}
           >
             <motion.span className="inline-flex items-center chrome-text">
-              {titleLetters1.map((letter, index) => <motion.span key={index} variants={letterVariants} className="inline-block">
-                  {letter === " " ? "\u00A0" : letter}
-                </motion.span>)}
+              Accelerating AI
             </motion.span>
             
             <motion.span 
@@ -252,27 +252,7 @@ const Hero = () => {
               variants={titleVariants} 
               onAnimationComplete={() => setTitleAnimationComplete(true)}
             >
-              {titleLetters2.map((letter, index) => {
-                if (letter === "y" && titleLetters2[index+1] === "o" && titleLetters2[index+2] === "u") {
-                  return (
-                    <motion.span 
-                      key={index} 
-                      variants={letterVariants} 
-                      className={`inline-block underline-you ${titleAnimationComplete ? 'active' : ''}`}
-                    >
-                      you
-                    </motion.span>
-                  );
-                } else if ((letter === "o" || letter === "u") && titleLetters2[index-1] === "y" && titleLetters2[index-2] !== " ") {
-                  return null;
-                } else {
-                  return (
-                    <motion.span key={index} variants={letterVariants} className="inline-block">
-                      {letter === " " ? "\u00A0" : letter}
-                    </motion.span>
-                  );
-                }
-              })}
+              For a Better Future
             </motion.span>
           </motion.h1>
 
@@ -293,7 +273,8 @@ const Hero = () => {
             }} 
             className="mt-6 text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Build as fast as you think. Design, Engineer, and Market AI-powered applications with our unified platform.
+            Your AI future belongs in your hands. With Hanzo, pioneer a new era of intelligence with customizable, 
+            private, transparent, and trusted AI solutions that empower all humans to build what was once impossible.
           </motion.p>
 
           <motion.div 
@@ -324,6 +305,41 @@ const Hero = () => {
             <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10 docs-button">
               <a href="https://docs.hanzo.sh" className="gradient-text">Read Docs →</a>
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: titleAnimationComplete ? 1 : 0,
+              y: titleAnimationComplete ? 0 : 20 
+            }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto"
+          >
+            <div className="text-center">
+              <p className="text-sm font-medium text-purple-400">Customizable</p>
+              <p className="text-xs text-gray-500">Pre-training to reality</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium text-blue-400">Private</p>
+              <p className="text-xs text-gray-500">Deploy anywhere</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium text-emerald-400">Transparent</p>
+              <p className="text-xs text-gray-500">Open-source focused</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium text-amber-400">Trustworthy</p>
+              <p className="text-xs text-gray-500">Human-centered AI</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium text-rose-400">Engaging</p>
+              <p className="text-xs text-gray-500">Hands-on solutions</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium text-indigo-400">Delightful</p>
+              <p className="text-xs text-gray-500">Beautiful interfaces</p>
+            </div>
           </motion.div>
         </div>
       </div>

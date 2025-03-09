@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -12,30 +11,30 @@ const testimonials = [
   },
   {
     company: "SKULLY",
-    quote: "Working with Hanzo has transformed our ability to integrate AR technology into our helmets. Their DX platform streamlines our development processes while maintaining the highest standards of quality and safety.",
-    author: "Ivan Contreras",
+    quote: "Working with Hanzo has transformed our ability to create the highest successfully funded Indiegogo project in history. Their DX platform streamlines our development processes while maintaining the highest standards of quality and safety.",
+    author: "Marcus Weller",
     role: "CEO at SKULLY",
     avatar: "/placeholder.svg"
   },
   {
     company: "Bellabeat",
     quote: "As a company focused on women's health technology, we need partners who understand both tech and human needs. Hanzo has been instrumental in helping us scale our infrastructure while maintaining the personal touch our customers expect.",
-    author: "Urška Sršen",
+    author: "Sandro Mur",
     role: "Co-founder & CEO at Bellabeat",
     avatar: "/placeholder.svg"
   },
   {
     company: "Triller",
-    quote: "In the fast-moving world of social media and entertainment, Hanzo gives us the agility we need. Their platform has been key to our ability to scale rapidly while delivering exceptional user experiences.",
-    author: "Mahi de Silva",
-    role: "CEO at Triller",
+    quote: "With Trillerfest reaching over 169M people, Hanzo's platform has been essential to our success. Their scalable solutions have allowed us to deliver exceptional user experiences at a global scale.",
+    author: "Vincent Butta",
+    role: "Board Member at Triller",
     avatar: "/placeholder.svg"
   },
   {
-    company: "ZOO",
-    quote: "Hanzo's platform has been a game-changer for us at ZOO. The combination of power and flexibility they provide has allowed us to focus on innovation rather than infrastructure concerns.",
-    author: "Logan Paul",
-    role: "Founder at ZOO",
+    company: "Lifemed AI",
+    quote: "Hanzo's AI Cloud and DX Platform have been transformative for our healthcare AI initiatives. Their solution enables us to deploy sophisticated ML models with confidence while meeting strict compliance requirements.",
+    author: "Matthew Joynes",
+    role: "Co-founder at Lifemed AI",
     avatar: "/placeholder.svg"
   }
 ];

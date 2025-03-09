@@ -1,33 +1,248 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Cloud, Database, BarChart, Server, Box, Users, CreditCard, Cpu } from "lucide-react";
+import { Cloud, Database, BarChart, Server, Box, Users, CreditCard, Cpu, Shield, Globe, Network, Lock } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
+import { Button } from "@/components/ui/button";
 
 const CloudServices = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLElement>(null);
+  const [isHovered, setIsHovered] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  // Cloud network visualization
+  const CloudNetworkGraphic = () => {
+    return (
+      <div className="relative h-48 w-full overflow-hidden rounded-xl bg-black/40 mb-8">
+        <motion.div 
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {/* Cloud network visualization */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Central cloud node */}
+            <motion.div 
+              className="h-16 w-16 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center z-10"
+              animate={{ 
+                boxShadow: ["0 0 0 0px rgba(168, 85, 247, 0.1)", "0 0 0 15px rgba(168, 85, 247, 0)"],
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                repeatType: "loop"
+              }}
+            >
+              <Cloud className="h-8 w-8 text-purple-400" />
+            </motion.div>
+            
+            {/* Connection lines and nodes */}
+            {[...Array(8)].map((_, i) => {
+              const angle = (i * Math.PI * 2) / 8;
+              const x = Math.cos(angle) * 100;
+              const y = Math.sin(angle) * 60;
+              
+              return (
+                <motion.div key={i} className="absolute" style={{ left: '50%', top: '50%' }}>
+                  {/* Connection line */}
+                  <motion.div 
+                    className="absolute h-0.5 bg-gradient-to-r from-purple-500/60 to-purple-500/0 origin-left"
+                    style={{ 
+                      width: 100, 
+                      transform: `translate(0, -50%) rotate(${angle}rad)`,
+                    }}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: i * 0.1,
+                    }}
+                  />
+                  
+                  {/* Node */}
+                  <motion.div 
+                    className="absolute h-8 w-8 rounded-full bg-gray-800/80 flex items-center justify-center border border-purple-500/30"
+                    style={{ transform: `translate(${x}px, ${y}px) translate(-50%, -50%)` }}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: [0, 1.2, 1] }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: 0.8 + i * 0.1,
+                    }}
+                  >
+                    {i === 0 && <Database className="h-4 w-4 text-purple-400" />}
+                    {i === 1 && <BarChart className="h-4 w-4 text-purple-400" />}
+                    {i === 2 && <Server className="h-4 w-4 text-purple-400" />}
+                    {i === 3 && <Box className="h-4 w-4 text-purple-400" />}
+                    {i === 4 && <Cpu className="h-4 w-4 text-purple-400" />}
+                    {i === 5 && <Globe className="h-4 w-4 text-purple-400" />}
+                    {i === 6 && <Network className="h-4 w-4 text-purple-400" />}
+                    {i === 7 && <Lock className="h-4 w-4 text-purple-400" />}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+            
+            {/* Data particles flowing through connections */}
+            {[...Array(5)].map((_, i) => {
+              const angle = ((i * Math.PI * 2) / 5) + (Math.PI / 6);
+              const pathLength = 100;
+              
+              return (
+                <motion.div 
+                  key={`particle-${i}`}
+                  className="absolute h-1.5 w-1.5 rounded-full bg-white"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                  }}
+                  animate={{
+                    x: [0, Math.cos(angle) * pathLength],
+                    y: [0, Math.sin(angle) * pathLength],
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                    repeatType: "loop",
+                    times: [0, 0.5, 1]
+                  }}
+                />
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
+    );
+  };
+
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
-            AI Cloud
-          </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Global, infinitely scalable, sustainable compute infrastructure specifically optimized for AI applications
-          </p>
+    <section ref={containerRef} className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-40 right-20 w-64 h-64 bg-purple-900/5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-4"
+            >
+              <span className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium">
+                Infinitely Scalable, Globally Distributed
+              </span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <ChromeText 
+                as="h2" 
+                className="text-3xl md:text-5xl font-bold mb-4"
+                style={{
+                  backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
+                }}
+              >
+                AI Cloud
+              </ChromeText>
+              <p className="text-xl text-gray-300 max-w-2xl">
+                Global, infinitely scalable, sustainable compute infrastructure specifically optimized for AI applications
+              </p>
+            </motion.div>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8 md:mt-0"
+          >
+            <Button size="lg" variant="outline" className="text-white">
+              <a href="/cloud">Explore Cloud</a>
+            </Button>
+          </motion.div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+          <div className="lg:col-span-1 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-2xl font-bold mb-4 text-white">Global Network</h3>
+              <p className="text-gray-300 mb-6">
+                Deploy AI workloads across our planetary-scale infrastructure with over 200 global locations, ensuring low-latency access and regional data compliance.
+              </p>
+              <ul className="space-y-3 text-gray-400">
+                <li className="flex items-start">
+                  <div className="mr-2 mt-1">•</div>
+                  <span>Instant global scaling with edge-optimized routing</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-2 mt-1">•</div>
+                  <span>Automatic load-balancing and failover protection</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-2 mt-1">•</div>
+                  <span>Zero-config private networking between regions</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+          
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <CloudNetworkGraphic />
+            </motion.div>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* AI Compute */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8"
+            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
+            onMouseEnter={() => setIsHovered("ai-compute")}
+            onMouseLeave={() => setIsHovered(null)}
           >
-            <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
-              <Cpu className="h-6 w-6 text-purple-400" />
+            <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "ai-compute" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Cpu className={`h-6 w-6 transition-colors duration-300 ${isHovered === "ai-compute" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             <ChromeText as="h3" className="text-2xl font-bold mb-4">
               AI Compute
@@ -48,6 +263,10 @@ const CloudServices = () => {
                 <span className="mr-2">•</span>
                 <span>Low-latency deployments across global data centers</span>
               </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Optimized containers for popular ML frameworks</span>
+              </li>
             </ul>
           </motion.div>
           
@@ -57,10 +276,12 @@ const CloudServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8"
+            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
+            onMouseEnter={() => setIsHovered("analytics")}
+            onMouseLeave={() => setIsHovered(null)}
           >
-            <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
-              <BarChart className="h-6 w-6 text-purple-400" />
+            <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "analytics" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <BarChart className={`h-6 w-6 transition-colors duration-300 ${isHovered === "analytics" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             <ChromeText as="h3" className="text-2xl font-bold mb-4">
               Analytics
@@ -81,6 +302,49 @@ const CloudServices = () => {
                 <span className="mr-2">•</span>
                 <span>Planetary-scale infrastructure (200+ global locations)</span>
               </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Interactive dashboards with no-code visualization tools</span>
+              </li>
+            </ul>
+          </motion.div>
+          
+          {/* Security */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
+            onMouseEnter={() => setIsHovered("security")}
+            onMouseLeave={() => setIsHovered(null)}
+          >
+            <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "security" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Shield className={`h-6 w-6 transition-colors duration-300 ${isHovered === "security" ? "text-purple-300" : "text-purple-400"}`} />
+            </div>
+            <ChromeText as="h3" className="text-2xl font-bold mb-4">
+              Security
+            </ChromeText>
+            <p className="text-gray-300 mb-4">
+              Enterprise-grade protection for AI workloads and data.
+            </p>
+            <ul className="text-gray-400 space-y-2">
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>End-to-end encryption for data in transit and at rest</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Advanced DDoS protection and intrusion detection</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>SOC 2, HIPAA, GDPR, and ISO 27001 compliance</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Hardware-level isolation for sensitive workloads</span>
+              </li>
             </ul>
           </motion.div>
           
@@ -90,10 +354,12 @@ const CloudServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8"
+            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
+            onMouseEnter={() => setIsHovered("base")}
+            onMouseLeave={() => setIsHovered(null)}
           >
-            <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
-              <Server className="h-6 w-6 text-purple-400" />
+            <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "base" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Server className={`h-6 w-6 transition-colors duration-300 ${isHovered === "base" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             <ChromeText as="h3" className="text-2xl font-bold mb-4">
               Base
@@ -114,6 +380,10 @@ const CloudServices = () => {
                 <span className="mr-2">•</span>
                 <span>Fully open-source, easy self-hosting and no vendor lock-in</span>
               </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Automatic schema validation and type generation</span>
+              </li>
             </ul>
           </motion.div>
           
@@ -123,10 +393,12 @@ const CloudServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.4 }}
-            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8"
+            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
+            onMouseEnter={() => setIsHovered("commerce")}
+            onMouseLeave={() => setIsHovered(null)}
           >
-            <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
-              <Box className="h-6 w-6 text-purple-400" />
+            <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "commerce" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Box className={`h-6 w-6 transition-colors duration-300 ${isHovered === "commerce" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             <ChromeText as="h3" className="text-2xl font-bold mb-4">
               Commerce
@@ -147,6 +419,10 @@ const CloudServices = () => {
                 <span className="mr-2">•</span>
                 <span>Seamless Web2 and Web3 payment integrations</span>
               </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>AI-powered recommendation engines and inventory forecasting</span>
+              </li>
             </ul>
           </motion.div>
           
@@ -156,10 +432,12 @@ const CloudServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8"
+            className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 group hover:bg-gray-900/30 transition-colors"
+            onMouseEnter={() => setIsHovered("database")}
+            onMouseLeave={() => setIsHovered(null)}
           >
-            <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
-              <Database className="h-6 w-6 text-purple-400" />
+            <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered === "database" ? "bg-purple-600/30" : "bg-purple-900/30"}`}>
+              <Database className={`h-6 w-6 transition-colors duration-300 ${isHovered === "database" ? "text-purple-300" : "text-purple-400"}`} />
             </div>
             <ChromeText as="h3" className="text-2xl font-bold mb-4">
               Database
@@ -179,6 +457,10 @@ const CloudServices = () => {
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <span>In-memory caching included, seamlessly integrated with Base</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">•</span>
+                <span>Automatic sharding and partitioning for massive datasets</span>
               </li>
             </ul>
           </motion.div>
