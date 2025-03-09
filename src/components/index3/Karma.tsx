@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Leaf, Recycle, ThermometerSun } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
+import { Button } from "@/components/ui/button";
 
 const Karma = () => {
   return (
@@ -89,6 +90,27 @@ const Karma = () => {
                 <p className="text-gray-400 text-sm">100% renewable data centers</p>
               </motion.div>
             </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-row gap-4"
+            >
+              <Button 
+                variant="outline" 
+                className="text-white border-white/20 bg-white/5 hover:bg-white/10"
+              >
+                <a href="/leadership">Our Leadership</a>
+              </Button>
+              <Button 
+                variant="outline" 
+                className="text-white border-white/20 bg-white/5 hover:bg-white/10"
+              >
+                <a href="/careers">Join Our Team</a>
+              </Button>
+            </motion.div>
           </div>
           
           <motion.div 
@@ -101,7 +123,7 @@ const Karma = () => {
             <div className="flex items-start mb-6">
               <div className="w-16 h-16 rounded-full bg-gray-800 mr-4"></div>
               <div>
-                <h3 className="text-xl font-bold mb-1">Antje Worring</h3>
+                <h3 className="text-xl font-bold mb-1">Michael Kelling</h3>
                 <p className="text-gray-400">CEO, Hanzo AI</p>
               </div>
             </div>

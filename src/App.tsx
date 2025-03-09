@@ -1,4 +1,3 @@
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/radix-tooltip";
@@ -14,6 +13,8 @@ import Cloud from "./pages/Cloud";
 import Platform from "./pages/Platform";
 import Download from "./pages/Download";
 import Database from "./pages/Database";
+import Leadership from "./pages/Leadership";
+import Careers from "./pages/Careers";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,8 @@ const App = () => {
             <Route path="/platform" element={<Platform />} />
             <Route path="/download" element={<Download />} />
             <Route path="/database" element={<Database />} />
+            <Route path="/leadership" element={<Leadership />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
