@@ -35,27 +35,32 @@ const HanzoAppWebinars = () => {
     {
       title: "How to Build No-Code SQL Chatbots using Hanzo AI",
       partner: "SingleStore",
-      logos: ["SingleStore"]
+      logos: ["SingleStore"],
+      image: "/webinar-placeholder-1.jpg" // Added image property
     },
     {
       title: "LlamaIndex Webinar: Build No-Code RAG with Hanzo AI",
       partner: "Milvus",
-      logos: ["Milvus"]
+      logos: ["Milvus"],
+      image: "/webinar-placeholder-2.jpg" // Added image property
     },
     {
       title: "How to Build a NoCode AWS Bedrock LLM App on Hanzo AI",
       partner: "AWS",
-      logos: ["SingleStore", "AWS"]
+      logos: ["SingleStore", "AWS"],
+      image: "/webinar-placeholder-3.jpg" // Added image property
     },
     {
       title: "Drag and Drop LLMs: Simplifying RAG with Hanzo AI and Milvus",
       partner: "Milvus",
-      logos: ["Milvus"]
+      logos: ["Milvus"],
+      image: "/webinar-placeholder-4.jpg" // Added image property
     },
     {
       title: "LangChain Weekly Webinar - Low-Code/No-Code LLM",
       partner: "Langchain",
-      logos: ["Langchain"]
+      logos: ["Langchain"],
+      image: "/webinar-placeholder-5.jpg" // Added image property
     }
   ];
 
@@ -82,6 +87,7 @@ const HanzoAppWebinars = () => {
               title={webinar.title}
               partner={webinar.partner}
               logos={webinar.logos}
+              image={webinar.image}
             />
           ))}
         </div>
