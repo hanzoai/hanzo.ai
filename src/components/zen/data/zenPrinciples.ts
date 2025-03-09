@@ -33,7 +33,7 @@ export const principles: ZenPrinciple[] = [
     emoji: "🧘",
     title: "Humility",
     japaneseSymbol: "謙虚",
-    description: "Speak softly; let results roar.",
+    description: "Quiet confidence; greatness emerges naturally.",
     discipline: "Empathy"
   },
   {
@@ -49,7 +49,7 @@ export const principles: ZenPrinciple[] = [
     emoji: "🤝",
     title: "Selflessness",
     japaneseSymbol: "無私",
-    description: "Lift others; personal success follows.",
+    description: "Elevate others; personal success follows.",
     discipline: "Empathy"
   },
   
@@ -67,7 +67,7 @@ export const principles: ZenPrinciple[] = [
     emoji: "🔬",
     title: "Empiricism",
     japaneseSymbol: "経験主義",
-    description: "Hypothesize, test; data settles debates.",
+    description: "Hypothesize, measure; reality defines truth.",
     discipline: "Science"
   },
   {
@@ -75,7 +75,7 @@ export const principles: ZenPrinciple[] = [
     emoji: "🎯",
     title: "Precision",
     japaneseSymbol: "精度",
-    description: "Measure twice; guess never.",
+    description: "Discipline in data; eliminate guesswork completely.",
     discipline: "Science"
   },
   {
@@ -207,15 +207,15 @@ export const principles: ZenPrinciple[] = [
   {
     number: "25",
     emoji: "💥",
-    title: "Disrupt",
+    title: "Disruption",
     japaneseSymbol: "破壊的革新",
-    description: "Invent boldly; competition irrelevant.",
+    description: "Reinvent boldly; transcend competition entirely.",
     discipline: "Scale"
   },
   {
     number: "26",
     emoji: "🧪",
-    title: "Experiment",
+    title: "Experimentation",
     japaneseSymbol: "実験",
     description: "Test quickly; iterate endlessly.",
     discipline: "Scale"
@@ -223,17 +223,17 @@ export const principles: ZenPrinciple[] = [
   {
     number: "27",
     emoji: "📈",
-    title: "Exponential",
+    title: "Exponentiality",
     japaneseSymbol: "指数的成長",
     description: "Compound constantly; incremental fades.",
     discipline: "Scale"
   },
   {
     number: "28",
-    emoji: "🌐",
-    title: "Network Effects",
-    japaneseSymbol: "ネットワーク効果",
-    description: "Build ecosystems; influence spreads exponentially.",
+    emoji: "🚀",
+    title: "Velocity",
+    japaneseSymbol: "速度",
+    description: "Ship fast; refine faster.",
     discipline: "Scale"
   },
   {
@@ -246,10 +246,10 @@ export const principles: ZenPrinciple[] = [
   },
   {
     number: "30",
-    emoji: "🚀",
-    title: "Velocity",
-    japaneseSymbol: "速度",
-    description: "Ship fast; refine faster.",
+    emoji: "🌐",
+    title: "Network Effects",
+    japaneseSymbol: "ネットワーク効果",
+    description: "Ecosystems built intentionally; influence multiplies exponentially.",
     discipline: "Scale"
   },
   
@@ -259,7 +259,7 @@ export const principles: ZenPrinciple[] = [
     emoji: "🌊",
     title: "Adaptability",
     japaneseSymbol: "適応性",
-    description: "Pivot sharply; failure fuels growth.",
+    description: "Pivot sharply; fluid response accelerates evolution.",
     discipline: "Wisdom"
   },
   {
@@ -275,7 +275,7 @@ export const principles: ZenPrinciple[] = [
     emoji: "🗽",
     title: "Freedom",
     japaneseSymbol: "自由",
-    description: "Tools unlocked; gatekeepers forgotten.",
+    description: "Democratize creativity; tools liberated, gatekeepers removed.",
     discipline: "Wisdom"
   },
   {
