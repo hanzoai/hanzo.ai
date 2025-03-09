@@ -92,19 +92,19 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
             </p>
             <ul className="space-y-4 text-gray-400">
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-purple-400">•</div>
+                <div className="mr-2 mt-1 text-blue-400">•</div>
                 <span>Automatic resource provisioning and configuration</span>
               </li>
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-purple-400">•</div>
+                <div className="mr-2 mt-1 text-blue-400">•</div>
                 <span>Real-time deployment status and monitoring</span>
               </li>
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-purple-400">•</div>
+                <div className="mr-2 mt-1 text-blue-400">•</div>
                 <span>AI-powered recommendations for optimizing your architecture</span>
               </li>
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-purple-400">•</div>
+                <div className="mr-2 mt-1 text-blue-400">•</div>
                 <span>Version control and rollback capabilities</span>
               </li>
             </ul>
@@ -115,8 +115,11 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center justify-center"
           >
-            <CloudDeploymentAnimation />
+            <div className="w-full max-w-lg mx-auto">
+              <CloudDeploymentAnimation />
+            </div>
           </motion.div>
         </div>
         

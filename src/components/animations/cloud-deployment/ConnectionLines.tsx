@@ -36,9 +36,14 @@ const ConnectionLines: React.FC<ConnectionLinesProps> = ({ connections, nodes })
           const sourceType = sourceNode.type;
           const targetType = targetNode.type;
           
-          // Use neutral, non-purple colors based on node types
+          // Use yellow for network connections
           if (sourceType === 'network' || targetType === 'network') {
-            strokeColor = "rgba(100, 170, 230, 0.4)"; // Soft blue for network connections
+            // Use brighter yellow for public network, softer yellow for private
+            if (sourceNode.id === 'network-public' || targetNode.id === 'network-public') {
+              strokeColor = "rgba(250, 204, 21, 0.5)"; // Bright yellow for public network
+            } else {
+              strokeColor = "rgba(234, 179, 8, 0.4)"; // Softer yellow for private network
+            }
           } else if (sourceType === 'database' || targetType === 'database') {
             strokeColor = "rgba(100, 180, 160, 0.4)"; // Teal for database connections
           } else if (sourceType === 'github') {

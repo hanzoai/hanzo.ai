@@ -115,14 +115,17 @@ const ConnectionAnimation = () => {
           const source = activePoints[sourceIndex];
           const target = activePoints[targetIndex];
           
-          // Create a new traffic particle
+          // Create a new traffic particle with blue colors
           const newTraffic = {
             id: `traffic-${Date.now()}-${Math.random()}`,
             sourceId: source.id,
             targetId: target.id,
             progress: 0,
             speed: Math.random() * 0.01 + 0.005, // Random speed
-            color: Math.random() > 0.5 ? 'rgba(120, 180, 230, 0.7)' : 'rgba(140, 200, 230, 0.7)',
+            // Using blue colors instead of purple
+            color: Math.random() > 0.5 
+              ? 'rgba(120, 180, 230, 0.7)' // Light blue
+              : 'rgba(100, 170, 255, 0.7)',  // Bright blue
             size: Math.random() * 1.2 + 0.8
           };
           

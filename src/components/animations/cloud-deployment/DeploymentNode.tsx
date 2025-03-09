@@ -21,8 +21,8 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
       case 'volume': return 'bg-green-500/20 border border-green-500/30';
       case 'network': 
         return node.id === 'network-public' 
-          ? 'bg-yellow-500/20 border border-yellow-500/30'
-          : 'bg-blue-500/20 border border-blue-500/30';
+          ? 'bg-yellow-500/20 border-2 border-yellow-500/50' // Highlighted yellow for public network
+          : 'bg-blue-500/20 border-2 border-yellow-400/40'; // Yellow outline for private network
       default: return 'bg-purple-500/20 border border-purple-500/30';
     }
   };

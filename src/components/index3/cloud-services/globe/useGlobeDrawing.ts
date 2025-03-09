@@ -18,7 +18,7 @@ export function useGlobeDrawing() {
     
     ctx.clearRect(0, 0, dimensions.width, dimensions.height);
     
-    // Draw main globe circle - using soft blue instead of purple
+    // Draw main globe circle - using soft blue
     ctx.beginPath();
     ctx.strokeStyle = 'rgba(100, 150, 200, 0.4)';
     ctx.lineWidth = 1;
@@ -58,7 +58,7 @@ export function useGlobeDrawing() {
         
         ctx.stroke();
         
-        // Fill with very subtle blue-gray color instead of purple
+        // Fill with very subtle blue-gray color
         ctx.fillStyle = 'rgba(120, 140, 180, 0.05)';
         ctx.fill();
       }
@@ -87,13 +87,13 @@ export function useGlobeDrawing() {
       ctx.stroke();
     }
     
-    // Draw city lights with pulsing effect - using cyan-blue instead of purple
+    // Draw city lights with pulsing effect - using cyan-blue
     connectionPoints.forEach(point => {
       if (point.active) {
         const size = point.size || 2;
         const intensity = point.intensity || 1;
         
-        // Outer glow - blue instead of purple
+        // Outer glow - blue
         const gradient = ctx.createRadialGradient(
           point.x, point.y, 0,
           point.x, point.y, size * 3
@@ -137,18 +137,18 @@ export function useGlobeDrawing() {
           // Create gradient for trail
           const gradient = ctx.createLinearGradient(trailStartX, trailStartY, currentX, currentY);
           gradient.addColorStop(0, 'rgba(100, 150, 200, 0)');
-          gradient.addColorStop(1, conn.color);
+          gradient.addColorStop(1, conn.color || 'rgba(140, 200, 230, 0.7)');
           
           ctx.strokeStyle = gradient;
-          ctx.lineWidth = conn.size;
+          ctx.lineWidth = conn.size || 1;
           ctx.moveTo(trailStartX, trailStartY);
           ctx.lineTo(currentX, currentY);
           ctx.stroke();
           
           // Draw leading dot
           ctx.beginPath();
-          ctx.fillStyle = conn.color;
-          ctx.arc(currentX, currentY, conn.size * 1.5, 0, 2 * Math.PI);
+          ctx.fillStyle = conn.color || 'rgba(140, 200, 230, 0.7)';
+          ctx.arc(currentX, currentY, (conn.size || 1) * 1.5, 0, 2 * Math.PI);
           ctx.fill();
           
           // Draw faint line for the full path

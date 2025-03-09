@@ -46,13 +46,13 @@ const GlobeContainer: React.FC = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="relative h-96 w-full bg-black rounded-lg overflow-hidden mt-8 mb-12"
+      className="relative w-full h-[500px] bg-black rounded-lg overflow-hidden mt-8 mb-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      {/* Background gradient - using blue tones instead of purple */}
+      {/* Background gradient - using blue tones */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-cyan-900/10 opacity-50"></div>
       
       {dimensions.width > 0 && dimensions.height > 0 && (

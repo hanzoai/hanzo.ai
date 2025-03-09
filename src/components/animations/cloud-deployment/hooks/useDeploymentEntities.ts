@@ -146,13 +146,13 @@ export const useDeploymentEntities = (setNotifications: React.Dispatch<React.Set
       {
         delay: sequenceTimings.createRedisVolume,
         action: () => {
-          // Add storage volume that will slide into Redis
+          // Add storage volume positioned underneath Redis initially
           setNodes(prev => [
             ...prev,
             {
               id: "redis-volume",
               type: "volume",
-              position: { x: 85, y: 40 },
+              position: { x: 75, y: 26 }, // Start almost at same position as Redis
               iconType: "hardDrive",
               iconProps: { className: "h-5 w-5 text-green-300" },
               label: "redis-data",
@@ -166,12 +166,12 @@ export const useDeploymentEntities = (setNotifications: React.Dispatch<React.Set
       {
         delay: sequenceTimings.attachRedisVolume,
         action: () => {
-          // Move volume closer to Redis to simulate "sliding in"
+          // Volume stays in place (partially under Redis)
           setNodes(prev => 
             prev.map(node => 
               node.id === "redis-volume" ? { 
                 ...node, 
-                position: { x: 77, y: 32 },
+                position: { x: 75, y: 32 }, // Slight adjustment to show it's "underneath"
                 status: "deployed",
                 statusMessage: "Volume attached to Redis" 
               } : node
@@ -250,13 +250,13 @@ export const useDeploymentEntities = (setNotifications: React.Dispatch<React.Set
       {
         delay: sequenceTimings.createPostgresVolume,
         action: () => {
-          // Add storage volume that will slide into Postgres
+          // Add storage volume already positioned under Postgres
           setNodes(prev => [
             ...prev,
             {
               id: "pg-data",
               type: "volume",
-              position: { x: 20, y: 85 },
+              position: { x: 30, y: 71 }, // Start almost at same position as Postgres
               iconType: "hardDrive",
               iconProps: { className: "h-5 w-5 text-green-300" },
               label: "pg-data",
@@ -270,12 +270,12 @@ export const useDeploymentEntities = (setNotifications: React.Dispatch<React.Set
       {
         delay: sequenceTimings.attachPostgresVolume,
         action: () => {
-          // Move volume closer to Postgres to simulate "sliding in"
+          // Move volume slightly to indicate attachment
           setNodes(prev => 
             prev.map(node => 
               node.id === "pg-data" ? { 
                 ...node, 
-                position: { x: 30, y: 78 },
+                position: { x: 30, y: 77 }, // Adjust to show it's "underneath"
                 status: "deployed", 
                 statusMessage: "Volume attached to PostgreSQL" 
               } : node
@@ -310,7 +310,7 @@ export const useDeploymentEntities = (setNotifications: React.Dispatch<React.Set
               type: "network",
               position: { x: 18, y: 40 },
               iconType: "link2",
-              iconProps: { className: "h-5 w-5 text-yellow-300" },
+              iconProps: { className: "h-5 w-5 text-yellow-300" }, // Yellow icon for public network
               label: "public-network",
               active: true,
               status: "pending",
