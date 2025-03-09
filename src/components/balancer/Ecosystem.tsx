@@ -43,32 +43,33 @@ const ecosystemCategories = [
 
 const products = {
   aiCloud: [
-    "AI – Unified access and billing to frontier AI models",
-    "Balancer – AI-native load balancer and model router with global CDN, caching, and firewall",
-    "Commerce – Intelligent e-commerce platform with dynamic pricing and subscription management",
-    "Database – Real-time analytics DB optimized for AI workloads, planetary-scale replication",
-    "Edge – Instant global edge deployments, ultra-low latency for edge-optimized compute",
-    "Functions – Globally distributed serverless compute for AI-driven event handling",
-    "Identity – Scalable identity and access management with SSO, RBAC, and compliance",
-    "Machines – Instantly scalable compute optimized for AI inference and training workloads",
-    "Metrics – Planetary-scale observability, real-time analytics, predictive monitoring",
-    "Payments – Integrated payment processing, subscription, and usage-based billing",
-    "Storage – Edge-optimized, secure global object storage, CDN, and S3 compatibility",
-    "Vector – High-performance vector database for RAG, embeddings, semantic search"
+    "AI – Unified access to frontier AI models.",
+    "Balancer – AI-native load balancer, LLM router, global CDN, caching, firewall.",
+    "Commerce – Intelligent e-commerce, dynamic pricing, subscriptions, integrated analytics.",
+    "Database – Real-time analytics DB optimized for AI, global replication, fault-tolerant.",
+    "Edge – Instant global edge deployments, ultra-low latency compute.",
+    "Functions – Globally distributed serverless compute for AI-driven event handling.",
+    "Machines – Instantly scalable GPU and CPU compute optimized for AI workloads.",
+    "Metrics – Planetary-scale monitoring, observability, predictive analytics.",
+    "Payments – Integrated payments infrastructure with subscriptions and usage-based billing.",
+    "Storage – Edge-optimized, secure global storage, CDN, S3 compatible.",
+    "Vector – High-performance vector database for semantic search, RAG, embeddings.",
+    "Works – Workflow automation and orchestration platform for AI-driven processes."
   ],
   dxPlatform: [
-    "App – No-code AI app builder with drag-and-drop workflows",
-    "Base – Complete Firebase-like backend: realtime database, auth, storage",
-    "Code – AI-powered VS Code fork with intelligent coding, autocomplete, natural language editing",
-    "Dev – AI-assisted developer platform with issue-to-PR automation, CI/CD integration",
-    "Edge – Lightweight application runtime optimized for global edge deployments",
-    "Extension – Marketplace for AI-powered plugins/extensions compatible with VS Code",
-    "Functions – Scalable, event-driven serverless compute with built-in AI capabilities",
-    "Identity – Seamless auth platform with OAuth, JWT, and enterprise SSO integrations",
-    "Observability – Unified AI monitoring platform with real-time metrics, logging, tracing",
-    "Platform – Instant app deployments, intelligent infrastructure provisioning, version control",
-    "Runtime – AI-enabled virtual machine runtime for universal AI enabled containers",
-    "Studio – No-code visual IDE integrated with LangChain and LlamaIndex for rapid AI app development"
+    "App – No-code AI app builder with drag-and-drop workflows.",
+    "Base – All-in-one realtime DB, authentication, file storage in one backend.",
+    "Code – AI-powered VS Code fork for codebase-aware autocomplete and editing.",
+    "Dev – Autonomous AI-powered software engineering assistant.",
+    "Edge – Lightweight runtime for global edge-optimized applications.",
+    "Extension – Marketplace for AI-powered IDE extensions compatible with VS Code.",
+    "Functions – Scalable, event-driven serverless compute with built-in AI integration.",
+    "Identity – Authentication and authorization supporting OAuth, JWT, RBAC.",
+    "Observability – Intelligent tracing, logging, real-time monitoring of AI systems.",
+    "Operator – AI-native assistant for automating desktop tasks via natural language.",
+    "Virtual Machine – AI-enabled local virtual machine for unified development environments.",
+    "Warehouse – Infinitely scalable columnar database designed for realtime analytics.",
+    "Zen – Simplicity, clarity, elegance—our AI engineering manifesto guiding every decision we make."
   ]
 };
 
