@@ -1,7 +1,7 @@
 
 import React from "react";
 import { 
-  AppWindow, Database, Code, Terminal, PuzzlePiece, 
+  AppWindow, Database, Code, Terminal, Puzzle, 
   Cpu, Bot, Layers, Plus, ExternalLink
 } from "lucide-react";
 import DXPlatformCard from "./DXPlatformCard";
@@ -71,7 +71,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       id: "extension",
       title: "Extension",
       description: "Extend platform capabilities with custom components.",
-      icon: PuzzlePiece,
+      icon: Puzzle,
       features: [
         "Plugin system for core platform functionality",
         "Custom integrations with third-party services",
