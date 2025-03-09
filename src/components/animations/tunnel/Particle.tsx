@@ -19,7 +19,7 @@ const Particle: React.FC<ParticleProps> = ({
   brightness,
   index
 }) => {
-  // All particles should move toward the center (vanishing point)
+  // Create laser-like particles that converge to the center (vanishing point)
   return (
     <motion.div
       key={`particle-${index}`}
@@ -32,19 +32,22 @@ const Particle: React.FC<ParticleProps> = ({
         left: `${x}%`,
         top: `${y}%`,
         transform: `translateZ(${z}px)`,
+        // Add a trail effect with a gradient
+        background: `radial-gradient(circle, rgba(255, 255, 255, ${brightness}) 0%, rgba(160, 120, 255, ${brightness * 0.5}) 70%, rgba(100, 80, 255, 0) 100%)`,
       }}
       animate={{
         translateZ: [z, z + 2500],
-        scale: [1, 0.2],
+        scale: [1, 0.1],
         left: [`${x}%`, `50%`],
         top: [`${y}%`, `50%`],
+        opacity: [1, 0.2],
       }}
       transition={{
-        duration: 4 + Math.random() * 4,
+        duration: 3 + Math.random() * 3,
         repeat: Infinity,
         repeatType: "loop",
-        ease: "linear",
-        delay: index * 0.1,
+        ease: "easeIn",
+        delay: index * 0.05,
       }}
     />
   );
