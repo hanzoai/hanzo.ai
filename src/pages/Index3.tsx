@@ -1,11 +1,11 @@
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe, Zap, Database, Shield, Server, Cloud, Code, Bot, Terminal, Cpu, BarChart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
+import ChromeText from "@/components/ui/chrome-text";
 import HeroBanner from "@/components/index3/HeroBanner";
 import DXPlatform from "@/components/index3/DXPlatform";
 import CloudServices from "@/components/index3/CloudServices";

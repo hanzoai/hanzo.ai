@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import ChromeText from "@/components/ui/chrome-text";
 
 const HeroSection = () => {
   return (
@@ -18,9 +19,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
             Hanzo Platform
-          </h1>
+          </ChromeText>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
             For too long, deploying cloud infrastructure has been the most painful part of the developer toolchain.
           </p>

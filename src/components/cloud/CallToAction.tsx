@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import ChromeText from "@/components/ui/chrome-text";
 
 const CallToAction = () => {
   return (
@@ -18,9 +19,9 @@ const CallToAction = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
             Start building on Hanzo Cloud
-          </h2>
+          </ChromeText>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Join thousands of developers building and scaling applications on Hanzo's global infrastructure.
           </p>
