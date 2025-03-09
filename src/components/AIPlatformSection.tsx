@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { 
   Terminal, Server, Blocks, Database, Network, Workflow, Bot, Code, Lock, Globe, Cpu, GitBranch,
-  Brain, ShoppingCart, Zap, Shield, BarChart, CreditCard, HardDrive, Layout, Puzzle, Function,
+  Brain, ShoppingCart, Zap, Shield, BarChart, CreditCard, HardDrive, Layout, Puzzle, FileCode,
   User, Activity, Layers
 } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";

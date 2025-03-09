@@ -1,12 +1,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Balance, Network, Shield } from "lucide-react";
+import { Scale, Network, Shield } from "lucide-react";
 
 const PlatformVision = () => {
   const visionPoints = [
     {
-      icon: <Balance className="h-10 w-10 text-purple-400" />,
+      icon: <Scale className="h-10 w-10 text-purple-400" />,
       title: "Intelligent Load Distribution",
       description: "Hanzo Balancer dynamically routes traffic based on real-time service health, load, and AI-driven insights to ensure optimal performance and resource utilization."
     },
