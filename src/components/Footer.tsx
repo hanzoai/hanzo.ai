@@ -32,7 +32,7 @@ const Footer = () => {
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-gray-400 font-medium">{category.title}</span>
                     <Link 
-                      to={category.title === "AI Cloud" ? "/platform" : category.title === "Cloud" ? "/cloud" : "#"} 
+                      to={category.title === "DX Platform" ? "/platform" : category.title === "AI Cloud" ? "/cloud" : "#"} 
                       className={`inline-flex items-center text-xs ${category.title === "OpenSource" ? "opacity-0" : "text-purple-400 hover:text-purple-300"}`}
                     >
                       {category.title !== "OpenSource" && (

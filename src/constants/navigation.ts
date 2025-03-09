@@ -1,7 +1,6 @@
-
 export const products = [
   {
-    title: "AI Cloud",
+    title: "DX Platform",
     items: [
       "AI",
       "Bot",
@@ -16,7 +15,7 @@ export const products = [
     ]
   },
   {
-    title: "Cloud",
+    title: "AI Cloud",
     items: ["AI Compute", "Analytics", "Base", "Commerce", "Identity", "Scale", "Payments", "Database"]
   },
   {
