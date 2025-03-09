@@ -1,4 +1,3 @@
-
 export const products = [
   {
     title: "DX Platform",
@@ -11,11 +10,11 @@ export const products = [
   },
   {
     title: "Cloud",
-    items: ["AI", "Analytics", "Base", "Commerce", "Identity", "Marketing", "Payments"]
+    items: ["AI Compute", "Analytics", "Base", "Commerce", "Identity", "Scale", "Payments", "Database"]
   },
   {
     title: "OpenSource",
-    items: ["Hanzo.js", "Engine", "Shop.js"]
+    items: ["Hanzo.js", "Engine", "Base.js"]
   }
 ];
 

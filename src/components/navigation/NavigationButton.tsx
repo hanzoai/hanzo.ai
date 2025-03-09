@@ -6,10 +6,11 @@ interface NavigationButtonProps {
   children: ReactNode;
   onHoverStart?: () => void;
   onClick?: () => void;
+  noChevron?: boolean;
 }
 
 export const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonProps>(
-  ({ children, onHoverStart, onClick, ...props }, ref) => {
+  ({ children, onHoverStart, onClick, noChevron = false, ...props }, ref) => {
     return (
       <button 
         ref={ref}
@@ -19,7 +20,7 @@ export const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonPr
         {...props}
       >
         {children}
-        <ChevronDown className="ml-1 h-4 w-4" />
+        {!noChevron && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
     );
   }
