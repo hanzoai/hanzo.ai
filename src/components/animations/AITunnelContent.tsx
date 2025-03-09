@@ -16,14 +16,14 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
   showButtons
 }) => {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4 py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative"
       >
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
           {title}
         </h1>
         

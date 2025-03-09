@@ -21,7 +21,7 @@ const AITunnelAnimation: React.FC<AITunnelAnimationProps> = ({
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-[500px] md:h-[600px] overflow-hidden bg-black"
+      className="relative w-full h-[550px] md:h-[650px] overflow-hidden bg-black"
     >
       {/* 3D Container */}
       <motion.div 
