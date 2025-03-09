@@ -42,6 +42,9 @@ const Navbar = () => {
             <SolutionsMenu />
             <ResourcesMenu />
             
+            <a href="/commerce" className="text-gray-300 hover:text-white transition-colors">
+              Commerce
+            </a>
             <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
               Docs
             </a>
