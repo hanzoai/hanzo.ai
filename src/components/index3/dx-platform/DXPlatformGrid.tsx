@@ -2,7 +2,8 @@
 import React from "react";
 import { 
   AppWindow, Database, Code, Terminal, Puzzle, 
-  Cpu, Bot, Layers, Plus, ExternalLink
+  Cpu, Bot, Layers, User, Activity, Share, Zap,
+  FileCode, Star, Monitor, Plus, ExternalLink
 } from "lucide-react";
 import DXPlatformCard from "./DXPlatformCard";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
     {
       id: "app",
       title: "App",
-      description: "Build and deploy modern applications with ease.",
+      description: "No-code AI app builder with drag-and-drop workflows.",
       icon: AppWindow,
       features: [
         "Zero-config application deployment",
@@ -31,7 +32,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
     {
       id: "base",
       title: "Base",
-      description: "The complete backend platform in one SDK.",
+      description: "All-in-one realtime DB, authentication, file storage in one backend.",
       icon: Database,
       features: [
         "Real-time database, serverless functions, and authentication",
@@ -44,7 +45,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
     {
       id: "code",
       title: "Code",
-      description: "AI-powered coding assistant and IDE integration.",
+      description: "AI-powered VS Code fork for codebase-aware autocomplete and editing.",
       icon: Code,
       features: [
         "Code generation across 80+ programming languages",
@@ -57,7 +58,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
     {
       id: "dev",
       title: "Dev",
-      description: "Developer experience toolkit for productive teams.",
+      description: "Autonomous AI-powered software engineering assistant.",
       icon: Terminal,
       features: [
         "Unified development environment setup",
@@ -68,9 +69,22 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       color: "green"
     },
     {
+      id: "edge",
+      title: "Edge",
+      description: "Lightweight runtime for global edge-optimized applications.",
+      icon: Share,
+      features: [
+        "Deploy to hundreds of edge locations globally",
+        "Minimal footprint for resource-efficient operation",
+        "Seamless integration with Hanzo services",
+        "Built-in CDN capabilities for static assets"
+      ],
+      color: "cyan"
+    },
+    {
       id: "extension",
       title: "Extension",
-      description: "Extend platform capabilities with custom components.",
+      description: "Marketplace for AI-powered IDE extensions compatible with VS Code.",
       icon: Puzzle,
       features: [
         "Plugin system for core platform functionality",
@@ -81,22 +95,48 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       color: "amber"
     },
     {
-      id: "runtime",
-      title: "Runtime",
-      description: "High-performance execution environment for code.",
-      icon: Cpu,
+      id: "functions",
+      title: "Functions",
+      description: "Scalable, event-driven serverless compute with built-in AI integration.",
+      icon: Zap,
       features: [
-        "Optimized runtimes for multiple programming languages",
-        "Serverless execution with cold-start optimization",
-        "Automatic scaling based on demand",
-        "Resource-efficient execution with minimal overhead"
+        "Event-driven execution with zero infrastructure",
+        "Integrated with Hanzo AI for intelligent processing",
+        "Automatic scaling based on workload",
+        "Multiple runtime environments supported"
+      ],
+      color: "rose"
+    },
+    {
+      id: "identity",
+      title: "Identity",
+      description: "Authentication and authorization supporting OAuth, JWT, RBAC.",
+      icon: User,
+      features: [
+        "Multi-factor authentication and biometric verification",
+        "Single sign-on (SSO) and user permission management",
+        "Compliance with global identity regulations and standards",
+        "Identity analytics and anomaly detection"
+      ],
+      color: "indigo"
+    },
+    {
+      id: "observability",
+      title: "Observability",
+      description: "Intelligent tracing, logging, real-time monitoring of AI systems.",
+      icon: Activity,
+      features: [
+        "Comprehensive monitoring of all application components",
+        "AI-powered anomaly detection and insights",
+        "Distributed tracing and performance profiling",
+        "Custom dashboards and visualization tools"
       ],
       color: "teal"
     },
     {
       id: "operator",
       title: "Operator",
-      description: "Self-operating computer framework for automation.",
+      description: "AI-native assistant for automating desktop tasks via natural language.",
       icon: Bot,
       features: [
         "Enable multimodal models to operate computers",
@@ -107,17 +147,30 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
       color: "rose"
     },
     {
-      id: "platform",
-      title: "Platform",
-      description: "The unified experience across all Hanzo DX tools.",
-      icon: Layers,
+      id: "virtual-machine",
+      title: "Virtual Machine",
+      description: "AI-enabled local virtual machine for unified development environments.",
+      icon: Monitor,
       features: [
-        "Consistent interface across all platform products",
-        "Unified authentication and authorization",
-        "Centralized team management and permissions",
-        "Integrated monitoring and observability"
+        "Consistent development environment across teams",
+        "AI-assisted configuration and optimization",
+        "Pre-configured with development tools and dependencies",
+        "Automatic synchronization with cloud environments"
       ],
-      color: "cyan"
+      color: "blue"
+    },
+    {
+      id: "zen",
+      title: "Zen",
+      description: "Simplicity, clarity, elegance—our AI engineering manifesto guiding every decision we make.",
+      icon: Star,
+      features: [
+        "Design principles for building AI systems",
+        "Focus on simplicity, clarity, and elegance",
+        "Opinionated best practices for AI engineering",
+        "Community-driven philosophy for modern software"
+      ],
+      color: "amber"
     },
     {
       id: "more",
@@ -134,7 +187,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
     }
   ];
 
-  // For mobile view, only show the first 8 items
+  // For mobile view, limit the number of items
   const displayData = window.innerWidth < 1024 ? platformData.slice(0, 8) : platformData;
 
   return (

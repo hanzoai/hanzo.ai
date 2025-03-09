@@ -2,7 +2,7 @@
 import React from "react";
 import { 
   Brain, Database, Bot, Server, ShoppingCart, UserCircle, CreditCard, Workflow,
-  Plus, ExternalLink
+  Cloud, Network, HardDrive, Activity, ExternalLink, Code, Zap, Share, Box, Plus
 } from "lucide-react";
 import CloudServiceCard from "./CloudServiceCard";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
     {
       id: "ai",
       title: "AI",
-      description: "The intelligence engine behind every Hanzo product.",
+      description: "Unified access to frontier AI models.",
       icon: Brain,
       features: [
         "Frontier LLMs, vector search, and advanced reasoning models",
@@ -29,48 +29,22 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
       color: "purple"
     },
     {
-      id: "bots",
-      title: "Bots",
-      description: "Intelligent conversational agents for business automation.",
-      icon: Bot,
+      id: "balancer",
+      title: "Balancer",
+      description: "AI-native load balancer, LLM router, global CDN, caching, firewall.",
+      icon: Network,
       features: [
-        "Multi-channel bot deployment (web, mobile, messaging platforms)",
-        "Natural language understanding and context awareness",
-        "Customizable personalities and knowledge bases",
-        "Analytics dashboard to monitor performance and engagement"
+        "Intelligent traffic routing based on model availability and load",
+        "Built-in caching for faster responses and reduced costs",
+        "Advanced security features and DDoS protection",
+        "Comprehensive monitoring and analytics dashboard"
       ],
       color: "blue"
     },
     {
-      id: "compute",
-      title: "Compute",
-      description: "Instant scaling, GPU-accelerated AI environments.",
-      icon: Server,
-      features: [
-        "High-performance NVIDIA hardware on-demand (H100, DGX)",
-        "Scalable AI inference and training infrastructure",
-        "Low-latency deployments across global data centers",
-        "Optimized containers for popular ML frameworks"
-      ],
-      color: "green"
-    },
-    {
-      id: "databases",
-      title: "Databases",
-      description: "High-performance real-time analytics databases.",
-      icon: Database,
-      features: [
-        "Optimized for AI workloads with clickhouse-style performance",
-        "Scalable, fault-tolerant architecture with global replication",
-        "In-memory caching included, seamlessly integrated with Base",
-        "Automatic sharding and partitioning for massive datasets"
-      ],
-      color: "teal"
-    },
-    {
-      id: "ecommerce",
-      title: "Ecommerce",
-      description: "Intelligent, next-generation e-commerce platform.",
+      id: "commerce",
+      title: "Commerce",
+      description: "Intelligent e-commerce, dynamic pricing, subscriptions, integrated analytics.",
       icon: ShoppingCart,
       features: [
         "One-line store creation with automated checkout and cart",
@@ -81,22 +55,61 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
       color: "amber"
     },
     {
-      id: "identity",
-      title: "Identity",
-      description: "Secure user authentication and identity management.",
-      icon: UserCircle,
+      id: "database",
+      title: "Database",
+      description: "Real-time analytics DB optimized for AI, global replication, fault-tolerant.",
+      icon: Database,
       features: [
-        "Multi-factor authentication and biometric verification",
-        "Single sign-on (SSO) and user permission management",
-        "Compliance with global identity regulations and standards",
-        "Identity analytics and anomaly detection"
+        "Optimized for AI workloads with clickhouse-style performance",
+        "Scalable, fault-tolerant architecture with global replication",
+        "In-memory caching included, seamlessly integrated with Base",
+        "Automatic sharding and partitioning for massive datasets"
       ],
-      color: "indigo"
+      color: "teal"
+    },
+    {
+      id: "edge",
+      title: "Edge",
+      description: "Instant global edge deployments, ultra-low latency compute.",
+      icon: Share,
+      features: [
+        "Deploy to 200+ edge locations in seconds",
+        "Built-in CDN and content optimization",
+        "Serverless edge functions with zero cold starts",
+        "Integrated with Hanzo AI for edge intelligence"
+      ],
+      color: "cyan"
+    },
+    {
+      id: "functions",
+      title: "Functions",
+      description: "Globally distributed serverless compute for AI-driven event handling.",
+      icon: Code,
+      features: [
+        "Event-driven execution with zero infrastructure management",
+        "Automatic scaling based on demand",
+        "Native integration with all Hanzo services",
+        "Support for multiple runtimes (Node.js, Python, etc.)"
+      ],
+      color: "green"
+    },
+    {
+      id: "machines",
+      title: "Machines",
+      description: "Instantly scalable GPU and CPU compute optimized for AI workloads.",
+      icon: Server,
+      features: [
+        "High-performance NVIDIA hardware on-demand (H100, DGX)",
+        "Scalable AI inference and training infrastructure",
+        "Low-latency deployments across global data centers",
+        "Optimized containers for popular ML frameworks"
+      ],
+      color: "green"
     },
     {
       id: "payments",
       title: "Payments",
-      description: "Streamlined payment processing and subscription billing.",
+      description: "Integrated payments infrastructure with subscriptions and usage-based billing.",
       icon: CreditCard,
       features: [
         "Global payment gateway with support for 135+ currencies",
@@ -107,9 +120,48 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
       color: "rose"
     },
     {
+      id: "observability",
+      title: "Observability",
+      description: "Planetary-scale monitoring, observability, predictive analytics.",
+      icon: Activity,
+      features: [
+        "Real-time monitoring and alerting across all services",
+        "AI-powered anomaly detection and predictive insights",
+        "Comprehensive logging and distributed tracing",
+        "Custom dashboards and visualization tools"
+      ],
+      color: "indigo"
+    },
+    {
+      id: "storage",
+      title: "Storage",
+      description: "Edge-optimized, secure global storage, CDN, S3 compatible.",
+      icon: HardDrive,
+      features: [
+        "Global CDN with automatic edge caching",
+        "S3-compatible API for easy migration",
+        "End-to-end encryption and access controls",
+        "Automatic backup and disaster recovery"
+      ],
+      color: "amber"
+    },
+    {
+      id: "vector",
+      title: "Vector",
+      description: "High-performance vector database for semantic search, RAG, embeddings.",
+      icon: Box,
+      features: [
+        "Optimized for storing and querying vector embeddings",
+        "Scales to billions of vectors with sub-millisecond query times",
+        "Built-in integration with popular embedding models",
+        "Sophisticated RAG capabilities for enhanced AI responses"
+      ],
+      color: "blue"
+    },
+    {
       id: "works",
       title: "Works",
-      description: "Intelligent workflow automation for complex processes.",
+      description: "Workflow automation and orchestration platform for AI-driven processes.",
       icon: Workflow,
       features: [
         "No-code workflow builder with AI-assisted automation",
@@ -134,7 +186,7 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
     }
   ];
 
-  // For mobile view, only show the first 8 items
+  // For mobile view, limit the number of items
   const displayData = window.innerWidth < 1024 ? serviceData.slice(0, 8) : serviceData;
 
   return (

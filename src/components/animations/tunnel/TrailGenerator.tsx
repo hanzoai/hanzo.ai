@@ -13,7 +13,11 @@ const TrailGenerator: React.FC<TrailGeneratorProps> = ({ trailCount }) => {
     trails.push(<Trail key={`trail-${i}`} index={i} />);
   }
   
-  return <>{trails}</>;
+  return (
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      {trails}
+    </div>
+  );
 };
 
 export default TrailGenerator;
