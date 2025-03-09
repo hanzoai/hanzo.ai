@@ -1,13 +1,8 @@
 
 import React from "react";
-import { 
-  AppWindow, Database, Code, Terminal, Puzzle, 
-  Bot, User, Activity, Zap, Star, 
-  Monitor, Plus, ExternalLink, EyeIcon, LineChart, Blocks
-} from "lucide-react";
 import DXPlatformCard from "./DXPlatformCard";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import ExploreAllButton from "./ExploreAllButton";
+import { dxPlatformData } from "./dxPlatformData";
 
 interface DXPlatformGridProps {
   isHovered: string | null;
@@ -15,169 +10,10 @@ interface DXPlatformGridProps {
 }
 
 const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered }) => {
-  const platformData = [
-    {
-      id: "app",
-      title: "App",
-      description: "No-code AI app builder with drag-and-drop workflows.",
-      icon: AppWindow,
-      features: [
-        "Zero-config application deployment",
-        "Full stack TypeScript/JavaScript support",
-        "Built-in CI/CD pipelines",
-        "Automatic scaling and load balancing"
-      ],
-      color: "indigo"
-    },
-    {
-      id: "base",
-      title: "Base",
-      description: "All-in-one realtime DB, authentication, file storage in one backend.",
-      icon: Database,
-      features: [
-        "Real-time database, serverless functions, and authentication",
-        "Integrated CDN and edge-optimized global storage",
-        "Fully open-source with no vendor lock-in",
-        "Automatic schema validation and type generation"
-      ],
-      color: "purple"
-    },
-    {
-      id: "code",
-      title: "Code",
-      description: "AI-powered VS Code fork for codebase-aware autocomplete and editing.",
-      icon: Code,
-      features: [
-        "Code generation across 80+ programming languages",
-        "Intelligent code completion and refactoring",
-        "Integration with popular IDEs and code editors",
-        "Advanced debugging and code analysis tools"
-      ],
-      color: "blue"
-    },
-    {
-      id: "dev",
-      title: "Dev",
-      description: "Autonomous AI-powered software engineering assistant.",
-      icon: Terminal,
-      features: [
-        "Unified development environment setup",
-        "Team collaboration tools and pair programming",
-        "AI-assisted documentation generation",
-        "Integrated testing and profiling tools"
-      ],
-      color: "green"
-    },
-    {
-      id: "extension",
-      title: "Extension",
-      description: "Marketplace for AI-powered IDE extensions compatible with VS Code.",
-      icon: Puzzle,
-      features: [
-        "Plugin system for core platform functionality",
-        "Custom integrations with third-party services",
-        "Visual extension marketplace",
-        "Extension development SDK with built-in testing"
-      ],
-      color: "amber"
-    },
-    {
-      id: "identity",
-      title: "Identity",
-      description: "Authentication and authorization supporting OAuth, JWT, RBAC.",
-      icon: User,
-      features: [
-        "Multi-factor authentication and biometric verification",
-        "Single sign-on (SSO) and user permission management",
-        "Compliance with global identity regulations and standards",
-        "Identity analytics and anomaly detection"
-      ],
-      color: "indigo"
-    },
-    {
-      id: "monitoring",
-      title: "Monitoring",
-      description: "Intelligent tracing, logging, real-time monitoring of AI systems.",
-      icon: Activity,
-      features: [
-        "Comprehensive monitoring of all application components",
-        "AI-powered anomaly detection and insights",
-        "Distributed tracing and performance profiling",
-        "Custom dashboards and visualization tools"
-      ],
-      color: "teal"
-    },
-    {
-      id: "operator",
-      title: "Operator",
-      description: "AI-native assistant for automating desktop tasks via natural language.",
-      icon: Bot,
-      features: [
-        "Enable multimodal models to operate computers",
-        "Same inputs and outputs as human operators",
-        "Advanced task automation for repeated workflows",
-        "Compatible with various multimodal AI models"
-      ],
-      color: "rose"
-    },
-    {
-      id: "runtime",
-      title: "Runtime",
-      description: "AI-enabled container runtime for unified development environments.",
-      icon: Blocks,
-      features: [
-        "Consistent development environment across teams",
-        "AI-assisted configuration and optimization",
-        "Pre-configured with development tools and dependencies",
-        "Automatic synchronization with cloud environments"
-      ],
-      color: "blue"
-    },
-    {
-      id: "studio",
-      title: "Studio",
-      description: "Visual no-code IDE for AI applications and workflows.",
-      icon: Monitor,
-      features: [
-        "Drag-and-drop interface for building AI applications",
-        "Visual workflow editor for complex AI pipelines",
-        "Built-in templates for common AI use cases",
-        "Real-time collaboration for team development"
-      ],
-      color: "cyan"
-    },
-    {
-      id: "zen",
-      title: "Zen",
-      description: "Simplicity, clarity, elegance—our AI engineering manifesto guiding every decision we make.",
-      icon: Star,
-      features: [
-        "Design principles for building AI systems",
-        "Focus on simplicity, clarity, and elegance",
-        "Opinionated best practices for AI engineering",
-        "Community-driven philosophy for modern software"
-      ],
-      color: "amber"
-    },
-    {
-      id: "more",
-      title: "More Tools",
-      description: "Discover additional developer tools in our ecosystem.",
-      icon: Plus,
-      features: [
-        "Infrastructure management tools",
-        "DevSecOps integrations",
-        "Design and prototyping utilities",
-        "Performance optimization tools"
-      ],
-      color: "gray"
-    }
-  ];
-
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-        {platformData.map((platform) => (
+        {dxPlatformData.map((platform) => (
           <DXPlatformCard
             key={platform.id}
             id={platform.id}
@@ -192,14 +28,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
         ))}
       </div>
       
-      <div className="text-center mt-8">
-        <Button variant="outline" className="group" asChild>
-          <Link to="/platform">
-            Explore All Platform Tools
-            <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </Button>
-      </div>
+      <ExploreAllButton />
     </div>
   );
 };
