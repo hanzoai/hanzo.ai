@@ -7,6 +7,8 @@ export interface ZenPrinciple {
   title: string;
   japaneseSymbol: string;
   description: string;
+  emoji: string;
+  discipline?: string;
 }
 
 interface ZenPrincipleCardProps {
@@ -25,7 +27,7 @@ const ZenPrincipleCard: React.FC<ZenPrincipleCardProps> = ({ principle, index })
     >
       <div className="flex items-center mb-3">
         <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 mr-3">
-          {principle.number}
+          {principle.emoji || principle.number}
         </div>
         <h3 className="text-xl text-white font-bold">{principle.title}</h3>
       </div>
