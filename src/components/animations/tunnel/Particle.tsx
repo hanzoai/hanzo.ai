@@ -19,6 +19,7 @@ const Particle: React.FC<ParticleProps> = ({
   brightness,
   index
 }) => {
+  // All particles should move toward the center (vanishing point)
   return (
     <motion.div
       key={`particle-${index}`}
@@ -35,6 +36,8 @@ const Particle: React.FC<ParticleProps> = ({
       animate={{
         translateZ: [z, z + 2500],
         scale: [1, 0.2],
+        left: [`${x}%`, `50%`],
+        top: [`${y}%`, `50%`],
       }}
       transition={{
         duration: 4 + Math.random() * 4,

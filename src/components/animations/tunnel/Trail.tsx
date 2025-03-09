@@ -38,6 +38,7 @@ const Trail: React.FC<TrailProps> = ({
         left: `${startX}%`,
         top: `${startY}%`,
         transform: `translateZ(${startZ}px) rotateX(90deg)`,
+        transformOrigin: "center center",
       }}
       animate={{
         left: [`${startX}%`, `${endX}%`],

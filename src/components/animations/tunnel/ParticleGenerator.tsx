@@ -10,6 +10,7 @@ const ParticleGenerator: React.FC<ParticleGeneratorProps> = ({ particleCount }) 
   const particles = [];
   
   for (let i = 0; i < particleCount; i++) {
+    // Spread particles throughout the viewport
     const x = Math.random() * 100;
     const y = Math.random() * 100;
     const z = -2000 - (Math.random() * 1000);

@@ -11,13 +11,13 @@ const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
   const perspectiveLines = [];
   const centerX = 50;
   const centerY = 50;
-  const lineCount = 16; // More lines for a denser effect
+  const lineCount = 24; // More lines for a denser effect
   
   // Create rays emanating from the center (vanishing point)
   for (let i = 0; i < lineCount; i++) {
     const angle = (i / lineCount) * Math.PI * 2;
-    const endX = 50 + Math.cos(angle) * 150; // Extend beyond viewport
-    const endY = 50 + Math.sin(angle) * 150; // Extend beyond viewport
+    const endX = centerX + Math.cos(angle) * 150; // Extend beyond viewport
+    const endY = centerY + Math.sin(angle) * 150; // Extend beyond viewport
     
     perspectiveLines.push(
       <motion.div
@@ -28,8 +28,8 @@ const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
           width: "1px",
           left: `${centerX}%`,
           top: `${centerY}%`,
-          transformOrigin: `0 0`,
-          transform: `rotate(${angle}rad) scale(100)`,
+          transformOrigin: "0 0",
+          transform: `rotate(${angle}rad) scale(150)`,
         }}
         animate={{
           opacity: [0.05, 0.2, 0.05],
@@ -46,8 +46,8 @@ const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
   
   // Create tunnel segments (rings that move toward the viewer)
   const tunnelSegments = [];
-  for (let i = 1; i <= 8; i++) {
-    const size = 90 - i * 10; // Gets smaller as it approaches vanishing point
+  for (let i = 1; i <= 10; i++) {
+    const size = 90 - i * 8; // Gets smaller as it approaches vanishing point
     
     tunnelSegments.push(
       <motion.div
@@ -79,7 +79,7 @@ const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
   
   // Create stars/particles that move toward the vanishing point
   const stars = [];
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 60; i++) {
     const initialX = Math.random() * 100;
     const initialY = Math.random() * 100;
     const size = Math.random() * 2 + 1;
@@ -132,7 +132,7 @@ const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
       
       {/* Glowing center point (vanishing point) */}
       <motion.div
-        className="absolute w-3 h-3 bg-purple-500 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-md"
+        className="absolute w-4 h-4 bg-purple-500 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-md"
         animate={{
           opacity: [0.3, 0.8, 0.3],
           scale: [1, 1.5, 1],

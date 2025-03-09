@@ -10,15 +10,17 @@ const TrailGenerator: React.FC<TrailGeneratorProps> = ({ trailCount }) => {
   const trails = [];
   
   for (let i = 0; i < trailCount; i++) {
+    // Start positions spread across the entire viewport
     const startX = Math.random() * 100;
     const startY = Math.random() * 100;
     const startZ = -2000;
     
-    const endX = 50 + (Math.random() * 20 - 10); // Converging toward center
-    const endY = 50 + (Math.random() * 20 - 10); // Converging toward center
+    // All trails converge to the center (vanishing point)
+    const endX = 50; // Center X
+    const endY = 50; // Center Y
     const endZ = 500;
     
-    // Calculate length based on distance from center to create a star-field effect
+    // Calculate length based on distance from center
     const distanceFromCenter = Math.sqrt(
       Math.pow((startX - 50), 2) + 
       Math.pow((startY - 50), 2)
