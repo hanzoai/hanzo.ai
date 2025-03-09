@@ -115,17 +115,19 @@ const Footer = () => {
             >
               Security
             </motion.a>
-            <motion.span
-              initial={{ opacity: 0.8 }}
-              whileHover={{ 
-                opacity: 1,
-                scale: 1.05,
-                color: "#a855f7" 
-              }}
-              className="text-sm text-gray-500 font-mono"
-            >
-              ai/acc
-            </motion.span>
+            <Link to="/ai-acc">
+              <motion.span
+                initial={{ opacity: 0.8 }}
+                whileHover={{ 
+                  opacity: 1,
+                  scale: 1.05,
+                  color: "#a855f7" 
+                }}
+                className="text-sm text-gray-500 font-mono cursor-pointer"
+              >
+                ai/acc
+              </motion.span>
+            </Link>
           </div>
         </div>
       </div>

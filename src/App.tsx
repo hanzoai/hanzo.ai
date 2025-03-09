@@ -25,6 +25,7 @@ import HanzoCode from "./pages/HanzoCode";
 import Operator from "./pages/Operator";
 import HanzoBalancer from "./pages/HanzoBalancer";
 import ZenOfHanzo from "./pages/ZenOfHanzo";
+import AIAcceleration from "./pages/AIAcceleration";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App = () => {
             <Route path="/operator" element={<Operator />} />
             <Route path="/balancer" element={<HanzoBalancer />} />
             <Route path="/zen" element={<ZenOfHanzo />} />
+            <Route path="/ai-acc" element={<AIAcceleration />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
