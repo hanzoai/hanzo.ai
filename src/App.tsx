@@ -20,6 +20,7 @@ import Analytics from "./pages/Analytics";
 import Observability from "./pages/Observability";
 import AI from "./pages/AI";
 import Payments from "./pages/Payments";
+import HanzoApp from "./pages/HanzoApp";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/observability" element={<Observability />} />
             <Route path="/ai" element={<AI />} />
             <Route path="/payments" element={<Payments />} />
+            <Route path="/app" element={<HanzoApp />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
