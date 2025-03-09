@@ -13,6 +13,7 @@ import Karma from "@/components/index3/Karma";
 import { Toaster } from "@/components/ui/toaster";
 import JapaneseWave from "@/components/zen/JapaneseWave";
 import { GridLines, BlueprintLine } from "@/components/ui/architectural-elements";
+import ReferralBanner from "@/components/referrals/ReferralBanner";
 
 const Index = () => {
   useEffect(() => {
@@ -77,6 +78,7 @@ const Index = () => {
         <AIPlatformSection />
         <CloudServices />
         <DXPlatform />
+        <ReferralBanner />
         <Karma />
         <TrustedBy />
         <CallToAction />

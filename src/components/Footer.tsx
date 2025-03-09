@@ -72,6 +72,8 @@ const Footer = () => {
                 <li><a href="https://api.hanzo.ai" className="text-base text-gray-400 hover:text-gray-300">API Reference</a></li>
                 <li><a href="https://discord.gg/hanzo" className="text-base text-gray-400 hover:text-gray-300">Community</a></li>
                 <li><a href="https://blog.hanzo.ai" className="text-base text-gray-400 hover:text-gray-300">Blog</a></li>
+                <li><Link to="/referrals" className="text-base text-gray-400 hover:text-gray-300">Referral Program</Link></li>
+                <li><Link to="/affiliates" className="text-base text-gray-400 hover:text-gray-300">Affiliate Program</Link></li>
               </ul>
             </div>
             
