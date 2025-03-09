@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { NodeType, ConnectionType } from "./types";
@@ -8,10 +9,10 @@ interface ConnectionLinesProps {
 }
 
 const ConnectionLines: React.FC<ConnectionLinesProps> = ({ connections, nodes }) => {
-  // We're keeping the SVG container but not rendering any lines
+  // SVG container without rendering connection lines
   return (
     <svg className="absolute inset-0 h-full w-full">
-      {/* No lines will be rendered */}
+      {/* Connection lines will not be rendered */}
     </svg>
   );
 };
