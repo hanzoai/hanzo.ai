@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Database as DatabaseIcon, Server, HardDrive, Globe, Zap, Scale, Shield, FlexibleIcon, Layers, Terminal } from "lucide-react";
+import { ArrowRight, Database as DatabaseIcon, Server, HardDrive, Globe, Zap, Scale, Shield, Grid, Layers, Terminal } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
