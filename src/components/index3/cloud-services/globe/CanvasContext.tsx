@@ -1,12 +1,23 @@
-
 import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 
+type TrafficConnection = {
+  id: string;
+  sourceId: string;
+  targetId: string;
+  progress: number;
+  speed: number;
+  color: string;
+  size: number;
+};
+
 type ConnectionPoint = {
+  id?: string;
   x: number;
   y: number;
   active: boolean;
   size?: number; // For city lights of varying sizes
   intensity?: number; // For pulsing effect
+  connections?: TrafficConnection[]; // For traffic between points
 };
 
 // Major city coordinates (simplified for visualization)
@@ -118,6 +129,11 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setCtx(context);
   }, []);
 
+  // Helper function to find a point by ID
+  const findPointById = (points: ConnectionPoint[], id?: string) => {
+    return id ? points.find(p => p.id === id) : undefined;
+  };
+
   const drawGlobe = useCallback(() => {
     if (!ctx) return;
     
@@ -219,29 +235,54 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       }
     });
     
-    // Draw connection lines between some points - using blue instead of purple
-    if (connectionPoints.filter(p => p.active).length >= 2) {
-      const activePoints = connectionPoints.filter(p => p.active);
-      
-      ctx.strokeStyle = 'rgba(120, 170, 210, 0.3)';
-      ctx.lineWidth = 0.5;
-      ctx.setLineDash([2, 3]);
-      
-      // Create a pattern of connections
-      for (let i = 0; i < activePoints.length; i++) {
-        for (let j = i + 1; j < activePoints.length; j++) {
-          // Only connect some points (not all-to-all)
-          if ((i + j) % 3 === 0) {
-            ctx.beginPath();
-            ctx.moveTo(activePoints[i].x, activePoints[i].y);
-            ctx.lineTo(activePoints[j].x, activePoints[j].y);
-            ctx.stroke();
-          }
-        }
+    // Draw traffic lines between cities
+    connectionPoints.forEach(point => {
+      if (point.connections && point.connections.length > 0) {
+        point.connections.forEach(conn => {
+          const target = findPointById(connectionPoints, conn.targetId);
+          if (!target) return;
+          
+          // Draw traffic animation
+          ctx.beginPath();
+          
+          // Calculate current position based on progress
+          const currentX = point.x + (target.x - point.x) * conn.progress;
+          const currentY = point.y + (target.y - point.y) * conn.progress;
+          
+          // Draw trail
+          const trailLength = Math.min(conn.progress, 0.2); // Trail length is 20% of the total line
+          const trailStartProgress = Math.max(0, conn.progress - trailLength);
+          const trailStartX = point.x + (target.x - point.x) * trailStartProgress;
+          const trailStartY = point.y + (target.y - point.y) * trailStartProgress;
+          
+          // Create gradient for trail
+          const gradient = ctx.createLinearGradient(trailStartX, trailStartY, currentX, currentY);
+          gradient.addColorStop(0, 'rgba(100, 150, 200, 0)');
+          gradient.addColorStop(1, conn.color);
+          
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = conn.size;
+          ctx.moveTo(trailStartX, trailStartY);
+          ctx.lineTo(currentX, currentY);
+          ctx.stroke();
+          
+          // Draw leading dot
+          ctx.beginPath();
+          ctx.fillStyle = conn.color;
+          ctx.arc(currentX, currentY, conn.size * 1.5, 0, 2 * Math.PI);
+          ctx.fill();
+          
+          // Draw faint line for the full path
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(130, 150, 180, 0.1)';
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(point.x, point.y);
+          ctx.lineTo(target.x, target.y);
+          ctx.stroke();
+        });
       }
-      
-      ctx.setLineDash([]);
-    }
+    });
+    
   }, [ctx, centerX, centerY, globeRadius, connectionPoints, dimensions.width, dimensions.height]);
 
   const generateConnectionPoints = useCallback((width: number, height: number) => {
@@ -252,7 +293,7 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const newGlobeRadius = Math.min(width / 2, height / 2) * 0.9;
     
     // Create points based on major cities
-    const newPoints: ConnectionPoint[] = majorCities.map(city => {
+    const newPoints: ConnectionPoint[] = majorCities.map((city, index) => {
       const position = latLongToPosition(
         city.lat, 
         city.lon, 
@@ -262,11 +303,13 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       );
       
       return {
+        id: `city-${index}`,
         x: position.x,
         y: position.y,
         active: false,
         size: city.size,
-        intensity: Math.random() * 0.5 + 0.5 // Random initial intensity
+        intensity: Math.random() * 0.5 + 0.5, // Random initial intensity
+        connections: []
       };
     });
     
@@ -285,11 +328,13 @@ export const CanvasProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       );
       
       newPoints.push({
+        id: `random-${i}`,
         x: position.x,
         y: position.y,
         active: false,
         size: Math.random() * 1.5 + 0.5, // Random size for smaller cities
-        intensity: Math.random() * 0.5 + 0.5
+        intensity: Math.random() * 0.5 + 0.5,
+        connections: []
       });
     }
     
