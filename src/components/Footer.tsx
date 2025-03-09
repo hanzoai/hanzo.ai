@@ -32,19 +32,15 @@ const Footer = () => {
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-gray-400 font-medium">{category.title}</span>
                     <Link 
-                      to={category.title === "DX Platform" ? "/platform" : category.title === "AI Cloud" ? "/cloud" : "#"} 
-                      className={`inline-flex items-center text-xs ${category.title === "OpenSource" ? "opacity-0" : "text-purple-400 hover:text-purple-300"}`}
+                      to={category.title === "AI Cloud" ? "/cloud" : category.title === "DX Platform" ? "/platform" : "#"} 
+                      className="inline-flex items-center text-xs text-purple-400 hover:text-purple-300"
                     >
-                      {category.title !== "OpenSource" && (
-                        <>
-                          View All 
-                          <ChevronRight className="h-3 w-3 ml-0.5" />
-                        </>
-                      )}
+                      {category.title === "AI Cloud" ? "View Cloud" : "View Platform"} 
+                      <ChevronRight className="h-3 w-3 ml-0.5" />
                     </Link>
                   </div>
                   <ul className="mt-1 space-y-1">
-                    {category.items.slice(0, 4).map(item => (
+                    {category.items.slice(0, 6).map(item => (
                       <li key={item}>
                         <a href="#" className="text-gray-500 hover:text-white text-sm">
                           {item}
@@ -64,7 +60,7 @@ const Footer = () => {
                 <li key={category.title}>
                   <span className="text-gray-400 font-medium">{category.title}</span>
                   <ul className="mt-1 space-y-1">
-                    {category.items.slice(0, 4).map(item => (
+                    {category.items.slice(0, 6).map(item => (
                       <li key={item}>
                         <a href="/solutions" className="text-gray-500 hover:text-white text-sm">
                           {item}
@@ -72,7 +68,7 @@ const Footer = () => {
                       </li>
                     ))}
                   </ul>
-                  {category.items.length > 4 && (
+                  {category.items.length > 6 && (
                     <Link 
                       to="/solutions" 
                       className="inline-flex items-center mt-2 text-sm text-purple-400 hover:text-purple-300"
