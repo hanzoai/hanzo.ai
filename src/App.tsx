@@ -21,6 +21,7 @@ import Observability from "./pages/Observability";
 import AI from "./pages/AI";
 import Payments from "./pages/Payments";
 import HanzoApp from "./pages/HanzoApp";
+import HanzoCode from "./pages/HanzoCode";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => {
             <Route path="/ai" element={<AI />} />
             <Route path="/payments" element={<Payments />} />
             <Route path="/app" element={<HanzoApp />} />
+            <Route path="/code" element={<HanzoCode />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
