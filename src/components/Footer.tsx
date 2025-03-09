@@ -1,134 +1,146 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { CheckCircle, Github, Twitter, Linkedin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { products, solutions, resources, company } from "@/constants/navigation";
 
 const Footer = () => {
   return (
     <footer className="bg-black border-t border-gray-800">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="xl:grid xl:grid-cols-5 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-10">
+          {/* Logo and Status Column */}
+          <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
               <img
                 src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png"
                 alt="Hanzo"
-                className="h-10 w-10"
+                className="h-9 w-9"
               />
               <span className="text-white font-bold text-xl">Hanzo</span>
             </Link>
-            <p className="text-gray-400 max-w-xs">
-              Build the future of AI with Hanzo's powerful suite of tools designed for modern development teams.
-            </p>
-            <div className="flex space-x-5">
-              <a href="https://twitter.com/hanzo" className="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="https://linkedin.com/company/hanzo" className="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-6 w-6" />
-              </a>
+            
+            <div className="flex items-center text-green-500 space-x-2">
+              <CheckCircle className="h-5 w-5" />
+              <span className="text-gray-400">All systems operational</span>
             </div>
           </div>
           
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 xl:mt-0 xl:col-span-4">
-            {/* AI Cloud Column */}
+          {/* Products Column */}
+          <div>
+            <h3 className="text-lg font-medium text-white mb-4">Products</h3>
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-gray-400 font-medium mb-3">DX Platform</h4>
+                <ul className="space-y-2">
+                  <li><Link to="/hanzoapp" className="text-gray-500 hover:text-gray-300">Hanzo App</Link></li>
+                  <li><Link to="/hanzocode" className="text-gray-500 hover:text-gray-300">Hanzo Code</Link></li>
+                  <li><Link to="/hanzobot" className="text-gray-500 hover:text-gray-300">Hanzo Bot</Link></li>
+                  <li><Link to="/hanzodev" className="text-gray-500 hover:text-gray-300">Hanzo Works</Link></li>
+                  <li><Link to="/cloud" className="text-gray-500 hover:text-gray-300">Managed Infrastructure</Link></li>
+                  <li><Link to="/analytics" className="text-gray-500 hover:text-gray-300">Analytics</Link></li>
+                  <li><Link to="/commerce" className="text-gray-500 hover:text-gray-300">Marketing</Link></li>
+                  <li><Link to="/payments" className="text-gray-500 hover:text-gray-300">Payments</Link></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-gray-400 font-medium mb-3">OpenSource</h4>
+                <ul className="space-y-2">
+                  <li><a href="https://github.com/hanzo" className="text-gray-500 hover:text-gray-300">Hanzo.js</a></li>
+                  <li><a href="https://github.com/hanzo" className="text-gray-500 hover:text-gray-300">Engine</a></li>
+                  <li><a href="https://github.com/hanzo" className="text-gray-500 hover:text-gray-300">Shop.js</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          {/* Solutions Column */}
+          <div>
+            <h3 className="text-lg font-medium text-white mb-4">Solutions</h3>
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-gray-400 font-medium mb-3">Capabilities</h4>
+                <ul className="space-y-2">
+                  <li><Link to="/cloud" className="text-gray-500 hover:text-gray-300">Cloud</Link></li>
+                  <li><Link to="/security" className="text-gray-500 hover:text-gray-300">Cybersecurity</Link></li>
+                  <li><Link to="/ai" className="text-gray-500 hover:text-gray-300">Data and Artificial Intelligence</Link></li>
+                  <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Digital Engineering and Manufacturing</Link></li>
+                </ul>
+                <Link to="/solutions" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
+                  <span>View all capabilities</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              
+              <div>
+                <h4 className="text-gray-400 font-medium mb-3">Industries</h4>
+                <ul className="space-y-2">
+                  <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Aerospace and Defense</Link></li>
+                  <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Automotive</Link></li>
+                  <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Banking</Link></li>
+                  <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Capital Markets</Link></li>
+                </ul>
+                <Link to="/solutions" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
+                  <span>View all industries</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Resources and Company Column */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+            {/* Resources */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">AI Cloud</h3>
-              <ul className="mt-4 space-y-3">
-                {products[0].items.map((item, index) => (
-                  <li key={`cloud-${index}`}>
-                    <Link to={`/cloud#${item.toLowerCase()}`} className="text-base text-gray-400 hover:text-gray-300">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-lg font-medium text-white mb-4">Resources</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-gray-400 font-medium mb-3">Community</h4>
+                  <ul className="space-y-2">
+                    <li><a href="https://hanzo.forum" className="text-gray-500 hover:text-gray-300">Hanzo Forum</a></li>
+                    <li><a href="https://hanzo.community" className="text-gray-500 hover:text-gray-300">Hanzo Community</a></li>
+                    <li><a href="https://hanzo.help" className="text-gray-500 hover:text-gray-300">Hanzo Help</a></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-gray-400 font-medium mb-3">Documentation</h4>
+                  <ul className="space-y-2">
+                    <li><a href="https://docs.hanzo.ai" className="text-gray-500 hover:text-gray-300">Documentation</a></li>
+                    <li><a href="https://docs.hanzo.ai" className="text-gray-500 hover:text-gray-300">API Reference</a></li>
+                    <li><Link to="/examples" className="text-gray-500 hover:text-gray-300">Examples</Link></li>
+                  </ul>
+                </div>
+              </div>
             </div>
             
-            {/* DX Platform Column */}
+            {/* Company */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">DX Platform</h3>
-              <ul className="mt-4 space-y-3">
-                {products[1].items.map((item, index) => (
-                  <li key={`platform-${index}`}>
-                    <Link to={`/platform#${item.toLowerCase()}`} className="text-base text-gray-400 hover:text-gray-300">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            {/* Resources Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Resources</h3>
-              <ul className="mt-4 space-y-3">
-                <li><Link to="/pricing" className="text-base text-gray-400 hover:text-gray-300">Pricing</Link></li>
-                <li><a href="https://docs.hanzo.ai" className="text-base text-gray-400 hover:text-gray-300">Documentation</a></li>
-                <li><a href="https://api.hanzo.ai" className="text-base text-gray-400 hover:text-gray-300">API Reference</a></li>
-                <li><a href="https://discord.gg/hanzo" className="text-base text-gray-400 hover:text-gray-300">Community</a></li>
-                <li><a href="https://blog.hanzo.ai" className="text-base text-gray-400 hover:text-gray-300">Blog</a></li>
-                <li><Link to="/referrals" className="text-base text-gray-400 hover:text-gray-300">Referral Program</Link></li>
-                <li><Link to="/affiliates" className="text-base text-gray-400 hover:text-gray-300">Affiliate Program</Link></li>
-              </ul>
-            </div>
-            
-            {/* Company Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Company</h3>
-              <ul className="mt-4 space-y-3">
-                {company.map((item, index) => (
-                  <li key={`company-${index}`}>
-                    <Link to={`/${item.toLowerCase()}`} className="text-base text-gray-400 hover:text-gray-300">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+              <h3 className="text-lg font-medium text-white mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li><Link to="/about" className="text-gray-500 hover:text-gray-300">About</Link></li>
+                <li><Link to="/blog" className="text-gray-500 hover:text-gray-300">Blog</Link></li>
+                <li><Link to="/careers" className="text-gray-500 hover:text-gray-300">Careers</Link></li>
+                <li><Link to="/team" className="text-gray-500 hover:text-gray-300">Team</Link></li>
               </ul>
             </div>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-base text-gray-500">&copy; {new Date().getFullYear()} Hanzo, Inc. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <motion.a 
-              href="/privacy" 
-              className="text-sm text-gray-500 hover:text-gray-400"
-              whileHover={{ y: -1 }}
-            >
-              Privacy
-            </motion.a>
-            <motion.a 
-              href="/terms" 
-              className="text-sm text-gray-500 hover:text-gray-400"
-              whileHover={{ y: -1 }}
-            >
-              Terms
-            </motion.a>
-            <motion.a 
-              href="/security" 
-              className="text-sm text-gray-500 hover:text-gray-400"
-              whileHover={{ y: -1 }}
-            >
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+          <p className="text-gray-500 text-sm">© 2016-{new Date().getFullYear()} Hanzo AI Inc. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link to="/privacy" className="text-gray-500 hover:text-gray-300 text-sm">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-gray-500 hover:text-gray-300 text-sm">
+              Terms of Service
+            </Link>
+            <Link to="/security" className="text-gray-500 hover:text-gray-300 text-sm">
               Security
-            </motion.a>
-            <Link to="/ai-acc">
-              <motion.span
-                initial={{ opacity: 0.8 }}
-                whileHover={{ 
-                  opacity: 1,
-                  scale: 1.05,
-                  color: "#a855f7" 
-                }}
-                className="text-sm text-gray-500 font-mono cursor-pointer"
-              >
-                ai/acc
-              </motion.span>
             </Link>
           </div>
         </div>

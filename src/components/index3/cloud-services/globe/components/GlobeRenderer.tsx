@@ -16,7 +16,13 @@ const GlobeRenderer: React.FC<GlobeRendererProps> = ({ width, height }) => {
   useGlobeAnimation(globeRef);
   
   return (
-    <div ref={containerRef} className="w-full h-full" />
+    <div 
+      ref={containerRef} 
+      className="w-full h-full rounded-lg overflow-hidden"
+      style={{ 
+        background: 'radial-gradient(circle at center, rgba(25, 34, 55, 0.4) 0%, rgba(10, 14, 25, 0.8) 70%)',
+      }}
+    />
   );
 };
 

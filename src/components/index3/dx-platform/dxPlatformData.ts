@@ -158,18 +158,5 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Context-aware history and command completion"
     ],
     color: "gray"
-  },
-  {
-    id: "zen",
-    title: "Zen",
-    description: "Simplicity, clarity, elegance—our AI engineering manifesto.",
-    icon: Star,
-    features: [
-      "Design principles for AI-first software development",
-      "Methodologies for building intuitive AI interfaces",
-      "Best practices for ethical AI implementation",
-      "Frameworks for reducing complexity in AI systems"
-    ],
-    color: "amber"
   }
 ];
