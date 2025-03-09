@@ -73,6 +73,12 @@ export const ProductsMenu = () => {
       link: "/cloud#commerce"
     },
     {
+      name: "Database",
+      icon: Database,
+      description: "The fastest open-source planet scale database",
+      link: "/database"
+    },
+    {
       name: "Identity",
       icon: User,
       description: "User authentication and identity management",
