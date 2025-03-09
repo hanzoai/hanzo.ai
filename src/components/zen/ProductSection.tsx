@@ -33,7 +33,14 @@ const ProductSection: React.FC<ProductSectionProps> = ({
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {products.map((product, index) => {
-          const [name, description] = product.description.split(" – ");
+          // Handle products in format "Name – Description"
+          let name, description;
+          if (product.description.includes(" – ")) {
+            [name, description] = product.description.split(" – ");
+          } else {
+            name = product.name;
+            description = product.description;
+          }
           
           return (
             <motion.div

@@ -4,29 +4,29 @@ import { motion } from "framer-motion";
 
 const principles = [
   {
-    title: "Simplicity",
-    japanese: "簡素",
-    description: "Complexity must be hidden beneath simplicity. The best tools feel effortless."
+    title: "Orthogonality",
+    japanese: "直交性",
+    description: "Components that stand alone, yet integrate effortlessly. Each piece precise, purposeful, and independent."
+  },
+  {
+    title: "Smallness",
+    japanese: "小型",
+    description: "Break complexity into simplicity. The tiniest modules scale infinitely; minimalism multiplied becomes power."
+  },
+  {
+    title: "Completeness",
+    japanese: "完全性",
+    description: "No half-measures. Batteries always included. Meticulously crafted to empower ambitious creators instantly."
+  },
+  {
+    title: "Dimensionality",
+    japanese: "次元性",
+    description: "Layers of abstraction that vanish complexity yet never block depth. Simplicity at the surface, depth underneath."
   },
   {
     title: "Clarity",
     japanese: "明晰",
-    description: "Every component should have a clear purpose. Every action should have a predictable outcome."
-  },
-  {
-    title: "Elegance",
-    japanese: "優雅",
-    description: "Solutions should be beautiful not only in function, but also in form and implementation."
-  },
-  {
-    title: "Efficiency",
-    japanese: "効率",
-    description: "Systems should be designed to maximize productivity and minimize waste."
-  },
-  {
-    title: "Harmony",
-    japanese: "調和",
-    description: "Components should work together seamlessly to create a cohesive whole."
+    description: "Complexity is the enemy. APIs should whisper, not shout. Documentation should guide, not obscure."
   }
 ];
 
