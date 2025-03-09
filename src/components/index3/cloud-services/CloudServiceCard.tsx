@@ -133,9 +133,9 @@ const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
           {CardContent}
         </Link>
       ) : (
-        <div className={containerClasses}>
+        <Link to={`/${id}`} className={containerClasses}>
           {CardContent}
-        </div>
+        </Link>
       )}
     </motion.div>
   );

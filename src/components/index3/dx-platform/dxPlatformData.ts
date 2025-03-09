@@ -160,16 +160,16 @@ export const dxPlatformData: DXPlatformItem[] = [
     color: "gray"
   },
   {
-    id: "more",
-    title: "More Tools",
-    description: "Discover additional developer tools in our ecosystem.",
-    icon: Plus,
+    id: "zen",
+    title: "Zen",
+    description: "Simplicity, clarity, elegance—our AI engineering manifesto.",
+    icon: Star,
     features: [
-      "Infrastructure management tools",
-      "DevSecOps integrations",
-      "Design and prototyping utilities",
-      "Performance optimization tools"
+      "Design principles for AI-first software development",
+      "Methodologies for building intuitive AI interfaces",
+      "Best practices for ethical AI implementation",
+      "Frameworks for reducing complexity in AI systems"
     ],
-    color: "gray"
+    color: "amber"
   }
 ];

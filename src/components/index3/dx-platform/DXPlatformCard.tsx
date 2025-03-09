@@ -133,9 +133,9 @@ const DXPlatformCard: React.FC<DXPlatformCardProps> = ({
           {CardContent}
         </Link>
       ) : (
-        <div className={containerClasses}>
+        <Link to={`/${id}`} className={containerClasses}>
           {CardContent}
-        </div>
+        </Link>
       )}
     </motion.div>
   );
