@@ -21,19 +21,18 @@ const AITunnelAnimation: React.FC<AITunnelAnimationProps> = ({
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-[550px] md:h-[650px] overflow-hidden bg-black"
+      className="relative w-full h-[100vh] overflow-hidden bg-black"
     >
       {/* 3D Container */}
       <motion.div 
         className="absolute inset-0 w-full h-full"
         style={{ 
           transformStyle: "preserve-3d",
-          translateZ: "-500px"
+          perspective: "1000px",
         }}
         animate={{ 
-          translateZ: [-500, -400],
-          rotateX: [0, 5, 0, -5, 0],
-          rotateY: [0, -5, 0, 5, 0]
+          rotateX: [0, 3, 0, -3, 0],
+          rotateY: [0, -3, 0, 3, 0]
         }}
         transition={{
           duration: 20,

@@ -1,6 +1,11 @@
+
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Terminal, Server, Blocks, Database, Network, Workflow, Bot, Code, Lock, Globe, Cpu, GitBranch } from "lucide-react";
+import { 
+  Terminal, Server, Blocks, Database, Network, Workflow, Bot, Code, Lock, Globe, Cpu, GitBranch,
+  Brain, ShoppingCart, Zap, Shield, BarChart, CreditCard, HardDrive, Layout, Puzzle, Function,
+  User, Activity, Layers
+} from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 import { Button } from "@/components/ui/button";
 import AITunnelAnimation from "@/components/animations/AITunnelAnimation";

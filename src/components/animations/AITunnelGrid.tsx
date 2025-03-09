@@ -7,127 +7,132 @@ interface AITunnelGridProps {
 }
 
 const AITunnelGrid: React.FC<AITunnelGridProps> = ({ mousePosition }) => {
-  // Generate grid lines
-  const gridSize = 8; // 8x8 grid
-  const gridLines = [];
-  
-  // Create horizontal and vertical grid lines
-  for (let i = 0; i <= gridSize; i++) {
-    const position = (i / gridSize) * 100;
-    
-    // Horizontal lines
-    gridLines.push(
-      <motion.div
-        key={`h-${i}`}
-        className="absolute h-[1px] w-full bg-purple-500/10"
-        style={{ top: `${position}%` }}
-        animate={{
-          opacity: [0.2, 0.1, 0.2],
-          scaleY: [1, 1.5, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          repeatType: "reverse",
-          delay: i * 0.2,
-        }}
-      />
-    );
-    
-    // Vertical lines
-    gridLines.push(
-      <motion.div
-        key={`v-${i}`}
-        className="absolute w-[1px] h-full bg-purple-500/10"
-        style={{ left: `${position}%` }}
-        animate={{
-          opacity: [0.2, 0.1, 0.2],
-          scaleX: [1, 1.5, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          repeatType: "reverse",
-          delay: i * 0.2,
-        }}
-      />
-    );
-  }
-  
-  // Create perspective lines
+  // Create perspective lines pointing to a vanishing point
   const perspectiveLines = [];
-  for (let i = 0; i < 4; i++) {
-    const corner = {
-      x: i % 2 === 0 ? 0 : 100,
-      y: i < 2 ? 0 : 100,
-    };
+  const centerX = 50;
+  const centerY = 50;
+  const lineCount = 16; // More lines for a denser effect
+  
+  // Create rays emanating from the center (vanishing point)
+  for (let i = 0; i < lineCount; i++) {
+    const angle = (i / lineCount) * Math.PI * 2;
+    const endX = 50 + Math.cos(angle) * 150; // Extend beyond viewport
+    const endY = 50 + Math.sin(angle) * 150; // Extend beyond viewport
     
     perspectiveLines.push(
       <motion.div
-        key={`p-${i}`}
-        className="absolute bg-purple-500/5"
+        key={`ray-${i}`}
+        className="absolute bg-purple-500/10"
         style={{
-          width: "1px",
           height: "1px",
-          left: `${corner.x}%`,
-          top: `${corner.y}%`,
-          transformOrigin: `${corner.x}% ${corner.y}%`,
+          width: "1px",
+          left: `${centerX}%`,
+          top: `${centerY}%`,
+          transformOrigin: `0 0`,
+          transform: `rotate(${angle}rad) scale(100)`,
         }}
         animate={{
-          width: ["1px", "200%"],
-          height: ["1px", "200%"],
+          opacity: [0.05, 0.2, 0.05],
         }}
         transition={{
-          duration: 0.01, // Instant expansion
+          duration: 3,
           repeat: Infinity,
-          repeatDelay: 3,
+          repeatType: "reverse",
+          delay: i * 0.1,
         }}
       />
     );
   }
   
-  // Create 3D tunnel segments
+  // Create tunnel segments (rings that move toward the viewer)
   const tunnelSegments = [];
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 8; i++) {
+    const size = 90 - i * 10; // Gets smaller as it approaches vanishing point
+    
     tunnelSegments.push(
       <motion.div
         key={`tunnel-${i}`}
-        className="absolute border border-purple-500/10 w-[90%] h-[90%]"
+        className="absolute bg-transparent"
         style={{
-          top: "5%",
-          left: "5%",
-          transform: `translateZ(${-i * 200}px)`,
+          width: `${size}%`,
+          height: `${size}%`,
           boxSizing: "border-box",
+          top: `${(100 - size) / 2}%`,
+          left: `${(100 - size) / 2}%`,
+          boxShadow: `0 0 10px 1px rgba(149, 76, 233, 0.1)`,
+          borderRadius: "50%",
         }}
         animate={{
-          rotateX: [0, mousePosition.y * 5],
-          rotateY: [0, mousePosition.x * 5],
-          translateZ: [(-i * 200) - 10, (-i * 200) + 10],
+          scale: [1, 0],
+          opacity: [0, 0.5, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 8,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: "loop",
+          delay: i * 1,
+          ease: "linear"
+        }}
+      />
+    );
+  }
+  
+  // Create stars/particles that move toward the vanishing point
+  const stars = [];
+  for (let i = 0; i < 40; i++) {
+    const initialX = Math.random() * 100;
+    const initialY = Math.random() * 100;
+    const size = Math.random() * 2 + 1;
+    const speed = Math.random() * 5 + 3;
+    
+    stars.push(
+      <motion.div
+        key={`star-${i}`}
+        className="absolute bg-white rounded-full"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          left: `${initialX}%`,
+          top: `${initialY}%`,
+          opacity: 0,
+        }}
+        animate={{
+          left: [
+            `${initialX}%`, 
+            `${centerX + (initialX - centerX) * 0.1}%`
+          ],
+          top: [
+            `${initialY}%`, 
+            `${centerY + (initialY - centerY) * 0.1}%`
+          ],
+          opacity: [0, 0.7, 0],
+          scale: [1, 0.2],
+        }}
+        transition={{
+          duration: speed,
+          repeat: Infinity,
+          repeatType: "loop",
+          delay: i * 0.2,
+          ease: "linear"
         }}
       />
     );
   }
   
   return (
-    <div className="absolute inset-0 w-full h-full">
-      {/* Grid lines */}
-      {gridLines}
-      
-      {/* Perspective lines */}
+    <div className="absolute inset-0 w-full h-full overflow-hidden">
+      {/* Perspective rays */}
       {perspectiveLines}
       
-      {/* Tunnel segments */}
+      {/* Moving tunnel rings */}
       {tunnelSegments}
       
-      {/* Glowing center point */}
+      {/* Stars flowing to center */}
+      {stars}
+      
+      {/* Glowing center point (vanishing point) */}
       <motion.div
-        className="absolute w-2 h-2 bg-purple-500 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-sm"
-        style={{ transform: "translateZ(-1000px)" }}
+        className="absolute w-3 h-3 bg-purple-500 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 blur-md"
         animate={{
           opacity: [0.3, 0.8, 0.3],
           scale: [1, 1.5, 1],
