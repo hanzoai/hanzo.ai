@@ -1,5 +1,4 @@
-
-import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight } from "lucide-react";
+import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight, MessageSquare, HardDrive, Box, Cpu, ExternalLink, Workflow, Monitor } from "lucide-react";
 import {
   PopoverContent,
   PopoverTrigger,
@@ -54,103 +53,121 @@ export const ProductsMenu = () => {
 
   const aiCloudItems: ProductItem[] = [
     {
-      name: "AI Compute",
+      name: "AI",
       icon: Brain,
-      description: "Managed AI infrastructure and models",
-      link: "/cloud#ai"
+      description: "Unified access to frontier AI models",
+      link: "/ai"
     },
     {
-      name: "Analytics",
-      icon: ChartBar,
-      description: "Data analytics and visualization tools",
-      link: "/analytics"
+      name: "Chat",
+      icon: MessageSquare,
+      description: "Interactive AI chat experiences",
+      link: "/cloud#chat"
     },
     {
-      name: "Base",
+      name: "Datastore",
       icon: Database,
-      description: "Managed database and backend services",
-      link: "/cloud#base"
+      description: "Scalable data storage for AI applications",
+      link: "/cloud#datastore"
     },
     {
-      name: "Commerce",
-      icon: Scale,
-      description: "E-commerce platform and payment processing",
-      link: "/cloud#commerce"
+      name: "Edge",
+      icon: Zap,
+      description: "Ultra-low latency edge computing",
+      link: "/cloud#edge"
     },
     {
-      name: "Database",
-      icon: Database,
-      description: "The fastest open-source planet scale database",
-      link: "/database"
+      name: "Functions",
+      icon: Code2,
+      description: "Serverless function execution",
+      link: "/cloud#functions"
     },
     {
       name: "Identity",
       icon: User,
-      description: "User authentication and identity management",
+      description: "Scalable identity management",
       link: "/cloud#identity"
+    },
+    {
+      name: "Machines",
+      icon: Cpu,
+      description: "Dedicated AI compute infrastructure",
+      link: "/cloud#machines"
     },
     {
       name: "Payments",
       icon: Calculator,
       description: "Payment processing and subscription billing",
       link: "/payments"
+    },
+    {
+      name: "Realtime",
+      icon: Activity,
+      description: "Real-time data synchronization",
+      link: "/cloud#realtime"
+    },
+    {
+      name: "Storage",
+      icon: HardDrive,
+      description: "Globally distributed file storage",
+      link: "/cloud#storage"
+    },
+    {
+      name: "Vector",
+      icon: Box,
+      description: "High-performance vector database for AI",
+      link: "/vector"
     }
   ];
 
   const dxPlatformItems: ProductItem[] = [
     {
-      name: "AI",
-      icon: Brain,
-      description: "Integrate AI capabilities into your applications",
-      link: "/ai"
+      name: "App",
+      icon: Monitor,
+      description: "AI app builder with drag-and-drop workflows",
+      link: "/app"
     },
     {
       name: "Bot",
       icon: Bot,
-      description: "Build conversational bots for your business",
-      link: "/platform#bot"
+      description: "Agentic framework for AI assistants",
+      link: "/bot"
     },
     {
       name: "Code",
       icon: Code2,
-      description: "Powerful code generation and analysis",
+      description: "AI-powered code editor and generator",
       link: "/code"
     },
     {
       name: "Dev",
       icon: Server,
-      description: "Developer tools and productivity enhancers",
+      description: "AI engineer assistant for developers",
       link: "/dev"
     },
     {
-      name: "Platform",
-      icon: Server,
-      description: "Virtual machine and container runtime solutions",
-      link: "/platform"
+      name: "Extension",
+      icon: ExternalLink,
+      description: "Browser and code editor plugins",
+      link: "/extension"
     },
     {
-      name: "Observability",
-      icon: Activity,
-      description: "Intelligent monitoring and visualization",
-      link: "/observability"
+      name: "Runtime",
+      icon: Cpu,
+      description: "Container runtime for AI applications",
+      link: "/platform#runtime"
     },
     {
-      name: "Network",
-      icon: Globe,
-      description: "Secure networking and connectivity",
-      link: "/platform#network"
+      name: "Operator",
+      icon: Workflow,
+      description: "AI-native assistant for automating tasks",
+      link: "/operator"
     },
     {
-      name: "Scale",
-      icon: Scale,
-      description: "Seamlessly scale your applications",
-      link: "/platform#scale"
-    },
-    {
-      name: "Evolve",
-      icon: RefreshCw,
-      description: "Continuous improvement and adaptation",
-      link: "/platform#evolve"
+      name: "Studio",
+      icon: Monitor,
+      description: "Low-code IDE for AI development",
+      link: "/platform#studio"
     }
   ];
 

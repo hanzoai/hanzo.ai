@@ -2,7 +2,7 @@
 import { 
   AppWindow, Database, Code, Terminal, Puzzle, 
   Bot, User, Activity, Zap, Star, 
-  Monitor, Plus, Blocks
+  Monitor, Plus, Blocks, Cpu, ExternalLink, Workflow
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -30,22 +30,22 @@ export const dxPlatformData: DXPlatformItem[] = [
     color: "indigo"
   },
   {
-    id: "base",
-    title: "Base",
-    description: "All-in-one realtime DB, authentication, file storage in one backend.",
-    icon: Database,
+    id: "bot",
+    title: "Bot",
+    description: "Agentic framework for building advanced AI assistants.",
+    icon: Bot,
     features: [
-      "Real-time database, serverless functions, and authentication",
-      "Integrated CDN and edge-optimized global storage",
-      "Fully open-source with no vendor lock-in",
-      "Automatic schema validation and type generation"
+      "Multi-agent orchestration and communication",
+      "Tool-use capabilities with custom tool integration",
+      "Customizable personalities and domain knowledge",
+      "Memory management and conversation history"
     ],
-    color: "purple"
+    color: "violet"
   },
   {
     id: "code",
     title: "Code",
-    description: "AI-powered VS Code fork for codebase-aware autocomplete and editing.",
+    description: "AI-powered code editor for intelligent development.",
     icon: Code,
     features: [
       "Code generation across 80+ programming languages",
@@ -71,7 +71,7 @@ export const dxPlatformData: DXPlatformItem[] = [
   {
     id: "extension",
     title: "Extension",
-    description: "Marketplace for AI-powered IDE extensions compatible with VS Code.",
+    description: "Browser and code editor plugins for AI assistance.",
     icon: Puzzle,
     features: [
       "Plugin system for core platform functionality",
@@ -80,6 +80,45 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Extension development SDK with built-in testing"
     ],
     color: "amber"
+  },
+  {
+    id: "runtime",
+    title: "Runtime",
+    description: "Container runtime for AI applications and development.",
+    icon: Blocks,
+    features: [
+      "Consistent development environment across teams",
+      "AI-assisted configuration and optimization",
+      "Pre-configured with development tools and dependencies",
+      "Automatic synchronization with cloud environments"
+    ],
+    color: "blue"
+  },
+  {
+    id: "operator",
+    title: "Operator",
+    description: "AI-native assistant for automating desktop tasks via natural language.",
+    icon: Workflow,
+    features: [
+      "Enable multimodal models to operate computers",
+      "Same inputs and outputs as human operators",
+      "Advanced task automation for repeated workflows",
+      "Compatible with various multimodal AI models"
+    ],
+    color: "rose"
+  },
+  {
+    id: "studio",
+    title: "Studio",
+    description: "Low-code IDE for AI development and cloud architecture.",
+    icon: Monitor,
+    features: [
+      "Drag-and-drop interface for building AI applications",
+      "Visual workflow editor for complex AI pipelines",
+      "Built-in templates for common AI use cases",
+      "Real-time collaboration for team development"
+    ],
+    color: "cyan"
   },
   {
     id: "identity",
@@ -106,45 +145,6 @@ export const dxPlatformData: DXPlatformItem[] = [
       "Custom dashboards and visualization tools"
     ],
     color: "teal"
-  },
-  {
-    id: "operator",
-    title: "Operator",
-    description: "AI-native assistant for automating desktop tasks via natural language.",
-    icon: Bot,
-    features: [
-      "Enable multimodal models to operate computers",
-      "Same inputs and outputs as human operators",
-      "Advanced task automation for repeated workflows",
-      "Compatible with various multimodal AI models"
-    ],
-    color: "rose"
-  },
-  {
-    id: "runtime",
-    title: "Runtime",
-    description: "AI-enabled container runtime for unified development environments.",
-    icon: Blocks,
-    features: [
-      "Consistent development environment across teams",
-      "AI-assisted configuration and optimization",
-      "Pre-configured with development tools and dependencies",
-      "Automatic synchronization with cloud environments"
-    ],
-    color: "blue"
-  },
-  {
-    id: "studio",
-    title: "Studio",
-    description: "Visual no-code IDE for AI applications and workflows.",
-    icon: Monitor,
-    features: [
-      "Drag-and-drop interface for building AI applications",
-      "Visual workflow editor for complex AI pipelines",
-      "Built-in templates for common AI use cases",
-      "Real-time collaboration for team development"
-    ],
-    color: "cyan"
   },
   {
     id: "terminal",

@@ -2,7 +2,7 @@
 import { 
   Brain, Database, Server, ShoppingCart, UserCircle, CreditCard, Workflow,
   Cloud, Network, HardDrive, Activity, Share, Box, Plus,
-  Cpu, BarChart, LineChart
+  Cpu, BarChart, LineChart, MessageSquare, Code
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -28,6 +28,84 @@ export const cloudServiceData: CloudServiceItem[] = [
       "Fine-tuning and custom model deployment capabilities"
     ],
     color: "purple"
+  },
+  {
+    id: "chat",
+    title: "Chat",
+    description: "Interactive AI chat experiences for your applications.",
+    icon: MessageSquare,
+    features: [
+      "Fully customizable chat interface for web and mobile",
+      "Memory management and context preservation",
+      "Multi-modal support for images, audio, and video",
+      "Easy integration with your existing applications"
+    ],
+    color: "indigo"
+  },
+  {
+    id: "datastore",
+    title: "Datastore",
+    description: "Scalable data storage optimized for AI applications.",
+    icon: Database,
+    features: [
+      "High-performance data storage with automatic indexing",
+      "Optimized for AI workloads with built-in caching",
+      "Real-time synchronization across clients",
+      "Seamless integration with Hanzo AI services"
+    ],
+    color: "blue"
+  },
+  {
+    id: "edge",
+    title: "Edge",
+    description: "Ultra-low latency compute at the network edge.",
+    icon: Share,
+    features: [
+      "Deploy to 200+ edge locations in seconds",
+      "Built-in CDN and content optimization",
+      "Serverless edge functions with zero cold starts",
+      "Integrated with Hanzo AI for edge intelligence"
+    ],
+    color: "cyan"
+  },
+  {
+    id: "functions",
+    title: "Functions",
+    description: "Serverless function execution for any workload.",
+    icon: Code,
+    features: [
+      "Execute code in response to events",
+      "Automatic scaling based on demand",
+      "Support for multiple languages and runtimes",
+      "Integrated monitoring and logging"
+    ],
+    color: "emerald"
+  },
+  {
+    id: "identity",
+    title: "Identity",
+    description: "Scalable identity and access management.",
+    icon: UserCircle,
+    features: [
+      "Multi-factor authentication and biometric verification",
+      "Single sign-on (SSO) and user permission management",
+      "Compliance with global identity regulations",
+      "Social login integrations and custom flows"
+    ],
+    color: "violet"
+  },
+  {
+    id: "machines",
+    title: "Machines",
+    description: "Dedicated AI compute infrastructure optimized for machine learning.",
+    icon: Cpu,
+    features: [
+      "High-performance NVIDIA hardware on-demand (H100, DGX)",
+      "Scalable AI inference and training infrastructure",
+      "Low-latency deployments across global data centers",
+      "Optimized containers for popular ML frameworks"
+    ],
+    color: "green"
   },
   {
     id: "balancer",
@@ -56,58 +134,6 @@ export const cloudServiceData: CloudServiceItem[] = [
     color: "amber"
   },
   {
-    id: "database",
-    title: "Database",
-    description: "Real-time analytics DB optimized for AI, global replication, fault-tolerant.",
-    icon: Database,
-    features: [
-      "Optimized for AI workloads with clickhouse-style performance",
-      "Scalable, fault-tolerant architecture with global replication",
-      "In-memory caching included, seamlessly integrated with Base",
-      "Automatic sharding and partitioning for massive datasets"
-    ],
-    color: "teal"
-  },
-  {
-    id: "edge",
-    title: "Edge",
-    description: "Instant global edge deployments, ultra-low latency compute and distributed serverless compute.",
-    icon: Share,
-    features: [
-      "Deploy to 200+ edge locations in seconds",
-      "Built-in CDN and content optimization",
-      "Serverless edge functions with zero cold starts",
-      "Integrated with Hanzo AI for edge intelligence"
-    ],
-    color: "cyan"
-  },
-  {
-    id: "machines",
-    title: "Machines",
-    description: "Instantly scalable GPU and CPU compute optimized for AI workloads.",
-    icon: Server,
-    features: [
-      "High-performance NVIDIA hardware on-demand (H100, DGX)",
-      "Scalable AI inference and training infrastructure",
-      "Low-latency deployments across global data centers",
-      "Optimized containers for popular ML frameworks"
-    ],
-    color: "green"
-  },
-  {
-    id: "metrics",
-    title: "Metrics",
-    description: "Planetary-scale monitoring, observability, predictive analytics.",
-    icon: BarChart,
-    features: [
-      "Real-time monitoring and alerting across all services",
-      "AI-powered anomaly detection and predictive insights",
-      "Comprehensive logging and distributed tracing",
-      "Custom dashboards and visualization tools"
-    ],
-    color: "indigo"
-  },
-  {
     id: "payments",
     title: "Payments",
     description: "Integrated payments infrastructure with subscriptions and usage-based billing.",
@@ -121,6 +147,19 @@ export const cloudServiceData: CloudServiceItem[] = [
     color: "rose"
   },
   {
+    id: "realtime",
+    title: "Realtime",
+    description: "Real-time data synchronization and messaging across clients.",
+    icon: Activity,
+    features: [
+      "WebSocket and pub/sub messaging for real-time communication",
+      "Automatic client state synchronization",
+      "Presence and status tracking for users",
+      "Collaborative editing and real-time updates"
+    ],
+    color: "fuchsia"
+  },
+  {
     id: "storage",
     title: "Storage",
     description: "Edge-optimized, secure global storage, CDN, S3 compatible.",
@@ -131,7 +170,7 @@ export const cloudServiceData: CloudServiceItem[] = [
       "End-to-end encryption and access controls",
       "Automatic backup and disaster recovery"
     ],
-    color: "amber"
+    color: "yellow"
   },
   {
     id: "vector",
@@ -145,19 +184,6 @@ export const cloudServiceData: CloudServiceItem[] = [
       "Sophisticated RAG capabilities for enhanced AI responses"
     ],
     color: "blue"
-  },
-  {
-    id: "works",
-    title: "Works",
-    description: "Workflow automation and orchestration platform for AI-driven processes.",
-    icon: Workflow,
-    features: [
-      "No-code workflow builder with AI-assisted automation",
-      "Integrations with 300+ popular business applications",
-      "Advanced analytics and performance optimization",
-      "Scalable execution engine for mission-critical processes"
-    ],
-    color: "cyan"
   },
   {
     id: "more",
