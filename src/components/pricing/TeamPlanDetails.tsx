@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from "react";
-import { Slider } from "@/components/ui/slider";
+import { Slider } from "@/components/ui/radix-slider";
 import { Cpu, Zap, Server, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/radix-button";
 
 interface TeamPlanDetailsProps {
   fromProPlan?: boolean;

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/radix-button";
 import { CreditCard } from "lucide-react";
 
 const BillingManagement = () => {

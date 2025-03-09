@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Switch } from "@/components/ui/switch";
+import { Switch } from "@/components/ui/radix-switch";
 import { Shield, HeadsetIcon } from "lucide-react";
 
 interface CostSummaryProps {

@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Users, MessageSquare, BarChart, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/radix-button";
 
 const CRM = () => {
   return (
