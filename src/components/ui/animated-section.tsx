@@ -4,8 +4,11 @@ import { motion, MotionProps, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { sectionAnimation, headingAnimation, staggerContainer } from "./animation-variants";
 
+// Define the allowed HTML elements for the animated section
+type AllowedElements = "section" | "div" | "article" | "main" | "aside" | "header" | "footer";
+
 interface AnimatedSectionProps {
-  as?: keyof JSX.IntrinsicElements;
+  as?: AllowedElements;
   children: React.ReactNode;
   className?: string;
   motionProps?: MotionProps;
@@ -26,11 +29,11 @@ const AnimatedSection = ({
   once = true,
   ...props
 }: AnimatedSectionProps) => {
-  // Use the correct type for the dynamic component
-  const Component = motion[as as keyof typeof motion];
+  // Instead of using dynamic motion[as], create element based on 'as' prop
+  const MotionComponent = motion[as];
   
   return (
-    <Component
+    <MotionComponent
       initial="hidden"
       whileInView="visible"
       viewport={{ once, amount: viewportAmount }}
@@ -41,7 +44,7 @@ const AnimatedSection = ({
       {...props}
     >
       {children}
-    </Component>
+    </MotionComponent>
   );
 };
 
