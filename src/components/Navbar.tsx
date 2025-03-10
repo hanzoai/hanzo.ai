@@ -5,10 +5,14 @@ import { ProductsMenu } from "./navigation/products-menu";
 import { SolutionsMenu } from "./navigation/SolutionsMenu";
 import { ResourcesMenu } from "./navigation/ResourcesMenu";
 import { MobileMenu } from "./navigation/MobileMenu";
+import { useAccount } from "@/contexts/AccountContext";
+import { Link } from "react-router-dom";
+import { User } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user } = useAccount();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,15 +54,29 @@ const Navbar = () => {
             </a>
 
             <div className="flex items-center space-x-3">
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="text-white border-white hover:bg-white/10"
-              >
-                <a href="https://console.hanzo.ai">
-                  Console
-                </a>
-              </Button>
+              {user ? (
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="text-white border-white hover:bg-white/10"
+                  asChild
+                >
+                  <Link to="/account" className="flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    Account
+                  </Link>
+                </Button>
+              ) : (
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="text-white border-white hover:bg-white/10"
+                >
+                  <a href="https://console.hanzo.ai">
+                    Console
+                  </a>
+                </Button>
+              )}
               <Button 
                 size="sm" 
                 className="bg-white text-black hover:bg-gray-100"
