@@ -133,7 +133,9 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
         </div>
       </main>
 
-      <Footer />
+      <div className="w-full">
+        <Footer />
+      </div>
     </div>
   );
 };

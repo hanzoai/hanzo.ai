@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Github, Twitter, Linkedin, ArrowRight } from "lucide-react";
@@ -34,7 +33,7 @@ const Footer = () => {
               <div>
                 <h4 className="text-gray-400 font-medium mb-3">AI Cloud</h4>
                 <ul className="space-y-2">
-                  <li><Link to="/ai" className="text-gray-500 hover:text-gray-300">AI</Link></li>
+                  <li><Link to="/cloud" className="text-gray-500 hover:text-gray-300">AI Cloud</Link></li>
                   <li><Link to="/cloud#chat" className="text-gray-500 hover:text-gray-300">Chat</Link></li>
                   <li><Link to="/datastore" className="text-gray-500 hover:text-gray-300">Datastore</Link></li>
                   <li><Link to="/cloud#edge" className="text-gray-500 hover:text-gray-300">Edge</Link></li>
@@ -48,6 +47,7 @@ const Footer = () => {
               <div>
                 <h4 className="text-gray-400 font-medium mb-3">DX Platform</h4>
                 <ul className="space-y-2">
+                  <li><Link to="/platform" className="text-gray-500 hover:text-gray-300">DX Platform</Link></li>
                   <li><Link to="/app" className="text-gray-500 hover:text-gray-300">App</Link></li>
                   <li><Link to="/bot" className="text-gray-500 hover:text-gray-300">Bot</Link></li>
                   <li><Link to="/code" className="text-gray-500 hover:text-gray-300">Code</Link></li>

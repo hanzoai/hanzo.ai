@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,9 +18,7 @@ const Usage = () => {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <div className="flex justify-between items-center mb-8">
-              <AnimatedHeading>
-                <h1 className="text-4xl font-bold">Usage</h1>
-              </AnimatedHeading>
+              <AnimatedHeading>Usage</AnimatedHeading>
               <DateRangePicker 
                 dateRange={dateRange} 
                 onDateRangeChange={setDateRange} 
@@ -57,3 +54,4 @@ const Usage = () => {
 };
 
 export default Usage;
+
