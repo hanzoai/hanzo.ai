@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Server, Memory, HardDrive, Globe } from "lucide-react";
+import { ChevronDown, ChevronUp, Server, Chip, HardDrive, Globe } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { motion } from "framer-motion";
 import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
@@ -226,7 +226,7 @@ const ProjectUsage = () => {
                     <div>
                       <div className="flex justify-between mb-1">
                         <div className="flex items-center gap-2">
-                          <Memory className="h-4 w-4 text-gray-400" />
+                          <Chip className="h-4 w-4 text-gray-400" />
                           <span className="text-sm text-gray-400">RAM</span>
                         </div>
                         <span className="text-sm">{project.resources.memory.value}</span>
