@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/organization-profile" element={<OrganizationProfile />} />
             <Route path="/referrals" element={<ReferralProgram />} />
+            <Route path="/invoices" element={<Invoices />} />
             
             <Route path="/account" element={<AccountLayout />}>
               <Route index element={<Account />} />
