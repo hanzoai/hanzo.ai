@@ -55,27 +55,27 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black" />
 
       {/* Architectural grid background with minimal opacity */}
-      <GridLines spacing={50} opacity={0.05} />
+      <GridLines spacing={50} opacity={0.03} />
       
       {/* Blueprint lines with minimal opacity */}
-      <BlueprintLine orientation="horizontal" position="15%" color="rgba(100, 149, 237, 0.05)" />
-      <BlueprintLine orientation="horizontal" position="85%" color="rgba(100, 149, 237, 0.05)" />
-      <BlueprintLine orientation="vertical" position="15%" color="rgba(100, 149, 237, 0.05)" />
-      <BlueprintLine orientation="vertical" position="85%" color="rgba(100, 149, 237, 0.05)" />
+      <BlueprintLine orientation="horizontal" position="15%" color="rgba(255, 255, 255, 0.03)" />
+      <BlueprintLine orientation="horizontal" position="85%" color="rgba(255, 255, 255, 0.03)" />
+      <BlueprintLine orientation="vertical" position="15%" color="rgba(255, 255, 255, 0.03)" />
+      <BlueprintLine orientation="vertical" position="85%" color="rgba(255, 255, 255, 0.03)" />
       
-      {/* Background gradient effects - very subtle */}
+      {/* Background subtle gradient effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-64 w-96 h-96 bg-purple-900/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
         <ArchitecturalBox 
-          className="text-center bg-black/0 p-8"
+          className="text-center bg-transparent p-6 sm:p-8 md:p-10"
           showCorners={true}
           showGrid={false}
           cornerSize={40}
-          cornerColor="rgba(147, 51, 234, 0.1)"
+          cornerColor="rgba(255, 255, 255, 0.05)"
         >
           <HeroTitle 
             mousePosition={mousePosition}
@@ -88,15 +88,15 @@ const Hero = () => {
           <HeroDescription titleAnimationComplete={titleAnimationComplete} />
 
           <HeroButtons titleAnimationComplete={titleAnimationComplete} />
-
-          <div 
-            ref={featuresRef} 
-            className="fixed left-0 right-0 bottom-6 z-50 transition-opacity duration-300"
-            style={{ opacity: featuresVisible ? 1 : 0 }}
-          >
-            <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
-          </div>
         </ArchitecturalBox>
+      </div>
+
+      <div 
+        ref={featuresRef} 
+        className="fixed left-0 right-0 bottom-6 z-50 transition-opacity duration-300 px-4"
+        style={{ opacity: featuresVisible ? 1 : 0 }}
+      >
+        <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
       </div>
     </div>
   );

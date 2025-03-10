@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
 
 interface HeroButtonsProps {
   titleAnimationComplete: boolean;
@@ -12,7 +11,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
   
   return (
     <div 
-      className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+      className="mt-12 flex flex-col sm:flex-row gap-5 justify-center"
       style={{
         opacity: titleAnimationComplete ? 1 : 0,
         transform: titleAnimationComplete ? "translateY(0)" : "translateY(20px)",
@@ -23,14 +22,18 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
     >
       <Button 
         size="lg" 
-        className="text-lg px-8 vercel-button"
+        className="text-lg px-8 py-6 bg-black hover:bg-neutral-900 border border-white/10"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <a href="https://hanzo.app">Start building</a>
       </Button>
-      <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10 docs-button">
-        <a href="https://docs.hanzo.sh" className="gradient-text">Read Docs →</a>
+      <Button 
+        size="lg" 
+        variant="outline" 
+        className="text-lg px-8 py-6 text-white border-white/10 bg-black/40 hover:bg-white/5"
+      >
+        <a href="https://docs.hanzo.sh" className="chrome-text">Read Docs →</a>
       </Button>
     </div>
   );

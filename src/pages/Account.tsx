@@ -52,114 +52,121 @@ const Account = () => {
 
   return (
     <AnimatedSection>
-      <div className="space-y-8">
+      <div className="space-y-10">
         <AnimatedHeading>
-          <h2 className="text-2xl font-bold mb-6">Profile Settings</h2>
+          <h2 className="text-2xl font-medium mb-8">Profile Settings</h2>
         </AnimatedHeading>
 
-        <div className="flex flex-col md:flex-row md:items-center gap-6">
+        <div className="flex flex-col md:flex-row md:items-center gap-8">
           <Avatar className="h-24 w-24">
             <AvatarImage src={user.avatar} />
-            <AvatarFallback className="text-2xl bg-gray-900">{user.name.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="text-2xl bg-neutral-900">{user.name.charAt(0)}</AvatarFallback>
           </Avatar>
           
           <div>
-            <h2 className="text-2xl font-bold mb-2">{user.name}</h2>
+            <h2 className="text-2xl font-medium mb-2">{user.name}</h2>
             <div className="flex items-center text-gray-400">
               <Mail className="h-4 w-4 mr-2" />
               {user.email}
             </div>
             
-            <div className="mt-4 space-x-4">
-              <Button variant="outline" size="sm" className="bg-black border-gray-800 hover:bg-gray-900">
+            <div className="mt-5 space-x-4">
+              <Button variant="outline" size="sm" className="bg-black border-white/10 hover:bg-white/5">
                 Upload New Picture
               </Button>
-              <Button variant="outline" size="sm" className="bg-black border-gray-800 hover:bg-gray-900 text-red-400 hover:text-red-300 hover:bg-red-900/20">
+              <Button variant="outline" size="sm" className="bg-black border-white/10 hover:bg-white/5 text-red-400 hover:text-red-300 hover:bg-red-900/10">
                 Remove
               </Button>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800/30 pt-6">
-          <h3 className="text-xl font-medium mb-4">Personal Information</h3>
+        <div className="border-t border-neutral-800/20 pt-8">
+          <h3 className="text-xl font-medium mb-6">Personal Information</h3>
           
-          <form onSubmit={handleProfileSubmit} className="space-y-6 max-w-xl">
+          <form onSubmit={handleProfileSubmit} className="space-y-8 max-w-xl">
             <div className="space-y-2">
-              <Label htmlFor="fullName">Full Name</Label>
+              <Label htmlFor="fullName" className="text-white">Full Name</Label>
               <Input
                 id="fullName"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="bg-gray-900/20 border-gray-800/30"
+                className="bg-black/40 border-white/10 focus:border-white/20"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
+              <Label htmlFor="email" className="text-white">Email Address</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-gray-900/20 border-gray-800/30"
+                className="bg-black/40 border-white/10 focus:border-white/20"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="bio">Bio</Label>
+              <Label htmlFor="bio" className="text-white">Bio</Label>
               <Textarea
                 id="bio"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                className="bg-gray-900/20 border-gray-800/30 min-h-24"
+                className="bg-black/40 border-white/10 focus:border-white/20 min-h-24"
                 placeholder="Tell us about yourself"
               />
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
+                <Label htmlFor="location" className="text-white">Location</Label>
                 <Input
                   id="location"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="bg-gray-900/20 border-gray-800/30"
+                  className="bg-black/40 border-white/10 focus:border-white/20"
                   placeholder="City, Country"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
+                <Label htmlFor="phone" className="text-white">Phone Number</Label>
                 <Input
                   id="phone"
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="bg-gray-900/20 border-gray-800/30"
+                  className="bg-black/40 border-white/10 focus:border-white/20"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="website">Website</Label>
+              <Label htmlFor="website" className="text-white">Website</Label>
               <Input
                 id="website"
                 type="url"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                className="bg-gray-900/20 border-gray-800/30"
+                className="bg-black/40 border-white/10 focus:border-white/20"
                 placeholder="https://example.com"
               />
             </div>
             
-            <div className="flex gap-4">
-              <Button type="submit" className="bg-gray-900 hover:bg-gray-800 border-none">
+            <div className="flex gap-4 pt-2">
+              <Button 
+                type="submit" 
+                className="bg-black hover:bg-neutral-900 border border-white/10"
+              >
                 Update Profile
               </Button>
               <Link to="/user-profile">
-                <Button type="button" variant="outline" className="bg-black border-gray-800 hover:bg-gray-900">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  className="bg-black border-white/10 hover:bg-white/5"
+                >
                   View Public Profile
                 </Button>
               </Link>

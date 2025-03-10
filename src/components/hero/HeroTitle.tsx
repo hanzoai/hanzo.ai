@@ -57,14 +57,14 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         transition={{ duration: 0.5 }}
         className="mb-8"
       >
-        <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-purple-900/20 border border-purple-500/20 text-purple-300 text-sm font-medium mb-8">
           AI Engineering Platform
         </div>
       </motion.div>
       
       <motion.h1 
         ref={headingRef}
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight text-white" 
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-white leading-[1.1]" 
         initial="hidden" 
         animate="visible" 
         variants={titleVariants} 

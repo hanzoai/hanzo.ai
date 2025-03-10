@@ -17,21 +17,21 @@
     --primary: #F0F7FF;
     --primary-foreground: #000000;
 
-    --secondary: #111111;
+    --secondary: #0C0C0C;
     --secondary-foreground: #F0F7FF;
 
-    --muted: #111111;
+    --muted: #0C0C0C;
     --muted-foreground: #AAAAAA;
 
-    --accent: #111111;
+    --accent: #0C0C0C;
     --accent-foreground: #F0F7FF;
 
     --destructive: #991B1B;
     --destructive-foreground: #F0F7FF;
 
-    --border: #222222;
-    --input: #222222;
-    --ring: #333333;
+    --border: #1A1A1A;
+    --input: #1A1A1A;
+    --ring: #2A2A2A;
 
     --radius: 0.5rem;
   }
@@ -44,16 +44,21 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-medium;
   }
 }
 
 /* Black on black theme specific styles */
 .black-on-black {
-  @apply bg-black border-gray-800/20 text-white;
+  @apply bg-black border-neutral-800/20 text-white;
 }
 
 .black-btn {
-  @apply bg-black hover:bg-gray-900 border border-gray-800/30 text-white;
+  @apply bg-black hover:bg-neutral-900 border border-neutral-800/30 text-white;
 }
 
 .black-card {
@@ -79,10 +84,76 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #2A2A2A;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444444;
+  background: #3A3A3A;
+}
+
+/* Gradients */
+.text-gradient-steel {
+  background: linear-gradient(
+    90deg,
+    rgb(180, 180, 180),
+    rgb(240, 240, 240),
+    rgb(180, 180, 180)
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typography enhancements */
+.heading-xl {
+  @apply text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight;
+}
+
+.heading-lg {
+  @apply text-3xl sm:text-4xl font-medium tracking-tight;
+}
+
+.heading-md {
+  @apply text-2xl sm:text-3xl font-medium tracking-tight;
+}
+
+.body-lg {
+  @apply text-lg leading-relaxed;
+}
+
+.body-md {
+  @apply text-base leading-relaxed;
+}
+
+/* Chrome text effect */
+.chrome-text {
+  background: linear-gradient(
+    90deg,
+    rgb(200, 200, 200),
+    rgb(255, 255, 255),
+    rgb(200, 200, 200)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease infinite;
+}
+
+/* Section spacing */
+.section-spacing {
+  @apply py-20 md:py-24 lg:py-28;
+}
+
+.content-spacing {
+  @apply space-y-8 md:space-y-10 lg:space-y-12;
 }

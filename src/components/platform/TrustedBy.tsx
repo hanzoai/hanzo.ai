@@ -69,17 +69,20 @@ const TrustedBy = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900">
+    <section 
+      ref={containerRef} 
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-black"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 
-            className="text-3xl font-bold mb-4 text-gradient-steel"
+            className="text-3xl md:text-4xl font-medium mb-6 chrome-text"
             style={{
               backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
             }}
@@ -99,11 +102,11 @@ const TrustedBy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+              className="bg-black/50 backdrop-blur-sm rounded-xl p-8 border border-neutral-800/20"
             >
               <div className="mb-4">
                 <h3 
-                  className="text-xl font-bold text-gradient-steel"
+                  className="text-xl font-medium chrome-text"
                   style={{
                     backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
                   }}
@@ -112,18 +115,18 @@ const TrustedBy = () => {
                 </h3>
               </div>
               
-              <p className="text-gray-300 mb-6">"{testimonial.quote}"</p>
+              <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
               
               <div className="flex items-center">
                 <div className="mr-4">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.author}
-                    className="h-12 w-12 rounded-full object-cover"
+                    className="h-12 w-12 rounded-full object-cover bg-neutral-900"
                   />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">{testimonial.author}</h4>
+                  <h4 className="font-medium text-white">{testimonial.author}</h4>
                   <p className="text-sm text-gray-400">{testimonial.role}</p>
                 </div>
               </div>
@@ -131,31 +134,6 @@ const TrustedBy = () => {
           ))}
         </div>
       </div>
-
-      <style>
-        {`
-        .text-gradient-steel {
-          background: linear-gradient(
-            90deg,
-            rgb(180, 180, 180),
-            rgb(240, 240, 240),
-            rgb(180, 180, 180)
-          );
-          background-size: 200% 100%;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          animation: shimmer 6s ease infinite;
-          transition: background-position 0.3s ease;
-        }
-        
-        @keyframes shimmer {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        `}
-      </style>
     </section>
   );
 };

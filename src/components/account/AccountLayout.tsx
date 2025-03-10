@@ -55,9 +55,9 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-10">
               <AnimatedHeading>
-                <h1 className="text-4xl font-bold">Account</h1>
+                <h1 className="text-3xl sm:text-4xl font-medium">Account</h1>
               </AnimatedHeading>
               
               {currentOrganization && (
@@ -65,21 +65,21 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
                   value={currentOrganization.id} 
                   onValueChange={switchOrganization}
                 >
-                  <SelectTrigger className="w-[250px] bg-black border-gray-800/30">
+                  <SelectTrigger className="w-[250px] bg-black border-neutral-800/30">
                     <SelectValue>
                       <div className="flex items-center">
-                        <div className="h-6 w-6 bg-gray-900 rounded-full mr-2 flex items-center justify-center text-sm">
+                        <div className="h-6 w-6 bg-neutral-900 rounded-full mr-2 flex items-center justify-center text-sm">
                           {currentOrganization.name.charAt(0)}
                         </div>
                         {currentOrganization.name}
                       </div>
                     </SelectValue>
                   </SelectTrigger>
-                  <SelectContent className="bg-black border-gray-800/30">
+                  <SelectContent className="bg-black border-neutral-800/30">
                     {organizations.map((org) => (
-                      <SelectItem key={org.id} value={org.id} className="text-white hover:bg-gray-900/30">
+                      <SelectItem key={org.id} value={org.id} className="text-white hover:bg-neutral-900/30">
                         <div className="flex items-center">
-                          <div className="h-6 w-6 bg-gray-900 rounded-full mr-2 flex items-center justify-center text-sm">
+                          <div className="h-6 w-6 bg-neutral-900 rounded-full mr-2 flex items-center justify-center text-sm">
                             {org.name.charAt(0)}
                           </div>
                           {org.name}
@@ -95,28 +95,28 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* Sidebar Navigation */}
               <div className="col-span-1">
-                <div className="bg-black/40 border-0 rounded-xl p-4 space-y-1">
+                <div className="backdrop-blur-xl bg-black/40 border border-white/5 rounded-xl p-4 space-y-1">
                   {accountNavItems.map((item) => (
                     <Link 
                       key={item.path} 
                       to={item.path}
-                      className={`flex items-center space-x-3 p-2 rounded-lg transition-colors ${
+                      className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
                         isActive(item.path) 
-                          ? 'bg-gray-900/30 text-white' 
-                          : 'text-gray-400 hover:bg-gray-900/20 hover:text-white'
+                          ? 'bg-white/5 text-white' 
+                          : 'text-gray-400 hover:bg-white/5 hover:text-white'
                       }`}
                     >
                       <item.icon className="w-5 h-5" />
-                      <span>{item.name}</span>
+                      <span className="font-medium">{item.name}</span>
                       {isActive(item.path) && <ChevronRight className="ml-auto w-4 h-4" />}
                     </Link>
                   ))}
                   
                   <Button 
                     variant="ghost" 
-                    className="w-full justify-start text-red-400 hover:text-red-300 hover:bg-red-900/20 mt-6"
+                    className="w-full justify-start text-red-400 hover:text-red-300 hover:bg-red-900/10 mt-6 p-3"
                   >
-                    <LogOut className="w-5 w-5 mr-3" />
+                    <LogOut className="w-5 h-5 mr-3" />
                     Sign Out
                   </Button>
                 </div>
@@ -124,7 +124,7 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
               
               {/* Main Content */}
               <div className="col-span-1 md:col-span-3">
-                <div className="bg-black/40 border-0 rounded-xl p-6">
+                <div className="backdrop-blur-xl bg-black/40 border border-white/5 rounded-xl p-8">
                   {children || <Outlet />}
                 </div>
               </div>
