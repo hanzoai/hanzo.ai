@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CloudServices from "@/components/index3/cloud-services";
 import AIPlatformSection from "@/components/AIPlatformSection";
+import CloudServices from "@/components/index3/cloud-services";
 import CallToAction from "@/components/index3/CallToAction";
 import TrustedBy from "@/components/platform/TrustedBy";
 import Footer from "@/components/Footer";
@@ -14,7 +14,7 @@ import JapaneseWave from "@/components/zen/JapaneseWave";
 import { GridLines, BlueprintLine } from "@/components/ui/architectural-elements";
 import ReferralBanner from "@/components/referrals/ReferralBanner";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -92,11 +92,40 @@ const Index = () => {
             Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
-        <ReferralBanner />
-        <CloudServices />
+        
+        {/* Rearranged sections as requested */}
         <AIPlatformSection />
-        <CallToAction />
+        <CloudServices />
         <Karma />
+        
+        {/* Hanzo Team CTA */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="max-w-5xl mx-auto bg-gray-900/40 border border-gray-800 rounded-xl p-8 backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="bg-purple-900/30 p-4 rounded-full">
+                <Users className="h-10 w-10 text-purple-400" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-2xl font-bold mb-2">Hanzo Team Workspace</h3>
+                <p className="text-gray-300 mb-4">
+                  Streamline your workflow with our integrated workspace. Collaborate with your team, manage projects, and get more done.
+                </p>
+              </div>
+              <Button 
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                size="lg"
+              >
+                <a href="https://hanzo.team" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  Visit Hanzo Team <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+        
+        {/* Referral Banner moved to bottom before footer */}
+        <ReferralBanner />
+        <CallToAction />
         <TrustedBy />
       </main>
       <Footer />

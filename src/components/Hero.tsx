@@ -12,7 +12,9 @@ const Hero = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [featuresVisible, setFeaturesVisible] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -25,9 +27,26 @@ const Hero = () => {
       }
     };
 
+    // Check if features should be visible based on viewport height
+    const checkFeaturesVisibility = () => {
+      if (featuresRef.current && containerRef.current) {
+        const containerHeight = containerRef.current.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        
+        // Hide features if viewport is too small
+        setFeaturesVisible(viewportHeight >= containerHeight - 50);
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', checkFeaturesVisibility);
+    
+    // Initial check
+    checkFeaturesVisibility();
+    
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', checkFeaturesVisibility);
     };
   }, []);
 
@@ -50,7 +69,7 @@ const Hero = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <ArchitecturalBox 
           className="text-center bg-black/0 p-8"
           showCorners={true}
@@ -70,7 +89,9 @@ const Hero = () => {
 
           <HeroButtons titleAnimationComplete={titleAnimationComplete} />
 
-          <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
+          <div ref={featuresRef} style={{ opacity: featuresVisible ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+            <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
+          </div>
         </ArchitecturalBox>
       </div>
     </div>
