@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Github, Twitter, Linkedin, ArrowRight } from "lucide-react";
@@ -20,10 +21,10 @@ const Footer = () => {
               <span className="text-white font-bold text-xl">Hanzo</span>
             </Link>
             
-            <a href="https://status.hanzo.cloud" className="flex items-center text-green-500 space-x-2 hover:underline">
+            <Link to="/status" className="flex items-center text-green-500 space-x-2 hover:underline">
               <CheckCircle className="h-5 w-5" />
               <span className="text-gray-400">All systems operational</span>
-            </a>
+            </Link>
           </div>
           
           {/* Products Column */}
