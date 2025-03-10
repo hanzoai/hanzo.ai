@@ -32,25 +32,30 @@ const Footer = () => {
             <h3 className="text-lg font-medium text-white mb-4">Products</h3>
             <div className="space-y-6">
               <div>
-                <h4 className="text-gray-400 font-medium mb-3">DX Platform</h4>
+                <h4 className="text-gray-400 font-medium mb-3">AI Cloud</h4>
                 <ul className="space-y-2">
-                  <li><Link to="/hanzoapp" className="text-gray-500 hover:text-gray-300">Hanzo App</Link></li>
-                  <li><Link to="/hanzocode" className="text-gray-500 hover:text-gray-300">Hanzo Code</Link></li>
-                  <li><Link to="/hanzobot" className="text-gray-500 hover:text-gray-300">Hanzo Bot</Link></li>
-                  <li><Link to="/hanzodev" className="text-gray-500 hover:text-gray-300">Hanzo Works</Link></li>
-                  <li><Link to="/cloud" className="text-gray-500 hover:text-gray-300">Managed Infrastructure</Link></li>
-                  <li><Link to="/analytics" className="text-gray-500 hover:text-gray-300">Analytics</Link></li>
-                  <li><Link to="/commerce" className="text-gray-500 hover:text-gray-300">Marketing</Link></li>
+                  <li><Link to="/ai" className="text-gray-500 hover:text-gray-300">AI</Link></li>
+                  <li><Link to="/cloud#chat" className="text-gray-500 hover:text-gray-300">Chat</Link></li>
+                  <li><Link to="/datastore" className="text-gray-500 hover:text-gray-300">Datastore</Link></li>
+                  <li><Link to="/cloud#edge" className="text-gray-500 hover:text-gray-300">Edge</Link></li>
+                  <li><Link to="/cloud#functions" className="text-gray-500 hover:text-gray-300">Functions</Link></li>
+                  <li><Link to="/cloud#identity" className="text-gray-500 hover:text-gray-300">Identity</Link></li>
+                  <li><Link to="/cloud#machines" className="text-gray-500 hover:text-gray-300">Machines</Link></li>
                   <li><Link to="/payments" className="text-gray-500 hover:text-gray-300">Payments</Link></li>
                 </ul>
               </div>
               
               <div>
-                <h4 className="text-gray-400 font-medium mb-3">OpenSource</h4>
+                <h4 className="text-gray-400 font-medium mb-3">DX Platform</h4>
                 <ul className="space-y-2">
-                  <li><a href="https://github.com/hanzo" className="text-gray-500 hover:text-gray-300">Hanzo.js</a></li>
-                  <li><a href="https://github.com/hanzo" className="text-gray-500 hover:text-gray-300">Engine</a></li>
-                  <li><a href="https://github.com/hanzo" className="text-gray-500 hover:text-gray-300">Shop.js</a></li>
+                  <li><Link to="/app" className="text-gray-500 hover:text-gray-300">App</Link></li>
+                  <li><Link to="/bot" className="text-gray-500 hover:text-gray-300">Bot</Link></li>
+                  <li><Link to="/code" className="text-gray-500 hover:text-gray-300">Code</Link></li>
+                  <li><Link to="/dev" className="text-gray-500 hover:text-gray-300">Dev</Link></li>
+                  <li><Link to="/extension" className="text-gray-500 hover:text-gray-300">Extension</Link></li>
+                  <li><Link to="/platform#runtime" className="text-gray-500 hover:text-gray-300">Runtime</Link></li>
+                  <li><Link to="/operator" className="text-gray-500 hover:text-gray-300">Operator</Link></li>
+                  <li><Link to="/platform#studio" className="text-gray-500 hover:text-gray-300">Studio</Link></li>
                 </ul>
               </div>
             </div>
