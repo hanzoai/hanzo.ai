@@ -19,7 +19,7 @@ const CallToAction = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
+          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6 mx-auto text-center">
             Build Your Vision, Shape the Future
           </ChromeText>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
@@ -28,7 +28,7 @@ const CallToAction = () => {
           
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-500 hover:to-blue-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+            className="bg-white hover:bg-gray-100 text-black px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
           >
             <a href="https://dashboard.hanzo.cloud">Get Started with Hanzo</a>
           </Button>
