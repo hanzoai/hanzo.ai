@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { 
   Bell, Globe, Moon, Sun, Laptop, 
-  MailCheck, AlertCircle 
+  MailCheck, AlertCircle, BarChart3
 } from 'lucide-react';
 import { 
   Tabs, 
