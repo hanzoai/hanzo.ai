@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import BillingTabsLink from './BillingTabsLink';
+import { useNavigate } from 'react-router-dom';
 
 const PaymentMethods = () => {
   const [cards, setCards] = useState([
@@ -21,6 +22,7 @@ const PaymentMethods = () => {
     expYear: '',
     cvc: ''
   });
+  const navigate = useNavigate();
 
   const getCardIcon = (type: string) => {
     switch (type) {
@@ -90,9 +92,8 @@ const PaymentMethods = () => {
     toast.success('Payment method added successfully');
     handleCloseAddCard();
     
-    // Redirect to overview after adding card to continue user journey
-    const navigate = BillingTabsLink({ tabId: 'overview', children: '' }).props.onClick;
-    if (navigate) navigate();
+    // Navigate back to overview after adding card to continue user journey
+    navigate('/account/billing#overview');
   };
   
   const handleDeleteCard = (id: number) => {
