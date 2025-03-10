@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Server, Chip, HardDrive, Globe } from "lucide-react";
+import { Server, CircuitBoard, HardDrive, Globe } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { ProjectResources } from "./models/project";
 
@@ -28,7 +28,7 @@ const ResourceUsageSection = ({ resources }: ResourceUsageSectionProps) => {
         <div>
           <div className="flex justify-between mb-1">
             <div className="flex items-center gap-2">
-              <Chip className="h-4 w-4 text-gray-400" />
+              <CircuitBoard className="h-4 w-4 text-gray-400" />
               <span className="text-sm text-gray-400">RAM</span>
             </div>
             <span className="text-sm">{resources.memory.value}</span>

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Cpu, HardDrive, Globe, Chip } from "lucide-react";
+import { Cpu, HardDrive, Globe, CircuitBoard } from "lucide-react";
 import { motion } from "framer-motion";
 import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
 
@@ -21,7 +21,7 @@ const ResourceBreakdown = () => {
     },
     {
       name: "Memory (RAM)",
-      icon: <Chip className="h-5 w-5" />,
+      icon: <CircuitBoard className="h-5 w-5" />,
       description: "Memory cost across all services",
       cost: "$0.0015 per GB/hour",
       percentage: 45
