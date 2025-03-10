@@ -9,7 +9,7 @@ interface GlobeThreeJsProps {
 
 const GlobeThreeJs: React.FC<GlobeThreeJsProps> = ({ width, height }) => {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full bg-gradient-to-br from-black to-neutral-900">
       <GlobeRenderer width={width} height={height} />
       
       {/* Status indicator */}

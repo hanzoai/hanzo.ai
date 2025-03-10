@@ -22,7 +22,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
     >
       <Button 
         size="lg" 
-        className="text-lg px-8 py-6 bg-black hover:bg-neutral-900 border border-white/10"
+        className="text-lg px-8 py-6 bg-white hover:bg-gray-100 text-black border-0"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -31,7 +31,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       <Button 
         size="lg" 
         variant="outline" 
-        className="text-lg px-8 py-6 text-white border-white/10 bg-black/40 hover:bg-white/5"
+        className="text-lg px-8 py-6 text-white border-white/10 bg-transparent hover:bg-white/5"
       >
         <a href="https://docs.hanzo.sh" className="chrome-text">Read Docs →</a>
       </Button>
