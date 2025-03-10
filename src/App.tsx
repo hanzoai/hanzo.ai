@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
@@ -60,12 +61,12 @@ import TeamSu from "./pages/TeamSu";
 import TeamVi from "./pages/TeamVi";
 import { BillingProvider } from "./contexts/BillingContext";
 import { ThemeProvider } from "styled-components";
-import Toaster from "./components/Toaster";
+import { Toaster } from "@/components/ui/toaster";
 
 function App() {
   return (
     <BillingProvider>
-      <ThemeProvider>
+      <ThemeProvider theme={{}}>
         <div className="App min-h-screen bg-black text-white">
           <Router>
             <ScrollToTop />
