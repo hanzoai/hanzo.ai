@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Download, Filter, Calendar, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { 
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table";
 
 const cardAnimation = createAnimationVariant("fadeInBlur", {
   duration: 0.4,
@@ -62,7 +70,7 @@ const InvoicesList = () => {
   return (
     <motion.div 
       variants={cardAnimation}
-      className="rounded-xl border border-gray-800 bg-gray-900/20 overflow-hidden"
+      className="rounded-xl border border-gray-800 bg-black/60 overflow-hidden"
     >
       <div className="p-6 border-b border-gray-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex items-center gap-3">
@@ -74,7 +82,7 @@ const InvoicesList = () => {
         </div>
         
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="border-gray-700">
+          <Button variant="outline" size="sm" className="border-gray-700 bg-black hover:bg-gray-900">
             <Filter className="h-4 w-4 mr-2" />
             Filter
           </Button>
@@ -88,30 +96,30 @@ const InvoicesList = () => {
       
       {filteredInvoices.length > 0 ? (
         <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-gray-900/50">
-                <th className="text-left py-3 px-6 font-medium text-gray-400">Invoice</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-400">Date</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-400">Due Date</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-400">Amount</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-400">Status</th>
-                <th className="text-right py-3 px-6 font-medium text-gray-400">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
+          <Table>
+            <TableHeader className="bg-black">
+              <TableRow className="border-b border-gray-800 hover:bg-transparent">
+                <TableHead className="text-gray-400 font-medium py-3 px-6">Invoice</TableHead>
+                <TableHead className="text-gray-400 font-medium py-3 px-6">Date</TableHead>
+                <TableHead className="text-gray-400 font-medium py-3 px-6">Due Date</TableHead>
+                <TableHead className="text-gray-400 font-medium py-3 px-6">Amount</TableHead>
+                <TableHead className="text-gray-400 font-medium py-3 px-6">Status</TableHead>
+                <TableHead className="text-right text-gray-400 font-medium py-3 px-6">Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {filteredInvoices.map((invoice) => (
-                <tr key={invoice.id} className="border-t border-gray-800 hover:bg-gray-900/30">
-                  <td className="py-4 px-6">{invoice.id}</td>
-                  <td className="py-4 px-6">{invoice.date}</td>
-                  <td className="py-4 px-6">{invoice.dueDate}</td>
-                  <td className="py-4 px-6">{invoice.amount}</td>
-                  <td className="py-4 px-6">
+                <TableRow key={invoice.id} className="border-t border-gray-800 hover:bg-gray-900/30">
+                  <TableCell className="py-4 px-6">{invoice.id}</TableCell>
+                  <TableCell className="py-4 px-6">{invoice.date}</TableCell>
+                  <TableCell className="py-4 px-6">{invoice.dueDate}</TableCell>
+                  <TableCell className="py-4 px-6">{invoice.amount}</TableCell>
+                  <TableCell className="py-4 px-6">
                     <span className={`inline-block px-2 py-1 rounded-full text-xs ${statusColors[invoice.status]}`}>
                       {invoice.status}
                     </span>
-                  </td>
-                  <td className="py-4 px-6 text-right">
+                  </TableCell>
+                  <TableCell className="py-4 px-6 text-right">
                     <Button 
                       variant="ghost" 
                       size="sm"
@@ -120,11 +128,11 @@ const InvoicesList = () => {
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
-                  </td>
-                </tr>
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
       ) : (
         <div className="py-16 text-center">
