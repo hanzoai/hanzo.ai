@@ -28,7 +28,7 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
     { name: 'Profile', path: '/account', icon: User },
     { name: 'Organization', path: '/account/organization', icon: Building },
     { name: 'Billing', path: '/account/billing', icon: CreditCard },
-    { name: 'Usage', path: '/usage', icon: BarChart3 },
+    { name: 'Usage', path: '/account/usage', icon: BarChart3 },
     { name: 'Invoices', path: '/invoices', icon: FileText },
     { name: 'Referrals', path: '/account/referrals', icon: Gift },
     { name: 'Settings', path: '/account/settings', icon: Settings },

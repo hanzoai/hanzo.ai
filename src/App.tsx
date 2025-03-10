@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -16,6 +15,7 @@ import BillingPlans from "./pages/BillingPlans";
 import UserProfile from "./pages/UserProfile";
 import OrganizationProfile from "./pages/OrganizationProfile";
 import ReferralProgram from "./pages/ReferralProgram";
+import Usage from "./pages/Usage";
 
 const App = () => {
   return (
@@ -42,6 +42,7 @@ const App = () => {
               <Route path="purchase-credits" element={<PurchaseCredits />} />
               <Route path="billing-plans" element={<BillingPlans />} />
               <Route path="referrals" element={<ReferralProgram />} />
+              <Route path="usage" element={<Usage />} />
             </Route>
           </Routes>
         </BillingProvider>
