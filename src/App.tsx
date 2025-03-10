@@ -37,7 +37,6 @@ const App = () => {
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/organization-profile" element={<OrganizationProfile />} />
             <Route path="/referrals" element={<ReferralProgram />} />
-            <Route path="/invoices" element={<Invoices />} />
             
             <Route path="/account" element={<AccountLayout />}>
               <Route index element={<Account />} />
