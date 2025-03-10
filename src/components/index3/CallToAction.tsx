@@ -19,7 +19,7 @@ const CallToAction = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6 mx-auto">
+          <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6 mx-auto text-center">
             Build Your Vision, Shape the Future
           </ChromeText>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">

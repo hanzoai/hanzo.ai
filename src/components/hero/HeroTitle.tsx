@@ -55,7 +55,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-8"
+        className="mb-8 text-center"
       >
         <div className="inline-block px-4 py-1.5 rounded-full bg-purple-900/20 border border-purple-500/20 text-purple-300 text-sm font-medium mb-8">
           AI Engineering Platform
