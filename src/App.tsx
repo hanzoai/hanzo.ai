@@ -26,6 +26,23 @@ import Blog from "./pages/Blog";
 import Careers from "./pages/Careers";
 import Team from "./pages/Team";
 import Leadership from "./pages/Leadership";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Security from "./pages/Security";
+import Index2 from "./pages/Index2";
+import Index3 from "./pages/Index3";
+import Calculator from "./pages/Calculator";
+import AIAcceleration from "./pages/AIAcceleration";
+import AI from "./pages/AI";
+import ZenOfHanzo from "./pages/ZenOfHanzo";
+import HanzoBalancer from "./pages/HanzoBalancer";
+import Observability from "./pages/Observability";
+import Install from "./pages/Install";
+import Referrals from "./pages/Referrals";
+import Affiliates from "./pages/Affiliates";
+import Billing from "./pages/Billing";
+import Usage from "./pages/Usage";
+import Invoices from "./pages/Invoices";
 import TeamAlgo from "./pages/TeamAlgo";
 import TeamArt from "./pages/TeamArt";
 import TeamCal from "./pages/TeamCal";
@@ -42,20 +59,6 @@ import TeamOpera from "./pages/TeamOpera";
 import TeamSec from "./pages/TeamSec";
 import TeamSu from "./pages/TeamSu";
 import TeamVi from "./pages/TeamVi";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import Security from "./pages/Security";
-import Index2 from "./pages/Index2";
-import Index3 from "./pages/Index3";
-import Calculator from "./pages/Calculator";
-import AIAcceleration from "./pages/AIAcceleration";
-import AI from "./pages/AI";
-import ZenOfHanzo from "./pages/ZenOfHanzo";
-import HanzoBalancer from "./pages/HanzoBalancer";
-import Observability from "./pages/Observability";
-import Install from "./pages/Install";
-import Referrals from "./pages/Referrals";
-import Affiliates from "./pages/Affiliates";
 
 function App() {
   return (
@@ -95,6 +98,14 @@ function App() {
         <Route path="/ai-acc" element={<AIAcceleration />} />
         <Route path="/ai" element={<AI />} />
         <Route path="/zen" element={<ZenOfHanzo />} />
+        <Route path="/balancer" element={<HanzoBalancer />} />
+        <Route path="/observability" element={<Observability />} />
+        <Route path="/install" element={<Install />} />
+        <Route path="/referrals" element={<Referrals />} />
+        <Route path="/affiliates" element={<Affiliates />} />
+        <Route path="/billing" element={<Billing />} />
+        <Route path="/usage" element={<Usage />} />
+        <Route path="/invoices" element={<Invoices />} />
         <Route path="/team/algo" element={<TeamAlgo />} />
         <Route path="/team/art" element={<TeamArt />} />
         <Route path="/team/cal" element={<TeamCal />} />
@@ -111,11 +122,6 @@ function App() {
         <Route path="/team/sec" element={<TeamSec />} />
         <Route path="/team/su" element={<TeamSu />} />
         <Route path="/team/vi" element={<TeamVi />} />
-        <Route path="/balancer" element={<HanzoBalancer />} />
-        <Route path="/observability" element={<Observability />} />
-        <Route path="/install" element={<Install />} />
-        <Route path="/referrals" element={<Referrals />} />
-        <Route path="/affiliates" element={<Affiliates />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
