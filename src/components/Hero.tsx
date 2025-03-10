@@ -12,9 +12,7 @@ const Hero = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [featuresVisible, setFeaturesVisible] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
-  const featuresRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -26,27 +24,11 @@ const Hero = () => {
         });
       }
     };
-
-    // Check if features should be visible based on viewport height
-    const checkFeaturesVisibility = () => {
-      if (featuresRef.current && containerRef.current) {
-        const containerHeight = containerRef.current.offsetHeight;
-        const viewportHeight = window.innerHeight;
-        
-        // Hide features if viewport is too small
-        setFeaturesVisible(viewportHeight >= containerHeight - 100);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', checkFeaturesVisibility);
     
-    // Initial check
-    checkFeaturesVisibility();
+    window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', checkFeaturesVisibility);
     };
   }, []);
 
@@ -88,15 +70,11 @@ const Hero = () => {
           <HeroDescription titleAnimationComplete={titleAnimationComplete} />
 
           <HeroButtons titleAnimationComplete={titleAnimationComplete} />
+          
+          <div className="mt-16">
+            <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
+          </div>
         </ArchitecturalBox>
-      </div>
-
-      <div 
-        ref={featuresRef} 
-        className="fixed left-0 right-0 bottom-6 z-50 transition-opacity duration-300 px-4"
-        style={{ opacity: featuresVisible ? 1 : 0 }}
-      >
-        <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
       </div>
     </div>
   );

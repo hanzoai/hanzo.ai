@@ -5,7 +5,7 @@ import { CreditCard } from "lucide-react";
 
 const BillingManagement = () => {
   return (
-    <div className="max-w-4xl mx-auto mb-16 p-8 rounded-xl border border-white/5 backdrop-blur-xl bg-black/40 hover:border-white/10 transition-all">
+    <div className="max-w-4xl mx-auto mb-16 p-8 rounded-xl border border-white/5 backdrop-blur-xl bg-black hover:border-white/10 transition-all">
       <div className="flex items-center gap-4 mb-5">
         <CreditCard className="h-8 w-8 text-white" />
         <h2 className="text-2xl font-medium">Billing Management</h2>
