@@ -67,12 +67,12 @@ const UsageOverview = ({
           <div className="bg-gray-900/30 rounded-xl p-6 flex flex-col items-center justify-center text-center">
             <div className="mb-2">
               <div className="text-sm text-gray-400">Credits Available</div>
-              <div className="text-3xl font-bold">${creditsAvailable}</div>
+              <div className="text-3xl font-bold">{creditsAvailable}</div>
             </div>
             
             <div className="mb-6">
               <div className="text-sm text-green-500">Est Credits Required</div>
-              <div className="text-3xl font-bold text-green-500">${creditsRequired}</div>
+              <div className="text-3xl font-bold text-green-500">{creditsRequired}</div>
             </div>
             
             <Button 

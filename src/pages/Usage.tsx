@@ -34,8 +34,8 @@ const Usage = () => {
               discounts="$0.00"
               creditsUsed="$0.00"
               estimatedCost="$0.07"
-              creditsAvailable="$5.00"
-              creditsRequired="$0.00"
+              creditsAvailable="5.00"
+              creditsRequired="0.00"
             />
             
             <div className="mt-12">
