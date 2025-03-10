@@ -49,7 +49,11 @@ const PurchaseCredits = () => {
     <AnimatedSection>
       <div className="space-y-6">
         <div className="flex items-center mb-4">
-          <Button variant="ghost" onClick={() => navigate('/account/billing')} className="mr-4">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/account/billing')} 
+            className="mr-4 hover:bg-gray-900/20"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Billing
           </Button>
@@ -61,7 +65,7 @@ const PurchaseCredits = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-3">
-            <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 space-y-6">
+            <div className="bg-black border-0 rounded-lg p-6 space-y-6">
               <form onSubmit={handlePurchaseCredits} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="creditAmount">Amount (USD)</Label>
@@ -73,7 +77,7 @@ const PurchaseCredits = () => {
                       placeholder="50"
                       value={creditAmount}
                       onChange={handleCreditAmountChange}
-                      className="bg-gray-800 border-gray-700 pl-8"
+                      className="bg-gray-900/20 border-gray-800/30 pl-8"
                     />
                   </div>
                   <p className="text-sm text-gray-400">Minimum amount: $10</p>
@@ -86,8 +90,8 @@ const PurchaseCredits = () => {
                       key={amount}
                       type="button"
                       variant="outline"
-                      className={`${
-                        creditAmount === amount ? 'border-purple-500 bg-purple-900/20' : ''
+                      className={`bg-black border-gray-800/30 hover:bg-gray-900/30 ${
+                        creditAmount === amount ? 'border-purple-500/30 bg-purple-900/10' : ''
                       }`}
                       onClick={() => setCreditAmount(amount)}
                     >
@@ -98,14 +102,14 @@ const PurchaseCredits = () => {
 
                 <div className="space-y-4">
                   <Label htmlFor="card">Payment Method</Label>
-                  <div className="p-4 border border-gray-800 rounded-lg bg-gray-900/20 flex items-center">
-                    <div className="h-10 w-14 bg-gray-800 rounded flex items-center justify-center mr-4">
+                  <div className="p-4 border-0 rounded-lg bg-gray-900/20 flex items-center">
+                    <div className="h-10 w-14 bg-gray-900/50 rounded flex items-center justify-center mr-4">
                       <div className="text-blue-500 font-bold text-xs">VISA</div>
                     </div>
                     <div>
                       <div className="font-medium">
                         Visa ending in 4242
-                        <span className="ml-2 text-xs bg-purple-900/50 text-purple-300 px-2 py-0.5 rounded-full">
+                        <span className="ml-2 text-xs bg-purple-900/20 text-purple-300 px-2 py-0.5 rounded-full">
                           Default
                         </span>
                       </div>
@@ -123,7 +127,7 @@ const PurchaseCredits = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-purple-600 hover:bg-purple-700" 
+                  className="w-full bg-gray-900 hover:bg-gray-800 border-0" 
                   disabled={isProcessing}
                 >
                   {isProcessing ? 'Processing...' : 'Purchase Credits'}
@@ -133,7 +137,7 @@ const PurchaseCredits = () => {
           </div>
           
           <div className="col-span-1 md:col-span-2">
-            <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 space-y-4">
+            <div className="bg-black border-0 rounded-lg p-6 space-y-4">
               <h3 className="text-lg font-medium">Order Summary</h3>
               
               <div className="space-y-2">
@@ -141,7 +145,7 @@ const PurchaseCredits = () => {
                   <span>Credits</span>
                   <span className="font-medium">${creditAmount}</span>
                 </div>
-                <div className="flex justify-between py-2 border-t border-gray-800">
+                <div className="flex justify-between py-2 border-t border-gray-800/10">
                   <span>Subtotal</span>
                   <span className="font-medium">${creditAmount}</span>
                 </div>
@@ -149,7 +153,7 @@ const PurchaseCredits = () => {
                   <span>Tax</span>
                   <span className="font-medium">$0.00</span>
                 </div>
-                <div className="flex justify-between py-2 border-t border-gray-800">
+                <div className="flex justify-between py-2 border-t border-gray-800/10">
                   <span className="font-bold">Total</span>
                   <span className="font-bold">${creditAmount}</span>
                 </div>

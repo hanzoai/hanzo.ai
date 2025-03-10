@@ -34,7 +34,7 @@ const Hero = () => {
         const viewportHeight = window.innerHeight;
         
         // Hide features if viewport is too small
-        setFeaturesVisible(viewportHeight >= containerHeight - 50);
+        setFeaturesVisible(viewportHeight >= containerHeight - 100);
       }
     };
 
@@ -54,18 +54,18 @@ const Hero = () => {
     <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-black" />
 
-      {/* Architectural grid background with reduced opacity */}
-      <GridLines spacing={50} opacity={0.08} />
+      {/* Architectural grid background with minimal opacity */}
+      <GridLines spacing={50} opacity={0.05} />
       
-      {/* Blueprint lines with reduced opacity */}
-      <BlueprintLine orientation="horizontal" position="15%" color="rgba(100, 149, 237, 0.1)" />
-      <BlueprintLine orientation="horizontal" position="85%" color="rgba(100, 149, 237, 0.1)" />
-      <BlueprintLine orientation="vertical" position="15%" color="rgba(100, 149, 237, 0.1)" />
-      <BlueprintLine orientation="vertical" position="85%" color="rgba(100, 149, 237, 0.1)" />
+      {/* Blueprint lines with minimal opacity */}
+      <BlueprintLine orientation="horizontal" position="15%" color="rgba(100, 149, 237, 0.05)" />
+      <BlueprintLine orientation="horizontal" position="85%" color="rgba(100, 149, 237, 0.05)" />
+      <BlueprintLine orientation="vertical" position="15%" color="rgba(100, 149, 237, 0.05)" />
+      <BlueprintLine orientation="vertical" position="85%" color="rgba(100, 149, 237, 0.05)" />
       
-      {/* Background gradient effects - subtle */}
+      {/* Background gradient effects - very subtle */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-purple-900/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
@@ -75,7 +75,7 @@ const Hero = () => {
           showCorners={true}
           showGrid={false}
           cornerSize={40}
-          cornerColor="rgba(147, 51, 234, 0.15)"
+          cornerColor="rgba(147, 51, 234, 0.1)"
         >
           <HeroTitle 
             mousePosition={mousePosition}
@@ -89,7 +89,11 @@ const Hero = () => {
 
           <HeroButtons titleAnimationComplete={titleAnimationComplete} />
 
-          <div ref={featuresRef} style={{ opacity: featuresVisible ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+          <div 
+            ref={featuresRef} 
+            className="fixed left-0 right-0 bottom-6 z-50 transition-opacity duration-300"
+            style={{ opacity: featuresVisible ? 1 : 0 }}
+          >
             <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
           </div>
         </ArchitecturalBox>

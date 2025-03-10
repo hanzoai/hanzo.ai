@@ -38,7 +38,7 @@ const OrganizationProfile = () => {
       <div className="space-y-8">
         {/* Organization Header */}
         <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="h-32 w-32 bg-gray-800 rounded-xl flex items-center justify-center border-4 border-purple-500/20">
+          <div className="h-32 w-32 bg-gray-900/30 rounded-xl flex items-center justify-center">
             <Building className="h-16 w-16 text-gray-400" />
           </div>
           
@@ -71,7 +71,7 @@ const OrganizationProfile = () => {
               <Button 
                 onClick={() => navigate('/account/organization')} 
                 variant="outline" 
-                className="flex items-center"
+                className="flex items-center bg-black hover:bg-gray-900/30 border-gray-800/30"
               >
                 <Edit className="h-4 w-4 mr-2" />
                 Edit Organization
@@ -82,13 +82,13 @@ const OrganizationProfile = () => {
         
         {/* Organization Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+          <div className="bg-black border-0 rounded-lg p-6">
             <h3 className="font-medium text-gray-400 mb-2">Current Plan</h3>
             <div className="text-2xl font-bold">Pro Plan</div>
             <div className="text-sm text-gray-400 mt-1">$49/month, billed annually</div>
           </div>
           
-          <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+          <div className="bg-black border-0 rounded-lg p-6">
             <h3 className="font-medium text-gray-400 mb-2">Team Members</h3>
             <div className="text-2xl font-bold">{teamMembers.length}</div>
             <div className="text-sm text-gray-400 mt-1">
@@ -97,7 +97,7 @@ const OrganizationProfile = () => {
             </div>
           </div>
           
-          <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+          <div className="bg-black border-0 rounded-lg p-6">
             <h3 className="font-medium text-gray-400 mb-2">Your Role</h3>
             <div className="text-2xl font-bold">{currentOrganization.role}</div>
             <div className="text-sm text-gray-400 mt-1">
@@ -111,12 +111,13 @@ const OrganizationProfile = () => {
         </div>
         
         {/* Team Members */}
-        <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+        <div className="bg-black border-0 rounded-lg p-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-medium">Team Members</h2>
             <Button 
               onClick={() => navigate('/account/organization')} 
               size="sm"
+              className="bg-gray-900 hover:bg-gray-800 border-0"
             >
               View All
             </Button>
@@ -124,8 +125,8 @@ const OrganizationProfile = () => {
           
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.slice(0, 3).map(member => (
-              <div key={member.id} className="flex items-center p-3 bg-gray-800/50 rounded-lg">
-                <div className="h-10 w-10 bg-gray-700 rounded-full mr-3 flex items-center justify-center text-sm font-medium">
+              <div key={member.id} className="flex items-center p-3 bg-gray-900/20 rounded-lg">
+                <div className="h-10 w-10 bg-gray-900/50 rounded-full mr-3 flex items-center justify-center text-sm font-medium">
                   {member.name.charAt(0)}
                 </div>
                 <div>

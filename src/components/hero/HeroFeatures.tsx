@@ -15,12 +15,7 @@ const HeroFeatures: React.FC<HeroFeaturesProps> = ({ titleAnimationComplete }) =
         y: titleAnimationComplete ? 0 : 20 
       }}
       transition={{ duration: 0.5, delay: 0.5 }}
-      className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto features-highlights"
-      style={{
-        position: "relative",
-        zIndex: 10,
-        minHeight: "80px" // Ensure it takes space even when hidden
-      }}
+      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto features-highlights bg-black/30 backdrop-blur-lg py-4 px-2 rounded-lg"
     >
       <div className="text-center">
         <p className="text-sm font-medium text-purple-400">Customizable</p>

@@ -17,21 +17,21 @@
     --primary: #F0F7FF;
     --primary-foreground: #000000;
 
-    --secondary: #FFFFFF;
+    --secondary: #111111;
     --secondary-foreground: #F0F7FF;
 
-    --muted: #FFFFFF;
-    --muted-foreground: #FFFFFF;
+    --muted: #111111;
+    --muted-foreground: #AAAAAA;
 
-    --accent: #FFFFFF;
+    --accent: #111111;
     --accent-foreground: #F0F7FF;
 
     --destructive: #991B1B;
     --destructive-foreground: #F0F7FF;
 
-    --border: #FFFFFF;
-    --input: #FFFFFF;
-    --ring: #454545;
+    --border: #222222;
+    --input: #222222;
+    --ring: #333333;
 
     --radius: 0.5rem;
   }
@@ -45,4 +45,44 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Black on black theme specific styles */
+.black-on-black {
+  @apply bg-black border-gray-800/20 text-white;
+}
+
+.black-btn {
+  @apply bg-black hover:bg-gray-900 border border-gray-800/30 text-white;
+}
+
+.black-card {
+  @apply bg-black border-0 shadow-none;
+}
+
+.neo-blur {
+  @apply backdrop-blur-xl bg-black/40 border-0;
+}
+
+.glass-morphism {
+  @apply backdrop-blur-xl bg-white/5 border-0 shadow-none;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
 }

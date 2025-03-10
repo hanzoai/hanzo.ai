@@ -3,28 +3,27 @@ import React, { useState, useEffect } from "react";
 import BillingOverview from "@/components/billing/BillingOverview";
 import PaymentMethods from "@/components/billing/PaymentMethods";
 import BillingHistory from "@/components/billing/BillingHistory";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AnimatedSection, { AnimatedHeading } from "@/components/ui/animated-section";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const BillingPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const defaultTab = location.hash ? location.hash.replace('#', '') : "overview";
-  const [activeTab, setActiveTab] = useState(defaultTab);
+  const [activeSection, setActiveSection] = useState("overview");
 
   useEffect(() => {
-    // Update active tab when hash changes
+    // Update active section when hash changes
     const hash = location.hash.replace('#', '');
     if (hash && (hash === 'overview' || hash === 'payment-methods' || hash === 'history')) {
-      setActiveTab(hash);
+      setActiveSection(hash);
     } else if (!hash) {
-      setActiveTab('overview');
+      setActiveSection('overview');
     }
   }, [location.hash]);
 
-  const handleTabChange = (value: string) => {
-    setActiveTab(value);
+  const handleSectionChange = (value: string) => {
+    setActiveSection(value);
     navigate(`/account/billing#${value}`, { replace: true });
   };
 
@@ -34,30 +33,35 @@ const BillingPage = () => {
         <h2 className="text-2xl font-bold mb-6">Billing</h2>
       </AnimatedHeading>
 
-      <Tabs 
-        defaultValue={activeTab} 
-        value={activeTab}
-        onValueChange={handleTabChange}
-        className="w-full"
-      >
-        <TabsList className="mb-8 bg-gray-900/50 border border-gray-800">
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="payment-methods">Payment Methods</TabsTrigger>
-          <TabsTrigger value="history">Billing History</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="overview">
-          <BillingOverview />
-        </TabsContent>
-        
-        <TabsContent value="payment-methods">
-          <PaymentMethods />
-        </TabsContent>
-        
-        <TabsContent value="history">
-          <BillingHistory />
-        </TabsContent>
-      </Tabs>
+      <div className="mb-8 flex space-x-2 border-b border-gray-800/20 pb-2">
+        <Button 
+          variant={activeSection === "overview" ? "default" : "ghost"} 
+          onClick={() => handleSectionChange("overview")}
+          className={activeSection === "overview" ? "bg-gray-900 hover:bg-gray-800" : "hover:bg-gray-900/20"}
+        >
+          Overview
+        </Button>
+        <Button 
+          variant={activeSection === "payment-methods" ? "default" : "ghost"} 
+          onClick={() => handleSectionChange("payment-methods")}
+          className={activeSection === "payment-methods" ? "bg-gray-900 hover:bg-gray-800" : "hover:bg-gray-900/20"}
+        >
+          Payment Methods
+        </Button>
+        <Button 
+          variant={activeSection === "history" ? "default" : "ghost"} 
+          onClick={() => handleSectionChange("history")}
+          className={activeSection === "history" ? "bg-gray-900 hover:bg-gray-800" : "hover:bg-gray-900/20"}
+        >
+          Billing History
+        </Button>
+      </div>
+      
+      <div>
+        {activeSection === "overview" && <BillingOverview />}
+        {activeSection === "payment-methods" && <PaymentMethods />}
+        {activeSection === "history" && <BillingHistory />}
+      </div>
     </AnimatedSection>
   );
 };
