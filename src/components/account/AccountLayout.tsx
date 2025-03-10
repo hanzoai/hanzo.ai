@@ -26,14 +26,14 @@ const AccountLayout = () => {
   const accountNavItems = [
     { name: 'Profile', path: '/account', icon: User },
     { name: 'Organization', path: '/account/organization', icon: Building },
-    { name: 'Billing', path: '/billing', icon: CreditCard },
+    { name: 'Billing', path: '/account/billing', icon: CreditCard },
     { name: 'Usage', path: '/usage', icon: BarChart3 },
     { name: 'Invoices', path: '/invoices', icon: FileText },
     { name: 'Settings', path: '/account/settings', icon: Settings },
   ];
 
   const isActive = (path: string) => {
-    if (path === '/billing' && location.pathname === '/billing') {
+    if (path === '/account/billing' && location.pathname === '/account/billing') {
       return true;
     }
     return location.pathname === path;
@@ -111,7 +111,7 @@ const AccountLayout = () => {
                     variant="ghost" 
                     className="w-full justify-start text-red-400 hover:text-red-300 hover:bg-red-900/20 mt-6"
                   >
-                    <LogOut className="w-5 h-5 mr-3" />
+                    <LogOut className="w-5 w-5 mr-3" />
                     Sign Out
                   </Button>
                 </div>

@@ -91,7 +91,8 @@ const PaymentMethods = () => {
     handleCloseAddCard();
     
     // Redirect to overview after adding card to continue user journey
-    BillingTabsLink({ tabId: 'overview', children: '' }).props.onClick();
+    const navigate = BillingTabsLink({ tabId: 'overview', children: '' }).props.onClick;
+    if (navigate) navigate();
   };
   
   const handleDeleteCard = (id: number) => {

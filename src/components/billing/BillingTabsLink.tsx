@@ -17,7 +17,7 @@ const BillingTabsLink: React.FC<BillingTabsLinkProps> = ({
   const navigate = useNavigate();
   
   const handleClick = () => {
-    navigate(`/billing#${tabId}`);
+    navigate(`/account/billing#${tabId}`);
   };
   
   return (

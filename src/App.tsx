@@ -2,15 +2,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
-import Billing from "./pages/Billing";
 import AccountLayout from "./components/account/AccountLayout";
 import Account from "./pages/Account";
 import Organization from "./pages/Organization";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import BillingPage from "./pages/Billing";
 import { BillingProvider } from "./contexts/BillingContext";
 import { AccountProvider } from "./contexts/AccountContext";
 import ScrollToTop from "./components/ScrollToTop";
+import PurchaseCredits from "./pages/PurchaseCredits";
+import BillingPlans from "./pages/BillingPlans";
 
 const App = () => {
   return (
@@ -23,10 +25,12 @@ const App = () => {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/billing" element={<Billing />} />
             <Route path="/account" element={<AccountLayout />}>
               <Route index element={<Account />} />
               <Route path="organization" element={<Organization />} />
+              <Route path="billing" element={<BillingPage />} />
+              <Route path="purchase-credits" element={<PurchaseCredits />} />
+              <Route path="billing-plans" element={<BillingPlans />} />
             </Route>
           </Routes>
         </BillingProvider>

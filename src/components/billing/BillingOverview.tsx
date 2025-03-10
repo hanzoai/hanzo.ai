@@ -7,14 +7,20 @@ import { Label } from '@/components/ui/label';
 import BillingTabsLink from './BillingTabsLink';
 import { toast } from 'sonner';
 import { useBilling } from '@/contexts/BillingContext';
+import { useNavigate } from 'react-router-dom';
 
 const BillingOverview = () => {
   const { billingInfo, addCredits, refreshBillingInfo } = useBilling();
+  const navigate = useNavigate();
   const [showAddCredits, setShowAddCredits] = useState(false);
   const [creditAmount, setCreditAmount] = useState('50');
   
   const handleAddCredits = () => {
-    setShowAddCredits(true);
+    navigate('/account/purchase-credits');
+  };
+  
+  const handleUpgradePlan = () => {
+    navigate('/account/billing-plans');
   };
   
   const handleCloseAddCredits = () => {
@@ -54,7 +60,7 @@ const BillingOverview = () => {
             <div className="text-2xl font-bold">Pro Plan</div>
             <div className="text-gray-400 mt-1">$49/month, billed annually</div>
           </div>
-          <Button>Upgrade Plan</Button>
+          <Button onClick={handleUpgradePlan}>Upgrade Plan</Button>
         </div>
         <div className="mt-6 pt-6 border-t border-gray-800 flex items-center justify-between">
           <div className="text-gray-400">Next billing date: July 15, 2024</div>

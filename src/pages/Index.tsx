@@ -83,7 +83,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <div className="max-w-5xl mx-auto px-4 text-center mt-8 mb-16">
+        <div className="max-w-5xl mx-auto px-4 text-center mt-8 mb-8">
           <Button 
             size="lg" 
             className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
@@ -93,8 +93,8 @@ const Index = () => {
           </Button>
         </div>
         <ReferralBanner />
-        <AIPlatformSection />
         <CloudServices />
+        <AIPlatformSection />
         <CallToAction />
         <Karma />
         <TrustedBy />
