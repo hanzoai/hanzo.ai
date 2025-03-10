@@ -3,7 +3,8 @@ import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { 
   User, CreditCard, BarChart3, FileText, 
-  Building, Settings, ChevronRight, LogOut 
+  Building, Settings, ChevronRight, LogOut, 
+  Gift, Link as LinkIcon
 } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
@@ -19,7 +20,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
 
-const AccountLayout = () => {
+const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
   const { user, organizations, currentOrganization, switchOrganization, isLoading } = useAccount();
   const location = useLocation();
 
@@ -29,11 +30,15 @@ const AccountLayout = () => {
     { name: 'Billing', path: '/account/billing', icon: CreditCard },
     { name: 'Usage', path: '/usage', icon: BarChart3 },
     { name: 'Invoices', path: '/invoices', icon: FileText },
+    { name: 'Referrals', path: '/account/referrals', icon: Gift },
     { name: 'Settings', path: '/account/settings', icon: Settings },
   ];
 
   const isActive = (path: string) => {
-    if (path === '/account/billing' && location.pathname === '/account/billing') {
+    if (path === '/account/billing' && location.pathname.startsWith('/account/billing')) {
+      return true;
+    }
+    if (path === '/account/referrals' && location.pathname.startsWith('/account/referrals')) {
       return true;
     }
     return location.pathname === path;
@@ -120,7 +125,7 @@ const AccountLayout = () => {
               {/* Main Content */}
               <div className="col-span-1 md:col-span-3">
                 <div className="bg-gray-900/20 border border-gray-800 rounded-xl p-6">
-                  <Outlet />
+                  {children || <Outlet />}
                 </div>
               </div>
             </div>

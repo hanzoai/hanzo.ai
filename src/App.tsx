@@ -13,6 +13,9 @@ import { AccountProvider } from "./contexts/AccountContext";
 import ScrollToTop from "./components/ScrollToTop";
 import PurchaseCredits from "./pages/PurchaseCredits";
 import BillingPlans from "./pages/BillingPlans";
+import UserProfile from "./pages/UserProfile";
+import OrganizationProfile from "./pages/OrganizationProfile";
+import ReferralProgram from "./pages/ReferralProgram";
 
 const App = () => {
   return (
@@ -25,12 +28,20 @@ const App = () => {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            
+            {/* Profile pages */}
+            <Route path="/user-profile" element={<UserProfile />} />
+            <Route path="/organization-profile" element={<OrganizationProfile />} />
+            <Route path="/referrals" element={<ReferralProgram />} />
+            
+            {/* Account sections */}
             <Route path="/account" element={<AccountLayout />}>
               <Route index element={<Account />} />
               <Route path="organization" element={<Organization />} />
               <Route path="billing" element={<BillingPage />} />
               <Route path="purchase-credits" element={<PurchaseCredits />} />
               <Route path="billing-plans" element={<BillingPlans />} />
+              <Route path="referrals" element={<ReferralProgram />} />
             </Route>
           </Routes>
         </BillingProvider>
