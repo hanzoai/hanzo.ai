@@ -33,6 +33,9 @@ const AccountLayout = () => {
   ];
 
   const isActive = (path: string) => {
+    if (path === '/billing' && location.pathname === '/billing') {
+      return true;
+    }
     return location.pathname === path;
   };
 

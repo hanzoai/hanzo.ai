@@ -1,185 +1,90 @@
 
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Gift, CreditCard, Package } from "lucide-react";
-import { motion } from "framer-motion";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
-import { useBilling } from "@/contexts/BillingContext";
-import PurchaseCreditsDialog from "./PurchaseCreditsDialog";
-import { toast } from "sonner";
-
-const cardAnimation = createAnimationVariant("fadeInBlur", {
-  duration: 0.4,
-  curve: curves.snappy,
-  distance: 15
-});
+import React from 'react';
+import { CreditCard, Download, Clock, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import BillingTabsLink from './BillingTabsLink';
 
 const BillingOverview = () => {
-  const { billingInfo, checkout } = useBilling();
-  const [isPurchaseDialogOpen, setIsPurchaseDialogOpen] = useState(false);
-  const [isProcessing, setIsProcessing] = useState<string | null>(null);
-
-  const handleSubscribe = async (plan: 'dev' | 'pro') => {
-    setIsProcessing(plan);
-    await checkout(plan);
-    setIsProcessing(null);
-  };
-
   return (
     <div className="space-y-8">
-      <motion.div 
-        variants={cardAnimation}
-        className="p-6 rounded-xl border border-indigo-500/30 bg-indigo-900/20"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <Gift className="h-5 w-5 text-indigo-400" />
-          <h3 className="text-xl font-medium">
-            {billingInfo.isInTrial ? "Trial Plan" : 
-             billingInfo.plan ? `${billingInfo.plan.charAt(0).toUpperCase() + billingInfo.plan.slice(1)} Plan` : 
-             "No Active Plan"}
-          </h3>
-        </div>
-        
-        <p className="text-gray-300 mb-6">
-          {billingInfo.isInTrial ? (
-            <>
-              Your plan includes a one-time credit grant of <span className="font-bold">${billingInfo.credits.toFixed(2)}</span>.
-              All deployments will be shut down when you run out of credits.
-            </>
-          ) : billingInfo.hasActiveSubscription ? (
-            <>
-              You are currently subscribed to our {billingInfo.plan?.toUpperCase()} plan.
-              Your subscription is active and billing automatically.
-            </>
-          ) : (
-            <>
-              You don't have an active subscription plan. Choose one of our plans below to get started.
-            </>
-          )}
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className="bg-black/30 rounded-lg p-4">
-            <div className="text-gray-400 text-sm mb-1">Memory per container</div>
-            <div className="font-semibold">512 MB</div>
-          </div>
-          <div className="bg-black/30 rounded-lg p-4">
-            <div className="text-gray-400 text-sm mb-1">CPU per container</div>
-            <div className="font-semibold">2 vCPU</div>
-          </div>
-          <div className="bg-black/30 rounded-lg p-4">
-            <div className="text-gray-400 text-sm mb-1">Shared disk</div>
-            <div className="font-semibold">1 GB</div>
-          </div>
-        </div>
-        
-        {!billingInfo.hasActiveSubscription && (
-          <Button 
-            className="bg-purple-600 hover:bg-purple-700 text-white border-none"
-            onClick={() => handleSubscribe('dev')}
-            disabled={!!isProcessing}
-          >
-            {isProcessing === 'dev' ? "Processing..." : "Subscribe to Dev Plan ($5/mo)"}
-          </Button>
-        )}
-      </motion.div>
-      
-      <motion.div 
-        variants={cardAnimation}
-        className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <CreditCard className="h-5 w-5 text-gray-400" />
-          <h3 className="text-xl font-medium">Credits Available</h3>
-        </div>
-        
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      {/* Current Plan */}
+      <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+        <h3 className="text-xl font-medium mb-4">Current Plan</h3>
+        <div className="flex items-center justify-between">
           <div>
-            <div className="text-3xl font-bold mb-1">${billingInfo.credits.toFixed(2)}</div>
-            <p className="text-gray-400">Current usage: $0.04</p>
+            <div className="text-2xl font-bold">Pro Plan</div>
+            <div className="text-gray-400 mt-1">$49/month, billed annually</div>
           </div>
-          
-          <Button 
-            className="bg-white hover:bg-gray-200 text-black"
-            onClick={() => setIsPurchaseDialogOpen(true)}
-          >
-            Purchase Credits
-          </Button>
+          <Button>Upgrade Plan</Button>
         </div>
-      </motion.div>
+        <div className="mt-6 pt-6 border-t border-gray-800 flex items-center justify-between">
+          <div className="text-gray-400">Next billing date: July 15, 2024</div>
+          <Button variant="outline" size="sm">Cancel Subscription</Button>
+        </div>
+      </div>
       
-      <motion.div 
-        variants={cardAnimation}
-        className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <Package className="h-5 w-5 text-gray-400" />
-          <h3 className="text-xl font-medium">Upgrade Options</h3>
+      {/* Payment Method Summary */}
+      <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-medium">Payment Method</h3>
+          <BillingTabsLink tabId="payment-methods">
+            <span className="flex items-center">
+              Manage <ArrowRight className="ml-2 h-4 w-4" />
+            </span>
+          </BillingTabsLink>
+        </div>
+        <div className="flex items-center">
+          <div className="h-10 w-14 bg-gray-800 rounded flex items-center justify-center mr-4">
+            <CreditCard className="h-6 w-6 text-gray-400" />
+          </div>
+          <div>
+            <div className="font-medium">Visa ending in 4242</div>
+            <div className="text-sm text-gray-400">Expires 12/25</div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Recent Invoices */}
+      <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-medium">Recent Invoices</h3>
+          <BillingTabsLink tabId="history">
+            <span className="flex items-center">
+              View All <ArrowRight className="ml-2 h-4 w-4" />
+            </span>
+          </BillingTabsLink>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-black/30 rounded-lg p-5 border border-gray-800 hover:border-gray-700 transition-colors">
-            <h4 className="text-lg font-medium mb-1">Dev</h4>
-            <div className="text-2xl font-bold mb-3">$5<span className="text-sm text-gray-400">/mo</span></div>
-            <ul className="space-y-2 mb-4">
-              <li className="text-gray-300 flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>$5 in initial credits</span>
-              </li>
-              <li className="text-gray-300 flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Pay-as-you-go after initial credits</span>
-              </li>
-              <li className="text-gray-300 flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Community support</span>
-              </li>
-            </ul>
-            <Button 
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white border-none"
-              onClick={() => handleSubscribe('dev')}
-              disabled={!!isProcessing || (billingInfo.plan === 'dev' && billingInfo.hasActiveSubscription)}
-            >
-              {isProcessing === 'dev' ? "Processing..." : 
-               (billingInfo.plan === 'dev' && billingInfo.hasActiveSubscription) ? "Current Plan" : 
-               "Subscribe to Dev"}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-lg">
+            <div className="flex items-center">
+              <Clock className="h-5 w-5 text-gray-400 mr-3" />
+              <div>
+                <div className="font-medium">June 15, 2024</div>
+                <div className="text-sm text-gray-400">Pro Plan - $49.00</div>
+              </div>
+            </div>
+            <Button variant="ghost" size="sm">
+              <Download className="h-4 w-4 mr-2" />
+              PDF
             </Button>
           </div>
           
-          <div className="bg-black/30 rounded-lg p-5 border border-gray-800 hover:border-gray-700 transition-colors">
-            <h4 className="text-lg font-medium mb-1">Pro</h4>
-            <div className="text-2xl font-bold mb-3">$20<span className="text-sm text-gray-400">/mo</span></div>
-            <ul className="space-y-2 mb-4">
-              <li className="text-gray-300 flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Healthy AI credits included</span>
-              </li>
-              <li className="text-gray-300 flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>CPU, memory, storage & network credits</span>
-              </li>
-              <li className="text-gray-300 flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Business day support</span>
-              </li>
-            </ul>
-            <Button 
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white border-none"
-              onClick={() => handleSubscribe('pro')}
-              disabled={!!isProcessing || (billingInfo.plan === 'pro' && billingInfo.hasActiveSubscription)}
-            >
-              {isProcessing === 'pro' ? "Processing..." : 
-               (billingInfo.plan === 'pro' && billingInfo.hasActiveSubscription) ? "Current Plan" : 
-               "Subscribe to Pro"}
+          <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-lg">
+            <div className="flex items-center">
+              <Clock className="h-5 w-5 text-gray-400 mr-3" />
+              <div>
+                <div className="font-medium">May 15, 2024</div>
+                <div className="text-sm text-gray-400">Pro Plan - $49.00</div>
+              </div>
+            </div>
+            <Button variant="ghost" size="sm">
+              <Download className="h-4 w-4 mr-2" />
+              PDF
             </Button>
           </div>
         </div>
-      </motion.div>
-
-      <PurchaseCreditsDialog 
-        open={isPurchaseDialogOpen} 
-        onOpenChange={setIsPurchaseDialogOpen} 
-      />
+      </div>
     </div>
   );
 };

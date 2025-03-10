@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CloudServices from "@/components/index3/cloud-services";
-import DXPlatform from "@/components/index3/DXPlatform";
 import AIPlatformSection from "@/components/AIPlatformSection";
 import CallToAction from "@/components/index3/CallToAction";
 import TrustedBy from "@/components/platform/TrustedBy";
@@ -77,11 +76,10 @@ const Index = () => {
         <Hero />
         <AIPlatformSection />
         <CloudServices />
-        <DXPlatform />
+        <CallToAction />
         <ReferralBanner />
         <Karma />
         <TrustedBy />
-        <CallToAction />
       </main>
       <Footer />
       <Toaster />

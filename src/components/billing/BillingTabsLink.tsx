@@ -1,0 +1,33 @@
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+
+interface BillingTabsLinkProps {
+  tabId: 'overview' | 'payment-methods' | 'history';
+  children: React.ReactNode;
+  variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive';
+}
+
+const BillingTabsLink: React.FC<BillingTabsLinkProps> = ({ 
+  tabId, 
+  children, 
+  variant = 'outline' 
+}) => {
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate(`/billing#${tabId}`);
+  };
+  
+  return (
+    <Button 
+      variant={variant} 
+      onClick={handleClick}
+    >
+      {children}
+    </Button>
+  );
+};
+
+export default BillingTabsLink;

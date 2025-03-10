@@ -7,9 +7,18 @@ import PaymentMethods from "@/components/billing/PaymentMethods";
 import BillingHistory from "@/components/billing/BillingHistory";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AnimatedSection, { AnimatedHeading } from "@/components/ui/animated-section";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Billing = () => {
-  const [activeTab, setActiveTab] = useState("overview");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const defaultTab = location.hash ? location.hash.replace('#', '') : "overview";
+  const [activeTab, setActiveTab] = useState(defaultTab);
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    navigate(`/billing#${value}`, { replace: true });
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -23,9 +32,9 @@ const Billing = () => {
             </AnimatedHeading>
 
             <Tabs 
-              defaultValue="overview" 
+              defaultValue={activeTab} 
               value={activeTab}
-              onValueChange={setActiveTab}
+              onValueChange={handleTabChange}
               className="w-full"
             >
               <TabsList className="mb-8 bg-gray-900/50 border border-gray-800">

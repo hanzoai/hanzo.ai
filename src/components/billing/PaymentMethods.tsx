@@ -1,144 +1,111 @@
 
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Plus, CreditCard, Trash2 } from "lucide-react";
-import { motion } from "framer-motion";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
-import { useBilling } from "@/contexts/BillingContext";
-import { toast } from "sonner";
-
-const cardAnimation = createAnimationVariant("fadeInBlur", {
-  duration: 0.4,
-  curve: curves.snappy,
-  distance: 15
-});
+import React, { useState } from 'react';
+import { CreditCard, Plus, Trash2, CheckCircle, Edit, ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import BillingTabsLink from './BillingTabsLink';
 
 const PaymentMethods = () => {
-  const { billingInfo } = useBilling();
-  const [isAdding, setIsAdding] = useState(false);
-  
-  // Mock data for payment methods
-  const paymentMethods = billingInfo.hasActiveSubscription ? [
-    {
-      id: 1,
-      type: "Visa",
-      last4: "4242",
-      expiry: "12/24",
-      isDefault: true
-    }
-  ] : [];
+  const [cards, setCards] = useState([
+    { id: 1, type: 'visa', last4: '4242', expMonth: 12, expYear: 25, isDefault: true },
+    { id: 2, type: 'mastercard', last4: '5555', expMonth: 10, expYear: 24, isDefault: false }
+  ]);
 
-  const handleAddPaymentMethod = () => {
-    setIsAdding(true);
-    // Simulate adding a payment method
-    setTimeout(() => {
-      setIsAdding(false);
-      toast.success("Payment method added successfully", {
-        description: "Your card has been added to your account."
-      });
-    }, 1500);
+  const getCardIcon = (type: string) => {
+    switch (type) {
+      case 'visa':
+        return <div className="text-blue-500 font-bold text-xs">VISA</div>;
+      case 'mastercard':
+        return <div className="text-red-500 font-bold text-xs">MC</div>;
+      default:
+        return <CreditCard className="h-4 w-4 text-gray-400" />;
+    }
   };
 
-  const handleDeletePaymentMethod = (id: number) => {
-    toast.success("Payment method removed", {
-      description: "The payment method has been removed from your account."
-    });
+  const setDefaultCard = (id: number) => {
+    setCards(cards.map(card => ({
+      ...card,
+      isDefault: card.id === id
+    })));
   };
 
   return (
     <div className="space-y-8">
-      <motion.div 
-        variants={cardAnimation}
-        className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
-      >
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-3">
-            <CreditCard className="h-5 w-5 text-gray-400" />
-            <h3 className="text-xl font-medium">Payment Methods</h3>
-          </div>
-          
-          <Button 
-            className="bg-white hover:bg-gray-200 text-black"
-            onClick={handleAddPaymentMethod}
-            disabled={isAdding}
-          >
-            <Plus className="h-4 w-4 mr-2" />
-            {isAdding ? "Adding..." : "Add Payment Method"}
-          </Button>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
+          <BillingTabsLink tabId="overview" variant="ghost">
+            <ArrowLeft className="h-4 w-4 mr-2" /> Back to Overview
+          </BillingTabsLink>
         </div>
-        
-        {paymentMethods.length > 0 ? (
-          <div className="space-y-4">
-            {paymentMethods.map((method) => (
-              <div 
-                key={method.id}
-                className="flex justify-between items-center p-4 bg-black/30 rounded-lg border border-gray-800"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="bg-gray-800 p-2 rounded">
-                    <CreditCard className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-medium">
-                      {method.type} ending in {method.last4}
-                      {method.isDefault && (
-                        <span className="ml-2 text-xs bg-gray-700 text-white px-2 py-0.5 rounded-full">
-                          Default
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-sm text-gray-400">Expires {method.expiry}</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="text-gray-400 hover:text-white hover:bg-gray-800"
-                  >
-                    Edit
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="text-red-400 hover:text-red-300 hover:bg-red-900/30"
-                    onClick={() => handleDeletePaymentMethod(method.id)}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-8 text-gray-400">
-            {billingInfo.isInTrial ? (
-              "You're currently on a trial plan. Add a payment method before your trial ends to continue service."
-            ) : (
-              "No payment methods found. Add a payment method to get started."
-            )}
-          </div>
-        )}
-      </motion.div>
-      
-      <motion.div 
-        variants={cardAnimation}
-        className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
-      >
-        <h3 className="text-xl font-medium mb-4">Billing Address</h3>
-        
-        <div className="bg-black/30 p-4 rounded-lg border border-gray-800 mb-4">
-          <p className="text-gray-400">
-            No billing address has been set. Adding a billing address helps with 
-            tax compliance and invoice generation.
-          </p>
-        </div>
-        
-        <Button className="bg-white hover:bg-gray-200 text-black">
-          Add Billing Address
+        <Button>
+          <Plus className="h-4 w-4 mr-2" />
+          Add Payment Method
         </Button>
-      </motion.div>
+      </div>
+      
+      {/* Cards list */}
+      <div className="space-y-4">
+        {cards.map(card => (
+          <div 
+            key={card.id} 
+            className={`flex items-center justify-between p-4 rounded-lg border ${
+              card.isDefault 
+                ? 'border-purple-500 bg-purple-900/10' 
+                : 'border-gray-800 bg-gray-900/30'
+            }`}
+          >
+            <div className="flex items-center">
+              <div className="h-10 w-14 bg-gray-800 rounded flex items-center justify-center mr-4">
+                {getCardIcon(card.type)}
+              </div>
+              <div>
+                <div className="font-medium">
+                  {card.type.charAt(0).toUpperCase() + card.type.slice(1)} ending in {card.last4}
+                  {card.isDefault && (
+                    <span className="ml-2 text-xs bg-purple-900/50 text-purple-300 px-2 py-0.5 rounded-full">
+                      Default
+                    </span>
+                  )}
+                </div>
+                <div className="text-sm text-gray-400">Expires {card.expMonth}/{card.expYear}</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              {!card.isDefault && (
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => setDefaultCard(card.id)}
+                >
+                  <CheckCircle className="h-4 w-4 mr-2" />
+                  Set Default
+                </Button>
+              )}
+              <Button variant="ghost" size="sm">
+                <Edit className="h-4 w-4 mr-2" />
+                Edit
+              </Button>
+              <Button variant="ghost" size="sm" className="text-red-400 hover:text-red-300 hover:bg-red-900/20">
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+        <h3 className="text-lg font-medium mb-4">Billing Address</h3>
+        <div className="space-y-1 mb-4">
+          <div>Jane Doe</div>
+          <div>123 Main St</div>
+          <div>San Francisco, CA 94105</div>
+          <div>United States</div>
+        </div>
+        <Button variant="outline" size="sm">
+          <Edit className="h-4 w-4 mr-2" />
+          Edit Address
+        </Button>
+      </div>
     </div>
   );
 };
