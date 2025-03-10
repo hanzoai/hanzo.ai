@@ -21,10 +21,10 @@ const Footer = () => {
               <span className="text-white font-bold text-xl">Hanzo</span>
             </Link>
             
-            <div className="flex items-center text-green-500 space-x-2">
+            <a href="https://status.hanzo.cloud" className="flex items-center text-green-500 space-x-2 hover:underline">
               <CheckCircle className="h-5 w-5" />
               <span className="text-gray-400">All systems operational</span>
-            </div>
+            </a>
           </div>
           
           {/* Products Column */}
@@ -131,7 +131,7 @@ const Footer = () => {
         
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center">
-          <p className="text-gray-500 text-sm">© 2016-{new Date().getFullYear()} Hanzo AI Inc. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2016-{new Date().getFullYear()} Hanzo Industries, Inc. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-gray-500 hover:text-gray-300 text-sm">
               Privacy Policy
