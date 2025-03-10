@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
@@ -59,72 +58,82 @@ import TeamOpera from "./pages/TeamOpera";
 import TeamSec from "./pages/TeamSec";
 import TeamSu from "./pages/TeamSu";
 import TeamVi from "./pages/TeamVi";
+import { BillingProvider } from "./contexts/BillingContext";
+import { ThemeProvider } from "styled-components";
+import Toaster from "./components/Toaster";
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/cloud" element={<Cloud />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/platform" element={<Platform />} />
-        <Route path="/datastore" element={<Datastore />} />
-        <Route path="/commerce" element={<Commerce />} />
-        <Route path="/solutions" element={<Solutions />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/payments" element={<Payments />} />
-        <Route path="/base" element={<Base />} />
-        <Route path="/vector" element={<Vector />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/hanzoapp" element={<HanzoApp />} />
-        <Route path="/hanzodev" element={<HanzoDev />} />
-        <Route path="/hanzocode" element={<HanzoCode />} />
-        <Route path="/hanzobot" element={<HanzoBot />} />
-        <Route path="/operator" element={<Operator />} />
-        <Route path="/download" element={<Download />} />
-        <Route path="/extension" element={<Extension />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/leadership" element={<Leadership />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/security" element={<Security />} />
-        <Route path="/index2" element={<Index2 />} />
-        <Route path="/index3" element={<Index3 />} />
-        <Route path="/calculator" element={<Calculator />} />
-        <Route path="/ai-acc" element={<AIAcceleration />} />
-        <Route path="/ai" element={<AI />} />
-        <Route path="/zen" element={<ZenOfHanzo />} />
-        <Route path="/balancer" element={<HanzoBalancer />} />
-        <Route path="/observability" element={<Observability />} />
-        <Route path="/install" element={<Install />} />
-        <Route path="/referrals" element={<Referrals />} />
-        <Route path="/affiliates" element={<Affiliates />} />
-        <Route path="/billing" element={<Billing />} />
-        <Route path="/usage" element={<Usage />} />
-        <Route path="/invoices" element={<Invoices />} />
-        <Route path="/team/algo" element={<TeamAlgo />} />
-        <Route path="/team/art" element={<TeamArt />} />
-        <Route path="/team/cal" element={<TeamCal />} />
-        <Route path="/team/chat" element={<TeamChat />} />
-        <Route path="/team/core" element={<TeamCore />} />
-        <Route path="/team/data" element={<TeamData />} />
-        <Route path="/team/db" element={<TeamDb />} />
-        <Route path="/team/des" element={<TeamDes />} />
-        <Route path="/team/dev" element={<TeamDev />} />
-        <Route path="/team/fin" element={<TeamFin />} />
-        <Route path="/team/mark" element={<TeamMark />} />
-        <Route path="/team/mu" element={<TeamMu />} />
-        <Route path="/team/opera" element={<TeamOpera />} />
-        <Route path="/team/sec" element={<TeamSec />} />
-        <Route path="/team/su" element={<TeamSu />} />
-        <Route path="/team/vi" element={<TeamVi />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <BillingProvider>
+      <ThemeProvider>
+        <div className="App min-h-screen bg-black text-white">
+          <Router>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/cloud" element={<Cloud />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/platform" element={<Platform />} />
+              <Route path="/datastore" element={<Datastore />} />
+              <Route path="/commerce" element={<Commerce />} />
+              <Route path="/solutions" element={<Solutions />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/payments" element={<Payments />} />
+              <Route path="/base" element={<Base />} />
+              <Route path="/vector" element={<Vector />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/hanzoapp" element={<HanzoApp />} />
+              <Route path="/hanzodev" element={<HanzoDev />} />
+              <Route path="/hanzocode" element={<HanzoCode />} />
+              <Route path="/hanzobot" element={<HanzoBot />} />
+              <Route path="/operator" element={<Operator />} />
+              <Route path="/download" element={<Download />} />
+              <Route path="/extension" element={<Extension />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/leadership" element={<Leadership />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/security" element={<Security />} />
+              <Route path="/index2" element={<Index2 />} />
+              <Route path="/index3" element={<Index3 />} />
+              <Route path="/calculator" element={<Calculator />} />
+              <Route path="/ai-acc" element={<AIAcceleration />} />
+              <Route path="/ai" element={<AI />} />
+              <Route path="/zen" element={<ZenOfHanzo />} />
+              <Route path="/balancer" element={<HanzoBalancer />} />
+              <Route path="/observability" element={<Observability />} />
+              <Route path="/install" element={<Install />} />
+              <Route path="/referrals" element={<Referrals />} />
+              <Route path="/affiliates" element={<Affiliates />} />
+              <Route path="/billing" element={<Billing />} />
+              <Route path="/usage" element={<Usage />} />
+              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/team/algo" element={<TeamAlgo />} />
+              <Route path="/team/art" element={<TeamArt />} />
+              <Route path="/team/cal" element={<TeamCal />} />
+              <Route path="/team/chat" element={<TeamChat />} />
+              <Route path="/team/core" element={<TeamCore />} />
+              <Route path="/team/data" element={<TeamData />} />
+              <Route path="/team/db" element={<TeamDb />} />
+              <Route path="/team/des" element={<TeamDes />} />
+              <Route path="/team/dev" element={<TeamDev />} />
+              <Route path="/team/fin" element={<TeamFin />} />
+              <Route path="/team/mark" element={<TeamMark />} />
+              <Route path="/team/mu" element={<TeamMu />} />
+              <Route path="/team/opera" element={<TeamOpera />} />
+              <Route path="/team/sec" element={<TeamSec />} />
+              <Route path="/team/su" element={<TeamSu />} />
+              <Route path="/team/vi" element={<TeamVi />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Router>
+          <Toaster />
+        </div>
+      </ThemeProvider>
+    </BillingProvider>
   );
 }
 

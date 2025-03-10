@@ -1,9 +1,11 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, CreditCard, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { useBilling } from "@/contexts/BillingContext";
+import { toast } from "sonner";
 
 const cardAnimation = createAnimationVariant("fadeInBlur", {
   duration: 0.4,
@@ -12,8 +14,11 @@ const cardAnimation = createAnimationVariant("fadeInBlur", {
 });
 
 const PaymentMethods = () => {
+  const { billingInfo } = useBilling();
+  const [isAdding, setIsAdding] = useState(false);
+  
   // Mock data for payment methods
-  const paymentMethods = [
+  const paymentMethods = billingInfo.hasActiveSubscription ? [
     {
       id: 1,
       type: "Visa",
@@ -21,7 +26,24 @@ const PaymentMethods = () => {
       expiry: "12/24",
       isDefault: true
     }
-  ];
+  ] : [];
+
+  const handleAddPaymentMethod = () => {
+    setIsAdding(true);
+    // Simulate adding a payment method
+    setTimeout(() => {
+      setIsAdding(false);
+      toast.success("Payment method added successfully", {
+        description: "Your card has been added to your account."
+      });
+    }, 1500);
+  };
+
+  const handleDeletePaymentMethod = (id: number) => {
+    toast.success("Payment method removed", {
+      description: "The payment method has been removed from your account."
+    });
+  };
 
   return (
     <div className="space-y-8">
@@ -35,9 +57,13 @@ const PaymentMethods = () => {
             <h3 className="text-xl font-medium">Payment Methods</h3>
           </div>
           
-          <Button className="bg-white hover:bg-gray-200 text-black">
+          <Button 
+            className="bg-white hover:bg-gray-200 text-black"
+            onClick={handleAddPaymentMethod}
+            disabled={isAdding}
+          >
             <Plus className="h-4 w-4 mr-2" />
-            Add Payment Method
+            {isAdding ? "Adding..." : "Add Payment Method"}
           </Button>
         </div>
         
@@ -77,6 +103,7 @@ const PaymentMethods = () => {
                     variant="ghost" 
                     size="sm"
                     className="text-red-400 hover:text-red-300 hover:bg-red-900/30"
+                    onClick={() => handleDeletePaymentMethod(method.id)}
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -86,7 +113,11 @@ const PaymentMethods = () => {
           </div>
         ) : (
           <div className="text-center py-8 text-gray-400">
-            No payment methods found. Add a payment method to get started.
+            {billingInfo.isInTrial ? (
+              "You're currently on a trial plan. Add a payment method before your trial ends to continue service."
+            ) : (
+              "No payment methods found. Add a payment method to get started."
+            )}
           </div>
         )}
       </motion.div>

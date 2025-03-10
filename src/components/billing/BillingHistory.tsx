@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Download, FileText, Info, Filter } from "lucide-react";
 import { motion } from "framer-motion";
 import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { useBilling } from "@/contexts/BillingContext";
 
 const cardAnimation = createAnimationVariant("fadeInBlur", {
   duration: 0.4,
@@ -12,21 +13,23 @@ const cardAnimation = createAnimationVariant("fadeInBlur", {
 });
 
 const BillingHistory = () => {
-  // Mock data for invoices
-  const invoices = [
+  const { billingInfo } = useBilling();
+  
+  // Mock data for invoices - in real app would come from Stripe API
+  const invoices = billingInfo.hasActiveSubscription ? [
     {
       id: "INV-001",
-      date: "March 1, 2023",
-      amount: "$20.00",
+      date: "June 1, 2023",
+      amount: billingInfo.plan === 'dev' ? "$5.00" : "$20.00",
       status: "Paid"
     },
     {
       id: "INV-002",
-      date: "April 1, 2023",
-      amount: "$20.00",
+      date: "July 1, 2023",
+      amount: billingInfo.plan === 'dev' ? "$5.00" : "$20.00",
       status: "Paid"
     }
-  ];
+  ] : [];
 
   return (
     <div className="space-y-8">
@@ -45,7 +48,10 @@ const BillingHistory = () => {
               <Filter className="h-4 w-4 mr-2" />
               Filter
             </Button>
-            <Button className="bg-white hover:bg-gray-200 text-black">
+            <Button 
+              className="bg-white hover:bg-gray-200 text-black"
+              disabled={invoices.length === 0}
+            >
               <Download className="h-4 w-4 mr-2" />
               Export All
             </Button>
@@ -93,7 +99,11 @@ const BillingHistory = () => {
         ) : (
           <div className="text-center py-8 text-gray-400 bg-black/30 rounded-lg">
             <FileText className="h-8 w-8 mx-auto mb-3 opacity-50" />
-            <p>No billing history found.</p>
+            <p>
+              {billingInfo.isInTrial 
+                ? "You're on a trial plan. Billing history will appear once you subscribe." 
+                : "No billing history found."}
+            </p>
           </div>
         )}
       </motion.div>
