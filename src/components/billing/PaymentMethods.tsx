@@ -1,7 +1,10 @@
 
 import React, { useState } from 'react';
-import { CreditCard, Plus, Trash2, CheckCircle, Edit, ArrowLeft } from 'lucide-react';
+import { CreditCard, Plus, Trash2, CheckCircle, Edit, ArrowLeft, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { toast } from 'sonner';
 import BillingTabsLink from './BillingTabsLink';
 
 const PaymentMethods = () => {
@@ -9,6 +12,15 @@ const PaymentMethods = () => {
     { id: 1, type: 'visa', last4: '4242', expMonth: 12, expYear: 25, isDefault: true },
     { id: 2, type: 'mastercard', last4: '5555', expMonth: 10, expYear: 24, isDefault: false }
   ]);
+  
+  const [showAddCard, setShowAddCard] = useState(false);
+  const [newCard, setNewCard] = useState({
+    cardNumber: '',
+    cardName: '',
+    expMonth: '',
+    expYear: '',
+    cvc: ''
+  });
 
   const getCardIcon = (type: string) => {
     switch (type) {
@@ -26,6 +38,65 @@ const PaymentMethods = () => {
       ...card,
       isDefault: card.id === id
     })));
+    
+    toast.success('Default payment method updated');
+  };
+  
+  const handleAddCard = () => {
+    setShowAddCard(true);
+  };
+  
+  const handleCloseAddCard = () => {
+    setShowAddCard(false);
+    setNewCard({
+      cardNumber: '',
+      cardName: '',
+      expMonth: '',
+      expYear: '',
+      cvc: ''
+    });
+  };
+  
+  const handleCardInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setNewCard(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleSubmitCard = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!newCard.cardNumber || !newCard.cardName || !newCard.expMonth || !newCard.expYear || !newCard.cvc) {
+      toast.error('Please fill in all fields');
+      return;
+    }
+    
+    // Add new card
+    const cardType = newCard.cardNumber.startsWith('4') ? 'visa' : 'mastercard';
+    const last4 = newCard.cardNumber.slice(-4);
+    
+    setCards([
+      ...cards,
+      {
+        id: Date.now(),
+        type: cardType,
+        last4,
+        expMonth: parseInt(newCard.expMonth),
+        expYear: parseInt(newCard.expYear),
+        isDefault: false
+      }
+    ]);
+    
+    toast.success('Payment method added successfully');
+    handleCloseAddCard();
+    
+    // Redirect to overview after adding card to continue user journey
+    BillingTabsLink({ tabId: 'overview', children: '' }).props.onClick();
+  };
+  
+  const handleDeleteCard = (id: number) => {
+    setCards(cards.filter(card => card.id !== id));
+    toast.success('Payment method removed');
   };
 
   return (
@@ -36,11 +107,94 @@ const PaymentMethods = () => {
             <ArrowLeft className="h-4 w-4 mr-2" /> Back to Overview
           </BillingTabsLink>
         </div>
-        <Button>
+        <Button onClick={handleAddCard}>
           <Plus className="h-4 w-4 mr-2" />
           Add Payment Method
         </Button>
       </div>
+      
+      {/* Add new card form */}
+      {showAddCard && (
+        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-medium">Add Payment Method</h3>
+            <Button variant="ghost" size="sm" onClick={handleCloseAddCard}>
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+          
+          <form onSubmit={handleSubmitCard} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="cardName">Name on Card</Label>
+              <Input
+                id="cardName"
+                name="cardName"
+                placeholder="John Doe"
+                value={newCard.cardName}
+                onChange={handleCardInputChange}
+                className="bg-gray-800 border-gray-700"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="cardNumber">Card Number</Label>
+              <Input
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="4242 4242 4242 4242"
+                value={newCard.cardNumber}
+                onChange={handleCardInputChange}
+                className="bg-gray-800 border-gray-700"
+              />
+            </div>
+            
+            <div className="grid grid-cols-3 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="expMonth">Month</Label>
+                <Input
+                  id="expMonth"
+                  name="expMonth"
+                  placeholder="MM"
+                  maxLength={2}
+                  value={newCard.expMonth}
+                  onChange={handleCardInputChange}
+                  className="bg-gray-800 border-gray-700"
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="expYear">Year</Label>
+                <Input
+                  id="expYear"
+                  name="expYear"
+                  placeholder="YY"
+                  maxLength={2}
+                  value={newCard.expYear}
+                  onChange={handleCardInputChange}
+                  className="bg-gray-800 border-gray-700"
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="cvc">CVC</Label>
+                <Input
+                  id="cvc"
+                  name="cvc"
+                  placeholder="123"
+                  maxLength={3}
+                  value={newCard.cvc}
+                  onChange={handleCardInputChange}
+                  className="bg-gray-800 border-gray-700"
+                />
+              </div>
+            </div>
+            
+            <Button type="submit" className="w-full mt-4">
+              Add Payment Method
+            </Button>
+          </form>
+        </div>
+      )}
       
       {/* Cards list */}
       <div className="space-y-4">
@@ -85,7 +239,12 @@ const PaymentMethods = () => {
                 <Edit className="h-4 w-4 mr-2" />
                 Edit
               </Button>
-              <Button variant="ghost" size="sm" className="text-red-400 hover:text-red-300 hover:bg-red-900/20">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                onClick={() => handleDeleteCard(card.id)}
+              >
                 <Trash2 className="h-4 w-4" />
               </Button>
             </div>

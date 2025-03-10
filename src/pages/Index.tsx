@@ -13,8 +13,13 @@ import { Toaster } from "@/components/ui/toaster";
 import JapaneseWave from "@/components/zen/JapaneseWave";
 import { GridLines, BlueprintLine } from "@/components/ui/architectural-elements";
 import ReferralBanner from "@/components/referrals/ReferralBanner";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Smooth scroll behavior
     const smoothScroll = (e: MouseEvent) => {
@@ -38,6 +43,10 @@ const Index = () => {
       });
     };
   }, []);
+
+  const handleSignUp = () => {
+    navigate('/signup');
+  };
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -74,10 +83,19 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <div className="max-w-5xl mx-auto px-4 text-center mt-8 mb-16">
+          <Button 
+            size="lg" 
+            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
+            onClick={handleSignUp}
+          >
+            Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+        <ReferralBanner />
         <AIPlatformSection />
         <CloudServices />
         <CallToAction />
-        <ReferralBanner />
         <Karma />
         <TrustedBy />
       </main>
