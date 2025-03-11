@@ -5,6 +5,7 @@ import { Bot, Activity, Database, Settings, PlayCircle, StopCircle, Brain, Zap, 
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { DummyAgentData } from "./dummy-data";
+import { cn } from "@/lib/utils";
 
 interface Agent {
   id: string;
@@ -20,7 +21,13 @@ interface Agent {
 }
 
 const AgentsList = () => {
-  const [agents, setAgents] = useState<Agent[]>(DummyAgentData);
+  // Convert data to match our Agent interface
+  const typedAgentData: Agent[] = DummyAgentData.map(agent => ({
+    ...agent,
+    status: agent.status as "idle" | "running" | "paused" | "error"
+  }));
+  
+  const [agents, setAgents] = useState<Agent[]>(typedAgentData);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredAgents = agents.filter(agent => 
@@ -104,7 +111,11 @@ const AgentsList = () => {
                 <td className="px-4 py-3">{agent.tasks}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center">
-                    <Progress value={agent.memory} className="h-1.5 w-16 mr-2 bg-gray-800" indicatorClassName="bg-blue-500" />
+                    <Progress 
+                      value={agent.memory} 
+                      className="h-1.5 w-16 mr-2 bg-gray-800" 
+                      indicatorClassName="bg-blue-500"
+                    />
                     <span>{agent.memory}%</span>
                   </div>
                 </td>
