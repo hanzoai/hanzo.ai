@@ -1,33 +1,13 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Bot, Activity, Database, Settings, PlayCircle, StopCircle, Brain, Zap, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
-import { DummyAgentData } from "./dummy-data";
+import { DummyAgentData, Agent } from "./data";
 import { cn } from "@/lib/utils";
 
-interface Agent {
-  id: string;
-  name: string;
-  status: "idle" | "running" | "paused" | "error";
-  type: string;
-  model: string;
-  tasks: number;
-  tokens: number;
-  cost: number;
-  lastActive: string;
-  memory: number;
-}
-
 const AgentsList = () => {
-  // Convert data to match our Agent interface
-  const typedAgentData: Agent[] = DummyAgentData.map(agent => ({
-    ...agent,
-    status: agent.status as "idle" | "running" | "paused" | "error"
-  }));
-  
-  const [agents, setAgents] = useState<Agent[]>(typedAgentData);
+  const [agents, setAgents] = useState<Agent[]>(DummyAgentData);
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredAgents = agents.filter(agent => 

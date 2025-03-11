@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, MoreHorizontal, MessageSquare, CheckCircle, Clock, Zap } from "lucide-react";
 import TaskCard from "./TaskCard";
-import { DummyTaskData } from "./dummy-data";
+import { DummyTaskData } from "./data";
 
 interface TaskColumn {
   id: string;
