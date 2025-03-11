@@ -20,6 +20,7 @@ import Usage from "./pages/Usage";
 import AccountSettings from "./pages/AccountSettings";
 import Invoices from "./pages/Invoices";
 import StatusPage from "./pages/Status";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/status" element={<StatusPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/organization-profile" element={<OrganizationProfile />} />
