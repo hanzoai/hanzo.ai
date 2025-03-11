@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Bot, Activity, Database, Settings, PlayCircle, StopCircle, Brain, Zap, PlusCircle, Search } from "lucide-react";
@@ -46,7 +45,7 @@ const AgentsList = () => {
   const handleStatusToggle = (agent: Agent, e: React.MouseEvent) => {
     e.stopPropagation();
     const newStatus = agent.status === "running" ? "paused" : "running";
-    const updatedAgent = { ...agent, status: newStatus };
+    const updatedAgent = { ...agent, status: newStatus as "running" | "paused" };
     
     const updatedAgents = agents.map(a => 
       a.id === agent.id ? updatedAgent : a
@@ -128,11 +127,11 @@ const AgentsList = () => {
                     <Progress 
                       value={agent.memory} 
                       className="h-1.5 w-16 mr-2 bg-gray-800" 
-                      indicatorClassName={
-                        agent.memory > 80 ? "bg-red-500" : 
-                        agent.memory > 60 ? "bg-yellow-500" : 
-                        "bg-blue-500"
-                      }
+                      style={{
+                        '--progress-background': agent.memory > 80 ? 'bg-red-500' : 
+                          agent.memory > 60 ? 'bg-yellow-500' : 
+                          'bg-blue-500'
+                      } as React.CSSProperties}
                     />
                     <span>{agent.memory}%</span>
                   </div>

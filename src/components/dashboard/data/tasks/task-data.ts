@@ -6,7 +6,7 @@ export const DummyTaskData = [
     title: "Research AI models for text summarization",
     description: "Compare different models and evaluate performance on our dataset",
     status: "backlog",
-    priority: "medium",
+    priority: "medium" as "low" | "medium" | "high",
     assignees: [
       { id: "u1", name: "Alex Chen" }
     ],
@@ -21,7 +21,7 @@ export const DummyTaskData = [
     id: "102",
     title: "Implement code generation agent",
     status: "backlog",
-    priority: "high",
+    priority: "high" as "low" | "medium" | "high",
     assignees: [
       { id: "u2", name: "Sarah Kim" }
     ],
@@ -46,7 +46,7 @@ export const DummyTaskData = [
     id: "104",
     title: "Optimize token usage for research agents",
     status: "todo",
-    priority: "medium",
+    priority: "medium" as "low" | "medium" | "high",
     assignees: [
       { id: "u4", name: "Priya Sharma" }
     ],
@@ -60,7 +60,7 @@ export const DummyTaskData = [
     title: "Integrate with vector database",
     description: "Connect agent memory system with Pinecone for long-term storage",
     status: "in-progress",
-    priority: "high",
+    priority: "high" as "low" | "medium" | "high",
     assignees: [
       { id: "u1", name: "Alex Chen" }
     ],
@@ -100,7 +100,7 @@ export const DummyTaskData = [
     id: "108",
     title: "Deploy agent system to production",
     status: "done",
-    priority: "high",
+    priority: "high" as "low" | "medium" | "high",
     assignees: [
       { id: "u2", name: "Sarah Kim" },
       { id: "u4", name: "Priya Sharma" }
