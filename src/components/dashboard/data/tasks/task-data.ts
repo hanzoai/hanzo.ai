@@ -1,12 +1,25 @@
 
 // Task data for the Kanban board
-export const DummyTaskData = [
+export interface Task {
+  id: string;
+  title: string;
+  description?: string;
+  status: string;
+  priority?: "low" | "medium" | "high";
+  assignees?: { id: string; name: string; avatar?: string }[];
+  labels?: { id: string; name: string; color: string }[];
+  agentCount?: number;
+  messageCount?: number;
+  dueDate?: string;
+}
+
+export const DummyTaskData: Task[] = [
   {
     id: "101",
     title: "Research AI models for text summarization",
     description: "Compare different models and evaluate performance on our dataset",
     status: "backlog",
-    priority: "medium" as "low" | "medium" | "high",
+    priority: "medium",
     assignees: [
       { id: "u1", name: "Alex Chen" }
     ],
@@ -21,7 +34,7 @@ export const DummyTaskData = [
     id: "102",
     title: "Implement code generation agent",
     status: "backlog",
-    priority: "high" as "low" | "medium" | "high",
+    priority: "high",
     assignees: [
       { id: "u2", name: "Sarah Kim" }
     ],
@@ -46,7 +59,7 @@ export const DummyTaskData = [
     id: "104",
     title: "Optimize token usage for research agents",
     status: "todo",
-    priority: "medium" as "low" | "medium" | "high",
+    priority: "medium",
     assignees: [
       { id: "u4", name: "Priya Sharma" }
     ],
@@ -60,7 +73,7 @@ export const DummyTaskData = [
     title: "Integrate with vector database",
     description: "Connect agent memory system with Pinecone for long-term storage",
     status: "in-progress",
-    priority: "high" as "low" | "medium" | "high",
+    priority: "high",
     assignees: [
       { id: "u1", name: "Alex Chen" }
     ],
@@ -100,7 +113,7 @@ export const DummyTaskData = [
     id: "108",
     title: "Deploy agent system to production",
     status: "done",
-    priority: "high" as "low" | "medium" | "high",
+    priority: "high",
     assignees: [
       { id: "u2", name: "Sarah Kim" },
       { id: "u4", name: "Priya Sharma" }
