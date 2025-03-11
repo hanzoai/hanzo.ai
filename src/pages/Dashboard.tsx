@@ -1,14 +1,34 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import KanbanBoard from "@/components/dashboard/KanbanBoard";
 import AgentsList from "@/components/dashboard/AgentsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, LayoutGrid, Users, ChartBar } from "lucide-react";
+import CommandPalette from "@/components/dashboard/CommandPalette";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const [view, setView] = useState<"board" | "agents" | "analytics">("board");
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const viewParam = searchParams.get('view');
+  const [view, setView] = useState<"board" | "agents" | "analytics">(
+    (viewParam as "board" | "agents" | "analytics") || "board"
+  );
+
+  // Update view state when URL parameter changes
+  useEffect(() => {
+    if (viewParam && (viewParam === "board" || viewParam === "agents" || viewParam === "analytics")) {
+      setView(viewParam);
+    }
+  }, [viewParam]);
+
+  // Update URL when view changes
+  const handleViewChange = (newView: "board" | "agents" | "analytics") => {
+    setView(newView);
+    navigate(`/dashboard?view=${newView}`);
+  };
 
   return (
     <DashboardLayout>
@@ -27,9 +47,9 @@ const Dashboard = () => {
         </div>
 
         <Tabs 
-          defaultValue="board" 
+          value={view} 
           className="w-full" 
-          onValueChange={(value) => setView(value as "board" | "agents" | "analytics")}
+          onValueChange={(value) => handleViewChange(value as "board" | "agents" | "analytics")}
         >
           <TabsList className="bg-black border border-gray-800 mb-6">
             <TabsTrigger value="board" className="data-[state=active]:bg-gray-800">
@@ -110,6 +130,8 @@ const Dashboard = () => {
           </TabsContent>
         </Tabs>
       </div>
+      
+      <CommandPalette />
     </DashboardLayout>
   );
 };

@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Bot, Activity, Database, Settings, PlayCircle, StopCircle, Brain, Zap, PlusCircle, Search } from "lucide-react";
@@ -5,10 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { DummyAgentData, Agent } from "./data";
 import { cn } from "@/lib/utils";
+import AgentDetail from "./AgentDetail";
+import { toast } from "sonner";
 
 const AgentsList = () => {
   const [agents, setAgents] = useState<Agent[]>(DummyAgentData);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
 
   const filteredAgents = agents.filter(agent => 
     agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -24,6 +28,32 @@ const AgentsList = () => {
 
   const getStatusText = (status: string) => {
     return status.charAt(0).toUpperCase() + status.slice(1);
+  };
+
+  const handleAgentClick = (agent: Agent) => {
+    setSelectedAgent(agent);
+  };
+
+  const handleAgentUpdate = (updatedAgent: Agent) => {
+    const updatedAgents = agents.map(agent => 
+      agent.id === updatedAgent.id ? updatedAgent : agent
+    );
+    setAgents(updatedAgents);
+    setSelectedAgent(null);
+    toast.success(`Agent ${updatedAgent.name} updated successfully`);
+  };
+
+  const handleStatusToggle = (agent: Agent, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newStatus = agent.status === "running" ? "paused" : "running";
+    const updatedAgent = { ...agent, status: newStatus };
+    
+    const updatedAgents = agents.map(a => 
+      a.id === agent.id ? updatedAgent : a
+    );
+    
+    setAgents(updatedAgents);
+    toast.success(`Agent ${agent.name} ${newStatus === "running" ? "started" : "paused"}`);
   };
 
   return (
@@ -61,7 +91,11 @@ const AgentsList = () => {
           </thead>
           <tbody className="divide-y divide-gray-800">
             {filteredAgents.map((agent) => (
-              <tr key={agent.id} className="bg-black hover:bg-gray-900/60">
+              <tr 
+                key={agent.id} 
+                className="bg-black hover:bg-gray-900/60 cursor-pointer"
+                onClick={() => handleAgentClick(agent)}
+              >
                 <td className="px-4 py-3">
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-md bg-blue-900/30 border border-blue-800/50 flex items-center justify-center mr-3">
@@ -94,7 +128,11 @@ const AgentsList = () => {
                     <Progress 
                       value={agent.memory} 
                       className="h-1.5 w-16 mr-2 bg-gray-800" 
-                      indicatorClassName="bg-blue-500"
+                      indicatorClassName={
+                        agent.memory > 80 ? "bg-red-500" : 
+                        agent.memory > 60 ? "bg-yellow-500" : 
+                        "bg-blue-500"
+                      }
                     />
                     <span>{agent.memory}%</span>
                   </div>
@@ -102,13 +140,13 @@ const AgentsList = () => {
                 <td className="px-4 py-3">{agent.tokens.toLocaleString()}</td>
                 <td className="px-4 py-3">${agent.cost.toFixed(2)}</td>
                 <td className="px-4 py-3">
-                  <div className="flex space-x-1">
+                  <div className="flex space-x-1" onClick={(e) => e.stopPropagation()}>
                     {agent.status === "running" ? (
-                      <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white">
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white" onClick={(e) => handleStatusToggle(agent, e)}>
                         <StopCircle className="h-4 w-4" />
                       </Button>
                     ) : (
-                      <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white">
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white" onClick={(e) => handleStatusToggle(agent, e)}>
                         <PlayCircle className="h-4 w-4" />
                       </Button>
                     )}
@@ -122,6 +160,14 @@ const AgentsList = () => {
           </tbody>
         </table>
       </div>
+
+      {selectedAgent && (
+        <AgentDetail
+          agent={selectedAgent}
+          onClose={() => setSelectedAgent(null)}
+          onUpdate={handleAgentUpdate}
+        />
+      )}
     </div>
   );
 };

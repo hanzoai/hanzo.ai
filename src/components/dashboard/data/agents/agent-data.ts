@@ -1,4 +1,3 @@
-
 // Agent data for the AgentsList component
 export interface Agent {
   id: string;
@@ -11,6 +10,19 @@ export interface Agent {
   cost: number;
   lastActive: string;
   memory: number;
+  // Additional fields for agent details
+  description?: string;
+  ragSources?: {
+    id: string;
+    name: string;
+    type: "database" | "vector" | "file" | "api";
+    connection: string;
+  }[];
+  // Resource usage
+  cpu?: number;
+  gpu?: number;
+  storage?: number;
+  bandwidth?: number;
 }
 
 export const DummyAgentData: Agent[] = [
@@ -24,7 +36,16 @@ export const DummyAgentData: Agent[] = [
     tokens: 127430,
     cost: 6.37,
     lastActive: "2 minutes ago",
-    memory: 65
+    memory: 65,
+    description: "Research assistant for gathering and synthesizing information from various sources.",
+    ragSources: [
+      { id: "rs1", name: "Research Database", type: "database", connection: "postgres://user:pass@host/db" },
+      { id: "rs2", name: "Document Library", type: "vector", connection: "pinecone://index" }
+    ],
+    cpu: 35,
+    gpu: 65,
+    storage: 22,
+    bandwidth: 14
   },
   {
     id: "a2",
