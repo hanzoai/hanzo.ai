@@ -56,10 +56,10 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
             </a>
             <div className="px-3 py-2 space-y-2">
               <Button variant="ghost" className="w-full text-white hover:bg-white/10">
-                Login
+                <a href="https://cloud.hanzo.ai">Login</a>
               </Button>
               <Button className="w-full bg-white text-black hover:bg-gray-100">
-                Signup
+                <a href="https://cloud.hanzo.ai/auth/sign-up">Signup</a>
               </Button>
             </div>
           </div>

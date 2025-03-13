@@ -59,12 +59,11 @@ const Navbar = () => {
                   variant="outline" 
                   size="sm"
                   className="text-white border-white hover:bg-white/10"
-                  asChild
                 >
-                  <Link to="/account" className="flex items-center gap-2">
+                  <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
                     <User className="h-4 w-4" />
                     Account
-                  </Link>
+                  </a>
                 </Button>
               ) : (
                 <Button 
@@ -72,7 +71,7 @@ const Navbar = () => {
                   size="sm"
                   className="text-white border-white hover:bg-white/10"
                 >
-                  <a href="https://console.hanzo.ai">
+                  <a href="https://cloud.hanzo.ai">
                     Console
                   </a>
                 </Button>
@@ -81,7 +80,7 @@ const Navbar = () => {
                 size="sm" 
                 className="bg-white text-black hover:bg-gray-100"
               >
-                <a href="https://auth.hanzo.ai/">
+                <a href="https://cloud.hanzo.ai/auth/sign-up">
                   Signup
                 </a>
               </Button>
