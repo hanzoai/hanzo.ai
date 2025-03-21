@@ -7,7 +7,7 @@ const ExpertServices: React.FC = () => {
   return (
     <div className="mb-24 bg-gradient-to-br from-gray-900/70 to-black/90 p-10 rounded-2xl border border-gray-800">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="p-6 bg-gradient-to-br from-purple-900/50 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-colors">
+        <div className="p-6 bg-gradient-to-br from-purple-900/50 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-colors h-full">
           <div className="p-3 rounded-lg bg-purple-500/20 self-start inline-block mb-4">
             <Users className="h-6 w-6 text-purple-400" strokeWidth={1.5} />
           </div>
@@ -35,7 +35,7 @@ const ExpertServices: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="p-6 bg-gradient-to-br from-green-900/50 to-teal-900/30 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-colors">
+        <div className="p-6 bg-gradient-to-br from-green-900/50 to-teal-900/30 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-colors h-full">
           <div className="p-3 rounded-lg bg-green-500/20 self-start inline-block mb-4">
             <Shield className="h-6 w-6 text-green-400" strokeWidth={1.5} />
           </div>
