@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -45,6 +44,7 @@ import HanzoDev from "./pages/HanzoDev";
 import Vector from "./pages/Vector";
 import Payments from "./pages/Payments";
 import Platform from "./pages/Platform";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -101,6 +101,7 @@ const App = () => {
               <Route path="settings" element={<AccountSettings />} />
               <Route path="invoices" element={<Invoices />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BillingProvider>
       </AccountProvider>
