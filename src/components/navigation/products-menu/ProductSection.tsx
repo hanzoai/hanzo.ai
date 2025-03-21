@@ -11,18 +11,28 @@ interface ProductSectionProps {
   link: string;
   items: ProductItem[];
   hasMore?: boolean;
+  viewAllText?: string; // Add an optional prop for custom "View all" text
 }
 
-const ProductSection = ({ title, link, items, hasMore = false }: ProductSectionProps) => {
+const ProductSection = ({ 
+  title, 
+  link, 
+  items, 
+  hasMore = false,
+  viewAllText 
+}: ProductSectionProps) => {
   // Only show up to 8 items
   const limitedItems = items.slice(0, 8);
+  
+  // Use custom viewAllText if provided, otherwise use default
+  const linkText = viewAllText || `View all ${title.split(' ')[0]}`;
   
   return (
     <div>
       <SectionHeader 
         title={title} 
         link={link} 
-        linkText={`View all ${title.split(' ')[0]}`} 
+        linkText={linkText}
       />
       
       <ProductVisualization items={limitedItems} />
@@ -35,7 +45,7 @@ const ProductSection = ({ title, link, items, hasMore = false }: ProductSectionP
             to={link} 
             className="inline-flex items-center text-purple-400 hover:text-purple-300 text-sm font-medium"
           >
-            View all {title.split(' ')[0]}
+            {linkText}
             <ChevronRight className="ml-1 h-3 w-3" />
           </Link>
         </div>

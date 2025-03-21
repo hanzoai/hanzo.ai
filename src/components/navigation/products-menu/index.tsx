@@ -88,7 +88,8 @@ export const ProductsMenu = () => {
                 title="AI Cloud" 
                 link="/cloud" 
                 items={aiCloudItems}
-                hasMore={aiCloudItems.length > 8} 
+                hasMore={aiCloudItems.length > 8}
+                viewAllText="View all Cloud" 
               />
               
               {/* AI Cloud Promo */}
@@ -116,6 +117,7 @@ export const ProductsMenu = () => {
                 link="/platform" 
                 items={dxPlatformItems}
                 hasMore={dxPlatformItems.length > 8}
+                viewAllText="View all Open Source"
               />
               
               {/* DX Platform Promo with link to open source */}
