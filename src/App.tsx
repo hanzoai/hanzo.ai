@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -30,7 +29,6 @@ import Solutions from "./pages/Solutions";
 import SolutionCapabilities from "./pages/SolutionCapabilities";
 import SolutionIndustries from "./pages/SolutionIndustries";
 
-// Import product pages
 import AI from "./pages/AI";
 import Datastore from "./pages/Datastore";
 import Commerce from "./pages/Commerce";
@@ -59,7 +57,6 @@ import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 import Team from "./pages/Team";
 
-// Import team member pages
 import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
 import TeamOpera from "./pages/TeamOpera";
@@ -77,7 +74,6 @@ import TeamDes from "./pages/TeamDes";
 import TeamMark from "./pages/TeamMark";
 import TeamCal from "./pages/TeamCal";
 
-// Define which routes need account and billing providers
 const AccountRoutes = () => {
   return (
     <AccountProvider>
@@ -104,7 +100,6 @@ const AccountRoutes = () => {
   );
 };
 
-// Marketing and product pages that don't need account/billing context
 const MarketingRoutes = () => {
   return (
     <Routes>
@@ -114,6 +109,7 @@ const MarketingRoutes = () => {
       <Route path="/index3" element={<Index3 />} />
       <Route path="/index4" element={<Index4 />} />
       <Route path="/index5" element={<Index5 />} />
+      <Route path="/index6" element={<Index6 />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
@@ -122,12 +118,11 @@ const MarketingRoutes = () => {
       <Route path="/referrals" element={<Referrals />} />
       <Route path="/open-source" element={<OpenSource />} />
       <Route path="/team" element={<Team />} />
-      <Route path="/solutions" element={<Solutions />} /> {/* Main solutions landing page */}
-      <Route path="/solutions/capabilities" element={<SolutionCapabilities />} /> {/* New detailed capabilities page */}
-      <Route path="/solutions/industries" element={<SolutionIndustries />} /> {/* New detailed industries page */}
-      <Route path="/solutions/:solutionId" element={<Solutions />} /> {/* Dynamic route for solution details */}
+      <Route path="/solutions" element={<Solutions />} />
+      <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />
+      <Route path="/solutions/industries" element={<SolutionIndustries />} />
+      <Route path="/solutions/:solutionId" element={<Solutions />} />
       
-      {/* Product Routes */}
       <Route path="/ai" element={<AI />} />
       <Route path="/datastore" element={<Datastore />} />
       <Route path="/commerce" element={<Commerce />} />
@@ -151,7 +146,6 @@ const MarketingRoutes = () => {
       <Route path="/realtime" element={<Realtime />} />
       <Route path="/ai-studio" element={<AIStudio />} />
       
-      {/* Team Pages */}
       <Route path="/team/dev" element={<TeamDev />} />
       <Route path="/team/vi" element={<TeamVi />} />
       <Route path="/team/opera" element={<TeamOpera />} />
@@ -169,13 +163,11 @@ const MarketingRoutes = () => {
       <Route path="/team/mark" element={<TeamMark />} />
       <Route path="/team/cal" element={<TeamCal />} />
       
-      {/* Catch-all route for 404 page */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
 
-// Helper to check if a pathname needs account context
 const isAccountRoute = (pathname: string) => {
   return pathname.startsWith('/account') || 
     pathname === '/dashboard' || 
