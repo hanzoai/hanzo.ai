@@ -59,6 +59,9 @@ const Navbar = () => {
               <SolutionsMenu />
               <ResourcesMenu />
               
+              <Link to="/team" className="text-gray-300 hover:text-white transition-colors">
+                Team
+              </Link>
               <Link to="/team/chat" className="text-gray-300 hover:text-white transition-colors">
                 Chat
               </Link>

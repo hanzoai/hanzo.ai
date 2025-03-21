@@ -56,6 +56,7 @@ import Edge from "./pages/Edge";
 import Realtime from "./pages/Realtime";
 import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
+import Team from "./pages/Team";
 
 // Define which routes need account and billing providers
 const AccountRoutes = () => {
@@ -124,6 +125,7 @@ const MarketingRoutes = () => {
       <Route path="/machines" element={<Machines />} />
       <Route path="/realtime" element={<Realtime />} />
       <Route path="/ai-studio" element={<AIStudio />} />
+      <Route path="/team" element={<Team />} />
       
       {/* Team Pages */}
       <Route path="/team/dev" element={<TeamDev />} />
