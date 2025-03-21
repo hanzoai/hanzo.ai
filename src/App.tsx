@@ -53,6 +53,7 @@ import Functions from "./pages/Functions";
 import Identity from "./pages/Identity";
 import Machines from "./pages/Machines";
 import Edge from "./pages/Edge";
+import Realtime from "./pages/Realtime";
 import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 
@@ -121,6 +122,7 @@ const MarketingRoutes = () => {
       <Route path="/functions" element={<Functions />} />
       <Route path="/identity" element={<Identity />} />
       <Route path="/machines" element={<Machines />} />
+      <Route path="/realtime" element={<Realtime />} />
       <Route path="/ai-studio" element={<AIStudio />} />
       
       {/* Team Pages */}

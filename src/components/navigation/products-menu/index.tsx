@@ -46,10 +46,6 @@ export const ProductsMenu = () => {
     }
   };
 
-  // Limit to 8 items for each section
-  const limitedAICloudItems = aiCloudItems.slice(0, 8);
-  const limitedDXPlatformItems = dxPlatformItems.slice(0, 8);
-
   return (
     <div>
       <Popover 
@@ -91,7 +87,7 @@ export const ProductsMenu = () => {
               <ProductSection 
                 title="AI Cloud" 
                 link="/cloud" 
-                items={limitedAICloudItems}
+                items={aiCloudItems}
                 hasMore={aiCloudItems.length > 8} 
               />
               
@@ -118,7 +114,7 @@ export const ProductsMenu = () => {
               <ProductSection 
                 title="DX Platform" 
                 link="/platform" 
-                items={limitedDXPlatformItems}
+                items={dxPlatformItems}
                 hasMore={dxPlatformItems.length > 8}
               />
               

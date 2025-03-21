@@ -14,6 +14,9 @@ interface ProductSectionProps {
 }
 
 const ProductSection = ({ title, link, items, hasMore = false }: ProductSectionProps) => {
+  // Only show up to 8 items
+  const limitedItems = items.slice(0, 8);
+  
   return (
     <div>
       <SectionHeader 
@@ -22,9 +25,9 @@ const ProductSection = ({ title, link, items, hasMore = false }: ProductSectionP
         linkText={`View ${title.split(' ')[0]}`} 
       />
       
-      <ProductVisualization items={items} />
+      <ProductVisualization items={limitedItems} />
       
-      <ProductGrid items={items} />
+      <ProductGrid items={limitedItems} />
       
       {hasMore && (
         <div className="mt-4 text-right">
