@@ -25,7 +25,9 @@ import Index2 from "./pages/Index2";
 import Index4 from "./pages/Index4";
 import Referrals from "./pages/Referrals";
 import OpenSource from "./pages/OpenSource";
-import Solutions from "./pages/Solutions"; // Import the Solutions page
+import Solutions from "./pages/Solutions";
+import SolutionCapabilities from "./pages/SolutionCapabilities";
+import SolutionIndustries from "./pages/SolutionIndustries";
 
 // Import product pages
 import AI from "./pages/AI";
@@ -105,8 +107,10 @@ const MarketingRoutes = () => {
       <Route path="/referrals" element={<Referrals />} />
       <Route path="/open-source" element={<OpenSource />} />
       <Route path="/team" element={<Team />} />
-      <Route path="/solutions" element={<Solutions />} /> {/* Add Solutions route */}
-      <Route path="/solutions/:solutionId" element={<Solutions />} /> {/* Add dynamic route for solution details */}
+      <Route path="/solutions" element={<Solutions />} /> {/* Main solutions landing page */}
+      <Route path="/solutions/capabilities" element={<SolutionCapabilities />} /> {/* New detailed capabilities page */}
+      <Route path="/solutions/industries" element={<SolutionIndustries />} /> {/* New detailed industries page */}
+      <Route path="/solutions/:solutionId" element={<Solutions />} /> {/* Dynamic route for solution details */}
       
       {/* Product Routes */}
       <Route path="/ai" element={<AI />} />
