@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Code, Zap, MessageSquare, Globe } from "lucide-react";
+import { Code, Zap, MessageSquare, Globe, Robot, FileCode, Infinity, Network } from "lucide-react";
 
 const FeatureCard = ({ title, description, icon }) => {
   return (
@@ -34,35 +34,59 @@ const HanzoCodeFeatures = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">Features</h2>
+          <h2 className="text-3xl font-bold mb-4">Beyond Other AI Editors</h2>
           <p className="text-xl text-gray-300">
-            Boost your productivity with our powerful AI-assisted features
+            Capabilities that leave Cursor, Windsurf, and other AI editors far behind
           </p>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FeatureCard 
-            title="Smart Completion"
-            description="Intelligent code suggestions that learn from your codebase"
+            title="Holistic Understanding"
+            description="Unlike others, we analyze your entire codebase, not just the current file or context window"
             icon={<Code className="h-10 w-10 text-purple-400" />}
           />
           
           <FeatureCard 
-            title="Fast Execution"
-            description="Lightning fast processing for a seamless development experience"
+            title="Parallel Execution"
+            description="Run multiple autonomous agents simultaneously to solve different parts of your project"
             icon={<Zap className="h-10 w-10 text-purple-400" />}
           />
           
           <FeatureCard 
-            title="Natural Language"
-            description="Write code using plain English instructions"
+            title="Advanced Reasoning"
+            description="Complex problem solving with multi-step reasoning that other AI tools can't match"
             icon={<MessageSquare className="h-10 w-10 text-purple-400" />}
           />
           
           <FeatureCard 
-            title="Multi-language"
-            description="Support for all major programming languages and frameworks"
+            title="Multi-repo Context"
+            description="Understand dependencies across multiple repositories and codebases simultaneously"
             icon={<Globe className="h-10 w-10 text-purple-400" />}
+          />
+          
+          <FeatureCard 
+            title="Complete Autonomy"
+            description="Agents can work independently, making decisions without constant human guidance"
+            icon={<Robot className="h-10 w-10 text-purple-400" />}
+          />
+          
+          <FeatureCard 
+            title="Full System Access"
+            description="Agents have controlled access to your file system, dev environment, and tooling"
+            icon={<FileCode className="h-10 w-10 text-purple-400" />}
+          />
+          
+          <FeatureCard 
+            title="Unlimited Context"
+            description="No token limits or context windows - process entire codebases at once"
+            icon={<Infinity className="h-10 w-10 text-purple-400" />}
+          />
+          
+          <FeatureCard 
+            title="Agent Collaboration"
+            description="Multiple agents working together with different roles and responsibilities"
+            icon={<Network className="h-10 w-10 text-purple-400" />}
           />
         </div>
       </div>

@@ -21,11 +21,11 @@ const HanzoCodeHero = () => {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            The AI <span className="text-purple-400">Code Editor</span>
+            The <span className="text-purple-400">Ultimate AI-Powered</span> Code Editor
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
-            Built to make you extraordinarily productive,
-            <br />Hanzo Code is the best way to code with AI.
+            Beyond Cursor and Windsurf, Hanzo Code supercharges your favorite VS Code-compatible editor 
+            with autonomous agents that transform how you build software.
           </p>
           
           <div className="mb-12">
@@ -34,7 +34,7 @@ const HanzoCodeHero = () => {
               className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#" className="flex items-center">
-                All Downloads
+                Get Hanzo Code
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>

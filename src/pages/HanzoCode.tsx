@@ -9,6 +9,8 @@ import HanzoCodeFrontier from "@/components/hanzocode/HanzoCodeFrontier";
 import HanzoCodeTestimonials from "@/components/hanzocode/HanzoCodeTestimonials";
 import HanzoCodeCTA from "@/components/hanzocode/HanzoCodeCTA";
 import HanzoCodeCompanies from "@/components/hanzocode/HanzoCodeCompanies";
+import HanzoCodeCompatibility from "@/components/hanzocode/HanzoCodeCompatibility";
+import HanzoCodeAgents from "@/components/hanzocode/HanzoCodeAgents";
 
 const HanzoCode = () => {
   return (
@@ -18,6 +20,8 @@ const HanzoCode = () => {
         <HanzoCodeHero />
         <HanzoCodeCompanies />
         <HanzoCodeBenefits />
+        <HanzoCodeCompatibility />
+        <HanzoCodeAgents />
         <HanzoCodeFeatures />
         <HanzoCodeFrontier />
         <HanzoCodeTestimonials />
