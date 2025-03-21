@@ -18,7 +18,7 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
   link
 }) => {
   return (
-    <div className="feature-card h-full w-full flex flex-col items-center p-6 rounded-2xl border border-gray-800 bg-black/50 backdrop-blur-sm">
+    <div className="feature-card h-full w-full flex flex-col items-center p-6 rounded-xl border border-gray-800 bg-black/50 backdrop-blur-sm">
       <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${color}`}>
         <Icon className="h-8 w-8 text-white" />
       </div>

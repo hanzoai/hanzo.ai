@@ -1,5 +1,5 @@
 
-import { LucideIcon, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
+import { LucideIcon, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout, Database, FileCode, Brain, Activity, Monitor, Network, BarChart, Server, ArrowRight } from "lucide-react";
 
 export interface Feature {
   title: string;
@@ -11,80 +11,94 @@ export interface Feature {
 
 export const features: Feature[] = [
   {
-    title: "Customizable",
-    description: "Tailor your AI experience from pre-training to implementation with adjustable parameters and flexible architecture designs.",
-    icon: Settings,
+    title: "Inference API",
+    description: "Flexible inference API across all ML models with a single unified interface.",
+    icon: Brain,
     color: "bg-purple-600",
     link: "/ai"
   },
   {
-    title: "Private",
-    description: "Keep your data secure with our privacy-focused solutions that prioritize your information security.",
-    icon: Lock,
+    title: "Vector Engine",
+    description: "Blazing fast similarity searches across billions of vectors.",
+    icon: Database,
     color: "bg-blue-600",
-    link: "/security"
+    link: "/vector"
   },
   {
-    title: "Deploy Anywhere",
-    description: "Flexible deployment options for any environment - cloud, on-premises, hybrid, or edge computing scenarios.",
-    icon: Cloud,
+    title: "AI Code Engine",
+    description: "Code generation, editing, and analysis powered by LLMs.",
+    icon: FileCode,
     color: "bg-cyan-600",
-    link: "/cloud"
+    link: "/hanzocode"
   },
   {
-    title: "Transparent",
-    description: "Understand how your AI works with full transparency into model decisions and processing methods.",
-    icon: Eye,
+    title: "Agent Framework",
+    description: "Build autonomous AI agents that can reason and take actions.",
+    icon: Server,
     color: "bg-emerald-600",
     link: "/ai"
   },
   {
-    title: "Open-Source Focused",
-    description: "Built on and contributing to open-source technologies, ensuring compatibility and community support.",
-    icon: Code,
-    color: "bg-green-600",
-    link: "/open-source"
+    title: "Reasoning",
+    description: "Context-aware reasoning with logic, math, and spatial understanding.",
+    icon: Brain,
+    color: "bg-purple-600",
+    link: "/ai"
   },
   {
-    title: "Trustworthy",
-    description: "Reliable AI systems designed with safety, ethics, and responsible AI principles at their core.",
+    title: "Workflow Automation",
+    description: "Sequence multiple models with logic to create complete workflows.",
+    icon: Network,
+    color: "bg-blue-600",
+    link: "/platform"
+  },
+  {
+    title: "Observability",
+    description: "Comprehensive monitoring and tracing of AI system performance.",
+    icon: Eye,
+    color: "bg-cyan-600",
+    link: "/observability"
+  },
+  {
+    title: "Safety & Ethics",
+    description: "Ensure responsible AI with content moderation and bias detection.",
     icon: Shield,
     color: "bg-amber-600",
     link: "/security"
   },
   {
-    title: "Human-Centered AI",
-    description: "Technology that enhances human capabilities and adapts to human needs rather than replacing them.",
-    icon: Users,
-    color: "bg-orange-600",
-    link: "/ai"
-  },
-  {
-    title: "Engaging",
-    description: "Interactive and intuitive AI experiences that keep users involved and productive throughout their journey.",
-    icon: Sparkles,
+    title: "Distributed Tracing",
+    description: "End-to-end request tracing for complex AI application flows.",
+    icon: Activity,
     color: "bg-rose-600",
-    link: "/platform"
+    link: "/observability"
   },
   {
-    title: "Hands-On Solutions",
-    description: "Practical, ready-to-implement tools and frameworks that solve real-world problems immediately.",
-    icon: Hand,
-    color: "bg-pink-600",
-    link: "/solutions"
+    title: "AI Analytics",
+    description: "Rich insights into usage patterns and model performance metrics.",
+    icon: BarChart,
+    color: "bg-blue-600",
+    link: "/analytics"
   },
   {
-    title: "Delightful",
-    description: "AI experiences that surprise and delight users with thoughtful design and unexpected capabilities.",
-    icon: Smile,
+    title: "Real-time Monitoring",
+    description: "Live dashboards showing AI system health and performance.",
+    icon: Monitor,
     color: "bg-indigo-600",
-    link: "/ai"
+    link: "/observability"
   },
   {
-    title: "Beautiful Interfaces",
-    description: "Stunning, intuitive user interfaces that make complex AI interactions simple and enjoyable.",
-    icon: Layout,
-    color: "bg-violet-600",
+    title: "Edge Deployment",
+    description: "Deploy AI models to edge locations for reduced latency.",
+    icon: Cloud,
+    color: "bg-emerald-600",
+    link: "/edge"
+  },
+  {
+    title: "Explore Platform",
+    description: "Discover all the capabilities and services available in the Hanzo AI platform.",
+    icon: ArrowRight,
+    color: "bg-gradient-to-r from-purple-600 to-blue-600",
     link: "/platform"
   }
 ];
