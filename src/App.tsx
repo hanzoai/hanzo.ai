@@ -22,8 +22,6 @@ import AccountSettings from "./pages/AccountSettings";
 import Invoices from "./pages/Invoices";
 import StatusPage from "./pages/Status";
 import Dashboard from "./pages/Dashboard";
-import Index2 from "./pages/Index2";
-import Index4 from "./pages/Index4";
 import Referrals from "./pages/Referrals";
 import OpenSource from "./pages/OpenSource";
 import Solutions from "./pages/Solutions";
@@ -39,9 +37,6 @@ import Download from "./pages/Download";
 import Analytics from "./pages/Analytics";
 import Cloud from "./pages/Cloud";
 import AIStudio from "./pages/AIStudio";
-import Index3 from "./pages/Index3";
-import Index5 from "./pages/Index5";
-import Index6 from "./pages/Index6";
 import Operative from "./pages/Operative";
 import HanzoApp from "./pages/HanzoApp";
 import HanzoBot from "./pages/HanzoBot";
@@ -107,11 +102,6 @@ const MarketingRoutes = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/index" element={<Index />} />
-      <Route path="/index2" element={<Index2 />} />
-      <Route path="/index3" element={<Index3 />} />
-      <Route path="/index4" element={<Index4 />} />
-      <Route path="/index5" element={<Index5 />} />
-      <Route path="/index6" element={<Index6 />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
