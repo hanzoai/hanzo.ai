@@ -49,6 +49,9 @@ import HanzoDev from "./pages/HanzoDev";
 import Vector from "./pages/Vector";
 import Payments from "./pages/Payments";
 import Platform from "./pages/Platform";
+import Functions from "./pages/Functions";
+import Identity from "./pages/Identity";
+import Machines from "./pages/Machines";
 import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 
@@ -113,6 +116,9 @@ const MarketingRoutes = () => {
       <Route path="/dev" element={<HanzoDev />} />
       <Route path="/vector" element={<Vector />} />
       <Route path="/payments" element={<Payments />} />
+      <Route path="/functions" element={<Functions />} />
+      <Route path="/identity" element={<Identity />} />
+      <Route path="/machines" element={<Machines />} />
       <Route path="/ai-studio" element={<AIStudio />} />
       
       {/* Team Pages */}
