@@ -4,6 +4,15 @@ import { motion } from "framer-motion";
 import { Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Define a proper type for the presence event
+interface PresenceEvent {
+  action: 'join' | 'leave';
+  userData: {
+    name: string;
+    [key: string]: any;
+  };
+}
+
 const Integration = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -98,7 +107,7 @@ const Integration = () => {
               <div className="text-gray-300 pl-8">// Update your UI with the message</div>
               <div className="text-gray-300 pl-8">appendMessageToChat(message);</div>
               <div className="text-gray-300 pl-4">{`}`},</div>
-              <div className="text-gray-300 pl-4">onPresence: (event) {`=>`} {`{`}</div>
+              <div className="text-gray-300 pl-4">onPresence: (event: PresenceEvent) {`=>`} {`{`}</div>
               <div className="text-gray-300 pl-8">if (event.action === 'join') {`{`}</div>
               <div className="text-gray-300 pl-12">console.log(`${event.userData.name} joined the chat`);</div>
               <div className="text-gray-300 pl-8">{`}`} else {`{`}</div>
