@@ -1,5 +1,4 @@
-
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FeatureSlide } from "./";
@@ -88,37 +87,52 @@ const features = [
 const FeatureShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
-  // Create a snap scrolling effect
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      // If scrolling horizontally is possible
-      if (container.scrollWidth > container.clientWidth) {
-        // Check if we're at the beginning or end of horizontal scroll
-        const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth;
-        const isAtStart = container.scrollLeft === 0;
+    let scrollTimeout: number;
 
-        // If scrolling right and not at the end, or scrolling left and not at the start
-        if ((e.deltaY > 0 && !isAtEnd) || (e.deltaY < 0 && !isAtStart)) {
-          e.preventDefault();
-          container.scrollLeft += e.deltaY;
-        }
+    const handleWheel = (e: WheelEvent) => {
+      if (container.scrollWidth > container.clientWidth) {
+        e.preventDefault();
+        
+        setIsScrolling(true);
+        
+        container.scrollLeft += e.deltaY;
+        
+        clearTimeout(scrollTimeout);
+        scrollTimeout = window.setTimeout(() => {
+          setIsScrolling(false);
+        }, 150);
       }
     };
 
-    container.addEventListener('wheel', handleWheel, { passive: false });
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        container.addEventListener('wheel', handleWheel, { passive: false });
+      } else {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    }, { threshold: 0.2 });
+
+    if (scrollRef.current) {
+      observer.observe(scrollRef.current);
+    }
     
     return () => {
       container.removeEventListener('wheel', handleWheel);
+      if (scrollRef.current) {
+        observer.unobserve(scrollRef.current);
+      }
+      clearTimeout(scrollTimeout);
     };
   }, []);
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden" id="features-showcase">
-      {/* Background element - simple gradient */}
+    <section className="py-24 bg-black relative overflow-hidden" id="features-showcase" ref={scrollRef}>
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-black/80"></div>
       </div>
@@ -148,7 +162,7 @@ const FeatureShowcase: React.FC = () => {
         <div className="feature-slide-container" ref={scrollRef}>
           <div 
             ref={containerRef}
-            className="flex gap-6 pb-6 px-2 overflow-x-auto snap-x snap-mandatory feature-scroll-container"
+            className="flex gap-6 pb-6 overflow-x-auto snap-x snap-mandatory feature-scroll-container"
           >
             {features.map((feature, index) => (
               <div 
