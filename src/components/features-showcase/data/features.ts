@@ -14,49 +14,49 @@ export interface Feature {
 const aiCloudFeatures: Feature[] = [
   {
     title: "Inference API",
-    description: "Unified access to frontier AI models via a simple API.",
+    description: "High-performance API for frontier AI models, optimized for production workloads with millisecond latency.",
     icon: Brain,
-    color: "bg-purple-600",
+    color: "bg-gradient-to-br from-purple-600 to-indigo-700",
     link: "/ai",
     category: "ai-cloud"
   },
   {
     title: "Vector Engine",
-    description: "High-performance vector database for semantic search and RAG.",
+    description: "High-performance vector database for semantic search, RAG applications, and AI-powered information retrieval.",
     icon: Database,
-    color: "bg-blue-600",
+    color: "bg-gradient-to-br from-blue-600 to-blue-800",
     link: "/vector",
     category: "ai-cloud"
   },
   {
     title: "Chat",
-    description: "Interactive chat experiences with custom AI assistants.",
+    description: "Build custom AI assistants with personalized knowledge and capabilities for your users and teams.",
     icon: MessageSquare,
-    color: "bg-indigo-600",
+    color: "bg-gradient-to-br from-indigo-600 to-purple-700",
     link: "/teamchat",
     category: "ai-cloud"
   },
   {
     title: "Datastore",
-    description: "Scalable data storage with built-in AI capabilities.",
+    description: "Scalable data storage with built-in AI capabilities for intelligent data analysis and management.",
     icon: HardDrive,
-    color: "bg-cyan-600",
+    color: "bg-gradient-to-br from-cyan-600 to-teal-700",
     link: "/datastore",
     category: "ai-cloud"
   },
   {
     title: "Edge Functions",
-    description: "Deploy serverless functions to global edge locations.",
+    description: "Run AI-powered code at the edge, closer to your users for faster response times and better experiences.",
     icon: Zap,
-    color: "bg-amber-600",
+    color: "bg-gradient-to-br from-amber-600 to-orange-700",
     link: "/edge",
     category: "ai-cloud"
   },
   {
     title: "Observability",
-    description: "Comprehensive monitoring of all AI systems.",
+    description: "Full visibility into your AI systems with comprehensive logging, monitoring, and analytics tools.",
     icon: Eye,
-    color: "bg-cyan-600",
+    color: "bg-gradient-to-br from-cyan-600 to-blue-700",
     link: "/observability",
     category: "ai-cloud"
   }
@@ -66,67 +66,69 @@ const aiCloudFeatures: Feature[] = [
 const dxPlatformFeatures: Feature[] = [
   {
     title: "Code",
-    description: "AI-powered code editor with pair programming experience.",
+    description: "AI-powered code editor with pair programming capabilities that understands your codebase and helps you write better code.",
     icon: Code2,
-    color: "bg-emerald-600",
+    color: "bg-gradient-to-br from-emerald-600 to-green-700",
     link: "/hanzocode",
     category: "dx-platform"
   },
   {
     title: "App",
-    description: "No-code AI application builder with visual workflows.",
+    description: "Visual AI application builder with drag-and-drop workflows to create sophisticated AI experiences without code.",
     icon: Monitor,
-    color: "bg-blue-600",
+    color: "bg-gradient-to-br from-blue-600 to-indigo-700",
     link: "/app",
     category: "dx-platform"
   },
   {
     title: "Dev",
-    description: "Your AI engineer for complex development tasks.",
+    description: "Your AI engineer for complex development tasks, capable of understanding requirements and implementing solutions.",
     icon: Terminal,
-    color: "bg-indigo-600",
+    color: "bg-gradient-to-br from-indigo-600 to-violet-700",
     link: "/dev",
     category: "dx-platform"
   },
   {
     title: "Bot",
-    description: "Build autonomous AI agents that reason and take actions.",
+    description: "Build autonomous AI agents that can reason about problems and take actions on your behalf with human-like intelligence.",
     icon: Bot,
-    color: "bg-purple-600",
+    color: "bg-gradient-to-br from-purple-600 to-pink-700",
     link: "/bot",
     category: "dx-platform"
   },
   {
     title: "Operative",
-    description: "Framework for AI to operate computers like humans.",
+    description: "Framework for AI to operate computers like humans, enabling automation of complex workflows and tasks.",
     icon: Workflow,
-    color: "bg-rose-600",
+    color: "bg-gradient-to-br from-rose-600 to-red-700",
     link: "/operative",
     category: "dx-platform"
   },
   {
     title: "Extension",
-    description: "Browser and editor extensions for AI-assisted development.",
+    description: "AI-powered browser and editor extensions that enhance your development workflow and productivity.",
     icon: ExternalLink,
-    color: "bg-amber-600",
+    color: "bg-gradient-to-br from-amber-600 to-yellow-700",
     link: "/extension",
     category: "dx-platform"
   }
 ];
 
-// Combine and export all features
+// Explore Platform feature
+const explorePlatform: Feature = {
+  title: "Explore Platform",
+  description: "Discover the full potential of the Hanzo AI platform and how it can transform your development workflow.",
+  icon: ArrowRight,
+  color: "bg-gradient-to-r from-purple-600 to-blue-600",
+  link: "/platform"
+};
+
+// Export features and categories
 export const features: Feature[] = [
   ...aiCloudFeatures,
   ...dxPlatformFeatures,
-  {
-    title: "Explore Platform",
-    description: "Discover all the capabilities and services available in the Hanzo AI platform.",
-    icon: ArrowRight,
-    color: "bg-gradient-to-r from-purple-600 to-blue-600",
-    link: "/platform"
-  }
+  explorePlatform
 ];
 
-// Export categories for filtering
 export const aiCloudFeatures_export = aiCloudFeatures;
 export const dxPlatformFeatures_export = dxPlatformFeatures;

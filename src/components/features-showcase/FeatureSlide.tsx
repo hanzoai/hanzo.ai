@@ -43,24 +43,39 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
 
   return (
     <motion.div 
-      className="feature-card h-full w-full flex flex-col items-center p-6 rounded-xl border border-gray-800 bg-black/50 backdrop-blur-sm relative"
-      whileHover={{ scale: 1.03 }}
+      className="feature-card backdrop-blur-sm bg-black/30 border border-gray-800 p-6 rounded-xl relative group"
+      whileHover={{ 
+        y: -5,
+        borderColor: "rgba(139, 92, 246, 0.5)",
+        boxShadow: "0 10px 25px -5px rgba(124, 58, 237, 0.15)"
+      }}
       transition={{ duration: 0.2 }}
     >
       {getCategoryBadge()}
       
-      <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${color}`}>
-        <Icon className="h-8 w-8 text-white" />
+      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${color} transform transition-transform group-hover:scale-110 duration-300`}>
+        <Icon className="h-7 w-7 text-white" />
       </div>
       
-      <h3 className="text-xl font-bold mb-3 text-white text-center">{title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
       
-      <p className="text-gray-300 text-center mb-6 flex-grow">
+      <p className="text-gray-300 mb-6">
         {description}
       </p>
       
-      <a href={link} className="inline-flex items-center justify-center rounded-full px-6 py-2 text-sm bg-black/50 border border-white/20 text-white hover:bg-white/10 transition-colors">
+      <a 
+        href={link} 
+        className="inline-flex items-center text-sm text-purple-300 hover:text-purple-100 transition-colors"
+      >
         Learn More
+        <svg 
+          className="ml-1 w-4 h-4 transform transition-transform group-hover:translate-x-1 duration-300" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
       </a>
     </motion.div>
   );
