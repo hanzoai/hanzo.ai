@@ -41,7 +41,7 @@ export const aiCloudItems: ProductItem[] = [
   },
   {
     name: "Machines",
-    icon: Cpu,
+    icon: Server,
     description: "Dedicated AI compute infrastructure",
     link: "/machines"
   },
@@ -110,7 +110,7 @@ export const dxPlatformItems: ProductItem[] = [
   },
   {
     name: "Runtime",
-    icon: Cpu,
+    icon: Server,
     description: "Container runtime for AI applications",
     link: "/platform#runtime"
   },
