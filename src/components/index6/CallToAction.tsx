@@ -64,7 +64,7 @@ const CallToAction: React.FC = () => {
               className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg relative overflow-hidden group rounded-full"
               onClick={handleGetStarted}
             >
-              <span className="relative z-10 flex items-center">
+              <span className="relative z-10 flex items-center py-1 leading-relaxed">
                 Get Started for Free 
                 <motion.span
                   initial={{ x: 0 }}

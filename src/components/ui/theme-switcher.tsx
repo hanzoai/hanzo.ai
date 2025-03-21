@@ -1,17 +1,24 @@
 
 import React from "react";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Moon, Sun, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ThemeSwitcherProps {
   className?: string;
+  size?: "sm" | "default";
 }
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
-  const { mode, setMode, isDarkMode, getRoundingClass, getGlassClass } = useTheme();
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ 
+  className = "",
+  size = "default" 
+}) => {
+  const { mode, setMode, getRoundingClass, getGlassClass } = useTheme();
+  
+  const iconSize = size === "sm" ? "h-3 w-3" : "h-4 w-4";
+  const toggleHeight = size === "sm" ? "h-7" : "h-9";
+  const itemHeight = size === "sm" ? "h-5 w-5" : "h-7 w-7";
 
   return (
     <div className={`${className}`}>
@@ -21,12 +28,12 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
         onValueChange={(value) => {
           if (value) setMode(value as "light" | "dark" | "system");
         }}
-        className={`${getGlassClass()} border ${getRoundingClass()} p-1 h-9`}
+        className={`${getGlassClass()} border ${getRoundingClass()} p-1 ${toggleHeight}`}
       >
         <ToggleGroupItem 
           value="light" 
           aria-label="Light mode"
-          className={`relative ${getRoundingClass()} data-[state=on]:text-yellow-500 h-7 w-7 flex items-center justify-center`}
+          className={`relative ${getRoundingClass()} data-[state=on]:text-yellow-500 ${itemHeight} flex items-center justify-center`}
         >
           {mode === "light" && (
             <motion.div 
@@ -37,13 +44,13 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
               transition={{ duration: 0.2 }}
             />
           )}
-          <Sun className="h-4 w-4" />
+          <Sun className={iconSize} />
         </ToggleGroupItem>
         
         <ToggleGroupItem 
           value="dark" 
           aria-label="Dark mode"
-          className={`relative ${getRoundingClass()} data-[state=on]:text-purple-400 h-7 w-7 flex items-center justify-center`}
+          className={`relative ${getRoundingClass()} data-[state=on]:text-purple-400 ${itemHeight} flex items-center justify-center`}
         >
           {mode === "dark" && (
             <motion.div 
@@ -54,13 +61,13 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
               transition={{ duration: 0.2 }}
             />
           )}
-          <Moon className="h-4 w-4" />
+          <Moon className={iconSize} />
         </ToggleGroupItem>
         
         <ToggleGroupItem 
           value="system" 
           aria-label="System preference"
-          className={`relative ${getRoundingClass()} data-[state=on]:text-blue-400 h-7 w-7 flex items-center justify-center`}
+          className={`relative ${getRoundingClass()} data-[state=on]:text-blue-400 ${itemHeight} flex items-center justify-center`}
         >
           {mode === "system" && (
             <motion.div 
@@ -71,7 +78,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
               transition={{ duration: 0.2 }}
             />
           )}
-          <Monitor className="h-4 w-4" />
+          <Monitor className={iconSize} />
         </ToggleGroupItem>
       </ToggleGroup>
     </div>

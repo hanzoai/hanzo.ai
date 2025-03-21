@@ -64,21 +64,21 @@ const HeroSection = () => {
               size="lg"
               className="bg-purple-600 hover:bg-purple-700 text-white rounded-full py-6"
             >
-              <span className="py-1">GET STARTED</span>
+              <span className="py-1 leading-relaxed">GET STARTED</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-gray-600 text-white hover:bg-white/10 rounded-full py-6"
             >
-              <span className="py-1">Start Free Trial</span>
+              <span className="py-1 leading-relaxed">Start Free Trial</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-gray-600 text-white hover:bg-white/10 rounded-full py-6"
             >
-              <span className="py-1">Request Demo</span>
+              <span className="py-1 leading-relaxed">Request Demo</span>
             </Button>
           </motion.div>
           

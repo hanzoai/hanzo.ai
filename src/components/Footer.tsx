@@ -148,7 +148,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div className="flex flex-wrap items-center gap-4">
             <p className="text-gray-500 text-sm">© 2016-{new Date().getFullYear()} Hanzo Industries, Inc. All rights reserved.</p>
-            <ThemeSwitcher className="mt-2 md:mt-0" />
+            <ThemeSwitcher size="sm" className="mt-2 md:mt-0" />
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-gray-500 hover:text-gray-300 text-sm">
