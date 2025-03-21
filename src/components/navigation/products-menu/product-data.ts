@@ -1,5 +1,5 @@
 
-import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight, MessageSquare, HardDrive, Box, Cpu, ExternalLink, Workflow, Monitor } from "lucide-react";
+import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight, MessageSquare, HardDrive, Box, ExternalLink, Workflow, Monitor } from "lucide-react";
 import { ProductItem } from "./types";
 
 export const aiCloudItems: ProductItem[] = [
@@ -68,6 +68,12 @@ export const aiCloudItems: ProductItem[] = [
     icon: Box,
     description: "High-performance vector database for AI",
     link: "/vector"
+  },
+  {
+    name: "Operative",
+    icon: Workflow,
+    description: "AI-native assistant for automating tasks",
+    link: "/operative"
   }
 ];
 
@@ -113,11 +119,5 @@ export const dxPlatformItems: ProductItem[] = [
     icon: Monitor,
     description: "Low-code IDE for AI development",
     link: "/ai-studio"
-  },
-  {
-    name: "Operative",
-    icon: Workflow,
-    description: "AI-native assistant for automating tasks",
-    link: "/operative"
   }
 ];

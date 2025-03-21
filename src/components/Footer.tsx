@@ -43,6 +43,7 @@ const Footer = () => {
                   <li><Link to="/cloud#identity" className="text-gray-500 hover:text-gray-300">Identity</Link></li>
                   <li><Link to="/cloud#machines" className="text-gray-500 hover:text-gray-300">Machines</Link></li>
                   <li><Link to="/payments" className="text-gray-500 hover:text-gray-300">Payments</Link></li>
+                  <li><Link to="/operative" className="text-gray-500 hover:text-gray-300">Operative</Link></li>
                 </ul>
                 <Link to="/cloud" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
                   <span>View all Cloud</span>
@@ -60,7 +61,6 @@ const Footer = () => {
                   <li><Link to="/dev" className="text-gray-500 hover:text-gray-300">Dev</Link></li>
                   <li><Link to="/extension" className="text-gray-500 hover:text-gray-300">Extension</Link></li>
                   <li><Link to="/platform#runtime" className="text-gray-500 hover:text-gray-300">Runtime</Link></li>
-                  <li><Link to="/operator" className="text-gray-500 hover:text-gray-300">Operator</Link></li>
                   <li><Link to="/platform#studio" className="text-gray-500 hover:text-gray-300">Studio</Link></li>
                 </ul>
                 <Link to="/open-source" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
