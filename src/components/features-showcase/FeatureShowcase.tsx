@@ -1,12 +1,9 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useNavigate } from "react-router-dom";
+import { FeatureSlide } from "./";
+import { ChevronLeft, ChevronRight, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
 
 const features = [
   {
@@ -89,14 +86,11 @@ const features = [
 ];
 
 const FeatureShowcase: React.FC = () => {
-  const navigate = useNavigate();
-
   return (
     <section className="py-24 bg-black relative overflow-hidden" id="features-showcase">
-      {/* Background element */}
+      {/* Background element - simple gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-black/80"></div>
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, rgba(0, 0, 0, 0) 70%)' }}></div>
       </div>
       
       <div className="container px-4 mx-auto">
@@ -121,48 +115,26 @@ const FeatureShowcase: React.FC = () => {
           </motion.p>
         </div>
 
-        <Carousel
-          className="w-full"
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {features.map((feature, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                <div className="p-1">
-                  <Card className="bg-black/50 border border-gray-800 backdrop-blur-sm overflow-hidden h-[400px] flex flex-col">
-                    <CardHeader>
-                      <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center ${feature.color}`}>
-                        <feature.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <CardTitle className="text-xl font-bold text-center mt-4">{feature.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <CardDescription className="text-gray-300 text-center">
-                        {feature.description}
-                      </CardDescription>
-                    </CardContent>
-                    <CardFooter className="flex justify-center pb-6">
-                      <Button 
-                        variant="outline" 
-                        className="rounded-full border-white/20 bg-black/50 backdrop-blur-sm hover:bg-white/10 text-white"
-                        onClick={() => navigate(feature.link)}
-                      >
-                        Learn More
-                      </Button>
-                    </CardFooter>
-                  </Card>
+        <div className="feature-slide-container">
+          <ScrollArea className="w-full whitespace-nowrap">
+            <div className="flex py-6 px-2 gap-4">
+              {features.map((feature, index) => (
+                <div key={index} className="min-w-[300px] md:min-w-[350px]">
+                  <FeatureSlide
+                    title={feature.title}
+                    description={feature.description}
+                    icon={feature.icon}
+                    color={feature.color}
+                    link={feature.link}
+                  />
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex justify-center mt-6 gap-2">
-            <CarouselPrevious className="relative static md:absolute" />
-            <CarouselNext className="relative static md:absolute" />
-          </div>
-        </Carousel>
+              ))}
+            </div>
+            <ScrollBar orientation="horizontal" className="h-2 bg-gray-800/50">
+              <div className="progress-bar"></div>
+            </ScrollBar>
+          </ScrollArea>
+        </div>
       </div>
     </section>
   );

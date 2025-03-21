@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
 import { MasonryGrid, MasonryItem } from "@/components/ui/masonry-grid";
 import { ArchitecturalBox, GridLines } from "@/components/ui/architectural-elements";
-import AITunnelParticles from "./animations/AITunnelParticles";
 import { aiPlatformFeatures } from "./data/ai-platform-data";
 import { getColorClasses } from "./utils/tailwind-helpers";
 
@@ -15,11 +14,9 @@ const AIPlatformSection = () => {
 
   return (
     <section className="relative py-20 sm:py-32 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-black/80" />
-      <div className="absolute inset-0 opacity-40">
-        <AITunnelParticles />
-      </div>
+      {/* Background elements - simplified */}
+      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/5 to-black/90"></div>
       
       <GridLines spacing={60} opacity={0.2} color="rgba(147, 51, 234, 0.15)" />
       

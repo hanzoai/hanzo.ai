@@ -19,12 +19,14 @@
 }
 
 .feature-slide-container {
-  overflow: hidden;
   position: relative;
+  width: 100%;
+  padding-bottom: 8px;
 }
 
 .progress-bar {
   height: 4px;
   background: linear-gradient(to right, #8b5cf6, #3b82f6);
   transition: width 0.3s ease-in-out;
+  border-radius: 2px;
 }
