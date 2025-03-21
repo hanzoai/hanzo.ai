@@ -11,7 +11,7 @@ export const AgencyCard = ({ onCardClick }: AgencyCardProps) => {
       href="https://hanzo.agency" 
       target="_blank" 
       rel="noopener noreferrer"
-      className="block rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-4 h-[200px] flex flex-col"
+      className="block rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-4 h-[220px] flex flex-col"
       onClick={onCardClick}
     >
       <div className="flex items-center gap-2 mb-3">
@@ -21,7 +21,7 @@ export const AgencyCard = ({ onCardClick }: AgencyCardProps) => {
         <h3 className="text-sm font-semibold text-white">Hanzo Agency</h3>
       </div>
       <p className="text-xs text-gray-400 leading-relaxed">
-        Our AI-powered creative agency helps brands transform their digital presence. We specialize in crafting cutting-edge solutions that drive engagement and conversion with innovative AI-driven strategies and tools.
+        Elevate your brand with our AI-powered creative agency. We craft cutting-edge digital experiences that captivate audiences, drive engagement, and deliver measurable business results. From immersive web experiences to conversion-optimized interfaces, our team transforms visions into digital reality.
       </p>
     </a>
   );

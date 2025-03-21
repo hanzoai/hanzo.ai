@@ -9,7 +9,7 @@ interface SolutionCategoryProps {
 }
 
 export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategoryProps) => {
-  // Increase to 8 items per category as requested
+  // Display 8 items per category
   const displayItems = items.slice(0, 8);
 
   return (
@@ -36,12 +36,12 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
               className="flex items-center space-x-3 group"
               onClick={onItemClick}
             >
-              <div className="w-10 h-10 flex items-center justify-center">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 <Icon className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" strokeWidth={1.5} />
               </div>
               <div className="flex-1">
                 <div className="text-gray-300 group-hover:text-white font-medium truncate">{item}</div>
-                <div className="text-sm text-gray-500 truncate">Solutions for {item}</div>
+                <div className="text-sm text-gray-500 truncate">Advanced {item.toLowerCase()} capabilities</div>
               </div>
             </Link>
           );

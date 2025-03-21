@@ -11,7 +11,7 @@ export const SenseiCard = ({ onCardClick }: SenseiCardProps) => {
       href="https://sensei.group" 
       target="_blank" 
       rel="noopener noreferrer"
-      className="block rounded-xl bg-gradient-to-b from-green-900/50 to-teal-900/50 border border-green-500/20 cursor-pointer hover:border-green-500/40 transition-colors p-4 h-[200px] flex flex-col"
+      className="block rounded-xl bg-gradient-to-b from-green-900/50 to-teal-900/50 border border-green-500/20 cursor-pointer hover:border-green-500/40 transition-colors p-4 h-[220px] flex flex-col"
       onClick={onCardClick}
     >
       <div className="flex items-center gap-2 mb-3">
@@ -21,7 +21,7 @@ export const SenseiCard = ({ onCardClick }: SenseiCardProps) => {
         <h3 className="text-sm font-semibold text-white">Sensei Group</h3>
       </div>
       <p className="text-xs text-gray-400 leading-relaxed">
-        Partner with our collective of CXOs and experts to implement enterprise solutions. Our team brings decades of experience delivering transformational technology and business outcomes across industries with strategic implementation and expert guidance.
+        Accelerate enterprise transformation with our elite collective of CXOs and technology experts. We guide organizations through digital evolution with strategic implementation, deep technical expertise, and industry-specific knowledge. Our proven methodology delivers transformational outcomes across diverse industries, ensuring your business stays ahead in rapidly evolving markets.
       </p>
     </a>
   );
