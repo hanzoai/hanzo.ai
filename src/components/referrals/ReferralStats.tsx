@@ -1,17 +1,13 @@
 
 import React from 'react';
 import { Mail, User, DollarSign, Clock } from 'lucide-react';
+import { ReferralStats } from './types';
 
 interface ReferralStatsProps {
-  referralStats: {
-    totalInvited: number;
-    signedUp: number;
-    creditsEarned: number;
-    pending: number;
-  };
+  referralStats: ReferralStats;
 }
 
-const ReferralStats = ({ referralStats }: ReferralStatsProps) => {
+const ReferralStatsComponent = ({ referralStats }: ReferralStatsProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
@@ -65,4 +61,4 @@ const ReferralStats = ({ referralStats }: ReferralStatsProps) => {
   );
 };
 
-export default ReferralStats;
+export default ReferralStatsComponent;

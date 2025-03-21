@@ -4,10 +4,10 @@ import { useAccount } from '@/contexts/AccountContext';
 import AccountLayout from '@/components/account/AccountLayout';
 import ReferralHeader from '@/components/referrals/ReferralHeader';
 import ReferralLink from '@/components/referrals/ReferralLink';
-import ReferralStats from '@/components/referrals/ReferralStats';
+import ReferralStatsComponent from '@/components/referrals/ReferralStats';
 import ReferralHistory from '@/components/referrals/ReferralHistory';
 import HowItWorks from '@/components/referrals/HowItWorks';
-import { ReferralRecord, ReferralStats } from '@/components/referrals/types';
+import { ReferralRecord, ReferralStats as ReferralStatsType } from '@/components/referrals/types';
 
 const ReferralProgram = () => {
   const { user } = useAccount();
@@ -17,7 +17,7 @@ const ReferralProgram = () => {
   const referralLink = `https://hanzo.ai/signup?ref=${referralCode}`;
   
   // Mock referral stats
-  const referralStats: ReferralStats = {
+  const referralStats: ReferralStatsType = {
     totalInvited: 12,
     signedUp: 8,
     creditsEarned: 40,
@@ -43,7 +43,7 @@ const ReferralProgram = () => {
         <ReferralLink referralLink={referralLink} referralCode={referralCode} />
         
         {/* Referral Stats */}
-        <ReferralStats referralStats={referralStats} />
+        <ReferralStatsComponent referralStats={referralStats} />
         
         {/* Referral History */}
         <ReferralHistory referralHistory={referralHistory} />
