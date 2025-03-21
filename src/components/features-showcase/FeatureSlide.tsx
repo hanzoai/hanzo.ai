@@ -1,6 +1,5 @@
 
 import React from "react";
-import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 
 interface FeatureSlideProps {
@@ -8,7 +7,7 @@ interface FeatureSlideProps {
   description: string;
   icon: LucideIcon;
   color: string;
-  isActive: boolean;
+  link: string;
 }
 
 const FeatureSlide: React.FC<FeatureSlideProps> = ({
@@ -16,39 +15,24 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
   description,
   icon: Icon,
   color,
-  isActive
+  link
 }) => {
   return (
-    <motion.div 
-      className={`h-screen w-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none absolute inset-0'}`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isActive ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="max-w-5xl mx-auto text-center">
-        <div className={`mx-auto mb-6 w-24 h-24 rounded-full flex items-center justify-center ${color}`}>
-          <Icon className="h-12 w-12 text-white" />
-        </div>
-        
-        <motion.h2 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 chrome-text"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          {title}
-        </motion.h2>
-        
-        <motion.p 
-          className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-        >
-          {description}
-        </motion.p>
+    <div className="feature-card h-full w-full flex flex-col items-center p-6 rounded-xl border border-gray-800 bg-black/50 backdrop-blur-sm">
+      <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${color}`}>
+        <Icon className="h-8 w-8 text-white" />
       </div>
-    </motion.div>
+      
+      <h3 className="text-xl font-bold mb-3 text-white text-center">{title}</h3>
+      
+      <p className="text-gray-300 text-center mb-6 flex-grow">
+        {description}
+      </p>
+      
+      <a href={link} className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm bg-black/50 border border-white/20 text-white hover:bg-white/10 transition-colors">
+        Learn More
+      </a>
+    </div>
   );
 };
 

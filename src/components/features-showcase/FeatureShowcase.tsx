@@ -1,191 +1,168 @@
 
-import React, { useState, useEffect } from "react";
-import FeatureSlide from "./FeatureSlide";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
 import { motion } from "framer-motion";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useNavigate } from "react-router-dom";
 
 const features = [
   {
     title: "Customizable",
     description: "Tailor your AI experience from pre-training to implementation with adjustable parameters and flexible architecture designs.",
     icon: Settings,
-    color: "bg-purple-600"
+    color: "bg-purple-600",
+    link: "/ai"
   },
   {
     title: "Private",
     description: "Keep your data secure with our privacy-focused solutions that prioritize your information security.",
     icon: Lock,
-    color: "bg-blue-600"
+    color: "bg-blue-600",
+    link: "/security"
   },
   {
     title: "Deploy Anywhere",
     description: "Flexible deployment options for any environment - cloud, on-premises, hybrid, or edge computing scenarios.",
     icon: Cloud,
-    color: "bg-cyan-600"
+    color: "bg-cyan-600",
+    link: "/cloud"
   },
   {
     title: "Transparent",
     description: "Understand how your AI works with full transparency into model decisions and processing methods.",
     icon: Eye,
-    color: "bg-emerald-600"
+    color: "bg-emerald-600",
+    link: "/ai"
   },
   {
     title: "Open-Source Focused",
     description: "Built on and contributing to open-source technologies, ensuring compatibility and community support.",
     icon: Code,
-    color: "bg-green-600"
+    color: "bg-green-600",
+    link: "/open-source"
   },
   {
     title: "Trustworthy",
     description: "Reliable AI systems designed with safety, ethics, and responsible AI principles at their core.",
     icon: Shield,
-    color: "bg-amber-600"
+    color: "bg-amber-600",
+    link: "/security"
   },
   {
     title: "Human-Centered AI",
     description: "Technology that enhances human capabilities and adapts to human needs rather than replacing them.",
     icon: Users,
-    color: "bg-orange-600"
+    color: "bg-orange-600",
+    link: "/ai"
   },
   {
     title: "Engaging",
     description: "Interactive and intuitive AI experiences that keep users involved and productive throughout their journey.",
     icon: Sparkles,
-    color: "bg-rose-600"
+    color: "bg-rose-600",
+    link: "/platform"
   },
   {
     title: "Hands-On Solutions",
     description: "Practical, ready-to-implement tools and frameworks that solve real-world problems immediately.",
     icon: Hand,
-    color: "bg-pink-600"
+    color: "bg-pink-600",
+    link: "/solutions"
   },
   {
     title: "Delightful",
     description: "AI experiences that surprise and delight users with thoughtful design and unexpected capabilities.",
     icon: Smile,
-    color: "bg-indigo-600"
+    color: "bg-indigo-600",
+    link: "/ai"
   },
   {
     title: "Beautiful Interfaces",
     description: "Stunning, intuitive user interfaces that make complex AI interactions simple and enjoyable.",
     icon: Layout,
-    color: "bg-violet-600"
+    color: "bg-violet-600",
+    link: "/platform"
   }
 ];
 
 const FeatureShowcase: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [autoplay, setAutoplay] = useState(true);
-
-  // Auto-advance slides when autoplay is enabled
-  useEffect(() => {
-    if (!autoplay) return;
-    
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % features.length);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [autoplay]);
-
-  // Pause autoplay when user interacts with controls
-  const handleNavigation = (direction: 'next' | 'prev') => {
-    setAutoplay(false);
-    
-    if (direction === 'next') {
-      setCurrentSlide((prev) => (prev + 1) % features.length);
-    } else {
-      setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
-    }
-    
-    // Resume autoplay after 10 seconds of inactivity
-    setTimeout(() => setAutoplay(true), 10000);
-  };
-
-  const handleDotClick = (index: number) => {
-    setAutoplay(false);
-    setCurrentSlide(index);
-    setTimeout(() => setAutoplay(true), 10000);
-  };
+  const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden">
+    <section className="py-24 bg-black relative overflow-hidden" id="features-showcase">
       {/* Background element */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-black/80"></div>
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, rgba(0, 0, 0, 0) 70%)' }}></div>
       </div>
       
-      {/* Slides */}
-      <div className="relative">
-        {features.map((feature, index) => (
-          <FeatureSlide
-            key={index}
-            title={feature.title}
-            description={feature.description}
-            icon={feature.icon}
-            color={feature.color}
-            isActive={currentSlide === index}
-          />
-        ))}
-      </div>
-      
-      {/* Navigation controls */}
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center items-center gap-4 z-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex items-center gap-4"
-        >
-          <Button 
-            variant="outline" 
-            size="icon" 
-            className="rounded-full border-white/20 bg-black/50 backdrop-blur-sm hover:bg-white/10"
-            onClick={() => handleNavigation('prev')}
+      <div className="container px-4 mx-auto">
+        <div className="text-center mb-12">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-4 text-white chrome-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          
-          <div className="flex gap-2">
-            {features.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "bg-white" : "bg-white/30 hover:bg-white/50"
-                }`}
-                onClick={() => handleDotClick(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-          
-          <Button 
-            variant="outline" 
-            size="icon" 
-            className="rounded-full border-white/20 bg-black/50 backdrop-blur-sm hover:bg-white/10"
-            onClick={() => handleNavigation('next')}
+            Our Feature Ecosystem
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
-        </motion.div>
-      </div>
-      
-      {/* Progress indicator */}
-      <div className="absolute top-8 left-0 right-0 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-            <motion.div 
-              className="h-full bg-white"
-              initial={{ width: '0%' }}
-              animate={{ 
-                width: `${((currentSlide + 1) / features.length) * 100}%` 
-              }}
-              transition={{ duration: 0.3 }}
-            />
-          </div>
+            Discover the powerful capabilities that make Hanzo AI the platform of choice for developers and enterprises
+          </motion.p>
         </div>
+
+        <Carousel
+          className="w-full"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {features.map((feature, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                <div className="p-1">
+                  <Card className="bg-black/50 border border-gray-800 backdrop-blur-sm overflow-hidden h-[400px] flex flex-col">
+                    <CardHeader>
+                      <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center ${feature.color}`}>
+                        <feature.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <CardTitle className="text-xl font-bold text-center mt-4">{feature.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <CardDescription className="text-gray-300 text-center">
+                        {feature.description}
+                      </CardDescription>
+                    </CardContent>
+                    <CardFooter className="flex justify-center pb-6">
+                      <Button 
+                        variant="outline" 
+                        className="rounded-full border-white/20 bg-black/50 backdrop-blur-sm hover:bg-white/10 text-white"
+                        onClick={() => navigate(feature.link)}
+                      >
+                        Learn More
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center mt-6 gap-2">
+            <CarouselPrevious className="relative static md:absolute" />
+            <CarouselNext className="relative static md:absolute" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
