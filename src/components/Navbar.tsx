@@ -12,8 +12,7 @@ const isAccountRoute = () => {
   return window.location.pathname.startsWith('/account') || 
     window.location.pathname === '/dashboard' || 
     window.location.pathname === '/user-profile' || 
-    window.location.pathname === '/organization-profile' || 
-    window.location.pathname === '/referrals';
+    window.location.pathname === '/organization-profile';
 };
 
 const Navbar = () => {

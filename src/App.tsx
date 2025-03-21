@@ -23,6 +23,7 @@ import StatusPage from "./pages/Status";
 import Dashboard from "./pages/Dashboard";
 import Index2 from "./pages/Index2";
 import Index4 from "./pages/Index4";
+import Referrals from "./pages/Referrals";
 
 // Import product pages
 import AI from "./pages/AI";
@@ -60,7 +61,6 @@ const AccountRoutes = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/organization-profile" element={<OrganizationProfile />} />
-          <Route path="/referrals" element={<ReferralProgram />} />
           
           <Route path="/account" element={<AccountLayout />}>
             <Route index element={<Account />} />
@@ -94,6 +94,7 @@ const MarketingRoutes = () => {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/status" element={<StatusPage />} />
       <Route path="/leadership" element={<Leadership />} />
+      <Route path="/referrals" element={<Referrals />} />
       
       {/* Product Routes */}
       <Route path="/ai" element={<AI />} />
@@ -131,8 +132,7 @@ const isAccountRoute = (pathname: string) => {
   return pathname.startsWith('/account') || 
     pathname === '/dashboard' || 
     pathname === '/user-profile' || 
-    pathname === '/organization-profile' || 
-    pathname === '/referrals';
+    pathname === '/organization-profile';
 };
 
 const App = () => {

@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MessageSquare, Send, Bot, RefreshCw, Camera, Mic, Paperclip, Settings, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
