@@ -55,16 +55,16 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-8 text-center"
+        className="mb-4 text-center"
       >
-        <div className="inline-block px-4 py-1.5 rounded-full bg-purple-900/20 border border-purple-500/20 text-purple-300 text-sm font-medium mb-8">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-purple-900/20 border border-purple-500/20 text-purple-300 text-sm font-medium mb-4">
           AI Engineering Platform
         </div>
       </motion.div>
       
       <motion.h1 
         ref={headingRef}
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-white leading-[1.3] pb-8"
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-white leading-[1.1] pb-4"
         initial="hidden" 
         animate="visible" 
         variants={titleVariants} 
@@ -73,12 +73,12 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
           backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
         }}
       >
-        <motion.span className="inline-flex items-center chrome-text font-bold mb-8 overflow-visible">
+        <motion.span className="inline-flex items-center chrome-text font-bold mb-4 overflow-visible">
           Accelerating AI
         </motion.span>
         
         <motion.span 
-          className="block text-white mt-10 pb-8 overflow-visible chrome-text font-bold" 
+          className="block text-white mt-6 pb-4 overflow-visible chrome-text font-bold" 
           initial="hidden" 
           animate={animationComplete ? "visible" : "hidden"} 
           variants={titleVariants} 
