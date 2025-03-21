@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -24,6 +23,7 @@ import Dashboard from "./pages/Dashboard";
 import Index2 from "./pages/Index2";
 import Index4 from "./pages/Index4";
 import Referrals from "./pages/Referrals";
+import OpenSource from "./pages/OpenSource";
 
 // Import product pages
 import AI from "./pages/AI";
@@ -101,6 +101,7 @@ const MarketingRoutes = () => {
       <Route path="/status" element={<StatusPage />} />
       <Route path="/leadership" element={<Leadership />} />
       <Route path="/referrals" element={<Referrals />} />
+      <Route path="/open-source" element={<OpenSource />} />
       
       {/* Product Routes */}
       <Route path="/ai" element={<AI />} />

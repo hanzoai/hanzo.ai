@@ -118,7 +118,7 @@ export const ProductsMenu = () => {
                 hasMore={dxPlatformItems.length > 8}
               />
               
-              {/* DX Platform Promo */}
+              {/* DX Platform Promo with link to open source */}
               <div className="mt-6 p-4 rounded-xl bg-gradient-to-b from-green-900/50 to-teal-900/50 border border-green-500/20 hover:border-green-500/40 transition-colors">
                 <div className="flex items-center space-x-2 mb-2">
                   <Code className="h-5 w-5 text-green-400" />
@@ -127,13 +127,22 @@ export const ProductsMenu = () => {
                 <p className="text-gray-300 text-sm mb-3">
                   Our developer experience platform is free to use and open source forever.
                 </p>
-                <Button 
-                  size="sm" 
-                  variant="outline"
-                  className="w-full bg-transparent border-green-500/30 text-white hover:bg-green-800/30"
-                >
-                  <a href="https://github.com/hanzoai">View on GitHub</a>
-                </Button>
+                <div className="flex space-x-2">
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    className="flex-1 bg-transparent border-green-500/30 text-white hover:bg-green-800/30"
+                  >
+                    <a href="https://github.com/hanzoai">View on GitHub</a>
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    className="flex-1 bg-transparent border-green-500/30 text-white hover:bg-green-800/30"
+                  >
+                    <Link to="/open-source">Open Source</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
