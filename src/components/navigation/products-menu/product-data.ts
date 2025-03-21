@@ -109,10 +109,10 @@ export const dxPlatformItems: ProductItem[] = [
     link: "/platform#runtime"
   },
   {
-    name: "Operator",
+    name: "Operative",
     icon: Workflow,
     description: "AI-native assistant for automating tasks",
-    link: "/operator"
+    link: "/operative"
   },
   {
     name: "Studio",

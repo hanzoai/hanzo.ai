@@ -35,6 +35,14 @@ import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
 import TeamOpera from "./pages/TeamOpera";
 import Index3 from "./pages/Index3";
+import Operative from "./pages/Operative";
+import HanzoApp from "./pages/HanzoApp";
+import HanzoBot from "./pages/HanzoBot";
+import HanzoCode from "./pages/HanzoCode";
+import HanzoDev from "./pages/HanzoDev";
+import Vector from "./pages/Vector";
+import Payments from "./pages/Payments";
+import Platform from "./pages/Platform";
 
 const App = () => {
   return (
@@ -60,6 +68,13 @@ const App = () => {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/cloud" element={<Cloud />} />
             <Route path="/platform" element={<Index3 />} />
+            <Route path="/operative" element={<Operative />} />
+            <Route path="/app" element={<HanzoApp />} />
+            <Route path="/bot" element={<HanzoBot />} />
+            <Route path="/code" element={<HanzoCode />} />
+            <Route path="/dev" element={<HanzoDev />} />
+            <Route path="/vector" element={<Vector />} />
+            <Route path="/payments" element={<Payments />} />
             
             {/* Team Pages */}
             <Route path="/team/dev" element={<TeamDev />} />

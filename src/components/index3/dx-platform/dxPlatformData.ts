@@ -95,8 +95,8 @@ export const dxPlatformData: DXPlatformItem[] = [
     color: "blue"
   },
   {
-    id: "operator",
-    title: "Operator",
+    id: "operative",
+    title: "Operative",
     description: "AI-native assistant for automating desktop tasks via natural language.",
     icon: Workflow,
     features: [
