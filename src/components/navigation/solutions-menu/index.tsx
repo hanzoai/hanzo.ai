@@ -80,7 +80,7 @@ export const SolutionsMenu = () => {
         </div>
         
         <PopoverContent 
-          className="w-[1100px] p-8 bg-black border-gray-800 z-50"
+          className="w-[1000px] p-6 bg-black border-gray-800 z-50"
           sideOffset={8}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
