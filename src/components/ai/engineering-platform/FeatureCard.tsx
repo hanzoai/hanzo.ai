@@ -1,19 +1,55 @@
 
-import React, { ReactNode } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
-interface FeatureCardProps {
-  icon: ReactNode;
-  title: string;
-  description: string;
+interface FeaturePoint {
+  text: string;
 }
 
-const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  featurePoints: FeaturePoint[];
+  delay: number;
+  iconBgClass: string;
+  iconTextClass: string;
+  bulletColor: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  icon,
+  title,
+  description,
+  featurePoints,
+  delay,
+  iconBgClass,
+  iconTextClass,
+  bulletColor
+}) => {
   return (
-    <div className="bg-gray-900/20 border border-gray-800 rounded-xl p-5">
-      {icon}
-      <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-      <p className="text-gray-400 text-sm">{description}</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 h-full flex flex-col"
+    >
+      <div className={`w-12 h-12 rounded-lg ${iconBgClass} flex items-center justify-center mb-4`}>
+        <div className={iconTextClass}>{icon}</div>
+      </div>
+      
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-gray-400 mb-4 flex-grow">{description}</p>
+      
+      <ul className="space-y-2">
+        {featurePoints.map((point, index) => (
+          <li key={index} className="flex items-start">
+            <span className={`${bulletColor} mr-2 text-lg`}>•</span>
+            <span className="text-sm text-gray-300">{point.text}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
   );
 };
 
