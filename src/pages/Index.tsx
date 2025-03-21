@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
@@ -11,8 +11,15 @@ import CallToAction from "@/components/landing/CallToAction";
 import TrustedBy from "@/components/platform/TrustedBy";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import { useInView } from "framer-motion";
 
 const Index = () => {
+  const philosophyRef = useRef<HTMLDivElement>(null);
+  const philosophyInView = useInView(philosophyRef, { once: true, amount: 0.2 });
+  
+  const featureRef = useRef<HTMLDivElement>(null);
+  const featureInView = useInView(featureRef, { once: true, amount: 0.2 });
+  
   useEffect(() => {
     // Smooth scroll behavior
     const smoothScroll = (e: MouseEvent) => {
@@ -65,8 +72,17 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <PhilosophySection />
-        <FeatureShowcase />
+        
+        <div ref={philosophyRef} className="opacity-0 transition-opacity duration-1000" 
+             style={{ opacity: philosophyInView ? 1 : 0 }}>
+          <PhilosophySection />
+        </div>
+        
+        <div ref={featureRef} className="opacity-0 transition-opacity duration-1000" 
+             style={{ opacity: featureInView ? 1 : 0 }}>
+          <FeatureShowcase />
+        </div>
+        
         <DemoShowcase />
         <TestimonialsSection />
         <CallToAction />

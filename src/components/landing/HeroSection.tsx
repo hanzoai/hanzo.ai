@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Star } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-black" />
@@ -109,23 +109,6 @@ const HeroSection: React.FC = () => {
             <Github className="mr-2 h-5 w-5" />
             Star on GitHub
           </Button>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="mt-16"
-        >
-          <div className="flex items-center justify-center gap-8 text-gray-400 flex-wrap">
-            <div className="flex items-center">
-              <Star className="h-5 w-5 text-yellow-400 mr-2" />
-              <span>47k+ GitHub Stars</span>
-            </div>
-            <div>3.2B+ Downloads</div>
-            <div>900+ Contributors</div>
-            <div>Used by 10k+ Developers</div>
-          </div>
         </motion.div>
       </div>
     </section>
