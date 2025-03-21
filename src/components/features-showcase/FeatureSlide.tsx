@@ -1,6 +1,7 @@
 
 import React from "react";
 import { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface FeatureSlideProps {
   title: string;
@@ -18,7 +19,11 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
   link
 }) => {
   return (
-    <div className="feature-card h-full w-full flex flex-col items-center p-6 rounded-xl border border-gray-800 bg-black/50 backdrop-blur-sm">
+    <motion.div 
+      className="feature-card h-full w-full flex flex-col items-center p-6 rounded-xl border border-gray-800 bg-black/50 backdrop-blur-sm"
+      whileHover={{ scale: 1.03 }}
+      transition={{ duration: 0.2 }}
+    >
       <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${color}`}>
         <Icon className="h-8 w-8 text-white" />
       </div>
@@ -32,7 +37,7 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
       <a href={link} className="inline-flex items-center justify-center rounded-full px-6 py-2 text-sm bg-black/50 border border-white/20 text-white hover:bg-white/10 transition-colors">
         Learn More
       </a>
-    </div>
+    </motion.div>
   );
 };
 

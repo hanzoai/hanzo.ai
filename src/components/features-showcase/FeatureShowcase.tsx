@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import FeatureShowcaseHeader from "./FeatureShowcaseHeader";
 import FeatureShowcaseSlider from "./FeatureShowcaseSlider";
@@ -7,6 +7,24 @@ import { features } from "./data/features";
 
 const FeatureShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [maxScrollDistance, setMaxScrollDistance] = useState(0);
+
+  useEffect(() => {
+    const calculateMaxScroll = () => {
+      // Calculate the total width of all cards (including gap) minus the visible area
+      const totalWidth = features.length * 350; // Each card is 350px wide (300px + margins)
+      const visibleWidth = window.innerWidth - 100; // Subtract some padding
+      const newMaxScroll = Math.max(0, totalWidth - visibleWidth);
+      setMaxScrollDistance(newMaxScroll);
+    };
+
+    calculateMaxScroll();
+    window.addEventListener('resize', calculateMaxScroll);
+    
+    return () => {
+      window.removeEventListener('resize', calculateMaxScroll);
+    };
+  }, []);
 
   // Scroll animation values
   const { scrollYProgress } = useScroll({
@@ -21,7 +39,7 @@ const FeatureShowcase: React.FC = () => {
   const x = useTransform(
     scrollYProgress, 
     [0.2, 0.8], 
-    [0, -((features.length * 350) - window.innerWidth + 100)]
+    [0, -maxScrollDistance]
   ); 
 
   return (

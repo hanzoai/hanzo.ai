@@ -1,5 +1,5 @@
 
-import { LucideIcon, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout, Database, FileCode, Brain, Activity, Monitor, Network, BarChart, Server, ArrowRight } from "lucide-react";
+import { LucideIcon, Brain, Database, FileCode, Server, Eye, Shield, Activity, BarChart, Monitor, Cloud, ArrowRight } from "lucide-react";
 
 export interface Feature {
   title: string;
@@ -44,13 +44,6 @@ export const features: Feature[] = [
     icon: Brain,
     color: "bg-purple-600",
     link: "/ai"
-  },
-  {
-    title: "Workflow Automation",
-    description: "Sequence multiple models with logic to create complete workflows.",
-    icon: Network,
-    color: "bg-blue-600",
-    link: "/platform"
   },
   {
     title: "Observability",
