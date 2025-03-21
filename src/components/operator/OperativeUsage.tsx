@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const OperatorUsage = () => {
+const OperativeUsage = () => {
   return (
     <section className="py-24 bg-gray-950 relative overflow-hidden" id="get-started">
       {/* Background gradient */}
@@ -19,7 +19,7 @@ const OperatorUsage = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Getting Started with Hanzo Operator
+              Getting Started with Hanzo Operative
             </h2>
             <p className="text-xl text-gray-300">
               Set up your environment in minutes and start using AI to operate your computer
@@ -42,14 +42,14 @@ const OperatorUsage = () => {
                 <div>
                   <p className="text-gray-400 mb-2">1. Install the package</p>
                   <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
-                    pip install hanzo-operator
+                    pip install hanzo-operative
                   </div>
                 </div>
                 
                 <div>
-                  <p className="text-gray-400 mb-2">2. Run the operator</p>
+                  <p className="text-gray-400 mb-2">2. Run the operative</p>
                   <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
-                    operate
+                    operative
                   </div>
                 </div>
                 
@@ -97,28 +97,28 @@ const OperatorUsage = () => {
               <div>
                 <p className="text-gray-400 mb-2">Running with default settings (GPT-4o)</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
-                  operate
+                  operative
                 </div>
               </div>
               
               <div>
                 <p className="text-gray-400 mb-2">Using voice input mode</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
-                  operate --voice
+                  operative --voice
                 </div>
               </div>
               
               <div>
                 <p className="text-gray-400 mb-2">Using OCR mode for enhanced element detection</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
-                  operate -m gpt-4-with-ocr
+                  operative -m gpt-4-with-ocr
                 </div>
               </div>
               
               <div>
                 <p className="text-gray-400 mb-2">Using Set-of-Mark (SoM) prompting</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
-                  operate -m gpt-4-with-som
+                  operative -m gpt-4-with-som
                 </div>
               </div>
               
@@ -133,4 +133,4 @@ const OperatorUsage = () => {
   );
 };
 
-export default OperatorUsage;
+export default OperativeUsage;

@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, Globe, Zap, ShieldCheck, Compass, Database, Cpu, Cloud } from "lucide-react";
 
-const OperatorFeatures = () => {
+const OperativeFeatures = () => {
   const features = [
     {
       icon: Globe,
@@ -54,7 +54,7 @@ const OperatorFeatures = () => {
               Key Capabilities
             </h2>
             <p className="text-xl text-gray-300">
-              Hanzo Operator gives AI models the ability to interact with computers
+              Hanzo Operative gives AI models the ability to interact with computers
               the same way humans do
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ const OperatorFeatures = () => {
           >
             <Github className="h-5 w-5 text-gray-400" />
             <span className="text-gray-300">Open Source on</span>
-            <a href="https://github.com/hanzo-ai/operator" className="text-white font-semibold hover:text-purple-400 transition-colors">GitHub</a>
+            <a href="https://github.com/hanzo-ai/operative" className="text-white font-semibold hover:text-purple-400 transition-colors">GitHub</a>
           </motion.div>
         </div>
       </div>
@@ -97,4 +97,4 @@ const OperatorFeatures = () => {
   );
 };
 
-export default OperatorFeatures;
+export default OperativeFeatures;

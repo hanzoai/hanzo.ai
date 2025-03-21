@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Terminal, Eye, Cpu, MousePointer, Keyboard } from "lucide-react";
 
-const OperatorHero = () => {
+const OperativeHero = () => {
   return (
     <section className="py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -24,7 +24,7 @@ const OperatorHero = () => {
             </span>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-purple-300">
-              Hanzo Operator
+              Hanzo Operative
             </h1>
 
             <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
@@ -37,7 +37,7 @@ const OperatorHero = () => {
                 <a href="#get-started">Get Started</a>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
-                <a href="https://docs.hanzo.ai/operator" className="flex items-center gap-2">
+                <a href="https://docs.hanzo.ai/operative" className="flex items-center gap-2">
                   <Terminal className="h-5 w-5" />
                   View Docs
                 </a>
@@ -82,4 +82,4 @@ const OperatorHero = () => {
   );
 };
 
-export default OperatorHero;
+export default OperativeHero;

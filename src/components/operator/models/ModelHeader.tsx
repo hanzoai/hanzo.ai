@@ -15,7 +15,7 @@ const ModelHeader = () => {
           Supported Models
         </h2>
         <p className="text-xl text-gray-300">
-          Hanzo Operator works with multiple multimodal AI models, 
+          Hanzo Operative works with multiple multimodal AI models, 
           each with different capabilities and strengths
         </p>
       </motion.div>

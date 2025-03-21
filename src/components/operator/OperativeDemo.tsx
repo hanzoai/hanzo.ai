@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play, Pause, SkipForward, SkipBack } from "lucide-react";
 
-const OperatorDemo = () => {
+const OperativeDemo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   
   return (
@@ -21,10 +21,10 @@ const OperatorDemo = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              See Operator in Action
+              See Operative in Action
             </h2>
             <p className="text-xl text-gray-300">
-              Watch as Hanzo Operator uses multimodal AI to navigate interfaces, 
+              Watch as Hanzo Operative uses multimodal AI to navigate interfaces, 
               complete tasks, and solve problems autonomously.
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ const OperatorDemo = () => {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://docs.hanzo.ai/operator/examples"
+            href="https://docs.hanzo.ai/operative/examples"
             className="text-purple-400 hover:text-purple-300 transition-colors"
           >
             View more examples →
@@ -76,4 +76,4 @@ const OperatorDemo = () => {
   );
 };
 
-export default OperatorDemo;
+export default OperativeDemo;

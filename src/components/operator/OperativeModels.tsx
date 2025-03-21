@@ -5,7 +5,7 @@ import ModelCard from "./models/ModelCard";
 import ModelFooter from "./models/ModelFooter";
 import { operatorModels } from "./models/operatorModelData";
 
-const OperatorModels = () => {
+const OperativeModels = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background gradient */}
@@ -30,4 +30,4 @@ const OperatorModels = () => {
   );
 };
 
-export default OperatorModels;
+export default OperativeModels;

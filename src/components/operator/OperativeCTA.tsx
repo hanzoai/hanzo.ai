@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Twitter, ExternalLink } from "lucide-react";
 
-const OperatorCTA = () => {
+const OperativeCTA = () => {
   return (
     <section className="py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -30,7 +30,7 @@ const OperatorCTA = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8">
-                <a href="https://github.com/hanzo-ai/operator" className="flex items-center gap-2">
+                <a href="https://github.com/hanzo-ai/operative" className="flex items-center gap-2">
                   <Github className="h-5 w-5" />
                   Star on GitHub
                 </a>
@@ -44,7 +44,7 @@ const OperatorCTA = () => {
             
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <a 
-                href="https://blog.hanzo.ai/operator"
+                href="https://blog.hanzo.ai/operative"
                 className="flex flex-col items-center p-4 rounded-xl hover:bg-gray-900/30 transition-colors"
               >
                 <ExternalLink className="h-6 w-6 text-purple-400 mb-2" />
@@ -58,7 +58,7 @@ const OperatorCTA = () => {
                 <span className="text-white font-medium">Follow Updates</span>
               </a>
               <a 
-                href="https://docs.hanzo.ai/operator/contribute"
+                href="https://docs.hanzo.ai/operative/contribute"
                 className="flex flex-col items-center p-4 rounded-xl hover:bg-gray-900/30 transition-colors"
               >
                 <Github className="h-6 w-6 text-purple-400 mb-2" />
@@ -72,4 +72,4 @@ const OperatorCTA = () => {
   );
 };
 
-export default OperatorCTA;
+export default OperativeCTA;
