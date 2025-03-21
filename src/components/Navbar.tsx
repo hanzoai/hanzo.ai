@@ -1,18 +1,30 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ProductsMenu } from "./navigation/products-menu";
 import { SolutionsMenu } from "./navigation/SolutionsMenu";
 import { ResourcesMenu } from "./navigation/ResourcesMenu";
 import { MobileMenu } from "./navigation/MobileMenu";
-import { useAccount } from "@/contexts/AccountContext";
 import { Link } from "react-router-dom";
 import { User } from "lucide-react";
+
+const isAccountRoute = () => {
+  return window.location.pathname.startsWith('/account') || 
+    window.location.pathname === '/dashboard' || 
+    window.location.pathname === '/user-profile' || 
+    window.location.pathname === '/organization-profile' || 
+    window.location.pathname === '/referrals';
+};
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { user } = useAccount();
+  const [user, setUser] = useState(null);
+  
+  useEffect(() => {
+    if (!isAccountRoute()) {
+      setUser(null);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

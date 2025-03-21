@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import AccountLayout from "./components/account/AccountLayout";
@@ -117,18 +117,22 @@ const MarketingRoutes = () => {
   );
 };
 
+// Helper to check if a pathname needs account context
+const isAccountRoute = (pathname: string) => {
+  return pathname.startsWith('/account') || 
+    pathname === '/dashboard' || 
+    pathname === '/user-profile' || 
+    pathname === '/organization-profile' || 
+    pathname === '/referrals';
+};
+
 const App = () => {
   console.log("App component rendering");
   
   return (
     <BrowserRouter>
       <ScrollToTop />
-      {/* Use the location pathname to determine which routes to render */}
-      {window.location.pathname.startsWith('/account') || 
-       window.location.pathname === '/dashboard' || 
-       window.location.pathname === '/user-profile' || 
-       window.location.pathname === '/organization-profile' || 
-       window.location.pathname === '/referrals' ? (
+      {isAccountRoute(window.location.pathname) ? (
         <AccountRoutes />
       ) : (
         <MarketingRoutes />
