@@ -24,6 +24,7 @@ import {
 import TeamHero from "@/components/team/TeamHero";
 import AgentGallery from "@/components/team/AgentGallery";
 import HumanAIIntegration from "@/components/team/HumanAIIntegration";
+import WorkspaceIntegration from "@/components/team/WorkspaceIntegration";
 import AuditFeatures from "@/components/team/AuditFeatures";
 import EnterpriseReadiness from "@/components/team/EnterpriseReadiness";
 import CallToAction from "@/components/team/CallToAction";
@@ -50,6 +51,7 @@ const Team = () => {
         <TeamHero />
         <AgentGallery />
         <HumanAIIntegration />
+        <WorkspaceIntegration />
         <AuditFeatures />
         <EnterpriseReadiness />
         <CallToAction />
