@@ -1,14 +1,16 @@
 
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { solutions } from "@/constants/navigation";
 import { ChevronRight } from "lucide-react";
 import { getIcon } from "@/constants/iconMappings";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-const Solutions = () => {
+const Solutions: React.FC = () => {
   const [expandedSections, setExpandedSections] = useState<Record<string, number>>({});
+  const { solutionId } = useParams<{ solutionId?: string }>();
 
   const toggleSection = (title: string) => {
     setExpandedSections(prev => ({

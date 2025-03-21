@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -24,6 +25,7 @@ import Index2 from "./pages/Index2";
 import Index4 from "./pages/Index4";
 import Referrals from "./pages/Referrals";
 import OpenSource from "./pages/OpenSource";
+import Solutions from "./pages/Solutions"; // Import the Solutions page
 
 // Import product pages
 import AI from "./pages/AI";
@@ -103,6 +105,8 @@ const MarketingRoutes = () => {
       <Route path="/referrals" element={<Referrals />} />
       <Route path="/open-source" element={<OpenSource />} />
       <Route path="/team" element={<Team />} />
+      <Route path="/solutions" element={<Solutions />} /> {/* Add Solutions route */}
+      <Route path="/solutions/:solutionId" element={<Solutions />} /> {/* Add dynamic route for solution details */}
       
       {/* Product Routes */}
       <Route path="/ai" element={<AI />} />
