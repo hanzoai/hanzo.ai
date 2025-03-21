@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Cloud, Database, Brain, Globe, Server, Zap, ArrowRight } from "lucide-react";
+import { Cloud, Server, Shield, Zap, Globe, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import ChromeText from "@/components/ui/chrome-text";
@@ -10,12 +10,12 @@ const AICloudSection: React.FC = () => {
   const navigate = useNavigate();
   
   const features = [
-    { icon: <Cloud className="h-6 w-6 text-blue-400" />, title: "Global Edge Network", description: "Deploy to 35+ regions with sub-50ms latency to 99% of users" },
-    { icon: <Database className="h-6 w-6 text-blue-400" />, title: "Datastore", description: "Structured data storage with AI-friendly APIs and real-time sync" },
-    { icon: <Brain className="h-6 w-6 text-blue-400" />, title: "AI Models", description: "Access to frontier models with seamless API integration" },
-    { icon: <Globe className="h-6 w-6 text-blue-400" />, title: "Edge Functions", description: "Run code globally with ultra-low latency and zero cold starts" },
-    { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Vector Database", description: "High-performance vector search optimized for AI embeddings" },
-    { icon: <Zap className="h-6 w-6 text-blue-400" />, title: "Real-time", description: "Bi-directional realtime subscriptions and streaming" }
+    { icon: <Cloud className="h-6 w-6 text-blue-400" />, title: "Global Infrastructure", description: "Deploy AI models across 35+ regions worldwide" },
+    { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Compute Scaling", description: "Automatically scale resources based on demand" },
+    { icon: <Shield className="h-6 w-6 text-blue-400" />, title: "Enterprise Security", description: "SOC 2 Type II, HIPAA, and GDPR compliant" },
+    { icon: <Zap className="h-6 w-6 text-blue-400" />, title: "Low Latency", description: "Sub-100ms response times for AI inference" },
+    { icon: <Globe className="h-6 w-6 text-blue-400" />, title: "Global Edge Network", description: "Serve models from the edge for faster responses" },
+    { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Model Optimization", description: "Automatic optimization for faster performance" }
   ];
   
   return (
@@ -30,7 +30,7 @@ const AICloudSection: React.FC = () => {
             className="mb-4"
           >
             <span className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium">
-              Infinitely Scalable
+              Enterprise Scale
             </span>
           </motion.div>
           
@@ -48,7 +48,7 @@ const AICloudSection: React.FC = () => {
             </ChromeText>
             
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Global, infinitely scalable infrastructure specifically optimized for AI workloads
+              Deploy, manage, and scale AI models with enterprise-grade reliability and security
             </p>
           </motion.div>
         </div>
