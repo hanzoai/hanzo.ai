@@ -21,6 +21,8 @@ import AccountSettings from "./pages/AccountSettings";
 import Invoices from "./pages/Invoices";
 import StatusPage from "./pages/Status";
 import Dashboard from "./pages/Dashboard";
+import Index2 from "./pages/Index2";
+import Index4 from "./pages/Index4";
 
 // Import product pages
 import AI from "./pages/AI";
@@ -52,6 +54,9 @@ const App = () => {
         <BillingProvider>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/index2" element={<Index2 />} />
+            <Route path="/index3" element={<Index3 />} />
+            <Route path="/index4" element={<Index4 />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
