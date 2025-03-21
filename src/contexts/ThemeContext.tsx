@@ -5,12 +5,15 @@ type ThemeRounding = 'sharp' | 'medium' | 'rounded' | 'pill';
 type ThemeSpacing = 'compact' | 'comfortable' | 'spacious';
 type ThemeFontFamily = 'system' | 'monospace' | 'serif' | 'sans';
 type ThemeGlassOpacity = 'subtle' | 'medium' | 'heavy';
+type ThemeMode = 'light' | 'dark' | 'system';
 
 interface ThemeContextType {
+  mode: ThemeMode;
   rounding: ThemeRounding;
   spacing: ThemeSpacing;
   fontFamily: ThemeFontFamily;
   glassOpacity: ThemeGlassOpacity;
+  setMode: (mode: ThemeMode) => void;
   setRounding: (rounding: ThemeRounding) => void;
   setSpacing: (spacing: ThemeSpacing) => void;
   setFontFamily: (fontFamily: ThemeFontFamily) => void;
@@ -20,15 +23,31 @@ interface ThemeContextType {
   getSpacingClass: () => string;
   getFontClass: () => string;
   getGlassClass: () => string;
+  isDarkMode: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [mode, setMode] = useState<ThemeMode>('dark');
+  const [systemIsDark, setSystemIsDark] = useState<boolean>(true);
   const [rounding, setRounding] = useState<ThemeRounding>('rounded');
   const [spacing, setSpacing] = useState<ThemeSpacing>('comfortable');
   const [fontFamily, setFontFamily] = useState<ThemeFontFamily>('system');
   const [glassOpacity, setGlassOpacity] = useState<ThemeGlassOpacity>('medium');
+  
+  // Detect system preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setSystemIsDark(mediaQuery.matches);
+    
+    const handler = (e: MediaQueryListEvent) => setSystemIsDark(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+  
+  // Compute if dark mode should be active
+  const isDarkMode = mode === 'system' ? systemIsDark : mode === 'dark';
 
   useEffect(() => {
     // Apply theme to document root for global access
@@ -36,7 +55,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.documentElement.dataset.spacing = spacing;
     document.documentElement.dataset.font = fontFamily;
     document.documentElement.dataset.glass = glassOpacity;
-  }, [rounding, spacing, fontFamily, glassOpacity]);
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    document.documentElement.classList.toggle('light', !isDarkMode);
+  }, [rounding, spacing, fontFamily, glassOpacity, isDarkMode]);
 
   const getRoundingClass = (): string => {
     switch (rounding) {
@@ -68,11 +89,25 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const getGlassClass = (): string => {
+    const baseClasses = isDarkMode ? 'backdrop-blur' : 'backdrop-blur bg-white/75 border-white/20';
+    
     switch (glassOpacity) {
-      case 'subtle': return 'bg-white/5 backdrop-blur-sm border-white/10';
-      case 'medium': return 'bg-white/10 backdrop-blur-md border-white/20';
-      case 'heavy': return 'bg-white/20 backdrop-blur-lg border-white/30';
-      default: return 'bg-white/10 backdrop-blur-md border-white/20';
+      case 'subtle': 
+        return isDarkMode 
+          ? 'bg-white/5 backdrop-blur-sm border-white/10' 
+          : 'bg-white/60 backdrop-blur-sm border-black/5';
+      case 'medium': 
+        return isDarkMode 
+          ? 'bg-white/10 backdrop-blur-md border-white/20' 
+          : 'bg-white/70 backdrop-blur-md border-black/10';
+      case 'heavy': 
+        return isDarkMode 
+          ? 'bg-white/20 backdrop-blur-lg border-white/30' 
+          : 'bg-white/80 backdrop-blur-lg border-black/15';
+      default: 
+        return isDarkMode 
+          ? 'bg-white/10 backdrop-blur-md border-white/20' 
+          : 'bg-white/70 backdrop-blur-md border-black/10';
     }
   };
 
@@ -83,10 +118,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   return (
     <ThemeContext.Provider
       value={{
+        mode,
         rounding,
         spacing,
         fontFamily,
         glassOpacity,
+        setMode,
         setRounding,
         setSpacing,
         setFontFamily,
@@ -95,7 +132,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         getRoundingClass,
         getSpacingClass,
         getFontClass,
-        getGlassClass
+        getGlassClass,
+        isDarkMode
       }}
     >
       {children}

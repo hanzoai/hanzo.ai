@@ -4,7 +4,41 @@
 @tailwind utilities;
 
 @layer base {
+  /* Dark mode (default) */
   :root {
+    --background: #000000;
+    --foreground: #FFFFFF;
+
+    --card: #111111;
+    --card-foreground: #FFFFFF;
+
+    --popover: #111111;
+    --popover-foreground: #FFFFFF;
+
+    --primary: #FFFFFF;
+    --primary-foreground: #000000;
+
+    --secondary: #1F1F1F;
+    --secondary-foreground: #FFFFFF;
+
+    --muted: #1F1F1F;
+    --muted-foreground: #999999;
+
+    --accent: #2A2A2A;
+    --accent-foreground: #FFFFFF;
+
+    --destructive: #991B1B;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #333333;
+    --input: #333333;
+    --ring: #555555;
+
+    --radius: 0.5rem;
+  }
+
+  /* Light mode */
+  .light {
     --background: #FFFFFF;
     --foreground: #111111;
 
@@ -87,22 +121,41 @@
 }
 
 /* Custom scrollbar for light theme */
-::-webkit-scrollbar {
+.light ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-::-webkit-scrollbar-track {
+.light ::-webkit-scrollbar-track {
   background: #F5F5F5;
 }
 
-::-webkit-scrollbar-thumb {
+.light ::-webkit-scrollbar-thumb {
   background: #D4D4D4;
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.light ::-webkit-scrollbar-thumb:hover {
   background: #A3A3A3;
+}
+
+/* Custom scrollbar for dark theme */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1F1F1F;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #444444;
 }
 
 /* Gradients */
@@ -162,6 +215,20 @@
   animation: shimmer 6s ease infinite;
 }
 
+.light .chrome-text {
+  background: linear-gradient(
+    90deg,
+    rgb(180, 180, 180),
+    rgb(120, 120, 120),
+    rgb(180, 180, 180)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease infinite;
+}
+
 /* Section spacing */
 .section-spacing {
   @apply py-20 md:py-24 lg:py-28;
@@ -171,7 +238,19 @@
   @apply space-y-8 md:space-y-10 lg:space-y-12;
 }
 
-/* Global styles for the Team page */
-html, body {
+/* Global styles */
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-background text-foreground transition-colors duration-300;
+}
+
+.dark {
   @apply bg-black text-white;
+}
+
+.light {
+  @apply bg-white text-gray-900;
 }
