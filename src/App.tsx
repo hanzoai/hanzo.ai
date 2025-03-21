@@ -37,6 +37,7 @@ import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
 import TeamOpera from "./pages/TeamOpera";
 import Index3 from "./pages/Index3";
+import Index5 from "./pages/Index5";
 import Operative from "./pages/Operative";
 import HanzoApp from "./pages/HanzoApp";
 import HanzoBot from "./pages/HanzoBot";
@@ -81,9 +82,11 @@ const MarketingRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/index" element={<Index />} />
       <Route path="/index2" element={<Index2 />} />
       <Route path="/index3" element={<Index3 />} />
       <Route path="/index4" element={<Index4 />} />
+      <Route path="/index5" element={<Index5 />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
