@@ -39,14 +39,14 @@ const Index5 = () => {
       
       {/* 3D Grid Background with dynamic perspective based on mouse position */}
       <div className="fixed inset-0 -z-10">
-        <GridLines 
-          spacing={60} 
-          opacity={0.1} 
+        <div 
           style={{
             transform: `perspective(1000px) rotateX(${(mousePosition.y - 0.5) * 5}deg) rotateY(${(mousePosition.x - 0.5) * -5}deg)`,
             transition: "transform 0.1s ease-out"
           }}
-        />
+        >
+          <GridLines spacing={60} opacity={0.1} />
+        </div>
         
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-40"></div>
         
