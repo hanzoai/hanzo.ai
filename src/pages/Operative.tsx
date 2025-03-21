@@ -3,12 +3,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { OperatorHero as OperativeHero } from '@/components/operator/OperatorHero';
-import { OperatorFeatures as OperativeFeatures } from '@/components/operator/OperatorFeatures';
-import { OperatorUsage as OperativeUsage } from '@/components/operator/OperatorUsage';
-import { OperatorModels as OperativeModels } from '@/components/operator/OperatorModels';
-import { OperatorDemo as OperativeDemo } from '@/components/operator/OperatorDemo';
-import { OperatorCTA as OperativeCTA } from '@/components/operator/OperatorCTA';
+import OperativeHero from '@/components/operator/OperatorHero';
+import OperativeFeatures from '@/components/operator/OperatorFeatures';
+import OperativeUsage from '@/components/operator/OperatorUsage';
+import OperativeModels from '@/components/operator/OperatorModels';
+import OperativeDemo from '@/components/operator/OperatorDemo';
+import OperativeCTA from '@/components/operator/OperatorCTA';
 
 const Operative = () => {
   return (
