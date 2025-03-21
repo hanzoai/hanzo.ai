@@ -64,7 +64,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
       
       <motion.h1 
         ref={headingRef}
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-white leading-[1.1] pb-2"
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-white leading-[1.2] pb-4"
         initial="hidden" 
         animate="visible" 
         variants={titleVariants} 
@@ -73,12 +73,12 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
           backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
         }}
       >
-        <motion.span className="inline-flex items-center chrome-text font-bold mb-4 overflow-visible">
+        <motion.span className="inline-flex items-center chrome-text font-bold mb-6 overflow-visible">
           Accelerating AI
         </motion.span>
         
         <motion.span 
-          className="block text-white mt-6 pb-6 overflow-visible chrome-text font-bold" 
+          className="block text-white mt-8 pb-6 overflow-visible chrome-text font-bold" 
           initial="hidden" 
           animate={animationComplete ? "visible" : "hidden"} 
           variants={titleVariants} 
