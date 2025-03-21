@@ -1,9 +1,9 @@
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { FeatureSlide } from "./";
-import { ChevronLeft, ChevronRight, Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
+import { Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
 
 const features = [
   {
@@ -86,6 +86,36 @@ const features = [
 ];
 
 const FeatureShowcase: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Create a snap scrolling effect
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // If scrolling horizontally is possible
+      if (container.scrollWidth > container.clientWidth) {
+        // Check if we're at the beginning or end of horizontal scroll
+        const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth;
+        const isAtStart = container.scrollLeft === 0;
+
+        // If scrolling right and not at the end, or scrolling left and not at the start
+        if ((e.deltaY > 0 && !isAtEnd) || (e.deltaY < 0 && !isAtStart)) {
+          e.preventDefault();
+          container.scrollLeft += e.deltaY;
+        }
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
+
   return (
     <section className="py-24 bg-black relative overflow-hidden" id="features-showcase">
       {/* Background element - simple gradient */}
@@ -115,25 +145,26 @@ const FeatureShowcase: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="feature-slide-container">
-          <ScrollArea className="w-full whitespace-nowrap">
-            <div className="flex py-6 px-2 gap-4">
-              {features.map((feature, index) => (
-                <div key={index} className="min-w-[300px] md:min-w-[350px]">
-                  <FeatureSlide
-                    title={feature.title}
-                    description={feature.description}
-                    icon={feature.icon}
-                    color={feature.color}
-                    link={feature.link}
-                  />
-                </div>
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" className="h-2 bg-gray-800/50">
-              <div className="progress-bar"></div>
-            </ScrollBar>
-          </ScrollArea>
+        <div className="feature-slide-container" ref={scrollRef}>
+          <div 
+            ref={containerRef}
+            className="flex gap-6 pb-6 px-2 overflow-x-auto snap-x snap-mandatory feature-scroll-container"
+          >
+            {features.map((feature, index) => (
+              <div 
+                key={index} 
+                className="snap-center flex-shrink-0 w-[350px]"
+              >
+                <FeatureSlide
+                  title={feature.title}
+                  description={feature.description}
+                  icon={feature.icon}
+                  color={feature.color}
+                  link={feature.link}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
