@@ -10,6 +10,8 @@ import {
 import { NavigationButton } from "./NavigationButton";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const SolutionsMenu = () => {
   const [open, setOpen] = useState(false);
@@ -59,22 +61,38 @@ export const SolutionsMenu = () => {
   };
 
   const renderSolutionItems = (category: { title: string; items: string[] }) => {
-    const displayItems = category.items.slice(0, 6);
+    // Limit to 8 items per category
+    const displayItems = category.items.slice(0, 8);
+    const hasMore = category.items.length > 8;
 
     return (
-      <div className="grid grid-cols-2 gap-4">
-        {displayItems.map((item: string) => {
-          const Icon = getIcon(item);
-          return (
-            <a href="#" key={item} className="flex items-start space-x-3 group">
-              <Icon className="h-5 w-5 text-gray-400 group-hover:text-white mt-1" strokeWidth={1.5} />
-              <div>
-                <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
-                <div className="text-sm text-gray-500">Solutions for {item}</div>
-              </div>
-            </a>
-          );
-        })}
+      <div className="space-y-6">
+        <div className="grid grid-cols-2 gap-4">
+          {displayItems.map((item: string) => {
+            const Icon = getIcon(item);
+            return (
+              <a href="#" key={item} className="flex items-start space-x-3 group">
+                <Icon className="h-5 w-5 text-gray-400 group-hover:text-white mt-1" strokeWidth={1.5} />
+                <div>
+                  <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
+                  <div className="text-sm text-gray-500">Solutions for {item}</div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+        
+        {hasMore && (
+          <div className="text-right">
+            <Link 
+              to="/solutions" 
+              className="inline-flex items-center text-purple-400 hover:text-purple-300 text-sm font-medium"
+            >
+              View more {category.title.toLowerCase()}
+              <ChevronRight className="ml-1 h-3 w-3" />
+            </Link>
+          </div>
+        )}
       </div>
     );
   };
@@ -121,14 +139,12 @@ export const SolutionsMenu = () => {
                 <div key={idx} className="space-y-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold text-white">{category.title}</h3>
-                    {category.items.length > 6 && (
-                      <a 
-                        href="/solutions" 
-                        className="text-purple-400 hover:text-purple-300 text-sm"
-                      >
-                        View all
-                      </a>
-                    )}
+                    <a 
+                      href="/solutions" 
+                      className="text-purple-400 hover:text-purple-300 text-sm"
+                    >
+                      View all
+                    </a>
                   </div>
                   {renderSolutionItems(category)}
                 </div>

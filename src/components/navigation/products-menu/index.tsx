@@ -8,7 +8,7 @@ import {
 import { NavigationButton } from "../NavigationButton";
 import ProductSection from "./ProductSection";
 import { aiCloudItems, dxPlatformItems } from "./product-data";
-import { Zap, Code } from "lucide-react";
+import { Zap, Code, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -45,6 +45,10 @@ export const ProductsMenu = () => {
       setOpen(false);
     }
   };
+
+  // Limit to 8 items for each section
+  const limitedAICloudItems = aiCloudItems.slice(0, 8);
+  const limitedDXPlatformItems = dxPlatformItems.slice(0, 8);
 
   return (
     <div>
@@ -87,7 +91,8 @@ export const ProductsMenu = () => {
               <ProductSection 
                 title="AI Cloud" 
                 link="/cloud" 
-                items={aiCloudItems} 
+                items={limitedAICloudItems}
+                hasMore={aiCloudItems.length > 8} 
               />
               
               {/* AI Cloud Promo */}
@@ -113,7 +118,8 @@ export const ProductsMenu = () => {
               <ProductSection 
                 title="DX Platform" 
                 link="/platform" 
-                items={dxPlatformItems} 
+                items={limitedDXPlatformItems}
+                hasMore={dxPlatformItems.length > 8}
               />
               
               {/* DX Platform Promo */}
