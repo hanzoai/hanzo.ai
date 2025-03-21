@@ -5,6 +5,7 @@ import DXPlatformCard from "./DXPlatformCard";
 import { dxPlatformData } from "./dxPlatformData";
 import { Link } from "react-router-dom";
 import ChromeText from "@/components/ui/chrome-text";
+import { Button } from "@/components/ui/button";
 
 interface DXPlatformGridProps {
   isHovered: string | null;
@@ -97,7 +98,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           />
         ))}
 
-        {/* Additional "Explore DX Platform" card */}
+        {/* Updated "Explore More" card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -118,6 +119,14 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
             <p className="text-gray-300 mb-4 text-sm">
               Discover our complete DX Platform and developer tools ecosystem
             </p>
+            <div className="mt-auto">
+              <Button 
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white w-full"
+                radius="full"
+              >
+                View All Tools
+              </Button>
+            </div>
           </Link>
         </motion.div>
       </div>
@@ -137,12 +146,14 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           <p className="text-lg text-gray-300 mb-6">
             Sign up now and receive $5 in free credits. Earn an additional $5 credit for every friend who joins through your referral link.
           </p>
-          <Link 
-            to="/signup" 
-            className="inline-block px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium rounded-lg shadow-lg transition-all duration-300"
+          <Button 
+            asChild
+            size="lg"
+            className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium shadow-lg transition-all duration-300"
+            radius="full"
           >
-            Get Started Free
-          </Link>
+            <Link to="/signup">Get Started Free</Link>
+          </Button>
           <p className="mt-4 text-sm text-gray-400">
             No credit card required. <Link to="/referrals" className="text-indigo-400 hover:text-indigo-300 underline">Learn more</Link> about our referral program.
           </p>

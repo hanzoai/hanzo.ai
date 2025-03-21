@@ -39,11 +39,9 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
         ))}
         
         {/* Special "Learn More" card as the last item */}
-        <ArchitecturalBox
-          className="flex flex-col justify-center items-center p-6 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-xl border border-blue-500/20 h-full min-h-[240px] hover:border-blue-500/40 transition-all duration-300"
-          showCorners={true}
-          cornerSize={20}
-          cornerColor="rgba(59, 130, 246, 0.3)"
+        <Link
+          to="/cloud"
+          className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 hover:bg-gray-900/30 transition-all duration-300 h-full flex flex-col justify-center items-center"
           onMouseEnter={() => setIsHovered("learn-more")}
           onMouseLeave={() => setIsHovered(null)}
         >
@@ -55,11 +53,14 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
             </div>
             <h3 className="text-xl font-semibold text-white">Explore More</h3>
             <p className="text-gray-300 text-sm">Discover our full range of cloud solutions and services</p>
-            <Button variant="outline" className="mt-4 bg-blue-950/50 text-white border-blue-500/30 hover:bg-blue-900/40">
-              <Link to="/cloud">View All Services</Link>
+            <Button 
+              className="mt-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white border-none"
+              radius="full"
+            >
+              View All Services
             </Button>
           </div>
-        </ArchitecturalBox>
+        </Link>
       </div>
     </div>
   );
