@@ -1,19 +1,32 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import ChromeText from "@/components/ui/chrome-text";
 
 const FeatureShowcaseHeader: React.FC = () => {
   return (
-    <div className="text-center mb-12">
-      <motion.h2 
-        className="text-3xl md:text-4xl font-bold mb-4 text-white chrome-text"
+    <div className="text-center mb-10">
+      <motion.div 
+        className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        Our Feature Ecosystem
+        Developer-First Platform
+      </motion.div>
+      
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <ChromeText as="span" className="text-3xl md:text-4xl font-bold mb-4">
+          AI Tools For Every Developer
+        </ChromeText>
       </motion.h2>
+      
       <motion.p 
         className="text-lg text-gray-300 max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
@@ -21,7 +34,8 @@ const FeatureShowcaseHeader: React.FC = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Discover the powerful capabilities that make Hanzo AI the platform of choice for developers and enterprises
+        From cloud services to development tools, our open source ecosystem empowers 
+        developers to build intelligent applications with complete control and flexibility
       </motion.p>
     </div>
   );

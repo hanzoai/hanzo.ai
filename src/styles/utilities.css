@@ -10,15 +10,17 @@
 
 /* Feature Showcase styles */
 .feature-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   border-radius: 1rem;
   height: 100%;
   overflow: hidden;
+  position: relative; /* For proper badge positioning */
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
 }
 
 .feature-slide-container {
@@ -52,4 +54,28 @@
   background: linear-gradient(to right, #8b5cf6, #3b82f6);
   transition: width 0.3s ease-in-out;
   border-radius: 2px;
+}
+
+/* Tab button styles for feature showcase */
+.tab-button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tab-button.active {
+  background-color: rgba(124, 58, 237, 0.9);
+  color: white;
+}
+
+.tab-button:not(.active) {
+  background-color: transparent;
+  color: rgba(209, 213, 219, 0.8);
+}
+
+.tab-button:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
