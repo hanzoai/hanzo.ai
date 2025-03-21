@@ -13,42 +13,72 @@ const CallToAction: React.FC = () => {
   };
   
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-purple-950/20">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-purple-950/20 relative overflow-hidden">
+      {/* Background animation elements */}
+      <motion.div 
+        className="absolute inset-0 opacity-20"
+        initial={{ backgroundPosition: "0% 0%" }}
+        animate={{ backgroundPosition: "100% 100%" }}
+        transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+        style={{ 
+          backgroundImage: "radial-gradient(circle at 30% 50%, purple 0%, transparent 20%), radial-gradient(circle at 70% 50%, indigo 0%, transparent 20%)",
+          backgroundSize: "100% 100%",
+        }}
+      />
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-3xl md:text-4xl font-bold mb-6 text-white"
         >
           Ready to Transform Your AI Development?
         </motion.h2>
         
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="text-lg text-gray-300 mb-10"
         >
           Join thousands of developers and companies building the future with Hanzo AI.
         </motion.p>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <Button 
-            size="lg" 
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
-            onClick={handleGetStarted}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+            <Button 
+              size="lg" 
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg relative overflow-hidden group"
+              onClick={handleGetStarted}
+            >
+              <span className="relative z-10 flex items-center">
+                Get Started for Free 
+                <motion.span
+                  initial={{ x: 0 }}
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut", repeatDelay: 1 }}
+                >
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </motion.span>
+              </span>
+              <motion.span 
+                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+              />
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>
