@@ -46,6 +46,7 @@ import Vector from "./pages/Vector";
 import Payments from "./pages/Payments";
 import Platform from "./pages/Platform";
 import NotFound from "./pages/NotFound";
+import Leadership from "./pages/Leadership";
 
 // Define which routes need account and billing providers
 const AccountRoutes = () => {
@@ -87,6 +88,7 @@ const MarketingRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/status" element={<StatusPage />} />
+      <Route path="/leadership" element={<Leadership />} />
       
       {/* Product Routes */}
       <Route path="/ai" element={<AI />} />
@@ -97,7 +99,7 @@ const MarketingRoutes = () => {
       <Route path="/download" element={<Download />} />
       <Route path="/analytics" element={<Analytics />} />
       <Route path="/cloud" element={<Cloud />} />
-      <Route path="/platform" element={<Index3 />} />
+      <Route path="/platform" element={<Platform />} />
       <Route path="/operative" element={<Operative />} />
       <Route path="/app" element={<HanzoApp />} />
       <Route path="/bot" element={<HanzoBot />} />
