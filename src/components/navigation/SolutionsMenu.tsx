@@ -45,11 +45,6 @@ export const SolutionsMenu = () => {
   const handleSolutionsClick = () => {
     setClickedOpen(!clickedOpen);
     setOpen(!open);
-    if (!open && !clickedOpen) {
-      // If opening from closed state, don't navigate yet
-      return;
-    }
-    navigate('/solutions');
   };
 
   // Close when clicking outside
@@ -70,14 +65,23 @@ export const SolutionsMenu = () => {
         <div className="grid grid-cols-2 gap-4">
           {displayItems.map((item: string) => {
             const Icon = getIcon(item);
+            const itemSlug = item.toLowerCase().replace(/\s+/g, '-');
             return (
-              <a href="#" key={item} className="flex items-start space-x-3 group">
+              <Link 
+                to={`/solutions/${itemSlug}`} 
+                key={item} 
+                className="flex items-start space-x-3 group"
+                onClick={() => {
+                  setOpen(false);
+                  setClickedOpen(false);
+                }}
+              >
                 <Icon className="h-5 w-5 text-gray-400 group-hover:text-white mt-1" strokeWidth={1.5} />
                 <div>
                   <div className="text-gray-300 group-hover:text-white font-medium">{item}</div>
                   <div className="text-sm text-gray-500">Solutions for {item}</div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -87,6 +91,10 @@ export const SolutionsMenu = () => {
             <Link 
               to="/solutions" 
               className="inline-flex items-center text-purple-400 hover:text-purple-300 text-sm font-medium"
+              onClick={() => {
+                setOpen(false);
+                setClickedOpen(false);
+              }}
             >
               View more {category.title.toLowerCase()}
               <ChevronRight className="ml-1 h-3 w-3" />
@@ -139,12 +147,16 @@ export const SolutionsMenu = () => {
                 <div key={idx} className="space-y-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold text-white">{category.title}</h3>
-                    <a 
-                      href="/solutions" 
+                    <Link 
+                      to="/solutions" 
                       className="text-purple-400 hover:text-purple-300 text-sm"
+                      onClick={() => {
+                        setOpen(false);
+                        setClickedOpen(false);
+                      }}
                     >
                       View all
-                    </a>
+                    </Link>
                   </div>
                   {renderSolutionItems(category)}
                 </div>

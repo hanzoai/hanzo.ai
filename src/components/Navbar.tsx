@@ -62,15 +62,6 @@ const Navbar = () => {
               <Link to="/team" className="text-gray-300 hover:text-white transition-colors">
                 Team
               </Link>
-              <Link to="/team/chat" className="text-gray-300 hover:text-white transition-colors">
-                Chat
-              </Link>
-              <Link to="/ai-studio" className="text-gray-300 hover:text-white transition-colors">
-                AI Studio
-              </Link>
-              <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
-                Docs
-              </a>
               <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
                 Pricing
               </a>
