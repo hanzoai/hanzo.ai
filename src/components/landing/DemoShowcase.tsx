@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Play, Terminal, Braces } from "lucide-react";
+import { Play, Terminal } from "lucide-react";
 
 const DemoShowcase: React.FC = () => {
   return (
@@ -59,18 +59,18 @@ const DemoShowcase: React.FC = () => {
               
               <div className="p-6 font-mono text-sm">
                 <pre className="language-typescript">
-                  <code className="block text-blue-400">import <span className="text-white">{"{"}</span> <span className="text-green-400">useHanzoAI</span> <span className="text-white">{"}"}</span> from <span className="text-yellow-300">'@hanzo/ai'</span>;</code>
-                  <code className="block mt-4 text-blue-400">function <span className="text-purple-400">AIAssistant</span><span className="text-white">()</span> <span className="text-white">{"{"};</span></code>
-                  <code className="block ml-4 text-blue-400">const <span className="text-white">{"{"};</span> <span className="text-green-400">assistant, isLoading, error</span> <span className="text-white">{"}"}</span> = <span className="text-purple-400">useHanzoAI</span><span className="text-white">{"({"}</span></code>
+                  <code className="block text-blue-400">import {"{"} <span className="text-green-400">useHanzoAI</span> {"}"} from <span className="text-yellow-300">'@hanzo/ai'</span>;</code>
+                  <code className="block mt-4 text-blue-400">function <span className="text-purple-400">AIAssistant</span><span className="text-white">()</span> <span className="text-white">{"{"}</span></code>
+                  <code className="block ml-4 text-blue-400">const {"{"} <span className="text-green-400">assistant, isLoading, error</span> {"}"} = <span className="text-purple-400">useHanzoAI</span>({"{"}</code>
                   <code className="block ml-8 text-green-400">model: <span className="text-yellow-300">'gpt-4'</span>,</code>
                   <code className="block ml-8 text-green-400">temperature: <span className="text-orange-400">0.7</span>,</code>
                   <code className="block ml-8 text-green-400">systemPrompt: <span className="text-yellow-300">'You are a helpful AI assistant.'</span></code>
-                  <code className="block ml-4 text-white">{"})"}</span>;</code>
+                  <code className="block ml-4 text-white">{"})"}</code>
                   <code className="block mt-4 ml-4 text-purple-400">return <span className="text-white">(</span></code>
                   <code className="block ml-8 text-white">{"<"}<span className="text-green-400">div</span> <span className="text-blue-400">className</span>=<span className="text-yellow-300">"ai-container"</span>{">"}</code>
                   <code className="block ml-12 text-white">{"{"}<span className="text-purple-400">isLoading</span> ? <span className="text-yellow-300">'Loading...'</span> : <span className="text-purple-400">assistant</span>.response{"}"}</code>
-                  <code className="block ml-8 text-white">{"</"}div{">"}</code>
-                  <code className="block ml-4 text-white">{")"}</span>;</code>
+                  <code className="block ml-8 text-white">{"</div>"}</code>
+                  <code className="block ml-4 text-white">)</code>
                   <code className="block text-white">{"}"}</code>
                 </pre>
               </div>
