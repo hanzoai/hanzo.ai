@@ -9,8 +9,8 @@ interface SolutionCategoryProps {
 }
 
 export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategoryProps) => {
-  // Limit to 4 items per category for better layout
-  const displayItems = items.slice(0, 4);
+  // Increase to 8 items per category as requested
+  const displayItems = items.slice(0, 8);
 
   return (
     <div className="space-y-4">
@@ -25,23 +25,23 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
         </Link>
       </div>
       
-      <div className="grid grid-cols-1 gap-5">
-        {displayItems.map((item: string, index) => {
+      <div className="grid grid-cols-1 gap-3">
+        {displayItems.map((item: string) => {
           const Icon = getIcon(item);
           const itemSlug = item.toLowerCase().replace(/\s+/g, '-');
           return (
             <Link 
               to={`/solutions/${itemSlug}`} 
               key={item} 
-              className="flex items-start space-x-3 group"
+              className="flex items-center space-x-3 group"
               onClick={onItemClick}
             >
               <div className="w-10 h-10 flex items-center justify-center">
-                <Icon className="h-5 w-5 text-gray-400 group-hover:text-white" strokeWidth={1.5} />
+                <Icon className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" strokeWidth={1.5} />
               </div>
               <div className="flex-1">
                 <div className="text-gray-300 group-hover:text-white font-medium truncate">{item}</div>
-                <div className="text-sm text-gray-500 truncate">Solutions for {item.split(' ').slice(0, 3).join(' ')}</div>
+                <div className="text-sm text-gray-500 truncate">Solutions for {item}</div>
               </div>
             </Link>
           );
