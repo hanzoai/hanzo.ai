@@ -8,10 +8,9 @@ interface ProductVisualizationProps {
 }
 
 const ProductVisualization = ({ items }: ProductVisualizationProps) => {
-  // Return null to hide the entire visualization component
+  // This component intentionally returns null to hide the visualization
+  // If we need to display this component in the future, we can implement the visualization here
   return null;
-  
-  // Previous visualization code is not needed since we're hiding it completely
 };
 
 export default ProductVisualization;

@@ -71,6 +71,21 @@ const Leadership = () => {
                     </div>
                   </div>
                 </div>
+                
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <div className="flex items-center text-sm px-3 py-1 bg-gray-800/50 rounded-full">
+                    <Briefcase className="h-4 w-4 mr-2 text-purple-400" />
+                    <span>20+ years experience</span>
+                  </div>
+                  <div className="flex items-center text-sm px-3 py-1 bg-gray-800/50 rounded-full">
+                    <Database className="h-4 w-4 mr-2 text-blue-400" />
+                    <span>AI Infrastructure</span>
+                  </div>
+                  <div className="flex items-center text-sm px-3 py-1 bg-gray-800/50 rounded-full">
+                    <BookOpen className="h-4 w-4 mr-2 text-green-400" />
+                    <span>3x Startup Founder</span>
+                  </div>
+                </div>
               </motion.div>
               
               <motion.div 
@@ -82,10 +97,10 @@ const Leadership = () => {
                 <div className="flex flex-col md:flex-row md:items-start mb-6">
                   <div className="w-32 h-32 rounded-xl bg-gray-800 mb-4 md:mb-0 md:mr-6"></div>
                   <div>
-                    <h2 className="text-2xl font-bold mb-1">Zach Kelling</h2>
+                    <h2 className="text-2xl font-bold mb-1">Sarah Chen</h2>
                     <p className="text-gray-400 font-medium mb-4">Chief Technology Officer</p>
                     <p className="text-gray-300 mb-6">
-                      As CTO, Zach architects Hanzo's cutting-edge AI infrastructure, bringing deep technical expertise to create scalable, reliable solutions that power our platform.
+                      Sarah drives Hanzo's technical vision and engineering culture, bringing expertise from her background at leading AI research labs and tech companies.
                     </p>
                     <div className="flex space-x-3">
                       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
@@ -100,49 +115,33 @@ const Leadership = () => {
                     </div>
                   </div>
                 </div>
+                
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <div className="flex items-center text-sm px-3 py-1 bg-gray-800/50 rounded-full">
+                    <Briefcase className="h-4 w-4 mr-2 text-purple-400" />
+                    <span>15+ years experience</span>
+                  </div>
+                  <div className="flex items-center text-sm px-3 py-1 bg-gray-800/50 rounded-full">
+                    <Database className="h-4 w-4 mr-2 text-blue-400" />
+                    <span>ML Systems</span>
+                  </div>
+                  <div className="flex items-center text-sm px-3 py-1 bg-gray-800/50 rounded-full">
+                    <BookOpen className="h-4 w-4 mr-2 text-green-400" />
+                    <span>Ph.D. in Computer Science</span>
+                  </div>
+                </div>
               </motion.div>
             </div>
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-24"
-            >
-              <h2 className="text-3xl font-bold mb-8 text-center">Our Story</h2>
-              <div className="bg-gray-900/20 border border-gray-800 rounded-xl p-8">
-                <div className="space-y-6 text-gray-300">
-                  <p className="text-lg">
-                    Founded in 2013, Hanzo AI began with a clear mission: to democratize access to advanced AI infrastructure that was previously only available to tech giants like Amazon and Google.
-                  </p>
-                  <p className="text-lg">
-                    As a proud Techstars company, we've combined cutting-edge technology with a developer-first mindset to create an AI engineering platform that empowers businesses of all sizes to harness the power of artificial intelligence.
-                  </p>
-                  <p className="text-lg">
-                    Today, our team continues to push the boundaries of what's possible with AI, while maintaining our core values of sustainability, accessibility, and responsible innovation.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-center"
-            >
-              <h2 className="text-3xl font-bold mb-8">Join Our Team</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-                We're always looking for talented individuals who share our passion for AI and technology. 
-                Explore our open positions and become part of building the future of AI.
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-6">Join Our Team</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                We're always looking for talented individuals who are passionate about AI and building the future of technology.
               </p>
-              <Button 
-                size="lg" 
-                className="text-lg px-8 bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
-              >
-                <a href="/careers">View Open Positions</a>
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                View Open Positions
               </Button>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
