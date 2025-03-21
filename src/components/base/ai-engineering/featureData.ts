@@ -15,7 +15,7 @@ export interface AIFeature {
 
 export const featureData: AIFeature[] = [
   {
-    icon: <Brain className="h-6 w-6" />,
+    icon: React.createElement(Brain, { className: "h-6 w-6" }),
     title: "Model Integration",
     description: "Seamlessly integrate with OpenAI, Hugging Face, and other machine learning platforms. Deploy and serve custom ML models with built-in scaling and monitoring.",
     featurePoints: [
@@ -29,7 +29,7 @@ export const featureData: AIFeature[] = [
     bulletColor: "text-purple-400"
   },
   {
-    icon: <Search className="h-6 w-6" />,
+    icon: React.createElement(Search, { className: "h-6 w-6" }),
     title: "Vector Search",
     description: "High-performance vector database capabilities for semantic search, RAG applications, and similarity matching across billions of vectors.",
     featurePoints: [
@@ -43,7 +43,7 @@ export const featureData: AIFeature[] = [
     bulletColor: "text-blue-400"
   },
   {
-    icon: <Database className="h-6 w-6" />,
+    icon: React.createElement(Database, { className: "h-6 w-6" }),
     title: "Data Processing",
     description: "Specialized data processing pipelines for cleaning, transforming, and enriching training data for machine learning models.",
     featurePoints: [
@@ -57,7 +57,7 @@ export const featureData: AIFeature[] = [
     bulletColor: "text-green-400"
   },
   {
-    icon: <Sparkles className="h-6 w-6" />,
+    icon: React.createElement(Sparkles, { className: "h-6 w-6" }),
     title: "AI-Enhanced Features",
     description: "Ready-to-use AI capabilities that can be integrated into applications with minimal configuration.",
     featurePoints: [

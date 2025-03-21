@@ -100,7 +100,7 @@ const CloudInfrastructure = () => {
         {/* Data particles */}
         {[...Array(6)].map((_, i) => {
           const angle = (i * Math.PI * 2) / 6;
-          const distance =, 80;
+          const distance = 80;
           
           return (
             <motion.div
