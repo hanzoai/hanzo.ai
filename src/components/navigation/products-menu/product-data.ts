@@ -13,7 +13,7 @@ export const aiCloudItems: ProductItem[] = [
     name: "Chat",
     icon: MessageSquare,
     description: "Interactive AI chat experiences",
-    link: "/cloud#chat"
+    link: "/team/chat"
   },
   {
     name: "Datastore",
@@ -109,15 +109,15 @@ export const dxPlatformItems: ProductItem[] = [
     link: "/platform#runtime"
   },
   {
+    name: "Studio",
+    icon: Monitor,
+    description: "Low-code IDE for AI development",
+    link: "/ai-studio"
+  },
+  {
     name: "Operative",
     icon: Workflow,
     description: "AI-native assistant for automating tasks",
     link: "/operative"
-  },
-  {
-    name: "Studio",
-    icon: Monitor,
-    description: "Low-code IDE for AI development",
-    link: "/platform#studio"
   }
 ];

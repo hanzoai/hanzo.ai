@@ -60,6 +60,12 @@ const Navbar = () => {
               <SolutionsMenu />
               <ResourcesMenu />
               
+              <Link to="/team/chat" className="text-gray-300 hover:text-white transition-colors">
+                Chat
+              </Link>
+              <Link to="/ai-studio" className="text-gray-300 hover:text-white transition-colors">
+                AI Studio
+              </Link>
               <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
                 Docs
               </a>

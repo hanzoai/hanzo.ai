@@ -36,6 +36,8 @@ import Cloud from "./pages/Cloud";
 import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
 import TeamOpera from "./pages/TeamOpera";
+import TeamChat from "./pages/TeamChat";
+import AIStudio from "./pages/AIStudio";
 import Index3 from "./pages/Index3";
 import Index5 from "./pages/Index5";
 import Operative from "./pages/Operative";
@@ -110,11 +112,13 @@ const MarketingRoutes = () => {
       <Route path="/dev" element={<HanzoDev />} />
       <Route path="/vector" element={<Vector />} />
       <Route path="/payments" element={<Payments />} />
+      <Route path="/ai-studio" element={<AIStudio />} />
       
       {/* Team Pages */}
       <Route path="/team/dev" element={<TeamDev />} />
       <Route path="/team/vi" element={<TeamVi />} />
       <Route path="/team/opera" element={<TeamOpera />} />
+      <Route path="/team/chat" element={<TeamChat />} />
       
       {/* Catch-all route for 404 page */}
       <Route path="*" element={<NotFound />} />
