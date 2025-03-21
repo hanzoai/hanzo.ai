@@ -22,6 +22,19 @@ import Invoices from "./pages/Invoices";
 import StatusPage from "./pages/Status";
 import Dashboard from "./pages/Dashboard";
 
+// Import product pages
+import AI from "./pages/AI";
+import Datastore from "./pages/Datastore";
+import Commerce from "./pages/Commerce";
+import Extension from "./pages/Extension";
+import Base from "./pages/Base";
+import Download from "./pages/Download";
+import Analytics from "./pages/Analytics";
+import Cloud from "./pages/Cloud";
+import TeamDev from "./pages/TeamDev";
+import TeamVi from "./pages/TeamVi";
+import Index3 from "./pages/Index3";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -35,6 +48,21 @@ const App = () => {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/status" element={<StatusPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            
+            {/* Product Routes */}
+            <Route path="/ai" element={<AI />} />
+            <Route path="/datastore" element={<Datastore />} />
+            <Route path="/commerce" element={<Commerce />} />
+            <Route path="/extension" element={<Extension />} />
+            <Route path="/base" element={<Base />} />
+            <Route path="/download" element={<Download />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/cloud" element={<Cloud />} />
+            <Route path="/platform" element={<Index3 />} />
+            
+            {/* Team Pages */}
+            <Route path="/team/dev" element={<TeamDev />} />
+            <Route path="/team/vi" element={<TeamVi />} />
             
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/organization-profile" element={<OrganizationProfile />} />
