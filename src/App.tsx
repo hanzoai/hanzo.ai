@@ -52,6 +52,7 @@ import Platform from "./pages/Platform";
 import Functions from "./pages/Functions";
 import Identity from "./pages/Identity";
 import Machines from "./pages/Machines";
+import Edge from "./pages/Edge";
 import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 
@@ -108,6 +109,7 @@ const MarketingRoutes = () => {
       <Route path="/download" element={<Download />} />
       <Route path="/analytics" element={<Analytics />} />
       <Route path="/cloud" element={<Cloud />} />
+      <Route path="/edge" element={<Edge />} />
       <Route path="/platform" element={<Platform />} />
       <Route path="/operative" element={<Operative />} />
       <Route path="/app" element={<HanzoApp />} />
