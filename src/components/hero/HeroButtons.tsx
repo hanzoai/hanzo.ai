@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 interface HeroButtonsProps {
   titleAnimationComplete: boolean;
@@ -22,6 +23,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
     >
       <Button 
         size="lg" 
+        radius="full"
         className="text-lg px-8 py-6 bg-white hover:bg-gray-100 text-black border-0"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -31,9 +33,12 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       <Button 
         size="lg" 
         variant="outline" 
+        radius="full"
         className="text-lg px-8 py-6 text-white border-white/10 bg-transparent hover:bg-white/5"
       >
-        <a href="https://docs.hanzo.sh" className="chrome-text">Read Docs →</a>
+        <a href="https://docs.hanzo.sh" className="chrome-text flex items-center">
+          Read Docs <ArrowRight className="ml-2 h-5 w-5" />
+        </a>
       </Button>
     </div>
   );

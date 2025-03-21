@@ -23,12 +23,13 @@ const CallToAction = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 bg-blue-600 hover:bg-blue-700 rounded-full">
+            <Button size="lg" radius="full" className="text-lg px-8 bg-blue-600 hover:bg-blue-700 text-white">
               <span className="py-1 leading-relaxed">Start Building</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 rounded-full">
-              <span className="py-1 leading-relaxed">Request Demo</span>
+            <Button size="lg" variant="outline" radius="full" className="text-lg px-8 text-white">
+              <span className="py-1 leading-relaxed">Read Docs</span>
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </motion.div>

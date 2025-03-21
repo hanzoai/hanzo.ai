@@ -61,6 +61,7 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
         >
           <Button 
             size="lg"
+            radius="full"
             className="text-lg px-8 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 border-none"
           >
             Start Building
@@ -68,9 +69,10 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
           <Button 
             size="lg" 
             variant="outline" 
+            radius="full"
             className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10"
           >
-            <span className="mr-2">Explore</span>
+            <span className="mr-2">Read Docs</span>
             <ArrowRight className="h-5 w-5" />
           </Button>
         </motion.div>
