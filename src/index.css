@@ -180,9 +180,24 @@
 .chrome-text {
   background: linear-gradient(
     90deg,
-    rgb(60, 60, 60),
-    rgb(30, 30, 30),
-    rgb(60, 60, 60)
+    rgb(240, 240, 240),
+    rgb(200, 200, 200),
+    rgb(240, 240, 240)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease infinite;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.light .chrome-text {
+  background: linear-gradient(
+    90deg,
+    rgb(40, 40, 40),
+    rgb(80, 80, 80),
+    rgb(40, 40, 40)
   );
   background-size: 200% auto;
   background-clip: text;
@@ -191,18 +206,16 @@
   animation: shimmer 6s ease infinite;
 }
 
-.light .chrome-text {
-  background: linear-gradient(
-    90deg,
-    rgb(180, 180, 180),
-    rgb(120, 120, 120),
-    rgb(180, 180, 180)
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shimmer 6s ease infinite;
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 /* Section spacing */
