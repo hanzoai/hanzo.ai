@@ -136,7 +136,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
           <div className="text-center max-w-3xl mx-auto mt-16">
             <h2 className="text-2xl font-semibold mb-6">What {member.name} Can Do For You</h2>
             <p className="text-gray-400 mb-8">
-              {member.name} specializes in {member.specialties || 'providing intelligent assistance'} to help you achieve your goals.
+              {member.name} specializes in {member.description.split(',')[0]} to help you achieve your goals.
               For the best results, consider working with our expert human teams at Hanzo Agency or Sensei Group.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
