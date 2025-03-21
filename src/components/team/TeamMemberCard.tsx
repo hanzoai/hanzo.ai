@@ -3,6 +3,7 @@ import { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface TeamMemberCardProps {
   name: string;
@@ -31,24 +32,19 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
       </div>
 
       <div className="grid grid-cols-2 gap-3 relative z-10">
-        <a 
-          href={`https://hanzo.ai/bot/${memberRoute}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full"
-        >
+        <Link to={`/team/${memberRoute}`} className="w-full">
           <Button 
             variant="outline" 
             size="sm"
             className="w-full"
           >
-            Deploy
+            View Profile
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-        </a>
+        </Link>
 
         <a 
-          href="https://github.com/hanzoai/bot"
+          href={`https://github.com/hanzoai/bot`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full"

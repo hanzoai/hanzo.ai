@@ -10,70 +10,144 @@ import {
   Pencil, 
   ShieldCheck, 
   Database,
-  Terminal 
+  Terminal,
+  BrainCircuit,
+  Music,
+  Palette,
+  Settings,
+  DollarSign,
+  Scale,
+  Binary,
+  Calculator,
+  MessageCircle,
+  Lightbulb,
+  HelpCircle
 } from "lucide-react";
 import TeamGroup from "./TeamGroup";
+import { teamMembers } from "@/constants/team-members";
 
 const AgentGallery = () => {
-  const engineeringAgents = [
+  const coreTeamMembers = [
     {
-      name: "DevBot",
+      name: "Vi",
+      role: "Visionary Leader",
+      description: "Your innovative AI visionary leader, guiding the team towards excellence with strategic insights.",
+      icon: Lightbulb,
+      gradient: "from-indigo-500 to-purple-500"
+    },
+    {
+      name: "Dev",
       role: "Software Engineer",
-      description: "Writes clean, maintainable code in multiple languages. Specializes in full-stack development and API integrations.",
+      description: "Your expert AI developer, specializing in full-stack development and system architecture.",
       icon: Code,
       gradient: "from-blue-600 to-blue-400"
     },
     {
-      name: "SecOpsBot",
-      role: "Security Engineer",
-      description: "Continuously scans for vulnerabilities, performs code reviews for security issues, and ensures compliance.",
-      icon: ShieldCheck,
-      gradient: "from-red-600 to-red-400"
+      name: "Des",
+      role: "Designer",
+      description: "Your creative AI designer, crafting beautiful and intuitive user experiences.",
+      icon: Palette,
+      gradient: "from-purple-600 to-pink-400"
     },
     {
-      name: "DBBot",
-      role: "Database Engineer",
-      description: "Optimizes database queries, designs schemas, and manages data migrations with minimal downtime.",
-      icon: Database,
-      gradient: "from-green-600 to-green-400"
-    },
-    {
-      name: "TerminalBot",
-      role: "DevOps Engineer",
-      description: "Automates deployment pipelines, manages infrastructure, and optimizes system performance.",
-      icon: Terminal,
+      name: "Opera",
+      role: "Operations Engineer",
+      description: "Your efficient AI operations engineer, maintaining system reliability and performance.",
+      icon: Settings,
       gradient: "from-yellow-600 to-yellow-400"
+    }
+  ];
+  
+  const engineeringAgents = [
+    {
+      name: "DB",
+      role: "Database Expert",
+      description: "Your expert AI database specialist, managing data infrastructure and optimizing database operations.",
+      icon: Database,
+      gradient: "from-emerald-500 to-green-500"
+    },
+    {
+      name: "Sec",
+      role: "Security Expert",
+      description: "Your expert AI security specialist, protecting digital assets and infrastructure.",
+      icon: ShieldCheck,
+      gradient: "from-red-500 to-orange-500"
+    },
+    {
+      name: "Core",
+      role: "Core Engineer",
+      description: "Your expert AI core engineer, building robust system foundations and architecture.",
+      icon: BrainCircuit,
+      gradient: "from-gray-500 to-slate-500"
+    },
+    {
+      name: "Algo",
+      role: "Algorithm Expert",
+      description: "Your expert AI algorithm specialist, optimizing computational solutions.",
+      icon: Binary,
+      gradient: "from-cyan-500 to-blue-500"
     }
   ];
   
   const businessAgents = [
     {
-      name: "AnalyticsBot",
-      role: "Data Analyst",
-      description: "Processes large datasets, creates visualizations, and delivers actionable business insights.",
-      icon: LineChart,
-      gradient: "from-purple-600 to-purple-400"
-    },
-    {
-      name: "SupportBot",
-      role: "Customer Support",
-      description: "Handles customer inquiries 24/7, resolves common issues, and escalates complex problems to humans.",
+      name: "Mark",
+      role: "Marketing Director",
+      description: "Your AI marketing strategist, crafting compelling campaigns and driving engagement.",
       icon: MessagesSquare,
-      gradient: "from-cyan-600 to-cyan-400"
+      gradient: "from-green-500 to-emerald-500"
     },
     {
-      name: "ContentBot",
-      role: "Content Creator",
-      description: "Generates blog posts, social media content, and marketing copy aligned with your brand voice.",
-      icon: Pencil,
-      gradient: "from-pink-600 to-pink-400"
+      name: "Su",
+      role: "Support Engineer",
+      description: "Your dedicated AI support engineer, ensuring smooth operations and user satisfaction.",
+      icon: HelpCircle,
+      gradient: "from-pink-500 to-rose-500"
     },
     {
-      name: "BizDevBot",
-      role: "Business Developer",
-      description: "Identifies growth opportunities, analyzes market trends, and assists with strategic planning.",
-      icon: Briefcase,
-      gradient: "from-orange-600 to-orange-400"
+      name: "Fin",
+      role: "Financial Expert",
+      description: "Your expert AI financial analyst, providing financial insights and strategy.",
+      icon: DollarSign,
+      gradient: "from-green-500 to-teal-500"
+    },
+    {
+      name: "Cal",
+      role: "Calculator",
+      description: "Your expert AI calculator, processing complex computations with precision.",
+      icon: Calculator,
+      gradient: "from-purple-500 to-violet-500"
+    }
+  ];
+
+  const creativeAgents = [
+    {
+      name: "Art",
+      role: "Artist",
+      description: "Your creative AI artist, bringing imagination to life through digital artistry.",
+      icon: Palette,
+      gradient: "from-violet-500 to-indigo-500"
+    },
+    {
+      name: "Mu",
+      role: "Musician",
+      description: "Your creative AI musician, composing and producing original music.",
+      icon: Music,
+      gradient: "from-pink-500 to-purple-500"
+    },
+    {
+      name: "Data",
+      role: "Data Scientist",
+      description: "Your expert AI data scientist, unlocking insights from complex datasets.",
+      icon: LineChart,
+      gradient: "from-blue-500 to-indigo-500"
+    },
+    {
+      name: "Chat",
+      role: "Conversation Expert",
+      description: "Your expert AI conversation specialist, facilitating natural communication.",
+      icon: MessageCircle,
+      gradient: "from-blue-500 to-purple-500"
     }
   ];
 
@@ -91,17 +165,19 @@ const AgentGallery = () => {
             <Bot className="h-6 w-6" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            AI Agents for Every Role
+            Meet Your AI Team
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Our AI team members can handle a wide range of tasks across engineering, 
-            design, analytics, and business functions. Each agent is specialized and 
+            Our AI team members can handle a wide range of tasks across leadership, engineering, 
+            business, and creative functions. Each agent is specialized and 
             trained to excel in their domain.
           </p>
         </motion.div>
 
+        <TeamGroup title="Leadership & Core Team" members={coreTeamMembers} />
         <TeamGroup title="Engineering Team" members={engineeringAgents} />
         <TeamGroup title="Business Team" members={businessAgents} />
+        <TeamGroup title="Creative Team" members={creativeAgents} />
       </div>
     </section>
   );

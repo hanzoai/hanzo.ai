@@ -38,10 +38,6 @@ import Base from "./pages/Base";
 import Download from "./pages/Download";
 import Analytics from "./pages/Analytics";
 import Cloud from "./pages/Cloud";
-import TeamDev from "./pages/TeamDev";
-import TeamVi from "./pages/TeamVi";
-import TeamOpera from "./pages/TeamOpera";
-import TeamChat from "./pages/TeamChat";
 import AIStudio from "./pages/AIStudio";
 import Index3 from "./pages/Index3";
 import Index5 from "./pages/Index5";
@@ -61,6 +57,24 @@ import Realtime from "./pages/Realtime";
 import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 import Team from "./pages/Team";
+
+// Import team member pages
+import TeamDev from "./pages/TeamDev";
+import TeamVi from "./pages/TeamVi";
+import TeamOpera from "./pages/TeamOpera";
+import TeamChat from "./pages/TeamChat";
+import TeamDb from "./pages/TeamDb";
+import TeamSu from "./pages/TeamSu"; 
+import TeamArt from "./pages/TeamArt";
+import TeamMu from "./pages/TeamMu";
+import TeamData from "./pages/TeamData";
+import TeamCore from "./pages/TeamCore";
+import TeamFin from "./pages/TeamFin";
+import TeamSec from "./pages/TeamSec";
+import TeamAlgo from "./pages/TeamAlgo";
+import TeamDes from "./pages/TeamDes";
+import TeamMark from "./pages/TeamMark";
+import TeamCal from "./pages/TeamCal";
 
 // Define which routes need account and billing providers
 const AccountRoutes = () => {
@@ -141,6 +155,18 @@ const MarketingRoutes = () => {
       <Route path="/team/vi" element={<TeamVi />} />
       <Route path="/team/opera" element={<TeamOpera />} />
       <Route path="/team/chat" element={<TeamChat />} />
+      <Route path="/team/db" element={<TeamDb />} />
+      <Route path="/team/su" element={<TeamSu />} />
+      <Route path="/team/art" element={<TeamArt />} />
+      <Route path="/team/mu" element={<TeamMu />} />
+      <Route path="/team/data" element={<TeamData />} />
+      <Route path="/team/core" element={<TeamCore />} />
+      <Route path="/team/fin" element={<TeamFin />} />
+      <Route path="/team/sec" element={<TeamSec />} />
+      <Route path="/team/algo" element={<TeamAlgo />} />
+      <Route path="/team/des" element={<TeamDes />} />
+      <Route path="/team/mark" element={<TeamMark />} />
+      <Route path="/team/cal" element={<TeamCal />} />
       
       {/* Catch-all route for 404 page */}
       <Route path="*" element={<NotFound />} />
