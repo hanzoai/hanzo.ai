@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -40,6 +41,7 @@ import Cloud from "./pages/Cloud";
 import AIStudio from "./pages/AIStudio";
 import Index3 from "./pages/Index3";
 import Index5 from "./pages/Index5";
+import Index6 from "./pages/Index6";
 import Operative from "./pages/Operative";
 import HanzoApp from "./pages/HanzoApp";
 import HanzoBot from "./pages/HanzoBot";
