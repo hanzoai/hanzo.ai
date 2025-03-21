@@ -41,7 +41,6 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
               </div>
               <div className="flex-1">
                 <div className="text-gray-300 group-hover:text-white font-medium truncate">{item}</div>
-                <div className="text-sm text-gray-500 truncate">Advanced {item.toLowerCase()} capabilities</div>
               </div>
             </Link>
           );
