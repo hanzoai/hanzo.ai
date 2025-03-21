@@ -1,4 +1,3 @@
-
 /* ... keep existing code (neo-blur, glass-morphism, card styles) */
 
 /* Chrome text effect */
@@ -169,4 +168,23 @@
   75% {
     transform: translate(-10%, 5%);
   }
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Grab cursor for draggable elements */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
 }

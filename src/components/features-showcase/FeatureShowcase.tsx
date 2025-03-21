@@ -29,7 +29,8 @@ const FeatureShowcase: React.FC = () => {
   useEffect(() => {
     const calculateMaxScroll = () => {
       // Calculate the total width of all cards (including gap) minus the visible area
-      const totalWidth = activeFeatures.length * 350; // Each card is 350px wide (300px + margins)
+      // Adding extra buffer space to ensure all cards are visible
+      const totalWidth = (activeFeatures.length * 350) + 100; // Each card is 350px wide + extra buffer
       const visibleWidth = window.innerWidth - 100; // Subtract some padding
       const newMaxScroll = Math.max(0, totalWidth - visibleWidth);
       setMaxScrollDistance(newMaxScroll);
@@ -53,10 +54,11 @@ const FeatureShowcase: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [100, 0, 0, 100]);
   
   // Modified horizontal scroll to show full content
+  // Use a lower end value to prevent scrolling too far
   const x = useTransform(
     scrollYProgress, 
     [0.2, 0.8], 
-    [0, -maxScrollDistance]
+    [0, -maxScrollDistance * 0.85] // Only scroll to 85% of max to ensure more content is visible
   ); 
 
   return (
@@ -105,6 +107,7 @@ const FeatureShowcase: React.FC = () => {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
             style={{ x }}
+            className="overflow-visible" // Ensure content doesn't get clipped
           >
             <FeatureShowcaseSlider features={activeFeatures} />
           </motion.div>

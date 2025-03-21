@@ -26,7 +26,10 @@ export const useHorizontalScroll = ({
       if (container.scrollWidth > container.clientWidth) {
         e.preventDefault();
         setIsScrolling(true);
-        container.scrollLeft += e.deltaY;
+        
+        // Smoother scrolling with consistent speed
+        const scrollAmount = e.deltaY * 1.5;
+        container.scrollLeft += scrollAmount;
         
         clearTimeout(timeout);
         timeout = window.setTimeout(() => {
@@ -35,6 +38,7 @@ export const useHorizontalScroll = ({
       }
     };
 
+    // Add scroll indicator and observer
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         container.addEventListener('wheel', handleWheel, { passive: false });
@@ -56,22 +60,34 @@ export const useHorizontalScroll = ({
     };
   }, [containerRef, scrollTimeout]);
 
+  // Mouse drag scrolling with improved behavior
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
     setScrollLeft(containerRef.current.scrollLeft);
+    
+    // Change cursor to indicate grabbing
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grabbing';
+      containerRef.current.style.userSelect = 'none';
+    }
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    // Reset cursor
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grab';
+      containerRef.current.style.userSelect = '';
+    }
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !containerRef.current) return;
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 1.5; // Increase sensitivity for better control
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
