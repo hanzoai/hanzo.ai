@@ -6,6 +6,9 @@ type ThemeSpacing = 'compact' | 'comfortable' | 'spacious';
 type ThemeFontFamily = 'system' | 'monospace' | 'serif' | 'sans';
 type ThemeGlassOpacity = 'subtle' | 'medium' | 'heavy';
 type ThemeMode = 'light' | 'dark' | 'system';
+type ThemeTypographySize = 'small' | 'medium' | 'large';
+type ThemeTypographySpacing = 'tight' | 'normal' | 'wide';
+type ThemeTypographyWeight = 'light' | 'regular' | 'heavy';
 
 interface ThemeContextType {
   mode: ThemeMode;
@@ -13,11 +16,17 @@ interface ThemeContextType {
   spacing: ThemeSpacing;
   fontFamily: ThemeFontFamily;
   glassOpacity: ThemeGlassOpacity;
+  typographySize: ThemeTypographySize;
+  typographySpacing: ThemeTypographySpacing;
+  typographyWeight: ThemeTypographyWeight;
   setMode: (mode: ThemeMode) => void;
   setRounding: (rounding: ThemeRounding) => void;
   setSpacing: (spacing: ThemeSpacing) => void;
   setFontFamily: (fontFamily: ThemeFontFamily) => void;
   setGlassOpacity: (opacity: ThemeGlassOpacity) => void;
+  setTypographySize: (size: ThemeTypographySize) => void;
+  setTypographySpacing: (spacing: ThemeTypographySpacing) => void;
+  setTypographyWeight: (weight: ThemeTypographyWeight) => void;
   applyThemeClasses: (baseClasses: string) => string;
   getRoundingClass: () => string;
   getSpacingClass: () => string;
@@ -35,6 +44,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [spacing, setSpacing] = useState<ThemeSpacing>('comfortable');
   const [fontFamily, setFontFamily] = useState<ThemeFontFamily>('system');
   const [glassOpacity, setGlassOpacity] = useState<ThemeGlassOpacity>('medium');
+  const [typographySize, setTypographySize] = useState<ThemeTypographySize>('medium');
+  const [typographySpacing, setTypographySpacing] = useState<ThemeTypographySpacing>('normal');
+  const [typographyWeight, setTypographyWeight] = useState<ThemeTypographyWeight>('regular');
   
   // Detect system preference
   useEffect(() => {
@@ -55,9 +67,55 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.documentElement.dataset.spacing = spacing;
     document.documentElement.dataset.font = fontFamily;
     document.documentElement.dataset.glass = glassOpacity;
+    document.documentElement.dataset.typographySize = typographySize;
+    document.documentElement.dataset.typographySpacing = typographySpacing;
+    document.documentElement.dataset.typographyWeight = typographyWeight;
     document.documentElement.classList.toggle('dark', isDarkMode);
     document.documentElement.classList.toggle('light', !isDarkMode);
-  }, [rounding, spacing, fontFamily, glassOpacity, isDarkMode]);
+    
+    // Apply typography variables
+    const root = document.documentElement;
+    
+    // Set font size scale
+    switch (typographySize) {
+      case 'small':
+        root.style.setProperty('--font-scale', '0.875');
+        break;
+      case 'medium':
+        root.style.setProperty('--font-scale', '1');
+        break;
+      case 'large':
+        root.style.setProperty('--font-scale', '1.125');
+        break;
+    }
+    
+    // Set line height scale
+    switch (typographySize) {
+      case 'small':
+        root.style.setProperty('--line-height-scale', '0.95');
+        break;
+      case 'medium':
+        root.style.setProperty('--line-height-scale', '1');
+        break;
+      case 'large':
+        root.style.setProperty('--line-height-scale', '1.05');
+        break;
+    }
+    
+    // Set letter spacing
+    switch (typographySpacing) {
+      case 'tight':
+        root.style.setProperty('--letter-spacing-scale', '-0.025em');
+        break;
+      case 'normal':
+        root.style.setProperty('--letter-spacing-scale', '0em');
+        break;
+      case 'wide':
+        root.style.setProperty('--letter-spacing-scale', '0.025em');
+        break;
+    }
+    
+  }, [rounding, spacing, fontFamily, glassOpacity, isDarkMode, typographySize, typographySpacing, typographyWeight]);
 
   const getRoundingClass = (): string => {
     switch (rounding) {
@@ -123,11 +181,17 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         spacing,
         fontFamily,
         glassOpacity,
+        typographySize,
+        typographySpacing,
+        typographyWeight,
         setMode,
         setRounding,
         setSpacing,
         setFontFamily,
         setGlassOpacity,
+        setTypographySize,
+        setTypographySpacing,
+        setTypographyWeight,
         applyThemeClasses,
         getRoundingClass,
         getSpacingClass,

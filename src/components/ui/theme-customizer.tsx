@@ -41,6 +41,9 @@ const ThemeCustomizer: React.FC = () => {
     spacing, setSpacing,
     fontFamily, setFontFamily,
     glassOpacity, setGlassOpacity,
+    typographySize, setTypographySize,
+    typographySpacing, setTypographySpacing,
+    typographyWeight, setTypographyWeight,
     isDarkMode, getRoundingClass, getGlassClass
   } = useTheme();
 
@@ -89,6 +92,33 @@ const ThemeCustomizer: React.FC = () => {
         </div>
       </div>
       
+      <div>
+        <h3 className="text-sm font-medium mb-3">Text Size</h3>
+        <div className="grid grid-cols-3 gap-2">
+          <ThemeOption value="small" currentValue={typographySize} onChange={setTypographySize} label="Small" />
+          <ThemeOption value="medium" currentValue={typographySize} onChange={setTypographySize} label="Medium" />
+          <ThemeOption value="large" currentValue={typographySize} onChange={setTypographySize} label="Large" />
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-sm font-medium mb-3">Letter Spacing</h3>
+        <div className="grid grid-cols-3 gap-2">
+          <ThemeOption value="tight" currentValue={typographySpacing} onChange={setTypographySpacing} label="Tight" />
+          <ThemeOption value="normal" currentValue={typographySpacing} onChange={setTypographySpacing} label="Normal" />
+          <ThemeOption value="wide" currentValue={typographySpacing} onChange={setTypographySpacing} label="Wide" />
+        </div>
+      </div>
+      
+      <div>
+        <h3 className="text-sm font-medium mb-3">Font Weight</h3>
+        <div className="grid grid-cols-3 gap-2">
+          <ThemeOption value="light" currentValue={typographyWeight} onChange={setTypographyWeight} label="Light" />
+          <ThemeOption value="regular" currentValue={typographyWeight} onChange={setTypographyWeight} label="Regular" />
+          <ThemeOption value="heavy" currentValue={typographyWeight} onChange={setTypographyWeight} label="Heavy" />
+        </div>
+      </div>
+      
       <Button 
         variant="outline" 
         size="sm" 
@@ -102,6 +132,9 @@ const ThemeCustomizer: React.FC = () => {
           setSpacing('comfortable');
           setFontFamily('system');
           setGlassOpacity('medium');
+          setTypographySize('medium');
+          setTypographySpacing('normal');
+          setTypographyWeight('regular');
           setMode('dark');
         }}
       >
