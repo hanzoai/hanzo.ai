@@ -73,12 +73,12 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
           backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
         }}
       >
-        <motion.span className="inline-flex items-center chrome-text font-bold">
+        <motion.span className="inline-flex items-center chrome-text font-bold mb-4 overflow-visible">
           Accelerating AI
         </motion.span>
         
         <motion.span 
-          className="block text-white pb-4 overflow-visible chrome-text font-bold" 
+          className="block text-white mt-6 pb-6 overflow-visible chrome-text font-bold" 
           initial="hidden" 
           animate={animationComplete ? "visible" : "hidden"} 
           variants={titleVariants} 
