@@ -102,6 +102,7 @@ const MarketingRoutes = () => {
       <Route path="/leadership" element={<Leadership />} />
       <Route path="/referrals" element={<Referrals />} />
       <Route path="/open-source" element={<OpenSource />} />
+      <Route path="/team" element={<Team />} />
       
       {/* Product Routes */}
       <Route path="/ai" element={<AI />} />
@@ -126,7 +127,6 @@ const MarketingRoutes = () => {
       <Route path="/machines" element={<Machines />} />
       <Route path="/realtime" element={<Realtime />} />
       <Route path="/ai-studio" element={<AIStudio />} />
-      <Route path="/team" element={<Team />} />
       
       {/* Team Pages */}
       <Route path="/team/dev" element={<TeamDev />} />

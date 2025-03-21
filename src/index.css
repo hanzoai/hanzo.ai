@@ -170,3 +170,8 @@
 .content-spacing {
   @apply space-y-8 md:space-y-10 lg:space-y-12;
 }
+
+/* Global styles for the Team page */
+html, body {
+  @apply bg-black text-white;
+}
