@@ -1,36 +1,5 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
-  /* Dark mode (default) */
-  :root {
-    /* ... keep existing code (CSS variables for colors) */
-    --radius: 0.5rem;
-    
-    /* Typography scale variables */
-    --font-scale: 100%;
-    --line-height-scale: 100%;
-    --letter-spacing-scale: 0em;
-  }
-
-  /* Light mode */
-  .light {
-    /* ... keep existing code (light mode CSS variables) */
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-  }
-  
   /* Typography base styles with theme variables */
   h1 {
     @apply text-4xl font-bold tracking-tight mb-4 font-sans;
@@ -82,15 +51,6 @@
   }
 }
 
-/* White theme styles */
-.white-theme {
-  /* ... keep existing code (white theme styles) */
-}
-
-/* ... keep existing code (black-on-black theme specific styles) */
-
-/* ... keep existing code (neo-blur, glass-morphism, card styles) */
-
 /* Typography utility classes */
 .heading-xl {
   @apply text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight;
@@ -132,28 +92,4 @@
   font-size: calc(0.875rem * var(--font-scale));
   line-height: calc(1.25rem * var(--line-height-scale));
   letter-spacing: calc(0em + var(--letter-spacing-scale));
-}
-
-/* Chrome text effect */
-.chrome-text {
-  /* ... keep existing code (chrome text effect) */
-}
-
-/* ... keep existing code (light chrome-text, animation, section spacing) */
-
-/* Global styles */
-html {
-  @apply scroll-smooth;
-}
-
-body {
-  @apply bg-background text-foreground transition-colors duration-300;
-}
-
-.dark {
-  @apply bg-black text-white;
-}
-
-.light {
-  @apply bg-white text-gray-900;
 }

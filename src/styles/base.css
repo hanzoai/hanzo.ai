@@ -1,0 +1,50 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dark mode (default) */
+  :root {
+    /* ... keep existing code (CSS variables for colors) */
+    --radius: 0.5rem;
+    
+    /* Typography scale variables */
+    --font-scale: 100%;
+    --line-height-scale: 100%;
+    --letter-spacing-scale: 0em;
+  }
+
+  /* Light mode */
+  .light {
+    /* ... keep existing code (light mode CSS variables) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  /* Global styles */
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  .dark {
+    @apply bg-black text-white;
+  }
+
+  .light {
+    @apply bg-white text-gray-900;
+  }
+}
