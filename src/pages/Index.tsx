@@ -48,7 +48,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <Helmet>
         <title>Hanzo AI - Accelerating AI for a Better Future</title>
         <meta name="description" content="Your AI future belongs in your hands. With Hanzo, pioneer a new era of intelligence with customizable, private, transparent, and trusted AI solutions." />
@@ -56,8 +56,8 @@ const Index = () => {
       
       {/* Subtle background pattern */}
       <div className="fixed inset-0 -z-10 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-white"></div>
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#ddd 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#444 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
       </div>
       
       <Navbar />
@@ -80,14 +80,14 @@ const Index = () => {
         
         {/* Hanzo Team CTA */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          <div className="max-w-5xl mx-auto bg-gray-50 border border-gray-200 rounded-xl p-8 shadow-sm">
+          <div className="max-w-5xl mx-auto bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-sm">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="bg-purple-100 p-4 rounded-full">
-                <Users className="h-10 w-10 text-purple-600" />
+              <div className="bg-purple-900 p-4 rounded-full">
+                <Users className="h-10 w-10 text-purple-300" />
               </div>
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-2">Hanzo Team Workspace</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-2xl font-bold mb-2 text-white">Hanzo Team Workspace</h3>
+                <p className="text-gray-300 mb-4">
                   Streamline your workflow with our integrated workspace. Collaborate with your team, manage projects, and get more done.
                 </p>
               </div>

@@ -39,13 +39,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isIndexPage
-          ? isScrolled
-            ? "bg-white/80 backdrop-blur-md shadow-sm"
-            : "bg-white/40 backdrop-blur-sm"
-          : isScrolled
-            ? "bg-black/80 backdrop-blur-md"
-            : "bg-black/40 backdrop-blur-sm"
+        isScrolled
+          ? "bg-black/80 backdrop-blur-md shadow-sm"
+          : "bg-black/40 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +52,7 @@ const Navbar = () => {
               alt="Hanzo"
               className="h-10 w-10"
             />
-            <span className={`font-bold text-xl ${isIndexPage ? 'text-gray-900' : 'text-white'}`}>Hanzo</span>
+            <span className="font-bold text-xl text-white">Hanzo</span>
           </a>
 
           <div className="hidden md:flex items-center justify-center space-x-6 flex-1">
@@ -65,10 +61,10 @@ const Navbar = () => {
               <SolutionsMenu />
               <ResourcesMenu />
               
-              <Link to="/team" className={`${isIndexPage ? 'text-gray-700 hover:text-gray-900' : 'text-gray-300 hover:text-white'} transition-colors`}>
+              <Link to="/team" className="text-gray-300 hover:text-white transition-colors">
                 Team
               </Link>
-              <a href="/pricing" className={`${isIndexPage ? 'text-gray-700 hover:text-gray-900' : 'text-gray-300 hover:text-white'} transition-colors`}>
+              <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
                 Pricing
               </a>
             </div>
@@ -79,7 +75,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className={isIndexPage ? "text-gray-900 border-gray-300 hover:bg-gray-100" : "text-white border-white hover:bg-white/10"}
+                className="text-white border-white hover:bg-white/10"
               >
                 <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
                   <User className="h-4 w-4" />
@@ -90,7 +86,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className={isIndexPage ? "text-gray-900 border-gray-300 hover:bg-gray-100" : "text-white border-white hover:bg-white/10"}
+                className="text-white border-white hover:bg-white/10"
               >
                 <a href="https://cloud.hanzo.ai">
                   Console
@@ -99,7 +95,7 @@ const Navbar = () => {
             )}
             <Button 
               size="sm" 
-              className={isIndexPage ? "bg-purple-600 text-white hover:bg-purple-700" : "bg-white text-black hover:bg-gray-100"}
+              className="bg-white text-black hover:bg-gray-100"
             >
               <a href="https://cloud.hanzo.ai/auth/sign-up">
                 Signup
