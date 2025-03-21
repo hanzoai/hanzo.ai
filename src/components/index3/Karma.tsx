@@ -146,7 +146,7 @@ const Karma = () => {
               <div className="w-16 h-16 rounded-full bg-gray-800 mr-4"></div>
               <div>
                 <h3 className="text-xl font-bold mb-1">Zach Kelling</h3>
-                <p className="text-gray-400">CEO, Hanzo AI</p>
+                <p className="text-gray-400">CTO, Hanzo AI</p>
               </div>
             </div>
             
