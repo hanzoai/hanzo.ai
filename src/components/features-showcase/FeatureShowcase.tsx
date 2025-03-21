@@ -1,5 +1,6 @@
+
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FeatureSlide } from "./";
 import { Settings, Cloud, Lock, Eye, Code, Shield, Users, Sparkles, Hand, Smile, Layout } from "lucide-react";
@@ -88,7 +89,20 @@ const FeatureShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
+  // Scroll animation values
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [100, 0, 0, 100]);
+
+  // Horizontal wheel scrolling logic
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -98,9 +112,7 @@ const FeatureShowcase: React.FC = () => {
     const handleWheel = (e: WheelEvent) => {
       if (container.scrollWidth > container.clientWidth) {
         e.preventDefault();
-        
         setIsScrolling(true);
-        
         container.scrollLeft += e.deltaY;
         
         clearTimeout(scrollTimeout);
@@ -131,13 +143,36 @@ const FeatureShowcase: React.FC = () => {
     };
   }, []);
 
+  // Mouse drag handling
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   return (
     <section className="py-24 bg-black relative overflow-hidden" id="features-showcase" ref={scrollRef}>
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-black/80"></div>
       </div>
       
-      <div className="container px-4 mx-auto">
+      <motion.div 
+        className="container px-4 mx-auto"
+        style={{ opacity, y }}
+      >
         <div className="text-center mb-12">
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-4 text-white chrome-text"
@@ -159,15 +194,23 @@ const FeatureShowcase: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="feature-slide-container" ref={scrollRef}>
+        <div className="feature-slide-container">
           <div 
             ref={containerRef}
-            className="flex gap-6 pb-6 overflow-x-auto snap-x snap-mandatory feature-scroll-container"
+            className="flex gap-6 pb-6 overflow-x-auto snap-x snap-mandatory feature-scroll-container cursor-grab active:cursor-grabbing"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onMouseMove={handleMouseMove}
           >
             {features.map((feature, index) => (
-              <div 
+              <motion.div 
                 key={index} 
                 className="snap-center flex-shrink-0 w-[350px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
                 <FeatureSlide
                   title={feature.title}
@@ -176,11 +219,11 @@ const FeatureShowcase: React.FC = () => {
                   color={feature.color}
                   link={feature.link}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
