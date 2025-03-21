@@ -1,7 +1,7 @@
 
 import React from "react";
 import AIEngineeringHeader from "./AIEngineeringHeader";
-import AIFeatureCard from "./AIFeatureCard";
+import ExpandableFeatureCard from "../../ai/engineering-platform/ExpandableFeatureCard";
 import { featureData } from "./featureData";
 
 const AIEngineering = () => {
@@ -12,7 +12,7 @@ const AIEngineering = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {featureData.map((feature, index) => (
-            <AIFeatureCard
+            <ExpandableFeatureCard
               key={index}
               icon={feature.icon}
               title={feature.title}
