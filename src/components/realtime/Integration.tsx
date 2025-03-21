@@ -93,12 +93,12 @@ const Integration = () => {
               
               <div className="text-green-400">// Subscribe to a channel</div>
               <div className="text-gray-300">const channel = await realtime.subscribe('chat-room', {`{`}</div>
-              <div className="text-gray-300 pl-4">onMessage: (message) => {`{`}</div>
+              <div className="text-gray-300 pl-4">onMessage: (message) {`=>`} {`{`}</div>
               <div className="text-gray-300 pl-8">console.log('New message received:', message);</div>
               <div className="text-gray-300 pl-8">// Update your UI with the message</div>
               <div className="text-gray-300 pl-8">appendMessageToChat(message);</div>
               <div className="text-gray-300 pl-4">{`}`},</div>
-              <div className="text-gray-300 pl-4">onPresence: (event) => {`{`}</div>
+              <div className="text-gray-300 pl-4">onPresence: (event) {`=>`} {`{`}</div>
               <div className="text-gray-300 pl-8">if (event.action === 'join') {`{`}</div>
               <div className="text-gray-300 pl-12">console.log(`${event.user.name} joined the chat`);</div>
               <div className="text-gray-300 pl-8">{`}`} else {`{`}</div>
