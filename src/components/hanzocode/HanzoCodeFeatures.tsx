@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Code, Zap, MessageSquare, Globe, Robot, FileCode, Infinity, Network } from "lucide-react";
+import { Code, Zap, MessageSquare, Globe, Bot, FileCode, Infinity, Network } from "lucide-react";
 
 const FeatureCard = ({ title, description, icon }) => {
   return (
@@ -68,7 +68,7 @@ const HanzoCodeFeatures = () => {
           <FeatureCard 
             title="Complete Autonomy"
             description="Agents can work independently, making decisions without constant human guidance"
-            icon={<Robot className="h-10 w-10 text-purple-400" />}
+            icon={<Bot className="h-10 w-10 text-purple-400" />}
           />
           
           <FeatureCard 
