@@ -1,4 +1,3 @@
-
 import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight, MessageSquare, HardDrive, Box, Cpu, ExternalLink, Workflow, Monitor } from "lucide-react";
 import { ProductItem } from "./types";
 
@@ -25,25 +24,25 @@ export const aiCloudItems: ProductItem[] = [
     name: "Edge",
     icon: Zap,
     description: "Ultra-low latency edge computing",
-    link: "/cloud#edge"
+    link: "/cloud"
   },
   {
     name: "Functions",
     icon: Code2,
     description: "Serverless function execution",
-    link: "/cloud#functions"
+    link: "/functions"
   },
   {
     name: "Identity",
     icon: User,
     description: "Scalable identity management",
-    link: "/cloud#identity"
+    link: "/identity"
   },
   {
     name: "Machines",
     icon: Cpu,
     description: "Dedicated AI compute infrastructure",
-    link: "/cloud#machines"
+    link: "/machines"
   },
   {
     name: "Payments",
