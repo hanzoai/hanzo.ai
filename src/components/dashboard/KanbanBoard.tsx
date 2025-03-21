@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, MoreHorizontal, MessageSquare, CheckCircle, Clock, Zap } from "lucide-react";
 import TaskCard from "./TaskCard";
 import { DummyTaskData } from "./data";
-import TaskDetailModal from "./TaskDetailModal";
+import { TaskDetailModal } from "./task-detail";
 import { toast } from "sonner";
+import { Task } from "./data/tasks/task-data";
 
 interface Task {
   id: string;
@@ -97,7 +97,6 @@ const KanbanBoard = () => {
   };
 
   const handleAddTask = (columnId: string) => {
-    // Implementation for adding a new task to a specific column
     const newTask: Task = {
       id: `${Date.now()}`,
       title: "New Task",
