@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import PhilosophySection from "@/components/landing/PhilosophySection";
-import FeatureShowcase from "@/components/features-showcase";
+import FeatureShowcase from "@/components/landing/FeatureShowcase";
 import DemoShowcase from "@/components/landing/DemoShowcase";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import CallToAction from "@/components/landing/CallToAction";

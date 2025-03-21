@@ -50,13 +50,7 @@ const PhilosophySection: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
             Our Philosophy
           </div>
@@ -67,7 +61,7 @@ const PhilosophySection: React.FC = () => {
             We believe AI should be powerful, transparent, and fully under your control.
             Our platform is built with these principles at its core.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {items.map((item, index) => (
