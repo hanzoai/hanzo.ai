@@ -3,7 +3,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Bot, Cpu, GitBranch, Braces, Users, Brain, Server, Maximize } from "lucide-react";
 
-const FeatureCard = ({ icon: Icon, title, description }) => {
+interface FeatureCardProps {
+  icon: React.FC<{ className?: string }>;
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +25,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
   );
 };
 
-const HanzoCodeAgents = () => {
+const HanzoCodeAgents: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
@@ -97,12 +103,12 @@ const HanzoCodeAgents = () => {
               <div className="text-sm font-mono text-gray-300 space-y-2">
                 <div className="text-purple-400">// Creating a team of agents to refactor an entire codebase</div>
                 <div className="text-white">const project = await HanzoCode.createProject('./my-app');</div>
-                <div className="text-white">const agents = await project.createAgentTeam({</div>
+                <div className="text-white">const agents = await project.createAgentTeam({"{"}</div>
                 <div className="text-white ml-4">size: 12,</div>
                 <div className="text-white ml-4">task: 'Refactor to React 18 with TypeScript',</div>
                 <div className="text-white ml-4">coordination: 'hierarchical',</div>
                 <div className="text-white ml-4">parallelization: true</div>
-                <div className="text-white">});</div>
+                <div className="text-white">{"}"});</div>
                 <div className="text-white">await agents.execute();</div>
                 <div className="text-white">// Agents will work together, with some focusing on</div>
                 <div className="text-white">// component logic, others on types, others on tests</div>
