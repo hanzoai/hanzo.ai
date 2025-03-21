@@ -35,6 +35,8 @@
   scroll-behavior: smooth;
   padding: 0 5%;
   cursor: grab;
+  width: max-content;
+  min-width: 100%;
 }
 
 .feature-scroll-container:active {

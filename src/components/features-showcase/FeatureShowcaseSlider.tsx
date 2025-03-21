@@ -38,8 +38,8 @@ const FeatureShowcaseSlider: React.FC<FeatureShowcaseSliderProps> = ({ features 
               className="snap-center flex-shrink-0 w-[350px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: index * 0.05 }}
             >
               {isLastFeature ? (
                 <ExploreCard

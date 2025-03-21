@@ -16,7 +16,13 @@ const FeatureShowcase: React.FC = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [100, 0, 0, 100]);
-  const x = useTransform(scrollYProgress, [0.3, 0.8], [0, -300]); // Horizontal movement based on scroll
+  
+  // Modified horizontal scroll to show full content
+  const x = useTransform(
+    scrollYProgress, 
+    [0.2, 0.8], 
+    [0, -((features.length * 350) - window.innerWidth + 100)]
+  ); 
 
   return (
     <section className="py-24 bg-black relative overflow-hidden" id="features-showcase" ref={scrollRef}>
