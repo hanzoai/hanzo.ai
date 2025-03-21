@@ -31,14 +31,15 @@ const ChatInterface: React.FC = () => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
-  const handleSendMessage = (text: string) => {
-    if (!text.trim()) return;
+  const handleSendMessage = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!message.trim()) return;
     
     // Add user message to chat
     const userMessage = {
       id: chatHistory.length + 1,
       sender: "user",
-      message: text,
+      message: message,
       timestamp: new Date().toISOString(),
     };
     
@@ -53,7 +54,7 @@ const ChatInterface: React.FC = () => {
       const botResponse = {
         id: chatHistory.length + 2,
         sender: "bot",
-        message: `I received your message: "${text}". This is a simulated response.`,
+        message: `I received your message: "${message}". This is a simulated response.`,
         timestamp: new Date().toISOString(),
       };
       
@@ -76,7 +77,8 @@ const ChatInterface: React.FC = () => {
       <MessageInput 
         message={message} 
         setMessage={setMessage} 
-        onSendMessage={handleSendMessage} 
+        handleSendMessage={handleSendMessage} 
+        isTyping={isTyping}
       />
     </div>
   );
