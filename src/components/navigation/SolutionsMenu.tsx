@@ -38,10 +38,6 @@ export const SolutionsMenu = () => {
     }
   };
 
-  const handleSenseiClick = () => {
-    window.location.href = "https://sensei.group";
-  };
-
   const handleSolutionsClick = () => {
     setClickedOpen(!clickedOpen);
     setOpen(!open);
@@ -163,23 +159,49 @@ export const SolutionsMenu = () => {
               ))}
             </div>
 
-            <div 
-              onClick={handleSenseiClick}
-              className="w-64 rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-6 flex flex-col"
-            >
-              <div className="p-3 rounded-lg bg-purple-500/20 self-start mb-4">
-                <Shield className="h-5 w-5 text-purple-400" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-3">Execute with Sensei</h3>
-              <p className="text-gray-400 text-sm">
-                Need expert guidance? Partner with Sensei Group to implement enterprise AI solutions 
-                and transform your business.
-              </p>
-              <div className="mt-auto pt-4">
-                <span className="text-purple-400 text-sm hover:text-purple-300 flex items-center">
+            <div className="w-64 space-y-4">
+              {/* Hanzo Agency Card */}
+              <a 
+                href="https://hanzo.agency" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block rounded-xl bg-gradient-to-b from-purple-900/50 to-blue-900/50 border border-purple-500/20 cursor-pointer hover:border-purple-500/40 transition-colors p-6 flex flex-col"
+              >
+                <div className="p-3 rounded-lg bg-purple-500/20 self-start mb-4">
+                  <Shield className="h-5 w-5 text-purple-400" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-3">Hanzo Agency</h3>
+                <p className="text-gray-400 text-sm">
+                  Our AI-powered creative agency helps brands transform their digital presence with advanced design 
+                  and marketing strategies.
+                </p>
+                <div className="mt-auto pt-4">
+                  <span className="text-purple-400 text-sm hover:text-purple-300 flex items-center">
+                    Visit Hanzo Agency →
+                  </span>
+                </div>
+              </a>
+              
+              {/* Sensei Group Card - Smaller height */}
+              <a 
+                href="https://sensei.group" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block rounded-xl bg-gradient-to-b from-green-900/50 to-teal-900/50 border border-green-500/20 cursor-pointer hover:border-green-500/40 transition-colors p-4 flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-lg bg-green-500/20">
+                    <Shield className="h-4 w-4 text-green-400" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-md font-semibold text-white">Sensei Group</h3>
+                </div>
+                <p className="text-gray-400 text-xs">
+                  Partner with our collective of CXOs and experts to implement enterprise solutions.
+                </p>
+                <span className="text-green-400 text-xs hover:text-green-300 flex items-center mt-2">
                   Contact Sensei Group →
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </PopoverContent>

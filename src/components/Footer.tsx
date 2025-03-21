@@ -43,6 +43,10 @@ const Footer = () => {
                   <li><Link to="/cloud#machines" className="text-gray-500 hover:text-gray-300">Machines</Link></li>
                   <li><Link to="/payments" className="text-gray-500 hover:text-gray-300">Payments</Link></li>
                 </ul>
+                <Link to="/cloud" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
+                  <span>View all Cloud</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
               
               <div>
@@ -58,6 +62,10 @@ const Footer = () => {
                   <li><Link to="/operator" className="text-gray-500 hover:text-gray-300">Operator</Link></li>
                   <li><Link to="/platform#studio" className="text-gray-500 hover:text-gray-300">Studio</Link></li>
                 </ul>
+                <Link to="/open-source" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
+                  <span>View all Open Source</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>
@@ -74,7 +82,7 @@ const Footer = () => {
                   <li><Link to="/ai" className="text-gray-500 hover:text-gray-300">Data and Artificial Intelligence</Link></li>
                   <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Digital Engineering and Manufacturing</Link></li>
                 </ul>
-                <Link to="/solutions" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
+                <Link to="/solutions/capabilities" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
                   <span>View all capabilities</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -88,7 +96,7 @@ const Footer = () => {
                   <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Banking</Link></li>
                   <li><Link to="/solutions" className="text-gray-500 hover:text-gray-300">Capital Markets</Link></li>
                 </ul>
-                <Link to="/solutions" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
+                <Link to="/solutions/industries" className="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 mt-2">
                   <span>View all industries</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>

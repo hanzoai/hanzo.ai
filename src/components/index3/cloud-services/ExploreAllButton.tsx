@@ -9,7 +9,7 @@ const ExploreAllButton: React.FC = () => {
     <div className="text-center mt-8">
       <Button variant="outline" className="group" asChild>
         <Link to="/cloud">
-          Explore All Cloud Services 
+          View all Cloud 
           <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </Button>
