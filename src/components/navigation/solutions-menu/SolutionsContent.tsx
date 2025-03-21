@@ -10,8 +10,8 @@ interface SolutionsContentProps {
 
 export const SolutionsContent = ({ onCloseMenu }: SolutionsContentProps) => {
   return (
-    <div className="flex gap-4">
-      <div className="flex-1 grid grid-cols-2 gap-8">
+    <div className="flex gap-5">
+      <div className="flex-1 grid grid-cols-2 gap-10">
         {solutions.map((category, idx) => (
           <SolutionCategory
             key={idx}
@@ -22,7 +22,7 @@ export const SolutionsContent = ({ onCloseMenu }: SolutionsContentProps) => {
         ))}
       </div>
 
-      <div className="w-56 space-y-3 shrink-0">
+      <div className="w-60 space-y-4 shrink-0">
         <AgencyCard onCardClick={onCloseMenu} />
         <SenseiCard onCardClick={onCloseMenu} />
       </div>
