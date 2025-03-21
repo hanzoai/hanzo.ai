@@ -22,7 +22,7 @@ const ProductSection = ({ title, link, items, hasMore = false }: ProductSectionP
       <SectionHeader 
         title={title} 
         link={link} 
-        linkText={`View ${title.split(' ')[0]}`} 
+        linkText={`View all ${title.split(' ')[0]}`} 
       />
       
       <ProductVisualization items={limitedItems} />
@@ -35,7 +35,7 @@ const ProductSection = ({ title, link, items, hasMore = false }: ProductSectionP
             to={link} 
             className="inline-flex items-center text-purple-400 hover:text-purple-300 text-sm font-medium"
           >
-            View more {title.split(' ')[0]} products
+            View all {title.split(' ')[0]}
             <ChevronRight className="ml-1 h-3 w-3" />
           </Link>
         </div>

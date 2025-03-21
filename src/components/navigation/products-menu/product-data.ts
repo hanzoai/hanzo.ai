@@ -13,7 +13,7 @@ export const aiCloudItems: ProductItem[] = [
     name: "Chat",
     icon: MessageSquare,
     description: "Interactive AI chat experiences",
-    link: "/team/chat"
+    link: "/teamchat"
   },
   {
     name: "Datastore",

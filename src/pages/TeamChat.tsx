@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -50,9 +50,7 @@ const TeamChat: React.FC = () => {
     endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [chatHistory]);
+  // Removed useEffect for auto-scrolling to bottom on initial load
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,6 +79,8 @@ const TeamChat: React.FC = () => {
       
       setChatHistory(prev => [...prev, newAIMessage]);
       setIsTyping(false);
+      // Only scroll to bottom after sending a message
+      scrollToBottom();
     }, 2000);
   };
 
