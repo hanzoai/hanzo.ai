@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ReferralBanner from "@/components/referrals/ReferralBanner";
+import FeatureShowcase from "@/components/features-showcase";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -72,6 +73,9 @@ const Index = () => {
             <span className="py-1">Get Started for Free</span> <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
+        
+        {/* Add the full-screen feature showcase right after Hero */}
+        <FeatureShowcase />
         
         {/* Rearranged sections as requested */}
         <AIPlatformSection />
