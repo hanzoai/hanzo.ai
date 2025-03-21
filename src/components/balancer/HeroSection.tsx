@@ -16,13 +16,13 @@ const HeroSection = () => {
         <div className="text-center mb-12">
           <div className="flex flex-wrap justify-center gap-4 mb-6">
             <a href="/pricing" className="flex items-center text-gray-300 hover:text-white transition-colors">
-              <Button variant="ghost" size="sm" className="gap-2">
+              <Button variant="ghost" size="sm" className="gap-2 rounded-full">
                 <FileText className="h-4 w-4" />
                 Pricing
               </Button>
             </a>
             <a href="https://docs.hanzo.ai/balancer" className="flex items-center text-gray-300 hover:text-white transition-colors">
-              <Button variant="ghost" size="sm" className="gap-2">
+              <Button variant="ghost" size="sm" className="gap-2 rounded-full">
                 <BookOpen className="h-4 w-4" />
                 Docs
               </Button>
@@ -30,7 +30,7 @@ const HeroSection = () => {
           </div>
 
           <div className="mb-4">
-            <span className="text-purple-400 font-medium">Hanzo Balancer v3.3 Is Now Available! 
+            <span className="text-purple-400 font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available! 
               <a href="#learn-more" className="ml-2 text-purple-300 underline">Learn More</a>
             </span>
           </div>
@@ -39,7 +39,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           >
             The Cloud Native<br />
             <span className="text-purple-400">Application Proxy</span>
@@ -49,7 +49,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12"
+            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             Simplify and automate the discovery, routing, and load balancing of microservices.
           </motion.p>
@@ -62,23 +62,23 @@ const HeroSection = () => {
           >
             <Button 
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white"
+              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full py-6"
             >
-              GET STARTED
+              <span className="py-1">GET STARTED</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-white/10"
+              className="border-gray-600 text-white hover:bg-white/10 rounded-full py-6"
             >
-              Start Free Trial
+              <span className="py-1">Start Free Trial</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-white/10"
+              className="border-gray-600 text-white hover:bg-white/10 rounded-full py-6"
             >
-              Request Demo
+              <span className="py-1">Request Demo</span>
             </Button>
           </motion.div>
           

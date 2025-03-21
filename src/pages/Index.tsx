@@ -66,10 +66,10 @@ const Index = () => {
         <div className="flex justify-center mt-8 mb-8">
           <Button 
             size="lg" 
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
+            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-full leading-relaxed"
             onClick={handleSignUp}
           >
-            Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
+            <span className="py-1">Get Started for Free</span> <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
         
@@ -86,17 +86,17 @@ const Index = () => {
                 <Users className="h-10 w-10 text-purple-300" />
               </div>
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-2 text-white">Hanzo Team Workspace</h3>
-                <p className="text-gray-300 mb-4">
+                <h3 className="text-2xl font-bold mb-2 text-white leading-tight">Hanzo Team Workspace</h3>
+                <p className="text-gray-300 mb-4 leading-relaxed">
                   Streamline your workflow with our integrated workspace. Collaborate with your team, manage projects, and get more done.
                 </p>
               </div>
               <Button 
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full"
                 size="lg"
               >
                 <a href="https://hanzo.team" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                  Visit Hanzo Team <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="py-1">Visit Hanzo Team</span> <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </div>

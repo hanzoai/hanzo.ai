@@ -21,12 +21,12 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
         onValueChange={(value) => {
           if (value) setMode(value as "light" | "dark" | "system");
         }}
-        className={`${getGlassClass()} border ${getRoundingClass()} p-1`}
+        className={`${getGlassClass()} border ${getRoundingClass()} p-1 h-9`}
       >
         <ToggleGroupItem 
           value="light" 
           aria-label="Light mode"
-          className={`relative ${getRoundingClass()} data-[state=on]:text-yellow-500`}
+          className={`relative ${getRoundingClass()} data-[state=on]:text-yellow-500 h-7 w-7 flex items-center justify-center`}
         >
           {mode === "light" && (
             <motion.div 
@@ -43,7 +43,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
         <ToggleGroupItem 
           value="dark" 
           aria-label="Dark mode"
-          className={`relative ${getRoundingClass()} data-[state=on]:text-purple-400`}
+          className={`relative ${getRoundingClass()} data-[state=on]:text-purple-400 h-7 w-7 flex items-center justify-center`}
         >
           {mode === "dark" && (
             <motion.div 
@@ -60,7 +60,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = "" }) => {
         <ToggleGroupItem 
           value="system" 
           aria-label="System preference"
-          className={`relative ${getRoundingClass()} data-[state=on]:text-blue-400`}
+          className={`relative ${getRoundingClass()} data-[state=on]:text-blue-400 h-7 w-7 flex items-center justify-center`}
         >
           {mode === "system" && (
             <motion.div 

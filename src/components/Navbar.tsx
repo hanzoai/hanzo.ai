@@ -7,7 +7,6 @@ import { ResourcesMenu } from "./navigation/ResourcesMenu";
 import { MobileMenu } from "./navigation/MobileMenu";
 import { Link, useLocation } from "react-router-dom";
 import { User } from "lucide-react";
-import ThemeSwitcher from "./ui/theme-switcher";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const isAccountRoute = () => {
@@ -78,8 +77,6 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-3">
-            <ThemeSwitcher />
-            
             {user ? (
               <Button 
                 variant="outline" 
