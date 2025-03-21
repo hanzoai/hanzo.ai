@@ -71,11 +71,11 @@ const HeroSection: React.FC = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300">
-              Build AI Applications
+              Build As Fast
             </span>
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400">
-              With Complete Control
+              As You Think
             </span>
           </h1>
           
