@@ -33,6 +33,7 @@ import Analytics from "./pages/Analytics";
 import Cloud from "./pages/Cloud";
 import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
+import TeamOpera from "./pages/TeamOpera";
 import Index3 from "./pages/Index3";
 
 const App = () => {
@@ -63,6 +64,7 @@ const App = () => {
             {/* Team Pages */}
             <Route path="/team/dev" element={<TeamDev />} />
             <Route path="/team/vi" element={<TeamVi />} />
+            <Route path="/team/opera" element={<TeamOpera />} />
             
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/organization-profile" element={<OrganizationProfile />} />
