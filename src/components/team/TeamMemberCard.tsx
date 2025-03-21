@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface TeamMemberCardProps {
   name: string;
@@ -15,15 +16,16 @@ interface TeamMemberCardProps {
 
 const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamMemberCardProps) => {
   const memberRoute = name.toLowerCase();
+  const { getRoundingClass, getGlassClass } = useTheme();
   
   return (
     <motion.div
       whileHover={{ y: -5 }}
-      className="relative group rounded-2xl border border-gray-800 bg-black/50 p-8 backdrop-blur-sm overflow-hidden"
+      className={`relative group border border-gray-800 overflow-hidden ${getRoundingClass()} ${getGlassClass()}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out -z-10" />
-      <div className="block mb-4 relative z-10">
-        <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${gradient} mb-4`}>
+      <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out -z-10 ${gradient}`} />
+      <div className="block p-8 relative z-10">
+        <div className={`inline-flex p-3 ${getRoundingClass()} bg-gradient-to-br ${gradient} mb-4`}>
           <Icon className="h-6 w-6 text-white" />
         </div>
         <h3 className="text-xl font-semibold mb-2 hover:text-gray-400 transition-colors">{name}</h3>
@@ -31,12 +33,12 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
         <p className="text-gray-400 mb-4">{description}</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 relative z-10">
+      <div className="grid grid-cols-2 gap-3 px-8 pb-8 relative z-10">
         <Link to={`/team/${memberRoute}`} className="w-full">
           <Button 
             variant="outline" 
             size="sm"
-            className="w-full"
+            className={`w-full bg-transparent border-gray-700 hover:bg-white/10 text-gray-300 ${getRoundingClass()}`}
           >
             View Profile
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -52,7 +54,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient }: TeamM
           <Button 
             variant="outline" 
             size="sm"
-            className="w-full"
+            className={`w-full bg-transparent border-gray-700 hover:bg-white/10 text-gray-300 ${getRoundingClass()}`}
           >
             Fork
             <Github className="ml-2 h-4 w-4" />

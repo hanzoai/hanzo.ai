@@ -10,6 +10,7 @@ import SignUpPage from "./pages/SignUpPage";
 import BillingPage from "./pages/Billing";
 import { BillingProvider } from "./contexts/BillingContext";
 import { AccountProvider } from "./contexts/AccountContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
 import PurchaseCredits from "./pages/PurchaseCredits";
 import BillingPlans from "./pages/BillingPlans";
@@ -187,12 +188,14 @@ const App = () => {
   
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      {isAccountRoute(window.location.pathname) ? (
-        <AccountRoutes />
-      ) : (
-        <MarketingRoutes />
-      )}
+      <ThemeProvider>
+        <ScrollToTop />
+        {isAccountRoute(window.location.pathname) ? (
+          <AccountRoutes />
+        ) : (
+          <MarketingRoutes />
+        )}
+      </ThemeProvider>
     </BrowserRouter>
   );
 };

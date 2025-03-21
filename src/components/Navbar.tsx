@@ -75,7 +75,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className="text-white border-white hover:bg-white/10"
+                className="text-white border-white hover:bg-white/10 rounded-xl"
               >
                 <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
                   <User className="h-4 w-4" />
@@ -86,7 +86,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className="text-white border-white hover:bg-white/10"
+                className="text-white border-white/30 bg-transparent backdrop-blur-sm hover:bg-white/10 hover:border-white/50 rounded-xl"
               >
                 <a href="https://cloud.hanzo.ai">
                   Console
@@ -95,7 +95,7 @@ const Navbar = () => {
             )}
             <Button 
               size="sm" 
-              className="bg-white text-black hover:bg-gray-100"
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20 rounded-xl"
             >
               <a href="https://cloud.hanzo.ai/auth/sign-up">
                 Signup
