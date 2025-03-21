@@ -34,6 +34,11 @@
   scrollbar-width: none;  /* Hide scrollbar for Firefox */
   scroll-behavior: smooth;
   padding: 0 5%;
+  cursor: grab;
+}
+
+.feature-scroll-container:active {
+  cursor: grabbing;
 }
 
 .feature-scroll-container::-webkit-scrollbar {

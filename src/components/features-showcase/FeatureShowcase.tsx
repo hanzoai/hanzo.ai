@@ -16,6 +16,7 @@ const FeatureShowcase: React.FC = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [100, 0, 0, 100]);
+  const x = useTransform(scrollYProgress, [0.3, 0.8], [0, -300]); // Horizontal movement based on scroll
 
   return (
     <section className="py-24 bg-black relative overflow-hidden" id="features-showcase" ref={scrollRef}>
@@ -28,7 +29,9 @@ const FeatureShowcase: React.FC = () => {
         style={{ opacity, y }}
       >
         <FeatureShowcaseHeader />
-        <FeatureShowcaseSlider features={features} />
+        <motion.div style={{ x }}>
+          <FeatureShowcaseSlider features={features} />
+        </motion.div>
       </motion.div>
     </section>
   );

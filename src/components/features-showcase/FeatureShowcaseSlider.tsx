@@ -22,7 +22,7 @@ const FeatureShowcaseSlider: React.FC<FeatureShowcaseSliderProps> = ({ features 
     <div className="feature-slide-container">
       <div 
         ref={containerRef}
-        className="flex gap-6 pb-6 overflow-x-auto snap-x snap-mandatory feature-scroll-container cursor-grab active:cursor-grabbing"
+        className="flex gap-6 pb-6 overflow-x-auto snap-x snap-mandatory feature-scroll-container"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
