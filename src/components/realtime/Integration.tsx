@@ -109,9 +109,9 @@ const Integration = () => {
               <div className="text-gray-300 pl-4">{`}`},</div>
               <div className="text-gray-300 pl-4">onPresence: (event: PresenceEvent) {`=>`} {`{`}</div>
               <div className="text-gray-300 pl-8">if (event.action === 'join') {`{`}</div>
-              <div className="text-gray-300 pl-12">console.log(`${event.userData.name} joined the chat`);</div>
+              <div className="text-gray-300 pl-12">{`console.log(\`\${event.userData.name} joined the chat\`);`}</div>
               <div className="text-gray-300 pl-8">{`}`} else {`{`}</div>
-              <div className="text-gray-300 pl-12">console.log(`${event.userData.name} left the chat`);</div>
+              <div className="text-gray-300 pl-12">{`console.log(\`\${event.userData.name} left the chat\`);`}</div>
               <div className="text-gray-300 pl-8">{`}`}</div>
               <div className="text-gray-300 pl-4">{`}`}</div>
               <div className="text-gray-300">{`}`});</div>
