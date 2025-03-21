@@ -52,7 +52,7 @@ const ChromeText = ({
       )}
       <div ref={textRef} className="inline-block">
         <Component
-          className={cn("chrome-gradient", className)}
+          className={cn("chrome-gradient leading-relaxed py-1", className)}
           style={{
             backgroundPosition: `${(mousePosition.x / (textRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (textRef.current?.offsetHeight || 1)) * 100}%`,
             ...style
@@ -73,6 +73,7 @@ const ChromeText = ({
             -webkit-background-clip: text;
             color: transparent;
             transition: background-position 0.1s ease;
+            line-height: 1.3;
           }
           
           .pre-heading-glow {
