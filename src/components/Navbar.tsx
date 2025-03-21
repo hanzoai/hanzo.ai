@@ -54,50 +54,52 @@ const Navbar = () => {
             <span className="text-white font-bold text-xl">Hanzo</span>
           </a>
 
-          <div className="hidden md:flex items-center space-x-6">
-            <ProductsMenu />
-            <SolutionsMenu />
-            <ResourcesMenu />
-            
-            <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
-              Docs
-            </a>
-            <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
-              Pricing
-            </a>
+          <div className="hidden md:flex items-center justify-center space-x-6 flex-1">
+            <div className="flex items-center justify-center space-x-6">
+              <ProductsMenu />
+              <SolutionsMenu />
+              <ResourcesMenu />
+              
+              <a href="https://docs.hanzo.ai" className="text-gray-300 hover:text-white transition-colors">
+                Docs
+              </a>
+              <a href="/pricing" className="text-gray-300 hover:text-white transition-colors">
+                Pricing
+              </a>
+            </div>
+          </div>
 
-            <div className="flex items-center space-x-3">
-              {user ? (
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="text-white border-white hover:bg-white/10"
-                >
-                  <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
-                    <User className="h-4 w-4" />
-                    Account
-                  </a>
-                </Button>
-              ) : (
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="text-white border-white hover:bg-white/10"
-                >
-                  <a href="https://cloud.hanzo.ai">
-                    Console
-                  </a>
-                </Button>
-              )}
+          <div className="hidden md:flex items-center space-x-3">
+            {user ? (
               <Button 
-                size="sm" 
-                className="bg-white text-black hover:bg-gray-100"
+                variant="outline" 
+                size="sm"
+                className="text-white border-white hover:bg-white/10"
               >
-                <a href="https://cloud.hanzo.ai/auth/sign-up">
-                  Signup
+                <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  Account
                 </a>
               </Button>
-            </div>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="text-white border-white hover:bg-white/10"
+              >
+                <a href="https://cloud.hanzo.ai">
+                  Console
+                </a>
+              </Button>
+            )}
+            <Button 
+              size="sm" 
+              className="bg-white text-black hover:bg-gray-100"
+            >
+              <a href="https://cloud.hanzo.ai/auth/sign-up">
+                Signup
+              </a>
+            </Button>
           </div>
 
           <MobileMenu 

@@ -31,12 +31,16 @@ const AIPlatformSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-4">
-            Unified AI Development
-          </span>
-          <ChromeText as="h2" className="text-4xl md:text-5xl font-bold mb-6">
-            AI Engineering Platform
-          </ChromeText>
+          <div className="flex justify-center mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium">
+              Unified AI Development
+            </span>
+          </div>
+          <div className="flex justify-center">
+            <ChromeText as="h2" className="text-4xl md:text-5xl font-bold mb-6">
+              AI Engineering Platform
+            </ChromeText>
+          </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             Build powerful AI experiences with our comprehensive platform designed for developers,
             researchers, and enterprises to create, deploy, and scale AI applications.
@@ -48,6 +52,7 @@ const AIPlatformSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          className="mx-auto max-w-7xl"
         >
           <MasonryGrid columns={4} gap={20} className="mb-12">
             {aiPlatformFeatures.map((feature, index) => {

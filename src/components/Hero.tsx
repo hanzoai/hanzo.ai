@@ -51,9 +51,9 @@ const Hero = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 w-full">
         <ArchitecturalBox 
-          className="text-center bg-transparent p-6 sm:p-8 md:p-10"
+          className="text-center bg-transparent p-6 sm:p-8 md:p-10 mx-auto"
           showCorners={true}
           showGrid={false}
           cornerSize={40}
@@ -69,7 +69,9 @@ const Hero = () => {
 
           <HeroDescription titleAnimationComplete={titleAnimationComplete} />
 
-          <HeroButtons titleAnimationComplete={titleAnimationComplete} />
+          <div className="flex justify-center">
+            <HeroButtons titleAnimationComplete={titleAnimationComplete} />
+          </div>
           
           <div className="mt-16">
             <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
