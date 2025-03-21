@@ -67,7 +67,7 @@ const AIPlatformSection = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <ArchitecturalBox
-                      className={`h-full bg-gradient-to-br ${gradientClasses} ${borderClasses} backdrop-blur-sm border p-6 rounded-lg transition-colors duration-300`}
+                      className={`h-full bg-gradient-to-br ${gradientClasses} ${borderClasses} backdrop-blur-sm border p-6 rounded-2xl transition-colors duration-300`}
                       showCorners={true}
                       cornerSize={16}
                       cornerColor={isFeatureHovered ? `rgba(147, 51, 234, 0.4)` : "rgba(147, 51, 234, 0.2)"}
@@ -97,7 +97,7 @@ const AIPlatformSection = () => {
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-600 hover:to-blue-600"
+            className="bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 rounded-full"
           >
             <a href="/ai" className="flex items-center">
               Explore the Platform <ArrowRight className="ml-2 h-5 w-5" />

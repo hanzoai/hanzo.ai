@@ -40,7 +40,7 @@ const ExpandableFeatureCard: React.FC<ExpandableFeatureCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 h-full"
+      className="bg-gray-900/20 border border-gray-800 rounded-2xl p-6 h-full"
     >
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
