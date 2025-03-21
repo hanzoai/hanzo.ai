@@ -1,10 +1,26 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight, Plus, Layers, Clock, Video, HelpCircle, ArrowUp } from "lucide-react";
+import { 
+  ChevronRight, 
+  Plus, 
+  ArrowUp,
+  ArrowRight,
+  Code, 
+  Terminal, 
+  Database,
+  Command
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { ArchitecturalBox, GridLines, BlueprintLine } from "@/components/ui/architectural-elements";
+import { createAnimationVariant, timing, curves } from "@/components/ui/animation-variants";
+
+const fadeInAnimation = createAnimationVariant("fadeIn", {
+  duration: timing.medium,
+  curve: curves.snappy
+});
 
 const Index4 = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,179 +34,189 @@ const Index4 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background blur effects */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Subtle grid background */}
+      <GridLines spacing={40} opacity={0.07} className="fixed inset-0 -z-10" />
+      
+      {/* Subtle gradient accents */}
+      <div className="fixed inset-0 -z-10 opacity-20">
+        <div className="absolute -top-80 -right-80 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/3 left-1/4 w-[30rem] h-[30rem] bg-blue-500/5 rounded-full blur-[100px]"></div>
       </div>
 
       <Navbar />
 
-      <main className="pt-24 pb-16 px-4">
+      <main className="pt-24 pb-16 px-4 md:px-8 relative z-10">
         {/* Hero Section */}
-        <section className="max-w-6xl mx-auto mb-32">
+        <section className="max-w-5xl mx-auto mb-32 relative">
+          <BlueprintLine orientation="horizontal" position="20%" color="rgba(255,255,255,0.04)" />
+          <BlueprintLine orientation="vertical" position="15%" color="rgba(255,255,255,0.04)" />
+          
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInAnimation}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-              Design the Future with Hanzo
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6 text-white">
+              Infrastructure for the<br />modern world
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-              Minimalist. Intuitive. Powerful. Build AI-native apps that transform the way we work.
+            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+              Build, deploy, and scale applications effortlessly with our developer-focused platform.
             </p>
 
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button 
                 size="lg" 
-                className="text-lg px-8 bg-white hover:bg-gray-100 text-black border-none"
+                className="h-12 px-8 bg-white hover:bg-zinc-200 text-black transition-colors duration-300"
               >
-                Get Started
+                Start building <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-8 border-white/20 bg-white/5 hover:bg-white/10"
+                className="h-12 px-8 border-zinc-800 bg-transparent hover:bg-zinc-900 transition-colors duration-300"
               >
-                Explore Features
+                Documentation
               </Button>
             </div>
-          </motion.div>
-        </section>
-
-        {/* Glass UI Showcase */}
-        <section className="max-w-6xl mx-auto mb-32">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            {/* Glass UI Element inspired by the image */}
-            <div className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-3xl p-8 shadow-xl overflow-hidden">
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-2">
-                  <div className="bg-white/10 p-2 rounded-full">
-                    <Plus className="h-5 w-5 text-white" />
-                  </div>
-                  <p className="text-gray-300 text-lg">Design your experience...</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Button variant="ghost" className="text-gray-300 hover:text-white">
-                    Tools
-                  </Button>
-                  <Button variant="ghost" className="text-gray-300 hover:text-white">
-                    Storyboard <ArrowUp className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors cursor-pointer">
-                  <Layers className="h-5 w-5 text-white" />
-                  <span>16:9</span>
-                </div>
-                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors cursor-pointer">
-                  <ChevronRight className="h-5 w-5 text-white" />
-                  <span>480p</span>
-                </div>
-                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors cursor-pointer">
-                  <Clock className="h-5 w-5 text-white" />
-                  <span>5s</span>
-                </div>
-                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors cursor-pointer">
-                  <Video className="h-5 w-5 text-white" />
-                  <span>2v</span>
-                </div>
-                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors cursor-pointer">
-                  <Layers className="h-5 w-5 text-white" />
-                </div>
-                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center gap-2 hover:bg-white/10 transition-colors cursor-pointer">
-                  <HelpCircle className="h-5 w-5 text-white" />
-                </div>
-              </div>
-              
-              <div className="backdrop-blur-2xl bg-gray-900/20 border border-white/5 rounded-2xl h-56 md:h-96 flex items-center justify-center">
-                <p className="text-gray-400 text-lg">Preview Area</p>
-              </div>
+            
+            <div className="text-sm text-zinc-500 flex items-center justify-center gap-2">
+              No credit card required <span className="mx-2">•</span> Cancel anytime
             </div>
           </motion.div>
         </section>
 
         {/* Features Section */}
-        <section className="max-w-6xl mx-auto mb-32">
+        <section className="max-w-6xl mx-auto mb-32 px-4">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            {/* Feature Card 1 */}
+            <ArchitecturalBox
+              className="backdrop-blur-lg bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 hover:border-zinc-700/50 transition-all duration-300"
+              showCorners={true}
+              cornerColor="rgba(100, 100, 100, 0.2)"
+              cornerSize={20}
+            >
+              <div className="mb-4 p-2 bg-zinc-800/50 rounded-lg w-10 h-10 flex items-center justify-center">
+                <Terminal className="h-5 w-5 text-zinc-300" />
+              </div>
+              <h3 className="text-xl font-medium mb-2 text-white">Developer Experience</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Intuitive CLI and dashboard designed for efficient workflow and rapid development.
+              </p>
+            </ArchitecturalBox>
+            
+            {/* Feature Card 2 */}
+            <ArchitecturalBox
+              className="backdrop-blur-lg bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 hover:border-zinc-700/50 transition-all duration-300"
+              showCorners={true}
+              cornerColor="rgba(100, 100, 100, 0.2)"
+              cornerSize={20}
+            >
+              <div className="mb-4 p-2 bg-zinc-800/50 rounded-lg w-10 h-10 flex items-center justify-center">
+                <Code className="h-5 w-5 text-zinc-300" />
+              </div>
+              <h3 className="text-xl font-medium mb-2 text-white">Instant Deployments</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                From code to production in seconds with automatic builds and zero downtime updates.
+              </p>
+            </ArchitecturalBox>
+            
+            {/* Feature Card 3 */}
+            <ArchitecturalBox
+              className="backdrop-blur-lg bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 hover:border-zinc-700/50 transition-all duration-300"
+              showCorners={true}
+              cornerColor="rgba(100, 100, 100, 0.2)"
+              cornerSize={20}
+            >
+              <div className="mb-4 p-2 bg-zinc-800/50 rounded-lg w-10 h-10 flex items-center justify-center">
+                <Database className="h-5 w-5 text-zinc-300" />
+              </div>
+              <h3 className="text-xl font-medium mb-2 text-white">Global Infrastructure</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Scale effortlessly with our distributed network optimized for performance and reliability.
+              </p>
+            </ArchitecturalBox>
+          </motion.div>
+        </section>
+
+        {/* Terminal Demo Section */}
+        <section className="max-w-4xl mx-auto mb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              Build with Glass-like UI Components
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Feature 1 */}
-              <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
-                <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Layers className="h-6 w-6 text-white" />
+            <ArchitecturalBox
+              className="backdrop-blur-lg bg-zinc-900/50 border border-zinc-800/50 rounded-xl overflow-hidden"
+              showGrid={true}
+              gridColor="rgba(255,255,255,0.03)"
+              gridSpacing={30}
+              gridOpacity={0.1}
+            >
+              <div className="flex items-center border-b border-zinc-800/70 px-4 py-3">
+                <div className="flex space-x-2 mr-4">
+                  <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
+                  <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
+                  <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Translucent Layers</h3>
-                <p className="text-gray-400">
-                  Create depth and dimension with our glass morphism UI components that add sophistication to your interfaces.
-                </p>
+                <div className="flex-1 text-center">
+                  <span className="text-xs font-mono text-zinc-400">terminal</span>
+                </div>
               </div>
               
-              {/* Feature 2 */}
-              <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
-                <div className="bg-gradient-to-br from-blue-500/20 to-teal-500/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-white" />
+              <div className="p-6 font-mono text-sm">
+                <div className="flex items-start mb-4">
+                  <span className="text-green-400 mr-2">$</span>
+                  <span className="text-zinc-300">hanzo deploy</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Time-Saving Tools</h3>
-                <p className="text-gray-400">
-                  Built-in timers and schedulers to automate your workflows and keep your projects on track.
-                </p>
-              </div>
-              
-              {/* Feature 3 */}
-              <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
-                <div className="bg-gradient-to-br from-green-500/20 to-yellow-500/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Video className="h-6 w-6 text-white" />
+                
+                <div className="pl-4 text-zinc-500 space-y-1">
+                  <p>Initializing deployment...</p>
+                  <p>Building application <span className="text-zinc-400">v2.3.5</span></p>
+                  <p className="text-zinc-400">Installing dependencies...</p>
+                  <p className="text-zinc-400">Running build command...</p>
+                  <p className="text-green-400">✓ Build successful</p>
+                  <p className="text-zinc-400">Uploading artifacts...</p>
+                  <p className="text-green-400">✓ Deployment complete</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Visual Creation</h3>
-                <p className="text-gray-400">
-                  Intuitive video and media tools that make content creation seamless and professional.
-                </p>
+                
+                <div className="mt-6 flex items-start">
+                  <span className="text-green-400 mr-2">$</span>
+                  <span className="text-zinc-300">_</span>
+                </div>
               </div>
-            </div>
+            </ArchitecturalBox>
           </motion.div>
         </section>
 
         {/* Call to Action */}
-        <section className="max-w-4xl mx-auto">
+        <section className="max-w-4xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="backdrop-blur-xl bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-white/10 rounded-3xl p-10 text-center"
+            className="backdrop-blur-xl bg-gradient-to-b from-zinc-900/40 to-zinc-900/80 border border-zinc-800/50 rounded-2xl p-10 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Start Creating Today
+            <h2 className="text-3xl md:text-4xl font-medium mb-6 text-white">
+              Start building today
             </h2>
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of designers and developers who are building the future with our glass-inspired UI components.
+            <p className="text-zinc-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join thousands of developers who are creating the next generation of applications on our platform.
             </p>
             <Button 
               size="lg" 
-              className="bg-white hover:bg-gray-100 text-black px-8 py-6 rounded-lg text-lg font-medium"
+              className="h-12 px-8 bg-white hover:bg-zinc-200 text-black transition-colors duration-300"
             >
-              Get Started Now
+              Deploy your first project <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
         </section>
@@ -202,7 +228,7 @@ const Index4 = () => {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: scrolled ? 1 : 0 }}
-        className={`fixed bottom-8 right-8 bg-white/10 backdrop-blur-lg p-3 rounded-full border border-white/20 hover:bg-white/20 transition-all z-50 ${
+        className={`fixed bottom-8 right-8 bg-zinc-800/80 backdrop-blur-md p-3 rounded-full border border-zinc-700/30 hover:bg-zinc-700/80 transition-all z-50 ${
           !scrolled && 'pointer-events-none'
         }`}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
