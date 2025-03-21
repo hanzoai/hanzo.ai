@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
+import Home2 from "./pages/Home2";
 import Pricing from "./pages/Pricing";
 import AccountLayout from "./components/account/AccountLayout";
 import Account from "./pages/Account";
@@ -101,6 +102,7 @@ const MarketingRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/home2" element={<Home2 />} />
       <Route path="/index" element={<Index />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/login" element={<LoginPage />} />
