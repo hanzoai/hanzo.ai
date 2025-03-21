@@ -20,6 +20,9 @@ const Index4 = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Adding debug console logs
+  console.log("Index4 component rendering");
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <Background />

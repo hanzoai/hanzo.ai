@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
@@ -47,6 +48,9 @@ import Platform from "./pages/Platform";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
+  // Debug route logging
+  console.log("App component rendering");
+  
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -101,6 +105,8 @@ const App = () => {
               <Route path="settings" element={<AccountSettings />} />
               <Route path="invoices" element={<Invoices />} />
             </Route>
+            
+            {/* Catch-all route for 404 page */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BillingProvider>
