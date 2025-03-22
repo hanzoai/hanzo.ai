@@ -34,8 +34,8 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
         className="text-white border-gray-700 hover:bg-white/10 rounded-full"
         onClick={() => window.open('https://github.com/hanzoai', '_blank')}
       >
-        <Github className="mr-2 h-4 w-4" />
         Star on GitHub
+        <Github className="ml-2 h-4 w-4" />
       </Button>
     </motion.div>
   );
