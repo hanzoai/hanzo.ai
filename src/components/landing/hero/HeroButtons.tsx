@@ -17,25 +17,25 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
+      className="flex flex-col sm:flex-row gap-golden-4 justify-center mt-golden-6"
     >
       <Button 
         size="sm" 
-        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full"
+        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full px-golden-4 py-golden-2"
         onClick={() => navigate('/signup')}
       >
         Get Started
-        <ArrowRight className="ml-2 h-4 w-4" />
+        <ArrowRight className="ml-golden-2 h-4 w-4" />
       </Button>
       
       <Button 
         size="sm" 
         variant="outline" 
-        className="text-white border-gray-700 hover:bg-white/10 rounded-full"
+        className="text-white border-gray-700 hover:bg-white/10 rounded-full px-golden-4 py-golden-2"
         onClick={() => window.open('https://github.com/hanzoai', '_blank')}
       >
         Star on GitHub
-        <Github className="ml-2 h-4 w-4" />
+        <Github className="ml-golden-2 h-4 w-4" />
       </Button>
     </motion.div>
   );

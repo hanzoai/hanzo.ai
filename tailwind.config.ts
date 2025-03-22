@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -73,37 +72,34 @@ export default {
         mono: ["JetBrains Mono", "monospace"],
         serif: ["Georgia", "serif"],
       },
+      // Updated font sizes based on golden ratio (1.618)
       fontSize: {
-        // Define consistent typography scale
-        xs: ["0.75rem", { lineHeight: "1rem" }],
-        sm: ["0.875rem", { lineHeight: "1.25rem" }],
-        base: ["1rem", { lineHeight: "1.5rem" }],
-        lg: ["1.125rem", { lineHeight: "1.75rem" }],
-        xl: ["1.25rem", { lineHeight: "1.75rem" }],
-        "2xl": ["1.5rem", { lineHeight: "2rem" }],
-        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
-        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
-        "5xl": ["3rem", { lineHeight: "1.2" }],
-        "6xl": ["3.75rem", { lineHeight: "1.1" }],
-        "7xl": ["4.5rem", { lineHeight: "1.1" }],
-        "8xl": ["6rem", { lineHeight: "1.1" }],
-        "9xl": ["8rem", { lineHeight: "1" }],
+        // Base size is 1rem (16px)
+        xs: ["0.75rem", { lineHeight: "1rem" }],                  // 12px
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],              // 14px
+        base: ["1rem", { lineHeight: "1.5rem" }],                 // 16px (base)
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],              // 18px
+        xl: ["1.25rem", { lineHeight: "1.85rem" }],               // 20px
+        "2xl": ["1.618rem", { lineHeight: "2.1rem" }],            // ~26px
+        "3xl": ["2.618rem", { lineHeight: "2.75rem" }],           // ~42px
+        "4xl": ["4.236rem", { lineHeight: "1.15" }],              // ~68px
+        "5xl": ["6.854rem", { lineHeight: "1.1" }],               // ~110px
+        "6xl": ["11.089rem", { lineHeight: "1" }],                // ~177px
       },
-      fontWeight: {
-        light: "300",
-        normal: "400",
-        medium: "500",
-        semibold: "600",
-        bold: "700",
-        extrabold: "800",
-      },
-      letterSpacing: {
-        tighter: "-0.05em",
-        tight: "-0.025em",
-        normal: "0em",
-        wide: "0.025em",
-        wider: "0.05em",
-        widest: "0.1em",
+      // Spacing system based on golden ratio
+      spacing: {
+        // Base size is 4 (0.25rem or 4px)
+        // Standard Tailwind: 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5...
+        // Adding golden ratio increments
+        "golden-1": "0.25rem",      // 4px (base unit)
+        "golden-2": "0.405rem",     // ~6.5px
+        "golden-3": "0.654rem",     // ~10.5px
+        "golden-4": "1.059rem",     // ~17px
+        "golden-5": "1.713rem",     // ~27.5px
+        "golden-6": "2.772rem",     // ~44.5px
+        "golden-7": "4.487rem",     // ~72px
+        "golden-8": "7.26rem",      // ~116px
+        "golden-9": "11.749rem",    // ~188px
       },
       lineHeight: {
         none: "1",
@@ -112,6 +108,44 @@ export default {
         normal: "1.5",
         relaxed: "1.625",
         loose: "2",
+        golden: "1.618",
+      },
+      // Golden ratio for width and height
+      width: {
+        "golden-sm": "38.2%",       // 0.382 = 1 - (1 / 1.618)
+        "golden-lg": "61.8%",       // 0.618 = 1 / 1.618
+      },
+      height: {
+        "golden-sm": "38.2%",       // 0.382 = 1 - (1 / 1.618)
+        "golden-lg": "61.8%",       // 0.618 = 1 / 1.618
+      },
+      // Golden ratio-based grid gaps
+      gap: {
+        "golden-1": "0.25rem",      // 4px (base unit)
+        "golden-2": "0.405rem",     // ~6.5px
+        "golden-3": "0.654rem",     // ~10.5px
+        "golden-4": "1.059rem",     // ~17px
+        "golden-5": "1.713rem",     // ~27.5px
+      },
+      padding: {
+        "golden-1": "0.25rem",      // 4px (base unit)
+        "golden-2": "0.405rem",     // ~6.5px
+        "golden-3": "0.654rem",     // ~10.5px
+        "golden-4": "1.059rem",     // ~17px
+        "golden-5": "1.713rem",     // ~27.5px
+      },
+      margin: {
+        "golden-1": "0.25rem",      // 4px (base unit)
+        "golden-2": "0.405rem",     // ~6.5px
+        "golden-3": "0.654rem",     // ~10.5px
+        "golden-4": "1.059rem",     // ~17px
+        "golden-5": "1.713rem",     // ~27.5px
+      },
+      gridTemplateColumns: {
+        "golden": "38.2% 61.8%",    // Golden ratio split
+      },
+      gridTemplateRows: {
+        "golden": "38.2% 61.8%",    // Golden ratio split
       },
       keyframes: {
         "fade-up": {
