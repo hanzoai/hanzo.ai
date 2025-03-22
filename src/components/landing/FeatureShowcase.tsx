@@ -1,19 +1,9 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Database, MessageSquare, HardDrive, Bot, Code2, Monitor, ArrowRight } from "lucide-react";
-
-const TabButton = ({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) => (
-  <button
-    className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
-      active ? "bg-purple-600 text-white" : "bg-transparent text-gray-400 hover:text-white"
-    }`}
-    onClick={onClick}
-  >
-    {label}
-  </button>
-);
+import { aiCloudItems, dxPlatformItems } from "../navigation/products-menu/product-data";
 
 interface ProductCardProps {
   icon: React.ReactNode;
@@ -40,43 +30,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ icon, title, description }) =
 };
 
 const FeatureShowcase: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"all" | "cloud" | "platform">("all");
-
-  const cloudProducts = [
-    {
-      icon: <Database className="h-6 w-6 text-blue-400" />,
-      title: "Datastore",
-      description: "Scalable data storage for AI applications with integrated vector capabilities."
-    },
-    {
-      icon: <MessageSquare className="h-6 w-6 text-blue-400" />,
-      title: "Chat",
-      description: "Build custom AI assistants with personalized knowledge and capabilities."
-    },
-    {
-      icon: <HardDrive className="h-6 w-6 text-blue-400" />,
-      title: "Vector Engine",
-      description: "High-performance vector database for semantic search, RAG applications, and more."
-    }
-  ];
-
-  const platformProducts = [
-    {
-      icon: <Bot className="h-6 w-6 text-purple-400" />,
-      title: "Bot",
-      description: "Agentic framework for building advanced AI assistants and automation."
-    },
-    {
-      icon: <Code2 className="h-6 w-6 text-purple-400" />,
-      title: "Code",
-      description: "AI-powered code editor and generator with deep project understanding."
-    },
-    {
-      icon: <Monitor className="h-6 w-6 text-purple-400" />,
-      title: "App",
-      description: "AI app builder with drag-and-drop workflows and no-code integration."
-    }
-  ];
+  const limitedCloudItems = aiCloudItems.slice(0, 8);
+  const limitedPlatformItems = dxPlatformItems.slice(0, 8);
 
   const industryCards = [
     {
@@ -105,11 +60,6 @@ const FeatureShowcase: React.FC = () => {
     }
   ];
 
-  const displayedProducts = 
-    activeTab === "all" ? [...cloudProducts, ...platformProducts] : 
-    activeTab === "cloud" ? cloudProducts : 
-    platformProducts;
-
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -131,48 +81,96 @@ const FeatureShowcase: React.FC = () => {
               applications with unprecedented speed and complete control.
             </p>
           </motion.div>
+        </div>
 
-          <div className="flex justify-center mb-12">
-            <div className="bg-gray-900/30 rounded-full p-1.5 flex">
-              <TabButton
-                active={activeTab === "all"}
-                label="All"
-                onClick={() => setActiveTab("all")}
-              />
-              <TabButton
-                active={activeTab === "cloud"}
-                label="AI Cloud"
-                onClick={() => setActiveTab("cloud")}
-              />
-              <TabButton
-                active={activeTab === "platform"}
-                label="DX Platform"
-                onClick={() => setActiveTab("platform")}
-              />
+        {/* AI Cloud Section */}
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+              AI Cloud
             </div>
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Scalable Infrastructure for AI Applications
+            </h3>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Build high-performance AI applications with our suite of cloud services designed for AI workloads.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {limitedCloudItems.map((product, index) => (
+              <ProductCard
+                key={index}
+                icon={<product.icon className="h-6 w-6 text-blue-400" />}
+                title={product.name}
+                description={product.description}
+              />
+            ))}
+          </div>
+          
+          <div className="flex justify-center mb-12">
+            <Button 
+              variant="outline" 
+              className="group border-gray-700 hover:border-blue-500 hover:bg-blue-950/20"
+              asChild
+            >
+              <a href="/ai">
+                <span className="mr-2">View all AI Cloud services</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {displayedProducts.map((product, index) => (
-            <ProductCard
-              key={index}
-              icon={product.icon}
-              title={product.title}
-              description={product.description}
-            />
-          ))}
-        </div>
-        
-        {/* View All Products Link */}
-        <div className="flex justify-center mb-24">
-          <Button 
-            variant="outline" 
-            className="group border-gray-700 hover:border-purple-500 hover:bg-purple-950/20"
+        {/* DX Platform Section */}
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
           >
-            <span className="mr-2">View all products</span>
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+            <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+              DX Platform
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Developer Experience Tools for AI Engineering
+            </h3>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Supercharge your AI development workflow with purpose-built tools for engineers.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {limitedPlatformItems.map((product, index) => (
+              <ProductCard
+                key={index}
+                icon={<product.icon className="h-6 w-6 text-purple-400" />}
+                title={product.name}
+                description={product.description}
+              />
+            ))}
+          </div>
+          
+          <div className="flex justify-center mb-12">
+            <Button 
+              variant="outline" 
+              className="group border-gray-700 hover:border-purple-500 hover:bg-purple-950/20"
+              asChild
+            >
+              <a href="/platform">
+                <span className="mr-2">View all DX Platform tools</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* Industries Section */}
@@ -195,7 +193,7 @@ const FeatureShowcase: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {industryCards.map((industry, index) => (
               <motion.div
                 key={index}
@@ -212,13 +210,16 @@ const FeatureShowcase: React.FC = () => {
           </div>
 
           {/* View All Industries Link */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-20">
             <Button 
               variant="outline" 
               className="group border-gray-700 hover:border-purple-500 hover:bg-purple-950/20"
+              asChild
             >
-              <span className="mr-2">View all industries</span>
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <a href="/solutions">
+                <span className="mr-2">View all industries</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>
