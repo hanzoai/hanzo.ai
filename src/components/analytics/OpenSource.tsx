@@ -91,13 +91,17 @@ const OpenSource = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" className="flex items-center gap-2">
+              <Button variant="outline" className="flex items-center gap-2" size="sm">
                 <Github className="h-4 w-4" />
-                View Docs
+                <a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer">
+                  View Docs
+                </a>
               </Button>
-              <Button variant="outline" className="flex items-center gap-2">
+              <Button variant="outline" className="flex items-center gap-2" size="sm">
                 <Github className="h-4 w-4" />
-                View Repository
+                <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer">
+                  View Repository
+                </a>
               </Button>
             </div>
           </motion.div>

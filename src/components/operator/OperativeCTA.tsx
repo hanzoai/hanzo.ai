@@ -29,14 +29,14 @@ const OperativeCTA = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                <a href="https://github.com/hanzo-ai/operative" className="flex items-center gap-2">
+              <Button size="sm" className="text-lg px-8">
+                <a href="https://github.com/hanzoai/operative" className="flex items-center gap-2">
                   <Github className="h-5 w-5" />
                   Star on GitHub
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
-                <a href="https://discord.gg/hanzo" className="flex items-center gap-2">
+              <Button size="sm" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
+                <a href="https://discord.gg/XthHQQj" className="flex items-center gap-2">
                   Join Discord Community
                 </a>
               </Button>

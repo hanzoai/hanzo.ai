@@ -65,20 +65,24 @@ const Community = () => {
             <div className="space-y-6">
               <div className="flex flex-col space-y-4">
                 <Button 
-                  size="lg"
+                  size="sm"
                   className="bg-purple-600 hover:bg-purple-700 text-white"
                 >
                   <Github className="mr-2 h-5 w-5" />
-                  Open Source: Contribute on GitHub
+                  <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer">
+                    Open Source: Contribute on GitHub
+                  </a>
                 </Button>
                 
                 <Button 
-                  size="lg"
+                  size="sm"
                   variant="outline"
                   className="border-gray-700 text-gray-300 hover:bg-gray-800"
                 >
                   <MessageSquare className="mr-2 h-5 w-5" />
-                  Join Discord Community
+                  <a href="https://discord.gg/XthHQQj" target="_blank" rel="noopener noreferrer">
+                    Join Discord Community
+                  </a>
                 </Button>
               </div>
               

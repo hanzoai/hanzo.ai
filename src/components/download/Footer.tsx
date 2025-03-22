@@ -8,7 +8,7 @@ const FooterSection = ({ title, links }: { title: string; links: string[] }) => 
     <ul className="space-y-2">
       {links.map((link, index) => (
         <li key={index}>
-          <a href="#" className="text-gray-500 hover:text-white text-sm">
+          <a href={link === "Discord Server" ? "https://discord.gg/XthHQQj" : "#"} className="text-gray-500 hover:text-white text-sm">
             {link}
           </a>
         </li>

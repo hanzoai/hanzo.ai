@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Twitter, MessagesSquare } from "lucide-react";
+import { Github, Twitter, MessagesSquare, Facebook, Linkedin, Instagram } from "lucide-react";
 
 const Community = () => {
   return (
@@ -19,7 +19,7 @@ const Community = () => {
           
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://github.com/hanzo-ai" 
+              href="https://github.com/hanzoai" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center bg-gray-800 hover:bg-gray-700 transition-colors px-4 py-2 rounded-lg"
@@ -28,7 +28,7 @@ const Community = () => {
               <span className="text-white">GitHub</span>
             </a>
             <a 
-              href="https://discord.gg/hanzo" 
+              href="https://discord.gg/XthHQQj" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center bg-gray-800 hover:bg-gray-700 transition-colors px-4 py-2 rounded-lg"
@@ -37,7 +37,7 @@ const Community = () => {
               <span className="text-white">Discord</span>
             </a>
             <a 
-              href="https://twitter.com/hanzo_ai" 
+              href="https://twitter.com/hanzoai" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center bg-gray-800 hover:bg-gray-700 transition-colors px-4 py-2 rounded-lg"
