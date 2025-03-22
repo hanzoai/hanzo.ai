@@ -1,6 +1,7 @@
 
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/radix-button";
+import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -42,12 +43,12 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
             >
               Resources
             </a>
-            <a
-              href="https://docs.hanzo.ai"
+            <Link
+              to="/open-source"
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
             >
-              Docs
-            </a>
+              Open Source
+            </Link>
             <a
               href="/pricing"
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
