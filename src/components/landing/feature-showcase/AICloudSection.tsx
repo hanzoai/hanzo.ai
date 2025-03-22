@@ -19,11 +19,11 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
         description="Build high-performance AI applications with our suite of cloud services designed for AI workloads."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-8">
         {products.map((product, index) => (
           <ProductCard
             key={index}
-            icon={<product.icon className="h-6 w-6 text-blue-400" />}
+            icon={<product.icon className="text-blue-400" />}
             title={product.name}
             description={product.description}
           />

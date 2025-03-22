@@ -8,11 +8,11 @@ import IndustriesSection from "./feature-showcase/IndustriesSection";
 import ServiceCards from "./feature-showcase/ServiceCards";
 
 const FeatureShowcase: React.FC = () => {
-  // Take exactly 8 items from the aiCloudItems array
-  const limitedCloudItems = aiCloudItems.slice(0, 8);
+  // Take exactly 11 items from the aiCloudItems array
+  const limitedCloudItems = aiCloudItems.slice(0, 11);
   
-  // Take exactly 8 items from the dxPlatformItems array
-  const limitedPlatformItems = dxPlatformItems.slice(0, 8);
+  // Take exactly 11 items from the dxPlatformItems array
+  const limitedPlatformItems = dxPlatformItems.slice(0, 11);
 
   return (
     <MainSection>
