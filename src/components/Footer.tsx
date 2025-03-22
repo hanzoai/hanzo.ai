@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle, Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+import { CheckCircle, Github, Twitter, Linkedin, Facebook, Instagram, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { products, solutions, resources, company } from "@/constants/navigation";
 import ThemeSwitcher from "./ui/theme-switcher";
