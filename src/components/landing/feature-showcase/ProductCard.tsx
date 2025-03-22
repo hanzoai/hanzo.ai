@@ -42,24 +42,24 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-blue-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
       
       <div className="relative z-10">
-        {/* Icon container with dynamic color and hover effect */}
+        {/* Icon container with dynamic color and hover effect - now with bigger icons */}
         <div className={cn(
-          "w-20 h-20 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300", 
+          "w-24 h-24 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300", 
           color,
           `group-hover:${hoverColor}`,
           "group-hover:shadow-lg group-hover:scale-110"
         )}>
-          {React.cloneElement(icon as React.ReactElement, { className: "h-10 w-10" })}
+          {React.cloneElement(icon as React.ReactElement, { className: "h-12 w-12" })}
         </div>
         
         <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-100 transition-colors">{title}</h3>
         <p className="text-gray-400 mb-5 group-hover:text-gray-300 transition-colors">{description}</p>
         
-        {/* Learn more button */}
+        {/* Learn more button - now more visible with improved styling */}
         <Button 
           variant="ghost" 
           size="sm" 
-          className="text-blue-400 hover:text-blue-300 hover:bg-blue-900/20 p-0 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="text-blue-400 hover:text-blue-300 hover:bg-blue-900/20 p-2 flex items-center gap-1 transition-all opacity-80 group-hover:opacity-100"
           asChild
         >
           <a href={link}>

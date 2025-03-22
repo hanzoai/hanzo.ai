@@ -40,7 +40,7 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
                     description={product.description}
                     color="bg-purple-900/30"
                     hoverColor="bg-purple-600/40"
-                    link={`/${product.id}`}
+                    link={product.link || "#"}
                   />
                 </div>
               </CarouselItem>
@@ -55,7 +55,7 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
 
       {/* Mobile layout - Scrollable horizontal list for smaller screens */}
       <div className="md:hidden mb-8">
-        <ScrollArea className="w-full whitespace-nowrap" orientation="horizontal">
+        <ScrollArea className="w-full whitespace-nowrap">
           <div className="flex space-x-4 pb-4 px-1">
             {products.map((product, index) => (
               <div key={index} className="w-[300px] flex-shrink-0">
@@ -65,7 +65,7 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
                   description={product.description}
                   color="bg-purple-900/30"
                   hoverColor="bg-purple-600/40"
-                  link={`/${product.id}`}
+                  link={product.link || "#"}
                 />
               </div>
             ))}

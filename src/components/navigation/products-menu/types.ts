@@ -1,9 +1,10 @@
 
-import { ElementType } from "react";
+import { LucideIcon } from "lucide-react";
 
 export interface ProductItem {
   name: string;
-  icon: ElementType;
+  icon: LucideIcon;
   description: string;
-  link: string;
+  link?: string;
+  id?: string;
 }
