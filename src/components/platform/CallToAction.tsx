@@ -3,12 +3,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { GitHub, ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-green-900/20 to-blue-900/20 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
@@ -20,15 +21,35 @@ const CallToAction = () => {
           transition={{ duration: 0.6 }}
         >
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
-            Deploy your first project today
+            Start building locally today
           </ChromeText>
           
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
-          >
-            <a href="https://dashboard.hanzo.cloud">Get Started →</a>
-          </Button>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            Join our community of developers building the future of AI applications with open source tools.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
+            >
+              <GitHub className="mr-2 h-5 w-5" />
+              <a href="https://github.com/hanzo/platform">Get on GitHub</a>
+            </Button>
+            
+            <Button 
+              size="lg"
+              variant="outline"
+              className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
+            >
+              <span className="flex-1">Read the Docs</span>
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+          
+          <div className="mt-12 text-gray-400 text-sm">
+            Need enterprise features? <a href="/cloud" className="text-green-400 hover:text-green-300 underline">Check out Hanzo Cloud</a>
+          </div>
         </motion.div>
       </div>
     </section>

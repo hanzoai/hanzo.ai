@@ -1,5 +1,5 @@
 
-import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight, MessageSquare, HardDrive, Box, ExternalLink, Workflow, Monitor } from "lucide-react";
+import { Brain, Code2, Bot, Database, ChartBar, Calculator, Scale, User, Server, Globe, Network, Activity, Zap, RefreshCw, ChevronRight, MessageSquare, HardDrive, Box, ExternalLink, Workflow, Monitor, Cloud } from "lucide-react";
 import { ProductItem } from "./types";
 
 export const aiCloudItems: ProductItem[] = [
@@ -63,14 +63,14 @@ export const aiCloudItems: ProductItem[] = [
     name: "Realtime",
     icon: Activity,
     description: "Real-time data synchronization",
-    link: "/cloud#realtime",
+    link: "/realtime",
     id: "realtime"
   },
   {
     name: "Storage",
     icon: HardDrive,
     description: "Globally distributed file storage",
-    link: "/cloud#storage",
+    link: "/storage",
     id: "storage"
   },
   {
@@ -79,6 +79,13 @@ export const aiCloudItems: ProductItem[] = [
     description: "High-performance vector database for AI",
     link: "/vector",
     id: "vector"
+  },
+  {
+    name: "Cloud",
+    icon: Cloud,
+    description: "Managed infrastructure for AI applications",
+    link: "/cloud",
+    id: "cloud"
   },
   {
     name: "Operative",
@@ -126,10 +133,17 @@ export const dxPlatformItems: ProductItem[] = [
     id: "extension"
   },
   {
+    name: "Platform",
+    icon: Globe,
+    description: "Open source AI engineering platform",
+    link: "/platform",
+    id: "platform"
+  },
+  {
     name: "Runtime",
     icon: Server,
     description: "Container runtime for AI applications",
-    link: "/platform#runtime",
+    link: "/runtime",
     id: "runtime"
   },
   {

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { GitHub, Terminal, Download } from "lucide-react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -42,8 +43,8 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium">
-            AI Engineering Platform
+          <span className="inline-block px-4 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-300 text-sm font-medium">
+            Open Source
           </span>
         </motion.div>
         
@@ -63,13 +64,13 @@ const HeroSection = () => {
             Hanzo Platform
           </ChromeText>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            For too long, deploying cloud infrastructure has been the most painful part of the developer toolchain.
+            The free, forever, open-source version of our cloud infrastructure.
+          </p>
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+            Build locally, deploy anywhere. Hanzo Platform gives developers the same powerful experience as our cloud offering, but with the freedom to run it on your own hardware.
           </p>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
-            We're working at the intersection of distributed systems engineering and interface design to rebuild every layer of the stack for speed and developer experience.
-          </p>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
-            With instant deployments and effortless scale, a better way to deploy applications is now boarding.
+            Permissively licensed, community-driven, and built for the modern developer who values sovereignty and control over their stack.
           </p>
         </motion.div>
         
@@ -81,10 +82,40 @@ const HeroSection = () => {
         >
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+            className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
           >
-            <a href="https://dashboard.hanzo.cloud">Build and Deploy</a>
+            <GitHub className="mr-2 h-5 w-5" />
+            <a href="https://github.com/hanzo/platform" className="flex-1">Get on GitHub</a>
           </Button>
+          
+          <Button 
+            size="lg"
+            variant="outline"
+            className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
+          >
+            <Terminal className="mr-2 h-5 w-5" />
+            <span className="flex-1">Quick Start</span>
+          </Button>
+          
+          <Button 
+            size="lg"
+            variant="outline"
+            className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
+          >
+            <Download className="mr-2 h-5 w-5" />
+            <span className="flex-1">Download CLI</span>
+          </Button>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16 px-4 py-3 bg-gray-900/50 rounded-lg inline-block"
+        >
+          <code className="text-sm text-gray-300">
+            npx @hanzo/cli create my-new-project
+          </code>
         </motion.div>
       </div>
     </section>
