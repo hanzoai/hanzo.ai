@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
-import { GitHub, Terminal, Download } from "lucide-react";
+import { Github, Terminal, Download } from "lucide-react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -84,7 +83,7 @@ const HeroSection = () => {
             size="lg"
             className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
           >
-            <GitHub className="mr-2 h-5 w-5" />
+            <Github className="mr-2 h-5 w-5" />
             <a href="https://github.com/hanzo/platform" className="flex-1">Get on GitHub</a>
           </Button>
           

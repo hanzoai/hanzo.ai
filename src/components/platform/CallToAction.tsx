@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
-import { GitHub, ArrowRight } from "lucide-react";
+import { Github, ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -33,7 +33,7 @@ const CallToAction = () => {
               size="lg"
               className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
             >
-              <GitHub className="mr-2 h-5 w-5" />
+              <Github className="mr-2 h-5 w-5" />
               <a href="https://github.com/hanzo/platform">Get on GitHub</a>
             </Button>
             

@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,7 +8,7 @@ import DeveloperLove from "@/components/platform/DeveloperLove";
 import Usage from "@/components/platform/Usage";
 import CallToAction from "@/components/platform/CallToAction";
 import { motion } from "framer-motion";
-import { GitHub, Code, Server, Database } from "lucide-react";
+import { Github, Code, Server, Database, Cloud } from "lucide-react";
 
 const ComparisonSection = () => {
   return (
@@ -37,7 +36,7 @@ const ComparisonSection = () => {
             className="bg-gray-900/30 border border-green-500/20 rounded-xl p-8"
           >
             <div className="flex items-center mb-6">
-              <GitHub className="h-8 w-8 text-green-400 mr-4" />
+              <Github className="h-8 w-8 text-green-400 mr-4" />
               <h3 className="text-2xl font-bold">Hanzo Platform</h3>
             </div>
             <ul className="space-y-4">

@@ -1,7 +1,6 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, GitHub, Terminal, Cloud, Database, RefreshCw, Globe, Server, Code2, Lock, Box, Network } from "lucide-react";
+import { ArrowRight, Github, Terminal, Cloud, Database, RefreshCw, Globe, Server, Code2, Lock, Box, Network } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const features = [
@@ -16,7 +15,7 @@ const features = [
     title: "Open Source Infrastructure",
     description: "All the components you need to build AI applications, completely open source",
     details: "From local vector databases to inference engines, we've packaged everything you need to build and test AI applications without any cloud dependencies.",
-    icon: GitHub,
+    icon: Github,
     replaces: ["proprietary AI services", "closed APIs", "vendor lock-in"]
   },
   {
