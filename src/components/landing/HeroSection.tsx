@@ -1,13 +1,11 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Github } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { HeroTitle, HeroDescription, HeroButtons } from "./hero";
 
 const HeroSection: React.FC = () => {
-  const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,57 +57,17 @@ const HeroSection: React.FC = () => {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
-            Open Source AI Engineering Platform
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300">
-              Build As Fast
-            </span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400">
-              As You Think
-            </span>
-          </h1>
-          
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6">
-            A complete platform for developers to build, deploy, and scale AI applications
-            with enterprise-grade reliability and open-source transparency.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
-        >
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full px-8 py-7 text-lg"
-            onClick={() => navigate('/signup')}
-          >
-            Get Started
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="text-white border-gray-700 hover:bg-white/10 rounded-full px-8 py-7 text-lg"
-            onClick={() => window.open('https://github.com/hanzoai', '_blank')}
-          >
-            <Github className="mr-2 h-5 w-5" />
-            Star on GitHub
-          </Button>
-        </motion.div>
+        <HeroTitle 
+          mousePosition={mousePosition}
+          containerRef={containerRef}
+          onAnimationComplete={() => setAnimationComplete(true)}
+          animationComplete={animationComplete}
+          onTitleAnimationComplete={() => setTitleAnimationComplete(true)}
+        />
+        
+        <HeroDescription titleAnimationComplete={titleAnimationComplete} />
+        
+        <HeroButtons titleAnimationComplete={titleAnimationComplete} />
       </div>
     </section>
   );
