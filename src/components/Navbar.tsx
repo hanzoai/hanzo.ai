@@ -92,7 +92,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className={`bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full`}
+                className="bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full"
               >
                 <a href="https://cloud.hanzo.ai">
                   Console
@@ -101,7 +101,7 @@ const Navbar = () => {
             )}
             <Button 
               size="sm" 
-              className={`bg-black/90 text-white rounded-full hover:bg-black`}
+              className="bg-white text-black rounded-full hover:bg-gray-100"
             >
               <a href="https://cloud.hanzo.ai/auth/sign-up">
                 Signup
