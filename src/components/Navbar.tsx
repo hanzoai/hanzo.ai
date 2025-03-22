@@ -92,11 +92,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className={`${getGlassClass()} ${getRoundingClass()} ${
-                  isDarkMode 
-                    ? "text-white hover:bg-white/10 hover:border-white/50" 
-                    : "text-gray-900 hover:bg-gray-200/50 hover:border-gray-400"
-                }`}
+                className={`bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full`}
               >
                 <a href="https://cloud.hanzo.ai">
                   Console
@@ -105,11 +101,7 @@ const Navbar = () => {
             )}
             <Button 
               size="sm" 
-              className={`${getGlassClass()} ${getRoundingClass()} ${
-                isDarkMode 
-                  ? "text-white hover:bg-white/20" 
-                  : "text-gray-900 hover:bg-gray-200/80"
-              }`}
+              className={`bg-black/90 text-white rounded-full hover:bg-black`}
             >
               <a href="https://cloud.hanzo.ai/auth/sign-up">
                 Signup
