@@ -58,7 +58,7 @@ const OperativeCTA = () => {
                 <span className="text-white font-medium">Follow Updates</span>
               </a>
               <a 
-                href="https://docs.hanzo.ai/operative/contribute"
+                href="https://github.com/hanzoai/operative/contribute"
                 className="flex flex-col items-center p-4 rounded-xl hover:bg-gray-900/30 transition-colors"
               >
                 <Github className="h-6 w-6 text-purple-400 mb-2" />

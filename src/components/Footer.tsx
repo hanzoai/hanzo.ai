@@ -114,9 +114,9 @@ const Footer = () => {
                 <div>
                   <h4 className="text-gray-400 font-medium mb-3">Community</h4>
                   <ul className="space-y-2">
-                    <li><a href="https://hanzo.forum" className="text-gray-500 hover:text-gray-300">Hanzo Forum</a></li>
-                    <li><a href="https://hanzo.community" className="text-gray-500 hover:text-gray-300">Hanzo Community</a></li>
-                    <li><a href="https://hanzo.help" className="text-gray-500 hover:text-gray-300">Hanzo Help</a></li>
+                    <li><a href="https://discord.gg/XthHQQj" className="text-gray-500 hover:text-gray-300">Hanzo Forum</a></li>
+                    <li><a href="https://discord.gg/XthHQQj" className="text-gray-500 hover:text-gray-300">Hanzo Community</a></li>
+                    <li><a href="https://discord.gg/XthHQQj" className="text-gray-500 hover:text-gray-300">Hanzo Help</a></li>
                   </ul>
                 </div>
                 

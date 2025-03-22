@@ -59,13 +59,13 @@ const Leadership = () => {
                       As CEO, Michael leads Hanzo's mission to democratize access to AI with a focus on sustainable, responsible technology that empowers developers worldwide.
                     </p>
                     <div className="flex space-x-3">
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                      <a href="https://linkedin.com/company/hanzo-ai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                         <Linkedin className="h-5 w-5 text-gray-300" />
                       </a>
-                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                      <a href="https://twitter.com/hanzoai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                         <Twitter className="h-5 w-5 text-gray-300" />
                       </a>
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                      <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                         <Github className="h-5 w-5 text-gray-300" />
                       </a>
                     </div>
@@ -103,13 +103,13 @@ const Leadership = () => {
                       Sarah drives Hanzo's technical vision and engineering culture, bringing expertise from her background at leading AI research labs and tech companies.
                     </p>
                     <div className="flex space-x-3">
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                      <a href="https://linkedin.com/company/hanzo-ai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                         <Linkedin className="h-5 w-5 text-gray-300" />
                       </a>
-                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                      <a href="https://twitter.com/hanzoai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                         <Twitter className="h-5 w-5 text-gray-300" />
                       </a>
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                      <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                         <Github className="h-5 w-5 text-gray-300" />
                       </a>
                     </div>
