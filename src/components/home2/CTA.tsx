@@ -26,19 +26,19 @@ const CTA = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-full"
+              size="sm"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full"
             >
               Get Started Free
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
             <Button 
-              size="lg"
+              size="sm"
               variant="outline"
-              className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-full"
+              className="text-white border-gray-700 hover:bg-white/10 rounded-full"
             >
-              <Github className="mr-2 h-5 w-5" />
+              <Github className="mr-2 h-4 w-4" />
               Star on GitHub
             </Button>
           </div>

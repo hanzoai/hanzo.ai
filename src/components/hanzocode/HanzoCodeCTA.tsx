@@ -22,28 +22,28 @@ const HanzoCodeCTA = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
             <Button 
-              size="lg"
-              className="bg-purple-600 hover:bg-purple-500 text-white px-6 py-6 rounded-lg text-lg font-medium w-full sm:w-auto"
+              size="sm"
+              className="bg-purple-600 hover:bg-purple-500 text-white w-full sm:w-auto"
             >
-              <Download className="mr-2 h-5 w-5" />
+              <Download className="mr-2 h-4 w-4" />
               Download Hanzo Code
             </Button>
             
             <Button 
-              size="lg" 
+              size="sm" 
               variant="outline"
-              className="bg-transparent border-purple-500/30 text-white hover:bg-purple-900/20 px-6 py-6 rounded-lg text-lg font-medium w-full sm:w-auto"
+              className="bg-transparent border-purple-500/30 text-white hover:bg-purple-900/20 w-full sm:w-auto"
             >
-              <ExternalLink className="mr-2 h-5 w-5" />
+              <ExternalLink className="mr-2 h-4 w-4" />
               VS Code Extension
             </Button>
             
             <Button 
-              size="lg" 
+              size="sm" 
               variant="outline"
-              className="bg-transparent border-gray-600 text-white hover:bg-gray-800 px-6 py-6 rounded-lg text-lg font-medium w-full sm:w-auto"
+              className="bg-transparent border-gray-600 text-white hover:bg-gray-800 w-full sm:w-auto"
             >
-              <Github className="mr-2 h-5 w-5" />
+              <Github className="mr-2 h-4 w-4" />
               GitHub
             </Button>
           </div>
@@ -54,6 +54,7 @@ const HanzoCodeCTA = () => {
               Install Hanzo Code alongside your current editor and supercharge it with our agentic capabilities. No need to switch or change your workflow.
             </p>
             <Button 
+              size="sm"
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white"
             >
               One-Click Integration

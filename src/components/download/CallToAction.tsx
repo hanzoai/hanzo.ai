@@ -54,59 +54,59 @@ const CallToAction = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Button 
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              size="sm"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white shadow-lg hover:shadow-xl transition-all flex items-center"
             >
-              <Apple className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-4 w-4" />
               Download (Apple Silicon)
             </Button>
             <Button 
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              size="sm"
+              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white shadow-lg hover:shadow-xl transition-all flex items-center"
             >
-              <Apple className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-4 w-4" />
               Download (Intel Mac)
             </Button>
             <Button 
-              size="lg"
-              className="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-500 hover:to-gray-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              size="sm"
+              className="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-500 hover:to-gray-400 text-white shadow-lg hover:shadow-xl transition-all flex items-center"
             >
-              <ArrowDown className="mr-2 h-5 w-5" />
+              <ArrowDown className="mr-2 h-4 w-4" />
               Download for Windows
             </Button>
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Button 
-              size="lg"
+              size="sm"
               variant="outline"
               className="border-gray-700 text-white hover:bg-gray-800"
             >
-              <Chrome className="mr-2 h-5 w-5" />
+              <Chrome className="mr-2 h-4 w-4" />
               Chrome Extension
             </Button>
             <Button 
-              size="lg"
+              size="sm"
               variant="outline"
               className="border-gray-700 text-white hover:bg-gray-800"
             >
-              <Chrome className="mr-2 h-5 w-5" />
+              <Chrome className="mr-2 h-4 w-4" />
               Safari Extension
             </Button>
             <Button 
-              size="lg"
+              size="sm"
               variant="outline"
               className="border-gray-700 text-white hover:bg-gray-800"
             >
-              <Chrome className="mr-2 h-5 w-5" />
+              <Chrome className="mr-2 h-4 w-4" />
               Firefox Add-on
             </Button>
             <Button 
-              size="lg"
+              size="sm"
               variant="outline"
               className="border-gray-700 text-white hover:bg-gray-800"
             >
-              <Chrome className="mr-2 h-5 w-5" />
+              <Chrome className="mr-2 h-4 w-4" />
               Edge Extension
             </Button>
           </div>

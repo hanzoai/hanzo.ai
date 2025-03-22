@@ -38,7 +38,7 @@ const CommunitySection = () => {
             <p className="text-gray-300 mb-6">
               Join 12,000+ developers discussing Hanzo projects and AI development.
             </p>
-            <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
+            <Button className="w-full bg-indigo-600 hover:bg-indigo-700" size="sm">
               <a href="https://discord.gg/hanzo" target="_blank" rel="noopener noreferrer">Join Discord</a>
             </Button>
           </motion.div>
@@ -57,7 +57,7 @@ const CommunitySection = () => {
             <p className="text-gray-300 mb-6">
               Ask questions, share ideas, and collaborate on code with our maintainers.
             </p>
-            <Button className="w-full bg-gray-700 hover:bg-gray-600">
+            <Button className="w-full bg-gray-700 hover:bg-gray-600" size="sm">
               <a href="https://github.com/hanzoai/platform/discussions" target="_blank" rel="noopener noreferrer">Go to Discussions</a>
             </Button>
           </motion.div>
@@ -76,7 +76,7 @@ const CommunitySection = () => {
             <p className="text-gray-300 mb-6">
               Help us improve Hanzo by contributing code, documentation, or ideas.
             </p>
-            <Button className="w-full bg-green-600 hover:bg-green-700">
+            <Button className="w-full bg-green-600 hover:bg-green-700" size="sm">
               <a href="https://github.com/hanzoai/platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributor Guide</a>
             </Button>
           </motion.div>

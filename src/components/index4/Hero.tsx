@@ -32,15 +32,15 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
-            size="lg" 
-            className="h-12 px-8 bg-white hover:bg-zinc-200 text-black transition-colors duration-300"
+            size="sm" 
+            className="bg-white hover:bg-zinc-200 text-black transition-colors duration-300"
           >
             Start building <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
           <Button 
-            size="lg" 
+            size="sm" 
             variant="outline" 
-            className="h-12 px-8 border-zinc-800 bg-transparent hover:bg-zinc-900 transition-colors duration-300"
+            className="border-zinc-800 bg-transparent hover:bg-zinc-900 transition-colors duration-300"
           >
             Documentation
           </Button>

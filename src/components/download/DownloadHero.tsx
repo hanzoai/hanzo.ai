@@ -54,17 +54,17 @@ const DownloadHero = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
             <Button 
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              size="sm"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white shadow-lg hover:shadow-xl transition-all"
             >
-              <Apple className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-4 w-4" />
               Download (Apple Silicon)
             </Button>
             <Button 
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              size="sm"
+              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white shadow-lg hover:shadow-xl transition-all"
             >
-              <Apple className="mr-2 h-5 w-5" />
+              <Apple className="mr-2 h-4 w-4" />
               Download (Intel Mac)
             </Button>
           </div>

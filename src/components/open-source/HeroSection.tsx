@@ -21,16 +21,27 @@ const HeroSection = () => {
             Everything we build is available for you to use, modify, and contribute to.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
-              <Github className="mr-2 h-5 w-5" />
+            <Button 
+              size="sm" 
+              className="bg-green-600 hover:bg-green-700"
+            >
+              <Github className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </Button>
-            <Button size="lg" variant="outline" className="border-green-500/30 text-white hover:bg-green-800/30">
-              <Star className="mr-2 h-5 w-5" />
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="border-green-500/30 text-white hover:bg-green-800/30"
+            >
+              <Star className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer">Star Platform Repo</a>
             </Button>
-            <Button size="lg" variant="outline" className="border-green-500/30 text-white hover:bg-green-800/30">
-              <GitBranch className="mr-2 h-5 w-5" />
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="border-green-500/30 text-white hover:bg-green-800/30"
+            >
+              <GitBranch className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai/platform/fork" target="_blank" rel="noopener noreferrer">Fork & Contribute</a>
             </Button>
           </div>
