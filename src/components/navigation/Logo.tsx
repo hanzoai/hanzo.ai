@@ -8,16 +8,22 @@ const Logo = () => {
   const { isDarkMode } = useTheme();
   const [animationComplete, setAnimationComplete] = useState(false);
   
-  // Animation variants for the origami folding effect - counter-clockwise from bottom left
+  // Animation variants for the container - includes initial flip
   const logoVariants = {
     initial: {
-      opacity: 0
+      opacity: 0,
+      rotateY: 180, // Start flipped horizontally
+      scale: 0.6
     },
     animate: {
       opacity: 1,
+      rotateY: 0, // Flip back to normal
+      scale: 1,
       transition: {
         duration: 0.5,
-        staggerChildren: 0.12
+        delay: 0.2,
+        staggerChildren: 0.12,
+        when: "beforeChildren" // Make sure the flip completes before the children start animating
       }
     }
   };
@@ -63,8 +69,9 @@ const Logo = () => {
         initial="initial"
         animate="animate"
         variants={logoVariants}
-        className="w-8 h-8 relative" // Reduced from w-10 h-10 to w-8 h-8
+        className="w-7 h-7 relative" // Reduced from w-8 h-8 to w-7 h-7
         onAnimationComplete={() => setAnimationComplete(true)}
+        style={{ transformOrigin: "center center" }} // Ensure proper flipping
       >
         <svg 
           viewBox="0 0 67 67" 
