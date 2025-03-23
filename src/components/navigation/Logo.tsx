@@ -69,7 +69,7 @@ const Logo = () => {
         initial="initial"
         animate="animate"
         variants={logoVariants}
-        className="w-7 h-7 relative" // Reduced from w-8 h-8 to w-7 h-7
+        className="w-6 h-6 relative" // Reduced from w-7 h-7 to w-6 h-6
         onAnimationComplete={() => setAnimationComplete(true)}
         style={{ transformOrigin: "center center" }} // Ensure proper flipping
       >
@@ -140,7 +140,7 @@ const Logo = () => {
         initial={{ opacity: 0, x: -5 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.3 }}
-        className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-gray-900"}`}
+        className={`font-bold text-2xl ${isDarkMode ? "text-white" : "text-gray-900"}`} // Changed from text-xl to text-2xl
       >
         Hanzo
       </motion.span>

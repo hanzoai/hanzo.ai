@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 
 interface HeroButtonsProps {
   titleAnimationComplete: boolean;
@@ -25,7 +25,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
         size="sm" 
         variant="outline" 
         radius="full"
-        className="text-white border-white/10 bg-transparent hover:bg-white/5"
+        className="text-white border-white/10 bg-transparent hover:bg-white/5 h-10 min-w-[120px]"
       >
         <a href="https://docs.hanzo.sh" className="chrome-text flex items-center">
           Read Docs <ArrowRight className="ml-2 h-4 w-4" />
@@ -34,7 +34,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       <Button 
         size="sm" 
         radius="full"
-        className="bg-white hover:bg-gray-100 text-black border-0"
+        className="bg-white hover:bg-gray-100 text-black border-0 h-10 min-w-[120px]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
