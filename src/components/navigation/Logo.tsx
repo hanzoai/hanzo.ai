@@ -22,18 +22,16 @@ const Logo = () => {
     }
   };
   
-  const squareVariants = {
+  const pathVariants = {
     initial: (custom: number) => ({
       opacity: 0,
-      rotate: custom * 15,
-      scale: 0.8,
-      x: custom * 10
+      scale: 0.9,
+      y: custom * 5
     }),
     animate: {
       opacity: 1,
-      rotate: 0,
       scale: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: "spring",
         stiffness: 260,
@@ -52,7 +50,7 @@ const Logo = () => {
   }, []);
   
   const fillColor = isDarkMode ? "#ffffff" : "#000000";
-  const accentColor = isDarkMode ? "#cccccc" : "#333333";
+  const accentColor = isDarkMode ? "#DDDDDD" : "#DDDDDD";
   
   return (
     <Link to="/" className="flex items-center space-x-2">
@@ -64,69 +62,64 @@ const Logo = () => {
         onAnimationComplete={() => setAnimationComplete(true)}
       >
         <svg 
-          viewBox="0 0 100 100" 
+          viewBox="0 0 67 67" 
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full"
         >
+          {/* Bottom left square */}
+          <motion.path
+            custom={1}
+            variants={pathVariants}
+            d="M22.21 67V44.6369H0V67H22.21Z" 
+            fill={fillColor}
+          />
+          
+          {/* Bottom left accent */}
+          <motion.path
+            custom={1.1}
+            variants={pathVariants}
+            d="M0 44.6369L22.21 46.8285V44.6369H0Z" 
+            fill={accentColor}
+          />
+          
+          {/* Center part */}
+          <motion.path
+            custom={2}
+            variants={pathVariants}
+            d="M66.7038 22.3184H22.2534L0.0878906 44.6367H44.4634L66.7038 22.3184Z" 
+            fill={fillColor}
+          />
+          
           {/* Top left square */}
-          <motion.rect
-            custom={-2}
-            variants={squareVariants}
-            x="5" 
-            y="5" 
-            width="30" 
-            height="30" 
+          <motion.path
+            custom={3}
+            variants={pathVariants}
+            d="M22.21 0H0V22.3184H22.21V0Z" 
             fill={fillColor}
           />
           
           {/* Top right square */}
-          <motion.rect
-            custom={2}
-            variants={squareVariants}
-            x="65" 
-            y="5" 
-            width="30" 
-            height="30" 
+          <motion.path
+            custom={4}
+            variants={pathVariants}
+            d="M66.7198 0H44.5098V22.3184H66.7198V0Z" 
             fill={fillColor}
           />
           
-          {/* Bottom left square */}
-          <motion.rect
-            custom={-1}
-            variants={squareVariants}
-            x="5" 
-            y="65" 
-            width="30" 
-            height="30" 
-            fill={fillColor}
+          {/* Top right accent */}
+          <motion.path
+            custom={4.1}
+            variants={pathVariants}
+            d="M66.6753 22.3185L44.5098 20.0822V22.3185H66.6753Z" 
+            fill={accentColor}
           />
           
           {/* Bottom right square */}
-          <motion.rect
-            custom={1}
-            variants={squareVariants}
-            x="65" 
-            y="65" 
-            width="30" 
-            height="30" 
-            fill={fillColor}
-          />
-          
-          {/* Center parallelogram with subtle shading for origami effect */}
           <motion.path
-            custom={0}
-            variants={squareVariants}
-            d="M35 35 L65 20 L65 65 L35 80 Z" 
+            custom={5}
+            variants={pathVariants}
+            d="M66.7198 67V44.6369H44.5098V67H66.7198Z" 
             fill={fillColor}
-          />
-          
-          {/* Shadow/highlight for origami effect */}
-          <motion.path
-            custom={0.2}
-            variants={squareVariants}
-            d="M35 35 L65 20 L65 30 L35 45 Z" 
-            fill={accentColor}
-            opacity="0.15"
           />
         </svg>
       </motion.div>
