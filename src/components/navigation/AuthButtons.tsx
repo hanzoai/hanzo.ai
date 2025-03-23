@@ -17,7 +17,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
         <Button 
           variant="outline" 
           size="sm"
-          className={`${isDarkMode ? "text-white border-white hover:bg-white/10" : "text-gray-900 border-gray-300 hover:bg-gray-100"} ${getRoundingClass()}`}
+          className={`${isDarkMode ? "text-white border-white hover:bg-white/10" : "text-gray-900 border-gray-300 hover:bg-gray-100"} ${getRoundingClass()} h-10 min-w-[120px]`}
         >
           <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
             <User className="h-4 w-4" />
@@ -28,7 +28,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
         <Button 
           variant="outline" 
           size="sm"
-          className="bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full"
+          className="bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full h-10 min-w-[120px]"
         >
           <a href="https://cloud.hanzo.ai">
             Console
@@ -37,7 +37,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
       )}
       <Button 
         size="sm" 
-        className="bg-white text-black rounded-full hover:bg-gray-100"
+        className="bg-white text-black rounded-full hover:bg-gray-100 h-10 min-w-[120px]"
       >
         <a href="https://cloud.hanzo.ai/auth/sign-up">
           Signup
