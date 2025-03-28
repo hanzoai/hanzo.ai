@@ -1,11 +1,13 @@
 
 import React from "react";
 import JapaneseWave from "./JapaneseWave";
+import CherryBlossom from "./CherryBlossom";
 
 const ZenBackground = () => {
   return (
     <div className="fixed inset-0 -z-10">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-gray-900/20"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-gray-900/30 to-black/80"></div>
+      <CherryBlossom count={15} className="opacity-70" />
       <JapaneseWave 
         color="#9b87f5" 
         height={600} 

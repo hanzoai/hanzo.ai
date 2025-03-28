@@ -31,15 +31,31 @@ const SenseiMethodSection = () => {
             and disciplined execution to scale businesses and deliver tangible growth.
           </p>
           
-          <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            <a 
+              href="https://hanzo.agency" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-900/70 to-purple-700/50 hover:from-purple-800/70 hover:to-purple-600/50 rounded-lg text-white transition-all group"
+            >
+              <div>
+                <h3 className="text-lg font-medium mb-1">Hanzo Agency</h3>
+                <p className="text-sm text-gray-300">AI-powered creative & marketing</p>
+              </div>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            
             <a 
               href="https://sensei.group" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 rounded-md text-white transition-colors"
+              className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-green-900/70 to-green-700/50 hover:from-green-800/70 hover:to-green-600/50 rounded-lg text-white transition-all group"
             >
-              <span>Explore case studies</span>
-              <ArrowRight size={16} />
+              <div>
+                <h3 className="text-lg font-medium mb-1">Sensei Group</h3>
+                <p className="text-sm text-gray-300">Enterprise transformation experts</p>
+              </div>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </motion.div>
