@@ -5,6 +5,7 @@ import {
   Users, Database, Share2, RefreshCcw, Heart, BookOpen
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const principles = [
   {
@@ -85,9 +86,9 @@ const ZenPrinciples = () => {
             size="lg"
             className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium"
           >
-            <a href="/zen" className="flex items-center">
+            <Link to="/zen" className="flex items-center">
               Explore The Full Zen Manifesto
-            </a>
+            </Link>
           </Button>
         </motion.div>
       </div>
