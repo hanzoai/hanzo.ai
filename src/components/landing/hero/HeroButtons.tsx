@@ -21,7 +21,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
     >
       <Button 
         size="sm" 
-        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full px-golden-4 py-golden-2 h-10 min-w-[152px]"
+        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full px-golden-4 py-golden-2 h-10 min-w-[120px]"
         onClick={() => navigate('/signup')}
       >
         Get Started
@@ -31,7 +31,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       <Button 
         size="sm" 
         variant="outline" 
-        className="text-white border-gray-700 hover:bg-white/10 rounded-full px-golden-4 py-golden-2 h-10 min-w-[152px]"
+        className="text-white border-gray-700 hover:bg-white/10 rounded-full px-golden-4 py-golden-2 h-10 min-w-[120px]"
         onClick={() => window.open('https://github.com/hanzoai', '_blank')}
       >
         Star on GitHub

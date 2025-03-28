@@ -83,6 +83,37 @@ const Security = () => {
           
           <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-8 mb-16">
             <div className="flex items-center mb-6">
+              <Server className="h-8 w-8 text-purple-400 mr-4" />
+              <h2 className="text-2xl font-semibold">Global Data Regions</h2>
+            </div>
+            <p className="text-gray-300 mb-6">
+              Hanzo Cloud operates across multiple geographic regions to ensure data residency compliance
+              and low-latency access for your applications.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-5">
+                <h3 className="text-lg font-semibold text-purple-300 mb-3">United States (US)</h3>
+                <p className="text-gray-300 mb-2">MCI - Kansas City</p>
+                <p className="text-gray-400 text-sm">Hanzo Cloud region: us-central-1</p>
+              </div>
+              
+              <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-5">
+                <h3 className="text-lg font-semibold text-purple-300 mb-3">Canada (CA)</h3>
+                <p className="text-gray-300 mb-2">YVR - Vancouver</p>
+                <p className="text-gray-400 text-sm">Hanzo Cloud region: ca-west-1</p>
+              </div>
+              
+              <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-5">
+                <h3 className="text-lg font-semibold text-purple-300 mb-3">European Union (EU)</h3>
+                <p className="text-gray-300 mb-2">BCN - Barcelona</p>
+                <p className="text-gray-400 text-sm">Hanzo Cloud region: eu-west-1</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-8 mb-16">
+            <div className="flex items-center mb-6">
               <AlertTriangle className="h-8 w-8 text-yellow-400 mr-4" />
               <h2 className="text-2xl font-semibold">Vulnerability Management</h2>
             </div>
