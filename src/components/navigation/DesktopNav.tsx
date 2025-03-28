@@ -19,6 +19,9 @@ const DesktopNav = () => {
         <Link to="/team" className={`${isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"} transition-colors`}>
           Team
         </Link>
+        <Link to="/zen" className={`${isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"} transition-colors`}>
+          Zen
+        </Link>
         <a href="/pricing" className={`${isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"} transition-colors`}>
           Pricing
         </a>
