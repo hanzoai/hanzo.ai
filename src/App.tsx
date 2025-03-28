@@ -28,6 +28,7 @@ import OpenSource from "./pages/OpenSource";
 import Solutions from "./pages/Solutions";
 import SolutionCapabilities from "./pages/SolutionCapabilities";
 import SolutionIndustries from "./pages/SolutionIndustries";
+import Security from "./pages/Security";
 
 import AI from "./pages/AI";
 import Datastore from "./pages/Datastore";
@@ -112,6 +113,7 @@ const MarketingRoutes = () => {
       <Route path="/referrals" element={<Referrals />} />
       <Route path="/open-source" element={<OpenSource />} />
       <Route path="/team" element={<Team />} />
+      <Route path="/security" element={<Security />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />
       <Route path="/solutions/industries" element={<SolutionIndustries />} />
