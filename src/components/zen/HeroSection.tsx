@@ -11,7 +11,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="max-w-4xl mx-auto text-center relative z-10 space-y-16"
+        className="max-w-4xl mx-auto text-center relative z-10 space-y-20"
       >
         <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
           The Zen of <span className="text-purple-400">Hanzo</span>
@@ -22,7 +22,7 @@ const HeroSection = () => {
           remove until you cannot remove any more."
         </p>
 
-        <div className="pt-16 flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="pt-20 flex flex-col sm:flex-row gap-8 justify-center">
           <a 
             href="https://hanzo.agency" 
             target="_blank" 
@@ -52,7 +52,7 @@ const HeroSection = () => {
         className="absolute bottom-12 left-0 right-0 flex justify-center"
       >
         <Link 
-          to="#manifesto" 
+          to="#principles" 
           className="text-gray-400 hover:text-white transition-colors animate-bounce"
           onClick={(e) => {
             e.preventDefault();

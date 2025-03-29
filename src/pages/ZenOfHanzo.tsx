@@ -5,8 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ZenBackground from "@/components/zen/ZenBackground";
 import HeroSection from "@/components/zen/HeroSection";
-import StorySection from "@/components/zen/StorySection";
-import ManifestoSection from "@/components/zen/ManifestoSection";
+import HexagramsSection from "@/components/zen/HexagramsSection";
 import SenseiMethodSection from "@/components/zen/SenseiMethodSection";
 import FinalQuoteSection from "@/components/zen/FinalQuoteSection";
 
@@ -27,8 +26,8 @@ const ZenOfHanzo = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Helmet>
-        <title>The Zen of Hanzo - AI Engineering Manifesto</title>
-        <meta name="description" content="Our battle-tested principles that guide everything we build at Hanzo. Simplicity, clarity, elegance—our AI engineering manifesto." />
+        <title>The Zen of Hanzo - 64 Principles of AI Engineering</title>
+        <meta name="description" content="Our 64 principles that guide everything we build at Hanzo. Simplicity, clarity, elegance—our AI engineering manifesto." />
       </Helmet>
       
       <ZenBackground />
@@ -37,9 +36,8 @@ const ZenOfHanzo = () => {
       <main>
         <HeroSection />
         
-        <div id="manifesto" className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
-          <StorySection />
-          <ManifestoSection />
+        <div className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+          <HexagramsSection />
           <SenseiMethodSection />
           <FinalQuoteSection />
         </div>
