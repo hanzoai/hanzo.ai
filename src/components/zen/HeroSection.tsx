@@ -11,7 +11,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="max-w-4xl mx-auto text-center relative z-10 space-y-12"
+        className="max-w-4xl mx-auto text-center relative z-10 space-y-16"
       >
         <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
           The Zen of <span className="text-purple-400">Hanzo</span>
@@ -22,12 +22,12 @@ const HeroSection = () => {
           remove until you cannot remove any more."
         </p>
 
-        <div className="pt-12 flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="pt-16 flex flex-col sm:flex-row gap-6 justify-center">
           <a 
             href="https://hanzo.agency" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-3 bg-purple-600 hover:bg-purple-500 rounded-md text-white transition-colors text-lg group"
+            className="flex items-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-500 rounded-md text-white transition-colors text-lg group"
           >
             <span>Hanzo Agency</span>
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -37,7 +37,7 @@ const HeroSection = () => {
             href="https://sensei.group" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-3 bg-green-600 hover:bg-green-500 rounded-md text-white transition-colors text-lg group"
+            className="flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-500 rounded-md text-white transition-colors text-lg group"
           >
             <span>Sensei Group</span>
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
