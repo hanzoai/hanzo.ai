@@ -1,13 +1,12 @@
-
 import { 
-  Heart, Compass, Layers, Star, Rocket, Scale, 
+  Heart, Layers, Star, Rocket, Scale, 
   Shield, PanelTop, Wrench, Combine, RefreshCw, ScanLine,
   MountainSnow, Binary, SlidersHorizontal, Wand2, Zap, Flame,
-  Leaf, Cloud, Wind, Sun, Cloud, FlowerIcon, Waves, Droplets,
+  Leaf, Cloud, Wind, Sun, FlowerIcon, Waves, Droplets,
   TreePine, Mountain, Scroll, Milestone, AlignJustify, ChevronsUp,
   Timer, CircleDot, Gift, Eye, Sparkles, GraduationCap, Feather, Lightbulb,
   Infinity, ArrowUpDown, Rabbit, Blocks, Building, Navigation, Compass,
-  Hexagon, Loader, Gem, Flow, Fingerprint, Hourglass, Construction, 
+  Hexagon, Loader, Gem, Network, Fingerprint, Hourglass, Construction, 
   Box, Lock, CalendarDays, HeartHandshake, Flag, Footprints, ArrowRight, 
   Banknote, Users, XCircle, CheckCircle2
 } from "lucide-react";
@@ -1017,7 +1016,7 @@ export const hexagramsData: Hexagram[] = [
     pinyin: "huàn",
     category: "The Implementation",
     description: "Creating through distribution and establishing wide-reaching systems",
-    icon: Flow,
+    icon: Network,
     principles: [
       "Create through distribution",
       "Establish wide-reaching systems",
