@@ -1,7 +1,7 @@
 
 import { 
   Heart, Compass, Layers, Star, Rocket, Scale, 
-  Shield, Accessibility, Wrench, Unity, Evolution, Balance
+  Shield, PanelTop, Wrench, Combine, RefreshCw, BalanceScale
 } from "lucide-react";
 
 export interface Hexagram {
@@ -121,7 +121,7 @@ export const hexagramsData: Hexagram[] = [
     title: "Harmony",
     category: "The Integration",
     description: "Balancing opposing forces into a unified whole",
-    icon: Unity,
+    icon: Combine,
     principles: [
       "Complementarity: Balance opposing forces, integrate yin and yang, combine strength and flexibility",
       "Resonance: Amplify through alignment, create harmonious interactions, design for sympathetic vibration",
@@ -138,7 +138,7 @@ export const hexagramsData: Hexagram[] = [
     title: "Transformation",
     category: "The Evolution",
     description: "Principles that enable growth and change",
-    icon: Evolution,
+    icon: RefreshCw,
     principles: [
       "Adaptation: Respond to changing conditions, evolve with environmental shifts, modify approach based on feedback",
       "Catalysis: Enable transformative change, create conditions for breakthrough, reduce activation energy",

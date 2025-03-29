@@ -16,8 +16,8 @@ const FinalQuoteSection = () => {
           <div className="inline-block p-8 bg-gradient-to-br from-black/40 to-gray-900/40 backdrop-blur-sm border border-purple-500/20 rounded-lg">
             <h3 className="text-2xl font-bold text-white mb-4">The Zen of Hanzo</h3>
             <p className="text-gray-300 md:text-lg leading-relaxed">
-              These principles shaped our journey from a small town startup to a global AI powerhouse, 
-              and they continue to guide our relentless pursuit of innovation.
+              "Before code, there is concept. Before concept, there is principle. 
+              Before principle, there is emptiness. From emptiness, all possibility."
             </p>
           </div>
         </motion.div>

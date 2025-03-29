@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const SenseiMethodSection = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black/50">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -26,9 +26,9 @@ const SenseiMethodSection = () => {
           className="bg-black/20 backdrop-blur-sm border border-purple-500/10 rounded-lg p-10 mb-10"
         >
           <p className="text-gray-300 md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto text-center">
-            Our principles come alive through the Sensei Method, a framework distilled from our 
-            experience launching over 100 high-impact products. It combines scientific rigor, mindful design,
-            and disciplined execution to deliver products that embody the harmony of form and function.
+            Our principles come alive through the Sensei Method, a framework that brings these 64 hexagrams
+            into practice. It combines wisdom from ancient philosophies with modern engineering practices
+            to create technology that is both powerful and humane.
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
