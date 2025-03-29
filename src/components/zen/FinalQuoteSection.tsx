@@ -19,6 +19,9 @@ const FinalQuoteSection = () => {
               "Before code, there is concept. Before concept, there is principle. 
               Before principle, there is emptiness. From emptiness, all possibility."
             </p>
+            <p className="text-purple-400 mt-4 text-sm italic">
+              — Where ancient wisdom meets modern engineering
+            </p>
           </div>
         </motion.div>
       </div>

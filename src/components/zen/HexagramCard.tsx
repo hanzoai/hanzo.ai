@@ -17,7 +17,7 @@ const HexagramCard: React.FC<HexagramCardProps> = ({ hexagram, index }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       className="bg-black/30 backdrop-blur-sm border border-purple-500/10 rounded-lg p-8 flex flex-col h-full hover:border-purple-500/30 transition-all cursor-pointer"
       onClick={() => setIsExpanded(!isExpanded)}
     >
@@ -26,23 +26,23 @@ const HexagramCard: React.FC<HexagramCardProps> = ({ hexagram, index }) => {
           <Icon className="h-6 w-6 text-purple-400" />
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-white">{hexagram.title}</h3>
-          <p className="text-purple-300 text-sm">{hexagram.category}</p>
+          <div className="flex items-center gap-2">
+            <h3 className="text-2xl font-bold text-white">{hexagram.id}. {hexagram.title}</h3>
+            <span className="text-xl text-purple-300">{hexagram.chineseTitle}</span>
+          </div>
+          <p className="text-purple-300 text-sm">{hexagram.pinyin} • {hexagram.category}</p>
         </div>
       </div>
       
       <p className="text-gray-300 mb-6">{hexagram.description}</p>
       
       <div className={`space-y-4 flex-1 overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[1000px]' : 'max-h-32'}`}>
-        {hexagram.principles.map((principle, i) => {
-          const [title, details] = principle.split(': ');
-          
-          return (
-            <div key={i} className="text-gray-300">
-              <span className="text-purple-400 font-medium">{title}:</span> {details}
-            </div>
-          );
-        })}
+        {hexagram.principles.map((principle, i) => (
+          <div key={i} className="text-gray-300 flex items-start">
+            <span className="text-purple-400 mr-2">•</span> 
+            <span>{principle}</span>
+          </div>
+        ))}
       </div>
       
       {!isExpanded && (

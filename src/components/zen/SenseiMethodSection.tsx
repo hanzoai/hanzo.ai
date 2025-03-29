@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, HexagonIcon } from "lucide-react";
 
 const SenseiMethodSection = () => {
   return (
@@ -25,6 +25,10 @@ const SenseiMethodSection = () => {
           transition={{ duration: 0.6 }}
           className="bg-black/20 backdrop-blur-sm border border-purple-500/10 rounded-lg p-10 mb-10"
         >
+          <div className="flex justify-center mb-8">
+            <HexagonIcon className="h-16 w-16 text-purple-500 opacity-70" />
+          </div>
+          
           <p className="text-gray-300 md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto text-center">
             Our principles come alive through the Sensei Method, a framework that brings these 64 hexagrams
             into practice. It combines wisdom from ancient philosophies with modern engineering practices
@@ -38,9 +42,12 @@ const SenseiMethodSection = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-between px-8 py-6 bg-gradient-to-r from-purple-900/30 to-purple-700/20 hover:from-purple-800/40 hover:to-purple-600/30 rounded-lg text-white transition-all group"
             >
-              <div>
-                <h3 className="text-xl font-medium mb-2">Hanzo Agency</h3>
-                <p className="text-sm text-gray-300">AI-powered creative & marketing</p>
+              <div className="flex items-center">
+                <BookOpen className="h-5 w-5 text-purple-400 mr-3" />
+                <div>
+                  <h3 className="text-xl font-medium mb-2">Hanzo Agency</h3>
+                  <p className="text-sm text-gray-300">AI-powered creative & marketing</p>
+                </div>
               </div>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -51,9 +58,12 @@ const SenseiMethodSection = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-between px-8 py-6 bg-gradient-to-r from-green-900/30 to-green-700/20 hover:from-green-800/40 hover:to-green-600/30 rounded-lg text-white transition-all group"
             >
-              <div>
-                <h3 className="text-xl font-medium mb-2">Sensei Group</h3>
-                <p className="text-sm text-gray-300">Enterprise transformation experts</p>
+              <div className="flex items-center">
+                <HexagonIcon className="h-5 w-5 text-green-400 mr-3" />
+                <div>
+                  <h3 className="text-xl font-medium mb-2">Sensei Group</h3>
+                  <p className="text-sm text-gray-300">Enterprise transformation experts</p>
+                </div>
               </div>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
