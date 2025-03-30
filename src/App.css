@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,105 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* New Hanzo Design System */
+
+/* Elegant animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease infinite;
+}
+
+/* Linear-inspired monochrome design */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+/* Zen page specific styles */
+.zen-page {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.zen-page::-webkit-scrollbar {
+  width: 6px;
+}
+
+.zen-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.zen-page::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* Vercel-inspired card */
+.vercel-card {
+  @apply bg-black border border-gray-800 rounded-xl overflow-hidden transition-all duration-300;
+}
+
+.vercel-card:hover {
+  @apply border-gray-700 shadow-xl shadow-black/20;
+  transform: translateY(-2px);
+}
+
+/* Glass design patterns */
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl;
+}
+
+.glass-button {
+  @apply bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 rounded-full transition-colors;
+}
+
+/* Reveal animations */
+.reveal-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.reveal-content > *:nth-child(1) { animation-delay: 0.1s; }
+.reveal-content > *:nth-child(2) { animation-delay: 0.2s; }
+.reveal-content > *:nth-child(3) { animation-delay: 0.3s; }
+.reveal-content > *:nth-child(4) { animation-delay: 0.4s; }
+.reveal-content > *:nth-child(5) { animation-delay: 0.5s; }
+.reveal-content > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Subtle hover animations */
+.subtle-hover {
+  transition: all 0.3s ease;
+}
+
+.subtle-hover:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }

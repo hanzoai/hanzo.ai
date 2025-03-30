@@ -4,15 +4,14 @@ import React from "react";
 const ZenBackground: React.FC = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Subtle grid pattern */}
+      {/* Pure, minimalist background with subtle dot pattern */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+            radial-gradient(circle at center, rgba(255,255,255,0.1) 0.5px, transparent 0.5px)
           `,
-          backgroundSize: '40px 40px'
+          backgroundSize: '24px 24px'
         }}
       />
       
@@ -22,29 +21,21 @@ const ZenBackground: React.FC = () => {
       
       {/* Radial gradient for depth */}
       <div 
-        className="absolute inset-0 opacity-80"
+        className="absolute inset-0"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,0.8))'
+          background: 'radial-gradient(circle at 50% 30%, rgba(25,25,25,0), rgba(0,0,0,0.8))'
         }}
       />
       
-      {/* Subtle moving dots for slight animation */}
-      <div className="absolute inset-0">
-        {Array.from({ length: 20 }).map((_, index) => (
-          <div
-            key={index}
-            className="absolute rounded-full bg-white opacity-10 animate-float"
-            style={{
-              width: `${Math.random() * 4 + 1}px`,
-              height: `${Math.random() * 4 + 1}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${Math.random() * 20 + 10}s`,
-              animationDelay: `${Math.random() * 10}s`
-            }}
-          />
-        ))}
-      </div>
+      {/* Subtle grain texture */}
+      <div 
+        className="absolute inset-0 opacity-[0.12] mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '128px 128px'
+        }}
+      />
     </div>
   );
 };
