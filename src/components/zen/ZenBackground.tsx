@@ -1,28 +1,50 @@
 
 import React from "react";
-import JapaneseWave from "./JapaneseWave";
-import CherryBlossom from "./CherryBlossom";
 
-const ZenBackground = () => {
+const ZenBackground: React.FC = () => {
   return (
-    <div className="fixed inset-0 -z-10">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-gray-900/30 to-black/80"></div>
-      <CherryBlossom count={10} className="opacity-50" />
-      <JapaneseWave 
-        color="#9b87f5" 
-        height={600} 
-        opacity={0.006} 
-        speed={90} 
-        className="absolute bottom-0"
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* Subtle grid pattern */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}
       />
-      <JapaneseWave 
-        color="#6E59A5" 
-        height={600} 
-        delay={5} 
-        opacity={0.004} 
-        speed={95} 
-        className="absolute bottom-40"
+      
+      {/* Subtle gradient overlays */}
+      <div className="absolute top-0 left-0 right-0 h-[40vh] bg-gradient-to-b from-gray-900/60 to-transparent" />
+      <div className="absolute left-0 bottom-0 right-0 h-[40vh] bg-gradient-to-t from-gray-900/60 to-transparent" />
+      
+      {/* Radial gradient for depth */}
+      <div 
+        className="absolute inset-0 opacity-80"
+        style={{
+          background: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,0.8))'
+        }}
       />
+      
+      {/* Subtle moving dots for slight animation */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 20 }).map((_, index) => (
+          <div
+            key={index}
+            className="absolute rounded-full bg-white opacity-10 animate-float"
+            style={{
+              width: `${Math.random() * 4 + 1}px`,
+              height: `${Math.random() * 4 + 1}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${Math.random() * 20 + 10}s`,
+              animationDelay: `${Math.random() * 10}s`
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };

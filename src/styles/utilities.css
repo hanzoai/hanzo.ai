@@ -1,11 +1,78 @@
-/* ... keep existing code (neo-blur, glass-morphism, card styles) */
+/* Neo-blur effect (glass morphism) */
+.neo-blur {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Basic card */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 /* Chrome text effect */
 .chrome-text {
-  /* ... keep existing code (chrome text effect) */
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #e6e6e6 0%,
+    #ffffff 25%,
+    #e6e6e6 50%,
+    #cccccc 75%,
+    #e6e6e6 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s ease;
 }
 
-/* ... keep existing code (light chrome-text, animation, section spacing) */
+/* Light chrome text effect */
+.light-chrome-text {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #333 0%,
+    #555 25%,
+    #333 50%,
+    #222 75%,
+    #333 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+/* Animation for chrome text */
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Section spacing */
+.section-spacing {
+  padding: 4rem 0;
+}
 
 /* Feature Showcase styles */
 .feature-card {
@@ -168,6 +235,84 @@
   75% {
     transform: translate(-10%, 5%);
   }
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Grab cursor for draggable elements */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+/* Origin-inspired monochrome styling */
+.mono-card {
+  @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-md p-4 transition-all;
+}
+
+.mono-card:hover {
+  @apply bg-gray-800/50 border-gray-700;
+  transform: translateY(-2px);
+}
+
+.mono-button {
+  @apply bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-all;
+}
+
+.mono-button-outline {
+  @apply bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-4 py-2 rounded-md transition-all;
+}
+
+/* Linear.app inspired animations */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-5px, 5px);
+  }
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+/* Monochrome UI elements */
+.mono-input {
+  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
+}
+
+.mono-select {
+  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
+}
+
+.mono-tabs {
+  @apply flex space-x-1 p-1 bg-gray-900/50 rounded-md border border-gray-800;
+}
+
+.mono-tab {
+  @apply px-3 py-2 text-sm text-gray-400 rounded-md hover:bg-gray-800/50 hover:text-white transition-all;
+}
+
+.mono-tab-active {
+  @apply bg-gray-800 text-white;
 }
 
 /* Hide scrollbar but allow scrolling */

@@ -13,21 +13,22 @@ const ZenOfHanzo = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.5) {
-        setShowContent(true);
-      }
+    // Show content immediately, no need for scroll detection in our new design
+    setShowContent(true);
+    
+    // Add a class to the body for this specific page
+    document.body.classList.add('zen-page');
+    
+    return () => {
+      document.body.classList.remove('zen-page');
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
       <Helmet>
-        <title>The Zen of Hanzo - 64 Principles of AI Engineering</title>
-        <meta name="description" content="Our 64 principles that guide everything we build at Hanzo. Simplicity, clarity, elegance—our AI engineering manifesto." />
+        <title>The Zen of Hanzo - 88 Principles of AI Engineering</title>
+        <meta name="description" content="Our 88 principles that guide everything we build at Hanzo. Simplicity, clarity, elegance—our AI engineering manifesto." />
       </Helmet>
       
       <ZenBackground />

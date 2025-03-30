@@ -1,81 +1,63 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import TaijiSymbol from "./svg/TaijiSymbol";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="min-h-[85vh] flex flex-col items-center justify-center py-20 px-4 sm:px-6 relative overflow-hidden">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="max-w-4xl mx-auto text-center relative z-10 space-y-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center max-w-5xl mx-auto z-10"
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-          The Zen of <span className="text-purple-400">Hanzo</span>
+        <div className="inline-block mb-8">
+          <TaijiSymbol size={80} className="text-white mx-auto" />
+        </div>
+        
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
+          The Zen of Hanzo
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-          "Simplicity is the ultimate sophistication. In code as in life, 
-          remove until you cannot remove any more."
-        </p>
-
-        <div className="pt-20 flex flex-col sm:flex-row gap-8 justify-center">
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-8"
+        >
+          Ancient wisdom meets modern engineering — 88 principles to guide AI innovation
+        </motion.p>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
           <a 
-            href="https://hanzo.agency" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-500 rounded-md text-white transition-colors text-lg group"
+            href="#principles" 
+            className="inline-flex items-center justify-center px-6 py-3 border border-gray-700 rounded-md text-white bg-gray-900/50 hover:bg-gray-800/70 transition-all"
           >
-            <span>Hanzo Agency</span>
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            Explore Principles
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 ml-2" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" 
+                clipRule="evenodd" 
+              />
+            </svg>
           </a>
-          
-          <a 
-            href="https://sensei.group" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-500 rounded-md text-white transition-colors text-lg group"
-          >
-            <span>Sensei Group</span>
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+        </motion.div>
       </motion.div>
       
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
-        className="absolute bottom-12 left-0 right-0 flex justify-center"
-      >
-        <Link 
-          to="#principles" 
-          className="text-gray-400 hover:text-white transition-colors animate-bounce"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({
-              top: window.innerHeight,
-              behavior: 'smooth'
-            });
-          }}
-        >
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </Link>
-      </motion.div>
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-gray-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-60 h-60 bg-gray-500/5 rounded-full blur-3xl"></div>
     </section>
   );
 };
