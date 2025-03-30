@@ -8,7 +8,7 @@ import PricingPlans from "@/pages/Pricing";
 import ZenOfHanzo from "@/pages/ZenOfHanzo";
 import Brand from "@/pages/Brand";
 import App from "./App";
-import "./index.css";
+import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
