@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { hexagramsData } from "./data/zenHexagrams";
 import HexagramCard from "./HexagramCard";
+import ZenOfHanzoPrinciples from "./ZenOfHanzoPrinciples";
 
 const categories = [
   "All",
@@ -67,6 +68,8 @@ const HexagramsSection: React.FC = () => {
             />
           ))}
         </div>
+        
+        <ZenOfHanzoPrinciples />
       </div>
     </section>
   );
