@@ -16,11 +16,14 @@ const DesktopNav = () => {
         <SolutionsMenu />
         <ResourcesMenu />
         
-        <Link to="/team" className={`${isDarkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"} transition-colors`}>
+        <Link to="/team" className="text-gray-500 hover:text-white transition-colors">
           Team
         </Link>
-        <Link to="/zen" className={`${isDarkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"} transition-colors`}>
-          Zen
+        <Link to="/zen" className="text-gray-400 hover:text-white border-b border-gray-800 pb-0.5 transition-colors">
+          Principles
+        </Link>
+        <Link to="/cloud" className="text-gray-500 hover:text-white transition-colors">
+          Cloud
         </Link>
       </div>
     </div>

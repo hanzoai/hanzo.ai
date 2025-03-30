@@ -7,6 +7,7 @@ import Index from "@/pages/Index";
 import PricingPlans from "@/pages/Pricing";
 import ZenOfHanzo from "@/pages/ZenOfHanzo";
 import Brand from "@/pages/Brand";
+import Cloud from "@/pages/Cloud";  // Add this import
 import App from "./App";
 import "./styles/index.css";
 
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/pricing" element={<PricingPlans />} />
           <Route path="/zen" element={<ZenOfHanzo />} />
           <Route path="/brand" element={<Brand />} />
+          <Route path="/cloud" element={<Cloud />} />  {/* Add this route */}
           <Route path="/app" element={<App />} />
         </Routes>
       </BrowserRouter>
