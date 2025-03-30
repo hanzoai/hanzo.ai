@@ -54,7 +54,7 @@ const AddCreditsDialog = ({ isOpen, onClose }: AddCreditsDialogProps) => {
         <div className="space-y-2">
           <Label htmlFor="creditAmount">Amount (USD)</Label>
           <div className="relative">
-            <div className="absolute left-3 top-3 text-gray-400">$</div>
+            <div className="absolute left-3 top-3 text-neutral-400">$</div>
             <Input
               id="creditAmount"
               name="creditAmount"
@@ -64,7 +64,7 @@ const AddCreditsDialog = ({ isOpen, onClose }: AddCreditsDialogProps) => {
               className="bg-gray-800 border-gray-700 pl-8"
             />
           </div>
-          <p className="text-sm text-gray-400">Minimum amount: $10</p>
+          <p className="text-sm text-neutral-400">Minimum amount: $10</p>
         </div>
         
         {/* Preset amounts */}

@@ -62,7 +62,7 @@ const WhyHanzo = () => {
               <ChromeText as="h3" className="text-xl font-bold mb-2">
                 {feature.title}
               </ChromeText>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-neutral-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>

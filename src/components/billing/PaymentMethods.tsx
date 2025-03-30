@@ -31,7 +31,7 @@ const PaymentMethods = () => {
       case 'mastercard':
         return <div className="text-red-500 font-bold text-xs">MC</div>;
       default:
-        return <CreditCard className="h-4 w-4 text-gray-400" />;
+        return <CreditCard className="h-4 w-4 text-neutral-400" />;
     }
   };
 
@@ -222,7 +222,7 @@ const PaymentMethods = () => {
                     </span>
                   )}
                 </div>
-                <div className="text-sm text-gray-400">Expires {card.expMonth}/{card.expYear}</div>
+                <div className="text-sm text-neutral-400">Expires {card.expMonth}/{card.expYear}</div>
               </div>
             </div>
             

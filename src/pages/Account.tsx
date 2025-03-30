@@ -65,16 +65,16 @@ const Account = () => {
           
           <div>
             <h2 className="text-2xl font-medium mb-2">{user.name}</h2>
-            <div className="flex items-center text-gray-400">
+            <div className="flex items-center text-neutral-400">
               <Mail className="h-4 w-4 mr-2" />
               {user.email}
             </div>
             
             <div className="mt-5 space-x-4">
-              <Button variant="outline" size="sm" className="bg-black border-white/10 hover:bg-white/5">
+              <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5">
                 Upload New Picture
               </Button>
-              <Button variant="outline" size="sm" className="bg-black border-white/10 hover:bg-white/5 text-red-400 hover:text-red-300 hover:bg-red-900/10">
+              <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5 text-red-400 hover:text-red-300 hover:bg-red-900/10">
                 Remove
               </Button>
             </div>
@@ -86,70 +86,70 @@ const Account = () => {
           
           <form onSubmit={handleProfileSubmit} className="space-y-8 max-w-xl">
             <div className="space-y-2">
-              <Label htmlFor="fullName" className="text-white">Full Name</Label>
+              <Label htmlFor="fullName" className="text-[var(--white)]">Full Name</Label>
               <Input
                 id="fullName"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="bg-black/40 border-white/10 focus:border-white/20"
+                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-white">Email Address</Label>
+              <Label htmlFor="email" className="text-[var(--white)]">Email Address</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-black/40 border-white/10 focus:border-white/20"
+                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="bio" className="text-white">Bio</Label>
+              <Label htmlFor="bio" className="text-[var(--white)]">Bio</Label>
               <Textarea
                 id="bio"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                className="bg-black/40 border-white/10 focus:border-white/20 min-h-24"
+                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20 min-h-24"
                 placeholder="Tell us about yourself"
               />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <Label htmlFor="location" className="text-white">Location</Label>
+                <Label htmlFor="location" className="text-[var(--white)]">Location</Label>
                 <Input
                   id="location"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="bg-black/40 border-white/10 focus:border-white/20"
+                  className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
                   placeholder="City, Country"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-white">Phone Number</Label>
+                <Label htmlFor="phone" className="text-[var(--white)]">Phone Number</Label>
                 <Input
                   id="phone"
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="bg-black/40 border-white/10 focus:border-white/20"
+                  className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="website" className="text-white">Website</Label>
+              <Label htmlFor="website" className="text-[var(--white)]">Website</Label>
               <Input
                 id="website"
                 type="url"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                className="bg-black/40 border-white/10 focus:border-white/20"
+                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
                 placeholder="https://example.com"
               />
             </div>
@@ -157,7 +157,7 @@ const Account = () => {
             <div className="flex gap-4 pt-2">
               <Button 
                 type="submit" 
-                className="bg-black hover:bg-neutral-900 border border-white/10"
+                className="bg-[var(--black)] hover:bg-neutral-900 border border-white/10"
               >
                 Update Profile
               </Button>
@@ -165,7 +165,7 @@ const Account = () => {
                 <Button 
                   type="button" 
                   variant="outline" 
-                  className="bg-black border-white/10 hover:bg-white/5"
+                  className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5"
                 >
                   View Public Profile
                 </Button>

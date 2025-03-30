@@ -21,9 +21,9 @@ const KnowledgeBaseCard = () => {
         </Badge>
       </div>
       <div className="p-4">
-        <div className="bg-black/60 rounded-lg p-4">
+        <div className="bg-[var(--black)]/60 rounded-lg p-4">
           <div className="mb-4 flex items-center justify-between">
-            <h3 className="font-medium text-white">Company Wiki</h3>
+            <h3 className="font-medium text-[var(--white)]">Company Wiki</h3>
             <div className="flex items-center space-x-2">
               <div className="text-xs text-green-400 flex items-center">
                 <div className="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center text-xs mr-1">AI</div>
@@ -38,7 +38,7 @@ const KnowledgeBaseCard = () => {
                 <Calendar className="h-4 w-4 text-purple-400 mr-2" />
                 <span className="font-medium">Onboarding Process</span>
               </div>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-neutral-400">
                 Step-by-step guide for new employees, updated automatically by HR Bot.
               </p>
             </div>
@@ -48,7 +48,7 @@ const KnowledgeBaseCard = () => {
                 <FileText className="h-4 w-4 text-purple-400 mr-2" />
                 <span className="font-medium">Technical Documentation</span>
               </div>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-neutral-400">
                 API references and architectural diagrams maintained by DevBot.
               </p>
             </div>

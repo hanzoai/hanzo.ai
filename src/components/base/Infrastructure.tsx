@@ -14,8 +14,8 @@ const Infrastructure = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Global Infrastructure</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-[var(--white)] mb-4">Global Infrastructure</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Serverless architecture that scales automatically with your application needs
           </p>
         </motion.div>
@@ -31,8 +31,8 @@ const Infrastructure = () => {
             <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-900/30 text-blue-400 mb-5 mx-auto">
               <Globe className="h-6 w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Global Distribution</h3>
-            <p className="text-gray-300">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Global Distribution</h3>
+            <p className="text-neutral-300">
               Multi-region deployments ensuring low latency and high availability for users worldwide.
             </p>
           </motion.div>
@@ -47,8 +47,8 @@ const Infrastructure = () => {
             <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-900/30 text-blue-400 mb-5 mx-auto">
               <Zap className="h-6 w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Automatic Scaling</h3>
-            <p className="text-gray-300">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Automatic Scaling</h3>
+            <p className="text-neutral-300">
               Serverless infrastructure that scales resources up and down based on demand without manual intervention.
             </p>
           </motion.div>
@@ -63,8 +63,8 @@ const Infrastructure = () => {
             <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-900/30 text-blue-400 mb-5 mx-auto">
               <Shield className="h-6 w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">High Redundancy</h3>
-            <p className="text-gray-300">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-3">High Redundancy</h3>
+            <p className="text-neutral-300">
               Fault-tolerant architecture with redundancy and failover capabilities to ensure 99.99% uptime.
             </p>
           </motion.div>

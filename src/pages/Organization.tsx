@@ -80,23 +80,23 @@ const Organization = () => {
 
         <div className="flex flex-col md:flex-row md:items-center gap-6">
           <div className="h-24 w-24 bg-gray-900/30 rounded-xl flex items-center justify-center">
-            <Building className="h-12 w-12 text-gray-400" />
+            <Building className="h-12 w-12 text-neutral-400" />
           </div>
           
           <div>
             <h2 className="text-2xl font-bold mb-2">{currentOrganization.name}</h2>
-            <div className="text-gray-400">
+            <div className="text-neutral-400">
               {currentOrganization.role === 'owner' ? 'You are the owner of this organization' : 
                 `You are a ${currentOrganization.role} in this organization`}
             </div>
             
             <div className="mt-4 space-x-4">
-              <Button variant="outline" size="sm" className="bg-black border-gray-800/30 hover:bg-gray-900/30 space-x-2">
+              <Button variant="outline" size="sm" className="bg-[var(--black)] border-gray-800/30 hover:bg-gray-900/30 space-x-2">
                 <Upload className="h-4 w-4" />
                 <span>Upload Logo</span>
               </Button>
               <Link to="/organization-profile">
-                <Button variant="outline" size="sm" className="bg-black border-gray-800/30 hover:bg-gray-900/30">
+                <Button variant="outline" size="sm" className="bg-[var(--black)] border-gray-800/30 hover:bg-gray-900/30">
                   View Public Profile
                 </Button>
               </Link>
@@ -187,7 +187,7 @@ const Organization = () => {
                         </Avatar>
                         <div>
                           <div className="font-medium">{member.name}</div>
-                          <div className="text-sm text-gray-400">{member.email}</div>
+                          <div className="text-sm text-neutral-400">{member.email}</div>
                         </div>
                       </div>
                     </TableCell>
@@ -197,7 +197,7 @@ const Organization = () => {
                           ? 'bg-purple-900/10 text-purple-300' 
                           : member.role === 'Admin' 
                             ? 'bg-blue-900/10 text-blue-300' 
-                            : 'bg-gray-900/20 text-gray-300'
+                            : 'bg-gray-900/20 text-neutral-300'
                       }`}>
                         {member.role}
                       </span>
@@ -209,11 +209,11 @@ const Organization = () => {
                             <MoreVertical className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-black border-gray-800/30">
-                          <DropdownMenuItem className="text-white hover:bg-gray-900/30">
+                        <DropdownMenuContent align="end" className="bg-[var(--black)] border-gray-800/30">
+                          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
                             View Profile
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-white hover:bg-gray-900/30">
+                          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
                             Change Role
                           </DropdownMenuItem>
                           <DropdownMenuItem className="text-red-400 hover:bg-red-900/10 hover:text-red-300">

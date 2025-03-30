@@ -16,7 +16,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
         <Icon className="h-6 w-6 text-purple-400" />
       </div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <p className="text-neutral-300">{description}</p>
     </motion.div>
   );
 };
@@ -66,7 +66,7 @@ const HanzoExtensionFeatures = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/50">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ const HanzoExtensionFeatures = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Powerful Features</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Enhance your browsing experience with AI-powered capabilities
           </p>
         </motion.div>

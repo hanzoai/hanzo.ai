@@ -13,14 +13,14 @@ const WebinarCard = ({ title, partner, image, logos = [] }) => {
       className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden group hover:border-gray-700 transition-colors"
     >
       <div className="h-48 bg-gray-800 relative">
-        <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+        <div className="absolute inset-0 flex items-center justify-center text-neutral-500">
           {title}
         </div>
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="text-lg font-semibold">{title}</div>
-          <div className="text-gray-500">{partner}</div>
+          <div className="text-neutral-500">{partner}</div>
         </div>
         <Button className="w-full bg-gray-800 hover:bg-gray-700">
           Learn More
@@ -65,7 +65,7 @@ const HanzoAppWebinars = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ const HanzoAppWebinars = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Webinars</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Learn how to use Hanzo AI from different webinar series with our partners
           </p>
         </motion.div>

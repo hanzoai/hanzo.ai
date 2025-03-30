@@ -10,7 +10,7 @@ interface KanbanAddTaskButtonProps {
 const KanbanAddTaskButton: React.FC<KanbanAddTaskButtonProps> = ({ onAddTask }) => {
   return (
     <Button 
-      className="w-full justify-start text-gray-400 hover:text-white border border-gray-800 bg-black hover:bg-gray-900" 
+      className="w-full justify-start text-neutral-400 hover:text-[var(--white)] border border-gray-800 bg-[var(--black)] hover:bg-gray-900" 
       variant="outline"
       onClick={onAddTask}
     >

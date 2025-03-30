@@ -27,8 +27,8 @@ const PlatformFeatureCard: React.FC<PlatformFeatureCardProps> = ({
       <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
         <Icon className="h-6 w-6 text-purple-400" />
       </div>
-      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{title}</h3>
+      <p className="text-neutral-400">{description}</p>
     </motion.div>
   );
 };

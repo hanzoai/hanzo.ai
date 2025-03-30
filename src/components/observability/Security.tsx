@@ -16,7 +16,7 @@ const securityFeatures = [
 
 const Security = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent opacity-70"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -31,7 +31,7 @@ const Security = () => {
               <Shield className="h-7 w-7 text-green-400" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Enterprise-Grade Security & Compliance</h2>
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="text-lg text-neutral-300 mb-8">
               Hanzo Observability is engineered with enterprise-grade security, compliance, and privacy at its foundation.
             </p>
             
@@ -46,7 +46,7 @@ const Security = () => {
                   className="flex items-center"
                 >
                   <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0" />
-                  <span className="text-gray-300">{feature}</span>
+                  <span className="text-neutral-300">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -60,7 +60,7 @@ const Security = () => {
             className="relative"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-xl blur opacity-75"></div>
-            <div className="relative bg-black rounded-xl border border-gray-800 p-8">
+            <div className="relative bg-[var(--black)] rounded-xl border border-gray-800 p-8">
               <div className="space-y-6">
                 <div className="flex items-center">
                   <div className="p-2 bg-green-900/30 rounded-md mr-4">
@@ -68,12 +68,12 @@ const Security = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Data Encryption</h3>
-                    <p className="text-gray-400 text-sm">All data encrypted at rest and in transit</p>
+                    <p className="text-neutral-400 text-sm">All data encrypted at rest and in transit</p>
                   </div>
                 </div>
                 
                 <div className="bg-gray-900/50 rounded-lg p-4">
-                  <div className="mb-3 text-sm text-gray-400">Security Certifications</div>
+                  <div className="mb-3 text-sm text-neutral-400">Security Certifications</div>
                   <div className="grid grid-cols-2 gap-3">
                     {["SOC 2", "ISO 27001", "GDPR", "HIPAA"].map((cert, idx) => (
                       <div key={idx} className="bg-gray-800/50 p-2 rounded flex items-center">
@@ -85,7 +85,7 @@ const Security = () => {
                 </div>
                 
                 <div className="bg-gray-900/50 rounded-lg p-4">
-                  <div className="mb-3 text-sm text-gray-400">Data Privacy Controls</div>
+                  <div className="mb-3 text-sm text-neutral-400">Data Privacy Controls</div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Data Retention</span>

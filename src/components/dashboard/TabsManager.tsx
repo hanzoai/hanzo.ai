@@ -60,7 +60,7 @@ const TabsManager: React.FC<TabsManagerProps> = ({ initialTabs, onAddTab }) => {
               <span className="truncate max-w-[150px]">{tab.title}</span>
               {tabs.length > 1 && (
                 <button
-                  className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-white"
+                  className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-neutral-500 hover:text-[var(--white)]"
                   onClick={(e) => handleCloseTab(e, tab.id)}
                 >
                   <X size={14} />

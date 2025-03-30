@@ -36,7 +36,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           {/* Central platform hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <div className="w-28 h-28 rounded-full bg-gradient-to-br from-indigo-600/30 to-purple-600/30 border border-indigo-500/40 flex items-center justify-center">
-              <span className="text-xl font-bold text-white">Hanzo DX</span>
+              <span className="text-xl font-bold text-[var(--white)]">Hanzo DX</span>
             </div>
             
             {/* Connection lines to product categories */}
@@ -71,7 +71,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
                       onMouseEnter={() => setIsHovered(platform.id)}
                       onMouseLeave={() => setIsHovered(null)}
                     >
-                      <span className="text-xs font-medium text-white whitespace-nowrap">{platform.title}</span>
+                      <span className="text-xs font-medium text-[var(--white)] whitespace-nowrap">{platform.title}</span>
                     </div>
                   </React.Fragment>
                 );
@@ -116,12 +116,12 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
             <ChromeText as="h3" className="text-xl font-bold mb-2">
               Explore More
             </ChromeText>
-            <p className="text-gray-300 mb-4 text-sm">
+            <p className="text-neutral-300 mb-4 text-sm">
               Discover our complete DX Platform and developer tools ecosystem
             </p>
             <div className="mt-auto">
               <Button 
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white w-full"
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-[var(--white)] w-full"
                 radius="full"
               >
                 View All Tools
@@ -143,18 +143,18 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           <ChromeText as="h2" className="text-2xl md:text-3xl font-bold mb-4">
             Start Building Today, Risk-Free
           </ChromeText>
-          <p className="text-lg text-gray-300 mb-6">
+          <p className="text-lg text-neutral-300 mb-6">
             Sign up now and receive $5 in free credits. Earn an additional $5 credit for every friend who joins through your referral link.
           </p>
           <Button 
             asChild
             size="lg"
-            className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium shadow-lg transition-all duration-300"
+            className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-[var(--white)] font-medium shadow-lg transition-all duration-300"
             radius="full"
           >
             <Link to="/signup">Get Started Free</Link>
           </Button>
-          <p className="mt-4 text-sm text-gray-400">
+          <p className="mt-4 text-sm text-neutral-400">
             No credit card required. <Link to="/referrals" className="text-indigo-400 hover:text-indigo-300 underline">Learn more</Link> about our referral program.
           </p>
         </div>

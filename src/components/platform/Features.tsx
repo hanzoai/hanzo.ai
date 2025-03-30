@@ -43,7 +43,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -60,7 +60,7 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-neutral-300 max-w-3xl mx-auto"
           >
             Everything you love about Hanzo Cloud, available as free and open source software you can run anywhere.
           </motion.p>
@@ -82,18 +82,18 @@ const Features = () => {
                 </div>
                 <h2 className="text-3xl font-bold">{feature.title}</h2>
               </div>
-              <p className="text-xl text-gray-300 mb-4">{feature.description}</p>
-              <p className="text-gray-400 mb-6">{feature.details}</p>
+              <p className="text-xl text-neutral-300 mb-4">{feature.description}</p>
+              <p className="text-neutral-400 mb-6">{feature.details}</p>
               
               <a href="#learn-more" className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               
               <div className="mt-8">
-                <p className="text-sm text-gray-500 mb-2">Replaces</p>
+                <p className="text-sm text-neutral-500 mb-2">Replaces</p>
                 <div className="flex flex-wrap gap-4">
                   {feature.replaces.map((replace, i) => (
-                    <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-400">
+                    <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-neutral-400">
                       {replace}
                     </span>
                   ))}
@@ -120,19 +120,19 @@ const Features = () => {
             <div className="space-y-4">
               <Code2 className="h-10 w-10 text-green-400" />
               <h3 className="text-xl font-bold">MIT Licensed</h3>
-              <p className="text-gray-400">Fork it, modify it, use it commercially. We believe in true open source.</p>
+              <p className="text-neutral-400">Fork it, modify it, use it commercially. We believe in true open source.</p>
             </div>
             
             <div className="space-y-4">
               <Lock className="h-10 w-10 text-green-400" />
               <h3 className="text-xl font-bold">Data Sovereignty</h3>
-              <p className="text-gray-400">Keep your code, data, and models on your infrastructure. No vendor lock-in.</p>
+              <p className="text-neutral-400">Keep your code, data, and models on your infrastructure. No vendor lock-in.</p>
             </div>
             
             <div className="space-y-4">
               <Network className="h-10 w-10 text-green-400" />
               <h3 className="text-xl font-bold">Enterprise Ready</h3>
-              <p className="text-gray-400">Scale from a laptop to a data center with enterprise support available.</p>
+              <p className="text-neutral-400">Scale from a laptop to a data center with enterprise support available.</p>
             </div>
           </div>
         </motion.div>

@@ -9,7 +9,7 @@ const SolutionsHero: React.FC = () => {
       <ChromeText as="h1" className="text-4xl sm:text-5xl font-bold mb-6">
         Enterprise Solutions
       </ChromeText>
-      <p className="text-gray-400 text-lg">
+      <p className="text-neutral-400 text-lg">
         Hanzo delivers a unified ecosystem of AI Cloud infrastructure, developer platforms, and expert consulting 
         to transform how enterprises build, deploy, and scale next-generation applications.
       </p>

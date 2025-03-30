@@ -9,7 +9,7 @@ import ChromeText from "@/components/ui/chrome-text";
 
 const Edge = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       
       {/* Hero Section */}
@@ -23,14 +23,14 @@ const Edge = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">
               Hanzo Edge
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Deploy globally in milliseconds with ultra-low latency edge computing infrastructure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-6 text-lg">
+              <Button className="bg-cyan-600 hover:bg-cyan-700 text-[var(--white)] px-8 py-6 text-lg">
                 Get Started
               </Button>
-              <Button variant="outline" className="border-cyan-500/30 text-white hover:bg-cyan-900/20 px-8 py-6 text-lg">
+              <Button variant="outline" className="border-cyan-500/30 text-[var(--white)] hover:bg-cyan-900/20 px-8 py-6 text-lg">
                 View Documentation
               </Button>
             </div>
@@ -40,22 +40,22 @@ const Edge = () => {
           <div className="relative bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-8 overflow-hidden">
             <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex flex-col items-center p-4 bg-black/30 rounded-lg border border-cyan-500/30">
+              <div className="flex flex-col items-center p-4 bg-[var(--black)]/30 rounded-lg border border-cyan-500/30">
                 <Globe className="h-10 w-10 text-cyan-400 mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Global Network</h3>
-                <p className="text-center text-gray-300">Deploy to 200+ locations worldwide in seconds</p>
+                <p className="text-center text-neutral-300">Deploy to 200+ locations worldwide in seconds</p>
               </div>
               
-              <div className="flex flex-col items-center p-4 bg-black/30 rounded-lg border border-cyan-500/30">
+              <div className="flex flex-col items-center p-4 bg-[var(--black)]/30 rounded-lg border border-cyan-500/30">
                 <Zap className="h-10 w-10 text-cyan-400 mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Ultra-Low Latency</h3>
-                <p className="text-center text-gray-300">Sub-50ms response times for 99% of global users</p>
+                <p className="text-center text-neutral-300">Sub-50ms response times for 99% of global users</p>
               </div>
               
-              <div className="flex flex-col items-center p-4 bg-black/30 rounded-lg border border-cyan-500/30">
+              <div className="flex flex-col items-center p-4 bg-[var(--black)]/30 rounded-lg border border-cyan-500/30">
                 <Network className="h-10 w-10 text-cyan-400 mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Built-in CDN</h3>
-                <p className="text-center text-gray-300">Integrated caching and content delivery</p>
+                <p className="text-center text-neutral-300">Integrated caching and content delivery</p>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const Edge = () => {
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Key Features & Capabilities
             </ChromeText>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Powerful edge computing infrastructure for modern applications
             </p>
           </div>
@@ -84,7 +84,7 @@ const Edge = () => {
             >
               <Code className="h-10 w-10 text-cyan-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Edge Functions</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Run serverless functions at the edge with zero cold starts and automatic scaling.
               </p>
             </motion.div>
@@ -98,7 +98,7 @@ const Edge = () => {
             >
               <Cloud className="h-10 w-10 text-cyan-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Edge Caching</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Intelligent caching strategies with automatic invalidation and stale-while-revalidate.
               </p>
             </motion.div>
@@ -112,7 +112,7 @@ const Edge = () => {
             >
               <Server className="h-10 w-10 text-cyan-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">AI at the Edge</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Run AI inference at the edge with optimized runtimes for major ML frameworks.
               </p>
             </motion.div>
@@ -126,7 +126,7 @@ const Edge = () => {
             >
               <Globe className="h-10 w-10 text-cyan-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Global Network</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Deploy to 200+ locations worldwide with automatic regional failover and load balancing.
               </p>
             </motion.div>
@@ -140,7 +140,7 @@ const Edge = () => {
             >
               <Network className="h-10 w-10 text-cyan-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Real-time WebSockets</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Build real-time applications with globally distributed WebSocket infrastructure.
               </p>
             </motion.div>
@@ -154,7 +154,7 @@ const Edge = () => {
             >
               <Shield className="h-10 w-10 text-cyan-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Security & DDoS Protection</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Built-in security with firewall rules, DDoS protection, and bot mitigation.
               </p>
             </motion.div>
@@ -169,7 +169,7 @@ const Edge = () => {
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Common Use Cases
             </ChromeText>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Hanzo Edge powers a wide range of modern applications
             </p>
           </div>
@@ -177,10 +177,10 @@ const Edge = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-cyan-900/10 border border-cyan-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Dynamic Web Applications</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Build and deploy web applications that respond dynamically to user input and data changes.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
                   <span>E-commerce platforms with personalized recommendations</span>
@@ -198,10 +198,10 @@ const Edge = () => {
             
             <div className="bg-cyan-900/10 border border-cyan-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">API Gateways & Backends</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Create scalable API gateways and backends that handle authentication, routing, and transformation.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
                   <span>API proxies with rate limiting and caching</span>
@@ -219,10 +219,10 @@ const Edge = () => {
             
             <div className="bg-cyan-900/10 border border-cyan-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Real-time Applications</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Build collaborative and real-time applications with WebSockets and server-sent events.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
                   <span>Collaborative document editing</span>
@@ -240,10 +240,10 @@ const Edge = () => {
             
             <div className="bg-cyan-900/10 border border-cyan-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">AI-powered Applications</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Deploy AI models at the edge for fast inference and personalized experiences.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
                   <span>Content moderation and filtering</span>
@@ -268,14 +268,14 @@ const Edge = () => {
           <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-2xl p-8 md:p-12 border border-cyan-500/30">
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">Deploy Globally in Seconds</h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 mb-8 max-w-3xl mx-auto">
                 Get started with Hanzo Edge today and experience ultra-low latency computing at the edge.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-6 text-lg">
+                <Button className="bg-cyan-600 hover:bg-cyan-700 text-[var(--white)] px-8 py-6 text-lg">
                   Sign Up Free
                 </Button>
-                <Button variant="outline" className="border-cyan-500/30 text-white hover:bg-cyan-900/20 px-8 py-6 text-lg">
+                <Button variant="outline" className="border-cyan-500/30 text-[var(--white)] hover:bg-cyan-900/20 px-8 py-6 text-lg">
                   Contact Sales
                 </Button>
               </div>

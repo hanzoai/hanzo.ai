@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const InfrastructureComponents = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/50">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,10 +15,10 @@ const InfrastructureComponents = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Infrastructure Components
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             The building blocks of the Hanzo Platform
           </p>
         </motion.div>
@@ -34,12 +34,12 @@ const InfrastructureComponents = () => {
           >
             <div className="flex items-center mb-4">
               <Database className="h-8 w-8 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Vector DB</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">Vector DB</h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               High-performance vector database designed for AI applications with local and distributed modes.
             </p>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>3.4k stars</span>
@@ -73,12 +73,12 @@ const InfrastructureComponents = () => {
           >
             <div className="flex items-center mb-4">
               <Brain className="h-8 w-8 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">LLM Runtime</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">LLM Runtime</h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               Optimized inference engine for running large language models locally with minimal resource usage.
             </p>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>4.1k stars</span>
@@ -112,12 +112,12 @@ const InfrastructureComponents = () => {
           >
             <div className="flex items-center mb-4">
               <Zap className="h-8 w-8 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">API Gateway</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">API Gateway</h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               High-performance API Gateway for routing, authentication, and rate limiting in AI applications.
             </p>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>2.8k stars</span>

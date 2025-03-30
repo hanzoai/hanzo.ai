@@ -50,7 +50,7 @@ const UseCases = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-0 w-72 h-72 bg-purple-900/10 rounded-full blur-3xl"></div>
@@ -65,10 +65,10 @@ const UseCases = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Versatile AI Use Cases
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-300">
               Hanzo's AI platform supports a wide range of intelligent applications across industries
             </p>
           </motion.div>
@@ -87,8 +87,8 @@ const UseCases = () => {
               <div className={`h-14 w-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${useCase.color} group-hover:bg-opacity-30`}>
                 <useCase.icon className={`h-7 w-7 ${useCase.textColor}`} />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{useCase.title}</h3>
-              <p className="text-gray-400">{useCase.description}</p>
+              <h3 className="text-xl font-semibold text-[var(--white)] mb-3">{useCase.title}</h3>
+              <p className="text-neutral-400">{useCase.description}</p>
             </motion.div>
           ))}
         </div>
@@ -103,11 +103,11 @@ const UseCases = () => {
         >
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-8 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Simple Implementation</h3>
-              <p className="text-gray-400 mb-6">
+              <h3 className="text-2xl font-bold text-[var(--white)] mb-4">Simple Implementation</h3>
+              <p className="text-neutral-400 mb-6">
                 Build powerful AI applications with just a few lines of code using our intuitive SDK
               </p>
-              <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-gray-300 overflow-x-auto">
+              <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
                 <pre>
 {`import { Hanzo } from '@hanzo/ai';
 
@@ -131,7 +131,7 @@ console.log(response);`}
               </div>
             </div>
             <div className="lg:w-1/2 bg-gray-950 p-8 flex flex-col">
-              <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-4 flex items-center">
                 <BookOpen className="h-4 w-4 mr-2 text-purple-400" />
                 Documentation Example
               </h4>
@@ -141,7 +141,7 @@ console.log(response);`}
                     <Database className="h-4 w-4 text-blue-400 mr-2" />
                     <h5 className="text-blue-400 font-medium">Vector Search</h5>
                   </div>
-                  <pre className="text-xs text-gray-300 overflow-x-auto">
+                  <pre className="text-xs text-neutral-300 overflow-x-auto">
 {`// Create a vector store
 const vectorStore = hanzo.vectorStore('my-store');
 
@@ -164,7 +164,7 @@ const results = await vectorStore.search(
                     <Bot className="h-4 w-4 text-green-400 mr-2" />
                     <h5 className="text-green-400 font-medium">AI Agents</h5>
                   </div>
-                  <pre className="text-xs text-gray-300 overflow-x-auto">
+                  <pre className="text-xs text-neutral-300 overflow-x-auto">
 {`// Create an agent with tools
 const agent = hanzo.agent({
   model: 'claude-3-opus',

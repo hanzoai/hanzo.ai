@@ -20,14 +20,14 @@ const CTA = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Build the Future with AI?
           </h2>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
             Join thousands of developers and start building powerful AI applications today.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] rounded-full"
             >
               Get Started Free
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -36,14 +36,14 @@ const CTA = () => {
             <Button 
               size="sm"
               variant="outline"
-              className="text-white border-gray-700 hover:bg-white/10 rounded-full"
+              className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 rounded-full"
             >
               <Github className="mr-2 h-4 w-4" />
               Star on GitHub
             </Button>
           </div>
           
-          <p className="text-gray-400 mt-8">
+          <p className="text-neutral-400 mt-8">
             No credit card required. Start with our free tier.
           </p>
         </div>

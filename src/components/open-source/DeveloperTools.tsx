@@ -15,10 +15,10 @@ const DeveloperTools = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Developer Tools
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Tools and libraries that enhance developer productivity
           </p>
         </motion.div>
@@ -34,12 +34,12 @@ const DeveloperTools = () => {
           >
             <div className="flex items-center mb-4">
               <Code className="h-8 w-8 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Hanzo Dev</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo Dev</h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               AI-powered software engineering assistant that helps you write, debug, and document code.
             </p>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>3.2k stars</span>
@@ -73,12 +73,12 @@ const DeveloperTools = () => {
           >
             <div className="flex items-center mb-4">
               <Users className="h-8 w-8 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Hanzo Team</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo Team</h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               An integrated collaboration platform with AI-powered tools for remote teams.
             </p>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>2.7k stars</span>
@@ -112,12 +112,12 @@ const DeveloperTools = () => {
           >
             <div className="flex items-center mb-4">
               <Terminal className="h-8 w-8 text-green-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Hanzo CLI</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo CLI</h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               Command-line interface for scaffolding and managing Hanzo applications. Create, deploy, and manage with ease.
             </p>
-            <div className="flex items-center justify-between text-sm text-gray-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>1.9k stars</span>
@@ -143,7 +143,7 @@ const DeveloperTools = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-green-500/30 text-white hover:bg-green-800/30">
+          <Button size="lg" variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-800/30">
             <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Github className="mr-2 h-5 w-5" /> View All Projects
             </a>

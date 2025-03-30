@@ -38,7 +38,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
   const specialty = member.description.split(',')[0].trim();
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       
       <main className="pt-32 pb-16 px-4">
@@ -49,12 +49,12 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
         >
           <div className="text-center mb-16">
             <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${member.gradient} mb-4`}>
-              <MainIcon className="h-8 w-8 text-white" />
+              <MainIcon className="h-8 w-8 text-[var(--white)]" />
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               {member.title}
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
               {member.description}
             </p>
           </div>
@@ -70,7 +70,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 >
                   <FeatureIcon className={`h-8 w-8 ${feature.color} mb-4`} />
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <p className="text-neutral-400">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -88,15 +88,15 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 <div className="p-3 rounded-lg bg-purple-500/20 self-start inline-block mb-4">
                   <Users className="h-6 w-6 text-purple-400" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Hanzo Agency</h3>
-                <p className="text-gray-300 mb-5">
+                <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
+                <p className="text-neutral-300 mb-5">
                   {member.name} collaborates with our creative agency to help brands transform their digital 
                   presence using cutting-edge AI-powered design and marketing strategies.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button 
                     onClick={handleContactAgency}
-                    className="bg-purple-600 hover:bg-purple-500 text-white"
+                    className="bg-purple-600 hover:bg-purple-500 text-[var(--white)]"
                   >
                     Work with Hanzo Agency
                     <ExternalLink className="ml-2 h-4 w-4" />
@@ -113,15 +113,15 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 <div className="p-3 rounded-lg bg-green-500/20 self-start inline-block mb-4">
                   <Shield className="h-6 w-6 text-green-400" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Sensei Group</h3>
-                <p className="text-gray-300 mb-5">
+                <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
+                <p className="text-neutral-300 mb-5">
                   When your project requires human expertise, {member.name} works alongside our collective of 
                   CXOs and industry specialists to implement enterprise-grade solutions.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button 
                     onClick={handleContactSensei}
-                    className="bg-green-600 hover:bg-green-500 text-white"
+                    className="bg-green-600 hover:bg-green-500 text-[var(--white)]"
                   >
                     Contact Sensei Group
                     <ExternalLink className="ml-2 h-4 w-4" />
@@ -138,7 +138,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
           {/* Use Cases Section */}
           <div className="text-center max-w-3xl mx-auto mt-16">
             <h2 className="text-2xl font-semibold mb-6">What {member.name} Can Do For You</h2>
-            <p className="text-gray-400 mb-8">
+            <p className="text-neutral-400 mb-8">
               {member.name} specializes in {specialty} to help you achieve your goals.
               For the best results, consider working with our expert human teams at Hanzo Agency or Sensei Group.
             </p>

@@ -15,7 +15,7 @@ const TechCard = ({ icon, title, description }: TechCardProps) => {
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <p className="text-neutral-400">{description}</p>
     </div>
   );
 };
@@ -59,7 +59,7 @@ const TechStack = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Technology Stack</h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
             Built on modern technologies for performance, security, and scalability.
           </p>
         </div>

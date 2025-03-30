@@ -8,7 +8,7 @@ import ChatFeatures from "./ChatFeatures";
 
 const TeamChatLayout: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] flex flex-col">
       <Navbar />
       
       <main className="flex-1 flex flex-col pt-16">

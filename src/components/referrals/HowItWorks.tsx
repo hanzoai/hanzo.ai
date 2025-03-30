@@ -14,7 +14,7 @@ const HowItWorks = () => {
             </div>
             <h3 className="font-medium">Share Your Link</h3>
           </div>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-neutral-400">
             Share your unique referral link with friends and colleagues via email or social media
           </p>
         </div>
@@ -26,7 +26,7 @@ const HowItWorks = () => {
             </div>
             <h3 className="font-medium">Friends Sign Up</h3>
           </div>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-neutral-400">
             When your friends use your link to sign up and subscribe to any paid plan
           </p>
         </div>
@@ -38,7 +38,7 @@ const HowItWorks = () => {
             </div>
             <h3 className="font-medium">Earn Credits</h3>
           </div>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-neutral-400">
             You receive $5 in credits for each successful referral that can be used toward your subscription
           </p>
         </div>

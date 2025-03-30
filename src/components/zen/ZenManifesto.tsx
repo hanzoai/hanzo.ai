@@ -91,8 +91,8 @@ const ZenManifesto: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our AI Engineering Manifesto</h2>
-          <p className="text-gray-300 md:text-lg max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">Our AI Engineering Manifesto</h2>
+          <p className="text-neutral-300 md:text-lg max-w-3xl mx-auto">
             Hanzo began as a spark—an intuition that AI was the next great leverage. Since then, 
             we've honed our craft: a fusion of relentless experimentation, bold creativity, and disciplined 
             engineering, forging principles that guide our quest for radical innovation.
@@ -111,9 +111,9 @@ const ZenManifesto: React.FC = () => {
             >
               <div className="flex items-center mb-3">
                 <div className="text-3xl text-purple-400 font-semibold mr-3">{principle.japaneseSymbol}</div>
-                <h3 className="text-xl text-white font-bold">{principle.title}</h3>
+                <h3 className="text-xl text-[var(--white)] font-bold">{principle.title}</h3>
               </div>
-              <p className="text-gray-300">{principle.description}</p>
+              <p className="text-neutral-300">{principle.description}</p>
             </motion.div>
           ))}
         </div>
@@ -125,9 +125,9 @@ const ZenManifesto: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-6 bg-black/30 backdrop-blur-sm border border-purple-500/20 rounded-lg">
-            <h3 className="text-xl text-white font-bold mb-2">Crafted by Innovators, Proven by Scale</h3>
-            <p className="text-gray-300">
+          <div className="inline-block p-6 bg-[var(--black)]/30 backdrop-blur-sm border border-purple-500/20 rounded-lg">
+            <h3 className="text-xl text-[var(--white)] font-bold mb-2">Crafted by Innovators, Proven by Scale</h3>
+            <p className="text-neutral-300">
               The Zen of Hanzo is our battle-tested ethos. Born from the crucible of high-stakes launches,
               explosive successes, and daring experiments. We are AI engineers, cypherpunk innovators, 
               and relentless optimists who believe technology is a lever to amplify human creativity and enterprise.

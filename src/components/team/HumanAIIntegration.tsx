@@ -61,17 +61,17 @@ const HumanAIIntegration = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Human-AI Integration
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Our AI agents are designed to work alongside your human team, 
               creating a seamless integration that enhances productivity and creativity.
             </p>
             
-            <div className="relative aspect-video rounded-xl overflow-hidden border border-purple-500/20 bg-black/50">
+            <div className="relative aspect-video rounded-xl overflow-hidden border border-purple-500/20 bg-[var(--black)]/50">
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* This would be a real video in production */}
                 <div className="text-center p-8">
                   <Video className="h-16 w-16 text-purple-400 mx-auto mb-4 opacity-70" />
-                  <p className="text-gray-400">Interactive demo video would be here</p>
+                  <p className="text-neutral-400">Interactive demo video would be here</p>
                 </div>
               </div>
             </div>
@@ -87,14 +87,14 @@ const HumanAIIntegration = () => {
               {features.map((feature, index) => (
                 <Card 
                   key={index} 
-                  className="bg-black/40 border border-purple-900/20 backdrop-blur-sm overflow-hidden"
+                  className="bg-[var(--black)]/40 border border-purple-900/20 backdrop-blur-sm overflow-hidden"
                 >
                   <CardContent className="p-6">
                     <div className="bg-purple-900/20 p-3 rounded-lg inline-flex mb-4">
                       {feature.icon}
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-gray-400">{feature.description}</p>
+                    <p className="text-neutral-400">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -55,7 +55,7 @@ const Chat = ({
             />
             <button 
               type="submit" 
-              className="rounded-l-none bg-purple-600 hover:bg-purple-700 px-4 py-2 text-white font-medium"
+              className="rounded-l-none bg-purple-600 hover:bg-purple-700 px-4 py-2 text-[var(--white)] font-medium"
             >
               Send
             </button>

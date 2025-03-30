@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 const Cloud = () => {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] overflow-x-hidden">
       <Helmet>
         <title>Hanzo Cloud - Harmonious Infrastructure</title>
         <meta name="description" content="Infrastructure that scales with intention. Deploy with simplicity, scale with wisdom." />

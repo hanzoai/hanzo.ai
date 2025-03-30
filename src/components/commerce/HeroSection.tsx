@@ -19,11 +19,11 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="text-white">Hanzo</span>
+            <span className="text-[var(--white)]">Hanzo</span>
             <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent"> Commerce</span>
           </h1>
           
-          <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+          <p className="text-neutral-300 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
             A powerful headless e-commerce platform with API-first architecture. 
             Build custom shopping experiences with modular components that scale.
           </p>
@@ -40,7 +40,7 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-white/10"
+              className="border-gray-600 text-[var(--white)] hover:bg-[var(--white)]/10"
               onClick={() => window.open('https://console.hanzo.ai', '_blank')}
             >
               Console

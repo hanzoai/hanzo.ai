@@ -70,24 +70,24 @@ const InvoicesList = () => {
   return (
     <motion.div 
       variants={cardAnimation}
-      className="rounded-xl border border-gray-800 bg-black/60 overflow-hidden"
+      className="rounded-xl border border-gray-800 bg-[var(--black)]/60 overflow-hidden"
     >
       <div className="p-6 border-b border-gray-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex items-center gap-3">
-          <Calendar className="h-5 w-5 text-gray-400" />
+          <Calendar className="h-5 w-5 text-neutral-400" />
           <div className="space-y-1">
             <h3 className="text-xl font-medium">Invoice History</h3>
-            <p className="text-sm text-gray-400">View and download past invoices</p>
+            <p className="text-sm text-neutral-400">View and download past invoices</p>
           </div>
         </div>
         
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="border-gray-700 bg-black hover:bg-gray-900">
+          <Button variant="outline" size="sm" className="border-gray-700 bg-[var(--black)] hover:bg-gray-900">
             <Filter className="h-4 w-4 mr-2" />
             Filter
           </Button>
           
-          <Button className="bg-white hover:bg-gray-200 text-black">
+          <Button className="bg-[var(--white)] hover:bg-gray-200 text-black">
             <Download className="h-4 w-4 mr-2" />
             Export All
           </Button>
@@ -97,14 +97,14 @@ const InvoicesList = () => {
       {filteredInvoices.length > 0 ? (
         <div className="overflow-x-auto">
           <Table>
-            <TableHeader className="bg-black">
+            <TableHeader className="bg-[var(--black)]">
               <TableRow className="border-b border-gray-800 hover:bg-transparent">
-                <TableHead className="text-gray-400 font-medium py-3 px-6">Invoice</TableHead>
-                <TableHead className="text-gray-400 font-medium py-3 px-6">Date</TableHead>
-                <TableHead className="text-gray-400 font-medium py-3 px-6">Due Date</TableHead>
-                <TableHead className="text-gray-400 font-medium py-3 px-6">Amount</TableHead>
-                <TableHead className="text-gray-400 font-medium py-3 px-6">Status</TableHead>
-                <TableHead className="text-right text-gray-400 font-medium py-3 px-6">Actions</TableHead>
+                <TableHead className="text-neutral-400 font-medium py-3 px-6">Invoice</TableHead>
+                <TableHead className="text-neutral-400 font-medium py-3 px-6">Date</TableHead>
+                <TableHead className="text-neutral-400 font-medium py-3 px-6">Due Date</TableHead>
+                <TableHead className="text-neutral-400 font-medium py-3 px-6">Amount</TableHead>
+                <TableHead className="text-neutral-400 font-medium py-3 px-6">Status</TableHead>
+                <TableHead className="text-right text-neutral-400 font-medium py-3 px-6">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -123,7 +123,7 @@ const InvoicesList = () => {
                     <Button 
                       variant="ghost" 
                       size="sm"
-                      className="text-gray-400 hover:text-white hover:bg-gray-800"
+                      className="text-neutral-400 hover:text-[var(--white)] hover:bg-gray-800"
                     >
                       <Download className="h-4 w-4 mr-2" />
                       Download
@@ -136,9 +136,9 @@ const InvoicesList = () => {
         </div>
       ) : (
         <div className="py-16 text-center">
-          <FileText className="h-12 w-12 mx-auto mb-4 text-gray-600" />
+          <FileText className="h-12 w-12 mx-auto mb-4 text-neutral-600" />
           <h3 className="text-xl font-medium mb-2">No Invoices Found</h3>
-          <p className="text-gray-400 max-w-md mx-auto">
+          <p className="text-neutral-400 max-w-md mx-auto">
             Once you start using our services, your invoices will appear here.
           </p>
         </div>

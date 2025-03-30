@@ -22,7 +22,7 @@ const SecurityFeatures = [
 
 const Security = () => {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-gray-900/40 via-transparent to-transparent"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -37,7 +37,7 @@ const Security = () => {
             <ShieldCheck className="h-10 w-10 text-green-400" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Enterprise-Grade Security & Compliance</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Secure by design, ensuring your data meets stringent compliance standards.
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const Security = () => {
                     className="flex items-center"
                   >
                     <CheckCircle className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300">{feature}</span>
+                    <span className="text-neutral-300">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -103,7 +103,7 @@ const Security = () => {
                       </div>
                       <h4 className="text-lg font-medium">{cert.name}</h4>
                     </div>
-                    <p className="mt-3 text-gray-400">{cert.details}</p>
+                    <p className="mt-3 text-neutral-400">{cert.details}</p>
                   </motion.div>
                 ))}
               </div>
@@ -117,7 +117,7 @@ const Security = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium mb-2">Data Privacy Commitment</h4>
-                    <p className="text-gray-400">
+                    <p className="text-neutral-400">
                       We believe privacy is a fundamental right. Hanzo Analytics is designed with privacy-first principles and gives you full control over your data collection practices.
                     </p>
                     <a href="#privacy-policy" className="inline-block mt-3 text-blue-400 hover:text-blue-300 transition-colors">

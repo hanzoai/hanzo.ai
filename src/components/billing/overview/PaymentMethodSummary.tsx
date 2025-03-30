@@ -16,11 +16,11 @@ const PaymentMethodSummary = () => {
       </div>
       <div className="flex items-center">
         <div className="h-10 w-14 bg-gray-800 rounded flex items-center justify-center mr-4">
-          <CreditCard className="h-6 w-6 text-gray-400" />
+          <CreditCard className="h-6 w-6 text-neutral-400" />
         </div>
         <div>
           <div className="font-medium">Visa ending in 4242</div>
-          <div className="text-sm text-gray-400">Expires 12/25</div>
+          <div className="text-sm text-neutral-400">Expires 12/25</div>
         </div>
       </div>
     </div>

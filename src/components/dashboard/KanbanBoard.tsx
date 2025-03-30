@@ -18,13 +18,13 @@ const KanbanBoard = () => {
     {
       id: "backlog",
       title: "Backlog",
-      icon: <Clock className="h-4 w-4 text-gray-400" />,
+      icon: <Clock className="h-4 w-4 text-neutral-400" />,
       tasks: tasks.filter(task => task.status === "backlog")
     },
     {
       id: "todo",
       title: "Todo",
-      icon: <CheckCircle className="h-4 w-4 text-gray-400" />,
+      icon: <CheckCircle className="h-4 w-4 text-neutral-400" />,
       tasks: tasks.filter(task => task.status === "todo")
     },
     {

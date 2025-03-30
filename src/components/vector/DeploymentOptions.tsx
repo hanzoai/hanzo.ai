@@ -97,10 +97,10 @@ const DeploymentOptions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Deployment Options to Match Your Journey
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-300">
               From local development to global-scale production, Hanzo Vector offers flexible deployment options to fit your needs.
             </p>
           </motion.div>
@@ -121,14 +121,14 @@ const DeploymentOptions = () => {
                 <div className={`h-12 w-12 rounded-lg ${bg} flex items-center justify-center mb-4`}>
                   <option.icon className={`h-6 w-6 ${text}`} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{option.title}</h3>
-                <p className="text-gray-300 mb-6">{option.description}</p>
+                <h3 className="text-xl font-bold text-[var(--white)] mb-2">{option.title}</h3>
+                <p className="text-neutral-300 mb-6">{option.description}</p>
                 
                 <ul className="space-y-2 mb-8 flex-grow">
                   {option.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start">
                       <span className={`mr-2 ${text}`}>•</span>
-                      <span className="text-gray-400 text-sm">{feature}</span>
+                      <span className="text-neutral-400 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>

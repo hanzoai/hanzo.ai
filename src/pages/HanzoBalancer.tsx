@@ -15,7 +15,7 @@ import EnterpriseSolutions from "@/components/balancer/EnterpriseSolutions";
 
 const HanzoBalancer = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       <HeroSection />
       <FeaturesOverview />

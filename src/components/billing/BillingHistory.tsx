@@ -30,7 +30,7 @@ const BillingHistory = () => {
       case 'Failed':
         return 'bg-red-900/20 text-red-400';
       default:
-        return 'bg-gray-900/20 text-gray-400';
+        return 'bg-gray-900/20 text-neutral-400';
     }
   };
 

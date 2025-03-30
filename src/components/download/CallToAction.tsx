@@ -26,7 +26,7 @@ const CallToAction = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -48,28 +48,28 @@ const CallToAction = () => {
             Do everything 100x faster
           </h2>
           
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-300 mb-12 max-w-2xl mx-auto">
             Hanzo AI lets models understand your desktop activity. Build faster.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white shadow-lg hover:shadow-xl transition-all flex items-center"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
             >
               <Apple className="mr-2 h-4 w-4" />
               Download (Apple Silicon)
             </Button>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white shadow-lg hover:shadow-xl transition-all flex items-center"
+              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
             >
               <Apple className="mr-2 h-4 w-4" />
               Download (Intel Mac)
             </Button>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-500 hover:to-gray-400 text-white shadow-lg hover:shadow-xl transition-all flex items-center"
+              className="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-500 hover:to-gray-400 text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
             >
               <ArrowDown className="mr-2 h-4 w-4" />
               Download for Windows
@@ -80,7 +80,7 @@ const CallToAction = () => {
             <Button 
               size="sm"
               variant="outline"
-              className="border-gray-700 text-white hover:bg-gray-800"
+              className="border-gray-700 text-[var(--white)] hover:bg-gray-800"
             >
               <Chrome className="mr-2 h-4 w-4" />
               Chrome Extension
@@ -88,7 +88,7 @@ const CallToAction = () => {
             <Button 
               size="sm"
               variant="outline"
-              className="border-gray-700 text-white hover:bg-gray-800"
+              className="border-gray-700 text-[var(--white)] hover:bg-gray-800"
             >
               <Chrome className="mr-2 h-4 w-4" />
               Safari Extension
@@ -96,7 +96,7 @@ const CallToAction = () => {
             <Button 
               size="sm"
               variant="outline"
-              className="border-gray-700 text-white hover:bg-gray-800"
+              className="border-gray-700 text-[var(--white)] hover:bg-gray-800"
             >
               <Chrome className="mr-2 h-4 w-4" />
               Firefox Add-on
@@ -104,7 +104,7 @@ const CallToAction = () => {
             <Button 
               size="sm"
               variant="outline"
-              className="border-gray-700 text-white hover:bg-gray-800"
+              className="border-gray-700 text-[var(--white)] hover:bg-gray-800"
             >
               <Chrome className="mr-2 h-4 w-4" />
               Edge Extension

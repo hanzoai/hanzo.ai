@@ -23,7 +23,7 @@ const HanzoCodeHero = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             The <span className="text-purple-400">Ultimate AI-Powered</span> Code Editor
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Beyond Cursor and Windsurf, Hanzo Code supercharges your favorite VS Code-compatible editor 
             with autonomous agents that transform how you build software.
           </p>
@@ -31,7 +31,7 @@ const HanzoCodeHero = () => {
           <div className="mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#" className="flex items-center">
                 Get Hanzo Code

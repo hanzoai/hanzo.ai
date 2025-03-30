@@ -6,7 +6,7 @@ import { Shield, Code } from "lucide-react";
 const EnterpriseFreePlans = () => {
   const enterprisePlan = {
     name: "Enterprise",
-    icon: <Shield className="h-6 w-6 text-gray-400" />,
+    icon: <Shield className="h-6 w-6 text-neutral-400" />,
     price: "Custom",
     description: "For large businesses requiring enterprise-grade security",
     features: [
@@ -24,7 +24,7 @@ const EnterpriseFreePlans = () => {
 
   const freePlan = {
     name: "Open Source",
-    icon: <Code className="h-6 w-6 text-gray-400" />,
+    icon: <Code className="h-6 w-6 text-neutral-400" />,
     price: "Free",
     billingPeriod: "Forever",
     description: "For individuals wanting full control",

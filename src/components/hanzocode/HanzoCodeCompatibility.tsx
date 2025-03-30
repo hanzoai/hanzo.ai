@@ -15,7 +15,7 @@ const HanzoCodeCompatibility = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Universal Compatibility</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Enhance any VS Code-compatible editor with Hanzo's intelligence
           </p>
         </motion.div>
@@ -34,36 +34,36 @@ const HanzoCodeCompatibility = () => {
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">VS Code:</span>
-                  <span className="text-gray-300 ml-2">Native integration with full feature support</span>
+                  <span className="font-semibold text-[var(--white)]">VS Code:</span>
+                  <span className="text-neutral-300 ml-2">Native integration with full feature support</span>
                 </div>
               </li>
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">Cursor:</span>
-                  <span className="text-gray-300 ml-2">Augment Cursor's AI capabilities with Hanzo's advanced agentic features</span>
+                  <span className="font-semibold text-[var(--white)]">Cursor:</span>
+                  <span className="text-neutral-300 ml-2">Augment Cursor's AI capabilities with Hanzo's advanced agentic features</span>
                 </div>
               </li>
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">Windsurf:</span>
-                  <span className="text-gray-300 ml-2">Add Hanzo's intelligence layer on top of Windsurf's editor experience</span>
+                  <span className="font-semibold text-[var(--white)]">Windsurf:</span>
+                  <span className="text-neutral-300 ml-2">Add Hanzo's intelligence layer on top of Windsurf's editor experience</span>
                 </div>
               </li>
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">Void:</span>
-                  <span className="text-gray-300 ml-2">Perfect complement to Void's streamlined experience</span>
+                  <span className="font-semibold text-[var(--white)]">Void:</span>
+                  <span className="text-neutral-300 ml-2">Perfect complement to Void's streamlined experience</span>
                 </div>
               </li>
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">Any VS Code-compatible editor:</span>
-                  <span className="text-gray-300 ml-2">If it supports VS Code extensions, it supports Hanzo Code</span>
+                  <span className="font-semibold text-[var(--white)]">Any VS Code-compatible editor:</span>
+                  <span className="text-neutral-300 ml-2">If it supports VS Code extensions, it supports Hanzo Code</span>
                 </div>
               </li>
             </ul>
@@ -79,25 +79,25 @@ const HanzoCodeCompatibility = () => {
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
                 <PanelLeft className="h-10 w-10 text-purple-400 mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Extension API</h4>
-                <p className="text-gray-300 text-sm">Seamless integration with standard VS Code extension API</p>
+                <p className="text-neutral-300 text-sm">Seamless integration with standard VS Code extension API</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
                 <Code2 className="h-10 w-10 text-purple-400 mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Native Experience</h4>
-                <p className="text-gray-300 text-sm">Feels like a native part of your existing editor</p>
+                <p className="text-neutral-300 text-sm">Feels like a native part of your existing editor</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
                 <Plug className="h-10 w-10 text-purple-400 mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Plugin System</h4>
-                <p className="text-gray-300 text-sm">Extend with custom plugins for your workflow</p>
+                <p className="text-neutral-300 text-sm">Extend with custom plugins for your workflow</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
                 <Shield className="h-10 w-10 text-purple-400 mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Enterprise Ready</h4>
-                <p className="text-gray-300 text-sm">Security and compliance features for teams</p>
+                <p className="text-neutral-300 text-sm">Security and compliance features for teams</p>
               </div>
             </div>
           </motion.div>

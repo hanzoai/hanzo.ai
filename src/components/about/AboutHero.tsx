@@ -27,14 +27,14 @@ const AboutHero = () => {
             History and Evolution of <span className="text-purple-400">Hanzo Industries</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             From startup to AI powerhouse, our journey of transformation, innovation, and purpose.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#timeline" className="flex items-center">
                 Explore Our Timeline
@@ -45,7 +45,7 @@ const AboutHero = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-purple-600 text-white hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
+              className="border-purple-600 text-[var(--white)] hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="/zen" className="flex items-center">
                 The Zen of Hanzo

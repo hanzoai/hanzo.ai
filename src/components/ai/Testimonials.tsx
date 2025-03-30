@@ -26,7 +26,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -bottom-64 -right-32 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl"></div>
@@ -40,10 +40,10 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Experiences from Our Community
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hear from engineering teams who are building the next generation of AI-powered applications
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ const Testimonials = () => {
               className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 hover:bg-gray-900/30 transition-colors relative"
             >
               <Quote className="absolute top-6 right-6 h-6 w-6 text-purple-500/40" />
-              <p className="text-gray-300 mb-8 mt-4">"{testimonial.quote}"</p>
+              <p className="text-neutral-300 mb-8 mt-4">"{testimonial.quote}"</p>
               <div className="flex items-center">
                 <div className="h-12 w-12 rounded-full bg-purple-900/30 overflow-hidden">
                   <img 
@@ -69,8 +69,8 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="ml-4">
-                  <div className="text-white font-medium">{testimonial.author}</div>
-                  <div className="text-gray-400 text-sm">{testimonial.title}</div>
+                  <div className="text-[var(--white)] font-medium">{testimonial.author}</div>
+                  <div className="text-neutral-400 text-sm">{testimonial.title}</div>
                 </div>
               </div>
             </motion.div>
@@ -86,25 +86,25 @@ const Testimonials = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-8 md:mb-0 md:mr-8 md:w-2/3">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-[var(--white)] mb-4">
                 The AI Engineering Community
               </h3>
-              <p className="text-gray-300 mb-6">
+              <p className="text-neutral-300 mb-6">
                 Join thousands of AI engineers and developers building the future of intelligent applications. 
                 Share experiences, get support, and collaborate on best practices.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
                   <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-gray-300 text-sm">4,500+ community members</span>
+                  <span className="text-neutral-300 text-sm">4,500+ community members</span>
                 </div>
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
                   <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
-                  <span className="text-gray-300 text-sm">Weekly office hours</span>
+                  <span className="text-neutral-300 text-sm">Weekly office hours</span>
                 </div>
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
                   <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
-                  <span className="text-gray-300 text-sm">Dedicated support team</span>
+                  <span className="text-neutral-300 text-sm">Dedicated support team</span>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ const Testimonials = () => {
                     {["JS", "MK", "AL", "TN", "RW"][i]}
                   </div>
                 ))}
-                <div className="h-12 w-12 rounded-full bg-purple-600/30 border-2 border-gray-900 flex items-center justify-center text-white text-sm font-medium">
+                <div className="h-12 w-12 rounded-full bg-purple-600/30 border-2 border-gray-900 flex items-center justify-center text-[var(--white)] text-sm font-medium">
                   +2.5k
                 </div>
               </div>

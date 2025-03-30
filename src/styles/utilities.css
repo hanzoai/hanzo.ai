@@ -267,11 +267,11 @@
 }
 
 .mono-button {
-  @apply bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-all;
+  @apply bg-gray-800 hover:bg-gray-700 text-[var(--white)] px-4 py-2 rounded-md transition-all;
 }
 
 .mono-button-outline {
-  @apply bg-transparent hover:bg-gray-800/50 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-4 py-2 rounded-md transition-all;
+  @apply bg-transparent hover:bg-gray-800/50 text-neutral-300 hover:text-[var(--white)] border border-gray-700 hover:border-gray-600 px-4 py-2 rounded-md transition-all;
 }
 
 /* Linear.app inspired animations */
@@ -296,11 +296,11 @@
 
 /* Monochrome UI elements */
 .mono-input {
-  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
+  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-[var(--white)] placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
 }
 
 .mono-select {
-  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
+  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-[var(--white)] focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
 }
 
 .mono-tabs {
@@ -308,11 +308,11 @@
 }
 
 .mono-tab {
-  @apply px-3 py-2 text-sm text-gray-400 rounded-md hover:bg-gray-800/50 hover:text-white transition-all;
+  @apply px-3 py-2 text-sm text-neutral-400 rounded-md hover:bg-gray-800/50 hover:text-[var(--white)] transition-all;
 }
 
 .mono-tab-active {
-  @apply bg-gray-800 text-white;
+  @apply bg-gray-800 text-[var(--white)];
 }
 
 /* Hide scrollbar but allow scrolling */

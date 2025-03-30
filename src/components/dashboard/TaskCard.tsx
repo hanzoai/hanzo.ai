@@ -29,7 +29,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
     <div className="bg-gray-900 rounded-md p-3 border border-gray-800 hover:border-gray-700 cursor-pointer transition-colors">
       {/* Task ID and Priority */}
       <div className="flex items-center justify-between mb-2">
-        <div className="text-xs text-gray-500 flex items-center">
+        <div className="text-xs text-neutral-500 flex items-center">
           <span>HAN-{task.id}</span>
         </div>
         {task.priority && (
@@ -42,7 +42,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
       
       {/* Description (optional) */}
       {task.description && (
-        <p className="text-xs text-gray-400 mb-3 line-clamp-2">{task.description}</p>
+        <p className="text-xs text-neutral-400 mb-3 line-clamp-2">{task.description}</p>
       )}
       
       {/* Labels */}
@@ -89,7 +89,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
         </div>
         
         {/* Metadata */}
-        <div className="flex items-center space-x-2 text-gray-400">
+        <div className="flex items-center space-x-2 text-neutral-400">
           {task.messageCount && task.messageCount > 0 && (
             <div className="flex items-center text-xs">
               <MessageSquare className="h-3 w-3 mr-1" />

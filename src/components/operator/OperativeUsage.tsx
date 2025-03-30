@@ -18,10 +18,10 @@ const OperativeUsage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Getting Started with Hanzo Operative
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-300">
               Set up your environment in minutes and start using AI to operate your computer
             </p>
           </motion.div>
@@ -36,30 +36,30 @@ const OperativeUsage = () => {
               transition={{ duration: 0.5 }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-6"
             >
-              <h3 className="text-xl font-semibold text-white mb-4">Installation</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)] mb-4">Installation</h3>
               
               <div className="space-y-4">
                 <div>
-                  <p className="text-gray-400 mb-2">1. Install the package</p>
-                  <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
+                  <p className="text-neutral-400 mb-2">1. Install the package</p>
+                  <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                     pip install hanzo-operative
                   </div>
                 </div>
                 
                 <div>
-                  <p className="text-gray-400 mb-2">2. Run the operative</p>
-                  <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
+                  <p className="text-neutral-400 mb-2">2. Run the operative</p>
+                  <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                     operative
                   </div>
                 </div>
                 
                 <div>
-                  <p className="text-gray-400 mb-2">3. Enter your API key when prompted</p>
+                  <p className="text-neutral-400 mb-2">3. Enter your API key when prompted</p>
                 </div>
               </div>
               
               <div className="mt-6">
-                <Button size="sm" variant="outline" className="text-gray-300 border-gray-700">
+                <Button size="sm" variant="outline" className="text-neutral-300 border-gray-700">
                   <Terminal className="h-4 w-4 mr-2" />
                   Copy Installation Commands
                 </Button>
@@ -73,9 +73,9 @@ const OperativeUsage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-6"
             >
-              <h3 className="text-xl font-semibold text-white mb-4">System Requirements</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)] mb-4">System Requirements</h3>
               
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-neutral-400">
                 <li>• macOS, Windows, or Linux (with X server)</li>
                 <li>• Python 3.8 or higher</li>
                 <li>• 8GB RAM recommended</li>
@@ -91,39 +91,39 @@ const OperativeUsage = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-3 bg-gray-900/30 border border-gray-800 rounded-xl p-6 h-full"
           >
-            <h3 className="text-xl font-semibold text-white mb-4">Basic Usage</h3>
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-4">Basic Usage</h3>
             
             <div className="space-y-6">
               <div>
-                <p className="text-gray-400 mb-2">Running with default settings (GPT-4o)</p>
-                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
+                <p className="text-neutral-400 mb-2">Running with default settings (GPT-4o)</p>
+                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                   operative
                 </div>
               </div>
               
               <div>
-                <p className="text-gray-400 mb-2">Using voice input mode</p>
-                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
+                <p className="text-neutral-400 mb-2">Using voice input mode</p>
+                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                   operative --voice
                 </div>
               </div>
               
               <div>
-                <p className="text-gray-400 mb-2">Using OCR mode for enhanced element detection</p>
-                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
+                <p className="text-neutral-400 mb-2">Using OCR mode for enhanced element detection</p>
+                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                   operative -m gpt-4-with-ocr
                 </div>
               </div>
               
               <div>
-                <p className="text-gray-400 mb-2">Using Set-of-Mark (SoM) prompting</p>
-                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-white overflow-x-auto">
+                <p className="text-neutral-400 mb-2">Using Set-of-Mark (SoM) prompting</p>
+                <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                   operative -m gpt-4-with-som
                 </div>
               </div>
               
               <div className="pt-2">
-                <p className="text-gray-400">After running any of these commands, you'll be prompted to enter an objective for the AI to accomplish.</p>
+                <p className="text-neutral-400">After running any of these commands, you'll be prompted to enter an objective for the AI to accomplish.</p>
               </div>
             </div>
           </motion.div>

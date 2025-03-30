@@ -75,7 +75,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
         <div className="grid grid-cols-3 gap-6">
           <div className="col-span-2">
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
+              <label className="block text-sm font-medium text-neutral-400 mb-1">Description</label>
               <Textarea 
                 name="description"
                 value={editedTask.description || ""}
@@ -87,7 +87,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
             <div className="mb-6">
               <div className="flex justify-between mb-2">
-                <label className="block text-sm font-medium text-gray-400">Assignees</label>
+                <label className="block text-sm font-medium text-neutral-400">Assignees</label>
                 <Button size="sm" variant="ghost" className="text-blue-400 hover:text-blue-300 h-6 px-2">
                   <PlusCircle className="h-3.5 w-3.5 mr-1" />
                   Add
@@ -103,20 +103,20 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
                       {assignee.name.charAt(0)}
                     </div>
                     <span>{assignee.name}</span>
-                    <button className="text-gray-400 hover:text-white">
+                    <button className="text-neutral-400 hover:text-[var(--white)]">
                       <X className="h-3 w-3" />
                     </button>
                   </div>
                 ))}
                 {!editedTask.assignees?.length && (
-                  <div className="text-sm text-gray-500">No assignees</div>
+                  <div className="text-sm text-neutral-500">No assignees</div>
                 )}
               </div>
             </div>
 
             <div className="mb-6">
               <div className="flex justify-between mb-2">
-                <label className="block text-sm font-medium text-gray-400">Labels</label>
+                <label className="block text-sm font-medium text-neutral-400">Labels</label>
                 <Button size="sm" variant="ghost" className="text-blue-400 hover:text-blue-300 h-6 px-2">
                   <PlusCircle className="h-3.5 w-3.5 mr-1" />
                   Add
@@ -136,7 +136,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
                   </div>
                 ))}
                 {!editedTask.labels?.length && (
-                  <div className="text-sm text-gray-500">No labels</div>
+                  <div className="text-sm text-neutral-500">No labels</div>
                 )}
               </div>
             </div>
@@ -144,7 +144,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1">Status</label>
+              <label className="block text-sm font-medium text-neutral-400 mb-1">Status</label>
               <div className="space-y-1">
                 {statusOptions.map(option => (
                   <div 
@@ -163,7 +163,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1">Priority</label>
+              <label className="block text-sm font-medium text-neutral-400 mb-1">Priority</label>
               <div className="space-y-1">
                 {priorityOptions.map(option => (
                   <div 
@@ -183,7 +183,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1">Due Date</label>
+              <label className="block text-sm font-medium text-neutral-400 mb-1">Due Date</label>
               <Input 
                 type="date"
                 name="dueDate"
@@ -194,7 +194,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1">AI Agents</label>
+              <label className="block text-sm font-medium text-neutral-400 mb-1">AI Agents</label>
               <Button 
                 variant="outline" 
                 className="w-full justify-start bg-gray-900 border-gray-800"

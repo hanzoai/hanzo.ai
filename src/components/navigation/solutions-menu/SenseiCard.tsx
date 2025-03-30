@@ -19,9 +19,9 @@ export const SenseiCard = ({ onCardClick }: SenseiCardProps) => {
           <div className="p-1.5 rounded-lg bg-green-500/20 flex items-center justify-center w-8 h-8">
             <Shield className="h-4 w-4 text-green-400" strokeWidth={1.5} />
           </div>
-          <h3 className="text-sm font-semibold text-white">Sensei Group</h3>
+          <h3 className="text-sm font-semibold text-[var(--white)]">Sensei Group</h3>
         </div>
-        <p className="text-xs text-gray-400 leading-relaxed">
+        <p className="text-xs text-neutral-400 leading-relaxed">
           Accelerate enterprise transformation with our elite collective of CXOs and technology experts. We guide organizations through digital evolution with strategic implementation.
         </p>
       </div>

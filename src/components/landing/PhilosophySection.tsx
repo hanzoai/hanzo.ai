@@ -22,8 +22,8 @@ const PhilosophyItem: React.FC<PhilosophyItemProps> = ({ icon, title, descriptio
       <div className="w-16 h-16 rounded-full bg-purple-900/30 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{title}</h3>
+      <p className="text-neutral-300">{description}</p>
     </motion.div>
   );
 };
@@ -54,10 +54,10 @@ const PhilosophySection: React.FC = () => {
           <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
             Our Philosophy
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Building AI, the Right Way
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             We believe AI should be powerful, transparent, and fully under your control.
             Our platform is built with these principles at its core.
           </p>

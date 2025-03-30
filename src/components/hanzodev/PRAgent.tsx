@@ -21,7 +21,7 @@ const PRAgent = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Resolve Pull Requests 10x Faster.
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Bring-in @hanzo-dev into any conversation on GitHub to automatically resolve feedback in the speed.
             </p>
 
@@ -32,7 +32,7 @@ const PRAgent = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Fast revisions.</h3>
-                  <p className="text-gray-300">
+                  <p className="text-neutral-300">
                     Skip the back-and-forth. Mention @hanzo-dev in a review comment to automatically resolve feedback in the speed.
                   </p>
                 </div>
@@ -44,7 +44,7 @@ const PRAgent = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Acclerate not just your product development, but your code quality.</h3>
-                  <p className="text-gray-300">
+                  <p className="text-neutral-300">
                     Automatically solve conflicts, add tests, docs, and more. Everything you need to ship better code, faster.
                   </p>
                 </div>
@@ -56,7 +56,7 @@ const PRAgent = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">AI Agents You Can Trust.</h3>
-                  <p className="text-gray-300">
+                  <p className="text-neutral-300">
                     With complete oversight of every thought and step you are always in full control. Provide feedback and and roll-back in one click if you need to.
                   </p>
                 </div>
@@ -85,7 +85,7 @@ const PRAgent = () => {
                     <div className="w-8 h-8 rounded-full bg-gray-700"></div>
                     <div>
                       <div className="font-medium">Senior Developer</div>
-                      <div className="text-gray-400 text-sm">2 hours ago</div>
+                      <div className="text-neutral-400 text-sm">2 hours ago</div>
                       <div className="mt-2 p-3 bg-gray-800 rounded-lg">
                         <p>Could you add error handling to this component and improve the accessibility?</p>
                       </div>
@@ -96,7 +96,7 @@ const PRAgent = () => {
                     <div className="w-8 h-8 rounded-full bg-purple-700 flex items-center justify-center text-xs font-bold">H</div>
                     <div>
                       <div className="font-medium">Hanzo Dev</div>
-                      <div className="text-gray-400 text-sm">1 hour ago</div>
+                      <div className="text-neutral-400 text-sm">1 hour ago</div>
                       <div className="mt-2 p-3 bg-gray-800 rounded-lg">
                         <p>I've added comprehensive error handling with try/catch blocks and implemented proper ARIA attributes to improve accessibility. The changes have been committed to the PR.</p>
                       </div>
@@ -113,7 +113,7 @@ const PRAgent = () => {
                     <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-black">✓</div>
                     <span className="text-green-400">Changes approved</span>
                   </div>
-                  <div className="text-gray-400">Ready to merge</div>
+                  <div className="text-neutral-400">Ready to merge</div>
                 </div>
               </div>
             </div>

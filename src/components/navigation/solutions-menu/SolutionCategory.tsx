@@ -15,7 +15,7 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-white">{title}</h3>
+        <h3 className="text-lg font-semibold text-[var(--white)]">{title}</h3>
         <Link 
           to="/solutions" 
           className="text-purple-400 hover:text-purple-300 text-sm font-medium"
@@ -37,10 +37,10 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
               onClick={onItemClick}
             >
               <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <Icon className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" strokeWidth={1.5} />
+                <Icon className="h-5 w-5 text-neutral-400 group-hover:text-[var(--white)] transition-colors" strokeWidth={1.5} />
               </div>
               <div className="flex-1">
-                <div className="text-gray-300 group-hover:text-white font-medium truncate">{item}</div>
+                <div className="text-neutral-300 group-hover:text-[var(--white)] font-medium truncate">{item}</div>
               </div>
             </Link>
           );

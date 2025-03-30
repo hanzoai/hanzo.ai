@@ -16,7 +16,7 @@ const StatusSelector: React.FC<StatusSelectorProps> = ({ status, onChange }) => 
 
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-1">Status</label>
+      <label className="block text-sm font-medium text-neutral-400 mb-1">Status</label>
       <div className="space-y-1">
         {statusOptions.map(option => (
           <div 

@@ -14,7 +14,7 @@ const UseCaseCard = ({ icon: Icon, title, description }) => {
     >
       <Icon className="h-10 w-10 text-purple-400 mb-4" />
       <h3 className="text-2xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <p className="text-neutral-300">{description}</p>
     </motion.div>
   );
 };
@@ -31,7 +31,7 @@ const HanzoExtensionUseCases = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Use Cases</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Discover how the Hanzo Extension can enhance your daily workflows
           </p>
         </motion.div>

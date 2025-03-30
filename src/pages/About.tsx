@@ -11,7 +11,7 @@ import OurStory from "@/components/about/OurStory";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>About Hanzo Industries - Our Story and Evolution</title>
         <meta 

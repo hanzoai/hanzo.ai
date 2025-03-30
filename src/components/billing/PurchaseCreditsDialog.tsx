@@ -55,7 +55,7 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px] bg-black border-gray-800">
+      <DialogContent className="sm:max-w-[425px] bg-[var(--black)] border-gray-800">
         <DialogHeader>
           <DialogTitle className="text-xl">Purchase Credits</DialogTitle>
           <DialogDescription>
@@ -65,7 +65,7 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
 
         <div className="space-y-6 py-4">
           <div>
-            <Label className="text-gray-400 mb-2 block">Select an amount</Label>
+            <Label className="text-neutral-400 mb-2 block">Select an amount</Label>
             <div className="grid grid-cols-2 gap-3">
               {PREDEFINED_AMOUNTS.map((amount) => (
                 <Button
@@ -75,8 +75,8 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
                   onClick={() => handleSelectAmount(amount)}
                   className={`${
                     selectedAmount === amount
-                      ? "bg-indigo-600 hover:bg-indigo-700 text-white"
-                      : "border-gray-700 text-white"
+                      ? "bg-indigo-600 hover:bg-indigo-700 text-[var(--white)]"
+                      : "border-gray-700 text-[var(--white)]"
                   }`}
                 >
                   ${amount}
@@ -86,11 +86,11 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
           </div>
 
           <div>
-            <Label htmlFor="custom-amount" className="text-gray-400 mb-2 block">
+            <Label htmlFor="custom-amount" className="text-neutral-400 mb-2 block">
               Or enter a custom amount
             </Label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400">$</span>
               <Input
                 id="custom-amount"
                 placeholder="Enter amount"
@@ -99,18 +99,18 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
                 step="1"
                 value={customAmount}
                 onChange={handleCustomAmountChange}
-                className="pl-8 bg-gray-900 border-gray-700 text-white"
+                className="pl-8 bg-gray-900 border-gray-700 text-[var(--white)]"
               />
             </div>
           </div>
 
           <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-gray-400">Amount:</span>
+              <span className="text-neutral-400">Amount:</span>
               <span>${getEffectiveAmount().toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm font-medium">
-              <span className="text-gray-400">Total:</span>
+              <span className="text-neutral-400">Total:</span>
               <span>${getEffectiveAmount().toFixed(2)}</span>
             </div>
           </div>
@@ -121,14 +121,14 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
             type="button"
             variant="ghost"
             onClick={() => onOpenChange(false)}
-            className="text-gray-400 hover:text-white hover:bg-gray-800"
+            className="text-neutral-400 hover:text-[var(--white)] hover:bg-gray-800"
             disabled={isProcessing}
           >
             Cancel
           </Button>
           <Button
             type="button"
-            className="bg-white hover:bg-gray-200 text-black"
+            className="bg-[var(--white)] hover:bg-gray-200 text-black"
             onClick={handlePurchase}
             disabled={isProcessing || getEffectiveAmount() <= 0}
           >

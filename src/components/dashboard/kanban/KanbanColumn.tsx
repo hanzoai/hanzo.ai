@@ -31,7 +31,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
   return (
     <div 
       key={column.id} 
-      className="w-72 flex flex-col bg-black rounded-lg"
+      className="w-72 flex flex-col bg-[var(--black)] rounded-lg"
       onDragOver={onDragOver}
       onDrop={onDrop}
     >
@@ -39,13 +39,13 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
         <div className="flex items-center">
           {column.icon}
           <h3 className="font-medium ml-2">{column.title}</h3>
-          <span className="text-sm text-gray-500 ml-1">{column.tasks.length}</span>
+          <span className="text-sm text-neutral-500 ml-1">{column.tasks.length}</span>
         </div>
         <div className="flex items-center">
-          <Button size="icon" variant="ghost" className="h-6 w-6 text-gray-400 hover:text-white" onClick={() => onAddTask(column.id)}>
+          <Button size="icon" variant="ghost" className="h-6 w-6 text-neutral-400 hover:text-[var(--white)]" onClick={() => onAddTask(column.id)}>
             <Plus className="h-4 w-4" />
           </Button>
-          <Button size="icon" variant="ghost" className="h-6 w-6 text-gray-400 hover:text-white">
+          <Button size="icon" variant="ghost" className="h-6 w-6 text-neutral-400 hover:text-[var(--white)]">
             <MoreHorizontal className="h-4 w-4" />
           </Button>
         </div>

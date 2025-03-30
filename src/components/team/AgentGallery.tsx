@@ -1,6 +1,5 @@
-
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Bot, 
   Briefcase, 
@@ -21,12 +20,128 @@ import {
   Calculator,
   MessageCircle,
   Lightbulb,
-  HelpCircle
+  HelpCircle,
+  X,
+  ArrowRight
 } from "lucide-react";
 import TeamGroup from "./TeamGroup";
 import { teamMembers } from "@/constants/team-members";
+import { Link } from "react-router-dom";
+
+interface AgentDetailModalProps {
+  agent: {
+    name: string;
+    role: string;
+    description: string;
+    icon: any;
+    gradient: string;
+  } | null;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onClose }) => {
+  if (!agent) return null;
+  
+  const Icon = agent.icon;
+  
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25 }}
+            className={`bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-2xl max-w-lg w-full p-6 shadow-xl`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between mb-6">
+              <div className="flex items-center">
+                <div className={`p-3 rounded-xl bg-gradient-to-br ${agent.gradient} mr-4`}>
+                  <Icon className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">{agent.name}</h3>
+                  <p className="text-neutral-400">{agent.role}</p>
+                </div>
+              </div>
+              <button
+                onClick={onClose}
+                className="text-neutral-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            <div className="mb-6">
+              <p className="text-neutral-300">{agent.description}</p>
+            </div>
+            
+            <div className="grid grid-cols-1 gap-4 mb-6">
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <h4 className="text-lg font-medium text-white mb-2">Expertise</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-neutral-300">
+                    <span className="mr-2 text-purple-400">•</span>
+                    Machine learning & data processing
+                  </li>
+                  <li className="flex items-center text-neutral-300">
+                    <span className="mr-2 text-purple-400">•</span>
+                    Neural network optimization
+                  </li>
+                  <li className="flex items-center text-neutral-300">
+                    <span className="mr-2 text-purple-400">•</span>
+                    Natural language processing
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <h4 className="text-lg font-medium text-white mb-2">Integration</h4>
+                <p className="text-neutral-300">
+                  Works seamlessly with human teams via natural language interfaces,
+                  and integrates with all major productivity tools and platforms.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex justify-center">
+              <Link 
+                to={`/team/${agent.name.toLowerCase()}`}
+                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl text-white"
+              >
+                View Full Profile
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 const AgentGallery = () => {
+  const [selectedAgent, setSelectedAgent] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openAgentDetail = (agent: any) => {
+    setSelectedAgent(agent);
+    setIsModalOpen(true);
+  };
+
+  const closeAgentDetail = () => {
+    setIsModalOpen(false);
+  };
+
   const coreTeamMembers = [
     {
       name: "Vi",
@@ -152,7 +267,7 @@ const AgentGallery = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -167,18 +282,40 @@ const AgentGallery = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Meet Your AI Team
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Our AI team members can handle a wide range of tasks across leadership, engineering, 
             business, and creative functions. Each agent is specialized and 
             trained to excel in their domain.
           </p>
         </motion.div>
 
-        <TeamGroup title="Leadership & Core Team" members={coreTeamMembers} />
-        <TeamGroup title="Engineering Team" members={engineeringAgents} />
-        <TeamGroup title="Business Team" members={businessAgents} />
-        <TeamGroup title="Creative Team" members={creativeAgents} />
+        <TeamGroup 
+          title="Leadership & Core Team" 
+          members={coreTeamMembers} 
+          onMemberClick={openAgentDetail}
+        />
+        <TeamGroup 
+          title="Engineering Team" 
+          members={engineeringAgents} 
+          onMemberClick={openAgentDetail}
+        />
+        <TeamGroup 
+          title="Business Team" 
+          members={businessAgents} 
+          onMemberClick={openAgentDetail}
+        />
+        <TeamGroup 
+          title="Creative Team" 
+          members={creativeAgents} 
+          onMemberClick={openAgentDetail}
+        />
       </div>
+
+      <AgentDetailModal 
+        agent={selectedAgent}
+        isOpen={isModalOpen}
+        onClose={closeAgentDetail}
+      />
     </section>
   );
 };

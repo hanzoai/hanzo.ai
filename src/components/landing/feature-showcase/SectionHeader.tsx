@@ -21,10 +21,10 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ badge, badgeColor, title,
       <div className={`inline-block px-4 py-1 rounded-full ${badgeColor} text-sm font-medium mb-6`}>
         {badge}
       </div>
-      <h3 className="text-3xl font-bold text-white mb-6">
+      <h3 className="text-3xl font-bold text-[var(--white)] mb-6">
         {title}
       </h3>
-      <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+      <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
         {description}
       </p>
     </motion.div>

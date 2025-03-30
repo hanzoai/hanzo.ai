@@ -16,12 +16,12 @@ const CurrentPlan = () => {
       <div className="flex items-center justify-between">
         <div>
           <div className="text-2xl font-bold">Pro Plan</div>
-          <div className="text-gray-400 mt-1">$49/month, billed annually</div>
+          <div className="text-neutral-400 mt-1">$49/month, billed annually</div>
         </div>
         <Button onClick={handleUpgradePlan}>Upgrade Plan</Button>
       </div>
       <div className="mt-6 pt-6 border-t border-gray-800 flex items-center justify-between">
-        <div className="text-gray-400">Next billing date: July 15, 2024</div>
+        <div className="text-neutral-400">Next billing date: July 15, 2024</div>
         <Button variant="outline" size="sm">Cancel Subscription</Button>
       </div>
     </div>

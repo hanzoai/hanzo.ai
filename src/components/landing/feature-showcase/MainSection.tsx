@@ -20,10 +20,10 @@ const MainSection: React.FC<MainSectionProps> = ({ children }) => {
             <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
               Open Source AI Engineering
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--white)] mb-6">
               Build the Future with AI
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
               A complete platform for developers to build, deploy, and scale AI
               applications with unprecedented speed and complete control.
             </p>

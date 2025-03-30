@@ -20,10 +20,10 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
             Hanzo Payments
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-8">
             Effortlessly accept payments, manage subscriptions, and scale globally.
           </p>
-          <p className="text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-neutral-300 max-w-3xl mx-auto mb-10">
             Hanzo Payments is a unified financial infrastructure that simplifies and automates payments, 
             subscriptions, and global financial compliance. From innovative startups to enterprise giants, 
             Hanzo Payments delivers customizable checkout experiences, seamless integrations, and powerful 
@@ -39,7 +39,7 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-gray-800"
+              className="border-gray-600 text-[var(--white)] hover:bg-gray-800"
             >
               Explore APIs
             </Button>
@@ -69,7 +69,7 @@ const HeroSection = () => {
                 {item.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-gray-400">{item.text}</p>
+              <p className="text-neutral-400">{item.text}</p>
             </motion.div>
           ))}
         </motion.div>

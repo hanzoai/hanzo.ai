@@ -49,13 +49,13 @@ const HowItWorks = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Issue In, Pull Request Out
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Let AI design, engineer and evolve your product
           </p>
         </div>
 
         <div className="mb-12">
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center mb-16">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto text-center mb-16">
             AI is for more than just pair programming. Delegate entire issues directly to Hanzo, squash out minor bugs, and clear your backlog. Hanzo is like the extra pair of hands you needed. Here's how it works:
           </p>
         </div>
@@ -79,7 +79,7 @@ const HowItWorks = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-purple-300 mb-2">{step.command}</h3>
-                  <p className="text-gray-300">{step.description}</p>
+                  <p className="text-neutral-300">{step.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -96,7 +96,7 @@ const HowItWorks = () => {
           </div>
           <div className="p-6">
             <div className="h-40 bg-gray-900/50 rounded-md flex items-center justify-center">
-              <p className="text-gray-500">Github pull request screenshot</p>
+              <p className="text-neutral-500">Github pull request screenshot</p>
             </div>
           </div>
         </div>
@@ -110,11 +110,11 @@ const HowItWorks = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-xl font-semibold text-purple-300 mb-4">/ask around your codebase</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               Hunting down a bug? Designing a new feature? Get started by asking Hanzo: the AI that knows everything it needs to answer your question accurately.
             </p>
             <div className="h-32 bg-gray-900/50 rounded-md flex items-center justify-center">
-              <p className="text-gray-500">Ask command illustration</p>
+              <p className="text-neutral-500">Ask command illustration</p>
             </div>
           </motion.div>
 
@@ -126,7 +126,7 @@ const HowItWorks = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-xl font-semibold text-purple-300 mb-4">AAA: Anywhere, Anytime, Asynchronous.</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               With Hanzo running in the cloud, you can let it work on tasks asynchronously while you focus on other things. Kick things off from anywhere you are, and come back to a ready-to-review pull request. Perfect for the always-changing startup.
             </p>
             <div className="text-right">

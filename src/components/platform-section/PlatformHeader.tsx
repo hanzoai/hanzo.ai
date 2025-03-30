@@ -31,7 +31,7 @@ const PlatformHeader: React.FC = () => {
           >
             Your AI future belongs to you
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-2xl">
+          <p className="text-xl text-neutral-300 max-w-2xl">
             Pioneer the next wave of intelligence with an integrated ecosystem that gives you full control over your AI journey.
           </p>
         </motion.div>
@@ -44,7 +44,7 @@ const PlatformHeader: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="mt-8 md:mt-0"
       >
-        <Button size="lg" variant="outline" className="text-white">
+        <Button size="lg" variant="outline" className="text-[var(--white)]">
           <a href="/solutions">Explore Solutions</a>
         </Button>
       </motion.div>

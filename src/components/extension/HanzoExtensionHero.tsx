@@ -23,7 +23,7 @@ const HanzoExtensionHero = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Hanzo <span className="text-purple-400">Extension</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Access Hanzo AI directly in your browser
             <br />for a seamless web experience
           </p>
@@ -31,7 +31,7 @@ const HanzoExtensionHero = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#browsers" className="flex items-center">
                 <Chrome className="mr-2 h-5 w-5" />
@@ -43,7 +43,7 @@ const HanzoExtensionHero = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-purple-600 text-white hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
+              className="border-purple-600 text-[var(--white)] hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#browsers" className="flex items-center">
                 <Globe className="mr-2 h-5 w-5" />

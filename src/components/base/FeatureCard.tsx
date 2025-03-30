@@ -72,14 +72,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <div className="mr-3">
           <Icon className={`h-6 w-6 ${classes.text}`} />
         </div>
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
+        <h3 className="text-xl font-semibold text-[var(--white)]">{title}</h3>
       </div>
-      <p className="text-gray-300 mb-4">{description}</p>
+      <p className="text-neutral-300 mb-4">{description}</p>
       <ul className="space-y-2">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <span className={`mr-2 ${classes.text}`}>•</span>
-            <span className="text-gray-300 text-sm">{feature}</span>
+            <span className="text-neutral-300 text-sm">{feature}</span>
           </li>
         ))}
       </ul>

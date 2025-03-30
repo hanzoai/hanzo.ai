@@ -20,14 +20,14 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       <h3 className="text-2xl font-semibold mb-2">{title}</h3>
       <div className="mb-4">
         <div className="text-3xl font-bold">{price}</div>
-        <p className="text-gray-400">{description}</p>
+        <p className="text-neutral-400">{description}</p>
       </div>
       
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-2">
             <Check className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-            <span className="text-gray-300">{feature}</span>
+            <span className="text-neutral-300">{feature}</span>
           </li>
         ))}
       </ul>
@@ -35,8 +35,8 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       <Button
         className={`w-full ${
           highlight
-            ? "bg-purple-600 hover:bg-purple-700 text-white"
-            : "bg-gray-800 text-white hover:bg-gray-700"
+            ? "bg-purple-600 hover:bg-purple-700 text-[var(--white)]"
+            : "bg-gray-800 text-[var(--white)] hover:bg-gray-700"
         }`}
       >
         {cta}
@@ -79,7 +79,7 @@ const HanzoAppPricing = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +89,7 @@ const HanzoAppPricing = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Pricing</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Free 14 day trial. No credit card required.
           </p>
         </motion.div>

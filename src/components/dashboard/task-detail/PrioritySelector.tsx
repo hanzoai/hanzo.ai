@@ -15,7 +15,7 @@ const PrioritySelector: React.FC<PrioritySelectorProps> = ({ priority, onChange 
 
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-1">Priority</label>
+      <label className="block text-sm font-medium text-neutral-400 mb-1">Priority</label>
       <div className="space-y-1">
         {priorityOptions.map(option => (
           <div 

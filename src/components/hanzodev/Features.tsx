@@ -63,7 +63,7 @@ const Features = () => {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="grid md:grid-cols-3 gap-12 mb-16"
@@ -80,7 +80,7 @@ const Features = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 AI-Powered Features that Transform Development
               </h2>
-              <p className="text-gray-300 mb-8">
+              <p className="text-neutral-300 mb-8">
                 Hanzo provides powerful AI capabilities that streamline development workflows and help teams ship faster.
               </p>
               <div className="h-1 w-24 bg-purple-500 rounded"></div>
@@ -99,7 +99,7 @@ const Features = () => {
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-neutral-300">{feature.description}</p>
                 </motion.div>
               ))}
             </div>

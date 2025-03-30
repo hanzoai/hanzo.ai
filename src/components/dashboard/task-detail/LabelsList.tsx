@@ -18,7 +18,7 @@ const LabelsList: React.FC<LabelsListProps> = ({ labels = [], onRemove }) => {
   return (
     <div className="mb-6">
       <div className="flex justify-between mb-2">
-        <label className="block text-sm font-medium text-gray-400">Labels</label>
+        <label className="block text-sm font-medium text-neutral-400">Labels</label>
         <Button size="sm" variant="ghost" className="text-blue-400 hover:text-blue-300 h-6 px-2">
           <PlusCircle className="h-3.5 w-3.5 mr-1" />
           Add
@@ -38,7 +38,7 @@ const LabelsList: React.FC<LabelsListProps> = ({ labels = [], onRemove }) => {
           </div>
         ))}
         {!labels.length && (
-          <div className="text-sm text-gray-500">No labels</div>
+          <div className="text-sm text-neutral-500">No labels</div>
         )}
       </div>
     </div>

@@ -26,14 +26,14 @@ const CallToAction: React.FC = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6 mx-auto text-center">
             Start Building Today
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
             Join thousands of developers building the future with Hanzo AI Cloud and DX Platform.
             Get started for free and scale as you grow.
           </p>
           
           <Button 
             size="lg"
-            className="bg-white hover:bg-gray-100 text-black px-10 py-7 rounded-lg text-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            className="bg-[var(--white)] hover:bg-gray-100 text-black px-10 py-7 rounded-lg text-xl font-medium shadow-lg hover:shadow-xl transition-all"
             onClick={() => navigate('/signup')}
           >
             Start Building for Free <ArrowRight className="ml-2 h-5 w-5" />

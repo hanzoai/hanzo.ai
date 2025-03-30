@@ -69,10 +69,10 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
     <div className="h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
         <div className="relative w-80">
-          <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-500" />
+          <Search className="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" />
           <Input 
             placeholder="Search agents..." 
-            className="bg-black border-gray-800 pl-10"
+            className="bg-[var(--black)] border-gray-800 pl-10"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -86,7 +86,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
           >
             {displayMode === "grid" ? <List className="h-4 w-4" /> : <LayoutGrid className="h-4 w-4" />}
           </Button>
-          <Button className="bg-black hover:bg-gray-900 border border-gray-800">
+          <Button className="bg-[var(--black)] hover:bg-gray-900 border border-gray-800">
             <PlusCircle className="h-4 w-4 mr-2" />
             New Agent
           </Button>
@@ -97,23 +97,23 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
         <div className="border border-gray-800 rounded-lg overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-black text-left">
-                <th className="px-4 py-3 font-medium text-gray-400">Name</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Status</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Type</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Model</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Tasks</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Memory</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Tokens</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Cost</th>
-                <th className="px-4 py-3 font-medium text-gray-400">Actions</th>
+              <tr className="bg-[var(--black)] text-left">
+                <th className="px-4 py-3 font-medium text-neutral-400">Name</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Status</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Type</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Model</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Tasks</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Memory</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Tokens</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Cost</th>
+                <th className="px-4 py-3 font-medium text-neutral-400">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-800">
               {filteredAgents.map((agent) => (
                 <tr 
                   key={agent.id} 
-                  className="bg-black hover:bg-gray-900/60 cursor-pointer"
+                  className="bg-[var(--black)] hover:bg-gray-900/60 cursor-pointer"
                   onClick={() => handleAgentClick(agent)}
                 >
                   <td className="px-4 py-3">
@@ -123,7 +123,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                       </div>
                       <div>
                         <div className="font-medium">{agent.name}</div>
-                        <div className="text-xs text-gray-500">Last active: {agent.lastActive}</div>
+                        <div className="text-xs text-neutral-500">Last active: {agent.lastActive}</div>
                       </div>
                     </div>
                   </td>
@@ -141,7 +141,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                       {agent.type}
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-gray-300">{agent.model}</td>
+                  <td className="px-4 py-3 text-neutral-300">{agent.model}</td>
                   <td className="px-4 py-3">{agent.tasks}</td>
                   <td className="px-4 py-3">
                     <div className="flex items-center">
@@ -162,15 +162,15 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                   <td className="px-4 py-3">
                     <div className="flex space-x-1" onClick={(e) => e.stopPropagation()}>
                       {agent.status === "running" ? (
-                        <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white" onClick={(e) => handleStatusToggle(agent, e)}>
+                        <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                           <StopCircle className="h-4 w-4" />
                         </Button>
                       ) : (
-                        <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white" onClick={(e) => handleStatusToggle(agent, e)}>
+                        <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                           <PlayCircle className="h-4 w-4" />
                         </Button>
                       )}
-                      <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white">
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]">
                         <Settings className="h-4 w-4" />
                       </Button>
                     </div>
@@ -185,7 +185,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
           {filteredAgents.map((agent) => (
             <div 
               key={agent.id}
-              className="bg-black border border-gray-800 rounded-lg p-4 cursor-pointer hover:bg-gray-900/20 transition-colors"
+              className="bg-[var(--black)] border border-gray-800 rounded-lg p-4 cursor-pointer hover:bg-gray-900/20 transition-colors"
               onClick={() => handleAgentClick(agent)}
             >
               <div className="flex items-center justify-between mb-3">
@@ -195,7 +195,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                   </div>
                   <div>
                     <div className="font-medium">{agent.name}</div>
-                    <div className="text-xs text-gray-500">Last active: {agent.lastActive}</div>
+                    <div className="text-xs text-neutral-500">Last active: {agent.lastActive}</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -206,7 +206,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
               
               <div className="mb-3 text-sm">
                 <div className="flex justify-between mb-1">
-                  <span className="text-gray-400">Type:</span>
+                  <span className="text-neutral-400">Type:</span>
                   <span className="flex items-center">
                     {agent.type === "Research" && <Database className="h-3 w-3 mr-1 text-blue-400" />}
                     {agent.type === "Coding" && <Brain className="h-3 w-3 mr-1 text-purple-400" />}
@@ -215,26 +215,26 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                   </span>
                 </div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-gray-400">Model:</span>
+                  <span className="text-neutral-400">Model:</span>
                   <span>{agent.model}</span>
                 </div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-gray-400">Tasks:</span>
+                  <span className="text-neutral-400">Tasks:</span>
                   <span>{agent.tasks}</span>
                 </div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-gray-400">Tokens:</span>
+                  <span className="text-neutral-400">Tokens:</span>
                   <span>{agent.tokens.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Cost:</span>
+                  <span className="text-neutral-400">Cost:</span>
                   <span>${agent.cost.toFixed(2)}</span>
                 </div>
               </div>
               
               <div className="flex items-center justify-between">
                 <div className="flex items-center text-sm">
-                  <span className="text-gray-400 mr-2">Memory:</span>
+                  <span className="text-neutral-400 mr-2">Memory:</span>
                   <Progress 
                     value={agent.memory} 
                     className="h-1.5 w-16 mr-2 bg-gray-800" 
@@ -249,15 +249,15 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                 
                 <div className="flex space-x-1" onClick={(e) => e.stopPropagation()}>
                   {agent.status === "running" ? (
-                    <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white" onClick={(e) => handleStatusToggle(agent, e)}>
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                       <StopCircle className="h-4 w-4" />
                     </Button>
                   ) : (
-                    <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white" onClick={(e) => handleStatusToggle(agent, e)}>
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                       <PlayCircle className="h-4 w-4" />
                     </Button>
                   )}
-                  <Button size="icon" variant="ghost" className="h-8 w-8 text-gray-400 hover:text-white">
+                  <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]">
                     <Settings className="h-4 w-4" />
                   </Button>
                 </div>

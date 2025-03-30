@@ -20,7 +20,7 @@ const BillingPage = () => {
         <Button 
           variant="outline" 
           onClick={() => navigate('/account/invoices')}
-          className="bg-black hover:bg-neutral-900 border border-white/10 text-white flex items-center"
+          className="bg-[var(--black)] hover:bg-neutral-900 border border-white/10 text-[var(--white)] flex items-center"
         >
           <FileText className="h-4 w-4 mr-2" />
           View Billing History
@@ -28,7 +28,7 @@ const BillingPage = () => {
         <Button 
           variant="outline" 
           onClick={() => navigate('/account/billing#payment-methods')}
-          className="bg-black hover:bg-neutral-900 border border-white/10 text-white flex items-center"
+          className="bg-[var(--black)] hover:bg-neutral-900 border border-white/10 text-[var(--white)] flex items-center"
         >
           <CreditCard className="h-4 w-4 mr-2" />
           Manage Payment Methods

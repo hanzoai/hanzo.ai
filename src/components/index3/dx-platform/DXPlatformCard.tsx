@@ -69,8 +69,8 @@ const getColorClasses = (color: string = "indigo", isHovered: boolean) => {
     gray: { 
       bg: "bg-gray-900/30", 
       hoverBg: "bg-gray-700/30", 
-      text: "text-gray-400", 
-      hoverText: "text-gray-300" 
+      text: "text-neutral-400", 
+      hoverText: "text-neutral-300" 
     }
   };
 
@@ -103,10 +103,10 @@ const DXPlatformCard: React.FC<DXPlatformCardProps> = ({
       <ChromeText as="h3" className="text-xl font-bold mb-2">
         {title}
       </ChromeText>
-      <p className="text-gray-300 mb-4 text-sm">
+      <p className="text-neutral-300 mb-4 text-sm">
         {description}
       </p>
-      <ul className="text-gray-400 space-y-2 text-xs mt-auto hidden lg:block">
+      <ul className="text-neutral-400 space-y-2 text-xs mt-auto hidden lg:block">
         {features.slice(0, 2).map((feature, index) => (
           <li key={`${id}-feature-${index}`} className="flex items-start">
             <span className="mr-2">•</span>

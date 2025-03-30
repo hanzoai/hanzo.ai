@@ -59,7 +59,7 @@ const Benefits = () => {
                 {benefit.icon}
               </div>
               <h3 className="text-lg font-bold mb-3">{benefit.title}</h3>
-              <p className="text-gray-400 text-sm">{benefit.description}</p>
+              <p className="text-neutral-400 text-sm">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
@@ -72,10 +72,10 @@ const Benefits = () => {
           className="mt-20 text-center"
         >
           <div className="inline-block p-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-xl">
-            <blockquote className="text-xl italic text-gray-300 max-w-2xl mx-auto">
+            <blockquote className="text-xl italic text-neutral-300 max-w-2xl mx-auto">
               "Hanzo Observability has been critical to our AI operations, giving us unprecedented visibility into our models' performance and significantly improving our debugging time."
             </blockquote>
-            <div className="mt-4 text-gray-400">
+            <div className="mt-4 text-neutral-400">
               <div className="font-medium">Alex Chen</div>
               <div className="text-sm">AI Engineering Lead, Triller</div>
             </div>

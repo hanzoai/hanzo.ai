@@ -28,10 +28,10 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center px-golden-4 sm:px-golden-6 lg:px-golden-8 py-golden-10 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-[var(--black)]" />
       
       {/* Animated gradient orbs */}
       <div 

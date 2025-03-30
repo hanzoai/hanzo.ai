@@ -53,8 +53,8 @@ const Templates = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Ready-to-Use Templates</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-[var(--white)] mb-4">Ready-to-Use Templates</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Jump-start your development with production-ready templates
           </p>
         </motion.div>
@@ -72,10 +72,10 @@ const Templates = () => {
               <div className={`h-2 bg-gradient-to-r ${template.color}`}></div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <template.icon className="w-6 h-6 mr-3 text-gray-400 group-hover:text-white transition-colors" />
-                  <h3 className="text-xl font-semibold text-white">{template.title}</h3>
+                  <template.icon className="w-6 h-6 mr-3 text-neutral-400 group-hover:text-[var(--white)] transition-colors" />
+                  <h3 className="text-xl font-semibold text-[var(--white)]">{template.title}</h3>
                 </div>
-                <p className="text-gray-300">{template.description}</p>
+                <p className="text-neutral-300">{template.description}</p>
               </div>
             </motion.div>
           ))}

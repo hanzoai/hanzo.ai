@@ -25,7 +25,7 @@ const TrustedBy = () => {
     >
       <div className="max-w-7xl mx-auto">
         <AnimatedHeading className="text-center mb-10">
-          <h2 className="text-2xl font-semibold text-white mb-2">Trusted By AI Innovators</h2>
+          <h2 className="text-2xl font-semibold text-[var(--white)] mb-2">Trusted By AI Innovators</h2>
           <div className="w-20 h-1 bg-indigo-500 mx-auto"></div>
         </AnimatedHeading>
         
@@ -34,7 +34,7 @@ const TrustedBy = () => {
             <motion.div 
               key={index}
               variants={companyItemVariant}
-              className="text-gray-400 font-medium text-lg transition-colors hover:text-indigo-400"
+              className="text-neutral-400 font-medium text-lg transition-colors hover:text-indigo-400"
               whileHover={{ scale: 1.05, color: "#818cf8" }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}

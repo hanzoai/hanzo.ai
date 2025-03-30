@@ -15,7 +15,7 @@ const HanzoAppUseCases = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Use Cases</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             One platform, endless possibilities. See some of the use cases
           </p>
         </motion.div>
@@ -32,7 +32,7 @@ const HanzoAppUseCases = () => {
               <ShoppingCart className="h-7 w-7 text-purple-400" />
             </div>
             <h3 className="text-2xl font-semibold mb-4">ProductCatalog</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Product catalog chatbot to answer any questions related to the products
             </p>
           </motion.div>

@@ -20,7 +20,7 @@ const UnifiedPlatform = () => {
             <Cpu className="h-7 w-7 text-blue-400" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Unified Intelligence Platform</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Bring all your AI observability needs under one seamless platform. Hanzo integrates monitoring, analytics, debugging, and evaluation into a single powerful toolkit.
           </p>
         </motion.div>
@@ -55,7 +55,7 @@ const UnifiedPlatform = () => {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-neutral-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -87,7 +87,7 @@ const UnifiedPlatform = () => {
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">Everything in One Place</h3>
-              <p className="text-gray-300 max-w-md">
+              <p className="text-neutral-300 max-w-md">
                 End fragmentation in your AI operations with Hanzo's all-in-one observability platform
               </p>
             </div>

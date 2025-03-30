@@ -67,7 +67,7 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
           </div>
         )}
       </div>
-      <span className="mt-2 text-xs text-gray-300 whitespace-nowrap">{node.label}</span>
+      <span className="mt-2 text-xs text-neutral-300 whitespace-nowrap">{node.label}</span>
     </motion.div>
   );
 };

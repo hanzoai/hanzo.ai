@@ -38,8 +38,8 @@ const UseCase = ({ icon, title, description }: UseCaseProps) => (
     >
       {icon}
     </motion.div>
-    <h3 className="text-xl font-bold text-white text-center mb-2">{title}</h3>
-    <p className="text-gray-400 text-center">{description}</p>
+    <h3 className="text-xl font-bold text-[var(--white)] text-center mb-2">{title}</h3>
+    <p className="text-neutral-400 text-center">{description}</p>
   </motion.div>
 );
 
@@ -87,7 +87,7 @@ const UseCases = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-4">
             Use Cases
           </ChromeText>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
             Powering AI applications across industries
           </p>
         </AnimatedHeading>

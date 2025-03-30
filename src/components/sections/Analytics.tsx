@@ -189,7 +189,7 @@ const Analytics = () => {
     }
   };
 
-  return <section className="py-20 bg-black">
+  return <section className="py-20 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{
         opacity: 0,
@@ -214,9 +214,9 @@ const Analytics = () => {
         }} transition={{
           delay: 0.1,
           duration: 0.4
-        }} className="inline-flex items-center space-x-2 bg-white/10 px-4 py-1 rounded-full mb-6">
-            <Activity className="h-4 w-4 text-gray-400" />
-            <span className="text-sm text-gray-400">Real-time Analytics</span>
+        }} className="inline-flex items-center space-x-2 bg-[var(--white)]/10 px-4 py-1 rounded-full mb-6">
+            <Activity className="h-4 w-4 text-neutral-400" />
+            <span className="text-sm text-neutral-400">Real-time Analytics</span>
           </motion.div>
           <motion.h2 initial={{
           opacity: 0,
@@ -229,7 +229,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.2,
           duration: 0.4
-        }} className="text-3xl md:text-4xl font-display text-white mb-4">
+        }} className="text-3xl md:text-4xl font-display text-[var(--white)] mb-4">
             Scale from Zero to One Billion Users
           </motion.h2>
           <motion.p initial={{
@@ -243,7 +243,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.3,
           duration: 0.4
-        }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto py-0">
+        }} className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto py-0">
             Enterprise-grade analytics built for the AI era. Track, analyze, and optimize your application with our powerful analytics suite.
           </motion.p>
         </motion.div>
@@ -255,17 +255,17 @@ const Analytics = () => {
             <div className="absolute top-6 left-0 w-full h-1.5 bg-gray-800 rounded-full"></div>
             
             {/* Animated progress lines in segments - with fixed percentages for equal spacing */}
-            <motion.div className="absolute top-6 left-0 h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-0 h-1.5 bg-[var(--white)] rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={33.33}></motion.div>
             
-            <motion.div className="absolute top-6 left-[33.33%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[33.33%] h-1.5 bg-[var(--white)] rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={33.33}></motion.div>
             
-            <motion.div className="absolute top-6 left-[66.66%] h-1.5 bg-white rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
+            <motion.div className="absolute top-6 left-[66.66%] h-1.5 bg-[var(--white)] rounded-full origin-left" variants={milestoneLineVariants} initial="hidden" whileInView="visible" viewport={{
             once: true,
             margin: "-100px"
           }} custom={33.34}></motion.div>
@@ -278,9 +278,9 @@ const Analytics = () => {
                 once: true,
                 margin: "-100px"
               }} custom={1}>
-                  <motion.span className="text-xl font-bold text-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>1</motion.span>
+                  <motion.span className="text-xl font-bold text-[var(--white)]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>1</motion.span>
                 </motion.div>
-                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">Real-time Events</p>
+                <p className="mt-2 font-medium text-[var(--white)] text-xs sm:text-sm md:text-base whitespace-nowrap">Real-time Events</p>
               </div>
               
               {/* Second Milestone - Center */}
@@ -289,9 +289,9 @@ const Analytics = () => {
                 once: true,
                 margin: "-100px"
               }} custom={2}>
-                  <motion.span className="text-xl font-bold text-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }}>2</motion.span>
+                  <motion.span className="text-xl font-bold text-[var(--white)]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }}>2</motion.span>
                 </motion.div>
-                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">User Insights</p>
+                <p className="mt-2 font-medium text-[var(--white)] text-xs sm:text-sm md:text-base whitespace-nowrap">User Insights</p>
               </div>
               
               {/* Third Milestone */}
@@ -300,9 +300,9 @@ const Analytics = () => {
                 once: true,
                 margin: "-100px"
               }} custom={3}>
-                  <motion.span className="text-xl font-bold text-white" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 5 }}>3</motion.span>
+                  <motion.span className="text-xl font-bold text-[var(--white)]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 5 }}>3</motion.span>
                 </motion.div>
-                <p className="mt-2 font-medium text-white text-xs sm:text-sm md:text-base whitespace-nowrap">AI Analytics</p>
+                <p className="mt-2 font-medium text-[var(--white)] text-xs sm:text-sm md:text-base whitespace-nowrap">AI Analytics</p>
               </div>
             </div>
           </div>
@@ -313,15 +313,15 @@ const Analytics = () => {
         margin: "-50px"
       }} className="grid grid-cols-3 gap-4 md:gap-8 mb-16 mt-10">
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-4 md:p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-xs xs:text-sm md:text-base text-gray-300">Track user behavior, system events, and business metrics in real-time with millisecond latency.</p>
+            <p className="text-xs xs:text-sm md:text-base text-neutral-300">Track user behavior, system events, and business metrics in real-time with millisecond latency.</p>
           </motion.div>
 
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-4 md:p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-xs xs:text-sm md:text-base text-gray-300">Understand user journeys, cohorts, and behavior patterns with AI-powered analytics.</p>
+            <p className="text-xs xs:text-sm md:text-base text-neutral-300">Understand user journeys, cohorts, and behavior patterns with AI-powered analytics.</p>
           </motion.div>
 
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-4 md:p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-xs xs:text-sm md:text-base text-gray-300">Leverage machine learning to predict trends, detect anomalies, and optimize performance.</p>
+            <p className="text-xs xs:text-sm md:text-base text-neutral-300">Leverage machine learning to predict trends, detect anomalies, and optimize performance.</p>
           </motion.div>
         </motion.div>
 
@@ -352,29 +352,29 @@ const Analytics = () => {
             delay: 0.3,
             duration: 0.5
           }}>
-              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Planetary-Scale Infrastructure</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-[var(--white)] mb-4">Planetary-Scale Infrastructure</h3>
               <motion.ul variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
               once: true
             }} className="space-y-4">
                 <motion.li variants={itemVariants} className="flex items-start space-x-3">
-                  <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 mt-1" />
+                  <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-neutral-400 mt-1" />
                   <div>
-                    <h4 className="text-sm sm:text-base text-white font-semibold">Global Edge Network</h4>
-                    <p className="text-xs sm:text-sm text-gray-300">200+ data centers worldwide ensuring sub-50ms latency for 99% of users</p>
+                    <h4 className="text-sm sm:text-base text-[var(--white)] font-semibold">Global Edge Network</h4>
+                    <p className="text-xs sm:text-sm text-neutral-300">200+ data centers worldwide ensuring sub-50ms latency for 99% of users</p>
                   </div>
                 </motion.li>
                 <motion.li variants={itemVariants} className="flex items-start space-x-3">
-                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 mt-1" />
+                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-neutral-400 mt-1" />
                   <div>
-                    <h4 className="text-sm sm:text-base text-white font-semibold">Infinite Scale</h4>
-                    <p className="text-xs sm:text-sm text-gray-300">Handle billions of events per day with automatic scaling and zero maintenance</p>
+                    <h4 className="text-sm sm:text-base text-[var(--white)] font-semibold">Infinite Scale</h4>
+                    <p className="text-xs sm:text-sm text-neutral-300">Handle billions of events per day with automatic scaling and zero maintenance</p>
                   </div>
                 </motion.li>
                 <motion.li variants={itemVariants} className="flex items-start space-x-3">
-                  <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 mt-1" />
+                  <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-neutral-400 mt-1" />
                   <div>
-                    <h4 className="text-sm sm:text-base text-white font-semibold">AI-Powered Insights</h4>
-                    <p className="text-xs sm:text-sm text-gray-300">Automatic anomaly detection, trend analysis, and predictive analytics</p>
+                    <h4 className="text-sm sm:text-base text-[var(--white)] font-semibold">AI-Powered Insights</h4>
+                    <p className="text-xs sm:text-sm text-neutral-300">Automatic anomaly detection, trend analysis, and predictive analytics</p>
                   </div>
                 </motion.li>
               </motion.ul>
@@ -409,7 +409,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.2,
           duration: 0.5
-        }} className="text-2xl sm:text-3xl font-semibold text-white text-center mb-12">
+        }} className="text-2xl sm:text-3xl font-semibold text-[var(--white)] text-center mb-12">
             Powerful User Insights for Growth
           </motion.h2>
 
@@ -425,8 +425,8 @@ const Analytics = () => {
               <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
                 <Users className="h-5 w-5 sm:h-6 sm:w-6 text-purple-300" />
               </div>
-              <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">Cohort Analysis</h3>
-              <p className="text-xs sm:text-sm text-gray-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-[var(--white)] mb-2 md:mb-3">Cohort Analysis</h3>
+              <p className="text-xs sm:text-sm text-neutral-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
             </motion.div>
 
             <motion.div variants={userInsightItemVariants} whileHover={{
@@ -438,8 +438,8 @@ const Analytics = () => {
               <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
                 <LineChart className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300" />
               </div>
-              <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">User Journeys</h3>
-              <p className="text-xs sm:text-sm text-gray-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-[var(--white)] mb-2 md:mb-3">User Journeys</h3>
+              <p className="text-xs sm:text-sm text-neutral-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
             </motion.div>
 
             <motion.div variants={userInsightItemVariants} whileHover={{
@@ -451,8 +451,8 @@ const Analytics = () => {
               <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
                 <PieChart className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-300" />
               </div>
-              <h3 className="text-base sm:text-lg md:text-xl font-medium text-white mb-2 md:mb-3">Engagement Metrics</h3>
-              <p className="text-xs sm:text-sm text-gray-300">Capture and analyze key engagement metrics to improve user retention.</p>
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-[var(--white)] mb-2 md:mb-3">Engagement Metrics</h3>
+              <p className="text-xs sm:text-sm text-neutral-300">Capture and analyze key engagement metrics to improve user retention.</p>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -482,7 +482,7 @@ const Analytics = () => {
         }} transition={{
           delay: 0.2,
           duration: 0.5
-        }} className="text-2xl sm:text-3xl font-semibold text-white text-center mb-10">
+        }} className="text-2xl sm:text-3xl font-semibold text-[var(--white)] text-center mb-10">
             Easily Integrate Hanzo AI-Powered Analytics
           </motion.h2>
 
@@ -499,8 +499,8 @@ const Analytics = () => {
                 <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-300" />
               </div>
               <div className="flex-1 text-center">
-                <h3 className="text-base sm:text-lg font-medium text-white mb-2">Predictive Analysis</h3>
-                <p className="text-xs sm:text-sm text-gray-300">Forecast future trends and user behaviors with advanced machine learning algorithms.</p>
+                <h3 className="text-base sm:text-lg font-medium text-[var(--white)] mb-2">Predictive Analysis</h3>
+                <p className="text-xs sm:text-sm text-neutral-300">Forecast future trends and user behaviors with advanced machine learning algorithms.</p>
               </div>
             </motion.div>
 
@@ -514,8 +514,8 @@ const Analytics = () => {
                 <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300" />
               </div>
               <div className="flex-1 text-center">
-                <h3 className="text-base sm:text-lg font-medium text-white mb-2">Anomaly Detection</h3>
-                <p className="text-xs sm:text-sm text-gray-300">Automatically identify unusual patterns and potential issues in your application.</p>
+                <h3 className="text-base sm:text-lg font-medium text-[var(--white)] mb-2">Anomaly Detection</h3>
+                <p className="text-xs sm:text-sm text-neutral-300">Automatically identify unusual patterns and potential issues in your application.</p>
               </div>
             </motion.div>
 
@@ -529,8 +529,8 @@ const Analytics = () => {
                 <BarChart className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-300" />
               </div>
               <div className="flex-1 text-center">
-                <h3 className="text-base sm:text-lg font-medium text-white mb-2">Intelligent Recommendations</h3>
-                <p className="text-xs sm:text-sm text-gray-300">Get actionable insights and recommendations to optimize your business metrics.</p>
+                <h3 className="text-base sm:text-lg font-medium text-[var(--white)] mb-2">Intelligent Recommendations</h3>
+                <p className="text-xs sm:text-sm text-neutral-300">Get actionable insights and recommendations to optimize your business metrics.</p>
               </div>
             </motion.div>
           </motion.div>
@@ -557,7 +557,7 @@ const Analytics = () => {
           stiffness: 400,
           damping: 10
         }}>
-            <Button className="bg-gray-600 hover:bg-gray-700 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-xl">
+            <Button className="bg-gray-600 hover:bg-gray-700 text-[var(--white)] px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-xl">
               Get Started with Analytics
             </Button>
           </motion.div>

@@ -14,7 +14,7 @@ const FeaturesOverview = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What is Hanzo Balancer?</h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-4xl mx-auto">
             Hanzo Balancer is a leading modern open source reverse proxy and ingress controller that makes deploying services and APIs easy. 
             Hanzo Balancer integrates with your existing infrastructure components and configures itself automatically and dynamically.
           </p>
@@ -29,7 +29,7 @@ const FeaturesOverview = () => {
             className="bg-gray-800/30 p-8 rounded-lg border border-gray-700"
           >
             <h3 className="text-2xl font-semibold mb-4">Simplified Operation, Complex Deployments</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Hanzo Balancer is designed to be as simple as possible to operate, but capable of handling large, 
               highly-complex deployments across a wide range of environments and protocols in public, private, and hybrid clouds.
             </p>
@@ -43,7 +43,7 @@ const FeaturesOverview = () => {
             className="bg-gray-800/30 p-8 rounded-lg border border-gray-700"
           >
             <h3 className="text-2xl font-semibold mb-4">Enhanced with Powerful Middleware Suite</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Hanzo Balancer also comes with a powerful set of middlewares that enhance its capabilities to include 
               load balancing, API gateway, orchestrator ingress, and more.
             </p>
@@ -57,7 +57,7 @@ const FeaturesOverview = () => {
             className="bg-gray-800/30 p-8 rounded-lg border border-gray-700"
           >
             <h3 className="text-2xl font-semibold mb-4">Upgrade from Other Proxies in Seconds</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Watch our short demo video to see why our cloud native, GitOps-driven API Gateway is Developers' #1 choice.
             </p>
             <a href="#watch-demo" className="inline-flex mt-4 text-purple-400 hover:text-purple-300">

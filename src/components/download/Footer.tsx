@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 const FooterSection = ({ title, links }: { title: string; links: string[] }) => (
   <div>
-    <h3 className="text-white font-semibold mb-3">{title}</h3>
+    <h3 className="text-[var(--white)] font-semibold mb-3">{title}</h3>
     <ul className="space-y-2">
       {links.map((link, index) => (
         <li key={index}>
-          <a href={link === "Discord Server" ? "https://discord.gg/XthHQQj" : "#"} className="text-gray-500 hover:text-white text-sm">
+          <a href={link === "Discord Server" ? "https://discord.gg/XthHQQj" : "#"} className="text-neutral-500 hover:text-[var(--white)] text-sm">
             {link}
           </a>
         </li>
@@ -30,7 +30,7 @@ const DownloadFooter = () => {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-black/80 border-t border-gray-800">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--black)]/80 border-t border-gray-800">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="grid grid-cols-2 md:grid-cols-5 gap-8"
@@ -46,7 +46,7 @@ const DownloadFooter = () => {
           <FooterSection title="Prompt Library" links={promptLibrary} />
         </motion.div>
         
-        <div className="mt-12 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <div className="mt-12 pt-6 border-t border-gray-800 text-center text-neutral-500 text-sm">
           © 2025 Hanzo AI. All rights reserved. Not associated with or endorsed by ChatGPT, Perplexity, or Claude.
         </div>
       </div>

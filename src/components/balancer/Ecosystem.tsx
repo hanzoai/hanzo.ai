@@ -53,7 +53,7 @@ const Ecosystem = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Hanzo Balancer Ecosystem</h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-4xl mx-auto">
             Hanzo Balancer integrates with every major cluster technology and includes built-in support for 
             the top distributed tracing and metrics providers.
           </p>
@@ -72,7 +72,7 @@ const Ecosystem = () => {
               <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
               <ul className="space-y-2">
                 {category.items.map((item) => (
-                  <li key={item} className="text-gray-300">
+                  <li key={item} className="text-neutral-300">
                     {item}
                   </li>
                 ))}

@@ -35,7 +35,7 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>Hanzo Team | AI + Human Integration | Enterprise AI Solutions</title>
         <meta 

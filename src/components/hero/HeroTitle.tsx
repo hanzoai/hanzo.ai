@@ -64,7 +64,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
       
       <motion.h1 
         ref={headingRef}
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-white leading-[1.1] pb-4"
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans tracking-tight font-medium text-[var(--white)] leading-[1.1] pb-4"
         initial="hidden" 
         animate="visible" 
         variants={titleVariants} 
@@ -78,7 +78,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         </motion.span>
         
         <motion.span 
-          className="block text-white mt-6 pb-4 overflow-visible chrome-text font-bold" 
+          className="block text-[var(--white)] mt-6 pb-4 overflow-visible chrome-text font-bold" 
           initial="hidden" 
           animate={animationComplete ? "visible" : "hidden"} 
           variants={titleVariants} 

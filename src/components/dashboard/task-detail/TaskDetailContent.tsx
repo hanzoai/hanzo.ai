@@ -28,7 +28,7 @@ const TaskDetailContent: React.FC<TaskDetailContentProps> = ({ task, onTaskChang
     <div className="grid grid-cols-3 gap-6">
       <div className="col-span-2">
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
+          <label className="block text-sm font-medium text-neutral-400 mb-1">Description</label>
           <Textarea 
             value={task.description || ""}
             onChange={handleDescriptionChange}
@@ -66,7 +66,7 @@ const TaskDetailContent: React.FC<TaskDetailContentProps> = ({ task, onTaskChang
         />
 
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-1">Due Date</label>
+          <label className="block text-sm font-medium text-neutral-400 mb-1">Due Date</label>
           <Input 
             type="date"
             value={task.dueDate || ""}
@@ -76,7 +76,7 @@ const TaskDetailContent: React.FC<TaskDetailContentProps> = ({ task, onTaskChang
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-1">AI Agents</label>
+          <label className="block text-sm font-medium text-neutral-400 mb-1">AI Agents</label>
           <Button 
             variant="outline" 
             className="w-full justify-start bg-gray-900 border-gray-800"

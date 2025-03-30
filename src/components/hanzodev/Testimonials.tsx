@@ -71,7 +71,7 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Loved by Developers.
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             See what the community is saying about Hanzo Dev.
           </p>
         </motion.div>
@@ -93,13 +93,13 @@ const Testimonials = () => {
                 <div className="w-12 h-12 rounded-full bg-gray-700"></div>
                 <div>
                   <div className="font-medium">{testimonial.name}</div>
-                  <div className="text-gray-400 flex items-center">
+                  <div className="text-neutral-400 flex items-center">
                     <Twitter className="h-3.5 w-3.5 mr-1 text-blue-400" />
                     {testimonial.handle}
                   </div>
                 </div>
               </div>
-              <p className="text-gray-300">{testimonial.quote}</p>
+              <p className="text-neutral-300">{testimonial.quote}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -33,7 +33,7 @@ const PlatformVision = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Platform Vision</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Balancer represents the next evolution in intelligent traffic management, designed for the AI-first era
             of cloud computing where millisecond performance and dynamic scaling are non-negotiable.
           </p>
@@ -51,7 +51,7 @@ const PlatformVision = () => {
             >
               <div className="mb-4">{point.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{point.title}</h3>
-              <p className="text-gray-300">{point.description}</p>
+              <p className="text-neutral-300">{point.description}</p>
             </motion.div>
           ))}
         </div>

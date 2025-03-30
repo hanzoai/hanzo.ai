@@ -28,7 +28,7 @@ const DeveloperExperience = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -38,8 +38,8 @@ const DeveloperExperience = () => {
             transition={{ duration: 0.5 }}
             className="space-y-8"
           >
-            <h2 className="text-3xl font-bold text-white">Developer Experience</h2>
-            <p className="text-xl text-gray-300">
+            <h2 className="text-3xl font-bold text-[var(--white)]">Developer Experience</h2>
+            <p className="text-xl text-neutral-300">
               Designed for developers who value simplicity, flexibility, and power.
               Our tools make database and backend development a breeze.
             </p>
@@ -53,8 +53,8 @@ const DeveloperExperience = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-white">{feature.title}</h3>
-                    <p className="mt-1 text-gray-300">{feature.description}</p>
+                    <h3 className="text-lg font-medium text-[var(--white)]">{feature.title}</h3>
+                    <p className="mt-1 text-neutral-300">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -75,16 +75,16 @@ const DeveloperExperience = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="mx-auto text-gray-400 text-sm">Terminal</div>
+                <div className="mx-auto text-neutral-400 text-sm">Terminal</div>
               </div>
               <div className="bg-gray-950 p-4 rounded-b-lg overflow-hidden">
                 <div className="font-mono text-sm">
-                  <p className="text-gray-400 mb-2">$ npx create-hanzo-app my-project</p>
+                  <p className="text-neutral-400 mb-2">$ npx create-hanzo-app my-project</p>
                   <p className="text-green-400 mb-2">Initializing Hanzo Base project...</p>
-                  <p className="text-gray-400 mb-2">$ cd my-project && npm run dev</p>
+                  <p className="text-neutral-400 mb-2">$ cd my-project && npm run dev</p>
                   <p className="text-green-400 mb-2">✓ Hanzo Base server started on http://localhost:3000</p>
                   <p className="text-green-400 mb-2">✓ Admin UI available at http://localhost:3000/admin</p>
-                  <p className="text-gray-400 mb-2">$ hanzo deploy</p>
+                  <p className="text-neutral-400 mb-2">$ hanzo deploy</p>
                   <p className="text-green-400">✓ Project deployed to https://my-project.hanzo.app</p>
                 </div>
               </div>

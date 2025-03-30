@@ -12,7 +12,7 @@ const AIPoweredHeader = () => {
       className="text-center mb-20"
     >
       <h2 className="text-3xl md:text-5xl font-bold mb-6">AI-Powered Observability & Monitoring</h2>
-      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+      <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
         Proactively identify issues and opportunities with AI-powered insights and monitoring.
       </p>
     </motion.div>

@@ -44,7 +44,7 @@ const OpenSource = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Open Source at Our Core</h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Hanzo Analytics is fully open-source, fostering innovation and collaboration among thousands of global developers.
             </p>
             
@@ -85,7 +85,7 @@ const OpenSource = () => {
                     </motion.span>
                     <span className="text-3xl font-bold">{item.suffix}</span>
                   </div>
-                  <div className="text-gray-400 text-sm mt-1">{item.label}</div>
+                  <div className="text-neutral-400 text-sm mt-1">{item.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -119,74 +119,74 @@ const OpenSource = () => {
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="flex-1 text-center text-gray-300 text-sm">analytics.js</div>
+              <div className="flex-1 text-center text-neutral-300 text-sm">analytics.js</div>
             </div>
             
-            <div className="p-6 text-left font-mono text-sm text-gray-400 overflow-x-auto">
+            <div className="p-6 text-left font-mono text-sm text-neutral-400 overflow-x-auto">
               <div className="flex">
-                <div className="mr-4 text-gray-600">1</div>
+                <div className="mr-4 text-neutral-600">1</div>
                 <div>
                   <span className="text-blue-400">import</span> <span className="text-green-400">{'{'}</span> <span className="text-yellow-300">HanzoAnalytics</span> <span className="text-green-400">{'}'}</span> <span className="text-blue-400">from</span> <span className="text-orange-400">'hanzo-analytics'</span>;
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">2</div>
+                <div className="mr-4 text-neutral-600">2</div>
                 <div></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">3</div>
+                <div className="mr-4 text-neutral-600">3</div>
                 <div><span className="text-purple-400">// Initialize analytics with your project ID</span></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">4</div>
+                <div className="mr-4 text-neutral-600">4</div>
                 <div>
-                  <span className="text-blue-400">const</span> analytics <span className="text-white">=</span> <span className="text-blue-400">new</span> <span className="text-yellow-300">HanzoAnalytics</span><span className="text-white">(</span><span className="text-orange-400">'YOUR_PROJECT_ID'</span><span className="text-white">);</span>
+                  <span className="text-blue-400">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-blue-400">new</span> <span className="text-yellow-300">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">5</div>
+                <div className="mr-4 text-neutral-600">5</div>
                 <div></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">6</div>
+                <div className="mr-4 text-neutral-600">6</div>
                 <div><span className="text-purple-400">// Track page views automatically</span></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">7</div>
+                <div className="mr-4 text-neutral-600">7</div>
                 <div>
-                  <span className="text-white">analytics.trackPageViews();</span>
+                  <span className="text-[var(--white)]">analytics.trackPageViews();</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">8</div>
+                <div className="mr-4 text-neutral-600">8</div>
                 <div></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">9</div>
+                <div className="mr-4 text-neutral-600">9</div>
                 <div><span className="text-purple-400">// Track custom events</span></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">10</div>
+                <div className="mr-4 text-neutral-600">10</div>
                 <div>
-                  <span className="text-white">analytics.track(</span><span className="text-orange-400">'button_click'</span><span className="text-white">, {'{'}</span>
+                  <span className="text-[var(--white)]">analytics.track(</span><span className="text-orange-400">'button_click'</span><span className="text-[var(--white)]">, {'{'}</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">11</div>
+                <div className="mr-4 text-neutral-600">11</div>
                 <div>
-                  <span className="text-white">  buttonId: </span><span className="text-orange-400">'signup_button'</span><span className="text-white">,</span>
+                  <span className="text-[var(--white)]">  buttonId: </span><span className="text-orange-400">'signup_button'</span><span className="text-[var(--white)]">,</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">12</div>
+                <div className="mr-4 text-neutral-600">12</div>
                 <div>
-                  <span className="text-white">  page: </span><span className="text-orange-400">'/home'</span>
+                  <span className="text-[var(--white)]">  page: </span><span className="text-orange-400">'/home'</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-gray-600">13</div>
+                <div className="mr-4 text-neutral-600">13</div>
                 <div>
-                  <span className="text-white">{'}'});</span>
+                  <span className="text-[var(--white)]">{'}'});</span>
                 </div>
               </div>
             </div>

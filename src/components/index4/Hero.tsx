@@ -23,7 +23,7 @@ const Hero = () => {
         variants={fadeInAnimation}
         className="text-center"
       >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6 text-white">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6 text-[var(--white)]">
           Infrastructure for the<br />modern world
         </h1>
         <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
             size="sm" 
-            className="bg-white hover:bg-zinc-200 text-black transition-colors duration-300"
+            className="bg-[var(--white)] hover:bg-zinc-200 text-black transition-colors duration-300"
           >
             Start building <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

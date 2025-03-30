@@ -49,9 +49,9 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
                   className="flex-shrink-0 text-center relative z-20" // Added relative and z-index to ensure text is on top
                 >
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.gradient} p-4 mx-auto mb-2`}>
-                    <Icon className="w-full h-full text-white" />
+                    <Icon className="w-full h-full text-[var(--white)]" />
                   </div>
-                  <p className="text-white font-medium">{member.name}</p>
+                  <p className="text-[var(--white)] font-medium">{member.name}</p>
                   <p className="text-purple-400 text-sm">{member.role}</p>
                 </motion.div>
               );

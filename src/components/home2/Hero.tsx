@@ -25,14 +25,14 @@ const Hero = () => {
               The AI Engineering Platform
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-10">
+            <p className="text-xl md:text-2xl text-neutral-300 mb-10">
               Build, deploy, and scale AI applications with unprecedented speed
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-full"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] px-8 py-6 text-lg rounded-full"
               >
                 Get Started Free
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -41,13 +41,13 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-full"
+                className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 px-8 py-6 text-lg rounded-full"
               >
                 See Demo
               </Button>
             </div>
             
-            <div className="mt-16 text-sm text-gray-400 flex flex-wrap justify-center gap-x-8 gap-y-2">
+            <div className="mt-16 text-sm text-neutral-400 flex flex-wrap justify-center gap-x-8 gap-y-2">
               <div>3.2B+ Downloads</div>
               <div>47k+ GitHub Stars</div>
               <div>900+ Contributors</div>

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const CoreProjects = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/50">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,10 +15,10 @@ const CoreProjects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Core Projects
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Our flagship open source technologies that power the Hanzo Platform
           </p>
         </motion.div>
@@ -35,27 +35,27 @@ const CoreProjects = () => {
             <div className="flex items-center mb-4">
               <Server className="h-12 w-12 text-green-400 mr-4" />
               <div>
-                <h3 className="text-2xl font-semibold text-white">Hanzo Platform</h3>
+                <h3 className="text-2xl font-semibold text-[var(--white)]">Hanzo Platform</h3>
                 <div className="flex items-center mt-1">
                   <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer" className="text-sm text-green-400 hover:text-green-300">github.com/hanzoai/platform</a>
                 </div>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 text-lg">
+            <p className="text-neutral-300 mb-6 text-lg">
               The free, forever, open-source version of our cloud infrastructure. Run the entire Hanzo stack locally with a single command.
             </p>
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
                 <Star className="h-5 w-5 text-yellow-400 mr-2" />
-                <span className="text-gray-300">5.2k stars</span>
+                <span className="text-neutral-300">5.2k stars</span>
               </div>
               <div className="flex items-center">
-                <GitBranch className="h-5 w-5 text-gray-400 mr-2" />
-                <span className="text-gray-300">742 forks</span>
+                <GitBranch className="h-5 w-5 text-neutral-400 mr-2" />
+                <span className="text-neutral-300">742 forks</span>
               </div>
               <div className="flex items-center">
                 <div className="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
-                <span className="text-gray-300">Active</span>
+                <span className="text-neutral-300">Active</span>
               </div>
             </div>
             <div className="flex space-x-3">
@@ -90,27 +90,27 @@ const CoreProjects = () => {
             <div className="flex items-center mb-4">
               <Bot className="h-12 w-12 text-green-400 mr-4" />
               <div>
-                <h3 className="text-2xl font-semibold text-white">Hanzo Bot</h3>
+                <h3 className="text-2xl font-semibold text-[var(--white)]">Hanzo Bot</h3>
                 <div className="flex items-center mt-1">
                   <a href="https://github.com/hanzoai/bot" target="_blank" rel="noopener noreferrer" className="text-sm text-green-400 hover:text-green-300">github.com/hanzoai/bot</a>
                 </div>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 text-lg">
+            <p className="text-neutral-300 mb-6 text-lg">
               Agentic framework for building advanced AI assistants with custom tool integration. Create powerful workflows with LLMs.
             </p>
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
                 <Star className="h-5 w-5 text-yellow-400 mr-2" />
-                <span className="text-gray-300">4.8k stars</span>
+                <span className="text-neutral-300">4.8k stars</span>
               </div>
               <div className="flex items-center">
-                <GitBranch className="h-5 w-5 text-gray-400 mr-2" />
-                <span className="text-gray-300">623 forks</span>
+                <GitBranch className="h-5 w-5 text-neutral-400 mr-2" />
+                <span className="text-neutral-300">623 forks</span>
               </div>
               <div className="flex items-center">
                 <div className="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
-                <span className="text-gray-300">Active</span>
+                <span className="text-neutral-300">Active</span>
               </div>
             </div>
             <div className="flex space-x-3">

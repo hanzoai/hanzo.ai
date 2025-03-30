@@ -55,7 +55,7 @@ const CoreCapabilities = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Core Capabilities</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Balancer provides a comprehensive set of features to handle the most demanding traffic management requirements.
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ const CoreCapabilities = () => {
                 <capability.icon className="h-6 w-6 text-purple-400" />
               </div>
               <h3 className="text-xl font-semibold mb-3">{capability.title}</h3>
-              <p className="text-gray-300">{capability.description}</p>
+              <p className="text-neutral-300">{capability.description}</p>
             </motion.div>
           ))}
         </div>

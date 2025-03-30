@@ -32,11 +32,11 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications, onDismiss 
                 {notification.type === 'info' && <Cloud className="h-4 w-4 text-blue-400" />}
               </div>
               <div className="ml-2">
-                <p className="text-sm font-medium text-gray-100">{notification.title}</p>
-                <p className="text-xs text-gray-300">{notification.message}</p>
+                <p className="text-sm font-medium text-neutral-100">{notification.title}</p>
+                <p className="text-xs text-neutral-300">{notification.message}</p>
               </div>
               <button 
-                className="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-300"
+                className="ml-4 flex-shrink-0 text-neutral-400 hover:text-neutral-300"
                 onClick={() => onDismiss(notification.id)}
               >
                 <X className="h-4 w-4" />

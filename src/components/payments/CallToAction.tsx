@@ -16,7 +16,7 @@ const CallToAction = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Explore Further</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Discover how Hanzo Payments can transform your business with our comprehensive resources.
           </p>
         </motion.div>
@@ -33,10 +33,10 @@ const CallToAction = () => {
               <FileText className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">API Reference</h3>
-            <p className="text-gray-400 mb-6 flex-grow">
+            <p className="text-neutral-400 mb-6 flex-grow">
               Detailed documentation on all Hanzo Payments APIs and integration options.
             </p>
-            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-white">
+            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-[var(--white)]">
               <ExternalLink className="h-4 w-4" />
               <span>View API Docs</span>
             </Button>
@@ -53,10 +53,10 @@ const CallToAction = () => {
               <BookOpen className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Hanzo App Marketplace</h3>
-            <p className="text-gray-400 mb-6 flex-grow">
+            <p className="text-neutral-400 mb-6 flex-grow">
               Explore hundreds of pre-built integrations and apps for Hanzo Payments.
             </p>
-            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-white">
+            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-[var(--white)]">
               <ExternalLink className="h-4 w-4" />
               <span>Browse Apps</span>
             </Button>
@@ -73,10 +73,10 @@ const CallToAction = () => {
               <MessageSquare className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Checkout Integration</h3>
-            <p className="text-gray-400 mb-6 flex-grow">
+            <p className="text-neutral-400 mb-6 flex-grow">
               Step-by-step guide to integrating Hanzo Payments checkout into your website or app.
             </p>
-            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-white">
+            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-[var(--white)]">
               <ExternalLink className="h-4 w-4" />
               <span>Integration Guide</span>
             </Button>
@@ -93,10 +93,10 @@ const CallToAction = () => {
               <BookOpen className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Case Studies</h3>
-            <p className="text-gray-400 mb-6 flex-grow">
+            <p className="text-neutral-400 mb-6 flex-grow">
               Read success stories from businesses using Hanzo Payments around the world.
             </p>
-            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-white">
+            <Button variant="outline" className="w-full justify-center gap-2 border-gray-700 hover:bg-gray-800 text-[var(--white)]">
               <ExternalLink className="h-4 w-4" />
               <span>View Case Studies</span>
             </Button>
@@ -111,7 +111,7 @@ const CallToAction = () => {
           className="bg-gradient-to-r from-purple-900/30 to-indigo-900/30 border border-purple-500/20 rounded-lg p-8 text-center"
         >
           <h2 className="text-3xl font-bold mb-4">Start Building Your Financial Future Today</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
             Hanzo Payments helps your team streamline operations, grow faster, and simplify financial complexity.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -124,7 +124,7 @@ const CallToAction = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-gray-800"
+              className="border-gray-600 text-[var(--white)] hover:bg-gray-800"
             >
               Contact Sales
             </Button>

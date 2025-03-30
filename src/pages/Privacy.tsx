@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const Privacy = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>Privacy Policy - Hanzo Industries</title>
         <meta 
@@ -65,7 +65,7 @@ const Privacy = () => {
               privacy@hanzo.ai.
             </p>
             
-            <p className="mt-8 text-gray-400">
+            <p className="mt-8 text-neutral-400">
               Last updated: {new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
             </p>
           </div>

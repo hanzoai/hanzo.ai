@@ -119,7 +119,7 @@ const BillingPlans = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-purple-600 text-[var(--white)] px-3 py-1 rounded-full text-xs font-medium">
                     Most Popular
                   </span>
                 </div>
@@ -127,10 +127,10 @@ const BillingPlans = () => {
               
               <CardHeader>
                 <CardTitle>{plan.name}</CardTitle>
-                <CardDescription className="text-gray-400">{plan.description}</CardDescription>
+                <CardDescription className="text-neutral-400">{plan.description}</CardDescription>
                 <div className="mt-4">
                   <span className="text-3xl font-bold">${plan.price}</span>
-                  <span className="text-gray-400">/{plan.interval}</span>
+                  <span className="text-neutral-400">/{plan.interval}</span>
                 </div>
               </CardHeader>
               
@@ -163,7 +163,7 @@ const BillingPlans = () => {
         
         <div className="mt-8 bg-gray-900/30 border border-gray-800 rounded-lg p-6">
           <h3 className="text-xl font-medium mb-4">Enterprise Plan</h3>
-          <p className="text-gray-400 mb-4">
+          <p className="text-neutral-400 mb-4">
             Need a custom solution for your organization? Our Enterprise plan offers custom pricing, 
             dedicated support, and tailored features for your specific needs.
           </p>

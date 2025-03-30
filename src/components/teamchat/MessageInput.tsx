@@ -20,13 +20,13 @@ const MessageInput: React.FC<MessageInputProps> = ({
     <div className="p-4 border-t border-gray-800">
       <form onSubmit={handleSendMessage} className="flex items-center">
         <div className="flex items-center space-x-2 mr-2">
-          <Button type="button" variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+          <Button type="button" variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
             <Paperclip className="h-5 w-5" />
           </Button>
-          <Button type="button" variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+          <Button type="button" variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
             <Camera className="h-5 w-5" />
           </Button>
-          <Button type="button" variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+          <Button type="button" variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
             <Mic className="h-5 w-5" />
           </Button>
         </div>

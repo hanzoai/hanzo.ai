@@ -14,7 +14,7 @@ const CallToAction = () => {
         transition={{ duration: 0.8 }}
         className="backdrop-blur-xl bg-gradient-to-b from-zinc-900/40 to-zinc-900/80 border border-zinc-800/50 rounded-2xl p-10 text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-medium mb-6 text-white">
+        <h2 className="text-3xl md:text-4xl font-medium mb-6 text-[var(--white)]">
           Start building today
         </h2>
         <p className="text-zinc-400 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -22,7 +22,7 @@ const CallToAction = () => {
         </p>
         <Button 
           size="lg" 
-          className="h-12 px-8 bg-white hover:bg-zinc-200 text-black transition-colors duration-300"
+          className="h-12 px-8 bg-[var(--white)] hover:bg-zinc-200 text-black transition-colors duration-300"
         >
           Deploy your first project <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

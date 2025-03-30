@@ -22,15 +22,15 @@ const StorySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-black/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8 space-y-4"
+          className="bg-[var(--black)]/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8 space-y-4"
         >
-          <p className="text-gray-300 md:text-lg leading-relaxed">
+          <p className="text-neutral-300 md:text-lg leading-relaxed">
             Hanzo began as Crowdstart, a small, hungry team driving explosive product launches—most notably, 
             the record-breaking SKULLY Technologies AR-1 helmet on Indiegogo, raising millions and demonstrating 
             the immense power of data-driven innovation. That success signaled we were onto something special.
           </p>
           
-          <p className="text-gray-300 md:text-lg leading-relaxed">
+          <p className="text-neutral-300 md:text-lg leading-relaxed">
             We soon evolved into Hanzo AI, incubated by Techstars, pioneering intelligent e-commerce, 
             AI-driven marketing, and blockchain innovation. Our tools democratized technology previously 
             reserved for giants, enabling startups and enterprises alike to scale beyond expectation. 
@@ -38,7 +38,7 @@ const StorySection = () => {
             (original co-founder, current CEO), Hanzo became synonymous with turning ambitious ideas into reality.
           </p>
           
-          <p className="text-gray-300 md:text-lg leading-relaxed">
+          <p className="text-neutral-300 md:text-lg leading-relaxed">
             Today, as Hanzo Industries, we fuse AI and engineering discipline to build powerful platforms, 
             open-source tools, and autonomous AI solutions—fueling the next generation of innovation.
           </p>

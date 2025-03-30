@@ -147,25 +147,25 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const getGlassClass = (): string => {
-    const baseClasses = isDarkMode ? 'backdrop-blur' : 'backdrop-blur bg-white/75 border-white/20';
+    const baseClasses = isDarkMode ? 'backdrop-blur' : 'backdrop-blur bg-[var(--white)]/75 border-white/20';
     
     switch (glassOpacity) {
       case 'subtle': 
         return isDarkMode 
-          ? 'bg-white/5 backdrop-blur-sm border-white/10' 
-          : 'bg-white/60 backdrop-blur-sm border-black/5';
+          ? 'bg-[var(--white)]/5 backdrop-blur-sm border-white/10' 
+          : 'bg-[var(--white)]/60 backdrop-blur-sm border-black/5';
       case 'medium': 
         return isDarkMode 
-          ? 'bg-white/10 backdrop-blur-md border-white/20' 
-          : 'bg-white/70 backdrop-blur-md border-black/10';
+          ? 'bg-[var(--white)]/10 backdrop-blur-md border-white/20' 
+          : 'bg-[var(--white)]/70 backdrop-blur-md border-black/10';
       case 'heavy': 
         return isDarkMode 
-          ? 'bg-white/20 backdrop-blur-lg border-white/30' 
-          : 'bg-white/80 backdrop-blur-lg border-black/15';
+          ? 'bg-[var(--white)]/20 backdrop-blur-lg border-white/30' 
+          : 'bg-[var(--white)]/80 backdrop-blur-lg border-black/15';
       default: 
         return isDarkMode 
-          ? 'bg-white/10 backdrop-blur-md border-white/20' 
-          : 'bg-white/70 backdrop-blur-md border-black/10';
+          ? 'bg-[var(--white)]/10 backdrop-blur-md border-white/20' 
+          : 'bg-[var(--white)]/70 backdrop-blur-md border-black/10';
     }
   };
 

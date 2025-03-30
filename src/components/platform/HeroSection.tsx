@@ -62,13 +62,13 @@ const HeroSection = () => {
           >
             Hanzo Platform
           </ChromeText>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-8">
             The free, forever, open-source version of our cloud infrastructure.
           </p>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-8">
             Build locally, deploy anywhere. Hanzo Platform gives developers the same powerful experience as our cloud offering, but with the freedom to run it on your own hardware.
           </p>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-12">
             Permissively licensed, community-driven, and built for the modern developer who values sovereignty and control over their stack.
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ const HeroSection = () => {
         >
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
+            className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
           >
             <Github className="mr-2 h-5 w-5" />
             <a href="https://github.com/hanzo/platform" className="flex-1">Get on GitHub</a>
@@ -90,7 +90,7 @@ const HeroSection = () => {
           <Button 
             size="lg"
             variant="outline"
-            className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
+            className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
           >
             <Terminal className="mr-2 h-5 w-5" />
             <span className="flex-1">Quick Start</span>
@@ -99,7 +99,7 @@ const HeroSection = () => {
           <Button 
             size="lg"
             variant="outline"
-            className="text-white border-gray-700 hover:bg-white/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
+            className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 px-8 py-6 text-lg rounded-lg font-medium flex items-center"
           >
             <Download className="mr-2 h-5 w-5" />
             <span className="flex-1">Download CLI</span>
@@ -112,7 +112,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 px-4 py-3 bg-gray-900/50 rounded-lg inline-block"
         >
-          <code className="text-sm text-gray-300">
+          <code className="text-sm text-neutral-300">
             npx @hanzo/cli create my-new-project
           </code>
         </motion.div>

@@ -29,7 +29,7 @@ const CreditBalance = () => {
         </div>
         <div>
           <div className="text-3xl font-bold">${billingInfo.credits.toFixed(2)}</div>
-          <div className="text-sm text-gray-400 mt-1">Available credits</div>
+          <div className="text-sm text-neutral-400 mt-1">Available credits</div>
         </div>
       </div>
     </div>

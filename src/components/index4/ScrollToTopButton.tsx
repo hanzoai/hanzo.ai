@@ -18,7 +18,7 @@ const ScrollToTopButton = ({ scrolled }: ScrollToTopButtonProps) => {
       }`}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     >
-      <ArrowUp className="h-5 w-5 text-white" />
+      <ArrowUp className="h-5 w-5 text-[var(--white)]" />
     </motion.button>
   );
 };

@@ -86,7 +86,7 @@ const UnifiedCapabilities = () => {
             <ChromeText as="h2" className="text-3xl md:text-4xl font-bold mb-6">
               Unified AI Platform
             </ChromeText>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-300">
               A complete suite of AI capabilities accessible through a single, 
               consistent API with everything you need to build powerful AI applications
             </p>
@@ -104,8 +104,8 @@ const UnifiedCapabilities = () => {
               className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/20 rounded-xl p-6"
             >
               <capability.icon className="h-8 w-8 text-purple-400 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">{capability.title}</h3>
-              <p className="text-gray-300">{capability.description}</p>
+              <h3 className="text-xl font-bold text-[var(--white)] mb-2">{capability.title}</h3>
+              <p className="text-neutral-300">{capability.description}</p>
             </motion.div>
           ))}
         </div>

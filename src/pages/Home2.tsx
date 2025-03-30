@@ -11,7 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 const Home2 = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>Hanzo AI - Enterprise AI Engineering Platform</title>
         <meta name="description" content="Build, deploy, and scale AI applications with enterprise-grade reliability. The complete platform for AI engineering teams." />

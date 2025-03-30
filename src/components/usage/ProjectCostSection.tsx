@@ -27,8 +27,8 @@ const ProjectCostSection = ({ costs, currentCost }: ProjectCostSectionProps) => 
           <div key={index} className="flex justify-between">
             <div>
               <div className="font-medium">{cost.name}</div>
-              <div className="text-xs text-gray-400">{cost.usage}</div>
-              <div className="text-xs text-gray-400">{cost.rate}</div>
+              <div className="text-xs text-neutral-400">{cost.usage}</div>
+              <div className="text-xs text-neutral-400">{cost.rate}</div>
             </div>
             <div className="font-medium">{cost.cost}</div>
           </div>

@@ -7,20 +7,25 @@ interface NavigationButtonProps {
   onHoverStart?: () => void;
   onClick?: () => void;
   noChevron?: boolean;
+  isActive?: boolean;
 }
 
 export const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonProps>(
-  ({ children, onHoverStart, onClick, noChevron = false, ...props }, ref) => {
+  ({ children, onHoverStart, onClick, noChevron = false, isActive = false, ...props }, ref) => {
     return (
       <button 
         ref={ref}
-        className="text-gray-300 hover:text-white transition-colors inline-flex items-center outline-none focus:outline-none"
+        className={`${isActive ? 'text-white' : 'text-neutral-300'} hover:text-white transition-colors inline-flex items-center outline-none focus:outline-none`}
         onMouseEnter={onHoverStart}
         onClick={onClick}
         {...props}
       >
         {children}
-        {!noChevron && <ChevronDown className="ml-1 h-4 w-4" />}
+        {!noChevron && (
+          <ChevronDown 
+            className={`ml-1 h-4 w-4 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} 
+          />
+        )}
       </button>
     );
   }

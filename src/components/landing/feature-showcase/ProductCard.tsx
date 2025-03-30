@@ -52,8 +52,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {React.cloneElement(icon as React.ReactElement, { className: "h-12 w-12" })}
         </div>
         
-        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-100 transition-colors">{title}</h3>
-        <p className="text-gray-400 mb-5 group-hover:text-gray-300 transition-colors">{description}</p>
+        <h3 className="text-xl font-bold mb-3 text-[var(--white)] group-hover:text-blue-100 transition-colors">{title}</h3>
+        <p className="text-neutral-400 mb-5 group-hover:text-neutral-300 transition-colors">{description}</p>
         
         {/* Learn more button - now more visible with improved styling */}
         <Button 

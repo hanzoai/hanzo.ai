@@ -14,20 +14,20 @@ const CallToAction = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6 leading-tight">
             Get Started Today
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-neutral-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             Launch your next-generation project instantly or request a custom demo to explore 
             Hanzo Base's powerful capabilities.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" radius="full" className="text-lg px-8 bg-blue-600 hover:bg-blue-700 text-white">
+            <Button size="lg" radius="full" className="text-lg px-8 bg-blue-600 hover:bg-blue-700 text-[var(--white)]">
               <span className="py-1 leading-relaxed">Start Building</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" radius="full" className="text-lg px-8 text-white">
+            <Button size="lg" variant="outline" radius="full" className="text-lg px-8 text-[var(--white)]">
               <span className="py-1 leading-relaxed">Read Docs</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

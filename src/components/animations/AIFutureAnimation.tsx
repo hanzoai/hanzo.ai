@@ -14,7 +14,7 @@ const AIFutureAnimation: React.FC<AIFutureAnimationProps> = ({
   showButtons = true
 }) => {
   return (
-    <div className="w-full h-[500px] md:h-[600px] bg-black rounded-xl overflow-hidden shadow-2xl border border-purple-900/20">
+    <div className="w-full h-[500px] md:h-[600px] bg-[var(--black)] rounded-xl overflow-hidden shadow-2xl border border-purple-900/20">
       <AITunnelAnimation 
         title={title}
         subtitle={subtitle}

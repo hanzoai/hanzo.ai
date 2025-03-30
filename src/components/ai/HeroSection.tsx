@@ -41,7 +41,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Build, deploy, and scale AI applications with unprecedented speed and reliability. 
               A complete toolkit for AI engineers to deliver production-ready AI systems.
             </p>
@@ -56,7 +56,7 @@ const HeroSection = () => {
             <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
               Start Building
             </Button>
-            <Button size="lg" variant="outline" className="text-white">
+            <Button size="lg" variant="outline" className="text-[var(--white)]">
               Read Documentation
             </Button>
           </motion.div>
@@ -69,7 +69,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative mx-auto max-w-5xl rounded-xl overflow-hidden border border-gray-800 shadow-2xl"
         >
-          <div className="bg-black/80 p-4">
+          <div className="bg-[var(--black)]/80 p-4">
             {/* Header bar */}
             <div className="flex items-center h-10 mb-4 px-4 bg-gray-900 rounded-t-lg">
               <div className="flex space-x-2 items-center">
@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="flex-1 text-center text-gray-400 text-sm">Hanzo AI Platform</div>
+              <div className="flex-1 text-center text-neutral-400 text-sm">Hanzo AI Platform</div>
               <div className="flex space-x-3 items-center">
                 <div className="w-4 h-4 rounded-full bg-purple-500/30 flex items-center justify-center">
                   <Brain className="w-2.5 h-2.5 text-purple-300" />
@@ -95,7 +95,7 @@ const HeroSection = () => {
                   {["GPT-4o", "Claude 3 Opus", "Mistral Large", "Llama 3", "Gemini Pro"].map((model, index) => (
                     <div 
                       key={index} 
-                      className={`flex items-center p-2 rounded-lg text-sm ${index === 0 ? 'bg-purple-900/30 text-white' : 'text-gray-400 hover:bg-gray-800/60'}`}
+                      className={`flex items-center p-2 rounded-lg text-sm ${index === 0 ? 'bg-purple-900/30 text-[var(--white)]' : 'text-neutral-400 hover:bg-gray-800/60'}`}
                     >
                       <div className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-green-400' : 'bg-gray-500'} mr-2`}></div>
                       {model}
@@ -108,7 +108,7 @@ const HeroSection = () => {
                   {["hanzo-copilot-v2", "support-agent", "content-writer"].map((model, index) => (
                     <div 
                       key={index} 
-                      className="flex items-center p-2 rounded-lg text-sm text-gray-400 hover:bg-gray-800/60"
+                      className="flex items-center p-2 rounded-lg text-sm text-neutral-400 hover:bg-gray-800/60"
                     >
                       <div className="w-2 h-2 rounded-full bg-blue-400 mr-2"></div>
                       {model}
@@ -120,18 +120,18 @@ const HeroSection = () => {
               {/* Main panel */}
               <div className="col-span-6 bg-gray-900/50 rounded-lg p-4 flex flex-col">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-white font-medium">AI Observability Dashboard</h2>
+                  <h2 className="text-[var(--white)] font-medium">AI Observability Dashboard</h2>
                   <div className="flex space-x-2">
                     <span className="px-2 py-1 bg-purple-900/40 rounded-md text-purple-300 text-xs">Live</span>
-                    <span className="px-2 py-1 bg-gray-800 rounded-md text-gray-400 text-xs">Last 24h</span>
+                    <span className="px-2 py-1 bg-gray-800 rounded-md text-neutral-400 text-xs">Last 24h</span>
                   </div>
                 </div>
 
                 {/* Metrics grid */}
                 <div className="grid grid-cols-3 gap-3 mb-4">
                   <div className="bg-gray-800/80 p-3 rounded-lg">
-                    <div className="text-gray-400 text-xs mb-1">Requests</div>
-                    <div className="text-white text-xl font-bold">1.2M</div>
+                    <div className="text-neutral-400 text-xs mb-1">Requests</div>
+                    <div className="text-[var(--white)] text-xl font-bold">1.2M</div>
                     <div className="text-green-400 text-xs flex items-center mt-1">
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -140,8 +140,8 @@ const HeroSection = () => {
                     </div>
                   </div>
                   <div className="bg-gray-800/80 p-3 rounded-lg">
-                    <div className="text-gray-400 text-xs mb-1">Avg. Latency</div>
-                    <div className="text-white text-xl font-bold">246ms</div>
+                    <div className="text-neutral-400 text-xs mb-1">Avg. Latency</div>
+                    <div className="text-[var(--white)] text-xl font-bold">246ms</div>
                     <div className="text-green-400 text-xs flex items-center mt-1">
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -150,8 +150,8 @@ const HeroSection = () => {
                     </div>
                   </div>
                   <div className="bg-gray-800/80 p-3 rounded-lg">
-                    <div className="text-gray-400 text-xs mb-1">Success Rate</div>
-                    <div className="text-white text-xl font-bold">99.8%</div>
+                    <div className="text-neutral-400 text-xs mb-1">Success Rate</div>
+                    <div className="text-[var(--white)] text-xl font-bold">99.8%</div>
                     <div className="text-green-400 text-xs flex items-center mt-1">
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -164,11 +164,11 @@ const HeroSection = () => {
                 {/* Chart area */}
                 <div className="flex-1 bg-gray-800/50 rounded-lg p-3 mb-4 relative overflow-hidden">
                   <div className="flex justify-between items-center mb-3">
-                    <div className="text-white text-sm">Request Volume</div>
+                    <div className="text-[var(--white)] text-sm">Request Volume</div>
                     <div className="flex space-x-2">
                       <div className="px-2 py-0.5 text-xs bg-purple-900/40 text-purple-300 rounded">GPT-4o</div>
                       <div className="px-2 py-0.5 text-xs bg-blue-900/40 text-blue-300 rounded">Claude 3</div>
-                      <div className="px-2 py-0.5 text-xs bg-gray-800 text-gray-400 rounded">Custom</div>
+                      <div className="px-2 py-0.5 text-xs bg-gray-800 text-neutral-400 rounded">Custom</div>
                     </div>
                   </div>
                   
@@ -188,7 +188,7 @@ const HeroSection = () => {
                   </div>
                   
                   {/* Time labels */}
-                  <div className="flex justify-between mt-2 text-gray-500 text-xs">
+                  <div className="flex justify-between mt-2 text-neutral-500 text-xs">
                     <span>00:00</span>
                     <span>06:00</span>
                     <span>12:00</span>
@@ -199,16 +199,16 @@ const HeroSection = () => {
 
                 {/* Recent requests */}
                 <div className="bg-gray-800/50 rounded-lg p-3">
-                  <div className="text-white text-sm mb-2">Recent Requests</div>
+                  <div className="text-[var(--white)] text-sm mb-2">Recent Requests</div>
                   <div className="space-y-2 max-h-24 overflow-y-auto">
                     {[...Array(3)].map((_, i) => (
                       <div key={i} className="flex items-center justify-between py-1 text-xs border-b border-gray-700/50">
                         <div className="flex items-center">
                           <div className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></div>
-                          <span className="text-gray-300">request-{Math.random().toString(36).substring(2, 8)}</span>
+                          <span className="text-neutral-300">request-{Math.random().toString(36).substring(2, 8)}</span>
                         </div>
-                        <div className="text-gray-400">GPT-4o</div>
-                        <div className="text-gray-400">216ms</div>
+                        <div className="text-neutral-400">GPT-4o</div>
+                        <div className="text-neutral-400">216ms</div>
                       </div>
                     ))}
                   </div>
@@ -228,8 +228,8 @@ const HeroSection = () => {
                     ].map((model, index) => (
                       <div key={index} className="space-y-1">
                         <div className="flex justify-between text-xs">
-                          <span className="text-gray-300">{model.name}</span>
-                          <span className="text-gray-400">{model.perf}%</span>
+                          <span className="text-neutral-300">{model.name}</span>
+                          <span className="text-neutral-400">{model.perf}%</span>
                         </div>
                         <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
                           <div 
@@ -253,7 +253,7 @@ const HeroSection = () => {
                       { name: "Vision API", status: "Operational" },
                     ].map((api, index) => (
                       <div key={index} className="flex justify-between text-sm">
-                        <span className="text-gray-300">{api.name}</span>
+                        <span className="text-neutral-300">{api.name}</span>
                         <span className={`text-xs px-2 py-0.5 rounded ${
                           api.status === "Operational" ? "bg-green-900/30 text-green-400" : 
                           "bg-yellow-900/30 text-yellow-400"
@@ -280,8 +280,8 @@ const HeroSection = () => {
             <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
               <Cpu className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Optimized Inference</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-2">Optimized Inference</h3>
+            <p className="text-neutral-400">
               High-performance inference engine with automatic batching and model distillation for production workloads.
             </p>
           </motion.div>
@@ -295,8 +295,8 @@ const HeroSection = () => {
             <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
               <Bot className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Advanced Orchestration</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-2">Advanced Orchestration</h3>
+            <p className="text-neutral-400">
               Intelligent model routing, prompt chaining, and multi-model orchestration for complex AI workflows.
             </p>
           </motion.div>
@@ -310,8 +310,8 @@ const HeroSection = () => {
             <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
               <Activity className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Complete Observability</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-2">Complete Observability</h3>
+            <p className="text-neutral-400">
               Full visibility into AI system performance, including model metrics, latency tracking, and request logging.
             </p>
           </motion.div>

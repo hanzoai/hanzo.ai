@@ -15,14 +15,14 @@ const MachinesHero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-400">
             Hanzo Machines
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-neutral-300 mb-8">
             Dedicated AI compute infrastructure optimized for machine learning and high-performance workloads.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg">
+            <Button className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
               Get Started
             </Button>
-            <Button variant="outline" className="border-green-500/30 text-white hover:bg-green-900/20 px-8 py-6 text-lg">
+            <Button variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
               View Documentation
             </Button>
           </div>
@@ -31,9 +31,9 @@ const MachinesHero = () => {
         {/* Hero Hardware Visualization */}
         <div className="relative bg-green-900/20 border border-green-500/20 rounded-xl p-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-black/50 border border-green-500/20 rounded-lg p-4">
+            <div className="bg-[var(--black)]/50 border border-green-500/20 rounded-lg p-4">
               <h3 className="font-medium text-green-400 mb-2">NVIDIA H100</h3>
-              <p className="text-sm text-gray-300 mb-3">Dedicated GPU instances for AI/ML training</p>
+              <p className="text-sm text-neutral-300 mb-3">Dedicated GPU instances for AI/ML training</p>
               <div className="space-y-3">
                 <div className="bg-gray-800 rounded-md p-2 flex justify-between items-center">
                   <span className="text-sm">VRAM</span>
@@ -50,9 +50,9 @@ const MachinesHero = () => {
               </div>
             </div>
             
-            <div className="bg-black/50 border border-green-500/20 rounded-lg p-4">
+            <div className="bg-[var(--black)]/50 border border-green-500/20 rounded-lg p-4">
               <h3 className="font-medium text-green-400 mb-2">AMD EPYC 7763</h3>
-              <p className="text-sm text-gray-300 mb-3">High-core count CPU instances</p>
+              <p className="text-sm text-neutral-300 mb-3">High-core count CPU instances</p>
               <div className="space-y-3">
                 <div className="bg-gray-800 rounded-md p-2 flex justify-between items-center">
                   <span className="text-sm">Cores</span>
@@ -69,9 +69,9 @@ const MachinesHero = () => {
               </div>
             </div>
             
-            <div className="bg-black/50 border border-green-500/20 rounded-lg p-4">
+            <div className="bg-[var(--black)]/50 border border-green-500/20 rounded-lg p-4">
               <h3 className="font-medium text-green-400 mb-2">Storage Options</h3>
-              <p className="text-sm text-gray-300 mb-3">Ultra-fast NVMe and persistent storage</p>
+              <p className="text-sm text-neutral-300 mb-3">Ultra-fast NVMe and persistent storage</p>
               <div className="space-y-3">
                 <div className="bg-gray-800 rounded-md p-2 flex justify-between items-center">
                   <span className="text-sm">Local NVMe</span>

@@ -69,7 +69,7 @@ const Features = () => {
           className="max-w-3xl mx-auto text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Complete Observability for Your AI Stack</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Hanzo Observability equips your team with powerful tools for real-time monitoring, comprehensive tracing, and actionable insights.
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ const Features = () => {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-neutral-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>

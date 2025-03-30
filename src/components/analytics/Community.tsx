@@ -83,7 +83,7 @@ const Community = () => {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Powered by Community, Improved by Collaboration</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Join thousands of developers building the future of analytics together.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ const Community = () => {
                   <span>{item.suffix}</span>
                 </div>
                 
-                <div className="text-gray-400">{item.label}</div>
+                <div className="text-neutral-400">{item.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -136,7 +136,7 @@ const Community = () => {
                 <h3 className="text-2xl font-bold">Open Source</h3>
               </div>
               
-              <p className="text-gray-400 mb-6">
+              <p className="text-neutral-400 mb-6">
                 Hanzo Analytics is fully open source, with a vibrant community of developers contributing from around the world. Join us on GitHub to collaborate on the future of analytics.
               </p>
               
@@ -180,7 +180,7 @@ const Community = () => {
                 <h3 className="text-2xl font-bold">Resources</h3>
               </div>
               
-              <p className="text-gray-400 mb-6">
+              <p className="text-neutral-400 mb-6">
                 Access comprehensive documentation, tutorials, and examples to help you make the most of Hanzo Analytics.
               </p>
               
@@ -212,8 +212,8 @@ const Community = () => {
                     href={resource.link} 
                     className="block p-4 bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
                   >
-                    <h4 className="font-medium text-white mb-1">{resource.title}</h4>
-                    <p className="text-sm text-gray-400">{resource.description}</p>
+                    <h4 className="font-medium text-[var(--white)] mb-1">{resource.title}</h4>
+                    <p className="text-sm text-neutral-400">{resource.description}</p>
                   </a>
                 ))}
               </div>

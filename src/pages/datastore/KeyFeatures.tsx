@@ -28,7 +28,7 @@ const FeatureCard = ({
     <ChromeText as="h3" className="text-xl font-bold mb-4">
       {title}
     </ChromeText>
-    <p className="text-gray-400">
+    <p className="text-neutral-400">
       {description}
     </p>
   </motion.div>
@@ -69,13 +69,13 @@ const KeyFeatures = () => {
   ];
 
   return (
-    <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+    <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
             Key Features
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             A powerful datastore built for modern analytical applications
           </p>
         </div>

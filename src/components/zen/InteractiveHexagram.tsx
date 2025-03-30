@@ -36,13 +36,13 @@ const InteractiveHexagram: React.FC<InteractiveHexagramProps> = ({
       onClick={() => onClick(hexagram)}
       whileHover={{ y: -2 }}
     >
-      <div className="text-xs text-gray-500 mb-1">{hexagram.id}</div>
+      <div className="text-xs text-neutral-500 mb-1">{hexagram.id}</div>
       <IChingHexagram 
         lines={hexagram.lines} 
         size={32} 
-        className={`${isSelected ? 'text-purple-400' : 'text-white/80'} mb-2`} 
+        className={`${isSelected ? 'text-purple-400' : 'text-[var(--white)]/80'} mb-2`} 
       />
-      <div className="text-center text-xs text-gray-400">
+      <div className="text-center text-xs text-neutral-400">
         {hexagram.chineseName}
       </div>
     </motion.div>

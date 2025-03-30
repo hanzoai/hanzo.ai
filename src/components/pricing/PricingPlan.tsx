@@ -34,12 +34,12 @@ const PricingPlan = ({
   
   const bgColor = popular 
     ? "bg-gray-900/30" 
-    : "bg-black/50";
+    : "bg-[var(--black)]/50";
 
   // Button color - updated to use #1f1f1f background and #333 border
   const buttonClass = popular 
-    ? "bg-white hover:bg-gray-200 text-black" 
-    : "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white border border-[#333]";
+    ? "bg-[var(--white)] hover:bg-gray-200 text-black" 
+    : "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-[var(--white)] border border-[#333]";
 
   const renderButton = () => {
     if (name === "Team" && showDetails) {
@@ -101,7 +101,7 @@ const PricingPlan = ({
     >
       {popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <div className="bg-white text-black px-3 py-1 rounded-full text-sm font-medium">
+          <div className="bg-[var(--white)] text-black px-3 py-1 rounded-full text-sm font-medium">
             Most Popular
           </div>
         </div>
@@ -116,10 +116,10 @@ const PricingPlan = ({
         <div className="flex items-baseline gap-1 mb-2">
           <span className="text-4xl font-bold">{price}</span>
           {billingPeriod && (
-            <span className="text-gray-400">{billingPeriod}</span>
+            <span className="text-neutral-400">{billingPeriod}</span>
           )}
         </div>
-        <p className="text-gray-400">{description}</p>
+        <p className="text-neutral-400">{description}</p>
       </div>
 
       {renderButton()}
@@ -127,8 +127,8 @@ const PricingPlan = ({
       <ul className="space-y-4">
         {features.map((feature) => (
           <li key={feature} className="flex items-start gap-3">
-            <Check className="h-5 w-5 text-gray-400 mt-0.5 flex-shrink-0" />
-            <span className="text-gray-300">{feature}</span>
+            <Check className="h-5 w-5 text-neutral-400 mt-0.5 flex-shrink-0" />
+            <span className="text-neutral-300">{feature}</span>
           </li>
         ))}
       </ul>

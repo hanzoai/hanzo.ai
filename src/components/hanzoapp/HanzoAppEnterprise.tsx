@@ -14,12 +14,12 @@ const HanzoAppEnterprise = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-4">Enterprise</h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-neutral-300 mb-8">
             Looking for specific use cases and support?
           </p>
           <Button 
             size="lg"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8"
+            className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-8"
           >
             Let's Chat
           </Button>

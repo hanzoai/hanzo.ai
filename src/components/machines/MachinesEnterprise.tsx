@@ -8,7 +8,7 @@ const EnterpriseFeature = ({ icon: Icon, title, description }) => {
     <div className="bg-green-900/10 border border-green-500/20 rounded-xl p-6 flex flex-col items-center text-center">
       <Icon className="h-12 w-12 text-green-400 mb-4" />
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-300">
+      <p className="text-neutral-300">
         {description}
       </p>
     </div>
@@ -41,7 +41,7 @@ const MachinesEnterprise = () => {
           <ChromeText as="h2" className="text-3xl font-bold mb-4">
             Enterprise-Grade Infrastructure
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Built for organizations with the most demanding requirements
           </p>
         </div>

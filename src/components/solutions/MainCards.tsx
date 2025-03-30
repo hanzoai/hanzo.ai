@@ -23,7 +23,7 @@ const MainCards: React.FC = () => {
           </ChromeText>
         </div>
         <div className="p-8">
-          <p className="text-gray-300 mb-6">
+          <p className="text-neutral-300 mb-6">
             Discover our comprehensive suite of technical capabilities that empower your organization to innovate
             and transform. From AI and cloud infrastructure to custom development solutions, we provide everything
             you need to stay ahead.
@@ -64,7 +64,7 @@ const MainCards: React.FC = () => {
           </ChromeText>
         </div>
         <div className="p-8">
-          <p className="text-gray-300 mb-6">
+          <p className="text-neutral-300 mb-6">
             Our industry-specific expertise helps organizations across sectors overcome unique challenges and seize
             opportunities. We combine deep domain knowledge with cutting-edge technology to deliver tailored
             solutions for your business.

@@ -89,7 +89,7 @@ const DeveloperFirst = () => {
   const [activeTab, setActiveTab] = useState("js");
   
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -101,7 +101,7 @@ const DeveloperFirst = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Developer-First API & SDKs</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Easy-to-integrate SDKs and APIs designed for minimal friction and maximum flexibility.
           </p>
         </motion.div>
@@ -123,22 +123,22 @@ const DeveloperFirst = () => {
                 <li className="flex">
                   <div className="mr-3 text-purple-400">•</div>
                   <div>
-                    <span className="font-medium text-white">OpenTelemetry Integration</span>
-                    <p className="text-gray-400 mt-1">Seamlessly integrate with your existing observability stack.</p>
+                    <span className="font-medium text-[var(--white)]">OpenTelemetry Integration</span>
+                    <p className="text-neutral-400 mt-1">Seamlessly integrate with your existing observability stack.</p>
                   </div>
                 </li>
                 <li className="flex">
                   <div className="mr-3 text-purple-400">•</div>
                   <div>
-                    <span className="font-medium text-white">API-first, highly customizable</span>
-                    <p className="text-gray-400 mt-1">Build exactly what you need with our flexible API.</p>
+                    <span className="font-medium text-[var(--white)]">API-first, highly customizable</span>
+                    <p className="text-neutral-400 mt-1">Build exactly what you need with our flexible API.</p>
                   </div>
                 </li>
                 <li className="flex">
                   <div className="mr-3 text-purple-400">•</div>
                   <div>
-                    <span className="font-medium text-white">Robust documentation and code examples</span>
-                    <p className="text-gray-400 mt-1">Comprehensive guides and examples to get you started quickly.</p>
+                    <span className="font-medium text-[var(--white)]">Robust documentation and code examples</span>
+                    <p className="text-neutral-400 mt-1">Comprehensive guides and examples to get you started quickly.</p>
                   </div>
                 </li>
               </ul>
@@ -165,8 +165,8 @@ const DeveloperFirst = () => {
                     key={tab.id}
                     className={`flex items-center px-4 py-3 text-sm font-medium ${
                       activeTab === tab.id
-                        ? "bg-gray-800 text-white"
-                        : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                        ? "bg-gray-800 text-[var(--white)]"
+                        : "text-neutral-400 hover:text-[var(--white)] hover:bg-gray-800/50"
                     }`}
                     onClick={() => setActiveTab(tab.id)}
                   >
@@ -177,12 +177,12 @@ const DeveloperFirst = () => {
               </div>
               
               <div className="p-5 overflow-x-auto">
-                <pre className="text-sm text-gray-300 font-mono whitespace-pre">
+                <pre className="text-sm text-neutral-300 font-mono whitespace-pre">
                   {codeExamples[activeTab as keyof typeof codeExamples]}
                 </pre>
               </div>
               
-              <div className="bg-gray-900 p-3 border-t border-gray-800 text-sm text-gray-400">
+              <div className="bg-gray-900 p-3 border-t border-gray-800 text-sm text-neutral-400">
                 {activeTab === "js" && "npm install hanzo-analytics"}
                 {activeTab === "py" && "pip install hanzo-analytics"}
                 {activeTab === "api" && "API Key: Get yours from the Hanzo Analytics dashboard"}

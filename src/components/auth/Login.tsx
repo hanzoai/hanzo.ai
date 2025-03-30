@@ -54,11 +54,11 @@ const Login = () => {
   };
   
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Welcome Back</h1>
-          <p className="text-gray-400 mt-2">
+          <p className="text-neutral-400 mt-2">
             Sign in to your account
           </p>
         </div>
@@ -68,7 +68,7 @@ const Login = () => {
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Mail className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
                 <Input
                   id="email"
                   name="email"
@@ -89,7 +89,7 @@ const Login = () => {
                 </a>
               </div>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Lock className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
                 <Input
                   id="password"
                   name="password"
@@ -104,7 +104,7 @@ const Login = () => {
             
             <Button 
               type="submit" 
-              className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white"
+              className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-[var(--white)]"
             >
               Sign In
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -112,7 +112,7 @@ const Login = () => {
           </form>
         </div>
         
-        <div className="text-center text-sm text-gray-400">
+        <div className="text-center text-sm text-neutral-400">
           Don't have an account?{" "}
           <a href="/signup" className="text-purple-400 hover:underline">
             Sign up

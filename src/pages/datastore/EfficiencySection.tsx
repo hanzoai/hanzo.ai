@@ -23,10 +23,10 @@ const EfficiencyCard = ({ title, mainText, subText, initialX, delay }: Efficienc
       <ChromeText as="h3" className="text-2xl font-bold mb-4">
         {title}
       </ChromeText>
-      <p className="text-gray-300 mb-4">
+      <p className="text-neutral-300 mb-4">
         {mainText}
       </p>
-      <p className="text-gray-400">
+      <p className="text-neutral-400">
         {subText}
       </p>
     </motion.div>

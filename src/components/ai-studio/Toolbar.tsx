@@ -22,7 +22,7 @@ const Toolbar = ({
         variant="ghost" 
         size="icon"
         onClick={() => setShowSidebar(!showSidebar)}
-        className="text-gray-400 hover:text-white mr-2"
+        className="text-neutral-400 hover:text-[var(--white)] mr-2"
       >
         <PanelLeft className="h-5 w-5" />
       </Button>
@@ -55,19 +55,19 @@ const Toolbar = ({
       </div>
       
       <div className="ml-auto flex items-center space-x-1">
-        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+        <Button variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
           <Save className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+        <Button variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
           <Play className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+        <Button variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
           <Share2 className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+        <Button variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
           <Download className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+        <Button variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
           <Settings className="h-4 w-4" />
         </Button>
       </div>

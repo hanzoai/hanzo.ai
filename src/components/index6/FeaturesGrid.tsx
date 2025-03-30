@@ -44,7 +44,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Ico
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
         viewport={{ once: true }}
-        className="text-xl font-bold mb-2 text-white"
+        className="text-xl font-bold mb-2 text-[var(--white)]"
       >
         {title}
       </motion.h3>
@@ -53,7 +53,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Ico
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
         viewport={{ once: true }}
-        className="text-gray-400"
+        className="text-neutral-400"
       >
         {description}
       </motion.p>
@@ -63,7 +63,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Ico
 
 const FeaturesGrid: React.FC = () => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-black/50 relative">
+    <section className="py-20 px-4 md:px-8 bg-[var(--black)]/50 relative">
       {/* Animated background dots */}
       <motion.div 
         className="absolute inset-0 opacity-20 z-0 pointer-events-none"
@@ -82,7 +82,7 @@ const FeaturesGrid: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-3xl md:text-4xl font-bold text-center mb-4 text-white"
+          className="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--white)]"
         >
           The Complete AI Engineering Platform
         </motion.h2>

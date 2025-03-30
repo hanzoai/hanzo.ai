@@ -22,21 +22,21 @@ const HanzoAppHero = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Build LLM Apps <span className="text-purple-400">Easily</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Build. Deploy. Scale.
           </p>
           
           <div className="mb-12">
-            <p className="text-gray-400 text-lg mb-4">Trusted and used by teams around the globe</p>
+            <p className="text-neutral-400 text-lg mb-4">Trusted and used by teams around the globe</p>
           </div>
           
           <div className="max-w-xl mx-auto bg-gray-900/30 border border-gray-800 rounded-xl p-6 mb-12">
             <h3 className="text-2xl font-semibold mb-4">Iterate, fast</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               Developing LLM apps takes countless iterations. With AI engineering approach, we enable quick iterations to go from testing to production
             </p>
             
-            <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-gray-300 text-left mb-6">
+            <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-neutral-300 text-left mb-6">
               <pre>
                 $ npm install -g flowise<br/>
                 $ npx flowise start
@@ -45,7 +45,7 @@ const HanzoAppHero = () => {
             
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#" className="flex items-center">
                 Get Started 

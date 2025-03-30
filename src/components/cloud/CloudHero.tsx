@@ -26,9 +26,9 @@ const CloudHero = () => {
               <IChingHexagram 
                 lines={adaptabilityHexagram} 
                 size={42} 
-                className="text-white/80 mr-4" 
+                className="text-[var(--white)]/80 mr-4" 
               />
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-neutral-500">
                 <div>坎 · kǎn</div>
                 <div>The Abysmal Water</div>
               </div>
@@ -49,7 +49,7 @@ const CloudHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-400 text-lg mb-8"
+              className="text-neutral-400 text-lg mb-8"
             >
               Hanzo Cloud embodies the principle of adaptability. Like water, it conforms to any container, 
               scaling seamlessly from prototype to planet-scale deployment.
@@ -62,13 +62,13 @@ const CloudHero = () => {
               className="flex flex-wrap gap-4"
             >
               <Button 
-                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white"
+                className="bg-[var(--white)]/5 hover:bg-[var(--white)]/10 border border-white/10 text-[var(--white)]"
               >
                 Deploy Now
               </Button>
               <Button 
                 variant="outline" 
-                className="border-gray-800 text-gray-400 hover:text-white hover:border-gray-700"
+                className="border-gray-800 text-neutral-400 hover:text-[var(--white)] hover:border-gray-700"
               >
                 Learn Principles
               </Button>
@@ -84,32 +84,32 @@ const CloudHero = () => {
             >
               <div className="bg-gray-950 border border-gray-900/50 rounded-lg p-6">
                 <div className="grid grid-cols-1 gap-4">
-                  <div className="bg-black/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
-                    <Server className="h-5 w-5 text-gray-500 mr-3 mt-0.5" />
+                  <div className="bg-[var(--black)]/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
+                    <Server className="h-5 w-5 text-neutral-500 mr-3 mt-0.5" />
                     <div>
-                      <h3 className="text-white text-sm font-medium mb-1">Infrastructure as Code</h3>
-                      <p className="text-gray-500 text-xs">Declarative deployments aligned with principle 34: "Form follows intention."</p>
+                      <h3 className="text-[var(--white)] text-sm font-medium mb-1">Infrastructure as Code</h3>
+                      <p className="text-neutral-500 text-xs">Declarative deployments aligned with principle 34: "Form follows intention."</p>
                     </div>
                   </div>
                   
-                  <div className="bg-black/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
-                    <Globe className="h-5 w-5 text-gray-500 mr-3 mt-0.5" />
+                  <div className="bg-[var(--black)]/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
+                    <Globe className="h-5 w-5 text-neutral-500 mr-3 mt-0.5" />
                     <div>
-                      <h3 className="text-white text-sm font-medium mb-1">Global Edge Network</h3>
-                      <p className="text-gray-500 text-xs">Embodies principle 53: "The wise engineer brings computation to data, not data to computation."</p>
+                      <h3 className="text-[var(--white)] text-sm font-medium mb-1">Global Edge Network</h3>
+                      <p className="text-neutral-500 text-xs">Embodies principle 53: "The wise engineer brings computation to data, not data to computation."</p>
                     </div>
                   </div>
                   
-                  <div className="bg-black/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
-                    <Zap className="h-5 w-5 text-gray-500 mr-3 mt-0.5" />
+                  <div className="bg-[var(--black)]/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
+                    <Zap className="h-5 w-5 text-neutral-500 mr-3 mt-0.5" />
                     <div>
-                      <h3 className="text-white text-sm font-medium mb-1">Auto-scaling</h3>
-                      <p className="text-gray-500 text-xs">Following principle 12: "Systems should grow and contract like breathing, without conscious effort."</p>
+                      <h3 className="text-[var(--white)] text-sm font-medium mb-1">Auto-scaling</h3>
+                      <p className="text-neutral-500 text-xs">Following principle 12: "Systems should grow and contract like breathing, without conscious effort."</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="mt-4 pt-4 border-t border-gray-800/50 text-xs text-gray-600 italic text-center">
+                <div className="mt-4 pt-4 border-t border-gray-800/50 text-xs text-neutral-600 italic text-center">
                   "The cloud is not the destination, but the path."
                 </div>
               </div>

@@ -15,7 +15,7 @@ const AIPlatformSection = () => {
   return (
     <section className="relative py-20 sm:py-32 overflow-hidden">
       {/* Background elements - simplified */}
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-[var(--black)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/5 to-black/90"></div>
       
       <GridLines spacing={60} opacity={0.2} color="rgba(147, 51, 234, 0.15)" />
@@ -38,7 +38,7 @@ const AIPlatformSection = () => {
               AI Engineering Platform
             </ChromeText>
           </div>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto">
             Build powerful AI experiences with our comprehensive platform designed for developers,
             researchers, and enterprises to create, deploy, and scale AI applications.
           </p>
@@ -79,7 +79,7 @@ const AIPlatformSection = () => {
                         })}
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-gray-400">{feature.description}</p>
+                      <p className="text-neutral-400">{feature.description}</p>
                     </ArchitecturalBox>
                   </motion.div>
                 </MasonryItem>

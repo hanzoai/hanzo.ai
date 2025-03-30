@@ -15,7 +15,7 @@ const Compliance = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Automatic Global Tax Compliance</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Focus on your business while Hanzo handles the complexity of global tax regulations and compliance.
           </p>
         </motion.div>
@@ -32,10 +32,10 @@ const Compliance = () => {
               <ShieldCheck className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Automated Tax Management</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-neutral-400 mb-4">
               Automatically handle VAT, GST, and regional taxes (including sales tax).
             </p>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-neutral-400">
               <li className="flex items-start gap-2">
                 <span className="text-purple-400">•</span>
                 <span>Real-time tax rate calculation</span>
@@ -62,10 +62,10 @@ const Compliance = () => {
               <Receipt className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Merchant of Record</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-neutral-400 mb-4">
               Hanzo takes liability for taxes and compliance, acting as your merchant of record.
             </p>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-neutral-400">
               <li className="flex items-start gap-2">
                 <span className="text-purple-400">•</span>
                 <span>Simplified global expansion</span>
@@ -92,10 +92,10 @@ const Compliance = () => {
               <AlertTriangle className="h-6 w-6 text-purple-400" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Fraud Protection</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-neutral-400 mb-4">
               Automatic fraud detection and prevention built-in to protect your business.
             </p>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-neutral-400">
               <li className="flex items-start gap-2">
                 <span className="text-purple-400">•</span>
                 <span>Machine learning fraud detection</span>

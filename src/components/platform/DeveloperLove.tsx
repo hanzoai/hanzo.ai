@@ -96,11 +96,11 @@ const DeveloperLove = () => {
                   className="h-10 w-10 rounded-full object-cover mr-3"
                 />
                 <div>
-                  <h4 className="font-semibold text-white">{tweet.name}</h4>
-                  <p className="text-sm text-gray-400">{tweet.handle}</p>
+                  <h4 className="font-semibold text-[var(--white)]">{tweet.name}</h4>
+                  <p className="text-sm text-neutral-400">{tweet.handle}</p>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm">{tweet.content}</p>
+              <p className="text-neutral-300 text-sm">{tweet.content}</p>
             </motion.div>
           ))}
         </div>

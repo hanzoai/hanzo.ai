@@ -76,7 +76,7 @@ const industriesData = [{
   description: "Financial solutions and risk assessment"
 }, {
   name: "Infrastructure and Capital Projects",
-  icon: <Building2 className="h-5 w-5 text-gray-400 mb-2" />,
+  icon: <Building2 className="h-5 w-5 text-neutral-400 mb-2" />,
   image: "/lovable-uploads/f1241c85-7df8-45b5-a92a-263554ff10cd.png",
   description: "Infrastructure development and capital management"
 }, {
@@ -152,7 +152,7 @@ const Features = () => {
     "Blockchain": <Blocks className="h-5 w-5 text-orange-400 mb-2" />,
     "Cloud Computing": <Cloud className="h-5 w-5 text-cyan-400 mb-2" />,
     "GPU": <Cpu className="h-5 w-5 text-red-400 mb-2" />,
-    "Hardware": <HardDrive className="h-5 w-5 text-gray-400 mb-2" />,
+    "Hardware": <HardDrive className="h-5 w-5 text-neutral-400 mb-2" />,
     "Machine Learning": <Brain className="h-5 w-5 text-green-400 mb-2" />,
     "Software": <Code className="h-5 w-5 text-yellow-400 mb-2" />,
     "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
@@ -236,7 +236,7 @@ const Features = () => {
   }, [api]);
   return (
     <>
-      <div className="w-full bg-black py-8 px-4">
+      <div className="w-full bg-[var(--black)] py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -253,7 +253,7 @@ const Features = () => {
         </div>
       </div>
       
-      <section id="features" className="py-20 bg-black">
+      <section id="features" className="py-20 bg-[var(--black)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="text-center">
             <motion.h2 initial={{
@@ -266,7 +266,7 @@ const Features = () => {
               once: true
             }} transition={{
               duration: 0.5
-            }} className="text-3xl sm:text-4xl font-display text-white">
+            }} className="text-3xl sm:text-4xl font-display text-[var(--white)]">
               Leading the Fourth Industrial Revolution
             </motion.h2>
             <motion.p initial={{
@@ -280,7 +280,7 @@ const Features = () => {
             }} transition={{
               duration: 0.5,
               delay: 0.1
-            }} className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+            }} className="mt-4 text-lg text-neutral-300 max-w-3xl mx-auto">
               Hanzo is a developer-first AI platform bringing frontier research directly into your workflow with open, private, and decentralized solutions.
             </motion.p>
           </div>
@@ -298,13 +298,13 @@ const Features = () => {
               duration: 0.5,
               delay: index * 0.1
             }} className="relative p-6 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all flex flex-col items-center text-center my-0">
-                <div className="p-2 bg-white/10 w-fit rounded-lg text-white">
+                <div className="p-2 bg-[var(--white)]/10 w-fit rounded-lg text-[var(--white)]">
                   {feature.icon}
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-white">
+                <h3 className="mt-4 text-xl font-semibold text-[var(--white)]">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-gray-300">{feature.description}</p>
+                <p className="mt-2 text-neutral-300">{feature.description}</p>
               </motion.div>)}
           </div>
 
@@ -319,7 +319,7 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="mt-12 text-center">
-            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-white hover:text-purple-400 transition-colors">
+            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-purple-400 transition-colors">
               View All Solutions
             </Button>
           </motion.div>}
@@ -337,7 +337,7 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="text-center mb-12">
-            <h2 className="font-display text-white bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-4xl">
+            <h2 className="font-display text-[var(--white)] bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-4xl">
               Hanzo has an impressive track record...
             </h2>
           </motion.div>
@@ -358,12 +358,12 @@ const Features = () => {
                 <motion.div variants={textContainerVariants} initial="hidden" whileInView="visible" viewport={{
               once: true,
               amount: 0.8
-            }} className="text-lg text-gray-300 overflow-hidden">
+            }} className="text-lg text-neutral-300 overflow-hidden">
                   <span>We've helped businesses and individuals harness the </span> 
-                  <span className="text-white font-bold">power of AI</span>
+                  <span className="text-[var(--white)] font-bold">power of AI</span>
                   <span> to drive growth, efficiency, and innovation.</span>
                 </motion.div>
-                <Button variant="outline" className="mt-6 bg-white text-black border-white hover:bg-gray-100 hover:text-black">
+                <Button variant="outline" className="mt-6 bg-[var(--white)] text-black border-white hover:bg-gray-100 hover:text-black">
                   Our Testimonial
                 </Button>
               </div>
@@ -371,23 +371,23 @@ const Features = () => {
             
             <div className="grid grid-cols-2 gap-8 md:col-span-2">
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-4xl font-medium text-white">1M<sup>+</sup></h3>
-                <p className="mt-2 text-gray-300">Users benefiting from our AI-powered solutions</p>
+                <h3 className="text-4xl font-medium text-[var(--white)]">1M<sup>+</sup></h3>
+                <p className="mt-2 text-neutral-300">Users benefiting from our AI-powered solutions</p>
               </div>
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-4xl font-medium text-white">4.9<span className="text-2xl">/5</span></h3>
-                <p className="mt-2 text-gray-300">Average rating across all AI-driven applications</p>
+                <h3 className="text-4xl font-medium text-[var(--white)]">4.9<span className="text-2xl">/5</span></h3>
+                <p className="mt-2 text-neutral-300">Average rating across all AI-driven applications</p>
               </div>
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-4xl font-medium text-white">80<sup>%</sup></h3>
-                <p className="mt-2 text-gray-300">Faster decision-making with AI recommendations</p>
+                <h3 className="text-4xl font-medium text-[var(--white)]">80<sup>%</sup></h3>
+                <p className="mt-2 text-neutral-300">Faster decision-making with AI recommendations</p>
               </div>
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
-                <h3 className="text-4xl font-medium text-white">99<sup>%</sup></h3>
-                <p className="mt-2 text-gray-300">Uptime guarantee for seamless AI experience</p>
+                <h3 className="text-4xl font-medium text-[var(--white)]">99<sup>%</sup></h3>
+                <p className="mt-2 text-neutral-300">Uptime guarantee for seamless AI experience</p>
               </div>
             </div>
           </motion.div>
@@ -402,12 +402,12 @@ const Features = () => {
             </motion.h3>
             <motion.h2 style={{
               y: industriesTitleY
-            }} className="text-4xl font-display text-white mb-3">
+            }} className="text-4xl font-display text-[var(--white)] mb-3">
               We deliver impact in various industries
             </motion.h2>
             <motion.p style={{
               y: industriesDescriptionY
-            }} className="text-gray-300 max-w-3xl mx-auto mb-8">
+            }} className="text-neutral-300 max-w-3xl mx-auto mb-8">
               We have a proven track record of delivering impactful solutions tailored to various industries, 
               driving success and innovation across diverse business sectors.
             </motion.p>
@@ -428,15 +428,15 @@ const Features = () => {
                       <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                         <div className="flex items-center mb-2">
                           {industry.icon}
-                          <h3 className="text-xl font-medium text-white ml-2">{industry.name}</h3>
+                          <h3 className="text-xl font-medium text-[var(--white)] ml-2">{industry.name}</h3>
                         </div>
-                        <p className="text-gray-300">{industry.description}</p>
+                        <p className="text-neutral-300">{industry.description}</p>
                       </div>
                     </div>
                   </CarouselItem>)}
               </CarouselContent>
-              <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-              <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+              <CarouselPrevious className="left-4 bg-[var(--white)]/10 hover:bg-[var(--white)]/20 border-none text-[var(--white)]" />
+              <CarouselNext className="right-4 bg-[var(--white)]/10 hover:bg-[var(--white)]/20 border-none text-[var(--white)]" />
             </Carousel>
           </motion.div>
         </div>

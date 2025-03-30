@@ -124,7 +124,7 @@ const BillingCalculator = () => {
       </div>
 
       <div className="flex justify-center pt-8">
-        <Button className="bg-white hover:bg-gray-200 text-black px-8">
+        <Button className="bg-[var(--white)] hover:bg-gray-200 text-black px-8">
           Contact Sales
         </Button>
       </div>

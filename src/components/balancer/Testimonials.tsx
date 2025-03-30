@@ -50,7 +50,7 @@ const StarRating = ({ rating }) => {
 
   const emptyStars = 5 - stars.length;
   for (let i = 0; i < emptyStars; i++) {
-    stars.push(<span key={`empty-${i}`} className="text-gray-500">★</span>);
+    stars.push(<span key={`empty-${i}`} className="text-neutral-500">★</span>);
   }
 
   return <div className="flex">{stars}</div>;
@@ -71,7 +71,7 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What Our Users Are Saying</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Join the growing number of users who trust Hanzo Balancer.
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ const Testimonials = () => {
               <StarRating rating={testimonial.rating} />
               <div className="mt-4">
                 <p className="font-medium">{testimonial.author}</p>
-                <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                <p className="text-neutral-400 text-sm">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}

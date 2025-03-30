@@ -9,7 +9,7 @@ import ChromeText from "@/components/ui/chrome-text";
 
 const Identity = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       
       {/* Hero Section */}
@@ -23,14 +23,14 @@ const Identity = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-400">
               Hanzo Identity
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Secure, scalable identity and access management for your applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-6 text-lg">
+              <Button className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
                 Get Started
               </Button>
-              <Button variant="outline" className="border-violet-500/30 text-white hover:bg-violet-900/20 px-8 py-6 text-lg">
+              <Button variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
                 View Documentation
               </Button>
             </div>
@@ -43,7 +43,7 @@ const Identity = () => {
                 <User className="h-10 w-10 text-violet-300" />
               </div>
               <h3 className="text-lg font-bold mb-2">User Authentication</h3>
-              <p className="text-gray-300 text-center">
+              <p className="text-neutral-300 text-center">
                 Multi-factor authentication, social logins, and passwordless options
               </p>
             </div>
@@ -53,7 +53,7 @@ const Identity = () => {
                 <Shield className="h-10 w-10 text-violet-300" />
               </div>
               <h3 className="text-lg font-bold mb-2">Access Control</h3>
-              <p className="text-gray-300 text-center">
+              <p className="text-neutral-300 text-center">
                 Role-based access control, custom claims, and fine-grained permissions
               </p>
             </div>
@@ -63,7 +63,7 @@ const Identity = () => {
                 <Lock className="h-10 w-10 text-violet-300" />
               </div>
               <h3 className="text-lg font-bold mb-2">Enterprise SSO</h3>
-              <p className="text-gray-300 text-center">
+              <p className="text-neutral-300 text-center">
                 SAML, OIDC, and enterprise identity provider integrations
               </p>
             </div>
@@ -78,7 +78,7 @@ const Identity = () => {
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Key Features & Capabilities
             </ChromeText>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Complete identity management solutions for every authentication and authorization need
             </p>
           </div>
@@ -93,7 +93,7 @@ const Identity = () => {
             >
               <UserCheck className="h-10 w-10 text-violet-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Multi-factor Authentication</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Secure access with SMS, email, authenticator apps, and biometric verification.
               </p>
             </motion.div>
@@ -107,7 +107,7 @@ const Identity = () => {
             >
               <UserCog className="h-10 w-10 text-violet-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">User Management</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Comprehensive tools for user creation, profile management, and account recovery.
               </p>
             </motion.div>
@@ -121,7 +121,7 @@ const Identity = () => {
             >
               <Key className="h-10 w-10 text-violet-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Single Sign-On (SSO)</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Seamless authentication across multiple applications with SAML and OIDC support.
               </p>
             </motion.div>
@@ -135,7 +135,7 @@ const Identity = () => {
             >
               <Shield className="h-10 w-10 text-violet-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Role-Based Access Control</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Define and manage permissions with customizable roles and user groups.
               </p>
             </motion.div>
@@ -149,7 +149,7 @@ const Identity = () => {
             >
               <Fingerprint className="h-10 w-10 text-violet-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Passwordless Authentication</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Secure login options without passwords using magic links, WebAuthn, and biometrics.
               </p>
             </motion.div>
@@ -163,7 +163,7 @@ const Identity = () => {
             >
               <History className="h-10 w-10 text-violet-400 mb-4" />
               <h3 className="text-xl font-bold mb-2">Audit & Compliance</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Comprehensive logging and reporting for user activities and access attempts.
               </p>
             </motion.div>
@@ -178,7 +178,7 @@ const Identity = () => {
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Enterprise-Ready Solutions
             </ChromeText>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Secure identity management that meets the highest compliance standards
             </p>
           </div>
@@ -186,10 +186,10 @@ const Identity = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-violet-900/10 border border-violet-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Compliance & Security</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Meet regulatory requirements with built-in compliance features.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-violet-400 mr-2">•</span>
                   <span>SOC 2, GDPR, HIPAA, and PCI DSS compliance</span>
@@ -207,10 +207,10 @@ const Identity = () => {
             
             <div className="bg-violet-900/10 border border-violet-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Enterprise Identity</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Seamlessly integrate with your existing identity infrastructure.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-violet-400 mr-2">•</span>
                   <span>Active Directory and LDAP integration</span>
@@ -228,10 +228,10 @@ const Identity = () => {
             
             <div className="bg-violet-900/10 border border-violet-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Customer Identity</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Create seamless authentication experiences for your customers.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-violet-400 mr-2">•</span>
                   <span>Social login integrations (Google, Facebook, Apple, etc.)</span>
@@ -249,10 +249,10 @@ const Identity = () => {
             
             <div className="bg-violet-900/10 border border-violet-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Developer Experience</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Extensive SDKs and tools for seamless integration.
               </p>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-violet-400 mr-2">•</span>
                   <span>SDKs for all major languages and frameworks</span>
@@ -277,14 +277,14 @@ const Identity = () => {
           <div className="bg-gradient-to-r from-violet-900/20 to-indigo-900/20 rounded-2xl p-8 md:p-12 border border-violet-500/30">
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">Secure Your Applications</h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 mb-8 max-w-3xl mx-auto">
                 Get started with Hanzo Identity today and implement secure authentication in minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-6 text-lg">
+                <Button className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
                   Sign Up Free
                 </Button>
-                <Button variant="outline" className="border-violet-500/30 text-white hover:bg-violet-900/20 px-8 py-6 text-lg">
+                <Button variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
                   Read Documentation
                 </Button>
               </div>

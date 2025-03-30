@@ -7,7 +7,7 @@ import ChromeText from "@/components/ui/chrome-text";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-[var(--black)]" />
       
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         <motion.div
@@ -25,7 +25,7 @@ const HeroSection = () => {
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             Build Any App. Scale to Millions.
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-300 max-w-4xl mx-auto">
             Hanzo Base is the open-source alternative to Firebase and PocketBase that developers trust. 
             Rapidly launch scalable, secure projects with integrated Postgres databases, Authentication, 
             APIs, Edge Functions, Realtime Subscriptions, Storage, Vector Embeddings, and comprehensive 

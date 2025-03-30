@@ -13,12 +13,12 @@ const Base = () => {
           viewport={{ once: true }} 
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-1 rounded-full mb-6">
-            <Database className="h-4 w-4 text-gray-400" />
-            <span className="text-sm text-gray-400">The Modern Backend Platform</span>
+          <div className="inline-flex items-center space-x-2 bg-[var(--white)]/10 px-4 py-1 rounded-full mb-6">
+            <Database className="h-4 w-4 text-neutral-400" />
+            <span className="text-sm text-neutral-400">The Modern Backend Platform</span>
           </div>
-          <h2 className="text-4xl font-display text-white mb-4">Everything You Need to Build at Scale</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-display text-[var(--white)] mb-4">Everything You Need to Build at Scale</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             A complete backend platform with authentication, database, file storage, and serverless functions—all in one place.
           </p>
         </motion.div>
@@ -30,16 +30,16 @@ const Base = () => {
             viewport={{ once: true }} 
             className="bg-gradient-to-br from-gray-900/20 to-transparent p-8 rounded-xl ring-1 ring-white/10"
           >
-            <h3 className="text-2xl font-semibold text-white mb-6">One-Line Backend</h3>
-            <div className="bg-black/50 p-6 rounded-lg mb-6">
-              <pre className="text-sm text-gray-300">
+            <h3 className="text-2xl font-semibold text-[var(--white)] mb-6">One-Line Backend</h3>
+            <div className="bg-[var(--black)]/50 p-6 rounded-lg mb-6">
+              <pre className="text-sm text-neutral-300">
                 <code>{`import { createClient } from '@hanzo/base';
 
 // Complete backend in one line
 const client = createClient();`}</code>
               </pre>
             </div>
-            <p className="text-gray-300">Get a complete backend with just one line of code. Includes database, auth, storage, and more.</p>
+            <p className="text-neutral-300">Get a complete backend with just one line of code. Includes database, auth, storage, and more.</p>
           </motion.div>
 
           <motion.div 
@@ -49,24 +49,24 @@ const client = createClient();`}</code>
             className="grid grid-cols-2 gap-4"
           >
             <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Lock className="h-8 w-8 text-gray-400 mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Authentication</h4>
-              <p className="text-gray-300">Multi-provider auth with social logins and enterprise SSO</p>
+              <Lock className="h-8 w-8 text-neutral-400 mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Authentication</h4>
+              <p className="text-neutral-300">Multi-provider auth with social logins and enterprise SSO</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Database className="h-8 w-8 text-gray-400 mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Database</h4>
-              <p className="text-gray-300">Real-time database with powerful querying and indexing</p>
+              <Database className="h-8 w-8 text-neutral-400 mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Database</h4>
+              <p className="text-neutral-300">Real-time database with powerful querying and indexing</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Cloud className="h-8 w-8 text-gray-400 mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Storage</h4>
-              <p className="text-gray-300">Secure file storage with CDN and image transformations</p>
+              <Cloud className="h-8 w-8 text-neutral-400 mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Storage</h4>
+              <p className="text-neutral-300">Secure file storage with CDN and image transformations</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl ring-1 ring-white/10">
-              <Settings className="h-8 w-8 text-gray-400 mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Functions</h4>
-              <p className="text-gray-300">Serverless functions with automatic scaling</p>
+              <Settings className="h-8 w-8 text-neutral-400 mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Functions</h4>
+              <p className="text-neutral-300">Serverless functions with automatic scaling</p>
             </div>
           </motion.div>
         </div>
@@ -79,44 +79,44 @@ const client = createClient();`}</code>
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-4">Built for Scale</h3>
+              <h3 className="text-2xl font-semibold text-[var(--white)] mb-4">Built for Scale</h3>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
-                  <Globe className="h-6 w-6 text-gray-400 mt-1" />
+                  <Globe className="h-6 w-6 text-neutral-400 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Global by Default</h4>
-                    <p className="text-gray-300">Multi-region deployments with automatic failover</p>
+                    <h4 className="text-[var(--white)] font-semibold">Global by Default</h4>
+                    <p className="text-neutral-300">Multi-region deployments with automatic failover</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Zap className="h-6 w-6 text-gray-400 mt-1" />
+                  <Zap className="h-6 w-6 text-neutral-400 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Enterprise Ready</h4>
-                    <p className="text-gray-300">SOC2, GDPR, and HIPAA compliant infrastructure</p>
+                    <h4 className="text-[var(--white)] font-semibold">Enterprise Ready</h4>
+                    <p className="text-neutral-300">SOC2, GDPR, and HIPAA compliant infrastructure</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Settings className="h-6 w-6 text-gray-400 mt-1" />
+                  <Settings className="h-6 w-6 text-neutral-400 mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold">Full Control</h4>
-                    <p className="text-gray-300">Custom domains, edge functions, and more</p>
+                    <h4 className="text-[var(--white)] font-semibold">Full Control</h4>
+                    <p className="text-neutral-300">Custom domains, edge functions, and more</p>
                   </div>
                 </li>
               </ul>
             </div>
             <div className="space-y-4">
               <div className="text-center">
-                <p className="text-gray-300 mb-2">Starting at</p>
-                <div className="text-4xl font-bold text-white mb-2">$49</div>
-                <p className="text-gray-400 mb-4">per month</p>
-                <p className="text-sm text-gray-400">Unlimited users & storage</p>
+                <p className="text-neutral-300 mb-2">Starting at</p>
+                <div className="text-4xl font-bold text-[var(--white)] mb-2">$49</div>
+                <p className="text-neutral-400 mb-4">per month</p>
+                <p className="text-sm text-neutral-400">Unlimited users & storage</p>
               </div>
             </div>
           </div>
         </motion.div>
 
         <div className="text-center">
-          <Button className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-6 text-lg rounded-xl">
+          <Button className="bg-gray-600 hover:bg-gray-700 text-[var(--white)] px-8 py-6 text-lg rounded-xl">
             Start Building with Base
           </Button>
         </div>

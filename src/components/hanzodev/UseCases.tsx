@@ -43,7 +43,7 @@ const UseCases = () => {
             <p className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-200">
               The Ultimate Developer Experience, Powered by AI
             </p>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-neutral-300">
               Hanzo is redefining the developer experience with AI-powered assistance for design, research, coding, reviews, debugging, and CI/CD. Let AI handle the mundane tasks and unlock your full potential.
             </p>
           </div>
@@ -79,7 +79,7 @@ const UseCases = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-xl font-semibold mb-4">Integrated AI Across the Software Development Lifecycle.</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Reduce cycle times with the help of AI workflows throughout the entire software development lifecycle. Hanzo's AI Agents support teams at every stage from coding and testing, analyzing production errors and troubleshooting CI/CD pipelines.
             </p>
           </motion.div>
@@ -92,7 +92,7 @@ const UseCases = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-xl font-semibold mb-4">One AI Platform for All Dev Tasks.</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-neutral-300 mb-6">
               Included in one subscription are dozens of built-in AI agentic workflows, carefully planned to perform developer tasks for you. Full-stack engineer? Of course. Bug fixes? Sure. Adding tests to existing code? No problem. UX/UI Improvements? Included. Generating user docs? That too.
             </p>
             <div className="text-right">

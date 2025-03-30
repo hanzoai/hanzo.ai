@@ -24,7 +24,7 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-white mb-6"
+          className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6"
         >
           Build Real-time Experiences in Minutes
         </motion.h2>
@@ -34,7 +34,7 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl text-gray-300 mb-8"
+          className="text-xl text-neutral-300 mb-8"
         >
           Join thousands of developers building with Hanzo Realtime.
           No credit card required to get started.
@@ -49,14 +49,14 @@ const CallToAction = () => {
         >
           <Button 
             size="lg" 
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg w-full sm:w-auto"
+            className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-8 py-6 text-lg w-full sm:w-auto"
           >
             Start Building <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-gray-700 text-white hover:bg-gray-800 px-8 py-6 text-lg w-full sm:w-auto"
+            className="border-gray-700 text-[var(--white)] hover:bg-gray-800 px-8 py-6 text-lg w-full sm:w-auto"
           >
             <a href="https://docs.hanzo.ai" className="flex items-center">
               Documentation <ChevronRight className="ml-2 h-5 w-5" />

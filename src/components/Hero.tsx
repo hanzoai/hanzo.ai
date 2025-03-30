@@ -34,7 +34,7 @@ const Hero = () => {
 
   return (
     <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-[var(--black)]" />
 
       {/* Architectural grid background with minimal opacity */}
       <GridLines spacing={50} opacity={0.03} />

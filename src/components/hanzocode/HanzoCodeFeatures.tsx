@@ -16,7 +16,7 @@ const FeatureCard = ({ title, description, icon }) => {
         <div className="mb-6">
           {icon}
           <h3 className="text-2xl font-semibold mt-4 mb-2">{title}</h3>
-          <p className="text-gray-300 mb-4">{description}</p>
+          <p className="text-neutral-300 mb-4">{description}</p>
         </div>
       </div>
     </motion.div>
@@ -35,7 +35,7 @@ const HanzoCodeFeatures = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Beyond Other AI Editors</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Capabilities that leave Cursor, Windsurf, and other AI editors far behind
           </p>
         </motion.div>

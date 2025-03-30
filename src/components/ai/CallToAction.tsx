@@ -21,10 +21,10 @@ const CallToAction = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-[var(--white)] mb-6">
               Start Building the Future of AI
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               Join thousands of developers and companies who are building intelligent, 
               scalable applications with Hanzo's AI Engineering Platform
             </p>
@@ -41,7 +41,7 @@ const CallToAction = () => {
               Get Started Free
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="text-white">
+            <Button size="lg" variant="outline" className="text-[var(--white)]">
               Schedule a Demo
             </Button>
           </motion.div>
@@ -58,8 +58,8 @@ const CallToAction = () => {
             <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-6">
               <BookOpen className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Documentation</h3>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Documentation</h3>
+            <p className="text-neutral-400 mb-6">
               Comprehensive guides, tutorials, and API references to help you build with Hanzo AI.
             </p>
             <a href="#" className="flex items-center text-purple-400 hover:text-purple-300 group">
@@ -72,8 +72,8 @@ const CallToAction = () => {
             <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-6">
               <Code className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Quickstart</h3>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Quickstart</h3>
+            <p className="text-neutral-400 mb-6">
               Get up and running quickly with our step-by-step quickstart guides and example projects.
             </p>
             <a href="#" className="flex items-center text-purple-400 hover:text-purple-300 group">
@@ -86,8 +86,8 @@ const CallToAction = () => {
             <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-6">
               <MessageCircle className="h-6 w-6 text-purple-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Community</h3>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Community</h3>
+            <p className="text-neutral-400 mb-6">
               Join our growing community of AI engineers, get support, and share your experiences.
             </p>
             <a href="#" className="flex items-center text-purple-400 hover:text-purple-300 group">
@@ -106,14 +106,14 @@ const CallToAction = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-white mb-2">Ready to get started?</h3>
-              <p className="text-gray-300">Sign up for free and start building with Hanzo AI today.</p>
+              <h3 className="text-2xl font-bold text-[var(--white)] mb-2">Ready to get started?</h3>
+              <p className="text-neutral-300">Sign up for free and start building with Hanzo AI today.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
                 Create Free Account
               </Button>
-              <Button size="lg" variant="outline" className="text-white">
+              <Button size="lg" variant="outline" className="text-[var(--white)]">
                 Contact Sales
               </Button>
             </div>

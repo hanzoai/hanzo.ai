@@ -38,7 +38,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
           {mode === "light" && (
             <motion.div 
               layoutId="theme-switcher-indicator"
-              className={`absolute inset-0 ${getRoundingClass()} bg-white/20 -z-10`} 
+              className={`absolute inset-0 ${getRoundingClass()} bg-[var(--white)]/20 -z-10`} 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
@@ -55,7 +55,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
           {mode === "dark" && (
             <motion.div 
               layoutId="theme-switcher-indicator"
-              className={`absolute inset-0 ${getRoundingClass()} bg-white/20 -z-10`} 
+              className={`absolute inset-0 ${getRoundingClass()} bg-[var(--white)]/20 -z-10`} 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
@@ -72,7 +72,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
           {mode === "system" && (
             <motion.div 
               layoutId="theme-switcher-indicator"
-              className={`absolute inset-0 ${getRoundingClass()} bg-white/20 -z-10`} 
+              className={`absolute inset-0 ${getRoundingClass()} bg-[var(--white)]/20 -z-10`} 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}

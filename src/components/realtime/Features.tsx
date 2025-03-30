@@ -22,8 +22,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
       <div className="h-12 w-12 rounded-lg bg-purple-900/20 flex items-center justify-center mb-4">
         <Icon className="h-6 w-6 text-purple-400" />
       </div>
-      <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{title}</h3>
+      <p className="text-neutral-400">{description}</p>
     </motion.div>
   );
 };
@@ -82,10 +82,10 @@ const Features = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Key Features
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Everything you need to build scalable real-time applications
           </p>
         </motion.div>

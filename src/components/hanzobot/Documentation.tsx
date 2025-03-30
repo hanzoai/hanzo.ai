@@ -37,8 +37,8 @@ const Documentation = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Documentation</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">Documentation</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Comprehensive guides to help you build, deploy, and manage your agents
           </p>
         </motion.div>
@@ -55,7 +55,7 @@ const Documentation = () => {
             >
               <div className="flex items-center mb-4">
                 <section.icon className="h-5 w-5 text-purple-500 mr-2" />
-                <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+                <h3 className="text-lg font-semibold text-[var(--white)]">{section.title}</h3>
               </div>
               
               <ul className="space-y-2">
@@ -63,7 +63,7 @@ const Documentation = () => {
                   <li key={i}>
                     <a 
                       href="#" 
-                      className="text-gray-400 hover:text-purple-400 transition-colors flex items-center py-1"
+                      className="text-neutral-400 hover:text-purple-400 transition-colors flex items-center py-1"
                     >
                       <div className="w-1 h-1 bg-gray-600 rounded-full mr-2"></div>
                       {item}

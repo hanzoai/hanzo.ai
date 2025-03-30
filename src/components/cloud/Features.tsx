@@ -23,7 +23,7 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-neutral-300 max-w-3xl mx-auto"
           >
             The most flexible and powerful compute platform for AI workloads. Hanzo Machines are hardware-virtualized containers, running on proprietary AI-optimized hardware, that launch instantly and scale automatically with your needs.
           </motion.p>
@@ -39,7 +39,7 @@ const Features = () => {
           >
             <Globe className="w-12 h-12 text-purple-400 mb-6" />
             <h3 className="text-xl font-bold mb-4">Global Reach</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Deploy in 35 regions, from Sydney to São Paulo, for sub-100ms response times and native-app feel no matter where your users are.
             </p>
           </motion.div>
@@ -53,7 +53,7 @@ const Features = () => {
           >
             <Server className="w-12 h-12 text-purple-400 mb-6" />
             <h3 className="text-xl font-bold mb-4">Instant Scaling</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Hanzo Machines start fast enough to handle HTTP requests, run only when you need them, and scale into tens of thousands of instances.
             </p>
           </motion.div>
@@ -67,7 +67,7 @@ const Features = () => {
           >
             <Cpu className="w-12 h-12 text-purple-400 mb-6" />
             <h3 className="text-xl font-bold mb-4">GPU Acceleration</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               From LLMs to inferencing, hardware acceleration with the same developer experience as a simple CRUD app.
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ const Features = () => {
           >
             <Database className="w-12 h-12 text-purple-400 mb-6" />
             <h3 className="text-xl font-bold mb-4">AI-Native Storage</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Vector databases, document stores, and relational databases optimized for AI workloads with automatic scaling.
             </p>
           </motion.div>
@@ -95,7 +95,7 @@ const Features = () => {
           >
             <Bot className="w-12 h-12 text-purple-400 mb-6" />
             <h3 className="text-xl font-bold mb-4">Model Management</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               Streamlined deployment and management of AI models with version control, A/B testing, and monitoring built-in.
             </p>
           </motion.div>
@@ -109,7 +109,7 @@ const Features = () => {
           >
             <Lock className="w-12 h-12 text-purple-400 mb-6" />
             <h3 className="text-xl font-bold mb-4">Enterprise Security</h3>
-            <p className="text-gray-300">
+            <p className="text-neutral-300">
               SOC 2, GDPR, and HIPAA compliant infrastructure with private networking, encryption, and audit logging.
             </p>
           </motion.div>
@@ -126,7 +126,7 @@ const Features = () => {
             <Cloud className="w-14 h-14 text-purple-400 mb-6 md:mb-0 md:mr-8" />
             <div>
               <h3 className="text-xl font-bold mb-3">Built for AI Engineering</h3>
-              <p className="text-gray-300">
+              <p className="text-neutral-300">
                 Specialized infrastructure for AI workloads, with optimizations for large language models, computer vision, and other AI tasks. From prototype to production with zero re-architecture.
               </p>
             </div>
@@ -142,25 +142,25 @@ const Features = () => {
         >
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-xl p-8 ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300">
             <h3 className="text-2xl font-bold mb-4">Enterprise Support</h3>
-            <p className="text-gray-300 mb-8">
+            <p className="text-neutral-300 mb-8">
               Paid support packages include a team of actual engineers (not chatbots) who themselves ship code on our platform. Emergency support and guaranteed response times available.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
-                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white"
+                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)]"
               >
                 Contact Sales
               </Button>
               
               <Button
                 variant="outline"
-                className="bg-transparent text-white hover:bg-white/10 border border-white/30"
+                className="bg-transparent text-[var(--white)] hover:bg-[var(--white)]/10 border border-white/30"
               >
                 Try Free Tier
               </Button>
             </div>
             
-            <div className="mt-6 text-gray-400 text-sm">
+            <div className="mt-6 text-neutral-400 text-sm">
               Looking for a free, self-hosted alternative? <a href="/platform" className="text-purple-400 hover:underline">Check out Hanzo Platform</a>
             </div>
           </div>

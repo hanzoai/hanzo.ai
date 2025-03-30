@@ -21,7 +21,7 @@ const CallToAction = () => {
             <LineChart className="h-10 w-10" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Start Analyzing Smarter, Today</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
             Empower your business decisions with Hanzo Analytics—start for free and scale effortlessly.
           </p>
           
@@ -72,7 +72,7 @@ const CallToAction = () => {
               className="bg-gray-900/20 p-6 rounded-xl border border-gray-800 hover:border-purple-900/30 transition-colors"
             >
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-neutral-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -82,7 +82,7 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 text-center text-gray-400 text-sm"
+          className="mt-16 text-center text-neutral-400 text-sm"
         >
           No credit card required. Free trial includes all premium features for 14 days.
         </motion.div>

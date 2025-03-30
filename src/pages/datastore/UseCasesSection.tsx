@@ -20,7 +20,7 @@ const UseCasesSection = () => {
   ];
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-blue-900/10 opacity-30 pointer-events-none"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -28,7 +28,7 @@ const UseCasesSection = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
             Datastore at Scale
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Datastore is used in a variety of industries for a broad set of use cases on top of both customer-facing and internally-facing workloads.
           </p>
         </div>
@@ -43,7 +43,7 @@ const UseCasesSection = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="bg-gray-900/20 border border-gray-800 rounded-lg p-4 text-center"
             >
-              <p className="text-gray-300">{useCase}</p>
+              <p className="text-neutral-300">{useCase}</p>
             </motion.div>
           ))}
         </div>

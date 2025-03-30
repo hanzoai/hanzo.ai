@@ -48,7 +48,7 @@ const ThemeCustomizer: React.FC = () => {
   } = useTheme();
 
   return (
-    <div className={`space-y-6 p-4 ${getGlassClass()} ${getRoundingClass()} ${isDarkMode ? "text-white" : "text-gray-800"}`}>
+    <div className={`space-y-6 p-4 ${getGlassClass()} ${getRoundingClass()} ${isDarkMode ? "text-[var(--white)]" : "text-neutral-800"}`}>
       <div>
         <h3 className="text-sm font-medium mb-3">Theme</h3>
         <ThemeSwitcher />

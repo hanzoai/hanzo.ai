@@ -23,7 +23,7 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative"
       >
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--white)] mb-6 leading-tight">
           {title}
         </h1>
         
@@ -47,7 +47,7 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl"
+        className="text-lg md:text-xl text-neutral-300 mb-8 max-w-xl"
       >
         {subtitle}
       </motion.p>
@@ -70,7 +70,7 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
             size="lg" 
             variant="outline" 
             radius="full"
-            className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10"
+            className="text-lg px-8 text-[var(--white)] border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10"
           >
             <span className="mr-2">Read Docs</span>
             <ArrowRight className="h-5 w-5" />

@@ -16,20 +16,20 @@ const FeatureCard = ({ title, description, icon, list, code = null }) => {
         <div className="mb-6">
           {icon}
           <h3 className="text-2xl font-semibold mt-4 mb-2">{title}</h3>
-          <p className="text-gray-300 mb-4">{description}</p>
+          <p className="text-neutral-300 mb-4">{description}</p>
         </div>
         
         {list && (
           <div className="mb-4">
             {list.map((item, index) => (
-              <div key={index} className="text-gray-400 mb-2">{item}</div>
+              <div key={index} className="text-neutral-400 mb-2">{item}</div>
             ))}
           </div>
         )}
         
         {code && (
           <div className="mt-auto">
-            <div className="bg-gray-950 rounded-lg p-4 font-mono text-xs text-gray-300 text-left overflow-auto">
+            <div className="bg-gray-950 rounded-lg p-4 font-mono text-xs text-neutral-300 text-left overflow-auto">
               <pre>{code}</pre>
             </div>
           </div>
@@ -41,7 +41,7 @@ const FeatureCard = ({ title, description, icon, list, code = null }) => {
 
 const HanzoAppFeatures = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

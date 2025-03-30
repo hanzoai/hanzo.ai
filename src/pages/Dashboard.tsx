@@ -38,10 +38,10 @@ const Dashboard = () => {
       icon: <ChartBar className="h-4 w-4" />,
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-black border border-gray-800 rounded-lg p-6">
+          <div className="bg-[var(--black)] border border-gray-800 rounded-lg p-6">
             <h3 className="text-lg font-medium mb-4">Usage Overview</h3>
             <p className="text-2xl font-semibold">24.5K</p>
-            <p className="text-gray-400 text-sm">Total tokens used today</p>
+            <p className="text-neutral-400 text-sm">Total tokens used today</p>
             <div className="h-40 mt-4 flex items-end">
               {[45, 35, 65, 50, 75, 55, 70].map((height, index) => (
                 <div 
@@ -53,10 +53,10 @@ const Dashboard = () => {
             </div>
           </div>
           
-          <div className="bg-black border border-gray-800 rounded-lg p-6">
+          <div className="bg-[var(--black)] border border-gray-800 rounded-lg p-6">
             <h3 className="text-lg font-medium mb-4">Agent Activity</h3>
             <p className="text-2xl font-semibold">8</p>
-            <p className="text-gray-400 text-sm">Active agents</p>
+            <p className="text-neutral-400 text-sm">Active agents</p>
             <div className="h-40 mt-4 flex items-center justify-center">
               <div className="w-40 h-40 relative rounded-full border-4 border-gray-800 flex items-center justify-center">
                 <div className="w-28 h-28 rounded-full bg-gray-800"></div>
@@ -67,10 +67,10 @@ const Dashboard = () => {
             </div>
           </div>
           
-          <div className="bg-black border border-gray-800 rounded-lg p-6">
+          <div className="bg-[var(--black)] border border-gray-800 rounded-lg p-6">
             <h3 className="text-lg font-medium mb-4">Cost Tracking</h3>
             <p className="text-2xl font-semibold">$12.85</p>
-            <p className="text-gray-400 text-sm">Spent this month</p>
+            <p className="text-neutral-400 text-sm">Spent this month</p>
             <div className="h-40 mt-4">
               <div className="h-full flex flex-col justify-between">
                 <div className="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
@@ -140,11 +140,11 @@ const Dashboard = () => {
         <div className="flex justify-between items-center mb-4">
           <div>
             <h1 className="text-2xl font-semibold">Workspace</h1>
-            <p className="text-gray-400 text-sm mt-1">Manage your AI tasks and agents</p>
+            <p className="text-neutral-400 text-sm mt-1">Manage your AI tasks and agents</p>
           </div>
         </div>
 
-        <div className="flex-1 overflow-hidden border border-gray-800 rounded-lg bg-black">
+        <div className="flex-1 overflow-hidden border border-gray-800 rounded-lg bg-[var(--black)]">
           <TabsManager initialTabs={tabs} onAddTab={addNewTab} />
         </div>
       </div>

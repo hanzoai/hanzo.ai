@@ -8,7 +8,7 @@ import { ArrowRight, LineChart } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-black z-0" />
+      <div className="absolute inset-0 bg-[var(--black)] z-0" />
       
       {/* Animated dots/points background */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
@@ -46,7 +46,7 @@ const HeroSection = () => {
           <ChromeText as="h1" className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Hanzo Analytics
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Precise, real-time insights into user behavior, product performance, and business outcomes, 
             enabling you to optimize faster, smarter, and at scale.
           </p>
@@ -78,7 +78,7 @@ const HeroSection = () => {
             <div className="flex items-center justify-between mb-4 border-b border-gray-800 pb-2">
               <div className="flex items-center">
                 <LineChart className="h-5 w-5 text-purple-400 mr-2" />
-                <span className="text-white font-medium">Hanzo Analytics Dashboard</span>
+                <span className="text-[var(--white)] font-medium">Hanzo Analytics Dashboard</span>
               </div>
               <div className="flex space-x-1">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -118,9 +118,9 @@ const HeroSection = () => {
               </div>
               <div className="space-y-4">
                 <div className="bg-gray-800/50 rounded-lg p-4 h-[30%]">
-                  <div className="text-sm text-gray-400">Users</div>
+                  <div className="text-sm text-neutral-400">Users</div>
                   <motion.div 
-                    className="text-2xl font-bold text-white mt-1"
+                    className="text-2xl font-bold text-[var(--white)] mt-1"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
@@ -130,9 +130,9 @@ const HeroSection = () => {
                   <div className="text-green-400 text-xs mt-1">+12.4% vs last week</div>
                 </div>
                 <div className="bg-gray-800/50 rounded-lg p-4 h-[30%]">
-                  <div className="text-sm text-gray-400">Conversion Rate</div>
+                  <div className="text-sm text-neutral-400">Conversion Rate</div>
                   <motion.div 
-                    className="text-2xl font-bold text-white mt-1"
+                    className="text-2xl font-bold text-[var(--white)] mt-1"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.2 }}
@@ -142,9 +142,9 @@ const HeroSection = () => {
                   <div className="text-green-400 text-xs mt-1">+0.8% vs last week</div>
                 </div>
                 <div className="bg-gray-800/50 rounded-lg p-4 h-[30%]">
-                  <div className="text-sm text-gray-400">Revenue</div>
+                  <div className="text-sm text-neutral-400">Revenue</div>
                   <motion.div 
-                    className="text-2xl font-bold text-white mt-1"
+                    className="text-2xl font-bold text-[var(--white)] mt-1"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.4 }}

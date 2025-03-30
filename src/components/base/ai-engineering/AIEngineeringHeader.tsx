@@ -11,8 +11,8 @@ const AIEngineeringHeader = () => {
       transition={{ duration: 0.5 }}
       className="text-center mb-16"
     >
-      <h2 className="text-3xl font-bold text-white mb-4">Built for AI Engineers</h2>
-      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+      <h2 className="text-3xl font-bold text-[var(--white)] mb-4">Built for AI Engineers</h2>
+      <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
         Powerful features specifically designed for AI-powered applications
       </p>
     </motion.div>

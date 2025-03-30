@@ -180,18 +180,18 @@ Follow this typography scale consistently:
   - h3: `text-2xl font-bold`
   - h4: `text-xl font-semibold`
 - Body:
-  - Large: `text-xl text-gray-300`
-  - Default: `text-lg text-gray-400`
-  - Small: `text-base text-gray-500`
-  - Caption: `text-sm text-gray-500`
+  - Large: `text-xl text-neutral-300`
+  - Default: `text-lg text-neutral-400`
+  - Small: `text-base text-neutral-500`
+  - Caption: `text-sm text-neutral-500`
 
 ## Color System
 
 Use these color classes consistently:
-- Primary text: `text-white` (headings and important text)
-- Secondary text: `text-gray-300` (body text)
-- Muted text: `text-gray-400` or `text-gray-500` (less important text)
+- Primary text: `text-[var(--white)]` (headings and important text)
+- Secondary text: `text-neutral-300` (body text)
+- Muted text: `text-neutral-400` or `text-neutral-500` (less important text)
 - Primary accent: `text-purple-400` or background `bg-purple-600`
 - Secondary accent: `text-blue-400` or background `bg-blue-600`
-- Backgrounds: `bg-black`, `bg-gray-900/50`, or `bg-gray-900/20`
+- Backgrounds: `bg-[var(--black)]`, `bg-gray-900/50`, or `bg-gray-900/20`
 - Borders: `border-gray-800` or `border-purple-500/30` for accents

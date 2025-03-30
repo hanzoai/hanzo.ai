@@ -75,10 +75,10 @@ const Features = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Complete AI Engineering Toolkit
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-300">
               Everything you need to build, deploy, and manage production-grade AI applications
             </p>
           </motion.div>
@@ -97,8 +97,8 @@ const Features = () => {
               <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
                 <feature.icon className="h-6 w-6 text-purple-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{feature.title}</h3>
+              <p className="text-neutral-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>

@@ -32,7 +32,7 @@ const CallToAction: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight"
+          className="text-3xl md:text-4xl font-bold mb-6 text-[var(--white)] leading-tight"
         >
           Ready to Transform Your AI Development?
         </motion.h2>
@@ -42,7 +42,7 @@ const CallToAction: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-lg text-gray-300 mb-10 leading-relaxed"
+          className="text-lg text-neutral-300 mb-10 leading-relaxed"
         >
           Join thousands of developers and companies building the future with Hanzo AI.
         </motion.p>
@@ -61,7 +61,7 @@ const CallToAction: React.FC = () => {
           >
             <Button 
               size="lg" 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg relative overflow-hidden group rounded-full"
+              className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-8 py-6 text-lg relative overflow-hidden group rounded-full"
               onClick={handleGetStarted}
             >
               <span className="relative z-10 flex items-center py-1 leading-relaxed">

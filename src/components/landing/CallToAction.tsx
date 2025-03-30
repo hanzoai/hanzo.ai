@@ -17,10 +17,10 @@ const CallToAction: React.FC = () => {
         className="max-w-5xl mx-auto bg-gradient-to-br from-gray-900 to-black border border-purple-500/20 rounded-2xl p-10 relative z-10"
       >
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Ready to Build the Future with AI?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
             Join thousands of developers using Hanzo to build powerful, 
             transparent AI applications that users love.
           </p>
@@ -28,7 +28,7 @@ const CallToAction: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] rounded-full"
             >
               Get Started
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -37,7 +37,7 @@ const CallToAction: React.FC = () => {
             <Button 
               size="sm"
               variant="outline"
-              className="text-white border-gray-700 hover:bg-white/10 rounded-full"
+              className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 rounded-full"
             >
               <Github className="mr-2 h-4 w-4" />
               Star on GitHub

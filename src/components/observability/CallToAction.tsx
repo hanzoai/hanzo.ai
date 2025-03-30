@@ -76,7 +76,7 @@ const CallToAction = () => {
                 className="bg-gray-900/20 p-6 rounded-xl border border-gray-800"
               >
                 <h3 className="text-lg font-bold mb-2">{option.title}</h3>
-                <p className="text-gray-400 text-sm">{option.description}</p>
+                <p className="text-neutral-400 text-sm">{option.description}</p>
               </motion.div>
             ))}
           </div>
@@ -86,7 +86,7 @@ const CallToAction = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 text-center text-gray-500 text-sm"
+            className="mt-12 text-center text-neutral-500 text-sm"
           >
             Free 14-day trial, no credit card required.
           </motion.div>

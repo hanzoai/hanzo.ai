@@ -25,8 +25,8 @@ const UnifiedAICloud: React.FC = () => {
           <div className="bg-purple-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
             <Users className="h-6 w-6 text-purple-400" />
           </div>
-          <h3 className="text-xl font-bold mb-2 text-white">Enterprise Infrastructure</h3>
-          <p className="text-gray-300">
+          <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Enterprise Infrastructure</h3>
+          <p className="text-neutral-300">
             Scalable, secure infrastructure designed for enterprise AI workloads, with global availability, 
             compliance-ready security, and managed services.
           </p>
@@ -42,8 +42,8 @@ const UnifiedAICloud: React.FC = () => {
           <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
             <BookOpen className="h-6 w-6 text-blue-400" />
           </div>
-          <h3 className="text-xl font-bold mb-2 text-white">Developer Experience</h3>
-          <p className="text-gray-300">
+          <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Developer Experience</h3>
+          <p className="text-neutral-300">
             Comprehensive tooling and frameworks that accelerate development, simplify deployments, and reduce 
             time-to-market for AI-powered applications.
           </p>
@@ -59,8 +59,8 @@ const UnifiedAICloud: React.FC = () => {
           <div className="bg-green-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
             <Shield className="h-6 w-6 text-green-400" />
           </div>
-          <h3 className="text-xl font-bold mb-2 text-white">Expert Services</h3>
-          <p className="text-gray-300">
+          <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Expert Services</h3>
+          <p className="text-neutral-300">
             Access to industry and technical experts who help you strategize, implement, and optimize your AI 
             initiatives for maximum business impact.
           </p>

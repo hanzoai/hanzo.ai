@@ -47,7 +47,7 @@ const AICloudSection: React.FC = () => {
               AI Cloud Platform
             </ChromeText>
             
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Deploy, manage, and scale AI models with enterprise-grade reliability and security
             </p>
           </motion.div>
@@ -66,8 +66,8 @@ const AICloudSection: React.FC = () => {
               <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{feature.title}</h3>
+              <p className="text-neutral-300">{feature.description}</p>
             </motion.div>
           ))}
         </div>

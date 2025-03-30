@@ -15,11 +15,11 @@ const NavbarContainer = ({ children, isScrolled }: NavbarContainerProps) => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
           ? isDarkMode 
-            ? "bg-black/80 backdrop-blur-md shadow-sm" 
-            : "bg-white/80 backdrop-blur-md shadow-sm"
+            ? "bg-[var(--black)]/80 backdrop-blur-md shadow-sm" 
+            : "bg-[var(--white)]/80 backdrop-blur-md shadow-sm"
           : isDarkMode 
-            ? "bg-black/40 backdrop-blur-sm" 
-            : "bg-white/40 backdrop-blur-sm"
+            ? "bg-[var(--black)]/40 backdrop-blur-sm" 
+            : "bg-[var(--white)]/40 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

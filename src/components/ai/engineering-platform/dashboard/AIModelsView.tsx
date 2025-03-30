@@ -10,13 +10,13 @@ const AIModelsView = () => {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-medium text-white">AI Model Registry</h3>
+        <h3 className="text-sm font-medium text-[var(--white)]">AI Model Registry</h3>
         <div className="flex space-x-2">
           <button className="px-2 py-1 bg-purple-600/40 rounded-md text-xs text-purple-200 flex items-center">
             <BrainCog className="w-3 h-3 mr-1" />
             Deploy Model
           </button>
-          <button className="px-2 py-1 bg-gray-800 rounded-md text-xs text-gray-400 flex items-center">
+          <button className="px-2 py-1 bg-gray-800 rounded-md text-xs text-neutral-400 flex items-center">
             <Terminal className="w-3 h-3 mr-1" />
             Import
           </button>
@@ -36,18 +36,18 @@ const AIModelsView = () => {
               <div>
                 <div className="flex items-center">
                   <BrainCircuit className="w-4 h-4 text-purple-400 mr-2" />
-                  <span className="font-medium text-white text-sm">{model.name}</span>
-                  <span className="ml-2 px-1.5 py-0.5 bg-gray-700/60 rounded text-xs text-gray-300">{model.type}</span>
+                  <span className="font-medium text-[var(--white)] text-sm">{model.name}</span>
+                  <span className="ml-2 px-1.5 py-0.5 bg-gray-700/60 rounded text-xs text-neutral-300">{model.type}</span>
                 </div>
-                <div className="text-xs text-gray-400 mt-1">Provider: {model.provider}</div>
+                <div className="text-xs text-neutral-400 mt-1">Provider: {model.provider}</div>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="text-right">
-                  <div className="text-xs text-gray-400">Accuracy</div>
+                  <div className="text-xs text-neutral-400">Accuracy</div>
                   <div className="text-sm font-medium text-green-400">{model.accuracy}%</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-gray-400">Latency</div>
+                  <div className="text-xs text-neutral-400">Latency</div>
                   <div className="text-sm font-medium text-blue-400">{model.latency}ms</div>
                 </div>
               </div>
@@ -60,11 +60,11 @@ const AIModelsView = () => {
                 animate={{ opacity: 1, height: "auto" }}
                 transition={{ duration: 0.3 }}
               >
-                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-gray-300 flex items-center justify-center">
+                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-neutral-300 flex items-center justify-center">
                   <Activity className="w-3 h-3 mr-1.5" />
                   Benchmark
                 </button>
-                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-gray-300 flex items-center justify-center">
+                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-neutral-300 flex items-center justify-center">
                   <ServerCog className="w-3 h-3 mr-1.5" />
                   Fine-tune
                 </button>

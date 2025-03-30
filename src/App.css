@@ -102,7 +102,7 @@
 
 /* Vercel-inspired card */
 .vercel-card {
-  @apply bg-black border border-gray-800 rounded-xl overflow-hidden transition-all duration-300;
+  @apply bg-[var(--black)] border border-gray-800 rounded-xl overflow-hidden transition-all duration-300;
 }
 
 .vercel-card:hover {
@@ -112,11 +112,11 @@
 
 /* Glass design patterns */
 .glass-panel {
-  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl;
+  @apply bg-[var(--white)]/5 backdrop-blur-sm border border-white/10 rounded-xl;
 }
 
 .glass-button {
-  @apply bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 rounded-full transition-colors;
+  @apply bg-[var(--white)]/10 hover:bg-[var(--white)]/15 backdrop-blur-sm border border-white/20 rounded-full transition-colors;
 }
 
 /* Reveal animations */

@@ -28,8 +28,8 @@ const IChingPrinciplesGrid: React.FC<IChingPrinciplesGridProps> = ({
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">{title}</h2>
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">{title}</h2>
+        <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
           {description}
         </p>
         <div className="h-px w-20 bg-gray-700 mx-auto mt-6"></div>
@@ -37,7 +37,7 @@ const IChingPrinciplesGrid: React.FC<IChingPrinciplesGridProps> = ({
       
       <div className="relative">
         <div className="absolute left-4 top-4">
-          <TaijiSymbol size={60} className="text-white" />
+          <TaijiSymbol size={60} className="text-[var(--white)]" />
         </div>
         
         <div className="overflow-x-auto">
@@ -60,9 +60,9 @@ const IChingPrinciplesGrid: React.FC<IChingPrinciplesGridProps> = ({
                       className="flex flex-col items-center justify-center p-2 border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50 rounded-md transition-all aspect-square cursor-pointer group"
                       title={`${hexagram.id}. ${hexagram.name} (${hexagram.chineseName} - ${hexagram.pinyin}): ${hexagram.principle}`}
                     >
-                      <div className="mb-2 text-xs text-gray-500">{hexagram.id}</div>
-                      <IChingHexagram lines={hexagram.lines} size={32} className="text-white mb-2" />
-                      <div className="text-center text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                      <div className="mb-2 text-xs text-neutral-500">{hexagram.id}</div>
+                      <IChingHexagram lines={hexagram.lines} size={32} className="text-[var(--white)] mb-2" />
+                      <div className="text-center text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">
                         {hexagram.chineseName}
                       </div>
                     </motion.div>
@@ -73,7 +73,7 @@ const IChingPrinciplesGrid: React.FC<IChingPrinciplesGridProps> = ({
           </div>
         </div>
         
-        <div className="mt-8 text-center text-sm text-gray-500">
+        <div className="mt-8 text-center text-sm text-neutral-500">
           Hover over each hexagram to see its principle
         </div>
       </div>

@@ -14,14 +14,14 @@ const HeroSection = () => {
           className="mb-8"
         >
           <div className="flex justify-center mb-8">
-            <TaijiSymbol size={80} className="text-white" />
+            <TaijiSymbol size={80} className="text-[var(--white)]" />
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
             The Zen of Hanzo
           </h1>
           
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed">
             Our guiding principles that shape everything we build. Distilled wisdom from ancient knowledge, 
             reimagined for modern AI engineering.
           </p>
@@ -42,7 +42,7 @@ const HeroSection = () => {
         >
           <a 
             href="#principles" 
-            className="group flex items-center gap-2 px-4 py-2 rounded-full text-gray-400 hover:text-white transition-colors"
+            className="group flex items-center gap-2 px-4 py-2 rounded-full text-neutral-400 hover:text-[var(--white)] transition-colors"
           >
             <span>Explore Principles</span>
             <svg 

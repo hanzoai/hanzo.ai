@@ -50,7 +50,7 @@ const DemoSection: React.FC = () => {
               See it in Action
             </ChromeText>
             
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Watch how simple it is to build AI applications with Hanzo
             </p>
           </motion.div>
@@ -64,14 +64,14 @@ const DemoSection: React.FC = () => {
           className="relative"
         >
           <div className="bg-gray-900/50 rounded-xl border border-gray-800 p-4 backdrop-blur-sm">
-            <div className="bg-black/70 rounded-lg overflow-hidden shadow-xl">
+            <div className="bg-[var(--black)]/70 rounded-lg overflow-hidden shadow-xl">
               <div className="flex items-center bg-gray-900 py-2 px-4 border-b border-gray-800">
                 <div className="flex space-x-2 mr-4">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="text-gray-400 text-sm font-mono">
+                <div className="text-neutral-400 text-sm font-mono">
                   hanzo-ai-terminal
                 </div>
                 <div className="ml-auto flex items-center space-x-3">
@@ -100,8 +100,8 @@ const DemoSection: React.FC = () => {
               <div className="p-6 font-mono text-sm h-[300px] overflow-hidden">
                 <div className="flex items-start">
                   <Terminal className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                  <div className="text-gray-400">
-                    <span className="text-green-400">hanzo@ai</span>:<span className="text-blue-400">~/projects/demo</span>$ <span className="text-white"> {isPlaying ? "node demo.js" : "node demo.js"}</span>
+                  <div className="text-neutral-400">
+                    <span className="text-green-400">hanzo@ai</span>:<span className="text-blue-400">~/projects/demo</span>$ <span className="text-[var(--white)]"> {isPlaying ? "node demo.js" : "node demo.js"}</span>
                   </div>
                 </div>
                 
@@ -112,7 +112,7 @@ const DemoSection: React.FC = () => {
                     className="mt-4 border border-gray-800 rounded-md p-3 bg-gray-900/50"
                   >
                     <div className="text-purple-300 mb-2">// Execute code</div>
-                    <div className="text-white whitespace-pre">{demoSteps[demoStep].code}</div>
+                    <div className="text-[var(--white)] whitespace-pre">{demoSteps[demoStep].code}</div>
                   </motion.div>
                 )}
                 
@@ -124,7 +124,7 @@ const DemoSection: React.FC = () => {
                     className="mt-4"
                   >
                     <div className="flex">
-                      <span className="text-gray-500">// Output:</span>
+                      <span className="text-neutral-500">// Output:</span>
                     </div>
                     <div className="mt-2 text-green-300 italic">
                       {demoSteps[demoStep].output}

@@ -59,10 +59,10 @@ const ZenTimeline: React.FC = () => {
             <div className="absolute left-1/2 top-5 w-5 h-5 rounded-full bg-purple-500 transform -translate-x-1/2 z-10"></div>
             
             <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
-              <div className="bg-black/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6">
+              <div className="bg-[var(--black)]/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6">
                 <div className="text-purple-400 font-bold mb-2">{event.year}</div>
-                <h3 className="text-xl text-white font-bold mb-2">{event.title}</h3>
-                <p className="text-gray-300">{event.description}</p>
+                <h3 className="text-xl text-[var(--white)] font-bold mb-2">{event.title}</h3>
+                <p className="text-neutral-300">{event.description}</p>
               </div>
             </div>
           </motion.div>

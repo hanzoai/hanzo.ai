@@ -17,7 +17,7 @@ const HanzoCodeTestimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Loved by world-class devs
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Engineers all around the world reach for Hanzo Code by choice.
           </p>
         </motion.div>
@@ -35,13 +35,13 @@ const HanzoCodeTestimonials = () => {
               <div className="w-12 h-12 rounded-full bg-gray-700"></div>
               <div>
                 <div className="font-medium">Sarah Chen</div>
-                <div className="text-gray-400 flex items-center">
+                <div className="text-neutral-400 flex items-center">
                   <Twitter className="h-3.5 w-3.5 mr-1 text-blue-400" />
                   @sarahcodes
                 </div>
               </div>
             </div>
-            <p className="text-gray-300">Hanzo Code has completely changed how I approach coding. The AI suggestions are spot-on and save me hours every day.</p>
+            <p className="text-neutral-300">Hanzo Code has completely changed how I approach coding. The AI suggestions are spot-on and save me hours every day.</p>
           </motion.div>
         </div>
       </div>

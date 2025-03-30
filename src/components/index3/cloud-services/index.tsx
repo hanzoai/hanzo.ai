@@ -68,7 +68,7 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
     <section 
       ref={containerRef}
       id="cloud" 
-      className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+      className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden"
     >
       <BackgroundEffects scanPoints={scanPoints} />
       
@@ -83,14 +83,14 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
             transition={{ duration: 0.5 }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--white)]">
               Intelligent Architecture Canvas
             </h3>
-            <p className="text-gray-300 mb-8 text-lg">
+            <p className="text-neutral-300 mb-8 text-lg">
               Visually compose and deploy entire cloud architectures with our drag-and-drop canvas. 
               Connect services, configure dependencies, and deploy with a single click.
             </p>
-            <ul className="space-y-4 text-gray-400">
+            <ul className="space-y-4 text-neutral-400">
               <li className="flex items-start">
                 <div className="mr-2 mt-1 text-blue-400">•</div>
                 <span>Automatic resource provisioning and configuration</span>

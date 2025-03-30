@@ -11,7 +11,7 @@ const ReferralHeader = () => {
         </div>
         <div className="text-center md:text-left">
           <h1 className="text-3xl font-bold mb-2">Referral Program</h1>
-          <p className="text-lg text-gray-300">Get $5 in credits for every friend who signs up and pays for any plan</p>
+          <p className="text-lg text-neutral-300">Get $5 in credits for every friend who signs up and pays for any plan</p>
         </div>
       </div>
     </div>

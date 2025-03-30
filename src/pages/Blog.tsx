@@ -53,7 +53,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>Blog - Hanzo Industries</title>
         <meta 
@@ -68,7 +68,7 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Hanzo Blog</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Insights, tutorials, and news from the Hanzo team to help you build better AI-powered applications.
             </p>
           </div>
@@ -86,23 +86,23 @@ const Blog = () => {
                   <span className="bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full text-sm">
                     Featured
                   </span>
-                  <span className="text-gray-400 text-sm flex items-center">
+                  <span className="text-neutral-400 text-sm flex items-center">
                     <CalendarIcon className="h-4 w-4 mr-1" />
                     {blogPosts[0].date}
                   </span>
                 </div>
                 
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">{blogPosts[0].title}</h2>
-                <p className="text-gray-300 mb-6">{blogPosts[0].excerpt}</p>
+                <p className="text-neutral-300 mb-6">{blogPosts[0].excerpt}</p>
                 
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="flex items-center">
-                    <User className="h-4 w-4 text-gray-400 mr-2" />
-                    <span className="text-gray-400 text-sm">{blogPosts[0].author}</span>
+                    <User className="h-4 w-4 text-neutral-400 mr-2" />
+                    <span className="text-neutral-400 text-sm">{blogPosts[0].author}</span>
                   </div>
                   <div className="flex items-center">
-                    <Tag className="h-4 w-4 text-gray-400 mr-2" />
-                    <span className="text-gray-400 text-sm">{blogPosts[0].category}</span>
+                    <Tag className="h-4 w-4 text-neutral-400 mr-2" />
+                    <span className="text-neutral-400 text-sm">{blogPosts[0].category}</span>
                   </div>
                 </div>
                 
@@ -142,23 +142,23 @@ const Blog = () => {
                 
                 <div className="p-6">
                   <div className="flex items-center space-x-4 mb-3">
-                    <span className="text-gray-400 text-sm flex items-center">
+                    <span className="text-neutral-400 text-sm flex items-center">
                       <CalendarIcon className="h-4 w-4 mr-1" />
                       {post.date}
                     </span>
-                    <span className="text-gray-400 text-sm flex items-center">
+                    <span className="text-neutral-400 text-sm flex items-center">
                       <Tag className="h-4 w-4 mr-1" />
                       {post.category}
                     </span>
                   </div>
                   
                   <h3 className="text-xl font-bold mb-3">{post.title}</h3>
-                  <p className="text-gray-300 mb-4 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-neutral-300 mb-4 line-clamp-3">{post.excerpt}</p>
                   
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <User className="h-4 w-4 text-gray-400 mr-2" />
-                      <span className="text-gray-400 text-sm">{post.author}</span>
+                      <User className="h-4 w-4 text-neutral-400 mr-2" />
+                      <span className="text-neutral-400 text-sm">{post.author}</span>
                     </div>
                     <Button variant="ghost" size="sm" className="text-purple-400 hover:text-purple-300">
                       Read More
@@ -173,7 +173,7 @@ const Blog = () => {
           <div className="mt-20 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl p-8 border border-purple-500/20">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-              <p className="text-gray-300 mb-6">
+              <p className="text-neutral-300 mb-6">
                 Get the latest Hanzo news, product updates, and tutorials delivered directly to your inbox.
               </p>
               
@@ -181,7 +181,7 @@ const Blog = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="px-4 py-2 bg-black/50 border border-gray-700 rounded-md flex-grow"
+                  className="px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md flex-grow"
                 />
                 <Button>Subscribe</Button>
               </div>

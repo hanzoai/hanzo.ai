@@ -16,7 +16,7 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-400 mb-6">
             Built in the Open, For Everyone
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
             Hanzo is proudly open source. We believe in transparency, collaboration, and community-driven innovation. 
             Everything we build is available for you to use, modify, and contribute to.
           </p>
@@ -31,7 +31,7 @@ const HeroSection = () => {
             <Button 
               size="sm" 
               variant="outline" 
-              className="border-green-500/30 text-white hover:bg-green-800/30"
+              className="border-green-500/30 text-[var(--white)] hover:bg-green-800/30"
             >
               <Star className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer">Star Platform Repo</a>
@@ -39,7 +39,7 @@ const HeroSection = () => {
             <Button 
               size="sm" 
               variant="outline" 
-              className="border-green-500/30 text-white hover:bg-green-800/30"
+              className="border-green-500/30 text-[var(--white)] hover:bg-green-800/30"
             >
               <GitBranch className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai/platform/fork" target="_blank" rel="noopener noreferrer">Fork & Contribute</a>

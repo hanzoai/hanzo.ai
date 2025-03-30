@@ -11,7 +11,7 @@ const Usage = () => {
   const [dateRange, setDateRange] = useState({ start: "Mar 7", end: "Mar 8" });
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">

@@ -140,7 +140,7 @@ const Logo = () => {
         initial={{ opacity: 0, x: -5 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.3 }}
-        className={`font-bold text-2xl ${isDarkMode ? "text-white" : "text-gray-900"}`} // Changed from text-xl to text-2xl
+        className={`font-bold text-2xl ${isDarkMode ? "text-[var(--white)]" : "text-neutral-900"}`} // Changed from text-xl to text-2xl
       >
         Hanzo
       </motion.span>

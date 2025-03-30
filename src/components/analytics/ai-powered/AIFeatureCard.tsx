@@ -30,7 +30,7 @@ const AIFeatureCard = ({ icon, title, description, delay, index }: AIFeatureCard
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <p className="text-neutral-400">{description}</p>
     </motion.div>
   );
 };

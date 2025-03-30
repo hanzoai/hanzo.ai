@@ -15,7 +15,7 @@ const BuildForGrowth = () => {
           className="max-w-3xl mx-auto text-center mb-24"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Built for Growth</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-neutral-300">
             Optimize user journeys and boost your conversions by understanding every interaction from entry point to checkout.
           </p>
         </motion.div>
@@ -51,7 +51,7 @@ const BuildForGrowth = () => {
             >
               <div className="mb-5">{item.icon}</div>
               <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-gray-400 mb-5">{item.description}</p>
+              <p className="text-neutral-400 mb-5">{item.description}</p>
               <div className="text-sm font-medium px-3 py-1 bg-gray-800 rounded-full inline-block text-purple-300">
                 {item.metrics}
               </div>

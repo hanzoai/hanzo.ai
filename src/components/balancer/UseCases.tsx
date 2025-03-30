@@ -47,7 +47,7 @@ const UseCaseCard = ({ useCase }) => {
         <useCase.icon className="h-6 w-6 text-purple-400" />
       </div>
       <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
-      <p className="text-gray-300 mb-4">{useCase.description}</p>
+      <p className="text-neutral-300 mb-4">{useCase.description}</p>
       <a href={useCase.learnMoreLink} className="text-purple-400 hover:text-purple-300">
         Learn more
       </a>

@@ -28,7 +28,7 @@ const useCases = [
 
 const UseCases = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const UseCases = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Use Cases</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Payments powers diverse business models across industries with flexible, scalable solutions.
           </p>
         </motion.div>
@@ -57,7 +57,7 @@ const UseCases = () => {
                 {useCase.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
-              <p className="text-gray-400 mb-4">{useCase.description}</p>
+              <p className="text-neutral-400 mb-4">{useCase.description}</p>
               
               <div className="mt-6 pt-6 border-t border-gray-800">
                 <h4 className="text-lg font-medium mb-3">Key Features</h4>
@@ -65,7 +65,7 @@ const UseCases = () => {
                   {[...Array(4)].map((_, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                      <span className="text-sm text-gray-400">
+                      <span className="text-sm text-neutral-400">
                         {index === 0 && ['Optimized checkout', 'Global shipping', 'Inventory sync', 'Tax compliance'][i]}
                         {index === 1 && ['Recurring billing', 'Trials & coupons', 'Revenue recovery', 'Usage metering'][i]}
                         {index === 2 && ['Split payments', 'Escrow', 'KYC verification', 'Seller onboarding'][i]} 
@@ -87,7 +87,7 @@ const UseCases = () => {
           className="mt-16 p-8 bg-gradient-to-r from-gray-900/50 to-purple-900/20 border border-gray-800 rounded-lg text-center"
         >
           <h3 className="text-2xl font-bold mb-4">Start Quickly, Scale Instantly</h3>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-6">
+          <p className="text-neutral-300 max-w-2xl mx-auto mb-6">
             No-code solutions available, with setup completed in minutes. Scalable from startup to enterprise-level with consistent reliability.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

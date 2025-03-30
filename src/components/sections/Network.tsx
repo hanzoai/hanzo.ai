@@ -13,12 +13,12 @@ const Network = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-1 rounded-full mb-6">
-            <Globe className="h-4 w-4 text-white" />
-            <span className="text-sm text-white">Decentralized Network</span>
+          <div className="inline-flex items-center space-x-2 bg-[var(--white)]/10 px-4 py-1 rounded-full mb-6">
+            <Globe className="h-4 w-4 text-[var(--white)]" />
+            <span className="text-sm text-[var(--white)]">Decentralized Network</span>
           </div>
-          <h2 className="text-4xl font-display text-white mb-4">The Hanzo Network</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-display text-[var(--white)] mb-4">The Hanzo Network</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Join the decentralized AI network powering the next generation of autonomous applications.
           </p>
         </motion.div>
@@ -30,16 +30,16 @@ const Network = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-br from-white/5 to-transparent p-8 rounded-xl ring-1 ring-white/10"
           >
-            <h3 className="text-2xl font-semibold text-white mb-6">Connect to Network</h3>
-            <div className="bg-black/50 p-6 rounded-lg mb-6">
-              <pre className="text-sm text-gray-300">
+            <h3 className="text-2xl font-semibold text-[var(--white)] mb-6">Connect to Network</h3>
+            <div className="bg-[var(--black)]/50 p-6 rounded-lg mb-6">
+              <pre className="text-sm text-neutral-300">
                 <code>{`import { connectNode } from '@hanzo/network';
 
 // Join the network with one line
 const node = connectNode();`}</code>
               </pre>
             </div>
-            <p className="text-gray-300">Join the network with just one line of code. Access distributed computing and storage.</p>
+            <p className="text-neutral-300">Join the network with just one line of code. Access distributed computing and storage.</p>
           </motion.div>
 
           <motion.div
@@ -49,31 +49,31 @@ const node = connectNode();`}</code>
             className="grid grid-cols-2 gap-4"
           >
             <div className="p-6 bg-gradient-to-br from-white/5 to-transparent rounded-xl ring-1 ring-white/10">
-              <Globe className="h-8 w-8 text-white mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Global</h4>
-              <p className="text-gray-300">Distributed across 100+ countries</p>
+              <Globe className="h-8 w-8 text-[var(--white)] mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Global</h4>
+              <p className="text-neutral-300">Distributed across 100+ countries</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-white/5 to-transparent rounded-xl ring-1 ring-white/10">
-              <Server className="h-8 w-8 text-white mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Reliable</h4>
-              <p className="text-gray-300">99.99% uptime guarantee</p>
+              <Server className="h-8 w-8 text-[var(--white)] mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Reliable</h4>
+              <p className="text-neutral-300">99.99% uptime guarantee</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-white/5 to-transparent rounded-xl ring-1 ring-white/10">
-              <Shield className="h-8 w-8 text-white mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Secure</h4>
-              <p className="text-gray-300">End-to-end encryption</p>
+              <Shield className="h-8 w-8 text-[var(--white)] mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Secure</h4>
+              <p className="text-neutral-300">End-to-end encryption</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-white/5 to-transparent rounded-xl ring-1 ring-white/10">
-              <Zap className="h-8 w-8 text-white mb-4" />
-              <h4 className="text-lg font-semibold text-white mb-2">Fast</h4>
-              <p className="text-gray-300">Sub-second response times</p>
+              <Zap className="h-8 w-8 text-[var(--white)] mb-4" />
+              <h4 className="text-lg font-semibold text-[var(--white)] mb-2">Fast</h4>
+              <p className="text-neutral-300">Sub-second response times</p>
             </div>
           </motion.div>
         </div>
 
         <div className="text-center">
           <Button 
-            className="bg-white/5 hover:bg-white/10 text-white px-8 py-6 text-lg rounded-xl border border-white/10 hover:border-white/20"
+            className="bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)] px-8 py-6 text-lg rounded-xl border border-white/10 hover:border-white/20"
           >
             Join the Network
           </Button>

@@ -65,12 +65,12 @@ const PurchaseCredits = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-3">
-            <div className="bg-black border-0 rounded-lg p-6 space-y-6">
+            <div className="bg-[var(--black)] border-0 rounded-lg p-6 space-y-6">
               <form onSubmit={handlePurchaseCredits} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="creditAmount">Amount (USD)</Label>
                   <div className="relative">
-                    <div className="absolute left-3 top-3 text-gray-400">$</div>
+                    <div className="absolute left-3 top-3 text-neutral-400">$</div>
                     <Input
                       id="creditAmount"
                       name="creditAmount"
@@ -80,7 +80,7 @@ const PurchaseCredits = () => {
                       className="bg-gray-900/20 border-gray-800/30 pl-8"
                     />
                   </div>
-                  <p className="text-sm text-gray-400">Minimum amount: $10</p>
+                  <p className="text-sm text-neutral-400">Minimum amount: $10</p>
                 </div>
                 
                 {/* Preset amounts */}
@@ -90,7 +90,7 @@ const PurchaseCredits = () => {
                       key={amount}
                       type="button"
                       variant="outline"
-                      className={`bg-black border-gray-800/30 hover:bg-gray-900/30 ${
+                      className={`bg-[var(--black)] border-gray-800/30 hover:bg-gray-900/30 ${
                         creditAmount === amount ? 'border-purple-500/30 bg-purple-900/10' : ''
                       }`}
                       onClick={() => setCreditAmount(amount)}
@@ -113,14 +113,14 @@ const PurchaseCredits = () => {
                           Default
                         </span>
                       </div>
-                      <div className="text-sm text-gray-400">Expires 12/25</div>
+                      <div className="text-sm text-neutral-400">Expires 12/25</div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-2 pt-2">
                   <Checkbox id="terms" checked={true} />
-                  <Label htmlFor="terms" className="text-sm text-gray-400">
+                  <Label htmlFor="terms" className="text-sm text-neutral-400">
                     I agree to the terms and conditions
                   </Label>
                 </div>
@@ -137,7 +137,7 @@ const PurchaseCredits = () => {
           </div>
           
           <div className="col-span-1 md:col-span-2">
-            <div className="bg-black border-0 rounded-lg p-6 space-y-4">
+            <div className="bg-[var(--black)] border-0 rounded-lg p-6 space-y-4">
               <h3 className="text-lg font-medium">Order Summary</h3>
               
               <div className="space-y-2">
@@ -159,7 +159,7 @@ const PurchaseCredits = () => {
                 </div>
               </div>
               
-              <div className="pt-4 text-sm text-gray-400">
+              <div className="pt-4 text-sm text-neutral-400">
                 <p>Credits never expire and can be used for any Hanzo AI service.</p>
                 <p className="mt-2">Need help? Contact our support team.</p>
               </div>

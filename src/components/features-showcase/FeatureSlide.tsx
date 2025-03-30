@@ -43,7 +43,7 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
 
   return (
     <motion.div 
-      className="feature-card backdrop-blur-sm bg-black/30 border border-gray-800 p-6 rounded-xl relative group"
+      className="feature-card backdrop-blur-sm bg-[var(--black)]/30 border border-gray-800 p-6 rounded-xl relative group"
       whileHover={{ 
         y: -5,
         borderColor: "rgba(139, 92, 246, 0.5)",
@@ -54,12 +54,12 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
       {getCategoryBadge()}
       
       <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${color} transform transition-transform group-hover:scale-110 duration-300`}>
-        <Icon className="h-7 w-7 text-white" />
+        <Icon className="h-7 w-7 text-[var(--white)]" />
       </div>
       
-      <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-[var(--white)]">{title}</h3>
       
-      <p className="text-gray-300 mb-6">
+      <p className="text-neutral-300 mb-6">
         {description}
       </p>
       

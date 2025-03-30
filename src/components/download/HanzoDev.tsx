@@ -26,7 +26,7 @@ const HanzoDev = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div 
@@ -45,15 +45,15 @@ const HanzoDev = () => {
             For Developers
           </h2>
           
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
             Install Hanzo Dev directly in your terminal and supercharge your development workflow.
           </p>
           
           <div className="flex justify-center mb-10">
             <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-4 flex items-center">
               <Terminal className="h-5 w-5 text-purple-500 mr-3" />
-              <code className="text-gray-300 font-mono">pip install hanzo-dev</code>
-              <Button variant="ghost" size="sm" className="ml-4 text-gray-400 hover:text-white">
+              <code className="text-neutral-300 font-mono">pip install hanzo-dev</code>
+              <Button variant="ghost" size="sm" className="ml-4 text-neutral-400 hover:text-[var(--white)]">
                 Copy
               </Button>
             </div>
@@ -61,7 +61,7 @@ const HanzoDev = () => {
           
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
           >
             <a href="/hanzodev">Learn More About Hanzo Dev</a>
           </Button>

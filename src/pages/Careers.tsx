@@ -65,14 +65,14 @@ const benefits = [
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[var(--black)]">
       <Helmet>
         <title>Careers - Hanzo AI</title>
         <meta name="description" content="Join the Hanzo AI team and help build the future of AI. Explore current job openings and benefits." />
       </Helmet>
       <Navbar />
       <main>
-        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
           <div className="absolute top-20 right-20 w-64 h-64 bg-purple-900/5 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl"></div>
           
@@ -92,7 +92,7 @@ const Careers = () => {
               >
                 Build the Future of AI
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
                 Join a team passionate about democratizing access to AI and creating technology that empowers developers worldwide.
               </p>
             </motion.div>
@@ -120,18 +120,18 @@ const Careers = () => {
                       <div>
                         <h3 className="text-xl font-bold mb-1">{job.title}</h3>
                         <div className="flex flex-wrap gap-3 mb-3">
-                          <span className="inline-flex items-center text-sm text-gray-400">
+                          <span className="inline-flex items-center text-sm text-neutral-400">
                             <MapPin className="h-4 w-4 mr-1" /> {job.location}
                           </span>
-                          <span className="inline-flex items-center text-sm text-gray-400">
+                          <span className="inline-flex items-center text-sm text-neutral-400">
                             <Clock className="h-4 w-4 mr-1" /> {job.type}
                           </span>
-                          <span className="inline-flex items-center text-sm text-gray-400">
+                          <span className="inline-flex items-center text-sm text-neutral-400">
                             <Users className="h-4 w-4 mr-1" /> {job.department}
                           </span>
                         </div>
-                        <p className="text-gray-300 mb-4">{job.description}</p>
-                        <Button variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10">
+                        <p className="text-neutral-300 mb-4">{job.description}</p>
+                        <Button variant="outline" className="text-[var(--white)] border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10">
                           Apply Now
                         </Button>
                       </div>
@@ -141,10 +141,10 @@ const Careers = () => {
               </div>
               
               <div className="mt-8 text-center">
-                <p className="text-gray-400 mb-4">Don't see a position that fits your skills?</p>
+                <p className="text-neutral-400 mb-4">Don't see a position that fits your skills?</p>
                 <Button 
                   variant="outline" 
-                  className="text-white border-white/20 bg-white/5 hover:bg-white/10"
+                  className="text-[var(--white)] border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10"
                 >
                   Submit Open Application
                 </Button>
@@ -171,7 +171,7 @@ const Careers = () => {
                       {benefit.icon}
                     </div>
                     <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-gray-400">{benefit.description}</p>
+                    <p className="text-neutral-400">{benefit.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -184,37 +184,37 @@ const Careers = () => {
               className="text-center bg-gray-900/20 border border-gray-800 rounded-xl p-8"
             >
               <h2 className="text-2xl font-bold mb-4">Our Hiring Process</h2>
-              <p className="text-gray-300 mb-6 max-w-3xl mx-auto">
+              <p className="text-neutral-300 mb-6 max-w-3xl mx-auto">
                 We've designed our hiring process to be straightforward, respectful of your time, and focused on finding the right match for both you and Hanzo.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                 <div className="p-4">
                   <div className="w-10 h-10 rounded-full bg-purple-900/30 flex items-center justify-center mb-3 mx-auto">
-                    <span className="text-white font-medium">1</span>
+                    <span className="text-[var(--white)] font-medium">1</span>
                   </div>
                   <h3 className="font-medium mb-1">Application Review</h3>
-                  <p className="text-sm text-gray-400">We review your resume and application materials</p>
+                  <p className="text-sm text-neutral-400">We review your resume and application materials</p>
                 </div>
                 <div className="p-4">
                   <div className="w-10 h-10 rounded-full bg-purple-900/30 flex items-center justify-center mb-3 mx-auto">
-                    <span className="text-white font-medium">2</span>
+                    <span className="text-[var(--white)] font-medium">2</span>
                   </div>
                   <h3 className="font-medium mb-1">Initial Interview</h3>
-                  <p className="text-sm text-gray-400">Get to know you and your experience</p>
+                  <p className="text-sm text-neutral-400">Get to know you and your experience</p>
                 </div>
                 <div className="p-4">
                   <div className="w-10 h-10 rounded-full bg-purple-900/30 flex items-center justify-center mb-3 mx-auto">
-                    <span className="text-white font-medium">3</span>
+                    <span className="text-[var(--white)] font-medium">3</span>
                   </div>
                   <h3 className="font-medium mb-1">Technical Assessment</h3>
-                  <p className="text-sm text-gray-400">Showcase your skills (no whiteboarding)</p>
+                  <p className="text-sm text-neutral-400">Showcase your skills (no whiteboarding)</p>
                 </div>
                 <div className="p-4">
                   <div className="w-10 h-10 rounded-full bg-purple-900/30 flex items-center justify-center mb-3 mx-auto">
-                    <span className="text-white font-medium">4</span>
+                    <span className="text-[var(--white)] font-medium">4</span>
                   </div>
                   <h3 className="font-medium mb-1">Final Interview</h3>
-                  <p className="text-sm text-gray-400">Meet the team and discuss next steps</p>
+                  <p className="text-sm text-neutral-400">Meet the team and discuss next steps</p>
                 </div>
               </div>
               <Button 

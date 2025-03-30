@@ -50,10 +50,10 @@ const OperativeFeatures = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Key Capabilities
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-300">
               Hanzo Operative gives AI models the ability to interact with computers
               the same way humans do
             </p>
@@ -73,8 +73,8 @@ const OperativeFeatures = () => {
               <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
                 <feature.icon className="h-6 w-6 text-purple-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{feature.title}</h3>
+              <p className="text-neutral-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -87,9 +87,9 @@ const OperativeFeatures = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex items-center space-x-3 bg-gray-900/50 border border-gray-800 rounded-full px-6 py-3"
           >
-            <Github className="h-5 w-5 text-gray-400" />
-            <span className="text-gray-300">Open Source on</span>
-            <a href="https://github.com/hanzo-ai/operative" className="text-white font-semibold hover:text-purple-400 transition-colors">GitHub</a>
+            <Github className="h-5 w-5 text-neutral-400" />
+            <span className="text-neutral-300">Open Source on</span>
+            <a href="https://github.com/hanzo-ai/operative" className="text-[var(--white)] font-semibold hover:text-purple-400 transition-colors">GitHub</a>
           </motion.div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const CommerceAnalytics = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+      className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-blue-900/5 opacity-50"></div>
@@ -31,7 +31,7 @@ const CommerceAnalytics = () => {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Commerce-Focused Analytics</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Optimize your sales funnel and boost revenue with insights designed specifically for commerce.
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ const CommerceAnalytics = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <p className="text-neutral-400">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -81,7 +81,7 @@ const CommerceAnalytics = () => {
             <div className="p-4 border-b border-gray-800">
               <div className="flex items-center">
                 <ShoppingCart className="h-5 w-5 text-purple-400 mr-2" />
-                <span className="text-white font-medium">Commerce Dashboard</span>
+                <span className="text-[var(--white)] font-medium">Commerce Dashboard</span>
               </div>
             </div>
             
@@ -107,7 +107,7 @@ const CommerceAnalytics = () => {
               
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-gray-800/30 p-4 rounded-lg">
-                  <div className="text-sm text-gray-400">Conversion Rate</div>
+                  <div className="text-sm text-neutral-400">Conversion Rate</div>
                   <div className="text-2xl font-bold mt-2">4.78%</div>
                   <div className="text-green-400 text-sm flex items-center mt-1">
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@ const CommerceAnalytics = () => {
                   </div>
                 </div>
                 <div className="bg-gray-800/30 p-4 rounded-lg">
-                  <div className="text-sm text-gray-400">Avg. Order Value</div>
+                  <div className="text-sm text-neutral-400">Avg. Order Value</div>
                   <div className="text-2xl font-bold mt-2">$87.32</div>
                   <div className="text-green-400 text-sm flex items-center mt-1">
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -137,7 +137,7 @@ const CommerceAnalytics = () => {
                     { name: "Smart Watch", score: 79 }
                   ].map((product, i) => (
                     <div key={i} className="flex items-center justify-between">
-                      <span className="text-gray-300">{product.name}</span>
+                      <span className="text-neutral-300">{product.name}</span>
                       <div className="flex items-center">
                         <div className="w-24 h-2 bg-gray-800 rounded-full mr-2 overflow-hidden">
                           <motion.div

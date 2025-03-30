@@ -20,7 +20,7 @@ const CloudHeader: React.FC<CloudHeaderProps> = ({ mousePosition, containerRef }
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-black border border-white/10 text-white text-sm font-medium">
+          <span className="inline-block px-4 py-1 rounded-full bg-[var(--black)] border border-white/10 text-[var(--white)] text-sm font-medium">
             Infinitely Scalable, Globally Distributed
           </span>
         </motion.div>
@@ -39,7 +39,7 @@ const CloudHeader: React.FC<CloudHeaderProps> = ({ mousePosition, containerRef }
           >
             AI Cloud
           </ChromeText>
-          <p className="text-xl text-gray-300 mt-4">
+          <p className="text-xl text-neutral-300 mt-4">
             Global, infinitely scalable, sustainable compute infrastructure specifically optimized for AI applications
           </p>
         </motion.div>
@@ -52,7 +52,7 @@ const CloudHeader: React.FC<CloudHeaderProps> = ({ mousePosition, containerRef }
         transition={{ duration: 0.5, delay: 0.2 }}
         className="mt-8 md:mt-0"
       >
-        <Button size="lg" variant="outline" className="text-white border-white/10 bg-black hover:bg-neutral-900 whitespace-nowrap">
+        <Button size="lg" variant="outline" className="text-[var(--white)] border-white/10 bg-[var(--black)] hover:bg-neutral-900 whitespace-nowrap">
           <a href="/cloud">Explore Cloud</a>
         </Button>
       </motion.div>

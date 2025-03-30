@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Affiliates = () => {
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] relative overflow-hidden">
       <Helmet>
         <title>Affiliate Program - Hanzo AI</title>
         <meta name="description" content="Join Hanzo's Affiliate Program and earn recurring commissions for promoting our AI tools and services to your audience." />
@@ -43,7 +43,7 @@ const Affiliates = () => {
               <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
                 Hanzo Affiliate Program
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
                 Earn recurring commissions by promoting Hanzo's AI tools and services to your audience. Join our growing network of influencers, content creators, and AI enthusiasts.
               </p>
               <div className="mt-8">
@@ -68,7 +68,7 @@ const Affiliates = () => {
               <ChromeText as="h2" className="text-3xl font-bold mb-4">
                 Commission Structure
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
                 Earn competitive commissions on all Hanzo products and services
               </p>
             </motion.div>
@@ -103,7 +103,7 @@ const Affiliates = () => {
                     {item.icon}
                   </div>
                   <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
+                  <p className="text-neutral-300">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -118,7 +118,7 @@ const Affiliates = () => {
               <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Revenue Calculator</h3>
-                  <p className="text-gray-300">
+                  <p className="text-neutral-300">
                     See how much you could earn as a Hanzo affiliate based on your audience size and conversion rates.
                   </p>
                 </div>
@@ -143,7 +143,7 @@ const Affiliates = () => {
               <ChromeText as="h2" className="text-3xl font-bold mb-4">
                 Why Become an Affiliate
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
                 Join forces with a leading AI technology company and earn while helping others discover powerful AI tools
               </p>
             </motion.div>
@@ -193,7 +193,7 @@ const Affiliates = () => {
                     {benefit.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-gray-300">{benefit.description}</p>
+                  <p className="text-neutral-300">{benefit.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -213,7 +213,7 @@ const Affiliates = () => {
               <ChromeText as="h2" className="text-3xl font-bold mb-4">
                 How It Works
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
                 Get started with Hanzo's Affiliate Program in just a few simple steps
               </p>
             </motion.div>
@@ -269,7 +269,7 @@ const Affiliates = () => {
                     </div>
                     <div className="md:w-1/2 bg-gray-900/20 border border-gray-800 rounded-xl p-6">
                       <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                      <p className="text-gray-300">{step.description}</p>
+                      <p className="text-neutral-300">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -284,7 +284,7 @@ const Affiliates = () => {
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Ready to Become an Affiliate?
             </ChromeText>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 mb-8 max-w-3xl mx-auto">
               Join our affiliate program today and start earning commissions by promoting Hanzo's powerful AI tools and services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

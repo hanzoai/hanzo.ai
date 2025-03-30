@@ -15,7 +15,7 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => {
     >
       <Icon className="h-10 w-10 text-green-400 mb-4" />
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-300">
+      <p className="text-neutral-300">
         {description}
       </p>
     </motion.div>
@@ -69,7 +69,7 @@ const MachinesFeatures = () => {
           <ChromeText as="h2" className="text-3xl font-bold mb-4">
             Key Features & Capabilities
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Purpose-built infrastructure for the most demanding AI and compute workloads
           </p>
         </div>

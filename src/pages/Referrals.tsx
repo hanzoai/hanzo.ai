@@ -31,7 +31,7 @@ const Referrals = () => {
   };
   
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] relative overflow-hidden">
       <Helmet>
         <title>Referral Program - Hanzo AI</title>
         <meta name="description" content="Invite friends to Hanzo and earn $5 in credits for every successful referral. Our referral program rewards you for sharing the power of Hanzo AI with others." />
@@ -62,7 +62,7 @@ const Referrals = () => {
               <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
                 Hanzo Referral Program
               </ChromeText>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
                 Share Hanzo with friends and colleagues to earn rewards. For every person who signs up and starts using our platform, you'll receive $5 in credits.
               </p>
             </motion.div>
@@ -76,7 +76,7 @@ const Referrals = () => {
             >
               <h2 className="text-2xl font-bold mb-4">Your Referral Link</h2>
               <div className="flex items-center gap-2 mb-6">
-                <div className="flex-1 bg-gray-800 p-4 rounded-lg text-gray-300 font-mono text-sm overflow-hidden">
+                <div className="flex-1 bg-gray-800 p-4 rounded-lg text-neutral-300 font-mono text-sm overflow-hidden">
                   {referralLink}
                 </div>
                 <Button
@@ -153,7 +153,7 @@ const Referrals = () => {
                       {step.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-gray-300">{step.description}</p>
+                    <p className="text-neutral-300">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -193,7 +193,7 @@ const Referrals = () => {
                 ].map((faq, index) => (
                   <div key={index} className="bg-gray-900/20 border border-gray-800 rounded-xl p-6">
                     <h3 className="text-xl font-bold mb-2">{faq.question}</h3>
-                    <p className="text-gray-300">{faq.answer}</p>
+                    <p className="text-neutral-300">{faq.answer}</p>
                   </div>
                 ))}
               </div>
@@ -207,7 +207,7 @@ const Referrals = () => {
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Ready to Start Earning?
             </ChromeText>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 mb-8 max-w-3xl mx-auto">
               Sign up for a Hanzo account today, get your referral link, and start sharing with friends to earn rewards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

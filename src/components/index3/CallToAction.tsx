@@ -6,7 +6,7 @@ import ChromeText from "@/components/ui/chrome-text";
 
 const CallToAction = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -22,13 +22,13 @@ const CallToAction = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6 mx-auto text-center">
             Build Your Vision, Shape the Future
           </ChromeText>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
             Join the revolution of AI-driven development. Hanzo gives your team the tools, platform, and support needed to innovate fearlessly, deploy instantly, and scale infinitely.
           </p>
           
           <Button 
             size="lg"
-            className="bg-white hover:bg-gray-100 text-black px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+            className="bg-[var(--white)] hover:bg-gray-100 text-black px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
           >
             <a href="https://dashboard.hanzo.cloud">Get Started with Hanzo</a>
           </Button>

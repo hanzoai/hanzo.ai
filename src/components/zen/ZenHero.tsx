@@ -58,10 +58,10 @@ const ZenHero = () => {
             transition={{ duration: 0.5 }}
             className="h-12 flex items-center justify-center"
           >
-            <p className="text-xl text-gray-400 italic">"{principles[currentPrinciple]}"</p>
+            <p className="text-xl text-neutral-400 italic">"{principles[currentPrinciple]}"</p>
           </motion.div>
           
-          <p className="text-gray-500 max-w-2xl mx-auto mt-8">
+          <p className="text-neutral-500 max-w-2xl mx-auto mt-8">
             Build software with enlightened engineering. Hanzo's platform embodies 
             88 principles that guide the creation of resilient, scalable systems.
           </p>
@@ -71,12 +71,12 @@ const ZenHero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               variant="outline" 
-              className="bg-black/50 border border-white/10 text-white hover:bg-white/10"
+              className="bg-[var(--black)]/50 border border-white/10 text-[var(--white)] hover:bg-[var(--white)]/10"
             >
               Explore Platform
             </Button>
             <Button 
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/20"
+              className="bg-[var(--white)]/10 hover:bg-[var(--white)]/20 text-[var(--white)] border border-white/20"
             >
               Learn Principles
             </Button>
@@ -86,7 +86,7 @@ const ZenHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.5 }}
-            className="text-gray-600 mt-16"
+            className="text-neutral-600 mt-16"
           >
             <a href="#principles" className="flex flex-col items-center">
               <span className="mb-2 text-sm">Discover more</span>

@@ -11,8 +11,8 @@ const ExpertServices: React.FC = () => {
           <div className="p-3 rounded-lg bg-purple-500/20 self-start inline-block mb-4">
             <Users className="h-6 w-6 text-purple-400" strokeWidth={1.5} />
           </div>
-          <h3 className="text-2xl font-bold text-white mb-3">Hanzo Agency</h3>
-          <p className="text-gray-300 mb-5">
+          <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
+          <p className="text-neutral-300 mb-5">
             Our AI-powered creative agency helps brands transform their digital presence with cutting-edge design, 
             content, and marketing strategies powered by artificial intelligence.
           </p>
@@ -21,7 +21,7 @@ const ExpertServices: React.FC = () => {
               href="https://hanzo.agency" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 rounded-md text-white transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Hanzo Agency</span>
               <ExternalLink size={14} />
@@ -39,8 +39,8 @@ const ExpertServices: React.FC = () => {
           <div className="p-3 rounded-lg bg-green-500/20 self-start inline-block mb-4">
             <Shield className="h-6 w-6 text-green-400" strokeWidth={1.5} />
           </div>
-          <h3 className="text-2xl font-bold text-white mb-3">Sensei Group</h3>
-          <p className="text-gray-300 mb-5">
+          <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
+          <p className="text-neutral-300 mb-5">
             Our collective of fractional CXOs and industry experts help enterprises implement transformative 
             technology solutions and drive strategic growth initiatives.
           </p>
@@ -49,7 +49,7 @@ const ExpertServices: React.FC = () => {
               href="https://sensei.group" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-500 rounded-md text-white transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-500 rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Sensei Group</span>
               <ExternalLink size={14} />

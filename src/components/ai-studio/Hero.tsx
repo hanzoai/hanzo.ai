@@ -9,7 +9,7 @@ const Hero = () => {
         <ChromeText as="h1" className="text-4xl font-bold mb-2">
           Hanzo AI Studio
         </ChromeText>
-        <p className="text-gray-300 max-w-xl">
+        <p className="text-neutral-300 max-w-xl">
           Your workspace for AI model experimentation, prompt engineering, and creating agent-based applications.
         </p>
       </div>

@@ -24,10 +24,10 @@ const Integration = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Simple Integration
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Add real-time capabilities to your application with just a few lines of code
           </p>
         </motion.div>
@@ -39,8 +39,8 @@ const Integration = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold text-white mb-4">Easy to Implement</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-2xl font-semibold text-[var(--white)] mb-4">Easy to Implement</h3>
+            <p className="text-neutral-300 mb-6">
               Hanzo Realtime provides a clean, intuitive API that makes it simple to add 
               real-time functionality to any application. With support for multiple platforms 
               and frameworks, you can get started in minutes.
@@ -52,8 +52,8 @@ const Integration = () => {
                   <span className="text-purple-400 text-sm font-bold">1</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Initialize the client</h4>
-                  <p className="text-gray-400 text-sm">Connect to the Hanzo Realtime service with your API key</p>
+                  <h4 className="text-[var(--white)] font-medium mb-1">Initialize the client</h4>
+                  <p className="text-neutral-400 text-sm">Connect to the Hanzo Realtime service with your API key</p>
                 </div>
               </div>
               
@@ -62,8 +62,8 @@ const Integration = () => {
                   <span className="text-purple-400 text-sm font-bold">2</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Subscribe to channels</h4>
-                  <p className="text-gray-400 text-sm">Listen for updates on specific channels or topics</p>
+                  <h4 className="text-[var(--white)] font-medium mb-1">Subscribe to channels</h4>
+                  <p className="text-neutral-400 text-sm">Listen for updates on specific channels or topics</p>
                 </div>
               </div>
               
@@ -72,8 +72,8 @@ const Integration = () => {
                   <span className="text-purple-400 text-sm font-bold">3</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Publish messages</h4>
-                  <p className="text-gray-400 text-sm">Send updates to all connected clients instantly</p>
+                  <h4 className="text-[var(--white)] font-medium mb-1">Publish messages</h4>
+                  <p className="text-neutral-400 text-sm">Send updates to all connected clients instantly</p>
                 </div>
               </div>
             </div>
@@ -88,48 +88,48 @@ const Integration = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-black rounded-xl border border-gray-800 p-6"
+            className="bg-[var(--black)] rounded-xl border border-gray-800 p-6"
           >
             <div className="flex items-center mb-4">
               <Code className="h-5 w-5 text-purple-400 mr-2" />
-              <span className="text-gray-300">JavaScript Example</span>
+              <span className="text-neutral-300">JavaScript Example</span>
             </div>
             
             <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-auto max-h-[400px]">
               <div className="text-green-400">// Initialize the Hanzo Realtime client</div>
-              <div className="text-gray-300">import {`{ Realtime }`} from '@hanzo/cloud';</div>
-              <div className="text-gray-300 mb-4">const realtime = new Realtime('YOUR_API_KEY');</div>
+              <div className="text-neutral-300">import {`{ Realtime }`} from '@hanzo/cloud';</div>
+              <div className="text-neutral-300 mb-4">const realtime = new Realtime('YOUR_API_KEY');</div>
               
               <div className="text-green-400">// Subscribe to a channel</div>
-              <div className="text-gray-300">const channel = await realtime.subscribe('chat-room', {`{`}</div>
-              <div className="text-gray-300 pl-4">onMessage: (message) {`=>`} {`{`}</div>
-              <div className="text-gray-300 pl-8">console.log('New message received:', message);</div>
-              <div className="text-gray-300 pl-8">// Update your UI with the message</div>
-              <div className="text-gray-300 pl-8">appendMessageToChat(message);</div>
-              <div className="text-gray-300 pl-4">{`}`},</div>
-              <div className="text-gray-300 pl-4">onPresence: (event: PresenceEvent) {`=>`} {`{`}</div>
-              <div className="text-gray-300 pl-8">if (event.action === 'join') {`{`}</div>
-              <div className="text-gray-300 pl-12">{`console.log(\`\${event.userData.name} joined the chat\`);`}</div>
-              <div className="text-gray-300 pl-8">{`}`} else {`{`}</div>
-              <div className="text-gray-300 pl-12">{`console.log(\`\${event.userData.name} left the chat\`);`}</div>
-              <div className="text-gray-300 pl-8">{`}`}</div>
-              <div className="text-gray-300 pl-4">{`}`}</div>
-              <div className="text-gray-300">{`}`});</div>
-              <div className="text-gray-300 mb-4"></div>
+              <div className="text-neutral-300">const channel = await realtime.subscribe('chat-room', {`{`}</div>
+              <div className="text-neutral-300 pl-4">onMessage: (message) {`=>`} {`{`}</div>
+              <div className="text-neutral-300 pl-8">console.log('New message received:', message);</div>
+              <div className="text-neutral-300 pl-8">// Update your UI with the message</div>
+              <div className="text-neutral-300 pl-8">appendMessageToChat(message);</div>
+              <div className="text-neutral-300 pl-4">{`}`},</div>
+              <div className="text-neutral-300 pl-4">onPresence: (event: PresenceEvent) {`=>`} {`{`}</div>
+              <div className="text-neutral-300 pl-8">if (event.action === 'join') {`{`}</div>
+              <div className="text-neutral-300 pl-12">{`console.log(\`\${event.userData.name} joined the chat\`);`}</div>
+              <div className="text-neutral-300 pl-8">{`}`} else {`{`}</div>
+              <div className="text-neutral-300 pl-12">{`console.log(\`\${event.userData.name} left the chat\`);`}</div>
+              <div className="text-neutral-300 pl-8">{`}`}</div>
+              <div className="text-neutral-300 pl-4">{`}`}</div>
+              <div className="text-neutral-300">{`}`});</div>
+              <div className="text-neutral-300 mb-4"></div>
               
               <div className="text-green-400">// Publish a message to the channel</div>
-              <div className="text-gray-300">await realtime.publish('chat-room', {`{`}</div>
-              <div className="text-gray-300 pl-4">user: {`{`}</div>
-              <div className="text-gray-300 pl-8">id: 'user-123',</div>
-              <div className="text-gray-300 pl-8">name: 'Alice'</div>
-              <div className="text-gray-300 pl-4">{`}`},</div>
-              <div className="text-gray-300 pl-4">text: 'Hello, world!',</div>
-              <div className="text-gray-300 pl-4">timestamp: new Date().toISOString()</div>
-              <div className="text-gray-300">{`}`});</div>
-              <div className="text-gray-300 mb-4"></div>
+              <div className="text-neutral-300">await realtime.publish('chat-room', {`{`}</div>
+              <div className="text-neutral-300 pl-4">user: {`{`}</div>
+              <div className="text-neutral-300 pl-8">id: 'user-123',</div>
+              <div className="text-neutral-300 pl-8">name: 'Alice'</div>
+              <div className="text-neutral-300 pl-4">{`}`},</div>
+              <div className="text-neutral-300 pl-4">text: 'Hello, world!',</div>
+              <div className="text-neutral-300 pl-4">timestamp: new Date().toISOString()</div>
+              <div className="text-neutral-300">{`}`});</div>
+              <div className="text-neutral-300 mb-4"></div>
               
               <div className="text-green-400">// Clean up when done</div>
-              <div className="text-gray-300">await channel.unsubscribe();</div>
+              <div className="text-neutral-300">await channel.unsubscribe();</div>
             </div>
           </motion.div>
         </div>

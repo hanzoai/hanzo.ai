@@ -19,7 +19,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
     >
       {message.sender === "ai" && (
         <div className="bg-purple-600/40 h-8 w-8 rounded-full flex items-center justify-center mr-2 mt-1">
-          <Bot className="h-4 w-4 text-white" />
+          <Bot className="h-4 w-4 text-[var(--white)]" />
         </div>
       )}
       
@@ -37,7 +37,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
           }} 
         />
         <div className="text-right mt-1">
-          <span className="text-xs text-gray-400">
+          <span className="text-xs text-neutral-400">
             {formatTimestamp(message.timestamp)}
           </span>
         </div>
@@ -45,7 +45,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
       
       {message.sender === "user" && (
         <div className="bg-blue-600/40 h-8 w-8 rounded-full flex items-center justify-center ml-2 mt-1">
-          <User className="h-4 w-4 text-white" />
+          <User className="h-4 w-4 text-[var(--white)]" />
         </div>
       )}
     </div>

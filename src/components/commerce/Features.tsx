@@ -18,7 +18,7 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <p className="text-neutral-400">{description}</p>
     </div>
   );
 };
@@ -78,11 +78,11 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 bg-black">
+    <section className="py-16 bg-[var(--black)]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Powerful E-commerce Features</h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
             Everything you need to build exceptional shopping experiences, all through a simple API-first approach.
           </p>
         </div>

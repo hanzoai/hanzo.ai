@@ -29,7 +29,7 @@ const TrustedBy = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Trusted Globally</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Industry leaders trust Hanzo Payments to manage their complex financial operations.
           </p>
         </motion.div>
@@ -58,12 +58,12 @@ const TrustedBy = () => {
         >
           <div className="flex flex-col items-center text-center">
             <div className="text-5xl text-purple-400 mb-4">"</div>
-            <p className="text-xl text-gray-200 italic mb-6">
+            <p className="text-xl text-neutral-200 italic mb-6">
               {testimonial.quote}
             </p>
             <div className="mt-4">
               <p className="font-semibold">{testimonial.author}</p>
-              <p className="text-gray-400 text-sm">{testimonial.role}</p>
+              <p className="text-neutral-400 text-sm">{testimonial.role}</p>
             </div>
           </div>
         </motion.div>
@@ -77,7 +77,7 @@ const TrustedBy = () => {
             className="p-4"
           >
             <div className="text-3xl font-bold text-purple-400 mb-2">200+</div>
-            <div className="text-gray-400">Currencies Supported</div>
+            <div className="text-neutral-400">Currencies Supported</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -87,7 +87,7 @@ const TrustedBy = () => {
             className="p-4"
           >
             <div className="text-3xl font-bold text-purple-400 mb-2">99.99%</div>
-            <div className="text-gray-400">Uptime SLA</div>
+            <div className="text-neutral-400">Uptime SLA</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -97,7 +97,7 @@ const TrustedBy = () => {
             className="p-4"
           >
             <div className="text-3xl font-bold text-purple-400 mb-2">190+</div>
-            <div className="text-gray-400">Countries Served</div>
+            <div className="text-neutral-400">Countries Served</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -107,7 +107,7 @@ const TrustedBy = () => {
             className="p-4"
           >
             <div className="text-3xl font-bold text-purple-400 mb-2">24/7</div>
-            <div className="text-gray-400">Global Support</div>
+            <div className="text-neutral-400">Global Support</div>
           </motion.div>
         </div>
       </div>

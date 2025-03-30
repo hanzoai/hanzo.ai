@@ -41,7 +41,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -50,7 +50,7 @@ const FAQ = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[var(--white)]">
             Common Questions
           </h2>
         </motion.div>
@@ -68,10 +68,10 @@ const FAQ = () => {
                 value={`item-${index}`}
                 className="border border-gray-800 rounded-lg overflow-hidden bg-gray-900/50"
               >
-                <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium text-white hover:no-underline">
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium text-[var(--white)] hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-gray-300">
+                <AccordionContent className="px-6 pb-4 text-neutral-300">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

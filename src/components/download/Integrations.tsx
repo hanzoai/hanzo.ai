@@ -9,15 +9,15 @@ const IntegrationCard = ({ icon, title, description }: { icon: React.ReactNode, 
       {icon}
     </div>
     <div>
-      <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
-      <p className="text-gray-400 text-sm">{description}</p>
+      <h3 className="text-lg font-semibold text-[var(--white)] mb-1">{title}</h3>
+      <p className="text-neutral-400 text-sm">{description}</p>
     </div>
   </div>
 );
 
 const Integrations = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/50">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]/50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -26,7 +26,7 @@ const Integrations = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[var(--white)]">
             Connect your own tools & datasources
           </h2>
         </motion.div>

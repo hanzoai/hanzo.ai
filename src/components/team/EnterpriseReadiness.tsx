@@ -63,7 +63,7 @@ const EnterpriseReadiness = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Enterprise Ready
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Team is built from the ground up for enterprise deployments,
             with the security, scalability, and support your organization requires.
           </p>
@@ -78,7 +78,7 @@ const EnterpriseReadiness = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full bg-black/40 border border-blue-500/20 backdrop-blur-sm">
+              <Card className="h-full bg-[var(--black)]/40 border border-blue-500/20 backdrop-blur-sm">
                 <CardHeader className="pb-2">
                   <div className="bg-blue-900/20 p-3 rounded-lg inline-flex mb-4">
                     {feature.icon}
@@ -86,7 +86,7 @@ const EnterpriseReadiness = () => {
                   <h3 className="text-xl font-semibold">{feature.title}</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <p className="text-neutral-400">{feature.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -101,7 +101,7 @@ const EnterpriseReadiness = () => {
           className="bg-blue-900/10 border border-blue-500/20 rounded-xl p-8 text-center"
         >
           <h3 className="text-2xl font-bold mb-4">Ready to equip your enterprise?</h3>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-neutral-300 max-w-2xl mx-auto mb-8">
             Contact our enterprise sales team for a personalized demo and custom pricing that meets your organization's unique needs.
           </p>
           <Button 

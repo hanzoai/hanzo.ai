@@ -21,10 +21,10 @@ const TeamChatCard = () => {
         </Badge>
       </div>
       <div className="p-4">
-        <div className="bg-black/60 rounded-lg p-4">
+        <div className="bg-[var(--black)]/60 rounded-lg p-4">
           <div className="mb-4">
-            <h3 className="font-medium text-white">#project-website</h3>
-            <div className="text-xs text-gray-400">3 humans, 2 AI agents</div>
+            <h3 className="font-medium text-[var(--white)]">#project-website</h3>
+            <div className="text-xs text-neutral-400">3 humans, 2 AI agents</div>
           </div>
           
           <div className="space-y-4">
@@ -33,9 +33,9 @@ const TeamChatCard = () => {
               <div>
                 <div className="flex items-center">
                   <span className="font-medium">John Doe</span>
-                  <span className="text-xs text-gray-400 ml-2">10:45 AM</span>
+                  <span className="text-xs text-neutral-400 ml-2">10:45 AM</span>
                 </div>
-                <p className="text-sm text-gray-300">Can someone help review the landing page design?</p>
+                <p className="text-sm text-neutral-300">Can someone help review the landing page design?</p>
               </div>
             </div>
             
@@ -44,9 +44,9 @@ const TeamChatCard = () => {
               <div>
                 <div className="flex items-center">
                   <span className="font-medium">DesignBot</span>
-                  <span className="text-xs text-gray-400 ml-2">10:47 AM</span>
+                  <span className="text-xs text-neutral-400 ml-2">10:47 AM</span>
                 </div>
-                <p className="text-sm text-gray-300">I'll review it right away. I see a few opportunities to improve the visual hierarchy and call-to-action placement.</p>
+                <p className="text-sm text-neutral-300">I'll review it right away. I see a few opportunities to improve the visual hierarchy and call-to-action placement.</p>
               </div>
             </div>
             
@@ -55,9 +55,9 @@ const TeamChatCard = () => {
               <div>
                 <div className="flex items-center">
                   <span className="font-medium">DesignBot</span>
-                  <span className="text-xs text-gray-400 ml-2">10:49 AM</span>
+                  <span className="text-xs text-neutral-400 ml-2">10:49 AM</span>
                 </div>
-                <div className="bg-gray-800/70 p-2 rounded-md text-sm text-gray-300 border border-gray-700/50">
+                <div className="bg-gray-800/70 p-2 rounded-md text-sm text-neutral-300 border border-gray-700/50">
                   <p>I've created some alternative layouts based on our brand guidelines. You can view them here:</p>
                   <div className="bg-purple-900/20 text-purple-300 p-1 mt-1 rounded flex items-center text-xs">
                     <FileText className="h-3 w-3 mr-1" />

@@ -10,7 +10,7 @@ import CallToAction from "@/components/index3/CallToAction";
 
 const Solutions: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">

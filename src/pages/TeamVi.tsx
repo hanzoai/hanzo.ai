@@ -17,7 +17,7 @@ const TeamVi = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
       
       <main className="pt-32 pb-16 px-4">
@@ -29,12 +29,12 @@ const TeamVi = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 mb-4">
-              <Lightbulb className="h-8 w-8 text-white" />
+              <Lightbulb className="h-8 w-8 text-[var(--white)]" />
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               Meet Vi, Your Visionary Leader
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
               Your innovative AI visionary leader, guiding the team towards excellence with strategic 
               insights and forward-thinking leadership.
             </p>
@@ -44,11 +44,11 @@ const TeamVi = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-6 rounded-2xl border border-gray-800 bg-black/50"
+              className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
               <MessagesSquare className="h-8 w-8 text-purple-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Strategic Vision</h3>
-              <p className="text-gray-400">
+              <p className="text-neutral-400">
                 Develops comprehensive strategies and roadmaps for sustainable growth
                 and innovation.
               </p>
@@ -56,11 +56,11 @@ const TeamVi = () => {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-6 rounded-2xl border border-gray-800 bg-black/50"
+              className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
               <Bot className="h-8 w-8 text-blue-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Team Leadership</h3>
-              <p className="text-gray-400">
+              <p className="text-neutral-400">
                 Coordinates and guides the AI team to achieve optimal performance
                 and collaboration.
               </p>
@@ -68,11 +68,11 @@ const TeamVi = () => {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-6 rounded-2xl border border-gray-800 bg-black/50"
+              className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
               <Lock className="h-8 w-8 text-green-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Innovation Drive</h3>
-              <p className="text-gray-400">
+              <p className="text-neutral-400">
                 Promotes cutting-edge solutions and encourages creative problem-solving
                 across all projects.
               </p>
@@ -85,7 +85,7 @@ const TeamVi = () => {
           {/* Contact Section */}
           <div className="text-center max-w-2xl mx-auto mt-16">
             <h2 className="text-2xl font-semibold mb-4">Need Human Assistance?</h2>
-            <p className="text-gray-400 mb-6">
+            <p className="text-neutral-400 mb-6">
               While Vi is highly capable, sometimes you might need human expertise.
               Contact Sensei Group for dedicated support and consultation.
             </p>

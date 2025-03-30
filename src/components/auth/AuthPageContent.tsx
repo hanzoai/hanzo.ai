@@ -15,7 +15,7 @@ const AuthPageContent: React.FC<AuthPageContentProps> = ({
   footer
 }) => {
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center mb-6">
           <a href="/" className="inline-block mb-8">
@@ -27,7 +27,7 @@ const AuthPageContent: React.FC<AuthPageContentProps> = ({
           </a>
           <h1 className="text-3xl font-bold">{title}</h1>
           {subtitle && (
-            <p className="text-gray-400 mt-2">{subtitle}</p>
+            <p className="text-neutral-400 mt-2">{subtitle}</p>
           )}
         </div>
         
@@ -36,7 +36,7 @@ const AuthPageContent: React.FC<AuthPageContentProps> = ({
         </div>
         
         {footer && (
-          <div className="text-center text-sm text-gray-400">
+          <div className="text-center text-sm text-neutral-400">
             {footer}
           </div>
         )}

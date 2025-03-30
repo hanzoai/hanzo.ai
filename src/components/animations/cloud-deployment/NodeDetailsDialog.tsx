@@ -25,32 +25,32 @@ const NodeDetailsDialog: React.FC<NodeDetailsDialogProps> = ({ isOpen, onOpenCha
         </DialogHeader>
         
         <div className="p-4 bg-gray-800/50 rounded-md mb-4">
-          <h4 className="text-sm font-medium text-gray-300 mb-2">Service Details</h4>
+          <h4 className="text-sm font-medium text-neutral-300 mb-2">Service Details</h4>
           <div className="grid grid-cols-2 gap-y-2 text-sm">
-            <div className="text-gray-400">Status</div>
-            <div className="text-gray-200">
+            <div className="text-neutral-400">Status</div>
+            <div className="text-neutral-200">
               {selectedNode.status === 'deployed' && <span className="text-green-400">Deployed</span>}
               {selectedNode.status === 'pending' && <span className="text-blue-400">Pending</span>}
               {selectedNode.status === 'error' && <span className="text-red-400">Failed</span>}
             </div>
             
-            <div className="text-gray-400">Type</div>
-            <div className="text-gray-200">{selectedNode.type}</div>
+            <div className="text-neutral-400">Type</div>
+            <div className="text-neutral-200">{selectedNode.type}</div>
             
-            <div className="text-gray-400">Created</div>
-            <div className="text-gray-200">Just now</div>
+            <div className="text-neutral-400">Created</div>
+            <div className="text-neutral-200">Just now</div>
           </div>
         </div>
         
         <div className="flex justify-end space-x-2">
           <button 
-            className="px-3 py-1.5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm"
+            className="px-3 py-1.5 rounded bg-gray-800 hover:bg-gray-700 text-neutral-300 text-sm"
             onClick={() => onOpenChange(false)}
           >
             Close
           </button>
           <button 
-            className="px-3 py-1.5 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm"
+            className="px-3 py-1.5 rounded bg-purple-600 hover:bg-purple-700 text-[var(--white)] text-sm"
             onClick={() => onOpenChange(false)}
           >
             View Details

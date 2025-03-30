@@ -42,22 +42,22 @@ const UserProfile = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold">{user.name}</h1>
-                <p className="text-gray-400 mt-1">{userProfile.bio}</p>
+                <p className="text-neutral-400 mt-1">{userProfile.bio}</p>
                 
                 <div className="flex flex-wrap gap-4 mt-4">
-                  <div className="flex items-center text-gray-400">
+                  <div className="flex items-center text-neutral-400">
                     <MapPin className="h-4 w-4 mr-2" />
                     {userProfile.location}
                   </div>
-                  <div className="flex items-center text-gray-400">
+                  <div className="flex items-center text-neutral-400">
                     <Calendar className="h-4 w-4 mr-2" />
                     Joined {userProfile.joinedDate}
                   </div>
-                  <div className="flex items-center text-gray-400">
+                  <div className="flex items-center text-neutral-400">
                     <Mail className="h-4 w-4 mr-2" />
                     {user.email}
                   </div>
-                  <div className="flex items-center text-gray-400">
+                  <div className="flex items-center text-neutral-400">
                     <LinkIcon className="h-4 w-4 mr-2" />
                     <a href={userProfile.website} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
                       {userProfile.website.replace('https://', '')}
@@ -87,7 +87,7 @@ const UserProfile = () => {
             </div>
             <div>
               <div className="font-medium text-lg">{currentOrganization?.name}</div>
-              <div className="text-sm text-gray-400">Role: {currentOrganization?.role}</div>
+              <div className="text-sm text-neutral-400">Role: {currentOrganization?.role}</div>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ const UserProfile = () => {
             {userProfile.projects.map(project => (
               <div key={project.id} className="bg-gray-800/50 rounded-lg p-4 hover:bg-gray-800 transition-colors">
                 <h3 className="font-medium">{project.name}</h3>
-                <p className="text-sm text-gray-400 mt-1">{project.description}</p>
+                <p className="text-sm text-neutral-400 mt-1">{project.description}</p>
               </div>
             ))}
           </div>

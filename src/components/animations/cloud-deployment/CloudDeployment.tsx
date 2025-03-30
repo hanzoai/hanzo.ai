@@ -22,7 +22,7 @@ const CloudDeployment: React.FC = () => {
   };
 
   return (
-    <div className="relative h-[460px] w-full overflow-hidden rounded-xl bg-black/90 border border-gray-800 shadow-lg">
+    <div className="relative h-[460px] w-full overflow-hidden rounded-xl bg-[var(--black)]/90 border border-gray-800 shadow-lg">
       {/* Semi-transparent blue gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 to-cyan-950/20 pointer-events-none"></div>
       

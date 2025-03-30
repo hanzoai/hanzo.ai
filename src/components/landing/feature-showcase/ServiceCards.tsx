@@ -22,9 +22,9 @@ const ServiceCards: React.FC = () => {
               <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white">Hanzo Agency</h3>
+          <h3 className="text-2xl font-bold text-[var(--white)]">Hanzo Agency</h3>
         </div>
-        <p className="text-gray-300 mb-6">
+        <p className="text-neutral-300 mb-6">
           Elevate your brand with our AI-powered creative agency. We craft cutting-edge digital experiences that captivate audiences and deliver measurable business results.
         </p>
         <a href="/agency" className="inline-flex items-center text-purple-300 hover:text-purple-200 transition-colors group">
@@ -48,9 +48,9 @@ const ServiceCards: React.FC = () => {
               <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white">Sensei Group</h3>
+          <h3 className="text-2xl font-bold text-[var(--white)]">Sensei Group</h3>
         </div>
-        <p className="text-gray-300 mb-6">
+        <p className="text-neutral-300 mb-6">
           Accelerate enterprise transformation with our elite collective of CXOs and technology experts. We guide organizations through digital evolution with strategic implementation.
         </p>
         <a href="/sensei" className="inline-flex items-center text-green-300 hover:text-green-200 transition-colors group">

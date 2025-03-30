@@ -78,10 +78,10 @@ const PricingFAQ = () => {
             value={`item-${index}`}
             className="border-b border-gray-800"
           >
-            <AccordionTrigger className="py-4 text-left text-gray-200 hover:text-white">
+            <AccordionTrigger className="py-4 text-left text-neutral-200 hover:text-[var(--white)]">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-gray-400 pb-4">
+            <AccordionContent className="text-neutral-400 pb-4">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>

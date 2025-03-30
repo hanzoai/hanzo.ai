@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] flex flex-col">
       <Navbar />
       
       <div className="flex-grow flex items-center justify-center">
@@ -15,7 +15,7 @@ const NotFound = () => {
           <p className="text-xl mb-8">Page not found</p>
           <Link 
             to="/" 
-            className="px-4 py-2 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors"
+            className="px-4 py-2 bg-[var(--white)] text-black rounded-md hover:bg-zinc-200 transition-colors"
           >
             Return Home
           </Link>

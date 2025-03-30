@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
           transition={{ duration: 0.7 }}
           className="mb-6"
         >
-          <span className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-purple-900/30 to-blue-900/30 text-white text-sm font-medium border border-purple-500/20">
+          <span className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-purple-900/30 to-blue-900/30 text-[var(--white)] text-sm font-medium border border-purple-500/20">
             The Future of AI Development
           </span>
         </motion.div>
@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
             AI Cloud + DX Platform
           </ChromeText>
           
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed">
+          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mt-6 leading-relaxed">
             Build, deploy, and scale AI applications with unmatched speed and efficiency.
             From development to production, Hanzo provides everything you need.
           </p>
@@ -74,7 +74,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg px-8 py-6 border-white/20 bg-black/50 backdrop-blur-sm hover:bg-white/10"
+            className="text-lg px-8 py-6 border-white/20 bg-[var(--black)]/50 backdrop-blur-sm hover:bg-[var(--white)]/10"
             onClick={() => navigate('/pricing')}
           >
             View Pricing
@@ -88,7 +88,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
           className="mt-24 sm:mt-32"
         >
           <div className="flex justify-center">
-            <ArrowRight className="h-10 w-10 text-white/50 animate-bounce" />
+            <ArrowRight className="h-10 w-10 text-[var(--white)]/50 animate-bounce" />
           </div>
         </motion.div>
       </motion.div>

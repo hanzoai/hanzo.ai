@@ -35,7 +35,7 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
     <ChromeText as="h3" className="text-xl font-bold mb-2">
       {title}
     </ChromeText>
-    <p className="text-gray-400">
+    <p className="text-neutral-400">
       {description}
     </p>
   </motion.div>
@@ -76,13 +76,13 @@ const Features = () => {
   ];
 
   return (
-    <AnimatedSection className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <AnimatedSection className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <AnimatedHeading className="text-center mb-16">
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-4">
             Powerful Features
           </ChromeText>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
             Everything you need for building AI-powered vector search applications
           </p>
         </AnimatedHeading>

@@ -37,8 +37,8 @@ const UseCases = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Use Cases</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">Use Cases</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Bot can be used to create a wide variety of autonomous agents
           </p>
         </motion.div>
@@ -56,10 +56,10 @@ const UseCases = () => {
               <div className="bg-purple-500/10 p-3 rounded-lg inline-block mb-4">
                 <useCase.icon className="h-6 w-6 text-purple-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">{useCase.title}</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)] mb-4">{useCase.title}</h3>
               <ul className="space-y-2">
                 {useCase.examples.map((example, i) => (
-                  <li key={i} className="text-gray-400 flex items-center">
+                  <li key={i} className="text-neutral-400 flex items-center">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
                     {example}
                   </li>

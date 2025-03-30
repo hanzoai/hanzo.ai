@@ -92,8 +92,8 @@ const ZenOfHanzoPrinciples: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">The Zen of Hanzo</h2>
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">The Zen of Hanzo</h2>
+        <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
           Embody the Zen of Hanzo principles in all interactions
         </p>
         <div className="h-px w-20 bg-gray-700 mx-auto mt-6"></div>
@@ -109,12 +109,12 @@ const ZenOfHanzoPrinciples: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition-all"
           >
-            <h3 className="text-xl font-semibold text-gray-300 mb-4">{discipline.name}</h3>
+            <h3 className="text-xl font-semibold text-neutral-300 mb-4">{discipline.name}</h3>
             <Separator className="bg-gray-800 mb-4" />
             <div className="space-y-3">
               {discipline.principles.map((principle) => (
-                <div key={principle.name} className="text-gray-400">
-                  <span className="text-white font-medium">• {principle.name}:</span>{" "}
+                <div key={principle.name} className="text-neutral-400">
+                  <span className="text-[var(--white)] font-medium">• {principle.name}:</span>{" "}
                   {principle.description}
                 </div>
               ))}

@@ -18,7 +18,7 @@ const AssigneesList: React.FC<AssigneesListProps> = ({ assignees = [], onRemove 
   return (
     <div className="mb-6">
       <div className="flex justify-between mb-2">
-        <label className="block text-sm font-medium text-gray-400">Assignees</label>
+        <label className="block text-sm font-medium text-neutral-400">Assignees</label>
         <Button size="sm" variant="ghost" className="text-blue-400 hover:text-blue-300 h-6 px-2">
           <PlusCircle className="h-3.5 w-3.5 mr-1" />
           Add
@@ -35,7 +35,7 @@ const AssigneesList: React.FC<AssigneesListProps> = ({ assignees = [], onRemove 
             </div>
             <span>{assignee.name}</span>
             <button 
-              className="text-gray-400 hover:text-white"
+              className="text-neutral-400 hover:text-[var(--white)]"
               onClick={() => onRemove && onRemove(assignee.id)}
             >
               <X className="h-3 w-3" />
@@ -43,7 +43,7 @@ const AssigneesList: React.FC<AssigneesListProps> = ({ assignees = [], onRemove 
           </div>
         ))}
         {!assignees.length && (
-          <div className="text-sm text-gray-500">No assignees</div>
+          <div className="text-sm text-neutral-500">No assignees</div>
         )}
       </div>
     </div>

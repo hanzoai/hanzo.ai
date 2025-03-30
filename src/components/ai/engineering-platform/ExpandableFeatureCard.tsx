@@ -56,12 +56,12 @@ const ExpandableFeatureCard: React.FC<ExpandableFeatureCardProps> = ({
           {isExpanded ? (
             <Minus className="h-4 w-4 text-purple-300" />
           ) : (
-            <Plus className="h-4 w-4 text-gray-300" />
+            <Plus className="h-4 w-4 text-neutral-300" />
           )}
         </button>
       </div>
       
-      <p className="text-gray-300 mb-4">{description}</p>
+      <p className="text-neutral-300 mb-4">{description}</p>
       
       <AnimatePresence>
         {isExpanded && (
@@ -73,12 +73,12 @@ const ExpandableFeatureCard: React.FC<ExpandableFeatureCardProps> = ({
             className="overflow-hidden"
           >
             <div className="pt-2 border-t border-gray-800">
-              <h4 className="font-medium text-white mb-3 mt-3">Key Features:</h4>
+              <h4 className="font-medium text-[var(--white)] mb-3 mt-3">Key Features:</h4>
               <ul className="space-y-2">
                 {featurePoints.map((point, index) => (
                   <li key={index} className="flex items-start">
                     <span className={`${bulletColor} mr-2 text-lg`}>•</span>
-                    <span className="text-sm text-gray-300">{point.text}</span>
+                    <span className="text-sm text-neutral-300">{point.text}</span>
                   </li>
                 ))}
               </ul>

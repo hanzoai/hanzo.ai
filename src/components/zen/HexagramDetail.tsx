@@ -19,23 +19,23 @@ const HexagramDetail: React.FC<HexagramDetailProps> = ({ hexagram }) => {
     >
       <div className="flex items-center mb-4">
         <div className="mr-4">
-          <IChingHexagram lines={hexagram.lines} size={64} className="text-white" />
+          <IChingHexagram lines={hexagram.lines} size={64} className="text-[var(--white)]" />
         </div>
         <div>
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-            <h3 className="text-2xl font-bold text-white">{hexagram.name}</h3>
-            <span className="text-xl text-gray-400">{hexagram.chineseName}</span>
-            <span className="text-sm text-gray-500">{hexagram.pinyin}</span>
+            <h3 className="text-2xl font-bold text-[var(--white)]">{hexagram.name}</h3>
+            <span className="text-xl text-neutral-400">{hexagram.chineseName}</span>
+            <span className="text-sm text-neutral-500">{hexagram.pinyin}</span>
           </div>
-          <div className="text-gray-400 text-sm">Hexagram {hexagram.id}</div>
+          <div className="text-neutral-400 text-sm">Hexagram {hexagram.id}</div>
         </div>
       </div>
       
       <div className="mt-4 mb-6 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
       
-      <p className="text-gray-300 mb-4">{hexagram.description || hexagram.principle}</p>
+      <p className="text-neutral-300 mb-4">{hexagram.description || hexagram.principle}</p>
       
-      <div className="mt-4 text-sm text-gray-500">
+      <div className="mt-4 text-sm text-neutral-500">
         Click on any hexagram in the grid to view its details
       </div>
     </motion.div>

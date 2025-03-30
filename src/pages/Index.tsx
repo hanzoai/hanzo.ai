@@ -11,7 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] overflow-x-hidden">
       <Helmet>
         <title>Hanzo - Engineering Enlightenment</title>
         <meta name="description" content="Forge software with wisdom. Build products aligned with the 88 principles of engineering enlightenment." />

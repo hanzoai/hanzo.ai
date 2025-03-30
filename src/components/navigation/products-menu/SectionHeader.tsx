@@ -12,7 +12,7 @@ const SectionHeader = ({ title, link, linkText }: SectionHeaderProps) => {
   return (
     <div className="flex items-center justify-between mb-4">
       <Link to={link}>
-        <h3 className="text-xl font-semibold text-white hover:text-gray-300 transition-colors">
+        <h3 className="text-xl font-semibold text-[var(--white)] hover:text-neutral-300 transition-colors">
           {title}
         </h3>
       </Link>

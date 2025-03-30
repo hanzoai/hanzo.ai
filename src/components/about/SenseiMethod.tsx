@@ -21,7 +21,7 @@ const SenseiMethod = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               The Sensei Method
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-neutral-300 mb-8">
               A practical framework for applying AI and data to achieve exponential growth for businesses.
               If the "Zen of Hanzo" is the theory, the Sensei Method is the practice.
             </p>
@@ -33,7 +33,7 @@ const SenseiMethod = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">Identify First-Principle Goals</h3>
-                  <p className="text-gray-300">Drill down to the fundamental objectives that drive real value.</p>
+                  <p className="text-neutral-300">Drill down to the fundamental objectives that drive real value.</p>
                 </div>
               </div>
               
@@ -43,7 +43,7 @@ const SenseiMethod = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">Rapid Prototyping</h3>
-                  <p className="text-gray-300">Build quickly, test assumptions, and iterate with purpose.</p>
+                  <p className="text-neutral-300">Build quickly, test assumptions, and iterate with purpose.</p>
                 </div>
               </div>
               
@@ -53,7 +53,7 @@ const SenseiMethod = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">Data-Driven Decisions</h3>
-                  <p className="text-gray-300">Measure impact, analyze patterns, and let insights guide strategy.</p>
+                  <p className="text-neutral-300">Measure impact, analyze patterns, and let insights guide strategy.</p>
                 </div>
               </div>
               
@@ -63,13 +63,13 @@ const SenseiMethod = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">Sensei Mentorship</h3>
-                  <p className="text-gray-300">Work directly with expert "senseis" to implement and refine your approach.</p>
+                  <p className="text-neutral-300">Work directly with expert "senseis" to implement and refine your approach.</p>
                 </div>
               </div>
             </div>
             
             <Button 
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)]"
             >
               <a href="https://sensei.group" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 Visit Sensei Group
@@ -86,7 +86,7 @@ const SenseiMethod = () => {
             className="relative"
           >
             <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl p-1">
-              <div className="bg-black/50 backdrop-blur-sm rounded-xl overflow-hidden">
+              <div className="bg-[var(--black)]/50 backdrop-blur-sm rounded-xl overflow-hidden">
                 <img 
                   src="/placeholder.svg" 
                   alt="Sensei Method in action" 
@@ -94,22 +94,22 @@ const SenseiMethod = () => {
                 />
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-4">The Impact of Sensei</h3>
-                  <p className="text-gray-300 mb-6">
+                  <p className="text-neutral-300 mb-6">
                     Through the Sensei Method and Sensei Group, we've helped clients generate over $1 billion in revenue,
                     launch groundbreaking products, and build scalable businesses.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <div className="bg-purple-900/30 px-4 py-2 rounded-lg">
                       <span className="text-2xl font-bold text-purple-300">$1B+</span>
-                      <p className="text-sm text-gray-400">Client Revenue</p>
+                      <p className="text-sm text-neutral-400">Client Revenue</p>
                     </div>
                     <div className="bg-blue-900/30 px-4 py-2 rounded-lg">
                       <span className="text-2xl font-bold text-blue-300">100+</span>
-                      <p className="text-sm text-gray-400">Product Launches</p>
+                      <p className="text-sm text-neutral-400">Product Launches</p>
                     </div>
                     <div className="bg-green-900/30 px-4 py-2 rounded-lg">
                       <span className="text-2xl font-bold text-green-300">10+</span>
-                      <p className="text-sm text-gray-400">Years Experience</p>
+                      <p className="text-sm text-neutral-400">Years Experience</p>
                     </div>
                   </div>
                 </div>

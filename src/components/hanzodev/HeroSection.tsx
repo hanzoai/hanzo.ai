@@ -26,7 +26,7 @@ const HeroSection = () => {
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-[var(--black)]" />
       
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         <motion.div
@@ -47,7 +47,7 @@ const HeroSection = () => {
               }}
             >high growth Startups</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Accelerate your release schedule and ship daily improvements. Hanzo is the AI Coding Agent built to act like another team member, getting work done.
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400 border-none">
             <a href="#start">Start Clearing Tasks</a>
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
+          <Button size="lg" variant="outline" className="text-lg px-8 text-[var(--white)] border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10">
             <a href="#watch">Watch the Agent Work</a>
           </Button>
         </motion.div>
@@ -72,7 +72,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-gray-400 mb-6">The best engineering teams use AI Agents</p>
+          <p className="text-lg text-neutral-400 mb-6">The best engineering teams use AI Agents</p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {/* We would add company logos here */}
             <div className="h-8 w-24 bg-gray-800/50 rounded-md"></div>

@@ -23,11 +23,11 @@ const OperativeHero = () => {
               AI Engineering Framework
             </span>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-purple-300">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--white)] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-purple-300">
               Hanzo Operative
             </h1>
 
-            <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="mt-6 text-xl text-neutral-300 max-w-3xl mx-auto">
               A framework that enables multimodal AI models to operate a computer using the same inputs and 
               outputs as a human operator, viewing the screen and executing mouse and keyboard actions to achieve objectives.
             </p>
@@ -36,7 +36,7 @@ const OperativeHero = () => {
               <Button size="lg" className="text-lg px-8">
                 <a href="#get-started">Get Started</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 text-white border-white/20 bg-white/5 hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 text-[var(--white)] border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10">
                 <a href="https://docs.hanzo.ai/operative" className="flex items-center gap-2">
                   <Terminal className="h-5 w-5" />
                   View Docs
@@ -55,25 +55,25 @@ const OperativeHero = () => {
               <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
                 <Eye className="h-6 w-6 text-purple-400" />
               </div>
-              <p className="text-sm font-medium text-gray-300">Screen Vision</p>
+              <p className="text-sm font-medium text-neutral-300">Screen Vision</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
                 <Cpu className="h-6 w-6 text-purple-400" />
               </div>
-              <p className="text-sm font-medium text-gray-300">Multimodal Models</p>
+              <p className="text-sm font-medium text-neutral-300">Multimodal Models</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
                 <MousePointer className="h-6 w-6 text-purple-400" />
               </div>
-              <p className="text-sm font-medium text-gray-300">Cursor Control</p>
+              <p className="text-sm font-medium text-neutral-300">Cursor Control</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-12 w-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-4">
                 <Keyboard className="h-6 w-6 text-purple-400" />
               </div>
-              <p className="text-sm font-medium text-gray-300">Keyboard Actions</p>
+              <p className="text-sm font-medium text-neutral-300">Keyboard Actions</p>
             </div>
           </motion.div>
         </div>

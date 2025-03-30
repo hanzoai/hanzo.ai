@@ -80,11 +80,11 @@ const SignUp = () => {
   };
   
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Create Account</h1>
-          <p className="text-gray-400 mt-2">
+          <p className="text-neutral-400 mt-2">
             {step === 1 ? 'Enter your details to get started' : 'Set up your profile'}
           </p>
         </div>
@@ -96,7 +96,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Mail className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
                     <Input
                       id="email"
                       name="email"
@@ -112,7 +112,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Lock className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
                     <Input
                       id="password"
                       name="password"
@@ -128,7 +128,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword">Confirm Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Lock className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
                     <Input
                       id="confirmPassword"
                       name="confirmPassword"
@@ -157,7 +157,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <User className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
                     <Input
                       id="name"
                       name="name"
@@ -199,7 +199,7 @@ const SignUp = () => {
             
             <Button 
               type="submit" 
-              className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white"
+              className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-[var(--white)]"
             >
               {step === 1 ? 'Continue' : 'Create Account'}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -207,7 +207,7 @@ const SignUp = () => {
           </form>
         </div>
         
-        <div className="text-center text-sm text-gray-400">
+        <div className="text-center text-sm text-neutral-400">
           Already have an account?{" "}
           <a href="/login" className="text-purple-400 hover:underline">
             Sign in

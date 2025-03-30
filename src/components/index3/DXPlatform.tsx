@@ -8,7 +8,7 @@ const DXPlatform = () => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-blue-900/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-purple-900/5 rounded-full blur-3xl"></div>
@@ -40,7 +40,7 @@ const DXPlatform = () => {
               The DX Platform
             </ChromeText>
             
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Unify your development workflow with tools designed to increase productivity, enable collaboration, and accelerate innovation.
             </p>
           </motion.div>
@@ -55,7 +55,7 @@ const DXPlatform = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-20 text-center"
         >
-          <p className="text-gray-400 mb-6 max-w-3xl mx-auto">
+          <p className="text-neutral-400 mb-6 max-w-3xl mx-auto">
             Join thousands of developers who build faster and ship more reliable software with the Hanzo DX Platform.
           </p>
         </motion.div>

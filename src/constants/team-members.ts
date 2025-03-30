@@ -235,7 +235,7 @@ export const teamMembers = {
     features: [
       {
         icon: Settings,
-        color: "text-gray-400",
+        color: "text-neutral-400",
         title: "Core Systems",
         description: "Develops and maintains core system infrastructure."
       },
@@ -247,7 +247,7 @@ export const teamMembers = {
       },
       {
         icon: Binary,
-        color: "text-gray-400",
+        color: "text-neutral-400",
         title: "Architecture",
         description: "Designs scalable system architectures."
       }

@@ -29,7 +29,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-purple-600 text-white hover:bg-purple-800/20"
+              className="w-full gap-2 border-purple-600 text-[var(--white)] hover:bg-purple-800/20"
             >
               <Github className="h-5 w-5" />
               View on GitHub
@@ -46,7 +46,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-purple-600 text-white hover:bg-purple-800/20"
+              className="w-full gap-2 border-purple-600 text-[var(--white)] hover:bg-purple-800/20"
             >
               <FileText className="h-5 w-5" />
               Learn more in Docs
@@ -63,7 +63,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-purple-600 text-white hover:bg-purple-800/20"
+              className="w-full gap-2 border-purple-600 text-[var(--white)] hover:bg-purple-800/20"
             >
               <Server className="h-5 w-5" />
               Get Commercial Support
@@ -93,7 +93,7 @@ const CallToAction = () => {
             <div className="mt-2 text-left">
               <label className="inline-flex items-center">
                 <input type="checkbox" className="rounded bg-gray-800 border-gray-700 text-purple-600" />
-                <span className="ml-2 text-sm text-gray-400">
+                <span className="ml-2 text-sm text-neutral-400">
                   I agree to receive communications from Hanzo
                 </span>
               </label>

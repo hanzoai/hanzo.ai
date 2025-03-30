@@ -33,8 +33,8 @@ const HexagramsGrid: React.FC<HexagramsGridProps> = ({
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">{title}</h2>
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">{title}</h2>
+        <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
           {description}
         </p>
         <div className="h-px w-20 bg-gray-800 mx-auto mt-6"></div>
@@ -74,7 +74,7 @@ const HexagramsGrid: React.FC<HexagramsGridProps> = ({
           </div>
         </div>
         
-        <div className="mt-6 text-center text-sm text-gray-500">
+        <div className="mt-6 text-center text-sm text-neutral-500">
           Click on a hexagram to view its meaning and principle
         </div>
       </div>

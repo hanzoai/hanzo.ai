@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>Contact Us - Hanzo Industries</title>
         <meta 
@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
               Have questions or need assistance? Our team is here to help. 
               Reach out to us through any of the channels below.
             </p>
@@ -36,49 +36,49 @@ const Contact = () => {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-1">
                       Name
                     </label>
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-1">
                       Email
                     </label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-1">
                     Subject
                   </label>
                   <input
                     type="text"
                     id="subject"
-                    className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="What is this regarding?"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-1">
                     Message
                   </label>
                   <textarea
                     id="message"
                     rows={6}
-                    className="w-full px-4 py-2 bg-black/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                    className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
                     placeholder="Tell us how we can help..."
                   />
                 </div>
@@ -99,7 +99,7 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-purple-400 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-gray-300">
+                      <p className="text-neutral-300">
                         <a href="mailto:info@hanzo.ai" className="hover:text-purple-400 transition-colors">
                           info@hanzo.ai
                         </a>
@@ -111,7 +111,7 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-purple-400 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <p className="text-gray-300">
+                      <p className="text-neutral-300">
                         <a href="tel:+18005551234" className="hover:text-purple-400 transition-colors">
                           +1 (800) 555-1234
                         </a>
@@ -123,7 +123,7 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-purple-400 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Location</h3>
-                      <p className="text-gray-300">
+                      <p className="text-neutral-300">
                         Kansas City, MO<br />
                         United States
                       </p>
@@ -134,7 +134,7 @@ const Contact = () => {
               
               <div className="bg-gray-900/30 rounded-xl p-8 border border-gray-800 flex-grow">
                 <h2 className="text-2xl font-semibold mb-6">Connect With Us</h2>
-                <p className="text-gray-300 mb-6">
+                <p className="text-neutral-300 mb-6">
                   Follow us on social media or join our community platforms to stay updated
                   on the latest news and engage with other Hanzo users.
                 </p>
@@ -177,10 +177,10 @@ const Contact = () => {
           {/* FAQ Section */}
           <div className="text-center">
             <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-            <p className="text-gray-300 mb-4">
+            <p className="text-neutral-300 mb-4">
               Can't find what you're looking for? Check our comprehensive FAQ section.
             </p>
-            <Button variant="outline" className="border-purple-500 text-white hover:bg-purple-900/20" size="sm">
+            <Button variant="outline" className="border-purple-500 text-[var(--white)] hover:bg-purple-900/20" size="sm">
               <a href="/pricing#faq">View FAQ</a>
             </Button>
           </div>

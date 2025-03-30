@@ -100,7 +100,7 @@ const CoreFeatures = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -109,8 +109,8 @@ const CoreFeatures = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Core Features</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-[var(--white)] mb-4">Core Features</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Everything you need to build modern, scalable applications
           </p>
         </motion.div>

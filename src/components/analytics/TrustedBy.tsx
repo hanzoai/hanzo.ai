@@ -24,7 +24,7 @@ const TrustedBy = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <h2 className="text-2xl font-medium text-gray-400">Trusted by Industry Leaders</h2>
+          <h2 className="text-2xl font-medium text-neutral-400">Trusted by Industry Leaders</h2>
         </motion.div>
         
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 px-4">

@@ -29,10 +29,10 @@ const ZenPrincipleCard: React.FC<ZenPrincipleCardProps> = ({ principle, index })
         <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 mr-3">
           {principle.emoji || principle.number}
         </div>
-        <h3 className="text-xl text-white font-bold">{principle.title}</h3>
+        <h3 className="text-xl text-[var(--white)] font-bold">{principle.title}</h3>
       </div>
       <div className="text-sm text-purple-400 font-mono mb-2">{principle.japaneseSymbol}</div>
-      <p className="text-gray-300">{principle.description}</p>
+      <p className="text-neutral-300">{principle.description}</p>
     </motion.div>
   );
 };

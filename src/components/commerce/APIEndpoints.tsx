@@ -12,7 +12,7 @@ const EndpointCard = ({ path, description }: EndpointProps) => {
   return (
     <div className="bg-gray-900/40 border border-gray-800 rounded-lg p-4 hover:border-amber-500/30 transition-all duration-300">
       <div className="font-mono text-sm text-amber-400 mb-2">{path}</div>
-      <p className="text-gray-400 text-sm">{description}</p>
+      <p className="text-neutral-400 text-sm">{description}</p>
     </div>
   );
 };
@@ -114,7 +114,7 @@ const APIEndpoints = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">Comprehensive API</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-neutral-400 max-w-2xl mx-auto">
             A complete API-first platform that powers your e-commerce business with flexible endpoints for every need.
           </p>
         </div>

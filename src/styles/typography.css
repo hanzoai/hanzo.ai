@@ -2,49 +2,49 @@
 @layer base {
   /* Typography base styles with theme variables and golden ratio */
   h1 {
-    @apply text-3xl sm:text-4xl font-bold tracking-tight mb-golden-5 font-sans;
+    @apply text-3xl sm:text-4xl font-bold tracking-tight  font-sans;
     font-size: calc(2.618rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(-0.025em + var(--letter-spacing-scale));
   }
   
   h2 {
-    @apply text-2xl sm:text-3xl font-semibold tracking-tight mb-golden-4 font-sans;
+    @apply text-2xl sm:text-3xl font-semibold tracking-tight  font-sans;
     font-size: calc(1.618rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(-0.025em + var(--letter-spacing-scale));
   }
   
   h3 {
-    @apply text-xl sm:text-2xl font-medium tracking-tight mb-golden-3 font-sans;
+    @apply text-xl sm:text-2xl font-medium tracking-tight  font-sans;
     font-size: calc(1.25rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(-0.025em + var(--letter-spacing-scale));
   }
   
   h4 {
-    @apply text-lg sm:text-xl font-medium tracking-tight mb-golden-3 font-sans;
+    @apply text-lg sm:text-xl font-medium tracking-tight  font-sans;
     font-size: calc(1.125rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(0em + var(--letter-spacing-scale));
   }
   
   h5 {
-    @apply text-base sm:text-lg font-medium tracking-tight mb-golden-2 font-sans;
+    @apply text-base sm:text-lg font-medium tracking-tight  font-sans;
     font-size: calc(1rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(0em + var(--letter-spacing-scale));
   }
   
   h6 {
-    @apply text-sm sm:text-base font-medium tracking-tight mb-golden-2 font-sans;
+    @apply text-sm sm:text-base font-medium tracking-tight  font-sans;
     font-size: calc(0.875rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(0em + var(--letter-spacing-scale));
   }
   
   p {
-    @apply text-base leading-golden mb-golden-4 font-sans;
+    @apply text-base   font-sans;
     font-size: calc(1rem * var(--font-scale));
     line-height: calc(1.618 * var(--line-height-scale));
     letter-spacing: calc(0em + var(--letter-spacing-scale));
@@ -74,21 +74,21 @@
 }
 
 .body-lg {
-  @apply text-lg leading-golden;
+  @apply text-lg ;
   font-size: calc(1.125rem * var(--font-scale));
   line-height: calc(1.618 * var(--line-height-scale));
   letter-spacing: calc(0em + var(--letter-spacing-scale));
 }
 
 .body-md {
-  @apply text-base leading-golden;
+  @apply text-base ;
   font-size: calc(1rem * var(--font-scale));
   line-height: calc(1.618 * var(--line-height-scale));
   letter-spacing: calc(0em + var(--letter-spacing-scale));
 }
 
 .body-sm {
-  @apply text-sm leading-golden;
+  @apply text-sm ;
   font-size: calc(0.875rem * var(--font-scale));
   line-height: calc(1.618 * var(--line-height-scale));
   letter-spacing: calc(0em + var(--letter-spacing-scale));
@@ -96,18 +96,18 @@
 
 /* Golden ratio utilities */
 .golden-grid {
-  @apply grid grid-cols-golden gap-golden-4;
+  @apply grid  ;
 }
 
 .golden-container {
-  @apply mx-auto px-golden-4 py-golden-5;
+  @apply mx-auto px-4 py-6;
   max-width: calc(1618px);
 }
 
 .golden-section {
-  @apply py-golden-7;
+  @apply py-16;
 }
 
 .golden-card {
-  @apply p-golden-4 rounded-xl;
+  @apply p-4 rounded-xl;
 }

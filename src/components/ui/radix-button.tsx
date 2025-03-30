@@ -15,12 +15,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     
     const variantClasses = {
-      default: "bg-gray-900 text-white hover:bg-gray-800",
-      destructive: "bg-red-600 text-white hover:bg-red-700",
-      outline: "border border-white/20 bg-white/5 hover:bg-white/10 text-white",
-      secondary: "bg-gray-800 text-white hover:bg-gray-700",
-      ghost: "hover:bg-white/10 text-white",
-      link: "text-white underline-offset-4 hover:underline"
+      default: "bg-gray-900 text-[var(--white)] hover:bg-gray-800",
+      destructive: "bg-red-600 text-[var(--white)] hover:bg-red-700",
+      outline: "border border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)]",
+      secondary: "bg-gray-800 text-[var(--white)] hover:bg-gray-700",
+      ghost: "hover:bg-[var(--white)]/10 text-[var(--white)]",
+      link: "text-[var(--white)] underline-offset-4 hover:underline"
     }
 
     const sizeClasses = {

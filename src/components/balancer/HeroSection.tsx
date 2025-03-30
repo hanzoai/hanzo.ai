@@ -15,13 +15,13 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <a href="/pricing" className="flex items-center text-gray-300 hover:text-white transition-colors">
+            <a href="/pricing" className="flex items-center text-neutral-300 hover:text-[var(--white)] transition-colors">
               <Button variant="ghost" size="sm" className="gap-2 rounded-full">
                 <FileText className="h-4 w-4" />
                 Pricing
               </Button>
             </a>
-            <a href="https://docs.hanzo.ai/balancer" className="flex items-center text-gray-300 hover:text-white transition-colors">
+            <a href="https://docs.hanzo.ai/balancer" className="flex items-center text-neutral-300 hover:text-[var(--white)] transition-colors">
               <Button variant="ghost" size="sm" className="gap-2 rounded-full">
                 <BookOpen className="h-4 w-4" />
                 Docs
@@ -49,7 +49,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             Simplify and automate the discovery, routing, and load balancing of microservices.
           </motion.p>
@@ -62,21 +62,21 @@ const HeroSection = () => {
           >
             <Button 
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full py-6"
+              className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] rounded-full py-6"
             >
               <span className="py-1 leading-relaxed">GET STARTED</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-white/10 rounded-full py-6"
+              className="border-gray-600 text-[var(--white)] hover:bg-[var(--white)]/10 rounded-full py-6"
             >
               <span className="py-1 leading-relaxed">Start Free Trial</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-gray-600 text-white hover:bg-white/10 rounded-full py-6"
+              className="border-gray-600 text-[var(--white)] hover:bg-[var(--white)]/10 rounded-full py-6"
             >
               <span className="py-1 leading-relaxed">Request Demo</span>
             </Button>
@@ -85,19 +85,19 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">3.2B+</h3>
-              <p className="text-gray-400">Downloads</p>
+              <p className="text-neutral-400">Downloads</p>
             </div>
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">47K+</h3>
-              <p className="text-gray-400">Stars on Github</p>
+              <p className="text-neutral-400">Stars on Github</p>
             </div>
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">900+</h3>
-              <p className="text-gray-400">Contributors</p>
+              <p className="text-neutral-400">Contributors</p>
             </div>
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">Top 15</h3>
-              <p className="text-gray-400">on Docker hub</p>
+              <p className="text-neutral-400">on Docker hub</p>
             </div>
           </div>
         </div>

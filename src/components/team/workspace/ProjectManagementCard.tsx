@@ -21,10 +21,10 @@ const ProjectManagementCard = () => {
         </Badge>
       </div>
       <div className="p-4">
-        <div className="bg-black/60 rounded-lg p-4">
+        <div className="bg-[var(--black)]/60 rounded-lg p-4">
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
-              <h3 className="font-medium text-white">Website Redesign</h3>
+              <h3 className="font-medium text-[var(--white)]">Website Redesign</h3>
               <Badge className="ml-2 bg-blue-600/20 text-blue-400 border-blue-500/30">In Progress</Badge>
             </div>
             <div className="flex space-x-2">

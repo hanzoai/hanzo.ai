@@ -33,7 +33,7 @@ const suiteItems = [
 
 const PaymentsSuite = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ const PaymentsSuite = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Comprehensive Payments Infrastructure</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Payments provides the essential tools needed to process payments and optimize your financial operations, 
             fully integrated into your Hanzo workflow.
           </p>
@@ -71,7 +71,7 @@ const PaymentsSuite = () => {
                   {item.icon}
                 </div>
                 <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
-                <p className="text-gray-400">{item.description}</p>
+                <p className="text-neutral-400">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -115,7 +115,7 @@ const PaymentsSuite = () => {
                     ></div>
                   ))}
                 </div>
-                <div className="text-sm text-gray-400">Last 7 days</div>
+                <div className="text-sm text-neutral-400">Last 7 days</div>
               </div>
             </div>
           </div>

@@ -23,8 +23,8 @@ const UseCaseCard: React.FC<UseCaseCardProps> = ({ icon: Icon, title, descriptio
       <div className="bg-purple-900/20 h-10 w-10 rounded-full flex items-center justify-center mb-4">
         <Icon className="h-5 w-5 text-purple-400" />
       </div>
-      <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-      <p className="text-gray-400 text-sm">{description}</p>
+      <h3 className="text-lg font-semibold text-[var(--white)] mb-2">{title}</h3>
+      <p className="text-neutral-400 text-sm">{description}</p>
     </motion.div>
   );
 };
@@ -77,10 +77,10 @@ const UseCases = () => {
             <Heart className="h-4 w-4 text-purple-400 mr-2" />
             <span className="text-sm text-purple-300">Popular Use Cases</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Build Interactive Experiences
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Hanzo Realtime powers a wide range of applications that demand immediate data updates
           </p>
         </motion.div>

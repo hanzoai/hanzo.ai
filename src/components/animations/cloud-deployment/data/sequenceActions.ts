@@ -24,7 +24,7 @@ export const createGithubNode = (
       type: "github",
       position: { x: 25, y: 18 },
       iconType: "github",
-      iconProps: { className: "h-5 w-5 text-gray-300" },
+      iconProps: { className: "h-5 w-5 text-neutral-300" },
       label: "backend",
       active: true,
       status: "pending",

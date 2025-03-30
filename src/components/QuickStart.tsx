@@ -5,25 +5,25 @@ import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 
 const quickApps = [{
-  icon: <Bot className="h-6 w-6 text-white" />,
+  icon: <Bot className="h-6 w-6 text-[var(--white)]" />,
   title: "AI Chat Assistant",
   description: "Launch your own ChatGPT-style AI assistant",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(96,165,250,0.3)]",
   borderColor: "group-hover:border-blue-400/30"
 }, {
-  icon: <ShoppingCart className="h-6 w-6 text-white" />,
+  icon: <ShoppingCart className="h-6 w-6 text-[var(--white)]" />,
   title: "E-commerce Store",
   description: "Start selling products online in minutes",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(74,222,128,0.3)]",
   borderColor: "group-hover:border-green-400/30"
 }, {
-  icon: <AppWindow className="h-6 w-6 text-white" />,
+  icon: <AppWindow className="h-6 w-6 text-[var(--white)]" />,
   title: "Web3 dApp",
   description: "Build a decentralized application",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.3)]",
   borderColor: "group-hover:border-purple-400/30"
 }, {
-  icon: <Rocket className="h-6 w-6 text-white" />,
+  icon: <Rocket className="h-6 w-6 text-[var(--white)]" />,
   title: "Custom App",
   description: "Start from scratch with our App Builder",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",
@@ -46,7 +46,7 @@ const QuickStart = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-12 relative overflow-hidden bg-black"
+      className="py-12 relative overflow-hidden bg-[var(--black)]"
     >
       {/* Parallax background */}
       <motion.div 
@@ -70,11 +70,11 @@ const QuickStart = () => {
           className="text-center mb-12"
           style={{ y: titleY }}
         >
-          <h2 className="text-3xl font-display text-white mb-4">
+          <h2 className="text-3xl font-display text-[var(--white)] mb-4">
             Quick Launch Apps
           </h2>
           <motion.p 
-            className="text-lg text-gray-400"
+            className="text-lg text-neutral-400"
             style={{ y: descriptionY }}
           >
             Get started quickly with our pre-built templates
@@ -123,12 +123,12 @@ const QuickStart = () => {
             }} 
             className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
                 border border-white/5 transition-all duration-50 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
-              <div className="p-3 rounded-lg w-fit bg-white/5 text-white mx-auto">
+              <div className="p-3 rounded-lg w-fit bg-[var(--white)]/5 text-[var(--white)] mx-auto">
                 {app.icon}
               </div>
               
-              <p className="mt-2 text-gray-400 text-center">{app.description}</p>
-              <Button className="mt-4 w-full bg-white/5 hover:bg-white/10 text-white border border-white/10
+              <p className="mt-2 text-neutral-400 text-center">{app.description}</p>
+              <Button className="mt-4 w-full bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)] border border-white/10
                   transition-all duration-300 hover:border-white/20" variant="outline">
                 Launch App
                 <Rocket className="ml-2 h-4 w-4" />

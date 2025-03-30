@@ -22,7 +22,7 @@ const AIAnalysisDemo = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="col-span-2">
-            <div className="bg-black/50 rounded-lg p-5 border border-gray-800">
+            <div className="bg-[var(--black)]/50 rounded-lg p-5 border border-gray-800">
               <h4 className="text-lg font-medium mb-4">Traffic Anomaly Detection</h4>
               <div className="h-60 relative">
                 {/* Base line chart */}
@@ -66,7 +66,7 @@ const AIAnalysisDemo = () => {
                 
                 {/* Anomaly detection popup */}
                 <motion.div
-                  className="absolute top-4 right-8 bg-red-900/80 text-white text-xs rounded px-3 py-2 border border-red-700"
+                  className="absolute top-4 right-8 bg-red-900/80 text-[var(--white)] text-xs rounded px-3 py-2 border border-red-700"
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -81,7 +81,7 @@ const AIAnalysisDemo = () => {
           </div>
           
           <div className="space-y-4">
-            <div className="bg-black/50 rounded-lg p-5 border border-gray-800">
+            <div className="bg-[var(--black)]/50 rounded-lg p-5 border border-gray-800">
               <h4 className="text-lg font-medium mb-3">AI Insights</h4>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -92,15 +92,15 @@ const AIAnalysisDemo = () => {
               >
                 <div className="text-sm">
                   <div className="font-medium text-red-400">Traffic Anomaly</div>
-                  <div className="text-gray-400">Unusual spike detected at 14:32 UTC</div>
+                  <div className="text-neutral-400">Unusual spike detected at 14:32 UTC</div>
                 </div>
                 <div className="text-sm">
                   <div className="font-medium text-green-400">Conversion Opportunity</div>
-                  <div className="text-gray-400">Checkout abandonment 23% higher on mobile</div>
+                  <div className="text-neutral-400">Checkout abandonment 23% higher on mobile</div>
                 </div>
                 <div className="text-sm">
                   <div className="font-medium text-blue-400">Performance Alert</div>
-                  <div className="text-gray-400">API latency increased by 150ms</div>
+                  <div className="text-neutral-400">API latency increased by 150ms</div>
                 </div>
               </motion.div>
             </div>
@@ -113,10 +113,10 @@ const AIAnalysisDemo = () => {
               className="bg-purple-900/20 rounded-lg p-5 border border-purple-900/30"
             >
               <h4 className="text-lg font-medium mb-2">AI Recommendation</h4>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-neutral-300">
                 Based on the traffic pattern analysis, we recommend scaling your infrastructure in the US-West region for the next 3 hours.
               </p>
-              <button className="mt-3 text-sm bg-purple-700 hover:bg-purple-600 text-white px-3 py-1 rounded">
+              <button className="mt-3 text-sm bg-purple-700 hover:bg-purple-600 text-[var(--white)] px-3 py-1 rounded">
                 Apply Recommendation
               </button>
             </motion.div>

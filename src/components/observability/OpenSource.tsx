@@ -45,7 +45,7 @@ const OpenSource = () => {
             <Github className="h-7 w-7 text-purple-400" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Proudly Open Source</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Transparency is at the core of Hanzo Observability. Deploy it locally, self-host on your own infrastructure, or leverage our managed cloud solution.
           </p>
         </motion.div>
@@ -87,16 +87,16 @@ const OpenSource = () => {
                 </motion.span>
                 <span className="text-4xl font-bold">{item.suffix}</span>
               </div>
-              <div className="text-gray-400 mt-2">{item.label}</div>
+              <div className="text-neutral-400 mt-2">{item.label}</div>
             </motion.div>
           ))}
         </div>
         
         <div className="flex justify-center gap-4">
-          <Button variant="outline" size="lg" className="text-white border-white/20 hover:bg-white/10">
+          <Button variant="outline" size="lg" className="text-[var(--white)] border-white/20 hover:bg-[var(--white)]/10">
             <Github className="mr-2 h-5 w-5" /> Read Documentation
           </Button>
-          <Button variant="outline" size="lg" className="text-white border-white/20 hover:bg-white/10">
+          <Button variant="outline" size="lg" className="text-[var(--white)] border-white/20 hover:bg-[var(--white)]/10">
             <Github className="mr-2 h-5 w-5" /> View GitHub Repository
           </Button>
         </div>

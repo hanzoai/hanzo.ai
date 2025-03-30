@@ -1,3 +1,4 @@
+@import 'tailwindcss';
 
 /* Main CSS file that imports all other CSS files */
 @import "./base.css";

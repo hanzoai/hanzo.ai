@@ -20,7 +20,7 @@ const Compliance = () => {
             <div className="mb-8 md:mb-0">
               <div className="flex items-center">
                 <Shield className="h-6 w-6 text-blue-400 mr-3" />
-                <h2 className="text-2xl font-semibold text-white">Secure & Compliant</h2>
+                <h2 className="text-2xl font-semibold text-[var(--white)]">Secure & Compliant</h2>
               </div>
               <div className="mt-4 flex flex-wrap gap-4">
                 <div className="flex items-center bg-blue-900/20 border border-blue-800/50 rounded-md px-3 py-1">
@@ -39,8 +39,8 @@ const Compliance = () => {
                 <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/hanzo-ai-icon.png" alt="Hanzo Base Logo" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Hanzo Base</h3>
-                <p className="text-gray-400">Secure. Scalable. Open Source.</p>
+                <h3 className="text-xl font-bold text-[var(--white)]">Hanzo Base</h3>
+                <p className="text-neutral-400">Secure. Scalable. Open Source.</p>
               </div>
             </div>
           </div>
@@ -54,31 +54,31 @@ const Compliance = () => {
           >
             <div className="flex items-center mb-4">
               <Server className="h-6 w-6 text-purple-400 mr-3" />
-              <h3 className="text-xl font-semibold text-white">Global Data Regions</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">Global Data Regions</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
               <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
                 <h4 className="font-medium text-blue-300 mb-2">United States (US)</h4>
-                <p className="text-gray-300 text-sm mb-1">MCI - Kansas City</p>
-                <p className="text-gray-400 text-xs">Hanzo Cloud region: us-central-1</p>
+                <p className="text-neutral-300 text-sm mb-1">MCI - Kansas City</p>
+                <p className="text-neutral-400 text-xs">Hanzo Cloud region: us-central-1</p>
               </div>
               
               <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
                 <h4 className="font-medium text-blue-300 mb-2">Canada (CA)</h4>
-                <p className="text-gray-300 text-sm mb-1">YVR - Vancouver</p>
-                <p className="text-gray-400 text-xs">Hanzo Cloud region: ca-west-1</p>
+                <p className="text-neutral-300 text-sm mb-1">YVR - Vancouver</p>
+                <p className="text-neutral-400 text-xs">Hanzo Cloud region: ca-west-1</p>
               </div>
               
               <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
                 <h4 className="font-medium text-blue-300 mb-2">European Union (EU)</h4>
-                <p className="text-gray-300 text-sm mb-1">BCN - Barcelona</p>
-                <p className="text-gray-400 text-xs">Hanzo Cloud region: eu-west-1</p>
+                <p className="text-neutral-300 text-sm mb-1">BCN - Barcelona</p>
+                <p className="text-neutral-400 text-xs">Hanzo Cloud region: eu-west-1</p>
               </div>
             </div>
             
             <div className="mt-6 text-center">
-              <Button variant="outline" className="bg-blue-900/30 border-blue-700/50 hover:bg-blue-800/50 text-white">
+              <Button variant="outline" className="bg-blue-900/30 border-blue-700/50 hover:bg-blue-800/50 text-[var(--white)]">
                 <Link to="/security">Learn More About Our Security</Link>
               </Button>
             </div>
