@@ -1,3 +1,4 @@
+
 import { HexagramLine } from '../svg/IChingHexagram';
 
 export interface IChing {
@@ -869,4 +870,205 @@ export const ichingPrinciples: IChing[] = [
   {
     id: 72,
     name: "Human-Centered Design",
-    chinese
+    chineseName: "人",
+    pinyin: "rén",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Prioritize human experience",
+    description: "Create systems that serve human needs and capabilities first."
+  },
+  {
+    id: 73,
+    name: "Distributed Systems",
+    chineseName: "分",
+    pinyin: "fēn",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Create resilient networks",
+    description: "Design systems with no single point of failure."
+  },
+  {
+    id: 74,
+    name: "Energy Efficiency",
+    chineseName: "能",
+    pinyin: "néng",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Optimize resource usage",
+    description: "Minimize computational waste while maximizing output."
+  },
+  {
+    id: 75,
+    name: "Knowledge Synthesis",
+    chineseName: "知",
+    pinyin: "zhī",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Integrate diverse insights",
+    description: "Create coherent understanding from disparate information sources."
+  },
+  {
+    id: 76,
+    name: "Emergent Intelligence",
+    chineseName: "智",
+    pinyin: "zhì",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
+    ],
+    principle: "Foster collective wisdom",
+    description: "Create systems where the whole exceeds the sum of parts."
+  },
+  {
+    id: 77,
+    name: "Transparent Reasoning",
+    chineseName: "晰",
+    pinyin: "xī",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Explain decision processes",
+    description: "Make AI reasoning clear and understandable to humans."
+  },
+  {
+    id: 78,
+    name: "Algorithmic Fairness",
+    chineseName: "公",
+    pinyin: "gōng",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Ensure equitable outcomes",
+    description: "Design systems that avoid systemic bias and discrimination."
+  },
+  {
+    id: 79,
+    name: "Learning Capacity",
+    chineseName: "学",
+    pinyin: "xué",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Develop adaptive growth",
+    description: "Create systems that improve through experience and feedback."
+  },
+  {
+    id: 80,
+    name: "Contextual Awareness",
+    chineseName: "境",
+    pinyin: "jìng",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
+    ],
+    principle: "Understand situational nuance",
+    description: "Respond appropriately to specific circumstances and environments."
+  },
+  {
+    id: 81,
+    name: "Graceful Degradation",
+    chineseName: "退",
+    pinyin: "tuì",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Fail safely and predictably",
+    description: "Ensure systems maintain core functionality even when compromised."
+  },
+  {
+    id: 82,
+    name: "Technical Debt",
+    chineseName: "债",
+    pinyin: "zhài",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Balance immediate needs with future costs",
+    description: "Recognize and manage compromises in engineering quality."
+  },
+  {
+    id: 83,
+    name: "Effective Abstraction",
+    chineseName: "象",
+    pinyin: "xiàng",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Hide appropriate complexity",
+    description: "Create intuitive interfaces to complex systems."
+  },
+  {
+    id: 84,
+    name: "Continuous Integration",
+    chineseName: "合",
+    pinyin: "hé",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Merge improvements frequently",
+    description: "Maintain dynamic equilibrium between stability and innovation."
+  },
+  {
+    id: 85,
+    name: "Semantic Understanding",
+    chineseName: "义",
+    pinyin: "yì",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Grasp meaning beyond syntax",
+    description: "Develop nuanced comprehension of human communication."
+  },
+  {
+    id: 86,
+    name: "Multimodal Perception",
+    chineseName: "觉",
+    pinyin: "jué",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Integrate diverse sensory inputs",
+    description: "Synthesize understanding across multiple information channels."
+  },
+  {
+    id: 87,
+    name: "Collaborative Intelligence",
+    chineseName: "协",
+    pinyin: "xié",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Enhance human capabilities",
+    description: "Design AI systems that complement rather than replace human intelligence."
+  },
+  {
+    id: 88,
+    name: "Harmonic Coherence",
+    chineseName: "和",
+    pinyin: "hé",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Create balanced wholeness",
+    description: "Integrate all principles into coherent, ethical AI systems."
+  }
+];
