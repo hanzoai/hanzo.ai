@@ -172,7 +172,7 @@ const PrinciplesPreview = () => {
     {
       id: "63",
       name: "After Completion",
-      chineseName: "既济",
+      chineseName: "既濟",
       pinyin: "jì jì",
       principle: "Balance attained leads to new beginnings",
       wisdomText: "After completion, vigilance remains essential. Even perfect systems require maintenance and evolution. The wise engineer celebrates success briefly, then prepares for the next transformation that inevitability approaches.",
