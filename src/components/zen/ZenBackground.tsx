@@ -1,50 +1,68 @@
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const ZenBackground: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    // Set canvas size
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    // Initialize canvas size
+    setCanvasSize();
+    
+    // Update canvas size on resize
+    window.addEventListener('resize', setCanvasSize);
+    
+    // Grid properties
+    const gridSpacing = 50;
+    const dotSize = 1;
+    
+    // Draw the grid
+    const drawGrid = () => {
+      if (!ctx) return;
+      
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(100, 100, 100, 0.05)';
+      
+      // Draw horizontal lines
+      for (let y = 0; y < canvas.height; y += gridSpacing) {
+        for (let x = 0; x < canvas.width; x += gridSpacing) {
+          ctx.fillRect(x, y, dotSize, dotSize);
+        }
+      }
+    };
+    
+    // Initial draw
+    drawGrid();
+    
+    // Resize handler
+    const handleResize = () => {
+      setCanvasSize();
+      drawGrid();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Subtle dot pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at center, rgba(255,255,255,0.1) 0.5px, transparent 0.5px)
-          `,
-          backgroundSize: '24px 24px'
-        }}
-      />
-      
-      {/* Ultra-subtle gradient overlays */}
-      <div className="absolute top-0 left-0 right-0 h-[30vh] bg-gradient-to-b from-gray-950/70 to-transparent" />
-      <div className="absolute left-0 bottom-0 right-0 h-[30vh] bg-gradient-to-t from-gray-950/70 to-transparent" />
-      
-      {/* Depth radial gradient */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(circle at 50% 30%, rgba(15,15,15,0), rgba(0,0,0,1))'
-        }}
-      />
-      
-      {/* Subtle grain texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E")`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '128px 128px'
-        }}
-      />
-      
-      {/* Vignette effect */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          boxShadow: 'inset 0 0 180px rgba(0,0,0,0.9)'
-        }}
-      />
-    </div>
+    <canvas 
+      ref={canvasRef} 
+      className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none opacity-50"
+    />
   );
 };
 

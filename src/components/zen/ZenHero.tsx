@@ -1,99 +1,86 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { Code, Database, Server, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import TaijiSymbol from "./svg/TaijiSymbol";
 
 const ZenHero = () => {
-  const [currentPrinciple, setCurrentPrinciple] = useState(0);
-  const principles = [
-    "Before code, there is concept.",
-    "Simplicity is the ultimate sophistication.",
-    "The way is in training.",
-    "Build with purpose, not with haste.",
-    "In silence, find clarity.",
-    "Each line of code should be necessary."
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPrinciple((prev) => (prev + 1) % principles.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-4 py-24 relative">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle at 50% 50%, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 70%)"
-        }}
-      />
-      
-      <div className="max-w-4xl mx-auto text-center z-10 relative">
-        <motion.div 
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-8"
         >
-          <TaijiSymbol size={80} className="mx-auto mb-8" animate={true} />
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
-              The Way of Hanzo
-            </span>
+          <div className="flex justify-center mb-8 space-x-8">
+            <Code className="w-12 h-12 text-neutral-500" />
+            <Database className="w-12 h-12 text-neutral-500" />
+            <Server className="w-12 h-12 text-neutral-500" />
+            <Cpu className="w-12 h-12 text-neutral-500" />
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
+            The Zen of Hanzo
           </h1>
           
-          <motion.div
-            key={currentPrinciple}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.5 }}
-            className="h-12 flex items-center justify-center"
-          >
-            <p className="text-xl text-neutral-400 italic">"{principles[currentPrinciple]}"</p>
-          </motion.div>
-          
-          <p className="text-neutral-500 max-w-2xl mx-auto mt-8">
-            Build software with enlightened engineering. Hanzo's platform embodies 
-            88 principles that guide the creation of resilient, scalable systems.
+          <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Engineering enlightenment through our AI Cloud and Developer Experience platform.
+            Guided by ancient wisdom, powered by cutting-edge technology.
           </p>
-        </motion.div>
-        
-        <div className="mt-12 space-y-6">
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          
+          <motion.div 
+            className="w-20 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mx-auto mb-8"
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          />
+          
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Button 
-              variant="outline" 
-              className="bg-[var(--black)]/50 border border-white/10 text-[var(--white)] hover:bg-[var(--white)]/10"
+              variant="outline"
+              className="border-gray-800 text-neutral-400 hover:text-white hover:border-gray-700"
             >
-              Explore Platform
+              <a href="https://github.com/hanzo-io/platform" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
             </Button>
             <Button 
-              className="bg-[var(--white)]/10 hover:bg-[var(--white)]/20 text-[var(--white)] border border-white/20"
+              className="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white"
             >
-              Learn Principles
+              Explore AI Cloud
             </Button>
           </div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-            className="text-neutral-600 mt-16"
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="flex justify-center"
+        >
+          <a 
+            href="#principles" 
+            className="group flex items-center gap-2 px-4 py-2 rounded-full text-neutral-400 hover:text-white transition-colors"
           >
-            <a href="#principles" className="flex flex-col items-center">
-              <span className="mb-2 text-sm">Discover more</span>
-              <ArrowDown className="animate-bounce w-5 h-5" />
-            </a>
-          </motion.div>
-        </div>
+            <span>Explore Principles</span>
+            <svg 
+              className="w-4 h-4 transform group-hover:translate-y-1 transition-transform" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path 
+                d="M12 4L12 20M12 20L18 14M12 20L6 14" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
