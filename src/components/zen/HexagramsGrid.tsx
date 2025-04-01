@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import InteractiveHexagram, { HexagramDetails } from "./InteractiveHexagram";
+import InteractiveHexagram from "./InteractiveHexagram";
 import HexagramDetail from "./HexagramDetail";
 import { ichingPrinciples } from "./data/ichingPrinciples";
+import { HexagramDetails } from "./types/hexagram";
 
 interface HexagramsGridProps {
   title?: string;

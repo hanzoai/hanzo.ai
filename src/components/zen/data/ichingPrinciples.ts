@@ -1,3 +1,4 @@
+
 import { HexagramDetails } from "../types/hexagram";
 
 // Sample I Ching hexagrams with engineering principles
