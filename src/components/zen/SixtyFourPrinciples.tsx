@@ -71,9 +71,14 @@ const SixtyFourPrinciples: React.FC<SixtyFourPrinciplesProps> = ({
                     id: `empty-${index}`,
                     name: `Principle ${index + 1}`,
                     chineseName: "未定义",
+                    pinyin: "",
                     lines: [
-                      { type: "solid" }, { type: "solid" }, { type: "solid" },
-                      { type: "broken" }, { type: "broken" }, { type: "broken" }
+                      { type: "solid" as const }, 
+                      { type: "solid" as const }, 
+                      { type: "solid" as const },
+                      { type: "broken" as const }, 
+                      { type: "broken" as const }, 
+                      { type: "broken" as const }
                     ],
                     meaning: "Principle to be defined",
                     principle: "Engineering principle to be determined"

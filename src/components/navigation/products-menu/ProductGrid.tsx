@@ -25,7 +25,7 @@ const ProductGrid = ({ items }: ProductGridProps) => {
             }`} 
           />
           <div className="flex-1">
-            <Link to={item.link} className="text-neutral-300 group-hover:text-[var(--white)] font-medium">
+            <Link to={item.href} className="text-neutral-300 group-hover:text-[var(--white)] font-medium">
               {item.name}
             </Link>
             <div className="text-sm text-neutral-500">{item.description}</div>

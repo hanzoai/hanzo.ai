@@ -3,24 +3,26 @@ import React from "react";
 import MainSection from "./feature-showcase/MainSection";
 import AICloudSection from "./feature-showcase/AICloudSection";
 import DXPlatformSection from "./feature-showcase/DXPlatformSection";
+import { Cloud, Database, Server } from "lucide-react";
+import { ProductItem } from "../navigation/products-menu/types";
 
-const mockProducts = [
+const mockProducts: ProductItem[] = [
   {
     name: "AI Cloud",
     description: "Infrastructure optimized for AI workloads",
-    icon: "Cloud",
+    icon: Cloud,
     href: "/cloud"
   },
   {
     name: "Vector DB",
     description: "High-performance vector database",
-    icon: "Database",
+    icon: Database,
     href: "/vector"
   },
   {
     name: "Platform",
     description: "Open source AI platform",
-    icon: "Server",
+    icon: Server,
     href: "/platform"
   }
 ];
