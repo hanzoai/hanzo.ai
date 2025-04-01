@@ -1,6 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { heroData } from "./hero-data";
 
 interface HeroDescriptionProps {
   titleAnimationComplete: boolean;
@@ -10,12 +11,11 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({ titleAnimationComplet
   return (
     <motion.p
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="text-xl text-neutral-300 max-w-3xl mx-auto mt-6"
+      animate={titleAnimationComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-8"
     >
-      A complete platform for developers to build, deploy, and scale AI applications
-      with enterprise-grade reliability and open-source transparency.
+      {heroData.description}
     </motion.p>
   );
 };

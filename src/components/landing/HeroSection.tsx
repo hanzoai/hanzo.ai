@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import { HeroTitle, HeroDescription, HeroButtons } from "./hero";
+import { HeroTitle, HeroDescription, HeroButtons, HeroFeatures } from "./hero";
 
 const HeroSection: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -48,12 +48,17 @@ const HeroSection: React.FC = () => {
         }}
       />
       
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="h-full w-full" style={{ 
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)',
-          backgroundSize: '40px 40px' 
-        }} />
+      {/* Cloud visualization in background - subtle SVG pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="cloud-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M20,40 Q30,20 40,40 Q55,20 70,40 Q85,20 100,40 L100,70 Q85,90 70,70 Q55,90 40,70 Q30,90 20,70 Z" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="0.5" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#cloud-pattern)" />
+        </svg>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -68,6 +73,8 @@ const HeroSection: React.FC = () => {
         <HeroDescription titleAnimationComplete={titleAnimationComplete} />
         
         <HeroButtons titleAnimationComplete={titleAnimationComplete} />
+        
+        <HeroFeatures titleAnimationComplete={titleAnimationComplete} />
       </div>
     </section>
   );

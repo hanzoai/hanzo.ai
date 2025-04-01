@@ -1,6 +1,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import ChromeText from "@/components/ui/chrome-text";
+import { heroData } from "./hero-data";
 
 interface HeroTitleProps {
   mousePosition: { x: number; y: number };
@@ -15,36 +17,41 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
   containerRef,
   onAnimationComplete,
   animationComplete,
-  onTitleAnimationComplete,
+  onTitleAnimationComplete
 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      onAnimationComplete={() => {
-        onAnimationComplete();
-        onTitleAnimationComplete();
-      }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      onAnimationComplete={onAnimationComplete}
+      className="mb-8"
     >
-      <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
-        Open Source AI Engineering Platform
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6"
+      >
+        Enterprise-Grade · Open Source · AI-Native
+      </motion.div>
       
-      <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300">
-          Build As Fast
-        </span>
-        <br />
-        <span 
-          className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        onAnimationComplete={onTitleAnimationComplete}
+      >
+        <ChromeText 
+          as="h1" 
+          className="text-5xl md:text-7xl font-bold mb-6"
           style={{
             backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
           }}
         >
-          As You Think
-        </span>
-      </h1>
+          {heroData.title}
+        </ChromeText>
+      </motion.div>
     </motion.div>
   );
 };
