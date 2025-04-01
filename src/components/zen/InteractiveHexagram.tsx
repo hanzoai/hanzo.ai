@@ -1,42 +1,94 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import IChingHexagram from "./svg/IChingHexagram";
 import { HexagramDetails } from "./types/hexagram";
 
 interface InteractiveHexagramProps {
   hexagram: HexagramDetails;
   index: number;
   onClick: (hexagram: HexagramDetails) => void;
-  isSelected: boolean;
+  isSelected?: boolean;
+  isFlipped?: boolean;
 }
 
-const InteractiveHexagram: React.FC<InteractiveHexagramProps> = ({ 
-  hexagram, 
-  index, 
-  onClick, 
-  isSelected 
+const InteractiveHexagram: React.FC<InteractiveHexagramProps> = ({
+  hexagram,
+  index,
+  onClick,
+  isSelected = false,
+  isFlipped = false
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, delay: (index % 24) * 0.02 }}
-      className={`flex flex-col items-center justify-center aspect-square cursor-pointer group transition-all
-        ${isSelected 
-          ? 'bg-gray-800/70 border-gray-700 shadow-lg' 
-          : 'bg-gray-900/40 border-gray-800/50 hover:bg-gray-800/40 hover:border-gray-800'
-        } border rounded-md p-1`}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ 
+        opacity: 1, 
+        scale: 1,
+        rotateY: isFlipped ? 180 : 0
+      }}
+      whileHover={{ scale: 1.05 }}
+      transition={{ 
+        duration: 0.3, 
+        delay: index * 0.01,
+        rotateY: { duration: 0.6 }
+      }}
+      className={`
+        aspect-square 
+        flex flex-col items-center justify-center 
+        cursor-pointer 
+        rounded-md
+        bg-gray-900/50
+        backdrop-blur-sm
+        border
+        p-1 
+        ${isSelected ? 'border-purple-500' : 'border-gray-800/50'}
+        ${isSelected ? 'shadow-glow' : ''}
+        preserve-3d
+        perspective-1000
+      `}
       onClick={() => onClick(hexagram)}
+      style={{
+        transformStyle: "preserve-3d"
+      }}
     >
-      <div className="text-xs text-neutral-500 mb-1">{hexagram.id}</div>
-      <IChingHexagram 
-        lines={hexagram.lines} 
-        size={28} 
-        className={`${isSelected ? 'text-white' : 'text-neutral-400 group-hover:text-neutral-300'} transition-colors`} 
-      />
-      <div className="mt-1 text-[10px] text-center text-neutral-500 group-hover:text-neutral-400 transition-colors overflow-hidden truncate w-full">
-        {hexagram.chineseName}
+      <div className="relative w-full h-full" style={{ 
+        transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+        transformStyle: "preserve-3d",
+        transition: "transform 0.6s"
+      }}>
+        {/* Front side */}
+        <div className="absolute w-full h-full flex flex-col items-center justify-center backface-hidden">
+          <div className="flex flex-col gap-1 items-center justify-center">
+            {hexagram.lines.map((line, lineIndex) => (
+              <div 
+                key={`${hexagram.id}-line-${lineIndex}`} 
+                className={`
+                  ${line.type === "solid" ? "w-full h-1" : "flex justify-between w-full"}
+                  ${isSelected ? "bg-purple-500" : "bg-gray-400"}
+                `}
+              >
+                {line.type === "broken" && (
+                  <>
+                    <div className={`w-[45%] h-1 ${isSelected ? "bg-purple-500" : "bg-gray-400"}`}></div>
+                    <div className={`w-[45%] h-1 ${isSelected ? "bg-purple-500" : "bg-gray-400"}`}></div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-1 text-[8px] text-center text-gray-400">
+            {hexagram.id}
+          </div>
+        </div>
+        
+        {/* Back side */}
+        <div className="absolute w-full h-full flex flex-col items-center justify-center backface-hidden"
+          style={{ transform: "rotateY(180deg)" }}>
+          <div className="text-[8px] font-bold text-center text-purple-300 line-clamp-2 p-1">
+            {hexagram.name}
+          </div>
+        </div>
       </div>
     </motion.div>
   );
