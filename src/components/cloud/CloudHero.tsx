@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Server, Globe, Zap } from "lucide-react";
 import IChingHexagram from "@/components/zen/svg/IChingHexagram";
+import { HexagramLine } from "@/components/zen/types/hexagram";
 
 const CloudHero = () => {
   // Hexagram for Water (坎 / kǎn) - Principle of Adaptability
-  const adaptabilityHexagram = [
+  const adaptabilityHexagram: HexagramLine[] = [
     { type: "broken" }, { type: "solid" }, { type: "broken" },
     { type: "broken" }, { type: "solid" }, { type: "broken" }
   ];

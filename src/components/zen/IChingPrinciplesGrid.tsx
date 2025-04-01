@@ -58,7 +58,7 @@ const IChingPrinciplesGrid: React.FC<IChingPrinciplesGridProps> = ({
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: (index % 16) * 0.05 }}
                       className="flex flex-col items-center justify-center p-2 border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50 rounded-md transition-all aspect-square cursor-pointer group"
-                      title={`${hexagram.id}. ${hexagram.name} (${hexagram.chineseName} - ${hexagram.pinyin}): ${hexagram.principle}`}
+                      title={`${hexagram.id}. ${hexagram.name} (${hexagram.chineseName}${hexagram.pinyin ? ` - ${hexagram.pinyin}` : ''}): ${hexagram.principle}`}
                     >
                       <div className="mb-2 text-xs text-neutral-500">{hexagram.id}</div>
                       <IChingHexagram lines={hexagram.lines} size={32} className="text-[var(--white)] mb-2" />

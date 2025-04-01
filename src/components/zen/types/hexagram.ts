@@ -10,4 +10,5 @@ export interface HexagramDetails {
   lines: HexagramLine[];
   meaning: string;
   principle?: string;
+  pinyin?: string;
 }

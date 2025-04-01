@@ -4,6 +4,7 @@ import { ArrowRight, Info, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import IChingHexagram from "./svg/IChingHexagram";
 import { principles } from "./data/zenPrinciples";
+import { HexagramLine } from "./types/hexagram";
 
 interface WisdomDialogProps {
   principle: {
@@ -11,7 +12,7 @@ interface WisdomDialogProps {
     chineseName: string;
     pinyin: string;
     principle: string;
-    lines: { type: string }[];
+    lines: HexagramLine[];
     wisdomText?: string;
   };
   isOpen: boolean;
@@ -83,7 +84,6 @@ const PrinciplesPreview = () => {
   const [selectedPrinciple, setSelectedPrinciple] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  // Sample hexagrams to display
   const previewHexagrams = [
     {
       id: "1",
@@ -93,8 +93,8 @@ const PrinciplesPreview = () => {
       principle: "Initiate with clear vision",
       wisdomText: "The Creative is heaven's foundation. The master engineer builds with vision that transcends the immediate, seeing potential where others perceive only obstacles. In initiating new endeavors, clarity of purpose illuminates the path forward.",
       lines: [
-        { type: "solid" }, { type: "solid" }, { type: "solid" },
-        { type: "solid" }, { type: "solid" }, { type: "solid" }
+        { type: "solid" as const }, { type: "solid" as const }, { type: "solid" as const },
+        { type: "solid" as const }, { type: "solid" as const }, { type: "solid" as const }
       ]
     },
     {
@@ -105,8 +105,8 @@ const PrinciplesPreview = () => {
       principle: "Nurture with patience",
       wisdomText: "The Receptive is earth's foundation. The enlightened developer understands that cultivation requires space and time. Success comes not from forcing growth, but from creating the conditions where innovation naturally flourishes.",
       lines: [
-        { type: "broken" }, { type: "broken" }, { type: "broken" },
-        { type: "broken" }, { type: "broken" }, { type: "broken" }
+        { type: "broken" as const }, { type: "broken" as const }, { type: "broken" as const },
+        { type: "broken" as const }, { type: "broken" as const }, { type: "broken" as const }
       ]
     },
     {
@@ -117,8 +117,8 @@ const PrinciplesPreview = () => {
       principle: "Unite teams through shared purpose",
       wisdomText: "When teams align with genuine purpose, productivity transforms from mere output to meaningful creation. The wise leader cultivates unity not through mandate but through shared vision that resonates with each individual's journey.",
       lines: [
-        { type: "broken" }, { type: "broken" }, { type: "broken" },
-        { type: "broken" }, { type: "broken" }, { type: "solid" }
+        { type: "broken" as const }, { type: "broken" as const }, { type: "broken" as const },
+        { type: "broken" as const }, { type: "broken" as const }, { type: "solid" as const }
       ]
     },
     {
@@ -129,8 +129,8 @@ const PrinciplesPreview = () => {
       principle: "Align interfaces for natural flow",
       wisdomText: "When heaven and earth commune, prosperity follows. In software, when interfaces align with natural user expectations, friction disappears and harmony emerges. Design not what you can, but what you should.",
       lines: [
-        { type: "broken" }, { type: "broken" }, { type: "broken" },
-        { type: "solid" }, { type: "solid" }, { type: "solid" }
+        { type: "broken" as const }, { type: "broken" as const }, { type: "broken" as const },
+        { type: "solid" as const }, { type: "solid" as const }, { type: "solid" as const }
       ]
     },
     {
@@ -141,8 +141,8 @@ const PrinciplesPreview = () => {
       principle: "Embrace continuous renewal",
       wisdomText: "After completion comes return; after complexity, simplicity. The cycle of renewal teaches that refactoring is not fixing what's broken, but honoring the natural evolution of code as understanding deepens.",
       lines: [
-        { type: "solid" }, { type: "broken" }, { type: "broken" },
-        { type: "broken" }, { type: "broken" }, { type: "broken" }
+        { type: "solid" as const }, { type: "broken" as const }, { type: "broken" as const },
+        { type: "broken" as const }, { type: "broken" as const }, { type: "broken" as const }
       ]
     },
     {
@@ -153,8 +153,8 @@ const PrinciplesPreview = () => {
       principle: "Bring clarity through documentation",
       wisdomText: "As the sun illuminates the earth, so does clarity illuminate understanding. Documentation is not an afterthought but a form of compassion for future developers and users who will walk the path you've cleared.",
       lines: [
-        { type: "broken" }, { type: "solid" }, { type: "solid" },
-        { type: "solid" }, { type: "solid" }, { type: "broken" }
+        { type: "broken" as const }, { type: "solid" as const }, { type: "solid" as const },
+        { type: "solid" as const }, { type: "solid" as const }, { type: "broken" as const }
       ]
     },
     {
@@ -165,8 +165,8 @@ const PrinciplesPreview = () => {
       principle: "Know when to refactor and simplify",
       wisdomText: "Strategic withdrawal is not defeat but wisdom. When complexity multiplies, the master engineer knows to step back, simplify, and create space for sustainable solutions to emerge naturally.",
       lines: [
-        { type: "solid" }, { type: "solid" }, { type: "solid" },
-        { type: "solid" }, { type: "solid" }, { type: "broken" }
+        { type: "solid" as const }, { type: "solid" as const }, { type: "solid" as const },
+        { type: "solid" as const }, { type: "solid" as const }, { type: "broken" as const }
       ]
     },
     {
@@ -177,8 +177,8 @@ const PrinciplesPreview = () => {
       principle: "Balance attained leads to new beginnings",
       wisdomText: "After completion, vigilance remains essential. Even perfect systems require maintenance and evolution. The wise engineer celebrates success briefly, then prepares for the next transformation that inevitability approaches.",
       lines: [
-        { type: "solid" }, { type: "broken" }, { type: "solid" },
-        { type: "broken" }, { type: "solid" }, { type: "broken" }
+        { type: "solid" as const }, { type: "broken" as const }, { type: "solid" as const },
+        { type: "broken" as const }, { type: "solid" as const }, { type: "broken" as const }
       ]
     }
   ];
