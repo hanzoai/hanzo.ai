@@ -292,7 +292,7 @@
   z-index: 99;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .menu-backdrop-overlay.visible {
@@ -303,29 +303,32 @@
 @keyframes menuSlideIn {
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 @keyframes menuSlideOut {
   from {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   to {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(0.98);
   }
 }
 
 .menu-content {
-  animation: menuSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  animation: menuSlideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.1s; /* Delay to let the blur effect start first */
 }
 
 .menu-content.exiting {
-  animation: menuSlideOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: menuSlideOut 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
