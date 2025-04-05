@@ -285,9 +285,6 @@
   50% {
     transform: translate(0, 10px);
   }
-  75% {
-    transform: translate(-5px, 5px);
-  }
 }
 
 .animate-float {
@@ -332,4 +329,18 @@
 
 .cursor-grabbing {
   cursor: grabbing;
+}
+
+/* Full-screen blur overlay for dropdown menus */
+.menu-backdrop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99;
+  pointer-events: none;
 }

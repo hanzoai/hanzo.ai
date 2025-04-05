@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import { NavigationButton } from "../NavigationButton";
 import { SolutionsContent } from "./SolutionsContent";
@@ -80,10 +81,13 @@ export const SolutionsMenu = () => {
       
       {open && (
         <>
+          {/* Full-screen blur backdrop */}
+          <div className="menu-backdrop-overlay" />
+          
           {/* Dropdown menu */}
-          <div className="fixed top-[var(--header-height)] left-0 z-50 w-screen">
-            {/* Full-width backdrop with blur */}
-            <div className="absolute inset-0 bg-[var(--black)]/80 backdrop-blur-md w-full h-full" />
+          <div className="fixed top-[var(--header-height)] left-0 z-[100] w-screen">
+            {/* Full-width backdrop with blur (for the menu area) */}
+            <div className="absolute inset-0 bg-[#000000]/90 backdrop-blur-md w-full h-full" />
             
             {/* Content container */}
             <div className="relative w-full">
