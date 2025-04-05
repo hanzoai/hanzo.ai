@@ -1,3 +1,4 @@
+
 /* Neo-blur effect (glass morphism) */
 .neo-blur {
   background: rgba(255, 255, 255, 0.1);
@@ -232,59 +233,6 @@
   50% {
     transform: translate(5%, -5%);
   }
-  75% {
-    transform: translate(-10%, 5%);
-  }
-}
-
-/* Hide scrollbar but allow scrolling */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
-}
-
-/* Grab cursor for draggable elements */
-.cursor-grab {
-  cursor: grab;
-}
-
-.cursor-grabbing {
-  cursor: grabbing;
-}
-
-/* Origin-inspired monochrome styling */
-.mono-card {
-  @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-md p-4 transition-all;
-}
-
-.mono-card:hover {
-  @apply bg-gray-800/50 border-gray-700;
-  transform: translateY(-2px);
-}
-
-.mono-button {
-  @apply bg-gray-800 hover:bg-gray-700 text-[var(--white)] px-4 py-2 rounded-md transition-all;
-}
-
-.mono-button-outline {
-  @apply bg-transparent hover:bg-gray-800/50 text-neutral-300 hover:text-[var(--white)] border border-gray-700 hover:border-gray-600 px-4 py-2 rounded-md transition-all;
-}
-
-/* Linear.app inspired animations */
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(5px, 5px);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
 }
 
 .animate-float {
@@ -343,4 +291,41 @@
   -webkit-backdrop-filter: blur(8px);
   z-index: 99;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-backdrop-overlay.visible {
+  opacity: 1;
+}
+
+/* Menu animations */
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+.menu-content {
+  animation: menuSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.menu-content.exiting {
+  animation: menuSlideOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

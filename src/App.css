@@ -142,3 +142,29 @@
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
+
+/* Menu transition animations */
+.menu-transition {
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-8px);
+}

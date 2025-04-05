@@ -6,33 +6,53 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 export const SolutionsMenu = () => {
   const [open, setOpen] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
   const isMobile = useIsMobile();
   const menuRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const exitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     }
+    if (exitTimeoutRef.current) {
+      clearTimeout(exitTimeoutRef.current);
+      exitTimeoutRef.current = null;
+    }
+    setIsExiting(false);
     setOpen(true);
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
-      setOpen(false);
+      startExitAnimation();
     }, 200);
   };
 
   const handleToggle = () => {
-    setOpen(!open);
+    if (open) {
+      startExitAnimation();
+    } else {
+      setIsExiting(false);
+      setOpen(true);
+    }
+  };
+
+  const startExitAnimation = () => {
+    setIsExiting(true);
+    exitTimeoutRef.current = setTimeout(() => {
+      setOpen(false);
+      setIsExiting(false);
+    }, 200); // Match this to the CSS animation duration
   };
 
   // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node) && open) {
-        setOpen(false);
+        startExitAnimation();
       }
     };
     
@@ -45,6 +65,9 @@ export const SolutionsMenu = () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
+      if (exitTimeoutRef.current) {
+        clearTimeout(exitTimeoutRef.current);
+      }
     };
   }, [open]);
 
@@ -52,7 +75,7 @@ export const SolutionsMenu = () => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setOpen(false);
+        startExitAnimation();
       }
     };
     
@@ -82,7 +105,7 @@ export const SolutionsMenu = () => {
       {open && (
         <>
           {/* Full-screen blur backdrop */}
-          <div className="menu-backdrop-overlay" />
+          <div className={`menu-backdrop-overlay ${!isExiting ? 'visible' : ''}`} />
           
           {/* Dropdown menu */}
           <div className="fixed top-[var(--header-height)] left-0 z-[100] w-screen">
@@ -90,9 +113,9 @@ export const SolutionsMenu = () => {
             <div className="absolute inset-0 bg-[#000000]/90 backdrop-blur-md w-full h-full" />
             
             {/* Content container */}
-            <div className="relative w-full">
+            <div className={`relative w-full menu-content ${isExiting ? 'exiting' : ''}`}>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <SolutionsContent onCloseMenu={() => setOpen(false)} />
+                <SolutionsContent onCloseMenu={startExitAnimation} />
               </div>
             </div>
           </div>
