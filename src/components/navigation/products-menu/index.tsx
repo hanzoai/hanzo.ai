@@ -127,8 +127,8 @@ export const ProductsMenu = () => {
       
       {open && (
         <>
-          {/* Full-screen blur backdrop */}
-          <div className={`menu-backdrop-overlay ${!isExiting ? 'visible' : ''}`} />
+          {/* Full-screen blur backdrop - positioned fixed to cover the entire viewport */}
+          <div className={`fixed inset-0 menu-backdrop-overlay ${!isExiting ? 'visible' : ''}`} />
           
           {/* Dropdown menu - only render content after backdrop starts */}
           {(open) && (

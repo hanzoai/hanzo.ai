@@ -123,8 +123,8 @@ export const SolutionsMenu = () => {
       
       {open && (
         <>
-          {/* Full-screen blur backdrop */}
-          <div className={`menu-backdrop-overlay ${!isExiting ? 'visible' : ''}`} />
+          {/* Full-screen blur backdrop - positioned outside the menu container */}
+          <div className={`fixed inset-0 menu-backdrop-overlay ${!isExiting ? 'visible' : ''}`} />
           
           {/* Dropdown menu - only render content after backdrop starts */}
           {(open) && (
