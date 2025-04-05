@@ -9,8 +9,7 @@ interface ProductSectionProps {
   link: string;
   items: ProductItem[];
   hasMore?: boolean;
-  viewAllText?: string; // Add an optional prop for custom "View all" text
-  onLinkClick?: () => void;
+  viewAllText?: string;
 }
 
 const ProductSection = ({ 
@@ -18,8 +17,7 @@ const ProductSection = ({
   link, 
   items, 
   hasMore = false,
-  viewAllText,
-  onLinkClick
+  viewAllText
 }: ProductSectionProps) => {
   // Only show up to 8 items
   const limitedItems = items.slice(0, 8);
@@ -38,8 +36,6 @@ const ProductSection = ({
       <ProductVisualization items={limitedItems} />
       
       <ProductGrid items={limitedItems} />
-      
-      {/* Removed duplicate "View all" link that was here */}
     </div>
   );
 };
