@@ -18,34 +18,6 @@ src/
   ├── hooks/           # React hooks
   ├── lib/             # Utility functions
   └── pages/           # Page components
-=======
-**Use Hanzo App**
-
-Simply visit the [Hanzo App](https://hanzo.app/projects/ee887e68-a27e-43a1-88d1-813320af7a8c) and start prompting.
-
-Changes made via Hanzo will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Hanzo.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
->>>>>>> d9efaad (Update README)
 ```
 
 ## Styling and Layout Guidelines
@@ -75,10 +47,6 @@ npm run dev
 - Always include sufficient whitespace between sections (min 8rem)
 
 ### Hero Sections
-=======
-This project is built with Hanzo App, powered by Hanzo AI as well as these
-excellent Open Source projects:
->>>>>>> d9efaad (Update README)
 
 All hero sections should follow this structure:
 1. Include the "AI Engineering Platform" pre-heading with purple background
@@ -90,15 +58,11 @@ All hero sections should follow this structure:
 
 ### Chrome Text Component
 
-<<<<<<< HEAD
 The `ChromeText` component is used for headings with a metallic gradient effect:
-=======
-Simply open [Hanzo](https://hanzo.app/projects/hanzo-ai) and click on Share -> Publish.
->>>>>>> d9efaad (Update README)
 
 ```jsx
-<ChromeText
-  as="h2"
+<ChromeText 
+  as="h2" 
   className="text-3xl md:text-5xl font-bold mb-4"
   preHeading="Optional Pre-Heading"
   preHeadingClassName="optional-additional-classes"

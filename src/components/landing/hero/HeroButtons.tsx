@@ -1,41 +1,50 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { heroData } from "./hero-data";
+import { ArrowRight, Github } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface HeroButtonsProps {
   titleAnimationComplete: boolean;
 }
 
 const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={titleAnimationComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+      animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      className="flex flex-col sm:flex-row justify-center mt-6"
     >
       <Button 
-        size="lg" 
-        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] px-8 py-6 text-lg rounded-lg"
+        size="sm" 
+        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] rounded-full px-4 py-2 h-10 min-w-[120px]"
+        onClick={() => navigate('/signup')}
       >
-        <Link to={heroData.primaryButtonLink} className="flex items-center">
-          {heroData.primaryButtonText}
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+        Get Started
+        <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
       
       <Button 
-        size="lg" 
+        size="sm" 
         variant="outline" 
-        className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 px-8 py-6 text-lg rounded-lg"
+        className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 rounded-full px-4 py-2 h-10 min-w-[120px]"
+        onClick={() => navigate('/zen')}
       >
-        <Link to={heroData.secondaryButtonLink}>
-          {heroData.secondaryButtonText}
-        </Link>
+        Zen of Hanzo
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+      
+      <Button 
+        size="sm" 
+        variant="outline" 
+        className="text-[var(--white)] border-gray-700 hover:bg-[var(--white)]/10 rounded-full px-4 py-2 h-10 min-w-[120px]"
+        onClick={() => window.open('https://github.com/hanzoai', '_blank')}
+      >
+        Star on GitHub
+        <Github className="ml-2 h-4 w-4" />
       </Button>
     </motion.div>
   );

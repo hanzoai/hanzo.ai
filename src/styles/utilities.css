@@ -232,6 +232,62 @@
   50% {
     transform: translate(5%, -5%);
   }
+  75% {
+    transform: translate(-10%, 5%);
+  }
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Grab cursor for draggable elements */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+/* Origin-inspired monochrome styling */
+.mono-card {
+  @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-md p-4 transition-all;
+}
+
+.mono-card:hover {
+  @apply bg-gray-800/50 border-gray-700;
+  transform: translateY(-2px);
+}
+
+.mono-button {
+  @apply bg-gray-800 hover:bg-gray-700 text-[var(--white)] px-4 py-2 rounded-md transition-all;
+}
+
+.mono-button-outline {
+  @apply bg-transparent hover:bg-gray-800/50 text-neutral-300 hover:text-[var(--white)] border border-gray-700 hover:border-gray-600 px-4 py-2 rounded-md transition-all;
+}
+
+/* Linear.app inspired animations */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-5px, 5px);
+  }
 }
 
 .animate-float {
@@ -276,58 +332,4 @@
 
 .cursor-grabbing {
   cursor: grabbing;
-}
-
-/* Full-screen blur overlay for dropdown menus */
-.menu-backdrop-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 99;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.menu-backdrop-overlay.visible {
-  opacity: 1;
-}
-
-/* Menu animations */
-@keyframes menuSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes menuSlideOut {
-  from {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-8px) scale(0.98);
-  }
-}
-
-.menu-content {
-  opacity: 0;
-  transform: translateY(-8px) scale(0.98);
-  animation: menuSlideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: 0.1s; /* Delay to let the blur effect start first */
-}
-
-.menu-content.exiting {
-  animation: menuSlideOut 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }

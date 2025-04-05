@@ -1,70 +1,109 @@
 
 import React from "react";
-import { HexagramLine } from "../types/hexagram";
+import { motion } from "framer-motion";
 
-interface IChingHexagramProps {
+export interface HexagramLine {
+  type: 'solid' | 'broken';
+}
+
+export interface HexagramProps {
   lines: HexagramLine[];
   size?: number;
   className?: string;
+  animate?: boolean;
+  index?: number;
 }
 
-const IChingHexagram: React.FC<IChingHexagramProps> = ({ 
-  lines, 
-  size = 40, 
-  className = "" 
+const IChingHexagram: React.FC<HexagramProps> = ({ 
+  lines = Array(6).fill({ type: 'solid' }), 
+  size = 36, 
+  className = "",
+  animate = false,
+  index = 0
 }) => {
-  const lineHeight = size / 12;
-  const lineSpacing = size / 8;
+  // Ensure we have exactly 6 lines
+  const normalizedLines = lines.slice(0, 6);
+  while (normalizedLines.length < 6) {
+    normalizedLines.push({ type: 'solid' });
+  }
+  
+  // Calculate dimensions
+  const lineHeight = size / 14;
   const lineWidth = size;
-
+  const gap = lineHeight * 1.3;
+  const totalHeight = (lineHeight * 6) + (gap * 5);
+  
   return (
     <svg 
-      width={size} 
-      height={size} 
-      viewBox={`0 0 ${size} ${size}`} 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg" 
+      width={lineWidth} 
+      height={totalHeight} 
+      viewBox={`0 0 ${lineWidth} ${totalHeight}`} 
       className={className}
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <g>
-        {lines.map((line, index) => {
-          const y = index * (lineHeight + lineSpacing) + size / 6;
-          
-          if (line.type === "solid") {
-            return (
-              <rect 
-                key={index} 
-                x="0" 
-                y={y} 
-                width={lineWidth} 
-                height={lineHeight} 
-                fill="currentColor" 
+      {normalizedLines.map((line, lineIndex) => {
+        const y = lineIndex * (lineHeight + gap);
+        const delay = animate ? 0.1 + (index * 0.02) + (lineIndex * 0.05) : 0;
+        
+        if (line.type === 'solid') {
+          return (
+            <motion.rect
+              key={lineIndex}
+              x="0"
+              y={y}
+              width={lineWidth}
+              height={lineHeight}
+              fill="currentColor"
+              initial={animate ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              transition={{ 
+                duration: 0.4, 
+                delay,
+                ease: [0.16, 1, 0.3, 1] 
+              }}
+              style={{ originX: 0 }}
+            />
+          );
+        } else {
+          // For broken lines, draw two rectangles with a gap
+          const gapWidth = lineWidth / 3;
+          const segmentWidth = (lineWidth - gapWidth) / 2;
+          return (
+            <g key={lineIndex}>
+              <motion.rect
+                x="0"
+                y={y}
+                width={segmentWidth}
+                height={lineHeight}
+                fill="currentColor"
+                initial={animate ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
+                animate={{ scaleX: 1, opacity: 1 }}
+                transition={{ 
+                  duration: 0.3, 
+                  delay,
+                  ease: [0.16, 1, 0.3, 1] 
+                }}
+                style={{ originX: 0 }}
               />
-            );
-          } else {
-            // Broken line
-            const gapWidth = lineWidth / 3;
-            return (
-              <g key={index}>
-                <rect 
-                  x="0" 
-                  y={y} 
-                  width={(lineWidth - gapWidth) / 2} 
-                  height={lineHeight} 
-                  fill="currentColor" 
-                />
-                <rect 
-                  x={lineWidth - (lineWidth - gapWidth) / 2} 
-                  y={y} 
-                  width={(lineWidth - gapWidth) / 2} 
-                  height={lineHeight} 
-                  fill="currentColor" 
-                />
-              </g>
-            );
-          }
-        })}
-      </g>
+              <motion.rect
+                x={segmentWidth + gapWidth}
+                y={y}
+                width={segmentWidth}
+                height={lineHeight}
+                fill="currentColor"
+                initial={animate ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
+                animate={{ scaleX: 1, opacity: 1 }}
+                transition={{ 
+                  duration: 0.3, 
+                  delay: delay + 0.1,
+                  ease: [0.16, 1, 0.3, 1] 
+                }}
+                style={{ originX: 0 }}
+              />
+            </g>
+          );
+        }
+      })}
     </svg>
   );
 };

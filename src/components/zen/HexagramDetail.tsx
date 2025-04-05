@@ -1,7 +1,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { HexagramDetails } from "./types/hexagram";
+import { HexagramDetails } from "./InteractiveHexagram";
+import IChingHexagram from "./svg/IChingHexagram";
 
 interface HexagramDetailProps {
   hexagram: HexagramDetails;
@@ -10,53 +11,32 @@ interface HexagramDetailProps {
 const HexagramDetail: React.FC<HexagramDetailProps> = ({ hexagram }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.3 }}
-      className="p-6 bg-gray-900/50 backdrop-blur-sm border border-purple-500/30 rounded-lg"
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="bg-gray-900/40 border border-gray-800/70 rounded-lg p-6 backdrop-blur-sm"
     >
-      <div className="flex flex-col md:flex-row gap-6 items-start">
-        <div className="shrink-0 w-20 h-24 flex flex-col items-center justify-center">
-          <div className="flex flex-col gap-1.5 items-center justify-center">
-            {hexagram.lines.map((line, lineIndex) => (
-              <div 
-                key={`detail-${hexagram.id}-line-${lineIndex}`} 
-                className={`
-                  ${line.type === "solid" ? "w-16 h-1.5" : "flex justify-between w-16"}
-                  bg-purple-400
-                `}
-              >
-                {line.type === "broken" && (
-                  <>
-                    <div className="w-[45%] h-1.5 bg-purple-400"></div>
-                    <div className="w-[45%] h-1.5 bg-purple-400"></div>
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="mt-2 text-xs text-center text-purple-400 font-mono">
-            {hexagram.id}
-          </div>
+      <div className="flex items-center mb-4">
+        <div className="mr-4">
+          <IChingHexagram lines={hexagram.lines} size={64} className="text-[var(--white)]" />
         </div>
-        
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-[var(--white)] mb-2 flex items-center">
-            {hexagram.name}
-            <span className="text-sm font-normal text-purple-400 ml-2">
-              {hexagram.chineseName} {hexagram.pinyin && `(${hexagram.pinyin})`}
-            </span>
-          </h3>
-          
-          <div className="mb-4 text-neutral-300 text-sm">
-            <strong className="text-purple-300">Meaning:</strong> {hexagram.meaning}
+        <div>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+            <h3 className="text-2xl font-bold text-[var(--white)]">{hexagram.name}</h3>
+            <span className="text-xl text-neutral-400">{hexagram.chineseName}</span>
+            <span className="text-sm text-neutral-500">{hexagram.pinyin}</span>
           </div>
-          
-          <div className="text-neutral-300">
-            <strong className="text-purple-300">Engineering Principle:</strong> {hexagram.principle}
-          </div>
+          <div className="text-neutral-400 text-sm">Hexagram {hexagram.id}</div>
         </div>
+      </div>
+      
+      <div className="mt-4 mb-6 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
+      
+      <p className="text-neutral-300 mb-4">{hexagram.description || hexagram.principle}</p>
+      
+      <div className="mt-4 text-sm text-neutral-500">
+        Click on any hexagram in the grid to view its details
       </div>
     </motion.div>
   );

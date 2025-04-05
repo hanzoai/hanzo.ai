@@ -5,21 +5,3 @@
 @import "./typography.css";
 @import "./themes.css";
 @import "./utilities.css";
-
-@layer utilities {
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  
-  .preserve-3d {
-    transform-style: preserve-3d;
-  }
-  
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  .shadow-glow {
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
-  }
-}

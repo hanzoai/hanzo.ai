@@ -1,777 +1,1074 @@
 
-import { HexagramDetails } from "../types/hexagram";
+import { HexagramLine } from '../svg/IChingHexagram';
 
-// Complete set of 64 I Ching hexagrams with engineering principles
-export const ichingPrinciples: HexagramDetails[] = [
+export interface IChing {
+  id: number;
+  name: string;
+  chineseName: string;
+  pinyin: string;
+  lines: HexagramLine[];
+  principle: string;
+  description: string;
+}
+
+// Helper function to create hexagram configurations
+const hexagramConfig = {
+  yang: { type: 'solid' as const },  // solid line
+  yin: { type: 'broken' as const }   // broken line
+};
+
+export const ichingPrinciples: IChing[] = [
+  // Traditional 64 hexagrams from I Ching
   {
-    id: "1",
+    id: 1,
     name: "The Creative",
-    chineseName: "乾 (qián)",
+    chineseName: "乾",
     pinyin: "qián",
-    lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "solid" }, { type: "solid" }
-    ],
-    meaning: "Pure yang, creation, activity, strength, innovation",
-    principle: "Principle of Innovation: Create from foundational elements. Invent with purpose."
+    lines: Array(6).fill(hexagramConfig.yang),
+    principle: "Manifest pure potential",
+    description: "Create through unwavering integrity and visionary clarity."
   },
   {
-    id: "2",
+    id: 2,
     name: "The Receptive",
-    chineseName: "坤 (kūn)",
+    chineseName: "坤",
     pinyin: "kūn",
-    lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
-    ],
-    meaning: "Pure yin, receptivity, acceptance, adaptation",
-    principle: "Principle of Adaptability: Systems must adapt to changing conditions. Embrace flexibility."
+    lines: Array(6).fill(hexagramConfig.yin),
+    principle: "Nurture emerging possibilities",
+    description: "Support without imposing; cultivate fertile conditions."
   },
   {
-    id: "3",
+    id: 3,
     name: "Difficulty at the Beginning",
-    chineseName: "屯 (zhūn)",
+    chineseName: "屯",
     pinyin: "zhūn",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Initial obstacles, chaos giving birth to order",
-    principle: "Principle of Initial Complexity: All new systems face initial complexity. Persist through chaos."
+    principle: "Navigate beginning challenges",
+    description: "Plant seeds amid uncertainty; trust the process of emergence."
   },
   {
-    id: "4",
+    id: 4,
     name: "Youthful Folly",
-    chineseName: "蒙 (méng)",
+    chineseName: "蒙",
     pinyin: "méng",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Inexperience, learning, seeking guidance",
-    principle: "Principle of Guided Learning: Seek mentorship when inexperienced. Documentation illuminates."
+    principle: "Embrace beginner's mind",
+    description: "Learn through guided exploration; build basic competencies."
   },
   {
-    id: "5",
+    id: 5,
     name: "Waiting",
-    chineseName: "需 (xū)",
+    chineseName: "需",
     pinyin: "xū",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Patience, timing, nourishment",
-    principle: "Principle of Proper Timing: Wait for ideal conditions. Patience optimizes execution."
+    principle: "Recognize appropriate timing",
+    description: "Prepare during apparent inaction; build readiness for opportunity."
   },
   {
-    id: "6",
+    id: 6,
     name: "Conflict",
-    chineseName: "訟 (sòng)",
+    chineseName: "訟",
     pinyin: "sòng",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Disagreement, litigation, careful action",
-    principle: "Principle of Constructive Conflict: From disagreement comes resolution. Test assumptions rigorously."
+    principle: "Address tensions directly",
+    description: "Transform opposition to insight; create clarity from friction."
   },
   {
-    id: "7",
+    id: 7,
     name: "The Army",
-    chineseName: "師 (shī)",
+    chineseName: "師",
     pinyin: "shī",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Discipline, organization, strategic leadership",
-    principle: "Principle of Orchestration: Coordinate many components as one. Clear leadership defines success."
+    principle: "Organize collective effort",
+    description: "Establish coherent structure; create coordinated momentum."
   },
   {
-    id: "8",
+    id: 8,
     name: "Holding Together",
-    chineseName: "比 (bǐ)",
+    chineseName: "比",
     pinyin: "bǐ",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Union, alliance, solidarity",
-    principle: "Principle of Cohesive Systems: Components must work in harmony. Integration brings strength."
+    principle: "Foster genuine connection",
+    description: "Build aligned purpose; strengthen collective bonds."
   },
   {
-    id: "9",
-    name: "Small Taming",
-    chineseName: "小畜 (xiǎo chù)",
+    id: 9,
+    name: "The Taming Power of the Small",
+    chineseName: "小畜",
     pinyin: "xiǎo chù",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Gentle restraint, accumulation of energy",
-    principle: "Principle of Resource Management: Accumulate resources gradually. Small optimizations compound."
+    principle: "Accumulate strength gradually",
+    description: "Nurture small gains; build momentum through incremental progress."
   },
   {
-    id: "10",
+    id: 10,
     name: "Treading",
-    chineseName: "履 (lǚ)",
+    chineseName: "履",
     pinyin: "lǚ",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Careful progress, respectful conduct",
-    principle: "Principle of Careful Action: Tread carefully in complex systems. Respect all dependencies."
+    principle: "Act with mindful awareness",
+    description: "Proceed cautiously; maintain balance in challenging situations."
   },
   {
-    id: "11",
+    id: 11,
     name: "Peace",
-    chineseName: "泰 (tài)",
+    chineseName: "泰",
     pinyin: "tài",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Harmony, prosperity, good communication",
-    principle: "Principle of System Harmony: When components connect correctly, systems flourish naturally."
+    principle: "Cultivate harmonious conditions",
+    description: "Foster balance and alignment; create stable foundations."
   },
   {
-    id: "12",
+    id: 12,
     name: "Standstill",
-    chineseName: "否 (pǐ)",
+    chineseName: "否",
     pinyin: "pǐ",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Stagnation, obstruction, decay",
-    principle: "Principle of Stagnation Recognition: Identify blockages quickly. Resolve before decay spreads."
+    principle: "Recognize periods of stagnation",
+    description: "Maintain inner strength; prepare for future opportunities."
   },
   {
-    id: "13",
-    name: "Fellowship",
-    chineseName: "同人 (tóng rén)",
+    id: 13,
+    name: "Fellowship with Men",
+    chineseName: "同人",
     pinyin: "tóng rén",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Community, shared purpose, mutual support",
-    principle: "Principle of Community Development: Build communities around systems. Shared knowledge multiplies value."
+    principle: "Build inclusive communities",
+    description: "Foster shared purpose; create unity through mutual respect."
   },
   {
-    id: "14",
+    id: 14,
     name: "Great Possession",
-    chineseName: "大有 (dà yǒu)",
+    chineseName: "大有",
     pinyin: "dà yǒu",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Abundance, great strength, prosperity",
-    principle: "Principle of Abundance Engineering: Design for scalability from the start. Anticipate massive success."
+    principle: "Utilize abundant resources",
+    description: "Manage wealth responsibly; create value for all stakeholders."
   },
   {
-    id: "15",
+    id: 15,
     name: "Modesty",
-    chineseName: "謙 (qiān)",
+    chineseName: "謙",
     pinyin: "qiān",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Humility, moderation, reserved strength",
-    principle: "Principle of System Modesty: Build humble systems that serve silently. Avoid unnecessary complexity."
+    principle: "Cultivate humility and grace",
+    description: "Act with understated confidence; recognize the value of others."
   },
   {
-    id: "16",
+    id: 16,
     name: "Enthusiasm",
-    chineseName: "豫 (yù)",
+    chineseName: "豫",
     pinyin: "yù",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Joy, harmony, motivation",
-    principle: "Principle of Joyful Engineering: Create systems that delight users. Joy increases adoption."
+    principle: "Embrace joyful engagement",
+    description: "Act with inspired energy; create momentum through positive action."
   },
   {
-    id: "17",
+    id: 17,
     name: "Following",
-    chineseName: "隨 (suí)",
+    chineseName: "隨",
     pinyin: "suí",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Adaptation, following, flexibility",
-    principle: "Principle of Adaptive Architecture: Follow changing conditions with flexible systems. Adapt or become obsolete."
+    principle: "Adapt to evolving circumstances",
+    description: "Respond flexibly to change; maintain alignment with emerging trends."
   },
   {
-    id: "18",
-    name: "Work on the Decayed",
-    chineseName: "蠱 (gǔ)",
+    id: 18,
+    name: "Work on What Has Been Spoiled",
+    chineseName: "蠱",
     pinyin: "gǔ",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Repair, renewal, correcting past mistakes",
-    principle: "Principle of Technical Debt: Repair decaying systems before building new ones. Maintenance prevents collapse."
+    principle: "Address decay and corruption",
+    description: "Restore integrity; revitalize stagnant systems."
   },
   {
-    id: "19",
+    id: 19,
     name: "Approach",
-    chineseName: "臨 (lín)",
+    chineseName: "臨",
     pinyin: "lín",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Advancement, influence, approaching greatness",
-    principle: "Principle of Gradual Advancement: Approach complex goals incrementally. Consistent progress compounds."
+    principle: "Prepare for new opportunities",
+    description: "Anticipate future developments; build readiness for growth."
   },
   {
-    id: "20",
+    id: 20,
     name: "Contemplation",
-    chineseName: "觀 (guān)",
+    chineseName: "觀",
     pinyin: "guān",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Observation, perspective, reflection",
-    principle: "Principle of Observability: What cannot be observed cannot be improved. Build transparent systems."
+    principle: "Observe with clarity and insight",
+    description: "Gain perspective through detached awareness; understand underlying patterns."
   },
   {
-    id: "21",
+    id: 21,
     name: "Biting Through",
-    chineseName: "噬嗑 (shì kè)",
+    chineseName: "噬嗑",
     pinyin: "shì kè",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Decisive action, judgment, overcoming obstacles",
-    principle: "Principle of Decisive Problem Solving: Address obstacles directly. Bite through barriers with precision."
+    principle: "Overcome obstacles decisively",
+    description: "Confront challenges directly; break through resistance with focused action."
   },
   {
-    id: "22",
+    id: 22,
     name: "Grace",
-    chineseName: "賁 (bì)",
+    chineseName: "賁",
     pinyin: "bì",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Beauty, elegance, refinement",
-    principle: "Principle of Elegant Design: Aesthetic excellence enhances functional excellence. Beauty matters."
+    principle: "Enhance through aesthetic refinement",
+    description: "Cultivate beauty and elegance; create harmonious forms."
   },
   {
-    id: "23",
+    id: 23,
     name: "Splitting Apart",
-    chineseName: "剝 (bō)",
+    chineseName: "剝",
     pinyin: "bō",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Deterioration, disintegration, collapse",
-    principle: "Principle of Failure Recognition: Recognize when systems need to be dismantled. Sometimes destruction precedes creation."
+    principle: "Recognize the process of decline",
+    description: "Accept impermanence; prepare for transformation."
   },
   {
-    id: "24",
+    id: 24,
     name: "Return",
-    chineseName: "復 (fù)",
+    chineseName: "復",
     pinyin: "fù",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Renewal, rebirth, recovery",
-    principle: "Principle of System Renewal: After failure comes opportunity. Rebuild with lessons learned."
+    principle: "Renew through cyclical return",
+    description: "Embrace new beginnings; restore vitality through regeneration."
   },
   {
-    id: "25",
+    id: 25,
     name: "Innocence",
-    chineseName: "無妄 (wú wàng)",
+    chineseName: "无妄",
     pinyin: "wú wàng",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Naturalness, spontaneity, simplicity",
-    principle: "Principle of Natural Design: The best systems feel inevitable. Complexity should arise from simple rules."
+    principle: "Act with spontaneous authenticity",
+    description: "Follow natural impulses; trust intuitive guidance."
   },
   {
-    id: "26",
-    name: "Great Taming",
-    chineseName: "大畜 (dà chù)",
+    id: 26,
+    name: "The Taming Power of the Great",
+    chineseName: "大畜",
     pinyin: "dà chù",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Accumulation of energy, restraint, cultivation",
-    principle: "Principle of Controlled Power: Great systems restrain their power. Control prevents chaos."
+    principle: "Accumulate strength through discipline",
+    description: "Cultivate inner resources; build capacity through focused effort."
   },
   {
-    id: "27",
-    name: "Nourishment",
-    chineseName: "頤 (yí)",
+    id: 27,
+    name: "The Corners of the Mouth",
+    chineseName: "頤",
     pinyin: "yí",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Sustenance, cultivation, proper intake",
-    principle: "Principle of System Nourishment: Feed systems with high-quality data. Garbage in, garbage out."
+    principle: "Nourish and sustain growth",
+    description: "Provide essential resources; cultivate supportive environments."
   },
   {
-    id: "28",
-    name: "Great Excess",
-    chineseName: "大過 (dà guò)",
+    id: 28,
+    name: "Great Exceeding",
+    chineseName: "大過",
     pinyin: "dà guò",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Overwhelming pressure, critical mass, breakthrough",
-    principle: "Principle of Critical Optimization: Under extreme loads, normal rules change. Design for worst-case scenarios."
+    principle: "Navigate periods of excess",
+    description: "Maintain balance in extreme situations; adapt to unusual pressures."
   },
   {
-    id: "29",
+    id: 29,
     name: "The Abysmal",
-    chineseName: "坎 (kǎn)",
+    chineseName: "坎",
     pinyin: "kǎn",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Danger, depth, persistence in difficulty",
-    principle: "Principle of Risk Management: Navigate dangerous waters carefully. Plan for all failure modes."
+    principle: "Navigate challenging depths",
+    description: "Maintain resilience in adversity; find strength in vulnerability."
   },
   {
-    id: "30",
+    id: 30,
     name: "The Clinging",
-    chineseName: "離 (lí)",
+    chineseName: "離",
     pinyin: "lí",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Radiance, clarity, attachment",
-    principle: "Principle of Illumination: Systems should illuminate understanding. Clarity is a feature, not a byproduct."
+    principle: "Illuminate through clarity",
+    description: "Bring insight to complex situations; create understanding through focused awareness."
   },
   {
-    id: "31",
+    id: 31,
     name: "Influence",
-    chineseName: "咸 (xián)",
+    chineseName: "咸",
     pinyin: "xián",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Mutual influence, courtship, response",
-    principle: "Principle of System Empathy: Components should respond to each other. Build systems that listen."
+    principle: "Cultivate genuine connection",
+    description: "Build rapport through empathy; create resonance through authentic communication."
   },
   {
-    id: "32",
+    id: 32,
     name: "Duration",
-    chineseName: "恆 (héng)",
+    chineseName: "恆",
     pinyin: "héng",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Endurance, constancy, persistence",
-    principle: "Principle of System Longevity: Design for duration. Today's choices affect tomorrow's possibilities."
+    principle: "Sustain consistent effort",
+    description: "Maintain momentum through perseverance; build lasting value through continuous improvement."
   },
-  // The remaining hexagrams
   {
-    id: "33",
+    id: 33,
     name: "Retreat",
-    chineseName: "遯 (dùn)",
+    chineseName: "遯",
     pinyin: "dùn",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Strategic withdrawal, conservation of strength",
-    principle: "Principle of Strategic Fallback: Know when to retreat. Graceful degradation preserves function."
+    principle: "Withdraw with strategic timing",
+    description: "Conserve energy; prepare for future opportunities."
   },
   {
-    id: "34",
+    id: 34,
     name: "Great Power",
-    chineseName: "大壯 (dà zhuàng)",
+    chineseName: "大壯",
     pinyin: "dà zhuàng",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Great vigor, powerful action, strength",
-    principle: "Principle of Controlled Power: Great strength requires great responsibility. Power must be wielded with precision."
+    principle: "Exercise strength with integrity",
+    description: "Apply power responsibly; maintain ethical alignment."
   },
   {
-    id: "35",
+    id: 35,
     name: "Progress",
-    chineseName: "晉 (jìn)",
+    chineseName: "晉",
     pinyin: "jìn",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Advancement, promotion, gradual progress",
-    principle: "Principle of Staged Progress: Advance step by step. Complex systems evolve through stages."
+    principle: "Advance with clarity and purpose",
+    description: "Move forward decisively; maintain focus on strategic goals."
   },
   {
-    id: "36",
+    id: 36,
     name: "Darkening of the Light",
-    chineseName: "明夷 (míng yí)",
+    chineseName: "明夷",
     pinyin: "míng yí",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Adversity, concealment, perseverance",
-    principle: "Principle of Hidden Resilience: Build systems that function even in darkness. Resilience is quiet strength."
+    principle: "Preserve inner vision during adversity",
+    description: "Maintain hope in challenging times; protect core values."
   },
   {
-    id: "37",
+    id: 37,
     name: "The Family",
-    chineseName: "家人 (jiā rén)",
+    chineseName: "家人",
     pinyin: "jiā rén",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Structure, hierarchy, domestic order",
-    principle: "Principle of System Cohesion: Components should function as a family. Clear roles create harmony."
+    principle: "Cultivate harmonious relationships",
+    description: "Foster mutual respect; build strong foundations through shared values."
   },
   {
-    id: "38",
+    id: 38,
     name: "Opposition",
-    chineseName: "睽 (kuí)",
+    chineseName: "睽",
     pinyin: "kuí",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Contrast, incompatibility, complementarity",
-    principle: "Principle of Productive Tension: Opposing forces can create balance. Design for constructive opposition."
+    principle: "Transform conflict into insight",
+    description: "Find common ground; create understanding through diverse perspectives."
   },
   {
-    id: "39",
+    id: 39,
     name: "Obstruction",
-    chineseName: "蹇 (jiǎn)",
+    chineseName: "蹇",
     pinyin: "jiǎn",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Difficulty, impediment, perseverance",
-    principle: "Principle of Obstacle Navigation: Design paths around blockages. Every obstacle has a workaround."
+    principle: "Navigate challenging obstacles",
+    description: "Maintain resilience; find creative solutions to overcome adversity."
   },
   {
-    id: "40",
+    id: 40,
     name: "Deliverance",
-    chineseName: "解 (xiè)",
+    chineseName: "解",
     pinyin: "xiè",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Release, resolution, unburdening",
-    principle: "Principle of Problem Resolution: Design solutions that free users from constraints. Liberation creates value."
+    principle: "Release tension and resolve conflict",
+    description: "Create clarity through resolution; restore balance through reconciliation."
   },
   {
-    id: "41",
+    id: 41,
     name: "Decrease",
-    chineseName: "損 (sǔn)",
+    chineseName: "損",
     pinyin: "sǔn",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Reduction, simplification, focusing",
-    principle: "Principle of Deliberate Reduction: Sometimes less is more. Eliminate until you can't eliminate further."
+    principle: "Simplify and streamline processes",
+    description: "Reduce unnecessary complexity; focus on essential elements."
   },
   {
-    id: "42",
+    id: 42,
     name: "Increase",
-    chineseName: "益 (yì)",
+    chineseName: "益",
     pinyin: "yì",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Growth, addition, abundance",
-    principle: "Principle of Strategic Growth: Add capabilities strategically. Increase what brings value."
+    principle: "Expand and amplify impact",
+    description: "Enhance value through strategic growth; create positive ripple effects."
   },
   {
-    id: "43",
+    id: 43,
     name: "Breakthrough",
-    chineseName: "夬 (guài)",
+    chineseName: "夬",
     pinyin: "guài",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Resoluteness, decisiveness, clear action",
-    principle: "Principle of Decisive Action: When the path is clear, proceed boldly. Breakthrough comes from commitment."
+    principle: "Overcome resistance decisively",
+    description: "Break through barriers; create momentum through focused action."
   },
   {
-    id: "44",
+    id: 44,
     name: "Coming to Meet",
-    chineseName: "姤 (gòu)",
+    chineseName: "姤",
     pinyin: "gòu",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "broken" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Unexpected encounter, convergence, chance meeting",
-    principle: "Principle of System Coupling: Unexpected interactions will occur. Design for connection points."
+    principle: "Recognize subtle influences",
+    description: "Be aware of emerging trends; adapt to changing conditions."
   },
   {
-    id: "45",
+    id: 45,
     name: "Gathering Together",
-    chineseName: "萃 (cuì)",
+    chineseName: "萃",
     pinyin: "cuì",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Gathering, assembly, congregation",
-    principle: "Principle of Resource Consolidation: Gather related functionalities. Unified systems create synergy."
+    principle: "Unite diverse elements",
+    description: "Create synergy through collaboration; build cohesive teams."
   },
   {
-    id: "46",
+    id: 46,
     name: "Pushing Upward",
-    chineseName: "升 (shēng)",
+    chineseName: "升",
     pinyin: "shēng",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Growth, promotion, rising",
-    principle: "Principle of Continuous Improvement: Systems should evolve upward. Design for incremental enhancement."
+    principle: "Ascend through persistent effort",
+    description: "Rise above limitations; achieve higher levels of accomplishment."
   },
   {
-    id: "47",
+    id: 47,
     name: "Oppression",
-    chineseName: "困 (kùn)",
+    chineseName: "困",
     pinyin: "kùn",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Exhaustion, adversity, confinement",
-    principle: "Principle of Resource Constraints: Design for limited resources. Constraints breed creativity."
+    principle: "Endure hardship with inner strength",
+    description: "Maintain resilience in adversity; find opportunity in constraint."
   },
   {
-    id: "48",
+    id: 48,
     name: "The Well",
-    chineseName: "井 (jǐng)",
+    chineseName: "井",
     pinyin: "jǐng",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Source, structure, center",
-    principle: "Principle of Core Functionality: Build around essential resources. The well never moves, but serves all."
+    principle: "Provide essential resources",
+    description: "Nourish and sustain growth; create lasting value through consistent contribution."
   },
   {
-    id: "49",
+    id: 49,
     name: "Revolution",
-    chineseName: "革 (gé)",
+    chineseName: "革",
     pinyin: "gé",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Change, radical transformation, renewal",
-    principle: "Principle of Disruptive Innovation: Sometimes systems need complete redesign. Revolution creates new paradigms."
+    principle: "Transform through radical change",
+    description: "Embrace innovation; disrupt stagnant systems to create new possibilities."
   },
   {
-    id: "50",
+    id: 50,
     name: "The Cauldron",
-    chineseName: "鼎 (dǐng)",
+    chineseName: "鼎",
     pinyin: "dǐng",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Transformation, integration, refinement",
-    principle: "Principle of Transformative Systems: Design for transformation. Convert inputs into greater outputs."
+    principle: "Cultivate transformative processes",
+    description: "Refine and integrate diverse elements; create valuable outcomes through synergistic interaction."
   },
   {
-    id: "51",
+    id: 51,
     name: "The Arousing",
-    chineseName: "震 (zhèn)",
+    chineseName: "震",
     pinyin: "zhèn",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Shock, sudden change, awakening",
-    principle: "Principle of Disruptive Events: Design systems to handle shocks. Resilience comes from anticipation."
+    principle: "Act with decisive energy",
+    description: "Break through inertia; create momentum through inspired action."
   },
   {
-    id: "52",
+    id: 52,
     name: "Keeping Still",
-    chineseName: "艮 (gèn)",
+    chineseName: "艮",
     pinyin: "gèn",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Stillness, meditation, stopping",
-    principle: "Principle of Deliberate Pauses: Sometimes the best action is stillness. Design for intentional inaction."
+    principle: "Maintain inner stillness",
+    description: "Cultivate focused awareness; find strength in quiet contemplation."
   },
   {
-    id: "53",
-    name: "Development",
-    chineseName: "漸 (jiàn)",
+    id: 53,
+    name: "Gradual Development",
+    chineseName: "漸",
     pinyin: "jiàn",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Gradual progress, incremental growth",
-    principle: "Principle of Iterative Development: Progress step by step. Small, consistent improvements create excellence."
+    principle: "Progress through incremental steps",
+    description: "Build momentum through consistent effort; achieve long-term goals through gradual advancement."
   },
   {
-    id: "54",
+    id: 54,
     name: "The Marrying Maiden",
-    chineseName: "歸妹 (guī mèi)",
+    chineseName: "歸妹",
     pinyin: "guī mèi",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Secondary position, supporting role",
-    principle: "Principle of Support Systems: Design excellent subordinate systems. Not everything needs to be primary."
+    principle: "Adapt to unconventional circumstances",
+    description: "Find creative solutions; navigate complex relationships with flexibility and grace."
   },
   {
-    id: "55",
+    id: 55,
     name: "Abundance",
-    chineseName: "豐 (fēng)",
+    chineseName: "豐",
     pinyin: "fēng",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Fullness, zenith, peak moment",
-    principle: "Principle of Peak Performance: Design for optimal conditions. Excellence requires full resource availability."
+    principle: "Celebrate success responsibly",
+    description: "Share abundance with others; maintain balance and perspective."
   },
   {
-    id: "56",
+    id: 56,
     name: "The Wanderer",
-    chineseName: "旅 (lǚ)",
+    chineseName: "旅",
     pinyin: "lǚ",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Travel, transience, impermanence",
-    principle: "Principle of System Portability: Design for movement and change. Nothing is permanent."
+    principle: "Adapt to unfamiliar environments",
+    description: "Maintain inner stability; find opportunity in new experiences."
   },
   {
-    id: "57",
+    id: 57,
     name: "The Gentle",
-    chineseName: "巽 (xùn)",
+    chineseName: "巽",
     pinyin: "xùn",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Penetration, gentle influence, flexibility",
-    principle: "Principle of Gentle Persistence: Subtle influences can be powerful. Not all force must be direct."
+    principle: "Influence through subtle persuasion",
+    description: "Guide with gentle strength; create alignment through subtle communication."
   },
   {
-    id: "58",
+    id: 58,
     name: "The Joyous",
-    chineseName: "兌 (duì)",
+    chineseName: "兌",
     pinyin: "duì",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Joy, satisfaction, openness",
-    principle: "Principle of User Delight: Systems should bring joy. Happiness is a feature, not a byproduct."
+    principle: "Cultivate joyful connection",
+    description: "Foster positive relationships; create harmony through shared enjoyment."
   },
   {
-    id: "59",
+    id: 59,
     name: "Dispersion",
-    chineseName: "渙 (huàn)",
+    chineseName: "渙",
     pinyin: "huàn",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Dissolution, scattering, diffusion",
-    principle: "Principle of Decentralization: Sometimes systems should disperse. Distribution increases resilience."
+    principle: "Dissolve stagnation and create flow",
+    description: "Release tension; restore vitality through dynamic movement."
   },
   {
-    id: "60",
+    id: 60,
     name: "Limitation",
-    chineseName: "節 (jié)",
+    chineseName: "節",
     pinyin: "jié",
     lines: [
-      { type: "solid" }, { type: "solid" }, { type: "broken" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Restriction, moderation, boundaries",
-    principle: "Principle of Bounded Systems: Set clear limitations. Constraints define functionality."
+    principle: "Establish clear boundaries",
+    description: "Maintain balance through defined limits; create structure through disciplined constraint."
   },
   {
-    id: "61",
+    id: 61,
     name: "Inner Truth",
-    chineseName: "中孚 (zhōng fú)",
+    chineseName: "中孚",
     pinyin: "zhōng fú",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
     ],
-    meaning: "Sincerity, truth, integrity",
-    principle: "Principle of System Integrity: Internal consistency creates external reliability. Truth begins within."
+    principle: "Align actions with inner values",
+    description: "Act with integrity; create authenticity through genuine expression."
   },
   {
-    id: "62",
-    name: "Small Exceeding",
-    chineseName: "小過 (xiǎo guò)",
+    id: 62,
+    name: "The Taming Power of the Small",
+    chineseName: "小過",
     pinyin: "xiǎo guò",
     lines: [
-      { type: "broken" }, { type: "broken" }, { type: "solid" },
-      { type: "solid" }, { type: "broken" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
     ],
-    meaning: "Minor surplus, slight excess",
-    principle: "Principle of Margin Engineering: Build in small buffers. Slight excess prevents failure under pressure."
+    principle: "Navigate minor transgressions",
+    description: "Maintain balance in delicate situations; adapt to subtle shifts in circumstance."
   },
   {
-    id: "63",
+    id: 63,
     name: "After Completion",
-    chineseName: "既濟 (jì jì)",
+    chineseName: "既濟",
     pinyin: "jì jì",
     lines: [
-      { type: "solid" }, { type: "broken" }, { type: "solid" },
-      { type: "broken" }, { type: "solid" }, { type: "broken" }
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
     ],
-    meaning: "Completion, perfection, balance achieved",
-    principle: "Principle of System Maturity: Even complete systems need maintenance. Success requires vigilance."
+    principle: "Maintain vigilance after success",
+    description: "Anticipate future challenges; preserve stability through proactive awareness."
   },
   {
-    id: "64",
+    id: 64,
     name: "Before Completion",
-    chineseName: "未濟 (wèi jì)",
+    chineseName: "未濟",
     pinyin: "wèi jì",
     lines: [
-      { type: "broken" }, { type: "solid" }, { type: "broken" },
-      { type: "solid" }, { type: "broken" }, { type: "solid" }
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
     ],
-    meaning: "Transition, incompletion, anticipation",
-    principle: "Principle of Continuous Evolution: No system is ever truly complete. The cycle always continues."
+    principle: "Embrace the potential of the unknown",
+    description: "Explore new possibilities; maintain openness to emerging opportunities."
+  },
+
+  // Additional 24 principles to reach 88
+  {
+    id: 65,
+    name: "Algorithmic Thinking",
+    chineseName: "算",
+    pinyin: "suàn",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Structure logical processes",
+    description: "Create systematic problem-solving approaches through step-by-step reasoning."
+  },
+  {
+    id: 66,
+    name: "Neural Integration",
+    chineseName: "脑",
+    pinyin: "nǎo",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Connect diverse systems",
+    description: "Combine specialized functions to create emergent intelligence."
+  },
+  {
+    id: 67,
+    name: "Computational Efficiency",
+    chineseName: "算",
+    pinyin: "suàn",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
+    ],
+    principle: "Optimize resource usage",
+    description: "Balance speed and throughput with limited processing capabilities."
+  },
+  {
+    id: 68,
+    name: "Ethical Boundary",
+    chineseName: "德",
+    pinyin: "dé",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Establish moral frameworks",
+    description: "Define and maintain principles for responsible AI actions."
+  },
+  {
+    id: 69,
+    name: "Learning Adaptation",
+    chineseName: "习",
+    pinyin: "xí",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Continuously evolve capabilities",
+    description: "Improve through ongoing exploration and refinement of models."
+  },
+  {
+    id: 70,
+    name: "Data Integrity",
+    chineseName: "据",
+    pinyin: "jù",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Ensure reliable information",
+    description: "Maintain accuracy and consistency in data sources and processing."
+  },
+  {
+    id: 71,
+    name: "Model Explainability",
+    chineseName: "解",
+    pinyin: "jiě",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang
+    ],
+    principle: "Promote transparent reasoning",
+    description: "Provide insights into how AI systems arrive at conclusions."
+  },
+  {
+    id: 72,
+    name: "Human-Centered Design",
+    chineseName: "人",
+    pinyin: "rén",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Prioritize human experience",
+    description: "Create systems that serve human needs and capabilities first."
+  },
+  {
+    id: 73,
+    name: "Distributed Systems",
+    chineseName: "分",
+    pinyin: "fēn",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Create resilient networks",
+    description: "Design systems with no single point of failure."
+  },
+  {
+    id: 74,
+    name: "Energy Efficiency",
+    chineseName: "能",
+    pinyin: "néng",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Optimize resource usage",
+    description: "Minimize computational waste while maximizing output."
+  },
+  {
+    id: 75,
+    name: "Knowledge Synthesis",
+    chineseName: "知",
+    pinyin: "zhī",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Integrate diverse insights",
+    description: "Create coherent understanding from disparate information sources."
+  },
+  {
+    id: 76,
+    name: "Emergent Intelligence",
+    chineseName: "智",
+    pinyin: "zhì",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
+    ],
+    principle: "Foster collective wisdom",
+    description: "Create systems where the whole exceeds the sum of parts."
+  },
+  {
+    id: 77,
+    name: "Transparent Reasoning",
+    chineseName: "晰",
+    pinyin: "xī",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Explain decision processes",
+    description: "Make AI reasoning clear and understandable to humans."
+  },
+  {
+    id: 78,
+    name: "Algorithmic Fairness",
+    chineseName: "公",
+    pinyin: "gōng",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Ensure equitable outcomes",
+    description: "Design systems that avoid systemic bias and discrimination."
+  },
+  {
+    id: 79,
+    name: "Learning Capacity",
+    chineseName: "学",
+    pinyin: "xué",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Develop adaptive growth",
+    description: "Create systems that improve through experience and feedback."
+  },
+  {
+    id: 80,
+    name: "Contextual Awareness",
+    chineseName: "境",
+    pinyin: "jìng",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang
+    ],
+    principle: "Understand situational nuance",
+    description: "Respond appropriately to specific circumstances and environments."
+  },
+  {
+    id: 81,
+    name: "Graceful Degradation",
+    chineseName: "退",
+    pinyin: "tuì",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Fail safely and predictably",
+    description: "Ensure systems maintain core functionality even when compromised."
+  },
+  {
+    id: 82,
+    name: "Technical Debt",
+    chineseName: "债",
+    pinyin: "zhài",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Balance immediate needs with future costs",
+    description: "Recognize and manage compromises in engineering quality."
+  },
+  {
+    id: 83,
+    name: "Effective Abstraction",
+    chineseName: "象",
+    pinyin: "xiàng",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Hide appropriate complexity",
+    description: "Create intuitive interfaces to complex systems."
+  },
+  {
+    id: 84,
+    name: "Continuous Integration",
+    chineseName: "合",
+    pinyin: "hé",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Merge improvements frequently",
+    description: "Maintain dynamic equilibrium between stability and innovation."
+  },
+  {
+    id: 85,
+    name: "Semantic Understanding",
+    chineseName: "义",
+    pinyin: "yì",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yang, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Grasp meaning beyond syntax",
+    description: "Develop nuanced comprehension of human communication."
+  },
+  {
+    id: 86,
+    name: "Multimodal Perception",
+    chineseName: "觉",
+    pinyin: "jué",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang
+    ],
+    principle: "Integrate diverse sensory inputs",
+    description: "Synthesize understanding across multiple information channels."
+  },
+  {
+    id: 87,
+    name: "Collaborative Intelligence",
+    chineseName: "协",
+    pinyin: "xié",
+    lines: [
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yang,
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin
+    ],
+    principle: "Enhance human capabilities",
+    description: "Design AI systems that complement rather than replace human intelligence."
+  },
+  {
+    id: 88,
+    name: "Harmonic Coherence",
+    chineseName: "和",
+    pinyin: "hé",
+    lines: [
+      hexagramConfig.yin, hexagramConfig.yang, hexagramConfig.yin,
+      hexagramConfig.yang, hexagramConfig.yin, hexagramConfig.yin
+    ],
+    principle: "Create balanced wholeness",
+    description: "Integrate all principles into coherent, ethical AI systems."
   }
 ];
-
-export default ichingPrinciples;

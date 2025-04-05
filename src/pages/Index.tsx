@@ -3,25 +3,27 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ZenHero from "@/components/zen/ZenHero";
+import PrinciplesPreview from "@/components/zen/PrinciplesPreview";
+import ProductsOverview from "@/components/zen/ProductsOverview";
+import ZenBackground from "@/components/zen/ZenBackground";
 import { Toaster } from "@/components/ui/toaster";
-import KonamiCodeDetector from "@/components/easter-eggs/KonamiCodeDetector";
-import HeroSection from "@/components/landing/HeroSection";
-import FeatureShowcase from "@/components/landing/FeatureShowcase";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)] overflow-x-hidden">
       <Helmet>
-        <title>Hanzo - AI Cloud & Developer Experience Platform</title>
-        <meta name="description" content="Enterprise-grade AI infrastructure and developer tools. Build, deploy, and scale AI applications with unmatched reliability." />
+        <title>Hanzo - Engineering Enlightenment</title>
+        <meta name="description" content="Forge software with wisdom. Build products aligned with the 88 principles of engineering enlightenment." />
       </Helmet>
       
-      <KonamiCodeDetector />
+      <ZenBackground />
       <Navbar />
       
-      <main className="relative z-10">
-        <HeroSection />
-        <FeatureShowcase />
+      <main>
+        <ZenHero />
+        <PrinciplesPreview />
+        <ProductsOverview />
       </main>
       
       <Footer />

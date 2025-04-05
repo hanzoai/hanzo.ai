@@ -5,7 +5,11 @@ import { AgencyCard } from "./AgencyCard";
 import { SenseiCard } from "./SenseiCard";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-export const SolutionsContent = () => {
+interface SolutionsContentProps {
+  onCloseMenu: () => void;
+}
+
+export const SolutionsContent = ({ onCloseMenu }: SolutionsContentProps) => {
   const isMobile = useIsMobile();
   
   return (
@@ -16,13 +20,14 @@ export const SolutionsContent = () => {
             key={idx}
             title={category.title}
             items={category.items}
+            onItemClick={onCloseMenu}
           />
         ))}
       </div>
 
       <div className={`${isMobile ? 'w-full' : 'w-80'} space-y-4 shrink-0`}>
-        <AgencyCard />
-        <SenseiCard />
+        <AgencyCard onCardClick={onCloseMenu} />
+        <SenseiCard onCardClick={onCloseMenu} />
       </div>
     </div>
   );

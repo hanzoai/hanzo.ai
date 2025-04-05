@@ -7,91 +7,91 @@ export const aiCloudItems: ProductItem[] = [
     name: "AI",
     icon: Brain,
     description: "Unified access to frontier AI models",
-    href: "/ai",
+    link: "/ai",
     id: "ai"
   },
   {
     name: "Chat",
     icon: MessageSquare,
     description: "Interactive AI chat experiences",
-    href: "/teamchat",
+    link: "/teamchat",
     id: "teamchat"
   },
   {
     name: "Datastore",
     icon: Database,
     description: "Scalable data storage for AI applications",
-    href: "/datastore",
+    link: "/datastore",
     id: "datastore"
   },
   {
     name: "Edge",
     icon: Zap,
     description: "Ultra-low latency edge computing",
-    href: "/edge",
+    link: "/edge",
     id: "edge"
   },
   {
     name: "Functions",
     icon: Code2,
     description: "Serverless function execution",
-    href: "/functions",
+    link: "/functions",
     id: "functions"
   },
   {
     name: "Identity",
     icon: User,
     description: "Scalable identity management",
-    href: "/identity",
+    link: "/identity",
     id: "identity"
   },
   {
     name: "Machines",
     icon: Server,
     description: "Dedicated AI compute infrastructure",
-    href: "/machines",
+    link: "/machines",
     id: "machines"
   },
   {
     name: "Payments",
     icon: Calculator,
     description: "Payment processing and subscription billing",
-    href: "/payments",
+    link: "/payments",
     id: "payments"
   },
   {
     name: "Realtime",
     icon: Activity,
     description: "Real-time data synchronization",
-    href: "/realtime",
+    link: "/realtime",
     id: "realtime"
   },
   {
     name: "Storage",
     icon: HardDrive,
     description: "Globally distributed file storage",
-    href: "/storage",
+    link: "/storage",
     id: "storage"
   },
   {
     name: "Vector",
     icon: Box,
     description: "High-performance vector database for AI",
-    href: "/vector",
+    link: "/vector",
     id: "vector"
   },
   {
     name: "Cloud",
     icon: Cloud,
     description: "Managed infrastructure for AI applications",
-    href: "/cloud",
+    link: "/cloud",
     id: "cloud"
   },
   {
     name: "Operative",
     icon: Workflow,
     description: "AI-native assistant for automating tasks",
-    href: "/operative",
+    link: "/operative",
     id: "operative"
   }
 ];
@@ -101,56 +101,56 @@ export const dxPlatformItems: ProductItem[] = [
     name: "App",
     icon: Monitor,
     description: "AI app builder with drag-and-drop workflows",
-    href: "/app",
+    link: "/app",
     id: "app"
   },
   {
     name: "Bot",
     icon: Bot,
     description: "Agentic framework for AI assistants",
-    href: "/bot",
+    link: "/bot",
     id: "bot"
   },
   {
     name: "Code",
     icon: Code2,
     description: "AI-powered code editor and generator",
-    href: "/code",
+    link: "/code",
     id: "code"
   },
   {
     name: "Dev",
     icon: Server,
     description: "AI engineer assistant for developers",
-    href: "/dev",
+    link: "/dev",
     id: "dev"
   },
   {
     name: "Extension",
     icon: ExternalLink,
     description: "Browser and code editor plugins",
-    href: "/extension",
+    link: "/extension",
     id: "extension"
   },
   {
     name: "Platform",
     icon: Globe,
     description: "Open source AI engineering platform",
-    href: "/platform",
+    link: "/platform",
     id: "platform"
   },
   {
     name: "Runtime",
     icon: Server,
     description: "Container runtime for AI applications",
-    href: "/runtime",
+    link: "/runtime",
     id: "runtime"
   },
   {
     name: "Studio",
     icon: Monitor,
     description: "Low-code IDE for AI development",
-    href: "/ai-studio",
+    link: "/ai-studio",
     id: "studio"
   }
 ];
