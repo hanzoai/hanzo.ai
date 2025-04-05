@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,7 +11,7 @@ const Datastore = () => {
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Navbar />
-      
+
       <main>
         <HeroSection />
         <KeyFeatures />
@@ -20,7 +19,7 @@ const Datastore = () => {
         <UseCasesSection />
         <GetStartedSection />
       </main>
-      
+
       <Footer />
     </div>
   );
