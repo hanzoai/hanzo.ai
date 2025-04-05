@@ -188,4 +188,7 @@ const App = () => {
   );
 };
 
+// Add for debug purposes
+console.log('Current pathname:', window.location.pathname);
+
 export default App;
