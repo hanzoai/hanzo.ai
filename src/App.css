@@ -44,10 +44,18 @@
 
 /* New Hanzo Design System */
 
+:root {
+  --header-height: 64px;
+}
+
 /* Elegant animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
 }
 
 @keyframes slideIn {
@@ -141,4 +149,27 @@
 .subtle-hover:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
+}
+
+/* Mega menu animations */
+.mega-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.mega-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mega-menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.mega-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
 }
