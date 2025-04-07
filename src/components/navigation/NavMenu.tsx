@@ -1,8 +1,7 @@
 
 import { useState, ReactNode, useEffect, useRef } from "react";
-import { ChevronDown, Search, MessageSquare } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { utilityNav } from "@/constants/navigation-data";
 import { cn } from "@/lib/utils";
 
 type NavMenuProps = {
@@ -111,19 +110,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
               }}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-                {/* Utility nav in top right */}
-                <div className="absolute top-4 right-6 flex items-center space-x-6">
-                  <a href={utilityNav.search.href} className="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
-                    <Search className="h-4 w-4" />
-                    <span>{utilityNav.search.title}</span>
-                  </a>
-                  <a href={utilityNav.chat.href} className="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
-                    <MessageSquare className="h-4 w-4" />
-                    <span>{utilityNav.chat.title}</span>
-                  </a>
-                </div>
-                
-                <div className="reveal-content mt-2">
+                <div className="reveal-content">
                   {childrenWithProps}
                 </div>
               </div>
