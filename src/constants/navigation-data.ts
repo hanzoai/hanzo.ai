@@ -150,7 +150,7 @@ export const productsNav: NavSection[] = [
         title: "Studio",
         href: "/studio",
         description: "Low-code IDE for AI development",
-        icon: LaptopCode
+        icon: Laptop
       }
     ]
   }
