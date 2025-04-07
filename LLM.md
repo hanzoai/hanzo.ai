@@ -2,12 +2,18 @@
 
 ## Recent Changes (2025-04-07)
 
-### 1. Fixed ProductsMenu Export/Import Issue
+### 1. Fixed ProductsMenu Import in DesktopNav.tsx
+- **Issue**: The ProductsMenu component had both named and default exports, but was imported as a default import in DesktopNav.tsx, causing an error: "lockdown-install.js:1:135422 'http://localhost:8080/src/components/navigation/products-menu/index.tsx' doesn't provide an export named: 'ProductsMenu'"
+- **Solution**: Updated the import in DesktopNav.tsx to use a named import for consistency with other menu components.
+- **Commit**: Current commit - "Fix ProductsMenu import in DesktopNav.tsx to use named import"
+
+
+### 2. Fixed ProductsMenu Export/Import Issue
 - **Issue**: The ProductsMenu component was exported with a named export but imported as a default export in DesktopNav.tsx, causing a module resolution error: "The requested module doesn't provide an export named: 'ProductsMenu'"
 - **Solution**: Added default export to ProductsMenu and updated the import in DesktopNav.tsx to use a default import.
 - **Commit**: [fdf6f92](https://github.com/hanzoai/hanzo.ai/commit/fdf6f92) - "Fix ProductsMenu export and update Node.js compatibility"
 
-### 2. Updated Node.js Version Requirements
+### 3. Updated Node.js Version Requirements
 - **Issue**: The project required modern JavaScript features (nullish coalescing assignment operator) not supported in Node.js v14.
 - **Solution**: Added .nvmrc file specifying Node.js v20 and updated package.json script to suppress warnings.
 - **Commit**: [fdf6f92](https://github.com/hanzoai/hanzo.ai/commit/fdf6f92) - "Fix ProductsMenu export and update Node.js compatibility"
@@ -16,12 +22,12 @@
 
 ## Issues Identified
 
-### 3. Component Export/Import Inconsistency (Historical)
+### 1. Component Export/Import Inconsistency (Historical)
 - **Issue**: The ProductsMenu component was using a default export while being imported as a named export in DesktopNav.
 - **Solution**: Changed ProductsMenu to use named export for consistency with other menu components.
 - **Commit**: [68f3e2c](https://github.com/hanzoai/hanzo.ai/commit/68f3e2c) - "Fix: Change ProductsMenu to use named export for consistency"
 
-### 4. Node.js Version Compatibility
+### 2. Node.js Version Compatibility
 - **Status**: RESOLVED
 - **Issue**: The project required Node.js with support for modern JavaScript features.
 - **Solution**: Added .nvmrc specifying Node.js v20 and configured package.json to suppress warnings.
