@@ -299,7 +299,7 @@ const ProductsOverview = () => {
         }}
       />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-screen-2xl w-full mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -316,7 +316,7 @@ const ProductsOverview = () => {
         </motion.div>
 
         {/* AI Ecosystem Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -406,7 +406,7 @@ const ProductsOverview = () => {
           </motion.div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.name}
