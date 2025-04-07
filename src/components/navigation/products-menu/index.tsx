@@ -36,18 +36,22 @@ const ProductsMenu = () => {
                     <Link
                       key={item.title}
                       to={item.href}
-                      className="flex flex-col space-y-1"
+                      className="flex items-center space-x-3 group"
                       onClick={closeMenu}
                     >
-                      <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 flex items-center justify-center shrink-0">
                         {Icon && <Icon className="h-5 w-5 text-neutral-400 group-hover:text-white" />}
-                        <span className="text-neutral-300 group-hover:text-white font-medium">{item.title}</span>
                       </div>
-                      {item.description && (
-                        <div className="text-sm text-neutral-500 group-hover:text-neutral-400 ml-8">
-                          {item.description}
+                      <div className="flex-1">
+                        <div className="text-neutral-300 group-hover:text-white font-medium truncate">
+                          {item.title}
                         </div>
-                      )}
+                        {item.description && (
+                          <div className="text-sm text-neutral-500 group-hover:text-neutral-400">
+                            {item.description}
+                          </div>
+                        )}
+                      </div>
                     </Link>
                   );
                 })}

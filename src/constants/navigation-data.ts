@@ -1,28 +1,37 @@
 import { 
   AppWindow, 
   Bot, 
+  Brain,
   Braces, 
   Building2, 
+  Car,
   Cloud, 
   Code, 
   CreditCard, 
   Database, 
+  DollarSign,
+  Factory,
   FileCode, 
   Globe, 
+  Landmark,
+  Laptop,
+  Leaf,
   LucideIcon, 
   MessageSquare, 
   MonitorSmartphone, 
   Network, 
   Plane, 
+  Rocket,
   Search, 
   Server, 
+  Shield, 
   ShieldCheck, 
+  ShoppingCart,
   Sparkles, 
   Terminal, 
   Users, 
   Zap,
-  Container,
-  LaptopCode
+  Container
 } from 'lucide-react';
 
 export type NavItem = {
@@ -154,17 +163,17 @@ export const capabilitiesNav: NavSection[] = [
       {
         title: "Cloud",
         href: "/solutions/cloud",
-        icon: Cloud
+        icon: Globe
       },
       {
         title: "Cybersecurity",
         href: "/solutions/cybersecurity",
-        icon: ShieldCheck
+        icon: Shield
       },
       {
         title: "Data and Artificial Intelligence",
         href: "/solutions/data-ai",
-        icon: Database
+        icon: Brain
       },
       {
         title: "Digital Engineering and Manufacturing",
@@ -174,7 +183,7 @@ export const capabilitiesNav: NavSection[] = [
       {
         title: "Emerging Technology",
         href: "/solutions/emerging-tech",
-        icon: Sparkles
+        icon: Rocket
       },
       {
         title: "Ecosystem Partners",
@@ -184,7 +193,7 @@ export const capabilitiesNav: NavSection[] = [
       {
         title: "Finance and Risk Management",
         href: "/solutions/finance",
-        icon: CreditCard
+        icon: DollarSign
       },
       {
         title: "Infrastructure and Capital Projects",
@@ -207,12 +216,12 @@ export const industriesNav: NavSection[] = [
       {
         title: "Automotive",
         href: "/industries/automotive",
-        icon: Terminal
+        icon: Car
       },
       {
         title: "Banking",
         href: "/industries/banking",
-        icon: CreditCard
+        icon: Landmark
       },
       {
         title: "Capital Markets",
@@ -222,22 +231,22 @@ export const industriesNav: NavSection[] = [
       {
         title: "Chemicals",
         href: "/industries/chemicals",
-        icon: Server
+        icon: Factory
       },
       {
         title: "Communications and Media",
         href: "/industries/communications",
-        icon: MonitorSmartphone
+        icon: Laptop
       },
       {
         title: "Consumer Goods and Services",
         href: "/industries/consumer",
-        icon: Users
+        icon: ShoppingCart
       },
       {
         title: "Energy",
         href: "/industries/energy",
-        icon: Zap
+        icon: Leaf
       },
     ]
   }
