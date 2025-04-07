@@ -8,19 +8,13 @@ interface NavbarContainerProps {
 }
 
 const NavbarContainer = ({ children, isScrolled }: NavbarContainerProps) => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode, getGlassClass } = useTheme();
   
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? isDarkMode 
-            ? "bg-[var(--black)]/80 backdrop-blur-md shadow-sm" 
-            : "bg-[var(--white)]/80 backdrop-blur-md shadow-sm"
-          : isDarkMode 
-            ? "bg-[var(--black)]/40 backdrop-blur-sm" 
-            : "bg-[var(--white)]/40 backdrop-blur-sm"
-      }`}
+        isScrolled ? "backdrop-blur-md shadow-sm" : "backdrop-blur-sm"
+      } ${getGlassClass()}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-[var(--header-height)]">

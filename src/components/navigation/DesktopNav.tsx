@@ -1,8 +1,9 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { ProductsMenu } from "./products-menu";
 import { SolutionsMenu } from "./solutions-menu";
-import { ResourcesMenu } from "./ResourcesMenu";
+import { ResourcesMenu } from "./resources-menu";
 import { mainNav } from "@/constants/navigation-data";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -24,7 +25,7 @@ const DesktopNav = () => {
           <Link 
             key={item.title}
             to={item.href}
-            className="text-neutral-400 hover:text-[var(--white)] transition-colors"
+            className="text-neutral-400 hover:text-neutral-100 transition-colors"
           >
             {item.title}
           </Link>
