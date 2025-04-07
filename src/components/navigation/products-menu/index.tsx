@@ -5,18 +5,30 @@ import NavMenu from "../NavMenu";
 import { Zap, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const ProductsMenu = () => {
   return (
     <NavMenu label="Products">
       {(closeMenu) => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Map through product sections */}
-          {productsNav.map((section, index) => (
-            <div key={section.title}>
-              <h3 className="text-lg font-semibold text-white mb-4">{section.title}</h3>
+          {/* Display the sections side by side */}
+          {productsNav.map((section) => (
+            <div key={section.title} className="flex flex-col">
+              {/* Section Title with View All Link */}
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+                <Link
+                  to={section.title === "AI Cloud" ? "/cloud" : "/platform"}
+                  className="text-sm text-purple-400 hover:text-purple-300"
+                  onClick={closeMenu}
+                >
+                  View all {section.title} →
+                </Link>
+              </div>
               
-              <div className="grid gap-4">
+              {/* Grid of items for each section */}
+              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                 {section.items.map((item) => {
                   const Icon = item.icon;
                   
@@ -24,33 +36,18 @@ const ProductsMenu = () => {
                     <Link
                       key={item.title}
                       to={item.href}
-                      className="flex items-start space-x-3 group"
+                      className="flex flex-col space-y-1"
                       onClick={closeMenu}
                     >
-                      {Icon && (
-                        <div className="mt-1">
-                          <Icon className="h-5 w-5 text-neutral-400 group-hover:text-white" />
+                      <div className="flex items-center space-x-3">
+                        {Icon && <Icon className="h-5 w-5 text-neutral-400 group-hover:text-white" />}
+                        <span className="text-neutral-300 group-hover:text-white font-medium">{item.title}</span>
+                      </div>
+                      {item.description && (
+                        <div className="text-sm text-neutral-500 group-hover:text-neutral-400 ml-8">
+                          {item.description}
                         </div>
                       )}
-                      <div>
-                        <div className="text-neutral-300 group-hover:text-white font-medium">
-                          {item.title}
-                          {item.featured && (
-                            <span className={cn(
-                              "ml-2 px-1.5 py-0.5 text-xs rounded-full",
-                              "bg-gradient-to-r from-blue-500/30 to-purple-500/30",
-                              "border border-blue-500/30 text-blue-300"
-                            )}>
-                              New
-                            </span>
-                          )}
-                        </div>
-                        {item.description && (
-                          <div className="text-sm text-neutral-500 group-hover:text-neutral-400">
-                            {item.description}
-                          </div>
-                        )}
-                      </div>
                     </Link>
                   );
                 })}
@@ -58,7 +55,7 @@ const ProductsMenu = () => {
               
               {/* Promo box based on section title */}
               <div className={cn(
-                "mt-6 p-4 rounded-xl transition-colors",
+                "mt-auto mt-6 p-4 rounded-xl transition-colors",
                 section.title === "AI Cloud" 
                   ? "bg-gradient-to-b from-purple-900/30 to-blue-900/30 border border-purple-500/20 hover:border-purple-500/40" 
                   : "bg-gradient-to-b from-green-900/30 to-teal-900/30 border border-green-500/20 hover:border-green-500/40"

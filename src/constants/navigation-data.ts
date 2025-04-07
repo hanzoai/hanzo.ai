@@ -1,17 +1,28 @@
 import { 
   AppWindow, 
+  Bot, 
   Braces, 
+  Building2, 
   Cloud, 
   Code, 
+  CreditCard, 
   Database, 
+  FileCode, 
+  Globe, 
   LucideIcon, 
   MessageSquare, 
+  MonitorSmartphone, 
+  Network, 
+  Plane, 
   Search, 
   Server, 
   ShieldCheck, 
   Sparkles, 
+  Terminal, 
   Users, 
-  Zap
+  Zap,
+  Container,
+  LaptopCode
 } from 'lucide-react';
 
 export type NavItem = {
@@ -34,27 +45,50 @@ export const productsNav: NavSection[] = [
       {
         title: "AI",
         href: "/ai",
-        description: "Build, deploy, and manage AI applications",
-        icon: Sparkles,
-        featured: true
+        description: "Unified access to frontier AI models",
+        icon: Sparkles
       },
       {
-        title: "Vector Database",
-        href: "/vector",
-        description: "High-performance vector database for AI",
+        title: "Chat",
+        href: "/chat",
+        description: "Interactive AI chat experiences",
+        icon: MessageSquare
+      },
+      {
+        title: "Datastore",
+        href: "/datastore",
+        description: "Scalable data storage for AI applications",
         icon: Database
       },
       {
-        title: "Cloud Compute",
-        href: "/cloud",
-        description: "Scalable infrastructure for AI workloads",
-        icon: Cloud
+        title: "Edge",
+        href: "/edge",
+        description: "Ultra-low latency edge computing",
+        icon: Zap
       },
       {
-        title: "AI Studio",
-        href: "/ai-studio",
-        description: "Visual development environment for AI",
-        icon: AppWindow
+        title: "Functions",
+        href: "/functions",
+        description: "Serverless function execution",
+        icon: Code
+      },
+      {
+        title: "Identity",
+        href: "/identity",
+        description: "Scalable identity management",
+        icon: Users
+      },
+      {
+        title: "Machines",
+        href: "/machines",
+        description: "Dedicated AI compute infrastructure",
+        icon: Server
+      },
+      {
+        title: "Payments",
+        href: "/payments",
+        description: "Payment processing and subscription billing",
+        icon: CreditCard
       }
     ]
   },
@@ -62,83 +96,149 @@ export const productsNav: NavSection[] = [
     title: "DX Platform",
     items: [
       {
-        title: "Developer Platform",
-        href: "/platform",
-        description: "Complete platform for app development",
-        icon: Code,
-        featured: true
+        title: "App",
+        href: "/app",
+        description: "AI app builder with drag-and-drop workflows",
+        icon: AppWindow
       },
       {
-        title: "Edge Compute",
-        href: "/edge",
-        description: "Global edge computing network",
-        icon: Server
+        title: "Bot",
+        href: "/bot",
+        description: "Agentic framework for AI assistants",
+        icon: Bot
       },
       {
-        title: "Open Source",
-        href: "/open-source",
-        description: "Free and open source components",
+        title: "Code",
+        href: "/code",
+        description: "AI-powered code editor and generator",
+        icon: FileCode
+      },
+      {
+        title: "Dev",
+        href: "/dev",
+        description: "AI engineer assistant for developers",
+        icon: Terminal
+      },
+      {
+        title: "Extension",
+        href: "/extension",
+        description: "Browser and code editor plugins",
         icon: Braces
       },
       {
-        title: "Operative",
-        href: "/operative",
-        description: "AI-powered DevOps automation",
-        icon: Zap
+        title: "Platform",
+        href: "/platform",
+        description: "Open source AI engineering platform",
+        icon: Globe
+      },
+      {
+        title: "Runtime",
+        href: "/runtime",
+        description: "Container runtime for AI applications",
+        icon: Container
+      },
+      {
+        title: "Studio",
+        href: "/studio",
+        description: "Low-code IDE for AI development",
+        icon: LaptopCode
       }
     ]
   }
 ];
 
-export const solutionsNav: NavSection[] = [
+export const capabilitiesNav: NavSection[] = [
   {
-    title: "By Capability",
+    title: "Capabilities",
     items: [
       {
-        title: "Enterprise AI",
-        href: "/solutions/enterprise-ai",
-        description: "AI solutions for large organizations"
-      },
-      {
-        title: "Data Engineering",
-        href: "/solutions/data-engineering",
-        description: "Build scalable data pipelines"
-      },
-      {
-        title: "API Development",
-        href: "/solutions/api-development",
-        description: "Design and build robust APIs"
+        title: "Cloud",
+        href: "/solutions/cloud",
+        icon: Cloud
       },
       {
         title: "Cybersecurity",
         href: "/solutions/cybersecurity",
-        description: "Secure your applications and data"
-      }
+        icon: ShieldCheck
+      },
+      {
+        title: "Data and Artificial Intelligence",
+        href: "/solutions/data-ai",
+        icon: Database
+      },
+      {
+        title: "Digital Engineering and Manufacturing",
+        href: "/solutions/engineering",
+        icon: Code
+      },
+      {
+        title: "Emerging Technology",
+        href: "/solutions/emerging-tech",
+        icon: Sparkles
+      },
+      {
+        title: "Ecosystem Partners",
+        href: "/solutions/partners",
+        icon: Network
+      },
+      {
+        title: "Finance and Risk Management",
+        href: "/solutions/finance",
+        icon: CreditCard
+      },
+      {
+        title: "Infrastructure and Capital Projects",
+        href: "/solutions/infrastructure",
+        icon: Building2
+      },
     ]
-  },
+  }
+];
+
+export const industriesNav: NavSection[] = [
   {
-    title: "By Industry",
+    title: "Industries",
     items: [
       {
-        title: "Finance",
-        href: "/solutions/finance",
-        description: "Solutions for financial services"
+        title: "Aerospace and Defense",
+        href: "/industries/aerospace",
+        icon: Plane
       },
       {
-        title: "Healthcare",
-        href: "/solutions/healthcare",
-        description: "HIPAA-compliant healthcare solutions"
+        title: "Automotive",
+        href: "/industries/automotive",
+        icon: Terminal
       },
       {
-        title: "E-commerce",
-        href: "/solutions/ecommerce",
-        description: "Scale your online retail business"
+        title: "Banking",
+        href: "/industries/banking",
+        icon: CreditCard
       },
       {
-        title: "SaaS",
-        href: "/solutions/saas",
-        description: "Build successful SaaS applications"
-      }
+        title: "Capital Markets",
+        href: "/industries/capital-markets",
+        icon: Globe
+      },
+      {
+        title: "Chemicals",
+        href: "/industries/chemicals",
+        icon: Server
+      },
+      {
+        title: "Communications and Media",
+        href: "/industries/communications",
+        icon: MonitorSmartphone
+      },
+      {
+        title: "Consumer Goods and Services",
+        href: "/industries/consumer",
+        icon: Users
+      },
+      {
+        title: "Energy",
+        href: "/industries/energy",
+        icon: Zap
+      },
     ]
   }
 ];
@@ -222,7 +322,10 @@ export const mainNav = [
   },
   {
     title: "Solutions",
-    sections: solutionsNav
+    sections: [
+      ...capabilitiesNav,
+      ...industriesNav
+    ]
   },
   {
     title: "Resources",
