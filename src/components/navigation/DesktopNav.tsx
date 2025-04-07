@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProductsMenu } from "./products-menu";
+import ProductsMenu from "./products-menu";
 import { SolutionsMenu } from "./solutions-menu";
 import { ResourcesMenu } from "./ResourcesMenu";
 import { mainNav } from "@/constants/navigation-data";

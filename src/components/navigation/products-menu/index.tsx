@@ -112,3 +112,5 @@ export const ProductsMenu = () => {
   );
 };
 
+export default ProductsMenu;
+
