@@ -4,7 +4,7 @@ import NavMenu from "../NavMenu";
 import { Zap, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ProductsMenu = () => {
+export const ProductsMenu = () => {
   return (
     <NavMenu label="Products">
       {(closeMenu) => (
@@ -112,4 +112,3 @@ const ProductsMenu = () => {
   );
 };
 
-export default ProductsMenu;
