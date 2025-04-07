@@ -1,10 +1,12 @@
+
 import { productsNav } from "@/constants/navigation-data";
 import { Link } from "react-router-dom";
 import NavMenu from "../NavMenu";
 import { Zap, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export const ProductsMenu = () => {
+const ProductsMenu = () => {
   return (
     <NavMenu label="Products">
       {(closeMenu) => (
@@ -34,7 +36,11 @@ export const ProductsMenu = () => {
                         <div className="text-neutral-300 group-hover:text-white font-medium">
                           {item.title}
                           {item.featured && (
-                            <span className="ml-2 px-1.5 py-0.5 text-xs rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 border border-blue-500/30 text-blue-300">
+                            <span className={cn(
+                              "ml-2 px-1.5 py-0.5 text-xs rounded-full",
+                              "bg-gradient-to-r from-blue-500/30 to-purple-500/30",
+                              "border border-blue-500/30 text-blue-300"
+                            )}>
                               New
                             </span>
                           )}
@@ -51,11 +57,12 @@ export const ProductsMenu = () => {
               </div>
               
               {/* Promo box based on section title */}
-              <div className={`mt-6 p-4 rounded-xl ${
+              <div className={cn(
+                "mt-6 p-4 rounded-xl transition-colors",
                 section.title === "AI Cloud" 
                   ? "bg-gradient-to-b from-purple-900/30 to-blue-900/30 border border-purple-500/20 hover:border-purple-500/40" 
                   : "bg-gradient-to-b from-green-900/30 to-teal-900/30 border border-green-500/20 hover:border-green-500/40"
-              } transition-colors`}>
+              )}>
                 <div className="flex items-center space-x-2 mb-2">
                   {section.title === "AI Cloud" ? (
                     <>
@@ -113,4 +120,3 @@ export const ProductsMenu = () => {
 };
 
 export default ProductsMenu;
-

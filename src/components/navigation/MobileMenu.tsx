@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import { Menu, X, ChevronRight, Search, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/radix-button";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { mainNav, utilityNav, NavSection } from "@/constants/navigation-data";
+import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -70,7 +72,10 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
                         onClick={() => toggleSection(item.title)}
                       >
                         {item.title}
-                        <ChevronRight className={`h-4 w-4 transition-transform ${expandedSections[item.title] ? 'rotate-90' : ''}`} />
+                        <ChevronRight className={cn(
+                          "h-4 w-4 transition-transform",
+                          expandedSections[item.title] && "rotate-90"
+                        )} />
                       </button>
                       
                       {expandedSections[item.title] && item.sections && (

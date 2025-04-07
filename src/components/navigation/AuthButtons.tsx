@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { cn } from "@/lib/utils";
 
 interface AuthButtonsProps {
   user: any | null;
@@ -17,7 +18,11 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
         <Button 
           variant="outline" 
           size="sm"
-          className={`${isDarkMode ? "text-[var(--white)] border-white hover:bg-[var(--white)]/10" : "text-neutral-900 border-gray-300 hover:bg-gray-100"} ${getRoundingClass()} h-10 min-w-[120px]`}
+          className={cn(
+            isDarkMode ? "text-[var(--white)] border-white hover:bg-[var(--white)]/10" : "text-neutral-900 border-gray-300 hover:bg-gray-100",
+            getRoundingClass(),
+            "h-10 min-w-[120px]"
+          )}
         >
           <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
             <User className="h-4 w-4" />

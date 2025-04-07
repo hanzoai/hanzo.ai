@@ -1,11 +1,13 @@
+
 import { useState, ReactNode, useEffect, useRef } from "react";
 import { ChevronDown, Search, MessageSquare } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { utilityNav } from "@/constants/navigation-data";
+import { cn } from "@/lib/utils";
 
 type NavMenuProps = {
   label: string;
-  children: ReactNode;
+  children: ReactNode | ((closeMenu: () => void) => ReactNode);
 };
 
 export const NavMenu = ({ label, children }: NavMenuProps) => {
@@ -80,11 +82,17 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
       {/* Menu trigger button */}
       <button
         onClick={toggleMenu}
-        className={`${isOpen ? 'text-white' : 'text-neutral-300'} hover:text-white transition-colors inline-flex items-center outline-none focus:outline-none`}
+        className={cn(
+          "inline-flex items-center outline-none focus:outline-none transition-colors",
+          isOpen ? "text-white" : "text-neutral-300 hover:text-white"
+        )}
       >
         {label}
         <ChevronDown
-          className={`ml-1 h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={cn(
+            "ml-1 h-4 w-4 transition-transform duration-300",
+            isOpen && "rotate-180"
+          )}
         />
       </button>
 

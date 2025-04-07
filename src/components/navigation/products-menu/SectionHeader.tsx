@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
   title: string;
@@ -16,7 +17,12 @@ const SectionHeader = ({ title, link, linkText }: SectionHeaderProps) => {
           {title}
         </h3>
       </Link>
-      <Link to={link} className="text-sm text-purple-400 hover:text-purple-300 flex items-center group">
+      <Link 
+        to={link} 
+        className={cn(
+          "text-sm text-purple-400 hover:text-purple-300 flex items-center group"
+        )}
+      >
         {linkText}
         <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
       </Link>

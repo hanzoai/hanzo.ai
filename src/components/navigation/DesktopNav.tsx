@@ -1,11 +1,12 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProductsMenu } from "./products-menu";
+import ProductsMenu from "./products-menu";
 import { SolutionsMenu } from "./solutions-menu";
 import { ResourcesMenu } from "./resources-menu";
 import { mainNav } from "@/constants/navigation-data";
 import { useTheme } from "@/contexts/ThemeContext";
+import { cn } from "@/lib/utils";
 
 const DesktopNav = () => {
   const { isDarkMode } = useTheme();
@@ -25,7 +26,10 @@ const DesktopNav = () => {
           <Link 
             key={item.title}
             to={item.href}
-            className="text-neutral-400 hover:text-neutral-100 transition-colors"
+            className={cn(
+              "text-neutral-400 hover:text-neutral-100 transition-colors", 
+              "text-sm font-medium"
+            )}
           >
             {item.title}
           </Link>
