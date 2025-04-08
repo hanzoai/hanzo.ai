@@ -324,7 +324,13 @@ export const resourcesNav: NavSection[] = [
   }
 ];
 
-export const mainNav = [
+export type MainNavItem = {
+  title: string;
+  href?: string;
+  sections?: NavSection[];
+};
+
+export const mainNav: MainNavItem[] = [
   {
     title: "Products",
     sections: productsNav

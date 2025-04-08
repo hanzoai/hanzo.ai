@@ -1,4 +1,3 @@
-
 import { productsNav } from "@/constants/navigation-data";
 import { Link } from "react-router-dom";
 import NavMenu from "../NavMenu";
@@ -7,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-const ProductsMenu = () => {
+export const ProductsMenu = () => {
   return (
     <NavMenu label="Products">
       {(closeMenu) => (
@@ -121,5 +120,3 @@ const ProductsMenu = () => {
     </NavMenu>
   );
 };
-
-export default ProductsMenu;

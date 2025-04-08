@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { mainNav, NavSection } from "@/constants/navigation-data";
+import { mainNav, utilityNav, NavSection, MainNavItem } from "@/constants/navigation-data";
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {

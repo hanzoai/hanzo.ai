@@ -79,8 +79,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter var", "sans-serif"],
-        display: ["CalSans Semibold", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        display: ["Inter", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
         serif: ["Georgia", "serif"],
       },
