@@ -101,12 +101,14 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
           {/* Desktop: Header-height dropdown with backdrop */}
           {isDesktop ? (
             <div
-              className="absolute left-0 w-screen bg-[#000000]/95 backdrop-blur-md z-50 animate-fadeIn shadow-xl"
+              className="absolute w-screen bg-[#000000]/95 backdrop-blur-md z-50 animate-fadeIn shadow-xl"
               style={{
                 top: 'var(--header-height)',
                 width: '100vw',
                 left: '50%',
-                transform: 'translateX(-50%)'
+                right: '50%',
+                transform: 'translateX(-50%)',
+                margin: '0 auto'
               }}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">

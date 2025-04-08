@@ -15,8 +15,8 @@ const DesktopNav = () => {
   const directNavItems = mainNav.filter(item => item.href);
   
   return (
-    <div className="hidden md:flex items-center justify-center space-x-6 flex-1">
-      <div className="flex items-center justify-center space-x-8">
+    <div className="hidden md:flex items-center justify-center space-x-6 flex-1 w-full">
+      <div className="flex items-center justify-center space-x-8 w-full max-w-7xl mx-auto">
         <ProductsMenu />
         <SolutionsMenu />
         <ResourcesMenu />
