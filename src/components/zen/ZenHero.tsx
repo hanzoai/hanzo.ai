@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
@@ -13,7 +12,9 @@ const ZenHero = () => {
     "The way is in training.",
     "Build with purpose, not with haste.",
     "In silence, find clarity.",
-    "Each line of code should be necessary."
+    "Each line of code should be necessary.",
+    "Perfect practice makes perfect code.",
+    "The path to mastery never ends."
   ];
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const ZenHero = () => {
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
-              The Way of Hanzo
+              The 64 Principles
             </span>
           </h1>
           
@@ -63,7 +64,7 @@ const ZenHero = () => {
           
           <p className="text-neutral-500 max-w-2xl mx-auto mt-8">
             Build software with enlightened engineering. Hanzo's platform embodies 
-            88 principles that guide the creation of resilient, scalable systems.
+            64 principles organized into 8 disciplines that guide the creation of resilient, scalable systems.
           </p>
         </motion.div>
         

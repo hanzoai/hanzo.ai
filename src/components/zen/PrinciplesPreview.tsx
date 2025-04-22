@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Info, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import IChingHexagram from "./svg/IChingHexagram";
 import { principles } from "./data/zenPrinciples";
 
 interface WisdomDialogProps {
   principle: {
-    name: string;
-    chineseName: string;
-    pinyin: string;
-    principle: string;
-    lines: { type: string }[];
-    wisdomText?: string;
+    number: string;
+    title: string;
+    description: string;
+    discipline: string;
+    emoji: string;
   };
   isOpen: boolean;
   onClose: () => void;
@@ -39,11 +37,13 @@ const WisdomDialog: React.FC<WisdomDialogProps> = ({ principle, isOpen, onClose 
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center">
-                <IChingHexagram lines={principle.lines} size={32} className="text-white mr-4" />
+                <div className="w-8 h-8 flex items-center justify-center bg-purple-500/20 rounded-full text-purple-400 mr-3">
+                  {principle.emoji}
+                </div>
                 <div>
-                  <h3 className="text-white text-xl font-medium">{principle.name}</h3>
+                  <h3 className="text-white text-xl font-medium">{principle.title}</h3>
                   <div className="text-neutral-400 text-sm">
-                    {principle.chineseName} · {principle.pinyin}
+                    {principle.discipline}
                   </div>
                 </div>
               </div>
@@ -56,11 +56,11 @@ const WisdomDialog: React.FC<WisdomDialogProps> = ({ principle, isOpen, onClose 
             </div>
             
             <div className="mb-4 text-neutral-200 font-medium">
-              "{principle.principle}"
+              "{principle.description}"
             </div>
             
             <div className="text-neutral-400 text-sm">
-              {principle.wisdomText || "In the boundless void, patterns emerge. The wise engineer recognizes that structure itself is emptiness, and emptiness is structure. Through this understanding, they create systems that flow with, rather than against, the natural momentum of change."}
+              Deep mastery of this principle leads to engineering excellence. Apply it consistently to create systems that are elegant, resilient, and sustainable.
             </div>
             
             <div className="mt-6 pt-4 border-t border-white/10 text-center">
@@ -68,7 +68,7 @@ const WisdomDialog: React.FC<WisdomDialogProps> = ({ principle, isOpen, onClose 
                 to="/zen" 
                 className="text-purple-400 hover:text-purple-300 transition-colors text-sm flex items-center justify-center"
               >
-                <span>Explore more wisdom</span>
+                <span>Explore more principles</span>
                 <ArrowRight className="ml-2 h-3 w-3" />
               </Link>
             </div>
@@ -82,106 +82,15 @@ const WisdomDialog: React.FC<WisdomDialogProps> = ({ principle, isOpen, onClose 
 const PrinciplesPreview = () => {
   const [selectedPrinciple, setSelectedPrinciple] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedDiscipline, setSelectedDiscipline] = useState<string | null>(null);
 
-  // Sample hexagrams to display
-  const previewHexagrams = [
-    {
-      id: "1",
-      name: "Creative Force",
-      chineseName: "乾",
-      pinyin: "qián",
-      principle: "Initiate with clear vision",
-      wisdomText: "The Creative is heaven's foundation. The master engineer builds with vision that transcends the immediate, seeing potential where others perceive only obstacles. In initiating new endeavors, clarity of purpose illuminates the path forward.",
-      lines: [
-        { type: "solid" }, { type: "solid" }, { type: "solid" },
-        { type: "solid" }, { type: "solid" }, { type: "solid" }
-      ]
-    },
-    {
-      id: "2",
-      name: "Receptive Force",
-      chineseName: "坤",
-      pinyin: "kūn",
-      principle: "Nurture with patience",
-      wisdomText: "The Receptive is earth's foundation. The enlightened developer understands that cultivation requires space and time. Success comes not from forcing growth, but from creating the conditions where innovation naturally flourishes.",
-      lines: [
-        { type: "broken" }, { type: "broken" }, { type: "broken" },
-        { type: "broken" }, { type: "broken" }, { type: "broken" }
-      ]
-    },
-    {
-      id: "8",
-      name: "Unity",
-      chineseName: "比",
-      pinyin: "bǐ",
-      principle: "Unite teams through shared purpose",
-      wisdomText: "When teams align with genuine purpose, productivity transforms from mere output to meaningful creation. The wise leader cultivates unity not through mandate but through shared vision that resonates with each individual's journey.",
-      lines: [
-        { type: "broken" }, { type: "broken" }, { type: "broken" },
-        { type: "broken" }, { type: "broken" }, { type: "solid" }
-      ]
-    },
-    {
-      id: "11",
-      name: "Harmony",
-      chineseName: "泰",
-      pinyin: "tài",
-      principle: "Align interfaces for natural flow",
-      wisdomText: "When heaven and earth commune, prosperity follows. In software, when interfaces align with natural user expectations, friction disappears and harmony emerges. Design not what you can, but what you should.",
-      lines: [
-        { type: "broken" }, { type: "broken" }, { type: "broken" },
-        { type: "solid" }, { type: "solid" }, { type: "solid" }
-      ]
-    },
-    {
-      id: "24",
-      name: "Return",
-      chineseName: "復",
-      pinyin: "fù",
-      principle: "Embrace continuous renewal",
-      wisdomText: "After completion comes return; after complexity, simplicity. The cycle of renewal teaches that refactoring is not fixing what's broken, but honoring the natural evolution of code as understanding deepens.",
-      lines: [
-        { type: "solid" }, { type: "broken" }, { type: "broken" },
-        { type: "broken" }, { type: "broken" }, { type: "broken" }
-      ]
-    },
-    {
-      id: "30",
-      name: "Illumination",
-      chineseName: "離",
-      pinyin: "lí",
-      principle: "Bring clarity through documentation",
-      wisdomText: "As the sun illuminates the earth, so does clarity illuminate understanding. Documentation is not an afterthought but a form of compassion for future developers and users who will walk the path you've cleared.",
-      lines: [
-        { type: "broken" }, { type: "solid" }, { type: "solid" },
-        { type: "solid" }, { type: "solid" }, { type: "broken" }
-      ]
-    },
-    {
-      id: "33",
-      name: "Retreat",
-      chineseName: "遯",
-      pinyin: "dùn",
-      principle: "Know when to refactor and simplify",
-      wisdomText: "Strategic withdrawal is not defeat but wisdom. When complexity multiplies, the master engineer knows to step back, simplify, and create space for sustainable solutions to emerge naturally.",
-      lines: [
-        { type: "solid" }, { type: "solid" }, { type: "solid" },
-        { type: "solid" }, { type: "solid" }, { type: "broken" }
-      ]
-    },
-    {
-      id: "63",
-      name: "After Completion",
-      chineseName: "既济",
-      pinyin: "jì jì",
-      principle: "Balance attained leads to new beginnings",
-      wisdomText: "After completion, vigilance remains essential. Even perfect systems require maintenance and evolution. The wise engineer celebrates success briefly, then prepares for the next transformation that inevitability approaches.",
-      lines: [
-        { type: "solid" }, { type: "broken" }, { type: "solid" },
-        { type: "broken" }, { type: "solid" }, { type: "broken" }
-      ]
-    }
-  ];
+  // Get unique disciplines from principles
+  const disciplines = Array.from(new Set(principles.map(p => p.discipline)));
+
+  // Get 8 representative principles - one from each discipline
+  const previewPrinciples = disciplines.map(discipline => {
+    return principles.find(p => p.discipline === discipline);
+  }).filter(Boolean);
 
   const openWisdomDialog = (principle: any) => {
     setSelectedPrinciple(principle);
@@ -207,21 +116,51 @@ const PrinciplesPreview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
-            The 88 Principles
+            The 64 Principles
           </h2>
           <p className="text-neutral-500 max-w-2xl mx-auto">
-            Ancient wisdom reimagined for modern engineering. Each principle guides a different 
-            aspect of building remarkable software.
+            Ancient wisdom reimagined for modern engineering. Eight disciplines, each with eight principles, 
+            guiding different aspects of building remarkable software.
           </p>
         </motion.div>
         
+        {/* Discipline Filter */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <button
+            className={`px-3 py-1 rounded-full text-sm ${
+              selectedDiscipline === null 
+                ? "bg-purple-500/30 text-purple-200" 
+                : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-gray-300"
+            } transition-colors`}
+            onClick={() => setSelectedDiscipline(null)}
+          >
+            All
+          </button>
+          {disciplines.map(discipline => (
+            <button
+              key={discipline}
+              className={`px-3 py-1 rounded-full text-sm ${
+                selectedDiscipline === discipline 
+                  ? "bg-purple-500/30 text-purple-200" 
+                  : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-gray-300"
+              } transition-colors`}
+              onClick={() => setSelectedDiscipline(discipline)}
+            >
+              {discipline}
+            </button>
+          ))}
+        </div>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {previewHexagrams.map((hexagram, index) => (
+          {(selectedDiscipline 
+            ? previewPrinciples.filter(p => p?.discipline === selectedDiscipline)
+            : previewPrinciples
+          ).map((principle, index) => principle && (
             <motion.div
-              key={hexagram.id}
+              key={principle.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -236,22 +175,24 @@ const PrinciplesPreview = () => {
                 transition: { duration: 0.2 }
               }}
               className="bg-gradient-to-br from-gray-900/40 to-gray-950/70 border border-white/10 rounded-2xl p-6 hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-900/10 transition-all duration-300 relative overflow-hidden group"
-              onClick={() => openWisdomDialog(hexagram)}
+              onClick={() => openWisdomDialog(principle)}
             >
               <div className="absolute top-2 right-2 text-purple-500/40 opacity-0 group-hover:opacity-100 transition-opacity">
                 <Info size={16} />
               </div>
               
               <div className="flex items-center mb-4">
-                <IChingHexagram lines={hexagram.lines} size={36} className="text-white mr-4 transition-transform duration-300 group-hover:scale-110" />
+                <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mr-3 text-lg">
+                  {principle.emoji}
+                </div>
                 <div>
-                  <h3 className="text-white text-lg font-medium">{hexagram.name}</h3>
+                  <h3 className="text-white text-lg font-medium">{principle.title}</h3>
                   <div className="text-neutral-500 text-sm">
-                    {hexagram.chineseName} · {hexagram.pinyin}
+                    {principle.discipline}
                   </div>
                 </div>
               </div>
-              <p className="text-neutral-400 text-sm mb-4">{hexagram.principle}</p>
+              <p className="text-neutral-400 text-sm mb-4">{principle.description}</p>
               
               <motion.div 
                 className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
@@ -264,7 +205,7 @@ const PrinciplesPreview = () => {
         
         <div className="text-center mt-12">
           <Link to="/zen" className="inline-flex items-center text-neutral-400 hover:text-white transition-colors group">
-            <span className="group-hover:underline">Explore all principles</span>
+            <span className="group-hover:underline">Explore all 64 principles</span>
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

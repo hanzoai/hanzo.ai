@@ -1,4 +1,3 @@
-
 import { useState, ReactNode, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -112,7 +111,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
               }}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-                <div className="reveal-content">
+                <div className="reveal-content w-full max-w-full overflow-hidden">
                   {childrenWithProps}
                 </div>
               </div>
@@ -133,7 +132,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 h-full flex flex-col">
-                  <div className="flex-grow">
+                  <div className="flex-grow overflow-x-hidden">
                     {childrenWithProps}
                   </div>
                 </div>

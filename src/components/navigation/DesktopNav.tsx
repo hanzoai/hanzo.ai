@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import ProductsMenu from "./products-menu";
@@ -15,8 +14,8 @@ const DesktopNav = () => {
   const directNavItems = mainNav.filter(item => item.href);
   
   return (
-    <div className="hidden md:flex items-center justify-center space-x-6 flex-1 w-full">
-      <div className="flex items-center justify-center space-x-8 w-full max-w-7xl mx-auto">
+    <div className="hidden md:flex items-center justify-center space-x-4 lg:space-x-8 flex-1 w-full">
+      <div className="flex items-center justify-center space-x-4 lg:space-x-8 w-full max-w-7xl mx-auto">
         <ProductsMenu />
         <SolutionsMenu />
         <ResourcesMenu />
@@ -28,7 +27,7 @@ const DesktopNav = () => {
             to={item.href}
             className={cn(
               "text-neutral-400 hover:text-neutral-100 transition-colors", 
-              "text-sm font-medium"
+              "text-sm font-medium whitespace-nowrap"
             )}
           >
             {item.title}

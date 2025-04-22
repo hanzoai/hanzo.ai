@@ -10,8 +10,8 @@ export const ProductsMenu = () => {
   return (
     <NavMenu label="Products">
       {(closeMenu) => (
-        <div className="w-full flex-1 flex">
-          <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="w-full flex justify-center">
+          <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Display the sections side by side */}
             {productsNav.map((section) => (
               <div key={section.title} className="flex flex-col">
@@ -28,7 +28,7 @@ export const ProductsMenu = () => {
                 </div>
                 
                 {/* Grid of items for each section */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {section.items.map((item) => {
                     const Icon = item.icon;
                     
@@ -39,15 +39,15 @@ export const ProductsMenu = () => {
                         className="flex items-center space-x-3 group"
                         onClick={closeMenu}
                       >
-                        <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                        <div className="min-w-10 w-10 h-10 flex items-center justify-center shrink-0">
                           {Icon && <Icon className="h-5 w-5 text-neutral-400 group-hover:text-white" />}
                         </div>
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <div className="text-neutral-300 group-hover:text-white font-medium truncate">
                             {item.title}
                           </div>
                           {item.description && (
-                            <div className="text-sm text-neutral-500 group-hover:text-neutral-400">
+                            <div className="text-sm text-neutral-500 group-hover:text-neutral-400 truncate">
                               {item.description}
                             </div>
                           )}
@@ -120,3 +120,6 @@ export const ProductsMenu = () => {
     </NavMenu>
   );
 };
+
+// Add default export
+export default ProductsMenu;

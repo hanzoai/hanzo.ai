@@ -448,7 +448,7 @@ const ProductsOverview = () => {
         >
           <h3 className="text-2xl font-medium mb-4 text-[var(--white)]">Seek guidance from a Sensei</h3>
           <p className="text-neutral-500 max-w-2xl mx-auto mb-6">
-            Our masters can guide your team through the principles and practices of enlightened engineering.
+            Our masters can guide your team through the 64 principles and practices of enlightened engineering.
           </p>
           <Link 
             to="/contact" 

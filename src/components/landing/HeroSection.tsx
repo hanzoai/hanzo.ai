@@ -1,73 +1,82 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-import React, { useState, useRef, useEffect } from "react";
-import { HeroTitle, HeroDescription, HeroButtons } from "./hero";
-
-const HeroSection: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [animationComplete, setAnimationComplete] = useState(false);
-  const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: (e.clientX - rect.left) / rect.width,
-          y: (e.clientY - rect.top) / rect.height,
-        });
-      }
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
+const HeroSection = () => {
   return (
-    <section 
-      ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden"
-    >
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-[var(--black)]" />
-      
-      {/* Animated gradient orbs */}
-      <div 
-        className="absolute -top-40 -right-40 w-[30rem] h-[30rem] bg-purple-900/20 rounded-full blur-3xl opacity-60 animate-pulse"
+    <section className="min-h-[80vh] py-16 md:py-24 px-4 relative flex items-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0 pointer-events-none"
         style={{
-          transform: `translate(${mousePosition.x * -30}px, ${mousePosition.y * -30}px)`,
-        }}
-      />
-      <div 
-        className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] bg-blue-900/20 rounded-full blur-3xl opacity-60 animate-pulse"
-        style={{
-          animationDelay: "1s",
-          transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`,
+          background: "radial-gradient(circle at 50% 50%, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 70%)"
         }}
       />
       
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="h-full w-full" style={{ 
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)',
-          backgroundSize: '40px 40px' 
-        }} />
+      {/* 3D Visual Placeholder - would be replaced with actual 3D scene */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+        <div className="w-[80vh] h-[80vh] rounded-full border border-purple-500/20 animate-[spin_40s_linear_infinite]" />
+        <div className="absolute w-[60vh] h-[60vh] rounded-full border border-blue-500/20 animate-[spin_30s_linear_infinite_reverse]" />
+        <div className="absolute w-[40vh] h-[40vh] rounded-full border border-cyan-500/20 animate-[spin_20s_linear_infinite]" />
+        <div className="absolute w-[400px] h-[400px] bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl" />
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto text-center">
-        <HeroTitle 
-          mousePosition={mousePosition}
-          containerRef={containerRef}
-          onAnimationComplete={() => setAnimationComplete(true)}
-          animationComplete={animationComplete}
-          onTitleAnimationComplete={() => setTitleAnimationComplete(true)}
-        />
-        
-        <HeroDescription titleAnimationComplete={titleAnimationComplete} />
-        
-        <HeroButtons titleAnimationComplete={titleAnimationComplete} />
+      <div className="max-w-6xl mx-auto z-10 relative text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-blue-200">
+              Build with Intelligence.
+            </span>
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-purple-200">
+              Scale with Unity.
+            </span>
+          </h1>
+          
+          <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-10">
+            A comprehensive AI ecosystem designed for collaboration, development, and exponential growth.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-none"
+            >
+              Get Started Free
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline" 
+              className="bg-transparent border border-white/20 text-white hover:bg-white/10"
+            >
+              Explore Our Cloud
+            </Button>
+            <Link
+              to="/contact"
+              className="text-neutral-400 hover:text-white transition-colors"
+            >
+              Talk to an Architect
+            </Link>
+          </div>
+          
+          <div className="mt-8">
+            <Link
+              to="https://republic.com/hanzo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 text-white border border-white/10 transition-colors"
+            >
+              Invest in Hanzo
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
