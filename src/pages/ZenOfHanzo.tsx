@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ZenBackground from "@/components/zen/ZenBackground";
 import HeroSection from "@/components/zen/HeroSection";
-import HexagramsSection from "@/components/zen/HexagramsSection";
+
 import SenseiMethodSection from "@/components/zen/SenseiMethodSection";
 import FinalQuoteSection from "@/components/zen/FinalQuoteSection";
 import ZenOfHanzoPrinciples from "@/components/zen/ZenOfHanzoPrinciples";
@@ -58,7 +58,6 @@ const ZenOfHanzo = () => {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
               <ZenOfHanzoPrinciples />
-              <HexagramsSection />
               <SenseiMethodSection />
               <FinalQuoteSection />
             </motion.div>

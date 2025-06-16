@@ -15,7 +15,7 @@ const ZenOfHanzoPrinciples: React.FC = () => {
     : principles;
 
   return (
-    <div className="mt-16 mb-24 px-4">
+    <div className="mt-16 mb-24 px-4" id="principles">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -30,40 +30,42 @@ const ZenOfHanzoPrinciples: React.FC = () => {
         <div className="h-px w-20 bg-gray-700 mx-auto mt-6"></div>
       </motion.div>
 
-      {/* Discipline Filter */}
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
-        <button
-          className={`px-3 py-1 rounded-full text-sm ${
-            selectedDiscipline === null 
-              ? "bg-white/20 text-white" 
-              : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-gray-300"
-          } transition-colors`}
-          onClick={() => setSelectedDiscipline(null)}
-        >
-          All Disciplines
-        </button>
-        {disciplines.map(discipline => (
+      {/* Sticky Discipline Filter */}
+      <div className="sticky top-0 z-40 bg-[var(--black)]/95 backdrop-blur-sm border-b border-gray-800/50 py-6 mb-8">
+        <div className="flex flex-wrap justify-center gap-2">
           <button
-            key={discipline}
-            className={`px-3 py-1 rounded-full text-sm ${
-              selectedDiscipline === discipline 
-                ? "bg-white/20 text-white" 
-                : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-gray-300"
-            } transition-colors`}
-            onClick={() => setSelectedDiscipline(discipline)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              selectedDiscipline === null 
+                ? "bg-white text-black shadow-lg" 
+                : "bg-gray-800/50 text-gray-400 hover:bg-gray-700/50 hover:text-gray-300"
+            }`}
+            onClick={() => setSelectedDiscipline(null)}
           >
-            {discipline}
+            All Disciplines
           </button>
-        ))}
-      </div>
-
-      {/* Display count of displayed principles */}
-      <div className="text-center mb-8 text-neutral-500">
-        {selectedDiscipline ? (
-          <p>Showing principles from the {selectedDiscipline} discipline</p>
-        ) : (
-          <p>Showing all engineering principles across disciplines</p>
-        )}
+          {disciplines.map(discipline => (
+            <button
+              key={discipline}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                selectedDiscipline === discipline 
+                  ? "bg-white text-black shadow-lg" 
+                  : "bg-gray-800/50 text-gray-400 hover:bg-gray-700/50 hover:text-gray-300"
+              }`}
+              onClick={() => setSelectedDiscipline(discipline)}
+            >
+              {discipline}
+            </button>
+          ))}
+        </div>
+        
+        {/* Display count of displayed principles */}
+        <div className="text-center mt-4 text-neutral-500 text-sm">
+          {selectedDiscipline ? (
+            <p>Showing principles from the {selectedDiscipline} discipline</p>
+          ) : (
+            <p>Showing all engineering principles across {disciplines.length} disciplines</p>
+          )}
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -87,13 +89,13 @@ const ZenOfHanzoPrinciples: React.FC = () => {
               href="https://docs.hanzo.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-[var(--white)] text-black rounded-lg hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] border border-transparent transition-all duration-300"
+              className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-100 transition-all duration-300"
             >
               Read Documentation
             </a>
             <a
               href="/platform"
-              className="px-6 py-3 bg-transparent border border-white/20 text-white hover:bg-[var(--white)] hover:text-black rounded-lg transition-all duration-300"
+              className="px-6 py-3 bg-transparent border border-white/20 text-white hover:bg-white hover:text-black rounded-lg transition-all duration-300"
             >
               Explore Platform
             </a>
@@ -101,7 +103,7 @@ const ZenOfHanzoPrinciples: React.FC = () => {
               href="https://github.com/hanzoai"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-transparent border border-white/20 text-white hover:bg-[var(--white)] hover:text-black rounded-lg transition-all duration-300"
+              className="px-6 py-3 bg-transparent border border-white/20 text-white hover:bg-white hover:text-black rounded-lg transition-all duration-300"
             >
               Open Source
             </a>
