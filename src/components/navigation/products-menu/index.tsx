@@ -20,7 +20,7 @@ export const ProductsMenu = () => {
                   <h3 className="text-lg font-semibold text-white">{section.title}</h3>
                   <Link
                     to={section.title === "AI Cloud" ? "/cloud" : "/platform"}
-                    className="text-sm text-purple-400 hover:text-purple-300"
+                    className="text-sm text-neutral-400 hover:text-white"
                     onClick={closeMenu}
                   >
                     View all {section.title} →

@@ -15,10 +15,10 @@ const HexagramsSection = () => {
           className="text-center mb-8"
         >
           <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/70">
-            The 64 Hexagrams
+            Zen of Hanzo
           </h2>
           <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
-            Ancient wisdom reimagined for modern AI engineering
+            Engineering principles for building next-generation AI systems
           </p>
         </motion.div>
         

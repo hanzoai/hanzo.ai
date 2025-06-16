@@ -14,6 +14,7 @@ interface PricingPlanProps {
   popular?: boolean;
   customColor?: string;
   showDetails?: boolean;
+  githubLink?: boolean;
 }
 
 const PricingPlan = ({
@@ -25,7 +26,8 @@ const PricingPlan = ({
   features,
   popular = false,
   customColor,
-  showDetails = false
+  showDetails = false,
+  githubLink = false
 }: PricingPlanProps) => {
   // Use monochrome design
   const borderColor = popular 
@@ -36,13 +38,24 @@ const PricingPlan = ({
     ? "bg-gray-900/30" 
     : "bg-[var(--black)]/50";
 
-  // Button color - white background with border, outline on hover
+  // Button color - prominent option gets white bg, others get outline
   const buttonClass = popular 
     ? "bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300" 
-    : "bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300";
+    : "bg-transparent border border-white/20 text-white hover:bg-[var(--white)] hover:text-black transition-all duration-300";
 
   const renderButton = () => {
-    if (name === "Team" && showDetails) {
+    if (githubLink || name === "Dev") {
+      return (
+        <Button
+          className={`w-full mb-8 ${buttonClass}`}
+          onClick={() => {
+            window.open('https://github.com/hanzoai/', '_blank');
+          }}
+        >
+          Get on GitHub
+        </Button>
+      );
+    } else if (name === "Team" && showDetails) {
       return (
         <Button
           className={`w-full mb-8 ${buttonClass}`}
@@ -69,21 +82,6 @@ const PricingPlan = ({
           }}
         >
           Get Started
-        </Button>
-      );
-    } else if (name === "Dev") {
-      return (
-        <Button
-          className={`w-full mb-8 ${buttonClass}`}
-          onClick={() => {
-            const teamConfigSection = document.getElementById('team-config-section');
-            if (teamConfigSection) {
-              window.history.pushState({}, '', window.location.pathname + '?from=dev');
-              teamConfigSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-        >
-          Configure Plan
         </Button>
       );
     } else {

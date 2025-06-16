@@ -315,9 +315,9 @@ export const resourcesNav: NavSection[] = [
         icon: ShieldCheck
       },
       {
-        title: "Principles",
+        title: "Zen of Hanzo",
         href: "/zen",
-        description: "The Hanzo engineering philosophy",
+        description: "64 principles in 8 classes guiding our philosophy",
         icon: Zap
       }
     ]
@@ -345,10 +345,6 @@ export const mainNav: MainNavItem[] = [
   {
     title: "Resources",
     sections: resourcesNav
-  },
-  {
-    title: "Open Source",
-    href: "/open-source"
   },
   {
     title: "Pricing",

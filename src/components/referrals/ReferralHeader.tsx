@@ -9,7 +9,7 @@ const ReferralHeader = () => {
         <div className="h-16 w-16 rounded-full bg-purple-900/50 border border-purple-500/30 flex items-center justify-center flex-shrink-0">
           <Gift className="h-8 w-8 text-purple-300" />
         </div>
-        <div className="text-center md:text-left">
+        <div className="text-center">
           <h1 className="text-3xl font-bold mb-2">Referral Program</h1>
           <p className="text-lg text-neutral-300">Get $5 in credits for every friend who signs up and pays for any plan</p>
         </div>

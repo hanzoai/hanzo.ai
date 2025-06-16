@@ -17,7 +17,7 @@ export const SolutionsMenu = () => {
                 <h3 className="text-lg font-semibold text-white">Capabilities</h3>
                 <Link
                   to="/solutions"
-                  className="text-sm text-purple-400 hover:text-purple-300"
+                  className="text-sm text-neutral-400 hover:text-white"
                   onClick={closeMenu}
                 >
                   View all →
@@ -50,9 +50,9 @@ export const SolutionsMenu = () => {
               </div>
               
               {/* Hanzo Agency Promo */}
-              <div className="mt-auto mt-6 p-4 rounded-xl bg-gradient-to-b from-purple-900/30 to-purple-800/30 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
+              <div className="mt-auto mt-6 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Shield className="h-5 w-5 text-purple-400" />
+                  <Shield className="h-5 w-5 text-neutral-400" />
                   <h4 className="text-lg font-semibold text-white">Hanzo Agency</h4>
                 </div>
                 <p className="text-neutral-300 text-sm mb-3">
@@ -60,7 +60,7 @@ export const SolutionsMenu = () => {
                 </p>
                 <Link
                   to="/agency"
-                  className="text-sm text-purple-400 hover:text-purple-300 inline-flex items-center"
+                  className="text-sm text-neutral-400 hover:text-white inline-flex items-center"
                   onClick={closeMenu}
                 >
                   Learn more →
@@ -75,7 +75,7 @@ export const SolutionsMenu = () => {
                 <h3 className="text-lg font-semibold text-white">Industries</h3>
                 <Link
                   to="/industries"
-                  className="text-sm text-purple-400 hover:text-purple-300"
+                  className="text-sm text-neutral-400 hover:text-white"
                   onClick={closeMenu}
                 >
                   View all →

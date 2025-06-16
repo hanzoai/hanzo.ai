@@ -6,6 +6,11 @@ import Footer from "@/components/Footer";
 import ZenBackground from "@/components/zen/ZenBackground";
 import ZenQuoteSection from "@/components/zen/ZenQuoteSection";
 import CloudHero from "@/components/cloud/CloudHero";
+import Features from "@/components/cloud/Features";
+import Regions from "@/components/cloud/Regions";
+import Security from "@/components/cloud/Security";
+import TechStack from "@/components/cloud/TechStack";
+import CallToAction from "@/components/cloud/CallToAction";
 import { Toaster } from "@/components/ui/toaster";
 
 const Cloud = () => {
@@ -21,10 +26,15 @@ const Cloud = () => {
       
       <main>
         <CloudHero />
+        <Features />
         <ZenQuoteSection 
           quote="The engineer who masters the cloud sees no distinction between the physical and the virtual."
           attribution="Principle 27"
         />
+        <Regions />
+        <Security />
+        <TechStack />
+        <CallToAction />
       </main>
       
       <Footer />

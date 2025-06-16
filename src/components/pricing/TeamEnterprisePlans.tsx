@@ -56,28 +56,12 @@ const TeamEnterprisePlans = () => {
         "Dedicated support & account management",
         "Customizable AI Credits"
       ]
-    },
-    {
-      name: "Open Source",
-      icon: <Code className="h-6 w-6 text-neutral-400" />,
-      price: "Free",
-      billingPeriod: "Forever",
-      description: "For individuals wanting full control",
-      features: [
-        "Completely open source (self-host via GitHub)",
-        "Full access to platform capabilities",
-        "Unlimited deployments on your hardware",
-        "Self-hosted AI models and compute",
-        "Real-time web search",
-        "Custom GPT usage"
-      ],
-      customColor: "gray"
     }
   ];
 
   return (
     <div className="max-w-7xl mx-auto mb-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {plans.map((plan) => (
           <PricingPlan
             key={plan.name}

@@ -29,6 +29,7 @@ import SolutionCapabilities from "./pages/SolutionCapabilities";
 import SolutionIndustries from "./pages/SolutionIndustries";
 import Security from "./pages/Security";
 import ZenOfHanzo from "./pages/ZenOfHanzo";
+import Contact from "./pages/Contact";
 
 import AI from "./pages/AI";
 import Datastore from "./pages/Datastore";
@@ -114,6 +115,7 @@ const MarketingRoutes = () => {
       <Route path="/open-source" element={<OpenSource />} />
       <Route path="/team" element={<Team />} />
       <Route path="/security" element={<Security />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/zen" element={<ZenOfHanzo />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />

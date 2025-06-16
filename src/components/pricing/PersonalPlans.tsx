@@ -1,9 +1,27 @@
 import React from "react";
 import PricingPlan from "./PricingPlan";
-import { Code, Zap } from "lucide-react";
+import { Code, Zap, Github } from "lucide-react";
 
 const PersonalPlans = () => {
   const plans = [
+    {
+      name: "Dev",
+      icon: <Github className="h-6 w-6 text-neutral-400" />,
+      price: "Free",
+      billingPeriod: " forever",
+      description: "Open source tools, run locally and privately",
+      features: [
+        "Access to Zen and Sho foundational models",
+        "Local deployment on your infrastructure", 
+        "Full source code access",
+        "Community support",
+        "Run models privately and securely",
+        "No cloud dependencies",
+        "All future model updates",
+        "Developer tools and CLI"
+      ],
+      githubLink: true
+    },
     {
       name: "Pro",
       icon: <Code className="h-6 w-6 text-neutral-400" />,
@@ -44,7 +62,7 @@ const PersonalPlans = () => {
 
   return (
     <div className="max-w-7xl mx-auto mb-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         {plans.map((plan) => (
           <PricingPlan
             key={plan.name}
@@ -55,6 +73,7 @@ const PersonalPlans = () => {
             description={plan.description}
             features={plan.features}
             popular={plan.popular}
+            githubLink={plan.githubLink}
           />
         ))}
       </div>

@@ -18,10 +18,10 @@ const HeroSection = () => {
       
       {/* 3D Visual Placeholder - would be replaced with actual 3D scene */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
-        <div className="w-[80vh] h-[80vh] rounded-full border border-purple-500/20 animate-[spin_40s_linear_infinite]" />
-        <div className="absolute w-[60vh] h-[60vh] rounded-full border border-blue-500/20 animate-[spin_30s_linear_infinite_reverse]" />
-        <div className="absolute w-[40vh] h-[40vh] rounded-full border border-cyan-500/20 animate-[spin_20s_linear_infinite]" />
-        <div className="absolute w-[400px] h-[400px] bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl" />
+        <div className="w-[80vh] h-[80vh] rounded-full border border-white/10 animate-[spin_40s_linear_infinite]" />
+        <div className="absolute w-[60vh] h-[60vh] rounded-full border border-white/20 animate-[spin_30s_linear_infinite_reverse]" />
+        <div className="absolute w-[40vh] h-[40vh] rounded-full border border-white/30 animate-[spin_20s_linear_infinite]" />
+        <div className="absolute w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl" />
       </div>
       
       <div className="max-w-6xl mx-auto z-10 relative text-center">
@@ -31,38 +31,42 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-blue-200">
-              Build with Intelligence.
+            <span className="text-white">
+              Frontier AI for Developers.
             </span>
             <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-purple-200">
-              Scale with Unity.
+            <span className="text-neutral-300">
+              Open Source. Free Forever.
             </span>
           </h1>
           
-          <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-10">
-            A comprehensive AI ecosystem designed for collaboration, development, and exponential growth.
+          <p className="text-xl text-neutral-400 max-w-4xl mx-auto mb-10">
+            Build with <strong className="text-white">Zen</strong>, our flagship MoDE architecture LLM, and <strong className="text-white">Sho</strong>, our next-gen diffusion model. Deploy anywhere with our open-source platform or scale instantly on our AI cloud infrastructure.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              size="lg"
-              className="bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300"
-            >
-              Get Started Free
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline" 
-              className="bg-transparent border border-white/20 text-white hover:bg-white/10"
-            >
-              Explore Our Cloud
-            </Button>
+            <Link to="/platform">
+              <Button 
+                size="lg"
+                className="bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300"
+              >
+                Explore Products
+              </Button>
+            </Link>
+            <Link to="/zen">
+              <Button 
+                size="lg"
+                variant="outline" 
+                className="bg-transparent border border-white/20 text-white hover:bg-white/10"
+              >
+                Learn Principles
+              </Button>
+            </Link>
             <Link
               to="/contact"
               className="text-neutral-400 hover:text-white transition-colors"
             >
-              Talk to an Architect
+              Enterprise Solutions
             </Link>
           </div>
           
@@ -71,7 +75,7 @@ const HeroSection = () => {
               to="https://republic.com/hanzo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 text-white border border-white/10 transition-colors"
+              className="inline-flex items-center text-sm px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors"
             >
               Invest in Hanzo
             </Link>

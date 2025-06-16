@@ -7,14 +7,14 @@ import { ArrowRight, Github } from "lucide-react";
 const CallToAction: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-30" />
+      <div className="absolute inset-0 bg-black/30" />
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="max-w-5xl mx-auto bg-gradient-to-br from-gray-900 to-black border border-purple-500/20 rounded-2xl p-10 relative z-10"
+        className="max-w-5xl mx-auto bg-gray-900 border border-white/10 rounded-2xl p-10 relative z-10"
       >
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
@@ -28,7 +28,7 @@ const CallToAction: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] rounded-full"
+              className="bg-[var(--white)] text-black hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] border border-transparent rounded-full transition-all duration-300"
             >
               Get Started
               <ArrowRight className="ml-2 h-4 w-4" />

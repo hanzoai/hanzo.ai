@@ -23,8 +23,8 @@ const Contact = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-              Have questions or need assistance? Our team is here to help. 
-              Reach out to us through any of the channels below.
+              Ready to transform your business with AI? Our enterprise team is here to help you build 
+              custom solutions with our flagship models and cloud infrastructure.
             </p>
           </div>
           
@@ -41,7 +41,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-white/20"
                       placeholder="Your name"
                     />
                   </div>
@@ -52,7 +52,7 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-2 bg-[var(--black)]/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-white/20"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -82,7 +82,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="w-full flex items-center justify-center bg-purple-600 hover:bg-purple-700" size="sm">
+                <Button type="submit" className="w-full flex items-center justify-center bg-[var(--white)] text-black hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] border border-transparent transition-all duration-300" size="sm">
                   <Send className="mr-2 h-4 w-4" />
                   Send Message
                 </Button>
@@ -91,27 +91,27 @@ const Contact = () => {
             
             {/* Contact Information */}
             <div className="flex flex-col">
-              <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-8 border border-purple-500/20 mb-8">
+              <div className="bg-white/5 rounded-xl p-8 border border-white/10 mb-8">
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <Mail className="h-6 w-6 text-purple-400 mr-4 mt-1" />
+                    <Mail className="h-6 w-6 text-neutral-400 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <p className="text-neutral-300">
-                        <a href="mailto:info@hanzo.ai" className="hover:text-purple-400 transition-colors">
-                          info@hanzo.ai
+                        <a href="mailto:enterprise@hanzo.ai" className="hover:text-white transition-colors">
+                          enterprise@hanzo.ai
                         </a>
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <Phone className="h-6 w-6 text-purple-400 mr-4 mt-1" />
+                    <Phone className="h-6 w-6 text-neutral-400 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
                       <p className="text-neutral-300">
-                        <a href="tel:+18005551234" className="hover:text-purple-400 transition-colors">
+                        <a href="tel:+18005551234" className="hover:text-white transition-colors">
                           +1 (800) 555-1234
                         </a>
                       </p>
@@ -119,7 +119,7 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <MapPin className="h-6 w-6 text-purple-400 mr-4 mt-1" />
+                    <MapPin className="h-6 w-6 text-neutral-400 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Location</h3>
                       <p className="text-neutral-300">
@@ -140,35 +140,67 @@ const Contact = () => {
                 
                 <div className="space-y-4">
                   <a href="https://discord.gg/XthHQQj" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <MessageSquare className="h-5 w-5 text-purple-400 mr-3" />
+                    <MessageSquare className="h-5 w-5 text-neutral-400 mr-3" />
                     <span>Join our Discord Community</span>
                   </a>
                   
                   <a href="https://github.com/hanzoai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Github className="h-5 w-5 text-purple-400 mr-3" />
+                    <Github className="h-5 w-5 text-neutral-400 mr-3" />
                     <span>Follow us on GitHub</span>
                   </a>
                   
                   <a href="https://twitter.com/hanzoai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Twitter className="h-5 w-5 text-purple-400 mr-3" />
+                    <Twitter className="h-5 w-5 text-neutral-400 mr-3" />
                     <span>Follow us on Twitter</span>
                   </a>
 
                   <a href="https://linkedin.com/company/hanzo-ai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Linkedin className="h-5 w-5 text-purple-400 mr-3" />
+                    <Linkedin className="h-5 w-5 text-neutral-400 mr-3" />
                     <span>Connect on LinkedIn</span>
                   </a>
 
                   <a href="https://facebook.com/hanzo-inc" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Facebook className="h-5 w-5 text-purple-400 mr-3" />
+                    <Facebook className="h-5 w-5 text-neutral-400 mr-3" />
                     <span>Like us on Facebook</span>
                   </a>
 
                   <a href="https://instagram.com/hanzoai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Instagram className="h-5 w-5 text-purple-400 mr-3" />
+                    <Instagram className="h-5 w-5 text-neutral-400 mr-3" />
                     <span>Follow us on Instagram</span>
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Enterprise Solutions Section */}
+          <div className="bg-white/5 rounded-xl p-8 border border-white/10 mb-16">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-semibold mb-4">Enterprise Solutions</h2>
+              <p className="text-xl text-neutral-300 max-w-4xl mx-auto">
+                Transform your business with our enterprise AI platform featuring Zen (1T+ parameter MoDE LLM), 
+                Sho (next-gen diffusion model), and comprehensive cloud infrastructure.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-3">Custom AI Models</h3>
+                <p className="text-neutral-300">
+                  Deploy our flagship Zen LLM and Sho diffusion models, or work with our team to create custom models for your specific use case.
+                </p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-3">Dedicated Infrastructure</h3>
+                <p className="text-neutral-300">
+                  Private cloud deployments with dedicated compute, storage, and networking designed for enterprise-scale AI workloads.
+                </p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-3">24/7 Support</h3>
+                <p className="text-neutral-300">
+                  Enterprise-grade support with dedicated account managers, priority response times, and direct access to our engineering team.
+                </p>
               </div>
             </div>
           </div>
@@ -179,7 +211,7 @@ const Contact = () => {
             <p className="text-neutral-300 mb-4">
               Can't find what you're looking for? Check our comprehensive FAQ section.
             </p>
-            <Button variant="outline" className="border-purple-500 text-[var(--white)] hover:bg-purple-900/20" size="sm">
+            <Button variant="outline" className="border-white/20 text-[var(--white)] hover:bg-white/10" size="sm">
               <a href="/pricing#faq">View FAQ</a>
             </Button>
           </div>
