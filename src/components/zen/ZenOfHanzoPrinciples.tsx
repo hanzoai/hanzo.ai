@@ -23,7 +23,7 @@ const ZenOfHanzoPrinciples: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">Engineering Principles</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">Our Principles</h2>
         <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
           Time-tested principles guiding the development of next-generation AI systems and applications
         </p>

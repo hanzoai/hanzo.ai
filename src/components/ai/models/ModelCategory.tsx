@@ -1,4 +1,3 @@
-
 import React from "react";
 import ModelCategoryCard from "./ModelCategoryCard";
 
@@ -6,6 +5,7 @@ interface ModelData {
   name: string;
   provider: string;
   features: string[];
+  description?: string;
 }
 
 interface ModelCategoryProps {
@@ -29,6 +29,7 @@ const ModelCategory = ({ category, categoryIndex }: ModelCategoryProps) => {
             key={modelIndex} 
             model={model} 
             modelIndex={modelIndex} 
+            categoryIndex={categoryIndex}
           />
         ))}
       </div>

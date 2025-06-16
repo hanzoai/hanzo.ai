@@ -1,9 +1,50 @@
-
-// Model categories and their respective models
+// Frontier AI model families from Hanzo
 const modelCategories = [
   {
+    name: "Frontier AI",
+    description: "Hanzo's cutting-edge model families pushing the boundaries of AI capabilities",
+    models: [
+      { 
+        name: "Zen Family", 
+        provider: "Hanzo", 
+        features: ["1T+ parameter MoE LLM", "Fused top language models", "Unmatched efficiency", "Peak performance"],
+        description: "🪷 Hanzo's flagship large language model that combines multiple expert models for unprecedented capability."
+      },
+      { 
+        name: "Sho Family", 
+        provider: "Hanzo", 
+        features: ["High-performance text diffusion", "Latency-aware generation", "Expert-guided semantic control", "Fluency and depth"],
+        description: "🌀 Purpose-built for high-coherence generation with expert semantic control."
+      },
+      { 
+        name: "Enso Family", 
+        provider: "Hanzo", 
+        features: ["Multimodal MUEN architecture", "Text, vision, and audio", "Diffusion-based intelligence", "Unified understanding"],
+        description: "◯ Multimodal Mixture of Unbound Experts unifying understanding across modalities."
+      },
+      { 
+        name: "Satori Family", 
+        provider: "Hanzo", 
+        features: ["Efficient video generation", "Latent space diffusion", "Temporal dynamics", "Frame coherence"],
+        description: "🎥 Advanced video generation with explicit temporal modeling and reduced computational overhead."
+      },
+      { 
+        name: "Mugen Family", 
+        provider: "Hanzo", 
+        features: ["Infinite context capability", "Unbounded sequence processing", "Memory-efficient architecture", "Continuous learning"],
+        description: "∞ Breaking the boundaries of context length for truly unlimited AI reasoning."
+      },
+      { 
+        name: "Koe Family", 
+        provider: "Hanzo", 
+        features: ["Advanced speech synthesis", "Multimodal voice generation", "Emotional expression", "Real-time processing"],
+        description: "🗣️ Next-generation voice AI with human-like expressiveness and natural interaction."
+      }
+    ]
+  },
+  {
     name: "Foundation Models",
-    description: "Industry-leading large language models for various use cases",
+    description: "Industry-leading open-source models optimized for the Hanzo platform",
     models: [
       { name: "GPT-4o", provider: "Open Source", features: ["Multimodal capabilities", "Advanced reasoning", "High accuracy", "Fast performance"] },
       { name: "Claude 3 Opus", provider: "Open Source", features: ["Best reasoning", "Strong knowledge retrieval", "Long context window", "Low hallucination rate"] },
