@@ -19,7 +19,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
           variant="outline" 
           size="sm"
           className={cn(
-            isDarkMode ? "text-[var(--white)] border-white hover:bg-[var(--white)]/10" : "text-neutral-900 border-gray-300 hover:bg-gray-100",
+            isDarkMode ? "text-white border-white hover:bg-white/10" : "text-neutral-900 border-gray-300 hover:bg-gray-100",
             getRoundingClass(),
             "h-10 min-w-[120px]"
           )}
@@ -33,7 +33,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
         <Button 
           variant="outline" 
           size="sm"
-          className="bg-[var(--black)]/90 text-[var(--white)] border border-gray-700 hover:bg-[var(--black)] hover:border-gray-600 rounded-full h-10 min-w-[120px]"
+          className="bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full h-10 min-w-[120px]"
         >
           <a href="https://cloud.hanzo.ai">
             Console
@@ -42,7 +42,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
       )}
       <Button 
         size="sm" 
-        className="bg-[var(--white)] text-black border border-gray-300 rounded-full hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-10 min-w-[120px]"
+        className="bg-white text-black border border-gray-300 rounded-full hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-10 min-w-[120px]"
       >
         <a href="https://cloud.hanzo.ai/auth/sign-up">
           Signup
