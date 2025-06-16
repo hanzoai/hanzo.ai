@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { MobileMenu } from "./navigation/MobileMenu";
@@ -36,13 +35,28 @@ const Navbar = () => {
 
   return (
     <NavbarContainer isScrolled={isScrolled}>
-      <Logo />
-      <DesktopNav />
-      <AuthButtons user={user} />
-      <MobileMenu 
-        isOpen={isMobileMenuOpen}
-        onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      />
+      <div className="flex items-center w-full">
+        {/* Logo - Fixed width */}
+        <div className="flex-shrink-0">
+          <Logo />
+        </div>
+        
+        {/* Navigation - Centered */}
+        <div className="flex-1 flex justify-center">
+          <DesktopNav />
+        </div>
+        
+        {/* Auth Buttons - Fixed width */}
+        <div className="flex-shrink-0">
+          <AuthButtons user={user} />
+        </div>
+        
+        {/* Mobile Menu */}
+        <MobileMenu 
+          isOpen={isMobileMenuOpen}
+          onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        />
+      </div>
     </NavbarContainer>
   );
 };

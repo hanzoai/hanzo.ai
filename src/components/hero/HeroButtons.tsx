@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Sparkles, Zap } from "lucide-react";
 
 interface HeroButtonsProps {
   titleAnimationComplete: boolean;
@@ -25,20 +24,24 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
         size="sm" 
         variant="outline" 
         radius="full"
-        className="text-[var(--white)] border-white/10 bg-transparent hover:bg-[var(--white)]/5 h-10 min-w-[120px]"
+        className="text-[var(--white)] border-white/10 bg-transparent hover:bg-[var(--white)]/5 h-10 min-w-[140px]"
       >
-        <a href="https://docs.hanzo.sh" className="chrome-text flex items-center">
-          Read Docs <ArrowRight className="ml-2 h-4 w-4" />
+        <a href="/ai" className="chrome-text flex items-center">
+          <Sparkles className="mr-2 h-4 w-4" />
+          Our models
         </a>
       </Button>
       <Button 
         size="sm" 
         radius="full"
-        className="bg-[var(--white)] hover:bg-gray-100 text-black border-0 h-10 min-w-[120px]"
+        className="bg-[var(--white)] hover:bg-gray-100 text-black border-0 h-10 min-w-[140px]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <a href="https://hanzo.app">Start building</a>
+        <a href="/zen" className="flex items-center">
+          <Zap className="mr-2 h-4 w-4" />
+          Our principles
+        </a>
       </Button>
     </div>
   );

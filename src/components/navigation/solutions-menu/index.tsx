@@ -1,7 +1,7 @@
 import { capabilitiesNav, industriesNav } from "@/constants/navigation-data";
 import { Link } from "react-router-dom";
 import NavMenu from "../NavMenu";
-import { Users, Shield } from "lucide-react";
+import { Users, Shield, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const SolutionsMenu = () => {
@@ -107,18 +107,18 @@ export const SolutionsMenu = () => {
                 })}
               </div>
               
-              {/* Sensei Group Promo */}
-              <div className="mt-auto mt-6 p-4 rounded-xl bg-gradient-to-b from-green-900/30 to-teal-900/30 border border-green-500/20 hover:border-green-500/40 transition-colors">
+              {/* Enterprise Promo */}
+              <div className="mt-auto mt-6 p-4 rounded-xl bg-gradient-to-b from-blue-900/30 to-indigo-900/30 border border-blue-500/20 hover:border-blue-500/40 transition-colors">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Users className="h-5 w-5 text-green-400" />
-                  <h4 className="text-lg font-semibold text-white">Sensei Group</h4>
+                  <Building2 className="h-5 w-5 text-blue-400" />
+                  <h4 className="text-lg font-semibold text-white">Enterprise</h4>
                 </div>
                 <p className="text-neutral-300 text-sm mb-3">
-                  Accelerate enterprise transformation with our elite collective of CXOs and technology experts. We guide organizations through digital evolution with strategic implementation.
+                  Scale your business with enterprise-grade AI solutions. Get dedicated support, custom integrations, and advanced security features for large organizations.
                 </p>
                 <Link
-                  to="/sensei"
-                  className="text-sm text-green-400 hover:text-green-300 inline-flex items-center"
+                  to="/enterprise"
+                  className="text-sm text-blue-400 hover:text-blue-300 inline-flex items-center"
                   onClick={closeMenu}
                 >
                   Learn more →
