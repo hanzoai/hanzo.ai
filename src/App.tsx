@@ -30,6 +30,7 @@ import SolutionIndustries from "./pages/SolutionIndustries";
 import Security from "./pages/Security";
 import ZenOfHanzo from "./pages/ZenOfHanzo";
 import Contact from "./pages/Contact";
+import Enterprise from "./pages/Enterprise";
 
 import AI from "./pages/AI";
 import Datastore from "./pages/Datastore";
@@ -116,6 +117,7 @@ const MarketingRoutes = () => {
       <Route path="/team" element={<Team />} />
       <Route path="/security" element={<Security />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/enterprise" element={<Enterprise />} />
       <Route path="/zen" element={<ZenOfHanzo />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />
