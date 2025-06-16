@@ -23,7 +23,7 @@ const ZenOfHanzoPrinciples: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">The 64 Principles</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">The 36 Principles &amp; 64 Hexagrams</h2>
         <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
           Eight disciplines, each with eight principles, guiding the path to enlightened engineering
         </p>

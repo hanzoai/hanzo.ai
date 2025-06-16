@@ -47,7 +47,7 @@ const ZenHero = () => {
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
-              The 64 Principles
+              The 36 Principles &amp; 64 Hexagrams
             </span>
           </h1>
           
@@ -64,7 +64,7 @@ const ZenHero = () => {
           
           <p className="text-neutral-500 max-w-2xl mx-auto mt-8">
             Build software with enlightened engineering. Hanzo's platform embodies 
-            64 principles organized into 8 disciplines that guide the creation of resilient, scalable systems.
+            36 principles and 64 hexagrams from the I Ching that guide the creation of resilient, scalable systems.
           </p>
         </motion.div>
         

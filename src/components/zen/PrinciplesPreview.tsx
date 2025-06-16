@@ -119,7 +119,7 @@ const PrinciplesPreview = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
-            The 64 Principles
+            The 36 Principles &amp; 64 Hexagrams
           </h2>
           <p className="text-neutral-500 max-w-2xl mx-auto">
             Ancient wisdom reimagined for modern engineering. Eight disciplines, each with eight principles, 

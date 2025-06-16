@@ -42,7 +42,7 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
       )}
       <Button 
         size="sm" 
-        className="bg-[var(--white)] text-black rounded-full hover:bg-gray-100 h-10 min-w-[120px]"
+        className="bg-[var(--white)] text-black border border-gray-300 rounded-full hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-10 min-w-[120px]"
       >
         <a href="https://cloud.hanzo.ai/auth/sign-up">
           Signup
