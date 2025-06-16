@@ -27,7 +27,7 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
           variant="ghost"
           size="icon"
           onClick={onToggle}
-          className="text-[var(--white)]"
+          className="text-white"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
@@ -35,16 +35,16 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onToggle} />
+          <div className="fixed inset-0 bg-black/90 backdrop-blur-md" onClick={onToggle} />
           
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-[var(--black)]/95 backdrop-blur-md shadow-xl border-l border-gray-800 pt-[var(--header-height)] h-screen overflow-y-auto">
-            <div className="px-2 py-3 space-y-1">
+          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-black/95 backdrop-blur-md border-l border-gray-800 pt-[var(--header-height)] h-screen overflow-y-auto shadow-2xl">
+            <div className="px-2 py-3 space-y-1 bg-black/95 backdrop-blur-md">
               {mainNav.map((item) => (
                 <div key={item.title} className="border-b border-gray-800 pb-2 mb-2">
                   {item.href ? (
                     <Link
                       to={item.href}
-                      className="block px-3 py-2 text-base font-medium text-neutral-300 hover:text-[var(--white)]"
+                      className="block px-3 py-2 text-base font-medium text-neutral-300 hover:text-white hover:bg-gray-800/50 rounded transition-colors"
                       onClick={onToggle}
                     >
                       {item.title}
@@ -52,7 +52,7 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
                   ) : (
                     <>
                       <button
-                        className="w-full flex justify-between items-center px-3 py-2 text-base font-medium text-neutral-300 hover:text-[var(--white)]"
+                        className="w-full flex justify-between items-center px-3 py-2 text-base font-medium text-neutral-300 hover:text-white hover:bg-gray-800/50 rounded transition-colors"
                         onClick={() => toggleSection(item.title)}
                       >
                         {item.title}
@@ -63,7 +63,7 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
                       </button>
                       
                       {expandedSections[item.title] && item.sections && (
-                        <div className="pl-4 space-y-2 mt-1">
+                        <div className="pl-4 space-y-2 mt-1 bg-gray-900/30 rounded-lg p-2">
                           {item.sections.map((section: NavSection) => (
                             <div key={section.title} className="mb-3">
                               <div className="px-3 py-1 text-sm font-semibold text-neutral-400">
@@ -74,7 +74,7 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
                                   <Link
                                     key={subItem.title}
                                     to={subItem.href}
-                                    className="block px-3 py-1 text-sm text-neutral-300 hover:text-[var(--white)]"
+                                    className="block px-3 py-1 text-sm text-neutral-300 hover:text-white hover:bg-gray-800/30 rounded transition-colors"
                                     onClick={onToggle}
                                   >
                                     {subItem.title}
@@ -91,11 +91,11 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
               ))}
             </div>
             
-            <div className="px-4 py-4 space-y-2 border-t border-gray-800">
-              <Button variant="ghost" className="w-full text-[var(--white)] hover:bg-[var(--white)]/10">
+            <div className="px-4 py-4 space-y-2 border-t border-gray-800 bg-black/95 backdrop-blur-md">
+              <Button variant="ghost" className="w-full text-white hover:bg-gray-800/50">
                 <a href="https://cloud.hanzo.ai">Login</a>
               </Button>
-              <Button className="w-full bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300">
+              <Button className="w-full bg-white text-black border border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300">
                 <a href="https://cloud.hanzo.ai/auth/sign-up">Signup</a>
               </Button>
             </div>

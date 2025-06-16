@@ -5,8 +5,8 @@ export const ResourcesMenu = () => {
   return (
     <NavMenu label="Resources">
       {(closeMenu) => (
-        <div className="w-full flex justify-center">
-          <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {resourcesNav.map(category => (
               <div key={category.title}>
                 <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>

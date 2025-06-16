@@ -81,8 +81,8 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
       <button
         onClick={toggleMenu}
         className={cn(
-          "inline-flex items-center outline-none focus:outline-none transition-colors",
-          isOpen ? "text-white" : "text-neutral-300 hover:text-white"
+          "inline-flex items-center outline-none focus:outline-none transition-colors text-sm font-medium",
+          isOpen ? "text-white" : "text-neutral-400 hover:text-white"
         )}
       >
         {label}
@@ -97,21 +97,14 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
       {/* Dropdown content */}
       {isOpen && (
         <>
-          {/* Desktop: Header-height dropdown with backdrop */}
+          {/* Desktop: Full viewport width dropdown with backdrop */}
           {isDesktop ? (
-            <div
-              className="absolute w-screen bg-[#000000]/95 backdrop-blur-md z-50 animate-fadeIn shadow-xl"
-              style={{
-                top: 'var(--header-height)',
-                width: '100vw',
-                left: '50%',
-                right: '50%',
-                transform: 'translateX(-50%)',
-                margin: '0 auto'
-              }}
-            >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-                <div className="reveal-content w-full max-w-full overflow-hidden">
+            <div className="fixed left-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-gray-800/50 shadow-2xl"
+                 style={{
+                   top: 'var(--header-height)',
+                 }}>
+              <div className="py-12">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   {childrenWithProps}
                 </div>
               </div>
@@ -119,7 +112,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
           ) : (
             /* Mobile: Full-viewport menu overlay */
             <div
-              className="fixed inset-0 left-0 right-0 bg-[#000000]/95 backdrop-blur-md z-50 w-screen transition-opacity duration-300 ease-in-out animate-fadeIn"
+              className="fixed inset-0 left-0 right-0 bg-black/95 backdrop-blur-md z-50 w-screen transition-opacity duration-300 ease-in-out"
               style={{ 
                 top: 'var(--header-height)', 
                 height: 'calc(100vh - var(--header-height))',
@@ -131,7 +124,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
                 className="relative w-full h-full overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 h-full flex flex-col">
+                <div className="px-4 sm:px-6 lg:px-8 py-6 h-full flex flex-col">
                   <div className="flex-grow overflow-x-hidden">
                     {childrenWithProps}
                   </div>
