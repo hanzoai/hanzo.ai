@@ -331,7 +331,7 @@ const Products = () => {
               >
                 <a href="https://app.hanzo.ai/signup" target="_blank" rel="noopener noreferrer">
                   <Button
-                    className="w-full sm:w-auto bg-[var(--white)] text-black hover:bg-gray-100 transition-all duration-300"
+                    className="w-full sm:w-auto bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300"
                   >
                     Get Started Free
                   </Button>

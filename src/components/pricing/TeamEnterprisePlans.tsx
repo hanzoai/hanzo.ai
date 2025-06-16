@@ -1,70 +1,33 @@
-
 import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
-import { Code, Users, Zap } from "lucide-react";
+import { Users, Shield, Code } from "lucide-react";
 import TeamPlanDetails from "./TeamPlanDetails";
 
-const IndividualPlans = () => {
+const TeamEnterprisePlans = () => {
+  const [fromMaxPlan, setFromMaxPlan] = useState(false);
   const [fromProPlan, setFromProPlan] = useState(false);
-  const [fromDevPlan, setFromDevPlan] = useState(false);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const from = urlParams.get('from');
-    if (from === 'pro') {
-      setFromProPlan(true);
-      setFromDevPlan(false);
-    } else if (from === 'dev') {
-      setFromDevPlan(true);
+    if (from === 'max') {
+      setFromMaxPlan(true);
       setFromProPlan(false);
+    } else if (from === 'pro') {
+      setFromProPlan(true);
+      setFromMaxPlan(false);
     }
     window.history.replaceState({}, '', window.location.pathname);
   }, []);
 
   const plans = [
     {
-      name: "Pro",
-      icon: <Code className="h-6 w-6 text-neutral-400" />,
-      price: "$20",
-      billingPeriod: "/month",
-      description: "Ideal for hobbyists and occasional use",
-      features: [
-        "All core Hanzo platform features",
-        "Unlimited private projects",
-        "Unlimited deployments",
-        "Self-hosted on your infrastructure",
-        "Full deployment functionality",
-        "Hanzo integration",
-        "Automated backups",
-        "All upcoming feature updates",
-        "1 AI Credit"
-      ]
-    },
-    {
-      name: "Max",
-      icon: <Zap className="h-6 w-6 text-neutral-400" />,
-      price: "$200",
-      billingPeriod: "/month",
-      description: "For professionals and small businesses",
-      popular: true,
-      features: [
-        "Everything in the Pro plan",
-        "Extended messaging and data analysis",
-        "Full access to Hanzo App, Chat, Dev",
-        "Integration with Hanzo Models",
-        "Image generation",
-        "Real-time web search",
-        "Access to deep research models",
-        "Up to 10 AI Credits (Adjustable)"
-      ],
-      showDetails: true
-    },
-    {
       name: "Team",
       icon: <Users className="h-6 w-6 text-neutral-400" />,
       price: "$30",
       billingPeriod: "/user/month",
       description: "Collaborative teams requiring unified billing",
+      popular: true,
       features: [
         "Everything in the Max plan",
         "Higher message limits",
@@ -76,6 +39,39 @@ const IndividualPlans = () => {
         "Up to 10 AI Credits per user (Adjustable)"
       ],
       showDetails: true
+    },
+    {
+      name: "Enterprise",
+      icon: <Shield className="h-6 w-6 text-neutral-400" />,
+      price: "Custom",
+      description: "For large businesses requiring enterprise-grade security",
+      features: [
+        "Everything in the Team plan",
+        "Expanded context window",
+        "Highest limits on messaging & features",
+        "Enhanced security (CSA, SOC 2, GDPR, CCPA)",
+        "User management via SCIM and SSO",
+        "Domain verification, user analytics",
+        "Custom data retention policies",
+        "Dedicated support & account management",
+        "Customizable AI Credits"
+      ]
+    },
+    {
+      name: "Open Source",
+      icon: <Code className="h-6 w-6 text-neutral-400" />,
+      price: "Free",
+      billingPeriod: "Forever",
+      description: "For individuals wanting full control",
+      features: [
+        "Completely open source (self-host via GitHub)",
+        "Full access to platform capabilities",
+        "Unlimited deployments on your hardware",
+        "Self-hosted AI models and compute",
+        "Real-time web search",
+        "Custom GPT usage"
+      ],
+      customColor: "gray"
     }
   ];
 
@@ -93,13 +89,14 @@ const IndividualPlans = () => {
             features={plan.features}
             popular={plan.popular}
             showDetails={plan.showDetails}
+            customColor={plan.customColor}
           />
         ))}
       </div>
       
-      <TeamPlanDetails fromProPlan={fromProPlan} fromDevPlan={fromDevPlan} />
+      <TeamPlanDetails fromMaxPlan={fromMaxPlan} fromProPlan={fromProPlan} />
     </div>
   );
 };
 
-export default IndividualPlans;
+export default TeamEnterprisePlans;

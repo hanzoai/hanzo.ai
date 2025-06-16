@@ -95,7 +95,7 @@ export const MobileMenu = ({ isOpen, onToggle }: MobileMenuProps) => {
               <Button variant="ghost" className="w-full text-[var(--white)] hover:bg-[var(--white)]/10">
                 <a href="https://cloud.hanzo.ai">Login</a>
               </Button>
-              <Button className="w-full bg-[var(--white)] text-black hover:bg-gray-100">
+              <Button className="w-full bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300">
                 <a href="https://cloud.hanzo.ai/auth/sign-up">Signup</a>
               </Button>
             </div>

@@ -1,5 +1,21 @@
 # Maintenance Report
 
+## Recent Changes (2025-06-16)
+
+### Updated Signup Button Styling
+- **Issue**: White background signup buttons were not very visible and lacked proper hover states
+- **Solution**: Updated all signup buttons across the site to have:
+  - White background with gray border by default
+  - On hover: transparent background with white text and white border
+  - Smooth transition animations
+- **Files Updated**:
+  - `/src/components/pricing/PricingPlan.tsx` - Updated pricing plan buttons
+  - `/src/components/Products.tsx` - Updated "Get Started Free" button
+  - `/src/components/navigation/AuthButtons.tsx` - Updated navigation signup button
+  - `/src/components/navigation/MobileMenu.tsx` - Updated mobile menu signup button
+  - `/src/components/landing/HeroSection.tsx` - Updated landing page hero button
+  - `/src/components/pricing/TeamPlanDetails.tsx` - Updated team plan configuration button
+
 ## Recent Changes (2025-04-07)
 
 ### 1. Fixed ProductsMenu Import in DesktopNav.tsx

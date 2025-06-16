@@ -8,37 +8,37 @@ const FeatureComparison = () => {
     {
       name: "Platform Access",
       features: [
-        { name: "Core Platform Features", dev: true, pro: true, team: true, enterprise: true },
-        { name: "Unlimited Private Projects", dev: true, pro: true, team: true, enterprise: true },
-        { name: "Self-hosted Infrastructure", dev: true, pro: true, team: true, enterprise: true },
-        { name: "Hanzo App Access", dev: false, pro: true, team: true, enterprise: true },
-        { name: "Unified Team Billing", dev: false, pro: false, team: true, enterprise: true },
+        { name: "Core Platform Features", pro: true, max: true, team: true, enterprise: true },
+        { name: "Unlimited Private Projects", pro: true, max: true, team: true, enterprise: true },
+        { name: "Self-hosted Infrastructure", pro: true, max: true, team: true, enterprise: true },
+        { name: "Hanzo App Access", pro: false, max: true, team: true, enterprise: true },
+        { name: "Unified Team Billing", pro: false, max: false, team: true, enterprise: true },
       ]
     },
     {
       name: "AI Credits",
       features: [
-        { name: "AI Credits Included", dev: "1", pro: "Up to 10", team: "Up to 10/user", enterprise: "Custom" },
-        { name: "Custom AI Resources", dev: false, pro: false, team: false, enterprise: true },
+        { name: "AI Credits Included", pro: "1", max: "Up to 10", team: "Up to 10/user", enterprise: "Custom" },
+        { name: "Custom AI Resources", pro: false, max: false, team: false, enterprise: true },
       ]
     },
     {
       name: "Security & Management",
       features: [
-        { name: "Admin Console", dev: false, pro: false, team: true, enterprise: true },
-        { name: "User Management", dev: false, pro: false, team: true, enterprise: true },
-        { name: "Data Exclusion from Training", dev: false, pro: false, team: true, enterprise: true },
-        { name: "Enhanced Security (SOC 2, GDPR)", dev: false, pro: false, team: false, enterprise: true },
-        { name: "Custom Data Retention", dev: false, pro: false, team: false, enterprise: true },
+        { name: "Admin Console", pro: false, max: false, team: true, enterprise: true },
+        { name: "User Management", pro: false, max: false, team: true, enterprise: true },
+        { name: "Data Exclusion from Training", pro: false, max: false, team: true, enterprise: true },
+        { name: "Enhanced Security (SOC 2, GDPR)", pro: false, max: false, team: false, enterprise: true },
+        { name: "Custom Data Retention", pro: false, max: false, team: false, enterprise: true },
       ]
     },
     {
       name: "Support",
       features: [
-        { name: "Community Support", dev: true, pro: true, team: true, enterprise: true },
-        { name: "Standard Support", dev: false, pro: true, team: true, enterprise: true },
-        { name: "Priority Support", dev: false, pro: false, team: true, enterprise: true },
-        { name: "Dedicated Account Manager", dev: false, pro: false, team: false, enterprise: true },
+        { name: "Community Support", pro: true, max: true, team: true, enterprise: true },
+        { name: "Standard Support", pro: false, max: true, team: true, enterprise: true },
+        { name: "Priority Support", pro: false, max: false, team: true, enterprise: true },
+        { name: "Dedicated Account Manager", pro: false, max: false, team: false, enterprise: true },
       ]
     }
   ];
@@ -64,8 +64,8 @@ const FeatureComparison = () => {
           <thead>
             <tr className="border-b border-gray-800">
               <th className="py-4 px-4 text-left">Feature</th>
-              <th className="py-4 px-6 text-center">Dev</th>
               <th className="py-4 px-6 text-center">Pro</th>
+              <th className="py-4 px-6 text-center">Max</th>
               <th className="py-4 px-6 text-center">Team</th>
               <th className="py-4 px-6 text-center">Enterprise</th>
             </tr>
@@ -81,8 +81,8 @@ const FeatureComparison = () => {
                 {category.features.map((feature) => (
                   <tr key={feature.name} className="border-b border-gray-800/50">
                     <td className="py-3 px-4 text-neutral-400">{feature.name}</td>
-                    <td className="py-3 px-6">{renderFeatureValue(feature.dev)}</td>
                     <td className="py-3 px-6">{renderFeatureValue(feature.pro)}</td>
+                    <td className="py-3 px-6">{renderFeatureValue(feature.max)}</td>
                     <td className="py-3 px-6">{renderFeatureValue(feature.team)}</td>
                     <td className="py-3 px-6">{renderFeatureValue(feature.enterprise)}</td>
                   </tr>
