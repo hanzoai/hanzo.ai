@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Sparkles, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -45,39 +46,24 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/platform">
+            <Link to="/ai">
               <Button 
                 size="lg"
-                className="bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300"
+                variant="outline"
+                className="text-[var(--white)] border-white/10 bg-transparent hover:bg-[var(--white)]/5 h-12 min-w-[160px]"
               >
-                Explore Products
+                <Sparkles className="mr-2 h-5 w-5" />
+                Our models
               </Button>
             </Link>
             <Link to="/zen">
               <Button 
                 size="lg"
-                variant="outline" 
-                className="bg-transparent border border-white/20 text-white hover:bg-white/10"
+                className="bg-[var(--white)] hover:bg-gray-100 text-black border-0 h-12 min-w-[160px]"
               >
-                Learn Principles
+                <Zap className="mr-2 h-5 w-5" />
+                Our principles
               </Button>
-            </Link>
-            <Link
-              to="/contact"
-              className="text-neutral-400 hover:text-white transition-colors"
-            >
-              Enterprise Solutions
-            </Link>
-          </div>
-          
-          <div className="mt-8">
-            <Link
-              to="https://republic.com/hanzo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors"
-            >
-              Invest in Hanzo
             </Link>
           </div>
         </motion.div>
