@@ -50,7 +50,7 @@ const HeroSection = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="text-[var(--white)] border-white/10 bg-transparent hover:bg-[var(--white)]/5 h-12 min-w-[160px]"
+                className="text-white border-white/10 bg-transparent hover:bg-white/5 h-12 min-w-[160px]"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 Our models
@@ -59,7 +59,7 @@ const HeroSection = () => {
             <Link to="/zen">
               <Button 
                 size="lg"
-                className="bg-[var(--white)] hover:bg-gray-100 text-black border-0 h-12 min-w-[160px]"
+                className="bg-white text-black border border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-12 min-w-[160px]"
               >
                 <Zap className="mr-2 h-5 w-5" />
                 Our principles
