@@ -37,8 +37,7 @@ const IndividualPlans = () => {
         "Hanzo integration",
         "Automated backups",
         "All upcoming feature updates",
-        "1 AI Unit",
-        "1 Compute Unit (Server)"
+        "1 AI Credit"
       ]
     },
     {
@@ -56,8 +55,8 @@ const IndividualPlans = () => {
         "Image generation",
         "Real-time web search",
         "Access to deep research models",
-        "Up to 10 AI Units (Adjustable)",
-        "Up to 10 Compute Units (Adjustable)"
+        "Up to 10 AI Credits (Adjustable)",
+
       ],
       showDetails: true
     },
@@ -75,8 +74,7 @@ const IndividualPlans = () => {
         "Unified team billing",
         "Team data excluded from training",
         "Custom GPT creation and sharing",
-        "Up to 10 AI Units per user (Adjustable)",
-        "Up to 10 Compute Units per user (Adjustable)"
+        "Up to 10 AI Credits per user (Adjustable)"
       ],
       showDetails: true
     }

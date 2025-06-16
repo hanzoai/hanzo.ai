@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { Slider } from "@/components/ui/radix-slider";
-import { Cpu, Zap, Server, Users } from "lucide-react";
+import { Cpu, Zap, Users } from "lucide-react";
 import { Button } from "@/components/ui/radix-button";
 
 interface TeamPlanDetailsProps {
@@ -11,21 +10,18 @@ interface TeamPlanDetailsProps {
 
 const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanDetailsProps) => {
   const [aiUnits, setAiUnits] = useState<number>(5);
-  const [computeUnits, setComputeUnits] = useState<number>(5);
   const [teamSize, setTeamSize] = useState<number>(1);
   
-  // Set AI and Compute units to 10 if coming from Pro plan
+  // Set AI units to 10 if coming from Pro plan
   useEffect(() => {
     if (fromProPlan) {
       setAiUnits(10);
-      setComputeUnits(10);
     }
   }, [fromProPlan]);
   
   const totalMonthlyPrice = teamSize * 30;
   const additionalAICost = aiUnits > 5 ? (aiUnits - 5) * 10 : 0;
-  const additionalComputeCost = computeUnits > 5 ? (computeUnits - 5) * 15 : 0;
-  const totalCost = totalMonthlyPrice + additionalAICost + additionalComputeCost;
+  const totalCost = totalMonthlyPrice + additionalAICost;
 
   // Determine title based on where user is coming from
   const getTitle = () => {
@@ -64,7 +60,7 @@ const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanD
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             <div className="space-y-6">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
@@ -98,7 +94,7 @@ const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanD
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-lg font-medium flex items-center gap-2">
                     <Zap className="h-5 w-5 text-neutral-400" />
-                    AI Processing
+                    AI Credits
                   </label>
                   <span className="text-xl font-semibold">{aiUnits} per {fromDevPlan ? "account" : "member"}</span>
                 </div>
@@ -118,37 +114,7 @@ const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanD
                 <div className="text-neutral-400 mt-2">
                   {aiUnits <= 5 ? 
                     "Included in base price" : 
-                    `+$${additionalAICost}/mo for additional processing`}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <label className="text-lg font-medium flex items-center gap-2">
-                    <Server className="h-5 w-5 text-neutral-400" />
-                    Compute Power
-                  </label>
-                  <span className="text-xl font-semibold">{computeUnits} per {fromDevPlan ? "account" : "member"}</span>
-                </div>
-                <Slider 
-                  className="mt-4" 
-                  value={[computeUnits]} 
-                  onValueChange={(value) => setComputeUnits(value[0])} 
-                  min={1} 
-                  max={20} 
-                  step={1}
-                />
-                <div className="flex justify-between text-xs text-neutral-500 mt-1">
-                  <span>1</span>
-                  <span>10</span>
-                  <span>20</span>
-                </div>
-                <div className="text-neutral-400 mt-2">
-                  {computeUnits <= 5 ? 
-                    "Included in base price" : 
-                    `+$${additionalComputeCost}/mo for additional computing power`}
+                    `+$${additionalAICost}/mo for additional AI processing`}
                 </div>
               </div>
             </div>
@@ -158,10 +124,10 @@ const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanD
             <h3 className="text-xl font-semibold mb-4">{fromDevPlan ? "Dev Plan Benefits" : "Team Plan Benefits"}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-3">
-                <Cpu className="h-5 w-5 text-neutral-400 mt-1 flex-shrink-0" />
+                <Zap className="h-5 w-5 text-neutral-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Dedicated Resources</p>
-                  <p className="text-neutral-400 text-sm">Scale processing power and compute resources to match your exact workflow needs</p>
+                  <p className="font-medium">AI-Powered Development</p>
+                  <p className="text-neutral-400 text-sm">Scale AI processing resources to match your exact workflow needs</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -172,24 +138,24 @@ const TeamPlanDetails = ({ fromProPlan = false, fromDevPlan = false }: TeamPlanD
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Zap className="h-5 w-5 text-neutral-400 mt-1 flex-shrink-0" />
+                <Cpu className="h-5 w-5 text-neutral-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Premium Performance</p>
                   <p className="text-neutral-400 text-sm">Priority access to all platform services with enhanced response times</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Server className="h-5 w-5 text-neutral-400 mt-1 flex-shrink-0" />
+                <Zap className="h-5 w-5 text-neutral-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Flexible Scaling</p>
-                  <p className="text-neutral-400 text-sm">Adjust resources month-to-month as your {fromDevPlan ? "project" : "team and project"} needs evolve</p>
+                  <p className="text-neutral-400 text-sm">Adjust AI credits month-to-month as your {fromDevPlan ? "project" : "team and project"} needs evolve</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="flex justify-center">
-            <Button size="lg" className="bg-[var(--white)] hover:bg-gray-200 text-black px-10 py-6 text-lg">
+            <Button size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 px-10 py-6 text-lg">
               Get Started with {fromDevPlan ? "Dev" : "Team"} Plan
             </Button>
           </div>

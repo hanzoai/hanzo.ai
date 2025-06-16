@@ -36,10 +36,10 @@ const PricingPlan = ({
     ? "bg-gray-900/30" 
     : "bg-[var(--black)]/50";
 
-  // Button color - updated to use #1f1f1f background and #333 border
+  // Button color - white background with border, outline on hover
   const buttonClass = popular 
-    ? "bg-[var(--white)] hover:bg-gray-200 text-black" 
-    : "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-[var(--white)] border border-[#333]";
+    ? "bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300" 
+    : "bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300";
 
   const renderButton = () => {
     if (name === "Team" && showDetails) {

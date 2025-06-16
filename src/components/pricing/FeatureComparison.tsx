@@ -16,10 +16,9 @@ const FeatureComparison = () => {
       ]
     },
     {
-      name: "AI & Compute",
+      name: "AI Credits",
       features: [
-        { name: "AI Units Included", dev: "1", pro: "Up to 10", team: "Up to 10/user", enterprise: "Custom" },
-        { name: "Compute Units", dev: "1", pro: "Up to 10", team: "Up to 10/user", enterprise: "Custom" },
+        { name: "AI Credits Included", dev: "1", pro: "Up to 10", team: "Up to 10/user", enterprise: "Custom" },
         { name: "Custom AI Resources", dev: false, pro: false, team: false, enterprise: true },
       ]
     },

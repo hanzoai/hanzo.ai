@@ -22,8 +22,8 @@ const PricingFAQ = () => {
       answer: "Users are individuals with login access to your platform workspace. Each team member with access to your workspace counts as one user for billing purposes. End-users of your applications don't count toward this limit unless they need direct platform access."
     },
     {
-      question: "What are AI Units and Compute Units?",
-      answer: "AI Units represent the allocation of AI processing resources for tasks like model inference and training. Compute Units are server resources allocated to run your deployments, including CPU, memory, and storage. Both can be adjusted based on your needs within the plan limits."
+      question: "What are AI Credits?",
+      answer: "AI Credits represent the allocation of AI processing resources for tasks like model inference, training, and analysis. Credits can be adjusted based on your needs within the plan limits, giving you flexible control over your AI resource consumption."
     },
     {
       question: "Do you offer a plan for educational institutions?",

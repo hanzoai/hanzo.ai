@@ -18,7 +18,7 @@ const EnterpriseFreePlans = () => {
       "Domain verification, user analytics",
       "Custom data retention policies",
       "Dedicated support & account management",
-      "Customizable AI & Compute resources"
+      "Customizable AI Credits"
     ]
   };
 
