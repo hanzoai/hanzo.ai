@@ -50,7 +50,7 @@ export const SolutionsMenu = () => {
                 </div>
                 
                 {/* Hanzo Agency Promo */}
-                <div className="mt-auto mt-6 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
+                <div className="mt-6 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                   <div className="flex items-center space-x-2 mb-2">
                     <Shield className="h-5 w-5 text-neutral-400" />
                     <h4 className="text-lg font-semibold text-white">Hanzo Agency</h4>
@@ -108,7 +108,7 @@ export const SolutionsMenu = () => {
                 </div>
                 
                 {/* Enterprise Promo */}
-                <div className="mt-auto mt-6 p-4 rounded-xl bg-gradient-to-b from-blue-900/30 to-indigo-900/30 border border-blue-500/20 hover:border-blue-500/40 transition-colors">
+                <div className="mt-6 p-4 rounded-xl bg-gradient-to-b from-blue-900/30 to-indigo-900/30 border border-blue-500/20 hover:border-blue-500/40 transition-colors">
                   <div className="flex items-center space-x-2 mb-2">
                     <Building2 className="h-5 w-5 text-blue-400" />
                     <h4 className="text-lg font-semibold text-white">Enterprise</h4>
