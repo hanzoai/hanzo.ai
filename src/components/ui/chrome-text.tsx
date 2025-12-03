@@ -9,15 +9,17 @@ interface ChromeTextProps {
   preHeading?: string;
   preHeadingClassName?: string;
   style?: CSSProperties;
+  gradient?: string;
 }
 
-const ChromeText = ({ 
-  children, 
-  as: Component = "h1", 
+const ChromeText = ({
+  children,
+  as: Component = "h1",
   className,
   preHeading,
   preHeadingClassName,
-  style
+  style,
+  gradient
 }: ChromeTextProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   // Use a more generic ref type that works with any HTML element
@@ -41,10 +43,10 @@ const ChromeText = ({
   }, []);
 
   return (
-    <div className={cn("flex flex-col", preHeading ? "items-center" : "items-start")}>
+    <div className={cn("flex flex-col items-center w-full")}>
       {preHeading && (
         <div className={cn(
-          "inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/50 text-purple-300 text-sm font-medium mb-4 pre-heading-glow", 
+          "inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/50 text-purple-300 text-sm font-medium mb-4 pre-heading-glow",
           preHeadingClassName
         )}>
           {preHeading}
@@ -52,9 +54,13 @@ const ChromeText = ({
       )}
       <div ref={textRef} className="inline-block">
         <Component
-          className={cn("chrome-gradient leading-relaxed py-1", className)}
+          className={cn(
+            gradient ? `bg-gradient-to-r ${gradient} bg-clip-text text-transparent` : "chrome-gradient",
+            "leading-relaxed py-1",
+            className
+          )}
           style={{
-            backgroundPosition: `${(mousePosition.x / (textRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (textRef.current?.offsetHeight || 1)) * 100}%`,
+            backgroundPosition: gradient ? undefined : `${(mousePosition.x / (textRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (textRef.current?.offsetHeight || 1)) * 100}%`,
             ...style
           }}
         >

@@ -35,24 +35,24 @@ const Navbar = () => {
 
   return (
     <NavbarContainer isScrolled={isScrolled}>
-      <div className="flex items-center w-full">
+      <div className="flex items-center justify-between w-full">
         {/* Logo - Fixed width */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 w-48">
           <Logo />
         </div>
-        
+
         {/* Navigation - Centered */}
         <div className="flex-1 flex justify-center">
           <DesktopNav />
         </div>
-        
+
         {/* Auth Buttons - Fixed width */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 w-48 flex justify-end">
           <AuthButtons user={user} />
         </div>
-        
+
         {/* Mobile Menu */}
-        <MobileMenu 
+        <MobileMenu
           isOpen={isMobileMenuOpen}
           onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         />

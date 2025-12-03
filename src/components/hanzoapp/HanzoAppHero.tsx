@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import ChromeText from "@/components/ui/chrome-text";
 
 const HanzoAppHero = () => {
   return (
@@ -19,9 +20,13 @@ const HanzoAppHero = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Build LLM Apps <span className="text-purple-400">Easily</span>
-          </h1>
+          <ChromeText
+            as="h1"
+            className="text-4xl md:text-6xl font-bold mb-6"
+            gradient="from-purple-400 to-pink-400"
+          >
+            Build LLM Apps Easily
+          </ChromeText>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Build. Deploy. Scale.
           </p>

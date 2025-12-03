@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code files
+.claude/
+Goals.md
+Context.md
+Flow.md

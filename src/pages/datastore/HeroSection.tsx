@@ -21,7 +21,7 @@ const HeroSection = () => {
           <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
             Hanzo Datastore
           </div>
-          <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
+          <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6" gradient="from-purple-400 to-pink-400">
             The Fastest Open-Source Planet Scale Datastore
           </ChromeText>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto mt-6">

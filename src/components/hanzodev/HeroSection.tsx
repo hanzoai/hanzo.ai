@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import ChromeText from "@/components/ui/chrome-text";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -38,15 +39,13 @@ const HeroSection = () => {
           <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
             Hanzo - AI App Platform backed by Techstars
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Full-Stack AI DX Platform and AI workforce for 
-            <span 
-              className="text-gradient-steel block mt-2"
-              style={{
-                backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
-              }}
-            >high growth Startups</span>
-          </h1>
+          <ChromeText
+            as="h1"
+            className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
+            gradient="from-purple-400 to-pink-400"
+          >
+            Full-Stack AI DX Platform and AI workforce for high growth Startups
+          </ChromeText>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Accelerate your release schedule and ship daily improvements. Hanzo is the AI Coding Agent built to act like another team member, getting work done.
           </p>
@@ -82,31 +81,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
-
-      <style>
-        {`
-        .text-gradient-steel {
-          background: linear-gradient(
-            90deg,
-            rgb(180, 180, 180),
-            rgb(240, 240, 240),
-            rgb(180, 180, 180)
-          );
-          background-size: 200% 100%;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          animation: shimmer 6s ease infinite;
-          transition: background-position 0.3s ease;
-        }
-        
-        @keyframes shimmer {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        `}
-      </style>
     </section>
   );
 };

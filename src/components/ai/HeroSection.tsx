@@ -31,7 +31,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
+            <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6" gradient="from-purple-400 to-pink-400">
               Hanzo AI Engineering Platform
             </ChromeText>
           </motion.div>

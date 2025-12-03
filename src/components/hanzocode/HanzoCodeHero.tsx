@@ -20,9 +20,13 @@ const HanzoCodeHero = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            The <span className="text-purple-400">Ultimate AI-Powered</span> Code Editor
-          </h1>
+          <ChromeText
+            as="h1"
+            className="text-4xl md:text-6xl font-bold mb-6"
+            gradient="from-purple-400 to-pink-400"
+          >
+            The Ultimate AI-Powered Code Editor
+          </ChromeText>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Beyond Cursor and Windsurf, Hanzo Code supercharges your favorite VS Code-compatible editor 
             with autonomous agents that transform how you build software.

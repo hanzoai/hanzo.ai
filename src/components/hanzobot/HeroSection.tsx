@@ -23,7 +23,11 @@ const HeroSection = () => {
             Multi-Agent Simulation Framework
           </div>
           
-          <ChromeText as="h1" className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <ChromeText
+            as="h1"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            gradient="from-purple-400 to-indigo-400"
+          >
             Hanzo Bot
           </ChromeText>
           

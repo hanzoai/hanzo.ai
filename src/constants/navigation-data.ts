@@ -53,49 +53,49 @@ export const productsNav: NavSection[] = [
     items: [
       {
         title: "AI",
-        href: "/ai",
+        href: "/cloud/ai",
         description: "Unified access to frontier AI models",
         icon: Sparkles
       },
       {
         title: "Chat",
-        href: "/chat",
+        href: "/cloud/chat",
         description: "Interactive AI chat experiences",
         icon: MessageSquare
       },
       {
         title: "Datastore",
-        href: "/datastore",
+        href: "/cloud/datastore",
         description: "Scalable data storage for AI applications",
         icon: Database
       },
       {
         title: "Edge",
-        href: "/edge",
+        href: "/cloud/edge",
         description: "Ultra-low latency edge computing",
         icon: Zap
       },
       {
         title: "Functions",
-        href: "/functions",
+        href: "/cloud/functions",
         description: "Serverless function execution",
         icon: Code
       },
       {
         title: "Identity",
-        href: "/identity",
+        href: "/cloud/identity",
         description: "Scalable identity management",
         icon: Users
       },
       {
         title: "Machines",
-        href: "/machines",
+        href: "/cloud/machines",
         description: "Dedicated AI compute infrastructure",
         icon: Server
       },
       {
         title: "Payments",
-        href: "/payments",
+        href: "/cloud/payments",
         description: "Payment processing and subscription billing",
         icon: CreditCard
       }
@@ -106,49 +106,43 @@ export const productsNav: NavSection[] = [
     items: [
       {
         title: "App",
-        href: "/app",
+        href: "/platform/app",
         description: "AI app builder with drag-and-drop workflows",
         icon: AppWindow
       },
       {
         title: "Bot",
-        href: "/bot",
+        href: "/platform/bot",
         description: "Agentic framework for AI assistants",
         icon: Bot
       },
       {
         title: "Code",
-        href: "/code",
+        href: "/platform/code",
         description: "AI-powered code editor and generator",
         icon: FileCode
       },
       {
         title: "Dev",
-        href: "/dev",
+        href: "/platform/dev",
         description: "AI engineer assistant for developers",
         icon: Terminal
       },
       {
         title: "Extension",
-        href: "/extension",
+        href: "/platform/extension",
         description: "Browser and code editor plugins",
         icon: Braces
       },
       {
-        title: "Platform",
-        href: "/platform",
-        description: "Open source AI engineering platform",
-        icon: Globe
-      },
-      {
         title: "Runtime",
-        href: "/runtime",
+        href: "/platform/runtime",
         description: "Container runtime for AI applications",
         icon: Container
       },
       {
         title: "Studio",
-        href: "/studio",
+        href: "/platform/studio",
         description: "Low-code IDE for AI development",
         icon: Laptop
       }

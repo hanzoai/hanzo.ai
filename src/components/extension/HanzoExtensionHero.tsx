@@ -20,9 +20,13 @@ const HanzoExtensionHero = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Hanzo <span className="text-purple-400">Extension</span>
-          </h1>
+          <ChromeText
+            as="h1"
+            className="text-4xl md:text-6xl font-bold mb-6"
+            gradient="from-purple-400 to-pink-400"
+          >
+            Hanzo Extension
+          </ChromeText>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Access Hanzo AI directly in your browser
             <br />for a seamless web experience

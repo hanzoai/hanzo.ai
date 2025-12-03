@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { solutions } from "@/constants/navigation";
-import { 
-  ChevronRight, 
-  FileText, 
-  ExternalLink, 
-  Mail, 
-  Phone, 
-  Users, 
-  BookOpen, 
+import {
+  ChevronRight,
+  FileText,
+  ExternalLink,
+  Mail,
+  Phone,
+  Users,
+  BookOpen,
   Link as LinkIcon,
   Shield,
   Building,
@@ -19,7 +19,14 @@ import {
   ServerCrash,
   CheckCircle,
   ArrowRight,
-  ArrowUpRight
+  ArrowUpRight,
+  Plane,
+  Car,
+  Landmark,
+  TrendingUp,
+  Beaker,
+  Radio,
+  Leaf
 } from "lucide-react";
 import { getIcon } from "@/constants/iconMappings";
 import { motion, AnimatePresence } from "framer-motion";
@@ -124,136 +131,306 @@ const SolutionIndustries: React.FC = () => {
       description: string,
       challenges: string[],
       solutions: string[],
+      detailedSolutions: Array<{ title: string; description: string }>,
       caseStudy: {
         title: string,
         description: string,
         results: string[]
-      }
+      },
+      link?: string
     }> = {
-      "Financial Services": {
-        icon: <Building className="h-10 w-10 text-blue-400" />,
-        color: "blue",
-        description: "We help banks, insurance companies, and investment firms transform their digital infrastructure, improve security, and deliver innovative customer experiences.",
-        challenges: [
-          "Legacy system modernization",
-          "Regulatory compliance",
-          "Digital customer experience",
-          "Fraud detection and prevention",
-          "Data security and privacy"
-        ],
-        solutions: [
-          "Core banking system modernization",
-          "AI-powered fraud detection",
-          "Open banking API platforms",
-          "Customer data platforms",
-          "Regulatory reporting automation"
-        ],
-        caseStudy: {
-          title: "Digital Transformation for Global Bank",
-          description: "We helped a Fortune 500 bank modernize their legacy systems and implement AI-powered customer experiences, resulting in 45% faster transaction processing and improved satisfaction.",
-          results: [
-            "45% faster transaction processing",
-            "68% improvement in customer satisfaction",
-            "30% reduction in operational costs",
-            "99.99% system uptime"
-          ]
-        }
-      },
-      "Healthcare": {
-        icon: <Heart className="h-10 w-10 text-pink-400" />,
-        color: "pink",
-        description: "Our healthcare solutions help providers, payers, and life sciences companies improve patient outcomes, optimize operations, and ensure security and compliance.",
-        challenges: [
-          "Interoperability of health data",
-          "Patient data security and HIPAA compliance",
-          "Clinical workflow optimization",
-          "Remote patient monitoring",
-          "Population health management"
-        ],
-        solutions: [
-          "Healthcare data platforms",
-          "Telemedicine solutions",
-          "Clinical decision support systems",
-          "Medical device integration",
-          "Healthcare analytics and reporting"
-        ],
-        caseStudy: {
-          title: "AI-Powered Patient Care Platform",
-          description: "We developed a secure, HIPAA-compliant platform that uses AI to analyze patient data and provide real-time clinical decision support, improving outcomes and reducing costs.",
-          results: [
-            "22% improvement in clinical outcomes",
-            "35% reduction in readmission rates",
-            "40% time savings for clinical staff",
-            "100% HIPAA compliance maintained"
-          ]
-        }
-      },
-      "Retail": {
-        icon: <ShoppingBag className="h-10 w-10 text-green-400" />,
-        color: "green",
-        description: "We help retailers create seamless omnichannel experiences, optimize supply chains, and leverage data for personalized customer engagement.",
-        challenges: [
-          "Omnichannel customer experience",
-          "Supply chain optimization",
-          "Inventory management",
-          "Customer analytics and personalization",
-          "E-commerce platform performance"
-        ],
-        solutions: [
-          "Unified commerce platforms",
-          "AI-driven demand forecasting",
-          "Customer data and analytics solutions",
-          "In-store digital experiences",
-          "Intelligent inventory management"
-        ],
-        caseStudy: {
-          title: "Omnichannel Transformation for Global Retailer",
-          description: "We helped a global retailer unify their online and offline shopping experiences while implementing AI-powered customer analytics, resulting in significant sales growth.",
-          results: [
-            "28% increase in online sales",
-            "15% increase in in-store conversions",
-            "42% improvement in inventory accuracy",
-            "3x faster website performance"
-          ]
-        }
-      },
-      "Technology": {
-        icon: <ServerCrash className="h-10 w-10 text-indigo-400" />,
+      "Aerospace": {
+        icon: <Plane className="h-10 w-10 text-indigo-400" />,
         color: "indigo",
-        description: "We help technology companies innovate faster, scale efficiently, and deliver secure, high-performance products and services.",
+        description: "Transform aerospace and defense operations with secure, reliable AI infrastructure built for mission-critical applications including predictive maintenance, secure communications, and autonomous systems.",
         challenges: [
-          "Accelerating innovation cycles",
-          "Scaling infrastructure efficiently",
-          "Security and compliance",
-          "Developer productivity",
-          "Product analytics and telemetry"
+          "Mission-critical system reliability and uptime",
+          "Defense-grade security and compliance requirements",
+          "Complex supply chain and logistics management",
+          "Predictive maintenance for aircraft and equipment",
+          "Integration of autonomous systems and AI decision support"
         ],
         solutions: [
-          "DevOps automation platforms",
-          "Scalable cloud architectures",
-          "AI-powered development tools",
-          "Product analytics frameworks",
-          "Security and compliance automation"
+          "Predictive maintenance for aircraft fleets",
+          "Secure communications for classified operations",
+          "Mission data analytics and real-time processing",
+          "Digital manufacturing and quality control",
+          "Autonomous systems for UAVs and navigation"
+        ],
+        detailedSolutions: [
+          { title: "Predictive Maintenance", description: "AI-driven analytics to predict equipment failures before they occur, reducing downtime and maintenance costs." },
+          { title: "Secure Communications", description: "Encrypted, compliant communication systems for classified operations and sensitive data transmission." },
+          { title: "Mission Data Analytics", description: "Real-time processing and analysis of mission-critical data with AI-powered insights." }
         ],
         caseStudy: {
-          title: "AI-Powered Development Platform for SaaS Provider",
-          description: "We created a development acceleration platform that helped a leading SaaS provider reduce development cycles and improve product quality while maintaining security.",
+          title: "Aircraft Maintenance Optimization",
+          description: "Reduced unscheduled maintenance and improved aircraft availability through predictive analytics and real-time sensor data analysis.",
           results: [
-            "60% faster development cycles",
-            "40% reduction in bugs and issues",
-            "85% improvement in developer productivity",
-            "30% reduction in infrastructure costs"
+            "35% reduction in unscheduled maintenance",
+            "42% improvement in aircraft availability",
+            "28% decrease in maintenance costs",
+            "Real-time failure detection capability"
           ]
-        }
+        },
+        link: "/industry/aerospace"
+      },
+      "Automotive": {
+        icon: <Car className="h-10 w-10 text-orange-400" />,
+        color: "orange",
+        description: "Drive the future of mobility with AI solutions for autonomous vehicles, connected cars, and smart manufacturing. Enable next-generation automotive innovation.",
+        challenges: [
+          "Autonomous vehicle development and testing",
+          "Connected car platform scalability",
+          "Battery performance and lifecycle optimization",
+          "Manufacturing quality control and efficiency",
+          "Over-the-air update infrastructure"
+        ],
+        solutions: [
+          "Autonomous systems for self-driving vehicles",
+          "Battery intelligence and optimization",
+          "Connected car platforms and V2X communication",
+          "Predictive maintenance and vehicle health monitoring",
+          "Manufacturing excellence with AI quality control"
+        ],
+        detailedSolutions: [
+          { title: "Autonomous Systems", description: "Advanced perception, planning, and control systems for autonomous vehicle development." },
+          { title: "Battery Intelligence", description: "Optimize battery performance and lifecycle with AI-powered analytics and predictive models." },
+          { title: "In-Vehicle AI", description: "Edge AI deployment for real-time processing in vehicle compute platforms." }
+        ],
+        caseStudy: {
+          title: "Autonomous Vehicle Development",
+          description: "Accelerated AV development with scalable AI infrastructure for training and simulation, enabling massive-scale sensor data processing.",
+          results: [
+            "50% faster model training cycles",
+            "75% reduction in simulation time",
+            "Petabyte-scale data processing",
+            "Real-time scenario testing capability"
+          ]
+        },
+        link: "/industry/automotive"
+      },
+      "Banking": {
+        icon: <Landmark className="h-10 w-10 text-emerald-400" />,
+        color: "emerald",
+        description: "Transform customer experiences, enhance security, and drive operational efficiency with enterprise-grade AI solutions for digital banking, fraud detection, and personalized services.",
+        challenges: [
+          "Real-time fraud detection and prevention",
+          "Credit risk assessment and lending decisions",
+          "Regulatory compliance and AML monitoring",
+          "Digital customer experience and personalization",
+          "Legacy system modernization"
+        ],
+        solutions: [
+          "AI-powered fraud prevention systems",
+          "Credit risk analytics and underwriting automation",
+          "Conversational AI for 24/7 customer service",
+          "Document processing for faster approvals",
+          "AML and compliance automation"
+        ],
+        detailedSolutions: [
+          { title: "Fraud Prevention", description: "Advanced ML models for real-time fraud detection across all transaction channels." },
+          { title: "Risk Analytics", description: "AI-driven credit risk assessment, portfolio optimization, and regulatory compliance." },
+          { title: "Digital Assistant", description: "Conversational AI for customer service, account management, and financial advice." }
+        ],
+        caseStudy: {
+          title: "Intelligent Fraud Detection",
+          description: "Protected customers and reduced losses with AI-powered fraud detection, behavioral biometrics, and automated case management.",
+          results: [
+            "87% reduction in fraud losses",
+            "Real-time transaction monitoring",
+            "95% accuracy in anomaly detection",
+            "60% faster investigation workflows"
+          ]
+        },
+        link: "/industry/banking"
+      },
+      "Capital Markets": {
+        icon: <TrendingUp className="h-10 w-10 text-blue-400" />,
+        color: "blue",
+        description: "Transform trading, investment, and risk management with ultra-low latency AI infrastructure and advanced analytics for algorithmic trading and portfolio optimization.",
+        challenges: [
+          "Ultra-low latency execution requirements",
+          "Real-time risk analytics and monitoring",
+          "Quantitative model development and backtesting",
+          "Alternative data integration and analysis",
+          "Regulatory compliance and reporting"
+        ],
+        solutions: [
+          "High-frequency algorithmic trading platforms",
+          "Quantitative research infrastructure",
+          "Real-time market surveillance and compliance",
+          "Alternative data intelligence and NLP",
+          "Portfolio optimization and risk management"
+        ],
+        detailedSolutions: [
+          { title: "Algorithmic Trading", description: "Deploy high-frequency trading strategies with microsecond-level execution." },
+          { title: "Quantitative Research", description: "Accelerate alpha discovery with scalable compute for backtesting and model development." },
+          { title: "Market Surveillance", description: "AI-powered monitoring for market manipulation and regulatory compliance." }
+        ],
+        caseStudy: {
+          title: "Real-Time Risk Analytics",
+          description: "Monitor and manage portfolio risk exposure with millisecond-level precision, including real-time VaR and stress testing.",
+          results: [
+            "Microsecond-level latency achieved",
+            "Real-time cross-asset risk aggregation",
+            "Automated limit monitoring",
+            "30% improvement in risk-adjusted returns"
+          ]
+        },
+        link: "/industry/capital-markets"
+      },
+      "Chemicals": {
+        icon: <Beaker className="h-10 w-10 text-violet-400" />,
+        color: "violet",
+        description: "Accelerate R&D, optimize production, and ensure safety with AI-powered solutions for molecular design, process control, and environmental compliance.",
+        challenges: [
+          "Accelerating drug and materials discovery",
+          "Process optimization and yield improvement",
+          "Quality assurance and batch consistency",
+          "Environmental compliance and safety monitoring",
+          "Supply chain complexity and optimization"
+        ],
+        solutions: [
+          "AI-driven molecular design and discovery",
+          "Real-time process control and optimization",
+          "Computer vision for quality assurance",
+          "Predictive safety and risk assessment",
+          "Sustainability analytics and emissions tracking"
+        ],
+        detailedSolutions: [
+          { title: "Materials Discovery", description: "Accelerate novel material discovery with AI-powered molecular modeling and simulation." },
+          { title: "Process Control", description: "Optimize chemical processes with real-time AI control systems and predictive maintenance." },
+          { title: "Quality Assurance", description: "Automated quality control with computer vision and advanced analytics." }
+        ],
+        caseStudy: {
+          title: "Accelerated Drug Discovery",
+          description: "Reduced time-to-market for pharmaceutical compounds with AI-driven molecular design and in silico screening.",
+          results: [
+            "3x faster compound discovery",
+            "60% reduction in lab experiments",
+            "Millions of molecules screened daily",
+            "Optimized synthesis pathways"
+          ]
+        },
+        link: "/industry/chemicals"
+      },
+      "Communications": {
+        icon: <Radio className="h-10 w-10 text-pink-400" />,
+        color: "pink",
+        description: "Transform content creation, delivery, and audience engagement with intelligent media solutions and 5G infrastructure for next-generation communications.",
+        challenges: [
+          "Content personalization at scale",
+          "Network optimization for 5G and streaming",
+          "Ad revenue optimization and targeting",
+          "Content moderation and safety",
+          "Audience analytics and engagement"
+        ],
+        solutions: [
+          "AI-assisted content generation and editing",
+          "Personalized recommendation engines",
+          "Network intelligence and optimization",
+          "Real-time sentiment analysis and social listening",
+          "Adaptive streaming and mobile experience"
+        ],
+        detailedSolutions: [
+          { title: "Content Generation", description: "AI-assisted content creation, editing, and production for video, audio, and text." },
+          { title: "Recommendation Engine", description: "Personalized content recommendations that increase engagement and retention." },
+          { title: "Network Intelligence", description: "AI-driven network optimization for improved quality of service." }
+        ],
+        caseStudy: {
+          title: "Streaming Video Platform",
+          description: "Built next-generation OTT platform with intelligent content delivery and personalization at scale.",
+          results: [
+            "45% increase in viewer engagement",
+            "35% improvement in content discovery",
+            "Adaptive bitrate optimization",
+            "AI-powered metadata generation"
+          ]
+        },
+        link: "/industry/communications"
+      },
+      "Consumer": {
+        icon: <ShoppingBag className="h-10 w-10 text-amber-400" />,
+        color: "amber",
+        description: "Transform retail, e-commerce, and consumer services with personalized experiences and intelligent operations for enhanced customer satisfaction and loyalty.",
+        challenges: [
+          "E-commerce personalization at scale",
+          "Omnichannel inventory management",
+          "Customer service automation and scaling",
+          "Demand forecasting and pricing optimization",
+          "Visual search and product discovery"
+        ],
+        solutions: [
+          "Hyper-personalization and dynamic recommendations",
+          "AI-driven demand forecasting",
+          "Customer intelligence and lifetime value analytics",
+          "Inventory optimization and replenishment",
+          "Visual search and AR experiences"
+        ],
+        detailedSolutions: [
+          { title: "Hyper-Personalization", description: "Deliver individualized experiences with AI-driven product recommendations." },
+          { title: "Demand Forecasting", description: "Predict consumer demand with ML models trained on sales and trends." },
+          { title: "Customer Intelligence", description: "Gain deep insights into customer behavior and preferences." }
+        ],
+        caseStudy: {
+          title: "E-Commerce Personalization",
+          description: "Increased conversions and average order value with AI-powered personalization and real-time recommendations.",
+          results: [
+            "32% increase in conversion rate",
+            "28% higher average order value",
+            "50% improvement in click-through rates",
+            "Personalized experiences at scale"
+          ]
+        },
+        link: "/industry/consumer"
+      },
+      "Energy": {
+        icon: <Leaf className="h-10 w-10 text-green-400" />,
+        color: "green",
+        description: "Transform energy operations with AI-driven optimization, renewable integration, and smart grid management for a sustainable future.",
+        challenges: [
+          "Renewable energy forecasting and integration",
+          "Grid stability and demand management",
+          "Asset performance and predictive maintenance",
+          "Energy trading and market optimization",
+          "Carbon reduction and sustainability tracking"
+        ],
+        solutions: [
+          "Solar and wind generation forecasting",
+          "Smart grid management and optimization",
+          "Energy storage and battery management",
+          "Demand response and load balancing",
+          "Asset management and predictive maintenance"
+        ],
+        detailedSolutions: [
+          { title: "Solar Forecasting", description: "AI-powered solar generation prediction for optimal energy planning." },
+          { title: "Wind Power Analytics", description: "Advanced wind pattern analysis and turbine optimization." },
+          { title: "Energy Storage", description: "Intelligent battery management for peak load management." }
+        ],
+        caseStudy: {
+          title: "Renewable Energy Optimization",
+          description: "Enhanced renewable operations with AI-powered forecasting and optimization for solar and wind facilities.",
+          results: [
+            "25% improvement in forecast accuracy",
+            "18% increase in energy yield",
+            "40% reduction in grid curtailment",
+            "Real-time performance optimization"
+          ]
+        },
+        link: "/industry/energy"
       }
     };
 
-    const industry = industryData[activeIndustry] || industryData["Financial Services"];
+    const industry = industryData[activeIndustry] || industryData["Aerospace"];
     const colorClasses = {
       blue: "from-blue-900/30 to-blue-900/10 border-blue-500/20",
       pink: "from-pink-900/30 to-pink-900/10 border-pink-500/20",
       green: "from-green-900/30 to-green-900/10 border-green-500/20",
-      indigo: "from-indigo-900/30 to-indigo-900/10 border-indigo-500/20"
+      indigo: "from-indigo-900/30 to-indigo-900/10 border-indigo-500/20",
+      emerald: "from-emerald-900/30 to-emerald-900/10 border-emerald-500/20",
+      orange: "from-orange-900/30 to-orange-900/10 border-orange-500/20",
+      violet: "from-violet-900/30 to-violet-900/10 border-violet-500/20",
+      amber: "from-amber-900/30 to-amber-900/10 border-amber-500/20"
     };
     
     return (
@@ -291,7 +468,7 @@ const SolutionIndustries: React.FC = () => {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-xl font-semibold mb-6 flex items-center">
               <span className="bg-gray-800 rounded-full h-8 w-8 inline-flex items-center justify-center mr-3 text-sm">2</span>
@@ -307,14 +484,44 @@ const SolutionIndustries: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
+        {/* Detailed Solutions Section */}
+        <div className="mb-10">
+          <h4 className="text-xl font-semibold mb-6 flex items-center">
+            <span className="bg-gray-800 rounded-full h-8 w-8 inline-flex items-center justify-center mr-3 text-sm">3</span>
+            Key Solutions Spotlight
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {industry.detailedSolutions.map((solution, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-900/50 to-black/90 rounded-xl border border-gray-800 p-6 hover:border-blue-500/30 transition-colors"
+              >
+                <h5 className="text-lg font-semibold mb-3 text-blue-400">{solution.title}</h5>
+                <p className="text-neutral-300 text-sm">{solution.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         <div className="bg-gradient-to-br from-gray-900/50 to-black/90 rounded-xl border border-gray-800 p-8 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
-              <h4 className="text-xl font-semibold mb-4">Case Study: {industry.caseStudy.title}</h4>
+              <h4 className="text-xl font-semibold mb-4 flex items-center">
+                <span className="bg-gray-800 rounded-full h-8 w-8 inline-flex items-center justify-center mr-3 text-sm">4</span>
+                Case Study: {industry.caseStudy.title}
+              </h4>
               <p className="text-neutral-300 mb-6">{industry.caseStudy.description}</p>
-              <Button className="mb-8">Read Full Case Study <ArrowUpRight className="ml-2 h-4 w-4" /></Button>
-              
+              {industry.link && (
+                <Link to={industry.link}>
+                  <Button className="mb-8">View Full Industry Page <ArrowUpRight className="ml-2 h-4 w-4" /></Button>
+                </Link>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {industry.caseStudy.results.map((result, idx) => (
                   <div key={idx} className="bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
@@ -543,7 +750,7 @@ const SolutionIndustries: React.FC = () => {
 
           <div className="mb-12">
             <div className="flex overflow-x-auto pb-4 scrollbar-hide gap-2 justify-center">
-              {["Financial Services", "Healthcare", "Retail", "Technology"].map((industry) => (
+              {["Aerospace", "Automotive", "Banking", "Capital Markets", "Chemicals", "Communications", "Consumer", "Energy"].map((industry) => (
                 <button
                   key={industry}
                   onClick={() => setActiveIndustry(industry)}

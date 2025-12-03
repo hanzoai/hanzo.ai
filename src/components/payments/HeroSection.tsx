@@ -17,7 +17,7 @@ const HeroSection = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-4">
             Integrated Global Payments Platform
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 mb-6">
             Hanzo Payments
           </h1>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-8">

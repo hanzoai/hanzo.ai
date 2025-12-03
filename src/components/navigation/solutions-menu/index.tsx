@@ -16,7 +16,7 @@ export const SolutionsMenu = () => {
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-semibold text-white">Capabilities</h3>
                   <Link
-                    to="/solutions"
+                    to="/solutions/capabilities"
                     className="text-sm text-neutral-400 hover:text-white"
                     onClick={closeMenu}
                   >
@@ -74,7 +74,7 @@ export const SolutionsMenu = () => {
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-semibold text-white">Industries</h3>
                   <Link
-                    to="/industries"
+                    to="/solutions/industries"
                     className="text-sm text-neutral-400 hover:text-white"
                     onClick={closeMenu}
                   >
