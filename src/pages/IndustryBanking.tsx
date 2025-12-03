@@ -10,7 +10,7 @@ import ChromeText from "@/components/ui/chrome-text";
 const IndustryBanking = () => {
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
-      <Navbar />
+      <Navbar themeColor="emerald" />
 
       {/* Hero Section */}
       <section className="py-20 lg:py-32 relative">

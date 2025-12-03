@@ -13,7 +13,11 @@ const isAccountRoute = () => {
     window.location.pathname === '/organization-profile';
 };
 
-const Navbar = () => {
+interface NavbarProps {
+  themeColor?: string;
+}
+
+const Navbar = ({ themeColor }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -34,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <NavbarContainer isScrolled={isScrolled}>
+    <NavbarContainer isScrolled={isScrolled} themeColor={themeColor}>
       <div className="flex items-center justify-between w-full">
         {/* Logo - Fixed width */}
         <div className="flex-shrink-0 w-48">
@@ -43,12 +47,12 @@ const Navbar = () => {
 
         {/* Navigation - Centered */}
         <div className="flex-1 flex justify-center">
-          <DesktopNav />
+          <DesktopNav themeColor={themeColor} />
         </div>
 
         {/* Auth Buttons - Fixed width */}
         <div className="flex-shrink-0 w-48 flex justify-end">
-          <AuthButtons user={user} />
+          <AuthButtons user={user} themeColor={themeColor} />
         </div>
 
         {/* Mobile Menu */}

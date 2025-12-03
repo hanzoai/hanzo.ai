@@ -7,19 +7,55 @@ import { cn } from "@/lib/utils";
 
 interface AuthButtonsProps {
   user: any | null;
+  themeColor?: string;
 }
 
-const AuthButtons = ({ user }: AuthButtonsProps) => {
+const AuthButtons = ({ user, themeColor }: AuthButtonsProps) => {
   const { isDarkMode, getRoundingClass } = useTheme();
-  
+
+  // Get theme-specific button classes
+  const getThemeButtonClasses = () => {
+    if (!themeColor) return "bg-white text-black hover:bg-gray-100";
+
+    const colorMap: Record<string, string> = {
+      indigo: "bg-indigo-600 text-white hover:bg-indigo-700 border-indigo-500",
+      orange: "bg-orange-600 text-white hover:bg-orange-700 border-orange-500",
+      emerald: "bg-emerald-600 text-white hover:bg-emerald-700 border-emerald-500",
+      blue: "bg-blue-600 text-white hover:bg-blue-700 border-blue-500",
+      violet: "bg-violet-600 text-white hover:bg-violet-700 border-violet-500",
+      pink: "bg-pink-600 text-white hover:bg-pink-700 border-pink-500",
+      amber: "bg-amber-600 text-white hover:bg-amber-700 border-amber-500",
+      green: "bg-green-600 text-white hover:bg-green-700 border-green-500",
+    };
+
+    return colorMap[themeColor] || "bg-white text-black hover:bg-gray-100";
+  };
+
+  const getThemeOutlineClasses = () => {
+    if (!themeColor) return "border-gray-700 text-white hover:bg-white/10";
+
+    const colorMap: Record<string, string> = {
+      indigo: "border-indigo-500/50 text-indigo-200 hover:bg-indigo-500/20",
+      orange: "border-orange-500/50 text-orange-200 hover:bg-orange-500/20",
+      emerald: "border-emerald-500/50 text-emerald-200 hover:bg-emerald-500/20",
+      blue: "border-blue-500/50 text-blue-200 hover:bg-blue-500/20",
+      violet: "border-violet-500/50 text-violet-200 hover:bg-violet-500/20",
+      pink: "border-pink-500/50 text-pink-200 hover:bg-pink-500/20",
+      amber: "border-amber-500/50 text-amber-200 hover:bg-amber-500/20",
+      green: "border-green-500/50 text-green-200 hover:bg-green-500/20",
+    };
+
+    return colorMap[themeColor] || "border-gray-700 text-white hover:bg-white/10";
+  };
+
   return (
     <div className="hidden md:flex items-center space-x-3">
       {user ? (
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           size="sm"
           className={cn(
-            isDarkMode ? "text-white border-white hover:bg-white/10" : "text-neutral-900 border-gray-300 hover:bg-gray-100",
+            getThemeOutlineClasses(),
             getRoundingClass(),
             "h-10 min-w-[120px]"
           )}
@@ -30,19 +66,25 @@ const AuthButtons = ({ user }: AuthButtonsProps) => {
           </a>
         </Button>
       ) : (
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           size="sm"
-          className="bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full h-10 min-w-[120px]"
+          className={cn(
+            getThemeOutlineClasses(),
+            "rounded-full h-10 min-w-[120px]"
+          )}
         >
           <a href="https://cloud.hanzo.ai">
             Console
           </a>
         </Button>
       )}
-      <Button 
-        size="sm" 
-        className="bg-white text-black border border-gray-300 rounded-full hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-10 min-w-[120px]"
+      <Button
+        size="sm"
+        className={cn(
+          getThemeButtonClasses(),
+          "rounded-full transition-all duration-300 h-10 min-w-[120px]"
+        )}
       >
         <a href="https://cloud.hanzo.ai/auth/sign-up">
           Signup
