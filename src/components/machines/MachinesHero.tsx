@@ -19,11 +19,11 @@ const MachinesHero = () => {
             Dedicated AI compute infrastructure optimized for machine learning and high-performance workloads.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
-              Get Started
+            <Button asChild className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
+              <a href="https://hanzo.computer" target="_blank" rel="noopener noreferrer">Get Started</a>
             </Button>
-            <Button variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
-              View Documentation
+            <Button asChild variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
+              <a href="https://hanzo.computer" target="_blank" rel="noopener noreferrer">View Documentation</a>
             </Button>
           </div>
         </div>
