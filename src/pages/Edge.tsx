@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const Edge = () => {
   return (
@@ -27,11 +28,11 @@ const Edge = () => {
               Deploy globally in milliseconds with ultra-low latency edge computing infrastructure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-cyan-600 hover:bg-cyan-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-cyan-600 hover:bg-cyan-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-cyan-500/30 text-[var(--white)] hover:bg-cyan-900/20 px-8 py-6 text-lg">
-                View Documentation
+              <Button asChild variant="outline" className="border-cyan-500/30 text-[var(--white)] hover:bg-cyan-900/20 px-8 py-6 text-lg">
+                <Link to="/cloud">View Documentation</Link>
               </Button>
             </div>
           </div>
@@ -272,11 +273,11 @@ const Edge = () => {
                 Get started with Hanzo Edge today and experience ultra-low latency computing at the edge.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-cyan-600 hover:bg-cyan-700 text-[var(--white)] px-8 py-6 text-lg">
-                  Sign Up Free
+                <Button asChild className="bg-cyan-600 hover:bg-cyan-700 text-[var(--white)] px-8 py-6 text-lg">
+                  <Link to="/contact">Sign Up Free</Link>
                 </Button>
-                <Button variant="outline" className="border-cyan-500/30 text-[var(--white)] hover:bg-cyan-900/20 px-8 py-6 text-lg">
-                  Contact Sales
+                <Button asChild variant="outline" className="border-cyan-500/30 text-[var(--white)] hover:bg-cyan-900/20 px-8 py-6 text-lg">
+                  <Link to="/contact">Contact Sales</Link>
                 </Button>
               </div>
             </div>

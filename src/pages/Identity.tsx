@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const Identity = () => {
   return (
@@ -27,11 +28,11 @@ const Identity = () => {
               Secure, scalable identity and access management for your applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
-                View Documentation
+              <Button asChild variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
+                <Link to="/security">View Documentation</Link>
               </Button>
             </div>
           </div>
@@ -281,11 +282,11 @@ const Identity = () => {
                 Get started with Hanzo Identity today and implement secure authentication in minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
-                  Sign Up Free
+                <Button asChild className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
+                  <Link to="/contact">Sign Up Free</Link>
                 </Button>
-                <Button variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
-                  Read Documentation
+                <Button asChild variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
+                  <Link to="/security">Read Documentation</Link>
                 </Button>
               </div>
             </div>

@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const Functions = () => {
   return (
@@ -27,11 +28,11 @@ const Functions = () => {
               Serverless function execution for any workload. Deploy code in seconds without managing infrastructure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
-                View Documentation
+              <Button asChild variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
+                <Link to="/cloud">View Documentation</Link>
               </Button>
             </div>
           </div>
@@ -277,11 +278,11 @@ const Functions = () => {
                 Get started with Hanzo Functions today and deploy your first serverless function in minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
-                  Sign Up Free
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
+                  <Link to="/contact">Sign Up Free</Link>
                 </Button>
-                <Button variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
-                  Read Documentation
+                <Button asChild variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
+                  <Link to="/cloud">Read Documentation</Link>
                 </Button>
               </div>
             </div>
