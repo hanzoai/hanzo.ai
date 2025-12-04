@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -55,11 +56,11 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 px-8 py-6 text-lg">
-              Start Building
+            <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700 px-8 py-6 text-lg">
+              <Link to="/contact">Start Building</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-purple-500/30 hover:bg-purple-500/10 text-[var(--white)] px-8 py-6 text-lg">
-              View Demo
+            <Button asChild size="lg" variant="outline" className="border-purple-500/30 hover:bg-purple-500/10 text-[var(--white)] px-8 py-6 text-lg">
+              <Link to="/pricing">View Demo</Link>
             </Button>
           </motion.div>
         </div>
@@ -422,11 +423,11 @@ const CallToAction = () => {
             Join thousands of developers building the future of conversational AI. Start for free, scale as you grow.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-8 py-6 text-lg">
-              Get Started Free
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-8 py-6 text-lg">
+              <Link to="/contact">Get Started Free</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-purple-500/30 hover:bg-purple-500/10 text-[var(--white)] px-8 py-6 text-lg">
-              Talk to Sales
+            <Button asChild size="lg" variant="outline" className="border-purple-500/30 hover:bg-purple-500/10 text-[var(--white)] px-8 py-6 text-lg">
+              <Link to="/contact">Talk to Sales</Link>
             </Button>
           </div>
           <p className="text-neutral-500 text-sm mt-6">

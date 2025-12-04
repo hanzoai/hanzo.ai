@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const Runtime = () => {
   return (
@@ -45,11 +46,11 @@ const Runtime = () => {
               High-performance container runtime optimized for AI applications. Deploy, scale, and manage AI workloads with enterprise-grade reliability and sub-second cold starts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
-                View Documentation
+              <Button asChild variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
+                <Link to="/pricing">View Documentation</Link>
               </Button>
             </div>
           </motion.div>
@@ -538,11 +539,11 @@ const Runtime = () => {
               Join thousands of teams building production AI applications on Hanzo Runtime. Get started in minutes with our free tier.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
-                Start Building Free
+              <Button asChild className="bg-blue-600 hover:bg-blue-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Start Building Free</Link>
               </Button>
-              <Button variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
-                Talk to an Expert
+              <Button asChild variant="outline" className="border-blue-500/30 text-[var(--white)] hover:bg-blue-900/20 px-8 py-6 text-lg">
+                <Link to="/contact">Talk to an Expert</Link>
               </Button>
             </div>
             <p className="text-sm text-neutral-400 mt-6">

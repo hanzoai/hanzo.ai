@@ -32,7 +32,7 @@ const IndustryEnergy = () => {
                 <Link to="/contact">Get Started</Link>
               </Button>
               <Button asChild variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
-                <Link to="/pricing">Schedule Consultation</Link>
+                <Link to="/contact">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
@@ -351,7 +351,7 @@ const IndustryEnergy = () => {
               <Link to="/contact">Schedule a Demo</Link>
             </Button>
             <Button asChild variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
-              <Link to="/pricing">Contact Sales</Link>
+              <Link to="/contact">Contact Sales</Link>
             </Button>
           </div>
         </div>

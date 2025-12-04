@@ -32,7 +32,7 @@ const IndustryAerospace = () => {
                 <Link to="/contact">Get Started</Link>
               </Button>
               <Button asChild variant="outline" className="border-indigo-500/30 text-[var(--white)] hover:bg-indigo-900/20 px-8 py-6 text-lg">
-                <Link to="/pricing">Schedule Consultation</Link>
+                <Link to="/contact">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
@@ -293,7 +293,7 @@ const IndustryAerospace = () => {
                   <Link to="/contact">Request Demo</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-indigo-500/30 text-[var(--white)] hover:bg-indigo-900/20 px-8 py-6 text-lg">
-                  <Link to="/pricing">Contact Sales</Link>
+                  <Link to="/contact">Contact Sales</Link>
                 </Button>
               </div>
             </div>

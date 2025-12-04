@@ -353,8 +353,8 @@ const SolutionCapabilities: React.FC = () => {
             </div>
           </div>
           
-          <Button className="flex items-center gap-2 bg-[var(--white)] text-black hover:bg-gray-200">
-            Read Full Case Study <ArrowRight size={16} />
+          <Button asChild className="flex items-center gap-2 bg-[var(--white)] text-black hover:bg-gray-200">
+            <Link to="/contact">Read Full Case Study <ArrowRight size={16} /></Link>
           </Button>
         </div>
         <div className="col-span-2 bg-gradient-to-br from-purple-900/40 to-blue-900/40 flex items-center justify-center p-8">
