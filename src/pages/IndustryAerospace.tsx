@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const IndustryAerospace = () => {
   return (
@@ -27,11 +28,11 @@ const IndustryAerospace = () => {
               Transform aerospace and defense operations with secure, reliable AI infrastructure built for mission-critical applications. From predictive maintenance to satellite operations, Hanzo provides defense-grade security and 99.99% uptime for systems that can't fail.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-indigo-600 hover:bg-indigo-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-indigo-500/30 text-[var(--white)] hover:bg-indigo-900/20 px-8 py-6 text-lg">
-                Schedule Consultation
+              <Button asChild variant="outline" className="border-indigo-500/30 text-[var(--white)] hover:bg-indigo-900/20 px-8 py-6 text-lg">
+                <Link to="/pricing">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
@@ -288,11 +289,11 @@ const IndustryAerospace = () => {
                 Partner with Hanzo to build secure, mission-critical AI systems for aerospace and defense.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-indigo-600 hover:bg-indigo-700 text-[var(--white)] px-8 py-6 text-lg">
-                  Request Demo
+                <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-[var(--white)] px-8 py-6 text-lg">
+                  <Link to="/contact">Request Demo</Link>
                 </Button>
-                <Button variant="outline" className="border-indigo-500/30 text-[var(--white)] hover:bg-indigo-900/20 px-8 py-6 text-lg">
-                  Contact Sales
+                <Button asChild variant="outline" className="border-indigo-500/30 text-[var(--white)] hover:bg-indigo-900/20 px-8 py-6 text-lg">
+                  <Link to="/pricing">Contact Sales</Link>
                 </Button>
               </div>
             </div>

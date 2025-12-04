@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const IndustryEnergy = () => {
   return (
@@ -27,11 +28,11 @@ const IndustryEnergy = () => {
               Transform energy operations with AI-driven optimization, renewable integration, and smart grid management for a sustainable future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
-                Schedule Consultation
+              <Button asChild variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
+                <Link to="/pricing">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
@@ -346,11 +347,11 @@ const IndustryEnergy = () => {
             Join leading energy companies using Hanzo AI to drive efficiency, sustainability, and innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
-              Schedule a Demo
+            <Button asChild className="bg-green-600 hover:bg-green-700 text-[var(--white)] px-8 py-6 text-lg">
+              <Link to="/contact">Schedule a Demo</Link>
             </Button>
-            <Button variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
-              Contact Sales
+            <Button asChild variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-900/20 px-8 py-6 text-lg">
+              <Link to="/pricing">Contact Sales</Link>
             </Button>
           </div>
         </div>

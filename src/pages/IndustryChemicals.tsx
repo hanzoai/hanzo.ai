@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const IndustryChemicals = () => {
   return (
@@ -27,11 +28,11 @@ const IndustryChemicals = () => {
               Accelerate R&D, optimize production, and ensure safety with AI-powered solutions for the chemical industry.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
-                Schedule Consultation
+              <Button asChild variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
+                <Link to="/pricing">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
@@ -272,11 +273,11 @@ const IndustryChemicals = () => {
                 Partner with Hanzo to accelerate innovation and optimize production with AI.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
-                  Request Demo
+                <Button asChild className="bg-violet-600 hover:bg-violet-700 text-[var(--white)] px-8 py-6 text-lg">
+                  <Link to="/contact">Request Demo</Link>
                 </Button>
-                <Button variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
-                  Contact Sales
+                <Button asChild variant="outline" className="border-violet-500/30 text-[var(--white)] hover:bg-violet-900/20 px-8 py-6 text-lg">
+                  <Link to="/pricing">Contact Sales</Link>
                 </Button>
               </div>
             </div>

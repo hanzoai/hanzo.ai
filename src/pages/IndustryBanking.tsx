@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ChromeText from "@/components/ui/chrome-text";
+import { Link } from "react-router-dom";
 
 const IndustryBanking = () => {
   return (
@@ -27,11 +28,11 @@ const IndustryBanking = () => {
               Transform customer experiences, enhance security, and drive operational efficiency with enterprise-grade AI solutions. Hanzo delivers SOC 2, HIPAA, and GDPR-compliant infrastructure with 99.99% uptime, processing millions of transactions securely in real-time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-emerald-600 hover:bg-emerald-700 text-[var(--white)] px-8 py-6 text-lg">
-                Get Started
+              <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-[var(--white)] px-8 py-6 text-lg">
+                <Link to="/contact">Get Started</Link>
               </Button>
-              <Button variant="outline" className="border-emerald-500/30 text-[var(--white)] hover:bg-emerald-900/20 px-8 py-6 text-lg">
-                Schedule Consultation
+              <Button asChild variant="outline" className="border-emerald-500/30 text-[var(--white)] hover:bg-emerald-900/20 px-8 py-6 text-lg">
+                <Link to="/pricing">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
@@ -288,11 +289,11 @@ const IndustryBanking = () => {
                 Partner with Hanzo to deliver secure, intelligent, and customer-centric banking experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-emerald-600 hover:bg-emerald-700 text-[var(--white)] px-8 py-6 text-lg">
-                  Request Demo
+                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-[var(--white)] px-8 py-6 text-lg">
+                  <Link to="/contact">Request Demo</Link>
                 </Button>
-                <Button variant="outline" className="border-emerald-500/30 text-[var(--white)] hover:bg-emerald-900/20 px-8 py-6 text-lg">
-                  Contact Sales
+                <Button asChild variant="outline" className="border-emerald-500/30 text-[var(--white)] hover:bg-emerald-900/20 px-8 py-6 text-lg">
+                  <Link to="/pricing">Contact Sales</Link>
                 </Button>
               </div>
             </div>
