@@ -1,139 +1,103 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Bot, Globe, Coins, ArrowRight } from "lucide-react";
+import { Check, AlertCircle, X } from "lucide-react";
 
-const useCases = [
-  {
-    icon: Bot,
-    title: "AI Apps",
-    subtitle: "Intelligent applications",
-    description:
-      "Build RAG pipelines, chatbots, and autonomous agents with our unified AI gateway. Access 100+ models through a single API.",
-    features: [
-      "Vector search & embeddings",
-      "Multi-model orchestration",
-      "Agent frameworks",
-      "Memory & context management",
-    ],
-    color: "#fd4444",
-    link: "/ai",
-  },
-  {
-    icon: Globe,
-    title: "Web Apps",
-    subtitle: "Full-stack applications",
-    description:
-      "Deploy full-stack applications with built-in auth, databases, edge functions, and global CDN. Zero config, infinite scale.",
-    features: [
-      "Edge-first architecture",
-      "Built-in authentication",
-      "Serverless functions",
-      "Global CDN",
-    ],
-    color: "#3b82f6",
-    link: "/cloud",
-  },
-  {
-    icon: Coins,
-    title: "Web3 Apps",
-    subtitle: "Decentralized applications",
-    description:
-      "Build smart contracts, DeFi protocols, and NFT marketplaces. Seamlessly integrate blockchain with traditional infrastructure.",
-    features: [
-      "Multi-chain support",
-      "Smart contract templates",
-      "Wallet integration",
-      "On-chain analytics",
-    ],
-    color: "#8b5cf6",
-    link: "/commerce",
-  },
+const features = [
+  { name: "Multi-agent parallelism", hanzo: "full", copilot: "none", claudeCode: "partial" },
+  { name: "Multi-model routing", hanzo: "full", copilot: "none", claudeCode: "partial" },
+  { name: "On-prem / air-gapped", hanzo: "full", copilot: "none", claudeCode: "partial" },
+  { name: "Policy + approvals + audit", hanzo: "full", copilot: "none", claudeCode: "none" },
+  { name: "Evidence-based output (tests/diffs)", hanzo: "full", copilot: "none", claudeCode: "partial" },
 ];
+
+const renderStatus = (status: string) => {
+  switch (status) {
+    case "full":
+      return <Check className="w-5 h-5 text-green-500" />;
+    case "partial":
+      return <AlertCircle className="w-5 h-5 text-yellow-500" />;
+    case "none":
+      return <X className="w-5 h-5 text-neutral-600" />;
+    default:
+      return null;
+  }
+};
 
 const UseCasesSection = () => {
   return (
     <section className="py-24 px-4 md:px-8 bg-black">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
             style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
           >
-            Use Cases
+            Why Hanzo
           </p>
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-6">
-            Build anything
+          <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            Built for enterprise agent work
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            From AI-powered applications to decentralized protocols. One platform, endless possibilities.
+          <p className="text-lg text-neutral-400">
+            More than autocomplete. Real software engineering at scale.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {useCases.map((useCase, index) => {
-            const Icon = useCase.icon;
-            return (
-              <motion.div
-                key={useCase.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="group relative"
-              >
-                <div className="h-full p-8 rounded-2xl border border-neutral-800 bg-neutral-900/30 hover:bg-neutral-900/60 transition-all duration-300 hover:border-neutral-700">
-                  {/* Icon */}
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
-                    style={{ backgroundColor: `${useCase.color}15` }}
-                  >
-                    <Icon className="w-7 h-7" style={{ color: useCase.color }} />
-                  </div>
+        {/* Comparison Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="rounded-xl border border-neutral-800 overflow-hidden"
+        >
+          {/* Header */}
+          <div className="grid grid-cols-4 gap-4 p-4 bg-neutral-900 border-b border-neutral-800">
+            <div className="text-sm font-medium text-neutral-500">Capability</div>
+            <div className="text-sm font-medium text-[#fd4444] text-center">Hanzo</div>
+            <div className="text-sm font-medium text-neutral-500 text-center">Copilot</div>
+            <div className="text-sm font-medium text-neutral-500 text-center">Claude Code</div>
+          </div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl font-semibold text-white mb-1">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-sm text-neutral-500 mb-4">{useCase.subtitle}</p>
+          {/* Rows */}
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.name}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className={`grid grid-cols-4 gap-4 p-4 ${
+                index !== features.length - 1 ? "border-b border-neutral-800" : ""
+              } hover:bg-neutral-900/50 transition-colors`}
+            >
+              <div className="text-sm text-white">{feature.name}</div>
+              <div className="flex justify-center">{renderStatus(feature.hanzo)}</div>
+              <div className="flex justify-center">{renderStatus(feature.copilot)}</div>
+              <div className="flex justify-center">{renderStatus(feature.claudeCode)}</div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-                  {/* Description */}
-                  <p className="text-neutral-400 mb-6 leading-relaxed">
-                    {useCase.description}
-                  </p>
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-8">
-                    {useCase.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm">
-                        <div
-                          className="w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: useCase.color }}
-                        />
-                        <span className="text-neutral-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <Link
-                    to={useCase.link}
-                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
-                    style={{ color: useCase.color }}
-                  >
-                    Learn more
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Legend */}
+        <div className="flex justify-center gap-6 mt-6">
+          <div className="flex items-center gap-2">
+            <Check className="w-4 h-4 text-green-500" />
+            <span className="text-xs text-neutral-500">Full support</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-yellow-500" />
+            <span className="text-xs text-neutral-500">Partial</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <X className="w-4 h-4 text-neutral-600" />
+            <span className="text-xs text-neutral-500">Not available</span>
+          </div>
         </div>
       </div>
     </section>
