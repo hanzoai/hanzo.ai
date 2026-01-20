@@ -1,36 +1,92 @@
-
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { ArrowRight, Mail } from "lucide-react";
+
+const BRAND_COLOR = "#fd4444";
 
 const CallToAction = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-      
-      <div className="max-w-5xl mx-auto relative z-10">
-        <motion.div 
+    <section className="py-24 px-4 bg-black relative overflow-hidden">
+      {/* Background gradient */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20"
+        style={{
+          background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+          filter: "blur(100px)",
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto relative z-10">
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Start working with AI agents
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+            Create what's exciting.
+            <br />
+            <span style={{ color: BRAND_COLOR }}>Maintain what's essential.</span>
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
-            Scale your Team with AI-Driven Software Development.
+
+          <p className="text-xl text-neutral-400 max-w-2xl mx-auto mb-8">
+            Use Hanzo Dev where you work
           </p>
-          
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
-          >
-            Try for Free →
-          </Button>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <Button
+              size="lg"
+              className="text-white text-lg px-8"
+              style={{ backgroundColor: BRAND_COLOR }}
+              asChild
+            >
+              <Link to="/signup">
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-neutral-700 hover:bg-neutral-900 text-lg px-8"
+              asChild
+            >
+              <a href="https://docs.hanzo.ai/dev" target="_blank" rel="noopener noreferrer">
+                Read the documentation
+              </a>
+            </Button>
+          </div>
+
+          {/* Newsletter signup */}
+          <div className="border-t border-neutral-800 pt-12">
+            <h3 className="text-xl font-semibold text-white mb-2">
+              Get the developer newsletter
+            </h3>
+            <p className="text-neutral-400 text-sm mb-6 max-w-lg mx-auto">
+              Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#fd4444]/50"
+              />
+              <Button
+                className="text-white px-6"
+                style={{ backgroundColor: BRAND_COLOR }}
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Subscribe
+              </Button>
+            </div>
+            <p className="text-xs text-neutral-500 mt-4">
+              Please provide your email address if you'd like to receive our monthly developer newsletter.
+              You can unsubscribe at any time.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

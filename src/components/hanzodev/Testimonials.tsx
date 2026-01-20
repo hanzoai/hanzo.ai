@@ -1,109 +1,137 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { Twitter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+const BRAND_COLOR = "#fd4444";
+
+const testimonials = [
+  {
+    company: "Ramp",
+    logo: "R",
+    quote: "Hanzo Dev has dramatically accelerated our team's coding efficiency. I can now write EDA code in a notebook—pulling data, training a model, and evaluating it with basic metrics—and then ask Hanzo to convert that into a Metaflow pipeline. This process saves 1-2 days of routine (and often boring!) work per model.",
+    author: "Anton Biryukov",
+    title: "Staff Software Engineer",
+    link: "/customers/ramp",
+  },
+  {
+    company: "Intercom",
+    logo: "I",
+    quote: "With Hanzo, we're not just automating customer service—we're elevating it to truly human quality. This lets support teams think more strategically about customer experience and what makes interactions genuinely valuable.",
+    author: "Fergal Reid",
+    title: "VP of AI",
+    link: "/customers/intercom",
+  },
+  {
+    company: "Notion",
+    logo: "N",
+    quote: "Hanzo Dev is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Hanzo Dev busy as possible.",
+    author: "Simon Last",
+    title: "Co-founder",
+    link: "/customers/notion",
+  },
+];
+
+const companyLogos = [
+  "Ramp", "Intercom", "Notion", "Stripe", "Shopify", "Vercel",
+  "Linear", "Figma", "Pitch", "Loom", "Discord", "Slack",
+];
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Bob Xu",
-      handle: "@Bobbxu",
-      avatar: "",
-      quote: "Impressive! Hanzo Dev seems like a game-changer for software development. AI agents streamlining coding tasks - that's the future we've been waiting for."
-    },
-    {
-      name: "Desmond Grealy",
-      handle: "@k_nearest",
-      avatar: "",
-      quote: "I look at a lot of Coding Agent tools, and I think this one is pretty slick."
-    },
-    {
-      name: "Anna Johnson",
-      handle: "@thisisprad",
-      avatar: "",
-      quote: "Wow absolute game changer with Hanzo - run agents in CI/CD and local development."
-    },
-    {
-      name: "Alan Tan",
-      handle: "@alanytan",
-      avatar: "",
-      quote: "Magic :-)"
-    },
-    {
-      name: "John Rush",
-      handle: "@johnrushx",
-      avatar: "",
-      quote: "Congrats, @thisisHanzodev is my favorite winner of all DevHunt winners so far."
-    },
-    {
-      name: "Kevin J. Scott",
-      handle: "CTO @ PGA",
-      avatar: "",
-      quote: "AI agents 🤖 are completely changing how software is created. Agent systems like Hanzo are the future."
-    }
-  ];
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
-      <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
+    <section className="py-24 px-4 bg-black">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Loved by Developers.
-          </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-            See what the community is saying about Hanzo Dev.
+          <p
+            className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
+            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+          >
+            Testimonials
           </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            What developers are saying
+          </h2>
         </motion.div>
 
-        <motion.div 
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+        {/* Company logos marquee */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex justify-center gap-8 mb-16 overflow-hidden"
         >
-          {testimonials.map((testimonial, index) => (
-            <motion.div 
-              key={index}
-              className="bg-gray-800/30 border border-gray-700/50 rounded-lg p-6 hover:bg-gray-800/50 transition-colors"
-              variants={item}
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-700"></div>
-                <div>
-                  <div className="font-medium">{testimonial.name}</div>
-                  <div className="text-neutral-400 flex items-center">
-                    <Twitter className="h-3.5 w-3.5 mr-1 text-blue-400" />
-                    {testimonial.handle}
-                  </div>
-                </div>
+          <div className="flex gap-8 animate-marquee">
+            {[...companyLogos, ...companyLogos].map((logo, i) => (
+              <div
+                key={i}
+                className="text-neutral-600 text-lg font-medium whitespace-nowrap"
+              >
+                {logo}
               </div>
-              <p className="text-neutral-300">{testimonial.quote}</p>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Testimonial cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.company}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors group"
+            >
+              {/* Company logo */}
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold"
+                  style={{ backgroundColor: `${BRAND_COLOR}40` }}
+                >
+                  {testimonial.logo}
+                </div>
+                <span className="text-white font-semibold">{testimonial.company}</span>
+              </div>
+
+              {/* Quote */}
+              <blockquote className="text-neutral-300 text-sm mb-6 leading-relaxed">
+                "{testimonial.quote}"
+              </blockquote>
+
+              {/* Author */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                  <div className="text-neutral-500 text-xs">{testimonial.title}</div>
+                </div>
+                <a
+                  href={testimonial.link}
+                  className="text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ color: BRAND_COLOR }}
+                >
+                  Read story
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 20s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };

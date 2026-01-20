@@ -16,15 +16,129 @@ import {
   Bug,
   Workflow,
   Box,
+  Bot,
 } from "lucide-react";
+import { CodeTabs } from "@/components/ui/code-block";
 
 const BRAND_COLOR = "#fd4444";
+
+// Multi-language code examples for the API section
+const API_CODE_EXAMPLES = [
+  {
+    language: "typescript",
+    label: "TypeScript",
+    code: `import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "https://api.hanzo.ai/v1",
+  apiKey: process.env.HANZO_API_KEY,
+});
+
+const response = await client.chat.completions.create({
+  model: "claude-sonnet-4-20250514",
+  messages: [{ role: "user", content: "Hello!" }],
+});
+
+console.log(response.choices[0].message.content);`,
+  },
+  {
+    language: "python",
+    label: "Python",
+    code: `from openai import OpenAI
+import os
+
+client = OpenAI(
+    base_url="https://api.hanzo.ai/v1",
+    api_key=os.environ["HANZO_API_KEY"],
+)
+
+response = client.chat.completions.create(
+    model="claude-sonnet-4-20250514",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+
+print(response.choices[0].message.content)`,
+  },
+  {
+    language: "go",
+    label: "Go",
+    code: `package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    "github.com/sashabaranov/go-openai"
+)
+
+func main() {
+    config := openai.DefaultConfig(os.Getenv("HANZO_API_KEY"))
+    config.BaseURL = "https://api.hanzo.ai/v1"
+    client := openai.NewClientWithConfig(config)
+
+    resp, _ := client.CreateChatCompletion(
+        context.Background(),
+        openai.ChatCompletionRequest{
+            Model: "claude-sonnet-4-20250514",
+            Messages: []openai.ChatCompletionMessage{
+                {Role: "user", Content: "Hello!"},
+            },
+        },
+    )
+
+    fmt.Println(resp.Choices[0].Message.Content)
+}`,
+  },
+  {
+    language: "rust",
+    label: "Rust",
+    code: `use async_openai::{
+    config::OpenAIConfig,
+    types::{ChatCompletionRequestMessage, CreateChatCompletionRequest},
+    Client,
+};
+
+#[tokio::main]
+async fn main() {
+    let config = OpenAIConfig::new()
+        .with_api_key(std::env::var("HANZO_API_KEY").unwrap())
+        .with_api_base("https://api.hanzo.ai/v1");
+
+    let client = Client::with_config(config);
+
+    let request = CreateChatCompletionRequest {
+        model: "claude-sonnet-4-20250514".to_string(),
+        messages: vec![
+            ChatCompletionRequestMessage::User("Hello!".into()),
+        ],
+        ..Default::default()
+    };
+
+    let response = client.chat().create(request).await.unwrap();
+    println!("{}", response.choices[0].message.content);
+}`,
+  },
+  {
+    language: "bash",
+    label: "cURL",
+    code: `curl https://api.hanzo.ai/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer $HANZO_API_KEY" \\
+  -d '{
+    "model": "claude-sonnet-4-20250514",
+    "messages": [
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'`,
+  },
+];
 
 const DeveloperExperienceSection = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyInstall = () => {
-    navigator.clipboard.writeText("curl -sSL https://hanzo.sh | sh");
+    navigator.clipboard.writeText("curl -fsSL hanzo.sh | sh");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -90,7 +204,7 @@ const DeveloperExperienceSection = () => {
           </div>
         </motion.div>
 
-        {/* CLI Section */}
+        {/* Hanzo Dev Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,25 +233,49 @@ const DeveloperExperienceSection = () => {
               </button>
             </div>
             <div className="p-4 font-mono text-sm bg-neutral-950">
-              <div className="text-neutral-500 mb-2">$ curl -sSL https://hanzo.sh | sh</div>
-              <div className="text-neutral-300 mb-4">$ hanzo dev "Fix rate limiting. Add metrics. Add tests. Open a PR."</div>
-              <div className="text-green-400 mb-1">✓ Plan created</div>
-              <div className="text-green-400 mb-1">✓ Implementation complete</div>
-              <div className="text-green-400 mb-1">✓ Tests passing (12/12)</div>
-              <div className="text-[#fd4444]">✓ PR opened: #247</div>
+              <div className="mb-2">
+                <span className="text-neutral-500">$ </span>
+                <span className="text-purple-400">curl</span>
+                <span className="text-neutral-300"> -fsSL </span>
+                <span className="text-blue-400">hanzo.sh</span>
+                <span className="text-neutral-300"> | </span>
+                <span className="text-purple-400">sh</span>
+              </div>
+              <div className="mb-4">
+                <span className="text-neutral-500">$ </span>
+                <span className="text-purple-400">hanzo</span>
+                <span className="text-cyan-400"> dev</span>
+                <span className="text-green-400"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
+              </div>
+              <div className="text-green-400 mb-1">
+                <span className="text-green-500">✓ </span>Plan created
+              </div>
+              <div className="text-green-400 mb-1">
+                <span className="text-green-500">✓ </span>Implementation complete
+              </div>
+              <div className="text-green-400 mb-1">
+                <span className="text-green-500">✓ </span>Tests passing (12/12)
+              </div>
+              <div className="text-[#fd4444]">
+                <span className="text-green-500">✓ </span>PR opened: #247
+              </div>
             </div>
           </div>
 
           <div className="order-1 lg:order-2">
             <p
-              className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
+              className="inline-flex items-center text-xs font-medium rounded-full px-4 py-2 border mb-6"
               style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
             >
-              Hanzo CLI
+              <Bot className="w-3.5 h-3.5 mr-1.5" />
+              Hanzo Dev
             </p>
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-              AI-powered development from the terminal.
+              AI coding agent in your terminal.
             </h2>
+            <p className="text-neutral-400 mb-6">
+              Install <code className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 text-sm">@hanzo/dev</code> and <code className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 text-sm">@hanzo/cli</code> via curl.
+            </p>
             <ul className="space-y-3 text-neutral-400 mb-8">
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
@@ -232,7 +370,7 @@ const DeveloperExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="rounded-2xl border border-[#fd4444]/30 bg-gradient-to-br from-[#fd4444]/10 to-transparent p-8 md:p-12"
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             <div>
               <p
                 className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
@@ -256,21 +394,7 @@ const DeveloperExperienceSection = () => {
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </div>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-950 p-4 font-mono text-sm overflow-x-auto">
-              <pre className="text-neutral-300">
-{`import OpenAI from "openai";
-
-const client = new OpenAI({
-  baseURL: "https://api.hanzo.ai/v1",
-  apiKey: process.env.HANZO_API_KEY,
-});
-
-const response = await client.chat.completions.create({
-  model: "claude-3-opus",
-  messages: [{ role: "user", content: "Hello!" }],
-});`}
-              </pre>
-            </div>
+            <CodeTabs tabs={API_CODE_EXAMPLES} />
           </div>
         </motion.div>
       </div>

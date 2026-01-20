@@ -11,6 +11,7 @@ import OpenSourceSection from "@/components/landing/OpenSourceSection";
 import PricingPreviewSection from "@/components/landing/PricingPreviewSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
 import { Toaster } from "@/components/ui/toaster";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const Index = () => {
   return (
@@ -35,6 +36,7 @@ const Index = () => {
 
       <Footer />
       <Toaster />
+      <ChatWidget />
     </div>
   );
 };

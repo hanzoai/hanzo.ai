@@ -1,14 +1,14 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/hanzodev/HeroSection";
-import HowItWorks from "@/components/hanzodev/HowItWorks";
-import UseCases from "@/components/hanzodev/UseCases";
-import Features from "@/components/hanzodev/Features";
+import PricingSection from "@/components/hanzodev/PricingSection";
+import CodeOnboardingSection from "@/components/hanzodev/CodeOnboardingSection";
 import Testimonials from "@/components/hanzodev/Testimonials";
+import MultiAgentSection from "@/components/hanzodev/MultiAgentSection";
+import CLISection from "@/components/hanzodev/CLISection";
+import FAQSection from "@/components/hanzodev/FAQSection";
 import CallToAction from "@/components/hanzodev/CallToAction";
-import PRAgent from "@/components/hanzodev/PRAgent";
 
 const HanzoDev = () => {
   return (
@@ -16,11 +16,12 @@ const HanzoDev = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <HowItWorks />
-        <UseCases />
-        <Features />
-        <PRAgent />
+        <PricingSection />
+        <CodeOnboardingSection />
         <Testimonials />
+        <MultiAgentSection />
+        <CLISection />
+        <FAQSection />
         <CallToAction />
       </main>
       <Footer />

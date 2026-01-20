@@ -209,11 +209,11 @@ const HeroSection = () => {
     </div>
   );
 
-  // Terminal Mock Component
+  // Terminal Mock Component - fixed height with scrolling content
   const TerminalMock = ({ className = "" }: { className?: string }) => (
     <div className={`rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl ${className}`}>
       {/* Terminal header */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-neutral-800 bg-neutral-900">
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-neutral-800 bg-neutral-900 shrink-0">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -233,14 +233,14 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-      {/* Terminal content */}
-      <div className="p-4 font-mono text-xs bg-neutral-950 min-h-[200px]">
+      {/* Terminal content - fixed height with scroll */}
+      <div className="p-4 font-mono text-xs bg-neutral-950 h-[220px] overflow-y-auto">
         {TERMINAL_LINES.slice(0, terminalStep).map((line, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.15 }}
             className={`mb-1 ${
               line.type === "command" ? "text-neutral-300" :
               line.type === "success" ? "text-neutral-400" :
@@ -274,23 +274,24 @@ const HeroSection = () => {
     </div>
   );
 
-  // Mobile Device Mock Component
+  // Mobile Device Mock Component - iPhone 15 Pro dimensions (71.6mm x 146.6mm = ~2.05:1 ratio)
+  // Using w-[150px] = h-[308px] for proper iPhone proportions
   const MobileDeviceMock = ({ className = "" }: { className?: string }) => (
-    <div className={`rounded-[24px] border-2 border-neutral-700 bg-neutral-900 overflow-hidden shadow-2xl ${className}`}>
-      {/* Phone notch */}
-      <div className="bg-neutral-950 py-2 flex justify-center">
-        <div className="w-16 h-4 bg-neutral-800 rounded-full" />
+    <div className={`w-[150px] h-[308px] rounded-[32px] border-[3px] border-neutral-600 bg-neutral-900 overflow-hidden shadow-2xl flex flex-col ${className}`}>
+      {/* Dynamic Island */}
+      <div className="bg-neutral-950 pt-2 pb-1 flex justify-center shrink-0">
+        <div className="w-[60px] h-[18px] bg-black rounded-full" />
       </div>
       {/* App content */}
-      <div className="bg-neutral-950 p-3 min-h-[180px]">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-[#fd4444] flex items-center justify-center">
-              <span className="text-white text-[8px] font-bold">H</span>
+      <div className="bg-neutral-950 p-2.5 flex-1 overflow-hidden flex flex-col">
+        <div className="flex items-center justify-between mb-2 shrink-0">
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 rounded-md bg-[#fd4444] flex items-center justify-center">
+              <span className="text-white text-[7px] font-bold">H</span>
             </div>
-            <span className="text-white text-xs font-medium">Hanzo</span>
+            <span className="text-white text-[10px] font-medium">Hanzo</span>
           </div>
-          <Bell className="w-4 h-4 text-neutral-500" />
+          <Bell className="w-3.5 h-3.5 text-neutral-500" />
         </div>
 
         {/* Push notification style */}
@@ -298,33 +299,33 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 1.5, duration: 0.3 }}
-          className="bg-neutral-900 rounded-lg p-2.5 border border-neutral-800 mb-2"
+          className="bg-neutral-900 rounded-lg p-2 border border-neutral-800 mb-2 shrink-0"
         >
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-1.5 mb-0.5">
             <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-            <span className="text-[10px] text-green-400 font-medium">Deploy Complete</span>
+            <span className="text-[9px] text-green-400 font-medium">Deploy Complete</span>
           </div>
-          <div className="text-[11px] text-white">docs-api is now live</div>
-          <div className="text-[9px] text-neutral-500 mt-1">https://docs-api.acme.dev</div>
+          <div className="text-[10px] text-white">docs-api is now live</div>
+          <div className="text-[8px] text-neutral-500 mt-0.5 truncate">https://docs-api.acme.dev</div>
         </motion.div>
 
-        <div className="space-y-2">
-          <div className="bg-neutral-900 rounded-lg p-2 border border-neutral-800">
-            <div className="text-[9px] text-neutral-500">Status</div>
+        <div className="space-y-1.5 flex-1 overflow-hidden">
+          <div className="bg-neutral-900 rounded-lg p-1.5 border border-neutral-800">
+            <div className="text-[8px] text-neutral-500">Status</div>
             <div className="flex items-center gap-1">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              <span className="text-[10px] text-green-400">All systems operational</span>
+              <span className="text-[9px] text-green-400">All systems operational</span>
             </div>
           </div>
-          <div className="bg-neutral-900 rounded-lg p-2 border border-neutral-800">
-            <div className="text-[9px] text-neutral-500">Active Deployments</div>
-            <div className="text-[11px] text-white">24 services</div>
+          <div className="bg-neutral-900 rounded-lg p-1.5 border border-neutral-800">
+            <div className="text-[8px] text-neutral-500">Active Deployments</div>
+            <div className="text-[10px] text-white">24 services</div>
           </div>
         </div>
       </div>
       {/* Home indicator */}
-      <div className="bg-neutral-950 py-2 flex justify-center">
-        <div className="w-12 h-1 bg-neutral-600 rounded-full" />
+      <div className="bg-neutral-950 py-1.5 flex justify-center shrink-0">
+        <div className="w-[40px] h-[4px] bg-neutral-600 rounded-full" />
       </div>
     </div>
   );
@@ -517,7 +518,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, x: 20, y: 20 }}
                 animate={{ opacity: mounted ? 1 : 0, x: mounted ? 0 : 20, y: mounted ? 0 : 20 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-[120px] xl:w-[140px]"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30"
               >
                 <MobileDeviceMock />
               </motion.div>
@@ -631,7 +632,7 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="flex justify-center"
                 >
-                  <MobileDeviceMock className="w-[140px]" />
+                  <MobileDeviceMock />
                 </motion.div>
               </div>
             </div>
@@ -768,7 +769,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.2 }}
                     className="flex justify-center"
                   >
-                    <MobileDeviceMock className="w-[160px]" />
+                    <MobileDeviceMock />
                   </motion.div>
                 )}
               </AnimatePresence>
