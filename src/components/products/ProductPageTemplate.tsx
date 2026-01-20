@@ -62,6 +62,16 @@ import type { Product, ProductCategory } from "@/data/product-taxonomy";
 import { getProductsByCategory } from "@/data/product-taxonomy";
 import { GridLines, BlueprintLine, ArchitecturalBox } from "@/components/ui/architectural-elements";
 import { ProductMockup } from "./ProductMockup";
+import { UpstreamAttribution } from "./UpstreamAttribution";
+import { CodeExamplesSection } from "./CodeExamplesSection";
+import { CommunitySection } from "./CommunitySection";
+import { SDKSection } from "./SDKSection";
+import {
+  getUpstreamForProduct,
+  getCodeExamplesForProduct,
+  getCommunityForProduct,
+  hanzoSDKs,
+} from "@/data/upstream-projects";
 
 // Icon mapping
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -216,6 +226,23 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
   const installMethods = product.install
     ? Object.keys(product.install).filter(key => product.install?.[key as keyof typeof product.install])
     : [];
+
+  // Get upstream project info (for forked OSS products)
+  const upstreamProject = getUpstreamForProduct(product.id);
+
+  // Get code examples for this product
+  const codeExamples = getCodeExamplesForProduct(product.id);
+
+  // Get community links
+  const community = getCommunityForProduct(product.id);
+
+  // Build community links array for CommunitySection
+  const communityLinks = [
+    { type: 'github' as const, url: product.github },
+    { type: 'docs' as const, url: product.docs || 'https://docs.hanzo.ai' },
+    ...(community.discord ? [{ type: 'discord' as const, url: community.discord }] : []),
+    ...(community.twitter ? [{ type: 'twitter' as const, url: community.twitter }] : []),
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -442,6 +469,15 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
         </section>
       )}
 
+      {/* Code Examples Section */}
+      {codeExamples.length > 0 && (
+        <CodeExamplesSection
+          title={`${product.shortName} Quick Start`}
+          subtitle="Get started in minutes with your language of choice"
+          examples={codeExamples}
+        />
+      )}
+
       {/* Features Section */}
       <section className="py-16 px-4 border-t border-white/10 bg-gradient-to-b from-neutral-900/30 to-transparent">
         <div className="max-w-6xl mx-auto">
@@ -480,6 +516,15 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
 
       {/* Custom content from children */}
       {children}
+
+      {/* SDK Section */}
+      <SDKSection productName={product.shortName} sdks={hanzoSDKs} />
+
+      {/* Community Section */}
+      <CommunitySection
+        productName={product.shortName}
+        links={communityLinks}
+      />
 
       {/* Resources Section */}
       <section className="py-16 px-4 border-t border-white/10">
@@ -587,6 +632,14 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
             </motion.div>
           </div>
         </section>
+      )}
+
+      {/* Upstream Attribution Section (for forked OSS projects) */}
+      {upstreamProject && (
+        <UpstreamAttribution
+          upstream={upstreamProject}
+          productName={product.name}
+        />
       )}
 
       {/* CTA Section */}
