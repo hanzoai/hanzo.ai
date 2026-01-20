@@ -178,9 +178,26 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
 
       {isOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
-          <div className="fixed inset-0 bg-black/90 backdrop-blur-md" onClick={onToggle} />
+          <div className="fixed inset-0 bg-black/95 backdrop-blur-md" onClick={onToggle} />
 
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-black border-l border-neutral-800 pt-[var(--header-height)] h-screen overflow-y-auto">
+          <div className="fixed inset-0 w-full bg-black pt-[var(--header-height)] h-screen overflow-y-auto">
+            {/* Search / Command palette widget at top */}
+            <div className="px-4 pt-4 pb-2">
+              <button
+                onClick={() => {
+                  onToggle();
+                  onOpenSearch?.();
+                }}
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-neutral-700 transition-all"
+              >
+                <Search className="h-5 w-5" />
+                <span className="flex-1 text-left text-sm">Search docs, products, pages...</span>
+                <kbd className="inline-flex items-center gap-0.5 px-2 py-1 text-[11px] font-mono bg-neutral-800 border border-neutral-700 rounded text-neutral-500">
+                  <span className="text-xs">⌘</span>K
+                </kbd>
+              </button>
+            </div>
+
             <div className="px-4 py-4 space-y-1">
               {mobileNav.map((item) => (
                 <div key={item.title} className="border-b border-neutral-800/50 pb-2 mb-2">

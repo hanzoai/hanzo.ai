@@ -3,6 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DesktopAppBanner from "@/components/DesktopAppBanner";
 import ZenBackground from "@/components/zen/ZenBackground";
 import ZenQuoteSection from "@/components/zen/ZenQuoteSection";
 import CloudHero from "@/components/cloud/CloudHero";
@@ -41,6 +42,7 @@ const Cloud = () => {
 
       <Footer />
       <Toaster />
+      <DesktopAppBanner />
     </div>
   );
 };

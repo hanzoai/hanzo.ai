@@ -16,7 +16,19 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const BRAND_COLOR = "#fd4444";
+const BRAND_COLOR = "#e11633";
+
+// AI providers we support for multi-agent execution
+const aiProviders = [
+  { name: "OpenAI", logo: "/logos/openai.svg" },
+  { name: "Anthropic", logo: "/logos/anthropic.svg" },
+  { name: "Google", logo: "/logos/google.svg" },
+  { name: "Qwen", logo: "/logos/qwen.svg" },
+  { name: "Gemini", logo: "/logos/gemini.svg" },
+  { name: "Mistral", logo: "/logos/mistral.svg" },
+  { name: "Kimi", logo: "/logos/kimi.svg" },
+  { name: "Moonshot", logo: "/logos/moonshot.svg" },
+];
 
 const multiAgentFeatures = [
   {
@@ -84,16 +96,36 @@ const PlatformOverviewSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            style={{ color: BRAND_COLOR, borderColor: `#e116334d` }}
           >
             Core Differentiator
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4">
             Parallel execution. One best outcome.
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mb-12">
+          <p className="text-lg text-neutral-400 max-w-2xl mb-8">
             Dispatch the same task to multiple agents (Hanzo + external), then pick the winner based on diff quality + test evidence, not vibes.
           </p>
+
+          {/* AI Provider logos */}
+          <div className="flex flex-wrap items-center gap-6 mb-12 p-4 rounded-xl bg-neutral-900/30 border border-neutral-800">
+            <span className="text-xs text-neutral-500 uppercase tracking-wider font-medium">Supported agents:</span>
+            {aiProviders.map((provider) => (
+              <div
+                key={provider.name}
+                className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
+                title={provider.name}
+              >
+                <img
+                  src={provider.logo}
+                  alt={provider.name}
+                  className="w-5 h-5 opacity-60 hover:opacity-100 transition-opacity"
+                  style={{ filter: 'grayscale(100%) brightness(2)' }}
+                />
+                <span className="text-xs hidden sm:inline">{provider.name}</span>
+              </div>
+            ))}
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {multiAgentFeatures.map((feature, index) => {
@@ -109,7 +141,7 @@ const PlatformOverviewSection = () => {
                 >
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                    style={{ backgroundColor: `${BRAND_COLOR}15` }}
+                    style={{ backgroundColor: `#e1163315` }}
                   >
                     <Icon className="w-5 h-5" style={{ color: BRAND_COLOR }} />
                   </div>
@@ -138,7 +170,7 @@ const PlatformOverviewSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            style={{ color: BRAND_COLOR, borderColor: `#e116334d` }}
           >
             Your Wedge
           </p>
@@ -164,17 +196,17 @@ const PlatformOverviewSection = () => {
                   onClick={() => setActiveMode(mode.id)}
                   className={`p-5 rounded-xl border text-left transition-all ${
                     isActive
-                      ? "border-[#fd4444] bg-[#fd4444]/10"
+                      ? "border-[#e11633] bg-[#e11633]/10"
                       : "border-neutral-800 bg-neutral-900/50 hover:border-neutral-700"
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        isActive ? "bg-[#fd4444]/20" : "bg-neutral-800"
+                        isActive ? "bg-[#e11633]/20" : "bg-neutral-800"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${isActive ? "text-[#fd4444]" : "text-neutral-400"}`} />
+                      <Icon className={`w-4 h-4 ${isActive ? "text-[#e11633]" : "text-neutral-400"}`} />
                     </div>
                     <div>
                       <h3 className={`text-sm font-semibold mb-1 ${isActive ? "text-white" : "text-neutral-300"}`}>
@@ -186,7 +218,7 @@ const PlatformOverviewSection = () => {
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="mt-3 flex items-center text-[#fd4444] text-xs font-medium"
+                      className="mt-3 flex items-center text-[#e11633] text-xs font-medium"
                     >
                       <ChevronRight className="w-3 h-3 mr-1" />
                       Selected

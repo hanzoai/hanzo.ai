@@ -11,32 +11,60 @@ import { Toaster } from "@/components/ui/toaster";
 
 const jobOpenings = [
   {
-    title: "Senior AI Engineer",
+    title: "AI/ML Research Engineer",
+    location: "Remote / SF",
+    type: "Full-time",
+    department: "AI Research",
+    description: "Work on foundational models, fine-tuning, and novel architectures. Experience with transformers, RLHF, and distributed training required."
+  },
+  {
+    title: "Compiler Engineer",
     location: "Remote",
     type: "Full-time",
     department: "Engineering",
-    description: "Join our team building cutting-edge AI models and infrastructure to power our platform."
+    description: "Build high-performance inference engines and model compilers. Experience with LLVM, MLIR, or similar frameworks preferred."
+  },
+  {
+    title: "MCP Protocol Engineer",
+    location: "Remote",
+    type: "Full-time",
+    department: "Infrastructure",
+    description: "Design and implement Model Context Protocol servers and tooling. Shape the future of AI agent infrastructure."
+  },
+  {
+    title: "Cryptography Engineer (ZKP)",
+    location: "Remote",
+    type: "Full-time",
+    department: "Blockchain",
+    description: "Implement zero-knowledge proofs for AI verification and on-chain compute. Experience with SNARKs/STARKs required."
+  },
+  {
+    title: "Quantum Computing Researcher",
+    location: "Remote / Research",
+    type: "Full-time",
+    department: "Research",
+    description: "Explore quantum ML algorithms and post-quantum cryptography. PhD or equivalent research experience preferred."
+  },
+  {
+    title: "Robotics Systems Engineer",
+    location: "SF Bay Area",
+    type: "Full-time",
+    department: "Robotics",
+    description: "Build AI systems for real-time robotic control. Experience with ROS, computer vision, and embedded systems required."
+  },
+  {
+    title: "Senior Backend Engineer (Go/Rust)",
+    location: "Remote",
+    type: "Full-time",
+    department: "Platform",
+    description: "Build scalable, high-performance backend services for our AI platform. Experience with distributed systems required."
   },
   {
     title: "Product Designer",
-    location: "San Francisco, CA",
+    location: "Remote / SF",
     type: "Full-time",
     department: "Design",
-    description: "Design beautiful, intuitive interfaces for our AI platform and developer tools."
-  },
-  {
-    title: "Developer Relations Engineer",
-    location: "Remote",
-    type: "Full-time",
-    department: "Developer Experience",
-    description: "Help developers succeed with Hanzo AI through documentation, tutorials, and support."
-  },
-  {
-    title: "Cloud Infrastructure Engineer",
-    location: "Remote",
-    type: "Full-time",
-    department: "Engineering",
-    description: "Build and maintain the cloud infrastructure that powers our global AI platform."
+    description: "Design beautiful, intuitive interfaces for AI products. Experience with developer tools and data visualization a plus."
   }
 ];
 

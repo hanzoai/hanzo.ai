@@ -11,10 +11,19 @@ import {
   PenLine,
   Minimize2,
   Maximize2,
-  Sparkles,
+  ChevronDown,
+  Check,
 } from "lucide-react";
 
-const BRAND_COLOR = "#fd4444";
+const BRAND_COLOR = "#e11633";
+
+// Available Zen models for the dropdown
+const zenModels = [
+  { id: "zen-eco-4b", name: "Zen Eco", params: "4B", description: "Fast general-purpose" },
+  { id: "zen-omni-8b", name: "Zen Omni", params: "8B", description: "Multimodal vision + audio" },
+  { id: "zen-coder-flash", name: "Zen Coder Flash", params: "31B MoE", description: "Code generation" },
+  { id: "zen-coder-plus", name: "Zen Coder Plus", params: "72B", description: "Advanced coding" },
+];
 
 // Chat action presets - matching footer order
 const chatPresets = [
@@ -77,10 +86,27 @@ const GlobalChatWidget = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedModel, setSelectedModel] = useState(zenModels[0]);
+  const [isModelDropdownOpen, setIsModelDropdownOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const modelDropdownRef = useRef<HTMLDivElement>(null);
 
   const pageContext = getPageContext(location.pathname);
+
+  // Close model dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modelDropdownRef.current && !modelDropdownRef.current.contains(event.target as Node)) {
+        setIsModelDropdownOpen(false);
+      }
+    };
+
+    if (isModelDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isModelDropdownOpen]);
 
   // Listen for events from footer chat widget
   useEffect(() => {
@@ -150,18 +176,61 @@ const GlobalChatWidget = () => {
     setInput("");
     setIsLoading(true);
 
-    // Simulate AI response (replace with actual API call)
-    setTimeout(() => {
+    try {
+      // Call Hanzo AI API with selected Zen model
+      const response = await fetch("https://api.hanzo.ai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer hz_widget_public",
+        },
+        body: JSON.stringify({
+          model: selectedModel.id,
+          messages: [
+            {
+              role: "system",
+              content: `You are Zen AI, powered by the ${selectedModel.name} model (${selectedModel.params}). You're helping users on the Hanzo AI website. Current page context: ${pageContext}. Be helpful, concise, and knowledgeable about Hanzo's products, Zen AI models, and AI development tools. For technical questions, provide accurate information. For pricing or sales, direct users to /pricing or /contact.`,
+            },
+            ...messages.slice(-10).map((m) => ({ role: m.role, content: m.content })),
+            { role: "user", content: input.trim() },
+          ],
+          max_tokens: 800,
+          temperature: 0.7,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: data.choices[0].message.content,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      } else {
+        // Fallback for API errors
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: `I'm having trouble connecting to the AI service right now. You can explore our documentation at [docs.hanzo.ai](https://docs.hanzo.ai), try the full chat at [hanzo.chat](https://hanzo.chat), or contact our team at [/contact](/contact).`,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      }
+    } catch (error) {
+      // Fallback for network errors
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: `Thanks for your question about "${input.trim()}". I'm currently in demo mode. In production, I would provide helpful information about ${pageContext} and answer your specific questions. For now, please check out our documentation at docs.hanzo.ai or contact support.`,
+        content: `I'm experiencing connectivity issues. Please try [hanzo.chat](https://hanzo.chat) for the full AI experience, or visit [docs.hanzo.ai](https://docs.hanzo.ai) for documentation.`,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, assistantMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1000);
-  }, [input, isLoading, pageContext]);
+    }
+  }, [input, isLoading, pageContext, messages, selectedModel]);
 
   const handlePreset = (preset: typeof chatPresets[0]) => {
     setInput(preset.prompt);
@@ -216,9 +285,66 @@ const GlobalChatWidget = () => {
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-black border border-neutral-700">
                   <img src="/zen-logo.png" alt="Zen AI" className="w-5 h-5" />
                 </div>
-                <div>
-                  <div className="text-white text-sm font-medium">Zen AI</div>
-                  <div className="text-neutral-500 text-xs">Powered by Hanzo</div>
+                {/* Model selector dropdown */}
+                <div className="relative" ref={modelDropdownRef}>
+                  <button
+                    onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
+                    className="flex items-center gap-1.5 hover:bg-neutral-800/50 rounded-md px-2 py-1 transition-colors"
+                  >
+                    <div className="text-left">
+                      <div className="text-white text-sm font-medium flex items-center gap-1.5">
+                        {selectedModel.name}
+                        <span className="text-[10px] font-mono text-neutral-500 bg-neutral-800 px-1 py-0.5 rounded">
+                          {selectedModel.params}
+                        </span>
+                      </div>
+                    </div>
+                    <ChevronDown className={`w-3.5 h-3.5 text-neutral-500 transition-transform ${isModelDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Model dropdown menu */}
+                  <AnimatePresence>
+                    {isModelDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -4 }}
+                        className="absolute left-0 top-full mt-1 w-56 bg-neutral-900 border border-neutral-800 rounded-lg shadow-xl overflow-hidden z-10"
+                      >
+                        {zenModels.map((model) => (
+                          <button
+                            key={model.id}
+                            onClick={() => {
+                              setSelectedModel(model);
+                              setIsModelDropdownOpen(false);
+                            }}
+                            className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-neutral-800 transition-colors ${
+                              selectedModel.id === model.id ? 'bg-neutral-800/50' : ''
+                            }`}
+                          >
+                            <div>
+                              <div className="text-sm text-white flex items-center gap-2">
+                                {model.name}
+                                <span className="text-[10px] font-mono text-neutral-500">{model.params}</span>
+                              </div>
+                              <div className="text-[10px] text-neutral-500">{model.description}</div>
+                            </div>
+                            {selectedModel.id === model.id && (
+                              <Check className="w-4 h-4 text-green-500" />
+                            )}
+                          </button>
+                        ))}
+                        <div className="border-t border-neutral-800 px-3 py-2">
+                          <a
+                            href="/zen"
+                            className="text-xs text-neutral-500 hover:text-white transition-colors"
+                          >
+                            View all models →
+                          </a>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
               <div className="flex items-center gap-1">

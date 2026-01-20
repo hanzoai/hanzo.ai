@@ -8,7 +8,6 @@ import {
   ArrowRight,
   Code2,
   Eye,
-  Sparkles,
   Box,
   Video,
   Music,
@@ -26,12 +25,6 @@ import {
   Terminal,
   Download,
 } from "lucide-react";
-
-// Monochromatic color scheme - works on both hanzo.ai and zenlm.org
-const ZEN_PRIMARY = "#ffffff";
-const ZEN_SECONDARY = "#a3a3a3";
-const ZEN_ACCENT = "#737373";
-// No colorful gradient - use solid white or subtle gray accents
 
 // Zen Coder lineup from zenlm.org
 const ZEN_CODER_MODELS = [
@@ -127,7 +120,6 @@ const MODEL_FAMILIES = {
     title: "Zen Coder",
     description: "Agentic coding models trained on 8.47B tokens of real programming sessions",
     icon: Code2,
-    color: "#10b981",
     models: [
       {
         name: "Zen Coder 4B",
@@ -218,7 +210,6 @@ const MODEL_FAMILIES = {
     title: "Language Models",
     description: "Efficient general-purpose language understanding",
     icon: Brain,
-    color: ZEN_ACCENT,
     models: [
       {
         name: "zen-nano",
@@ -291,7 +282,6 @@ const MODEL_FAMILIES = {
     title: "Vision-Language Models",
     description: "Advanced visual understanding and multimodal reasoning",
     icon: Eye,
-    color: "#f59e0b",
     models: [
       {
         name: "zen-vl-4b-instruct",
@@ -338,20 +328,6 @@ const MODEL_FAMILIES = {
         huggingface: "https://huggingface.co/zenlm/zen-vl-8b-instruct",
       },
       {
-        name: "zen-vl-8b-agent",
-        params: "8B",
-        context: "256K (1M expandable)",
-        license: "Apache 2.0",
-        features: [
-          "Function calling",
-          "Visual agent",
-          "GUI interaction",
-          "Tool use",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-vl-8b-agent",
-      },
-      {
         name: "zen-vl-30b-instruct",
         params: "30B (31B MoE)",
         context: "256K (1M expandable)",
@@ -372,7 +348,6 @@ const MODEL_FAMILIES = {
     title: "3D Generation",
     description: "Create 3D assets and worlds from text and images",
     icon: Box,
-    color: "#06b6d4",
     models: [
       {
         name: "zen-3d",
@@ -417,7 +392,6 @@ const MODEL_FAMILIES = {
     title: "Video Generation",
     description: "Create videos from text and images",
     icon: Video,
-    color: "#ec4899",
     models: [
       {
         name: "zen-director",
@@ -462,7 +436,6 @@ const MODEL_FAMILIES = {
     title: "Audio Generation",
     description: "Create music and sound effects",
     icon: Music,
-    color: "#a855f7",
     models: [
       {
         name: "zen-musician",
@@ -493,7 +466,7 @@ const MODEL_FAMILIES = {
   },
 };
 
-const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) => {
+const ModelCard = ({ model }: { model: any }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -501,44 +474,19 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`bg-neutral-900/80 border rounded-xl p-6 ${
+      className={`bg-neutral-950 border rounded-xl p-6 ${
         model.badge === "FLAGSHIP"
-          ? `border-[${ZEN_PRIMARY}]/50 ring-1 ring-[${ZEN_PRIMARY}]/20`
+          ? "border-white/30 ring-1 ring-white/10"
           : "border-neutral-800"
       }`}
-      style={{
-        borderColor: model.badge === "FLAGSHIP" ? `${ZEN_PRIMARY}50` : undefined,
-        boxShadow: model.badge === "FLAGSHIP" ? `0 0 20px ${ZEN_PRIMARY}10` : undefined,
-      }}
     >
       <div className="flex items-start justify-between mb-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <h3 className="text-lg font-bold text-white">{model.name}</h3>
             {model.badge && (
-              <span
-                className="px-2 py-0.5 text-[10px] font-bold rounded-full"
-                style={{
-                  backgroundColor:
-                    model.badge === "FLAGSHIP"
-                      ? `${ZEN_PRIMARY}20`
-                      : model.badge === "FRONTIER"
-                      ? `${ZEN_SECONDARY}20`
-                      : "#06b6d420",
-                  color:
-                    model.badge === "FLAGSHIP"
-                      ? ZEN_PRIMARY
-                      : model.badge === "FRONTIER"
-                      ? ZEN_SECONDARY
-                      : "#06b6d4",
-                }}
-              >
+              <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
                 {model.badge}
-              </span>
-            )}
-            {model.status === "Latest" && (
-              <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-green-500/20 text-green-400">
-                NEW
               </span>
             )}
           </div>
@@ -549,10 +497,10 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
         <span
           className={`text-xs px-2 py-1 rounded-full ${
             model.status === "Released" || model.status === "Latest" || model.status === "Trained"
-              ? "bg-green-500/20 text-green-400"
+              ? "bg-white/10 text-white border border-white/20"
               : model.status === "Training"
-              ? "bg-indigo-500/20 text-indigo-400"
-              : "bg-yellow-500/20 text-yellow-400"
+              ? "bg-neutral-800 text-neutral-300 border border-neutral-700"
+              : "bg-neutral-900 text-neutral-400 border border-neutral-800"
           }`}
         >
           {model.status}
@@ -597,7 +545,7 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
       <div className="space-y-2 mb-4">
         {model.features.slice(0, isExpanded ? undefined : 3).map((feature: string, idx: number) => (
           <div key={idx} className="flex items-center gap-2">
-            <Check className="w-3 h-3" style={{ color: familyColor }} />
+            <Check className="w-3 h-3 text-neutral-400" />
             <span className="text-sm text-neutral-300">{feature}</span>
           </div>
         ))}
@@ -639,11 +587,8 @@ const FamilySection = ({
   return (
     <section id={familyKey} className="py-16 border-t border-neutral-800 first:border-t-0">
       <div className="flex items-center gap-4 mb-8">
-        <div
-          className="w-12 h-12 rounded-xl flex items-center justify-center"
-          style={{ backgroundColor: `${family.color}20` }}
-        >
-          <Icon className="w-6 h-6" style={{ color: family.color }} />
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/5 border border-white/10">
+          <Icon className="w-6 h-6 text-white" />
         </div>
         <div>
           <h2 className="text-2xl font-bold text-white">{family.title}</h2>
@@ -653,12 +598,14 @@ const FamilySection = ({
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {family.models.map((model) => (
-          <ModelCard key={model.name} model={model} familyColor={family.color} />
+          <ModelCard key={model.name} model={model} />
         ))}
       </div>
     </section>
   );
 };
+
+const BRAND_COLOR = "#8b5cf6"; // Purple for Zen
 
 const ZenModels = () => {
   return (
@@ -672,59 +619,73 @@ const ZenModels = () => {
       </Helmet>
       <Navbar />
 
-      <main className="pt-24 pb-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Hero Section - matching zenlm.org style */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-20"
-          >
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+      <main>
+        {/* Hero Section */}
+        <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
+          {/* Background gradient */}
+          <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
               style={{
-                background: ZEN_GRADIENT,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+                filter: "blur(100px)",
               }}
-            >
-              Open Foundation Models for Agentic AI
-            </h1>
-            <p className="text-xl md:text-2xl text-neutral-300 mb-6">
-              30+ models from 0.6B to 1T parameters across language, vision, audio, video, and 3D
-            </p>
-            <p className="text-lg text-neutral-400 max-w-3xl mx-auto mb-10">
-              Zen LM provides production-ready AI models for agentic coding, multimodal understanding,
-              and creative generation. Our flagship Zen Coder models are trained on 8.47 billion tokens
-              of real-world programming sessions, delivering state-of-the-art performance on agentic
-              programming tasks.
-            </p>
+            />
+          </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mb-6 text-center"
+            >
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <Code2 className="w-3 h-3" />
+                30+ Open Models
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6 text-center"
+            >
+              <span className="text-white">Open Foundation Models</span>
+              <br />
+              <span className="text-neutral-400">for Agentic AI</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl mx-auto text-center"
+            >
+              Zen LM provides production-ready AI models for agentic coding, multimodal understanding,
+              and creative generation. Our flagship Zen Coder models are trained on 8.47B tokens
+              of real programming sessions.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="flex flex-wrap justify-center items-center gap-4 mb-8"
+            >
               <a
                 href="#models"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
-                style={{ background: ZEN_GRADIENT }}
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
               >
                 Explore Models
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
                 href="#dataset"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors text-sm"
-                style={{
-                  border: `2px solid ${ZEN_PRIMARY}`,
-                  color: ZEN_PRIMARY,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = ZEN_PRIMARY;
-                  e.currentTarget.style.color = "white";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.color = ZEN_PRIMARY;
-                }}
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
               >
                 <Database className="mr-2 h-4 w-4" />
                 Training Data
@@ -733,31 +694,60 @@ const ZenModels = () => {
                 href="https://zenlm.org/research"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors border border-neutral-600 hover:border-neutral-400 text-sm text-neutral-300 hover:text-white"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
               >
                 <BookOpen className="mr-2 h-4 w-4" />
                 Research Papers
               </a>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Zen Coder Feature Section - matching zenlm.org */}
-          <section id="zen-coder" className="mb-20 py-12 px-8 rounded-2xl" style={{ background: "linear-gradient(180deg, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%)" }}>
+            {/* Quick links */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-3"
+            >
+              <a
+                href="https://huggingface.co/zenlm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
+              >
+                🤗 HuggingFace
+              </a>
+              <a
+                href="https://github.com/zenlm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+              <a
+                href="https://zenlm.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
+              >
+                <Globe className="w-4 h-4" />
+                zenlm.org
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Zen Coder Feature Section */}
+        <section id="zen-coder" className="py-20 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto py-12 px-8 rounded-2xl bg-neutral-950 border border-neutral-800">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-3"
-                style={{
-                  background: ZEN_GRADIENT,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Zen Coder - Agentic Coding Models
               </h2>
               <p className="text-neutral-400 text-lg">
@@ -765,7 +755,7 @@ const ZenModels = () => {
               </p>
             </motion.div>
 
-            {/* Models Table - matching zenlm.org */}
+            {/* Models Table */}
             <div className="overflow-x-auto mb-10">
               <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
                 <thead>
@@ -779,27 +769,21 @@ const ZenModels = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {ZEN_CODER_MODELS.map((model, idx) => (
+                  {ZEN_CODER_MODELS.map((model) => (
                     <tr
                       key={model.name}
-                      className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors ${model.flagship ? "bg-neutral-900/30" : ""}`}
+                      className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors ${model.flagship ? "bg-white/5" : ""}`}
                     >
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-2">
                           <span className="font-semibold text-white">{model.name}</span>
                           {model.flagship && (
-                            <span
-                              className="px-2 py-0.5 text-[10px] font-bold rounded-full"
-                              style={{ backgroundColor: `${ZEN_PRIMARY}20`, color: ZEN_PRIMARY }}
-                            >
+                            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
                               FLAGSHIP
                             </span>
                           )}
                           {model.frontier && (
-                            <span
-                              className="px-2 py-0.5 text-[10px] font-bold rounded-full"
-                              style={{ backgroundColor: `${ZEN_SECONDARY}20`, color: ZEN_SECONDARY }}
-                            >
+                            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
                               FRONTIER
                             </span>
                           )}
@@ -813,10 +797,10 @@ const ZenModels = () => {
                         <span
                           className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase ${
                             model.status === "Trained"
-                              ? "bg-green-500/20 text-green-400 border border-green-500/50"
+                              ? "bg-white/10 text-white border border-white/20"
                               : model.status === "Training"
-                              ? "bg-indigo-500/20 text-indigo-400 border border-indigo-500/50"
-                              : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/50"
+                              ? "bg-neutral-800 text-neutral-300 border border-neutral-700"
+                              : "bg-neutral-900 text-neutral-400 border border-neutral-800"
                           }`}
                           style={model.status === "Training" ? { animation: "pulse 2s infinite" } : {}}
                         >
@@ -831,30 +815,29 @@ const ZenModels = () => {
 
             {/* Coder Features Grid */}
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-indigo-500/50 transition-colors">
-                <h3 className="text-lg font-semibold mb-2" style={{ color: ZEN_PRIMARY }}>Real Agentic Data</h3>
+              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-2">Real Agentic Data</h3>
                 <p className="text-neutral-400 text-sm">
                   Trained on actual agentic debug sessions - not synthetic data. Real debugging workflows,
                   multi-file refactoring, and tool use patterns.
                 </p>
               </div>
-              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-indigo-500/50 transition-colors">
-                <h3 className="text-lg font-semibold mb-2" style={{ color: ZEN_PRIMARY }}>Production Code</h3>
+              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-2">Production Code</h3>
                 <p className="text-neutral-400 text-sm">
                   15 years of professional development across AI, Web3, cryptography, and modern software
                   engineering from 1,452 repositories.
                 </p>
               </div>
-              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-indigo-500/50 transition-colors">
-                <h3 className="text-lg font-semibold mb-2" style={{ color: ZEN_PRIMARY }}>Open Training</h3>
+              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-2">Open Training</h3>
                 <p className="text-neutral-400 text-sm">
                   Use{" "}
                   <a
                     href="https://github.com/zenlm/zen-trainer"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline hover:text-white"
-                    style={{ color: ZEN_PRIMARY }}
+                    className="underline text-white hover:text-neutral-300"
                   >
                     zen-trainer
                   </a>
@@ -862,25 +845,19 @@ const ZenModels = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Complete AI Model Ecosystem - matching zenlm.org */}
-          <section id="overview" className="mb-20">
+        {/* Complete AI Model Ecosystem */}
+        <section id="overview" className="py-20 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-3"
-                style={{
-                  background: ZEN_GRADIENT,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Complete AI Model Ecosystem
               </h2>
             </motion.div>
@@ -895,13 +872,10 @@ const ZenModels = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
                   >
-                    <div
-                      className="text-4xl mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-xl"
-                      style={{ backgroundColor: `${ZEN_PRIMARY}15` }}
-                    >
-                      <Icon className="w-8 h-8" style={{ color: ZEN_PRIMARY }} />
+                    <div className="text-4xl mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20">
+                      <Icon className="w-8 h-8 text-purple-400" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">{category.title}</h3>
                     <p className="text-neutral-400 text-sm">{category.description}</p>
@@ -909,25 +883,19 @@ const ZenModels = () => {
                 );
               })}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Dataset Section - matching zenlm.org */}
-          <section id="dataset" className="mb-20 py-12 px-8 rounded-2xl bg-black">
+        {/* Dataset Section */}
+        <section id="dataset" className="py-20 px-4 md:px-8 bg-neutral-950/50">
+          <div className="max-w-7xl mx-auto py-12 px-8 rounded-2xl bg-neutral-950 border border-neutral-800">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-3"
-                style={{
-                  background: ZEN_GRADIENT,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Zen Agentic Dataset
               </h2>
               <p className="text-neutral-400 text-lg">
@@ -943,20 +911,12 @@ const ZenModels = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="p-6 bg-neutral-900/50 border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all"
+                  className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-neutral-600 transition-all"
                 >
-                  <div
-                    className="text-3xl font-bold mb-2"
-                    style={{
-                      background: ZEN_GRADIENT,
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
+                  <div className="text-3xl font-bold text-white mb-2">
                     {stat.value}
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-1">{stat.label}</h3>
+                  <h3 className="text-lg font-semibold text-neutral-300 mb-1">{stat.label}</h3>
                   <p className="text-neutral-500 text-sm">{stat.description}</p>
                 </motion.div>
               ))}
@@ -967,8 +927,8 @@ const ZenModels = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="mailto:z@hanzo.ai"
-                  className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
-                  style={{ background: ZEN_GRADIENT }}
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
                 >
                   Request Access
                 </a>
@@ -976,65 +936,52 @@ const ZenModels = () => {
                   href="https://huggingface.co/datasets/hanzoai/zen-agentic-dataset"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors text-sm"
-                  style={{
-                    border: `2px solid ${ZEN_PRIMARY}`,
-                    color: ZEN_PRIMARY,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = ZEN_PRIMARY;
-                    e.currentTarget.style.color = "white";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.color = ZEN_PRIMARY;
-                  }}
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 text-white hover:bg-neutral-900 text-sm"
                 >
                   View on HuggingFace
                 </a>
               </div>
             </div>
-          </section>
-
-          {/* Quick Nav */}
-          <div id="models" className="mb-12 flex flex-wrap gap-3 justify-center">
-            {Object.entries(MODEL_FAMILIES).map(([key, family]) => {
-              const Icon = family.icon;
-              return (
-                <a
-                  key={key}
-                  href={`#${key}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-neutral-600 transition-colors text-sm text-neutral-400 hover:text-white"
-                >
-                  <Icon className="w-4 h-4" style={{ color: family.color }} />
-                  {family.title}
-                </a>
-              );
-            })}
           </div>
+        </section>
 
-          {/* Model Families */}
-          {Object.entries(MODEL_FAMILIES).map(([key, family]) => (
-            <FamilySection key={key} familyKey={key} family={family} />
-          ))}
+        {/* Model Families Section */}
+        <section className="py-20 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto">
+            {/* Quick Nav */}
+            <div id="models" className="mb-12 flex flex-wrap gap-3 justify-center">
+              {Object.entries(MODEL_FAMILIES).map(([key, family]) => {
+                const Icon = family.icon;
+                return (
+                  <a
+                    key={key}
+                    href={`#${key}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-purple-500/30 transition-colors text-sm text-neutral-400 hover:text-white"
+                  >
+                    <Icon className="w-4 h-4" />
+                    {family.title}
+                  </a>
+                );
+              })}
+            </div>
 
-          {/* Get Started Section - matching zenlm.org */}
-          <section id="downloads" className="py-16 border-t border-neutral-800">
+            {/* Model Families */}
+            {Object.entries(MODEL_FAMILIES).map(([key, family]) => (
+              <FamilySection key={key} familyKey={key} family={family} />
+            ))}
+          </div>
+        </section>
+
+        {/* Get Started Section */}
+        <section id="downloads" className="py-20 px-4 md:px-8 border-t border-neutral-800">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-3"
-                style={{
-                  background: ZEN_GRADIENT,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Get Started
               </h2>
             </motion.div>
@@ -1044,17 +991,17 @@ const ZenModels = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
               >
-                <Download className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <Download className="w-8 h-8 mx-auto mb-4 text-purple-400" />
                 <h3 className="text-xl font-semibold text-white mb-2">HuggingFace</h3>
                 <p className="text-neutral-400 text-sm mb-4">Access all 30+ models via HuggingFace Hub</p>
                 <a
                   href="https://huggingface.co/zenlm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
-                  style={{ background: ZEN_GRADIENT }}
+                  className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
                 >
                   Visit HuggingFace
                 </a>
@@ -1065,17 +1012,17 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
               >
-                <Github className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <Github className="w-8 h-8 mx-auto mb-4 text-purple-400" />
                 <h3 className="text-xl font-semibold text-white mb-2">GitHub</h3>
                 <p className="text-neutral-400 text-sm mb-4">Training code, documentation, and source</p>
                 <a
                   href="https://github.com/zenlm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
-                  style={{ background: ZEN_GRADIENT }}
+                  className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
                 >
                   View on GitHub
                 </a>
@@ -1086,13 +1033,13 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
               >
-                <Terminal className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <Terminal className="w-8 h-8 mx-auto mb-4 text-purple-400" />
                 <h3 className="text-xl font-semibold text-white mb-2">zen-trainer</h3>
                 <p className="text-neutral-400 text-sm mb-4">Fine-tune models on your own data</p>
-                <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-3">
-                  <code className="text-sm" style={{ color: ZEN_PRIMARY }}>pip install zen-trainer</code>
+                <div className="bg-black border border-neutral-800 rounded-lg p-3">
+                  <code className="text-sm text-white">pip install zen-trainer</code>
                 </div>
               </motion.div>
 
@@ -1101,41 +1048,35 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
               >
-                <BookOpen className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <BookOpen className="w-8 h-8 mx-auto mb-4 text-purple-400" />
                 <h3 className="text-xl font-semibold text-white mb-2">Research</h3>
                 <p className="text-neutral-400 text-sm mb-4">Technical papers and whitepapers</p>
                 <a
                   href="https://zenlm.org/research"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
-                  style={{ background: ZEN_GRADIENT }}
+                  className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
                 >
                   Read Papers
                 </a>
               </motion.div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Infrastructure Section */}
-          <section className="py-16 border-t border-neutral-800">
+        {/* Infrastructure Section */}
+        <section className="py-20 px-4 md:px-8 bg-neutral-950/50 border-t border-neutral-800">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-3"
-                style={{
-                  background: ZEN_GRADIENT,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Infrastructure
               </h2>
               <p className="text-neutral-400">
@@ -1148,10 +1089,10 @@ const ZenModels = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8 hover:border-purple-500/50 transition-colors"
+                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-purple-500/30 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Layers className="w-6 h-6" style={{ color: ZEN_SECONDARY }} />
+                  <Layers className="w-6 h-6 text-purple-400" />
                   <h3 className="text-xl font-bold text-white">Zen Gym</h3>
                 </div>
                 <p className="text-neutral-400 mb-4">
@@ -1166,7 +1107,7 @@ const ZenModels = () => {
                     "Liger Kernel optimization",
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3" style={{ color: ZEN_SECONDARY }} />
+                      <Check className="w-3 h-3 text-purple-400" />
                       <span className="text-sm text-neutral-300">{feature}</span>
                     </div>
                   ))}
@@ -1175,8 +1116,7 @@ const ZenModels = () => {
                   href="https://github.com/zenlm/zen-gym"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm hover:text-purple-300 transition-colors"
-                  style={{ color: ZEN_SECONDARY }}
+                  className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
                 >
                   View on GitHub
                   <ExternalLink className="w-3 h-3" />
@@ -1188,10 +1128,10 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8 hover:border-cyan-500/50 transition-colors"
+                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-purple-500/30 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Zap className="w-6 h-6 text-cyan-400" />
+                  <Zap className="w-6 h-6 text-purple-400" />
                   <h3 className="text-xl font-bold text-white">Zen Engine</h3>
                 </div>
                 <p className="text-neutral-400 mb-4">
@@ -1206,7 +1146,7 @@ const ZenModels = () => {
                     "MCP integration",
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-cyan-400" />
+                      <Check className="w-3 h-3 text-purple-400" />
                       <span className="text-sm text-neutral-300">{feature}</span>
                     </div>
                   ))}
@@ -1215,58 +1155,62 @@ const ZenModels = () => {
                   href="https://github.com/zenlm/zen-engine"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
                 >
                   View on GitHub
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </motion.div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* CTA Section */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="py-16 text-center"
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to build with Zen?
-            </h2>
-            <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
-              All models are open source under Apache 2.0 or MIT license. Start
-              building today.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://huggingface.co/zenlm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
-                style={{ background: ZEN_GRADIENT }}
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-              <Link
-                to="/dev"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
-              >
-                Try Hanzo Dev
-              </Link>
-              <a
-                href="https://zenlm.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
-              >
-                <Globe className="mr-2 h-4 w-4" />
-                Visit zenlm.org
-              </a>
-            </div>
-          </motion.section>
-        </div>
+        {/* CTA Section */}
+        <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Ready to build with Zen?
+              </h2>
+              <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
+                All models are open source under Apache 2.0 or MIT license. Start
+                building today.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="https://huggingface.co/zenlm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+                <Link
+                  to="/dev"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                >
+                  Try Hanzo Dev
+                </Link>
+                <a
+                  href="https://zenlm.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                >
+                  <Globe className="mr-2 h-4 w-4" />
+                  Visit zenlm.org
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </main>
 
       <Footer />

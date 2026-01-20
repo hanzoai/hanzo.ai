@@ -2,6 +2,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DesktopAppBanner from "@/components/DesktopAppBanner";
 import HeroSection from "@/components/ai/HeroSection";
 import Features from "@/components/ai/Features";
 import AIEngineeringPlatform from "@/components/ai/EngineeringPlatform";
@@ -28,6 +29,7 @@ const AI = () => {
         <CallToAction />
       </main>
       <Footer />
+      <DesktopAppBanner />
     </div>
   );
 };

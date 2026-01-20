@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import GlobalChatWidget from "./components/GlobalChatWidget";
+import PageTransition from "./components/PageTransition";
+import KonamiCode from "./components/KonamiCode";
 import Index from "./pages/Index";
 import Home2 from "./pages/Home2";
 import Pricing from "./pages/Pricing";
@@ -30,6 +32,7 @@ import SolutionCapabilities from "./pages/SolutionCapabilities";
 import SolutionIndustries from "./pages/SolutionIndustries";
 import Security from "./pages/Security";
 import ZenOfHanzo from "./pages/ZenOfHanzo";
+import Zen from "./pages/Zen";
 import ZenModels from "./pages/ZenModels";
 import Contact from "./pages/Contact";
 import Enterprise from "./pages/Enterprise";
@@ -142,7 +145,8 @@ const MarketingRoutes = () => {
       <Route path="/security" element={<Security />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/enterprise" element={<Enterprise />} />
-      <Route path="/zen" element={<ZenModels />} />
+      <Route path="/zen" element={<Zen />} />
+      <Route path="/zen/models" element={<ZenModels />} />
       <Route path="/zen-models" element={<ZenModels />} />
       <Route path="/philosophy" element={<ZenOfHanzo />} />
       <Route path="/zen-of-hanzo" element={<ZenOfHanzo />} />
@@ -226,25 +230,45 @@ const isAccountRoute = (pathname: string) => {
 };
 
 const App = () => {
-  console.log("App component rendering");
-
   return (
     <BrowserRouter>
       <ThemeProvider>
         <ScrollToTop />
-        {isAccountRoute(window.location.pathname) ? (
-          <AccountRoutes />
-        ) : (
-          <MarketingRoutes />
-        )}
+        <PageTransition>
+          {isAccountRoute(window.location.pathname) ? (
+            <AccountRoutes />
+          ) : (
+            <MarketingRoutes />
+          )}
+        </PageTransition>
         {/* Global chat widget on all pages */}
         <GlobalChatWidget />
+        {/* Easter egg - Konami code for secret menu */}
+        <KonamiCode />
       </ThemeProvider>
     </BrowserRouter>
   );
 };
 
-// Add for debug purposes
-console.log('Current pathname:', window.location.pathname);
+// Console message for developers
+console.log(`
+%c🐉 HERE BE DRAGONS 🐉
+
+%cIf you like compilers, MCP, AI, ML, ZKP, Quantum,
+robotics systems, and building the future...
+
+%cWe're hiring! Reach out about working with us:
+%chttps://hanzo.ai/careers
+%cz@hanzo.ai
+
+%c– Hanzo AI (Techstars '17)
+`,
+  'font-size: 24px; font-weight: bold; color: #e11633;',
+  'font-size: 14px; color: #888;',
+  'font-size: 14px; color: #fff;',
+  'font-size: 14px; color: #e11633; text-decoration: underline;',
+  'font-size: 14px; color: #e11633;',
+  'font-size: 12px; color: #666; font-style: italic;'
+);
 
 export default App;

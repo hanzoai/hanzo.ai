@@ -33,6 +33,7 @@ const contextMenuItems = [
 const Logo = () => {
   const { isDarkMode } = useTheme();
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [showIntroWordmark, setShowIntroWordmark] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -81,11 +82,22 @@ const Logo = () => {
     }
   };
 
+  // After logo animation, show wordmark briefly then hide
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const animTimer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 1500);
-    return () => clearTimeout(timer);
+      setShowIntroWordmark(true);
+    }, 1200);
+
+    // Hide the intro wordmark after showing it
+    const hideTimer = setTimeout(() => {
+      setShowIntroWordmark(false);
+    }, 2500);
+
+    return () => {
+      clearTimeout(animTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   // Close context menu on click outside
@@ -135,11 +147,14 @@ const Logo = () => {
   const fillColor = isDarkMode ? "#ffffff" : "#000000";
   const accentColor = isDarkMode ? "#DDDDDD" : "#DDDDDD";
 
+  // Show wordmark when hovering OR during intro animation
+  const shouldShowWordmark = isHovered || showIntroWordmark;
+
   return (
     <>
       <Link
         to="/"
-        className="flex items-center space-x-2 group"
+        className="relative flex items-center group"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onContextMenu={handleContextMenu}
@@ -148,7 +163,7 @@ const Logo = () => {
           initial="initial"
           animate="animate"
           variants={logoVariants}
-          className="w-6 h-6 relative"
+          className="w-6 h-6 relative flex-shrink-0"
           onAnimationComplete={() => setAnimationComplete(true)}
           style={{ transformOrigin: "center center" }}
         >
@@ -202,14 +217,16 @@ const Logo = () => {
           </svg>
         </motion.div>
 
-        {/* Text slides in on hover - inspired by secret menu */}
-        <span
-          className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-neutral-900"} overflow-hidden transition-all duration-300 whitespace-nowrap ${
-            isHovered ? "max-w-[100px]" : "max-w-0"
-          }`}
-        >
-          Hanzo
-        </span>
+        {/* Wordmark - absolute positioned so it doesn't shift other content */}
+        <div className="absolute left-8 overflow-hidden">
+          <span
+            className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-neutral-900"} whitespace-nowrap block transition-transform duration-300 ease-out ${
+              shouldShowWordmark ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            Hanzo
+          </span>
+        </div>
       </Link>
 
       {/* Right-click context menu */}
