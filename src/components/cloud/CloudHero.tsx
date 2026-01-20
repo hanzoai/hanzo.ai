@@ -1,119 +1,285 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Server, Globe, Zap } from "lucide-react";
-import IChingHexagram from "@/components/zen/svg/IChingHexagram";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Server,
+  Globe,
+  Database,
+  Cpu,
+  Shield,
+  Zap,
+  Cloud,
+  Check,
+  Copy,
+} from "lucide-react";
 
-const CloudHero = () => {
-  // Hexagram for Water (坎 / kǎn) - Principle of Adaptability
-  const adaptabilityHexagram = [
-    { type: "broken" }, { type: "solid" }, { type: "broken" },
-    { type: "broken" }, { type: "solid" }, { type: "broken" }
-  ];
+const BRAND_COLOR = "#fd4444";
+
+const SERVICES = [
+  { id: "compute", label: "Compute", icon: Server },
+  { id: "ai", label: "AI/ML", icon: Cpu },
+  { id: "database", label: "Database", icon: Database },
+  { id: "edge", label: "Edge", icon: Globe },
+  { id: "security", label: "Security", icon: Shield },
+];
+
+const ServiceDemo = ({ activeService }: { activeService: string }) => {
+  const demos: Record<string, { title: string; code: string }> = {
+    compute: {
+      title: "Auto-scaling Compute",
+      code: `# Deploy with auto-scaling
+hanzo deploy --min 1 --max 100
+
+# Scale based on metrics
+hanzo scale web \\
+  --cpu-target 70% \\
+  --memory-target 80%
+
+# GPU instances for AI workloads
+hanzo compute create \\
+  --type a100-80gb \\
+  --spot-instances`,
+    },
+    ai: {
+      title: "AI Infrastructure",
+      code: `# Deploy ML models
+hanzo ai deploy ./model \\
+  --gpu a100 \\
+  --replicas 3
+
+# Inference endpoints
+curl https://api.hanzo.cloud/v1/predict \\
+  -H "Authorization: Bearer $TOKEN" \\
+  -d '{"input": "Hello world"}'
+
+# Fine-tuning jobs
+hanzo ai train --base llama-3 --data ./dataset`,
+    },
+    database: {
+      title: "Managed Databases",
+      code: `# PostgreSQL with pgvector
+hanzo db create postgres \\
+  --version 16 \\
+  --extensions pgvector,postgis
+
+# Redis cluster
+hanzo db create redis \\
+  --cluster \\
+  --replicas 3
+
+# Automatic backups
+hanzo db backup --schedule "0 2 * * *"`,
+    },
+    edge: {
+      title: "Global Edge Network",
+      code: `# Deploy to edge
+hanzo edge deploy ./functions \\
+  --regions all
+
+# Edge KV storage
+hanzo edge kv put user:123 '{"name":"Alice"}'
+
+# 35+ regions, <50ms latency
+hanzo edge status
+# ✓ 35 regions active
+# ✓ Avg latency: 23ms`,
+    },
+    security: {
+      title: "Enterprise Security",
+      code: `# SOC 2 & HIPAA compliant
+hanzo security audit
+
+# Private networking
+hanzo vpc create production \\
+  --cidr 10.0.0.0/16
+
+# Secrets management
+hanzo secrets set API_KEY --env production
+
+# Zero-trust access
+hanzo access grant user@company.com \\
+  --role developer`,
+    },
+  };
+
+  const demo = demos[activeService];
 
   return (
-    <section className="relative py-32 px-4 min-h-screen flex flex-col justify-center">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
+    <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+        <div className="flex gap-1.5">
+          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+        </div>
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={activeService}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="text-xs text-neutral-500 font-mono ml-2"
+          >
+            {demo.title}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+      <div className="p-4 bg-neutral-950">
+        <AnimatePresence mode="wait">
+          <motion.pre
+            key={activeService}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="text-sm font-mono text-neutral-300 overflow-x-auto"
+          >
+            <code>{demo.code}</code>
+          </motion.pre>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+const CloudHero = () => {
+  const [activeService, setActiveService] = useState("compute");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("npx hanzo deploy");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
+          style={{
+            background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+            filter: "blur(100px)",
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column */}
+          <div>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="mb-6 flex items-center"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
+              style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
             >
-              <IChingHexagram 
-                lines={adaptabilityHexagram} 
-                size={42} 
-                className="text-white/80 mr-4" 
-              />
-              <div className="text-sm text-neutral-500">
-                <div>坎 · kǎn</div>
-                <div>The Abysmal Water</div>
-              </div>
+              90+ Managed Services • Global Edge • 99.99% SLA
             </motion.div>
-            
+
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold mb-6 tracking-tight"
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
-                Flow like water.<br />Scale like clouds.
-              </span>
+              <span className="text-white">Cloud that</span>
+              <br />
+              <span className="text-neutral-400">scales with you.</span>
             </motion.h1>
-            
+
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-neutral-400 text-lg mb-8"
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-xl"
             >
-              Hanzo Cloud embodies the principle of adaptability. Like water, it conforms to any container, 
-              scaling seamlessly from prototype to planet-scale deployment.
+              AI infrastructure, managed databases, serverless compute, and global edge deployment.
+              Build, deploy, and scale modern applications on a unified platform.
             </motion.p>
-            
+
+            {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="flex flex-wrap items-center gap-4 mb-6"
             >
-              <Button 
-                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white"
+              <Link
+                to="/signup"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
               >
-                Deploy Now
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-gray-800 text-neutral-400 hover:text-white hover:border-gray-700"
+                Start free
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <a
+                href="https://docs.hanzo.ai/cloud"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
               >
-                Learn Principles
-              </Button>
+                Documentation
+              </a>
             </motion.div>
-          </div>
-          
-          <div className="md:w-1/2">
+
+            {/* Deploy command */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="p-1 border border-gray-800/80 rounded-xl bg-gradient-to-br from-gray-900/30 to-black"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="mb-8"
             >
-              <div className="bg-gray-950 border border-gray-900/50 rounded-lg p-6">
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="bg-black/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
-                    <Server className="h-5 w-5 text-neutral-500 mr-3 mt-0.5" />
-                    <div>
-                      <h3 className="text-white text-sm font-medium mb-1">Infrastructure as Code</h3>
-                      <p className="text-neutral-500 text-xs">Declarative deployments aligned with principle 34: "Form follows intention."</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-black/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
-                    <Globe className="h-5 w-5 text-neutral-500 mr-3 mt-0.5" />
-                    <div>
-                      <h3 className="text-white text-sm font-medium mb-1">Global Edge Network</h3>
-                      <p className="text-neutral-500 text-xs">Embodies principle 53: "The wise engineer brings computation to data, not data to computation."</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-black/80 border border-gray-800/50 rounded-lg p-4 flex items-start">
-                    <Zap className="h-5 w-5 text-neutral-500 mr-3 mt-0.5" />
-                    <div>
-                      <h3 className="text-white text-sm font-medium mb-1">Auto-scaling</h3>
-                      <p className="text-neutral-500 text-xs">Following principle 12: "Systems should grow and contract like breathing, without conscious effort."</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-4 pt-4 border-t border-gray-800/50 text-xs text-neutral-600 italic text-center">
-                  "The cloud is not the destination, but the path."
-                </div>
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
+                <code className="text-sm font-mono text-neutral-300">npx hanzo deploy</code>
+                <button
+                  onClick={handleCopy}
+                  className="text-neutral-500 hover:text-white transition-colors"
+                >
+                  {copied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
+                </button>
               </div>
             </motion.div>
+
+            {/* Service tabs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.25 }}
+              className="flex flex-wrap gap-2"
+            >
+              {SERVICES.map((service) => {
+                const Icon = service.icon;
+                const isActive = activeService === service.id;
+                return (
+                  <button
+                    key={service.id}
+                    onClick={() => setActiveService(service.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      isActive
+                        ? "bg-[#fd4444] text-white"
+                        : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700"
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {service.label}
+                  </button>
+                );
+              })}
+            </motion.div>
           </div>
+
+          {/* Right Column: Service Demo */}
+          <motion.div
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <ServiceDemo activeService={activeService} />
+          </motion.div>
         </div>
       </div>
     </section>

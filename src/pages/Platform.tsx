@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { Github, Cloud, Server, Lock, Code2, Network, Terminal, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const BRAND_COLOR = "#10b981";
+const BRAND_COLOR = "#fd4444";
 
 const DeploymentOptions = () => {
   return (
@@ -40,7 +40,7 @@ const DeploymentOptions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-green-500/30 transition-colors"
+            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors"
           >
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -54,20 +54,20 @@ const DeploymentOptions = () => {
             </p>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> Docker & Kubernetes ready
+                <span className="text-[#fd4444]">✓</span> Docker & Kubernetes ready
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> Air-gapped deployments
+                <span className="text-[#fd4444]">✓</span> Air-gapped deployments
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> No external dependencies
+                <span className="text-[#fd4444]">✓</span> No external dependencies
               </li>
             </ul>
             <a
               href="https://github.com/hanzoai/platform"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center mt-6 text-sm text-green-400 hover:text-green-300"
+              className="inline-flex items-center mt-6 text-sm text-[#fd4444] hover:text-[#fd6666]"
             >
               <Github className="w-4 h-4 mr-2" />
               View on GitHub
@@ -175,7 +175,7 @@ const OpenSourceBenefits = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <Code2 className="h-10 w-10 text-green-400" />
+              <Code2 className="h-10 w-10 text-[#fd4444]" />
               <h4 className="text-lg font-bold text-white">MIT Licensed</h4>
               <p className="text-neutral-400 text-sm">
                 Use it commercially, modify it freely. No vendor lock-in, no surprise licensing changes.
@@ -183,7 +183,7 @@ const OpenSourceBenefits = () => {
             </div>
 
             <div className="space-y-4">
-              <Lock className="h-10 w-10 text-green-400" />
+              <Lock className="h-10 w-10 text-[#fd4444]" />
               <h4 className="text-lg font-bold text-white">Data Sovereignty</h4>
               <p className="text-neutral-400 text-sm">
                 Your code, your data, your infrastructure. Complete control over your stack.
@@ -191,7 +191,7 @@ const OpenSourceBenefits = () => {
             </div>
 
             <div className="space-y-4">
-              <Terminal className="h-10 w-10 text-green-400" />
+              <Terminal className="h-10 w-10 text-[#fd4444]" />
               <h4 className="text-lg font-bold text-white">Developer First</h4>
               <p className="text-neutral-400 text-sm">
                 Built by developers, for developers. Extensive docs, active community, responsive maintainers.
