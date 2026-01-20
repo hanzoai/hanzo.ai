@@ -19,11 +19,11 @@ export const ProductsMenu = () => {
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-lg font-semibold text-white">{section.title}</h3>
                     <Link
-                      to={section.title === "AI Cloud" ? "/cloud" : "/platform"}
+                      to="/products"
                       className="text-sm text-neutral-400 hover:text-white"
                       onClick={closeMenu}
                     >
-                      View all {section.title} →
+                      View all products →
                     </Link>
                   </div>
                   
@@ -60,57 +60,52 @@ export const ProductsMenu = () => {
                   {/* Promo box based on section title */}
                   <div className={cn(
                     "mt-auto mt-6 p-4 rounded-xl transition-colors",
-                    section.title === "AI Cloud" 
-                      ? "bg-gradient-to-b from-purple-900/30 to-blue-900/30 border border-purple-500/20 hover:border-purple-500/40" 
+                    section.title === "Data & Compute"
+                      ? "bg-gradient-to-b from-purple-900/30 to-blue-900/30 border border-purple-500/20 hover:border-purple-500/40"
                       : "bg-gradient-to-b from-green-900/30 to-teal-900/30 border border-green-500/20 hover:border-green-500/40"
                   )}>
                     <div className="flex items-center space-x-2 mb-2">
-                      {section.title === "AI Cloud" ? (
+                      {section.title === "Data & Compute" ? (
                         <>
                           <Zap className="h-5 w-5 text-purple-400" />
-                          <h4 className="text-lg font-semibold text-white">Get $5 free</h4>
+                          <h4 className="text-lg font-semibold text-white">Get started instantly</h4>
                         </>
                       ) : (
                         <>
                           <Code className="h-5 w-5 text-green-400" />
-                          <h4 className="text-lg font-semibold text-white">Always Free & Open Source</h4>
+                          <h4 className="text-lg font-semibold text-white">Open Source First</h4>
                         </>
                       )}
                     </div>
                     <p className="text-neutral-300 text-sm mb-3">
-                      {section.title === "AI Cloud" 
-                        ? "Start building with AI Cloud today and get $5 credit free."
-                        : "Our developer experience platform is free to use and open source forever."}
+                      {section.title === "Data & Compute"
+                        ? "Install the Hanzo CLI and start building in seconds."
+                        : "40+ products, mostly open source. Self-host or use Hanzo Cloud."}
                     </p>
-                    
-                    {section.title === "AI Cloud" ? (
-                      <Button 
+
+                    {section.title === "Data & Compute" ? (
+                      <div className="bg-black/50 rounded-lg p-2 font-mono text-sm text-green-400 mb-3">
+                        curl -sSL https://hanzo.sh | sh
+                      </div>
+                    ) : null}
+
+                    <div className="flex space-x-2">
+                      <Button
                         size="sm"
-                        className="w-full bg-purple-700 hover:bg-purple-600 text-white border-none"
+                        variant="outline"
+                        className="flex-1 bg-transparent border-white/20 text-white hover:bg-white/10"
                         onClick={closeMenu}
                       >
-                        <a href="https://cloud.hanzo.ai/auth/sign-up">Get Started Today</a>
+                        <a href="https://github.com/hanzoai">GitHub</a>
                       </Button>
-                    ) : (
-                      <div className="flex space-x-2">
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className="flex-1 bg-transparent border-green-500/30 text-white hover:bg-green-800/30"
-                          onClick={closeMenu}
-                        >
-                          <a href="https://github.com/hanzoai">View on GitHub</a>
-                        </Button>
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className="flex-1 bg-transparent border-green-500/30 text-white hover:bg-green-800/30"
-                          onClick={closeMenu}
-                        >
-                          <Link to="/open-source">Open Source</Link>
-                        </Button>
-                      </div>
-                    )}
+                      <Button
+                        size="sm"
+                        className="flex-1 bg-white text-black hover:bg-neutral-200"
+                        onClick={closeMenu}
+                      >
+                        <Link to="/products">All Products</Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               ))}

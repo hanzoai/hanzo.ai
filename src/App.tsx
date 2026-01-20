@@ -58,6 +58,11 @@ import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 import Team from "./pages/Team";
 
+// New product taxonomy pages
+import Products from "./pages/Products";
+import CategoryPage from "./pages/products/CategoryPage";
+import ProductPage from "./pages/products/ProductPage";
+
 import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
 import TeamOpera from "./pages/TeamOpera";
@@ -122,7 +127,12 @@ const MarketingRoutes = () => {
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />
       <Route path="/solutions/industries" element={<SolutionIndustries />} />
-      
+
+      {/* New product taxonomy routes */}
+      <Route path="/products" element={<Products />} />
+      <Route path="/products/:categoryId" element={<CategoryPage />} />
+      <Route path="/products/:categoryId/:productId" element={<ProductPage />} />
+
       <Route path="/ai" element={<AI />} />
       <Route path="/datastore" element={<Datastore />} />
       <Route path="/commerce" element={<Commerce />} />

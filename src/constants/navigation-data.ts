@@ -1,37 +1,57 @@
-import { 
-  AppWindow, 
-  Bot, 
+import {
+  AppWindow,
+  Bot,
   Brain,
-  Braces, 
-  Building2, 
+  Braces,
+  Building2,
   Car,
-  Cloud, 
-  Code, 
-  CreditCard, 
-  Database, 
+  Cloud,
+  Code,
+  CreditCard,
+  Database,
   DollarSign,
   Factory,
-  FileCode, 
-  Globe, 
+  FileCode,
+  Globe,
   Landmark,
   Laptop,
   Leaf,
-  LucideIcon, 
-  MessageSquare, 
-  MonitorSmartphone, 
-  Network, 
-  Plane, 
+  LucideIcon,
+  MessageSquare,
+  MonitorSmartphone,
+  Network,
+  Plane,
   Rocket,
-  Search, 
-  Server, 
-  Shield, 
-  ShieldCheck, 
+  Search,
+  Server,
+  Shield,
+  ShieldCheck,
   ShoppingCart,
-  Sparkles, 
-  Terminal, 
-  Users, 
+  Sparkles,
+  Terminal,
+  Users,
   Zap,
-  Container
+  Container,
+  Cpu,
+  Clock,
+  Activity,
+  Layers,
+  LayoutGrid,
+  Key,
+  HardDrive,
+  BarChart3,
+  ListTodo,
+  Radio,
+  BookOpen,
+  GitBranch,
+  LineChart,
+  ScrollText,
+  Route,
+  PieChart,
+  UserCheck,
+  KeyRound,
+  Workflow,
+  LayoutDashboard
 } from 'lucide-react';
 
 export type NavItem = {
@@ -47,110 +67,111 @@ export type NavSection = {
   items: NavItem[];
 };
 
+// New taxonomy-based products navigation
 export const productsNav: NavSection[] = [
   {
-    title: "AI Cloud",
+    title: "Data & Compute",
     items: [
       {
-        title: "AI",
-        href: "/ai",
-        description: "Unified access to frontier AI models",
-        icon: Sparkles
-      },
-      {
-        title: "Chat",
-        href: "/chat",
-        description: "Interactive AI chat experiences",
-        icon: MessageSquare
-      },
-      {
-        title: "Datastore",
-        href: "/datastore",
-        description: "Scalable data storage for AI applications",
+        title: "SQL",
+        href: "/products/data/sql",
+        description: "Managed PostgreSQL",
         icon: Database
       },
       {
-        title: "Edge",
-        href: "/edge",
-        description: "Ultra-low latency edge computing",
-        icon: Zap
+        title: "Vector",
+        href: "/products/data/vector",
+        description: "High-performance vector database",
+        icon: Sparkles
+      },
+      {
+        title: "KV",
+        href: "/products/data/kv",
+        description: "Redis-compatible key-value",
+        icon: Key
+      },
+      {
+        title: "Storage",
+        href: "/products/data/storage",
+        description: "S3-compatible object storage",
+        icon: HardDrive
       },
       {
         title: "Functions",
-        href: "/functions",
-        description: "Serverless function execution",
-        icon: Code
-      },
-      {
-        title: "Identity",
-        href: "/identity",
-        description: "Scalable identity management",
-        icon: Users
+        href: "/products/compute/functions",
+        description: "Serverless compute platform",
+        icon: Zap
       },
       {
         title: "Machines",
-        href: "/machines",
-        description: "Dedicated AI compute infrastructure",
-        icon: Server
+        href: "/products/compute/machines",
+        description: "Dedicated AI compute",
+        icon: Cpu
       },
       {
-        title: "Payments",
-        href: "/payments",
-        description: "Payment processing and subscription billing",
-        icon: CreditCard
+        title: "Tasks",
+        href: "/products/async/tasks",
+        description: "Durable workflow execution",
+        icon: ListTodo
+      },
+      {
+        title: "All Products",
+        href: "/products",
+        description: "View all 40+ products",
+        icon: LayoutGrid
       }
     ]
   },
   {
-    title: "DX Platform",
+    title: "ML & Platform",
     items: [
       {
-        title: "App",
-        href: "/app",
-        description: "AI app builder with drag-and-drop workflows",
-        icon: AppWindow
+        title: "Notebooks",
+        href: "/products/ml/notebooks",
+        description: "Managed Jupyter workspaces",
+        icon: BookOpen
       },
       {
-        title: "Bot",
-        href: "/bot",
-        description: "Agentic framework for AI assistants",
-        icon: Bot
+        title: "Pipelines",
+        href: "/products/ml/pipelines",
+        description: "ML workflow orchestration",
+        icon: GitBranch
       },
       {
-        title: "Code",
-        href: "/code",
-        description: "AI-powered code editor and generator",
-        icon: FileCode
+        title: "Serving",
+        href: "/products/ml/serving",
+        description: "Production model inference",
+        icon: Rocket
       },
       {
-        title: "Dev",
-        href: "/dev",
-        description: "AI engineer assistant for developers",
-        icon: Terminal
+        title: "Edge",
+        href: "/products/platform/edge",
+        description: "High-performance API edge",
+        icon: Zap
       },
       {
-        title: "Extension",
-        href: "/extension",
-        description: "Browser and code editor plugins",
-        icon: Braces
+        title: "IAM",
+        href: "/products/platform/iam",
+        description: "Identity & access management",
+        icon: UserCheck
       },
       {
-        title: "Platform",
-        href: "/platform",
-        description: "Open source AI engineering platform",
-        icon: Globe
+        title: "Metrics",
+        href: "/products/observability/metrics",
+        description: "Time-series metrics database",
+        icon: LineChart
       },
       {
-        title: "Runtime",
-        href: "/runtime",
-        description: "Container runtime for AI applications",
-        icon: Container
+        title: "Chat",
+        href: "/products/apps/chat",
+        description: "AI chat interface",
+        icon: MessageSquare
       },
       {
-        title: "Studio",
-        href: "/studio",
-        description: "Low-code IDE for AI development",
-        icon: Laptop
+        title: "Cloud",
+        href: "/products/apps/cloud",
+        description: "AI infrastructure platform",
+        icon: Cloud
       }
     ]
   }
