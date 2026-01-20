@@ -15,17 +15,16 @@ const partners = [
 const clients = [
   "Triller",
   "Damon",
-  "Skully",
   "Bellabeat",
   "Unikrn",
-  "Darkstore",
-  "VNTANA",
-  "Lunchbox",
-  "Monogram",
-  "Playbook",
-  "Goldcast",
-  "Eaze",
-  "Dosist",
+  "Cover",
+  "Casper",
+  "Myle",
+  "Drumpants",
+  "Cove",
+  "Aura",
+  "KANOA",
+  "SKULLY",
 ];
 
 const TrustedBySection = () => {
@@ -41,10 +40,10 @@ const TrustedBySection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-            Trusted worldwide
+            Trusted by the best
           </h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Working with leading companies and backed by world-class partners
+            Backed by world-class partners and trusted by industry leaders
           </p>
         </motion.div>
 
@@ -88,7 +87,7 @@ const TrustedBySection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6 text-center">
-            Companies we've worked with
+            Trusted By
           </p>
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
             {clients.map((client, index) => (
