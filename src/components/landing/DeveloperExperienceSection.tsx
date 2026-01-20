@@ -27,14 +27,13 @@ const API_CODE_EXAMPLES = [
   {
     language: "typescript",
     label: "TypeScript",
-    code: `import OpenAI from "openai";
+    code: `import { Hanzo } from "@hanzo/ai";
 
-const client = new OpenAI({
-  baseURL: "https://api.hanzo.ai/v1",
+const hanzo = new Hanzo({
   apiKey: process.env.HANZO_API_KEY,
 });
 
-const response = await client.chat.completions.create({
+const response = await hanzo.chat.completions.create({
   model: "claude-sonnet-4-20250514",
   messages: [{ role: "user", content: "Hello!" }],
 });
@@ -44,13 +43,10 @@ console.log(response.choices[0].message.content);`,
   {
     language: "python",
     label: "Python",
-    code: `from openai import OpenAI
+    code: `from hanzo import Hanzo
 import os
 
-client = OpenAI(
-    base_url="https://api.hanzo.ai/v1",
-    api_key=os.environ["HANZO_API_KEY"],
-)
+client = Hanzo(api_key=os.environ["HANZO_API_KEY"])
 
 response = client.chat.completions.create(
     model="claude-sonnet-4-20250514",
@@ -69,54 +65,23 @@ import (
     "fmt"
     "os"
 
-    "github.com/sashabaranov/go-openai"
+    "github.com/hanzoai/hanzo-go"
 )
 
 func main() {
-    config := openai.DefaultConfig(os.Getenv("HANZO_API_KEY"))
-    config.BaseURL = "https://api.hanzo.ai/v1"
-    client := openai.NewClientWithConfig(config)
+    client := hanzo.NewClient(os.Getenv("HANZO_API_KEY"))
 
-    resp, _ := client.CreateChatCompletion(
+    resp, _ := client.Chat.Completions.Create(
         context.Background(),
-        openai.ChatCompletionRequest{
+        hanzo.ChatCompletionRequest{
             Model: "claude-sonnet-4-20250514",
-            Messages: []openai.ChatCompletionMessage{
+            Messages: []hanzo.Message{
                 {Role: "user", Content: "Hello!"},
             },
         },
     )
 
     fmt.Println(resp.Choices[0].Message.Content)
-}`,
-  },
-  {
-    language: "rust",
-    label: "Rust",
-    code: `use async_openai::{
-    config::OpenAIConfig,
-    types::{ChatCompletionRequestMessage, CreateChatCompletionRequest},
-    Client,
-};
-
-#[tokio::main]
-async fn main() {
-    let config = OpenAIConfig::new()
-        .with_api_key(std::env::var("HANZO_API_KEY").unwrap())
-        .with_api_base("https://api.hanzo.ai/v1");
-
-    let client = Client::with_config(config);
-
-    let request = CreateChatCompletionRequest {
-        model: "claude-sonnet-4-20250514".to_string(),
-        messages: vec![
-            ChatCompletionRequestMessage::User("Hello!".into()),
-        ],
-        ..Default::default()
-    };
-
-    let response = client.chat().create(request).await.unwrap();
-    println!("{}", response.choices[0].message.content);
 }`,
   },
   {
