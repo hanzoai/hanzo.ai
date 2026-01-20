@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -9,57 +9,68 @@ import {
   ArrowRight,
   GitBranch,
   TestTube,
-  FileCode,
-  Globe,
+  FileCheck,
+  Rocket,
+  Shield,
+  Lock,
+  ChevronRight,
 } from "lucide-react";
 
-const features = [
+const BRAND_COLOR = "#fd4444";
+
+const multiAgentFeatures = [
   {
     icon: Zap,
-    title: "Multi-Agent Execution",
-    description: "Send the same task to multiple agents at once.",
+    title: "Multi-agent runs",
+    description: "One prompt, many implementations across agents/models.",
   },
   {
     icon: Users,
-    title: "Consensus (Chairman LLM)",
-    description: "Compare implementations, test results, and diffs; pick the best.",
+    title: "Consensus selection",
+    description: "Compare diffs, benchmarks, and test logs; select the strongest patch.",
   },
   {
     icon: Clock,
     title: "Long-running sandboxes",
-    description: "Agents can install deps, run suites, refactor, and iterate.",
+    description: "Install deps, refactor safely, run suites, iterate until green.",
   },
   {
     icon: Eye,
     title: "Team visibility",
-    description: "Monitor all runs, decisions, and outputs in one view.",
+    description: "Shared workspace for runs, artifacts, decisions, and audit links.",
   },
 ];
 
-const codebaseFeatures = [
+const autonomyModes = [
   {
-    icon: FileCode,
-    title: "Large codebase context",
-    description: "Optimized for monorepos and production systems.",
+    id: "plan",
+    title: "Plan-only",
+    description: "Proposal + file list + risk notes + diff preview",
+    icon: FileCheck,
   },
   {
+    id: "implement",
+    title: "Implement",
+    description: "Coherent multi-file edits with repo context",
     icon: GitBranch,
-    title: "Controllable autonomy",
-    description: "Choose Plan-only → Implement → Implement+Test+PR.",
   },
   {
+    id: "test",
+    title: "Implement + test",
+    description: "Suites run automatically; logs attached",
     icon: TestTube,
-    title: "Plan → Execute → Test",
-    description: "Structured work you can review and trust.",
   },
   {
-    icon: Globe,
-    title: "Browser agent",
-    description: "Interactive validation for flows that need real UI or web checks.",
+    id: "deploy",
+    title: "Implement + deploy",
+    description: "Approvals + policy checks + audit trail",
+    icon: Rocket,
   },
 ];
 
 const PlatformOverviewSection = () => {
+  const [activeMode, setActiveMode] = useState("plan");
+
   return (
     <section className="py-24 px-4 md:px-8 bg-black">
       <div className="max-w-6xl mx-auto">
@@ -69,23 +80,23 @@ const PlatformOverviewSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-24"
+          className="mb-32"
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
           >
-            Multi-Agent Remote Execution
+            Core Differentiator
           </p>
-          <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-            Ship with parallel execution + consensus
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4">
+            Parallel execution. One best outcome.
           </h2>
           <p className="text-lg text-neutral-400 max-w-2xl mb-12">
-            Let multiple agents tackle your task simultaneously, then select the winner.
+            Dispatch the same task to multiple agents (Hanzo + external), then pick the winner based on diff quality + test evidence, not vibes.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {features.map((feature, index) => {
+            {multiAgentFeatures.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <motion.div
@@ -96,8 +107,11 @@ const PlatformOverviewSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/50"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#fd4444]/10 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-[#fd4444]" />
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${BRAND_COLOR}15` }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color: BRAND_COLOR }} />
                   </div>
                   <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
                   <p className="text-sm text-neutral-400">{feature.description}</p>
@@ -115,7 +129,7 @@ const PlatformOverviewSection = () => {
           </Link>
         </motion.div>
 
-        {/* Built for real codebases */}
+        {/* Controllable Autonomy */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,38 +138,81 @@ const PlatformOverviewSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
           >
-            Built for real codebases
+            Your Wedge
           </p>
-          <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-            Agents that understand your repo
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4">
+            Autonomy you can dial. Evidence you can trust.
           </h2>
           <p className="text-lg text-neutral-400 max-w-2xl mb-12">
-            Production-grade agents for production-grade code.
+            Move fast without giving agents the keys. Every step is explicit, reviewable, and enforceable.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {codebaseFeatures.map((feature, index) => {
-              const Icon = feature.icon;
+          {/* Mode Selector */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {autonomyModes.map((mode, index) => {
+              const Icon = mode.icon;
+              const isActive = activeMode === mode.id;
               return (
-                <motion.div
-                  key={feature.title}
+                <motion.button
+                  key={mode.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/50"
+                  onClick={() => setActiveMode(mode.id)}
+                  className={`p-5 rounded-xl border text-left transition-all ${
+                    isActive
+                      ? "border-[#fd4444] bg-[#fd4444]/10"
+                      : "border-neutral-800 bg-neutral-900/50 hover:border-neutral-700"
+                  }`}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-neutral-400" />
+                  <div className="flex items-start gap-3">
+                    <div
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                        isActive ? "bg-[#fd4444]/20" : "bg-neutral-800"
+                      }`}
+                    >
+                      <Icon className={`w-4 h-4 ${isActive ? "text-[#fd4444]" : "text-neutral-400"}`} />
+                    </div>
+                    <div>
+                      <h3 className={`text-sm font-semibold mb-1 ${isActive ? "text-white" : "text-neutral-300"}`}>
+                        {mode.title}
+                      </h3>
+                      <p className="text-xs text-neutral-500">{mode.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-sm text-neutral-400">{feature.description}</p>
-                </motion.div>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="mt-3 flex items-center text-[#fd4444] text-xs font-medium"
+                    >
+                      <ChevronRight className="w-3 h-3 mr-1" />
+                      Selected
+                    </motion.div>
+                  )}
+                </motion.button>
               );
             })}
           </div>
+
+          {/* Signature line */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex items-center gap-3 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 max-w-md"
+          >
+            <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
+              <Lock className="w-5 h-5 text-neutral-400" />
+            </div>
+            <p className="text-sm text-neutral-300">
+              <span className="font-medium text-white">Agents don't get admin.</span>{" "}
+              They get policies.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

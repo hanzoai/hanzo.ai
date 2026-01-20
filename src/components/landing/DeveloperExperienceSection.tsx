@@ -7,13 +7,18 @@ import {
   Check,
   ArrowRight,
   MonitorUp,
-  Cloud,
   Zap,
   Lock,
   Users,
   Shield,
   ExternalLink,
+  Code,
+  Bug,
+  Workflow,
+  Box,
 } from "lucide-react";
+
+const BRAND_COLOR = "#fd4444";
 
 const DeveloperExperienceSection = () => {
   const [copied, setCopied] = useState(false);
@@ -39,15 +44,15 @@ const DeveloperExperienceSection = () => {
           <div>
             <p
               className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
             >
-              IDE Agents
+              Works where developers live
             </p>
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-              Inside VS Code, JetBrains, and your terminal
+              VS Code. JetBrains. Terminal. Remote.
             </h2>
             <p className="text-lg text-neutral-400 mb-8">
-              The agent reads your project structure before making changes, edits multiple files cohesively, and executes tasks step-by-step.
+              Hanzo reads your repo structure first, edits across files coherently, and executes tasks step-by-step—locally or in isolated remote sandboxes.
             </p>
             <Link
               to="/extensions"
@@ -71,7 +76,7 @@ const DeveloperExperienceSection = () => {
             <div className="p-4 space-y-3 bg-neutral-950">
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
                 <MonitorUp className="w-4 h-4 text-[#fd4444]" />
-                <span className="text-sm text-neutral-300">Analyzing project structure...</span>
+                <span className="text-sm text-neutral-300">Reading repo structure...</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
                 <Check className="w-4 h-4 text-green-500" />
@@ -115,8 +120,7 @@ const DeveloperExperienceSection = () => {
             </div>
             <div className="p-4 font-mono text-sm bg-neutral-950">
               <div className="text-neutral-500 mb-2">$ curl -sSL https://hanzo.sh | sh</div>
-              <div className="text-neutral-500 mb-2">$ hanzo login</div>
-              <div className="text-neutral-300 mb-2">$ hanzo dev "Improve the rate limiter. Add metrics. Add tests. Open a PR."</div>
+              <div className="text-neutral-300 mb-4">$ hanzo dev "Fix rate limiting. Add metrics. Add tests. Open a PR."</div>
               <div className="text-green-400 mb-1">✓ Plan created</div>
               <div className="text-green-400 mb-1">✓ Implementation complete</div>
               <div className="text-green-400 mb-1">✓ Tests passing (12/12)</div>
@@ -127,28 +131,36 @@ const DeveloperExperienceSection = () => {
           <div className="order-1 lg:order-2">
             <p
               className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
             >
               Hanzo CLI
             </p>
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-              AI-powered development from the terminal
+              AI-powered development from the terminal.
             </h2>
             <ul className="space-y-3 text-neutral-400 mb-8">
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#fd4444]" />
-                Generate APIs, scripts, and components
+              <li className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
+                  <Code className="w-3.5 h-3.5 text-neutral-500" />
+                </div>
+                Generate APIs, scripts, components, and tests
               </li>
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#fd4444]" />
-                Debug + fix with context
+              <li className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
+                  <Bug className="w-3.5 h-3.5 text-neutral-500" />
+                </div>
+                Debug and fix using your real codebase context
               </li>
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#fd4444]" />
-                Produce tests and CI scaffolding
+              <li className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
+                  <Workflow className="w-3.5 h-3.5 text-neutral-500" />
+                </div>
+                Scaffold CI/CD and release workflows
               </li>
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#fd4444]" />
+              <li className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
+                  <Box className="w-3.5 h-3.5 text-neutral-500" />
+                </div>
                 No framework lock-in
               </li>
             </ul>
@@ -165,7 +177,7 @@ const DeveloperExperienceSection = () => {
           <div className="text-center mb-12">
             <p
               className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
             >
               Remote Agents
             </p>
@@ -224,15 +236,15 @@ const DeveloperExperienceSection = () => {
             <div>
               <p
                 className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-                style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+                style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
               >
                 Hanzo AI API
               </p>
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-                One API for the best models
+                One API for models + tools.
               </h2>
               <p className="text-lg text-neutral-400 mb-6">
-                Use leading models through a single endpoint with streaming + tool calling. Works with existing OpenAI SDKs by changing the base URL.
+                Streaming, tool calling, and agent execution behind a single endpoint. Compatible with existing OpenAI SDKs by switching the base URL.
               </p>
               <a
                 href="https://docs.hanzo.ai/api"

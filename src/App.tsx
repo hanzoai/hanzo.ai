@@ -54,6 +54,7 @@ import Identity from "./pages/Identity";
 import Machines from "./pages/Machines";
 import Edge from "./pages/Edge";
 import Realtime from "./pages/Realtime";
+import Automations from "./pages/Automations";
 import NotFound from "./pages/NotFound";
 import Leadership from "./pages/Leadership";
 import Team from "./pages/Team";
@@ -155,6 +156,7 @@ const MarketingRoutes = () => {
       <Route path="/machines" element={<Machines />} />
       <Route path="/realtime" element={<Realtime />} />
       <Route path="/ai-studio" element={<AIStudio />} />
+      <Route path="/automations" element={<Automations />} />
       
       <Route path="/team/dev" element={<TeamDev />} />
       <Route path="/team/vi" element={<TeamVi />} />

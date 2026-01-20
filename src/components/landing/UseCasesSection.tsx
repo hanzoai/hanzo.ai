@@ -1,23 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Check, AlertCircle, X } from "lucide-react";
+import { Check, X, Minus } from "lucide-react";
+
+const BRAND_COLOR = "#fd4444";
 
 const features = [
-  { name: "Multi-agent parallelism", hanzo: "full", copilot: "none", claudeCode: "partial" },
-  { name: "Multi-model routing", hanzo: "full", copilot: "none", claudeCode: "partial" },
-  { name: "On-prem / air-gapped", hanzo: "full", copilot: "none", claudeCode: "partial" },
-  { name: "Policy + approvals + audit", hanzo: "full", copilot: "none", claudeCode: "none" },
-  { name: "Evidence-based output (tests/diffs)", hanzo: "full", copilot: "none", claudeCode: "partial" },
+  { name: "Multi-agent parallelism + consensus", hanzo: "full", others: "none", desc: "Best patch wins" },
+  { name: "Policy / approvals / audit by default", hanzo: "full", others: "none", desc: "Humans + agents" },
+  { name: "Self-host and air-gapped options", hanzo: "full", others: "partial", desc: "On-prem ready" },
+  { name: "Evidence-driven output", hanzo: "full", others: "partial", desc: "Diffs + tests + traces, not screenshots" },
+  { name: "Long-running sandboxes", hanzo: "full", others: "partial", desc: "Install, refactor, iterate" },
 ];
 
 const renderStatus = (status: string) => {
   switch (status) {
     case "full":
-      return <Check className="w-5 h-5 text-green-500" />;
+      return (
+        <div className="flex items-center justify-center">
+          <Check className="w-5 h-5 text-green-500" />
+        </div>
+      );
     case "partial":
-      return <AlertCircle className="w-5 h-5 text-yellow-500" />;
+      return (
+        <div className="flex items-center justify-center">
+          <Minus className="w-5 h-5 text-yellow-500" />
+        </div>
+      );
     case "none":
-      return <X className="w-5 h-5 text-neutral-600" />;
+      return (
+        <div className="flex items-center justify-center">
+          <X className="w-5 h-5 text-neutral-600" />
+        </div>
+      );
     default:
       return null;
   }
@@ -36,15 +50,15 @@ const UseCasesSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: "#fd4444", borderColor: "rgba(253, 68, 68, 0.3)" }}
+            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
           >
-            Why Hanzo
+            Comparison
           </p>
           <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-            Built for enterprise agent work
+            Why Hanzo vs agents + glue
           </h2>
           <p className="text-lg text-neutral-400">
-            More than autocomplete. Real software engineering at scale.
+            Production software needs more than autocomplete.
           </p>
         </motion.div>
 
@@ -57,11 +71,10 @@ const UseCasesSection = () => {
           className="rounded-xl border border-neutral-800 overflow-hidden"
         >
           {/* Header */}
-          <div className="grid grid-cols-4 gap-4 p-4 bg-neutral-900 border-b border-neutral-800">
+          <div className="grid grid-cols-3 gap-4 p-4 bg-neutral-900 border-b border-neutral-800">
             <div className="text-sm font-medium text-neutral-500">Capability</div>
-            <div className="text-sm font-medium text-[#fd4444] text-center">Hanzo</div>
-            <div className="text-sm font-medium text-neutral-500 text-center">Copilot</div>
-            <div className="text-sm font-medium text-neutral-500 text-center">Claude Code</div>
+            <div className="text-sm font-medium text-center" style={{ color: BRAND_COLOR }}>Hanzo</div>
+            <div className="text-sm font-medium text-neutral-500 text-center">Others</div>
           </div>
 
           {/* Rows */}
@@ -72,14 +85,16 @@ const UseCasesSection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className={`grid grid-cols-4 gap-4 p-4 ${
+              className={`grid grid-cols-3 gap-4 p-4 ${
                 index !== features.length - 1 ? "border-b border-neutral-800" : ""
               } hover:bg-neutral-900/50 transition-colors`}
             >
-              <div className="text-sm text-white">{feature.name}</div>
-              <div className="flex justify-center">{renderStatus(feature.hanzo)}</div>
-              <div className="flex justify-center">{renderStatus(feature.copilot)}</div>
-              <div className="flex justify-center">{renderStatus(feature.claudeCode)}</div>
+              <div>
+                <div className="text-sm text-white font-medium">{feature.name}</div>
+                <div className="text-xs text-neutral-500 mt-0.5">{feature.desc}</div>
+              </div>
+              <div className="flex justify-center items-center">{renderStatus(feature.hanzo)}</div>
+              <div className="flex justify-center items-center">{renderStatus(feature.others)}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -91,8 +106,8 @@ const UseCasesSection = () => {
             <span className="text-xs text-neutral-500">Full support</span>
           </div>
           <div className="flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 text-yellow-500" />
-            <span className="text-xs text-neutral-500">Partial</span>
+            <Minus className="w-4 h-4 text-yellow-500" />
+            <span className="text-xs text-neutral-500">Partial / varies</span>
           </div>
           <div className="flex items-center gap-2">
             <X className="w-4 h-4 text-neutral-600" />

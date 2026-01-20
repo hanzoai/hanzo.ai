@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageSquare } from "lucide-react";
 
+const BRAND_COLOR = "#fd4444";
+
 const FinalCTASection = () => {
   return (
     <section className="py-32 px-4 md:px-8 bg-black relative overflow-hidden">
@@ -15,7 +17,7 @@ const FinalCTASection = () => {
           transition={{ duration: 1 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
           style={{
-            background: "radial-gradient(circle, #fd4444 0%, transparent 60%)",
+            background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 60%)`,
             filter: "blur(100px)",
           }}
         />
@@ -36,8 +38,8 @@ const FinalCTASection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl font-medium text-white mb-6"
           >
-            Start with{" "}
-            <span style={{ color: "#fd4444" }}>Hanzo</span>
+            Ship faster.{" "}
+            <span style={{ color: BRAND_COLOR }}>Keep control.</span>
           </motion.h2>
 
           <motion.p
@@ -47,7 +49,7 @@ const FinalCTASection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto"
           >
-            Run agents you can trust—backed by governance, audit, and deployment controls.
+            The governed agent platform for shipping production software—fast, verifiable, and under your policies.
           </motion.p>
 
           <motion.div
@@ -60,9 +62,9 @@ const FinalCTASection = () => {
             <Link
               to="/get-started"
               className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 rounded-full font-medium text-white text-lg transition-all hover:opacity-90"
-              style={{ backgroundColor: "#fd4444" }}
+              style={{ backgroundColor: BRAND_COLOR }}
             >
-              Get started free
+              Start free
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
 
