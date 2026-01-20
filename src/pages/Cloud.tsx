@@ -7,6 +7,7 @@ import ZenBackground from "@/components/zen/ZenBackground";
 import ZenQuoteSection from "@/components/zen/ZenQuoteSection";
 import CloudHero from "@/components/cloud/CloudHero";
 import Features from "@/components/cloud/Features";
+import ProductCatalog from "@/components/cloud/ProductCatalog";
 import Regions from "@/components/cloud/Regions";
 import Security from "@/components/cloud/Security";
 import TechStack from "@/components/cloud/TechStack";
@@ -17,26 +18,27 @@ const Cloud = () => {
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)] overflow-x-hidden">
       <Helmet>
-        <title>Hanzo Cloud - Harmonious Infrastructure</title>
-        <meta name="description" content="Infrastructure that scales with intention. Deploy with simplicity, scale with wisdom." />
+        <title>Hanzo Cloud - Complete Cloud Platform</title>
+        <meta name="description" content="90+ managed services for AI, databases, compute, and more. Build, deploy, and scale modern applications on a unified platform." />
       </Helmet>
-      
+
       <ZenBackground />
       <Navbar />
-      
+
       <main>
         <CloudHero />
-        <Features />
-        <ZenQuoteSection 
+        <ProductCatalog />
+        <ZenQuoteSection
           quote="The engineer who masters the cloud sees no distinction between the physical and the virtual."
           attribution="Principle 27"
         />
+        <Features />
         <Regions />
         <Security />
         <TechStack />
         <CallToAction />
       </main>
-      
+
       <Footer />
       <Toaster />
     </div>

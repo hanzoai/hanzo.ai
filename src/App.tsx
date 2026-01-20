@@ -46,6 +46,19 @@ import HanzoApp from "./pages/HanzoApp";
 import HanzoBot from "./pages/HanzoBot";
 import HanzoCode from "./pages/HanzoCode";
 import HanzoDev from "./pages/HanzoDev";
+import Blockchain from "./pages/Blockchain";
+import HanzoNodes from "./pages/blockchain/HanzoNodes";
+import HanzoIndexer from "./pages/blockchain/HanzoIndexer";
+import HanzoWallet from "./pages/blockchain/HanzoWallet";
+import HanzoSafe from "./pages/blockchain/HanzoSafe";
+import HanzoID from "./pages/blockchain/HanzoID";
+import HanzoPay from "./pages/blockchain/HanzoPay";
+import HanzoBridge from "./pages/blockchain/HanzoBridge";
+import HanzoDeFi from "./pages/blockchain/HanzoDeFi";
+import HanzoOracle from "./pages/blockchain/HanzoOracle";
+import HanzoStorage from "./pages/blockchain/HanzoStorage";
+import HanzoExplorer from "./pages/blockchain/HanzoExplorer";
+import HanzoQuest from "./pages/blockchain/HanzoQuest";
 import Vector from "./pages/Vector";
 import Payments from "./pages/Payments";
 import Platform from "./pages/Platform";
@@ -151,6 +164,20 @@ const MarketingRoutes = () => {
       <Route path="/bot" element={<HanzoBot />} />
       <Route path="/code" element={<HanzoCode />} />
       <Route path="/dev" element={<HanzoDev />} />
+      <Route path="/blockchain" element={<Blockchain />} />
+      <Route path="/web3" element={<Blockchain />} />
+      <Route path="/blockchain/nodes" element={<HanzoNodes />} />
+      <Route path="/blockchain/indexer" element={<HanzoIndexer />} />
+      <Route path="/blockchain/wallet" element={<HanzoWallet />} />
+      <Route path="/blockchain/safe" element={<HanzoSafe />} />
+      <Route path="/blockchain/id" element={<HanzoID />} />
+      <Route path="/blockchain/pay" element={<HanzoPay />} />
+      <Route path="/blockchain/bridge" element={<HanzoBridge />} />
+      <Route path="/blockchain/defi" element={<HanzoDeFi />} />
+      <Route path="/blockchain/oracle" element={<HanzoOracle />} />
+      <Route path="/blockchain/storage" element={<HanzoStorage />} />
+      <Route path="/blockchain/explorer" element={<HanzoExplorer />} />
+      <Route path="/blockchain/quest" element={<HanzoQuest />} />
       <Route path="/vector" element={<Vector />} />
       <Route path="/payments" element={<Payments />} />
       <Route path="/functions" element={<Functions />} />

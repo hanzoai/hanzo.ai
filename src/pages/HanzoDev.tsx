@@ -2,13 +2,10 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/hanzodev/HeroSection";
-import PricingSection from "@/components/hanzodev/PricingSection";
-import CodeOnboardingSection from "@/components/hanzodev/CodeOnboardingSection";
-import Testimonials from "@/components/hanzodev/Testimonials";
-import MultiAgentSection from "@/components/hanzodev/MultiAgentSection";
-import CLISection from "@/components/hanzodev/CLISection";
+import HowItWorks from "@/components/hanzodev/HowItWorks";
+import WhyHanzo from "@/components/hanzodev/WhyHanzo";
 import FAQSection from "@/components/hanzodev/FAQSection";
-import CallToAction from "@/components/hanzodev/CallToAction";
+import FooterCTA from "@/components/hanzodev/FooterCTA";
 
 const HanzoDev = () => {
   return (
@@ -16,13 +13,10 @@ const HanzoDev = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <PricingSection />
-        <CodeOnboardingSection />
-        <Testimonials />
-        <MultiAgentSection />
-        <CLISection />
+        <HowItWorks />
+        <WhyHanzo />
         <FAQSection />
-        <CallToAction />
+        <FooterCTA />
       </main>
       <Footer />
     </div>
