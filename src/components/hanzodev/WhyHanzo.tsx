@@ -1,33 +1,115 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, ShieldCheck, Server, FileText } from "lucide-react";
+import {
+  RefreshCw,
+  Smartphone,
+  Eye,
+  Rocket,
+  Users,
+  Brain,
+  Keyboard,
+  Settings,
+  Shield,
+  BarChart3,
+  CreditCard,
+  Copy,
+} from "lucide-react";
 
 const BRAND_COLOR = "#fd4444";
 
-const REASONS = [
+const VALUE_PROPS = [
   {
-    icon: Users,
-    title: "Multi-agent parallelism and consensus",
-    description:
-      "Run multiple agents on the same task. Compare implementations. Ship the best one based on diff quality and test results.",
+    title: "Stay in your flow",
+    subtitle: "The all-in-one agentic engineering platform",
+    color: "#3b82f6",
+    features: [
+      {
+        icon: Smartphone,
+        title: "Sync across every interface",
+        description:
+          "Start a task on your mobile device and finish it in VS Code, JetBrains, or the CLI without missing a beat.",
+      },
+      {
+        icon: RefreshCw,
+        title: "Persist your context",
+        description:
+          "Never lose state. Your session history, active agents, and variables follow you automatically across devices and environments.",
+      },
+      {
+        icon: Eye,
+        title: "Open the black box",
+        description:
+          "Hanzo is open source so you can inspect, customize, and integrate to meet your specific needs.",
+      },
+      {
+        icon: Rocket,
+        title: "Ship without friction",
+        description:
+          'Move from "commit" to "live" in one motion. Get AI code reviews and deployments without leaving your IDE.',
+      },
+    ],
   },
   {
-    icon: ShieldCheck,
-    title: "Policy, approvals and audit baked in",
-    description:
-      "Define policies for what agents can do. Require approvals at key gates. Full audit trail for compliance.",
+    title: "1000x every dev",
+    subtitle: "Multiply your engineering output",
+    color: "#10b981",
+    features: [
+      {
+        icon: Users,
+        title: "Multiply your output",
+        description:
+          "Use Orchestrator Mode and Code Review to plan, build, and audit simultaneously. Be everywhere at once.",
+      },
+      {
+        icon: Brain,
+        title: "Externalize your context",
+        description:
+          "Stop repeating yourself. Use Memory Bank to store architectural decisions and onboard the team automatically.",
+      },
+      {
+        icon: Keyboard,
+        title: "Code at thought speed",
+        description:
+          "Eliminate boilerplate. Use intelligent Tab Autocomplete to ship PRs faster than you can type them.",
+      },
+      {
+        icon: Settings,
+        title: "Use the best model for the job",
+        description:
+          "With 500+ models, you can control the right tradeoffs between latency, cost, context, and reasoning for each task.",
+      },
+    ],
   },
   {
-    icon: Server,
-    title: "Self-host and air-gapped options",
-    description:
-      "Run entirely on your infrastructure. Keep code and data within your security perimeter. No external dependencies required.",
-  },
-  {
-    icon: FileText,
-    title: "Evidence-driven output",
-    description:
-      "Every change comes with diffs, test logs, and execution traces. Review artifacts, not promises.",
+    title: "Accelerate AI ROI",
+    subtitle: "Enterprise-grade AI management",
+    color: "#8b5cf6",
+    features: [
+      {
+        icon: Shield,
+        title: "Stop AI sprawl",
+        description:
+          "Centralize usage to prevent shadow IT, security risks, and wasted credits before they spiral.",
+      },
+      {
+        icon: BarChart3,
+        title: "Track and improve velocity",
+        description:
+          "Use the AI Management Dashboard to track adoption rates, measure new hire speed, and prove ROI.",
+      },
+      {
+        icon: CreditCard,
+        title: "Centralize management",
+        description:
+          "Simplify administration with pooled credits, unified billing, and enterprise-grade data privacy controls.",
+      },
+      {
+        icon: Copy,
+        title: "Duplicate your best devs",
+        description:
+          'Build a managed index to speed up onboarding. Capture individual "superpowers" into custom modes the whole team can use.',
+      },
+    ],
   },
 ];
 
@@ -46,36 +128,62 @@ const WhyHanzo = () => {
             Why Hanzo
           </h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Built for teams that need speed without sacrificing control.
+            The all-in-one agentic engineering platform
           </p>
         </motion.div>
 
-        {/* Feature grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {REASONS.map((reason, index) => {
-            const Icon = reason.icon;
-            return (
-              <motion.div
-                key={reason.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                  style={{ backgroundColor: `${BRAND_COLOR}20` }}
+        {/* Value Props */}
+        <div className="space-y-20">
+          {VALUE_PROPS.map((prop, propIndex) => (
+            <motion.div
+              key={prop.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: propIndex * 0.1 }}
+            >
+              {/* Prop Header */}
+              <div className="mb-8">
+                <h3
+                  className="text-2xl md:text-3xl font-bold mb-2"
+                  style={{ color: prop.color }}
                 >
-                  <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {reason.title}
+                  {prop.title}
                 </h3>
-                <p className="text-sm text-neutral-400">{reason.description}</p>
-              </motion.div>
-            );
-          })}
+                <p className="text-neutral-400">{prop.subtitle}</p>
+              </div>
+
+              {/* Features Grid */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {prop.features.map((feature, featureIndex) => {
+                  const Icon = feature.icon;
+                  return (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: featureIndex * 0.05 }}
+                      className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors"
+                    >
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                        style={{ backgroundColor: `${prop.color}20` }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color: prop.color }} />
+                      </div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        {feature.title}
+                      </h4>
+                      <p className="text-sm text-neutral-400">
+                        {feature.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
