@@ -51,7 +51,9 @@ import {
   UserCheck,
   KeyRound,
   Workflow,
-  LayoutDashboard
+  LayoutDashboard,
+  Plug,
+  PlayCircle
 } from 'lucide-react';
 
 export type NavItem = {
@@ -123,8 +125,35 @@ export const productsNav: NavSection[] = [
     ]
   },
   {
-    title: "ML & Platform",
+    title: "Automation & ML",
     items: [
+      {
+        title: "Auto",
+        href: "/products/automation/auto",
+        description: "Workflow automation platform",
+        icon: PlayCircle,
+        featured: true
+      },
+      {
+        title: "Flow",
+        href: "/products/automation/flow",
+        description: "Visual AI/LLM workflow builder",
+        icon: Workflow,
+        featured: true
+      },
+      {
+        title: "MQ",
+        href: "/products/async/mq",
+        description: "Message queue for Node.js",
+        icon: Radio
+      },
+      {
+        title: "Integrations",
+        href: "/products/integrations",
+        description: "280+ pre-built connectors",
+        icon: Plug,
+        featured: true
+      },
       {
         title: "Notebooks",
         href: "/products/ml/notebooks",
@@ -142,30 +171,6 @@ export const productsNav: NavSection[] = [
         href: "/products/ml/serving",
         description: "Production model inference",
         icon: Rocket
-      },
-      {
-        title: "Edge",
-        href: "/products/platform/edge",
-        description: "High-performance API edge",
-        icon: Zap
-      },
-      {
-        title: "IAM",
-        href: "/products/platform/iam",
-        description: "Identity & access management",
-        icon: UserCheck
-      },
-      {
-        title: "Metrics",
-        href: "/products/observability/metrics",
-        description: "Time-series metrics database",
-        icon: LineChart
-      },
-      {
-        title: "Chat",
-        href: "/products/apps/chat",
-        description: "AI chat interface",
-        icon: MessageSquare
       },
       {
         title: "Cloud",

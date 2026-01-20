@@ -389,24 +389,64 @@ export const computeProducts: Product[] = [
 
 export const asyncProducts: Product[] = [
   {
-    id: 'automations',
-    name: 'Hanzo Automations',
-    shortName: 'Automations',
-    tagline: 'No-code workflow automation',
-    description: 'Build automations visually with drag-and-drop. Connect apps, trigger workflows, and automate repetitive tasks. Activepieces-compatible.',
+    id: 'auto',
+    name: 'Hanzo Auto',
+    shortName: 'Auto',
+    tagline: 'AI-powered workflow automation',
+    description: 'All-in-one AI workflow automation platform. Build automations visually with drag-and-drop. 280+ integrations, AI-first design, enterprise-ready. Based on Activepieces.',
     category: 'async',
-    icon: 'Workflow',
-    href: '/products/async/automations',
-    github: 'https://github.com/hanzoai/automations',
-    docs: 'https://docs.hanzo.ai/automations',
+    icon: 'PlayCircle',
+    href: '/products/async/auto',
+    github: 'https://github.com/hanzoai/auto',
+    docs: 'https://docs.hanzo.ai/auto',
     install: {
-      cli: 'hanzo automations init',
-      docker: 'docker run -d hanzo/automations'
+      cli: 'hanzo auto init',
+      docker: 'docker run -d hanzo/auto',
+      npm: 'npm install @hanzo/auto'
     },
-    features: ['Visual builder', '200+ connectors', 'Webhooks', 'Schedules', 'Branching logic', 'Error handling', 'Versioning', 'Self-hostable'],
+    features: ['280+ integrations', 'Visual builder', 'AI-first design', 'Webhooks', 'Schedules', 'MCP support', 'TypeScript pieces', 'Self-hostable'],
     status: 'ga',
     openSource: true,
     pricing: 'freemium'
+  },
+  {
+    id: 'flow',
+    name: 'Hanzo Flow',
+    shortName: 'Flow',
+    tagline: 'Visual AI/LLM workflow builder',
+    description: 'Build sophisticated AI/LLM pipelines with a visual drag-and-drop interface. Chain models, process data, and deploy AI workflows. Based on Langflow.',
+    category: 'async',
+    icon: 'Workflow',
+    href: '/products/async/flow',
+    github: 'https://github.com/hanzoai/flow',
+    docs: 'https://docs.hanzo.ai/flow',
+    install: {
+      cli: 'hanzo flow init',
+      docker: 'docker run -d hanzo/flow'
+    },
+    features: ['Visual LLM pipeline builder', 'Multi-model support', 'RAG workflows', 'Agent orchestration', 'Custom components', 'Deploy anywhere'],
+    status: 'beta',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'mq',
+    name: 'Hanzo MQ',
+    shortName: 'MQ',
+    tagline: 'Message queue for Node.js',
+    description: 'The fastest, most reliable message queue for Node.js. Built on Hanzo KV (Redis/Valkey compatible). Rock solid stability and atomicity. Based on BullMQ.',
+    category: 'async',
+    icon: 'Radio',
+    href: '/products/async/mq',
+    github: 'https://github.com/hanzoai/mq',
+    docs: 'https://docs.hanzo.ai/mq',
+    install: {
+      npm: 'npm install @hanzo/mq'
+    },
+    features: ['Job queues', 'Delayed jobs', 'Rate limiting', 'Priorities', 'Parent-child dependencies', 'Repeatable jobs', 'Sandboxed workers'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'free'
   },
   {
     id: 'tasks',

@@ -63,6 +63,7 @@ import Team from "./pages/Team";
 import Products from "./pages/Products";
 import CategoryPage from "./pages/products/CategoryPage";
 import ProductPage from "./pages/products/ProductPage";
+import Integrations from "./pages/products/Integrations";
 
 import TeamDev from "./pages/TeamDev";
 import TeamVi from "./pages/TeamVi";
@@ -131,6 +132,7 @@ const MarketingRoutes = () => {
 
       {/* New product taxonomy routes */}
       <Route path="/products" element={<Products />} />
+      <Route path="/products/integrations" element={<Integrations />} />
       <Route path="/products/:categoryId" element={<CategoryPage />} />
       <Route path="/products/:categoryId/:productId" element={<ProductPage />} />
 
