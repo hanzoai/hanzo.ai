@@ -43,7 +43,8 @@ const mobileNav = [
         items: [
           { title: "Team", href: "/team" },
           { title: "Leadership", href: "/leadership" },
-          { title: "Zen of Hanzo", href: "/zen" },
+          { title: "Philosophy", href: "/philosophy" },
+          { title: "Zen Models", href: "/zen" },
           { title: "Open Source", href: "/open-source" },
         ]
       },

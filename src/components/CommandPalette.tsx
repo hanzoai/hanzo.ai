@@ -62,7 +62,8 @@ const commands: CommandItem[] = [
   // Company
   { id: "team", title: "Team", description: "Meet the team", href: "/team", icon: Users, category: "Company", keywords: ["about", "people"] },
   { id: "security", title: "Security", description: "Security practices", href: "/security", icon: Shield, category: "Company", keywords: ["compliance", "soc2"] },
-  { id: "zen", title: "Zen of Hanzo", description: "Our principles", href: "/zen", icon: HelpCircle, category: "Company", keywords: ["philosophy", "values"] },
+  { id: "philosophy", title: "Philosophy", description: "Zen of Hanzo principles", href: "/philosophy", icon: HelpCircle, category: "Company", keywords: ["philosophy", "values", "zen of hanzo"] },
+  { id: "zen-models", title: "Zen Models", description: "Open source AI models", href: "/zen", icon: HelpCircle, category: "Company", keywords: ["ai", "models", "llm", "zen"] },
   { id: "enterprise", title: "Enterprise", description: "Enterprise solutions", href: "/enterprise", icon: Server, category: "Company", keywords: ["business", "sales"] },
 ];
 

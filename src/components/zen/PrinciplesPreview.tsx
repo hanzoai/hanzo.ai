@@ -65,7 +65,7 @@ const WisdomDialog: React.FC<WisdomDialogProps> = ({ principle, isOpen, onClose 
             
             <div className="mt-6 pt-4 border-t border-white/10 text-center">
               <Link 
-                to="/zen" 
+                to="/philosophy" 
                 className="text-neutral-400 hover:text-white transition-colors text-sm flex items-center justify-center"
               >
                 <span>Explore more principles</span>
@@ -204,7 +204,7 @@ const PrinciplesPreview = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Link to="/zen" className="inline-flex items-center text-neutral-400 hover:text-white transition-colors group">
+          <Link to="/philosophy" className="inline-flex items-center text-neutral-400 hover:text-white transition-colors group">
             <span className="group-hover:underline">Learn more principles</span>
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Link>

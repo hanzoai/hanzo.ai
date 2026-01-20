@@ -14,6 +14,7 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
         <li><Link to="/team" onClick={closeMenu} className="text-sm text-neutral-300 hover:text-white transition-colors">Team</Link></li>
         <li><Link to="/leadership" onClick={closeMenu} className="text-sm text-neutral-300 hover:text-white transition-colors">Leadership</Link></li>
         <li><Link to="/philosophy" onClick={closeMenu} className="text-sm text-neutral-300 hover:text-white transition-colors">Philosophy</Link></li>
+        <li><Link to="/zen" onClick={closeMenu} className="text-sm text-neutral-300 hover:text-white transition-colors">Zen Models</Link></li>
         <li><Link to="/open-source" onClick={closeMenu} className="text-sm text-neutral-300 hover:text-white transition-colors">Open Source</Link></li>
       </ul>
     </div>

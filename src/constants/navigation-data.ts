@@ -259,7 +259,7 @@ export const resourcesNav: NavSection[] = [
     items: [
       { title: "Team", href: "/team", description: "Meet the team", icon: Users },
       { title: "Security", href: "/security", description: "Security practices", icon: ShieldCheck },
-      { title: "Zen", href: "/zen", description: "Our principles", icon: Zap }
+      { title: "Philosophy", href: "/philosophy", description: "Our principles", icon: Zap }
     ]
   }
 ];
@@ -311,7 +311,8 @@ export const footerNav = [
     items: [
       { title: "Team", href: "/team" },
       { title: "Security", href: "/security" },
-      { title: "Zen of Hanzo", href: "/zen" },
+      { title: "Philosophy", href: "/philosophy" },
+      { title: "Zen Models", href: "/zen" },
       { title: "Careers", href: "/careers" }
     ]
   }

@@ -86,8 +86,9 @@ const footerLinks = {
     title: "Company",
     items: [
       { title: "Careers", href: "/careers" },
+      { title: "Philosophy", href: "/philosophy" },
+      { title: "Zen Models", href: "/zen" },
       { title: "Research", href: "https://zenlm.org", external: true },
-      { title: "News", href: "/blog" },
       { title: "Contact", href: "/contact" },
       { title: "About", href: "/team" },
     ],

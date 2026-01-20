@@ -202,15 +202,14 @@ const Logo = () => {
           </svg>
         </motion.div>
 
-        {/* Ninja-style text: slightly faded by default, fully visible on hover */}
-        <motion.span
-          initial={{ opacity: 0, x: -5 }}
-          animate={{ opacity: isHovered ? 1 : 0.6, x: 0 }}
-          transition={{ duration: 0.2 }}
-          className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-neutral-900"} transition-opacity`}
+        {/* Text slides in on hover - inspired by secret menu */}
+        <span
+          className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-neutral-900"} overflow-hidden transition-all duration-300 whitespace-nowrap ${
+            isHovered ? "max-w-[100px]" : "max-w-0"
+          }`}
         >
           Hanzo
-        </motion.span>
+        </span>
       </Link>
 
       {/* Right-click context menu */}

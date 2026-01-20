@@ -48,7 +48,8 @@ const getPageContext = (pathname: string): string => {
     "/contact": "Hanzo Contact - Get in touch",
     "/team": "Hanzo Team - Meet the team",
     "/security": "Hanzo Security - Security practices and compliance",
-    "/zen": "Zen of Hanzo - Our engineering principles",
+    "/zen": "Zen AI Models - Open source AI model family",
+    "/philosophy": "Zen of Hanzo - Our engineering principles",
     "/solutions": "Hanzo Solutions - Use cases and industries",
   };
 
@@ -186,10 +187,9 @@ const GlobalChatWidget = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center"
-            style={{ backgroundColor: BRAND_COLOR }}
+            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-black border border-neutral-800"
           >
-            <Sparkles className="w-6 h-6 text-white" />
+            <img src="/zen-logo.png" alt="Zen AI" className="w-8 h-8" />
             {/* Pulse animation */}
             <span className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ backgroundColor: BRAND_COLOR }} />
           </motion.button>
@@ -213,15 +213,12 @@ const GlobalChatWidget = () => {
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800">
               <div className="flex items-center gap-3">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: BRAND_COLOR }}
-                >
-                  <Sparkles className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-black border border-neutral-700">
+                  <img src="/zen-logo.png" alt="Zen AI" className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-white text-sm font-medium">Hanzo AI</div>
-                  <div className="text-neutral-500 text-xs">Always here to help</div>
+                  <div className="text-white text-sm font-medium">Zen AI</div>
+                  <div className="text-neutral-500 text-xs">Powered by Hanzo</div>
                 </div>
               </div>
               <div className="flex items-center gap-1">

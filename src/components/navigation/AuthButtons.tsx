@@ -10,8 +10,6 @@ interface AuthButtonsProps {
   onOpenCommandPalette?: () => void;
 }
 
-const BRAND_COLOR = "#fd4444";
-
 // Try Hanzo dropdown menu items
 const tryHanzoMenu = {
   products: {
@@ -132,15 +130,16 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         </Button>
       </Link>
 
-      {/* Try Hanzo dropdown */}
-      <div className="relative" ref={dropdownRef}>
+      {/* Try Hanzo dropdown - hover activated */}
+      <div
+        className="relative"
+        ref={dropdownRef}
+        onMouseEnter={() => setIsDropdownOpen(true)}
+        onMouseLeave={() => setIsDropdownOpen(false)}
+      >
         <Button
-          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           size="sm"
-          className="text-white rounded-full h-9 px-4 text-sm font-medium transition-all duration-200 flex items-center gap-2"
-          style={{
-            background: `linear-gradient(135deg, ${BRAND_COLOR} 0%, #ff6b6b 100%)`,
-          }}
+          className="bg-white text-black hover:bg-neutral-100 rounded-full h-9 px-4 text-sm font-medium transition-all duration-200 flex items-center gap-2"
         >
           Try Hanzo
           <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
