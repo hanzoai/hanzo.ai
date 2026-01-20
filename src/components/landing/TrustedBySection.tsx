@@ -49,13 +49,6 @@ const partners = [
   },
 ];
 
-const stats = [
-  { value: "100K+", label: "Developers" },
-  { value: "50M+", label: "API Calls/Day" },
-  { value: "99.99%", label: "Uptime" },
-  { value: "150+", label: "Countries" },
-];
-
 const TrustedBySection = () => {
   return (
     <section className="py-20 px-4 md:px-8 bg-black">
@@ -99,31 +92,6 @@ const TrustedBySection = () => {
                   <span className="text-[#fd4444] ml-1">{partner.year}</span>
                 )}
               </span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-neutral-800"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              className="text-center"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-neutral-500">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
