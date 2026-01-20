@@ -13,21 +13,19 @@ const partners = [
 
 // Companies we've worked with at Hanzo Industries
 const clients = [
-  "Mozilla",
-  "GitHub",
-  "1Password",
-  "PwC",
-  "Pika",
-  "Humata",
-  "Krea",
-  "Udio",
-  "LangChain",
-  "Resend",
-  "Loops",
-  "Mobbin",
-  "Gopuff",
-  "Chatbase",
-  "Betashares",
+  "Triller",
+  "Damon",
+  "Skully",
+  "Bellabeat",
+  "Unikrn",
+  "Darkstore",
+  "VNTANA",
+  "Lunchbox",
+  "Monogram",
+  "Playbook",
+  "Goldcast",
+  "Eaze",
+  "Dosist",
 ];
 
 const TrustedBySection = () => {
