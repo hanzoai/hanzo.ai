@@ -4,17 +4,17 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 const BRAND_COLOR = "#fd4444";
 
-const TOP_MODELS = [
-  { rank: 1, name: "grok-code-fast-1", tokens: "37.6B" },
-  { rank: 2, name: "glm-4.7", tokens: "19.6B" },
-  { rank: 3, name: "claude-sonnet-4.5", tokens: "13.3B" },
-  { rank: 4, name: "claude-opus-4.5", tokens: "12.0B" },
-  { rank: 5, name: "qwen3-coder-plus", tokens: "11.6B" },
-  { rank: 6, name: "gemini-3-flash-preview", tokens: "8.4B" },
-  { rank: 7, name: "giga-potato", tokens: "5.8B" },
-  { rank: 8, name: "gpt-5.2", tokens: "5.5B" },
-  { rank: 9, name: "gemini-3-pro-preview", tokens: "5.4B" },
-  { rank: 10, name: "minimax-m2.1", tokens: "4.6B" },
+const SUPPORTED_PROVIDERS = [
+  "OpenAI",
+  "Anthropic",
+  "Google",
+  "Mistral",
+  "Cohere",
+  "Together AI",
+  "Groq",
+  "Fireworks",
+  "Ollama",
+  "LM Studio",
 ];
 
 const OpenModels = () => {
@@ -61,7 +61,7 @@ const OpenModels = () => {
             </div>
           </motion.div>
 
-          {/* Right: Leaderboard */}
+          {/* Right: Providers */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,56 +70,34 @@ const OpenModels = () => {
             className="bg-neutral-900/80 border border-neutral-800 rounded-xl overflow-hidden"
           >
             <div className="p-4 border-b border-neutral-800">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-white">
-                  Model Leaderboard
-                </span>
-                <span className="text-xs text-neutral-500">
-                  Daily real-world usage from 1M+ Hanzo Devrs
+              <span className="text-sm font-medium text-white">
+                Supported Providers
+              </span>
+            </div>
+
+            <div className="p-4">
+              <div className="flex flex-wrap gap-2">
+                {SUPPORTED_PROVIDERS.map((provider, index) => (
+                  <motion.span
+                    key={provider}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.03 }}
+                    className="px-3 py-1.5 bg-neutral-800 rounded-full text-sm text-neutral-300"
+                  >
+                    {provider}
+                  </motion.span>
+                ))}
+                <span className="px-3 py-1.5 bg-neutral-800/50 rounded-full text-sm text-neutral-500">
+                  + many more
                 </span>
               </div>
             </div>
 
-            <div className="divide-y divide-neutral-800/50">
-              {TOP_MODELS.map((model, index) => (
-                <motion.div
-                  key={model.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.03 }}
-                  className="flex items-center justify-between px-4 py-3 hover:bg-neutral-800/30 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <span
-                      className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold ${
-                        model.rank <= 3
-                          ? "bg-[#fd4444]/20 text-[#fd4444]"
-                          : "bg-neutral-800 text-neutral-400"
-                      }`}
-                    >
-                      {model.rank}
-                    </span>
-                    <span className="text-sm text-white font-mono">
-                      {model.name}
-                    </span>
-                  </div>
-                  <span className="text-sm text-neutral-500 font-mono">
-                    {model.tokens}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
             <div className="p-4 border-t border-neutral-800 text-center">
               <span className="text-xs text-neutral-500">
-                Want your model to take flight?{" "}
-                <a
-                  href="mailto:models@hanzo.ai"
-                  className="text-[#fd4444] hover:underline"
-                >
-                  Get in touch
-                </a>
+                Bring your own API keys or use Hanzo Gateway
               </span>
             </div>
           </motion.div>

@@ -66,31 +66,6 @@ const OpenSource = () => {
           </p>
         </motion.div>
 
-        {/* Social proof */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-neutral-500 mb-4">Coming to Hanzo from Cursor?</p>
-          <p className="text-neutral-400 mb-2">You're not alone.</p>
-
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <div className="text-center">
-              <span
-                className="text-5xl md:text-6xl font-bold"
-                style={{ color: BRAND_COLOR }}
-              >
-                43%
-              </span>
-              <p className="text-sm text-neutral-500 mt-2">
-                of Hanzo Devrs previously used Cursor
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -6,18 +6,9 @@ import {
   ExternalLink,
   Copy,
   Check,
-  Trophy,
-  Users,
-  Zap,
 } from "lucide-react";
 
 const BRAND_COLOR = "#fd4444";
-
-const STATS = [
-  { value: "#1", label: "on OpenRouter", icon: Trophy },
-  { value: "1M+", label: "Hanzo Devrs", icon: Users },
-  { value: "20T+", label: "tokens processed", icon: Zap },
-];
 
 const HeroSection = () => {
   const [copied, setCopied] = useState(false);
@@ -120,28 +111,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.25 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16"
-          >
-            {STATS.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div key={stat.label} className="text-center">
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <Icon className="w-5 h-5 text-[#fd4444]" />
-                    <span className="text-2xl md:text-3xl font-bold text-white">
-                      {stat.value}
-                    </span>
-                  </div>
-                  <span className="text-sm text-neutral-500">{stat.label}</span>
-                </div>
-              );
-            })}
-          </motion.div>
         </div>
       </div>
     </section>
