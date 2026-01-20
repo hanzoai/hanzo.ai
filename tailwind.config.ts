@@ -51,6 +51,11 @@ export default {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        brand: {
+          DEFAULT: "var(--brand)",
+          foreground: "var(--brand-foreground)",
+          muted: "var(--brand-muted)",
+        },
         neutral: {
           50: "#FAFAFA",
           100: "#F5F5F5",

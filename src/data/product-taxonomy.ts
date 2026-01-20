@@ -37,6 +37,8 @@ export type ProductCategory =
   | 'observability'
   | 'platform'
   | 'apps'
+  | 'growth'
+  | 'cx'
 
 export interface CategoryInfo {
   id: ProductCategory
@@ -107,6 +109,22 @@ export const categories: CategoryInfo[] = [
     description: 'Production-ready applications built on Hanzo primitives. BaaS, analytics, commerce, and more.',
     icon: 'LayoutGrid',
     href: '/products/apps'
+  },
+  {
+    id: 'growth',
+    name: 'Growth',
+    tagline: 'Analytics, experiments & engagement',
+    description: 'Product analytics, web analytics, feature flags, A/B testing, and lifecycle messaging. Understand users and grow faster.',
+    icon: 'TrendingUp',
+    href: '/products/growth'
+  },
+  {
+    id: 'cx',
+    name: 'CX & Ops',
+    tagline: 'Customer experience & operations',
+    description: 'Support inbox, CRM, and ERP. Everything for customer success and business operations.',
+    icon: 'HeadphonesIcon',
+    href: '/products/cx'
   }
 ]
 
@@ -371,11 +389,31 @@ export const computeProducts: Product[] = [
 
 export const asyncProducts: Product[] = [
   {
+    id: 'automations',
+    name: 'Hanzo Automations',
+    shortName: 'Automations',
+    tagline: 'No-code workflow automation',
+    description: 'Build automations visually with drag-and-drop. Connect apps, trigger workflows, and automate repetitive tasks. Activepieces-compatible.',
+    category: 'async',
+    icon: 'Workflow',
+    href: '/products/async/automations',
+    github: 'https://github.com/hanzoai/automations',
+    docs: 'https://docs.hanzo.ai/automations',
+    install: {
+      cli: 'hanzo automations init',
+      docker: 'docker run -d hanzo/automations'
+    },
+    features: ['Visual builder', '200+ connectors', 'Webhooks', 'Schedules', 'Branching logic', 'Error handling', 'Versioning', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
     id: 'tasks',
     name: 'Hanzo Tasks',
     shortName: 'Tasks',
     tagline: 'Durable workflow execution',
-    description: 'Run long-running tasks with guaranteed delivery. Retries, timeouts, and exactly-once semantics.',
+    description: 'Run long-running tasks with guaranteed delivery. Retries, timeouts, and exactly-once semantics. Temporal-compatible.',
     category: 'async',
     icon: 'ListTodo',
     href: '/products/async/tasks',
@@ -432,16 +470,17 @@ export const asyncProducts: Product[] = [
     name: 'Hanzo PubSub',
     shortName: 'PubSub',
     tagline: 'Event streaming & messaging',
-    description: 'Publish-subscribe messaging for real-time event streaming. High-throughput, low-latency message delivery at scale.',
+    description: 'Publish-subscribe messaging for real-time event streaming. High-throughput, low-latency message delivery at scale. NATS-compatible.',
     category: 'async',
     icon: 'Radio',
     href: '/products/async/pubsub',
     github: 'https://github.com/hanzoai/pubsub',
     docs: 'https://docs.hanzo.ai/pubsub',
     install: {
-      cli: 'hanzo pubsub create mytopic'
+      cli: 'hanzo pubsub create mytopic',
+      docker: 'docker run -d hanzo/pubsub'
     },
-    features: ['Pub/sub', 'Streaming', 'JetStream', 'Request-reply', 'Wildcard subjects'],
+    features: ['Pub/sub', 'Streaming', 'JetStream', 'Request-reply', 'Wildcard subjects', 'Clustering', 'Self-hostable'],
     status: 'ga',
     openSource: true,
     pricing: 'freemium'
@@ -758,22 +797,6 @@ export const observabilityProducts: Product[] = [
     github: 'https://github.com/hanzoai/telemetry',
     docs: 'https://docs.hanzo.ai/telemetry',
     features: ['OTel collector', 'Protocol conversion', 'Sampling', 'Filtering', 'Multi-destination'],
-    status: 'ga',
-    openSource: true,
-    pricing: 'freemium'
-  },
-  {
-    id: 'insights',
-    name: 'Hanzo Insights',
-    shortName: 'Insights',
-    tagline: 'Product analytics',
-    description: 'Understand user behavior with product analytics. Event tracking, funnels, and feature flags.',
-    category: 'observability',
-    icon: 'PieChart',
-    href: '/products/observability/insights',
-    github: 'https://github.com/hanzoai/insights',
-    docs: 'https://docs.hanzo.ai/insights',
-    features: ['Event tracking', 'Funnels', 'Cohorts', 'Feature flags', 'Session replay'],
     status: 'ga',
     openSource: true,
     pricing: 'freemium'
@@ -1136,6 +1159,176 @@ export const appsProducts: Product[] = [
 ]
 
 // =============================================================================
+// GROWTH PRODUCTS
+// =============================================================================
+
+export const growthProducts: Product[] = [
+  {
+    id: 'insights',
+    name: 'Hanzo Insights',
+    shortName: 'Insights',
+    tagline: 'Product analytics platform',
+    description: 'Understand user behavior with product analytics. Event tracking, funnels, cohorts, session replay, and feature flags. PostHog-compatible.',
+    category: 'growth',
+    icon: 'PieChart',
+    href: '/products/growth/insights',
+    github: 'https://github.com/hanzoai/insights',
+    docs: 'https://docs.hanzo.ai/insights',
+    install: {
+      cli: 'hanzo insights init',
+      docker: 'docker run -d hanzo/insights'
+    },
+    features: ['Event tracking', 'Funnels', 'Cohorts', 'Session replay', 'Feature flags', 'A/B testing', 'Heatmaps', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'web-analytics',
+    name: 'Hanzo Web Analytics',
+    shortName: 'Web Analytics',
+    tagline: 'Privacy-focused web analytics',
+    description: 'Simple, privacy-focused website analytics. No cookies, GDPR compliant, lightweight script. Umami-compatible.',
+    category: 'growth',
+    icon: 'BarChart',
+    href: '/products/growth/web-analytics',
+    github: 'https://github.com/hanzoai/web-analytics',
+    docs: 'https://docs.hanzo.ai/web-analytics',
+    install: {
+      cli: 'hanzo analytics create mysite',
+      docker: 'docker run -d hanzo/web-analytics'
+    },
+    features: ['Privacy-first', 'No cookies', 'GDPR compliant', 'Lightweight', 'Real-time', 'Custom events', 'UTM tracking', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'experiments',
+    name: 'Hanzo Experiments',
+    shortName: 'Experiments',
+    tagline: 'Feature flags & A/B testing',
+    description: 'Ship features safely with feature flags and A/B testing. Gradual rollouts, targeting rules, and statistical analysis. GrowthBook-compatible.',
+    category: 'growth',
+    icon: 'SlidersHorizontal',
+    href: '/products/growth/experiments',
+    github: 'https://github.com/hanzoai/experiments',
+    docs: 'https://docs.hanzo.ai/experiments',
+    install: {
+      cli: 'hanzo experiments init',
+      npm: 'npm install @hanzo/experiments'
+    },
+    features: ['Feature flags', 'A/B testing', 'Gradual rollouts', 'Targeting rules', 'Statistical analysis', 'SDK support', 'Warehouse native', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'engage',
+    name: 'Hanzo Engage',
+    shortName: 'Engage',
+    tagline: 'Lifecycle messaging & automation',
+    description: 'Customer engagement and lifecycle messaging. Email, push, SMS, and in-app messages triggered by user behavior. Dittofeed-compatible.',
+    category: 'growth',
+    icon: 'MessageSquare',
+    href: '/products/growth/engage',
+    github: 'https://github.com/hanzoai/engage',
+    docs: 'https://docs.hanzo.ai/engage',
+    install: {
+      cli: 'hanzo engage init',
+      docker: 'docker run -d hanzo/engage'
+    },
+    features: ['Email campaigns', 'Push notifications', 'SMS', 'In-app messages', 'Journey builder', 'Segmentation', 'Templates', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'ads',
+    name: 'Hanzo Ads',
+    shortName: 'Ads',
+    tagline: 'Paid acquisition & attribution',
+    description: 'Unified ad management and attribution. Connect ad platforms, track conversions, optimize spend across channels.',
+    category: 'growth',
+    icon: 'Zap',
+    href: '/products/growth/ads',
+    github: 'https://github.com/hanzoai/ads',
+    docs: 'https://docs.hanzo.ai/ads',
+    features: ['Multi-channel', 'Attribution', 'Conversion tracking', 'Budget optimization', 'Creative testing', 'Audience sync', 'ROAS reporting'],
+    status: 'beta',
+    openSource: false,
+    pricing: 'paid'
+  }
+]
+
+// =============================================================================
+// CX & OPS PRODUCTS
+// =============================================================================
+
+export const cxProducts: Product[] = [
+  {
+    id: 'cx-suite',
+    name: 'Hanzo CX',
+    shortName: 'CX',
+    tagline: 'Complete customer experience suite',
+    description: 'Your complete customer experience platform. Unified inbox for email, chat, social, and phone. AI-powered responses, routing, and analytics. Chatwoot-compatible.',
+    category: 'cx',
+    icon: 'MessageSquare',
+    href: '/products/cx/suite',
+    github: 'https://github.com/hanzoai/cx',
+    docs: 'https://docs.hanzo.ai/cx',
+    install: {
+      cli: 'hanzo cx init',
+      docker: 'docker run -d hanzo/cx'
+    },
+    features: ['Unified inbox', 'Omnichannel', 'AI responses', 'Live chat', 'Automation rules', 'CSAT surveys', 'Reports', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'crm',
+    name: 'Hanzo CRM',
+    shortName: 'CRM',
+    tagline: 'Modern customer relationship management',
+    description: 'Open source CRM built for modern teams. Contacts, deals, pipelines, and automation. Twenty/EspoCRM-compatible.',
+    category: 'cx',
+    icon: 'UserCheck',
+    href: '/products/cx/crm',
+    github: 'https://github.com/hanzoai/crm',
+    docs: 'https://docs.hanzo.ai/crm',
+    install: {
+      cli: 'hanzo crm init',
+      docker: 'docker run -d hanzo/crm'
+    },
+    features: ['Contact management', 'Deal pipelines', 'Email sync', 'Automation', 'Custom fields', 'API-first', 'GraphQL', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'erp',
+    name: 'Hanzo ERP',
+    shortName: 'ERP',
+    tagline: 'Enterprise resource planning',
+    description: 'Complete business management suite. Accounting, inventory, HR, and operations in one platform. ERPNext/Odoo-compatible.',
+    category: 'cx',
+    icon: 'Boxes',
+    href: '/products/cx/erp',
+    github: 'https://github.com/hanzoai/erp',
+    docs: 'https://docs.hanzo.ai/erp',
+    install: {
+      cli: 'hanzo erp init',
+      docker: 'docker run -d hanzo/erp'
+    },
+    features: ['Accounting', 'Inventory', 'HR', 'Manufacturing', 'Projects', 'CRM', 'E-commerce', 'Self-hostable'],
+    status: 'beta',
+    openSource: true,
+    pricing: 'freemium'
+  }
+]
+
+// =============================================================================
 // ALL PRODUCTS
 // =============================================================================
 
@@ -1146,7 +1339,9 @@ export const allProducts: Product[] = [
   ...mlProducts,
   ...observabilityProducts,
   ...platformProducts,
-  ...appsProducts
+  ...appsProducts,
+  ...growthProducts,
+  ...cxProducts
 ]
 
 // =============================================================================

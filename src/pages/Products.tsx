@@ -15,11 +15,51 @@ import {
   Terminal,
   Copy,
   Check,
-  ExternalLink
+  ExternalLink,
+  Zap,
+  Key,
+  Search,
+  HardDrive,
+  FileJson,
+  BarChart3,
+  Boxes,
+  Sparkles,
+  Shield,
+  ListTodo,
+  ListOrdered,
+  Radio,
+  BookOpen,
+  GitBranch,
+  Dumbbell,
+  SlidersHorizontal,
+  Rocket,
+  Archive,
+  CheckCircle,
+  LineChart,
+  ScrollText,
+  Route,
+  PieChart,
+  UserCheck,
+  KeyRound,
+  Network,
+  Globe,
+  BarChart,
+  ShoppingCart,
+  MessageSquare,
+  Workflow,
+  LayoutDashboard,
+  Cloud,
+  Bot,
+  Monitor,
+  Image,
+  Music,
+  Video,
+  TrendingUp,
+  Headphones
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { categories, allProducts } from "@/data/product-taxonomy";
+import { categories, allProducts, getProductsByCategory, ProductCategory } from "@/data/product-taxonomy";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Database,
@@ -28,7 +68,48 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Brain,
   Activity,
   Layers,
-  LayoutGrid
+  LayoutGrid,
+  Zap,
+  Key,
+  Search,
+  HardDrive,
+  FileJson,
+  BarChart3,
+  Boxes,
+  Sparkles,
+  Shield,
+  ListTodo,
+  ListOrdered,
+  Radio,
+  BookOpen,
+  GitBranch,
+  Dumbbell,
+  SlidersHorizontal,
+  Rocket,
+  Archive,
+  CheckCircle,
+  LineChart,
+  ScrollText,
+  Route,
+  PieChart,
+  UserCheck,
+  KeyRound,
+  Network,
+  Globe,
+  BarChart,
+  ShoppingCart,
+  MessageSquare,
+  Workflow,
+  LayoutDashboard,
+  Cloud,
+  Bot,
+  Monitor,
+  Image,
+  Music,
+  Video,
+  TrendingUp,
+  Headphones,
+  HeadphonesIcon: Headphones
 };
 
 const CopyButton = ({ text }: { text: string }) => {
@@ -52,10 +133,6 @@ const CopyButton = ({ text }: { text: string }) => {
 };
 
 export default function Products() {
-  const totalProducts = allProducts.length;
-  const openSourceProducts = allProducts.filter(p => p.openSource).length;
-  const gaProducts = allProducts.filter(p => p.status === 'ga').length;
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -77,7 +154,7 @@ export default function Products() {
             </h1>
 
             <p className="text-xl md:text-2xl text-neutral-400 mb-6">
-              {totalProducts}+ products. {openSourceProducts} open source. One platform.
+              The complete stack for AI-native applications.
             </p>
 
             <p className="text-lg text-neutral-500 max-w-3xl mx-auto mb-10">
@@ -97,7 +174,7 @@ export default function Products() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-neutral-200"
+                className="bg-[#fd4444] text-white hover:bg-[#e03333]"
                 asChild
               >
                 <Link to="/pricing">
@@ -108,7 +185,7 @@ export default function Products() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/20 hover:bg-white/5"
+                className="border-neutral-700 hover:bg-neutral-900 hover:border-neutral-600"
                 asChild
               >
                 <a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer">
@@ -121,26 +198,18 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Partners */}
       <section className="py-12 px-4 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">{totalProducts}+</div>
-              <div className="text-neutral-500">Products</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">{openSourceProducts}</div>
-              <div className="text-neutral-500">Open Source</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">{gaProducts}</div>
-              <div className="text-neutral-500">Generally Available</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">7</div>
-              <div className="text-neutral-500">Categories</div>
-            </div>
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6">
+            Trusted by teams at
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 opacity-50">
+            <span className="text-sm font-medium text-neutral-400">Techstars '17</span>
+            <span className="text-sm font-medium text-neutral-400">NVIDIA</span>
+            <span className="text-sm font-medium text-neutral-400">Google Cloud</span>
+            <span className="text-sm font-medium text-neutral-400">Nebius</span>
+            <span className="text-sm font-medium text-neutral-400">DigitalOcean</span>
           </div>
         </div>
       </section>
@@ -193,6 +262,68 @@ export default function Products() {
         </div>
       </section>
 
+      {/* All Products by Category */}
+      {categories.map((category) => {
+        const products = getProductsByCategory(category.id as ProductCategory);
+        const CategoryIcon = iconMap[category.icon] || Database;
+
+        return (
+          <section key={category.id} className="py-16 px-4 border-t border-white/5">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <CategoryIcon className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold">{category.name}</h2>
+                  <p className="text-sm text-neutral-500">{category.tagline}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {products.map((product, idx) => {
+                  const ProductIcon = iconMap[product.icon] || Database;
+                  return (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2, delay: idx * 0.03 }}
+                    >
+                      <Link to={product.href}>
+                        <div className="group p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-neutral-600 hover:bg-neutral-900/80 transition-all h-full">
+                          <div className="flex items-start gap-3">
+                            <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
+                              <ProductIcon className="h-4 w-4 text-neutral-400 group-hover:text-white transition-colors" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-medium text-sm group-hover:text-white transition-colors truncate">
+                                  {product.shortName}
+                                </h3>
+                                {product.status === 'beta' && (
+                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-yellow-500/20 text-yellow-400">beta</span>
+                                )}
+                                {product.status === 'coming' && (
+                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-500/20 text-neutral-400">soon</span>
+                                )}
+                              </div>
+                              <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
+                                {product.tagline}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
       {/* Zen Section */}
       <section className="py-20 px-4 border-t border-white/10 bg-neutral-900/30">
         <div className="max-w-4xl mx-auto text-center">
@@ -228,7 +359,7 @@ export default function Products() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-neutral-200"
+              className="bg-[#fd4444] text-white hover:bg-[#e03333]"
               asChild
             >
               <Link to="/pricing">
@@ -239,7 +370,7 @@ export default function Products() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/20 hover:bg-white/5"
+              className="border-neutral-700 hover:bg-neutral-900 hover:border-neutral-600"
               asChild
             >
               <Link to="/contact">
