@@ -85,8 +85,8 @@ const features = [
   },
   {
     icon: Crown,
-    title: "Chairman LLM",
-    description: "Every task is implemented differently by each agent, and the chairman LLM selects the best implementation for users.",
+    title: "LLM Consensus",
+    description: "Every task is implemented differently by each agent, and LLM consensus selects the best implementation for users.",
   },
   {
     icon: Clock,
@@ -159,7 +159,7 @@ const MultiAgentSection = () => {
             locally and remotely
           </h2>
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            Multi-agent remote execution with a chairman LLM to select the best execution for each task.
+            Multi-agent remote execution with LLM consensus to select the best execution for each task.
           </p>
           <Button
             size="lg"
