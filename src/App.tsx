@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import GlobalChatWidget from "./components/GlobalChatWidget";
 import Index from "./pages/Index";
 import Home2 from "./pages/Home2";
 import Pricing from "./pages/Pricing";
@@ -218,7 +219,7 @@ const isAccountRoute = (pathname: string) => {
 
 const App = () => {
   console.log("App component rendering");
-  
+
   return (
     <BrowserRouter>
       <ThemeProvider>
@@ -228,6 +229,8 @@ const App = () => {
         ) : (
           <MarketingRoutes />
         )}
+        {/* Global chat widget on all pages */}
+        <GlobalChatWidget />
       </ThemeProvider>
     </BrowserRouter>
   );

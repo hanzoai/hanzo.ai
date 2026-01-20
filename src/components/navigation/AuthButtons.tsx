@@ -1,53 +1,53 @@
-
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { User } from "lucide-react";
+import { Search } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { cn } from "@/lib/utils";
 
 interface AuthButtonsProps {
   user: any | null;
+  onOpenCommandPalette?: () => void;
 }
 
-const AuthButtons = ({ user }: AuthButtonsProps) => {
+const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
   const { isDarkMode, getRoundingClass } = useTheme();
-  
+
   return (
     <div className="hidden md:flex items-center space-x-3">
-      {user ? (
-        <Button 
-          variant="outline" 
-          size="sm"
-          className={cn(
-            isDarkMode ? "text-white border-white hover:bg-white/10" : "text-neutral-900 border-gray-300 hover:bg-gray-100",
-            getRoundingClass(),
-            "h-10 min-w-[120px]"
-          )}
-        >
-          <a href="https://cloud.hanzo.ai" className="flex items-center gap-2">
-            <User className="h-4 w-4" />
-            Account
-          </a>
-        </Button>
-      ) : (
-        <Button 
-          variant="outline" 
-          size="sm"
-          className="bg-black/90 text-white border border-gray-700 hover:bg-black hover:border-gray-600 rounded-full h-10 min-w-[120px]"
-        >
-          <a href="https://cloud.hanzo.ai">
-            Console
-          </a>
-        </Button>
-      )}
-      <Button 
-        size="sm" 
-        className="bg-white text-black border border-gray-300 rounded-full hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-10 min-w-[120px]"
+      {/* Search / Command palette trigger */}
+      <button
+        onClick={onOpenCommandPalette}
+        className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-neutral-400 hover:text-white transition-colors text-sm"
+        aria-label="Search (⌘K)"
       >
-        <a href="https://cloud.hanzo.ai/auth/sign-up">
-          Signup
-        </a>
-      </Button>
+        <Search className="h-4 w-4" />
+        <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono bg-neutral-800/50 border border-neutral-700/50 rounded text-neutral-500">
+          <span className="text-xs">⌘</span>K
+        </kbd>
+      </button>
+
+      {/* Contact sales button */}
+      <Link to="/contact">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-neutral-300 hover:text-white hover:bg-transparent text-sm font-medium h-9"
+        >
+          Contact sales
+        </Button>
+      </Link>
+
+      {/* Try Hanzo button */}
+      <a href="https://cloud.hanzo.ai">
+        <Button
+          variant="outline"
+          size="sm"
+          className="bg-transparent text-white border border-neutral-600 hover:bg-white hover:text-black hover:border-white rounded-full h-9 px-4 text-sm font-medium transition-all duration-200"
+        >
+          Try Hanzo
+        </Button>
+      </a>
     </div>
   );
 };
