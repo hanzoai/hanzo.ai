@@ -137,13 +137,12 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         onMouseEnter={() => setIsDropdownOpen(true)}
         onMouseLeave={() => setIsDropdownOpen(false)}
       >
-        <Button
-          size="sm"
-          className="bg-white text-black hover:bg-neutral-100 rounded-full h-9 px-4 text-sm font-medium transition-all duration-200 flex items-center gap-2"
+        <button
+          className="inline-flex items-center justify-center gap-2 bg-white text-black hover:bg-neutral-200 active:bg-neutral-300 rounded-full h-9 px-4 text-sm font-medium transition-all duration-200"
         >
           Try Hanzo
           <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-        </Button>
+        </button>
 
         <AnimatePresence>
           {isDropdownOpen && (

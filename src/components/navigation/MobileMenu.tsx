@@ -254,10 +254,11 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                   Contact sales
                 </Button>
               </Link>
-              <a href="https://cloud.hanzo.ai" className="block">
-                <Button className="w-full bg-white text-black hover:bg-neutral-200 rounded-full">
-                  Try Hanzo
-                </Button>
+              <a
+                href="https://cloud.hanzo.ai"
+                className="block w-full bg-white text-black hover:bg-neutral-200 active:bg-neutral-300 rounded-full h-10 flex items-center justify-center text-sm font-medium transition-all duration-200"
+              >
+                Try Hanzo
               </a>
             </div>
           </div>

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Cpu,
   Code2,
   Eye,
   Sparkles,
@@ -20,11 +19,109 @@ import {
   ChevronDown,
   Brain,
   Layers,
+  Database,
+  Shield,
+  Globe,
+  BookOpen,
+  Terminal,
+  Download,
 } from "lucide-react";
 
-const BRAND_COLOR = "#fd4444";
+// Monochromatic color scheme - works on both hanzo.ai and zenlm.org
+const ZEN_PRIMARY = "#ffffff";
+const ZEN_SECONDARY = "#a3a3a3";
+const ZEN_ACCENT = "#737373";
+// No colorful gradient - use solid white or subtle gray accents
 
-// Model data based on zenlm.org and ~/work/zen specifications
+// Zen Coder lineup from zenlm.org
+const ZEN_CODER_MODELS = [
+  {
+    name: "Zen Coder 4B",
+    size: "4B",
+    base: "Qwen3-4B-Instruct",
+    vram: "8 GB",
+    context: "32K",
+    status: "Trained",
+  },
+  {
+    name: "Zen Coder 24B",
+    size: "24B",
+    base: "Devstral Small 2",
+    vram: "24 GB",
+    context: "256K",
+    status: "Trained",
+    flagship: true,
+  },
+  {
+    name: "Zen Coder 123B",
+    size: "123B",
+    base: "Devstral 2",
+    vram: "128 GB",
+    context: "256K",
+    status: "Training",
+  },
+  {
+    name: "Zen Coder Max",
+    size: "358B",
+    base: "GLM-4.7 (MoE)",
+    vram: "180 GB",
+    context: "200K",
+    status: "Planned",
+    frontier: true,
+  },
+  {
+    name: "Zen Coder Ultra",
+    size: "1T",
+    base: "Kimi K2 (MoE)",
+    vram: "256 GB",
+    context: "128K",
+    status: "Planned",
+  },
+];
+
+// Dataset stats from zenlm.org
+const DATASET_STATS = [
+  { value: "8.47B", label: "Tokens", description: "Total training tokens across all data sources" },
+  { value: "3.35M", label: "Samples", description: "Training samples with conversation context" },
+  { value: "1,452", label: "Repositories", description: "Open source and private codebases" },
+  { value: "15yr", label: "History", description: "Years of development history (2010-2025)" },
+];
+
+// AI Ecosystem categories from zenlm.org
+const ECOSYSTEM_CATEGORIES = [
+  {
+    icon: Brain,
+    title: "Language Models",
+    description: "6 core models from 0.6B to 32B. zen-nano for edge, zen-eco for efficiency, zen-omni for multimodal, zen-next for frontier reasoning.",
+  },
+  {
+    icon: Code2,
+    title: "Zen Coder",
+    description: "5 coding models from 4B to 1T trained on 8.47B tokens of agentic programming data. State-of-the-art on tool use and multi-step coding.",
+  },
+  {
+    icon: Eye,
+    title: "Vision & Multimodal",
+    description: "zen-vl for vision-language, zen-designer for visual understanding, zen-artist for image generation, zen-omni for unified multimodal.",
+  },
+  {
+    icon: Video,
+    title: "Video & 3D",
+    description: "zen-director for video generation, zen-video for high-quality synthesis, zen-3d for 3D assets, zen-world for world simulation.",
+  },
+  {
+    icon: Music,
+    title: "Audio",
+    description: "zen-musician for music generation, zen-foley for sound effects, zen-scribe for transcription, zen-dub for voice dubbing.",
+  },
+  {
+    icon: Shield,
+    title: "Specialized",
+    description: "zen-guard for safety, zen-embedding for vectors, zen-reranker for search, zen-translator for translation, zen-agent for tool use.",
+  },
+];
+
+// Model families with full details
 const MODEL_FAMILIES = {
   coder: {
     title: "Zen Coder",
@@ -121,7 +218,7 @@ const MODEL_FAMILIES = {
     title: "Language Models",
     description: "Efficient general-purpose language understanding",
     icon: Brain,
-    color: "#8b5cf6",
+    color: ZEN_ACCENT,
     models: [
       {
         name: "zen-nano",
@@ -269,20 +366,6 @@ const MODEL_FAMILIES = {
         status: "Released",
         huggingface: "https://huggingface.co/zenlm/zen-vl-30b-instruct",
       },
-      {
-        name: "zen-vl-30b-agent",
-        params: "30B (31B MoE)",
-        context: "256K (1M expandable)",
-        license: "Apache 2.0",
-        features: [
-          "Function calling",
-          "Visual context",
-          "Agent tasks",
-          "Tool calling",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-vl-30b-agent",
-      },
     ],
   },
   generative3d: {
@@ -420,9 +503,13 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
       viewport={{ once: true }}
       className={`bg-neutral-900/80 border rounded-xl p-6 ${
         model.badge === "FLAGSHIP"
-          ? "border-[#fd4444]/50 ring-1 ring-[#fd4444]/20"
+          ? `border-[${ZEN_PRIMARY}]/50 ring-1 ring-[${ZEN_PRIMARY}]/20`
           : "border-neutral-800"
       }`}
+      style={{
+        borderColor: model.badge === "FLAGSHIP" ? `${ZEN_PRIMARY}50` : undefined,
+        boxShadow: model.badge === "FLAGSHIP" ? `0 0 20px ${ZEN_PRIMARY}10` : undefined,
+      }}
     >
       <div className="flex items-start justify-between mb-4">
         <div>
@@ -434,15 +521,15 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
                 style={{
                   backgroundColor:
                     model.badge === "FLAGSHIP"
-                      ? `${BRAND_COLOR}20`
+                      ? `${ZEN_PRIMARY}20`
                       : model.badge === "FRONTIER"
-                      ? "#8b5cf620"
+                      ? `${ZEN_SECONDARY}20`
                       : "#06b6d420",
                   color:
                     model.badge === "FLAGSHIP"
-                      ? BRAND_COLOR
+                      ? ZEN_PRIMARY
                       : model.badge === "FRONTIER"
-                      ? "#8b5cf6"
+                      ? ZEN_SECONDARY
                       : "#06b6d4",
                 }}
               >
@@ -461,8 +548,10 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
         </div>
         <span
           className={`text-xs px-2 py-1 rounded-full ${
-            model.status === "Released" || model.status === "Latest"
+            model.status === "Released" || model.status === "Latest" || model.status === "Trained"
               ? "bg-green-500/20 text-green-400"
+              : model.status === "Training"
+              ? "bg-indigo-500/20 text-indigo-400"
               : "bg-yellow-500/20 text-yellow-400"
           }`}
         >
@@ -504,24 +593,6 @@ const ModelCard = ({ model, familyColor }: { model: any; familyColor: string }) 
           </div>
         )}
       </div>
-
-      {model.benchmarks && (
-        <div className="mb-4 p-3 bg-neutral-800/50 rounded-lg">
-          <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
-            Benchmarks
-          </p>
-          <div className="grid grid-cols-3 gap-2">
-            {Object.entries(model.benchmarks).map(([key, value]) => (
-              <div key={key}>
-                <p className="text-xs text-neutral-400">{key}</p>
-                <p className="text-sm font-bold" style={{ color: familyColor }}>
-                  {value as string}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       <div className="space-y-2 mb-4">
         {model.features.slice(0, isExpanded ? undefined : 3).map((feature: string, idx: number) => (
@@ -593,144 +664,340 @@ const ZenModels = () => {
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
-        <title>Zen AI Models - Complete Hypermodal AI Family | Hanzo AI</title>
+        <title>Zen LM - Open Foundation Models for Agentic AI | Hanzo AI</title>
         <meta
           name="description"
-          content="The world's most comprehensive hypermodal AI ecosystem. Code, vision, 3D, video, and audio models. Featuring zen-coder-flash with 59.2% SWE-bench."
+          content="30+ models from 0.6B to 1T parameters across language, vision, audio, video, and 3D. Production-ready AI models for agentic coding, multimodal understanding, and creative generation."
         />
       </Helmet>
       <Navbar />
 
       <main className="pt-24 pb-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Section */}
+          {/* Hero Section - matching zenlm.org style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
-              style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              style={{
+                background: ZEN_GRADIENT,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
             >
-              <Sparkles className="w-3 h-3" />
-              zen-coder-flash is here
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Zen AI Model Family
+              Open Foundation Models for Agentic AI
             </h1>
-            <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-8">
-              The world's most comprehensive hypermodal AI ecosystem. From edge
-              computing to frontier capability, Zen models cover the full
-              spectrum of AI.
+            <p className="text-xl md:text-2xl text-neutral-300 mb-6">
+              30+ models from 0.6B to 1T parameters across language, vision, audio, video, and 3D
+            </p>
+            <p className="text-lg text-neutral-400 max-w-3xl mx-auto mb-10">
+              Zen LM provides production-ready AI models for agentic coding, multimodal understanding,
+              and creative generation. Our flagship Zen Coder models are trained on 8.47 billion tokens
+              of real-world programming sessions, delivering state-of-the-art performance on agentic
+              programming tasks.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://huggingface.co/zenlm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                href="#models"
+                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
+                style={{ background: ZEN_GRADIENT }}
               >
-                Browse on HuggingFace
+                Explore Models
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
-                href="https://github.com/zenlm"
+                href="#dataset"
+                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors text-sm"
+                style={{
+                  border: `2px solid ${ZEN_PRIMARY}`,
+                  color: ZEN_PRIMARY,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = ZEN_PRIMARY;
+                  e.currentTarget.style.color = "white";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = ZEN_PRIMARY;
+                }}
+              >
+                <Database className="mr-2 h-4 w-4" />
+                Training Data
+              </a>
+              <a
+                href="https://zenlm.org/research"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors border border-neutral-600 hover:border-neutral-400 text-sm text-neutral-300 hover:text-white"
               >
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
+                <BookOpen className="mr-2 h-4 w-4" />
+                Research Papers
               </a>
             </div>
           </motion.div>
 
-          {/* Featured Model - zen-coder-flash */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16 p-8 bg-gradient-to-br from-neutral-900 to-neutral-800/50 rounded-2xl border border-[#fd4444]/30 ring-1 ring-[#fd4444]/10"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <Zap className="w-5 h-5 text-[#fd4444]" />
-              <span className="text-sm font-medium text-[#fd4444]">
-                FEATURED MODEL
-              </span>
+          {/* Zen Coder Feature Section - matching zenlm.org */}
+          <section id="zen-coder" className="mb-20 py-12 px-8 rounded-2xl" style={{ background: "linear-gradient(180deg, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%)" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-3"
+                style={{
+                  background: ZEN_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Zen Coder - Agentic Coding Models
+              </h2>
+              <p className="text-neutral-400 text-lg">
+                Fine-tuned on 8.47B tokens of real programming sessions
+              </p>
+            </motion.div>
+
+            {/* Models Table - matching zenlm.org */}
+            <div className="overflow-x-auto mb-10">
+              <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-neutral-900/80">
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Model</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Size</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Base</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">VRAM</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Context</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ZEN_CODER_MODELS.map((model, idx) => (
+                    <tr
+                      key={model.name}
+                      className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors ${model.flagship ? "bg-neutral-900/30" : ""}`}
+                    >
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-white">{model.name}</span>
+                          {model.flagship && (
+                            <span
+                              className="px-2 py-0.5 text-[10px] font-bold rounded-full"
+                              style={{ backgroundColor: `${ZEN_PRIMARY}20`, color: ZEN_PRIMARY }}
+                            >
+                              FLAGSHIP
+                            </span>
+                          )}
+                          {model.frontier && (
+                            <span
+                              className="px-2 py-0.5 text-[10px] font-bold rounded-full"
+                              style={{ backgroundColor: `${ZEN_SECONDARY}20`, color: ZEN_SECONDARY }}
+                            >
+                              FRONTIER
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-neutral-300">{model.size}</td>
+                      <td className="px-6 py-4 text-neutral-300">{model.base}</td>
+                      <td className="px-6 py-4 text-neutral-300">{model.vram}</td>
+                      <td className="px-6 py-4 text-neutral-300">{model.context}</td>
+                      <td className="px-6 py-4">
+                        <span
+                          className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase ${
+                            model.status === "Trained"
+                              ? "bg-green-500/20 text-green-400 border border-green-500/50"
+                              : model.status === "Training"
+                              ? "bg-indigo-500/20 text-indigo-400 border border-indigo-500/50"
+                              : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/50"
+                          }`}
+                          style={model.status === "Training" ? { animation: "pulse 2s infinite" } : {}}
+                        >
+                          {model.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-2">
-                  zen-coder-flash
-                </h2>
-                <p className="text-neutral-400 mb-6">
-                  Our flagship coding model with state-of-the-art performance.
-                  31B MoE architecture with only 3B active parameters means
-                  frontier capability at efficient cost.
+            {/* Coder Features Grid */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-indigo-500/50 transition-colors">
+                <h3 className="text-lg font-semibold mb-2" style={{ color: ZEN_PRIMARY }}>Real Agentic Data</h3>
+                <p className="text-neutral-400 text-sm">
+                  Trained on actual agentic debug sessions - not synthetic data. Real debugging workflows,
+                  multi-file refactoring, and tool use patterns.
                 </p>
+              </div>
+              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-indigo-500/50 transition-colors">
+                <h3 className="text-lg font-semibold mb-2" style={{ color: ZEN_PRIMARY }}>Production Code</h3>
+                <p className="text-neutral-400 text-sm">
+                  15 years of professional development across AI, Web3, cryptography, and modern software
+                  engineering from 1,452 repositories.
+                </p>
+              </div>
+              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-indigo-500/50 transition-colors">
+                <h3 className="text-lg font-semibold mb-2" style={{ color: ZEN_PRIMARY }}>Open Training</h3>
+                <p className="text-neutral-400 text-sm">
+                  Use{" "}
+                  <a
+                    href="https://github.com/zenlm/zen-trainer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                    style={{ color: ZEN_PRIMARY }}
+                  >
+                    zen-trainer
+                  </a>
+                  {" "}to fine-tune on your own data. Supports MLX (Apple Silicon), Unsloth, and DeepSpeed.
+                </p>
+              </div>
+            </div>
+          </section>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-neutral-800/50 rounded-lg p-4">
-                    <p className="text-2xl font-bold text-white">59.2%</p>
-                    <p className="text-xs text-neutral-400">SWE-bench Verified</p>
-                  </div>
-                  <div className="bg-neutral-800/50 rounded-lg p-4">
-                    <p className="text-2xl font-bold text-white">131K</p>
-                    <p className="text-xs text-neutral-400">Context Window</p>
-                  </div>
-                  <div className="bg-neutral-800/50 rounded-lg p-4">
-                    <p className="text-2xl font-bold text-white">91.6%</p>
-                    <p className="text-xs text-neutral-400">AIME 2025</p>
-                  </div>
-                  <div className="bg-neutral-800/50 rounded-lg p-4">
-                    <p className="text-2xl font-bold text-white">MIT</p>
-                    <p className="text-xs text-neutral-400">License</p>
-                  </div>
-                </div>
+          {/* Complete AI Model Ecosystem - matching zenlm.org */}
+          <section id="overview" className="mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-3"
+                style={{
+                  background: ZEN_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Complete AI Model Ecosystem
+              </h2>
+            </motion.div>
 
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {ECOSYSTEM_CATEGORIES.map((category, idx) => {
+                const Icon = category.icon;
+                return (
+                  <motion.div
+                    key={category.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+                  >
+                    <div
+                      className="text-4xl mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-xl"
+                      style={{ backgroundColor: `${ZEN_PRIMARY}15` }}
+                    >
+                      <Icon className="w-8 h-8" style={{ color: ZEN_PRIMARY }} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{category.title}</h3>
+                    <p className="text-neutral-400 text-sm">{category.description}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Dataset Section - matching zenlm.org */}
+          <section id="dataset" className="mb-20 py-12 px-8 rounded-2xl bg-black">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-3"
+                style={{
+                  background: ZEN_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Zen Agentic Dataset
+              </h2>
+              <p className="text-neutral-400 text-lg">
+                8.47 Billion Tokens of Real-World Agentic Programming
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+              {DATASET_STATS.map((stat, idx) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="p-6 bg-neutral-900/50 border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all"
+                >
+                  <div
+                    className="text-3xl font-bold mb-2"
+                    style={{
+                      background: ZEN_GRADIENT,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {stat.value}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-1">{stat.label}</h3>
+                  <p className="text-neutral-500 text-sm">{stat.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-neutral-400 mb-6">Available for research and commercial licensing.</p>
+              <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="https://huggingface.co/zenlm/zen-coder-flash"
+                  href="mailto:z@hanzo.ai"
+                  className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
+                  style={{ background: ZEN_GRADIENT }}
+                >
+                  Request Access
+                </a>
+                <a
+                  href="https://huggingface.co/datasets/hanzoai/zen-agentic-dataset"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                  className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors text-sm"
+                  style={{
+                    border: `2px solid ${ZEN_PRIMARY}`,
+                    color: ZEN_PRIMARY,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = ZEN_PRIMARY;
+                    e.currentTarget.style.color = "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = ZEN_PRIMARY;
+                  }}
                 >
-                  Try zen-coder-flash
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  View on HuggingFace
                 </a>
               </div>
-
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider">
-                  Key Features
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    "Advanced code generation (59.2% SWE-bench vs 22% Qwen3-30B)",
-                    "Tool calling with glm47 parser",
-                    "Reasoning mode with glm45 parser",
-                    "Speculative decoding (MTP/EAGLE)",
-                    "100+ programming languages",
-                    "MLX for Apple Silicon",
-                    "vLLM & SGLang support",
-                  ].map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <Check className="w-4 h-4 text-[#fd4444]" />
-                      <span className="text-sm text-neutral-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
-          </motion.div>
+          </section>
 
           {/* Quick Nav */}
-          <div className="mb-12 flex flex-wrap gap-3 justify-center">
+          <div id="models" className="mb-12 flex flex-wrap gap-3 justify-center">
             {Object.entries(MODEL_FAMILIES).map(([key, family]) => {
               const Icon = family.icon;
               return (
@@ -751,6 +1018,107 @@ const ZenModels = () => {
             <FamilySection key={key} familyKey={key} family={family} />
           ))}
 
+          {/* Get Started Section - matching zenlm.org */}
+          <section id="downloads" className="py-16 border-t border-neutral-800">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-3"
+                style={{
+                  background: ZEN_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Get Started
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+              >
+                <Download className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <h3 className="text-xl font-semibold text-white mb-2">HuggingFace</h3>
+                <p className="text-neutral-400 text-sm mb-4">Access all 30+ models via HuggingFace Hub</p>
+                <a
+                  href="https://huggingface.co/zenlm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
+                  style={{ background: ZEN_GRADIENT }}
+                >
+                  Visit HuggingFace
+                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+              >
+                <Github className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <h3 className="text-xl font-semibold text-white mb-2">GitHub</h3>
+                <p className="text-neutral-400 text-sm mb-4">Training code, documentation, and source</p>
+                <a
+                  href="https://github.com/zenlm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
+                  style={{ background: ZEN_GRADIENT }}
+                >
+                  View on GitHub
+                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+              >
+                <Terminal className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <h3 className="text-xl font-semibold text-white mb-2">zen-trainer</h3>
+                <p className="text-neutral-400 text-sm mb-4">Fine-tune models on your own data</p>
+                <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-3">
+                  <code className="text-sm" style={{ color: ZEN_PRIMARY }}>pip install zen-trainer</code>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-indigo-500/50 transition-all hover:-translate-y-1"
+              >
+                <BookOpen className="w-8 h-8 mx-auto mb-4" style={{ color: ZEN_PRIMARY }} />
+                <h3 className="text-xl font-semibold text-white mb-2">Research</h3>
+                <p className="text-neutral-400 text-sm mb-4">Technical papers and whitepapers</p>
+                <a
+                  href="https://zenlm.org/research"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
+                  style={{ background: ZEN_GRADIENT }}
+                >
+                  Read Papers
+                </a>
+              </motion.div>
+            </div>
+          </section>
+
           {/* Infrastructure Section */}
           <section className="py-16 border-t border-neutral-800">
             <motion.div
@@ -759,7 +1127,15 @@ const ZenModels = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-3"
+                style={{
+                  background: ZEN_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Infrastructure
               </h2>
               <p className="text-neutral-400">
@@ -772,10 +1148,10 @@ const ZenModels = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8"
+                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8 hover:border-purple-500/50 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Layers className="w-6 h-6 text-purple-400" />
+                  <Layers className="w-6 h-6" style={{ color: ZEN_SECONDARY }} />
                   <h3 className="text-xl font-bold text-white">Zen Gym</h3>
                 </div>
                 <p className="text-neutral-400 mb-4">
@@ -790,7 +1166,7 @@ const ZenModels = () => {
                     "Liger Kernel optimization",
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-purple-400" />
+                      <Check className="w-3 h-3" style={{ color: ZEN_SECONDARY }} />
                       <span className="text-sm text-neutral-300">{feature}</span>
                     </div>
                   ))}
@@ -799,7 +1175,8 @@ const ZenModels = () => {
                   href="https://github.com/zenlm/zen-gym"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300"
+                  className="inline-flex items-center gap-2 text-sm hover:text-purple-300 transition-colors"
+                  style={{ color: ZEN_SECONDARY }}
                 >
                   View on GitHub
                   <ExternalLink className="w-3 h-3" />
@@ -811,7 +1188,7 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8"
+                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8 hover:border-cyan-500/50 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Zap className="w-6 h-6 text-cyan-400" />
@@ -838,7 +1215,7 @@ const ZenModels = () => {
                   href="https://github.com/zenlm/zen-engine"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300"
+                  className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
                   View on GitHub
                   <ExternalLink className="w-3 h-3" />
@@ -866,24 +1243,41 @@ const ZenModels = () => {
                 href="https://huggingface.co/zenlm"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-sm text-white"
+                style={{ background: ZEN_GRADIENT }}
               >
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <Link
                 to="/dev"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
               >
                 Try Hanzo Dev
               </Link>
+              <a
+                href="https://zenlm.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 rounded-lg font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+              >
+                <Globe className="mr-2 h-4 w-4" />
+                Visit zenlm.org
+              </a>
             </div>
           </motion.section>
         </div>
       </main>
 
       <Footer />
+
+      {/* Add pulse animation for training status */}
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+      `}</style>
     </div>
   );
 };
