@@ -19,7 +19,7 @@ const tryHanzoMenu = {
     items: [
       { label: "Hanzo Dev", href: "/dev", external: false },
       { label: "Hanzo Cloud", href: "https://cloud.hanzo.ai", external: true },
-      { label: "Hanzo Models", href: "/ai", external: false },
+      { label: "Zen Models", href: "/zen", external: false },
       { label: "Pricing", href: "/pricing", external: false },
       { label: "Talk to sales", href: "/contact", external: false },
     ],

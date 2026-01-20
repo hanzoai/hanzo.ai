@@ -2,6 +2,7 @@ import { useState, ReactNode, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/contexts/ThemeContext";
 
 type NavMenuProps = {
   label: string;
@@ -12,6 +13,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const isDesktop = useMediaQuery("(min-width: 768px)");
+  const { isDarkMode } = useTheme();
   
   const toggleMenu = () => {
     if (!isDesktop) {
@@ -82,7 +84,9 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
         onClick={toggleMenu}
         className={cn(
           "inline-flex items-center outline-none focus:outline-none transition-colors text-sm font-medium",
-          isOpen ? "text-white" : "text-neutral-400 hover:text-white"
+          isOpen
+            ? (isDarkMode ? "text-white" : "text-black")
+            : (isDarkMode ? "text-neutral-400 hover:text-white" : "text-neutral-600 hover:text-black")
         )}
       >
         {label}
@@ -99,7 +103,12 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
         <>
           {/* Desktop: Full viewport width dropdown with backdrop */}
           {isDesktop ? (
-            <div className="fixed left-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-gray-800/50 shadow-2xl"
+            <div className={cn(
+                   "fixed left-0 w-full backdrop-blur-md z-50 border-b shadow-2xl",
+                   isDarkMode
+                     ? "bg-black/95 border-gray-800/50"
+                     : "bg-white/95 border-gray-200"
+                 )}
                  style={{
                    top: 'var(--header-height)',
                  }}>
@@ -112,9 +121,12 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
           ) : (
             /* Mobile: Full-viewport menu overlay */
             <div
-              className="fixed inset-0 left-0 right-0 bg-black/95 backdrop-blur-md z-50 w-screen transition-opacity duration-300 ease-in-out"
-              style={{ 
-                top: 'var(--header-height)', 
+              className={cn(
+                "fixed inset-0 left-0 right-0 backdrop-blur-md z-50 w-screen transition-opacity duration-300 ease-in-out",
+                isDarkMode ? "bg-black/95" : "bg-white/95"
+              )}
+              style={{
+                top: 'var(--header-height)',
                 height: 'calc(100vh - var(--header-height))',
                 width: '100vw'
               }}

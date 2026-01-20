@@ -30,8 +30,11 @@ import SolutionCapabilities from "./pages/SolutionCapabilities";
 import SolutionIndustries from "./pages/SolutionIndustries";
 import Security from "./pages/Security";
 import ZenOfHanzo from "./pages/ZenOfHanzo";
+import ZenModels from "./pages/ZenModels";
 import Contact from "./pages/Contact";
 import Enterprise from "./pages/Enterprise";
+import Brand from "./pages/Brand";
+import Press from "./pages/Press";
 
 import AI from "./pages/AI";
 import Datastore from "./pages/Datastore";
@@ -139,7 +142,12 @@ const MarketingRoutes = () => {
       <Route path="/security" element={<Security />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/enterprise" element={<Enterprise />} />
-      <Route path="/zen" element={<ZenOfHanzo />} />
+      <Route path="/zen" element={<ZenModels />} />
+      <Route path="/zen-models" element={<ZenModels />} />
+      <Route path="/philosophy" element={<ZenOfHanzo />} />
+      <Route path="/zen-of-hanzo" element={<ZenOfHanzo />} />
+      <Route path="/brand" element={<Brand />} />
+      <Route path="/press" element={<Press />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />
       <Route path="/solutions/industries" element={<SolutionIndustries />} />

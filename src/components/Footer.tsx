@@ -280,11 +280,16 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {/* Copyright */}
             <div className="space-y-0.5">
-              <div className="text-neutral-500 text-xs font-medium tracking-wider uppercase">
-                BY HANZO
-              </div>
+              <a
+                href="https://hanzo.industries"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-500 text-xs font-medium tracking-wider uppercase hover:text-neutral-400 transition-colors"
+              >
+                BY HANZO INDUSTRIES
+              </a>
               <div className="text-neutral-600 text-xs">
-                © {new Date().getFullYear()} HANZO.AI
+                © 2016-{new Date().getFullYear()} HANZO.AI
               </div>
             </div>
 
