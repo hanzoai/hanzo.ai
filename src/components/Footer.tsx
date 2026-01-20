@@ -7,7 +7,11 @@ import {
   Send,
   Globe,
   ChevronDown,
+  Sun,
+  Moon,
+  Monitor,
 } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const BRAND_COLOR = "#fd4444";
 
@@ -182,6 +186,7 @@ const FooterColumn = ({
 
 const Footer = () => {
   const [chatInput, setChatInput] = useState("");
+  const { mode, setMode, isDarkMode } = useTheme();
 
   const handleChatSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -297,6 +302,43 @@ const Footer = () => {
                   {social.icon}
                 </a>
               ))}
+            </div>
+
+            {/* Theme switcher - like Vercel */}
+            <div className="inline-flex items-center rounded-full bg-neutral-900 border border-neutral-800 p-0.5">
+              <button
+                onClick={() => setMode('system')}
+                className={`p-1.5 rounded-full transition-colors ${
+                  mode === 'system'
+                    ? 'bg-neutral-700 text-white'
+                    : 'text-neutral-500 hover:text-neutral-300'
+                }`}
+                title="System theme"
+              >
+                <Monitor className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={() => setMode('light')}
+                className={`p-1.5 rounded-full transition-colors ${
+                  mode === 'light'
+                    ? 'bg-neutral-700 text-white'
+                    : 'text-neutral-500 hover:text-neutral-300'
+                }`}
+                title="Light theme"
+              >
+                <Sun className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={() => setMode('dark')}
+                className={`p-1.5 rounded-full transition-colors ${
+                  mode === 'dark'
+                    ? 'bg-neutral-700 text-white'
+                    : 'text-neutral-500 hover:text-neutral-300'
+                }`}
+                title="Dark theme"
+              >
+                <Moon className="w-3.5 h-3.5" />
+              </button>
             </div>
 
             {/* Language selector */}

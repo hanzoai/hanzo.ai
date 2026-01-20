@@ -181,10 +181,10 @@ const Logo = () => {
           </svg>
         </motion.div>
 
-        {/* Ninja-style text: faded by default, visible on hover */}
+        {/* Ninja-style text: slightly faded by default, fully visible on hover */}
         <motion.span
           initial={{ opacity: 0, x: -5 }}
-          animate={{ opacity: isHovered ? 1 : 0.15, x: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0.6, x: 0 }}
           transition={{ duration: 0.2 }}
           className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-neutral-900"} transition-opacity`}
         >
