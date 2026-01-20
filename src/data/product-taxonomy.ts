@@ -860,7 +860,7 @@ export const platformProducts: Product[] = [
     github: 'https://github.com/hanzoai/platform',
     docs: 'https://docs.hanzo.ai/platform',
     install: {
-      cli: 'curl -sSL https://hanzo.sh | sh'
+      cli: 'curl -fsSL hanzo.sh/install.sh | sh'
     },
     features: ['Git deploy', 'Auto TLS', 'Custom domains', 'Preview environments', 'Rollbacks'],
     status: 'ga',

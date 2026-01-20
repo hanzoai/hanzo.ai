@@ -76,7 +76,7 @@ export const ProductsMenu = () => {
           <div className="mt-6 pt-6 border-t border-neutral-800 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="bg-neutral-900 rounded-lg px-3 py-1.5 font-mono text-xs text-green-400">
-                curl -sSL https://hanzo.sh | sh
+                curl -fsSL hanzo.sh/install.sh | sh
               </div>
               <span className="text-xs text-neutral-500">Install Hanzo CLI</span>
             </div>

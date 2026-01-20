@@ -461,7 +461,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
               <p className="text-center text-neutral-500 mt-6 text-sm">
                 New to Hanzo? Install the CLI first:{" "}
                 <code className="bg-neutral-800 px-2 py-1 rounded text-white font-mono text-xs">
-                  curl -sSL https://hanzo.sh | sh
+                  curl -fsSL hanzo.sh/install.sh | sh
                 </code>
               </p>
             </motion.div>

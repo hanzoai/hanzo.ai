@@ -50,7 +50,7 @@ const DASHBOARD_NAV = [
 
 // Terminal lines - demonstrates the vertical stack in one story
 const TERMINAL_LINES = [
-  { text: "$ curl -fsSL https://hanzo.sh/install | sh", type: "command" },
+  { text: "$ curl -fsSL hanzo.sh/install.sh | sh", type: "command" },
   { text: "$ hanzo team create acme", type: "command" },
   { text: "$ hanzo login", type: "command" },
   { text: "$ hanzo iam role bind --role engineer --to dev@acme.com", type: "command" },
@@ -89,7 +89,7 @@ const HeroSection = () => {
   }, [mounted]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("curl -fsSL https://hanzo.sh/install | sh");
+    navigator.clipboard.writeText("curl -fsSL hanzo.sh/install.sh | sh");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

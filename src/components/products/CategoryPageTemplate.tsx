@@ -207,7 +207,7 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
 
           <div className="bg-black rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-between font-mono text-sm">
-              <code className="text-green-400">curl -sSL https://hanzo.sh | sh</code>
+              <code className="text-green-400">curl -fsSL hanzo.sh/install.sh | sh</code>
               <Button variant="ghost" size="sm" className="text-neutral-400 hover:text-white">
                 Copy
               </Button>

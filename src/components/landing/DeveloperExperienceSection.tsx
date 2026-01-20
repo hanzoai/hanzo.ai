@@ -103,7 +103,7 @@ const DeveloperExperienceSection = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyInstall = () => {
-    navigator.clipboard.writeText("curl -fsSL hanzo.sh | sh");
+    navigator.clipboard.writeText("curl -fsSL hanzo.sh/install.sh | sh");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -202,7 +202,7 @@ const DeveloperExperienceSection = () => {
                 <span className="text-neutral-500">$ </span>
                 <span className="text-purple-400">curl</span>
                 <span className="text-neutral-300"> -fsSL </span>
-                <span className="text-blue-400">hanzo.sh</span>
+                <span className="text-blue-400">hanzo.sh/install.sh</span>
                 <span className="text-neutral-300"> | </span>
                 <span className="text-purple-400">sh</span>
               </div>

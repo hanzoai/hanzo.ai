@@ -14,7 +14,7 @@ const FooterCTA = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("curl -fsSL hanzo.sh | sh");
+    navigator.clipboard.writeText("curl -fsSL hanzo.sh/install.sh | sh");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -79,7 +79,7 @@ const FooterCTA = () => {
         >
           <div className="inline-flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800">
             <code className="text-sm font-mono text-neutral-300">
-              curl -fsSL hanzo.sh | sh
+              curl -fsSL hanzo.sh/install.sh | sh
             </code>
             <button
               onClick={handleCopy}

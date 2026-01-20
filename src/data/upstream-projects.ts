@@ -219,7 +219,7 @@ export const productUpstreamMap: Record<string, string> = {
   // Core AI products
   'gateway': 'litellm',
   'chat': 'librechat',
-  'flow': 'activepieces',
+  'flow': 'langfuse',
   'auto': 'activepieces',
   'studio': 'comfyui',
   'console': 'langfuse',

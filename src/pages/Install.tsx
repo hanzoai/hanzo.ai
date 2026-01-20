@@ -44,7 +44,7 @@ const Install = () => {
           <Terminal class="text-purple-400" size="20" />
           <h2 class="text-xl font-semibold text-purple-400">Quick Install</h2>
         </div>
-        <pre class="bg-[var(--black)] rounded-lg p-4 overflow-x-auto border border-purple-500/10"><code>curl -sL hanzo.sh | sh</code></pre>
+        <pre class="bg-[var(--black)] rounded-lg p-4 overflow-x-auto border border-purple-500/10"><code>curl -fsSL hanzo.sh/install.sh | sh</code></pre>
         <p class="mt-4 text-sm text-neutral-400">This command downloads and executes the Hanzo Platform installer.</p>
       </div>
 
