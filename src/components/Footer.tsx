@@ -57,9 +57,11 @@ const footerLinks = {
   models: {
     title: "Models",
     items: [
-      { title: "Zoo", href: "https://zoo.ngo", external: true },
-      { title: "Hanzo L1", href: "/ai" },
-      { title: "SPC", href: "/ai" },
+      { title: "Flash", href: "/zen" },
+      { title: "Zen Coder", href: "/zen" },
+      { title: "Zen Coder Max", href: "/zen" },
+      { title: "Zen Ultra", href: "/zen" },
+      { title: "View All Models", href: "/zen", highlight: true },
     ],
   },
   learn: {
@@ -85,12 +87,11 @@ const footerLinks = {
   company: {
     title: "Company",
     items: [
-      { title: "Careers", href: "/careers" },
-      { title: "Philosophy", href: "/philosophy" },
-      { title: "Zen Models", href: "/zen" },
-      { title: "Research", href: "https://zenlm.org", external: true },
-      { title: "Contact", href: "/contact" },
       { title: "About", href: "/team" },
+      { title: "Careers", href: "/careers" },
+      { title: "Contact", href: "/contact" },
+      { title: "Philosophy", href: "/philosophy" },
+      { title: "Research", href: "https://zenlm.org", external: true },
     ],
   },
 };
@@ -276,8 +277,26 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Social links - above bottom bar */}
+        <div className="mt-12 flex justify-center">
+          <div className="flex items-center gap-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-500 hover:text-white transition-colors"
+                aria-label={social.name}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-neutral-800/50">
+        <div className="mt-6 pt-6 border-t border-neutral-800/50">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {/* Copyright */}
             <div className="space-y-0.5">
@@ -294,65 +313,52 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social links */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neutral-500 hover:text-white transition-colors"
-                  aria-label={social.name}
+            {/* Theme switcher + Language selector - grouped on right */}
+            <div className="flex items-center gap-2">
+              {/* Theme switcher - like Vercel */}
+              <div className="inline-flex items-center rounded-full bg-neutral-900 border border-neutral-800 p-0.5">
+                <button
+                  onClick={() => setMode('system')}
+                  className={`p-1.5 rounded-full transition-colors ${
+                    mode === 'system'
+                      ? 'bg-neutral-700 text-white'
+                      : 'text-neutral-500 hover:text-neutral-300'
+                  }`}
+                  title="System theme"
                 >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
+                  <Monitor className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  onClick={() => setMode('light')}
+                  className={`p-1.5 rounded-full transition-colors ${
+                    mode === 'light'
+                      ? 'bg-neutral-700 text-white'
+                      : 'text-neutral-500 hover:text-neutral-300'
+                  }`}
+                  title="Light theme"
+                >
+                  <Sun className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  onClick={() => setMode('dark')}
+                  className={`p-1.5 rounded-full transition-colors ${
+                    mode === 'dark'
+                      ? 'bg-neutral-700 text-white'
+                      : 'text-neutral-500 hover:text-neutral-300'
+                  }`}
+                  title="Dark theme"
+                >
+                  <Moon className="w-3.5 h-3.5" />
+                </button>
+              </div>
 
-            {/* Theme switcher - like Vercel */}
-            <div className="inline-flex items-center rounded-full bg-neutral-900 border border-neutral-800 p-0.5">
-              <button
-                onClick={() => setMode('system')}
-                className={`p-1.5 rounded-full transition-colors ${
-                  mode === 'system'
-                    ? 'bg-neutral-700 text-white'
-                    : 'text-neutral-500 hover:text-neutral-300'
-                }`}
-                title="System theme"
-              >
-                <Monitor className="w-3.5 h-3.5" />
-              </button>
-              <button
-                onClick={() => setMode('light')}
-                className={`p-1.5 rounded-full transition-colors ${
-                  mode === 'light'
-                    ? 'bg-neutral-700 text-white'
-                    : 'text-neutral-500 hover:text-neutral-300'
-                }`}
-                title="Light theme"
-              >
-                <Sun className="w-3.5 h-3.5" />
-              </button>
-              <button
-                onClick={() => setMode('dark')}
-                className={`p-1.5 rounded-full transition-colors ${
-                  mode === 'dark'
-                    ? 'bg-neutral-700 text-white'
-                    : 'text-neutral-500 hover:text-neutral-300'
-                }`}
-                title="Dark theme"
-              >
-                <Moon className="w-3.5 h-3.5" />
+              {/* Language selector */}
+              <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs hover:bg-neutral-800 hover:text-white transition-colors">
+                <Globe className="w-3.5 h-3.5" />
+                English (US)
+                <ChevronDown className="w-3 h-3" />
               </button>
             </div>
-
-            {/* Language selector */}
-            <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs hover:bg-neutral-800 hover:text-white transition-colors">
-              <Globe className="w-3.5 h-3.5" />
-              English (US)
-              <ChevronDown className="w-3 h-3" />
-            </button>
           </div>
         </div>
       </div>

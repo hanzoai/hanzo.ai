@@ -33,23 +33,23 @@ const aiProviders = [
 const multiAgentFeatures = [
   {
     icon: Zap,
-    title: "Multi-agent runs",
-    description: "One prompt, many implementations across agents/models.",
+    title: "Race multiple agents",
+    description: "One task, multiple agents racing. GPT-4, Claude, Gemini, and Qwen compete in parallel.",
   },
   {
     icon: Users,
-    title: "Consensus selection",
-    description: "Compare diffs, benchmarks, and test logs; select the strongest patch.",
+    title: "Automatic winner selection",
+    description: "Diffs scored by test pass rate, code quality, and performance. Best patch wins.",
   },
   {
     icon: Clock,
-    title: "Long-running sandboxes",
-    description: "Install deps, refactor safely, run suites, iterate until green.",
+    title: "Persistent sandboxes",
+    description: "Full dev environments that persist. Install deps, refactor, iterate until CI goes green.",
   },
   {
     icon: Eye,
-    title: "Team visibility",
-    description: "Shared workspace for runs, artifacts, decisions, and audit links.",
+    title: "Complete audit trail",
+    description: "Every run, every decision, every artifact. Full visibility for your entire team.",
   },
 ];
 
@@ -98,13 +98,14 @@ const PlatformOverviewSection = () => {
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
             style={{ color: BRAND_COLOR, borderColor: `#e116334d` }}
           >
-            Core Differentiator
+            Why Hanzo Wins
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4">
-            Parallel execution. One best outcome.
+            Ship code that actually works.
           </h2>
           <p className="text-lg text-neutral-400 max-w-2xl mb-8">
-            Dispatch the same task to multiple agents (Hanzo + external), then pick the winner based on diff quality + test evidence, not vibes.
+            Stop gambling on single-model outputs. Race multiple AI agents against each other,
+            and let test results pick the winner. Evidence over vibes.
           </p>
 
           {/* AI Provider logos */}
@@ -154,9 +155,10 @@ const PlatformOverviewSection = () => {
 
           <Link
             to="/dev"
-            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors border border-neutral-700 hover:bg-neutral-900 text-white"
+            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors text-white"
+            style={{ backgroundColor: BRAND_COLOR }}
           >
-            Run your first task
+            Start building now
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </motion.div>

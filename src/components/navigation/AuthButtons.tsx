@@ -62,8 +62,8 @@ const quickAccess = [
 
 // Login items
 const loginItems = [
-  { label: "hanzo.chat", href: "https://hanzo.chat", external: true },
-  { label: "Console login", href: "https://cloud.hanzo.ai", external: true },
+  { label: "Hanzo Chat", href: "https://hanzo.chat", external: true },
+  { label: "Hanzo Cloud", href: "https://cloud.hanzo.ai", external: true },
 ];
 
 const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {

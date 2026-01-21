@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Partners and investors
+// Investors and partners
 const partners = [
   { name: "Techstars", year: "'17" },
   { name: "NVIDIA" },
@@ -47,7 +47,7 @@ const TrustedBySection = () => {
           </p>
         </motion.div>
 
-        {/* Partners section */}
+        {/* Clients section - FIRST */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,33 @@ const TrustedBySection = () => {
           className="mb-12"
         >
           <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6 text-center">
-            Partners & Investors
+            Trusted By
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+            {clients.map((client, index) => (
+              <motion.span
+                key={client}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
+                className="text-neutral-500 hover:text-neutral-300 transition-colors text-sm font-medium"
+              >
+                {client}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Investors & Partners section - SECOND */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6 text-center">
+            Investors & Partners
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {partners.map((partner, index) => (
@@ -75,32 +101,6 @@ const TrustedBySection = () => {
                   )}
                 </span>
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Clients section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6 text-center">
-            Trusted By
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-            {clients.map((client, index) => (
-              <motion.span
-                key={client}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
-                className="text-neutral-500 hover:text-neutral-300 transition-colors text-sm font-medium"
-              >
-                {client}
-              </motion.span>
             ))}
           </div>
         </motion.div>
