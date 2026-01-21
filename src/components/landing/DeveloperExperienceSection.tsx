@@ -17,6 +17,18 @@ import {
   Workflow,
   Box,
   Bot,
+  Brain,
+  Database,
+  FolderSearch,
+  Wrench,
+  Share2,
+  Layers,
+  GitBranch,
+  FileSearch,
+  Puzzle,
+  History,
+  Globe,
+  Cpu,
 } from "lucide-react";
 import { CodeTabs } from "@/components/ui/code-block";
 
@@ -270,6 +282,130 @@ const DeveloperExperienceSection = () => {
           </div>
         </motion.div>
 
+        {/* Unified AI Platform Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="text-center mb-12">
+            <p
+              className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
+              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            >
+              Unified AI Platform
+            </p>
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+              One platform. Every AI tool. Shared everything.
+            </h2>
+            <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
+              Stop context-switching between AI tools. Hanzo unifies memory, history, and context across all your AI interactions—terminal, IDE, browser, and API.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {[
+              { icon: Brain, title: "Shared Memory", desc: "Context persists across all tools and sessions" },
+              { icon: Database, title: "Vector Search", desc: "Semantic search over your entire codebase" },
+              { icon: FolderSearch, title: "Master Large Codebases", desc: "Navigate millions of lines with ease" },
+              { icon: Puzzle, title: "Auto Tool Discovery", desc: "Automatically adds tools as you need them" },
+              { icon: History, title: "Unified History", desc: "Every prompt, every response, searchable" },
+              { icon: Share2, title: "Team Sync", desc: "Share context and memory across your team" },
+              { icon: Layers, title: "260+ MCP Tools", desc: "Browser, file, code, git, and more built-in" },
+              { icon: Cpu, title: "Any Model", desc: "GPT-4, Claude, Gemini, Qwen, Llama, local" },
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="p-4 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 hover:border-neutral-700 transition-all"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-4 h-4 text-neutral-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white mb-0.5">{item.title}</h3>
+                      <p className="text-xs text-neutral-500">{item.desc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* How it works visualization */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 mb-8"
+          >
+            <div className="text-center mb-6">
+              <h3 className="text-lg font-semibold text-white mb-2">How Hanzo Unifies Your AI Stack</h3>
+              <p className="text-sm text-neutral-500">All your tools, one shared brain</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 items-center">
+              {/* Entry points */}
+              <div className="space-y-2 col-span-2 md:col-span-2">
+                {[
+                  { icon: Terminal, label: "Terminal" },
+                  { icon: Code, label: "VS Code" },
+                  { icon: Globe, label: "Browser" },
+                  { icon: Bot, label: "API" },
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.label} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-800/50 border border-neutral-700/50">
+                      <Icon className="w-4 h-4 text-neutral-400" />
+                      <span className="text-sm text-neutral-300">{item.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Arrow */}
+              <div className="hidden md:flex justify-center">
+                <ArrowRight className="w-6 h-6 text-neutral-600" />
+              </div>
+
+              {/* Core */}
+              <div className="col-span-2 md:col-span-2 p-4 rounded-xl border-2 border-[#fd4444]/30 bg-[#fd4444]/5">
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-[#fd4444]/20 flex items-center justify-center mx-auto mb-3">
+                    <Brain className="w-6 h-6 text-[#fd4444]" />
+                  </div>
+                  <h4 className="text-sm font-semibold text-white mb-1">Hanzo Core</h4>
+                  <p className="text-xs text-neutral-500 mb-3">Unified memory • Vector index • Tool registry</p>
+                  <div className="flex flex-wrap justify-center gap-1">
+                    {["Memory", "Context", "History", "Tools"].map((tag) => (
+                      <span key={tag} className="px-2 py-0.5 rounded-full bg-neutral-800 text-[10px] text-neutral-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="text-center">
+            <Link
+              to="/products"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-[#fd4444] text-white hover:opacity-90"
+            >
+              Explore all capabilities
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+        </motion.div>
+
         {/* Remote Agents Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -318,7 +454,7 @@ const DeveloperExperienceSection = () => {
 
           <div className="text-center">
             <Link
-              to="/remote"
+              to="/operative"
               className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors border border-neutral-700 hover:bg-neutral-900 text-white"
             >
               Enable Remote Agents
