@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, MessageCircle, Users, BookOpen } from "lucide-react";
+import { ExternalLink, Github, MessageCircle, Users, BookOpen, Calendar, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CommunityLink {
-  type: "discord" | "github" | "docs" | "discussions" | "twitter" | "slack";
+  type: "discord" | "github" | "docs" | "discussions" | "twitter" | "slack" | "events" | "forum";
   url: string;
   label?: string;
+  internal?: boolean;
 }
 
 interface CommunitySectionProps {
@@ -18,7 +20,9 @@ const iconMap = {
   discord: MessageCircle,
   github: Github,
   docs: BookOpen,
-  discussions: Users,
+  discussions: MessageSquare,
+  events: Calendar,
+  forum: Users,
   twitter: () => (
     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -35,7 +39,9 @@ const labelMap = {
   discord: "Join Discord",
   github: "Star on GitHub",
   docs: "Read Docs",
-  discussions: "Discussions",
+  discussions: "Discuss on GitHub",
+  events: "Meetups & Events",
+  forum: "Community Forum",
   twitter: "Follow on X",
   slack: "Join Slack",
 };
@@ -45,6 +51,8 @@ const colorMap = {
   github: "hover:bg-neutral-700",
   docs: "hover:bg-blue-500/20 hover:border-blue-500/50",
   discussions: "hover:bg-purple-500/20 hover:border-purple-500/50",
+  events: "hover:bg-green-500/20 hover:border-green-500/50",
+  forum: "hover:bg-orange-500/20 hover:border-orange-500/50",
   twitter: "hover:bg-neutral-700",
   slack: "hover:bg-[#4A154B]/20 hover:border-[#4A154B]/50",
 };
@@ -98,6 +106,37 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
             const label = link.label || labelMap[link.type];
             const colorClass = colorMap[link.type];
 
+            const content = (
+              <>
+                <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
+                  {typeof Icon === "function" ? <Icon /> : <Icon className="w-5 h-5 text-neutral-300" />}
+                </div>
+                <div className="flex-1">
+                  <span className="font-medium text-white">{label}</span>
+                </div>
+                {!link.internal && <ExternalLink className="w-4 h-4 text-neutral-500" />}
+              </>
+            );
+
+            if (link.internal) {
+              return (
+                <motion.div
+                  key={link.type}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <Link
+                    to={link.url}
+                    className={`flex items-center gap-3 p-4 bg-neutral-900/50 border border-neutral-800 rounded-xl transition-all ${colorClass}`}
+                  >
+                    {content}
+                  </Link>
+                </motion.div>
+              );
+            }
+
             return (
               <motion.a
                 key={link.type}
@@ -110,13 +149,7 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className={`flex items-center gap-3 p-4 bg-neutral-900/50 border border-neutral-800 rounded-xl transition-all ${colorClass}`}
               >
-                <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
-                  {typeof Icon === "function" ? <Icon /> : <Icon className="w-5 h-5 text-neutral-300" />}
-                </div>
-                <div className="flex-1">
-                  <span className="font-medium text-white">{label}</span>
-                </div>
-                <ExternalLink className="w-4 h-4 text-neutral-500" />
+                {content}
               </motion.a>
             );
           })}
