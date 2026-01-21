@@ -52,7 +52,7 @@ const CostSummary = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4 text-neutral-400" />
-            <span className="text-neutral-400">SOC2 Type 2 Compliance</span>
+            <span className="text-neutral-400">Enhanced Security</span>
           </div>
           <div className="flex items-center gap-3">
             <span>${costs.compliance.toFixed(2)}</span>

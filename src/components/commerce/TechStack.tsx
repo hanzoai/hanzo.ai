@@ -35,7 +35,7 @@ const TechStack = () => {
     {
       icon: <Shield className="h-8 w-8 text-amber-400" />,
       title: "Enterprise Security",
-      description: "PCI-compliant infrastructure with encryption at rest and in transit for all sensitive data."
+      description: "Payment-grade security with encryption at rest and in transit for all sensitive data."
     },
     {
       icon: <Zap className="h-8 w-8 text-amber-400" />,

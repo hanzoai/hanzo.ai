@@ -12,7 +12,7 @@ const AICloudSection: React.FC = () => {
   const features = [
     { icon: <Cloud className="h-6 w-6 text-blue-400" />, title: "Global Infrastructure", description: "Deploy AI models across 35+ regions worldwide" },
     { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Compute Scaling", description: "Automatically scale resources based on demand" },
-    { icon: <Shield className="h-6 w-6 text-blue-400" />, title: "Enterprise Security", description: "SOC 2 Type II, HIPAA, and GDPR compliant" },
+    { icon: <Shield className="h-6 w-6 text-blue-400" />, title: "Enterprise Security", description: "Enterprise-grade security with GDPR controls" },
     { icon: <Zap className="h-6 w-6 text-blue-400" />, title: "Low Latency", description: "Sub-100ms response times for AI inference" },
     { icon: <Globe className="h-6 w-6 text-blue-400" />, title: "Global Edge Network", description: "Serve models from the edge for faster responses" },
     { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Model Optimization", description: "Automatic optimization for faster performance" }

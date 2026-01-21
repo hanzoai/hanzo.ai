@@ -1,58 +1,90 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight, Sparkles } from "lucide-react";
+
+const BRAND_COLOR = "#fd4444";
 
 const AboutHero = () => {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-      
+    <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
+          style={{
+            background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+            filter: "blur(100px)",
+          }}
+        />
+        <div
+          className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-10"
+          style={{
+            background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+            filter: "blur(80px)",
+          }}
+        />
+      </div>
+
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
           className="text-center"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
+            style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+          >
+            <Sparkles className="w-3.5 h-3.5" />
             Our Journey
-          </span>
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            History and Evolution of <span className="text-purple-400">Hanzo Industries</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
+          >
+            <span className="text-white">History of</span>
+            <br />
+            <span className="text-neutral-400">Hanzo Industries.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-10 max-w-3xl mx-auto"
+          >
             From startup to AI powerhouse, our journey of transformation, innovation, and purpose.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <a
+              href="#timeline"
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+              style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
             >
-              <a href="#timeline" className="flex items-center">
-                Explore Our Timeline
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-            
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-purple-600 text-[var(--white)] hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
+              Explore Our Timeline
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+            <Link
+              to="/zen"
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
             >
-              <a href="/zen" className="flex items-center">
-                The Zen of Hanzo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
+              The Zen of Hanzo
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

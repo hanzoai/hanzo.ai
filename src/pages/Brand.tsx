@@ -1,32 +1,61 @@
-
 import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  Palette,
+  Download,
+  Type,
+  Grid3X3,
+  Sparkles,
+  ArrowRight,
+  CheckCircle,
+  ExternalLink
+} from "lucide-react";
 
-const ColorSwatch = ({ name, hex, className }) => (
+const BRAND_COLOR = "#fd4444";
+
+interface ColorSwatchProps {
+  name: string;
+  hex: string;
+  className: string;
+}
+
+const ColorSwatch = ({ name, hex, className }: ColorSwatchProps) => (
   <div className="space-y-2">
-    <div className={`w-full aspect-square rounded-lg ${className}`}></div>
-    <div className="text-sm font-medium">{name}</div>
+    <div className={`w-full aspect-square rounded-lg ${className} border border-neutral-800`}></div>
+    <div className="text-sm font-medium text-white">{name}</div>
     <div className="text-xs text-neutral-500">{hex}</div>
   </div>
 );
 
-const TypographyExample = ({ name, className, description }) => (
+interface TypographyExampleProps {
+  name: string;
+  className: string;
+  description: string;
+}
+
+const TypographyExample = ({ name, className, description }: TypographyExampleProps) => (
   <div className="space-y-2 mb-10">
     <div className={`${className}`}>{name}</div>
     <div className="text-xs text-neutral-500">{description}</div>
   </div>
 );
 
-const ComponentShowcase = ({ title, children }) => (
-  <div className="border border-gray-800 rounded-xl overflow-hidden">
-    <div className="p-4 border-b border-gray-800 bg-[var(--black)]/40">
-      <h3 className="text-sm font-medium text-[var(--white)]">{title}</h3>
+interface ComponentShowcaseProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+const ComponentShowcase = ({ title, children }: ComponentShowcaseProps) => (
+  <div className="border border-neutral-800 rounded-xl overflow-hidden">
+    <div className="p-4 border-b border-neutral-800 bg-neutral-900/50">
+      <h3 className="text-sm font-medium text-white">{title}</h3>
     </div>
-    <div className="p-8 flex flex-wrap gap-4 items-center justify-center bg-[var(--black)]/20">
+    <div className="p-8 flex flex-wrap gap-4 items-center justify-center bg-neutral-900/30">
       {children}
     </div>
   </div>
@@ -36,72 +65,185 @@ const Brand = () => {
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
-        <title>Hanzo Design System - Brand Guidelines</title>
+        <title>Brand Guidelines - Hanzo AI</title>
         <meta name="description" content="The Hanzo design system, typography, colors, and components. A guide for consistent visual design across our platform." />
       </Helmet>
-      
+
       <Navbar />
-      
-      <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-6xl mx-auto"
-        >
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 rounded-full bg-gray-900 text-neutral-300 text-sm font-medium mb-4">
-              Design System
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/70">
-              Hanzo Brand
-            </h1>
-            <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
-              A comprehensive guide for creating consistent, elegant, and minimal interfaces across our platform.
-            </p>
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
+              style={{
+                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+                filter: "blur(100px)",
+              }}
+            />
+            <div
+              className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-10"
+              style={{
+                background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+                filter: "blur(80px)",
+              }}
+            />
           </div>
-          
-          {/* Design Principles */}
-          <section className="mb-24">
-            <h2 className="text-2xl font-bold mb-8 text-center">Design Principles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-gray-800">
-                <h3 className="text-xl font-bold mb-4">Minimal & Focused</h3>
-                <p className="text-neutral-400">
-                  Reduce visual noise and focus on essential elements. Each design decision should have purpose and enhance the user experience.
-                </p>
-              </div>
-              <div className="p-8 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-gray-800">
-                <h3 className="text-xl font-bold mb-4">Elegant & Refined</h3>
-                <p className="text-neutral-400">
-                  Use subtle gradients, appropriate spacing, and thoughtful typography to create elegant and sophisticated interfaces.
-                </p>
-              </div>
-              <div className="p-8 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-gray-800">
-                <h3 className="text-xl font-bold mb-4">Consistent & Cohesive</h3>
-                <p className="text-neutral-400">
-                  Maintain consistency in design patterns, spacing, and visual hierarchy to create a unified experience across all touchpoints.
-                </p>
-              </div>
+
+          <div className="max-w-5xl mx-auto relative z-10">
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
+                style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+              >
+                <Palette className="w-3.5 h-3.5" />
+                Design System
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.05 }}
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
+              >
+                <span className="text-white">Hanzo Brand</span>
+                <br />
+                <span className="text-neutral-400">Guidelines.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-10 max-w-3xl mx-auto"
+              >
+                A comprehensive guide for creating consistent, elegant, and minimal interfaces
+                across our platform and products.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="flex flex-wrap items-center justify-center gap-4"
+              >
+                <a
+                  href="#assets"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
+                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Assets
+                </a>
+                <Link
+                  to="/press"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                >
+                  Press Kit
+                </Link>
+              </motion.div>
             </div>
-          </section>
-          
-          {/* Color Palette */}
-          <section className="mb-24">
-            <h2 className="text-2xl font-bold mb-8 text-center">Color Palette</h2>
+          </div>
+        </section>
+
+        {/* Design Principles */}
+        <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Design Principles</h2>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                Our core principles guide every design decision we make.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Sparkles,
+                  title: "Minimal & Focused",
+                  description: "Reduce visual noise and focus on essential elements. Each design decision should have purpose and enhance the user experience."
+                },
+                {
+                  icon: Type,
+                  title: "Elegant & Refined",
+                  description: "Use subtle gradients, appropriate spacing, and thoughtful typography to create elegant and sophisticated interfaces."
+                },
+                {
+                  icon: Grid3X3,
+                  title: "Consistent & Cohesive",
+                  description: "Maintain consistency in design patterns, spacing, and visual hierarchy to create a unified experience across all touchpoints."
+                }
+              ].map((principle, index) => {
+                const Icon = principle.icon;
+                return (
+                  <motion.div
+                    key={principle.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors"
+                  >
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      style={{ backgroundColor: `${BRAND_COLOR}15` }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{principle.title}</h3>
+                    <p className="text-sm text-neutral-400">{principle.description}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Color Palette */}
+        <section className="py-16 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Color Palette</h2>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                Our colors are carefully selected to create a bold, modern aesthetic.
+              </p>
+            </motion.div>
+
             <div className="space-y-12">
-              <div>
-                <h3 className="text-xl font-medium mb-6">Core Colors</h3>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-medium mb-6 text-white">Brand Colors</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                  <ColorSwatch name="Pure Black" hex="#000000" className="bg-[var(--black)]" />
-                  <ColorSwatch name="Deep Black" hex="#101010" className="bg-[#101010]" />
-                  <ColorSwatch name="Pure White" hex="#FFFFFF" className="bg-[var(--white)]" />
-                  <ColorSwatch name="Off White" hex="#F7F7F7" className="bg-[#F7F7F7]" />
+                  <ColorSwatch name="Hanzo Red" hex="#FD4444" className="bg-[#fd4444]" />
+                  <ColorSwatch name="Pure Black" hex="#000000" className="bg-black" />
+                  <ColorSwatch name="Pure White" hex="#FFFFFF" className="bg-white" />
+                  <ColorSwatch name="Deep Gray" hex="#171717" className="bg-[#171717]" />
                 </div>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-medium mb-6">Gray Scale</h3>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-medium mb-6 text-white">Gray Scale</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6">
                   <ColorSwatch name="Gray 900" hex="#171717" className="bg-[#171717]" />
                   <ColorSwatch name="Gray 800" hex="#262626" className="bg-[#262626]" />
@@ -110,146 +252,272 @@ const Brand = () => {
                   <ColorSwatch name="Gray 500" hex="#737373" className="bg-[#737373]" />
                   <ColorSwatch name="Gray 400" hex="#A3A3A3" className="bg-[#A3A3A3]" />
                 </div>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-medium mb-6">Subtle Gradients</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <ColorSwatch 
-                    name="White Fade" 
-                    hex="Linear" 
-                    className="bg-gradient-to-b from-white/10 to-transparent" 
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-medium mb-6 text-white">Gradients</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <ColorSwatch
+                    name="Brand Glow"
+                    hex="Radial"
+                    className="bg-gradient-to-br from-[#fd4444]/30 to-transparent"
                   />
-                  <ColorSwatch 
-                    name="Gray Fade" 
-                    hex="Linear" 
-                    className="bg-gradient-to-r from-gray-800/20 to-transparent" 
+                  <ColorSwatch
+                    name="White Fade"
+                    hex="Linear"
+                    className="bg-gradient-to-b from-white/10 to-transparent"
+                  />
+                  <ColorSwatch
+                    name="Gray Fade"
+                    hex="Linear"
+                    className="bg-gradient-to-r from-neutral-800/50 to-transparent"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </section>
-          
-          {/* Typography */}
-          <section className="mb-24">
-            <h2 className="text-2xl font-bold mb-8 text-center">Typography</h2>
-            <div className="max-w-3xl mx-auto">
-              <TypographyExample 
-                name="Heading 1" 
-                className="text-4xl md:text-6xl font-bold tracking-tight" 
-                description="Large page titles, hero sections" 
-              />
-              <TypographyExample 
-                name="Heading 2" 
-                className="text-3xl md:text-4xl font-bold tracking-tight" 
-                description="Section titles, major divisions" 
-              />
-              <TypographyExample 
-                name="Heading 3" 
-                className="text-2xl font-semibold" 
-                description="Subsection headings, feature headings" 
-              />
-              <TypographyExample 
-                name="Heading 4" 
-                className="text-xl font-medium" 
-                description="Card titles, minor section headings" 
-              />
-              <TypographyExample 
-                name="Body Large" 
-                className="text-lg leading-relaxed text-neutral-300" 
-                description="Featured paragraphs, pull quotes" 
-              />
-              <TypographyExample 
-                name="Body" 
-                className="text-base leading-relaxed text-neutral-400" 
-                description="Primary body text" 
-              />
-              <TypographyExample 
-                name="Caption" 
-                className="text-sm text-neutral-500" 
-                description="Supporting text, metadata, labels" 
-              />
-            </div>
-          </section>
-          
-          {/* Components */}
-          <section className="mb-24">
-            <h2 className="text-2xl font-bold mb-8 text-center">Components</h2>
-            <div className="space-y-12">
-              <ComponentShowcase title="Buttons">
-                <Button variant="default" size="lg">Primary Button</Button>
-                <Button variant="outline" size="lg">Secondary Button</Button>
-                <Button variant="ghost" size="lg">Ghost Button</Button>
-                <Button variant="link" size="lg">Link Button</Button>
-              </ComponentShowcase>
-              
-              <ComponentShowcase title="Cards">
-                <div className="w-full max-w-md p-6 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-gray-800">
-                  <h3 className="text-xl font-medium mb-2">Card Title</h3>
-                  <p className="text-neutral-400 mb-4">This is a standard card component with a subtle gradient background.</p>
-                  <Button variant="outline" size="sm">Learn More</Button>
-                </div>
-              </ComponentShowcase>
-              
-              <ComponentShowcase title="Badges">
-                <div className="px-3 py-1 rounded-full bg-gray-900 text-neutral-300 text-sm font-medium">Default Badge</div>
-                <div className="px-3 py-1 rounded-full bg-[var(--white)]/10 backdrop-blur-sm border border-white/20 text-[var(--white)] text-sm font-medium">Glass Badge</div>
-              </ComponentShowcase>
-            </div>
-          </section>
-          
-          {/* Grid & Spacing */}
-          <section className="mb-24">
-            <h2 className="text-2xl font-bold mb-8 text-center">Grid & Spacing</h2>
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-gray-900 p-4 rounded-lg mb-8">
-                <div className="grid grid-cols-4 gap-4 h-64">
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className="bg-gray-800 rounded flex items-center justify-center">
-                      <span className="text-xs text-neutral-500">{i+1}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="space-y-3 text-neutral-400">
-                <p>We use a 4px base unit for all spacing measurements.</p>
-                <p>Common spacing values: 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, 96px.</p>
-                <p>Baseline grid: 4px with a primary line height of 1.5.</p>
-              </div>
-            </div>
-          </section>
-          
-          {/* Icons & Illustrations */}
-          <section>
-            <h2 className="text-2xl font-bold mb-8 text-center">Icons & Illustrations</h2>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-neutral-400 mb-8">
-                We use minimalist, monochrome SVG graphics with subtle animations to emphasize important concepts
-                without compromising our clean, elegant aesthetic.
+          </div>
+        </section>
+
+        {/* Typography */}
+        <section className="py-16 px-4 md:px-8 bg-neutral-900/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Typography</h2>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                Clean, readable typography is essential to our design language.
               </p>
-              <div className="flex flex-wrap gap-8 justify-center">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[var(--white)]">
-                  <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[var(--white)]">
-                  <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M12 8V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-                
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[var(--white)]">
-                  <path d="M15 4L9 12L15 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[var(--white)]">
-                  <path d="M9 4L15 12L9 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto bg-neutral-900/50 border border-neutral-800 rounded-xl p-8"
+            >
+              <TypographyExample
+                name="Heading 1"
+                className="text-4xl md:text-6xl font-bold tracking-tight text-white"
+                description="Large page titles, hero sections"
+              />
+              <TypographyExample
+                name="Heading 2"
+                className="text-3xl md:text-4xl font-bold tracking-tight text-white"
+                description="Section titles, major divisions"
+              />
+              <TypographyExample
+                name="Heading 3"
+                className="text-2xl font-semibold text-white"
+                description="Subsection headings, feature headings"
+              />
+              <TypographyExample
+                name="Heading 4"
+                className="text-xl font-medium text-white"
+                description="Card titles, minor section headings"
+              />
+              <TypographyExample
+                name="Body Large"
+                className="text-lg leading-relaxed text-neutral-300"
+                description="Featured paragraphs, pull quotes"
+              />
+              <TypographyExample
+                name="Body"
+                className="text-base leading-relaxed text-neutral-400"
+                description="Primary body text"
+              />
+              <TypographyExample
+                name="Caption"
+                className="text-sm text-neutral-500"
+                description="Supporting text, metadata, labels"
+              />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Components */}
+        <section className="py-16 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Components</h2>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                Reusable UI components that maintain consistency across our products.
+              </p>
+            </motion.div>
+
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <ComponentShowcase title="Buttons">
+                  <Button
+                    className="rounded-full"
+                    style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                  >
+                    Primary Button
+                  </Button>
+                  <Button variant="outline" className="rounded-full border-neutral-700 text-white hover:bg-neutral-900">
+                    Secondary Button
+                  </Button>
+                  <Button variant="ghost" className="text-white hover:bg-neutral-900">
+                    Ghost Button
+                  </Button>
+                  <Button variant="link" className="text-[#fd4444]">
+                    Link Button
+                  </Button>
+                </ComponentShowcase>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <ComponentShowcase title="Cards">
+                  <div className="w-full max-w-md p-6 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-[#fd4444]/30 transition-colors">
+                    <h3 className="text-xl font-medium mb-2 text-white">Card Title</h3>
+                    <p className="text-neutral-400 mb-4">This is a standard card component with hover states and consistent styling.</p>
+                    <Button variant="outline" size="sm" className="border-neutral-700 text-white hover:bg-neutral-900">
+                      Learn More
+                    </Button>
+                  </div>
+                </ComponentShowcase>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <ComponentShowcase title="Badges">
+                  <div
+                    className="px-3 py-1 rounded-full text-sm font-medium"
+                    style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+                  >
+                    Brand Badge
+                  </div>
+                  <div className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 text-sm font-medium">
+                    Default Badge
+                  </div>
+                  <div className="px-3 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-400 text-sm font-medium">
+                    Success Badge
+                  </div>
+                </ComponentShowcase>
+              </motion.div>
             </div>
-          </section>
-        </motion.div>
+          </div>
+        </section>
+
+        {/* Download Assets */}
+        <section id="assets" className="py-16 px-4 md:px-8 bg-neutral-900/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Download Assets</h2>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                Get our brand assets for your projects and presentations.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: "Logo Package", description: "SVG, PNG, and PDF formats", size: "2.4 MB" },
+                { title: "Icon Set", description: "500+ custom icons", size: "8.1 MB" },
+                { title: "Brand Guide", description: "Complete PDF guidelines", size: "4.2 MB" }
+              ].map((asset, index) => (
+                <motion.a
+                  key={asset.title}
+                  href="#"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors group"
+                >
+                  <div
+                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${BRAND_COLOR}15` }}
+                  >
+                    <Download className="w-6 h-6" style={{ color: BRAND_COLOR }} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#fd4444] transition-colors">
+                    {asset.title}
+                  </h3>
+                  <p className="text-sm text-neutral-400 mb-2">{asset.description}</p>
+                  <span className="text-xs text-neutral-500">{asset.size}</span>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#fd4444]/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+            >
+              Need brand assistance?
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-neutral-400 mb-10 max-w-2xl mx-auto"
+            >
+              Our team can help with custom assets, co-branding requests, and other brand-related inquiries.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-wrap items-center justify-center gap-4"
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base"
+                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+              >
+                Contact Us
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a
+                href="mailto:brand@hanzo.ai"
+                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-base text-white"
+              >
+                brand@hanzo.ai
+              </a>
+            </motion.div>
+          </div>
+        </section>
       </main>
 
       <Footer />

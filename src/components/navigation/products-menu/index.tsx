@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 
-const ITEMS_PER_CATEGORY = 3;
+const ITEMS_PER_CATEGORY = 4;
 
 export const ProductsMenu = () => {
   const { isDarkMode } = useTheme();

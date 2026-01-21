@@ -2,6 +2,102 @@
 
 ## Recent Changes (2026-01-20)
 
+### Updated All Sub Pages with Modern Hero Style
+Comprehensive visual refresh across all sub pages with consistent brand styling:
+
+**Design System Applied:**
+- Brand color: `#fd4444` consistently across all pages
+- Animated hero sections with radial gradient backgrounds (800px, blur 100px, 15% opacity)
+- Staggered motion animations (framer-motion) with 0.4s base, 0.05s increments
+- Badge pills with icon + text in rounded-full styling
+- Two-line headings (white + neutral-400 color scheme)
+- Card components with `bg-neutral-900/50 border border-neutral-800 rounded-xl`
+- CTA sections with decorative blur blobs (blur-3xl)
+- Rounded-full buttons with brand color primary and neutral-700 border secondary
+
+**Pages Updated:**
+- `/src/pages/Brand.tsx` - Design system showcase with color swatches, typography, components
+- `/src/pages/Leadership.tsx` - Leadership team with stats row and values section
+- `/src/pages/Enterprise.tsx` - (previously updated)
+- `/src/pages/Careers.tsx` - (previously updated)
+- `/src/pages/Press.tsx` - (previously updated)
+
+**Hero Components Updated:**
+- `/src/components/solutions/Hero.tsx` - Enterprise Solutions hero
+- `/src/components/about/AboutHero.tsx` - Company history hero
+- `/src/components/team/TeamHero.tsx` - AI Team hero with feature pills and scroll indicator
+- `/src/components/download/DownloadHero.tsx` - Desktop app hero with download buttons
+
+**Pages Already Modern (no changes needed):**
+- Terms.tsx, Privacy.tsx, Contact.tsx, Security.tsx, OpenSource.tsx, Blog.tsx
+
+## Previous Changes (2026-01-20)
+
+### Fixed Page Navigation Scroll Behavior and GitHub Pages 404 Routing
+- **Scroll Behavior Fix**: Updated `ScrollToTop.tsx` to:
+  - Skip scroll on initial page load (let browser handle it)
+  - Delay scroll by 50ms to avoid jarring "scroll-then-render" effect during page transitions
+  - Use `behavior: "instant"` for clean navigation
+- **GitHub Pages SPA Routing**: Added `copyIndexTo404()` plugin in `vite.config.ts` that copies `index.html` to `404.html` during build. This ensures GitHub Pages serves the SPA for all routes (including dynamic paths like `/products/:categoryId`).
+- **Files Updated**:
+  - `/src/components/ScrollToTop.tsx` - Fixed scroll timing
+  - `/vite.config.ts` - Added 404.html generation plugin
+
+### Expanded Products Navigation
+- Increased `ITEMS_PER_CATEGORY` from 3 to 4 in products dropdown menu
+- Added 2 more featured products: Base (Backend-as-a-Service) and Cloud (AI Cloud infrastructure)
+- Now shows 8 featured products and 4 items per category (was 6 featured, 3 per category)
+- Files updated:
+  - `/src/components/navigation/products-menu/index.tsx`
+  - `/src/constants/navigation-data.ts`
+
+### Additional Compliance Fixes
+- Fixed `commerce/TechStack.tsx` - "PCI-compliant" → "Payment-grade security"
+- Fixed `Privacy.tsx` badge - "GDPR & CCPA Compliant" → "Privacy-First"
+
+### SSL and Social Meta Tags
+- **index.html**: Added proper Open Graph and Twitter Card meta tags with absolute `https://hanzo.ai/` URLs
+- Added canonical URL for SEO
+
+### Removed Datacenter Location References
+- Removed ALL specific location mentions, now uses "Global High-Performance Edge" messaging
+- Updated to show: 15+ regions, auto-scaling, data residency controls
+- Files updated:
+  - `/src/pages/Security.tsx` - Global edge features instead of specific regions
+  - `/src/components/base/Compliance.tsx` - Same treatment
+  - `/src/pages/Status.tsx` - Generic region names (Americas, Europe, APAC, Edge)
+
+### Honest Certification Claims (YC-Ready)
+Updated 20+ files to reflect honest certification status (SOC 2 audit in progress, no false claims):
+- Changed "SOC 2 Type II Certified" → "SOC 2 Audit in Progress" or removed
+- Changed "HIPAA Compliant" → "HIPAA Ready", "Healthcare-ready", or "BAA Available"
+- Changed "ISO 27001 certified" → Removed (not yet certified)
+- Changed "SOC 2 compliant infrastructure" → "Enterprise security" or "Enterprise-grade security"
+- Updated language across Security, Pricing, Cloud, Analytics, Team, and FAQ components
+- **Files updated**:
+  - `/src/pages/Security.tsx`
+  - `/src/pages/Enterprise.tsx`
+  - `/src/pages/Privacy.tsx`
+  - `/src/pages/Identity.tsx`
+  - `/src/pages/SolutionIndustries.tsx`
+  - `/src/pages/OrganizationProfile.tsx`
+  - `/src/pages/Calculator.tsx`
+  - `/src/components/analytics/Security.tsx`
+  - `/src/components/observability/Security.tsx`
+  - `/src/components/base/Compliance.tsx`
+  - `/src/components/cloud/Security.tsx`, `Features.tsx`, `CloudHero.tsx`
+  - `/src/components/home2/Features.tsx`
+  - `/src/components/sections/Base.tsx`
+  - `/src/components/pricing/FeatureComparison.tsx`, `TeamEnterprisePlans.tsx`, `EnterpriseFreePlans.tsx`, `PricingFAQ.tsx`
+  - `/src/components/team/AuditFeatures.tsx`
+  - `/src/components/index5/AICloudSection.tsx`
+  - `/src/components/zen/ProductsOverview.tsx`
+  - `/src/components/machines/MachinesEnterprise.tsx`
+  - `/src/components/hanzodev/FAQSection.tsx`
+  - `/src/components/hanzoapp/FAQSection.tsx`
+  - `/src/components/calculator/CostSummary.tsx`
+  - `/src/constants/navigation.ts`
+
 ### Updated Desktop App Messaging and Type Safety
 - **UI Update**: Updated `Extensions.tsx` to shift focus from "VS Code Extension" to "Desktop App" and "Browser Extensions", reflecting a broader product strategy.
 - **Type Safety**:

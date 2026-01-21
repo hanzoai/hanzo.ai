@@ -47,7 +47,7 @@ const PricingFAQ = () => {
     },
     {
       question: "How secure is it?",
-      answer: "Security is our top priority. We use industry-standard encryption for all data, both in transit and at rest. Our infrastructure is hosted on secure cloud providers with SOC 2 compliance, and we regularly conduct security audits and penetration testing to ensure your data remains protected."
+      answer: "Security is our top priority. We use industry-standard encryption for all data, both in transit and at rest. Our infrastructure is hosted on secure cloud providers, and we regularly conduct security audits and penetration testing to ensure your data remains protected."
     },
     {
       question: "How is my data used?",

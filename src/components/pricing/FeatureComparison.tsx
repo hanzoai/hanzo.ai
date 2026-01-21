@@ -28,7 +28,7 @@ const FeatureComparison = () => {
         { name: "Admin Console", pro: false, max: false, team: true, enterprise: true },
         { name: "User Management", pro: false, max: false, team: true, enterprise: true },
         { name: "Data Exclusion from Training", pro: false, max: false, team: true, enterprise: true },
-        { name: "Enhanced Security (SOC 2, GDPR)", pro: false, max: false, team: false, enterprise: true },
+        { name: "Enhanced Security (GDPR ready)", pro: false, max: false, team: false, enterprise: true },
         { name: "Custom Data Retention", pro: false, max: false, team: false, enterprise: true },
       ]
     },

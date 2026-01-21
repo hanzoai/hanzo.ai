@@ -92,7 +92,7 @@ const client = createClient();`}</code>
                   <Zap className="h-6 w-6 text-neutral-400 mt-1" />
                   <div>
                     <h4 className="text-[var(--white)] font-semibold">Enterprise Ready</h4>
-                    <p className="text-neutral-300">SOC2, GDPR, and HIPAA compliant infrastructure</p>
+                    <p className="text-neutral-300">Enterprise security with GDPR and privacy controls</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">

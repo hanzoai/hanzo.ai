@@ -87,7 +87,7 @@ hanzo edge status
     },
     security: {
       title: "Enterprise Security",
-      code: `# SOC 2 & HIPAA compliant
+      code: `# Enterprise security
 hanzo security audit
 
 # Private networking

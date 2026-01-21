@@ -37,7 +37,7 @@ const Security = () => {
               {[
                 "Single Sign-On",
                 "Guaranteed Support Response Times",
-                "SOC2 Type 2 Attested",
+                "SOC 2 audit in progress",
                 "Memory-safe Rust and Go stack",
                 "CI/CD Integration"
               ].map((feature, index) => (

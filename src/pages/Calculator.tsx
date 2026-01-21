@@ -45,7 +45,7 @@ const Calculator = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-neutral-400" />
-                <span><strong>Compliance:</strong> $99/month for SOC2 Type 2 compliance</span>
+                <span><strong>Compliance:</strong> $99/month for enhanced security features</span>
               </li>
               <li className="flex items-center gap-2">
                 <HeadsetIcon className="h-4 w-4 text-neutral-400" />

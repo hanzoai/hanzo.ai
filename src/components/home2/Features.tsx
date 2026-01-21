@@ -17,7 +17,7 @@ const features = [
   {
     icon: <Shield className="h-6 w-6" />,
     title: "Enterprise Ready",
-    description: "SOC 2, GDPR, and HIPAA compliant with 99.9% uptime SLA."
+    description: "Enterprise security with GDPR controls and 99.9% uptime SLA."
   },
   {
     icon: <Bot className="h-6 w-6" />,

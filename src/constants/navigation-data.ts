@@ -202,6 +202,8 @@ export const featuredProducts: NavItem[] = [
   { title: "Agent", href: "/products/apps/agent", icon: Bot, description: "Multi-agent SDK", featured: true },
   { title: "Vector", href: "/products/data/vector", icon: Sparkles, description: "High-performance vector DB", featured: true },
   { title: "Functions", href: "/products/compute/functions", icon: Zap, description: "Serverless compute", featured: true },
+  { title: "Base", href: "/products/apps/base", icon: Layers, description: "Backend-as-a-Service", featured: true },
+  { title: "Cloud", href: "/cloud", icon: Cloud, description: "AI Cloud infrastructure", featured: true },
   { title: "IAM", href: "/products/platform/iam", icon: UserCheck, description: "Identity & access", featured: true },
 ];
 

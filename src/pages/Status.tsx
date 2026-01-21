@@ -28,10 +28,10 @@ const services = [
 ];
 
 const regions = [
-  { name: "US Central", code: "us-central-1", status: "operational" },
-  { name: "US East", code: "us-east-1", status: "operational" },
-  { name: "EU West", code: "eu-west-1", status: "operational" },
-  { name: "Asia Pacific", code: "ap-southeast-1", status: "operational" },
+  { name: "Americas", code: "americas", status: "operational" },
+  { name: "Europe", code: "europe", status: "operational" },
+  { name: "Asia Pacific", code: "apac", status: "operational" },
+  { name: "Edge Network", code: "edge", status: "operational" },
 ];
 
 const StatusPage = () => {

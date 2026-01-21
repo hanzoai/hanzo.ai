@@ -28,12 +28,10 @@ import {
 const BRAND_COLOR = "#fd4444";
 
 const COMPLIANCE_BADGES = [
-  { name: "SOC 2 Type II", description: "Annual audit completed" },
-  { name: "GDPR", description: "EU data protection" },
-  { name: "CCPA", description: "California privacy" },
-  { name: "HIPAA", description: "Healthcare ready" },
-  { name: "ISO 27001", description: "Information security" },
-  { name: "PCI DSS", description: "Payment security" },
+  { name: "SOC 2 Type II", description: "Audit in progress" },
+  { name: "GDPR", description: "Data protection ready" },
+  { name: "CCPA", description: "Privacy controls" },
+  { name: "HIPAA", description: "BAA available" },
 ];
 
 const SECURITY_FEATURES = [
@@ -86,10 +84,10 @@ const ENTERPRISE_FEATURES = [
   "Security questionnaire support",
 ];
 
-const REGIONS = [
-  { name: "United States", code: "MCI - Kansas City", region: "us-central-1" },
-  { name: "Canada", code: "YVR - Vancouver", region: "ca-west-1" },
-  { name: "European Union", code: "BCN - Barcelona", region: "eu-west-1" },
+const EDGE_FEATURES = [
+  { name: "Global Edge Network", description: "15+ regions worldwide" },
+  { name: "Auto-scaling", description: "Scale to zero or millions" },
+  { name: "Data Residency", description: "Choose your data location" },
 ];
 
 const Security = () => {
@@ -99,7 +97,7 @@ const Security = () => {
         <title>Security - Enterprise-Grade Protection | Hanzo AI</title>
         <meta
           name="description"
-          content="SOC 2, HIPAA, GDPR compliant. Enterprise-grade security with end-to-end encryption, MFA, and comprehensive access controls. Your data is protected."
+          content="Enterprise-grade security with end-to-end encryption, MFA, and comprehensive access controls. SOC 2 audit in progress. Your data is protected."
         />
       </Helmet>
 
@@ -130,7 +128,7 @@ const Security = () => {
                 style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
               >
                 <Shield className="w-3.5 h-3.5" />
-                SOC 2 Type II Certified
+                SOC 2 Audit in Progress
               </motion.div>
 
               <motion.h1
@@ -267,7 +265,7 @@ const Security = () => {
                   Built on secure foundations
                 </h2>
                 <p className="text-neutral-400 mb-8">
-                  Our infrastructure runs on SOC 2 compliant data centers with 24/7 physical
+                  Our infrastructure runs on enterprise-grade data centers with 24/7 physical
                   security, redundant power, and isolated network architecture. Every component
                   is designed with security as the primary requirement.
                 </p>
@@ -298,25 +296,22 @@ const Security = () => {
                 className="bg-gradient-to-br from-neutral-900 to-neutral-900/50 rounded-xl p-8 border border-neutral-800"
               >
                 <Globe className="w-10 h-10 text-neutral-400 mb-6" />
-                <h3 className="text-xl font-bold text-white mb-4">Global Data Regions</h3>
+                <h3 className="text-xl font-bold text-white mb-4">Global High-Performance Edge</h3>
                 <p className="text-neutral-400 mb-6">
-                  Deploy to specific geographic regions to meet data residency requirements
-                  and minimize latency.
+                  Deploy globally with automatic scaling and data residency controls
+                  to meet compliance requirements.
                 </p>
 
                 <div className="space-y-4">
-                  {REGIONS.map((region) => (
+                  {EDGE_FEATURES.map((feature) => (
                     <div
-                      key={region.region}
+                      key={feature.name}
                       className="bg-neutral-800/50 rounded-lg p-4 border border-neutral-700"
                     >
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-medium text-white">{region.name}</span>
-                        <span className="text-xs text-neutral-500 font-mono">
-                          {region.region}
-                        </span>
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium text-white">{feature.name}</span>
                       </div>
-                      <span className="text-sm text-neutral-400">{region.code}</span>
+                      <span className="text-sm text-neutral-400">{feature.description}</span>
                     </div>
                   ))}
                 </div>

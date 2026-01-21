@@ -143,7 +143,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                       <h4 className="text-white font-medium">Enterprise Security</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
-                      SOC 2 compliance, end-to-end encryption, and comprehensive audit logging for mission-critical AI systems.
+                      Enterprise security, end-to-end encryption, and comprehensive audit logging for mission-critical AI systems.
                     </p>
                   </motion.div>
                 </div>

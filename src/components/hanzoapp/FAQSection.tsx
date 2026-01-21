@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Is my code private?",
-    answer: "In Local AI mode, absolutely - nothing leaves your machine. In cloud mode, we never train on your code and offer SOC 2 compliance, E2E encryption, and enterprise data isolation options.",
+    answer: "In Local AI mode, absolutely - nothing leaves your machine. In cloud mode, we never train on your code and offer E2E encryption and enterprise data isolation options.",
   },
 ];
 

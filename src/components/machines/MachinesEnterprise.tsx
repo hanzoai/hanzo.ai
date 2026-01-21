@@ -20,7 +20,7 @@ const MachinesEnterprise = () => {
     {
       icon: Shield,
       title: "Security & Compliance",
-      description: "SOC 2, HIPAA, and GDPR compliant infrastructure with hardware-level isolation."
+      description: "Enterprise security with GDPR controls and hardware-level isolation."
     },
     {
       icon: Database,

@@ -165,7 +165,7 @@ const SolutionIndustries: React.FC = () => {
         description: "Our healthcare solutions help providers, payers, and life sciences companies improve patient outcomes, optimize operations, and ensure security and compliance.",
         challenges: [
           "Interoperability of health data",
-          "Patient data security and HIPAA compliance",
+          "Patient data security and privacy",
           "Clinical workflow optimization",
           "Remote patient monitoring",
           "Population health management"
@@ -179,12 +179,12 @@ const SolutionIndustries: React.FC = () => {
         ],
         caseStudy: {
           title: "AI-Powered Patient Care Platform",
-          description: "We developed a secure, HIPAA-compliant platform that uses AI to analyze patient data and provide real-time clinical decision support, improving outcomes and reducing costs.",
+          description: "We developed a secure, healthcare-ready platform that uses AI to analyze patient data and provide real-time clinical decision support, improving outcomes and reducing costs.",
           results: [
             "22% improvement in clinical outcomes",
             "35% reduction in readmission rates",
             "40% time savings for clinical staff",
-            "100% HIPAA compliance maintained"
+            "Healthcare privacy standards maintained"
           ]
         }
       },

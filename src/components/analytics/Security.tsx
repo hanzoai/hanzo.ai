@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Lock, CheckCircle } from "lucide-react";
 
 const certifications = [
-  { name: "SOC 2 Type II", details: "Certified for organizational controls and security." },
-  { name: "GDPR compliance", details: "Fully compliant with European data protection regulations." },
-  { name: "ISO 27001 certified", details: "International standard for information security management." },
-  { name: "HIPAA compliant", details: "Compliant with healthcare data protection requirements." }
+  { name: "SOC 2 Type II", details: "Audit in progress. Enterprise security controls." },
+  { name: "GDPR ready", details: "Data protection controls for EU compliance." },
+  { name: "Privacy-first", details: "Built with privacy-by-design principles." },
+  { name: "HIPAA capable", details: "BAA available for healthcare use cases." }
 ];
 
 const SecurityFeatures = [

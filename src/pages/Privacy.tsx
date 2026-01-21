@@ -38,7 +38,7 @@ const Privacy = () => {
         <title>Privacy Policy - Hanzo AI</title>
         <meta
           name="description"
-          content="Hanzo AI privacy policy - how we protect your data and respect your privacy. GDPR and CCPA compliant."
+          content="Hanzo AI privacy policy - how we protect your data and respect your privacy. Privacy controls for GDPR and CCPA."
         />
       </Helmet>
 
@@ -67,7 +67,7 @@ const Privacy = () => {
                 style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
               >
                 <Shield className="w-3.5 h-3.5" />
-                GDPR & CCPA Compliant
+                Privacy-First
               </motion.div>
 
               <motion.h1
@@ -97,7 +97,7 @@ const Privacy = () => {
                 transition={{ duration: 0.4, delay: 0.15 }}
                 className="flex flex-wrap justify-center gap-3 mb-8"
               >
-                {["GDPR", "CCPA", "SOC 2", "HIPAA"].map((badge) => (
+                {["GDPR", "CCPA", "Privacy-first"].map((badge) => (
                   <div
                     key={badge}
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800"

@@ -25,11 +25,11 @@ const Compliance = () => {
               <div className="mt-4 flex flex-wrap gap-4">
                 <div className="flex items-center bg-blue-900/20 border border-blue-800/50 rounded-md px-3 py-1">
                   <Lock className="h-4 w-4 text-blue-400 mr-2" />
-                  <span className="text-blue-300 text-sm">SOC2 Type 2 Certified</span>
+                  <span className="text-blue-300 text-sm">SOC 2 Audit in Progress</span>
                 </div>
                 <div className="flex items-center bg-blue-900/20 border border-blue-800/50 rounded-md px-3 py-1">
                   <Lock className="h-4 w-4 text-blue-400 mr-2" />
-                  <span className="text-blue-300 text-sm">HIPAA Compliant</span>
+                  <span className="text-blue-300 text-sm">HIPAA BAA Available</span>
                 </div>
               </div>
             </div>
@@ -54,26 +54,26 @@ const Compliance = () => {
           >
             <div className="flex items-center mb-4">
               <Server className="h-6 w-6 text-purple-400 mr-3" />
-              <h3 className="text-xl font-semibold text-[var(--white)]">Global Data Regions</h3>
+              <h3 className="text-xl font-semibold text-[var(--white)]">Global High-Performance Edge</h3>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
               <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
-                <h4 className="font-medium text-blue-300 mb-2">United States (US)</h4>
-                <p className="text-neutral-300 text-sm mb-1">MCI - Kansas City</p>
-                <p className="text-neutral-400 text-xs">Hanzo Cloud region: us-central-1</p>
+                <h4 className="font-medium text-blue-300 mb-2">15+ Regions</h4>
+                <p className="text-neutral-300 text-sm mb-1">Global Coverage</p>
+                <p className="text-neutral-400 text-xs">Deploy close to your users worldwide</p>
               </div>
-              
+
               <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
-                <h4 className="font-medium text-blue-300 mb-2">Canada (CA)</h4>
-                <p className="text-neutral-300 text-sm mb-1">YVR - Vancouver</p>
-                <p className="text-neutral-400 text-xs">Hanzo Cloud region: ca-west-1</p>
+                <h4 className="font-medium text-blue-300 mb-2">Auto-scaling</h4>
+                <p className="text-neutral-300 text-sm mb-1">Scale to Zero</p>
+                <p className="text-neutral-400 text-xs">Pay only for what you use</p>
               </div>
-              
+
               <div className="bg-blue-900/20 border border-blue-800/50 rounded-lg p-4">
-                <h4 className="font-medium text-blue-300 mb-2">European Union (EU)</h4>
-                <p className="text-neutral-300 text-sm mb-1">BCN - Barcelona</p>
-                <p className="text-neutral-400 text-xs">Hanzo Cloud region: eu-west-1</p>
+                <h4 className="font-medium text-blue-300 mb-2">Data Residency</h4>
+                <p className="text-neutral-300 text-sm mb-1">You Choose</p>
+                <p className="text-neutral-400 text-xs">Control where your data lives</p>
               </div>
             </div>
             
