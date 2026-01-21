@@ -30,7 +30,7 @@ const PricingPreviewSection = () => {
             Pricing
           </p>
           <h2 className="text-3xl md:text-5xl font-medium text-white mb-6">
-            Start free, scale infinitely
+            Scale forever
           </h2>
           <p className="text-lg text-neutral-400">
             No credit card required. Upgrade when you're ready.
