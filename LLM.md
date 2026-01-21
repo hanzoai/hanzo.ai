@@ -1,5 +1,15 @@
 # Maintenance Report
 
+## Recent Changes (2026-01-20)
+
+### Updated Desktop App Messaging and Type Safety
+- **UI Update**: Updated `Extensions.tsx` to shift focus from "VS Code Extension" to "Desktop App" and "Browser Extensions", reflecting a broader product strategy.
+- **Type Safety**:
+  - Added `ZenModel` interface in `ZenModels.tsx` to replace `any`.
+  - Added `Agent` interface in `AgentGallery.tsx` to replace `any`.
+  - Improved typing in `Integration.tsx` and `Hero.tsx`.
+- **Commit**: "Refactor types and update Extensions/Desktop App messaging"
+
 ## Recent Changes (2025-06-16)
 
 ### Updated Signup Button Styling
