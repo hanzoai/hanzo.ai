@@ -1,5 +1,20 @@
 # Maintenance Report
 
+## Recent Changes (2026-01-21)
+
+### Deployed All Updates to Production
+- **Commit**: `e3b87d3` - "Update all sub-pages with modern hero style and honest certification claims"
+- **Files Changed**: 44 files, +2628 insertions, -1321 deletions
+- **Deployment**: GitHub Pages workflow completed successfully (35s)
+- **Live URL**: https://hanzo.ai/
+
+### Docs Component Patterns (for reference)
+Explored `~/work/hanzo/docs/packages/` for reusable patterns:
+- **Card**: Grid layout with hover effects, icon support (`packages/base-ui/src/components/card.tsx`)
+- **Banner**: Dismissible with localStorage persistence, rainbow gradient animation
+- **Callout**: Styled alerts with type variants (info, warn, error, success, idea)
+- Note: Docs uses Next.js/fumadocs - patterns adaptable but not directly importable
+
 ## Recent Changes (2026-01-20)
 
 ### Updated All Sub Pages with Modern Hero Style
