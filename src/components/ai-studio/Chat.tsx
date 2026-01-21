@@ -1,5 +1,6 @@
 
 import React from "react";
+import DOMPurify from "dompurify";
 import { MessageInterface } from "./types";
 
 interface ChatProps {
@@ -31,11 +32,13 @@ const Chat = ({
                   : "bg-gray-800/60 border border-gray-700/50"
               }`}
             >
-              <div 
-                className="prose prose-invert text-sm" 
-                dangerouslySetInnerHTML={{ 
-                  __html: message.content.replace(/```(.+?)```/gs, '<pre><code>$1</code></pre>') 
-                }} 
+              <div
+                className="prose prose-invert text-sm"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(
+                    message.content.replace(/```(.+?)```/gs, '<pre><code>$1</code></pre>')
+                  )
+                }}
               />
             </div>
           </div>

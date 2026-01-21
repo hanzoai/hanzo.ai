@@ -8,7 +8,6 @@ interface ScrollToTopButtonProps {
 }
 
 const ScrollToTopButton = ({ scrolled }: ScrollToTopButtonProps) => {
-  console.log("ScrollToTopButton rendering, scrolled:", scrolled);
   return (
     <motion.button
       initial={{ opacity: 0 }}

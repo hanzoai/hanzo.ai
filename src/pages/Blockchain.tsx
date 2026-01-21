@@ -186,8 +186,6 @@ const Blockchain = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle waitlist signup
-    console.log("Waitlist signup:", email);
     setSubmitted(true);
     setEmail("");
     setTimeout(() => setSubmitted(false), 3000);

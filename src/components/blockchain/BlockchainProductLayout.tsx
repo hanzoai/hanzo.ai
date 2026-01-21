@@ -63,7 +63,6 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Beta signup:", formData);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);

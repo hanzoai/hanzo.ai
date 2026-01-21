@@ -1,9 +1,8 @@
 
 import { toast } from "sonner";
 
-// Note: In a production environment, these keys would be handled through environment variables
-// and the actual payment processing would happen on the server-side
-const PUBLISHABLE_KEY = "pk_test_51NzKVbEfyRQgfHfUnlyYrL0Jz5FinRXogBTJLULKqLFhDkgkDMQaF8MaKVeJb7XpxipzjFsyHZ8SgYgWkzpW";
+// Stripe publishable key from environment variables
+const PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || "";
 
 export type PlanType = "dev" | "pro" | "team";
 
@@ -63,16 +62,20 @@ const mockUserBillingInfo: UserBillingInfo = {
 
 // Simulate loading the user's billing info from storage or API
 export const getUserBillingInfo = (): UserBillingInfo => {
-  const storedInfo = localStorage.getItem('userBillingInfo');
-  if (storedInfo) {
-    const parsedInfo = JSON.parse(storedInfo);
-    return {
-      ...parsedInfo,
-      trialEndsAt: parsedInfo.trialEndsAt ? new Date(parsedInfo.trialEndsAt) : null
-    };
+  try {
+    const storedInfo = localStorage.getItem('userBillingInfo');
+    if (storedInfo) {
+      const parsedInfo = JSON.parse(storedInfo);
+      return {
+        ...parsedInfo,
+        trialEndsAt: parsedInfo.trialEndsAt ? new Date(parsedInfo.trialEndsAt) : null
+      };
+    }
+  } catch (error) {
+    console.error("Error parsing billing info from localStorage:", error);
   }
-  
-  // Initialize with mock data if nothing stored
+
+  // Initialize with mock data if nothing stored or on error
   localStorage.setItem('userBillingInfo', JSON.stringify(mockUserBillingInfo));
   return mockUserBillingInfo;
 };
@@ -90,8 +93,6 @@ export const redirectToCheckout = async (planType: PlanType, quantity: number = 
   const plan = PLANS[planType];
   
   try {
-    console.log(`Redirecting to Stripe checkout for ${plan.name} (${quantity} seats)`);
-    
     // In a real implementation, you would:
     // 1. Call your backend to create a Stripe Checkout session
     // 2. Redirect to the Stripe Checkout URL
@@ -127,8 +128,6 @@ export const redirectToCheckout = async (planType: PlanType, quantity: number = 
 // Simulate purchasing additional credits
 export const purchaseCredits = async (amount: number) => {
   try {
-    console.log(`Purchasing $${amount} in additional credits`);
-    
     // In a real implementation, you would:
     // 1. Call your backend to create a Stripe Checkout session for credits
     // 2. Redirect to the Stripe Checkout URL

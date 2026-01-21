@@ -79,8 +79,16 @@ const WisdomDialog: React.FC<WisdomDialogProps> = ({ principle, isOpen, onClose 
   );
 };
 
+interface Principle {
+  number: string;
+  title: string;
+  description: string;
+  discipline: string;
+  emoji: string;
+}
+
 const PrinciplesPreview = () => {
-  const [selectedPrinciple, setSelectedPrinciple] = useState<any>(null);
+  const [selectedPrinciple, setSelectedPrinciple] = useState<Principle | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedDiscipline, setSelectedDiscipline] = useState<string | null>(null);
 
@@ -92,7 +100,7 @@ const PrinciplesPreview = () => {
     return principles.find(p => p.discipline === discipline);
   }).filter(Boolean);
 
-  const openWisdomDialog = (principle: any) => {
+  const openWisdomDialog = (principle: Principle) => {
     setSelectedPrinciple(principle);
     setIsDialogOpen(true);
   };

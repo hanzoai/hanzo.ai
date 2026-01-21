@@ -45,10 +45,10 @@ const CommandPalette: React.FC = () => {
     // Handle the selected command
     switch (id) {
       case "new-agent":
-        console.log("Create new agent");
+        window.location.href = "/dashboard?action=new-agent";
         break;
       case "new-task":
-        console.log("Create new task");
+        window.location.href = "/dashboard?action=new-task";
         break;
       case "view-board":
         window.location.href = "/dashboard?view=board";
@@ -60,13 +60,11 @@ const CommandPalette: React.FC = () => {
         window.location.href = "/dashboard?view=analytics";
         break;
       case "settings":
-        console.log("Open settings");
+        window.location.href = "/dashboard?view=settings";
         break;
       default:
-        // Check if it's an agent toggle command
         if (id.startsWith("toggle-agent-")) {
-          const agentId = id.replace("toggle-agent-", "");
-          console.log(`Toggle agent: ${agentId}`);
+          window.location.href = `/dashboard?action=toggle-agent&id=${id.replace("toggle-agent-", "")}`;
         }
     }
   };

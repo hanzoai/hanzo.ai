@@ -1,5 +1,6 @@
 
 import React from "react";
+import DOMPurify from "dompurify";
 import { Bot, User } from "lucide-react";
 
 interface ChatMessageProps {
@@ -30,11 +31,13 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
             : "bg-gray-800/60 border border-gray-700/50"
         }`}
       >
-        <div 
-          className="prose prose-invert text-sm" 
-          dangerouslySetInnerHTML={{ 
-            __html: message.message.replace(/```(.+?)```/gs, '<pre><code>$1</code></pre>').replace(/\n/g, '<br>') 
-          }} 
+        <div
+          className="prose prose-invert text-sm"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(
+              message.message.replace(/```(.+?)```/gs, '<pre><code>$1</code></pre>').replace(/\n/g, '<br>')
+            )
+          }}
         />
         <div className="text-right mt-1">
           <span className="text-xs text-neutral-400">

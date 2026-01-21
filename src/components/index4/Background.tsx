@@ -3,7 +3,6 @@ import React from "react";
 import { GridLines } from "@/components/ui/architectural-elements";
 
 const Background = () => {
-  console.log("Background component rendering");
   return (
     <>
       {/* Subtle grid background */}

@@ -5,8 +5,14 @@ import { Search, ChevronDown, ExternalLink, Brain, Video, Music, Box, Cpu, Spark
 import { useTheme } from "@/contexts/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 
+interface User {
+  id: string;
+  email: string;
+  name?: string;
+}
+
 interface AuthButtonsProps {
-  user: any | null;
+  user: User | null;
   onOpenCommandPalette?: () => void;
 }
 

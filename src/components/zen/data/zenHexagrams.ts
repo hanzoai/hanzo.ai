@@ -1,14 +1,15 @@
-import { 
-  Heart, Layers, Star, Rocket, Scale, 
+import {
+  Heart, Layers, Star, Rocket, Scale,
   Shield, PanelTop, Wrench, Combine, RefreshCw, ScanLine,
   MountainSnow, Binary, SlidersHorizontal, Wand2, Zap, Flame,
   Leaf, Cloud, Wind, Sun, FlowerIcon, Waves, Droplets,
   TreePine, Mountain, Scroll, Milestone, AlignJustify, ChevronsUp,
   Timer, CircleDot, Gift, Eye, Sparkles, GraduationCap, Feather, Lightbulb,
   Infinity, ArrowUpDown, Rabbit, Blocks, Building, Navigation, Compass,
-  Hexagon, Loader, Gem, Network, Fingerprint, Hourglass, Construction, 
-  Box, Lock, CalendarDays, HeartHandshake, Flag, Footprints, ArrowRight, 
-  Banknote, Users, XCircle, CheckCircle2
+  Hexagon, Loader, Gem, Network, Fingerprint, Hourglass, Construction,
+  Box, Lock, CalendarDays, HeartHandshake, Flag, Footprints, ArrowRight,
+  Banknote, Users, XCircle, CheckCircle2,
+  LucideIcon
 } from "lucide-react";
 
 export interface Hexagram {
@@ -18,7 +19,7 @@ export interface Hexagram {
   pinyin: string;
   category: string;
   description: string;
-  icon: any;
+  icon: LucideIcon;
   principles: string[];
 }
 
