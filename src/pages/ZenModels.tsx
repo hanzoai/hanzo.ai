@@ -466,7 +466,22 @@ const MODEL_FAMILIES = {
   },
 };
 
-const ModelCard = ({ model }: { model: any }) => {
+interface ZenModel {
+  name: string;
+  params?: string;
+  context?: string;
+  vram?: string;
+  license?: string;
+  base?: string;
+  badge?: string;
+  status: string;
+  features?: string[];
+  performance?: string;
+  memory?: string;
+  huggingface?: string;
+}
+
+const ModelCard = ({ model }: { model: ZenModel }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

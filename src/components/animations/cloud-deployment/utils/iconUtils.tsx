@@ -1,8 +1,8 @@
 
 import React from "react";
-import { Cloud, Database, Github, Server, HardDrive, Boxes, Box, Network, Link2 } from "lucide-react";
+import { Cloud, Database, Github, Server, HardDrive, Boxes, Box, Network, Link2, LucideProps } from "lucide-react";
 
-export const iconMap: Record<string, React.ComponentType<any>> = {
+export const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   "cloud": Cloud,
   "database": Database,
   "github": Github,
@@ -14,7 +14,7 @@ export const iconMap: Record<string, React.ComponentType<any>> = {
   "link": Link2
 };
 
-export const renderIcon = (iconType: string, props?: any) => {
+export const renderIcon = (iconType: string, props?: LucideProps) => {
   const IconComponent = iconMap[iconType];
   if (!IconComponent) {
     return null;

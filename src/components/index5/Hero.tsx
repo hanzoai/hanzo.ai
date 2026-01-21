@@ -1,6 +1,6 @@
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -8,8 +8,8 @@ import ChromeText from "@/components/ui/chrome-text";
 
 interface HeroProps {
   mousePosition: { x: number; y: number };
-  opacity: any;
-  scale: any;
+  opacity: MotionValue<number>;
+  scale: MotionValue<number>;
 }
 
 const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {

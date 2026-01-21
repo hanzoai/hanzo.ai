@@ -10,9 +10,11 @@ import StatusSelector from "./StatusSelector";
 import PrioritySelector from "./PrioritySelector";
 import { Task } from "../data/tasks/task-data";
 
+type TaskFieldValue = string | string[] | number | Date | null;
+
 interface TaskDetailContentProps {
   task: Task;
-  onTaskChange: (field: string, value: any) => void;
+  onTaskChange: (field: string, value: TaskFieldValue) => void;
 }
 
 const TaskDetailContent: React.FC<TaskDetailContentProps> = ({ task, onTaskChange }) => {

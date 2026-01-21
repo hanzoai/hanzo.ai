@@ -28,14 +28,16 @@ import TeamGroup from "./TeamGroup";
 import { teamMembers } from "@/constants/team-members";
 import { Link } from "react-router-dom";
 
+interface Agent {
+  name: string;
+  role: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  gradient: string;
+}
+
 interface AgentDetailModalProps {
-  agent: {
-    name: string;
-    role: string;
-    description: string;
-    icon: any;
-    gradient: string;
-  } | null;
+  agent: Agent | null;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -130,10 +132,10 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
 };
 
 const AgentGallery = () => {
-  const [selectedAgent, setSelectedAgent] = useState<any>(null);
+  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openAgentDetail = (agent: any) => {
+  const openAgentDetail = (agent: Agent) => {
     setSelectedAgent(agent);
     setIsModalOpen(true);
   };

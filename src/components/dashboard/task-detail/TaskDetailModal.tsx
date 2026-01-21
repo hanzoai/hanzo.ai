@@ -28,7 +28,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
     setEditedTask(prev => ({ ...prev, title: e.target.value }));
   };
 
-  const handleTaskChange = (field: string, value: any) => {
+  const handleTaskChange = (field: string, value: string | string[] | number | Date | null) => {
     setEditedTask(prev => ({ ...prev, [field]: value }));
   };
 
