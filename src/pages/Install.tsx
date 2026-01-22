@@ -1,226 +1,181 @@
+import React, { useEffect } from 'react';
+import { Terminal, Package, Bot, Cpu, Code, ArrowRight, ExternalLink } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { motion } from 'framer-motion';
 
-import { useEffect } from 'react';
-import { Terminal } from 'lucide-react';
+const BRAND_COLOR = "#fd4444";
+
+const bundles = [
+  {
+    name: "minimal",
+    desc: "Python CLI only",
+    cmd: "curl -fsSL hanzo.sh | bash",
+  },
+  {
+    name: "python",
+    desc: "CLI, MCP, Agents, AI SDK",
+    cmd: "curl -fsSL hanzo.sh/python | bash",
+  },
+  {
+    name: "rust",
+    desc: "Node, Dev, MCP (Rust)",
+    cmd: "curl -fsSL hanzo.sh/rust | bash",
+  },
+  {
+    name: "full",
+    desc: "Everything: Python + Rust",
+    cmd: "curl -fsSL hanzo.sh/full | bash",
+  },
+];
+
+const shortcuts = [
+  { path: "/dev", name: "hanzo-dev", desc: "AI coding agent", icon: Bot },
+  { path: "/mcp", name: "hanzo-mcp", desc: "MCP server (260+ tools)", icon: Cpu },
+  { path: "/cli", name: "hanzo", desc: "Cloud CLI", icon: Terminal },
+  { path: "/agents", name: "hanzo-agents", desc: "Multi-agent SDK", icon: Code },
+];
 
 const Install = () => {
-  useEffect(() => {
-    const meta = document.createElement('meta');
-    meta.httpEquiv = 'Content-Type';
-    meta.content = 'text/plain';
-    document.head.appendChild(meta);
-
-    return () => {
-      document.head.removeChild(meta);
-    };
-  }, []);
-
   return (
-    <pre style={{ margin: 0, padding: 0 }}>
-{`#!/bin/sh
-<<\\EOF
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>hanzo.sh | Install Hanzo Platform</title>
-    <link rel="stylesheet" href="https://hanzo.sh/styles.css"/>
-  </head>
-  <body class="bg-[#1A1F2C] text-[var(--white)] min-h-screen">
-    <div class="max-w-4xl mx-auto p-8">
-      <div class="text-center mb-16">
-        <div class="mb-8">
-          <span class="font-display text-8xl text-[var(--white)]">H</span>
-        </div>
-        <h1 class="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">Install Hanzo Platform</h1>
-        <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-          One command to install the complete Hanzo development platform. 
-          This page doubles as both documentation and the installer script itself.
-        </p>
-      </div>
+    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
+      <Navbar />
 
-      <div class="bg-[var(--black)]/50 rounded-lg p-8 mb-12 border border-purple-500/20 backdrop-blur">
-        <div class="flex items-center gap-3 mb-4">
-          <Terminal class="text-purple-400" size="20" />
-          <h2 class="text-xl font-semibold text-purple-400">Quick Install</h2>
-        </div>
-        <pre class="bg-[var(--black)] rounded-lg p-4 overflow-x-auto border border-purple-500/10"><code>curl -fsSL hanzo.sh/install.sh | sh</code></pre>
-        <p class="mt-4 text-sm text-neutral-400">This command downloads and executes the Hanzo Platform installer.</p>
-      </div>
+      <main className="pt-24 pb-16 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Hero */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
+              style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+            >
+              <Terminal className="w-3.5 h-3.5" />
+              One Command Install
+            </motion.div>
 
-      <div class="space-y-8">
-        <div class="bg-[var(--black)]/30 rounded-lg p-6">
-          <h2 class="text-2xl font-semibold mb-4 text-purple-400">Requirements</h2>
-          <ul class="list-disc list-inside text-neutral-400 space-y-2">
-            <li>Root access (sudo)</li>
-            <li>Linux operating system</li>
-            <li>Docker support</li>
-            <li>Ports 80, 443, and 3000 available</li>
-          </ul>
-        </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-white">Install Hanzo</span>
+            </h1>
 
-        <div class="bg-[var(--black)]/30 rounded-lg p-6">
-          <h2 class="text-2xl font-semibold mb-4 text-purple-400">What's Included</h2>
-          <ul class="list-disc list-inside text-neutral-400 space-y-2">
-            <li>Docker Swarm initialization</li>
-            <li>Hanzo Platform container</li>
-            <li>PostgreSQL 16 database</li>
-            <li>Redis 7 cache</li>
-            <li>Traefik v3.1.2 proxy</li>
-          </ul>
-        </div>
-      </div>
+            <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-8">
+              The complete Hanzo AI toolkit in one command. CLI, MCP, Agents, Dev tools — in Python, Rust, or JavaScript.
+            </p>
 
-      <footer class="mt-16 text-center text-neutral-500 border-t border-gray-800 pt-8">
-        <p>&copy; 2024 Hanzo. All rights reserved.</p>
-      </footer>
+            {/* Main install command */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 mb-8">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Terminal className="h-6 w-6 text-[#fd4444]" />
+                <code className="text-xl font-mono text-white">curl -fsSL hanzo.sh | bash</code>
+              </div>
+              <p className="text-sm text-neutral-500">
+                Or visit <a href="https://hanzo.sh" className="text-[#fd4444] hover:underline">hanzo.sh</a> for more options
+              </p>
+            </div>
+
+            <a
+              href="https://hanzo.sh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base"
+              style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+            >
+              Visit hanzo.sh
+              <ExternalLink className="ml-2 h-5 w-5" />
+            </a>
+          </motion.div>
+
+          {/* Shortcuts */}
+          <motion.section
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <h2 className="text-2xl font-semibold mb-6 text-center">Quick Install Shortcuts</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {shortcuts.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.path}
+                    href={`https://hanzo.sh${s.path}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-5 hover:border-[#fd4444]/50 transition-colors flex items-start gap-4"
+                  >
+                    <div className="p-2 rounded-lg bg-[#fd4444]/10">
+                      <Icon className="h-5 w-5 text-[#fd4444]" />
+                    </div>
+                    <div>
+                      <div className="font-mono text-white">{s.name}</div>
+                      <div className="text-sm text-neutral-500 mb-2">{s.desc}</div>
+                      <code className="text-xs text-neutral-600">curl hanzo.sh{s.path} | bash</code>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </motion.section>
+
+          {/* Bundles */}
+          <motion.section
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          >
+            <h2 className="text-2xl font-semibold mb-6 text-center">Installation Bundles</h2>
+            <div className="space-y-3">
+              {bundles.map((b) => (
+                <div
+                  key={b.name}
+                  className="bg-neutral-900/30 border border-neutral-800 rounded-lg p-4 flex items-center justify-between"
+                >
+                  <div>
+                    <span className="font-mono text-[#fd4444]">--bundle {b.name}</span>
+                    <span className="text-neutral-500 ml-3">{b.desc}</span>
+                  </div>
+                  <code className="text-xs text-neutral-600 hidden md:block">{b.cmd}</code>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Package managers */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <h2 className="text-2xl font-semibold mb-6 text-center">Or Use Your Package Manager</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-neutral-900/30 border border-neutral-800 rounded-lg p-4">
+                <div className="text-sm text-neutral-500 mb-2">Python (uv/pip)</div>
+                <code className="text-sm text-neutral-300">uv tool install hanzo</code>
+              </div>
+              <div className="bg-neutral-900/30 border border-neutral-800 rounded-lg p-4">
+                <div className="text-sm text-neutral-500 mb-2">Node.js (npm/pnpm)</div>
+                <code className="text-sm text-neutral-300">npm i -g @hanzoai/cli</code>
+              </div>
+              <div className="bg-neutral-900/30 border border-neutral-800 rounded-lg p-4">
+                <div className="text-sm text-neutral-500 mb-2">Homebrew</div>
+                <code className="text-sm text-neutral-300">brew install hanzoai/tap/hanzo</code>
+              </div>
+            </div>
+          </motion.section>
+        </div>
+      </main>
+
+      <Footer />
     </div>
-  </body>
-</html>
-EOF
-
-install_hanzo() {
-  if [ "$(id -u)" != "0" ]; then
-    echo "This script must be run as root" >&2
-    exit 1
-  fi
-
-  # check if is Mac OS
-  if [ "$(uname)" = "Darwin" ]; then
-    echo "This script must be run on Linux" >&2
-    exit 1
-  fi
-
-  # check if is running inside a container
-  if [ -f /.dockerenv ]; then
-    echo "This script must be run on Linux" >&2
-    exit 1
-  fi
-
-  # check if something is running on port 80
-  if ss -tulnp | grep ':80 ' >/dev/null; then
-    echo "Error: something is already running on port 80" >&2
-    exit 1
-  fi
-
-  # check if something is running on port 443
-  if ss -tulnp | grep ':443 ' >/dev/null; then
-    echo "Error: something is already running on port 443" >&2
-    exit 1
-  fi
-
-  command_exists() {
-    command -v "$@" > /dev/null 2>&1
-  }
-
-  if command_exists docker; then
-    echo "Docker already installed"
-  else
-    curl -sSL https://get.docker.com | sh
-  fi
-
-  docker swarm leave --force 2>/dev/null
-
-  get_ip() {
-    local ip=""
-    # Try IPv4 first
-    ip=\$(curl -4s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
-    if [ -z "\$ip" ]; then
-      ip=\$(curl -4s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
-    fi
-    if [ -z "\$ip" ]; then
-      ip=\$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
-    fi
-    # If no IPv4, try IPv6
-    if [ -z "\$ip" ]; then
-      ip=\$(curl -6s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
-      if [ -z "\$ip" ]; then
-        ip=\$(curl -6s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
-      fi
-      if [ -z "\$ip" ]; then
-        ip=\$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
-      fi
-    fi
-    if [ -z "\$ip" ]; then
-      echo "Error: Could not determine server IP address automatically." >&2
-      echo "Please set the ADVERTISE_ADDR environment variable manually." >&2
-      exit 1
-    fi
-    echo "\$ip"
-  }
-
-  advertise_addr="\${ADVERTISE_ADDR:-\$(get_ip)}"
-  echo "Using advertise address: \$advertise_addr"
-
-  docker swarm init --advertise-addr \$advertise_addr
-  if [ \$? -ne 0 ]; then
-    echo "Error: Failed to initialize Docker Swarm" >&2
-    exit 1
-  fi
-
-  echo "Swarm initialized"
-  docker network rm -f hanzo-network 2>/dev/null
-  docker network create --driver overlay --attachable hanzo-network
-  echo "Network created"
-
-  mkdir -p /etc/hanzo
-  chmod 777 /etc/hanzo
-
-  docker pull postgres:16
-  docker pull redis:7
-  docker pull traefik:v3.1.2
-  docker pull hanzo/platform:latest
-
-  # Installation
-  docker service create \\
-    --name hanzo \\
-    --replicas 1 \\
-    --network hanzo-network \\
-    --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \\
-    --mount type=bind,source=/etc/hanzo,target=/etc/hanzo \\
-    --mount type=volume,source=hanzo-docker-config,target=/root/.docker \\
-    --publish published=3000,target=3000,mode=host \\
-    --update-parallelism 1 \\
-    --update-order stop-first \\
-    --constraint 'node.role == manager' \\
-    -e ADVERTISE_ADDR=\$advertise_addr \\
-    hanzo/platform:latest
-
-  GREEN="\\\\033[0;32m"
-  YELLOW="\\\\033[1;33m"
-  BLUE="\\\\033[0;34m"
-  NC="\\\\033[0m" # No Color
-
-  format_ip_for_url() {
-    local ip="\$1"
-    if echo "\$ip" | grep -q ':'; then
-      echo "[\${ip}]"
-    else
-      echo "\${ip}"
-    fi
-  }
-
-  formatted_addr=\$(format_ip_for_url "\$advertise_addr")
-  echo ""
-  printf "\${GREEN}Congratulations, hanzo is installed!\${NC}\\n"
-  printf "\${BLUE}Wait 15 seconds for the server to start\${NC}\\n"
-  printf "\${YELLOW}Please go to http://\${formatted_addr}:3000\${NC}\\n\\n"
-}
-
-update_hanzo() {
-  echo "Updating Hanzo Platform..."
-  docker pull hanzo/platform:latest
-  docker service update --image hanzo/platform:latest hanzo
-  echo "Hanzo Platform has been updated to the latest version."
-}
-
-# Main script execution
-if [ "\$1" = "update" ]; then
-  update_hanzo
-else
-  install_hanzo
-fi`}
-    </pre>
   );
 };
 
