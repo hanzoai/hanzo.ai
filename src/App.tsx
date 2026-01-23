@@ -35,14 +35,18 @@ import ZenOfHanzo from "./pages/ZenOfHanzo";
 import Zen from "./pages/Zen";
 import ZenModels from "./pages/ZenModels";
 import Contact from "./pages/Contact";
+import ContactSales from "./pages/ContactSales";
 import Enterprise from "./pages/Enterprise";
 import Brand from "./pages/Brand";
 import Press from "./pages/Press";
+import Careers from "./pages/Careers";
+import About from "./pages/About";
 
 import AI from "./pages/AI";
 import Datastore from "./pages/Datastore";
 import Commerce from "./pages/Commerce";
 import Extension from "./pages/Extension";
+import Zap from "./pages/Zap";
 import Base from "./pages/Base";
 import Download from "./pages/Download";
 import Analytics from "./pages/Analytics";
@@ -144,6 +148,7 @@ const MarketingRoutes = () => {
       <Route path="/team" element={<Team />} />
       <Route path="/security" element={<Security />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/contact/sales" element={<ContactSales />} />
       <Route path="/enterprise" element={<Enterprise />} />
       <Route path="/zen" element={<Zen />} />
       <Route path="/zen/models" element={<ZenModels />} />
@@ -152,6 +157,8 @@ const MarketingRoutes = () => {
       <Route path="/zen-of-hanzo" element={<ZenOfHanzo />} />
       <Route path="/brand" element={<Brand />} />
       <Route path="/press" element={<Press />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/about" element={<About />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/capabilities" element={<SolutionCapabilities />} />
       <Route path="/solutions/industries" element={<SolutionIndustries />} />
@@ -166,6 +173,7 @@ const MarketingRoutes = () => {
       <Route path="/datastore" element={<Datastore />} />
       <Route path="/commerce" element={<Commerce />} />
       <Route path="/extension" element={<Extension />} />
+      <Route path="/zap" element={<Zap />} />
       <Route path="/base" element={<Base />} />
       <Route path="/download" element={<Download />} />
       <Route path="/analytics" element={<Analytics />} />

@@ -82,6 +82,7 @@ export const productsNav: NavSection[] = [
       { title: "Models", href: "/products/ml/zen", icon: Brain, featured: true },
       { title: "Agent", href: "/products/apps/agent", icon: Bot, featured: true },
       { title: "MCP", href: "/products/apps/mcp", icon: Plug },
+      { title: "ZAP", href: "/zap", icon: Zap },
       { title: "Router", href: "/products/ml/serving", icon: Route },
       { title: "Notebooks", href: "/products/ml/notebooks", icon: FileText },
       { title: "Pipelines", href: "/products/ml/pipelines", icon: GitBranch },
