@@ -29,7 +29,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-purple-600 text-[var(--white)] hover:bg-purple-800/20"
+              className="w-full gap-2 border-[#fd4444] text-[var(--white)] hover:bg-red-800/20"
             >
               <Github className="h-5 w-5" />
               View on GitHub
@@ -46,7 +46,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-purple-600 text-[var(--white)] hover:bg-purple-800/20"
+              className="w-full gap-2 border-[#fd4444] text-[var(--white)] hover:bg-red-800/20"
             >
               <FileText className="h-5 w-5" />
               Learn more in Docs
@@ -63,7 +63,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-purple-600 text-[var(--white)] hover:bg-purple-800/20"
+              className="w-full gap-2 border-[#fd4444] text-[var(--white)] hover:bg-red-800/20"
             >
               <Server className="h-5 w-5" />
               Get Commercial Support
@@ -84,15 +84,15 @@ const CallToAction = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="w-full px-4 py-2 bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-2 bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fd4444]"
               />
-              <Button className="bg-purple-600 hover:bg-purple-700">
+              <Button className="bg-[#fd4444] hover:bg-[#e03e3e]">
                 Subscribe
               </Button>
             </div>
             <div className="mt-2 text-left">
               <label className="inline-flex items-center">
-                <input type="checkbox" className="rounded bg-gray-800 border-gray-700 text-purple-600" />
+                <input type="checkbox" className="rounded bg-gray-800 border-gray-700 text-[#fd4444]" />
                 <span className="ml-2 text-sm text-neutral-400">
                   I agree to receive communications from Hanzo
                 </span>

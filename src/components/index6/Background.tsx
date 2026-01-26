@@ -33,10 +33,10 @@ const Background: React.FC = () => {
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
         
-        // Random purple/indigo hue
-        const hue = Math.random() * 60 + 240; // 240-300 is purple/indigo range
-        const saturation = Math.random() * 30 + 70; // 70-100%
-        const lightness = Math.random() * 20 + 40; // 40-60%
+        // Random brand red hue
+        const hue = Math.random() * 20 + 0; // 0-20 is red range
+        const saturation = Math.random() * 20 + 80; // 80-100%
+        const lightness = Math.random() * 20 + 45; // 45-65%
         this.color = `hsla(${hue}, ${saturation}%, ${lightness}%, 0.3)`;
       }
       
@@ -73,7 +73,7 @@ const Background: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw connections
-      ctx.strokeStyle = 'rgba(148, 93, 245, 0.05)';
+      ctx.strokeStyle = 'rgba(253, 68, 68, 0.05)';
       ctx.lineWidth = 0.3;
       
       for (let a = 0; a < particles.length; a++) {
@@ -120,7 +120,7 @@ const Background: React.FC = () => {
         className="absolute inset-0 w-full h-full"
       />
       
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-950/20 to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#fd4444]/10 to-black"></div>
       
       {/* Animated grid overlay */}
       <motion.div 
@@ -136,17 +136,17 @@ const Background: React.FC = () => {
       
       {/* Animated glow spots */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[100px] bg-purple-500/10"
-        animate={{ 
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[100px] bg-[#fd4444]/10"
+        animate={{
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.15, 0.1],
         }}
         transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
       />
-      
+
       <motion.div
-        className="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full blur-[100px] bg-indigo-500/10"
-        animate={{ 
+        className="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full blur-[100px] bg-[#ff6b6b]/10"
+        animate={{
           scale: [1, 1.3, 1],
           opacity: [0.08, 0.12, 0.08],
         }}

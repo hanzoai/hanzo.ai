@@ -39,8 +39,8 @@ const Testimonials = () => {
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -68,7 +68,7 @@ const Testimonials = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 relative"
             >
-              <div className="absolute -top-4 left-8 text-5xl text-indigo-500">"</div>
+              <div className="absolute -top-4 left-8 text-5xl text-[#fd4444]">"</div>
               <p className="text-neutral-300 mb-8 relative z-10 pt-4">
                 {testimonial.quote}
               </p>

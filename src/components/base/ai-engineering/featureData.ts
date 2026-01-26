@@ -24,9 +24,9 @@ export const featureData: AIFeature[] = [
       { text: "Performance optimization for inference workloads" }
     ],
     delay: 0.1,
-    iconBgClass: "bg-purple-900/30",
-    iconTextClass: "text-purple-400",
-    bulletColor: "text-purple-400"
+    iconBgClass: "bg-[#fd4444]/20",
+    iconTextClass: "text-[#fd4444]",
+    bulletColor: "text-[#fd4444]"
   },
   {
     icon: React.createElement(Search, { className: "h-6 w-6" }),
@@ -38,9 +38,9 @@ export const featureData: AIFeature[] = [
       { text: "Hybrid search combining vector and traditional queries" }
     ],
     delay: 0.2,
-    iconBgClass: "bg-blue-900/30",
-    iconTextClass: "text-blue-400",
-    bulletColor: "text-blue-400"
+    iconBgClass: "bg-[#ff6b6b]/20",
+    iconTextClass: "text-[#ff6b6b]",
+    bulletColor: "text-[#ff6b6b]"
   },
   {
     icon: React.createElement(Database, { className: "h-6 w-6" }),

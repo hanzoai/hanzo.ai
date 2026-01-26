@@ -10,12 +10,12 @@ const AICloudSection: React.FC = () => {
   const navigate = useNavigate();
   
   const features = [
-    { icon: <Cloud className="h-6 w-6 text-blue-400" />, title: "Global Infrastructure", description: "Deploy AI models across 35+ regions worldwide" },
-    { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Compute Scaling", description: "Automatically scale resources based on demand" },
-    { icon: <Shield className="h-6 w-6 text-blue-400" />, title: "Enterprise Security", description: "Enterprise-grade security with GDPR controls" },
-    { icon: <Zap className="h-6 w-6 text-blue-400" />, title: "Low Latency", description: "Sub-100ms response times for AI inference" },
-    { icon: <Globe className="h-6 w-6 text-blue-400" />, title: "Global Edge Network", description: "Serve models from the edge for faster responses" },
-    { icon: <Server className="h-6 w-6 text-blue-400" />, title: "Model Optimization", description: "Automatic optimization for faster performance" }
+    { icon: <Cloud className="h-6 w-6 text-[#ff6b6b]" />, title: "Global Infrastructure", description: "Deploy AI models across 35+ regions worldwide" },
+    { icon: <Server className="h-6 w-6 text-[#ff6b6b]" />, title: "Compute Scaling", description: "Automatically scale resources based on demand" },
+    { icon: <Shield className="h-6 w-6 text-[#ff6b6b]" />, title: "Enterprise Security", description: "Enterprise-grade security with GDPR controls" },
+    { icon: <Zap className="h-6 w-6 text-[#ff6b6b]" />, title: "Low Latency", description: "Sub-100ms response times for AI inference" },
+    { icon: <Globe className="h-6 w-6 text-[#ff6b6b]" />, title: "Global Edge Network", description: "Serve models from the edge for faster responses" },
+    { icon: <Server className="h-6 w-6 text-[#ff6b6b]" />, title: "Model Optimization", description: "Automatic optimization for faster performance" }
   ];
   
   return (
@@ -29,7 +29,7 @@ const AICloudSection: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mb-4"
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#ff6b6b]/20 border border-[#ff6b6b]/30 text-[#ff6b6b] text-sm font-medium">
               Enterprise Scale
             </span>
           </motion.div>
@@ -61,9 +61,9 @@ const AICloudSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+              className="bg-gradient-to-br from-[#ff6b6b]/20 to-[#ff6b6b]/5 p-6 rounded-xl border border-[#ff6b6b]/20 hover:border-[#ff6b6b]/40 transition-all duration-300"
             >
-              <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <div className="bg-[#ff6b6b]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{feature.title}</h3>
@@ -80,7 +80,7 @@ const AICloudSection: React.FC = () => {
           className="mt-16 flex justify-center"
         >
           <Button 
-            className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700"
+            className="text-lg px-8 py-6 bg-[#fd4444] hover:bg-[#e03e3e]"
             onClick={() => navigate('/cloud')}
           >
             Explore AI Cloud <ArrowRight className="ml-2 h-5 w-5" />

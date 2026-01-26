@@ -18,7 +18,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const BRAND_COLOR = "#10b981"; // Green for platform
+const BRAND_COLOR = "#fd4444"; // Brand color
 
 interface Service {
   name: string;
@@ -144,7 +144,7 @@ const PaaSCapabilities = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
                   className={`p-6 rounded-xl bg-neutral-900/50 border border-neutral-800 transition-all ${
-                    service.href ? "hover:border-green-500/30 cursor-pointer" : ""
+                    service.href ? "hover:border-[#fd4444]/30 cursor-pointer" : ""
                   }`}
                 >
                   <div className="flex items-start gap-4">
@@ -226,7 +226,7 @@ const PaaSCapabilities = () => {
           <div className="p-6 font-mono text-sm">
             <div className="space-y-3">
               <div className="text-neutral-500">
-                <span className="text-green-400">$</span> hanzo init my-app
+                <span className="text-[#fd4444]">$</span> hanzo init my-app
               </div>
               <div className="text-neutral-400">
                 ✓ Created project configuration
@@ -238,26 +238,26 @@ const PaaSCapabilities = () => {
                 ✓ Generated TypeScript types
               </div>
               <div className="mt-4 text-neutral-500">
-                <span className="text-green-400">$</span> hanzo dev
+                <span className="text-[#fd4444]">$</span> hanzo dev
               </div>
               <div className="text-neutral-400">
                 Starting local development server...
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
-                <span className="text-green-400">
+                <div className="w-2 h-2 rounded-full bg-[#fd4444]" />
+                <span className="text-[#fd4444]">
                   Platform running at http://localhost:8000
                 </span>
               </div>
               <div className="mt-4 text-neutral-500">
-                <span className="text-green-400">$</span> hanzo deploy
+                <span className="text-[#fd4444]">$</span> hanzo deploy
               </div>
               <div className="text-neutral-400">
                 Deploying to production...
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
-                <span className="text-green-400">
+                <div className="w-2 h-2 rounded-full bg-[#fd4444]" />
+                <span className="text-[#fd4444]">
                   Live at https://my-app.hanzo.app
                 </span>
               </div>

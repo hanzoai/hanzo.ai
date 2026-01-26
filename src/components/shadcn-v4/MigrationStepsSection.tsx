@@ -45,7 +45,7 @@ const steps = [
 
 const MigrationStepsSection = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/30 to-purple-900/10">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/30 to-[#fd4444]/10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,10 +69,10 @@ const MigrationStepsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-gray-900/50 border-gray-800 hover:border-purple-500/30 transition-all duration-300">
+              <Card className="bg-gray-900/50 border-gray-800 hover:border-[#fd4444]/30 transition-all duration-300">
                 <CardHeader className="flex flex-row items-start gap-4">
-                  <div className="bg-purple-900/30 rounded-lg p-2 w-12 h-12 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-purple-400">{step.number}</span>
+                  <div className="bg-[#fd4444]/20 rounded-lg p-2 w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold text-[#fd4444]">{step.number}</span>
                   </div>
                   <div>
                     <CardTitle className="text-xl text-white">{step.title}</CardTitle>

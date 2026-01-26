@@ -118,8 +118,8 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                 >
                   <td className="px-4 py-3">
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-md bg-blue-900/30 border border-blue-800/50 flex items-center justify-center mr-3">
-                        <Bot className="h-4 w-4 text-blue-400" />
+                      <div className="w-8 h-8 rounded-md bg-red-900/30 border border-red-800/50 flex items-center justify-center mr-3">
+                        <Bot className="h-4 w-4 text-[#fd4444]" />
                       </div>
                       <div>
                         <div className="font-medium">{agent.name}</div>
@@ -135,8 +135,8 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex items-center">
-                      {agent.type === "Research" && <Database className="h-4 w-4 mr-1 text-blue-400" />}
-                      {agent.type === "Coding" && <Brain className="h-4 w-4 mr-1 text-purple-400" />}
+                      {agent.type === "Research" && <Database className="h-4 w-4 mr-1 text-[#fd4444]" />}
+                      {agent.type === "Coding" && <Brain className="h-4 w-4 mr-1 text-[#ff6b6b]" />}
                       {agent.type === "Assistant" && <Activity className="h-4 w-4 mr-1 text-green-400" />}
                       {agent.type}
                     </div>
@@ -151,7 +151,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                         style={{
                           '--progress-background': agent.memory > 80 ? 'bg-red-500' : 
                             agent.memory > 60 ? 'bg-yellow-500' : 
-                            'bg-blue-500'
+                            'bg-[#fd4444]'
                         } as React.CSSProperties}
                       />
                       <span>{agent.memory}%</span>
@@ -190,8 +190,8 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
-                  <div className="w-8 h-8 rounded-md bg-blue-900/30 border border-blue-800/50 flex items-center justify-center mr-3">
-                    <Bot className="h-4 w-4 text-blue-400" />
+                  <div className="w-8 h-8 rounded-md bg-red-900/30 border border-red-800/50 flex items-center justify-center mr-3">
+                    <Bot className="h-4 w-4 text-[#fd4444]" />
                   </div>
                   <div>
                     <div className="font-medium">{agent.name}</div>
@@ -208,8 +208,8 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                 <div className="flex justify-between mb-1">
                   <span className="text-neutral-400">Type:</span>
                   <span className="flex items-center">
-                    {agent.type === "Research" && <Database className="h-3 w-3 mr-1 text-blue-400" />}
-                    {agent.type === "Coding" && <Brain className="h-3 w-3 mr-1 text-purple-400" />}
+                    {agent.type === "Research" && <Database className="h-3 w-3 mr-1 text-[#fd4444]" />}
+                    {agent.type === "Coding" && <Brain className="h-3 w-3 mr-1 text-[#ff6b6b]" />}
                     {agent.type === "Assistant" && <Activity className="h-3 w-3 mr-1 text-green-400" />}
                     {agent.type}
                   </span>
@@ -241,7 +241,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                     style={{
                       '--progress-background': agent.memory > 80 ? 'bg-red-500' : 
                         agent.memory > 60 ? 'bg-yellow-500' : 
-                        'bg-blue-500'
+                        'bg-[#fd4444]'
                     } as React.CSSProperties}
                   />
                   <span>{agent.memory}%</span>

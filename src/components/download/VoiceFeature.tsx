@@ -31,11 +31,11 @@ const VoiceFeature = () => {
             </p>
             
             <div className="flex items-center space-x-4 text-neutral-400">
-              <Command className="h-6 w-6 text-purple-500" />
+              <Command className="h-6 w-6 text-[#fd4444]" />
               <span>Use system-wide keyboard shortcuts</span>
             </div>
             <div className="flex items-center space-x-4 text-neutral-400 mt-3">
-              <Mic className="h-6 w-6 text-purple-500" />
+              <Mic className="h-6 w-6 text-[#fd4444]" />
               <span>Seamless voice recognition</span>
             </div>
           </div>

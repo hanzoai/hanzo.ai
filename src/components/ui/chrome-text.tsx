@@ -44,7 +44,7 @@ const ChromeText = ({
     <div className={cn("flex flex-col", preHeading ? "items-center" : "items-start")}>
       {preHeading && (
         <div className={cn(
-          "inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/50 text-purple-300 text-sm font-medium mb-4 pre-heading-glow", 
+          "inline-block px-4 py-1 rounded-full bg-[#fd4444]/20 border border-[#fd4444]/50 text-[#ff6b6b] text-sm font-medium mb-4 pre-heading-glow", 
           preHeadingClassName
         )}>
           {preHeading}
@@ -88,7 +88,7 @@ const ChromeText = ({
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.3), rgba(139, 92, 246, 0));
+            background: linear-gradient(90deg, rgba(253, 68, 68, 0), rgba(253, 68, 68, 0.3), rgba(253, 68, 68, 0));
             background-size: 200% 100%;
             animation: glow 2s ease-in-out infinite;
             pointer-events: none;

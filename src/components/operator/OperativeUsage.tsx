@@ -8,7 +8,7 @@ const OperativeUsage = () => {
   return (
     <section className="py-24 bg-gray-950 relative overflow-hidden" id="get-started">
       {/* Background gradient */}
-      <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-purple-900/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -40,9 +40,9 @@ const OperativeUsage = () => {
               
               <div className="space-y-4">
                 <div>
-                  <p className="text-neutral-400 mb-2">1. Install the package</p>
+                  <p className="text-neutral-400 mb-2">1. Install Hanzo tools</p>
                   <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
-                    pip install hanzo-operative
+                    curl -fsSL hanzo.sh | bash
                   </div>
                 </div>
                 

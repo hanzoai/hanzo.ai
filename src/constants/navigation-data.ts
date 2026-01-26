@@ -198,16 +198,16 @@ export const productsNav: NavSection[] = [
     ]
   },
   {
-    title: "FinTech",
+    title: "Web3",
     items: [
-      { title: "Payments", href: "/fintech/payments", icon: CreditCard, featured: true },
-      { title: "Banking API", href: "/fintech/banking", icon: Landmark },
-      { title: "DEX Router", href: "/defi/dex", icon: Route },
+      { title: "Chains", href: "/blockchain/chains", icon: Server, featured: true },
+      { title: "Exchange", href: "/defi/exchange", icon: Route },
+      { title: "Indexer", href: "/blockchain/indexer", icon: Search },
+      { title: "NFT API", href: "/blockchain/nft", icon: LayoutGrid },
+      { title: "Payments", href: "/fintech/payments", icon: CreditCard },
       { title: "Staking", href: "/defi/staking", icon: Layers },
-      { title: "Chains", href: "/blockchain/chains", icon: Server },
-      { title: "Wallets", href: "/blockchain/wallets", icon: Wallet },
       { title: "Token API", href: "/blockchain/tokens", icon: Coins },
-      { title: "KYC/AML", href: "/fintech/kyc", icon: UserCheck },
+      { title: "Wallets", href: "/blockchain/wallets", icon: Wallet },
     ]
   }
 ];
@@ -220,7 +220,7 @@ export const featuredProducts: NavItem[] = [
   { title: "Vector", href: "/products/data/vector", icon: Sparkles, description: "High-performance vector DB", featured: true },
   { title: "Functions", href: "/products/compute/functions", icon: Zap, description: "Serverless compute", featured: true },
   { title: "Cloud", href: "/cloud", icon: Cloud, description: "AI Cloud infrastructure", featured: true },
-  { title: "FinTech", href: "/fintech", icon: CreditCard, description: "Payments, DeFi & Web3 APIs", featured: true },
+  { title: "Web3", href: "/blockchain", icon: Blocks, description: "Chains, DeFi & Payments", featured: true },
 ];
 
 export const capabilitiesNav: NavSection[] = [
@@ -307,11 +307,11 @@ export const footerNav = [
     ]
   },
   {
-    title: "FinTech",
+    title: "Web3",
     items: [
-      { title: "Payments", href: "/fintech/payments" },
-      { title: "DEX Router", href: "/defi/dex" },
       { title: "Chains", href: "/blockchain/chains" },
+      { title: "Exchange", href: "/defi/exchange" },
+      { title: "Payments", href: "/fintech/payments" },
       { title: "Wallets", href: "/blockchain/wallets" }
     ]
   },

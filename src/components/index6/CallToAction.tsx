@@ -13,15 +13,15 @@ const CallToAction: React.FC = () => {
   };
   
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-purple-950/20 relative overflow-hidden">
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-[#fd4444]/10 relative overflow-hidden">
       {/* Background animation elements */}
       <motion.div 
         className="absolute inset-0 opacity-20"
         initial={{ backgroundPosition: "0% 0%" }}
         animate={{ backgroundPosition: "100% 100%" }}
         transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-        style={{ 
-          backgroundImage: "radial-gradient(circle at 30% 50%, purple 0%, transparent 20%), radial-gradient(circle at 70% 50%, indigo 0%, transparent 20%)",
+        style={{
+          backgroundImage: "radial-gradient(circle at 30% 50%, #fd4444 0%, transparent 20%), radial-gradient(circle at 70% 50%, #ff6b6b 0%, transparent 20%)",
           backgroundSize: "100% 100%",
         }}
       />
@@ -61,7 +61,7 @@ const CallToAction: React.FC = () => {
           >
             <Button 
               size="lg" 
-              className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-8 py-6 text-lg relative overflow-hidden group rounded-full"
+              className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] px-8 py-6 text-lg relative overflow-hidden group rounded-full"
               onClick={handleGetStarted}
             >
               <span className="relative z-10 flex items-center py-1 leading-relaxed">
@@ -74,8 +74,8 @@ const CallToAction: React.FC = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.span>
               </span>
-              <motion.span 
-                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-[#fd4444] to-[#e03e3e] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
             </Button>
           </motion.div>

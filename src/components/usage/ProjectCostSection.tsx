@@ -16,7 +16,7 @@ const ProjectCostSection = ({ costs, currentCost }: ProjectCostSectionProps) => 
         <Button 
           variant="ghost" 
           size="sm"
-          className="text-indigo-400 hover:text-indigo-300 hover:bg-indigo-900/20"
+          className="text-[#fd4444] hover:text-[#ff6b6b] hover:bg-red-900/20"
         >
           View Cost by Service
         </Button>

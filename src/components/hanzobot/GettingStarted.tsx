@@ -81,7 +81,7 @@ const GettingStarted = () => {
           >
             <div className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 flex flex-col h-full">
               <div className="mb-6 text-center">
-                <Terminal className="h-12 w-12 text-purple-500 mx-auto mb-4" />
+                <Terminal className="h-12 w-12 text-[#fd4444] mx-auto mb-4" />
                 <h3 className="text-2xl font-semibold text-[var(--white)]">Quickstart Guide</h3>
                 <p className="text-neutral-400 mt-2">
                   For a more detailed guide, check out our comprehensive documentation
@@ -96,7 +96,7 @@ const GettingStarted = () => {
                   
                   <Button 
                     size="lg"
-                    className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-8 w-full"
+                    className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] px-8 w-full"
                   >
                     View Quickstart Guide
                   </Button>

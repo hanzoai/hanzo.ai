@@ -9,13 +9,13 @@ const Templates = () => {
       title: "Stripe Subscriptions Starter",
       description: "Complete SaaS subscription management with Stripe integration",
       icon: CreditCard,
-      color: "from-purple-500 to-purple-700"
+      color: "from-[#fd4444] to-[#e03e3e]"
     },
     {
       title: "Next.js App Router with Authentication",
       description: "Secure, fast Next.js application with built-in authentication",
       icon: Globe,
-      color: "from-blue-500 to-blue-700"
+      color: "from-[#ff6b6b] to-[#fd4444]"
     },
     {
       title: "AI Chatbot Template",
@@ -33,7 +33,7 @@ const Templates = () => {
       title: "Flutter User Management",
       description: "Cross-platform Flutter app with complete user management",
       icon: Phone,
-      color: "from-cyan-500 to-cyan-700"
+      color: "from-[#fd4444] to-[#ff6b6b]"
     },
     {
       title: "Expo React Native Starter",

@@ -23,7 +23,7 @@ const HanzoCodeCTA = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
             <Button 
               size="sm"
-              className="bg-purple-600 hover:bg-purple-500 text-[var(--white)] w-full sm:w-auto"
+              className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] w-full sm:w-auto"
             >
               <Download className="mr-2 h-4 w-4" />
               Download Hanzo Code
@@ -32,7 +32,7 @@ const HanzoCodeCTA = () => {
             <Button 
               size="sm" 
               variant="outline"
-              className="bg-transparent border-purple-500/30 text-[var(--white)] hover:bg-purple-900/20 w-full sm:w-auto"
+              className="bg-transparent border-[#fd4444]/30 text-[var(--white)] hover:bg-[#fd4444]/10 w-full sm:w-auto"
             >
               <ExternalLink className="mr-2 h-4 w-4" />
               VS Code Extension
@@ -55,7 +55,7 @@ const HanzoCodeCTA = () => {
             </p>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-[var(--white)]"
+              className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] text-[var(--white)]"
             >
               One-Click Integration
             </Button>

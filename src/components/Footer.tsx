@@ -34,11 +34,11 @@ const footerLinks = {
     title: "Features",
     items: [
       { title: "CLI", href: "/download" },
-      { title: "VS Code extension", href: "https://marketplace.visualstudio.com/items?itemName=hanzo.hanzo-dev", external: true },
+      { title: "Browser Extension", href: "/extension" },
+      { title: "IDE Extensions", href: "https://marketplace.visualstudio.com/items?itemName=hanzo.hanzo-dev", external: true },
       { title: "Slack", href: "https://hanzo.ai/slack", external: true },
       { title: "GitHub App", href: "https://github.com/apps/hanzo-ai", external: true },
       { title: "Agents", href: "/operative" },
-      { title: "Observability", href: "/analytics" },
     ],
   },
   solutions: {
@@ -57,7 +57,7 @@ const footerLinks = {
   models: {
     title: "Models",
     items: [
-      { title: "Flash", href: "/zen" },
+      { title: "Zen Coder Flash", href: "/zen" },
       { title: "Zen Coder", href: "/zen" },
       { title: "Zen Coder Max", href: "/zen" },
       { title: "Zen Ultra", href: "/zen" },
@@ -151,7 +151,7 @@ const FooterColumn = ({
   items: Array<{ title: string; href: string; external?: boolean; highlight?: boolean }>;
 }) => (
   <div>
-    <h3 className="text-neutral-400 text-xs font-medium mb-3 uppercase tracking-wider">{title}</h3>
+    <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">{title}</h3>
     <ul className="space-y-2">
       {items.map((item) => (
         <li key={item.title}>
@@ -162,8 +162,8 @@ const FooterColumn = ({
               rel="noopener noreferrer"
               className={`text-sm transition-colors ${
                 item.highlight
-                  ? "text-white hover:text-neutral-300"
-                  : "text-neutral-300 hover:text-white"
+                  ? "text-foreground hover:text-muted-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.title}
@@ -173,8 +173,8 @@ const FooterColumn = ({
               to={item.href}
               className={`text-sm transition-colors ${
                 item.highlight
-                  ? "text-white hover:text-neutral-300"
-                  : "text-neutral-300 hover:text-white"
+                  ? "text-foreground hover:text-muted-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.title}
@@ -200,20 +200,28 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black border-t border-neutral-800/50">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <footer className="bg-background border-t border-border relative overflow-hidden">
+      {/* Subtle radiant gradient background */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 80% 50% at 50% 100%, var(--brand) 0%, transparent 60%)',
+        }}
+      />
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
         {/* Main footer content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Logo and chat widget - left column */}
           <div className="lg:col-span-3 space-y-6">
-            {/* Logo */}
+            {/* Logo - same size as header (w-6 h-6) */}
             <Link to="/" className="flex items-center space-x-2">
               <img
                 src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png"
                 alt="Hanzo"
-                className="h-8 w-8"
+                className="h-6 w-6"
               />
-              <span className="text-white font-semibold text-xl">Hanzo</span>
+              <span className="text-foreground font-bold text-xl">Hanzo</span>
             </Link>
 
             {/* Chat widget */}
@@ -225,12 +233,11 @@ const Footer = () => {
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
                   placeholder="How can I help you today?"
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2.5 pr-10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-700 transition-colors"
+                  className="w-full bg-card border border-border rounded-lg px-4 py-2.5 pr-10 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring transition-colors"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded flex items-center justify-center transition-colors hover:opacity-80"
-                  style={{ backgroundColor: BRAND_COLOR }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded flex items-center justify-center transition-colors hover:opacity-80 bg-[var(--brand)]"
                 >
                   <Send className="w-3 h-3 text-white" />
                 </button>
@@ -247,7 +254,7 @@ const Footer = () => {
                       onClick={() => {
                         window.dispatchEvent(new CustomEvent('openGlobalChat', { detail: { action: action.label } }));
                       }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-medium hover:bg-neutral-800 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-card border border-border text-muted-foreground text-xs font-medium hover:bg-accent hover:text-foreground transition-colors"
                     >
                       <Icon className="w-3 h-3" />
                       {action.label}
@@ -277,52 +284,90 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Social links - above bottom bar */}
-        <div className="mt-12 flex justify-center">
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-white transition-colors"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
+        {/* Newsletter + Social CTA */}
+        <div className="mt-10 pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            {/* Newsletter */}
+            <div className="flex-1 max-w-md">
+              <h4 className="text-sm font-semibold text-foreground mb-2">Stay updated</h4>
+              <p className="text-xs text-muted-foreground mb-3">Get the latest news, product updates, and AI insights.</p>
+              <form className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-white transition-colors hover:opacity-90 bg-[var(--brand)]"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
+            {/* Social links + Referral */}
+            <div className="flex flex-col items-start md:items-end gap-3">
+              <div className="flex items-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+              <div className="flex items-center gap-3 text-xs">
+                <Link to="/referral" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Referral Program
+                </Link>
+                <span className="text-muted-foreground/40">•</span>
+                <Link to="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Affiliates
+                </Link>
+                <span className="text-muted-foreground/40">•</span>
+                <Link to="/share" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Share & Earn
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-6 pt-6 border-t border-neutral-800/50">
+        {/* Bottom bar - condensed */}
+        <div className="mt-6 pt-4 border-t border-border">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            {/* Copyright */}
-            <div className="space-y-0.5">
+            {/* Left side: Copyright */}
+            <div className="flex items-center gap-3 text-xs">
               <a
                 href="https://hanzo.industries"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 text-xs font-medium tracking-wider uppercase hover:text-neutral-400 transition-colors"
+                className="text-muted-foreground tracking-wider uppercase hover:text-foreground transition-colors"
+                style={{ fontWeight: 100 }}
               >
                 BY HANZO INDUSTRIES
               </a>
-              <div className="text-neutral-600 text-xs">
+              <span className="text-muted-foreground/60">
                 © 2016-{new Date().getFullYear()} HANZO.AI
-              </div>
+              </span>
             </div>
 
-            {/* Theme switcher + Language selector - grouped on right */}
+            {/* Right side: Theme switcher + Language selector */}
             <div className="flex items-center gap-2">
               {/* Theme switcher - like Vercel */}
-              <div className="inline-flex items-center rounded-full bg-neutral-900 border border-neutral-800 p-0.5">
+              <div className="inline-flex items-center rounded-full bg-card border border-border p-0.5">
                 <button
                   onClick={() => setMode('system')}
                   className={`p-1.5 rounded-full transition-colors ${
                     mode === 'system'
-                      ? 'bg-neutral-700 text-white'
-                      : 'text-neutral-500 hover:text-neutral-300'
+                      ? 'bg-accent text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                   title="System theme"
                 >
@@ -332,8 +377,8 @@ const Footer = () => {
                   onClick={() => setMode('light')}
                   className={`p-1.5 rounded-full transition-colors ${
                     mode === 'light'
-                      ? 'bg-neutral-700 text-white'
-                      : 'text-neutral-500 hover:text-neutral-300'
+                      ? 'bg-accent text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                   title="Light theme"
                 >
@@ -343,8 +388,8 @@ const Footer = () => {
                   onClick={() => setMode('dark')}
                   className={`p-1.5 rounded-full transition-colors ${
                     mode === 'dark'
-                      ? 'bg-neutral-700 text-white'
-                      : 'text-neutral-500 hover:text-neutral-300'
+                      ? 'bg-accent text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                   title="Dark theme"
                 >
@@ -353,7 +398,7 @@ const Footer = () => {
               </div>
 
               {/* Language selector */}
-              <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs hover:bg-neutral-800 hover:text-white transition-colors">
+              <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border text-muted-foreground text-xs hover:bg-accent hover:text-foreground transition-colors">
                 <Globe className="w-3.5 h-3.5" />
                 English (US)
                 <ChevronDown className="w-3 h-3" />

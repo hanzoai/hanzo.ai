@@ -20,7 +20,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
     >
       <Button 
         size="sm" 
-        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] rounded-full px-4 py-2 h-10 min-w-[120px]"
+        className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] rounded-full px-4 py-2 h-10 min-w-[120px]"
         onClick={() => navigate('/signup')}
       >
         Get Started

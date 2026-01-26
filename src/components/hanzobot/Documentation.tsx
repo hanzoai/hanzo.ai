@@ -54,7 +54,7 @@ const Documentation = () => {
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-6"
             >
               <div className="flex items-center mb-4">
-                <section.icon className="h-5 w-5 text-purple-500 mr-2" />
+                <section.icon className="h-5 w-5 text-[#fd4444] mr-2" />
                 <h3 className="text-lg font-semibold text-[var(--white)]">{section.title}</h3>
               </div>
               
@@ -63,7 +63,7 @@ const Documentation = () => {
                   <li key={i}>
                     <a 
                       href="#" 
-                      className="text-neutral-400 hover:text-purple-400 transition-colors flex items-center py-1"
+                      className="text-neutral-400 hover:text-[#fd4444] transition-colors flex items-center py-1"
                     >
                       <div className="w-1 h-1 bg-gray-600 rounded-full mr-2"></div>
                       {item}
@@ -84,7 +84,7 @@ const Documentation = () => {
         >
           <a 
             href="#" 
-            className="inline-flex items-center text-purple-400 hover:text-purple-300"
+            className="inline-flex items-center text-[#fd4444] hover:text-[#ff6b6b]"
           >
             <Book className="h-5 w-5 mr-2" />
             View Complete Documentation

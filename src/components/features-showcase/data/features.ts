@@ -16,7 +16,7 @@ const aiCloudFeatures: Feature[] = [
     title: "Inference API",
     description: "High-performance API for frontier AI models, optimized for production workloads with millisecond latency.",
     icon: Brain,
-    color: "bg-gradient-to-br from-purple-600 to-indigo-700",
+    color: "bg-gradient-to-br from-[#fd4444] to-[#ff6b6b]",
     link: "/ai",
     category: "ai-cloud"
   },
@@ -24,7 +24,7 @@ const aiCloudFeatures: Feature[] = [
     title: "Vector Engine",
     description: "High-performance vector database for semantic search, RAG applications, and AI-powered information retrieval.",
     icon: Database,
-    color: "bg-gradient-to-br from-blue-600 to-blue-800",
+    color: "bg-gradient-to-br from-[#fd4444] to-rose-700",
     link: "/vector",
     category: "ai-cloud"
   },
@@ -32,7 +32,7 @@ const aiCloudFeatures: Feature[] = [
     title: "Chat",
     description: "Build custom AI assistants with personalized knowledge and capabilities for your users and teams.",
     icon: MessageSquare,
-    color: "bg-gradient-to-br from-indigo-600 to-purple-700",
+    color: "bg-gradient-to-br from-[#ff6b6b] to-[#fd4444]",
     link: "/teamchat",
     category: "ai-cloud"
   },
@@ -40,7 +40,7 @@ const aiCloudFeatures: Feature[] = [
     title: "Datastore",
     description: "Scalable data storage with built-in AI capabilities for intelligent data analysis and management.",
     icon: HardDrive,
-    color: "bg-gradient-to-br from-cyan-600 to-teal-700",
+    color: "bg-gradient-to-br from-cyan-600 to-cyan-700",
     link: "/datastore",
     category: "ai-cloud"
   },
@@ -68,7 +68,7 @@ const dxPlatformFeatures: Feature[] = [
     title: "Code",
     description: "AI-powered code editor with pair programming capabilities that understands your codebase and helps you write better code.",
     icon: Code2,
-    color: "bg-gradient-to-br from-emerald-600 to-green-700",
+    color: "bg-gradient-to-br from-[#fd4444] to-rose-700",
     link: "/hanzocode",
     category: "dx-platform"
   },
@@ -76,7 +76,7 @@ const dxPlatformFeatures: Feature[] = [
     title: "App",
     description: "Visual AI application builder with drag-and-drop workflows to create sophisticated AI experiences without code.",
     icon: Monitor,
-    color: "bg-gradient-to-br from-blue-600 to-indigo-700",
+    color: "bg-gradient-to-br from-[#fd4444] to-[#ff6b6b]",
     link: "/app",
     category: "dx-platform"
   },
@@ -84,7 +84,7 @@ const dxPlatformFeatures: Feature[] = [
     title: "Dev",
     description: "Your AI engineer for complex development tasks, capable of understanding requirements and implementing solutions.",
     icon: Terminal,
-    color: "bg-gradient-to-br from-indigo-600 to-violet-700",
+    color: "bg-gradient-to-br from-[#ff6b6b] to-rose-700",
     link: "/dev",
     category: "dx-platform"
   },
@@ -92,7 +92,7 @@ const dxPlatformFeatures: Feature[] = [
     title: "Bot",
     description: "Build autonomous AI agents that can reason about problems and take actions on your behalf with human-like intelligence.",
     icon: Bot,
-    color: "bg-gradient-to-br from-purple-600 to-pink-700",
+    color: "bg-gradient-to-br from-[#fd4444] to-pink-700",
     link: "/bot",
     category: "dx-platform"
   },
@@ -119,7 +119,7 @@ const explorePlatform: Feature = {
   title: "Explore Platform",
   description: "Discover the full potential of the Hanzo AI platform and how it can transform your development workflow.",
   icon: ArrowRight,
-  color: "bg-gradient-to-r from-purple-600 to-blue-600",
+  color: "bg-gradient-to-r from-[#fd4444] to-[#ff6b6b]",
   link: "/platform"
 };
 

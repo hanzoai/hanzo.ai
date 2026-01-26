@@ -66,19 +66,19 @@ const ZenManifesto: React.FC = () => {
   return (
     <div className="relative">
       <div className="absolute -z-10 top-0 left-0 right-0 h-full">
-        <JapaneseWave 
-          color="#9b87f5" 
-          height={300} 
-          opacity={0.05} 
-          speed={30} 
+        <JapaneseWave
+          color="#fd4444"
+          height={300}
+          opacity={0.05}
+          speed={30}
           className="absolute top-1/4"
         />
-        <JapaneseWave 
-          color="#6E59A5" 
-          height={300} 
-          delay={1} 
-          opacity={0.03} 
-          speed={35} 
+        <JapaneseWave
+          color="#e03e3e"
+          height={300}
+          delay={1}
+          opacity={0.03}
+          speed={35}
           className="absolute top-2/3"
         />
       </div>
@@ -107,10 +107,10 @@ const ZenManifesto: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6"
+              className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-6"
             >
               <div className="flex items-center mb-3">
-                <div className="text-3xl text-purple-400 font-semibold mr-3">{principle.japaneseSymbol}</div>
+                <div className="text-3xl text-[#fd4444] font-semibold mr-3">{principle.japaneseSymbol}</div>
                 <h3 className="text-xl text-[var(--white)] font-bold">{principle.title}</h3>
               </div>
               <p className="text-neutral-300">{principle.description}</p>
@@ -125,7 +125,7 @@ const ZenManifesto: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-6 bg-[var(--black)]/30 backdrop-blur-sm border border-purple-500/20 rounded-lg">
+          <div className="inline-block p-6 bg-[var(--black)]/30 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg">
             <h3 className="text-xl text-[var(--white)] font-bold mb-2">Crafted by Innovators, Proven by Scale</h3>
             <p className="text-neutral-300">
               The Zen of Hanzo is our battle-tested ethos. Born from the crucible of high-stakes launches,

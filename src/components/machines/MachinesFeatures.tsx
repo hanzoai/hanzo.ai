@@ -4,18 +4,28 @@ import { motion } from "framer-motion";
 import { Cpu, Server, Zap, Network, BarChart, Globe } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 
-const FeatureCard = ({ icon: Icon, title, description, delay }) => {
+const BRAND_COLOR = "#fd4444";
+
+interface FeatureCardProps {
+  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
+  title: string;
+  description: string;
+  delay: number;
+}
+
+const FeatureCard = ({ icon: Icon, title, description, delay }: FeatureCardProps) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      className="bg-green-900/20 border border-green-500/30 rounded-xl p-6"
+      className="bg-card rounded-xl p-6"
+      style={{ backgroundColor: `${BRAND_COLOR}10`, border: `1px solid ${BRAND_COLOR}40` }}
     >
-      <Icon className="h-10 w-10 text-green-400 mb-4" />
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-neutral-300">
+      <Icon className="h-10 w-10 mb-4" style={{ color: BRAND_COLOR }} />
+      <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
+      <p className="text-muted-foreground">
         {description}
       </p>
     </motion.div>
@@ -69,11 +79,11 @@ const MachinesFeatures = () => {
           <ChromeText as="h2" className="text-3xl font-bold mb-4">
             Key Features & Capabilities
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Purpose-built infrastructure for the most demanding AI and compute workloads
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FeatureCard

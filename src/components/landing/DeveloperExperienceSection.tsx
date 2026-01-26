@@ -115,7 +115,7 @@ const DeveloperExperienceSection = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyInstall = () => {
-    navigator.clipboard.writeText("curl -fsSL hanzo.sh/install.sh | sh");
+    navigator.clipboard.writeText("curl -fsSL hanzo.sh | bash");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -212,15 +212,15 @@ const DeveloperExperienceSection = () => {
             <div className="p-4 font-mono text-sm bg-neutral-950">
               <div className="mb-2">
                 <span className="text-neutral-500">$ </span>
-                <span className="text-purple-400">curl</span>
+                <span className="text-[#fd4444]">curl</span>
                 <span className="text-neutral-300"> -fsSL </span>
-                <span className="text-blue-400">hanzo.sh/install.sh</span>
+                <span className="text-[#ff6b6b]">hanzo.sh</span>
                 <span className="text-neutral-300"> | </span>
-                <span className="text-purple-400">sh</span>
+                <span className="text-[#fd4444]">bash</span>
               </div>
               <div className="mb-4">
                 <span className="text-neutral-500">$ </span>
-                <span className="text-purple-400">hanzo</span>
+                <span className="text-[#fd4444]">hanzo</span>
                 <span className="text-cyan-400"> dev</span>
                 <span className="text-green-400"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
               </div>

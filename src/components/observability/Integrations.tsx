@@ -31,8 +31,8 @@ const Integrations = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          <div className="inline-flex items-center justify-center mb-6 bg-blue-900/30 p-3 rounded-full">
-            <Braces className="h-7 w-7 text-blue-400" />
+          <div className="inline-flex items-center justify-center mb-6 bg-[#fd4444]/10 p-3 rounded-full">
+            <Braces className="h-7 w-7 text-[#fd4444]" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Integrated Across Your Development Workflow</h2>
           <p className="text-xl text-neutral-300">
@@ -49,28 +49,28 @@ const Integrations = () => {
             className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 p-8"
           >
             <div className="flex items-center mb-6">
-              <Code className="h-6 w-6 text-blue-400 mr-3" />
+              <Code className="h-6 w-6 text-[#fd4444] mr-3" />
               <h3 className="text-2xl font-bold">Import & Initialize</h3>
             </div>
             
             <div className="bg-[var(--black)]/50 rounded-lg p-6 font-mono text-sm">
               <div className="mb-4">
-                <span className="text-blue-400">import</span> <span className="text-green-400">{'{'}</span> <span className="text-yellow-300">HanzoObservability</span> <span className="text-green-400">{'}'}</span> <span className="text-blue-400">from</span> <span className="text-orange-400">'hanzo-observability'</span>
+                <span className="text-[#fd4444]">import</span> <span className="text-green-400">{'{'}</span> <span className="text-yellow-300">HanzoObservability</span> <span className="text-green-400">{'}'}</span> <span className="text-[#fd4444]">from</span> <span className="text-orange-400">'hanzo-observability'</span>
               </div>
               <div className="mb-4">
-                <span className="text-purple-400">// Initialize with your project token</span>
+                <span className="text-neutral-500">// Initialize with your project token</span>
               </div>
               <div className="mb-4">
-                <span className="text-blue-400">const</span> observability <span className="text-[var(--white)]">=</span> <span className="text-blue-400">new</span> <span className="text-yellow-300">HanzoObservability</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'YOUR_PROJECT_TOKEN'</span><span className="text-[var(--white)]">);</span>
+                <span className="text-[#fd4444]">const</span> observability <span className="text-[var(--white)]">=</span> <span className="text-[#fd4444]">new</span> <span className="text-yellow-300">HanzoObservability</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'YOUR_PROJECT_TOKEN'</span><span className="text-[var(--white)]">);</span>
               </div>
               <div className="mb-4">
-                <span className="text-purple-400">// Trace AI model calls</span>
+                <span className="text-neutral-500">// Trace AI model calls</span>
               </div>
               <div>
-                <span className="text-blue-400">await</span> observability.<span className="text-yellow-300">trace</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'chatCompletion'</span><span className="text-[var(--white)]">, {'async () => {'}</span>
+                <span className="text-[#fd4444]">await</span> observability.<span className="text-yellow-300">trace</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'chatCompletion'</span><span className="text-[var(--white)]">, {'async () => {'}</span>
                 <div className="pl-5 text-[var(--white)]">
-                  <span className="text-blue-400">const</span> response <span className="text-[var(--white)]">=</span> <span className="text-blue-400">await</span> openai.<span className="text-yellow-300">createChatCompletion</span><span className="text-[var(--white)]">({'{...}'})</span>
-                  <div><span className="text-blue-400">return</span> response</div>
+                  <span className="text-[#fd4444]">const</span> response <span className="text-[var(--white)]">=</span> <span className="text-[#fd4444]">await</span> openai.<span className="text-yellow-300">createChatCompletion</span><span className="text-[var(--white)]">({'{...}'})</span>
+                  <div><span className="text-[#fd4444]">return</span> response</div>
                 </div>
                 <span className="text-[var(--white)]">{'}'})</span>
               </div>
@@ -96,7 +96,7 @@ const Integrations = () => {
                       transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
                       className="flex items-center p-3 bg-gray-800/30 rounded-lg border border-gray-700/40"
                     >
-                      <CheckCircle className="h-4 w-4 text-blue-400 mr-2 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-[#fd4444] mr-2 flex-shrink-0" />
                       <span className="text-neutral-300 text-sm">{item}</span>
                     </motion.div>
                   ))}
@@ -111,7 +111,7 @@ const Integrations = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center mt-8"
             >
-              <a href="#integrations" className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm">
+              <a href="#integrations" className="inline-flex items-center text-[#fd4444] hover:text-[#ff6b6b] transition-colors text-sm">
                 View all integrations <Code className="ml-1 h-4 w-4" />
               </a>
             </motion.div>

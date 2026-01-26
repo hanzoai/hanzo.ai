@@ -21,7 +21,7 @@ const UseCasesSection = () => {
 
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-blue-900/10 opacity-30 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#fd4444]/10 to-[#fd4444]/5 opacity-30 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -45,7 +45,7 @@ const UseCasesSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="bg-gray-900/20 border border-gray-800 rounded-lg p-6 text-center flex flex-col items-center hover:bg-gray-900/40 hover:border-gray-700 transition-all"
               >
-                <Icon className="h-8 w-8 text-purple-400 mb-3" />
+                <Icon className="h-8 w-8 text-[#fd4444] mb-3" />
                 <p className="text-neutral-300">{useCase.name}</p>
               </motion.div>
             );

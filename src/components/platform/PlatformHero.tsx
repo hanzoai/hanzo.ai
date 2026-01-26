@@ -28,7 +28,7 @@ const FeatureDemo = ({ activeFeature }: { activeFeature: string }) => {
     "self-host": {
       title: "Self-Hosting",
       code: `# One-line install
-curl -fsSL install.hanzo.ai | sh
+curl -fsSL hanzo.sh | bash
 
 # Docker Compose setup
 git clone https://github.com/hanzoai/platform

@@ -12,8 +12,8 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={`border rounded-xl p-8 h-full ${
-        highlight 
-          ? "border-purple-500 bg-gradient-to-b from-purple-900/20 to-black" 
+        highlight
+          ? "border-[#fd4444] bg-gradient-to-b from-[#fd4444]/10 to-black"
           : "border-gray-800 bg-gray-900/20"
       }`}
     >
@@ -35,7 +35,7 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       <Button
         className={`w-full ${
           highlight
-            ? "bg-purple-600 hover:bg-purple-700 text-[var(--white)]"
+            ? "bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)]"
             : "bg-gray-800 text-[var(--white)] hover:bg-gray-700"
         }`}
       >

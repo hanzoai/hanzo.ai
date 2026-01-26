@@ -57,7 +57,7 @@ const TrustedBy = () => {
           className="bg-gray-900/30 border border-gray-800 rounded-lg p-8 max-w-3xl mx-auto"
         >
           <div className="flex flex-col items-center text-center">
-            <div className="text-5xl text-purple-400 mb-4">"</div>
+            <div className="text-5xl text-[#fd4444] mb-4">"</div>
             <p className="text-xl text-neutral-200 italic mb-6">
               {testimonial.quote}
             </p>
@@ -76,7 +76,7 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-purple-400 mb-2">200+</div>
+            <div className="text-3xl font-bold text-[#fd4444] mb-2">200+</div>
             <div className="text-neutral-400">Currencies Supported</div>
           </motion.div>
           <motion.div
@@ -86,7 +86,7 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-purple-400 mb-2">99.99%</div>
+            <div className="text-3xl font-bold text-[#fd4444] mb-2">99.99%</div>
             <div className="text-neutral-400">Uptime SLA</div>
           </motion.div>
           <motion.div
@@ -96,7 +96,7 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-purple-400 mb-2">190+</div>
+            <div className="text-3xl font-bold text-[#fd4444] mb-2">190+</div>
             <div className="text-neutral-400">Countries Served</div>
           </motion.div>
           <motion.div
@@ -106,7 +106,7 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-purple-400 mb-2">24/7</div>
+            <div className="text-3xl font-bold text-[#fd4444] mb-2">24/7</div>
             <div className="text-neutral-400">Global Support</div>
           </motion.div>
         </div>

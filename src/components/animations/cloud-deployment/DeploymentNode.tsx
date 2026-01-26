@@ -14,16 +14,16 @@ interface DeploymentNodeProps {
 const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
   const getNodeBackgroundClass = () => {
     switch(node.type) {
-      case 'app': return 'bg-purple-500/20 border border-purple-500/30';
+      case 'app': return 'bg-[#fd4444]/20 border border-[#fd4444]/30';
       case 'redis': return 'bg-red-500/20 border border-red-500/30';
-      case 'postgres': return 'bg-blue-500/20 border border-blue-500/30';
+      case 'postgres': return 'bg-[#fd4444]/20 border border-[#fd4444]/30';
       case 'github': return 'bg-gray-500/20 border border-gray-500/30';
       case 'volume': return 'bg-green-500/20 border border-green-500/30';
       case 'network': 
         return node.id === 'network-public' 
           ? 'bg-yellow-500/20 border-2 border-yellow-500/50' // Highlighted yellow for public network
-          : 'bg-blue-500/20 border-2 border-yellow-400/40'; // Yellow outline for private network
-      default: return 'bg-purple-500/20 border border-purple-500/30';
+          : 'bg-[#fd4444]/20 border-2 border-yellow-400/40'; // Yellow outline for private network
+      default: return 'bg-[#fd4444]/20 border border-[#fd4444]/30';
     }
   };
 
@@ -58,7 +58,7 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
-                <svg className="h-3 w-3 text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="h-3 w-3 text-[#fd4444]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 9.27455 20.9097 6.80375 19.1414 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </motion.div>

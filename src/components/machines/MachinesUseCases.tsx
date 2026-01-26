@@ -2,17 +2,28 @@
 import React from 'react';
 import ChromeText from "@/components/ui/chrome-text";
 
-const UseCaseCard = ({ title, description, features }) => {
+const BRAND_COLOR = "#fd4444";
+
+interface UseCaseCardProps {
+  title: string;
+  description: string;
+  features: string[];
+}
+
+const UseCaseCard = ({ title, description, features }: UseCaseCardProps) => {
   return (
-    <div className="bg-green-900/10 border border-green-500/20 rounded-xl p-8">
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
-      <p className="text-neutral-300 mb-4">
+    <div
+      className="bg-card rounded-xl p-8"
+      style={{ backgroundColor: `${BRAND_COLOR}08`, border: `1px solid ${BRAND_COLOR}30` }}
+    >
+      <h3 className="text-2xl font-bold text-foreground mb-4">{title}</h3>
+      <p className="text-muted-foreground mb-4">
         {description}
       </p>
-      <ul className="space-y-2 text-neutral-300">
+      <ul className="space-y-2 text-muted-foreground">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-green-400 mr-2">•</span>
+            <span className="mr-2" style={{ color: BRAND_COLOR }}>•</span>
             <span>{feature}</span>
           </li>
         ))}
@@ -62,17 +73,20 @@ const MachinesUseCases = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-green-950/20">
+    <section
+      className="py-20"
+      style={{ background: `linear-gradient(to bottom, transparent, ${BRAND_COLOR}10)` }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <ChromeText as="h2" className="text-3xl font-bold mb-4">
             Designed for AI Workloads
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Optimized infrastructure for every stage of machine learning and AI development
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {useCases.map((useCase, index) => (
             <UseCaseCard

@@ -6,14 +6,14 @@ import { Github, ExternalLink } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900/10 to-blue-900/10">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#fd4444]/10 to-[#ff6b6b]/10">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-black/50 border border-purple-500/20 rounded-lg p-10 text-center"
+          className="bg-black/50 border border-[#fd4444]/20 rounded-lg p-10 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Ready to Get Started?
@@ -26,7 +26,7 @@ const CallToAction = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-purple-600 hover:bg-purple-700 text-white"
+              className="bg-[#fd4444] hover:bg-[#e03e3e] text-white"
             >
               Get Started Guide
             </Button>

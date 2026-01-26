@@ -213,7 +213,7 @@ export const ossCatalog: OSSRepo[] = [
     maturity: 'stable',
     deployment: ['npm', 'one-click'],
     actions: {
-      deployUrl: 'https://hanzo.sh/install.sh',
+      deployUrl: 'https://hanzo.sh',
       docsUrl: 'https://docs.hanzo.ai/dev',
       githubUrl: 'https://github.com/hanzoai/dev',
       learnUrl: '/dev',

@@ -12,7 +12,7 @@ const AIModelsView = () => {
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-[var(--white)]">AI Model Registry</h3>
         <div className="flex space-x-2">
-          <button className="px-2 py-1 bg-purple-600/40 rounded-md text-xs text-purple-200 flex items-center">
+          <button className="px-2 py-1 bg-[#fd4444]/40 rounded-md text-xs text-[#ff6b6b] flex items-center">
             <BrainCog className="w-3 h-3 mr-1" />
             Deploy Model
           </button>
@@ -27,7 +27,7 @@ const AIModelsView = () => {
         {aiModels.map((model) => (
           <motion.div
             key={model.id}
-            className={`p-3 rounded-lg border ${selectedModel === model.id ? "bg-purple-900/20 border-purple-600/40" : "bg-gray-800/40 border-gray-700/40"} hover:bg-gray-800/60 transition-colors cursor-pointer`}
+            className={`p-3 rounded-lg border ${selectedModel === model.id ? "bg-[#fd4444]/10 border-[#fd4444]/40" : "bg-gray-800/40 border-gray-700/40"} hover:bg-gray-800/60 transition-colors cursor-pointer`}
             onClick={() => setSelectedModel(model.id)}
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
@@ -35,7 +35,7 @@ const AIModelsView = () => {
             <div className="flex items-start justify-between">
               <div>
                 <div className="flex items-center">
-                  <BrainCircuit className="w-4 h-4 text-purple-400 mr-2" />
+                  <BrainCircuit className="w-4 h-4 text-[#fd4444] mr-2" />
                   <span className="font-medium text-[var(--white)] text-sm">{model.name}</span>
                   <span className="ml-2 px-1.5 py-0.5 bg-gray-700/60 rounded text-xs text-neutral-300">{model.type}</span>
                 </div>
@@ -48,7 +48,7 @@ const AIModelsView = () => {
                 </div>
                 <div className="text-right">
                   <div className="text-xs text-neutral-400">Latency</div>
-                  <div className="text-sm font-medium text-blue-400">{model.latency}ms</div>
+                  <div className="text-sm font-medium text-[#ff6b6b]">{model.latency}ms</div>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ const AIModelsView = () => {
                   <ServerCog className="w-3 h-3 mr-1.5" />
                   Fine-tune
                 </button>
-                <button className="px-2 py-1.5 bg-purple-600/30 rounded text-xs text-purple-200 flex items-center justify-center">
+                <button className="px-2 py-1.5 bg-[#fd4444]/30 rounded text-xs text-[#ff6b6b] flex items-center justify-center">
                   <Zap className="w-3 h-3 mr-1.5" />
                   Deploy
                 </button>

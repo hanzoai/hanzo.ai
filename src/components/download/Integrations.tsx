@@ -39,37 +39,37 @@ const Integrations = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <IntegrationCard 
-            icon={<Github className="h-8 w-8 text-purple-500" />}
+            icon={<Github className="h-8 w-8 text-[#fd4444]" />}
             title="GitHub"
             description="Automatically manage development work and more"
           />
           
           <IntegrationCard 
-            icon={<FileEdit className="h-8 w-8 text-purple-500" />}
+            icon={<FileEdit className="h-8 w-8 text-[#fd4444]" />}
             title="Notion"
             description="Seamlessly sync notes and tasks with your Notion workspace"
           />
           
           <IntegrationCard 
-            icon={<CalendarDays className="h-8 w-8 text-purple-500" />}
+            icon={<CalendarDays className="h-8 w-8 text-[#fd4444]" />}
             title="Google Calendar"
             description="Connect your calendar to automate meeting workflows"
           />
           
           <IntegrationCard 
-            icon={<Trello className="h-8 w-8 text-purple-500" />}
+            icon={<Trello className="h-8 w-8 text-[#fd4444]" />}
             title="Linear"
             description="Create Linear issues directly from any context"
           />
           
           <IntegrationCard 
-            icon={<MessageSquare className="h-8 w-8 text-purple-500" />}
+            icon={<MessageSquare className="h-8 w-8 text-[#fd4444]" />}
             title="Slack"
             description="Summarize channels and post meeting notes to Slack"
           />
           
           <IntegrationCard 
-            icon={<Code className="h-8 w-8 text-purple-500" />}
+            icon={<Code className="h-8 w-8 text-[#fd4444]" />}
             title="MCP"
             description="Add your own tooling securely using Model Context Protocol"
           />

@@ -37,9 +37,9 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
       <ul className="space-y-2">
         <li>
           <Link to="/zen" onClick={closeMenu} className="group flex items-start gap-2">
-            <span className="text-purple-400 text-lg">🧠</span>
+            <span className="text-[#fd4444] text-lg">🧠</span>
             <div>
-              <span className="text-sm text-white font-medium group-hover:text-purple-400 transition-colors">Zen LM</span>
+              <span className="text-sm text-white font-medium group-hover:text-[#fd4444] transition-colors">Zen LM</span>
               <p className="text-xs text-neutral-500">30+ open foundation models</p>
             </div>
           </Link>

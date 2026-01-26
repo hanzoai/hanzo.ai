@@ -56,8 +56,8 @@ const AppDemo = ({ activeTab }: { activeTab: string }) => {
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm">
-            <Monitor className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-400">Native performance</span>
+            <Monitor className="w-4 h-4 text-[#fd4444]" />
+            <span className="text-[#fd4444]">Native performance</span>
           </div>
           <div className="grid grid-cols-3 gap-2">
             <div className="bg-neutral-900/50 rounded-lg p-2 text-center">
@@ -82,8 +82,8 @@ const AppDemo = ({ activeTab }: { activeTab: string }) => {
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm">
-            <Cpu className="w-4 h-4 text-purple-400" />
-            <span className="text-purple-400">Running locally</span>
+            <Cpu className="w-4 h-4 text-[#ff6b6b]" />
+            <span className="text-[#ff6b6b]">Running locally</span>
           </div>
           <div className="bg-neutral-900/50 rounded-lg p-3 font-mono text-xs">
             <div className="text-neutral-500">$ hanzo local start</div>

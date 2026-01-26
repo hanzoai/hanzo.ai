@@ -51,16 +51,16 @@ const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-gray-900/50 to-gray-900/30 border border-gray-800 rounded-xl p-6 hover:border-purple-500/30 transition-colors"
+              className="bg-gradient-to-br from-gray-900/50 to-gray-900/30 border border-gray-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors"
             >
-              <div className="bg-purple-500/10 p-3 rounded-lg inline-block mb-4">
-                <useCase.icon className="h-6 w-6 text-purple-400" />
+              <div className="bg-[#fd4444]/10 p-3 rounded-lg inline-block mb-4">
+                <useCase.icon className="h-6 w-6 text-[#fd4444]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--white)] mb-4">{useCase.title}</h3>
               <ul className="space-y-2">
                 {useCase.examples.map((example, i) => (
                   <li key={i} className="text-neutral-400 flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#fd4444] rounded-full mr-2"></span>
                     {example}
                   </li>
                 ))}

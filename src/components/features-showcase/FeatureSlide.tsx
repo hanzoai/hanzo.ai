@@ -23,17 +23,17 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
   // Define category badge styles
   const getCategoryBadge = () => {
     if (!category) return null;
-    
+
     const badgeStyles = {
-      'ai-cloud': 'bg-blue-900/30 border-blue-500/30 text-blue-300',
-      'dx-platform': 'bg-emerald-900/30 border-emerald-500/30 text-emerald-300'
+      'ai-cloud': 'bg-[#fd4444]/20 border-[#fd4444]/30 text-[#fd4444]',
+      'dx-platform': 'bg-[#fd4444]/20 border-[#fd4444]/30 text-[#fd4444]'
     };
-    
+
     const badgeText = {
       'ai-cloud': 'AI Cloud',
       'dx-platform': 'DX Platform'
     };
-    
+
     return (
       <div className={`absolute top-3 right-3 px-2 py-0.5 rounded-full text-xs font-medium border ${badgeStyles[category]}`}>
         {badgeText[category]}
@@ -44,10 +44,10 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
   return (
     <motion.div 
       className="feature-card backdrop-blur-sm bg-[var(--black)]/30 border border-gray-800 p-6 rounded-xl relative group"
-      whileHover={{ 
+      whileHover={{
         y: -5,
-        borderColor: "rgba(139, 92, 246, 0.5)",
-        boxShadow: "0 10px 25px -5px rgba(124, 58, 237, 0.15)"
+        borderColor: "rgba(253, 68, 68, 0.5)",
+        boxShadow: "0 10px 25px -5px rgba(253, 68, 68, 0.15)"
       }}
       transition={{ duration: 0.2 }}
     >
@@ -63,9 +63,9 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
         {description}
       </p>
       
-      <a 
-        href={link} 
-        className="inline-flex items-center text-sm text-purple-300 hover:text-purple-100 transition-colors"
+      <a
+        href={link}
+        className="inline-flex items-center text-sm text-[#fd4444] hover:text-[#ff6b6b] transition-colors"
       >
         Learn More
         <svg 

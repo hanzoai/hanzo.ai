@@ -15,19 +15,19 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = ({ href, text, hoverColor })
   // Map hover colors to Tailwind classes
   const hoverColorMap: Record<string, { bg: string, border: string, text: string }> = {
     blue: {
-      bg: "hover:bg-blue-900/20",
-      border: "hover:border-blue-500",
-      text: "text-blue-400 hover:text-blue-300"
+      bg: "hover:bg-[#fd4444]/20",
+      border: "hover:border-[#fd4444]",
+      text: "text-[#fd4444] hover:text-[#ff6b6b]"
     },
     purple: {
-      bg: "hover:bg-purple-900/20",
-      border: "hover:border-purple-500",
-      text: "text-purple-400 hover:text-purple-300"
+      bg: "hover:bg-[#fd4444]/20",
+      border: "hover:border-[#fd4444]",
+      text: "text-[#fd4444] hover:text-[#ff6b6b]"
     },
     green: {
-      bg: "hover:bg-green-900/20",
-      border: "hover:border-green-500",
-      text: "text-green-400 hover:text-green-300"
+      bg: "hover:bg-[#fd4444]/20",
+      border: "hover:border-[#fd4444]",
+      text: "text-[#fd4444] hover:text-[#ff6b6b]"
     }
   };
   

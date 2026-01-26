@@ -18,13 +18,13 @@ const Background: React.FC<BackgroundProps> = ({ mousePosition }) => {
         <GridLines spacing={60} opacity={0.1} />
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-40"></div>
-      
+      <div className="absolute inset-0 bg-gradient-to-b from-[#fd4444]/10 to-[#ff6b6b]/10 opacity-40"></div>
+
       {/* Dynamic blueprint lines */}
-      <BlueprintLine orientation="vertical" position="20%" color="rgba(147, 51, 234, 0.1)" />
-      <BlueprintLine orientation="vertical" position="80%" color="rgba(147, 51, 234, 0.1)" />
-      <BlueprintLine orientation="horizontal" position="25%" color="rgba(37, 99, 235, 0.1)" />
-      <BlueprintLine orientation="horizontal" position="75%" color="rgba(37, 99, 235, 0.1)" />
+      <BlueprintLine orientation="vertical" position="20%" color="rgba(253, 68, 68, 0.1)" />
+      <BlueprintLine orientation="vertical" position="80%" color="rgba(253, 68, 68, 0.1)" />
+      <BlueprintLine orientation="horizontal" position="25%" color="rgba(255, 107, 107, 0.1)" />
+      <BlueprintLine orientation="horizontal" position="75%" color="rgba(255, 107, 107, 0.1)" />
     </div>
   );
 };

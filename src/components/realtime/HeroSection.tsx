@@ -7,29 +7,29 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-transparent" />
-      
+      <div className="absolute inset-0 bg-gradient-to-b from-red-900/20 to-transparent" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="w-full lg:w-1/2">
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center px-3 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 mb-6"
+              className="inline-flex items-center px-3 py-1 rounded-full bg-red-900/30 border border-[#fd4444]/30 mb-6"
             >
-              <Activity className="h-4 w-4 text-purple-400 mr-2" />
-              <span className="text-sm text-purple-300">Real-time Data Synchronization</span>
+              <Activity className="h-4 w-4 text-[#fd4444] mr-2" />
+              <span className="text-sm text-[#ff6b6b]">Real-time Data Synchronization</span>
             </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--white)]"
             >
               Instant data sync <br/>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#fd4444] to-[#ff6b6b]">
                 across all clients
               </span>
             </motion.h1>
@@ -51,9 +51,9 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <Button 
-                size="lg" 
-                className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-6"
+              <Button
+                size="lg"
+                className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] px-6"
               >
                 Start Building <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -80,14 +80,14 @@ const HeroSection = () => {
                   <span className="text-neutral-300 text-sm">Live connection</span>
                 </div>
                 <div className="flex items-center">
-                  <Radio className="h-4 w-4 text-blue-400 mr-2" />
+                  <Radio className="h-4 w-4 text-[#fd4444] mr-2" />
                   <span className="text-neutral-300 text-sm">10ms latency</span>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
-                <div className="h-14 bg-gradient-to-r from-purple-900/40 to-blue-900/40 rounded-lg border border-purple-500/30 p-4 flex items-center">
-                  <Zap className="h-5 w-5 text-purple-400 mr-3" />
+                <div className="h-14 bg-gradient-to-r from-red-900/40 to-red-900/20 rounded-lg border border-[#fd4444]/30 p-4 flex items-center">
+                  <Zap className="h-5 w-5 text-[#fd4444] mr-3" />
                   <span className="text-neutral-200">Client data synchronized in real-time</span>
                 </div>
                 
@@ -97,7 +97,7 @@ const HeroSection = () => {
                       key={i}
                       className="h-24 rounded-lg border border-gray-800 p-4 flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 to-gray-950"
                     >
-                      <div className="h-2 w-2 rounded-full bg-blue-500 mb-2 animate-pulse" />
+                      <div className="h-2 w-2 rounded-full bg-[#fd4444] mb-2 animate-pulse" />
                       <span className="text-xs text-neutral-400 text-center">Client {i}</span>
                       <span className="text-xs text-neutral-500 text-center">Connected</span>
                     </div>

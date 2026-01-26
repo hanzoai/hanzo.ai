@@ -166,8 +166,8 @@ export default function Products() {
             <div className="bg-neutral-900/50 rounded-2xl p-6 max-w-2xl mx-auto mb-10 border border-neutral-800">
               <p className="text-sm text-neutral-400 mb-3">Get started in seconds</p>
               <div className="flex items-center justify-between bg-black rounded-xl p-4 font-mono">
-                <code className="text-green-400">curl -fsSL hanzo.sh/install.sh | sh</code>
-                <CopyButton text="curl -fsSL hanzo.sh/install.sh | sh" />
+                <code className="text-green-400">curl -fsSL hanzo.sh | bash</code>
+                <CopyButton text="curl -fsSL hanzo.sh | bash" />
               </div>
             </div>
 

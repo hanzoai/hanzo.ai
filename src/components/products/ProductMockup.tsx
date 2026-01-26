@@ -24,11 +24,11 @@ const DatabaseMockup: React.FC<{ product: Product }> = ({ product }) => (
     {/* Query Editor */}
     <div className="p-4 border-b border-neutral-800 bg-neutral-900/30">
       <div className="font-mono text-sm">
-        <span className="text-purple-400">SELECT</span>
+        <span className="text-[#fd4444]">SELECT</span>
         <span className="text-neutral-300"> * </span>
-        <span className="text-purple-400">FROM</span>
+        <span className="text-[#fd4444]">FROM</span>
         <span className="text-cyan-400"> users </span>
-        <span className="text-purple-400">WHERE</span>
+        <span className="text-[#fd4444]">WHERE</span>
         <span className="text-neutral-300"> status = </span>
         <span className="text-green-400">'active'</span>
         <span className="text-neutral-500">;</span>
@@ -473,7 +473,7 @@ const AgentMockup: React.FC<{ product: Product }> = ({ product }) => (
 
         {/* Arrow */}
         <motion.div
-          className="flex-1 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 mx-2"
+          className="flex-1 h-0.5 bg-gradient-to-r from-cyan-400 to-[#fd4444] mx-2"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.6 }}
@@ -485,8 +485,8 @@ const AgentMockup: React.FC<{ product: Product }> = ({ product }) => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
         >
-          <div className="w-14 h-14 rounded-xl bg-purple-500/20 border-2 border-purple-500 flex items-center justify-center">
-            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-14 h-14 rounded-xl bg-[#fd4444]/20 border-2 border-[#fd4444] flex items-center justify-center">
+            <svg className="w-6 h-6 text-[#fd4444]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -496,7 +496,7 @@ const AgentMockup: React.FC<{ product: Product }> = ({ product }) => (
 
         {/* Arrow */}
         <motion.div
-          className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-green-400 mx-2"
+          className="flex-1 h-0.5 bg-gradient-to-r from-[#fd4444] to-green-400 mx-2"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.9 }}
@@ -755,7 +755,7 @@ const GenericMockup: React.FC<{ product: Product }> = ({ product }) => (
 
     <div className="p-8 flex items-center justify-center">
       <div className="text-center">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#fd4444]/20 to-purple-500/20 border border-[#fd4444]/30 flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 border border-[#fd4444]/30 flex items-center justify-center mx-auto mb-4">
           <motion.div
             className="w-8 h-8 rounded-lg bg-[#fd4444]/40"
             animate={{

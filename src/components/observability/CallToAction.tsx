@@ -7,7 +7,7 @@ import { FileText, ArrowRight } from "lucide-react";
 const CallToAction = () => {
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/30 to-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent opacity-70"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#fd4444]/10 via-transparent to-transparent opacity-70"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
@@ -26,7 +26,7 @@ const CallToAction = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 border-none">
+              <Button size="lg" className="text-lg px-8 py-6 bg-[#fd4444] hover:bg-[#e03e3e] border-none">
                 Get Started
               </Button>
             </motion.div>

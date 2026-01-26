@@ -57,14 +57,14 @@ const HanzoAppFeatures = () => {
           <FeatureCard 
             title="Chatflow LLM Orchestration"
             description="Connect LLMs with memory, data loaders, cache, moderation and many more"
-            icon={<MessageCircle className="h-10 w-10 text-purple-400" />}
+            icon={<MessageCircle className="h-10 w-10 text-[#fd4444]" />}
             list={["Langchain", "LlamaIndex", "100+ integrations"]}
           />
           
           <FeatureCard 
             title="Agents & Assistants"
             description="Create autonomous agent that can uses tools to execute different tasks"
-            icon={<Bot className="h-10 w-10 text-purple-400" />}
+            icon={<Bot className="h-10 w-10 text-[#fd4444]" />}
             list={["Custom Tools", "OpenAI Assistant", "Function Agent"]}
             code={`import requests
  
@@ -85,7 +85,7 @@ output = query({
           <FeatureCard 
             title="Developer Friendly API, SDK, Embed"
             description="Extend and integrate to your applications using APIs, SDK and Embedded Chat"
-            icon={<Code className="h-10 w-10 text-purple-400" />}
+            icon={<Code className="h-10 w-10 text-[#fd4444]" />}
             list={["APIs", "Embedded Widget", "React SDK"]}
           />
         </div>
@@ -104,7 +104,7 @@ output = query({
           <FeatureCard 
             title="Platform Agnostic Open source LLMs"
             description="Run in air-gapped environment with local LLMs, embeddings and vector databases"
-            icon={<ServerIcon className="h-10 w-10 text-purple-400" />}
+            icon={<ServerIcon className="h-10 w-10 text-[#fd4444]" />}
             list={[
               "HuggingFace, Ollama, LocalAI, Replicate", 
               "Llama2, Mistral, Vicuna, Orca, Llava", 

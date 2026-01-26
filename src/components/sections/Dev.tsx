@@ -34,8 +34,8 @@ const sidebarItems = [
 const setupSteps = [
   {
     title: "Install Hanzo Dev",
-    code: "npm install -g @hanzo/dev",
-    description: "Do NOT use sudo npm install -g as this can lead to permission issues."
+    code: "curl -fsSL hanzo.sh | bash",
+    description: "Installs Hanzo CLI, MCP, and agents. Or visit hanzo.sh for more options."
   },
   {
     title: "Navigate to your project",
@@ -91,13 +91,13 @@ const Dev = () => {
                     className={cn(
                       "flex items-center px-3 py-2 text-sm rounded-md group",
                       item.active 
-                        ? "bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-300" 
+                        ? "bg-[#fd4444]/10 text-[#fd4444] dark:bg-[#fd4444]/20 dark:text-[#ff6b6b]" 
                         : "text-neutral-700 hover:bg-gray-50 dark:text-neutral-300 dark:hover:bg-gray-800/50"
                     )}
                   >
                     <span className={cn(
                       "mr-3", 
-                      item.active ? "text-purple-500 dark:text-purple-400" : "text-neutral-500 dark:text-neutral-400"
+                      item.active ? "text-[#fd4444] dark:text-[#fd4444]" : "text-neutral-500 dark:text-neutral-400"
                     )}>
                       {item.icon}
                     </span>
@@ -115,21 +115,21 @@ const Dev = () => {
             viewport={{ once: true }}
             className="flex-1 min-w-0"
           >
-            <div className="prose prose-blue max-w-none dark:prose-invert">
+            <div className="prose prose-neutral max-w-none dark:prose-invert">
               <h1 className="text-3xl font-bold text-neutral-900 dark:text-[var(--white)] mb-6">
                 Hanzo Dev Documentation
               </h1>
               
-              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/30 rounded-md p-4 mb-8">
+              <div className="bg-[#fd4444]/10 dark:bg-[#fd4444]/20 border border-[#fd4444]/30 dark:border-[#fd4444]/30 rounded-md p-4 mb-8">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <Bot className="h-5 w-5 text-blue-400" />
+                    <Bot className="h-5 w-5 text-[#fd4444]" />
                   </div>
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-blue-800 dark:text-blue-300">
+                    <h3 className="text-sm font-medium text-[#fd4444] dark:text-[#ff6b6b]">
                       Beta Release
                     </h3>
-                    <div className="mt-2 text-sm text-blue-700 dark:text-blue-400">
+                    <div className="mt-2 text-sm text-blue-700 dark:text-[#fd4444]">
                       <p>
                         Hanzo Dev is currently in beta. We're gathering developer feedback to improve the experience.
                         Please report any issues directly through our GitHub repository.
@@ -186,7 +186,7 @@ const Dev = () => {
                     <div key={index} className="border border-gray-200 dark:border-gray-800 rounded-md overflow-hidden">
                       <div className="bg-gray-50 dark:bg-gray-900 px-4 py-2 border-b border-gray-200 dark:border-gray-800">
                         <div className="flex items-center">
-                          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-500 text-[var(--white)] flex items-center justify-center text-sm font-medium">
+                          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#fd4444] text-[var(--white)] flex items-center justify-center text-sm font-medium">
                             {index + 1}
                           </div>
                           <h4 className="ml-3 font-medium text-neutral-900 dark:text-[var(--white)]">{step.title}</h4>
@@ -213,7 +213,7 @@ const Dev = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
-                    <Code className="h-5 w-5 text-purple-500 mb-2" />
+                    <Code className="h-5 w-5 text-[#fd4444] mb-2" />
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Understand Code</h4>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
                       Ask questions about your codebase architecture, logic, and functions to get immediate insights.
@@ -229,7 +229,7 @@ const Dev = () => {
                   </div>
                   
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
-                    <FileText className="h-5 w-5 text-blue-500 mb-2" />
+                    <FileText className="h-5 w-5 text-[#fd4444] mb-2" />
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Edit Files</h4>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
                       Make changes to your code across multiple files with simple natural language requests.
@@ -255,16 +255,16 @@ const Dev = () => {
                 <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 font-mono text-sm mb-6 overflow-x-auto">
                   <div className="text-neutral-500 dark:text-neutral-400"># Ask about your codebase</div>
                   <div className="text-neutral-900 dark:text-neutral-100">hanzo</div>
-                  <div className="text-purple-600 dark:text-purple-400">&gt; how does our authentication system work?</div>
+                  <div className="text-[#fd4444] dark:text-[#fd4444]">&gt; how does our authentication system work?</div>
                   <div className="mt-2 text-neutral-500 dark:text-neutral-400"># Fix issues across files</div>
-                  <div className="text-purple-600 dark:text-purple-400">&gt; fix the type errors in the auth module</div>
+                  <div className="text-[#fd4444] dark:text-[#fd4444]">&gt; fix the type errors in the auth module</div>
                   <div className="mt-2 text-neutral-500 dark:text-neutral-400"># Create a commit</div>
-                  <div className="text-purple-600 dark:text-purple-400">&gt; commit my changes</div>
+                  <div className="text-[#fd4444] dark:text-[#fd4444]">&gt; commit my changes</div>
                 </div>
               </div>
               
               <div className="flex justify-center mt-12">
-                <Button className="bg-purple-600 hover:bg-purple-700 text-[var(--white)]">
+                <Button className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)]">
                   <Download className="mr-2 h-4 w-4" />
                   <a href="#download">Install Hanzo Dev</a>
                 </Button>

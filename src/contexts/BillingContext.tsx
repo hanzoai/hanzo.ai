@@ -1,13 +1,32 @@
+/**
+ * BillingContext - Legacy wrapper for CommerceContext
+ *
+ * This file provides backwards compatibility with existing code
+ * that uses the BillingContext/useBilling pattern.
+ *
+ * New code should use CommerceContext/useCommerce directly.
+ */
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { 
-  getUserBillingInfo, 
-  updateUserBillingInfo, 
-  redirectToCheckout, 
+import React, { createContext, useContext, ReactNode } from 'react';
+import {
+  BillingInfo,
+  Plan,
+  getBillingInfo,
+  getPlans,
+  subscribeToPlan,
   purchaseCredits,
-  UserBillingInfo,
-  PlanType
-} from '@/services/stripe';
+} from '@/lib/hanzo/commerce';
+
+// Legacy types for backwards compatibility
+export type PlanType = 'dev' | 'pro' | 'team';
+
+export interface UserBillingInfo {
+  credits: number;
+  plan: PlanType | null;
+  trialEndsAt: Date | null;
+  isInTrial: boolean;
+  hasActiveSubscription: boolean;
+}
 
 interface BillingContextType {
   billingInfo: UserBillingInfo;
@@ -20,54 +39,103 @@ interface BillingContextType {
 
 const BillingContext = createContext<BillingContextType | undefined>(undefined);
 
-export const BillingProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [billingInfo, setBillingInfo] = useState<UserBillingInfo | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+/**
+ * Convert new BillingInfo to legacy UserBillingInfo format
+ */
+function toLegacyBillingInfo(info: BillingInfo): UserBillingInfo {
+  const planMap: Record<string, PlanType> = {
+    plan_dev: 'dev',
+    plan_pro: 'pro',
+    plan_team: 'team',
+    dev: 'dev',
+    pro: 'pro',
+    team: 'team',
+  };
 
-  const loadBillingInfo = () => {
+  return {
+    credits: info.credits,
+    plan: info.plan ? planMap[info.plan.id] || null : null,
+    trialEndsAt: info.trialEndsAt ? new Date(info.trialEndsAt) : null,
+    isInTrial: info.isInTrial,
+    hasActiveSubscription: info.subscription?.status === 'active',
+  };
+}
+
+export const BillingProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const [billingInfo, setBillingInfo] = React.useState<UserBillingInfo>(() =>
+    toLegacyBillingInfo(getBillingInfo())
+  );
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState<Error | null>(null);
+
+  const refreshBillingInfo = React.useCallback(() => {
+    setIsLoading(true);
+    setError(null);
     try {
-      setIsLoading(true);
-      setError(null);
-      const info = getUserBillingInfo();
-      setBillingInfo(info);
+      const info = getBillingInfo();
+      setBillingInfo(toLegacyBillingInfo(info));
     } catch (err) {
-      setError(err instanceof Error ? err : new Error('Failed to load billing information'));
-      console.error('Error loading billing info:', err);
+      setError(
+        err instanceof Error ? err : new Error('Failed to load billing info')
+      );
     } finally {
       setIsLoading(false);
     }
-  };
-
-  useEffect(() => {
-    loadBillingInfo();
   }, []);
 
-  const checkout = async (planType: PlanType, quantity: number = 1) => {
-    return await redirectToCheckout(planType, quantity);
-  };
+  React.useEffect(() => {
+    refreshBillingInfo();
+  }, [refreshBillingInfo]);
 
-  const addCredits = async (amount: number) => {
-    const result = await purchaseCredits(amount);
-    if (result) {
-      loadBillingInfo();
-    }
-    return result;
-  };
+  const checkout = React.useCallback(
+    async (planType: PlanType, _quantity: number = 1): Promise<boolean> => {
+      setIsLoading(true);
+      try {
+        await subscribeToPlan(planType);
+        refreshBillingInfo();
+        return true;
+      } catch (err) {
+        setError(
+          err instanceof Error ? err : new Error('Checkout failed')
+        );
+        return false;
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [refreshBillingInfo]
+  );
 
-  const refreshBillingInfo = () => {
-    loadBillingInfo();
-  };
+  const addCredits = React.useCallback(
+    async (amount: number): Promise<boolean> => {
+      setIsLoading(true);
+      try {
+        const result = await purchaseCredits(amount);
+        refreshBillingInfo();
+        return result.success;
+      } catch (err) {
+        setError(
+          err instanceof Error ? err : new Error('Failed to add credits')
+        );
+        return false;
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [refreshBillingInfo]
+  );
 
   return (
-    <BillingContext.Provider 
-      value={{ 
-        billingInfo: billingInfo || getUserBillingInfo(),
-        isLoading, 
-        error, 
-        checkout, 
+    <BillingContext.Provider
+      value={{
+        billingInfo,
+        isLoading,
+        error,
+        checkout,
         addCredits,
-        refreshBillingInfo
+        refreshBillingInfo,
       }}
     >
       {children}

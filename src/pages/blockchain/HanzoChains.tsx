@@ -99,9 +99,11 @@ const HanzoChains = () => {
         // Other Networks
         "Aptos", "Sui", "Sei", "Berachain", "Monad", "Celestia", "Near",
       ]}
-      codeExample={{
-        filename: "chains.ts",
-        code: `import { HanzoChains } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "chains.ts",
+          code: `import { HanzoChains } from "@hanzo/blockchain";
 
 const chains = new HanzoChains({
   apiKey: process.env.HANZO_API_KEY,
@@ -115,18 +117,160 @@ chains.lux.cchain.subscribe("newHeads", (block) => {
   console.log("New block:", block.number);
 });
 
-// Multi-chain balance check across Lux ecosystem
+// Multi-chain balance check
 const balances = await chains.multiCall([
   { chain: "ethereum", method: "eth_getBalance", params: [address] },
   { chain: "lux-cchain", method: "eth_getBalance", params: [address] },
-  { chain: "lux-dchain", method: "eth_getBalance", params: [address] },
-  { chain: "hanzo-network", method: "eth_getBalance", params: [address] },
-  { chain: "zoo-network", method: "eth_getBalance", params: [address] },
-]);
+]);`,
+        },
+        {
+          language: "Python",
+          filename: "chains.py",
+          code: `from hanzo import HanzoChains
 
-// Access Lux P-Chain for staking info
-const validators = await chains.lux.pchain.getValidators();`,
-      }}
+chains = HanzoChains(api_key=os.environ["HANZO_API_KEY"])
+
+# Get the latest block from Ethereum
+block = await chains.eth.get_block_number()
+
+# Subscribe to new blocks on Lux C-Chain
+async for block in chains.lux.cchain.subscribe("newHeads"):
+    print(f"New block: {block['number']}")
+
+# Multi-chain balance check
+balances = await chains.multi_call([
+    {"chain": "ethereum", "method": "eth_getBalance", "params": [address]},
+    {"chain": "lux-cchain", "method": "eth_getBalance", "params": [address]},
+])`,
+        },
+        {
+          language: "Go",
+          filename: "chains.go",
+          code: `package main
+
+import "github.com/hanzoai/hanzo-go/blockchain"
+
+func main() {
+    chains := blockchain.NewClient(os.Getenv("HANZO_API_KEY"))
+
+    // Get the latest block from Ethereum
+    block, _ := chains.Eth.GetBlockNumber(ctx)
+
+    // Subscribe to new blocks on Lux C-Chain
+    sub := chains.Lux.CChain.Subscribe(ctx, "newHeads")
+    for block := range sub.Blocks() {
+        fmt.Printf("New block: %d\\n", block.Number)
+    }
+
+    // Multi-chain balance check
+    balances, _ := chains.MultiCall(ctx, []blockchain.Call{
+        {Chain: "ethereum", Method: "eth_getBalance", Params: []any{address}},
+        {Chain: "lux-cchain", Method: "eth_getBalance", Params: []any{address}},
+    })
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "chains.rs",
+          code: `use hanzo_blockchain::HanzoChains;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let chains = HanzoChains::new(std::env::var("HANZO_API_KEY")?);
+
+    // Get the latest block from Ethereum
+    let block = chains.eth().get_block_number().await?;
+
+    // Subscribe to new blocks on Lux C-Chain
+    let mut stream = chains.lux().cchain().subscribe("newHeads").await?;
+    while let Some(block) = stream.next().await {
+        println!("New block: {}", block.number);
+    }
+
+    // Multi-chain balance check
+    let balances = chains.multi_call(vec![
+        Call::new("ethereum", "eth_getBalance", vec![address]),
+        Call::new("lux-cchain", "eth_getBalance", vec![address]),
+    ]).await?;
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "chains.c",
+          code: `#include <hanzo/blockchain.h>
+
+int main() {
+    hanzo_chains_t *chains = hanzo_chains_new(getenv("HANZO_API_KEY"));
+
+    // Get the latest block from Ethereum
+    uint64_t block = hanzo_eth_get_block_number(chains);
+
+    // Subscribe to new blocks on Lux C-Chain
+    hanzo_subscription_t *sub = hanzo_lux_cchain_subscribe(chains, "newHeads");
+    hanzo_block_t block;
+    while (hanzo_subscription_next(sub, &block)) {
+        printf("New block: %llu\\n", block.number);
+    }
+
+    // Multi-chain balance check
+    hanzo_call_t calls[] = {
+        {"ethereum", "eth_getBalance", address},
+        {"lux-cchain", "eth_getBalance", address},
+    };
+    hanzo_multi_call(chains, calls, 2);
+
+    hanzo_chains_free(chains);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "chains.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+
+int main() {
+    auto chains = hanzo::Chains(std::getenv("HANZO_API_KEY"));
+
+    // Get the latest block from Ethereum
+    auto block = chains.eth().getBlockNumber();
+
+    // Subscribe to new blocks on Lux C-Chain
+    chains.lux().cchain().subscribe("newHeads", [](auto block) {
+        std::cout << "New block: " << block.number << std::endl;
+    });
+
+    // Multi-chain balance check
+    auto balances = chains.multiCall({
+        {"ethereum", "eth_getBalance", {address}},
+        {"lux-cchain", "eth_getBalance", {address}},
+    });
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "chains.rb",
+          code: `require 'hanzo/blockchain'
+
+chains = Hanzo::Chains.new(api_key: ENV['HANZO_API_KEY'])
+
+# Get the latest block from Ethereum
+block = chains.eth.get_block_number
+
+# Subscribe to new blocks on Lux C-Chain
+chains.lux.cchain.subscribe('newHeads') do |block|
+  puts "New block: #{block[:number]}"
+end
+
+# Multi-chain balance check
+balances = chains.multi_call([
+  { chain: 'ethereum', method: 'eth_getBalance', params: [address] },
+  { chain: 'lux-cchain', method: 'eth_getBalance', params: [address] },
+])`,
+        },
+      ]}
     />
   );
 };

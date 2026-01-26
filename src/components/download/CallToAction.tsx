@@ -27,9 +27,9 @@ const CallToAction = () => {
 
   return (
     <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#fd4444]/20 to-[#ff6b6b]/20 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div 
@@ -55,14 +55,14 @@ const CallToAction = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
+              className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
             >
               <Apple className="mr-2 h-4 w-4" />
               Download (Apple Silicon)
             </Button>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
+              className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] text-[var(--white)] shadow-lg hover:shadow-xl transition-all flex items-center"
             >
               <Apple className="mr-2 h-4 w-4" />
               Download (Intel Mac)

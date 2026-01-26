@@ -2,6 +2,8 @@ import { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Info } from "lucide-react";
 
+const BRAND_COLOR = "#fd4444";
+
 interface TeamMemberCardProps {
   name: string;
   role: string;
@@ -16,7 +18,7 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient, onClick
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="relative group h-full border border-gray-800 overflow-hidden rounded-2xl bg-gray-900/50 backdrop-blur-sm cursor-pointer"
+      className="relative group h-full border border-border overflow-hidden rounded-2xl bg-card backdrop-blur-sm cursor-pointer"
       onClick={onClick}
     >
       <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out -z-10 ${gradient}`} />
@@ -25,25 +27,27 @@ const TeamMemberCard = ({ name, role, description, icon: Icon, gradient, onClick
           <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${gradient} mb-4`}>
             <Icon className="h-6 w-6 text-white" />
           </div>
-          <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-neutral-300 transition-colors">{name}</h3>
-          <p className="text-neutral-400 font-medium mb-3">{role}</p>
-          <p className="text-neutral-400 mb-4">{description}</p>
+          <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-muted-foreground transition-colors">{name}</h3>
+          <p className="text-muted-foreground font-medium mb-3">{role}</p>
+          <p className="text-muted-foreground mb-4">{description}</p>
         </div>
 
         <div className="px-8 pb-8 relative z-10">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center justify-center px-4 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors group-hover:border-purple-500/30"
+            className="flex items-center justify-center px-4 py-2 bg-secondary/50 border border-border rounded-xl hover:bg-accent transition-colors"
+            style={{ '--hover-border-color': `${BRAND_COLOR}30` } as React.CSSProperties}
           >
-            <Info className="h-5 w-5 text-purple-400 mr-2" />
-            <span className="text-white">View Details</span>
+            <Info className="h-5 w-5 mr-2" style={{ color: BRAND_COLOR }} />
+            <span className="text-foreground">View Details</span>
           </motion.div>
         </div>
       </div>
 
       {/* Hover effect */}
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+      <motion.div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+        style={{ background: `linear-gradient(to bottom right, ${BRAND_COLOR}05, ${BRAND_COLOR}05)` }}
         initial={false}
         whileHover={{ opacity: 0.3 }}
       />

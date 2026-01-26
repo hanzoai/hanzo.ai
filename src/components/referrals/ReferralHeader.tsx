@@ -4,10 +4,10 @@ import { Gift } from 'lucide-react';
 
 const ReferralHeader = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 p-8 rounded-xl border border-purple-500/20">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-red-900/30 to-neutral-900/30 p-8 rounded-xl border border-[#fd4444]/20">
       <div className="flex items-center gap-6">
-        <div className="h-16 w-16 rounded-full bg-purple-900/50 border border-purple-500/30 flex items-center justify-center flex-shrink-0">
-          <Gift className="h-8 w-8 text-purple-300" />
+        <div className="h-16 w-16 rounded-full bg-red-900/50 border border-[#fd4444]/30 flex items-center justify-center flex-shrink-0">
+          <Gift className="h-8 w-8 text-[#fd4444]" />
         </div>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-2">Referral Program</h1>

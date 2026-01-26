@@ -1,7 +1,10 @@
-# Environment variables
+# Environment variables - NEVER commit credentials
 .env
 .env.local
 .env.*.local
+.env.production
+.env.staging
+*.secrets
 
 # Logs
 logs

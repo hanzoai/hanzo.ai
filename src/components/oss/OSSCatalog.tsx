@@ -83,10 +83,10 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
   const getBadgeVariant = (type: string) => {
     switch (type) {
       case 'featured': return 'bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30';
-      case 'recommended': return 'bg-blue-500/10 text-blue-400 border-blue-500/30';
+      case 'recommended': return 'bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30';
       case 'experimental': return 'bg-orange-500/10 text-orange-400 border-orange-500/30';
       case 'stable': return 'bg-green-500/10 text-green-400 border-green-500/30';
-      case 'active': return 'bg-blue-500/10 text-blue-400 border-blue-500/30';
+      case 'active': return 'bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30';
       default: return 'bg-neutral-800 text-neutral-400 border-neutral-700';
     }
   };

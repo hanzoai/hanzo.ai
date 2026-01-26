@@ -7,7 +7,7 @@ import { ArrowRight, LineChart } from "lucide-react";
 const CallToAction = () => {
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/30 to-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent opacity-70"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#fd4444]/10 via-transparent to-transparent opacity-70"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -17,7 +17,7 @@ const CallToAction = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center bg-purple-900/30 p-3 rounded-full border border-purple-500/30 text-purple-400 mb-6">
+          <div className="inline-flex items-center justify-center bg-[#fd4444]/10 p-3 rounded-full border border-[#fd4444]/30 text-[#fd4444] mb-6">
             <LineChart className="h-10 w-10" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Start Analyzing Smarter, Today</h2>
@@ -30,7 +30,7 @@ const CallToAction = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400 border-none">
+              <Button size="lg" className="text-lg px-10 py-6 bg-[#fd4444] hover:bg-[#e03e3e] border-none">
                 Start Free Trial
               </Button>
             </motion.div>
@@ -69,7 +69,7 @@ const CallToAction = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-900/20 p-6 rounded-xl border border-gray-800 hover:border-purple-900/30 transition-colors"
+              className="bg-gray-900/20 p-6 rounded-xl border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
             >
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
               <p className="text-neutral-400">{feature.description}</p>

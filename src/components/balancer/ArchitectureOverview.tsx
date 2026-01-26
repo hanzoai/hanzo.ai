@@ -47,14 +47,14 @@ const ArchitectureOverview = () => {
               for automatic certificate generation. Hanzo Balancer's extensive features and capabilities make it 
               the comprehensive gateway to all your applications.
             </p>
-            <div className="bg-gradient-to-r from-purple-900/30 to-indigo-900/30 border border-purple-500/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-red-900/30 to-red-900/20 border border-[#fd4444]/20 rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Maximize Uptime, Solve Issues Quickly</h3>
               <p className="text-neutral-300 mb-4">
                 Need support with Hanzo Balancer? Our team of experts is here to help 24/7/365!
               </p>
-              <a 
-                href="#support" 
-                className="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md font-medium transition-colors"
+              <a
+                href="#support"
+                className="inline-block px-4 py-2 bg-[#fd4444] hover:bg-[#e03e3e] rounded-md font-medium transition-colors"
               >
                 REQUEST COMMERCIAL SUPPORT
               </a>

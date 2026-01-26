@@ -16,7 +16,7 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
     <div className="mb-20">
       <SectionHeader
         badge="DX Platform"
-        badgeColor="bg-purple-900/30 border border-purple-500/30 text-purple-300"
+        badgeColor="bg-[#fd4444]/20 border border-[#fd4444]/30 text-[#ff6b6b]"
         title="Developer Experience Tools for AI Engineering"
         description="Supercharge your AI development workflow with purpose-built tools for engineers."
       />
@@ -35,11 +35,11 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <div className="h-full">
                   <ProductCard
-                    icon={<product.icon className="text-purple-400" />}
+                    icon={<product.icon className="text-[#fd4444]" />}
                     title={product.name}
                     description={product.description}
-                    color="bg-purple-900/30"
-                    hoverColor="bg-purple-600/40"
+                    color="bg-[#fd4444]/20"
+                    hoverColor="bg-[#e03e3e]/40"
                     link={product.link || "#"}
                   />
                 </div>
@@ -60,11 +60,11 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
             {products.map((product, index) => (
               <div key={index} className="w-[300px] flex-shrink-0">
                 <ProductCard
-                  icon={<product.icon className="text-purple-400" />}
+                  icon={<product.icon className="text-[#fd4444]" />}
                   title={product.name}
                   description={product.description}
-                  color="bg-purple-900/30"
-                  hoverColor="bg-purple-600/40"
+                  color="bg-[#fd4444]/20"
+                  hoverColor="bg-[#e03e3e]/40"
                   link={product.link || "#"}
                 />
               </div>

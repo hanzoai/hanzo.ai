@@ -7,27 +7,27 @@ import ChromeText from "@/components/ui/chrome-text";
 const WhyHanzo = () => {
   const features = [
     {
-      icon: <Brain className="h-6 w-6 text-purple-400" />,
+      icon: <Brain className="h-6 w-6 text-[#fd4444]" />,
       title: "AI-Native",
       description: "Purpose-built for AI-driven software development and deployment."
     },
     {
-      icon: <Code className="h-6 w-6 text-purple-400" />,
+      icon: <Code className="h-6 w-6 text-[#fd4444]" />,
       title: "Autonomous",
       description: "Delegate complex tasks to intelligent AI agents."
     },
     {
-      icon: <Scale className="h-6 w-6 text-purple-400" />,
+      icon: <Scale className="h-6 w-6 text-[#fd4444]" />,
       title: "Scalable",
       description: "Grow seamlessly from startup to enterprise-level demands."
     },
     {
-      icon: <Leaf className="h-6 w-6 text-purple-400" />,
+      icon: <Leaf className="h-6 w-6 text-[#fd4444]" />,
       title: "Sustainable",
       description: "Operate with 100% renewable energy at planet-scale efficiency."
     },
     {
-      icon: <Shield className="h-6 w-6 text-purple-400" />,
+      icon: <Shield className="h-6 w-6 text-[#fd4444]" />,
       title: "Open and Secure",
       description: "Fully open-source options ensuring transparency and control."
     }
@@ -56,7 +56,7 @@ const WhyHanzo = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="bg-gray-900/30 rounded-xl p-6 border border-gray-800"
             >
-              <div className="h-12 w-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+              <div className="h-12 w-12 bg-[#fd4444]/20 rounded-lg flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <ChromeText as="h3" className="text-xl font-bold mb-2">

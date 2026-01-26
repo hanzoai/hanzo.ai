@@ -27,7 +27,7 @@ const PaymentMethods = () => {
   const getCardIcon = (type: string) => {
     switch (type) {
       case 'visa':
-        return <div className="text-blue-500 font-bold text-xs">VISA</div>;
+        return <div className="text-[#fd4444] font-bold text-xs">VISA</div>;
       case 'mastercard':
         return <div className="text-red-500 font-bold text-xs">MC</div>;
       default:
@@ -205,7 +205,7 @@ const PaymentMethods = () => {
             key={card.id} 
             className={`flex items-center justify-between p-4 rounded-lg border ${
               card.isDefault 
-                ? 'border-purple-500 bg-purple-900/10' 
+                ? 'border-[#fd4444] bg-red-900/10' 
                 : 'border-gray-800 bg-gray-900/30'
             }`}
           >
@@ -217,7 +217,7 @@ const PaymentMethods = () => {
                 <div className="font-medium">
                   {card.type.charAt(0).toUpperCase() + card.type.slice(1)} ending in {card.last4}
                   {card.isDefault && (
-                    <span className="ml-2 text-xs bg-purple-900/50 text-purple-300 px-2 py-0.5 rounded-full">
+                    <span className="ml-2 text-xs bg-red-900/50 text-[#fd4444] px-2 py-0.5 rounded-full">
                       Default
                     </span>
                   )}

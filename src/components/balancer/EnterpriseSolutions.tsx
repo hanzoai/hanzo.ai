@@ -30,8 +30,8 @@ const EnterpriseSolutions = () => {
             className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 p-8 rounded-xl border border-gray-700/50"
           >
             <div className="flex items-start mb-6">
-              <div className="bg-purple-900/20 p-3 rounded-full mr-4">
-                <Shield className="h-6 w-6 text-purple-400" />
+              <div className="bg-red-900/20 p-3 rounded-full mr-4">
+                <Shield className="h-6 w-6 text-[#fd4444]" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Enhanced Security Suite</h3>
@@ -41,8 +41,8 @@ const EnterpriseSolutions = () => {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-purple-900/20 p-3 rounded-full mr-4">
-                <Building2 className="h-6 w-6 text-purple-400" />
+              <div className="bg-red-900/20 p-3 rounded-full mr-4">
+                <Building2 className="h-6 w-6 text-[#fd4444]" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">High Availability Clustering</h3>
@@ -61,8 +61,8 @@ const EnterpriseSolutions = () => {
             className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 p-8 rounded-xl border border-gray-700/50"
           >
             <div className="flex items-start mb-6">
-              <div className="bg-purple-900/20 p-3 rounded-full mr-4">
-                <FileCode className="h-6 w-6 text-purple-400" />
+              <div className="bg-red-900/20 p-3 rounded-full mr-4">
+                <FileCode className="h-6 w-6 text-[#fd4444]" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Advanced Traffic Policies</h3>
@@ -72,8 +72,8 @@ const EnterpriseSolutions = () => {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-purple-900/20 p-3 rounded-full mr-4">
-                <Users className="h-6 w-6 text-purple-400" />
+              <div className="bg-red-900/20 p-3 rounded-full mr-4">
+                <Users className="h-6 w-6 text-[#fd4444]" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Enterprise Support</h3>
@@ -94,7 +94,7 @@ const EnterpriseSolutions = () => {
         >
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8"
+            className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] px-8"
           >
             Request Enterprise Demo
           </Button>

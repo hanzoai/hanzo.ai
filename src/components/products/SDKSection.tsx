@@ -46,7 +46,7 @@ const languageLogos: Record<string, JSX.Element> = {
 
 const registryColors: Record<string, string> = {
   npm: "bg-red-500/10 text-red-400 border-red-500/30",
-  pypi: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+  pypi: "bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30",
   "crates.io": "bg-orange-500/10 text-orange-400 border-orange-500/30",
   "go modules": "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
 };

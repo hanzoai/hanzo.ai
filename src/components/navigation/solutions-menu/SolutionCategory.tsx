@@ -16,9 +16,9 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-[var(--white)]">{title}</h3>
-        <Link 
-          to="/solutions" 
-          className="text-purple-400 hover:text-purple-300 text-sm font-medium"
+        <Link
+          to="/solutions"
+          className="text-[#fd4444] hover:text-[#ff6b6b] text-sm font-medium"
           onClick={onItemClick}
         >
           View all

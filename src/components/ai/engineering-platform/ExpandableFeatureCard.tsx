@@ -51,10 +51,10 @@ const ExpandableFeatureCard: React.FC<ExpandableFeatureCardProps> = ({
         </div>
         <button 
           onClick={toggleExpand}
-          className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isExpanded ? 'bg-purple-600/30' : 'bg-gray-800/50 hover:bg-gray-700/50'}`}
+          className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isExpanded ? 'bg-[#fd4444]/20' : 'bg-gray-800/50 hover:bg-gray-700/50'}`}
         >
           {isExpanded ? (
-            <Minus className="h-4 w-4 text-purple-300" />
+            <Minus className="h-4 w-4 text-[#ff6b6b]" />
           ) : (
             <Plus className="h-4 w-4 text-neutral-300" />
           )}

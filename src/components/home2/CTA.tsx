@@ -7,7 +7,7 @@ import { ArrowRight, Github } from "lucide-react";
 const CTA = () => {
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#fd4444]/10 to-black"></div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ const CTA = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto px-4 relative z-10"
       >
-        <div className="max-w-4xl mx-auto bg-gradient-to-br from-gray-900 to-black border border-purple-500/20 rounded-2xl p-10 text-center">
+        <div className="max-w-4xl mx-auto bg-gradient-to-br from-gray-900 to-black border border-[#fd4444]/20 rounded-2xl p-10 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Build the Future with AI?
           </h2>
@@ -27,7 +27,7 @@ const CTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-[var(--white)] rounded-full"
+              className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] rounded-full"
             >
               Get Started Free
               <ArrowRight className="ml-2 h-4 w-4" />

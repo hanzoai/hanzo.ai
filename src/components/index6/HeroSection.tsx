@@ -79,7 +79,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         >
           <Button 
             size="lg" 
-            className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] px-8 py-6 text-lg"
+            className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] px-8 py-6 text-lg"
             onClick={handleGetStarted}
           >
             Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
@@ -88,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <Button 
             size="lg" 
             variant="outline"
-            className="border-purple-500/30 hover:border-purple-500/70 text-[var(--white)] hover:text-[var(--white)] px-8 py-6 text-lg"
+            className="border-[#fd4444]/30 hover:border-[#fd4444]/70 text-[var(--white)] hover:text-[var(--white)] px-8 py-6 text-lg"
             onClick={() => navigate('/platform')}
           >
             Explore Platform

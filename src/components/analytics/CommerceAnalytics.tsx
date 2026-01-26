@@ -19,7 +19,7 @@ const CommerceAnalytics = () => {
       className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-blue-900/5 opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#fd4444]/10 to-[#ff6b6b]/5 opacity-50"></div>
       
       {/* Content */}
       <div className="max-w-7xl mx-auto relative z-10">
@@ -63,7 +63,7 @@ const CommerceAnalytics = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex"
               >
-                <div className="mr-4 p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-purple-500/20 text-purple-400">
+                <div className="mr-4 p-3 rounded-xl bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 border border-[#fd4444]/20 text-[#fd4444]">
                   {feature.icon}
                 </div>
                 <div>
@@ -80,7 +80,7 @@ const CommerceAnalytics = () => {
           >
             <div className="p-4 border-b border-gray-800">
               <div className="flex items-center">
-                <ShoppingCart className="h-5 w-5 text-purple-400 mr-2" />
+                <ShoppingCart className="h-5 w-5 text-[#fd4444] mr-2" />
                 <span className="text-[var(--white)] font-medium">Commerce Dashboard</span>
               </div>
             </div>
@@ -94,7 +94,7 @@ const CommerceAnalytics = () => {
                     {[65, 80, 55, 90, 70, 85, 60].map((height, i) => (
                       <motion.div
                         key={i}
-                        className="w-6 bg-gradient-to-t from-purple-600 to-purple-400 rounded-t"
+                        className="w-6 bg-gradient-to-t from-[#fd4444] to-[#ff6b6b] rounded-t"
                         initial={{ height: 0 }}
                         whileInView={{ height: `${height}%` }}
                         viewport={{ once: true }}
@@ -141,14 +141,14 @@ const CommerceAnalytics = () => {
                       <div className="flex items-center">
                         <div className="w-24 h-2 bg-gray-800 rounded-full mr-2 overflow-hidden">
                           <motion.div
-                            className="h-full bg-purple-500"
+                            className="h-full bg-[#fd4444]"
                             initial={{ width: 0 }}
                             whileInView={{ width: `${product.score}%` }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 + i * 0.1 }}
                           ></motion.div>
                         </div>
-                        <span className="text-sm text-purple-400">{product.score}%</span>
+                        <span className="text-sm text-[#fd4444]">{product.score}%</span>
                       </div>
                     </div>
                   ))}

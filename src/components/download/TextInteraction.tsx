@@ -23,11 +23,11 @@ const TextInteraction = () => {
             </p>
             
             <div className="flex items-center space-x-4 text-neutral-400">
-              <MousePointer className="h-6 w-6 text-purple-500" />
+              <MousePointer className="h-6 w-6 text-[#fd4444]" />
               <span>Works with any selectable text</span>
             </div>
             <div className="flex items-center space-x-4 text-neutral-400 mt-3">
-              <FileText className="h-6 w-6 text-purple-500" />
+              <FileText className="h-6 w-6 text-[#fd4444]" />
               <span>Instant insights across applications</span>
             </div>
           </div>

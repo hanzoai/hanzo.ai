@@ -7,18 +7,18 @@ const CloudInfrastructure = () => {
   return (
     <div className="relative h-64 w-full rounded-xl bg-gradient-to-br from-black to-gray-900 overflow-hidden">
       <div className="absolute inset-0" style={{
-        backgroundImage: "radial-gradient(rgba(128, 90, 213, 0.07) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(rgba(253, 68, 68, 0.07) 1px, transparent 1px)",
         backgroundSize: "20px 20px",
       }}></div>
       
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div 
-          className="relative h-20 w-20 rounded-xl bg-gray-900/70 border border-purple-500/30 flex items-center justify-center z-30"
+          className="relative h-20 w-20 rounded-xl bg-gray-900/70 border border-[#fd4444]/30 flex items-center justify-center z-30"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <BrainCog className="h-8 w-8 text-purple-400" />
+          <BrainCog className="h-8 w-8 text-[#fd4444]" />
         </motion.div>
         
         {[...Array(6)].map((_, i) => {
@@ -27,12 +27,12 @@ const CloudInfrastructure = () => {
           const x = Math.cos(angle) * distance;
           const y = Math.sin(angle) * distance;
           const icons = [
-            <Cloud key={0} className="h-5 w-5 text-purple-400" />,
-            <Server key={1} className="h-5 w-5 text-purple-400" />,
-            <Database key={2} className="h-5 w-5 text-purple-400" />,
-            <Monitor key={3} className="h-5 w-5 text-purple-400" />,
-            <Network key={4} className="h-5 w-5 text-purple-400" />,
-            <Activity key={5} className="h-5 w-5 text-purple-400" />
+            <Cloud key={0} className="h-5 w-5 text-[#fd4444]" />,
+            <Server key={1} className="h-5 w-5 text-[#fd4444]" />,
+            <Database key={2} className="h-5 w-5 text-[#fd4444]" />,
+            <Monitor key={3} className="h-5 w-5 text-[#fd4444]" />,
+            <Network key={4} className="h-5 w-5 text-[#fd4444]" />,
+            <Activity key={5} className="h-5 w-5 text-[#fd4444]" />
           ];
           
           return (
@@ -73,7 +73,7 @@ const CloudInfrastructure = () => {
           return (
             <motion.div
               key={`line-${i}`}
-              className="absolute h-0.5 bg-gradient-to-r from-purple-500/60 to-purple-500/10"
+              className="absolute h-0.5 bg-gradient-to-r from-[#fd4444]/60 to-[#fd4444]/10"
               style={{
                 width: 80,
                 transformOrigin: "left center",
@@ -105,7 +105,7 @@ const CloudInfrastructure = () => {
           return (
             <motion.div
               key={`particle-${i}`}
-              className="absolute h-1.5 w-1.5 rounded-full bg-purple-400"
+              className="absolute h-1.5 w-1.5 rounded-full bg-[#fd4444]"
               style={{
                 left: "50%",
                 top: "50%",

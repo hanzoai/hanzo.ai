@@ -102,7 +102,7 @@ const Features = () => {
             </div>
             
             <div className="w-full lg:w-1/2 bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800">
-              <div className="aspect-video p-8 flex items-center justify-center bg-gradient-to-br from-green-900/10 to-blue-900/10">
+              <div className="aspect-video p-8 flex items-center justify-center bg-gradient-to-br from-green-900/10 to-[#fd4444]/10">
                 <feature.icon className="h-24 w-24 text-green-500/70" />
               </div>
             </div>

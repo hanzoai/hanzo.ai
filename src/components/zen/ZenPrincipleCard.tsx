@@ -22,22 +22,22 @@ const ZenPrincipleCard: React.FC<ZenPrincipleCardProps> = ({ principle, index })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6 relative overflow-hidden group"
+      className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-6 relative overflow-hidden group"
     >
       {principle.discipline && (
-        <div className="absolute top-2 right-2 text-xs text-purple-400/30 opacity-50 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-2 right-2 text-xs text-[#fd4444]/30 opacity-50 group-hover:opacity-100 transition-opacity">
           {principle.discipline}
         </div>
       )}
       <div className="flex items-center mb-3">
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 mr-3">
+        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#fd4444]/20 text-[#fd4444] mr-3">
           {principle.emoji || principle.number}
         </div>
         <h3 className="text-xl text-[var(--white)] font-bold">{principle.title}</h3>
       </div>
-      <div className="text-sm text-purple-400 font-mono mb-2">{principle.japaneseSymbol}</div>
+      <div className="text-sm text-[#fd4444] font-mono mb-2">{principle.japaneseSymbol}</div>
       <p className="text-neutral-300">{principle.description}</p>
-      <div className="absolute bottom-2 right-2 text-xs text-purple-400/30">
+      <div className="absolute bottom-2 right-2 text-xs text-[#fd4444]/30">
         #{principle.number}/64
       </div>
     </motion.div>

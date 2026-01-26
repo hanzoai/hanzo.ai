@@ -48,28 +48,28 @@ const Integration = () => {
             
             <div className="space-y-4 mb-8">
               <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-purple-900/30 flex items-center justify-center mr-3 mt-0.5">
-                  <span className="text-purple-400 text-sm font-bold">1</span>
+                <div className="h-6 w-6 rounded-full bg-red-900/30 flex items-center justify-center mr-3 mt-0.5">
+                  <span className="text-[#fd4444] text-sm font-bold">1</span>
                 </div>
                 <div>
                   <h4 className="text-[var(--white)] font-medium mb-1">Initialize the client</h4>
                   <p className="text-neutral-400 text-sm">Connect to the Hanzo Realtime service with your API key</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-purple-900/30 flex items-center justify-center mr-3 mt-0.5">
-                  <span className="text-purple-400 text-sm font-bold">2</span>
+                <div className="h-6 w-6 rounded-full bg-red-900/30 flex items-center justify-center mr-3 mt-0.5">
+                  <span className="text-[#fd4444] text-sm font-bold">2</span>
                 </div>
                 <div>
                   <h4 className="text-[var(--white)] font-medium mb-1">Subscribe to channels</h4>
                   <p className="text-neutral-400 text-sm">Listen for updates on specific channels or topics</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-purple-900/30 flex items-center justify-center mr-3 mt-0.5">
-                  <span className="text-purple-400 text-sm font-bold">3</span>
+                <div className="h-6 w-6 rounded-full bg-red-900/30 flex items-center justify-center mr-3 mt-0.5">
+                  <span className="text-[#fd4444] text-sm font-bold">3</span>
                 </div>
                 <div>
                   <h4 className="text-[var(--white)] font-medium mb-1">Publish messages</h4>
@@ -78,7 +78,7 @@ const Integration = () => {
               </div>
             </div>
             
-            <Button className="bg-purple-600 hover:bg-purple-700">
+            <Button className="bg-[#fd4444] hover:bg-[#e03e3e]">
               View Documentation <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
@@ -91,7 +91,7 @@ const Integration = () => {
             className="bg-[var(--black)] rounded-xl border border-gray-800 p-6"
           >
             <div className="flex items-center mb-4">
-              <Code className="h-5 w-5 text-purple-400 mr-2" />
+              <Code className="h-5 w-5 text-[#fd4444] mr-2" />
               <span className="text-neutral-300">JavaScript Example</span>
             </div>
             

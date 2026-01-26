@@ -20,7 +20,7 @@ const statsItems = [
     countUpDuration: 2.2
   },
   { 
-    icon: <Users className="h-6 w-6 text-blue-400" />,
+    icon: <Users className="h-6 w-6 text-[#ff6b6b]" />,
     value: 280,
     suffix: "+",
     label: "Contributors",
@@ -126,7 +126,7 @@ const OpenSource = () => {
               <div className="flex">
                 <div className="mr-4 text-neutral-600">1</div>
                 <div>
-                  <span className="text-blue-400">import</span> <span className="text-green-400">{'{'}</span> <span className="text-yellow-300">HanzoAnalytics</span> <span className="text-green-400">{'}'}</span> <span className="text-blue-400">from</span> <span className="text-orange-400">'hanzo-analytics'</span>;
+                  <span className="text-[#fd4444]">import</span> <span className="text-green-400">{'{'}</span> <span className="text-yellow-300">HanzoAnalytics</span> <span className="text-green-400">{'}'}</span> <span className="text-[#fd4444]">from</span> <span className="text-orange-400">'hanzo-analytics'</span>;
                 </div>
               </div>
               <div className="flex">
@@ -135,12 +135,12 @@ const OpenSource = () => {
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">3</div>
-                <div><span className="text-purple-400">// Initialize analytics with your project ID</span></div>
+                <div><span className="text-neutral-500">// Initialize analytics with your project ID</span></div>
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">4</div>
                 <div>
-                  <span className="text-blue-400">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-blue-400">new</span> <span className="text-yellow-300">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
+                  <span className="text-[#fd4444]">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-[#fd4444]">new</span> <span className="text-yellow-300">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
                 </div>
               </div>
               <div className="flex">
@@ -149,7 +149,7 @@ const OpenSource = () => {
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">6</div>
-                <div><span className="text-purple-400">// Track page views automatically</span></div>
+                <div><span className="text-neutral-500">// Track page views automatically</span></div>
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">7</div>
@@ -163,7 +163,7 @@ const OpenSource = () => {
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">9</div>
-                <div><span className="text-purple-400">// Track custom events</span></div>
+                <div><span className="text-neutral-500">// Track custom events</span></div>
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">10</div>

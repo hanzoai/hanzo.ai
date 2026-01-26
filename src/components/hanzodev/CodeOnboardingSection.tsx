@@ -11,7 +11,7 @@ const CodebaseDemo = () => {
       <div className="p-6">
         {/* User message */}
         <div className="flex gap-3 mb-6">
-          <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+          <div className="w-8 h-8 rounded-full bg-[#fd4444] flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
             &gt;
           </div>
           <div className="bg-neutral-800 rounded-lg px-4 py-3 max-w-lg">

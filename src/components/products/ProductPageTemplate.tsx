@@ -168,8 +168,8 @@ const PricingBadge = ({ pricing }: { pricing?: Product['pricing'] }) => {
 
   const variants = {
     free: { label: 'Free', className: 'bg-green-500/20 text-green-400 border-green-500/30' },
-    freemium: { label: 'Free Tier', className: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-    paid: { label: 'Paid', className: 'bg-purple-500/20 text-purple-400 border-purple-500/30' }
+    freemium: { label: 'Free Tier', className: 'bg-[#ff6b6b]/20 text-[#ff6b6b] border-[#ff6b6b]/30' },
+    paid: { label: 'Paid', className: 'bg-[#fd4444]/20 text-[#fd4444] border-[#fd4444]/30' }
   };
 
   const variant = variants[pricing];
@@ -259,7 +259,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
         {/* Gradient accents */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-64 w-96 h-96 bg-[#fd4444]/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#fd4444]/20 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -284,7 +284,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
                   </div>
                   <StatusBadge status={product.status} />
                   {product.openSource && (
-                    <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30">
+                    <Badge variant="outline" className="bg-[#fd4444]/20 text-[#fd4444] border-[#fd4444]/30">
                       Open Source
                     </Badge>
                   )}
@@ -420,7 +420,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
                       </div>
                       <div className="p-4 font-mono text-sm overflow-x-auto">
                         <span className="text-neutral-500">$</span>{" "}
-                        <span className="text-blue-400">{product.install.docker}</span>
+                        <span className="text-[#ff6b6b]">{product.install.docker}</span>
                       </div>
                     </div>
                   </TabsContent>
@@ -461,7 +461,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
               <p className="text-center text-neutral-500 mt-6 text-sm">
                 New to Hanzo? Install the CLI first:{" "}
                 <code className="bg-neutral-800 px-2 py-1 rounded text-white font-mono text-xs">
-                  curl -fsSL hanzo.sh/install.sh | sh
+                  curl -fsSL hanzo.sh | bash
                 </code>
               </p>
             </motion.div>

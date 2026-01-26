@@ -85,7 +85,7 @@ const Brand = () => {
             <div
               className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-10"
               style={{
-                background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
                 filter: "blur(80px)",
               }}
             />

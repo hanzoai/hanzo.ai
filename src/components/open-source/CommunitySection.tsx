@@ -38,7 +38,7 @@ const CommunitySection = () => {
             <p className="text-neutral-300 mb-6">
               Join 12,000+ developers discussing Hanzo projects and AI development.
             </p>
-            <Button className="w-full bg-indigo-600 hover:bg-indigo-700" size="sm">
+            <Button className="w-full bg-[#fd4444] hover:bg-[#e03e3e]" size="sm">
               <a href="https://discord.gg/XthHQQj" target="_blank" rel="noopener noreferrer">Join Discord</a>
             </Button>
           </motion.div>

@@ -12,8 +12,8 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 h-full"
     >
-      <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-purple-900/30">
-        <Icon className="h-6 w-6 text-purple-400" />
+      <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-[#fd4444]/20">
+        <Icon className="h-6 w-6 text-[#fd4444]" />
       </div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-neutral-300">{description}</p>

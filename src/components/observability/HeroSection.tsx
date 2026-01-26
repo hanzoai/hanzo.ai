@@ -8,9 +8,9 @@ const HeroSection = () => {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       {/* Gradient effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-violet-900/20 via-transparent to-transparent opacity-70"></div>
-      <div className="absolute top-40 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-[100px]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#fd4444]/10 via-transparent to-transparent opacity-70"></div>
+      <div className="absolute top-40 left-20 w-96 h-96 bg-[#fd4444]/15 rounded-full blur-[100px]"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#ff6b6b]/15 rounded-full blur-[100px]"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -20,7 +20,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex justify-center mb-6"
           >
-            <div className="bg-gradient-to-r from-violet-600 to-blue-600 p-3 rounded-lg">
+            <div className="bg-[#fd4444] p-3 rounded-lg">
               <Activity className="h-8 w-8 text-[var(--white)]" />
             </div>
           </motion.div>
@@ -49,7 +49,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button size="lg" className="bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-[var(--white)] border-none px-8 py-6 rounded-md text-lg">
+            <Button size="lg" className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] border-none px-8 py-6 rounded-md text-lg">
               Get Started
             </Button>
             <Button size="lg" variant="outline" className="border-gray-600 hover:bg-gray-800/50 px-8 py-6 rounded-md text-lg">
@@ -82,17 +82,17 @@ const HeroSection = () => {
                     <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="w-full h-full">
                       <path
                         d="M0,150 L0,40 Q125,10 250,40 T500,40 L500,150 Z"
-                        fill="rgba(124, 58, 237, 0.5)"
+                        fill="rgba(253, 68, 68, 0.5)"
                       ></path>
                       <path
                         d="M0,150 L0,60 Q125,30 250,60 T500,60 L500,150 Z"
-                        fill="rgba(37, 99, 235, 0.4)"
+                        fill="rgba(255, 107, 107, 0.4)"
                       ></path>
                     </svg>
                   </div>
                   <div className="absolute top-4 left-4 flex space-x-2">
-                    <div className="h-3 w-3 rounded-full bg-violet-500"></div>
-                    <div className="h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div className="h-3 w-3 rounded-full bg-[#ff6b6b]"></div>
+                    <div className="h-3 w-3 rounded-full bg-[#fd4444]"></div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">

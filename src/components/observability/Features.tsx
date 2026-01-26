@@ -14,22 +14,22 @@ import {
 
 const features = [
   {
-    icon: <History className="h-7 w-7 text-violet-400" />,
+    icon: <History className="h-7 w-7 text-[#fd4444]" />,
     title: "Tracing and Logging",
     description: "End-to-end traces for rapid debugging, detailed logs for every inference request."
   },
   {
-    icon: <BarChart className="h-7 w-7 text-blue-400" />,
+    icon: <BarChart className="h-7 w-7 text-[#ff6b6b]" />,
     title: "Real-time Metrics",
     description: "Instant visibility into system health, latency, throughput, and cost efficiency."
   },
   {
-    icon: <MessageSquare className="h-7 w-7 text-indigo-400" />,
+    icon: <MessageSquare className="h-7 w-7 text-[#fd4444]" />,
     title: "Prompt Management",
     description: "Collaboratively version, test, and deploy prompts with low-latency retrieval."
   },
   {
-    icon: <Sparkles className="h-7 w-7 text-purple-400" />,
+    icon: <Sparkles className="h-7 w-7 text-[#ff6b6b]" />,
     title: "Playground",
     description: "Experiment rapidly with different prompts and models directly in the Hanzo interface."
   },
@@ -39,7 +39,7 @@ const features = [
     description: "Collect, annotate, and systematically evaluate model outputs and user feedback."
   },
   {
-    icon: <Database className="h-7 w-7 text-cyan-400" />,
+    icon: <Database className="h-7 w-7 text-[#fd4444]" />,
     title: "Datasets",
     description: "Generate robust datasets from live production data to enhance model training and evaluation."
   },

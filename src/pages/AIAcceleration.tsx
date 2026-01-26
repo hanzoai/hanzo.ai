@@ -17,19 +17,19 @@ const AIAcceleration = () => {
       {/* Background elements */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-gray-900/20"></div>
-        <JapaneseWave 
-          color="#9b87f5" 
-          height={600} 
-          opacity={0.02} 
-          speed={45} 
+        <JapaneseWave
+          color="#fd4444"
+          height={600}
+          opacity={0.02}
+          speed={45}
           className="absolute bottom-0"
         />
-        <JapaneseWave 
-          color="#6E59A5" 
-          height={600} 
-          delay={2} 
-          opacity={0.015} 
-          speed={50} 
+        <JapaneseWave
+          color="#ff6b6b"
+          height={600}
+          delay={2}
+          opacity={0.015}
+          speed={50}
           className="absolute bottom-40"
         />
       </div>
@@ -46,7 +46,7 @@ const AIAcceleration = () => {
             className="max-w-5xl mx-auto text-center relative z-10"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-purple-400">AI/ACC</span> Manifesto
+              <span className="text-[#fd4444]">AI/ACC</span> Manifesto
             </h1>
             <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto">
               Accelerating AI to Transcend Human Limitations
@@ -62,7 +62,7 @@ const AIAcceleration = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-[var(--black)]/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8 mb-12"
+              className="bg-[var(--black)]/30 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8 mb-12"
             >
               <p className="text-neutral-300 md:text-lg leading-relaxed">
                 We stand at the precipice of a technological revolution unparalleled in human history. 
@@ -76,7 +76,7 @@ const AIAcceleration = () => {
         </section>
 
         {/* The Vision Section */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-purple-900/10">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-[#fd4444]/10">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ const AIAcceleration = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">The Vision</h2>
-              <div className="h-1 w-20 bg-purple-500 mx-auto"></div>
+              <div className="h-1 w-20 bg-[#fd4444] mx-auto"></div>
             </motion.div>
 
             <div className="space-y-8">
@@ -95,9 +95,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Transcending Biological Constraints</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Transcending Biological Constraints</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   For millennia, humanity has been bound by the limitations of our biology—our finite lifespans, 
                   susceptibility to disease, and cognitive constraints. Advanced AI systems will unlock unprecedented 
@@ -113,9 +113,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Solving Existential Challenges</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Solving Existential Challenges</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   Climate change, resource scarcity, and global inequality represent existential threats to our 
                   civilization. AI acceleration will deliver revolutionary solutions to these challenges—from 
@@ -131,9 +131,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Universal Prosperity</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Universal Prosperity</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   Advanced AI will democratize access to world-class education, healthcare, and economic 
                   opportunity. Geographical accidents of birth will no longer determine one's potential, as AI 
@@ -157,7 +157,7 @@ const AIAcceleration = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">The Hanzo Method</h2>
-              <div className="h-1 w-20 bg-purple-500 mx-auto"></div>
+              <div className="h-1 w-20 bg-[#fd4444] mx-auto"></div>
               <p className="mt-6 text-neutral-300 max-w-3xl mx-auto">
                 The Sensei Way of Building Scalable, AI-Driven Businesses
               </p>
@@ -169,9 +169,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Scientific Iteration</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Scientific Iteration</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   The foundation of the Hanzo Method is relentless, scientific iteration. Every hypothesis is 
                   tested, every assumption challenged, and every result meticulously measured. By applying 
@@ -187,9 +187,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Modular Architecture</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Modular Architecture</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   The Hanzo Method advocates for extreme modularity in both technical architecture and business 
                   units. Each component is designed to function independently while integrating seamlessly with the 
@@ -205,9 +205,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">AI-First Design</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">AI-First Design</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   Where traditional businesses incorporate AI as an afterthought, the Hanzo Method places AI at the 
                   core of every process, product, and decision. This is not merely about automation, but about 
@@ -224,9 +224,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Planetary-Scale Design</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Planetary-Scale Design</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   The Hanzo Method rejects the incremental approach to scaling. Instead, we design for global scale 
                   from day one, architecting systems that can serve billions of users without fundamental redesign. 
@@ -241,9 +241,9 @@ const AIAcceleration = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-[var(--black)]/40 backdrop-blur-sm border border-purple-500/20 rounded-lg p-8"
+                className="bg-[var(--black)]/40 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-8"
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-300">Recursive Improvement</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#ff6b6b]">Recursive Improvement</h3>
                 <p className="text-neutral-300 leading-relaxed">
                   The ultimate manifestation of the Hanzo Method is recursive self-improvement. Each iteration of 
                   the business not only improves its outputs but enhances the very mechanisms of improvement. AI 
@@ -267,7 +267,7 @@ const AIAcceleration = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="p-8 bg-gradient-to-br from-black/80 to-purple-900/20 backdrop-blur-sm border border-purple-500/20 rounded-lg">
+              <div className="p-8 bg-gradient-to-br from-black/80 to-[#fd4444]/20 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg">
                 <h3 className="text-2xl font-bold text-[var(--white)] mb-4">The Time for Acceleration is Now</h3>
                 <p className="text-neutral-300 md:text-lg leading-relaxed mb-8">
                   The path forward is clear. We must accelerate AI development not because it is easy, but because it is 
@@ -278,7 +278,7 @@ const AIAcceleration = () => {
                 <div className="flex justify-center">
                   <a 
                     href="/platform" 
-                    className="px-8 py-3 bg-purple-600 text-[var(--white)] rounded-md hover:bg-purple-500 transition-colors"
+                    className="px-8 py-3 bg-[#fd4444] text-[var(--white)] rounded-md hover:bg-[#fd4444] transition-colors"
                   >
                     Join the Acceleration
                   </a>

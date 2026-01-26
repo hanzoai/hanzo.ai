@@ -23,13 +23,13 @@ function ThemeOption<T>({ value, currentValue, label, onChange }: ThemeOptionPro
       onPressedChange={() => onChange(value)}
       className={`flex flex-col items-center justify-center p-2 ${getRoundingClass()} ${
         isActive 
-          ? isDarkMode ? "bg-purple-900/30 border-purple-500/50" : "bg-purple-500/20 border-purple-500/50" 
+          ? isDarkMode ? "bg-[#fd4444]/20 border-[#fd4444]/50" : "bg-[#fd4444]/20 border-[#fd4444]/50" 
           : isDarkMode ? "bg-gray-800/40 hover:bg-gray-800/60" : "bg-gray-200/40 hover:bg-gray-200/60"
       }`}
       aria-label={label}
     >
       <span className="text-xs">{label}</span>
-      {isActive && <Check className={`h-3 w-3 mt-1 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`} />}
+      {isActive && <Check className={`h-3 w-3 mt-1 ${isDarkMode ? "text-[#fd4444]" : "text-[#fd4444]"}`} />}
     </Toggle>
   );
 }

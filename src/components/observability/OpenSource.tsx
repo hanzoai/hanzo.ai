@@ -20,7 +20,7 @@ const statsItems = [
     countUpDuration: 2.2
   },
   { 
-    icon: <Users className="h-6 w-6 text-blue-400" />,
+    icon: <Users className="h-6 w-6 text-[#ff6b6b]" />,
     value: 280,
     suffix: "+",
     label: "Contributors",
@@ -41,8 +41,8 @@ const OpenSource = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center mb-6 bg-purple-900/30 p-3 rounded-full">
-            <Github className="h-7 w-7 text-purple-400" />
+          <div className="inline-flex items-center justify-center mb-6 bg-[#fd4444]/10 p-3 rounded-full">
+            <Github className="h-7 w-7 text-[#fd4444]" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Proudly Open Source</h2>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto">

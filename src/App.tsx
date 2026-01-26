@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner";
 import GlobalChatWidget from "./components/GlobalChatWidget";
 import PageTransition from "./components/PageTransition";
 import KonamiCode from "./components/KonamiCode";
@@ -11,9 +12,12 @@ import Organization from "./pages/Organization";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import BillingPage from "./pages/Billing";
+import AuthCallback from "./pages/AuthCallback";
 import { BillingProvider } from "./contexts/BillingContext";
 import { AccountProvider } from "./contexts/AccountContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { Web3Provider } from "./contexts/Web3Context";
+import { AuthProvider } from "./contexts/AuthContext";
 import ScrollToTop from "./components/ScrollToTop";
 import PurchaseCredits from "./pages/PurchaseCredits";
 import BillingPlans from "./pages/BillingPlans";
@@ -163,6 +167,7 @@ const MarketingRoutes = () => {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/auth/callback" element={<AuthCallback />} />
       <Route path="/status" element={<StatusPage />} />
       <Route path="/leadership" element={<Leadership />} />
       <Route path="/referrals" element={<Referrals />} />
@@ -287,22 +292,28 @@ const isAccountRoute = (pathname: string) => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ThemeProvider>
-        <ScrollToTop />
-        <PageTransition>
-          {isAccountRoute(window.location.pathname) ? (
-            <AccountRoutes />
-          ) : (
-            <MarketingRoutes />
-          )}
-        </PageTransition>
-        {/* Global chat widget on all pages */}
-        <GlobalChatWidget />
-        {/* Easter egg - Konami code for secret menu */}
-        <KonamiCode />
-      </ThemeProvider>
-    </BrowserRouter>
+    <Web3Provider>
+      <BrowserRouter>
+        <ThemeProvider>
+          <AuthProvider>
+            <ScrollToTop />
+            <PageTransition>
+              {isAccountRoute(window.location.pathname) ? (
+                <AccountRoutes />
+              ) : (
+                <MarketingRoutes />
+              )}
+            </PageTransition>
+            {/* Global chat widget on all pages */}
+            <GlobalChatWidget />
+            {/* Easter egg - Konami code for secret menu */}
+            <KonamiCode />
+            {/* Global toast notifications */}
+            <Toaster />
+          </AuthProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </Web3Provider>
   );
 };
 

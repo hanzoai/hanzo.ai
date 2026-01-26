@@ -7,7 +7,7 @@ import modelCategories from "./models/data/modelData";
 
 const SupportedModels = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-black to-purple-950/20">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-black to-[#fd4444]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ModelHeader />
 

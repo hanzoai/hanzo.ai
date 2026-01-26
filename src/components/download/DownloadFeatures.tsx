@@ -23,11 +23,11 @@ const DownloadFeatures = () => {
             </p>
             
             <div className="flex items-center space-x-4 text-neutral-400">
-              <Mic className="h-6 w-6 text-purple-500" />
+              <Mic className="h-6 w-6 text-[#fd4444]" />
               <span>Private, secure, and processed on-device</span>
             </div>
             <div className="flex items-center space-x-4 text-neutral-400 mt-3">
-              <Headphones className="h-6 w-6 text-purple-500" />
+              <Headphones className="h-6 w-6 text-[#fd4444]" />
               <span>Works with all major conferencing apps</span>
             </div>
           </div>

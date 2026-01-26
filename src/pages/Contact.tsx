@@ -1,235 +1,351 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
   Mail,
   MapPin,
+  Phone,
   MessageSquare,
   Github,
   Linkedin,
+  Send,
   ArrowRight,
-  Building2,
-  Zap,
-  Users,
-  Clock,
-  ExternalLink
+  ExternalLink,
+  Calendar,
+  Facebook,
+  Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const BRAND_COLOR = "#fd4444";
-
-const ENTERPRISE_BENEFITS = [
+const socialLinks = [
   {
-    icon: Building2,
-    title: "Custom AI Solutions",
-    description: "Work with our team to build AI solutions tailored to your business needs."
+    icon: MessageSquare,
+    label: "Join our Discord Community",
+    href: "https://discord.gg/hanzo",
+    color: "#5865F2",
   },
   {
-    icon: Zap,
-    title: "Dedicated Infrastructure",
-    description: "Private cloud deployments with dedicated compute and priority support."
+    icon: Github,
+    label: "Follow us on GitHub",
+    href: "https://github.com/hanzoai",
+    color: "#ffffff",
   },
   {
-    icon: Users,
-    title: "Expert Guidance",
-    description: "Direct access to our AI engineers and solution architects."
+    icon: () => (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+    label: "Follow us on Twitter",
+    href: "https://x.com/hanzoai",
+    color: "#ffffff",
   },
   {
-    icon: Clock,
-    title: "Priority Support",
-    description: "24/7 enterprise support with guaranteed response times."
-  }
+    icon: Linkedin,
+    label: "Connect on LinkedIn",
+    href: "https://linkedin.com/company/hanzoai",
+    color: "#0A66C2",
+  },
+  {
+    icon: Facebook,
+    label: "Like us on Facebook",
+    href: "https://facebook.com/hanzoai",
+    color: "#1877F2",
+  },
+  {
+    icon: Instagram,
+    label: "Follow on Instagram",
+    href: "https://instagram.com/hanzoai",
+    color: "#E4405F",
+  },
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Contact Sales - Hanzo AI</title>
+        <title>Contact Us - Hanzo AI</title>
         <meta
           name="description"
-          content="Get in touch with the Hanzo AI team. Schedule a call, request a demo, or learn about enterprise solutions."
+          content="Get in touch with the Hanzo AI team. Send us a message, schedule a call, or connect with our community."
         />
       </Helmet>
 
       <Navbar />
 
       <main>
-        {/* Hero Section - Compact */}
-        <section className="relative pt-24 pb-8 px-4 md:px-8 lg:px-12">
-          <div className="max-w-5xl mx-auto text-center">
+        {/* Hero Section */}
+        <section className="relative pt-28 pb-12 px-4 md:px-8 lg:px-12">
+          <div className="max-w-6xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight mb-4"
             >
-              <span className="text-white">Talk to Sales</span>
+              Contact Us
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-base lg:text-lg text-neutral-400 leading-relaxed max-w-2xl mx-auto"
+              className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
             >
-              Book a call to discuss your needs. We'll help you find the right solution for your team.
+              Have a question or want to learn more about Hanzo? Our team is here to help you.
             </motion.p>
           </div>
         </section>
 
-        {/* Cal.com Embed Section - At Top */}
-        <section className="pb-16 px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-xl border border-neutral-800 overflow-hidden bg-neutral-900/50"
-            >
-              <iframe
-                src="https://cal.com/hanzo?embed=true&theme=dark"
-                width="100%"
-                height="650"
-                frameBorder="0"
-                className="w-full"
-                title="Schedule a call with Hanzo"
-              />
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Quick Contact Options */}
-        <section className="py-12 px-4 md:px-8 lg:px-12 border-t border-neutral-800/50">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Email */}
-              <motion.a
-                href="mailto:enterprise@hanzo.ai"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 hover:bg-neutral-900 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-[#fd4444]/20 transition-colors">
-                  <Mail className="w-5 h-5 text-neutral-400 group-hover:text-[#fd4444] transition-colors" />
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-500">Email</p>
-                  <p className="text-white font-medium">enterprise@hanzo.ai</p>
-                </div>
-              </motion.a>
-
-              {/* Location */}
+        {/* Main Content - Two Column Layout */}
+        <section className="pb-20 px-4 md:px-8 lg:px-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+              {/* Left Column - Contact Form */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900/50"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-neutral-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-500">Location</p>
-                  <p className="text-white font-medium">995 Market St, San Francisco</p>
-                </div>
+                <h2 className="text-xl font-semibold text-foreground mb-6">
+                  Send Us a Message
+                </h2>
+
+                {submitted ? (
+                  <div className="p-8 rounded-xl border border-green-500/30 bg-green-500/10 text-center">
+                    <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                      <Send className="w-6 h-6 text-green-500" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      Message Sent!
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Thank you for reaching out. We'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium text-foreground mb-2"
+                        >
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="Your name"
+                          className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/50 focus:border-[var(--brand)] transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium text-foreground mb-2"
+                        >
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="your.email@example.com"
+                          className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/50 focus:border-[var(--brand)] transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-foreground mb-2"
+                      >
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        placeholder="What is this regarding?"
+                        className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/50 focus:border-[var(--brand)] transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-foreground mb-2"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={5}
+                        placeholder="Tell us how we can help..."
+                        className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/50 focus:border-[var(--brand)] transition-all resize-none"
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full sm:w-auto bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90 disabled:opacity-50"
+                    >
+                      {isSubmitting ? (
+                        "Sending..."
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2" />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                )}
               </motion.div>
 
-              {/* Discord */}
-              <motion.a
-                href="https://discord.gg/hanzo"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 hover:bg-neutral-900 transition-all group"
+              {/* Right Column - Contact Information */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="space-y-8"
               >
-                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-[#5865F2]/20 transition-colors">
-                  <MessageSquare className="w-5 h-5 text-neutral-400 group-hover:text-[#5865F2] transition-colors" />
-                </div>
                 <div>
-                  <p className="text-sm text-neutral-500">Community</p>
-                  <p className="text-white font-medium">Join Discord</p>
+                  <h2 className="text-xl font-semibold text-foreground mb-6">
+                    Contact Information
+                  </h2>
+
+                  <div className="space-y-4">
+                    {/* Email */}
+                    <a
+                      href="mailto:hello@hanzo.ai"
+                      className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-ring hover:bg-accent/50 transition-all group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--brand)]/20 transition-colors">
+                        <Mail className="w-5 h-5 text-muted-foreground group-hover:text-[var(--brand)] transition-colors" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Email</p>
+                        <p className="text-sm text-muted-foreground">hello@hanzo.ai</p>
+                      </div>
+                    </a>
+
+                    {/* Phone */}
+                    <a
+                      href="tel:+14155551234"
+                      className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-ring hover:bg-accent/50 transition-all group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--brand)]/20 transition-colors">
+                        <Phone className="w-5 h-5 text-muted-foreground group-hover:text-[var(--brand)] transition-colors" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Phone</p>
+                        <p className="text-sm text-muted-foreground">+1 (415) 555-1234</p>
+                      </div>
+                    </a>
+
+                    {/* Location */}
+                    <div className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card">
+                      <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-muted-foreground" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Location</p>
+                        <p className="text-sm text-muted-foreground">
+                          995 Market Street<br />
+                          San Francisco, CA 94103
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-neutral-600 ml-auto" />
-              </motion.a>
+
+                {/* Sales CTA */}
+                <div className="p-6 rounded-xl border border-[var(--brand)]/30 bg-[var(--brand)]/5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Calendar className="w-5 h-5 text-[var(--brand)]" />
+                    <h3 className="font-semibold text-foreground">Talk to Sales</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Interested in enterprise solutions? Schedule a call with our sales team.
+                  </p>
+                  <Button asChild className="w-full bg-[var(--brand)] text-white hover:bg-[var(--brand)]/90">
+                    <Link to="/contact/sales">
+                      Schedule a Call
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Enterprise Benefits */}
-        <section className="py-16 px-4 md:px-8 lg:px-12 bg-neutral-900/30">
-          <div className="max-w-6xl mx-auto">
+        {/* Connect With Us */}
+        <section className="py-16 px-4 md:px-8 lg:px-12 border-t border-border bg-secondary/20">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center mb-12"
+              className="text-center mb-10"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Enterprise Solutions
+              <h2 className="text-2xl font-semibold text-foreground mb-2">
+                Connect With Us
               </h2>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
-                Transform your business with our enterprise AI platform featuring 100+ models,
-                dedicated infrastructure, and expert support.
+              <p className="text-muted-foreground">
+                Follow us on social media or join our community platforms to stay updated.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {ENTERPRISE_BENEFITS.map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={benefit.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-6 rounded-xl border border-neutral-800 bg-neutral-900/50"
-                  >
-                    <Icon className="w-8 h-8 text-[#fd4444] mb-4" />
-                    <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-neutral-400">{benefit.description}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Social Links */}
-        <section className="py-16 px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-xl font-semibold text-white mb-2">Connect With Us</h2>
-              <p className="text-neutral-500 text-sm">Follow us for updates and announcements</p>
-            </motion.div>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { icon: Github, label: "GitHub", href: "https://github.com/hanzoai" },
-                { icon: () => (
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                ), label: "X / Twitter", href: "https://x.com/hanzoai" },
-                { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/hanzoai" },
-                { icon: MessageSquare, label: "Discord", href: "https://discord.gg/hanzo" },
-              ].map((social, index) => {
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
                   <motion.a
@@ -241,54 +357,29 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-800 hover:border-neutral-700 transition-all text-neutral-300 hover:text-white"
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:bg-accent hover:border-ring transition-all group"
                   >
-                    {typeof Icon === "function" ? <Icon /> : <Icon className="w-5 h-5" />}
-                    <span className="text-sm font-medium">{social.label}</span>
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
+                      style={{ backgroundColor: `${social.color}15` }}
+                    >
+                      {typeof Icon === "function" ? (
+                        <Icon />
+                      ) : (
+                        <Icon
+                          className="w-5 h-5 transition-colors"
+                          style={{ color: social.color }}
+                        />
+                      )}
+                    </div>
+                    <span className="text-sm font-medium text-foreground">
+                      {social.label}
+                    </span>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto" />
                   </motion.a>
                 );
               })}
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="p-12 rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-900/50"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Ready to get started?
-              </h2>
-              <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
-                Start building with Hanzo today. Free tier available with no credit card required.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="bg-[#fd4444] text-white hover:bg-[#fd4444]/90"
-                  asChild
-                >
-                  <a href="https://cloud.hanzo.ai/signup">
-                    Start Free
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-neutral-700 text-white hover:bg-neutral-800"
-                  asChild
-                >
-                  <a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer">
-                    View Documentation
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
           </div>
         </section>
       </main>

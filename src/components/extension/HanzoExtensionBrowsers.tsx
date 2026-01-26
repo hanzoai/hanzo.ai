@@ -14,13 +14,13 @@ const BrowserCard = ({ icon: Icon, title, description, buttonText }) => {
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 flex flex-col"
     >
       <div className="mb-4">
-        <Icon className="h-12 w-12 text-purple-400 mb-4" />
+        <Icon className="h-12 w-12 text-[#fd4444] mb-4" />
         <h3 className="text-2xl font-bold mb-2">{title}</h3>
         <p className="text-neutral-300 mb-6">{description}</p>
       </div>
       
       <div className="mt-auto">
-        <Button className="w-full bg-purple-600 hover:bg-purple-500">
+        <Button className="w-full bg-[#fd4444] hover:bg-[#e03e3e]">
           {buttonText}
         </Button>
       </div>

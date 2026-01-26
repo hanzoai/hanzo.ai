@@ -620,7 +620,7 @@ const FamilySection = ({
   );
 };
 
-const BRAND_COLOR = "#8b5cf6"; // Purple for Zen
+const BRAND_COLOR = "#fd4444"; // Brand primary red
 
 const ZenModels = () => {
   return (
@@ -655,7 +655,7 @@ const ZenModels = () => {
               transition={{ duration: 0.4 }}
               className="mb-6 text-center"
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[#fd4444]/10 text-[#fd4444] border border-[#fd4444]/20">
                 <Code2 className="w-3 h-3" />
                 30+ Open Models
               </span>
@@ -887,10 +887,10 @@ const ZenModels = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
                   >
-                    <div className="text-4xl mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20">
-                      <Icon className="w-8 h-8 text-purple-400" />
+                    <div className="text-4xl mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-[#fd4444]/10 border border-[#fd4444]/20">
+                      <Icon className="w-8 h-8 text-[#fd4444]" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">{category.title}</h3>
                     <p className="text-neutral-400 text-sm">{category.description}</p>
@@ -971,7 +971,7 @@ const ZenModels = () => {
                   <a
                     key={key}
                     href={`#${key}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-purple-500/30 transition-colors text-sm text-neutral-400 hover:text-white"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-[#fd4444]/30 transition-colors text-sm text-neutral-400 hover:text-white"
                   >
                     <Icon className="w-4 h-4" />
                     {family.title}
@@ -1006,9 +1006,9 @@ const ZenModels = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
-                <Download className="w-8 h-8 mx-auto mb-4 text-purple-400" />
+                <Download className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
                 <h3 className="text-xl font-semibold text-white mb-2">HuggingFace</h3>
                 <p className="text-neutral-400 text-sm mb-4">Access all 30+ models via HuggingFace Hub</p>
                 <a
@@ -1027,9 +1027,9 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
-                <Github className="w-8 h-8 mx-auto mb-4 text-purple-400" />
+                <Github className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
                 <h3 className="text-xl font-semibold text-white mb-2">GitHub</h3>
                 <p className="text-neutral-400 text-sm mb-4">Training code, documentation, and source</p>
                 <a
@@ -1048,9 +1048,9 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
-                <Terminal className="w-8 h-8 mx-auto mb-4 text-purple-400" />
+                <Terminal className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
                 <h3 className="text-xl font-semibold text-white mb-2">zen-trainer</h3>
                 <p className="text-neutral-400 text-sm mb-4">Fine-tune models on your own data</p>
                 <div className="bg-black border border-neutral-800 rounded-lg p-3">
@@ -1063,9 +1063,9 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
-                <BookOpen className="w-8 h-8 mx-auto mb-4 text-purple-400" />
+                <BookOpen className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
                 <h3 className="text-xl font-semibold text-white mb-2">Research</h3>
                 <p className="text-neutral-400 text-sm mb-4">Technical papers and whitepapers</p>
                 <a
@@ -1104,10 +1104,10 @@ const ZenModels = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-purple-500/30 transition-colors"
+                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-[#fd4444]/30 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Layers className="w-6 h-6 text-purple-400" />
+                  <Layers className="w-6 h-6 text-[#fd4444]" />
                   <h3 className="text-xl font-bold text-white">Zen Gym</h3>
                 </div>
                 <p className="text-neutral-400 mb-4">
@@ -1122,7 +1122,7 @@ const ZenModels = () => {
                     "Liger Kernel optimization",
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-purple-400" />
+                      <Check className="w-3 h-3 text-[#fd4444]" />
                       <span className="text-sm text-neutral-300">{feature}</span>
                     </div>
                   ))}
@@ -1143,10 +1143,10 @@ const ZenModels = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-purple-500/30 transition-colors"
+                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-[#fd4444]/30 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Zap className="w-6 h-6 text-purple-400" />
+                  <Zap className="w-6 h-6 text-[#fd4444]" />
                   <h3 className="text-xl font-bold text-white">Zen Engine</h3>
                 </div>
                 <p className="text-neutral-400 mb-4">
@@ -1161,7 +1161,7 @@ const ZenModels = () => {
                     "MCP integration",
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-purple-400" />
+                      <Check className="w-3 h-3 text-[#fd4444]" />
                       <span className="text-sm text-neutral-300">{feature}</span>
                     </div>
                   ))}

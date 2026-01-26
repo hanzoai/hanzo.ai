@@ -36,7 +36,7 @@ const HanzoCodeTestimonials = () => {
               <div>
                 <div className="font-medium">Sarah Chen</div>
                 <div className="text-neutral-400 flex items-center">
-                  <Twitter className="h-3.5 w-3.5 mr-1 text-blue-400" />
+                  <Twitter className="h-3.5 w-3.5 mr-1 text-[#fd4444]" />
                   @sarahcodes
                 </div>
               </div>

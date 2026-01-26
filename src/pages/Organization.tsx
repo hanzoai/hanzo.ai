@@ -194,9 +194,9 @@ const Organization = () => {
                     <TableCell>
                       <span className={`px-2 py-1 rounded-full text-xs ${
                         member.role === 'Owner' 
-                          ? 'bg-purple-900/10 text-purple-300' 
+                          ? 'bg-[#fd4444]/10 text-[#fd4444]' 
                           : member.role === 'Admin' 
-                            ? 'bg-blue-900/10 text-blue-300' 
+                            ? 'bg-[#ff6b6b]/10 text-[#ff6b6b]' 
                             : 'bg-gray-900/20 text-neutral-300'
                       }`}>
                         {member.role}

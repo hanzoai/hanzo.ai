@@ -30,7 +30,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <FileText className="h-6 w-6 text-purple-400" />
+              <FileText className="h-6 w-6 text-[#fd4444]" />
             </div>
             <h3 className="text-xl font-semibold mb-3">API Reference</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -50,7 +50,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <BookOpen className="h-6 w-6 text-purple-400" />
+              <BookOpen className="h-6 w-6 text-[#fd4444]" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Hanzo App Marketplace</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -70,7 +70,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <MessageSquare className="h-6 w-6 text-purple-400" />
+              <MessageSquare className="h-6 w-6 text-[#fd4444]" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Checkout Integration</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -90,7 +90,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <BookOpen className="h-6 w-6 text-purple-400" />
+              <BookOpen className="h-6 w-6 text-[#fd4444]" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Case Studies</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -108,7 +108,7 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-purple-900/30 to-indigo-900/30 border border-purple-500/20 rounded-lg p-8 text-center"
+          className="bg-gradient-to-r from-red-900/30 to-red-900/20 border border-[#fd4444]/20 rounded-lg p-8 text-center"
         >
           <h2 className="text-3xl font-bold mb-4">Start Building Your Financial Future Today</h2>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
@@ -117,7 +117,7 @@ const CallToAction = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+              className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444]"
             >
               Get Started Now
             </Button>

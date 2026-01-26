@@ -15,7 +15,7 @@ const Customization = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-            <User className="h-10 w-10 text-purple-500 mb-4" />
+            <User className="h-10 w-10 text-[#fd4444] mb-4" />
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Customized to you</h3>
             <p className="text-neutral-300">
               Use About Me to tell Hanzo things you want it to consider when it responds
@@ -23,7 +23,7 @@ const Customization = () => {
           </div>
           
           <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-            <Laptop className="h-10 w-10 text-purple-500 mb-4" />
+            <Laptop className="h-10 w-10 text-[#fd4444] mb-4" />
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Sees files & context</h3>
             <p className="text-neutral-300">
               Set up key shortcuts to quickly access your most-used interactions
@@ -31,7 +31,7 @@ const Customization = () => {
           </div>
           
           <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-            <Settings className="h-10 w-10 text-purple-500 mb-4" />
+            <Settings className="h-10 w-10 text-[#fd4444] mb-4" />
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Grounded using screen data</h3>
             <p className="text-neutral-300">
               We ground your requests in the context of your screen

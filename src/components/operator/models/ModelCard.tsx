@@ -19,11 +19,11 @@ const ModelCard = ({ model, index }: ModelCardProps) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`
         bg-gray-900/30 border rounded-xl p-6 hover:bg-gray-900/50 transition-colors relative
-        ${model.recommended ? 'border-purple-500/50' : 'border-gray-800'}
+        ${model.recommended ? 'border-[#fd4444]/50' : 'border-gray-800'}
       `}
     >
       {model.recommended && (
-        <span className="absolute top-0 right-6 -translate-y-1/2 px-3 py-1 bg-purple-600 text-[var(--white)] text-xs font-semibold rounded-full">
+        <span className="absolute top-0 right-6 -translate-y-1/2 px-3 py-1 bg-[#fd4444] text-[var(--white)] text-xs font-semibold rounded-full">
           Recommended
         </span>
       )}
@@ -34,7 +34,7 @@ const ModelCard = ({ model, index }: ModelCardProps) => {
       <ul className="space-y-2 mb-6">
         {model.features.map((feature, i) => (
           <li key={i} className="flex items-start">
-            <Check className="h-5 w-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" />
+            <Check className="h-5 w-5 text-[#fd4444] mr-2 flex-shrink-0 mt-0.5" />
             <span className="text-neutral-300 text-sm">{feature}</span>
           </li>
         ))}

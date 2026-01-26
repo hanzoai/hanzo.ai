@@ -9,7 +9,7 @@ const HowItWorks = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-4 bg-gray-900/50 rounded-lg">
           <div className="flex items-center mb-3">
-            <div className="h-8 w-8 rounded-full bg-purple-900/30 text-purple-300 flex items-center justify-center mr-3">
+            <div className="h-8 w-8 rounded-full bg-red-900/30 text-[#fd4444] flex items-center justify-center mr-3">
               1
             </div>
             <h3 className="font-medium">Share Your Link</h3>
@@ -21,7 +21,7 @@ const HowItWorks = () => {
         
         <div className="p-4 bg-gray-900/50 rounded-lg">
           <div className="flex items-center mb-3">
-            <div className="h-8 w-8 rounded-full bg-purple-900/30 text-purple-300 flex items-center justify-center mr-3">
+            <div className="h-8 w-8 rounded-full bg-red-900/30 text-[#fd4444] flex items-center justify-center mr-3">
               2
             </div>
             <h3 className="font-medium">Friends Sign Up</h3>
@@ -33,7 +33,7 @@ const HowItWorks = () => {
         
         <div className="p-4 bg-gray-900/50 rounded-lg">
           <div className="flex items-center mb-3">
-            <div className="h-8 w-8 rounded-full bg-purple-900/30 text-purple-300 flex items-center justify-center mr-3">
+            <div className="h-8 w-8 rounded-full bg-red-900/30 text-[#fd4444] flex items-center justify-center mr-3">
               3
             </div>
             <h3 className="font-medium">Earn Credits</h3>

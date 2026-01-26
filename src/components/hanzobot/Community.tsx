@@ -26,14 +26,14 @@ const Community = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gradient-to-r from-purple-900/20 to-indigo-900/20 border border-purple-500/20 rounded-xl p-8 md:p-12"
+          className="bg-gradient-to-r from-[#fd4444]/10 to-[#ff6b6b]/10 border border-[#fd4444]/20 rounded-xl p-8 md:p-12"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-[var(--white)] mb-4">Next Steps</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <div className="bg-purple-500/20 p-1 rounded text-purple-400 mr-3 mt-0.5">
+                  <div className="bg-[#fd4444]/20 p-1 rounded text-[#fd4444] mr-3 mt-0.5">
                     <div className="w-4 h-4 flex items-center justify-center">1</div>
                   </div>
                   <div>
@@ -42,7 +42,7 @@ const Community = () => {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-purple-500/20 p-1 rounded text-purple-400 mr-3 mt-0.5">
+                  <div className="bg-[#fd4444]/20 p-1 rounded text-[#fd4444] mr-3 mt-0.5">
                     <div className="w-4 h-4 flex items-center justify-center">2</div>
                   </div>
                   <div>
@@ -51,7 +51,7 @@ const Community = () => {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-purple-500/20 p-1 rounded text-purple-400 mr-3 mt-0.5">
+                  <div className="bg-[#fd4444]/20 p-1 rounded text-[#fd4444] mr-3 mt-0.5">
                     <div className="w-4 h-4 flex items-center justify-center">3</div>
                   </div>
                   <div>
@@ -66,7 +66,7 @@ const Community = () => {
               <div className="flex flex-col space-y-4">
                 <Button 
                   size="sm"
-                  className="bg-purple-600 hover:bg-purple-700 text-[var(--white)]"
+                  className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)]"
                 >
                   <Github className="mr-2 h-5 w-5" />
                   <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer">
@@ -88,7 +88,7 @@ const Community = () => {
               
               <div className="text-neutral-400 text-sm">
                 <p className="mb-2">Looking for examples?</p>
-                <a href="#" className="text-purple-400 hover:text-purple-300">
+                <a href="#" className="text-[#fd4444] hover:text-[#ff6b6b]">
                   View ready-to-use character templates and implementations →
                 </a>
               </div>

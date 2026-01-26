@@ -18,10 +18,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Ico
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ 
-        y: -5, 
-        boxShadow: "0 10px 30px -15px rgba(136, 58, 234, 0.5)",
-        borderColor: "rgba(139, 92, 246, 0.5)" 
+      whileHover={{
+        y: -5,
+        boxShadow: "0 10px 30px -15px rgba(253, 68, 68, 0.5)",
+        borderColor: "rgba(253, 68, 68, 0.5)"
       }}
       className="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-gray-800 transition-all duration-300"
     >
@@ -92,7 +92,7 @@ const FeaturesGrid: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-300 rounded-full mx-auto mb-12"
+          className="w-24 h-1 bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] rounded-full mx-auto mb-12"
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

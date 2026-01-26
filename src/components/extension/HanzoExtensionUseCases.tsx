@@ -12,7 +12,7 @@ const UseCaseCard = ({ icon: Icon, title, description }) => {
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-8"
     >
-      <Icon className="h-10 w-10 text-purple-400 mb-4" />
+      <Icon className="h-10 w-10 text-[#fd4444] mb-4" />
       <h3 className="text-2xl font-bold mb-2">{title}</h3>
       <p className="text-neutral-300">{description}</p>
     </motion.div>

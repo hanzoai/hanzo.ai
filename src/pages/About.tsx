@@ -11,17 +11,17 @@ import OurStory from "@/components/about/OurStory";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
+    <div className="min-h-screen bg-background text-foreground">
       <Helmet>
         <title>About Hanzo Industries - Our Story and Evolution</title>
-        <meta 
-          name="description" 
-          content="Learn about Hanzo Industries' journey from a crowd-powered marketing platform to a Techstars-backed AI venture, and our guiding philosophy." 
+        <meta
+          name="description"
+          content="Learn about Hanzo Industries' journey from a crowd-powered marketing platform to a Techstars-backed AI venture, and our guiding philosophy."
         />
       </Helmet>
-      
+
       <Navbar />
-      
+
       <main className="pt-20">
         <AboutHero />
         <OurStory />
@@ -29,7 +29,7 @@ const About = () => {
         <ZenPrinciples />
         <SenseiMethod />
       </main>
-      
+
       <Footer />
     </div>
   );

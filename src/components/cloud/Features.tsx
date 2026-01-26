@@ -35,9 +35,9 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-purple-500/30 transition-colors"
+            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
           >
-            <Globe className="w-12 h-12 text-purple-400 mb-6" />
+            <Globe className="w-12 h-12 text-[#fd4444] mb-6" />
             <h3 className="text-xl font-bold mb-4">Global Reach</h3>
             <p className="text-neutral-300">
               Deploy in 35 regions, from Sydney to São Paulo, for sub-100ms response times and native-app feel no matter where your users are.
@@ -49,9 +49,9 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-purple-500/30 transition-colors"
+            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
           >
-            <Server className="w-12 h-12 text-purple-400 mb-6" />
+            <Server className="w-12 h-12 text-[#fd4444] mb-6" />
             <h3 className="text-xl font-bold mb-4">Instant Scaling</h3>
             <p className="text-neutral-300">
               Hanzo Machines start fast enough to handle HTTP requests, run only when you need them, and scale into tens of thousands of instances.
@@ -63,9 +63,9 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-purple-500/30 transition-colors"
+            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
           >
-            <Cpu className="w-12 h-12 text-purple-400 mb-6" />
+            <Cpu className="w-12 h-12 text-[#fd4444] mb-6" />
             <h3 className="text-xl font-bold mb-4">GPU Acceleration</h3>
             <p className="text-neutral-300">
               From LLMs to inferencing, hardware acceleration with the same developer experience as a simple CRUD app.
@@ -77,9 +77,9 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-purple-500/30 transition-colors"
+            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
           >
-            <Database className="w-12 h-12 text-purple-400 mb-6" />
+            <Database className="w-12 h-12 text-[#fd4444] mb-6" />
             <h3 className="text-xl font-bold mb-4">AI-Native Storage</h3>
             <p className="text-neutral-300">
               Vector databases, document stores, and relational databases optimized for AI workloads with automatic scaling.
@@ -91,9 +91,9 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-purple-500/30 transition-colors"
+            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
           >
-            <Bot className="w-12 h-12 text-purple-400 mb-6" />
+            <Bot className="w-12 h-12 text-[#fd4444] mb-6" />
             <h3 className="text-xl font-bold mb-4">Model Management</h3>
             <p className="text-neutral-300">
               Streamlined deployment and management of AI models with version control, A/B testing, and monitoring built-in.
@@ -105,9 +105,9 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 1.0 }}
-            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-purple-500/30 transition-colors"
+            className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-[#fd4444]/30 transition-colors"
           >
-            <Lock className="w-12 h-12 text-purple-400 mb-6" />
+            <Lock className="w-12 h-12 text-[#fd4444] mb-6" />
             <h3 className="text-xl font-bold mb-4">Enterprise Security</h3>
             <p className="text-neutral-300">
               Enterprise-grade security with private networking, encryption, audit logging, and GDPR controls.
@@ -120,10 +120,10 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 bg-purple-900/20 rounded-xl p-8 border border-purple-800/30"
+          className="mt-16 bg-[#fd4444]/10 rounded-xl p-8 border border-[#fd4444]/30"
         >
           <div className="flex flex-col md:flex-row items-center">
-            <Cloud className="w-14 h-14 text-purple-400 mb-6 md:mb-0 md:mr-8" />
+            <Cloud className="w-14 h-14 text-[#fd4444] mb-6 md:mb-0 md:mr-8" />
             <div>
               <h3 className="text-xl font-bold mb-3">Built for AI Engineering</h3>
               <p className="text-neutral-300">
@@ -147,7 +147,7 @@ const Features = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
-                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)]"
+                className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] text-[var(--white)]"
               >
                 Contact Sales
               </Button>
@@ -161,7 +161,7 @@ const Features = () => {
             </div>
             
             <div className="mt-6 text-neutral-400 text-sm">
-              Looking for a free, self-hosted alternative? <a href="/platform" className="text-purple-400 hover:underline">Check out Hanzo Platform</a>
+              Looking for a free, self-hosted alternative? <a href="/platform" className="text-[#fd4444] hover:underline">Check out Hanzo Platform</a>
             </div>
           </div>
         </motion.div>

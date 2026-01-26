@@ -73,7 +73,7 @@ const BENEFITS = [
   },
 ];
 
-const BRAND_COLOR = "#8b5cf6"; // Purple for Zen
+const BRAND_COLOR = "#fd4444"; // Brand primary red
 
 // Quick stats for the demo panel
 const QUICK_STATS = [
@@ -119,7 +119,7 @@ const Zen = () => {
                   transition={{ duration: 0.4 }}
                   className="mb-6"
                 >
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[#fd4444]/10 text-[#fd4444] border border-[#fd4444]/20">
                     <Zap className="w-3 h-3" />
                     Open Source AI
                   </span>
@@ -234,15 +234,15 @@ const Zen = () => {
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm">
-                        <Brain className="w-4 h-4 text-purple-400" />
+                        <Brain className="w-4 h-4 text-[#fd4444]" />
                         <span className="text-neutral-300">Language • Vision • Audio • Video • 3D</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <Code2 className="w-4 h-4 text-purple-400" />
+                        <Code2 className="w-4 h-4 text-[#fd4444]" />
                         <span className="text-neutral-300">Agentic coding with tool use</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <Shield className="w-4 h-4 text-purple-400" />
+                        <Shield className="w-4 h-4 text-[#fd4444]" />
                         <span className="text-neutral-300">Apache 2.0 • Open weights & training</span>
                       </div>
                     </div>
@@ -277,13 +277,13 @@ const Zen = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
                   >
-                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20">
-                      <Icon className="w-6 h-6 text-purple-400" />
+                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-[#fd4444]/10 border border-[#fd4444]/20">
+                      <Icon className="w-6 h-6 text-[#fd4444]" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-1">{category.title}</h3>
-                    <p className="text-sm text-purple-400 mb-2">{category.count}</p>
+                    <p className="text-sm text-[#fd4444] mb-2">{category.count}</p>
                     <p className="text-neutral-500 text-sm">{category.description}</p>
                   </motion.div>
                 );
@@ -316,10 +316,10 @@ const Zen = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all"
+                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all"
                   >
-                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20">
-                      <Icon className="w-6 h-6 text-purple-400" />
+                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-[#fd4444]/10 border border-[#fd4444]/20">
+                      <Icon className="w-6 h-6 text-[#fd4444]" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
                     <p className="text-neutral-400 text-sm">{benefit.description}</p>
@@ -350,7 +350,7 @@ const Zen = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
                 <div className="text-3xl mb-4">🤗</div>
                 <h3 className="text-xl font-semibold text-white mb-2">HuggingFace</h3>
@@ -365,7 +365,7 @@ const Zen = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
                 <div className="text-3xl mb-4">💻</div>
                 <h3 className="text-xl font-semibold text-white mb-2">GitHub</h3>
@@ -377,7 +377,7 @@ const Zen = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-purple-500/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
               >
                 <Link to="/zen/models" className="block">
                   <div className="text-3xl mb-4">📚</div>

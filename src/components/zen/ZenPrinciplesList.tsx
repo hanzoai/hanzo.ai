@@ -32,8 +32,8 @@ const ZenPrinciplesList: React.FC<ZenPrinciplesListProps> = ({
         {Object.entries(disciplineGroups).map(([discipline, disciplinePrinciples]) => (
           <div key={discipline} className="space-y-6">
             <div className="flex items-center space-x-2">
-              <h3 className="text-2xl font-semibold text-purple-400">{discipline}</h3>
-              <div className="h-px flex-grow bg-purple-500/20"></div>
+              <h3 className="text-2xl font-semibold text-[#fd4444]">{discipline}</h3>
+              <div className="h-px flex-grow bg-[#fd4444]/20"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {disciplinePrinciples.map((principle, index) => (

@@ -27,7 +27,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         onTitleAnimationComplete();
       }}
     >
-      <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+      <div className="inline-block px-4 py-1 rounded-full bg-[#fd4444]/20 border border-[#fd4444]/30 text-[#ff6b6b] text-sm font-medium mb-6">
         Open Source AI Engineering Platform
       </div>
       
@@ -37,7 +37,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         </span>
         <br />
         <span 
-          className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400"
+          className="bg-clip-text text-transparent bg-gradient-to-r from-[#fd4444] via-[#ff6b6b] to-[#fd4444]"
           style={{
             backgroundPosition: `${(mousePosition.x / (containerRef.current?.offsetWidth || 1)) * 100}% ${(mousePosition.y / (containerRef.current?.offsetHeight || 1)) * 100}%`,
           }}

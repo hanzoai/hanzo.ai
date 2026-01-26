@@ -7,8 +7,8 @@ const EnterpriseFeatures = () => {
     <section id="infra-log" className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:30px_30px]" />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/10 rounded-full blur-3xl" />
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -32,12 +32,12 @@ const EnterpriseFeatures = () => {
               <div className="p-4 font-mono text-sm text-neutral-300 max-h-[400px] overflow-y-auto">
                 <div className="text-neutral-500"># Hanzo Infrastructure Log</div>
                 <div className="text-green-400">[INFO] Sydney region: 12 new CPU machines online</div>
-                <div className="text-purple-400">[SCALING] Tokyo region: GPU cluster expanding</div>
-                <div className="text-blue-400">[NETWORK] Frankfurt: New 100Gbps uplink active</div>
+                <div className="text-[#fd4444]">[SCALING] Tokyo region: GPU cluster expanding</div>
+                <div className="text-[#ff6b6b]">[NETWORK] Frankfurt: New 100Gbps uplink active</div>
                 <div className="text-yellow-400">[UPDATE] Global: System update scheduled for May 15</div>
                 <div className="text-green-400">[INFO] Amsterdam: Storage cluster expansion complete</div>
-                <div className="text-purple-400">[SCALING] São Paulo: 8 new CPU machines online</div>
-                <div className="text-blue-400">[NETWORK] New York: DDoS protection enhanced</div>
+                <div className="text-[#fd4444]">[SCALING] São Paulo: 8 new CPU machines online</div>
+                <div className="text-[#ff6b6b]">[NETWORK] New York: DDoS protection enhanced</div>
                 <div className="text-green-400">[INFO] Singapore: New edge region now available</div>
                 <div className="text-yellow-400">[UPDATE] Global: Network routes optimized</div>
               </div>
@@ -56,7 +56,7 @@ const EnterpriseFeatures = () => {
               initial={{ opacity: 0.9 }}
               whileHover={{ opacity: 1, scale: 1.02 }}
               transition={{ duration: 0.2 }}
-              className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 text-[var(--white)] font-medium hover:shadow-lg hover:shadow-purple-500/20 transition-all"
+              className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] text-[var(--white)] font-medium hover:shadow-lg hover:shadow-[#fd4444]/20 transition-all"
             >
               Learn More
             </motion.a>

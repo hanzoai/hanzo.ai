@@ -7,7 +7,7 @@ import { Play, Terminal } from "lucide-react";
 const DemoShowcase: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black to-purple-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black to-[#fd4444]/10" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -18,7 +18,7 @@ const DemoShowcase: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-block px-4 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+            <div className="inline-block px-4 py-1 rounded-full bg-[#fd4444]/20 border border-[#fd4444]/30 text-[#ff6b6b] text-sm font-medium mb-6">
               See it in action
             </div>
             
@@ -32,7 +32,7 @@ const DemoShowcase: React.FC = () => {
             </p>
             
             <Button 
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full px-6 py-6 text-[var(--white)]"
+              className="bg-[#fd4444] hover:bg-[#e03e3e] rounded-full px-6 py-6 text-[var(--white)]"
             >
               <Play className="mr-2 h-5 w-5" /> Watch Demo
             </Button>

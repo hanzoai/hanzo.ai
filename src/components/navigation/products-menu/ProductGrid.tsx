@@ -19,10 +19,10 @@ const ProductGrid = ({ items }: ProductGridProps) => {
           onMouseEnter={() => setHoveredItem(item.name)}
           onMouseLeave={() => setHoveredItem(null)}
         >
-          <item.icon 
+          <item.icon
             className={`h-6 w-6 mt-1 transition-colors duration-200 ${
-              hoveredItem === item.name ? 'text-purple-400' : 'text-neutral-400 group-hover:text-[var(--white)]'
-            }`} 
+              hoveredItem === item.name ? 'text-[#fd4444]' : 'text-neutral-400 group-hover:text-[var(--white)]'
+            }`}
           />
           <div className="flex-1">
             <Link to={item.link} className="text-neutral-300 group-hover:text-[var(--white)] font-medium">

@@ -58,15 +58,15 @@ const benefits = [
     icon: Server,
     title: "Custom Integrations",
     description: "Seamlessly integrate with your existing infrastructure, identity providers, and business systems.",
-    gradient: "from-emerald-900/20 to-teal-900/20",
-    border: "border-emerald-500/30"
+    gradient: "from-[#fd4444]/15 to-orange-900/20",
+    border: "border-[#fd4444]/30"
   },
   {
     icon: Lock,
     title: "Flexible Deployment",
     description: "Deploy on our cloud, your cloud, or on-premises. We support hybrid deployments for security and compliance.",
-    gradient: "from-violet-900/20 to-purple-900/20",
-    border: "border-violet-500/30"
+    gradient: "from-[#fd4444]/15 to-[#fd4444]/10",
+    border: "border-[#fd4444]/30"
   }
 ];
 
@@ -101,7 +101,7 @@ const Enterprise = () => {
             <div
               className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-10"
               style={{
-                background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
                 filter: "blur(80px)",
               }}
             />

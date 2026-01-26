@@ -67,7 +67,7 @@ const ResourceBreakdown = () => {
             
             <div className="w-full bg-gray-800 rounded-full h-2.5">
               <div 
-                className="bg-indigo-500 h-2.5 rounded-full" 
+                className="bg-[#fd4444] h-2.5 rounded-full" 
                 style={{ width: `${resource.percentage}%` }}
               ></div>
             </div>

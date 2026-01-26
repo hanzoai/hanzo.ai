@@ -50,16 +50,16 @@ const AboutHero = () => {
             transition={{ duration: 0.4, delay: 0.05 }}
             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
           >
-            <span className="text-white">History of</span>
+            <span className="text-foreground">History of</span>
             <br />
-            <span className="text-neutral-400">Hanzo Industries.</span>
+            <span className="text-muted-foreground">Hanzo Industries.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-10 max-w-3xl mx-auto"
+            className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto"
           >
             From startup to AI powerhouse, our journey of transformation, innovation, and purpose.
           </motion.p>
@@ -80,7 +80,7 @@ const AboutHero = () => {
             </a>
             <Link
               to="/zen"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-accent text-sm text-foreground"
             >
               The Zen of Hanzo
             </Link>

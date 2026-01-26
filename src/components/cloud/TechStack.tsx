@@ -26,7 +26,7 @@ const TechStack = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700 hover:border-purple-500/50 hover:bg-gray-800 transition-colors"
+              className="px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700 hover:border-[#fd4444]/50 hover:bg-gray-800 transition-colors"
             >
               {tech}
             </motion.div>

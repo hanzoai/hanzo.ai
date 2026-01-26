@@ -72,7 +72,7 @@ const DeveloperLove = () => {
               href="https://twitter.com/search?q=hanzo" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+              className="inline-flex items-center text-[#fd4444] hover:text-[#ff6b6b] transition-colors"
             >
               Join nearly 1M developers building with Hanzo <ArrowRight className="ml-2 h-4 w-4" />
             </a>

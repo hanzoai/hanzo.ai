@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-blue-950/30">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-neutral-950/30">
       <div className="max-w-5xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const CallToAction = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" radius="full" className="text-lg px-8 bg-blue-600 hover:bg-blue-700 text-[var(--white)]">
+            <Button size="lg" radius="full" className="text-lg px-8 bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)]">
               <span className="py-1 leading-relaxed">Start Building</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

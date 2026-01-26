@@ -16,15 +16,15 @@ export const features: Feature[] = [
     title: "AI Engineering",
     description: "Build, deploy, and operate AI applications with developer-first tools that make AI development a breeze.",
     icon: ArrowRight,
-    bgColor: "bg-purple-900/20",
-    iconColor: "text-purple-400"
+    bgColor: "bg-[#fd4444]/20",
+    iconColor: "text-[#fd4444]"
   },
   {
     title: "Cloud Infrastructure",
     description: "Serverless, scalable cloud infrastructure designed for AI workloads with global distribution.",
     icon: ArrowRight,
-    bgColor: "bg-blue-900/20",
-    iconColor: "text-blue-400"
+    bgColor: "bg-[#ff6b6b]/20",
+    iconColor: "text-[#ff6b6b]"
   },
   {
     title: "Developer Experience",
@@ -44,14 +44,14 @@ export const features: Feature[] = [
     title: "Rapid Prototyping",
     description: "Go from idea to prototype in minutes with intuitive tools and pre-built templates.",
     icon: ArrowRight,
-    bgColor: "bg-pink-900/20",
-    iconColor: "text-pink-400"
+    bgColor: "bg-[#fd4444]/20",
+    iconColor: "text-[#fd4444]"
   },
   {
     title: "AI Ecosystem",
     description: "Access to a growing ecosystem of AI models, tools, and services built on Hanzo.",
     icon: ArrowRight,
-    bgColor: "bg-teal-900/20",
-    iconColor: "text-teal-400"
+    bgColor: "bg-[#ff6b6b]/20",
+    iconColor: "text-[#ff6b6b]"
   }
 ];

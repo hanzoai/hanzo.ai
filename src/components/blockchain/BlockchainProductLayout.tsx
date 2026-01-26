@@ -18,6 +18,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
+export interface CodeExample {
+  language: string;
+  filename: string;
+  code: string;
+}
+
 export interface BlockchainProductProps {
   name: string;
   tagline: string;
@@ -38,6 +44,7 @@ export interface BlockchainProductProps {
     filename: string;
     code: string;
   };
+  codeExamples?: CodeExample[];
 }
 
 const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
@@ -50,7 +57,9 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
   useCases,
   chains,
   codeExample,
+  codeExamples,
 }) => {
+  const [activeTab, setActiveTab] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -324,8 +333,67 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
         </div>
       </section>
 
-      {/* Code Example */}
-      {codeExample && (
+      {/* Code Examples - Polyglot */}
+      {(codeExamples && codeExamples.length > 0) && (
+        <section className="py-24 px-4 md:px-8">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+                Simple to Integrate
+              </h2>
+              <p className="text-lg text-neutral-400">
+                Get started with just a few lines of code. SDKs for every language.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden"
+            >
+              {/* Language Tabs */}
+              <div className="flex items-center gap-1 px-4 py-2 border-b border-neutral-800 bg-neutral-950 overflow-x-auto">
+                {codeExamples.map((example, idx) => (
+                  <button
+                    key={example.language}
+                    onClick={() => setActiveTab(idx)}
+                    className={`px-3 py-1.5 text-xs font-medium rounded transition-colors ${
+                      activeTab === idx
+                        ? "bg-neutral-800 text-white"
+                        : "text-neutral-500 hover:text-neutral-300"
+                    }`}
+                  >
+                    {example.language}
+                  </button>
+                ))}
+              </div>
+              {/* File Header */}
+              <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800 bg-neutral-900/50">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                </div>
+                <span className="ml-2 text-xs text-neutral-500 font-mono">
+                  {codeExamples[activeTab]?.filename}
+                </span>
+              </div>
+              <div className="p-4 font-mono text-sm bg-neutral-950 overflow-x-auto max-h-[500px]">
+                <pre className="text-neutral-300">{codeExamples[activeTab]?.code}</pre>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* Legacy single code example fallback */}
+      {codeExample && !codeExamples && (
         <section className="py-24 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <motion.div

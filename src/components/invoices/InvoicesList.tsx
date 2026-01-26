@@ -64,7 +64,7 @@ const InvoicesList = () => {
     Paid: "bg-green-900/30 text-green-400",
     Due: "bg-yellow-900/30 text-yellow-400",
     Overdue: "bg-red-900/30 text-red-400",
-    Processing: "bg-blue-900/30 text-blue-400"
+    Processing: "bg-red-900/30 text-[#fd4444]"
   };
 
   return (

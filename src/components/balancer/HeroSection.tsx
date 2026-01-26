@@ -8,9 +8,9 @@ const HeroSection = () => {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 to-red-900/5 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
@@ -30,11 +30,11 @@ const HeroSection = () => {
           </div>
 
           <div className="mb-4">
-            <span className="text-purple-400 font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available! 
-              <a href="#learn-more" className="ml-2 text-purple-300 underline">Learn More</a>
+            <span className="text-[#fd4444] font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available!
+              <a href="#learn-more" className="ml-2 text-[#ff6b6b] underline">Learn More</a>
             </span>
           </div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const HeroSection = () => {
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           >
             The Cloud Native<br />
-            <span className="text-purple-400">Application Proxy</span>
+            <span className="text-[#fd4444]">Application Proxy</span>
           </motion.h1>
           
           <motion.p
@@ -60,9 +60,9 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
           >
-            <Button 
+            <Button
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] rounded-full py-6"
+              className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] rounded-full py-6"
             >
               <span className="py-1 leading-relaxed">GET STARTED</span>
             </Button>

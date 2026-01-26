@@ -88,7 +88,7 @@ const WebAnalytics = () => {
 
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-800 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#fd4444] via-transparent to-transparent"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -115,7 +115,7 @@ const WebAnalytics = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex"
               >
-                <div className="mr-4 mt-1 bg-purple-900/30 p-2 rounded-lg text-purple-400">
+                <div className="mr-4 mt-1 bg-[#fd4444]/10 p-2 rounded-lg text-[#fd4444]">
                   {feature.icon}
                 </div>
                 <div>
@@ -154,7 +154,7 @@ const WebAnalytics = () => {
                     {/* Chart lines */}
                     <motion.path
                       d="M0,80 C10,70 20,85 30,60 C40,40 50,55 60,30 C70,40 80,20 90,10 L100,20"
-                      stroke="#8B5CF6"
+                      stroke="#fd4444"
                       strokeWidth="2"
                       fill="none"
                       variants={lineVariants}
@@ -163,7 +163,7 @@ const WebAnalytics = () => {
                     />
                     <motion.path
                       d="M0,90 C15,80 25,75 35,70 C45,65 55,60 65,50 C75,70 85,60 95,40 L100,50"
-                      stroke="#33C3F0"
+                      stroke="#ff6b6b"
                       strokeWidth="2"
                       fill="none"
                       variants={lineVariants}
@@ -173,12 +173,12 @@ const WebAnalytics = () => {
                     
                     {/* Data points */}
                     {[
-                      { x: 30, y: 60, color: "#8B5CF6" },
-                      { x: 60, y: 30, color: "#8B5CF6" },
-                      { x: 90, y: 10, color: "#8B5CF6" },
-                      { x: 35, y: 70, color: "#33C3F0" },
-                      { x: 65, y: 50, color: "#33C3F0" },
-                      { x: 95, y: 40, color: "#33C3F0" }
+                      { x: 30, y: 60, color: "#fd4444" },
+                      { x: 60, y: 30, color: "#fd4444" },
+                      { x: 90, y: 10, color: "#fd4444" },
+                      { x: 35, y: 70, color: "#ff6b6b" },
+                      { x: 65, y: 50, color: "#ff6b6b" },
+                      { x: 95, y: 40, color: "#ff6b6b" }
                     ].map((point, i) => (
                       <motion.circle
                         key={i}

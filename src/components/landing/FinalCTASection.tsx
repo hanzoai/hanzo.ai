@@ -26,7 +26,7 @@ const entryPoints = [
     primary: true,
     action: {
       type: "copy",
-      command: "npm install -g @hanzo/dev",
+      command: "curl -fsSL hanzo.sh | bash",
       label: "Copy install command",
     },
   },
@@ -229,9 +229,9 @@ const FinalCTASection = () => {
             {/* Terminal content */}
             <div className="p-4 font-mono text-sm">
               <div className="text-neutral-400">
-                <span className="text-green-500">$</span> npm install -g @hanzo/dev
+                <span className="text-green-500">$</span> curl -fsSL hanzo.sh | bash
               </div>
-              <div className="text-neutral-500 mt-1">✓ Installed @hanzo/dev</div>
+              <div className="text-neutral-500 mt-1">✓ Installed hanzo CLI, MCP, and agents</div>
               <div className="text-neutral-400 mt-3">
                 <span className="text-green-500">$</span> dev
               </div>

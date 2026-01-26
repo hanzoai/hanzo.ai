@@ -29,7 +29,7 @@ const InvoicesSummary = () => {
         </div>
         
         <Button 
-          className="bg-purple-600 hover:bg-purple-700 text-[var(--white)] w-full"
+          className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] w-full"
         >
           View Plan Details
         </Button>
@@ -74,7 +74,7 @@ const InvoicesSummary = () => {
         </div>
         
         <div className="bg-[var(--black)]/30 p-4 rounded-lg flex items-center gap-3 mb-6">
-          <AlertCircle className="h-5 w-5 text-blue-400" />
+          <AlertCircle className="h-5 w-5 text-[#fd4444]" />
           <p className="text-neutral-300">No upcoming charges. You're on a trial plan.</p>
         </div>
         

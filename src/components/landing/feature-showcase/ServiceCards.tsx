@@ -12,11 +12,11 @@ const ServiceCards: React.FC = () => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-purple-900/30 border border-purple-800/30 rounded-xl p-8 relative overflow-hidden"
+        className="bg-[#fd4444]/20 border border-[#fd4444]/30 rounded-xl p-8 relative overflow-hidden"
       >
         <div className="flex items-center gap-4 mb-4">
-          <div className="p-3 bg-purple-800/30 rounded-full">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-300">
+          <div className="p-3 bg-[#fd4444]/30 rounded-full">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#ff6b6b]">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -27,7 +27,7 @@ const ServiceCards: React.FC = () => {
         <p className="text-neutral-300 mb-6">
           Elevate your brand with our AI-powered creative agency. We craft cutting-edge digital experiences that captivate audiences and deliver measurable business results.
         </p>
-        <a href="/agency" className="inline-flex items-center text-purple-300 hover:text-purple-200 transition-colors group">
+        <a href="/agency" className="inline-flex items-center text-[#ff6b6b] hover:text-[#fd4444] transition-colors group">
           <span className="mr-2">Learn more</span>
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </a>

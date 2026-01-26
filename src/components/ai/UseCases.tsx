@@ -9,15 +9,15 @@ const UseCases = () => {
       icon: MessageSquare,
       title: 'Conversational AI',
       description: 'Build intelligent chatbots, virtual assistants, and customer support agents with natural language understanding.',
-      color: 'bg-blue-500/20',
-      textColor: 'text-blue-400'
+      color: 'bg-[#fd4444]/20',
+      textColor: 'text-[#fd4444]'
     },
     {
       icon: Brain,
       title: 'Generative Content',
       description: 'Create text, images, code, and other content with AI-powered generation and customization.',
-      color: 'bg-purple-500/20',
-      textColor: 'text-purple-400'
+      color: 'bg-[#ff6b6b]/20',
+      textColor: 'text-[#ff6b6b]'
     },
     {
       icon: Search,
@@ -53,8 +53,8 @@ const UseCases = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-72 h-72 bg-purple-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-1/4 right-0 w-72 h-72 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#ff6b6b]/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -132,14 +132,14 @@ console.log(response);`}
             </div>
             <div className="lg:w-1/2 bg-gray-950 p-8 flex flex-col">
               <h4 className="text-lg font-semibold text-[var(--white)] mb-4 flex items-center">
-                <BookOpen className="h-4 w-4 mr-2 text-purple-400" />
+                <BookOpen className="h-4 w-4 mr-2 text-[#fd4444]" />
                 Documentation Example
               </h4>
               <div className="flex flex-col h-full space-y-4 overflow-y-auto">
                 <div className="bg-gray-900 rounded-lg p-4">
                   <div className="flex items-center mb-2">
-                    <Database className="h-4 w-4 text-blue-400 mr-2" />
-                    <h5 className="text-blue-400 font-medium">Vector Search</h5>
+                    <Database className="h-4 w-4 text-[#fd4444] mr-2" />
+                    <h5 className="text-[#fd4444] font-medium">Vector Search</h5>
                   </div>
                   <pre className="text-xs text-neutral-300 overflow-x-auto">
 {`// Create a vector store

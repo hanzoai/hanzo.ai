@@ -5,6 +5,7 @@ import PricingHeader from "@/components/pricing/PricingHeader";
 import PersonalPlans from "@/components/pricing/PersonalPlans";
 import TeamEnterprisePlans from "@/components/pricing/TeamEnterprisePlans";
 import APIPricing from "@/components/pricing/APIPricing";
+import BlockchainPricing from "@/components/pricing/BlockchainPricing";
 import FeatureComparison from "@/components/pricing/FeatureComparison";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
 import BillingManagement from "@/components/pricing/BillingManagement";
@@ -15,7 +16,8 @@ const PricingPlans = () => {
   const tabs = [
     { id: "personal", label: "Personal" },
     { id: "team", label: "Team & Enterprise" },
-    { id: "api", label: "API" }
+    { id: "api", label: "API" },
+    { id: "blockchain", label: "Blockchain" }
   ];
 
   const renderTabContent = () => {
@@ -40,6 +42,8 @@ const PricingPlans = () => {
         );
       case "api":
         return <APIPricing />;
+      case "blockchain":
+        return <BlockchainPricing />;
       default:
         return <PersonalPlans />;
     }

@@ -274,7 +274,7 @@ const Analytics = () => {
             <div className="flex justify-between items-center relative w-full">
               {/* First Milestone */}
               <div className="text-center relative w-1/3 pr-4">
-                <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-purple-400 flex items-center justify-center mx-auto relative" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
+                <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-[#fd4444] flex items-center justify-center mx-auto relative" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
                 once: true,
                 margin: "-100px"
               }} custom={1}>
@@ -285,7 +285,7 @@ const Analytics = () => {
               
               {/* Second Milestone - Center */}
               <div className="text-center relative w-1/3 px-2">
-                <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-blue-400 flex items-center justify-center mx-auto" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
+                <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-[#fd4444] flex items-center justify-center mx-auto" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
                 once: true,
                 margin: "-100px"
               }} custom={2}>
@@ -422,8 +422,8 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
-                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-purple-300" />
+              <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff6b6b]" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-[var(--white)] mb-2 md:mb-3">Cohort Analysis</h3>
               <p className="text-xs sm:text-sm text-neutral-300">Group users by common characteristics and behaviors to discover usage patterns.</p>
@@ -435,8 +435,8 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
-                <LineChart className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300" />
+              <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
+                <LineChart className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff6b6b]" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-[var(--white)] mb-2 md:mb-3">User Journeys</h3>
               <p className="text-xs sm:text-sm text-neutral-300">Visualize and optimize the complete user journey from acquisition to conversion.</p>
@@ -448,7 +448,7 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/30 to-transparent rounded-xl p-4 md:p-6 ring-1 ring-white/10 flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
+              <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-full p-2 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center mb-3 md:mb-4">
                 <PieChart className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-300" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-[var(--white)] mb-2 md:mb-3">Engagement Metrics</h3>
@@ -495,8 +495,8 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4">
-              <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-lg p-3">
-                <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-300" />
+              <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-lg p-3">
+                <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff6b6b]" />
               </div>
               <div className="flex-1 text-center">
                 <h3 className="text-base sm:text-lg font-medium text-[var(--white)] mb-2">Predictive Analysis</h3>
@@ -510,8 +510,8 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4">
-              <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-lg p-3">
-                <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300" />
+              <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-lg p-3">
+                <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff6b6b]" />
               </div>
               <div className="flex-1 text-center">
                 <h3 className="text-base sm:text-lg font-medium text-[var(--white)] mb-2">Anomaly Detection</h3>
@@ -525,8 +525,8 @@ const Analytics = () => {
               duration: 0.2
             }
           }} className="bg-gradient-to-br from-gray-900/40 to-black/20 rounded-lg p-5 ring-1 ring-white/5 flex items-start space-x-4">
-              <div className="bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-lg p-3">
-                <BarChart className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-300" />
+              <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-lg p-3">
+                <BarChart className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff6b6b]" />
               </div>
               <div className="flex-1 text-center">
                 <h3 className="text-base sm:text-lg font-medium text-[var(--white)] mb-2">Intelligent Recommendations</h3>

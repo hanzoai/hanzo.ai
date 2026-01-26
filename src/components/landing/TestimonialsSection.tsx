@@ -19,7 +19,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ quote, name, title, delay }) 
       transition={{ duration: 0.5, delay }}
       className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-6 shadow-lg"
     >
-      <Quote className="h-8 w-8 text-purple-400 mb-4" />
+      <Quote className="h-8 w-8 text-[#fd4444] mb-4" />
       <p className="text-neutral-300 text-lg mb-6">{quote}</p>
       <div>
         <p className="font-bold text-[var(--white)]">{name}</p>
@@ -58,7 +58,7 @@ const TestimonialsSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#fd4444]/20 border border-[#fd4444]/30 text-[#fd4444] text-sm font-medium mb-6">
             Testimonials
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">

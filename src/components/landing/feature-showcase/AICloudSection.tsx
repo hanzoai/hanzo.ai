@@ -16,7 +16,7 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
     <div className="mb-20">
       <SectionHeader
         badge="AI Cloud"
-        badgeColor="bg-blue-900/30 border border-blue-500/30 text-blue-300"
+        badgeColor="bg-[#fd4444]/20 border border-[#fd4444]/30 text-[#ff6b6b]"
         title="Scalable Infrastructure for AI Applications"
         description="Build high-performance AI applications with our suite of cloud services designed for AI workloads."
       />
@@ -35,11 +35,11 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <div className="h-full">
                   <ProductCard
-                    icon={<product.icon className="text-blue-400" />}
+                    icon={<product.icon className="text-[#fd4444]" />}
                     title={product.name}
                     description={product.description}
-                    color="bg-blue-900/30"
-                    hoverColor="bg-blue-600/40"
+                    color="bg-[#fd4444]/20"
+                    hoverColor="bg-[#e03e3e]/40"
                     link={product.link || "#"}
                   />
                 </div>
@@ -60,11 +60,11 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
             {products.map((product, index) => (
               <div key={index} className="w-[300px] flex-shrink-0">
                 <ProductCard
-                  icon={<product.icon className="text-blue-400" />}
+                  icon={<product.icon className="text-[#fd4444]" />}
                   title={product.name}
                   description={product.description}
-                  color="bg-blue-900/30"
-                  hoverColor="bg-blue-600/40"
+                  color="bg-[#fd4444]/20"
+                  hoverColor="bg-[#e03e3e]/40"
                   link={product.link || "#"}
                 />
               </div>

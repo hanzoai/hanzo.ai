@@ -22,8 +22,8 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
         style={{ opacity, scale }}
       >
         {/* Floating orbs in background */}
-        <div className="absolute top-1/4 -right-20 w-40 h-40 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 -left-20 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/4 -right-20 w-40 h-40 bg-[#fd4444]/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 -left-20 w-40 h-40 bg-[#ff6b6b]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
           transition={{ duration: 0.7 }}
           className="mb-6"
         >
-          <span className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-purple-900/30 to-blue-900/30 text-[var(--white)] text-sm font-medium border border-purple-500/20">
+          <span className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-[#fd4444]/30 to-[#ff6b6b]/30 text-[var(--white)] text-sm font-medium border border-[#fd4444]/20">
             The Future of AI Development
           </span>
         </motion.div>
@@ -66,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
         >
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 border-none"
+            className="text-lg px-8 py-6 bg-[#fd4444] hover:bg-[#e03e3e] border-none"
             onClick={() => navigate('/signup')}
           >
             Start Building <ArrowRight className="ml-2 h-5 w-5" />

@@ -18,7 +18,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
   title,
   subtitle,
   products,
-  bgClass = "bg-gradient-to-br from-purple-900/20 to-indigo-900/20"
+  bgClass = "bg-gradient-to-br from-red-900/20 to-red-900/10"
 }) => {
   return (
     <motion.div
@@ -49,9 +49,9 @@ const ProductSection: React.FC<ProductSectionProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-[var(--black)]/30 p-4 rounded-lg border border-purple-500/10 hover:border-purple-500/30 transition-colors"
+              className="bg-[var(--black)]/30 p-4 rounded-lg border border-[#fd4444]/10 hover:border-[#fd4444]/30 transition-colors"
             >
-              <h4 className="text-lg font-semibold text-purple-400 mb-1">{name}</h4>
+              <h4 className="text-lg font-semibold text-[#fd4444] mb-1">{name}</h4>
               <p className="text-neutral-300 text-sm">{description}</p>
             </motion.div>
           );

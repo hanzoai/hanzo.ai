@@ -80,13 +80,13 @@ const DeploymentOptions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-blue-500/30 transition-colors"
+            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors"
           >
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-              style={{ backgroundColor: "#3b82f620" }}
+              style={{ backgroundColor: `${BRAND_COLOR}20` }}
             >
-              <Cloud className="w-6 h-6 text-blue-500" />
+              <Cloud className="w-6 h-6" style={{ color: BRAND_COLOR }} />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Hanzo Cloud</h3>
             <p className="text-neutral-400 text-sm mb-4">
@@ -94,18 +94,18 @@ const DeploymentOptions = () => {
             </p>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li className="flex items-center gap-2">
-                <span className="text-blue-500">✓</span> 35+ global regions
+                <span className="text-[#fd4444]">✓</span> 35+ global regions
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-blue-500">✓</span> Zero-config deployments
+                <span className="text-[#fd4444]">✓</span> Zero-config deployments
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-blue-500">✓</span> 99.99% SLA
+                <span className="text-[#fd4444]">✓</span> 99.99% SLA
               </li>
             </ul>
             <Link
               to="/cloud"
-              className="inline-flex items-center mt-6 text-sm text-blue-400 hover:text-blue-300"
+              className="inline-flex items-center mt-6 text-sm text-[#fd4444] hover:text-[#ff6b6b]"
             >
               Explore Cloud
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -118,13 +118,13 @@ const DeploymentOptions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-purple-500/30 transition-colors"
+            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors"
           >
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-              style={{ backgroundColor: "#8b5cf620" }}
+              style={{ backgroundColor: `${BRAND_COLOR}20` }}
             >
-              <Network className="w-6 h-6 text-purple-500" />
+              <Network className="w-6 h-6" style={{ color: BRAND_COLOR }} />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Hybrid</h3>
             <p className="text-neutral-400 text-sm mb-4">
@@ -132,18 +132,18 @@ const DeploymentOptions = () => {
             </p>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li className="flex items-center gap-2">
-                <span className="text-purple-500">✓</span> Data residency compliance
+                <span className="text-[#fd4444]">✓</span> Data residency compliance
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-purple-500">✓</span> Edge + origin architecture
+                <span className="text-[#fd4444]">✓</span> Edge + origin architecture
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-purple-500">✓</span> Unified management
+                <span className="text-[#fd4444]">✓</span> Unified management
               </li>
             </ul>
             <Link
               to="/enterprise"
-              className="inline-flex items-center mt-6 text-sm text-purple-400 hover:text-purple-300"
+              className="inline-flex items-center mt-6 text-sm text-[#fd4444] hover:text-[#ff6b6b]"
             >
               Contact Sales
               <ArrowRight className="w-4 h-4 ml-2" />

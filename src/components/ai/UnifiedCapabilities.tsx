@@ -73,7 +73,7 @@ const capabilities = [
 const UnifiedCapabilities = () => {
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/10 to-purple-950/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#fd4444]/5 to-[#ff6b6b]/5"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -101,9 +101,9 @@ const UnifiedCapabilities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/20 rounded-xl p-6"
+              className="bg-gradient-to-br from-[#fd4444]/10 to-[#ff6b6b]/10 border border-[#fd4444]/20 rounded-xl p-6"
             >
-              <capability.icon className="h-8 w-8 text-purple-400 mb-4" />
+              <capability.icon className="h-8 w-8 text-[#fd4444] mb-4" />
               <h3 className="text-xl font-bold text-[var(--white)] mb-2">{capability.title}</h3>
               <p className="text-neutral-300">{capability.description}</p>
             </motion.div>

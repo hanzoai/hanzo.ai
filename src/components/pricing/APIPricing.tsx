@@ -153,7 +153,7 @@ const APIPricing = () => {
         </div>
         
         <div className="text-sm text-neutral-500 mb-6">
-          *Learn more about <a href="#" className="text-blue-400 hover:underline">batch processing</a>
+          *Learn more about <a href="#" className="text-[#fd4444] hover:underline">batch processing</a>
         </div>
         
         <div className="text-sm text-neutral-500 mb-6">
@@ -161,7 +161,7 @@ const APIPricing = () => {
         </div>
         
         <div className="text-sm text-neutral-500 mb-8">
-          Prompt caching pricing is for our standard 5-minute TTL; <a href="#" className="text-blue-400 hover:underline">extended prompt caching</a> is available at an additional cost
+          Prompt caching pricing is for our standard 5-minute TTL; <a href="#" className="text-[#fd4444] hover:underline">extended prompt caching</a> is available at an additional cost
         </div>
 
         <div className="flex justify-center">

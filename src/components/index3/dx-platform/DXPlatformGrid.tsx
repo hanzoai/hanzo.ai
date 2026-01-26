@@ -24,18 +24,18 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
         className="mb-12"
       >
         <div className="relative h-80 w-full bg-gray-900/30 rounded-xl overflow-hidden border border-gray-800">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 to-purple-900/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#fd4444]/10 to-[#ff6b6b]/10"></div>
           
           {/* Background grid pattern with enhanced visibility */}
           <div className="absolute inset-0 grid grid-cols-16 grid-rows-8 gap-4 p-4 opacity-30">
             {Array(16 * 8).fill(0).map((_, i) => (
-              <div key={i} className="border border-indigo-500/20 rounded-sm"></div>
+              <div key={i} className="border border-[#fd4444]/20 rounded-sm"></div>
             ))}
           </div>
           
           {/* Central platform hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-indigo-600/30 to-purple-600/30 border border-indigo-500/40 flex items-center justify-center">
+            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#fd4444]/30 to-[#ff6b6b]/30 border border-[#fd4444]/40 flex items-center justify-center">
               <span className="text-xl font-bold text-[var(--white)]">Hanzo DX</span>
             </div>
             
@@ -50,7 +50,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
                 return (
                   <React.Fragment key={platform.id}>
                     <div 
-                      className="absolute w-0.5 bg-gradient-to-b from-indigo-500/20 to-purple-500/40"
+                      className="absolute w-0.5 bg-gradient-to-b from-[#fd4444]/20 to-[#ff6b6b]/40"
                       style={{
                         height: distance,
                         transform: `rotate(${angle + Math.PI/2}rad)`,
@@ -60,7 +60,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
                       }}
                     />
                     <div 
-                      className="absolute p-2 rounded-lg bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-500/30 flex items-center justify-center"
+                      className="absolute p-2 rounded-lg bg-gradient-to-br from-[#fd4444]/30 to-[#ff6b6b]/30 border border-[#fd4444]/30 flex items-center justify-center"
                       style={{
                         width: '80px',
                         height: '40px',
@@ -108,8 +108,8 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           onMouseLeave={() => setIsHovered(null)}
         >
           <Link to="/platform" className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 group hover:bg-gray-900/30 transition-colors h-full flex flex-col">
-            <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 bg-indigo-900/30 group-hover:bg-indigo-600/30">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 bg-[#fd4444]/20 group-hover:bg-[#e03e3e]/30">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#fd4444] group-hover:text-[#ff6b6b] transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
@@ -121,7 +121,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
             </p>
             <div className="mt-auto">
               <Button 
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-[var(--white)] w-full"
+                className="bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] w-full"
                 radius="full"
               >
                 View All Tools
@@ -137,7 +137,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mt-16 p-8 bg-gradient-to-r from-indigo-900/20 to-purple-900/20 rounded-xl border border-indigo-500/20"
+        className="mt-16 p-8 bg-gradient-to-r from-[#fd4444]/20 to-[#ff6b6b]/20 rounded-xl border border-[#fd4444]/20"
       >
         <div className="max-w-4xl mx-auto text-center">
           <ChromeText as="h2" className="text-2xl md:text-3xl font-bold mb-4">
@@ -149,13 +149,13 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           <Button 
             asChild
             size="lg"
-            className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-[var(--white)] font-medium shadow-lg transition-all duration-300"
+            className="px-8 py-3 bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] font-medium shadow-lg transition-all duration-300"
             radius="full"
           >
             <Link to="/signup">Get Started Free</Link>
           </Button>
           <p className="mt-4 text-sm text-neutral-400">
-            No credit card required. <Link to="/referrals" className="text-indigo-400 hover:text-indigo-300 underline">Learn more</Link> about our referral program.
+            No credit card required. <Link to="/referrals" className="text-[#fd4444] hover:text-[#ff6b6b] underline">Learn more</Link> about our referral program.
           </p>
         </div>
       </motion.div>

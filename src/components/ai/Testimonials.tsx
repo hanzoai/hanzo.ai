@@ -29,7 +29,7 @@ const Testimonials = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -bottom-64 -right-32 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-64 -right-32 w-96 h-96 bg-[#fd4444]/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -58,10 +58,10 @@ const Testimonials = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 hover:bg-gray-900/30 transition-colors relative"
             >
-              <Quote className="absolute top-6 right-6 h-6 w-6 text-purple-500/40" />
+              <Quote className="absolute top-6 right-6 h-6 w-6 text-[#fd4444]/40" />
               <p className="text-neutral-300 mb-8 mt-4">"{testimonial.quote}"</p>
               <div className="flex items-center">
-                <div className="h-12 w-12 rounded-full bg-purple-900/30 overflow-hidden">
+                <div className="h-12 w-12 rounded-full bg-[#fd4444]/10 overflow-hidden">
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.author}
@@ -99,11 +99,11 @@ const Testimonials = () => {
                   <span className="text-neutral-300 text-sm">4,500+ community members</span>
                 </div>
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
-                  <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#ff6b6b] mr-2"></div>
                   <span className="text-neutral-300 text-sm">Weekly office hours</span>
                 </div>
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
-                  <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#fd4444] mr-2"></div>
                   <span className="text-neutral-300 text-sm">Dedicated support team</span>
                 </div>
               </div>
@@ -113,12 +113,12 @@ const Testimonials = () => {
                 {[...Array(5)].map((_, i) => (
                   <div 
                     key={i} 
-                    className="h-12 w-12 rounded-full bg-purple-900/50 border-2 border-gray-900 flex items-center justify-center text-purple-300 text-sm font-medium"
+                    className="h-12 w-12 rounded-full bg-[#fd4444]/30 border-2 border-gray-900 flex items-center justify-center text-[#ff6b6b] text-sm font-medium"
                   >
                     {["JS", "MK", "AL", "TN", "RW"][i]}
                   </div>
                 ))}
-                <div className="h-12 w-12 rounded-full bg-purple-600/30 border-2 border-gray-900 flex items-center justify-center text-[var(--white)] text-sm font-medium">
+                <div className="h-12 w-12 rounded-full bg-[#fd4444]/20 border-2 border-gray-900 flex items-center justify-center text-[var(--white)] text-sm font-medium">
                   +2.5k
                 </div>
               </div>

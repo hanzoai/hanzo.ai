@@ -48,7 +48,7 @@ const DeveloperExperience = () => {
               {features.map((feature, index) => (
                 <div key={index} className="flex">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-blue-900/30 text-blue-400">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-[#fd4444]/20 text-[#fd4444]">
                       <feature.icon className="h-6 w-6" />
                     </div>
                   </div>

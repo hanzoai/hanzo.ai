@@ -60,7 +60,7 @@ const FeaturesOverview = () => {
             <p className="text-neutral-300">
               Watch our short demo video to see why our cloud native, GitOps-driven API Gateway is Developers' #1 choice.
             </p>
-            <a href="#watch-demo" className="inline-flex mt-4 text-purple-400 hover:text-purple-300">
+            <a href="#watch-demo" className="inline-flex mt-4 text-[#fd4444] hover:text-[#ff6b6b]">
               Watch Demo Video
             </a>
           </motion.div>

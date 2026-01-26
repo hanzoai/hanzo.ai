@@ -28,7 +28,7 @@ const HanzoCodeCompatibility = () => {
             transition={{ duration: 0.5 }}
             className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 border border-gray-700"
           >
-            <h3 className="text-2xl font-bold mb-6 text-purple-400">Works With Your Favorite Editors</h3>
+            <h3 className="text-2xl font-bold mb-6 text-[#fd4444]">Works With Your Favorite Editors</h3>
             
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -77,25 +77,25 @@ const HanzoCodeCompatibility = () => {
           >
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
-                <PanelLeft className="h-10 w-10 text-purple-400 mb-4" />
+                <PanelLeft className="h-10 w-10 text-[#fd4444] mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Extension API</h4>
                 <p className="text-neutral-300 text-sm">Seamless integration with standard VS Code extension API</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
-                <Code2 className="h-10 w-10 text-purple-400 mb-4" />
+                <Code2 className="h-10 w-10 text-[#fd4444] mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Native Experience</h4>
                 <p className="text-neutral-300 text-sm">Feels like a native part of your existing editor</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
-                <Plug className="h-10 w-10 text-purple-400 mb-4" />
+                <Plug className="h-10 w-10 text-[#fd4444] mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Plugin System</h4>
                 <p className="text-neutral-300 text-sm">Extend with custom plugins for your workflow</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
-                <Shield className="h-10 w-10 text-purple-400 mb-4" />
+                <Shield className="h-10 w-10 text-[#fd4444] mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Enterprise Ready</h4>
                 <p className="text-neutral-300 text-sm">Security and compliance features for teams</p>
               </div>

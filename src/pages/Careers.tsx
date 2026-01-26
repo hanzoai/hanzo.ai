@@ -113,7 +113,7 @@ const hiringSteps = [
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
+    <div className="min-h-screen bg-background text-foreground">
       <Helmet>
         <title>Careers - Hanzo AI</title>
         <meta name="description" content="Join the Hanzo AI team and help build the future of AI. Explore current job openings and benefits." />
@@ -160,16 +160,16 @@ const Careers = () => {
                 transition={{ duration: 0.4, delay: 0.05 }}
                 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
               >
-                <span className="text-white">Build the future</span>
+                <span className="text-foreground">Build the future</span>
                 <br />
-                <span className="text-neutral-400">of AI.</span>
+                <span className="text-muted-foreground">of AI.</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-10 max-w-3xl mx-auto"
+                className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto"
               >
                 Join a team passionate about democratizing access to AI and creating technology
                 that empowers developers worldwide.
@@ -191,7 +191,7 @@ const Careers = () => {
                 </a>
                 <Link
                   to="/about"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-accent text-sm text-foreground"
                 >
                   Learn About Us
                 </Link>
@@ -201,7 +201,7 @@ const Careers = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30">
+        <section className="py-16 px-4 md:px-8 bg-secondary/20">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -209,8 +209,8 @@ const Careers = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Benefits & Perks</h2>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Benefits & Perks</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 We take care of our team so they can focus on building amazing things.
               </p>
             </motion.div>
@@ -225,7 +225,7 @@ const Careers = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center hover:border-[#fd4444]/30 transition-colors"
+                    className="bg-card border border-border rounded-xl p-6 text-center hover:border-[#fd4444]/30 transition-colors"
                   >
                     <div
                       className="w-12 h-12 mx-auto rounded-lg flex items-center justify-center mb-4"
@@ -233,8 +233,8 @@ const Careers = () => {
                     >
                       <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-neutral-400">{benefit.description}</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
                   </motion.div>
                 );
               })}
@@ -251,8 +251,8 @@ const Careers = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Open Positions</h2>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Open Positions</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Find your next opportunity and help us shape the future of AI.
               </p>
             </motion.div>
@@ -265,7 +265,7 @@ const Careers = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors group"
+                  className="bg-card border border-border rounded-xl p-6 hover:border-[#fd4444]/30 transition-colors group"
                 >
                   <div className="flex items-start gap-4">
                     <div
@@ -275,21 +275,21 @@ const Careers = () => {
                       <Briefcase className="h-6 w-6" style={{ color: BRAND_COLOR }} />
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#fd4444] transition-colors">
+                      <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#fd4444] transition-colors">
                         {job.title}
                       </h3>
                       <div className="flex flex-wrap gap-3 mb-3">
-                        <span className="inline-flex items-center text-sm text-neutral-400">
+                        <span className="inline-flex items-center text-sm text-muted-foreground">
                           <MapPin className="h-4 w-4 mr-1" /> {job.location}
                         </span>
-                        <span className="inline-flex items-center text-sm text-neutral-400">
+                        <span className="inline-flex items-center text-sm text-muted-foreground">
                           <Clock className="h-4 w-4 mr-1" /> {job.type}
                         </span>
-                        <span className="inline-flex items-center text-sm text-neutral-400">
+                        <span className="inline-flex items-center text-sm text-muted-foreground">
                           <Users className="h-4 w-4 mr-1" /> {job.department}
                         </span>
                       </div>
-                      <p className="text-neutral-400 text-sm mb-4">{job.description}</p>
+                      <p className="text-muted-foreground text-sm mb-4">{job.description}</p>
                       <button
                         className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
                         style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
@@ -309,9 +309,9 @@ const Careers = () => {
               viewport={{ once: true }}
               className="mt-8 text-center"
             >
-              <p className="text-neutral-400 mb-4">Don't see a position that fits your skills?</p>
+              <p className="text-muted-foreground mb-4">Don't see a position that fits your skills?</p>
               <button
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-accent text-sm text-foreground"
               >
                 Submit Open Application
               </button>
@@ -320,7 +320,7 @@ const Careers = () => {
         </section>
 
         {/* Hiring Process Section */}
-        <section className="py-16 px-4 md:px-8 bg-neutral-900/30">
+        <section className="py-16 px-4 md:px-8 bg-secondary/20">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -328,8 +328,8 @@ const Careers = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Our Hiring Process</h2>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Hiring Process</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 We've designed our process to be straightforward, respectful of your time,
                 and focused on finding the right match.
               </p>
@@ -351,8 +351,8 @@ const Careers = () => {
                   >
                     <span className="font-bold" style={{ color: BRAND_COLOR }}>{step.step}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-sm text-neutral-400">{step.description}</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -360,7 +360,7 @@ const Careers = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
+        <section className="py-24 px-4 md:px-8 relative overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#fd4444]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#fd4444]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -369,7 +369,7 @@ const Careers = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
             >
               Ready to join us?
             </motion.h2>
@@ -379,7 +379,7 @@ const Careers = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-neutral-400 mb-10 max-w-2xl mx-auto"
+              className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto"
             >
               We're always looking for talented individuals who are passionate about
               pushing the boundaries of what's possible with AI.
@@ -402,7 +402,7 @@ const Careers = () => {
               </a>
               <a
                 href="mailto:careers@hanzo.ai"
-                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-base text-white"
+                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-accent text-base text-foreground"
               >
                 careers@hanzo.ai
               </a>

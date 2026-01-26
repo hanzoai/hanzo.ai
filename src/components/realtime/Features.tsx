@@ -19,8 +19,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
       transition={{ duration: 0.5, delay }}
       className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6"
     >
-      <div className="h-12 w-12 rounded-lg bg-purple-900/20 flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 text-purple-400" />
+      <div className="h-12 w-12 rounded-lg bg-red-900/20 flex items-center justify-center mb-4">
+        <Icon className="h-6 w-6 text-[#fd4444]" />
       </div>
       <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{title}</h3>
       <p className="text-neutral-400">{description}</p>

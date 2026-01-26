@@ -9,7 +9,7 @@ const ObservabilityView = () => {
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-[var(--white)]">AI Observability Dashboard</h3>
         <div className="flex space-x-2">
-          <button className="px-2 py-1 bg-purple-600/40 rounded-md text-xs text-purple-200 flex items-center">
+          <button className="px-2 py-1 bg-[#fd4444]/40 rounded-md text-xs text-[#ff6b6b] flex items-center">
             <Activity className="w-3 h-3 mr-1" />
             Real-time
           </button>
@@ -53,7 +53,7 @@ const ObservabilityView = () => {
           {[35, 42, 38, 30, 45, 55, 47, 40, 48, 60, 53, 41, 48, 50, 58, 45, 43, 49, 55, 62].map((value, index) => (
             <motion.div
               key={index}
-              className="bg-purple-500/70 rounded-t w-full"
+              className="bg-[#fd4444]/70 rounded-t w-full"
               style={{ height: `${value}%` }}
               initial={{ height: 0 }}
               animate={{ height: `${value}%` }}
@@ -84,7 +84,7 @@ const ObservabilityView = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-neutral-400">{trace.time}</span>
-                <span className={`${trace.status === "success" ? "text-blue-400" : "text-red-400"}`}>{trace.duration}</span>
+                <span className={`${trace.status === "success" ? "text-[#ff6b6b]" : "text-red-400"}`}>{trace.duration}</span>
               </div>
             </div>
           ))}

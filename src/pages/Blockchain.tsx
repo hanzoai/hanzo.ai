@@ -11,12 +11,8 @@ import {
   Search,
   ArrowLeftRight,
   Shield,
-  Clock,
-  Bell,
-  Mail,
   ArrowRight,
   Check,
-  Network,
   Key,
   Database,
   Globe,
@@ -156,40 +152,44 @@ const CAPABILITIES = [
 
 // Roadmap items
 const ROADMAP = [
-  { phase: "Q2 2025", title: "Nodes & Indexing", status: "in-progress" },
-  { phase: "Q3 2025", title: "Wallet Infrastructure", status: "planned" },
-  { phase: "Q3 2025", title: "Payment Processing", status: "planned" },
-  { phase: "Q4 2025", title: "Cross-Chain & Oracles", status: "planned" },
-  { phase: "Q1 2026", title: "Full Platform Launch", status: "planned" },
+  { phase: "Q4 2025", title: "Nodes & Indexing", status: "complete" },
+  { phase: "Q1 2026", title: "Token & NFT APIs", status: "complete" },
+  { phase: "Q1 2026", title: "Smart Wallets (ERC-4337)", status: "in-progress" },
+  { phase: "Q2 2026", title: "Cross-Chain & Oracles", status: "planned" },
+  { phase: "Q2 2026", title: "DeFi Integrations", status: "planned" },
 ];
 
-// Product pages
+// Product pages - Core APIs
 const PRODUCTS = [
-  { id: "nodes", name: "Hanzo Nodes", description: "Managed RPC endpoints for every chain", icon: Server, color: "#3b82f6", href: "/blockchain/nodes" },
-  { id: "indexer", name: "Hanzo Indexer", description: "Query blockchain data with GraphQL", icon: Search, color: "#10b981", href: "/blockchain/indexer" },
-  { id: "wallet", name: "Hanzo Wallet", description: "Unified wallet infrastructure", icon: Wallet, color: "#f59e0b", href: "/blockchain/wallet" },
-  { id: "safe", name: "Hanzo Safe", description: "Multi-sig & threshold custody", icon: Shield, color: "#8b5cf6", href: "/blockchain/safe" },
-  { id: "id", name: "Hanzo ID", description: "Decentralized identity & credentials", icon: Key, color: "#ec4899", href: "/blockchain/id" },
-  { id: "pay", name: "Hanzo Pay", description: "Crypto payments gateway", icon: CreditCard, color: "#22c55e", href: "/blockchain/pay" },
-  { id: "bridge", name: "Hanzo Bridge", description: "Cross-chain asset transfers", icon: ArrowLeftRight, color: "#06b6d4", href: "/blockchain/bridge" },
-  { id: "defi", name: "Hanzo DeFi", description: "Staking, lending & yield modules", icon: Code, color: "#f97316", href: "/blockchain/defi" },
-  { id: "oracle", name: "Hanzo Oracle", description: "Price feeds & VRF", icon: Radio, color: "#a855f7", href: "/blockchain/oracle" },
-  { id: "storage", name: "Hanzo Storage", description: "IPFS, Arweave & Filecoin", icon: HardDrive, color: "#14b8a6", href: "/blockchain/storage" },
-  { id: "explorer", name: "Hanzo Explorer", description: "Multi-chain block explorer", icon: Search, color: "#6366f1", href: "/blockchain/explorer" },
-  { id: "quest", name: "Hanzo Quest", description: "Gamified engagement & loyalty", icon: Blocks, color: "#eab308", href: "/blockchain/quest" },
+  // Core Infrastructure
+  { id: "chains", name: "Hanzo Chains", description: "Multi-chain RPC endpoints & infrastructure", icon: Server, color: "#3b82f6", href: "/blockchain/chains" },
+  { id: "indexer", name: "Indexer", description: "Query blockchain data with GraphQL", icon: Search, color: "#10b981", href: "/blockchain/indexer" },
+  { id: "wallets", name: "Smart Wallets", description: "ERC-4337 account abstraction wallets", icon: Wallet, color: "#f59e0b", href: "/blockchain/wallets" },
+  { id: "rollups", name: "Rollups", description: "L2 scaling & rollup infrastructure", icon: Blocks, color: "#8b5cf6", href: "/blockchain/rollups" },
+  // Data APIs
+  { id: "tokens", name: "Token API", description: "ERC-20 balances, prices & metadata", icon: Database, color: "#22c55e", href: "/blockchain/tokens" },
+  { id: "nft", name: "NFT API", description: "NFT metadata, ownership & transfers", icon: Blocks, color: "#ec4899", href: "/blockchain/nft" },
+  { id: "transfers", name: "Transfers API", description: "Track token & NFT transfers", icon: ArrowLeftRight, color: "#06b6d4", href: "/blockchain/transfers" },
+  // Trading & DeFi APIs
+  { id: "prices", name: "Prices API", description: "Real-time & historical price feeds", icon: Database, color: "#22c55e", href: "/blockchain/prices" },
+  { id: "dex", name: "DEX API", description: "Swap routing & liquidity aggregation", icon: ArrowLeftRight, color: "#f59e0b", href: "/blockchain/dex" },
+  { id: "oracle", name: "Oracle API", description: "On-chain price oracles & data feeds", icon: Radio, color: "#8b5cf6", href: "/blockchain/oracle" },
+  // Realtime & Events
+  { id: "webhooks", name: "Webhooks", description: "Real-time blockchain event notifications", icon: Radio, color: "#f97316", href: "/blockchain/webhooks" },
+  { id: "websockets", name: "Websockets", description: "Live blockchain data streaming", icon: Radio, color: "#a855f7", href: "/blockchain/websockets" },
+  // Account Abstraction
+  { id: "bundler", name: "Bundler API", description: "ERC-4337 UserOp bundling service", icon: Blocks, color: "#14b8a6", href: "/blockchain/bundler" },
+  { id: "gas", name: "Gas Manager", description: "Sponsor gas for your users", icon: Zap, color: "#eab308", href: "/blockchain/gas" },
+  { id: "simulation", name: "Simulation API", description: "UserOp & transaction simulation", icon: Code, color: "#06b6d4", href: "/blockchain/simulation" },
+  // Debug & Development
+  { id: "debug", name: "Debug API", description: "Transaction tracing & debugging", icon: Code, color: "#64748b", href: "/blockchain/debug" },
+  { id: "trace", name: "Trace API", description: "Internal transaction traces", icon: Search, color: "#94a3b8", href: "/blockchain/trace" },
+  // Payments
+  { id: "pay", name: "Payments", description: "Crypto payments gateway", icon: CreditCard, color: "#3b82f6", href: "/blockchain/pay" },
 ];
 
 const Blockchain = () => {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [expandedCapability, setExpandedCapability] = useState<string | null>(null);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setEmail("");
-    setTimeout(() => setSubmitted(false), 3000);
-  };
 
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
@@ -202,7 +202,7 @@ const Blockchain = () => {
           <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
             style={{
-              background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+              background: `radial-gradient(circle, #fd4444 0%, transparent 70%)`,
               filter: "blur(100px)",
             }}
           />
@@ -215,10 +215,10 @@ const Blockchain = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            {/* Coming Soon Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 mb-6">
-              <Clock className="w-4 h-4 text-purple-400" />
-              <span className="text-sm font-medium text-purple-400">Coming Soon</span>
+            {/* Live Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 mb-6">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-sm font-medium text-green-400">Now Available</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6">
@@ -228,50 +228,35 @@ const Blockchain = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8">
-              Blockchain nodes, wallets, payments, smart contracts, and more—all integrated into the Hanzo platform. Build decentralized applications with the same simplicity as traditional apps.
+              Multi-chain RPC nodes, Token & NFT APIs, Smart Wallets, indexing, and more—all integrated into the Hanzo platform. Build decentralized applications with the same simplicity as traditional apps.
             </p>
 
-            {/* Waitlist Form */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="max-w-md mx-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800">
-                  <Mail className="w-4 h-4 text-neutral-500" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm"
-                    required
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="px-6 py-3 rounded-lg font-medium transition-all"
-                  style={{ backgroundColor: "#8b5cf6" }}
-                >
-                  {submitted ? (
-                    <span className="flex items-center gap-2">
-                      <Check className="w-4 h-4" />
-                      Joined!
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      Join Waitlist
-                      <Bell className="w-4 h-4" />
-                    </span>
-                  )}
-                </Button>
-              </form>
-              <p className="text-xs text-neutral-500 mt-3">
-                Be the first to know when Hanzo Blockchain launches. No spam, ever.
-              </p>
+              <Button
+                className="px-8 py-3 rounded-lg font-medium transition-all"
+                style={{ backgroundColor: "#fd4444" }}
+                onClick={() => window.open('https://cloud.hanzo.ai/signup', '_blank')}
+              >
+                Start Building Free
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button
+                variant="outline"
+                className="px-8 py-3 rounded-lg font-medium border-neutral-700 hover:border-neutral-600"
+                onClick={() => window.location.href = '/pricing?tab=blockchain'}
+              >
+                View Pricing
+              </Button>
             </motion.div>
+            <p className="text-xs text-neutral-500 mt-4">
+              100+ chains supported. No credit card required.
+            </p>
           </motion.div>
 
           {/* Visual Hero Element */}
@@ -279,7 +264,7 @@ const Blockchain = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-transparent p-8 md:p-12"
+            className="rounded-2xl border border-[#fd4444]/20 bg-gradient-to-br from-[#fd4444]/20 to-transparent p-8 md:p-12"
           >
             <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
               {[
@@ -299,8 +284,8 @@ const Blockchain = () => {
                     transition={{ duration: 0.4, delay: 0.3 + idx * 0.05 }}
                     className="flex flex-col items-center gap-2"
                   >
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center">
-                      <Icon className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[#fd4444]/10 border border-[#fd4444]/30 flex items-center justify-center">
+                      <Icon className="w-6 h-6 md:w-8 md:h-8 text-[#fd4444]" />
                     </div>
                     <span className="text-xs md:text-sm text-neutral-400">{item.label}</span>
                   </motion.div>
@@ -324,7 +309,7 @@ const Blockchain = () => {
               Web3 Products
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-              Explore our suite of blockchain services. Each product is in private beta—apply for early access.
+              A complete suite of blockchain APIs and services. Build, deploy, and scale your Web3 applications.
             </p>
           </motion.div>
 
@@ -349,12 +334,12 @@ const Blockchain = () => {
                     >
                       <Icon className="w-5 h-5" style={{ color: product.color }} />
                     </div>
-                    <h3 className="font-semibold text-white mb-1 group-hover:text-purple-400 transition-colors">
+                    <h3 className="font-semibold text-white mb-1 group-hover:text-[#fd4444] transition-colors">
                       {product.name}
                     </h3>
                     <p className="text-sm text-neutral-500">{product.description}</p>
-                    <div className="mt-3 flex items-center gap-1 text-xs text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Apply for beta
+                    <div className="mt-3 flex items-center gap-1 text-xs text-[#fd4444] opacity-0 group-hover:opacity-100 transition-opacity">
+                      Get started
                       <ArrowRight className="w-3 h-3" />
                     </div>
                   </Link>
@@ -399,8 +384,8 @@ const Blockchain = () => {
                     onClick={() => setExpandedCapability(isExpanded ? null : capability.id)}
                     className="w-full p-5 text-left flex items-start gap-4 hover:bg-neutral-800/50 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-purple-400" />
+                    <div className="w-10 h-10 rounded-lg bg-[#fd4444]/10 flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-[#fd4444]" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-2">
@@ -425,7 +410,7 @@ const Blockchain = () => {
                       <ul className="mt-4 space-y-2">
                         {capability.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-neutral-300">
-                            <Check className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                            <Check className="w-4 h-4 text-[#fd4444] shrink-0 mt-0.5" />
                             {feature}
                           </li>
                         ))}
@@ -448,9 +433,9 @@ const Blockchain = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 mb-6">
-                <Zap className="w-4 h-4 text-purple-400" />
-                <span className="text-sm font-medium text-purple-400">Unified Platform</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#fd4444]/30 bg-[#fd4444]/10 mb-6">
+                <Zap className="w-4 h-4 text-[#fd4444]" />
+                <span className="text-sm font-medium text-[#fd4444]">Unified Platform</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
                 AI + Web3.<br />
@@ -467,8 +452,8 @@ const Blockchain = () => {
                   "Cross-chain portfolio management",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 text-neutral-300">
-                    <div className="w-6 h-6 rounded bg-purple-500/10 flex items-center justify-center">
-                      <Check className="w-3.5 h-3.5 text-purple-400" />
+                    <div className="w-6 h-6 rounded bg-[#fd4444]/10 flex items-center justify-center">
+                      <Check className="w-3.5 h-3.5 text-[#fd4444]" />
                     </div>
                     {item}
                   </li>
@@ -547,16 +532,20 @@ await agent.run(\`
                   }`}
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full -translate-x-1/2 bg-purple-500" />
+                  <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full -translate-x-1/2 bg-[#fd4444]" />
 
                   {/* Content */}
                   <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                    <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30 mb-2">
+                    <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[#fd4444]/10 text-[#fd4444] border border-[#fd4444]/30 mb-2">
                       {item.phase}
                     </div>
                     <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                    <span className={`text-sm ${item.status === "in-progress" ? "text-green-400" : "text-neutral-500"}`}>
-                      {item.status === "in-progress" ? "In Progress" : "Planned"}
+                    <span className={`text-sm ${
+                      item.status === "complete" ? "text-green-400" :
+                      item.status === "in-progress" ? "text-yellow-400" : "text-neutral-500"
+                    }`}>
+                      {item.status === "complete" ? "Complete" :
+                       item.status === "in-progress" ? "In Progress" : "Planned"}
                     </span>
                   </div>
                 </motion.div>
@@ -590,18 +579,16 @@ await agent.run(\`
             className="flex flex-wrap justify-center gap-4"
           >
             {[
-              "Ethereum",
-              "Polygon",
-              "Arbitrum",
-              "Optimism",
-              "Base",
-              "Solana",
-              "Cosmos",
-              "Avalanche",
-              "BNB Chain",
-              "Lux",
-              "zkSync",
-              "Starknet",
+              // L1s
+              "Ethereum", "Solana", "Bitcoin", "Avalanche", "BNB Chain", "Cosmos",
+              // L2s & Rollups
+              "Arbitrum", "Optimism", "Base", "Polygon", "zkSync", "Scroll", "Linea", "Blast", "Starknet",
+              // Lux Ecosystem - All Chains
+              "Lux P-Chain", "Lux C-Chain", "Lux A-Chain", "Lux B-Chain", "Lux Z-Chain",
+              "Lux T-Chain", "Lux K-Chain", "Lux Q-Chain", "Lux D-Chain",
+              "Hanzo Network", "Zoo Network", "Pars Network",
+              // Other Networks
+              "Aptos", "Sui", "Sei", "Near", "Tron",
             ].map((chain, index) => (
               <div
                 key={chain}
@@ -621,47 +608,44 @@ await agent.run(\`
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-purple-500/30 bg-gradient-to-br from-purple-900/20 to-transparent p-8 md:p-12 text-center"
+            className="rounded-2xl border border-[#fd4444]/30 bg-gradient-to-br from-[#fd4444]/20 to-transparent p-8 md:p-12 text-center"
           >
-            <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-6">
-              <Blocks className="w-8 h-8 text-purple-400" />
+            <div className="w-16 h-16 rounded-2xl bg-[#fd4444]/10 flex items-center justify-center mx-auto mb-6">
+              <Blocks className="w-8 h-8 text-[#fd4444]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
               Ready to Build on Web3?
             </h2>
             <p className="text-lg text-neutral-400 mb-8 max-w-xl mx-auto">
-              Join the waitlist to be among the first to access Hanzo's Web3 infrastructure when it launches.
+              Start building with multi-chain RPC, Token APIs, NFT APIs, Smart Wallets, and more. No credit card required.
             </p>
 
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-              <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800">
-                <Mail className="w-4 h-4 text-neutral-500" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm"
-                  required
-                />
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button
-                type="submit"
-                className="px-6 py-3 rounded-lg font-medium"
-                style={{ backgroundColor: "#8b5cf6" }}
+                className="px-8 py-3 rounded-lg font-medium"
+                style={{ backgroundColor: "#fd4444" }}
+                onClick={() => window.open('https://cloud.hanzo.ai/signup', '_blank')}
               >
-                {submitted ? "Joined!" : "Join Waitlist"}
+                Get Started Free
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </form>
+              <Button
+                variant="outline"
+                className="px-8 py-3 rounded-lg font-medium border-neutral-700 hover:border-neutral-600"
+                onClick={() => window.location.href = '/pricing?tab=blockchain'}
+              >
+                View Pricing
+              </Button>
+            </div>
 
-            <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-neutral-500">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-neutral-500">
               <span className="flex items-center gap-2">
                 <Lock className="w-4 h-4" />
                 Enterprise-grade security
               </span>
               <span className="flex items-center gap-2">
                 <Globe className="w-4 h-4" />
-                Multi-chain support
+                100+ chains supported
               </span>
               <span className="flex items-center gap-2">
                 <Zap className="w-4 h-4" />

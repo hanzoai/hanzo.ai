@@ -1,46 +1,72 @@
-
 /**
  * Maps feature color strings to Tailwind CSS color classes
  * This is needed because Tailwind doesn't support dynamic class names via string interpolation
+ *
+ * NOTE: All colors now map to brand colors for consistency.
+ * Use 'primary' or 'secondary' for brand color variations.
  */
 export const getColorClasses = (color: string, type: 'gradient' | 'border' | 'text', isHovered: boolean) => {
-  const colorMap = {
+  // All colors now use brand palette
+  const colorMap: Record<string, Record<string, string>> = {
+    // Primary brand color
+    brand: {
+      gradient: isHovered ? 'from-[#fd4444]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#fd4444]/20' : 'border-gray-700/20',
+      text: 'text-[#fd4444]'
+    },
+    primary: {
+      gradient: isHovered ? 'from-[#fd4444]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#fd4444]/20' : 'border-gray-700/20',
+      text: 'text-[#fd4444]'
+    },
+    // Secondary brand color
+    secondary: {
+      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#fd4444]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
+      text: 'text-[#ff6b6b]'
+    },
+    // Legacy color mappings - all redirect to brand colors
+    red: {
+      gradient: isHovered ? 'from-[#fd4444]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#fd4444]/20' : 'border-gray-700/20',
+      text: 'text-[#fd4444]'
+    },
     purple: {
-      gradient: isHovered ? 'from-purple-900/30 to-purple-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-purple-500/20' : 'border-gray-700/20',
-      text: 'text-purple-400'
+      gradient: isHovered ? 'from-[#fd4444]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#fd4444]/20' : 'border-gray-700/20',
+      text: 'text-[#fd4444]'
     },
     blue: {
-      gradient: isHovered ? 'from-blue-900/30 to-blue-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-blue-500/20' : 'border-gray-700/20',
-      text: 'text-blue-400'
+      gradient: isHovered ? 'from-[#fd4444]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#fd4444]/20' : 'border-gray-700/20',
+      text: 'text-[#fd4444]'
     },
     indigo: {
-      gradient: isHovered ? 'from-indigo-900/30 to-indigo-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-indigo-500/20' : 'border-gray-700/20',
-      text: 'text-indigo-400'
+      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#fd4444]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
+      text: 'text-[#ff6b6b]'
     },
     cyan: {
-      gradient: isHovered ? 'from-cyan-900/30 to-cyan-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-cyan-500/20' : 'border-gray-700/20',
-      text: 'text-cyan-400'
-    },
-    emerald: {
-      gradient: isHovered ? 'from-emerald-900/30 to-emerald-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-emerald-500/20' : 'border-gray-700/20',
-      text: 'text-emerald-400'
+      gradient: isHovered ? 'from-[#fd4444]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#fd4444]/20' : 'border-gray-700/20',
+      text: 'text-[#fd4444]'
     },
     amber: {
-      gradient: isHovered ? 'from-amber-900/30 to-amber-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-amber-500/20' : 'border-gray-700/20',
-      text: 'text-amber-400'
+      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#fd4444]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
+      text: 'text-[#ff6b6b]'
     },
     rose: {
-      gradient: isHovered ? 'from-rose-900/30 to-rose-800/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-rose-500/20' : 'border-gray-700/20',
-      text: 'text-rose-400'
+      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#fd4444]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
+      text: 'text-[#ff6b6b]'
+    },
+    orange: {
+      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#fd4444]/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
+      text: 'text-[#ff6b6b]'
     }
   };
 
-  return colorMap[color]?.[type] || colorMap.purple[type];
+  return colorMap[color]?.[type] || colorMap.brand[type];
 };

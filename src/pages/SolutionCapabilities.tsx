@@ -59,13 +59,13 @@ const SolutionCapabilities: React.FC = () => {
                   whileHover={{ y: -5 }}
                   className="relative group rounded-xl border border-gray-800 bg-[var(--black)]/50 p-6 backdrop-blur-sm overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#fd4444]/10 to-[#ff6b6b]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative">
                     <div className="flex items-center justify-between mb-4">
-                      <Icon className="h-6 w-6 text-purple-400" strokeWidth={1.5} />
-                      <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-purple-400 transition-colors" />
+                      <Icon className="h-6 w-6 text-[#fd4444]" strokeWidth={1.5} />
+                      <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-[#fd4444] transition-colors" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-[#fd4444] transition-colors">
                       {item}
                     </h3>
                     <p className="text-neutral-400 text-sm mb-4">
@@ -74,13 +74,13 @@ const SolutionCapabilities: React.FC = () => {
                     </p>
                     
                     <div className="flex flex-wrap gap-2 mt-4">
-                      <Link to={`/solutions/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-xs flex items-center text-purple-400 hover:text-purple-300">
+                      <Link to={`/solutions/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-xs flex items-center text-[#fd4444] hover:text-[#ff6b6b]">
                         <LinkIcon className="h-3 w-3 mr-1" /> Learn more
                       </Link>
-                      <a href="#" className="text-xs flex items-center text-blue-400 hover:text-blue-300">
+                      <a href="#" className="text-xs flex items-center text-[#fd4444] hover:text-[#ff6b6b]">
                         <FileText className="h-3 w-3 mr-1" /> Case study
                       </a>
-                      <a href="#" className="text-xs flex items-center text-green-400 hover:text-green-300">
+                      <a href="#" className="text-xs flex items-center text-[#ff6b6b] hover:text-[#fd4444]">
                         <BookOpen className="h-3 w-3 mr-1" /> White paper
                       </a>
                     </div>
@@ -99,7 +99,7 @@ const SolutionCapabilities: React.FC = () => {
           >
             <button
               onClick={() => toggleSection("Capabilities")}
-              className="inline-flex items-center px-6 py-3 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-[#fd4444] text-[#fd4444] hover:bg-[#fd4444]/10 transition-colors"
             >
               View More Capabilities
               <ChevronRight className="ml-2 h-5 w-5" />
@@ -123,7 +123,7 @@ const SolutionCapabilities: React.FC = () => {
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xs text-neutral-400">Case Study</span>
             <span className="w-1 h-1 rounded-full bg-gray-500"></span>
-            <span className="text-xs px-2 py-1 bg-purple-900/40 rounded-full text-purple-300 border border-purple-500/30">
+            <span className="text-xs px-2 py-1 bg-[#fd4444]/20 rounded-full text-[#fd4444] border border-[#fd4444]/30">
               {industry}
             </span>
           </div>
@@ -132,15 +132,15 @@ const SolutionCapabilities: React.FC = () => {
           
           <div className="space-y-4 mb-6">
             <div className="flex items-start gap-2">
-              <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-[#fd4444] flex-shrink-0 mt-0.5" />
               <p className="text-neutral-400">Reduced development time by 40% through AI-powered automation</p>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-[#fd4444] flex-shrink-0 mt-0.5" />
               <p className="text-neutral-400">Improved customer satisfaction scores by 35% with new digital experiences</p>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-[#fd4444] flex-shrink-0 mt-0.5" />
               <p className="text-neutral-400">Achieved 99.99% uptime with Hanzo's enterprise-grade infrastructure</p>
             </div>
           </div>
@@ -149,11 +149,11 @@ const SolutionCapabilities: React.FC = () => {
             Read Full Case Study <ArrowRight size={16} />
           </Button>
         </div>
-        <div className="col-span-2 bg-gradient-to-br from-purple-900/40 to-blue-900/40 flex items-center justify-center p-8">
+        <div className="col-span-2 bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/20 flex items-center justify-center p-8">
           <div className="flex flex-col items-center text-center">
-            <Award className="h-16 w-16 text-purple-300 mb-4" />
+            <Award className="h-16 w-16 text-[#fd4444] mb-4" />
             <div className="text-4xl font-bold text-[var(--white)] mb-2">200%</div>
-            <div className="text-purple-300">Return on Investment</div>
+            <div className="text-[#fd4444]">Return on Investment</div>
           </div>
         </div>
       </div>
@@ -174,10 +174,10 @@ const SolutionCapabilities: React.FC = () => {
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/20 rounded-xl border border-purple-500/20 p-8">
+          <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#ff6b6b]/10 rounded-xl border border-[#fd4444]/20 p-8">
             <div className="mb-6">
-              <div className="h-16 w-16 rounded-lg bg-purple-900/40 flex items-center justify-center mb-4">
-                <Icon className="h-10 w-10 text-purple-300" />
+              <div className="h-16 w-16 rounded-lg bg-[#fd4444]/20 flex items-center justify-center mb-4">
+                <Icon className="h-10 w-10 text-[#fd4444]" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Enterprise AI Solutions</h3>
               <p className="text-neutral-300">
@@ -190,17 +190,17 @@ const SolutionCapabilities: React.FC = () => {
             <div className="space-y-4 mb-8">
               {featuredService.features.map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-[#fd4444] flex-shrink-0 mt-0.5" />
                   <p className="text-neutral-300">{feature}</p>
                 </div>
               ))}
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Button asChild className="bg-purple-600 hover:bg-purple-700">
+              <Button asChild className="bg-[#fd4444] hover:bg-[#e03e3e]">
                 <Link to="/ai">Explore AI Solutions</Link>
               </Button>
-              <Button asChild variant="outline" className="border-purple-500/40 text-purple-400 hover:bg-purple-500/10">
+              <Button asChild variant="outline" className="border-[#fd4444]/40 text-[#fd4444] hover:bg-[#fd4444]/10">
                 <a href="#">Request Demo</a>
               </Button>
             </div>
@@ -213,29 +213,29 @@ const SolutionCapabilities: React.FC = () => {
                 How a leading investment firm used Hanzo's AI platform to analyze market trends and automate 
                 investment decisions, resulting in a 32% increase in portfolio performance.
               </p>
-              <a href="#" className="text-purple-400 hover:text-purple-300 flex items-center gap-1.5">
+              <a href="#" className="text-[#fd4444] hover:text-[#ff6b6b] flex items-center gap-1.5">
                 Read case study <ArrowRight size={16} />
               </a>
             </div>
-            
+
             <div className="bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 p-6">
               <h4 className="text-lg font-semibold mb-3">White Paper: Enterprise AI Adoption</h4>
               <p className="text-neutral-400 mb-4">
-                Download our comprehensive guide to implementing AI across large organizations, addressing 
+                Download our comprehensive guide to implementing AI across large organizations, addressing
                 challenges around security, compliance, and organizational change.
               </p>
-              <a href="#" className="text-blue-400 hover:text-blue-300 flex items-center gap-1.5">
+              <a href="#" className="text-[#fd4444] hover:text-[#ff6b6b] flex items-center gap-1.5">
                 Download white paper <ArrowRight size={16} />
               </a>
             </div>
-            
+
             <div className="bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 p-6">
               <h4 className="text-lg font-semibold mb-3">Webinar: The Future of GenAI in Enterprise</h4>
               <p className="text-neutral-400 mb-4">
-                Join our expert panel discussing how generative AI is transforming enterprise operations and 
+                Join our expert panel discussing how generative AI is transforming enterprise operations and
                 creating new business opportunities across industries.
               </p>
-              <a href="#" className="text-green-400 hover:text-green-300 flex items-center gap-1.5">
+              <a href="#" className="text-[#ff6b6b] hover:text-[#fd4444] flex items-center gap-1.5">
                 Register now <ArrowRight size={16} />
               </a>
             </div>
@@ -253,7 +253,7 @@ const SolutionCapabilities: React.FC = () => {
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
-        <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/20 p-8 rounded-xl border border-purple-500/20">
+        <div className="bg-gradient-to-br from-[#fd4444]/20 to-[#fd4444]/10 p-8 rounded-xl border border-[#fd4444]/20">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">Case Studies</h3>
           <p className="text-neutral-300 mb-6">
             See how we've helped organizations like yours achieve their goals through innovative solutions.
@@ -261,34 +261,34 @@ const SolutionCapabilities: React.FC = () => {
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-purple-400 mr-3" />
+                <FileText className="h-5 w-5 text-[#fd4444] mr-3" />
                 <span className="text-[var(--white)]">Financial Services Digital Transformation</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-purple-400 mr-3" />
+                <FileText className="h-5 w-5 text-[#fd4444] mr-3" />
                 <span className="text-[var(--white)]">Healthcare AI Implementation</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-purple-400 mr-3" />
+                <FileText className="h-5 w-5 text-[#fd4444] mr-3" />
                 <span className="text-[var(--white)]">Retail Analytics Platform</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-purple-500/40 text-purple-400 hover:bg-purple-500/10">
+            <Button variant="outline" className="border-[#fd4444]/40 text-[#fd4444] hover:bg-[#fd4444]/10">
               View all case studies <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
-        
-        <div className="bg-gradient-to-br from-blue-900/30 to-indigo-900/20 p-8 rounded-xl border border-blue-500/20">
+
+        <div className="bg-gradient-to-br from-[#ff6b6b]/20 to-[#ff6b6b]/10 p-8 rounded-xl border border-[#ff6b6b]/20">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">White Papers</h3>
           <p className="text-neutral-300 mb-6">
             Access our thought leadership and research on the latest industry trends and technologies.
@@ -296,28 +296,28 @@ const SolutionCapabilities: React.FC = () => {
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-blue-400 mr-3" />
+                <BookOpen className="h-5 w-5 text-[#ff6b6b] mr-3" />
                 <span className="text-[var(--white)]">The Future of AI in Enterprise</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-blue-400 mr-3" />
+                <BookOpen className="h-5 w-5 text-[#ff6b6b] mr-3" />
                 <span className="text-[var(--white)]">Cloud Security Best Practices</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-blue-400 mr-3" />
+                <BookOpen className="h-5 w-5 text-[#ff6b6b] mr-3" />
                 <span className="text-[var(--white)]">Digital Transformation Playbook</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-blue-500/40 text-blue-400 hover:bg-blue-500/10">
+            <Button variant="outline" className="border-[#ff6b6b]/40 text-[#ff6b6b] hover:bg-[#ff6b6b]/10">
               View all white papers <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -334,56 +334,56 @@ const SolutionCapabilities: React.FC = () => {
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="p-6 bg-gradient-to-br from-purple-900/50 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-colors">
-          <div className="p-3 rounded-lg bg-purple-500/20 self-start inline-block mb-4">
-            <Users className="h-6 w-6 text-purple-400" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-[#fd4444]/30 to-[#fd4444]/10 rounded-xl border border-[#fd4444]/20 hover:border-[#fd4444]/40 transition-colors">
+          <div className="p-3 rounded-lg bg-[#fd4444]/20 self-start inline-block mb-4">
+            <Users className="h-6 w-6 text-[#fd4444]" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
           <p className="text-neutral-300 mb-5">
-            Our AI-powered creative agency helps brands transform their digital presence with cutting-edge design, 
+            Our AI-powered creative agency helps brands transform their digital presence with cutting-edge design,
             content, and marketing strategies powered by artificial intelligence.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a 
-              href="https://hanzo.agency" 
-              target="_blank" 
+            <a
+              href="https://hanzo.agency"
+              target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-[#fd4444] hover:bg-[#e03e3e] rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Hanzo Agency</span>
               <ExternalLink size={14} />
             </a>
-            <a 
-              href="/contact" 
-              className="flex items-center gap-2 px-5 py-2.5 border border-purple-500/40 hover:border-purple-500 rounded-md text-purple-400 hover:text-purple-300 transition-colors"
+            <a
+              href="/contact"
+              className="flex items-center gap-2 px-5 py-2.5 border border-[#fd4444]/40 hover:border-[#fd4444] rounded-md text-[#fd4444] hover:text-[#ff6b6b] transition-colors"
             >
               <span>Contact us</span>
               <Mail size={14} />
             </a>
           </div>
         </div>
-        <div className="p-6 bg-gradient-to-br from-green-900/50 to-teal-900/30 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-colors">
-          <div className="p-3 rounded-lg bg-green-500/20 self-start inline-block mb-4">
-            <Shield className="h-6 w-6 text-green-400" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-[#ff6b6b]/30 to-[#ff6b6b]/10 rounded-xl border border-[#ff6b6b]/20 hover:border-[#ff6b6b]/40 transition-colors">
+          <div className="p-3 rounded-lg bg-[#ff6b6b]/20 self-start inline-block mb-4">
+            <Shield className="h-6 w-6 text-[#ff6b6b]" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
           <p className="text-neutral-300 mb-5">
-            Our collective of fractional CXOs and industry experts help enterprises implement transformative 
+            Our collective of fractional CXOs and industry experts help enterprises implement transformative
             technology solutions and drive strategic growth initiatives.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a 
-              href="https://sensei.group" 
-              target="_blank" 
+            <a
+              href="https://sensei.group"
+              target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-500 rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-[#ff6b6b] hover:bg-[#fd4444] rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Sensei Group</span>
               <ExternalLink size={14} />
             </a>
-            <a 
-              href="tel:+1234567890" 
-              className="flex items-center gap-2 px-5 py-2.5 border border-green-500/40 hover:border-green-500 rounded-md text-green-400 hover:text-green-300 transition-colors"
+            <a
+              href="tel:+1234567890"
+              className="flex items-center gap-2 px-5 py-2.5 border border-[#ff6b6b]/40 hover:border-[#ff6b6b] rounded-md text-[#ff6b6b] hover:text-[#fd4444] transition-colors"
             >
               <span>Schedule a call</span>
               <Phone size={14} />
@@ -465,14 +465,14 @@ const SolutionCapabilities: React.FC = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-[var(--white)] font-medium transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-[#fd4444] hover:bg-[#e03e3e] text-[var(--white)] font-medium transition-colors"
                 >
                   Get Started
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </a>
                 <a
                   href="tel:+1234567890"
-                  className="inline-flex items-center px-6 py-3 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-500/10 transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg border border-[#fd4444] text-[#fd4444] hover:bg-[#fd4444]/10 transition-colors"
                 >
                   Schedule a Call
                   <Phone className="ml-2 h-5 w-5" />

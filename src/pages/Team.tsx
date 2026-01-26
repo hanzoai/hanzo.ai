@@ -35,11 +35,11 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
+    <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Hanzo Team | AI + Human Integration | Enterprise AI Solutions</title>
-        <meta 
-          name="description" 
+        <title>Hanzo Team | AI + Human Integration | hanzo.team</title>
+        <meta
+          name="description"
           content="Hanzo Team combines autonomous AI agents with human intelligence. Train AI via Zoom calls, monitor real-time work, and benefit from enterprise-grade security and audit features."
         />
       </Helmet>

@@ -15,7 +15,7 @@ const HeroSection = () => {
         {Array(20).fill(0).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute h-1 w-1 rounded-full bg-purple-500"
+            className="absolute h-1 w-1 rounded-full bg-[#fd4444]"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -40,7 +40,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#fd4444]/10 border border-[#fd4444]/30 text-[#ff6b6b] text-sm font-medium mb-6">
             AI-Powered Analytics for Next-Generation Growth
           </div>
           <ChromeText as="h1" className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
@@ -58,7 +58,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
         >
-          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400 border-none">
+          <Button size="lg" className="text-lg px-8 bg-[#fd4444] hover:bg-[#e03e3e] border-none">
             <a href="#start-free-trial">Start Free Trial</a>
           </Button>
           <Button size="lg" variant="outline" className="text-lg px-8">
@@ -77,7 +77,7 @@ const HeroSection = () => {
           <div className="bg-gradient-to-br from-gray-900 to-black p-4 rounded-xl border border-gray-800 shadow-2xl overflow-hidden">
             <div className="flex items-center justify-between mb-4 border-b border-gray-800 pb-2">
               <div className="flex items-center">
-                <LineChart className="h-5 w-5 text-purple-400 mr-2" />
+                <LineChart className="h-5 w-5 text-[#fd4444] mr-2" />
                 <span className="text-[var(--white)] font-medium">Hanzo Analytics Dashboard</span>
               </div>
               <div className="flex space-x-1">
@@ -98,7 +98,7 @@ const HeroSection = () => {
                     <motion.path
                       d="M0,50 L10,40 L20,45 L30,35 L40,38 L50,25 L60,30 L70,20 L80,15 L90,10 L100,5"
                       fill="none"
-                      stroke="#9b87f5"
+                      stroke="#fd4444"
                       strokeWidth="1"
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}
@@ -107,7 +107,7 @@ const HeroSection = () => {
                     <motion.path
                       d="M0,50 L10,42 L20,40 L30,38 L40,30 L50,32 L60,25 L70,28 L80,20 L90,18 L100,15"
                       fill="none"
-                      stroke="#33C3F0"
+                      stroke="#ff6b6b"
                       strokeWidth="1"
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}

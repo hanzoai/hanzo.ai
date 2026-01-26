@@ -44,7 +44,7 @@ const timelineEvents: TimelineEvent[] = [
 const ZenTimeline: React.FC = () => {
   return (
     <div className="relative py-16">
-      <div className="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500/0 via-purple-500/50 to-purple-500/0 transform -translate-x-1/2"></div>
+      <div className="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-[#fd4444]/0 via-[#fd4444]/50 to-[#fd4444]/0 transform -translate-x-1/2"></div>
       
       <div className="max-w-5xl mx-auto">
         {timelineEvents.map((event, index) => (
@@ -56,11 +56,11 @@ const ZenTimeline: React.FC = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={`relative mb-16 flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
           >
-            <div className="absolute left-1/2 top-5 w-5 h-5 rounded-full bg-purple-500 transform -translate-x-1/2 z-10"></div>
-            
+            <div className="absolute left-1/2 top-5 w-5 h-5 rounded-full bg-[#fd4444] transform -translate-x-1/2 z-10"></div>
+
             <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
-              <div className="bg-[var(--black)]/30 backdrop-blur-sm border border-purple-500/20 rounded-lg p-6">
-                <div className="text-purple-400 font-bold mb-2">{event.year}</div>
+              <div className="bg-[var(--black)]/30 backdrop-blur-sm border border-[#fd4444]/20 rounded-lg p-6">
+                <div className="text-[#fd4444] font-bold mb-2">{event.year}</div>
                 <h3 className="text-xl text-[var(--white)] font-bold mb-2">{event.title}</h3>
                 <p className="text-neutral-300">{event.description}</p>
               </div>
