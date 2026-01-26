@@ -2,23 +2,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { 
-  Home, 
-  LayoutDashboard, 
-  Users, 
-  Settings, 
-  FileCog, 
-  Bot, 
-  Search, 
-  ChevronDown, 
-  PlusCircle, 
+import {
+  Home,
+  LayoutDashboard,
+  Users,
+  Settings,
+  FileCog,
+  Bot,
+  Search,
+  ChevronDown,
+  PlusCircle,
   BellDot,
   Database,
   Server,
   Cpu,
   Layers,
   Command,
-  Keyboard
+  Keyboard,
+  Blocks
 } from "lucide-react";
 
 interface DashboardLayoutProps {
@@ -82,8 +83,14 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
               </li>
               <li>
                 <Button variant="ghost" className="w-full justify-start text-neutral-300 hover:bg-gray-900 hover:text-[var(--white)]">
-                  <Server className="w-4 h-4 mr-2" /> 
+                  <Server className="w-4 h-4 mr-2" />
                   Infrastructure
+                </Button>
+              </li>
+              <li>
+                <Button variant="ghost" className="w-full justify-start text-neutral-300 hover:bg-gray-900 hover:text-[var(--white)]" onClick={() => navigate("/dashboard?view=blockchain")}>
+                  <Blocks className="w-4 h-4 mr-2" />
+                  Blockchain
                 </Button>
               </li>
             </ul>
@@ -99,13 +106,13 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
             <ul className="space-y-1">
               <li>
                 <Button variant="ghost" className="w-full justify-start text-neutral-300 hover:bg-gray-900 hover:text-[var(--white)]">
-                  <div className="w-4 h-4 bg-blue-600 rounded-sm flex items-center justify-center text-[10px] mr-2">G</div>
+                  <div className="w-4 h-4 bg-[#fd4444] rounded-sm flex items-center justify-center text-[10px] mr-2">G</div>
                   GPT-4o
                 </Button>
               </li>
               <li>
                 <Button variant="ghost" className="w-full justify-start text-neutral-300 hover:bg-gray-900 hover:text-[var(--white)]">
-                  <div className="w-4 h-4 bg-purple-600 rounded-sm flex items-center justify-center text-[10px] mr-2">C</div>
+                  <div className="w-4 h-4 bg-[#ff6b6b] rounded-sm flex items-center justify-center text-[10px] mr-2">C</div>
                   Claude 3
                 </Button>
               </li>
@@ -134,7 +141,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
               </li>
               <li>
                 <Button variant="ghost" className="w-full justify-start text-neutral-300 hover:bg-gray-900 hover:text-[var(--white)]">
-                  <div className="w-4 h-4 bg-blue-600 rounded-sm flex items-center justify-center text-[10px] mr-2">D</div>
+                  <div className="w-4 h-4 bg-[#fd4444] rounded-sm flex items-center justify-center text-[10px] mr-2">D</div>
                   Design
                 </Button>
               </li>

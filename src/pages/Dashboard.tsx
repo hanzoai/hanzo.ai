@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import KanbanBoard from "@/components/dashboard/KanbanBoard";
 import AgentsList from "@/components/dashboard/AgentsList";
+import BlockchainDashboard from "@/components/dashboard/BlockchainDashboard";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, LayoutGrid, Users, ChartBar, X, Plus, Database, Bot, Activity, Server } from "lucide-react";
+import { PlusCircle, LayoutGrid, Users, ChartBar, X, Plus, Database, Bot, Activity, Server, Blocks } from "lucide-react";
 import CommandPalette from "@/components/dashboard/CommandPalette";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import TabsManager, { TabType } from "@/components/dashboard/TabsManager";
@@ -34,6 +35,12 @@ const Dashboard = () => {
     },
     {
       id: "tab-3",
+      title: "Blockchain",
+      icon: <Blocks className="h-4 w-4" />,
+      content: <BlockchainDashboard />
+    },
+    {
+      id: "tab-4",
       title: "Analytics",
       icon: <ChartBar className="h-4 w-4" />,
       content: (
@@ -105,20 +112,25 @@ const Dashboard = () => {
         icon: <Bot className="h-4 w-4" />, 
         content: <AgentsList /> 
       },
-      { 
-        title: "Analytics", 
-        icon: <ChartBar className="h-4 w-4" />, 
-        content: tabs[2].content 
+      {
+        title: "Blockchain",
+        icon: <Blocks className="h-4 w-4" />,
+        content: <BlockchainDashboard />
       },
-      { 
-        title: "Data Sources", 
-        icon: <Database className="h-4 w-4" />, 
-        content: <div className="p-4">Data Sources content</div> 
+      {
+        title: "Analytics",
+        icon: <ChartBar className="h-4 w-4" />,
+        content: tabs[3].content
       },
-      { 
-        title: "Infrastructure", 
-        icon: <Server className="h-4 w-4" />, 
-        content: <div className="p-4">Infrastructure content</div> 
+      {
+        title: "Data Sources",
+        icon: <Database className="h-4 w-4" />,
+        content: <div className="p-4">Data Sources content</div>
+      },
+      {
+        title: "Infrastructure",
+        icon: <Server className="h-4 w-4" />,
+        content: <div className="p-4">Infrastructure content</div>
       }
     ];
 
