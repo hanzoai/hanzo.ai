@@ -47,6 +47,7 @@ import Datastore from "./pages/Datastore";
 import Commerce from "./pages/Commerce";
 import Extension from "./pages/Extension";
 import Zap from "./pages/Zap";
+import MCP from "./pages/MCP";
 import Base from "./pages/Base";
 import Download from "./pages/Download";
 import Analytics from "./pages/Analytics";
@@ -58,6 +59,7 @@ import HanzoBot from "./pages/HanzoBot";
 import HanzoCode from "./pages/HanzoCode";
 import HanzoDev from "./pages/HanzoDev";
 import Blockchain from "./pages/Blockchain";
+// Legacy blockchain pages
 import HanzoNodes from "./pages/blockchain/HanzoNodes";
 import HanzoIndexer from "./pages/blockchain/HanzoIndexer";
 import HanzoWallet from "./pages/blockchain/HanzoWallet";
@@ -70,6 +72,26 @@ import HanzoOracle from "./pages/blockchain/HanzoOracle";
 import HanzoStorage from "./pages/blockchain/HanzoStorage";
 import HanzoExplorer from "./pages/blockchain/HanzoExplorer";
 import HanzoQuest from "./pages/blockchain/HanzoQuest";
+// New blockchain API pages
+import HanzoChains from "./pages/blockchain/HanzoChains";
+import HanzoRollups from "./pages/blockchain/HanzoRollups";
+import HanzoSmartWallets from "./pages/blockchain/HanzoSmartWallets";
+import HanzoTokens from "./pages/blockchain/HanzoTokens";
+import HanzoNFT from "./pages/blockchain/HanzoNFT";
+import HanzoTransfers from "./pages/blockchain/HanzoTransfers";
+import HanzoWebhooks from "./pages/blockchain/HanzoWebhooks";
+import HanzoWebsockets from "./pages/blockchain/HanzoWebsockets";
+import HanzoBundler from "./pages/blockchain/HanzoBundler";
+import HanzoGas from "./pages/blockchain/HanzoGas";
+// New blockchain infrastructure pages
+import ChainDirectory from "./pages/blockchain/ChainDirectory";
+import HanzoMPC from "./pages/blockchain/HanzoMPC";
+import HanzoExchange from "./pages/blockchain/HanzoExchange";
+import DigitalAssets from "./pages/blockchain/DigitalAssets";
+import HanzoWeb3Cloud from "./pages/blockchain/HanzoWeb3Cloud";
+import HanzoDeFiStack from "./pages/blockchain/HanzoDeFiStack";
+import HanzoIPFS from "./pages/blockchain/HanzoIPFS";
+import HanzoGraph from "./pages/blockchain/HanzoGraph";
 import Vector from "./pages/Vector";
 import Payments from "./pages/Payments";
 import Platform from "./pages/Platform";
@@ -174,6 +196,7 @@ const MarketingRoutes = () => {
       <Route path="/commerce" element={<Commerce />} />
       <Route path="/extension" element={<Extension />} />
       <Route path="/zap" element={<Zap />} />
+      <Route path="/mcp" element={<MCP />} />
       <Route path="/base" element={<Base />} />
       <Route path="/download" element={<Download />} />
       <Route path="/analytics" element={<Analytics />} />
@@ -187,18 +210,43 @@ const MarketingRoutes = () => {
       <Route path="/dev" element={<HanzoDev />} />
       <Route path="/blockchain" element={<Blockchain />} />
       <Route path="/web3" element={<Blockchain />} />
-      <Route path="/blockchain/nodes" element={<HanzoNodes />} />
+      {/* Primary blockchain API routes */}
+      <Route path="/blockchain/chains" element={<HanzoChains />} />
       <Route path="/blockchain/indexer" element={<HanzoIndexer />} />
-      <Route path="/blockchain/wallet" element={<HanzoWallet />} />
-      <Route path="/blockchain/safe" element={<HanzoSafe />} />
-      <Route path="/blockchain/id" element={<HanzoID />} />
+      <Route path="/blockchain/wallets" element={<HanzoSmartWallets />} />
+      <Route path="/blockchain/rollups" element={<HanzoRollups />} />
+      <Route path="/blockchain/tokens" element={<HanzoTokens />} />
+      <Route path="/blockchain/nft" element={<HanzoNFT />} />
+      <Route path="/blockchain/transfers" element={<HanzoTransfers />} />
+      <Route path="/blockchain/webhooks" element={<HanzoWebhooks />} />
+      <Route path="/blockchain/websockets" element={<HanzoWebsockets />} />
+      <Route path="/blockchain/bundler" element={<HanzoBundler />} />
+      <Route path="/blockchain/gas" element={<HanzoGas />} />
       <Route path="/blockchain/pay" element={<HanzoPay />} />
+      {/* Legacy routes - redirect to new pages */}
+      <Route path="/blockchain/nodes" element={<HanzoChains />} />
+      <Route path="/blockchain/wallet" element={<HanzoSmartWallets />} />
+      <Route path="/blockchain/safe" element={<HanzoSmartWallets />} />
+      {/* Other blockchain products */}
+      <Route path="/blockchain/id" element={<HanzoID />} />
       <Route path="/blockchain/bridge" element={<HanzoBridge />} />
       <Route path="/blockchain/defi" element={<HanzoDeFi />} />
       <Route path="/blockchain/oracle" element={<HanzoOracle />} />
       <Route path="/blockchain/storage" element={<HanzoStorage />} />
       <Route path="/blockchain/explorer" element={<HanzoExplorer />} />
       <Route path="/blockchain/quest" element={<HanzoQuest />} />
+      {/* New blockchain infrastructure pages */}
+      <Route path="/blockchain/directory" element={<ChainDirectory />} />
+      <Route path="/blockchain/mpc" element={<HanzoMPC />} />
+      <Route path="/blockchain/exchange" element={<HanzoExchange />} />
+      <Route path="/blockchain/assets" element={<DigitalAssets />} />
+      <Route path="/blockchain/dex" element={<HanzoExchange />} />
+      <Route path="/blockchain/nodes" element={<HanzoWeb3Cloud />} />
+      <Route path="/blockchain/defi" element={<HanzoDeFiStack />} />
+      <Route path="/blockchain/ipfs" element={<HanzoIPFS />} />
+      <Route path="/blockchain/graph" element={<HanzoGraph />} />
+      <Route path="/nodes" element={<HanzoWeb3Cloud />} />
+      <Route path="/defi" element={<HanzoDeFiStack />} />
       <Route path="/vector" element={<Vector />} />
       <Route path="/payments" element={<Payments />} />
       <Route path="/functions" element={<Functions />} />
