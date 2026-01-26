@@ -89,9 +89,11 @@ const HanzoTokens = () => {
         "Ethereum", "Polygon", "Arbitrum", "Optimism", "Base",
         "BNB Chain", "Avalanche", "Fantom", "zkSync", "Linea",
       ]}
-      codeExample={{
-        filename: "tokens.ts",
-        code: `import { HanzoTokens } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "tokens.ts",
+          code: `import { HanzoTokens } from "@hanzo/blockchain";
 
 const tokens = new HanzoTokens({
   apiKey: process.env.HANZO_API_KEY,
@@ -117,7 +119,192 @@ const results = await tokens.search({
   query: "USDC",
   chains: ["ethereum", "polygon"],
 });`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "tokens.py",
+          code: `from hanzo import HanzoTokens
+
+tokens = HanzoTokens(api_key=os.environ["HANZO_API_KEY"])
+
+# Get all token balances for an address
+balances = await tokens.get_balances(
+    address="0x...",
+    chains=["ethereum", "polygon", "arbitrum"],
+    include_spam=False,
+)
+
+# Get token price with history
+price = await tokens.get_price(
+    token="0x...",
+    chain="ethereum",
+    currency="USD",
+    history="24h",
+)
+
+# Search for tokens
+results = await tokens.search(
+    query="USDC",
+    chains=["ethereum", "polygon"],
+)`,
+        },
+        {
+          language: "Go",
+          filename: "tokens.go",
+          code: `package main
+
+import "github.com/hanzoai/hanzo-go/blockchain"
+
+func main() {
+    tokens := blockchain.NewTokensClient(os.Getenv("HANZO_API_KEY"))
+
+    // Get all token balances for an address
+    balances, _ := tokens.GetBalances(ctx, blockchain.BalanceRequest{
+        Address:     "0x...",
+        Chains:      []string{"ethereum", "polygon", "arbitrum"},
+        IncludeSpam: false,
+    })
+
+    // Get token price with history
+    price, _ := tokens.GetPrice(ctx, blockchain.PriceRequest{
+        Token:    "0x...",
+        Chain:    "ethereum",
+        Currency: "USD",
+        History:  "24h",
+    })
+
+    // Search for tokens
+    results, _ := tokens.Search(ctx, blockchain.SearchRequest{
+        Query:  "USDC",
+        Chains: []string{"ethereum", "polygon"},
+    })
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "tokens.rs",
+          code: `use hanzo_blockchain::HanzoTokens;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let tokens = HanzoTokens::new(std::env::var("HANZO_API_KEY")?);
+
+    // Get all token balances for an address
+    let balances = tokens.get_balances(BalanceRequest {
+        address: "0x...".into(),
+        chains: vec!["ethereum", "polygon", "arbitrum"],
+        include_spam: false,
+    }).await?;
+
+    // Get token price with history
+    let price = tokens.get_price(PriceRequest {
+        token: "0x...".into(),
+        chain: "ethereum",
+        currency: "USD",
+        history: "24h",
+    }).await?;
+
+    // Search for tokens
+    let results = tokens.search(SearchRequest {
+        query: "USDC".into(),
+        chains: vec!["ethereum", "polygon"],
+    }).await?;
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "tokens.c",
+          code: `#include <hanzo/blockchain.h>
+
+int main() {
+    hanzo_tokens_t *tokens = hanzo_tokens_new(getenv("HANZO_API_KEY"));
+
+    // Get all token balances for an address
+    const char *chains[] = {"ethereum", "polygon", "arbitrum"};
+    hanzo_balances_t *balances = hanzo_tokens_get_balances(
+        tokens, "0x...", chains, 3, false
+    );
+
+    // Get token price with history
+    hanzo_price_t *price = hanzo_tokens_get_price(
+        tokens, "0x...", "ethereum", "USD", "24h"
+    );
+
+    // Search for tokens
+    const char *search_chains[] = {"ethereum", "polygon"};
+    hanzo_search_result_t *results = hanzo_tokens_search(
+        tokens, "USDC", search_chains, 2
+    );
+
+    hanzo_balances_free(balances);
+    hanzo_price_free(price);
+    hanzo_search_free(results);
+    hanzo_tokens_free(tokens);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "tokens.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+
+int main() {
+    auto tokens = hanzo::Tokens(std::getenv("HANZO_API_KEY"));
+
+    // Get all token balances for an address
+    auto balances = tokens.getBalances({
+        .address = "0x...",
+        .chains = {"ethereum", "polygon", "arbitrum"},
+        .includeSpam = false,
+    });
+
+    // Get token price with history
+    auto price = tokens.getPrice({
+        .token = "0x...",
+        .chain = "ethereum",
+        .currency = "USD",
+        .history = "24h",
+    });
+
+    // Search for tokens
+    auto results = tokens.search({
+        .query = "USDC",
+        .chains = {"ethereum", "polygon"},
+    });
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "tokens.rb",
+          code: `require 'hanzo/blockchain'
+
+tokens = Hanzo::Tokens.new(api_key: ENV['HANZO_API_KEY'])
+
+# Get all token balances for an address
+balances = tokens.get_balances(
+  address: '0x...',
+  chains: ['ethereum', 'polygon', 'arbitrum'],
+  include_spam: false
+)
+
+# Get token price with history
+price = tokens.get_price(
+  token: '0x...',
+  chain: 'ethereum',
+  currency: 'USD',
+  history: '24h'
+)
+
+# Search for tokens
+results = tokens.search(
+  query: 'USDC',
+  chains: ['ethereum', 'polygon']
+)`,
+        },
+      ]}
     />
   );
 };

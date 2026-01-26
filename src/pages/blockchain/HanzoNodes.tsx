@@ -100,9 +100,11 @@ const HanzoNodes = () => {
         "zkSync",
         "Scroll",
       ]}
-      codeExample={{
-        filename: "example.ts",
-        code: `import { HanzoNodes } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "nodes.ts",
+          code: `import { HanzoNodes } from "@hanzo/blockchain";
 
 const nodes = new HanzoNodes({
   apiKey: process.env.HANZO_API_KEY,
@@ -120,8 +122,203 @@ const subscription = nodes.lux.subscribe("newHeads", (block) => {
 const balance = await nodes.eth.call({
   to: "0x...",
   data: "0x70a08231000000000000000000000000...",
-});`,
-      }}
+});
+
+// Multi-chain balance check
+const balances = await nodes.multiCall([
+  { chain: "ethereum", method: "eth_getBalance", params: [address] },
+  { chain: "lux", method: "eth_getBalance", params: [address] },
+]);`,
+        },
+        {
+          language: "Python",
+          filename: "nodes.py",
+          code: `from hanzo import HanzoNodes
+import os
+
+nodes = HanzoNodes(api_key=os.environ["HANZO_API_KEY"])
+
+# Get the latest block from Ethereum
+block = await nodes.eth.get_block_number()
+
+# Subscribe to new blocks on Lux
+async for block in nodes.lux.subscribe("newHeads"):
+    print(f"New block: {block['number']}")
+
+# Call a contract method
+balance = await nodes.eth.call(
+    to="0x...",
+    data="0x70a08231000000000000000000000000..."
+)
+
+# Multi-chain balance check
+balances = await nodes.multi_call([
+    {"chain": "ethereum", "method": "eth_getBalance", "params": [address]},
+    {"chain": "lux", "method": "eth_getBalance", "params": [address]},
+])`,
+        },
+        {
+          language: "Go",
+          filename: "nodes.go",
+          code: `package main
+
+import (
+    "fmt"
+    "os"
+    "github.com/hanzoai/hanzo-go/blockchain"
+)
+
+func main() {
+    nodes := blockchain.NewNodes(os.Getenv("HANZO_API_KEY"))
+
+    // Get the latest block from Ethereum
+    block, _ := nodes.Eth.GetBlockNumber(ctx)
+
+    // Subscribe to new blocks on Lux
+    sub := nodes.Lux.Subscribe(ctx, "newHeads")
+    for block := range sub.Blocks() {
+        fmt.Printf("New block: %d\\n", block.Number)
+    }
+
+    // Call a contract method
+    balance, _ := nodes.Eth.Call(ctx, blockchain.CallOpts{
+        To:   "0x...",
+        Data: "0x70a08231000000000000000000000000...",
+    })
+
+    // Multi-chain balance check
+    balances, _ := nodes.MultiCall(ctx, []blockchain.Call{
+        {Chain: "ethereum", Method: "eth_getBalance", Params: []any{address}},
+        {Chain: "lux", Method: "eth_getBalance", Params: []any{address}},
+    })
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "nodes.rs",
+          code: `use hanzo_blockchain::Nodes;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let nodes = Nodes::new(std::env::var("HANZO_API_KEY")?);
+
+    // Get the latest block from Ethereum
+    let block = nodes.eth().get_block_number().await?;
+
+    // Subscribe to new blocks on Lux
+    let mut stream = nodes.lux().subscribe("newHeads").await?;
+    while let Some(block) = stream.next().await {
+        println!("New block: {}", block.number);
+    }
+
+    // Call a contract method
+    let balance = nodes.eth().call(CallOpts {
+        to: "0x...".into(),
+        data: "0x70a08231000000000000000000000000...".into(),
+    }).await?;
+
+    // Multi-chain balance check
+    let balances = nodes.multi_call(vec![
+        Call::new("ethereum", "eth_getBalance", vec![address]),
+        Call::new("lux", "eth_getBalance", vec![address]),
+    ]).await?;
+
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "nodes.c",
+          code: `#include <hanzo/blockchain.h>
+
+int main() {
+    hanzo_nodes_t *nodes = hanzo_nodes_new(getenv("HANZO_API_KEY"));
+
+    // Get the latest block from Ethereum
+    uint64_t block = hanzo_eth_get_block_number(nodes);
+
+    // Subscribe to new blocks on Lux
+    hanzo_subscription_t *sub = hanzo_lux_subscribe(nodes, "newHeads");
+    hanzo_block_t blk;
+    while (hanzo_subscription_next(sub, &blk)) {
+        printf("New block: %llu\\n", blk.number);
+    }
+
+    // Call a contract method
+    char *balance = hanzo_eth_call(nodes, "0x...",
+        "0x70a08231000000000000000000000000...");
+
+    // Multi-chain balance check
+    hanzo_call_t calls[] = {
+        {"ethereum", "eth_getBalance", address},
+        {"lux", "eth_getBalance", address},
+    };
+    hanzo_multi_call(nodes, calls, 2);
+
+    hanzo_nodes_free(nodes);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "nodes.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+#include <iostream>
+
+int main() {
+    auto nodes = hanzo::Nodes(std::getenv("HANZO_API_KEY"));
+
+    // Get the latest block from Ethereum
+    auto block = nodes.eth().getBlockNumber();
+
+    // Subscribe to new blocks on Lux
+    nodes.lux().subscribe("newHeads", [](auto block) {
+        std::cout << "New block: " << block.number << std::endl;
+    });
+
+    // Call a contract method
+    auto balance = nodes.eth().call({
+        .to = "0x...",
+        .data = "0x70a08231000000000000000000000000..."
+    });
+
+    // Multi-chain balance check
+    auto balances = nodes.multiCall({
+        {"ethereum", "eth_getBalance", {address}},
+        {"lux", "eth_getBalance", {address}},
+    });
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "nodes.rb",
+          code: `require 'hanzo/blockchain'
+
+nodes = Hanzo::Nodes.new(api_key: ENV['HANZO_API_KEY'])
+
+# Get the latest block from Ethereum
+block = nodes.eth.get_block_number
+
+# Subscribe to new blocks on Lux
+nodes.lux.subscribe('newHeads') do |block|
+  puts "New block: #{block[:number]}"
+end
+
+# Call a contract method
+balance = nodes.eth.call(
+  to: '0x...',
+  data: '0x70a08231000000000000000000000000...'
+)
+
+# Multi-chain balance check
+balances = nodes.multi_call([
+  { chain: 'ethereum', method: 'eth_getBalance', params: [address] },
+  { chain: 'lux', method: 'eth_getBalance', params: [address] },
+])`,
+        },
+      ]}
     />
   );
 };

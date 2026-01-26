@@ -91,13 +91,13 @@ const HanzoBridge = () => {
         "BNB Chain",
         "Solana",
       ]}
-      codeExample={{
-        filename: "bridge.ts",
-        code: `import { HanzoBridge } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "bridge.ts",
+          code: `import { HanzoBridge } from "@hanzo/blockchain";
 
-const bridge = new HanzoBridge({
-  apiKey: process.env.HANZO_API_KEY,
-});
+const bridge = new HanzoBridge({ apiKey: process.env.HANZO_API_KEY });
 
 // Get a quote for bridging
 const quote = await bridge.getQuote({
@@ -110,10 +110,10 @@ const quote = await bridge.getQuote({
 console.log(quote.estimatedTime); // "~2 minutes"
 console.log(quote.fees); // { bridge: "0.1%", gas: "~$2" }
 
-// Execute the bridge
+// Execute the bridge transfer
 const tx = await bridge.transfer({
   quoteId: quote.id,
-  recipient: "0x...", // Address on destination chain
+  recipient: "0x...",
   wallet: userWallet,
 });
 
@@ -121,7 +121,194 @@ const tx = await bridge.transfer({
 bridge.onStatusChange(tx.id, (status) => {
   console.log(status); // "pending" -> "confirming" -> "completed"
 });`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "bridge.py",
+          code: `from hanzo import HanzoBridge
+import os
+
+bridge = HanzoBridge(api_key=os.environ["HANZO_API_KEY"])
+
+# Get a quote for bridging
+quote = await bridge.get_quote(
+    from_chain="ethereum",
+    to_chain="lux",
+    token="USDC",
+    amount="1000000000"  # 1000 USDC
+)
+
+print(f"Estimated time: {quote.estimated_time}")
+print(f"Fees: {quote.fees}")
+
+# Execute the bridge transfer
+tx = await bridge.transfer(
+    quote_id=quote.id,
+    recipient="0x...",
+    wallet=user_wallet
+)
+
+# Track progress
+async for status in bridge.track_status(tx.id):
+    print(f"Status: {status}")  # pending -> confirming -> completed`,
+        },
+        {
+          language: "Go",
+          filename: "bridge.go",
+          code: `package main
+
+import "github.com/hanzoai/hanzo-go/blockchain"
+
+func main() {
+    bridge := blockchain.NewBridge(os.Getenv("HANZO_API_KEY"))
+
+    // Get a quote for bridging
+    quote, _ := bridge.GetQuote(ctx, &blockchain.QuoteRequest{
+        FromChain: "ethereum",
+        ToChain:   "lux",
+        Token:     "USDC",
+        Amount:    "1000000000", // 1000 USDC
+    })
+
+    fmt.Printf("Est. time: %s, Fees: %v\\n", quote.EstimatedTime, quote.Fees)
+
+    // Execute the bridge transfer
+    tx, _ := bridge.Transfer(ctx, &blockchain.TransferRequest{
+        QuoteID:   quote.ID,
+        Recipient: "0x...",
+        Wallet:    userWallet,
+    })
+
+    // Track progress
+    for status := range bridge.TrackStatus(ctx, tx.ID) {
+        fmt.Printf("Status: %s\\n", status)
+    }
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "bridge.rs",
+          code: `use hanzo_blockchain::Bridge;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let bridge = Bridge::new(std::env::var("HANZO_API_KEY")?);
+
+    // Get a quote for bridging
+    let quote = bridge.get_quote(QuoteRequest {
+        from_chain: "ethereum",
+        to_chain: "lux",
+        token: "USDC",
+        amount: "1000000000", // 1000 USDC
+    }).await?;
+
+    println!("Est. time: {}, Fees: {:?}", quote.estimated_time, quote.fees);
+
+    // Execute the bridge transfer
+    let tx = bridge.transfer(TransferRequest {
+        quote_id: quote.id,
+        recipient: "0x...".into(),
+        wallet: user_wallet,
+    }).await?;
+
+    // Track progress
+    let mut stream = bridge.track_status(tx.id).await?;
+    while let Some(status) = stream.next().await {
+        println!("Status: {}", status);
+    }
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "bridge.c",
+          code: `#include <hanzo/blockchain.h>
+
+int main() {
+    hanzo_bridge_t *bridge = hanzo_bridge_new(getenv("HANZO_API_KEY"));
+
+    // Get a quote for bridging
+    hanzo_quote_t quote;
+    hanzo_bridge_get_quote(bridge, &quote, "ethereum", "lux", "USDC", "1000000000");
+
+    printf("Est. time: %s, Fees: %s\\n", quote.estimated_time, quote.fees);
+
+    // Execute the bridge transfer
+    hanzo_tx_t tx;
+    hanzo_bridge_transfer(bridge, &tx, quote.id, "0x...");
+
+    // Track progress
+    hanzo_status_t status;
+    while (hanzo_bridge_track(bridge, tx.id, &status)) {
+        printf("Status: %s\\n", status.state);
+    }
+
+    hanzo_bridge_free(bridge);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "bridge.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+
+int main() {
+    auto bridge = hanzo::Bridge(std::getenv("HANZO_API_KEY"));
+
+    // Get a quote for bridging
+    auto quote = bridge.get_quote({
+        .from_chain = "ethereum",
+        .to_chain = "lux",
+        .token = "USDC",
+        .amount = "1000000000"  // 1000 USDC
+    });
+
+    std::cout << "Est. time: " << quote.estimated_time << std::endl;
+
+    // Execute the bridge transfer
+    auto tx = bridge.transfer({
+        .quote_id = quote.id,
+        .recipient = "0x..."
+    });
+
+    // Track progress
+    bridge.track_status(tx.id, [](auto status) {
+        std::cout << "Status: " << status << std::endl;
+    });
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "bridge.rb",
+          code: `require 'hanzo/blockchain'
+
+bridge = Hanzo::Bridge.new(api_key: ENV['HANZO_API_KEY'])
+
+# Get a quote for bridging
+quote = bridge.get_quote(
+  from_chain: 'ethereum',
+  to_chain: 'lux',
+  token: 'USDC',
+  amount: '1000000000'  # 1000 USDC
+)
+
+puts "Est. time: #{quote.estimated_time}, Fees: #{quote.fees}"
+
+# Execute the bridge transfer
+tx = bridge.transfer(
+  quote_id: quote.id,
+  recipient: '0x...',
+  wallet: user_wallet
+)
+
+# Track progress
+bridge.track_status(tx.id) do |status|
+  puts "Status: #{status}"  # pending -> confirming -> completed
+end`,
+        },
+      ]}
     />
   );
 };

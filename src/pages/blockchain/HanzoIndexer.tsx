@@ -90,42 +90,169 @@ const HanzoIndexer = () => {
         "Avalanche",
         "BNB Chain",
       ]}
-      codeExample={{
-        filename: "query.graphql",
-        code: `# Query token transfers for an address
-query GetTransfers($address: String!) {
-  transfers(
-    where: { from: $address }
-    orderBy: timestamp
-    orderDirection: desc
-    first: 100
-  ) {
-    id
-    from
-    to
-    value
-    token {
-      symbol
-      decimals
-    }
-    transaction {
-      hash
-      blockNumber
-    }
-    timestamp
-  }
-}
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "indexer.ts",
+          code: `import { HanzoIndexer } from "@hanzo/blockchain";
 
-# Subscribe to new swaps on a DEX
-subscription OnSwap($pair: String!) {
-  swaps(where: { pair: $pair }) {
-    amount0In
-    amount1Out
-    sender
-    timestamp
+const indexer = new HanzoIndexer({ apiKey: process.env.HANZO_API_KEY });
+
+// Query token transfers
+const transfers = await indexer.query(\`
+  query GetTransfers($address: String!) {
+    transfers(where: { from: $address }, first: 100) {
+      id, from, to, value
+      token { symbol, decimals }
+    }
   }
+\`, { address: "0x..." });
+
+// Subscribe to DEX swaps
+indexer.subscribe("swaps", { pair: "ETH/USDC" }, (swap) => {
+  console.log("Swap:", swap.amount0In, "->", swap.amount1Out);
+});`,
+        },
+        {
+          language: "Python",
+          filename: "indexer.py",
+          code: `from hanzo import HanzoIndexer
+
+indexer = HanzoIndexer(api_key=os.environ["HANZO_API_KEY"])
+
+# Query token transfers
+transfers = await indexer.query("""
+  query GetTransfers($address: String!) {
+    transfers(where: { from: $address }, first: 100) {
+      id, from, to, value
+      token { symbol, decimals }
+    }
+  }
+""", {"address": "0x..."})
+
+# Subscribe to DEX swaps
+async for swap in indexer.subscribe("swaps", pair="ETH/USDC"):
+    print(f"Swap: {swap['amount0In']} -> {swap['amount1Out']}")`,
+        },
+        {
+          language: "Go",
+          filename: "indexer.go",
+          code: `package main
+
+import "github.com/hanzoai/hanzo-go/blockchain"
+
+func main() {
+    indexer := blockchain.NewIndexer(os.Getenv("HANZO_API_KEY"))
+
+    // Query token transfers
+    var transfers []Transfer
+    indexer.Query(ctx, &transfers, \`
+      query GetTransfers($address: String!) {
+        transfers(where: { from: $address }, first: 100) {
+          id, from, to, value
+        }
+      }
+    \`, map[string]any{"address": "0x..."})
+
+    // Subscribe to DEX swaps
+    sub := indexer.Subscribe(ctx, "swaps", blockchain.Filter{Pair: "ETH/USDC"})
+    for swap := range sub.Events() {
+        fmt.Printf("Swap: %s -> %s\\n", swap.Amount0In, swap.Amount1Out)
+    }
 }`,
-      }}
+        },
+        {
+          language: "Rust",
+          filename: "indexer.rs",
+          code: `use hanzo_blockchain::Indexer;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let indexer = Indexer::new(std::env::var("HANZO_API_KEY")?);
+
+    // Query token transfers
+    let transfers: Vec<Transfer> = indexer.query(r#"
+      query GetTransfers($address: String!) {
+        transfers(where: { from: $address }, first: 100) {
+          id, from, to, value
+        }
+      }
+    "#, json!({"address": "0x..."})).await?;
+
+    // Subscribe to DEX swaps
+    let mut stream = indexer.subscribe("swaps", Filter::pair("ETH/USDC")).await?;
+    while let Some(swap) = stream.next().await {
+        println!("Swap: {} -> {}", swap.amount0_in, swap.amount1_out);
+    }
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "indexer.c",
+          code: `#include <hanzo/blockchain.h>
+
+int main() {
+    hanzo_indexer_t *idx = hanzo_indexer_new(getenv("HANZO_API_KEY"));
+
+    // Query token transfers
+    const char *query = "query { transfers(first: 100) { id from to value } }";
+    hanzo_result_t *result = hanzo_indexer_query(idx, query, NULL);
+
+    // Subscribe to DEX swaps
+    hanzo_sub_t *sub = hanzo_indexer_subscribe(idx, "swaps", "ETH/USDC");
+    hanzo_event_t event;
+    while (hanzo_sub_next(sub, &event)) {
+        printf("Swap: %s -> %s\\n", event.amount0_in, event.amount1_out);
+    }
+
+    hanzo_indexer_free(idx);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "indexer.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+
+int main() {
+    auto indexer = hanzo::Indexer(std::getenv("HANZO_API_KEY"));
+
+    // Query token transfers
+    auto transfers = indexer.query<std::vector<Transfer>>(R"(
+      query { transfers(first: 100) { id from to value } }
+    )");
+
+    // Subscribe to DEX swaps
+    indexer.subscribe("swaps", {{"pair", "ETH/USDC"}}, [](auto swap) {
+        std::cout << "Swap: " << swap.amount0_in << " -> " << swap.amount1_out << std::endl;
+    });
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "indexer.rb",
+          code: `require 'hanzo/blockchain'
+
+indexer = Hanzo::Indexer.new(api_key: ENV['HANZO_API_KEY'])
+
+# Query token transfers
+transfers = indexer.query(<<~GRAPHQL, address: '0x...')
+  query GetTransfers($address: String!) {
+    transfers(where: { from: $address }, first: 100) {
+      id, from, to, value
+    }
+  }
+GRAPHQL
+
+# Subscribe to DEX swaps
+indexer.subscribe('swaps', pair: 'ETH/USDC') do |swap|
+  puts "Swap: #{swap[:amount0_in]} -> #{swap[:amount1_out]}"
+end`,
+        },
+      ]}
     />
   );
 };

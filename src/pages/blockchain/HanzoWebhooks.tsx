@@ -89,9 +89,11 @@ const HanzoWebhooks = () => {
         "Ethereum", "Polygon", "Arbitrum", "Optimism", "Base",
         "BNB Chain", "Avalanche", "zkSync", "Scroll", "Linea",
       ]}
-      codeExample={{
-        filename: "webhooks.ts",
-        code: `import { HanzoWebhooks } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "webhooks.ts",
+          code: `import { HanzoWebhooks } from "@hanzo/blockchain";
 
 const webhooks = new HanzoWebhooks({
   apiKey: process.env.HANZO_API_KEY,
@@ -115,7 +117,187 @@ const isValid = webhooks.verifySignature({
   signature: req.headers["x-hanzo-signature"],
   secret: process.env.WEBHOOK_SECRET,
 });`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "webhooks.py",
+          code: `from hanzo_blockchain import HanzoWebhooks
+
+webhooks = HanzoWebhooks(api_key=os.environ["HANZO_API_KEY"])
+
+# Create a webhook subscription
+subscription = webhooks.create(
+    url="https://api.myapp.com/webhook",
+    events=["transfer", "contract_event"],
+    chains=["ethereum", "polygon"],
+    filters={
+        "address": "0x...",
+        "min_value": "1000000000000000000",  # 1 ETH
+    },
+    confirmations=12,
+)
+
+# Verify webhook signature
+is_valid = webhooks.verify_signature(
+    payload=request.data,
+    signature=request.headers["X-Hanzo-Signature"],
+    secret=os.environ["WEBHOOK_SECRET"],
+)`,
+        },
+        {
+          language: "Go",
+          filename: "webhooks.go",
+          code: `package main
+
+import (
+    "os"
+    hanzo "github.com/hanzoai/blockchain-go"
+)
+
+func main() {
+    webhooks := hanzo.NewWebhooks(os.Getenv("HANZO_API_KEY"))
+
+    // Create a webhook subscription
+    subscription, err := webhooks.Create(&hanzo.WebhookConfig{
+        URL:    "https://api.myapp.com/webhook",
+        Events: []string{"transfer", "contract_event"},
+        Chains: []string{"ethereum", "polygon"},
+        Filters: &hanzo.WebhookFilters{
+            Address:  "0x...",
+            MinValue: "1000000000000000000", // 1 ETH
+        },
+        Confirmations: 12,
+    })
+
+    // Verify webhook signature
+    isValid := webhooks.VerifySignature(
+        payload,
+        r.Header.Get("X-Hanzo-Signature"),
+        os.Getenv("WEBHOOK_SECRET"),
+    )
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "webhooks.rs",
+          code: `use hanzo_blockchain::{HanzoWebhooks, WebhookConfig, WebhookFilters};
+use std::env;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let webhooks = HanzoWebhooks::new(&env::var("HANZO_API_KEY")?);
+
+    // Create a webhook subscription
+    let subscription = webhooks.create(WebhookConfig {
+        url: "https://api.myapp.com/webhook".into(),
+        events: vec!["transfer".into(), "contract_event".into()],
+        chains: vec!["ethereum".into(), "polygon".into()],
+        filters: Some(WebhookFilters {
+            address: Some("0x...".into()),
+            min_value: Some("1000000000000000000".into()), // 1 ETH
+        }),
+        confirmations: 12,
+    }).await?;
+
+    // Verify webhook signature
+    let is_valid = webhooks.verify_signature(
+        &payload,
+        &headers["x-hanzo-signature"],
+        &env::var("WEBHOOK_SECRET")?,
+    );
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "webhooks.c",
+          code: `#include <hanzo/blockchain.h>
+#include <stdlib.h>
+
+int main() {
+    hanzo_webhooks_t *webhooks = hanzo_webhooks_new(getenv("HANZO_API_KEY"));
+
+    // Create a webhook subscription
+    hanzo_webhook_config_t config = {
+        .url = "https://api.myapp.com/webhook",
+        .events = (const char*[]){"transfer", "contract_event"},
+        .events_count = 2,
+        .chains = (const char*[]){"ethereum", "polygon"},
+        .chains_count = 2,
+        .filter_address = "0x...",
+        .filter_min_value = "1000000000000000000", // 1 ETH
+        .confirmations = 12,
+    };
+    hanzo_subscription_t *subscription = hanzo_webhooks_create(webhooks, &config);
+
+    // Verify webhook signature
+    int is_valid = hanzo_webhooks_verify_signature(
+        webhooks, payload, signature, getenv("WEBHOOK_SECRET")
+    );
+
+    hanzo_subscription_free(subscription);
+    hanzo_webhooks_free(webhooks);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "webhooks.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+#include <cstdlib>
+
+int main() {
+    auto webhooks = hanzo::Webhooks(std::getenv("HANZO_API_KEY"));
+
+    // Create a webhook subscription
+    auto subscription = webhooks.create({
+        .url = "https://api.myapp.com/webhook",
+        .events = {"transfer", "contract_event"},
+        .chains = {"ethereum", "polygon"},
+        .filters = {
+            .address = "0x...",
+            .min_value = "1000000000000000000", // 1 ETH
+        },
+        .confirmations = 12,
+    });
+
+    // Verify webhook signature
+    bool is_valid = webhooks.verify_signature(
+        payload,
+        headers["X-Hanzo-Signature"],
+        std::getenv("WEBHOOK_SECRET")
+    );
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "webhooks.rb",
+          code: `require 'hanzo/blockchain'
+
+webhooks = Hanzo::Webhooks.new(api_key: ENV['HANZO_API_KEY'])
+
+# Create a webhook subscription
+subscription = webhooks.create(
+  url: 'https://api.myapp.com/webhook',
+  events: ['transfer', 'contract_event'],
+  chains: ['ethereum', 'polygon'],
+  filters: {
+    address: '0x...',
+    min_value: '1000000000000000000' # 1 ETH
+  },
+  confirmations: 12
+)
+
+# Verify webhook signature
+is_valid = webhooks.verify_signature(
+  payload: request.body.read,
+  signature: request.headers['X-Hanzo-Signature'],
+  secret: ENV['WEBHOOK_SECRET']
+)`,
+        },
+      ]}
     />
   );
 };

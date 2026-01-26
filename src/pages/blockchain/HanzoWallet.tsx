@@ -91,9 +91,11 @@ const HanzoWallet = () => {
         "BNB Chain",
         "zkSync",
       ]}
-      codeExample={{
-        filename: "wallet.ts",
-        code: `import { HanzoWallet } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "wallet.ts",
+          code: `import { HanzoWallet } from "@hanzo/blockchain";
 
 // Create an embedded wallet for a user
 const wallet = await HanzoWallet.createEmbedded({
@@ -101,20 +103,167 @@ const wallet = await HanzoWallet.createEmbedded({
   authMethod: "email", // or "google", "passkey"
 });
 
-// Sign a transaction
+// Sign and send a transaction
 const tx = await wallet.sendTransaction({
   to: "0x...",
   value: "1000000000000000000", // 1 ETH
   chainId: 1,
 });
 
-// Or use server wallets for backend
-const serverWallet = HanzoWallet.server({
-  walletId: "wallet_abc",
-});
-
+// Server wallet for backend automation
+const serverWallet = HanzoWallet.server({ walletId: "wallet_abc" });
 const signature = await serverWallet.signMessage("Hello, Web3!");`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "wallet.py",
+          code: `from hanzo import HanzoWallet
+
+# Create an embedded wallet for a user
+wallet = await HanzoWallet.create_embedded(
+    user_id="user_123",
+    auth_method="email"  # or "google", "passkey"
+)
+
+# Sign and send a transaction
+tx = await wallet.send_transaction(
+    to="0x...",
+    value="1000000000000000000",  # 1 ETH
+    chain_id=1
+)
+
+# Server wallet for backend automation
+server_wallet = HanzoWallet.server(wallet_id="wallet_abc")
+signature = await server_wallet.sign_message("Hello, Web3!")`,
+        },
+        {
+          language: "Go",
+          filename: "wallet.go",
+          code: `package main
+
+import "github.com/hanzoai/hanzo-go/blockchain"
+
+func main() {
+    // Create an embedded wallet for a user
+    wallet, _ := blockchain.CreateEmbeddedWallet(ctx, blockchain.EmbeddedOpts{
+        UserID:     "user_123",
+        AuthMethod: "email",
+    })
+
+    // Sign and send a transaction
+    tx, _ := wallet.SendTransaction(ctx, blockchain.TxRequest{
+        To:      "0x...",
+        Value:   "1000000000000000000",
+        ChainID: 1,
+    })
+
+    // Server wallet for backend automation
+    serverWallet := blockchain.ServerWallet("wallet_abc")
+    sig, _ := serverWallet.SignMessage(ctx, "Hello, Web3!")
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "wallet.rs",
+          code: `use hanzo_blockchain::{Wallet, EmbeddedOpts};
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    // Create an embedded wallet for a user
+    let wallet = Wallet::create_embedded(EmbeddedOpts {
+        user_id: "user_123",
+        auth_method: "email",
+    }).await?;
+
+    // Sign and send a transaction
+    let tx = wallet.send_transaction(TxRequest {
+        to: "0x...".parse()?,
+        value: "1000000000000000000".parse()?,
+        chain_id: 1,
+    }).await?;
+
+    // Server wallet for backend automation
+    let server_wallet = Wallet::server("wallet_abc");
+    let sig = server_wallet.sign_message("Hello, Web3!").await?;
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "wallet.c",
+          code: `#include <hanzo/blockchain.h>
+
+int main() {
+    // Create an embedded wallet for a user
+    hanzo_wallet_t *wallet = hanzo_wallet_create_embedded(
+        "user_123", "email"
+    );
+
+    // Sign and send a transaction
+    hanzo_tx_t tx = {
+        .to = "0x...",
+        .value = "1000000000000000000",
+        .chain_id = 1
+    };
+    hanzo_wallet_send_tx(wallet, &tx);
+
+    // Server wallet for backend automation
+    hanzo_wallet_t *server = hanzo_wallet_server("wallet_abc");
+    char *sig = hanzo_wallet_sign_message(server, "Hello, Web3!");
+
+    hanzo_wallet_free(wallet);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "wallet.cpp",
+          code: `#include <hanzo/blockchain.hpp>
+
+int main() {
+    // Create an embedded wallet for a user
+    auto wallet = hanzo::Wallet::createEmbedded({
+        .userId = "user_123",
+        .authMethod = "email"
+    });
+
+    // Sign and send a transaction
+    auto tx = wallet.sendTransaction({
+        .to = "0x...",
+        .value = "1000000000000000000",
+        .chainId = 1
+    });
+
+    // Server wallet for backend automation
+    auto serverWallet = hanzo::Wallet::server("wallet_abc");
+    auto sig = serverWallet.signMessage("Hello, Web3!");
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "wallet.rb",
+          code: `require 'hanzo/blockchain'
+
+# Create an embedded wallet for a user
+wallet = Hanzo::Wallet.create_embedded(
+  user_id: 'user_123',
+  auth_method: 'email'  # or 'google', 'passkey'
+)
+
+# Sign and send a transaction
+tx = wallet.send_transaction(
+  to: '0x...',
+  value: '1000000000000000000',  # 1 ETH
+  chain_id: 1
+)
+
+# Server wallet for backend automation
+server_wallet = Hanzo::Wallet.server(wallet_id: 'wallet_abc')
+signature = server_wallet.sign_message('Hello, Web3!')`,
+        },
+      ]}
     />
   );
 };

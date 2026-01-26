@@ -95,36 +95,242 @@ const HanzoPay = () => {
         "Solana",
         "BNB Chain",
       ]}
-      codeExample={{
-        filename: "payments.ts",
-        code: `import { HanzoPay } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "payments.ts",
+          code: `import { HanzoPay } from "@hanzo/pay";
 
 // Create a payment intent
 const payment = await HanzoPay.createPayment({
   amount: 99.99,
   currency: "USD",
   acceptedTokens: ["USDC", "USDT", "ETH"],
-  metadata: {
-    orderId: "order_123",
-  },
+  metadata: { orderId: "order_123" },
 });
 
-// Get the payment URL or embed checkout
-const checkoutUrl = payment.url;
+// Get checkout URL or embed widget
+console.log(payment.url);
 
-// Or use the embeddable widget
-<HanzoPayButton
-  paymentId={payment.id}
-  onSuccess={(tx) => console.log("Paid!", tx)}
-/>
-
-// Webhooks notify you of payment status
-// POST /webhook { event: "payment.completed", ... }
+// Fiat on-ramp: let user buy crypto with card
+const onramp = await HanzoPay.createOnRamp({
+  userId: "user_456",
+  fiatAmount: 100,
+  fiatCurrency: "USD",
+  cryptoCurrency: "USDC",
+  walletAddress: "0x...",
+});
 
 // Query payment status
 const status = await HanzoPay.getPayment(payment.id);
 console.log(status.state); // "completed"`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "payments.py",
+          code: `from hanzo_pay import HanzoPay
+
+client = HanzoPay(api_key="sk_live_...")
+
+# Create a payment intent
+payment = client.create_payment(
+    amount=99.99,
+    currency="USD",
+    accepted_tokens=["USDC", "USDT", "ETH"],
+    metadata={"order_id": "order_123"},
+)
+
+print(payment.url)
+
+# Fiat on-ramp: let user buy crypto with card
+onramp = client.create_onramp(
+    user_id="user_456",
+    fiat_amount=100,
+    fiat_currency="USD",
+    crypto_currency="USDC",
+    wallet_address="0x...",
+)
+
+# Check payment status
+status = client.get_payment(payment.id)
+print(status.state)  # "completed"`,
+        },
+        {
+          language: "Go",
+          filename: "payments.go",
+          code: `package main
+
+import (
+    "fmt"
+    "github.com/hanzoai/pay-go"
+)
+
+func main() {
+    client := pay.New("sk_live_...")
+
+    // Create a payment intent
+    payment, _ := client.CreatePayment(&pay.PaymentParams{
+        Amount:         99.99,
+        Currency:       "USD",
+        AcceptedTokens: []string{"USDC", "USDT", "ETH"},
+        Metadata:       map[string]string{"orderId": "order_123"},
+    })
+
+    fmt.Println(payment.URL)
+
+    // Fiat on-ramp
+    onramp, _ := client.CreateOnRamp(&pay.OnRampParams{
+        UserID:         "user_456",
+        FiatAmount:     100,
+        FiatCurrency:   "USD",
+        CryptoCurrency: "USDC",
+        WalletAddress:  "0x...",
+    })
+
+    // Check payment status
+    status, _ := client.GetPayment(payment.ID)
+    fmt.Println(status.State) // "completed"
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "payments.rs",
+          code: `use hanzo_pay::{Client, PaymentParams, OnRampParams};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = Client::new("sk_live_...");
+
+    // Create a payment intent
+    let payment = client.create_payment(PaymentParams {
+        amount: 99.99,
+        currency: "USD".into(),
+        accepted_tokens: vec!["USDC", "USDT", "ETH"],
+        metadata: Some(serde_json::json!({"orderId": "order_123"})),
+    }).await?;
+
+    println!("{}", payment.url);
+
+    // Fiat on-ramp
+    let onramp = client.create_onramp(OnRampParams {
+        user_id: "user_456".into(),
+        fiat_amount: 100.0,
+        fiat_currency: "USD".into(),
+        crypto_currency: "USDC".into(),
+        wallet_address: "0x...".into(),
+    }).await?;
+
+    // Check payment status
+    let status = client.get_payment(&payment.id).await?;
+    println!("{}", status.state); // "completed"
+
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "payments.c",
+          code: `#include <hanzo_pay.h>
+#include <stdio.h>
+
+int main() {
+    hanzo_client_t *client = hanzo_pay_init("sk_live_...");
+
+    // Create a payment intent
+    hanzo_payment_params_t params = {
+        .amount = 99.99,
+        .currency = "USD",
+        .accepted_tokens = {"USDC", "USDT", "ETH"},
+        .metadata = "{\"orderId\": \"order_123\"}"
+    };
+
+    hanzo_payment_t *payment = hanzo_create_payment(client, &params);
+    printf("Checkout URL: %s\\n", payment->url);
+
+    // Fiat on-ramp
+    hanzo_onramp_params_t onramp_params = {
+        .user_id = "user_456",
+        .fiat_amount = 100.0,
+        .fiat_currency = "USD",
+        .crypto_currency = "USDC",
+        .wallet_address = "0x..."
+    };
+    hanzo_onramp_t *onramp = hanzo_create_onramp(client, &onramp_params);
+
+    // Check payment status
+    hanzo_payment_t *status = hanzo_get_payment(client, payment->id);
+    printf("Status: %s\\n", status->state); // "completed"
+
+    hanzo_pay_cleanup(client);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "payments.cpp",
+          code: `#include <hanzo/pay.hpp>
+#include <iostream>
+
+int main() {
+    hanzo::PayClient client("sk_live_...");
+
+    // Create a payment intent
+    auto payment = client.createPayment({
+        .amount = 99.99,
+        .currency = "USD",
+        .acceptedTokens = {"USDC", "USDT", "ETH"},
+        .metadata = {{"orderId", "order_123"}}
+    });
+
+    std::cout << "Checkout URL: " << payment.url << std::endl;
+
+    // Fiat on-ramp
+    auto onramp = client.createOnRamp({
+        .userId = "user_456",
+        .fiatAmount = 100.0,
+        .fiatCurrency = "USD",
+        .cryptoCurrency = "USDC",
+        .walletAddress = "0x..."
+    });
+
+    // Check payment status
+    auto status = client.getPayment(payment.id);
+    std::cout << "Status: " << status.state << std::endl; // "completed"
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "payments.rb",
+          code: `require 'hanzo_pay'
+
+client = HanzoPay::Client.new(api_key: 'sk_live_...')
+
+# Create a payment intent
+payment = client.create_payment(
+  amount: 99.99,
+  currency: 'USD',
+  accepted_tokens: %w[USDC USDT ETH],
+  metadata: { order_id: 'order_123' }
+)
+
+puts payment.url
+
+# Fiat on-ramp: let user buy crypto with card
+onramp = client.create_onramp(
+  user_id: 'user_456',
+  fiat_amount: 100,
+  fiat_currency: 'USD',
+  crypto_currency: 'USDC',
+  wallet_address: '0x...'
+)
+
+# Check payment status
+status = client.get_payment(payment.id)
+puts status.state # "completed"`,
+        },
+      ]}
     />
   );
 };

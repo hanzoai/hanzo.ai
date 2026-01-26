@@ -89,9 +89,11 @@ const HanzoWebsockets = () => {
         "Ethereum", "Polygon", "Arbitrum", "Optimism", "Base",
         "BNB Chain", "Avalanche", "zkSync", "Scroll", "Linea",
       ]}
-      codeExample={{
-        filename: "websockets.ts",
-        code: `import { HanzoWebsocket } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "websockets.ts",
+          code: `import { HanzoWebsocket } from "@hanzo/blockchain";
 
 const ws = new HanzoWebsocket({
   apiKey: process.env.HANZO_API_KEY,
@@ -115,7 +117,231 @@ ws.subscribe("logs", {
 }, (log) => {
   console.log("Event:", log);
 });`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "websockets.py",
+          code: `import asyncio
+from hanzo.blockchain import HanzoWebsocket
+
+async def main():
+    ws = HanzoWebsocket(api_key=os.environ["HANZO_API_KEY"])
+
+    # Subscribe to new blocks
+    async def on_block(block):
+        print(f"New block: {block['number']}")
+
+    await ws.subscribe("newHeads", {"chain": "ethereum"}, on_block)
+
+    # Subscribe to pending transactions
+    async def on_pending(tx):
+        print(f"Pending: {tx['hash']}")
+
+    await ws.subscribe("pendingTransactions", {"chain": "ethereum"}, on_pending)
+
+    # Subscribe to contract events
+    async def on_log(log):
+        print(f"Event: {log}")
+
+    await ws.subscribe("logs", {
+        "chain": "ethereum",
+        "address": "0x...",
+        "topics": ["0x..."],
+    }, on_log)
+
+    # Keep connection alive
+    await ws.run_forever()
+
+asyncio.run(main())`,
+        },
+        {
+          language: "Go",
+          filename: "websockets.go",
+          code: `package main
+
+import (
+    "fmt"
+    "os"
+
+    "github.com/hanzoai/blockchain-go"
+)
+
+func main() {
+    ws := blockchain.NewWebsocket(blockchain.Config{
+        APIKey: os.Getenv("HANZO_API_KEY"),
+    })
+
+    // Subscribe to new blocks
+    ws.Subscribe("newHeads", blockchain.Params{
+        "chain": "ethereum",
+    }, func(block blockchain.Block) {
+        fmt.Printf("New block: %d\\n", block.Number)
+    })
+
+    // Subscribe to pending transactions
+    ws.Subscribe("pendingTransactions", blockchain.Params{
+        "chain": "ethereum",
+    }, func(tx blockchain.Transaction) {
+        fmt.Printf("Pending: %s\\n", tx.Hash)
+    })
+
+    // Subscribe to contract events
+    ws.Subscribe("logs", blockchain.Params{
+        "chain":   "ethereum",
+        "address": "0x...",
+        "topics":  []string{"0x..."},
+    }, func(log blockchain.Log) {
+        fmt.Printf("Event: %+v\\n", log)
+    })
+
+    ws.RunForever()
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "websockets.rs",
+          code: `use hanzo_blockchain::{HanzoWebsocket, Config, Subscription};
+use std::env;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let ws = HanzoWebsocket::new(Config {
+        api_key: env::var("HANZO_API_KEY")?,
+    }).await?;
+
+    // Subscribe to new blocks
+    ws.subscribe("newHeads", serde_json::json!({
+        "chain": "ethereum"
+    }), |block| {
+        println!("New block: {}", block["number"]);
+    }).await?;
+
+    // Subscribe to pending transactions
+    ws.subscribe("pendingTransactions", serde_json::json!({
+        "chain": "ethereum"
+    }), |tx| {
+        println!("Pending: {}", tx["hash"]);
+    }).await?;
+
+    // Subscribe to contract events
+    ws.subscribe("logs", serde_json::json!({
+        "chain": "ethereum",
+        "address": "0x...",
+        "topics": ["0x..."]
+    }), |log| {
+        println!("Event: {:?}", log);
+    }).await?;
+
+    ws.run_forever().await
+}`,
+        },
+        {
+          language: "C",
+          filename: "websockets.c",
+          code: `#include <stdio.h>
+#include <stdlib.h>
+#include <hanzo/blockchain.h>
+
+void on_block(hanzo_block_t *block) {
+    printf("New block: %llu\\n", block->number);
+}
+
+void on_pending(hanzo_transaction_t *tx) {
+    printf("Pending: %s\\n", tx->hash);
+}
+
+void on_log(hanzo_log_t *log) {
+    printf("Event: %s\\n", log->data);
+}
+
+int main() {
+    hanzo_ws_t *ws = hanzo_ws_new(getenv("HANZO_API_KEY"));
+
+    // Subscribe to new blocks
+    hanzo_ws_subscribe(ws, "newHeads",
+        "{\\"chain\\": \\"ethereum\\"}", on_block);
+
+    // Subscribe to pending transactions
+    hanzo_ws_subscribe(ws, "pendingTransactions",
+        "{\\"chain\\": \\"ethereum\\"}", on_pending);
+
+    // Subscribe to contract events
+    hanzo_ws_subscribe(ws, "logs",
+        "{\\"chain\\": \\"ethereum\\", "
+        "\\"address\\": \\"0x...\\", "
+        "\\"topics\\": [\\"0x...\\"]}",
+        on_log);
+
+    hanzo_ws_run_forever(ws);
+    hanzo_ws_free(ws);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "websockets.cpp",
+          code: `#include <iostream>
+#include <hanzo/blockchain.hpp>
+
+int main() {
+    auto ws = hanzo::Websocket({
+        .api_key = std::getenv("HANZO_API_KEY")
+    });
+
+    // Subscribe to new blocks
+    ws.subscribe("newHeads", {{"chain", "ethereum"}},
+        [](const hanzo::Block& block) {
+            std::cout << "New block: " << block.number << std::endl;
+        });
+
+    // Subscribe to pending transactions
+    ws.subscribe("pendingTransactions", {{"chain", "ethereum"}},
+        [](const hanzo::Transaction& tx) {
+            std::cout << "Pending: " << tx.hash << std::endl;
+        });
+
+    // Subscribe to contract events
+    ws.subscribe("logs", {
+        {"chain", "ethereum"},
+        {"address", "0x..."},
+        {"topics", {"0x..."}}
+    }, [](const hanzo::Log& log) {
+        std::cout << "Event: " << log << std::endl;
+    });
+
+    ws.run_forever();
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "websockets.rb",
+          code: `require 'hanzo/blockchain'
+
+ws = Hanzo::Websocket.new(api_key: ENV['HANZO_API_KEY'])
+
+# Subscribe to new blocks
+ws.subscribe('newHeads', chain: 'ethereum') do |block|
+  puts "New block: #{block['number']}"
+end
+
+# Subscribe to pending transactions
+ws.subscribe('pendingTransactions', chain: 'ethereum') do |tx|
+  puts "Pending: #{tx['hash']}"
+end
+
+# Subscribe to contract events
+ws.subscribe('logs',
+  chain: 'ethereum',
+  address: '0x...',
+  topics: ['0x...']
+) do |log|
+  puts "Event: #{log}"
+end
+
+ws.run_forever`,
+        },
+      ]}
     />
   );
 };

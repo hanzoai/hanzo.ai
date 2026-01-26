@@ -89,9 +89,11 @@ const HanzoTransfers = () => {
         "Ethereum", "Polygon", "Arbitrum", "Optimism", "Base",
         "BNB Chain", "Avalanche", "zkSync", "Scroll", "Linea",
       ]}
-      codeExample={{
-        filename: "transfers.ts",
-        code: `import { HanzoTransfers } from "@hanzo/blockchain";
+      codeExamples={[
+        {
+          language: "Node",
+          filename: "transfers.ts",
+          code: `import { HanzoTransfers } from "@hanzo/blockchain";
 
 const transfers = new HanzoTransfers({
   apiKey: process.env.HANZO_API_KEY,
@@ -119,7 +121,204 @@ const pending = await transfers.getPending({
   address: "0x...",
   chain: "ethereum",
 });`,
-      }}
+        },
+        {
+          language: "Python",
+          filename: "transfers.py",
+          code: `from hanzo_blockchain import HanzoTransfers
+
+transfers = HanzoTransfers(api_key=os.environ["HANZO_API_KEY"])
+
+# Get transfer history for an address
+history = transfers.get_history(
+    address="0x...",
+    chains=["ethereum", "polygon"],
+    type=["native", "erc20"],
+    limit=100,
+)
+
+# Subscribe to real-time transfers
+def on_transfer(transfer):
+    print(f"{transfer.from_addr} -> {transfer.to_addr}: {transfer.value}")
+
+transfers.subscribe(
+    address="0x...",
+    chains=["ethereum"],
+    on_transfer=on_transfer,
+)
+
+# Get pending transfers
+pending = transfers.get_pending(address="0x...", chain="ethereum")`,
+        },
+        {
+          language: "Go",
+          filename: "transfers.go",
+          code: `package main
+
+import (
+    "fmt"
+    "os"
+    hanzo "github.com/hanzoai/blockchain-go"
+)
+
+func main() {
+    client := hanzo.NewTransfersClient(os.Getenv("HANZO_API_KEY"))
+
+    // Get transfer history for an address
+    history, _ := client.GetHistory(&hanzo.HistoryParams{
+        Address: "0x...",
+        Chains:  []string{"ethereum", "polygon"},
+        Type:    []string{"native", "erc20"},
+        Limit:   100,
+    })
+
+    // Subscribe to real-time transfers
+    client.Subscribe(&hanzo.SubscribeParams{
+        Address: "0x...",
+        Chains:  []string{"ethereum"},
+        OnTransfer: func(t *hanzo.Transfer) {
+            fmt.Printf("%s -> %s: %s\\n", t.From, t.To, t.Value)
+        },
+    })
+
+    // Get pending transfers
+    pending, _ := client.GetPending("0x...", "ethereum")
+}`,
+        },
+        {
+          language: "Rust",
+          filename: "transfers.rs",
+          code: `use hanzo_blockchain::{TransfersClient, HistoryParams, SubscribeParams};
+use std::env;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = TransfersClient::new(env::var("HANZO_API_KEY")?);
+
+    // Get transfer history for an address
+    let history = client.get_history(HistoryParams {
+        address: "0x...".to_string(),
+        chains: vec!["ethereum", "polygon"],
+        transfer_type: vec!["native", "erc20"],
+        limit: 100,
+    }).await?;
+
+    // Subscribe to real-time transfers
+    client.subscribe(SubscribeParams {
+        address: "0x...".to_string(),
+        chains: vec!["ethereum"],
+        on_transfer: |transfer| {
+            println!("{} -> {}: {}", transfer.from, transfer.to, transfer.value);
+        },
+    }).await?;
+
+    // Get pending transfers
+    let pending = client.get_pending("0x...", "ethereum").await?;
+
+    Ok(())
+}`,
+        },
+        {
+          language: "C",
+          filename: "transfers.c",
+          code: `#include <stdio.h>
+#include <stdlib.h>
+#include "hanzo_blockchain.h"
+
+void on_transfer(hanzo_transfer_t *transfer) {
+    printf("%s -> %s: %s\\n", transfer->from, transfer->to, transfer->value);
+}
+
+int main() {
+    hanzo_transfers_t *client = hanzo_transfers_new(getenv("HANZO_API_KEY"));
+
+    // Get transfer history for an address
+    const char *chains[] = {"ethereum", "polygon"};
+    const char *types[] = {"native", "erc20"};
+    hanzo_history_t *history = hanzo_get_history(client, &(hanzo_history_params_t){
+        .address = "0x...",
+        .chains = chains,
+        .chains_len = 2,
+        .type = types,
+        .type_len = 2,
+        .limit = 100
+    });
+
+    // Subscribe to real-time transfers
+    hanzo_subscribe(client, &(hanzo_subscribe_params_t){
+        .address = "0x...",
+        .chains = (const char*[]){"ethereum"},
+        .chains_len = 1,
+        .on_transfer = on_transfer
+    });
+
+    // Get pending transfers
+    hanzo_pending_t *pending = hanzo_get_pending(client, "0x...", "ethereum");
+
+    hanzo_transfers_free(client);
+    return 0;
+}`,
+        },
+        {
+          language: "C++",
+          filename: "transfers.cpp",
+          code: `#include <iostream>
+#include <hanzo/blockchain.hpp>
+
+int main() {
+    auto client = hanzo::TransfersClient(std::getenv("HANZO_API_KEY"));
+
+    // Get transfer history for an address
+    auto history = client.getHistory({
+        .address = "0x...",
+        .chains = {"ethereum", "polygon"},
+        .type = {"native", "erc20"},
+        .limit = 100
+    });
+
+    // Subscribe to real-time transfers
+    client.subscribe({
+        .address = "0x...",
+        .chains = {"ethereum"},
+        .onTransfer = [](const hanzo::Transfer& transfer) {
+            std::cout << transfer.from << " -> " << transfer.to
+                      << ": " << transfer.value << std::endl;
+        }
+    });
+
+    // Get pending transfers
+    auto pending = client.getPending("0x...", "ethereum");
+
+    return 0;
+}`,
+        },
+        {
+          language: "Ruby",
+          filename: "transfers.rb",
+          code: `require 'hanzo/blockchain'
+
+client = Hanzo::Transfers.new(api_key: ENV['HANZO_API_KEY'])
+
+# Get transfer history for an address
+history = client.get_history(
+  address: '0x...',
+  chains: ['ethereum', 'polygon'],
+  type: ['native', 'erc20'],
+  limit: 100
+)
+
+# Subscribe to real-time transfers
+client.subscribe(
+  address: '0x...',
+  chains: ['ethereum']
+) do |transfer|
+  puts "#{transfer.from} -> #{transfer.to}: #{transfer.value}"
+end
+
+# Get pending transfers
+pending = client.get_pending(address: '0x...', chain: 'ethereum')`,
+        },
+      ]}
     />
   );
 };
