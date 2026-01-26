@@ -202,38 +202,12 @@ export const productsNav: NavSection[] = [
     items: [
       { title: "Payments", href: "/fintech/payments", icon: CreditCard, featured: true },
       { title: "Banking API", href: "/fintech/banking", icon: Landmark },
-      { title: "Treasury", href: "/fintech/treasury", icon: DollarSign },
-      { title: "Invoicing", href: "/fintech/invoicing", icon: FileText },
-      { title: "Subscriptions", href: "/fintech/subscriptions", icon: LineChart },
-      { title: "Payouts", href: "/fintech/payouts", icon: Coins },
-      { title: "KYC/AML", href: "/fintech/kyc", icon: UserCheck },
-      { title: "Compliance", href: "/fintech/compliance", icon: ShieldCheck },
-    ]
-  },
-  {
-    title: "DeFi",
-    items: [
-      { title: "DEX Router", href: "/defi/dex", icon: Route, featured: true },
-      { title: "Liquidity", href: "/defi/liquidity", icon: Coins },
+      { title: "DEX Router", href: "/defi/dex", icon: Route },
       { title: "Staking", href: "/defi/staking", icon: Layers },
-      { title: "Yield", href: "/defi/yield", icon: LineChart },
-      { title: "Lending", href: "/defi/lending", icon: DollarSign },
-      { title: "Bridges", href: "/defi/bridges", icon: Network },
-      { title: "Oracles", href: "/defi/oracles", icon: Radio },
-      { title: "Governance", href: "/defi/governance", icon: Users },
-    ]
-  },
-  {
-    title: "Web3",
-    items: [
-      { title: "Chains", href: "/blockchain/chains", icon: Server, featured: true },
-      { title: "Indexer", href: "/blockchain/indexer", icon: Search, featured: true },
+      { title: "Chains", href: "/blockchain/chains", icon: Server },
       { title: "Wallets", href: "/blockchain/wallets", icon: Wallet },
       { title: "Token API", href: "/blockchain/tokens", icon: Coins },
-      { title: "NFT API", href: "/blockchain/nft", icon: LayoutGrid },
-      { title: "Bundler", href: "/blockchain/bundler", icon: Blocks },
-      { title: "Gas Manager", href: "/blockchain/gas", icon: Gauge },
-      { title: "Webhooks", href: "/blockchain/webhooks", icon: Bell },
+      { title: "KYC/AML", href: "/fintech/kyc", icon: UserCheck },
     ]
   }
 ];
@@ -246,9 +220,7 @@ export const featuredProducts: NavItem[] = [
   { title: "Vector", href: "/products/data/vector", icon: Sparkles, description: "High-performance vector DB", featured: true },
   { title: "Functions", href: "/products/compute/functions", icon: Zap, description: "Serverless compute", featured: true },
   { title: "Cloud", href: "/cloud", icon: Cloud, description: "AI Cloud infrastructure", featured: true },
-  { title: "Payments", href: "/fintech/payments", icon: CreditCard, description: "Global payment processing", featured: true },
-  { title: "DeFi", href: "/defi", icon: Coins, description: "Decentralized finance APIs", featured: true },
-  { title: "Web3", href: "/blockchain", icon: Blocks, description: "Multi-chain Web3 APIs", featured: true },
+  { title: "FinTech", href: "/fintech", icon: CreditCard, description: "Payments, DeFi & Web3 APIs", featured: true },
 ];
 
 export const capabilitiesNav: NavSection[] = [
@@ -338,28 +310,9 @@ export const footerNav = [
     title: "FinTech",
     items: [
       { title: "Payments", href: "/fintech/payments" },
-      { title: "Banking API", href: "/fintech/banking" },
-      { title: "Treasury", href: "/fintech/treasury" },
-      { title: "KYC/AML", href: "/fintech/kyc" }
-    ]
-  },
-  {
-    title: "DeFi",
-    items: [
       { title: "DEX Router", href: "/defi/dex" },
-      { title: "Liquidity", href: "/defi/liquidity" },
-      { title: "Staking", href: "/defi/staking" },
-      { title: "Bridges", href: "/defi/bridges" }
-    ]
-  },
-  {
-    title: "Web3",
-    items: [
       { title: "Chains", href: "/blockchain/chains" },
-      { title: "Indexer", href: "/blockchain/indexer" },
-      { title: "Wallets", href: "/blockchain/wallets" },
-      { title: "Token API", href: "/blockchain/tokens" },
-      { title: "NFT API", href: "/blockchain/nft" }
+      { title: "Wallets", href: "/blockchain/wallets" }
     ]
   },
   {
