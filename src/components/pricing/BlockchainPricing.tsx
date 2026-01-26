@@ -5,27 +5,29 @@ import { Check, Server, Search, Wallet, Shield, Zap, Bell, Database, Layers } fr
 const BlockchainPricing = () => {
   const rpcPricing = [
     {
-      name: "RPC Lite",
+      name: "Free",
       description: "For hobby projects and testing",
       price: "Free",
       period: "",
+      cuRate: "",
       features: [
-        "10M compute units/month",
-        "10 supported chains",
+        "300M compute units/month",
+        "All supported chains",
         "Shared endpoints",
         "Community support",
-        "Basic rate limiting",
+        "Standard rate limits",
       ],
       highlighted: false,
     },
     {
-      name: "RPC Growth",
+      name: "Growth",
       description: "For production applications",
       price: "$49",
       period: "/mo",
+      cuRate: "$0.45/M CU overage",
       features: [
-        "100M compute units/month",
-        "50+ supported chains",
+        "400M compute units/month",
+        "100+ supported chains",
         "Dedicated endpoints",
         "Priority support",
         "Enhanced rate limits",
@@ -35,12 +37,13 @@ const BlockchainPricing = () => {
       highlighted: true,
     },
     {
-      name: "RPC Scale",
+      name: "Scale",
       description: "For high-volume applications",
-      price: "$299",
+      price: "$199",
       period: "/mo",
+      cuRate: "$0.45/M CU overage",
       features: [
-        "1B compute units/month",
+        "1.5B compute units/month",
         "100+ supported chains",
         "Private clusters",
         "24/7 dedicated support",
@@ -56,6 +59,7 @@ const BlockchainPricing = () => {
       description: "For mission-critical infrastructure",
       price: "Custom",
       period: "",
+      cuRate: "Volume discounts",
       features: [
         "Unlimited compute units",
         "All supported chains",
@@ -64,7 +68,7 @@ const BlockchainPricing = () => {
         "Custom SLA (99.99%)",
         "On-premise option",
         "White-glove onboarding",
-        "Volume discounts",
+        "Committed use discounts",
       ],
       highlighted: false,
     },
@@ -174,6 +178,9 @@ const BlockchainPricing = () => {
               <div className="mb-6">
                 <span className="text-3xl font-bold">{plan.price}</span>
                 <span className="text-neutral-500">{plan.period}</span>
+                {plan.cuRate && (
+                  <div className="text-xs text-neutral-500 mt-1">{plan.cuRate}</div>
+                )}
               </div>
 
               <ul className="space-y-3 mb-6">
