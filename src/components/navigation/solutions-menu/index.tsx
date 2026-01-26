@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 
-const ITEMS_PER_CATEGORY = 4;
+// Show all items - no truncation
+const ITEMS_PER_CATEGORY = 20;
 
 export const SolutionsMenu = () => {
   const { isDarkMode } = useTheme();

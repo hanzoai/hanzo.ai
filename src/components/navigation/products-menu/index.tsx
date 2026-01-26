@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 
-const ITEMS_PER_CATEGORY = 4;
+// Show all items - no truncation
+const MAX_ITEMS_PER_CATEGORY = 20;
 
 export const ProductsMenu = () => {
   const { isDarkMode } = useTheme();
@@ -56,55 +57,60 @@ export const ProductsMenu = () => {
             </div>
           </div>
 
-          {/* 9-Category Grid - Condensed to 3 items per category */}
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-4">
-            {productsNav.map((section) => (
-              <div key={section.title} className="space-y-1.5">
-                <h3 className={cn(
-                  "text-[10px] font-semibold uppercase tracking-wider mb-2",
-                  isDarkMode ? "text-neutral-500" : "text-neutral-400"
-                )}>
-                  {section.title}
-                </h3>
-                <div className="space-y-0.5">
-                  {section.items.slice(0, ITEMS_PER_CATEGORY).map((item) => {
-                    const Icon = item.icon;
-                    return (
+          {/* 10-Category Grid - 5 columns x 2 rows for symmetry */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-4">
+            {productsNav.map((section) => {
+              const displayItems = section.items.slice(0, MAX_ITEMS_PER_CATEGORY);
+              const hasMore = section.items.length > MAX_ITEMS_PER_CATEGORY;
+
+              return (
+                <div key={section.title} className="space-y-1.5">
+                  <h3 className={cn(
+                    "text-[10px] font-semibold uppercase tracking-wider mb-2",
+                    isDarkMode ? "text-neutral-500" : "text-neutral-400"
+                  )}>
+                    {section.title}
+                  </h3>
+                  <div className="space-y-0.5">
+                    {displayItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.title}
+                          to={item.href}
+                          onClick={closeMenu}
+                          className="flex items-center gap-1.5 py-0.5 group"
+                        >
+                          {Icon && <Icon className={cn(
+                            "h-3 w-3 group-hover:text-[#fd4444]",
+                            isDarkMode ? "text-neutral-500" : "text-neutral-400"
+                          )} />}
+                          <span className={cn(
+                            "text-xs transition-colors group-hover:text-[#fd4444]",
+                            isDarkMode ? "text-neutral-400" : "text-neutral-600"
+                          )}>
+                            {item.title}
+                          </span>
+                        </Link>
+                      );
+                    })}
+                    {hasMore && (
                       <Link
-                        key={item.title}
-                        to={item.href}
+                        to="/products"
                         onClick={closeMenu}
-                        className="flex items-center gap-1.5 py-0.5 group"
+                        className={cn(
+                          "flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#fd4444]",
+                          isDarkMode ? "text-neutral-600" : "text-neutral-500"
+                        )}
                       >
-                        {Icon && <Icon className={cn(
-                          "h-3 w-3 group-hover:text-[#fd4444]",
-                          isDarkMode ? "text-neutral-500" : "text-neutral-400"
-                        )} />}
-                        <span className={cn(
-                          "text-xs transition-colors group-hover:text-[#fd4444]",
-                          isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                        )}>
-                          {item.title}
-                        </span>
+                        +{section.items.length - MAX_ITEMS_PER_CATEGORY} more
+                        <ArrowRight className="h-2.5 w-2.5" />
                       </Link>
-                    );
-                  })}
-                  {section.items.length > ITEMS_PER_CATEGORY && (
-                    <Link
-                      to="/products"
-                      onClick={closeMenu}
-                      className={cn(
-                        "flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#fd4444]",
-                        isDarkMode ? "text-neutral-600" : "text-neutral-500"
-                      )}
-                    >
-                      +{section.items.length - ITEMS_PER_CATEGORY} more
-                      <ArrowRight className="h-2.5 w-2.5" />
-                    </Link>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Footer - More compact */}
@@ -115,7 +121,7 @@ export const ProductsMenu = () => {
             <div className="flex items-center gap-3">
               <div className={cn(
                 "rounded-md px-2.5 py-1 font-mono text-[10px]",
-                isDarkMode ? "bg-neutral-900 text-green-400" : "bg-neutral-100 text-green-600"
+                isDarkMode ? "bg-neutral-900 text-[#fd4444]" : "bg-neutral-100 text-[#fd4444]"
               )}>
                 curl -fsSL hanzo.sh | sh
               </div>
