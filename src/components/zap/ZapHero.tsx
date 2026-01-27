@@ -65,7 +65,7 @@ const ZapHero = () => {
           className="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto"
         >
           MCP made tool integration easy — but JSON everywhere doesn't scale.
-          ZAP is Cap'n Proto-native: low allocation, low memory, built for agent swarms.
+          ZAP uses zero-copy serialization: low allocation, low memory, built for agent swarms.
         </motion.p>
 
         {/* Stats */}
@@ -101,20 +101,20 @@ const ZapHero = () => {
           className="flex flex-wrap justify-center gap-4"
         >
           <a
-            href="https://hanzoai.github.io/zap/docs"
+            href="https://zap-proto.github.io/zap/docs"
             className="inline-flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text-black font-medium rounded-full transition-colors"
           >
             Get Started
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="https://hanzoai.github.io/zap/docs/whitepaper"
+            href="https://zap-proto.github.io/zap/docs/whitepaper"
             className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
           >
             Read Whitepaper
           </a>
           <a
-            href="https://github.com/hanzoai/zap"
+            href="https://github.com/zap-proto/zap"
             className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
           >
             GitHub

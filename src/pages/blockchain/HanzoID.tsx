@@ -82,6 +82,130 @@ const HanzoID = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "IdentityAttestation.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/identity/IEAS.sol";
+import "@hanzo/identity/ISchemaRegistry.sol";
+
+/// @title IdentityAttestation - On-chain identity and verifiable credentials
+/// @notice DID-linked attestations using Ethereum Attestation Service (EAS)
+contract IdentityAttestation {
+    IEAS public eas;
+    ISchemaRegistry public schemaRegistry;
+
+    // Schema UIDs for different credential types
+    bytes32 public constant KYC_SCHEMA = keccak256("bool verified,uint64 expiry,string provider");
+    bytes32 public constant AGE_SCHEMA = keccak256("bool ageOver18,bool ageOver21,uint64 verifiedAt");
+    bytes32 public constant ACCREDITATION_SCHEMA = keccak256("string accreditationType,string jurisdiction,uint64 validUntil");
+
+    // DID to attestation mapping
+    mapping(bytes32 => bytes32[]) public didAttestations;
+
+    event AttestationCreated(
+        bytes32 indexed did,
+        bytes32 indexed attestationId,
+        bytes32 indexed schemaId
+    );
+
+    event CredentialRevoked(
+        bytes32 indexed did,
+        bytes32 indexed attestationId
+    );
+
+    constructor(address _eas, address _schemaRegistry) {
+        eas = IEAS(_eas);
+        schemaRegistry = ISchemaRegistry(_schemaRegistry);
+    }
+
+    // Create KYC attestation for a DID
+    function attestKYC(
+        bytes32 did,
+        address recipient,
+        bool verified,
+        uint64 expiry,
+        string calldata provider
+    ) external returns (bytes32 attestationId) {
+        bytes memory data = abi.encode(verified, expiry, provider);
+
+        AttestationRequest memory request = AttestationRequest({
+            schema: KYC_SCHEMA,
+            data: AttestationRequestData({
+                recipient: recipient,
+                expirationTime: expiry,
+                revocable: true,
+                refUID: bytes32(0),
+                data: data,
+                value: 0
+            })
+        });
+
+        attestationId = eas.attest(request);
+        didAttestations[did].push(attestationId);
+        emit AttestationCreated(did, attestationId, KYC_SCHEMA);
+    }
+
+    // Create age verification attestation
+    function attestAge(
+        bytes32 did,
+        address recipient,
+        bool ageOver18,
+        bool ageOver21
+    ) external returns (bytes32 attestationId) {
+        bytes memory data = abi.encode(ageOver18, ageOver21, block.timestamp);
+
+        AttestationRequest memory request = AttestationRequest({
+            schema: AGE_SCHEMA,
+            data: AttestationRequestData({
+                recipient: recipient,
+                expirationTime: 0, // No expiry
+                revocable: true,
+                refUID: bytes32(0),
+                data: data,
+                value: 0
+            })
+        });
+
+        attestationId = eas.attest(request);
+        didAttestations[did].push(attestationId);
+        emit AttestationCreated(did, attestationId, AGE_SCHEMA);
+    }
+
+    // Verify an attestation is valid
+    function verifyAttestation(bytes32 attestationId) external view returns (
+        bool valid,
+        address recipient,
+        uint64 expirationTime,
+        bool revoked
+    ) {
+        Attestation memory attestation = eas.getAttestation(attestationId);
+        valid = attestation.uid != bytes32(0);
+        recipient = attestation.recipient;
+        expirationTime = attestation.expirationTime;
+        revoked = attestation.revocationTime > 0;
+    }
+
+    // Revoke a credential
+    function revokeCredential(bytes32 did, bytes32 attestationId) external {
+        eas.revoke(RevocationRequest({
+            schema: KYC_SCHEMA,
+            data: RevocationRequestData({
+                uid: attestationId,
+                value: 0
+            })
+        }));
+        emit CredentialRevoked(did, attestationId);
+    }
+
+    // Get all attestations for a DID
+    function getAttestations(bytes32 did) external view returns (bytes32[] memory) {
+        return didAttestations[did];
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "identity.ts",
           code: `import { HanzoID } from "@hanzo/blockchain";

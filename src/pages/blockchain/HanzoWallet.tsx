@@ -93,6 +93,70 @@ const HanzoWallet = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "WalletFactory.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/wallet/IHanzoWallet.sol";
+import "@hanzo/wallet/IWalletFactory.sol";
+import "@openzeppelin/contracts/proxy/Clones.sol";
+
+/// @title WalletFactory - Deploy Hanzo embedded wallets
+contract WalletFactory is IWalletFactory {
+    address public immutable walletImplementation;
+    mapping(bytes32 => address) public userWallets;
+
+    event WalletCreated(bytes32 indexed userId, address wallet);
+
+    constructor(address _implementation) {
+        walletImplementation = _implementation;
+    }
+
+    // Create deterministic wallet for user
+    function createWallet(
+        bytes32 userId,
+        address owner,
+        address[] calldata guardians
+    ) external returns (address wallet) {
+        require(userWallets[userId] == address(0), "Wallet exists");
+
+        // Deploy minimal proxy clone
+        bytes32 salt = keccak256(abi.encode(userId, owner));
+        wallet = Clones.cloneDeterministic(walletImplementation, salt);
+
+        // Initialize the wallet
+        IHanzoWallet(wallet).initialize(owner, guardians);
+
+        userWallets[userId] = wallet;
+        emit WalletCreated(userId, wallet);
+    }
+
+    // Predict wallet address before deployment
+    function predictWalletAddress(
+        bytes32 userId,
+        address owner
+    ) external view returns (address) {
+        bytes32 salt = keccak256(abi.encode(userId, owner));
+        return Clones.predictDeterministicAddress(
+            walletImplementation,
+            salt,
+            address(this)
+        );
+    }
+
+    // Check if wallet exists for user
+    function hasWallet(bytes32 userId) external view returns (bool) {
+        return userWallets[userId] != address(0);
+    }
+
+    // Get wallet for user
+    function getWallet(bytes32 userId) external view returns (address) {
+        return userWallets[userId];
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "wallet.ts",
           code: `import { HanzoWallet } from "@hanzo/blockchain";

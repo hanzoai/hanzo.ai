@@ -101,7 +101,7 @@ const Leadership = () => {
                 style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
               >
                 <Award className="w-3.5 h-3.5" />
-                Techstars '17
+                Techstars
               </motion.div>
 
               <motion.h1

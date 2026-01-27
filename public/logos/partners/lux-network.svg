@@ -1,0 +1,12 @@
+<svg viewBox="0 0 180 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LUX">
+  <rect x="0" y="0" width="10" height="36" fill="#000" />
+  <rect x="0" y="26" width="32" height="10" fill="#000" />
+
+  <rect x="58" y="0" width="10" height="26" fill="#000" />
+  <rect x="58" y="26" width="10" height="10" fill="#000" />
+  <rect x="90" y="0" width="10" height="26" fill="#000" />
+  <rect x="74" y="26" width="16" height="10" fill="#000" />
+
+  <polygon points="128,0 140,0 180,36 168,36" fill="#000" />
+  <polygon points="168,0 180,0 140,36 128,36" fill="#000" />
+</svg>

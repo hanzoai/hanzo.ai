@@ -328,7 +328,7 @@ robotics systems, and building the future...
 %chttps://hanzo.ai/careers
 %cz@hanzo.ai
 
-%c– Hanzo AI (Techstars '17)
+%c– Hanzo AI (Techstars)
 `,
   'font-size: 24px; font-weight: bold; color: #e11633;',
   'font-size: 14px; color: #888;',

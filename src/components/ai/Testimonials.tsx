@@ -8,22 +8,21 @@ const Testimonials = () => {
     {
       quote: "Hanzo's AI Engineering Platform has completely transformed how we build and deploy AI applications. What used to take us weeks now takes days.",
       author: "Sarah Chen",
-      title: "CTO, Quantum Innovations",
-      image: "/placeholder.svg"
+      title: "CTO, Quantum Innovations"
     },
     {
       quote: "The unified approach to model deployment, monitoring, and scaling has allowed our team to focus on building great AI experiences instead of wrestling with infrastructure.",
       author: "James Wilson",
-      title: "Head of AI, GlobalTech",
-      image: "/placeholder.svg"
+      title: "Head of AI, GlobalTech"
     },
     {
       quote: "We evaluated several AI platforms, but Hanzo stood out for its developer experience and comprehensive observability features. It's made monitoring our AI in production so much easier.",
       author: "Maria Rodriguez",
-      title: "Principal Engineer, TechFlow",
-      image: "/placeholder.svg"
+      title: "Principal Engineer, TechFlow"
     }
   ];
+
+  const getInitials = (name: string) => name.split(" ").map((part) => part[0]).slice(0, 2).join("").toUpperCase();
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
@@ -61,12 +60,8 @@ const Testimonials = () => {
               <Quote className="absolute top-6 right-6 h-6 w-6 text-[#fd4444]/40" />
               <p className="text-neutral-300 mb-8 mt-4">"{testimonial.quote}"</p>
               <div className="flex items-center">
-                <div className="h-12 w-12 rounded-full bg-[#fd4444]/10 overflow-hidden">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author}
-                    className="h-full w-full object-cover opacity-70" 
-                  />
+                <div className="h-12 w-12 rounded-full bg-[#fd4444]/20 border border-[#fd4444]/30 flex items-center justify-center text-[var(--white)] font-semibold">
+                  {getInitials(testimonial.author)}
                 </div>
                 <div className="ml-4">
                   <div className="text-[var(--white)] font-medium">{testimonial.author}</div>

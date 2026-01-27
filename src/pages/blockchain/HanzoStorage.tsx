@@ -87,6 +87,97 @@ const HanzoStorage = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "NFTMetadata.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/// @title NFTMetadata - NFT with IPFS/Arweave metadata storage
+/// @notice ERC-721 with decentralized storage integration
+contract NFTMetadata is ERC721, Ownable {
+    // Base URI for IPFS gateway
+    string public baseURI;
+
+    // Token URI overrides for individual tokens
+    mapping(uint256 => string) private _tokenURIs;
+
+    // Storage provider tracking
+    enum StorageProvider { IPFS, Arweave, Filecoin }
+    mapping(uint256 => StorageProvider) public tokenStorageProvider;
+
+    event MetadataUpdated(
+        uint256 indexed tokenId,
+        string uri,
+        StorageProvider indexed provider
+    );
+
+    event BaseURIUpdated(string oldURI, string newURI);
+
+    constructor(
+        string memory name,
+        string memory symbol,
+        string memory _baseURI
+    ) ERC721(name, symbol) Ownable(msg.sender) {
+        baseURI = _baseURI;
+    }
+
+    // Mint with IPFS metadata
+    function mintWithIPFS(
+        address to,
+        uint256 tokenId,
+        string calldata ipfsCID
+    ) external onlyOwner {
+        _safeMint(to, tokenId);
+        _tokenURIs[tokenId] = string(abi.encodePacked("ipfs://", ipfsCID));
+        tokenStorageProvider[tokenId] = StorageProvider.IPFS;
+        emit MetadataUpdated(tokenId, _tokenURIs[tokenId], StorageProvider.IPFS);
+    }
+
+    // Mint with Arweave metadata (permanent)
+    function mintWithArweave(
+        address to,
+        uint256 tokenId,
+        string calldata arweaveTxId
+    ) external onlyOwner {
+        _safeMint(to, tokenId);
+        _tokenURIs[tokenId] = string(abi.encodePacked("ar://", arweaveTxId));
+        tokenStorageProvider[tokenId] = StorageProvider.Arweave;
+        emit MetadataUpdated(tokenId, _tokenURIs[tokenId], StorageProvider.Arweave);
+    }
+
+    // Update metadata for dynamic NFTs
+    function updateMetadata(
+        uint256 tokenId,
+        string calldata newURI,
+        StorageProvider provider
+    ) external onlyOwner {
+        require(_ownerOf(tokenId) != address(0), "Token does not exist");
+        _tokenURIs[tokenId] = newURI;
+        tokenStorageProvider[tokenId] = provider;
+        emit MetadataUpdated(tokenId, newURI, provider);
+    }
+
+    // Override tokenURI to support individual URIs
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
+        require(_ownerOf(tokenId) != address(0), "Token does not exist");
+        string memory _tokenURI = _tokenURIs[tokenId];
+        if (bytes(_tokenURI).length > 0) {
+            return _tokenURI;
+        }
+        return string(abi.encodePacked(baseURI, Strings.toString(tokenId)));
+    }
+
+    // Update base URI
+    function setBaseURI(string calldata newBaseURI) external onlyOwner {
+        emit BaseURIUpdated(baseURI, newBaseURI);
+        baseURI = newBaseURI;
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "storage.ts",
           code: `import { HanzoStorage } from "@hanzo/storage";

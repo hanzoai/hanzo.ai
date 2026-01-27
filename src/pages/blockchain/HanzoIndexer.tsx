@@ -92,6 +92,77 @@ const HanzoIndexer = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "IndexedContract.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/indexer/IHanzoIndexer.sol";
+
+/// @title IndexedContract - Emit events optimized for Hanzo Indexer
+/// @notice Structured events for efficient GraphQL querying
+contract IndexedContract {
+    // Indexed events for efficient GraphQL queries
+    event Transfer(
+        address indexed from,
+        address indexed to,
+        uint256 indexed tokenId,
+        uint256 amount,
+        uint256 timestamp
+    );
+
+    event Swap(
+        address indexed pair,
+        address indexed sender,
+        uint256 amount0In,
+        uint256 amount1In,
+        uint256 amount0Out,
+        uint256 amount1Out,
+        uint256 indexed blockNumber
+    );
+
+    event PriceUpdate(
+        address indexed token,
+        uint256 price,
+        uint256 indexed timestamp
+    );
+
+    // Log transfer for indexing
+    function logTransfer(
+        address from,
+        address to,
+        uint256 tokenId,
+        uint256 amount
+    ) external {
+        emit Transfer(from, to, tokenId, amount, block.timestamp);
+    }
+
+    // Log swap for DEX indexing
+    function logSwap(
+        address pair,
+        uint256 amount0In,
+        uint256 amount1In,
+        uint256 amount0Out,
+        uint256 amount1Out
+    ) external {
+        emit Swap(
+            pair,
+            msg.sender,
+            amount0In,
+            amount1In,
+            amount0Out,
+            amount1Out,
+            block.number
+        );
+    }
+
+    // Log price for oracle indexing
+    function logPriceUpdate(address token, uint256 price) external {
+        emit PriceUpdate(token, price, block.timestamp);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "indexer.ts",
           code: `import { HanzoIndexer } from "@hanzo/blockchain";

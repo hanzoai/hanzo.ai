@@ -91,6 +91,69 @@ const HanzoWebsockets = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "EventEmitter.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+/// @title EventEmitter - Structured events for WebSocket streaming
+/// @notice Emit indexed events for efficient WebSocket subscriptions
+contract EventEmitter {
+    // Indexed events for real-time streaming via WebSockets
+    event BlockProcessed(
+        uint256 indexed blockNumber,
+        bytes32 indexed blockHash,
+        uint256 timestamp,
+        uint256 gasUsed
+    );
+
+    event TransactionDetected(
+        bytes32 indexed txHash,
+        address indexed from,
+        address indexed to,
+        uint256 value,
+        uint256 gasPrice
+    );
+
+    event ContractEvent(
+        address indexed contractAddress,
+        bytes32 indexed eventSignature,
+        bytes data,
+        uint256 indexed logIndex
+    );
+
+    // Emit block processing event for indexers
+    function emitBlockProcessed(
+        uint256 _blockNumber,
+        bytes32 _blockHash,
+        uint256 _gasUsed
+    ) external {
+        emit BlockProcessed(_blockNumber, _blockHash, block.timestamp, _gasUsed);
+    }
+
+    // Emit transaction event for mempool tracking
+    function emitTransaction(
+        bytes32 _txHash,
+        address _from,
+        address _to,
+        uint256 _value,
+        uint256 _gasPrice
+    ) external {
+        emit TransactionDetected(_txHash, _from, _to, _value, _gasPrice);
+    }
+
+    // Emit contract event for log subscriptions
+    function emitContractEvent(
+        address _contract,
+        bytes32 _eventSig,
+        bytes calldata _data,
+        uint256 _logIndex
+    ) external {
+        emit ContractEvent(_contract, _eventSig, _data, _logIndex);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "websockets.ts",
           code: `import { HanzoWebsocket } from "@hanzo/blockchain";

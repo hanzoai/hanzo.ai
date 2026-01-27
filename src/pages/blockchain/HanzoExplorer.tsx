@@ -92,6 +92,73 @@ const HanzoExplorer = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "VerifiedContract.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/explorer/IHanzoExplorer.sol";
+
+/// @title VerifiedContract - Contract verification and analytics integration
+/// @notice Events and functions designed for explorer indexing and verification
+contract VerifiedContract {
+    // Events optimized for explorer indexing
+    event ContractVerified(
+        address indexed contractAddress,
+        bytes32 indexed codeHash,
+        string sourceUrl,
+        uint256 timestamp
+    );
+
+    event TransactionDecoded(
+        bytes32 indexed txHash,
+        address indexed target,
+        bytes4 selector,
+        bytes decodedParams
+    );
+
+    event AddressLabeled(
+        address indexed account,
+        string label,
+        string category
+    );
+
+    // Verification status mapping
+    mapping(address => bool) public verified;
+    mapping(address => string) public sourceUrls;
+
+    // Mark a contract as verified with source code
+    function verifyContract(
+        address contractAddress,
+        string calldata sourceUrl
+    ) external {
+        bytes32 codeHash = contractAddress.codehash;
+        verified[contractAddress] = true;
+        sourceUrls[contractAddress] = sourceUrl;
+        emit ContractVerified(contractAddress, codeHash, sourceUrl, block.timestamp);
+    }
+
+    // Log decoded transaction for explorer
+    function logDecodedTransaction(
+        bytes32 txHash,
+        address target,
+        bytes4 selector,
+        bytes calldata decodedParams
+    ) external {
+        emit TransactionDecoded(txHash, target, selector, decodedParams);
+    }
+
+    // Label an address for easier identification
+    function labelAddress(
+        address account,
+        string calldata label,
+        string calldata category
+    ) external {
+        emit AddressLabeled(account, label, category);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "explorer.ts",
           code: `import { HanzoExplorer } from "@hanzo/blockchain";

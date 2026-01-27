@@ -27,10 +27,10 @@ const OrganizationProfile = () => {
 
   // Mock team members data
   const teamMembers = [
-    { id: '1', name: 'Alex Johnson', role: 'Owner', avatar: '/placeholder.svg' },
-    { id: '2', name: 'Sarah Chen', role: 'Admin', avatar: '/placeholder.svg' },
-    { id: '3', name: 'Miguel Rodriguez', role: 'Member', avatar: '/placeholder.svg' },
-    { id: '4', name: 'Leila Patel', role: 'Member', avatar: '/placeholder.svg' },
+    { id: '1', name: 'Alex Johnson', role: 'Owner' },
+    { id: '2', name: 'Sarah Chen', role: 'Admin' },
+    { id: '3', name: 'Miguel Rodriguez', role: 'Member' },
+    { id: '4', name: 'Leila Patel', role: 'Member' },
   ];
 
   return (

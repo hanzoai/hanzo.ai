@@ -102,6 +102,109 @@ const HanzoNodes = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "MultiChainClient.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/nodes/IChainlinkOracle.sol";
+import "@hanzo/nodes/ILayerZeroEndpoint.sol";
+
+/// @title MultiChainClient - Cross-chain RPC client patterns
+/// @notice Demonstrates patterns for cross-chain communication via nodes
+contract MultiChainClient {
+    // Chainlink oracle for cross-chain data
+    IChainlinkOracle public oracle;
+
+    // LayerZero endpoint for cross-chain messaging
+    ILayerZeroEndpoint public lzEndpoint;
+
+    // Chain ID mappings
+    mapping(uint256 => bool) public supportedChains;
+    mapping(uint256 => address) public remoteContracts;
+
+    event CrossChainRequest(
+        uint256 indexed targetChain,
+        bytes32 indexed requestId,
+        bytes payload
+    );
+
+    event CrossChainResponse(
+        uint256 indexed sourceChain,
+        bytes32 indexed requestId,
+        bytes response
+    );
+
+    constructor(address _oracle, address _lzEndpoint) {
+        oracle = IChainlinkOracle(_oracle);
+        lzEndpoint = ILayerZeroEndpoint(_lzEndpoint);
+    }
+
+    // Register a supported chain
+    function addChain(uint256 chainId, address remoteContract) external {
+        supportedChains[chainId] = true;
+        remoteContracts[chainId] = remoteContract;
+    }
+
+    // Request data from another chain via oracle
+    function requestCrossChainData(
+        uint256 targetChain,
+        bytes calldata query
+    ) external returns (bytes32 requestId) {
+        require(supportedChains[targetChain], "Chain not supported");
+
+        requestId = oracle.requestData(
+            targetChain,
+            remoteContracts[targetChain],
+            query,
+            this.handleOracleResponse.selector
+        );
+
+        emit CrossChainRequest(targetChain, requestId, query);
+    }
+
+    // Handle oracle response callback
+    function handleOracleResponse(
+        bytes32 requestId,
+        uint256 sourceChain,
+        bytes calldata response
+    ) external {
+        require(msg.sender == address(oracle), "Only oracle");
+        emit CrossChainResponse(sourceChain, requestId, response);
+        // Process response data
+    }
+
+    // Send message to another chain via LayerZero
+    function sendCrossChainMessage(
+        uint16 dstChainId,
+        bytes calldata payload
+    ) external payable {
+        bytes memory remoteAndLocalAddresses = abi.encodePacked(
+            remoteContracts[dstChainId],
+            address(this)
+        );
+
+        lzEndpoint.send{value: msg.value}(
+            dstChainId,
+            remoteAndLocalAddresses,
+            payload,
+            payable(msg.sender),
+            address(0),
+            bytes("")
+        );
+    }
+
+    // Get current block number (for demonstration)
+    function getBlockInfo() external view returns (
+        uint256 blockNumber,
+        uint256 timestamp,
+        uint256 chainId
+    ) {
+        return (block.number, block.timestamp, block.chainid);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "nodes.ts",
           code: `import { HanzoNodes } from "@hanzo/blockchain";

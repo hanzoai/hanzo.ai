@@ -89,11 +89,12 @@ const SenseiMethod = () => {
           >
             <div className="bg-gradient-to-br from-[#fd4444]/20 to-transparent rounded-2xl p-1">
               <div className="bg-card backdrop-blur-sm rounded-xl overflow-hidden border border-border">
-                <img
-                  src="/placeholder.svg"
-                  alt="Sensei Method in action"
-                  className="w-full h-auto rounded-t-xl"
-                />
+                <div className="w-full h-56 rounded-t-xl bg-gradient-to-br from-[#fd4444]/25 via-black/40 to-[#ff6b6b]/20 border-b border-border flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-xs uppercase tracking-widest text-neutral-400">Sensei Method</div>
+                    <div className="text-xl font-semibold text-[var(--white)] mt-2">Strategy → Execution</div>
+                  </div>
+                </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-foreground mb-4">The Impact of Sensei</h3>
                   <p className="text-muted-foreground mb-6">

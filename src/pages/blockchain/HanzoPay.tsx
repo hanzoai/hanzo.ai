@@ -97,6 +97,66 @@ const HanzoPay = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "PaymentReceiver.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/pay/IHanzoPay.sol";
+import "@hanzo/pay/IPaymentReceiver.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract MerchantContract is IPaymentReceiver {
+    IHanzoPay public hanzoPay;
+    mapping(bytes32 => bool) public processedPayments;
+
+    event PaymentReceived(bytes32 indexed paymentId, address token, uint256 amount);
+
+    constructor(address _hanzoPay) {
+        hanzoPay = IHanzoPay(_hanzoPay);
+    }
+
+    // Receive payment callback from HanzoPay
+    function onPaymentReceived(
+        bytes32 paymentId,
+        address payer,
+        address token,
+        uint256 amount,
+        bytes calldata metadata
+    ) external override {
+        require(msg.sender == address(hanzoPay), "Only HanzoPay");
+        require(!processedPayments[paymentId], "Already processed");
+
+        processedPayments[paymentId] = true;
+
+        // Decode order info from metadata
+        (string memory orderId) = abi.decode(metadata, (string));
+
+        // Process order fulfillment
+        _fulfillOrder(orderId, payer, amount);
+
+        emit PaymentReceived(paymentId, token, amount);
+    }
+
+    // Create payment intent on-chain
+    function createPaymentIntent(
+        uint256 amount,
+        address[] calldata acceptedTokens
+    ) external returns (bytes32 paymentId) {
+        paymentId = hanzoPay.createIntent(
+            amount,
+            acceptedTokens,
+            address(this),
+            abi.encode("order_123")
+        );
+    }
+
+    function _fulfillOrder(string memory orderId, address buyer, uint256 amount) internal {
+        // Custom fulfillment logic
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "payments.ts",
           code: `import { HanzoPay } from "@hanzo/pay";

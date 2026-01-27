@@ -32,9 +32,9 @@ const features = [
   },
   {
     icon: Blocks,
-    title: "Cap'n Proto Native",
+    title: "Zero-Copy Native",
     description:
-      "Zero-copy serialization means no parsing overhead. Data stays in wire format, accessed directly in memory.",
+      "ZAP's zero-copy serialization means no parsing overhead. Data stays in wire format, accessed directly in memory.",
   },
   {
     icon: Cpu,

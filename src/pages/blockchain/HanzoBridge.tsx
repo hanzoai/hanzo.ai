@@ -93,6 +93,68 @@ const HanzoBridge = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "CrossChainVault.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/bridge/IHanzoBridge.sol";
+import "@hanzo/bridge/IBridgeReceiver.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract CrossChainVault is IBridgeReceiver {
+    IHanzoBridge public bridge;
+    mapping(bytes32 => bool) public processedMessages;
+
+    constructor(address _bridge) {
+        bridge = IHanzoBridge(_bridge);
+    }
+
+    // Bridge tokens to another chain
+    function bridgeTokens(
+        address token,
+        uint256 amount,
+        uint16 destChainId,
+        address recipient
+    ) external payable returns (bytes32 messageId) {
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        IERC20(token).approve(address(bridge), amount);
+
+        messageId = bridge.sendTokens{value: msg.value}(
+            token,
+            amount,
+            destChainId,
+            abi.encode(recipient)
+        );
+    }
+
+    // Get bridge quote for fees
+    function getBridgeQuote(
+        address token,
+        uint256 amount,
+        uint16 destChainId
+    ) external view returns (uint256 fee, uint256 estimatedTime) {
+        return bridge.getQuote(token, amount, destChainId);
+    }
+
+    // Receive bridged tokens (callback from bridge)
+    function onBridgeReceive(
+        bytes32 messageId,
+        uint16 srcChainId,
+        address token,
+        uint256 amount,
+        bytes calldata payload
+    ) external override {
+        require(msg.sender == address(bridge), "Only bridge");
+        require(!processedMessages[messageId], "Already processed");
+        processedMessages[messageId] = true;
+
+        address recipient = abi.decode(payload, (address));
+        IERC20(token).transfer(recipient, amount);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "bridge.ts",
           code: `import { HanzoBridge } from "@hanzo/blockchain";

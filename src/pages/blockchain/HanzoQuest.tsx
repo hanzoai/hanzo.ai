@@ -82,6 +82,145 @@ const HanzoQuest = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "QuestRewards.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/// @title QuestRewards - Gamified engagement with on-chain rewards
+/// @notice Quest completion, points tracking, and reward distribution
+contract QuestRewards is ERC721, Ownable {
+    IERC20 public rewardToken;
+
+    // Quest campaign struct
+    struct Campaign {
+        string name;
+        uint256 startTime;
+        uint256 endTime;
+        bytes32 merkleRoot;
+        uint256 totalRewards;
+        bool active;
+    }
+
+    // User progress tracking
+    struct UserProgress {
+        uint256 points;
+        uint256 questsCompleted;
+        uint256 lastClaimTime;
+        bool hasClaimed;
+    }
+
+    mapping(uint256 => Campaign) public campaigns;
+    mapping(uint256 => mapping(address => UserProgress)) public userProgress;
+    mapping(uint256 => mapping(address => bool)) public questCompleted;
+
+    uint256 public campaignCount;
+    uint256 public badgeTokenId;
+
+    event CampaignCreated(uint256 indexed campaignId, string name, uint256 startTime, uint256 endTime);
+    event QuestCompleted(uint256 indexed campaignId, address indexed user, uint256 questId, uint256 points);
+    event RewardsClaimed(uint256 indexed campaignId, address indexed user, uint256 amount);
+    event BadgeMinted(uint256 indexed campaignId, address indexed user, uint256 tokenId);
+
+    constructor(
+        address _rewardToken
+    ) ERC721("Quest Badge", "QBADGE") Ownable(msg.sender) {
+        rewardToken = IERC20(_rewardToken);
+    }
+
+    // Create a new quest campaign
+    function createCampaign(
+        string calldata name,
+        uint256 startTime,
+        uint256 endTime,
+        bytes32 merkleRoot,
+        uint256 totalRewards
+    ) external onlyOwner returns (uint256 campaignId) {
+        campaignId = campaignCount++;
+        campaigns[campaignId] = Campaign({
+            name: name,
+            startTime: startTime,
+            endTime: endTime,
+            merkleRoot: merkleRoot,
+            totalRewards: totalRewards,
+            active: true
+        });
+        emit CampaignCreated(campaignId, name, startTime, endTime);
+    }
+
+    // Complete a quest (called by backend with proof)
+    function completeQuest(
+        uint256 campaignId,
+        uint256 questId,
+        uint256 points,
+        bytes32[] calldata proof
+    ) external {
+        Campaign storage campaign = campaigns[campaignId];
+        require(campaign.active, "Campaign not active");
+        require(block.timestamp >= campaign.startTime, "Campaign not started");
+        require(block.timestamp <= campaign.endTime, "Campaign ended");
+
+        // Verify quest completion proof
+        bytes32 leaf = keccak256(abi.encodePacked(msg.sender, questId, points));
+        require(MerkleProof.verify(proof, campaign.merkleRoot, leaf), "Invalid proof");
+
+        require(!questCompleted[campaignId][msg.sender], "Quest already completed");
+        questCompleted[campaignId][msg.sender] = true;
+
+        UserProgress storage progress = userProgress[campaignId][msg.sender];
+        progress.points += points;
+        progress.questsCompleted++;
+
+        emit QuestCompleted(campaignId, msg.sender, questId, points);
+    }
+
+    // Claim token rewards
+    function claimRewards(
+        uint256 campaignId,
+        uint256 amount,
+        bytes32[] calldata proof
+    ) external {
+        Campaign storage campaign = campaigns[campaignId];
+        require(block.timestamp > campaign.endTime, "Campaign not ended");
+
+        UserProgress storage progress = userProgress[campaignId][msg.sender];
+        require(!progress.hasClaimed, "Already claimed");
+
+        // Verify reward amount proof
+        bytes32 leaf = keccak256(abi.encodePacked(msg.sender, amount));
+        require(MerkleProof.verify(proof, campaign.merkleRoot, leaf), "Invalid proof");
+
+        progress.hasClaimed = true;
+        progress.lastClaimTime = block.timestamp;
+
+        rewardToken.transfer(msg.sender, amount);
+        emit RewardsClaimed(campaignId, msg.sender, amount);
+    }
+
+    // Mint achievement badge (SBT)
+    function mintBadge(uint256 campaignId, uint256 minPoints) external {
+        UserProgress storage progress = userProgress[campaignId][msg.sender];
+        require(progress.points >= minPoints, "Not enough points");
+
+        uint256 tokenId = badgeTokenId++;
+        _safeMint(msg.sender, tokenId);
+        emit BadgeMinted(campaignId, msg.sender, tokenId);
+    }
+
+    // Soulbound - prevent transfers
+    function _update(address to, uint256 tokenId, address auth) internal override returns (address) {
+        address from = _ownerOf(tokenId);
+        require(from == address(0), "Soulbound: non-transferable");
+        return super._update(to, tokenId, auth);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "quest.ts",
           code: `import { HanzoQuest } from "@hanzo/blockchain";

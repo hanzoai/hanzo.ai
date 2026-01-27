@@ -8,52 +8,46 @@ const tweets = [
   {
     name: "Bob Jones",
     handle: "@heybobjones",
-    content: "Installed @umami_software with @Hanzo in 60 seconds. Then did it again on AWS with a new Ubuntu 24 instance, Docker, Nginx, Postgres, Certbot and Cloudflare in 60 minutes.",
-    avatar: "/placeholder.svg"
+    content: "Installed @umami_software with @Hanzo in 60 seconds. Then did it again on AWS with a new Ubuntu 24 instance, Docker, Nginx, Postgres, Certbot and Cloudflare in 60 minutes."
   },
   {
     name: "Fabio Coelho",
     handle: "@fccoelho7",
-    content: "this week I swapped @heroku with @Hanzo, no more annoying redis/postgres obligatory updates anymore.. in love with Hanzo's docker support",
-    avatar: "/placeholder.svg"
+    content: "this week I swapped @heroku with @Hanzo, no more annoying redis/postgres obligatory updates anymore.. in love with Hanzo's docker support"
   },
   {
     name: "Lyes",
     handle: "@lyker_zi",
-    content: "There is an easier option. Deploying literally anything on @Hanzo",
-    avatar: "/placeholder.svg"
+    content: "There is an easier option. Deploying literally anything on @Hanzo"
   },
   {
     name: "Benjamin Klieger",
     handle: "@BenjaminKlieger",
-    content: "\"Ship your apps, databases, and more to production in seconds.\"@Hanzo is not exaggerating, it's a breeze to deploy. Bringing Infinite Bookshelf online with a custom domain took minutes… and that just because I had to create a Dockerfile!",
-    avatar: "/placeholder.svg"
+    content: "\"Ship your apps, databases, and more to production in seconds.\"@Hanzo is not exaggerating, it's a breeze to deploy. Bringing Infinite Bookshelf online with a custom domain took minutes… and that just because I had to create a Dockerfile!"
   },
   {
     name: "kinsyu",
     handle: "@kinsyudev",
-    content: "Addicted to organising my services in @Hanzo",
-    avatar: "/placeholder.svg"
+    content: "Addicted to organising my services in @Hanzo"
   },
   {
     name: "Sam Newby",
     handle: "@SamNewby_",
-    content: "The UX in deploying a new app on @Hanzo is probably the best I've ever used. Spinning up a new MySQL database was so easy and fast.",
-    avatar: "/placeholder.svg"
+    content: "The UX in deploying a new app on @Hanzo is probably the best I've ever used. Spinning up a new MySQL database was so easy and fast."
   },
   {
     name: "flavio",
     handle: "@flaviocopes",
-    content: "I'm using @Hanzo_App to get a PostgreSQL database in the cloud and tbh it feels like magic",
-    avatar: "/placeholder.svg"
+    content: "I'm using @Hanzo_App to get a PostgreSQL database in the cloud and tbh it feels like magic"
   },
   {
     name: "Kyle McDonald",
     handle: "@kpmdev",
-    content: "Damn, @Hanzo is by far the fastest I've ever got up and running on a host. What an insanely good experience.",
-    avatar: "/placeholder.svg"
+    content: "Damn, @Hanzo is by far the fastest I've ever got up and running on a host. What an insanely good experience."
   }
 ];
+
+const getInitials = (name: string) => name.split(" ").map((part) => part[0]).slice(0, 2).join("").toUpperCase();
 
 const DeveloperLove = () => {
   return (
@@ -90,11 +84,9 @@ const DeveloperLove = () => {
               className="bg-gray-900/50 rounded-xl p-4 border border-gray-800"
             >
               <div className="flex items-center mb-3">
-                <img
-                  src={tweet.avatar}
-                  alt={tweet.name}
-                  className="h-10 w-10 rounded-full object-cover mr-3"
-                />
+                <div className="h-10 w-10 rounded-full mr-3 bg-[#fd4444]/20 border border-[#fd4444]/30 text-[var(--white)] flex items-center justify-center text-sm font-semibold">
+                  {getInitials(tweet.name)}
+                </div>
                 <div>
                   <h4 className="font-semibold text-[var(--white)]">{tweet.name}</h4>
                   <p className="text-sm text-neutral-400">{tweet.handle}</p>

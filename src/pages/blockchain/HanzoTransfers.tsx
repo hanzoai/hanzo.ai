@@ -91,6 +91,81 @@ const HanzoTransfers = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "TransferMonitor.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+
+/// @title TransferMonitor - Track and log transfers for indexing
+contract TransferMonitor {
+    // Indexed transfer events for efficient querying
+    event TokenTransfer(
+        address indexed token,
+        address indexed from,
+        address indexed to,
+        uint256 amount,
+        uint256 timestamp
+    );
+
+    event NFTTransfer(
+        address indexed collection,
+        uint256 indexed tokenId,
+        address indexed from,
+        address to,
+        uint256 timestamp
+    );
+
+    event NativeTransfer(
+        address indexed from,
+        address indexed to,
+        uint256 amount,
+        uint256 indexed blockNumber
+    );
+
+    // Log ERC20 transfer with metadata
+    function logTokenTransfer(
+        address token,
+        address from,
+        address to,
+        uint256 amount
+    ) external {
+        emit TokenTransfer(token, from, to, amount, block.timestamp);
+    }
+
+    // Log NFT transfer
+    function logNFTTransfer(
+        address collection,
+        uint256 tokenId,
+        address from,
+        address to
+    ) external {
+        emit NFTTransfer(collection, tokenId, from, to, block.timestamp);
+    }
+
+    // Transfer ETH and emit event
+    function transferWithLog(address payable to) external payable {
+        to.transfer(msg.value);
+        emit NativeTransfer(msg.sender, to, msg.value, block.number);
+    }
+
+    // Batch transfer ERC20 tokens
+    function batchTransfer(
+        address token,
+        address[] calldata recipients,
+        uint256[] calldata amounts
+    ) external {
+        require(recipients.length == amounts.length, "Length mismatch");
+        for (uint256 i = 0; i < recipients.length; i++) {
+            IERC20(token).transferFrom(msg.sender, recipients[i], amounts[i]);
+            emit TokenTransfer(token, msg.sender, recipients[i], amounts[i], block.timestamp);
+        }
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "transfers.ts",
           code: `import { HanzoTransfers } from "@hanzo/blockchain";

@@ -86,6 +86,49 @@ const socialLinks = [
   { name: "Instagram", handle: "@hanzoai", href: "https://instagram.com/hanzoai" },
 ];
 
+const partnerAssets = [
+  {
+    name: "Techstars",
+    files: [{ label: "Logo (PNG)", href: "/press/partners/techstars/techstars.png" }],
+  },
+  {
+    name: "NVIDIA",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/nvidia/nvidia.svg" }],
+  },
+  {
+    name: "Google Cloud",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/googlecloud/googlecloud.svg" }],
+  },
+  {
+    name: "AWS",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/aws/aws.svg" }],
+  },
+  {
+    name: "DigitalOcean",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/digitalocean/digitalocean.svg" }],
+  },
+  {
+    name: "Nebius",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/nebius/nebius.svg" }],
+  },
+  {
+    name: "Zoo Labs Foundation Inc",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/zoo-labs-foundation/zoo-labs-foundation.svg" }],
+  },
+  {
+    name: "Lux Industries",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/lux-industries/lux-industries.svg" }],
+  },
+  {
+    name: "Lux Network",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/lux-network/lux-network.svg" }],
+  },
+  {
+    name: "Lux Partners",
+    files: [{ label: "Logo (SVG)", href: "/press/partners/lux-partners/lux-partners.svg" }],
+  },
+];
+
 const LogoPreview = ({ isDark }: { isDark: boolean }) => (
   <svg viewBox="0 0 67 67" className="w-8 h-8">
     <path d="M22.21 67V44.6369H0V67H22.21Z" fill={isDark ? "#ffffff" : "#000000"} />
@@ -322,13 +365,14 @@ const Press = () => {
               viewport={{ once: true }}
               className="flex flex-wrap gap-4"
             >
-              <button
+              <a
+                href="/press/hanzo-press-kit.zip"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
                 style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Press Kit (ZIP)
-              </button>
+              </a>
               <Link
                 to="/brand"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
@@ -337,6 +381,29 @@ const Press = () => {
                 View Brand Guidelines
               </Link>
             </motion.div>
+
+            <div className="mt-10">
+              <h3 className="text-lg font-semibold text-white mb-4">Partner Assets</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {partnerAssets.map((partner) => (
+                  <div key={partner.name} className="border border-neutral-800 rounded-xl p-4 bg-neutral-900/40">
+                    <div className="text-sm uppercase tracking-widest text-neutral-500 mb-2">{partner.name}</div>
+                    <div className="flex flex-col gap-2">
+                      {partner.files.map((file) => (
+                        <a
+                          key={file.href}
+                          href={file.href}
+                          className="inline-flex items-center text-sm text-neutral-300 hover:text-[#fd4444] transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          {file.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

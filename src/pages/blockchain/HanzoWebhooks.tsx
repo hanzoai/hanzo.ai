@@ -91,6 +91,82 @@ const HanzoWebhooks = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "WebhookTrigger.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/webhooks/IHanzoWebhooks.sol";
+
+/// @title WebhookTrigger - Emit events for webhook notifications
+/// @notice Structured events for reliable webhook delivery
+contract WebhookTrigger {
+    // Events optimized for webhook subscriptions
+    event PaymentReceived(
+        address indexed from,
+        address indexed token,
+        uint256 amount,
+        bytes32 indexed orderId,
+        uint256 timestamp
+    );
+
+    event LiquidationAlert(
+        address indexed user,
+        address indexed market,
+        uint256 collateralValue,
+        uint256 debtValue,
+        uint256 indexed blockNumber
+    );
+
+    event NFTActivity(
+        address indexed collection,
+        uint256 indexed tokenId,
+        address from,
+        address to,
+        uint256 price,
+        string activityType // "sale", "bid", "transfer"
+    );
+
+    event SecurityAlert(
+        address indexed target,
+        bytes32 indexed alertType,
+        address triggeredBy,
+        bytes data
+    );
+
+    // Emit payment for webhook notification
+    function emitPayment(
+        address token,
+        uint256 amount,
+        bytes32 orderId
+    ) external {
+        emit PaymentReceived(msg.sender, token, amount, orderId, block.timestamp);
+    }
+
+    // Emit liquidation alert for DeFi monitoring
+    function emitLiquidationAlert(
+        address user,
+        address market,
+        uint256 collateralValue,
+        uint256 debtValue
+    ) external {
+        emit LiquidationAlert(user, market, collateralValue, debtValue, block.number);
+    }
+
+    // Emit NFT activity for marketplace webhooks
+    function emitNFTActivity(
+        address collection,
+        uint256 tokenId,
+        address from,
+        address to,
+        uint256 price,
+        string calldata activityType
+    ) external {
+        emit NFTActivity(collection, tokenId, from, to, price, activityType);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "webhooks.ts",
           code: `import { HanzoWebhooks } from "@hanzo/blockchain";

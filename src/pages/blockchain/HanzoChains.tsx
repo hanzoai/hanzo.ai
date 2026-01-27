@@ -101,6 +101,64 @@ const HanzoChains = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "MultiChainReader.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/chains/IChainReader.sol";
+import "@hanzo/chains/ICrossChainMessenger.sol";
+
+contract MultiChainReader {
+    IChainReader public chainReader;
+    ICrossChainMessenger public messenger;
+
+    mapping(uint256 => uint256) public chainBalances;
+
+    event CrossChainBalanceUpdated(uint256 chainId, uint256 balance);
+
+    constructor(address _chainReader, address _messenger) {
+        chainReader = IChainReader(_chainReader);
+        messenger = ICrossChainMessenger(_messenger);
+    }
+
+    // Request balance from another chain via cross-chain message
+    function requestCrossChainBalance(
+        uint256 targetChainId,
+        address account
+    ) external returns (bytes32 messageId) {
+        bytes memory payload = abi.encode(account);
+        messageId = messenger.sendMessage(
+            targetChainId,
+            address(this),
+            payload,
+            200000 // gas limit
+        );
+    }
+
+    // Receive cross-chain balance response
+    function onMessageReceived(
+        uint256 sourceChainId,
+        bytes calldata payload
+    ) external {
+        require(msg.sender == address(messenger), "Only messenger");
+        uint256 balance = abi.decode(payload, (uint256));
+        chainBalances[sourceChainId] = balance;
+        emit CrossChainBalanceUpdated(sourceChainId, balance);
+    }
+
+    // Read current chain's block number
+    function getBlockNumber() external view returns (uint256) {
+        return chainReader.getBlockNumber();
+    }
+
+    // Read current chain's gas price
+    function getGasPrice() external view returns (uint256) {
+        return chainReader.getGasPrice();
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "chains.ts",
           code: `import { HanzoChains } from "@hanzo/blockchain";

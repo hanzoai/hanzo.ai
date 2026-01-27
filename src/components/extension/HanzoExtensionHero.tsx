@@ -58,12 +58,16 @@ const HanzoExtensionHero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/placeholder.svg" 
-                alt="Hanzo Extension Preview" 
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="h-[360px] md:h-[440px] w-full bg-gradient-to-br from-[#fd4444]/25 via-black/40 to-[#ff6b6b]/20">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.14),transparent_50%)]" />
+                <div className="relative z-10 h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-xs uppercase tracking-widest text-neutral-400">Extension Preview</div>
+                    <div className="text-2xl font-semibold text-[var(--white)] mt-2">Browser-native AI</div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
           </motion.div>
         </motion.div>

@@ -97,7 +97,6 @@ const industriesData = [{
 }, {
   name: "Sales and Commerce",
   icon: <ShoppingCart className="h-5 w-5 text-orange-400 mb-2" />,
-  image: "/placeholder.svg",
   description: "Sales enablement and commerce solutions"
 }];
 
@@ -107,45 +106,37 @@ const industriesSectors = [{
   description: "Cutting-edge AI solutions for business transformation"
 }, {
   name: "Financial Services",
-  image: "/placeholder.svg",
   description: "Innovative solutions for banking and finance sectors"
 }, {
   name: "Manufacturing & Mobility",
-  image: "/placeholder.svg",
   description: "Optimizing operations and driving innovation in manufacturing"
 }, {
   name: "Healthcare",
-  image: "/placeholder.svg",
   description: "Digital transformation for healthcare providers"
 }, {
   name: "Retail & Consumer",
-  image: "/placeholder.svg",
   description: "Creating exceptional customer experiences"
 }, {
   name: "Technology",
-  image: "/placeholder.svg",
   description: "Empowering the tech industry with advanced solutions"
 }, {
   name: "Energy & Utilities",
-  image: "/placeholder.svg",
   description: "Smart solutions for sustainable energy management"
 }, {
   name: "Telecommunications",
-  image: "/placeholder.svg",
   description: "Next-generation communication infrastructure"
 }, {
   name: "Education",
-  image: "/placeholder.svg",
   description: "Digital learning platforms and educational technology"
 }, {
   name: "Government",
-  image: "/placeholder.svg",
   description: "Digital transformation for public services"
 }];
 
 const Features = () => {
   const displayedFeatures = allFeatures.slice(0, 16);
   const hasMoreFeatures = allFeatures.length > 16;
+  const isRealImage = (src?: string) => Boolean(src && !src.includes("placeholder"));
   const industryIcons = {
     "Artificial Intelligence": <Brain className="h-5 w-5 text-purple-400 mb-2" />,
     "Adtech": <Target className="h-5 w-5 text-blue-400 mb-2" />,
@@ -424,7 +415,11 @@ const Features = () => {
                 {industriesData.map((industry, index) => <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                     <div className="group h-[400px] relative overflow-hidden rounded-xl">
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-                      <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      {isRealImage(industry.image) ? (
+                        <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      ) : (
+                        <div className="h-full w-full bg-gradient-to-br from-[#fd4444]/20 via-black/50 to-[#ff6b6b]/15" />
+                      )}
                       <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                         <div className="flex items-center mb-2">
                           {industry.icon}

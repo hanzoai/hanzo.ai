@@ -91,6 +91,85 @@ const HanzoNFT = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "NFTMarketplace.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/nft/IHanzoNFT.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+
+contract NFTMarketplace is ReentrancyGuard {
+    IHanzoNFT public hanzoNFT;
+
+    struct Listing {
+        address seller;
+        address nftContract;
+        uint256 tokenId;
+        uint256 price;
+        bool is1155;
+        uint256 amount;
+    }
+
+    mapping(bytes32 => Listing) public listings;
+
+    event Listed(bytes32 indexed listingId, address seller, uint256 price);
+    event Sold(bytes32 indexed listingId, address buyer, uint256 price);
+
+    constructor(address _hanzoNFT) {
+        hanzoNFT = IHanzoNFT(_hanzoNFT);
+    }
+
+    // List an ERC721 NFT
+    function listERC721(
+        address nftContract,
+        uint256 tokenId,
+        uint256 price
+    ) external returns (bytes32 listingId) {
+        IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
+
+        listingId = keccak256(abi.encode(nftContract, tokenId, block.timestamp));
+        listings[listingId] = Listing({
+            seller: msg.sender,
+            nftContract: nftContract,
+            tokenId: tokenId,
+            price: price,
+            is1155: false,
+            amount: 1
+        });
+
+        emit Listed(listingId, msg.sender, price);
+    }
+
+    // Buy a listed NFT
+    function buy(bytes32 listingId) external payable nonReentrant {
+        Listing memory listing = listings[listingId];
+        require(listing.seller != address(0), "Not listed");
+        require(msg.value >= listing.price, "Insufficient payment");
+
+        delete listings[listingId];
+
+        // Transfer NFT to buyer
+        if (listing.is1155) {
+            IERC1155(listing.nftContract).safeTransferFrom(
+                address(this), msg.sender, listing.tokenId, listing.amount, ""
+            );
+        } else {
+            IERC721(listing.nftContract).transferFrom(
+                address(this), msg.sender, listing.tokenId
+            );
+        }
+
+        // Transfer payment to seller
+        payable(listing.seller).transfer(listing.price);
+
+        emit Sold(listingId, msg.sender, listing.price);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "nft.ts",
           code: `import { HanzoNFT } from "@hanzo/blockchain";

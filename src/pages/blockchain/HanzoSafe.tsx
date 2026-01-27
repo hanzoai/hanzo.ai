@@ -91,6 +91,71 @@ const HanzoSafe = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "TreasurySafe.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/safe/IHanzoSafe.sol";
+import "@hanzo/safe/ISafeModule.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract TreasuryModule is ISafeModule {
+    IHanzoSafe public safe;
+    uint256 public dailyLimit;
+    uint256 public spentToday;
+    uint256 public lastSpendDate;
+
+    mapping(address => bool) public allowedRecipients;
+
+    constructor(address _safe, uint256 _dailyLimit) {
+        safe = IHanzoSafe(_safe);
+        dailyLimit = _dailyLimit;
+    }
+
+    // Execute transaction through Safe with daily limit check
+    function executeWithLimit(
+        address to,
+        uint256 value,
+        bytes calldata data
+    ) external returns (bool success) {
+        require(allowedRecipients[to], "Recipient not allowed");
+
+        // Reset daily limit if new day
+        if (block.timestamp / 1 days > lastSpendDate) {
+            spentToday = 0;
+            lastSpendDate = block.timestamp / 1 days;
+        }
+
+        require(spentToday + value <= dailyLimit, "Daily limit exceeded");
+        spentToday += value;
+
+        // Execute through Safe
+        success = safe.execTransactionFromModule(to, value, data, 0);
+    }
+
+    // Propose multi-sig transaction
+    function proposeTransaction(
+        address to,
+        uint256 value,
+        bytes calldata data
+    ) external returns (bytes32 proposalId) {
+        proposalId = safe.proposeTransaction(to, value, data, msg.sender);
+    }
+
+    // Sign/approve a proposal
+    function approveProposal(bytes32 proposalId) external {
+        safe.approveTransaction(proposalId, msg.sender);
+    }
+
+    // Execute when threshold reached
+    function executeProposal(bytes32 proposalId) external {
+        require(safe.getApprovalCount(proposalId) >= safe.threshold(), "Threshold not met");
+        safe.executeTransaction(proposalId);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "safe.ts",
           code: `import { HanzoSafe } from "@hanzo/blockchain";

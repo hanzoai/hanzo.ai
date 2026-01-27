@@ -58,6 +58,8 @@ import {
   Headphones
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import { PartnerLogoRow } from "@/components/shared";
+import { partnerLogos } from "@/constants/partner-logos";
 import Footer from "@/components/Footer";
 import { categories, allProducts, getProductsByCategory, ProductCategory } from "@/data/product-taxonomy";
 
@@ -204,13 +206,11 @@ export default function Products() {
           <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6">
             Trusted by teams at
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 opacity-50">
-            <span className="text-sm font-medium text-neutral-400">Techstars '17</span>
-            <span className="text-sm font-medium text-neutral-400">NVIDIA</span>
-            <span className="text-sm font-medium text-neutral-400">Google Cloud</span>
-            <span className="text-sm font-medium text-neutral-400">Nebius</span>
-            <span className="text-sm font-medium text-neutral-400">DigitalOcean</span>
-          </div>
+          <PartnerLogoRow
+            logos={partnerLogos}
+            invert
+            className="opacity-70"
+          />
         </div>
       </section>
 

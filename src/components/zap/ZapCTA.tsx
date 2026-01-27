@@ -33,7 +33,7 @@ const ZapCTA = () => {
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://hanzoai.github.io/zap/docs"
+              href="https://zap-proto.github.io/zap/docs"
               className="inline-flex items-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-600 text-black font-medium rounded-full transition-colors"
             >
               <BookOpen className="w-5 h-5" />
@@ -41,7 +41,7 @@ const ZapCTA = () => {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href="https://github.com/hanzoai/zap"
+              href="https://github.com/zap-proto/zap"
               className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
             >
               <Github className="w-5 h-5" />

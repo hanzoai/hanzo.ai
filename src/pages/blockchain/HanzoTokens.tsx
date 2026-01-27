@@ -91,6 +91,56 @@ const HanzoTokens = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "TokenVault.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@hanzo/tokens/ITokenRegistry.sol";
+
+contract MultiTokenVault {
+    using SafeERC20 for IERC20;
+
+    ITokenRegistry public registry;
+    mapping(address => mapping(address => uint256)) public balances;
+
+    constructor(address _registry) {
+        registry = ITokenRegistry(_registry);
+    }
+
+    // Deposit any registered token
+    function deposit(address token, uint256 amount) external {
+        require(registry.isVerified(token), "Token not verified");
+        require(!registry.isSpam(token), "Spam token");
+
+        IERC20(token).safeTransferFrom(msg.sender, address(this), amount);
+        balances[msg.sender][token] += amount;
+    }
+
+    // Get token metadata from registry
+    function getTokenInfo(address token) external view returns (
+        string memory name,
+        string memory symbol,
+        uint8 decimals,
+        uint256 price
+    ) {
+        return registry.getTokenInfo(token);
+    }
+
+    // Batch check balances across tokens
+    function getPortfolioValue(address user, address[] calldata tokens)
+        external view returns (uint256 totalValue)
+    {
+        for (uint i = 0; i < tokens.length; i++) {
+            (,,, uint256 price) = registry.getTokenInfo(tokens[i]);
+            totalValue += balances[user][tokens[i]] * price / 1e18;
+        }
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "tokens.ts",
           code: `import { HanzoTokens } from "@hanzo/blockchain";

@@ -91,6 +91,58 @@ const HanzoGas = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "GaslessApp.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/gas/IHanzoPaymaster.sol";
+import "@account-abstraction/contracts/core/BasePaymaster.sol";
+
+contract HanzoPaymaster is BasePaymaster {
+    mapping(address => bool) public whitelistedContracts;
+    mapping(address => uint256) public userGasUsed;
+    uint256 public maxGasPerUser = 0.01 ether;
+
+    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint) {}
+
+    // Validate paymaster will sponsor this UserOp
+    function _validatePaymasterUserOp(
+        UserOperation calldata userOp,
+        bytes32 userOpHash,
+        uint256 maxCost
+    ) internal override returns (bytes memory context, uint256 validationData) {
+        address target = address(bytes20(userOp.callData[16:36]));
+        require(whitelistedContracts[target], "Contract not whitelisted");
+        require(
+            userGasUsed[userOp.sender] + maxCost <= maxGasPerUser,
+            "User gas limit exceeded"
+        );
+
+        return (abi.encode(userOp.sender, maxCost), 0);
+    }
+
+    // Called after UserOp execution
+    function _postOp(
+        PostOpMode mode,
+        bytes calldata context,
+        uint256 actualGasCost
+    ) internal override {
+        (address user, ) = abi.decode(context, (address, uint256));
+        userGasUsed[user] += actualGasCost;
+    }
+
+    // Admin functions
+    function whitelistContract(address target, bool allowed) external onlyOwner {
+        whitelistedContracts[target] = allowed;
+    }
+
+    function setMaxGasPerUser(uint256 _max) external onlyOwner {
+        maxGasPerUser = _max;
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "gas.ts",
           code: `import { HanzoGasManager } from "@hanzo/blockchain";

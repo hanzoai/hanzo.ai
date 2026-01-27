@@ -91,6 +91,73 @@ const HanzoSmartWallets = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "SmartAccount.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@account-abstraction/contracts/core/BaseAccount.sol";
+import "@hanzo/wallet/ISessionKeyManager.sol";
+import "@hanzo/wallet/ISocialRecovery.sol";
+
+contract HanzoSmartAccount is BaseAccount, ISocialRecovery {
+    address public owner;
+    ISessionKeyManager public sessionManager;
+
+    mapping(address => bool) public guardians;
+    uint256 public guardianCount;
+    uint256 public recoveryThreshold;
+
+    constructor(
+        IEntryPoint _entryPoint,
+        address _owner,
+        address[] memory _guardians,
+        uint256 _threshold
+    ) BaseAccount(_entryPoint) {
+        owner = _owner;
+        recoveryThreshold = _threshold;
+        for (uint i = 0; i < _guardians.length; i++) {
+            guardians[_guardians[i]] = true;
+            guardianCount++;
+        }
+    }
+
+    // Validate UserOperation signature
+    function _validateSignature(
+        UserOperation calldata userOp,
+        bytes32 userOpHash
+    ) internal override returns (uint256 validationData) {
+        // Check if signed by owner or valid session key
+        bytes32 hash = keccak256(abi.encodePacked("\\x19Ethereum Signed Message:\\n32", userOpHash));
+        address signer = ECDSA.recover(hash, userOp.signature);
+
+        if (signer == owner) return 0;
+        if (sessionManager.isValidSession(signer, userOp.callData)) return 0;
+
+        return SIG_VALIDATION_FAILED;
+    }
+
+    // Execute batch of calls
+    function executeBatch(
+        address[] calldata targets,
+        uint256[] calldata values,
+        bytes[] calldata datas
+    ) external onlyEntryPoint {
+        for (uint i = 0; i < targets.length; i++) {
+            (bool success,) = targets[i].call{value: values[i]}(datas[i]);
+            require(success, "Batch call failed");
+        }
+    }
+
+    // Social recovery - guardians can recover to new owner
+    function executeRecovery(address newOwner, bytes[] calldata signatures) external {
+        require(signatures.length >= recoveryThreshold, "Not enough signatures");
+        // Verify guardian signatures
+        owner = newOwner;
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "smart-wallet.ts",
           code: `import { HanzoSmartWallet } from "@hanzo/blockchain";

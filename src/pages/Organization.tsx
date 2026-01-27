@@ -43,10 +43,10 @@ const Organization = () => {
   
   // Mock team members for demonstration
   const teamMembers = [
-    { id: '1', name: 'Alex Johnson', email: 'alex@hanzo.ai', role: 'Owner', avatar: '/placeholder.svg' },
-    { id: '2', name: 'Sarah Chen', email: 'sarah@hanzo.ai', role: 'Admin', avatar: '/placeholder.svg' },
-    { id: '3', name: 'Miguel Rodriguez', email: 'miguel@hanzo.ai', role: 'Member', avatar: '/placeholder.svg' },
-    { id: '4', name: 'Leila Patel', email: 'leila@hanzo.ai', role: 'Member', avatar: '/placeholder.svg' },
+    { id: '1', name: 'Alex Johnson', email: 'alex@hanzo.ai', role: 'Owner' },
+    { id: '2', name: 'Sarah Chen', email: 'sarah@hanzo.ai', role: 'Admin' },
+    { id: '3', name: 'Miguel Rodriguez', email: 'miguel@hanzo.ai', role: 'Member' },
+    { id: '4', name: 'Leila Patel', email: 'leila@hanzo.ai', role: 'Member' },
   ];
   
   const handleSubmit = (e: React.FormEvent) => {
@@ -182,8 +182,10 @@ const Organization = () => {
                     <TableCell>
                       <div className="flex items-center space-x-3">
                         <Avatar className="h-8 w-8">
-                          <AvatarImage src={member.avatar} />
-                          <AvatarFallback className="bg-gray-900/50">{member.name[0]}</AvatarFallback>
+                          {member.avatar ? <AvatarImage src={member.avatar} /> : null}
+                          <AvatarFallback className="bg-gray-900/50">
+                            {member.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}
+                          </AvatarFallback>
                         </Avatar>
                         <div>
                           <div className="font-medium">{member.name}</div>

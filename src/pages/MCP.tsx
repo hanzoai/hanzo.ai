@@ -471,7 +471,7 @@ servers:
               className="text-xl text-neutral-400 mb-8 max-w-2xl mx-auto"
             >
               MCP made tool integration easy. ZAP makes it <strong className="text-white">fast</strong>.
-              Zero-Copy Agent Protocol is the next evolution: Cap'n Proto-native, 40-50x lower overhead,
+              Zero-Copy Agent Protocol is the next evolution: zero-copy serialization, 40-50x lower overhead,
               built for agent swarms at scale.
             </motion.p>
 

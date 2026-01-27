@@ -91,6 +91,65 @@ const HanzoRollups = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "L2Bridge.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/rollups/IL2Bridge.sol";
+import "@hanzo/rollups/ICrossChainMessenger.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+/// @title L2Bridge - Bridge assets between L1 and L2 rollups
+contract L2Bridge {
+    IL2Bridge public bridge;
+    ICrossChainMessenger public messenger;
+
+    mapping(bytes32 => bool) public processedDeposits;
+
+    event DepositInitiated(address indexed from, uint256 amount, uint256 l2ChainId);
+    event WithdrawalCompleted(address indexed to, uint256 amount);
+
+    constructor(address _bridge, address _messenger) {
+        bridge = IL2Bridge(_bridge);
+        messenger = ICrossChainMessenger(_messenger);
+    }
+
+    // Bridge ETH from L1 to L2
+    function bridgeETHToL2(uint256 l2ChainId) external payable {
+        bridge.depositETH{value: msg.value}(l2ChainId, msg.sender);
+        emit DepositInitiated(msg.sender, msg.value, l2ChainId);
+    }
+
+    // Bridge ERC20 tokens to L2
+    function bridgeTokenToL2(
+        address token,
+        uint256 amount,
+        uint256 l2ChainId
+    ) external {
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        IERC20(token).approve(address(bridge), amount);
+        bridge.depositERC20(token, amount, l2ChainId, msg.sender);
+        emit DepositInitiated(msg.sender, amount, l2ChainId);
+    }
+
+    // Finalize withdrawal on L1 (called by relayer)
+    function finalizeWithdrawal(
+        bytes32 withdrawalHash,
+        address to,
+        uint256 amount,
+        bytes calldata proof
+    ) external {
+        require(!processedDeposits[withdrawalHash], "Already processed");
+        require(bridge.verifyWithdrawalProof(withdrawalHash, proof), "Invalid proof");
+
+        processedDeposits[withdrawalHash] = true;
+        payable(to).transfer(amount);
+        emit WithdrawalCompleted(to, amount);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "rollups.ts",
           code: `import { HanzoRollups } from "@hanzo/blockchain";

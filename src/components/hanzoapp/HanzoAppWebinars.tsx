@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const WebinarCard = ({ title, partner, image, logos = [] }) => {
+const WebinarCard = ({ title, partner }: { title: string; partner: string }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -12,9 +12,13 @@ const WebinarCard = ({ title, partner, image, logos = [] }) => {
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden group hover:border-gray-700 transition-colors"
     >
-      <div className="h-48 bg-gray-800 relative">
-        <div className="absolute inset-0 flex items-center justify-center text-neutral-500">
-          {title}
+      <div className="h-48 bg-gradient-to-br from-[#fd4444]/25 via-black/40 to-[#ff6b6b]/20 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_55%)]" />
+        <div className="absolute bottom-4 left-4 right-4">
+          <div className="text-sm uppercase tracking-widest text-neutral-400">Webinar</div>
+          <div className="text-lg font-semibold text-[var(--white)] mt-1 line-clamp-2">
+            {title}
+          </div>
         </div>
       </div>
       <div className="p-6">
@@ -34,33 +38,23 @@ const HanzoAppWebinars = () => {
   const webinars = [
     {
       title: "How to Build No-Code SQL Chatbots using Hanzo AI",
-      partner: "SingleStore",
-      logos: ["SingleStore"],
-      image: "/webinar-placeholder-1.jpg" // Added image property
+      partner: "SingleStore"
     },
     {
       title: "LlamaIndex Webinar: Build No-Code RAG with Hanzo AI",
-      partner: "Milvus",
-      logos: ["Milvus"],
-      image: "/webinar-placeholder-2.jpg" // Added image property
+      partner: "Milvus"
     },
     {
       title: "How to Build a NoCode AWS Bedrock LLM App on Hanzo AI",
-      partner: "AWS",
-      logos: ["SingleStore", "AWS"],
-      image: "/webinar-placeholder-3.jpg" // Added image property
+      partner: "AWS"
     },
     {
       title: "Drag and Drop LLMs: Simplifying RAG with Hanzo AI and Milvus",
-      partner: "Milvus",
-      logos: ["Milvus"],
-      image: "/webinar-placeholder-4.jpg" // Added image property
+      partner: "Milvus"
     },
     {
       title: "LangChain Weekly Webinar - Low-Code/No-Code LLM",
-      partner: "Langchain",
-      logos: ["Langchain"],
-      image: "/webinar-placeholder-5.jpg" // Added image property
+      partner: "Langchain"
     }
   ];
 
@@ -82,12 +76,10 @@ const HanzoAppWebinars = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {webinars.map((webinar, index) => (
-            <WebinarCard 
+            <WebinarCard
               key={index}
               title={webinar.title}
               partner={webinar.partner}
-              logos={webinar.logos}
-              image={webinar.image}
             />
           ))}
         </div>

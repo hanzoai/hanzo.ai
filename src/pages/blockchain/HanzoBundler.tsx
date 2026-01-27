@@ -91,6 +91,68 @@ const HanzoBundler = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "UserOpBuilder.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@account-abstraction/contracts/interfaces/IEntryPoint.sol";
+import "@account-abstraction/contracts/interfaces/UserOperation.sol";
+
+contract UserOpHelper {
+    IEntryPoint public immutable entryPoint;
+
+    constructor(address _entryPoint) {
+        entryPoint = IEntryPoint(_entryPoint);
+    }
+
+    // Encode a simple ETH transfer for UserOp callData
+    function encodeTransfer(address to, uint256 value) external pure returns (bytes memory) {
+        return abi.encodeWithSignature("execute(address,uint256,bytes)", to, value, "");
+    }
+
+    // Encode ERC20 transfer for UserOp callData
+    function encodeERC20Transfer(
+        address token,
+        address to,
+        uint256 amount
+    ) external pure returns (bytes memory) {
+        bytes memory tokenCall = abi.encodeWithSignature("transfer(address,uint256)", to, amount);
+        return abi.encodeWithSignature("execute(address,uint256,bytes)", token, 0, tokenCall);
+    }
+
+    // Encode batch execution for UserOp callData
+    function encodeBatch(
+        address[] calldata targets,
+        uint256[] calldata values,
+        bytes[] calldata datas
+    ) external pure returns (bytes memory) {
+        return abi.encodeWithSignature(
+            "executeBatch(address[],uint256[],bytes[])",
+            targets, values, datas
+        );
+    }
+
+    // Get gas limits for simulation
+    function estimateGas(UserOperation calldata userOp) external returns (
+        uint256 preVerificationGas,
+        uint256 verificationGasLimit,
+        uint256 callGasLimit
+    ) {
+        // Simulate execution to estimate gas
+        try entryPoint.simulateValidation(userOp) {}
+        catch (bytes memory result) {
+            // Parse simulation result for gas estimates
+        }
+    }
+
+    // Get current nonce for account
+    function getNonce(address account) external view returns (uint256) {
+        return entryPoint.getNonce(account, 0);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "bundler.ts",
           code: `import { HanzoBundler } from "@hanzo/blockchain";

@@ -1,8 +1,9 @@
 
 import { motion } from "framer-motion";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { PartnerLogoRow } from "@/components/shared";
+import { partnerLogos } from "@/constants/partner-logos";
 
 const testimonials = [{
   quote: "Hanzo has helped us to streamline our complex challenges and processes. Their suite of tools has made it easier for us to launch, scale, and innovate our business.",
@@ -18,31 +19,6 @@ const testimonials = [{
   role: "CTO, Bellabeat"
 }];
 
-const brandLogos = [{
-  name: "Sensei",
-  logo: "https://sensei.partners/logo.png"
-}, {
-  name: "Damon Motorcycles",
-  logo: "/placeholder.svg"
-}, {
-  name: "Skully AR-1",
-  logo: "/placeholder.svg"
-}, {
-  name: "Triller",
-  logo: "/placeholder.svg"
-}, {
-  name: "Bellabeat",
-  logo: "/placeholder.svg"
-}, {
-  name: "Arca",
-  logo: "/placeholder.svg"
-}, {
-  name: "ZOO",
-  logo: "/placeholder.svg"
-}, {
-  name: "LUX",
-  logo: "/placeholder.svg"
-}];
 
 const caseStudies = [{
   title: "Damon Motorcycles: Revolutionizing Electric Mobility",
@@ -74,27 +50,10 @@ const Testimonials = () => {
           <p className="mt-4 text-lg text-neutral-300">Transforming businesses through innovation.</p>
         </div>
 
-        {/* Brand Logos Scroll Area */}
+        {/* Partner Logos */}
         <div className="mb-16">
           <h3 className="text-xl font-display text-[var(--white)] mb-6">Trusted By Industry Leaders</h3>
-          <ScrollArea className="w-full whitespace-nowrap rounded-lg">
-            <div className="flex space-x-8 p-4">
-              {brandLogos.map((brand, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} className="flex-shrink-0">
-                  <img src={brand.logo} alt={brand.name} className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
-                </motion.div>)}
-            </div>
-          </ScrollArea>
+          <PartnerLogoRow logos={partnerLogos} invert className="opacity-70" />
         </div>
 
         {/* Case Studies */}

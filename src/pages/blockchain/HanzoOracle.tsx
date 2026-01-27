@@ -90,6 +90,47 @@ const HanzoOracle = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "Oracle.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/oracle/IHanzoOracle.sol";
+import "@hanzo/oracle/IHanzoVRF.sol";
+
+contract MyDeFiProtocol {
+    IHanzoOracle public oracle;
+    IHanzoVRF public vrf;
+
+    constructor(address _oracle, address _vrf) {
+        oracle = IHanzoOracle(_oracle);
+        vrf = IHanzoVRF(_vrf);
+    }
+
+    // Get latest ETH/USD price
+    function getEthPrice() external view returns (uint256 price, uint256 timestamp) {
+        (price, timestamp) = oracle.getLatestPrice("ETH/USD");
+        require(timestamp > block.timestamp - 1 hours, "Stale price");
+    }
+
+    // Get TWAP price over period
+    function getTwap(string calldata pair, uint256 period) external view returns (uint256) {
+        return oracle.getTWAP(pair, period);
+    }
+
+    // Request verifiable randomness for NFT mint
+    function requestRandomMint() external returns (bytes32 requestId) {
+        requestId = vrf.requestRandomWords(1, 200000, 3);
+    }
+
+    // VRF callback - receive random number
+    function fulfillRandomWords(bytes32 requestId, uint256[] memory randomWords) internal {
+        uint256 tokenId = randomWords[0] % 10000;
+        // Mint NFT with random traits
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "oracle.ts",
           code: `import { HanzoOracle } from '@hanzo/oracle';

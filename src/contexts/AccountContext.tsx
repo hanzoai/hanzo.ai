@@ -44,7 +44,6 @@ const MOCK_USER: User = {
   id: 'user-1',
   name: 'Alex Johnson',
   email: 'alex@hanzo.ai',
-  avatar: '/placeholder.svg',
   bio: 'Senior Developer specializing in AI and cloud infrastructure',
   location: 'San Francisco, CA',
   joinedDate: 'January 2022',

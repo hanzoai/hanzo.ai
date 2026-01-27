@@ -94,6 +94,67 @@ const HanzoDeFi = () => {
       ]}
       codeExamples={[
         {
+          language: "Solidity",
+          filename: "YieldVault.sol",
+          code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import "@hanzo/defi/IHanzoRouter.sol";
+import "@hanzo/defi/IHanzoStaking.sol";
+import "@hanzo/defi/IHanzoLending.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract YieldOptimizer {
+    IHanzoRouter public router;
+    IHanzoStaking public staking;
+    IHanzoLending public lending;
+
+    constructor(address _router, address _staking, address _lending) {
+        router = IHanzoRouter(_router);
+        staking = IHanzoStaking(_staking);
+        lending = IHanzoLending(_lending);
+    }
+
+    // Swap tokens using best route
+    function swap(
+        address tokenIn,
+        address tokenOut,
+        uint256 amountIn,
+        uint256 minAmountOut
+    ) external returns (uint256 amountOut) {
+        IERC20(tokenIn).transferFrom(msg.sender, address(this), amountIn);
+        IERC20(tokenIn).approve(address(router), amountIn);
+
+        amountOut = router.swapExactTokensForTokens(
+            tokenIn, tokenOut, amountIn, minAmountOut, msg.sender
+        );
+    }
+
+    // Stake tokens for yield
+    function stake(address pool, uint256 amount, uint256 lockPeriod) external {
+        IERC20(staking.stakingToken(pool)).transferFrom(msg.sender, address(this), amount);
+        staking.stake(pool, amount, lockPeriod, msg.sender);
+    }
+
+    // Supply to lending market
+    function supply(address market, uint256 amount) external {
+        address asset = lending.marketAsset(market);
+        IERC20(asset).transferFrom(msg.sender, address(this), amount);
+        IERC20(asset).approve(address(lending), amount);
+        lending.supply(market, amount, msg.sender);
+    }
+
+    // Get best yield across protocols
+    function getBestYield(address token) external view returns (
+        uint256 stakingAPY,
+        uint256 lendingAPY
+    ) {
+        stakingAPY = staking.getAPY(token);
+        lendingAPY = lending.getSupplyRate(token);
+    }
+}`,
+        },
+        {
           language: "Node",
           filename: "defi.ts",
           code: `import { HanzoDeFi } from "@hanzo/blockchain";
