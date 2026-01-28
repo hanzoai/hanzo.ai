@@ -1,0 +1,36 @@
+# Hanzo AI
+
+> Frontier AI company building LLMs, AI cloud infrastructure, and agent frameworks.
+
+## About
+Hanzo AI (Techstars '17) builds frontier AI models, cloud infrastructure, and developer tools for AI-native applications. The platform provides foundation models (30+ Zen open-source models), an AI cloud platform, Model Context Protocol (MCP) infrastructure, agent frameworks, and blockchain infrastructure APIs supporting 100+ chains. Products include Hanzo Dev (AI coding assistant), AI Studio, and a comprehensive Cloud Platform.
+
+## Key Features
+- 30+ Zen open-source foundation models (qwen3+ architecture)
+- Hanzo Dev: AI-powered coding assistant with MCP integration
+- AI Studio: Train, fine-tune, and deploy models
+- Cloud Platform: Managed AI infrastructure with GPU clusters
+- Model Context Protocol (MCP): Open protocol for AI context management
+- Agent frameworks for building autonomous AI systems
+- Blockchain infrastructure APIs: nodes, wallets, webhooks, data APIs
+- Support for 100+ blockchain networks
+- Enterprise-grade security and compliance
+
+## Links
+- [Website](https://hanzo.ai)
+- [Documentation](https://docs.hanzo.ai)
+- [AI Studio](https://studio.hanzo.ai)
+- [Cloud Platform](https://app.hanzo.ai)
+- [Hanzo Dev](https://dev.hanzo.ai)
+- [GitHub](https://github.com/hanzoai)
+- [Status](https://status.hanzo.ai)
+
+## API
+- Base URL: https://api.hanzo.ai
+- Authentication: API key via Bearer token
+- Docs: https://docs.hanzo.ai/api
+
+## Contact
+- Support: support@hanzo.ai
+- Sales: sales@hanzo.ai
+- Twitter: @hanaboroshi
