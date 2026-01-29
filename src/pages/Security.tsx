@@ -274,7 +274,7 @@ const Security = () => {
                   {[
                     { icon: Server, text: "KVM hardware-isolated virtual machines" },
                     { icon: Eye, text: "24/7 security monitoring and alerting" },
-                    { icon: Clock, text: "99.99% uptime SLA with automatic failover" },
+                    { icon: Clock, text: "99.999% uptime SLA with automatic failover" },
                     { icon: FileCheck, text: "Automated security patching and updates" },
                   ].map((item, index) => {
                     const Icon = item.icon;

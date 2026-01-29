@@ -2,16 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Clock,
-  Mail,
-  Bell,
   Check,
   ArrowRight,
-  Lock,
-  Building2,
-  User,
-  Briefcase,
-  MessageSquare,
   LucideIcon,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -60,25 +52,6 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
   codeExamples,
 }) => {
   const [activeTab, setActiveTab] = useState(0);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    role: "",
-    useCase: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [formExpanded, setFormExpanded] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", company: "", role: "", useCase: "" });
-      setFormExpanded(false);
-    }, 3000);
-  };
 
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
@@ -104,14 +77,14 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              {/* Coming Soon Badge */}
+              {/* Available Badge */}
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6"
                 style={{ borderColor: `${accentColor}4d`, backgroundColor: `${accentColor}1a` }}
               >
-                <Clock className="w-4 h-4" style={{ color: accentColor }} />
+                <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
                 <span className="text-sm font-medium" style={{ color: accentColor }}>
-                  Private Beta
+                  Available Now
                 </span>
               </div>
 
@@ -158,6 +131,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-2xl border border-neutral-800 bg-neutral-900/80 p-6 md:p-8"
             >
+              {/* Quick Start */}
               <div className="flex items-center gap-3 mb-6">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -166,124 +140,61 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                   <ProductIcon className="w-6 h-6" style={{ color: accentColor }} />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-white">Request Beta Access</h2>
-                  <p className="text-sm text-neutral-400">Limited spots available</p>
+                  <h2 className="text-lg font-semibold text-white">Get Your API Key</h2>
+                  <p className="text-sm text-neutral-400">Start building in under 5 minutes</p>
                 </div>
               </div>
 
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-8"
+              {/* Performance Stats */}
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                {[
+                  { value: "99.999%", label: "Uptime" },
+                  { value: "<50ms", label: "Latency" },
+                  { value: "100+", label: "Chains" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <div className="text-xl font-bold text-white">{stat.value}</div>
+                    <div className="text-xs text-neutral-500">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="space-y-3">
+                <Button
+                  className="w-full py-3 rounded-lg font-medium"
+                  style={{ backgroundColor: accentColor }}
+                  onClick={() => window.open('https://cloud.hanzo.ai/signup', '_blank')}
                 >
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                    style={{ backgroundColor: `${accentColor}1a` }}
-                  >
-                    <Check className="w-8 h-8" style={{ color: accentColor }} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Application Received!</h3>
-                  <p className="text-neutral-400">
-                    We'll review your request and reach out soon.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs text-neutral-500 mb-1.5">Full Name</label>
-                      <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-neutral-950 border border-neutral-800">
-                        <User className="w-4 h-4 text-neutral-600" />
-                        <input
-                          type="text"
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="John Doe"
-                          className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-xs text-neutral-500 mb-1.5">Work Email</label>
-                      <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-neutral-950 border border-neutral-800">
-                        <Mail className="w-4 h-4 text-neutral-600" />
-                        <input
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="john@company.com"
-                          className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <span className="flex items-center justify-center gap-2">
+                    Start Building Free
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full py-3 rounded-lg font-medium border-neutral-700 hover:border-neutral-600"
+                  onClick={() => window.open('https://docs.hanzo.ai/blockchain', '_blank')}
+                >
+                  View Documentation
+                </Button>
+              </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs text-neutral-500 mb-1.5">Company</label>
-                      <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-neutral-950 border border-neutral-800">
-                        <Building2 className="w-4 h-4 text-neutral-600" />
-                        <input
-                          type="text"
-                          value={formData.company}
-                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                          placeholder="Acme Inc"
-                          className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-xs text-neutral-500 mb-1.5">Role</label>
-                      <div className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-neutral-950 border border-neutral-800">
-                        <Briefcase className="w-4 h-4 text-neutral-600" />
-                        <input
-                          type="text"
-                          value={formData.role}
-                          onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                          placeholder="Backend Engineer"
-                          className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
+              <p className="text-xs text-neutral-500 text-center mt-4">
+                No credit card required. Free tier includes 300M compute units/month.
+              </p>
 
-                  <div>
-                    <label className="block text-xs text-neutral-500 mb-1.5">
-                      What are you building? (Use case)
-                    </label>
-                    <div className="flex items-start gap-2 px-3 py-2.5 rounded-lg bg-neutral-950 border border-neutral-800">
-                      <MessageSquare className="w-4 h-4 text-neutral-600 mt-0.5" />
-                      <textarea
-                        value={formData.useCase}
-                        onChange={(e) => setFormData({ ...formData, useCase: e.target.value })}
-                        placeholder="Tell us about your project and how you plan to use this service..."
-                        className="flex-1 bg-transparent text-white placeholder:text-neutral-600 outline-none text-sm resize-none min-h-[80px]"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full py-3 rounded-lg font-medium"
-                    style={{ backgroundColor: accentColor }}
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      Apply for Beta Access
-                      <Bell className="w-4 h-4" />
+              {/* Trust Signals */}
+              <div className="mt-6 pt-6 border-t border-neutral-800">
+                <p className="text-xs text-neutral-500 mb-3">Trusted by developers building:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["DeFi", "NFTs", "Payments", "Gaming", "AI Agents"].map((tag) => (
+                    <span key={tag} className="px-2 py-1 text-xs rounded-full border border-neutral-800 text-neutral-400">
+                      {tag}
                     </span>
-                  </Button>
-
-                  <p className="text-xs text-neutral-500 text-center">
-                    We'll review your application and email you within 48 hours.
-                  </p>
-                </form>
-              )}
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -507,18 +418,19 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-              Ready to Get Started?
+              Start Building with {name}
             </h2>
             <p className="text-lg text-neutral-400 mb-8">
-              Join the private beta and be among the first to build with {name}.
+              Get your free API key and ship your first request in under 5 minutes. No credit card required.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => window.open('https://cloud.hanzo.ai/signup', '_blank')}
                 className="px-6 py-3 rounded-lg font-medium"
                 style={{ backgroundColor: accentColor }}
               >
-                Apply for Beta Access
+                Get Your API Key
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
               <Link
                 to="/blockchain"

@@ -29,7 +29,7 @@ const modes = [
       { icon: Users, text: "Real-time collaboration" },
       { icon: RefreshCw, text: "Auto-save and versioning" },
     ],
-    color: "#3b82f6", // blue
+    color: "#f97316", // blue
   },
   {
     id: "desktop",
@@ -55,7 +55,7 @@ const modes = [
       { icon: Cpu, text: "GPU accelerated" },
       { icon: Zap, text: "Zero latency" },
     ],
-    color: "#8b5cf6", // purple
+    color: "#fd4444", // purple
   },
   {
     id: "node",

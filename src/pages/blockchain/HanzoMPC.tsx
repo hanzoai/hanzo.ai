@@ -112,10 +112,10 @@ const HanzoMPC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-8"
           >
-            <Shield className="w-4 h-4 text-purple-500" />
-            <span className="text-sm font-medium text-purple-400">Next-Gen Key Infrastructure</span>
+            <Shield className="w-4 h-4 text-red-500" />
+            <span className="text-sm font-medium text-red-400">Next-Gen Key Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -126,7 +126,7 @@ const HanzoMPC = () => {
           >
             <span className="text-white">MPC + FHE</span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
               Wallets
             </span>
           </motion.h1>
@@ -158,19 +158,19 @@ const HanzoMPC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">0</div>
+              <div className="text-2xl font-bold text-red-500">0</div>
               <div className="text-sm text-neutral-400">Single points of failure</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">M-of-N</div>
+              <div className="text-2xl font-bold text-red-500">M-of-N</div>
               <div className="text-sm text-neutral-400">Threshold schemes</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">&lt;200ms</div>
+              <div className="text-2xl font-bold text-red-500">&lt;200ms</div>
               <div className="text-sm text-neutral-400">Signing latency</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">FHE</div>
+              <div className="text-2xl font-bold text-red-500">FHE</div>
               <div className="text-sm text-neutral-400">Encrypted rules</div>
             </div>
           </motion.div>
@@ -184,7 +184,7 @@ const HanzoMPC = () => {
           >
             <a
               href="https://docs.hanzo.ai/mpc"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
@@ -222,8 +222,8 @@ const HanzoMPC = () => {
               transition={{ delay: 0 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
-                <Key className="w-8 h-8 text-purple-500" />
+              <div className="w-16 h-16 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                <Key className="w-8 h-8 text-red-500" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">1. Key Generation</h3>
               <p className="text-neutral-400">
@@ -238,8 +238,8 @@ const HanzoMPC = () => {
               transition={{ delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
-                <Lock className="w-8 h-8 text-purple-500" />
+              <div className="w-16 h-16 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                <Lock className="w-8 h-8 text-red-500" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">2. Policy Encryption</h3>
               <p className="text-neutral-400">
@@ -254,8 +254,8 @@ const HanzoMPC = () => {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-purple-500" />
+              <div className="w-16 h-16 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-red-500" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">3. Threshold Signing</h3>
               <p className="text-neutral-400">
@@ -286,10 +286,10 @@ const HanzoMPC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-purple-500/30 transition-colors"
+                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-red-500/30 transition-colors"
               >
-                <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-purple-500/10">
-                  <feature.icon className="h-6 w-6 text-purple-500" />
+                <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-red-500/10">
+                  <feature.icon className="h-6 w-6 text-red-500" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-neutral-400 text-sm">{feature.description}</p>
@@ -386,7 +386,7 @@ await wallet.broadcast(signature);`}</code>
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-purple-500/20 to-pink-500/10 border border-purple-500/30 rounded-2xl p-8 md:p-12 text-center overflow-hidden"
+            className="relative bg-gradient-to-br from-red-500/20 to-pink-500/10 border border-red-500/30 rounded-2xl p-8 md:p-12 text-center overflow-hidden"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready for Next-Gen Security?
@@ -398,7 +398,7 @@ await wallet.broadcast(signature);`}</code>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://docs.hanzo.ai/mpc"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors"
               >
                 Read the Docs
                 <ArrowRight className="w-4 h-4" />

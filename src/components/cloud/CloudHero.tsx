@@ -177,7 +177,7 @@ const CloudHero = () => {
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
               style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
             >
-              90+ Managed Services • Global Edge • 99.99% SLA
+              90+ Managed Services • Global Edge • 99.999% SLA
             </motion.div>
 
             <motion.h1

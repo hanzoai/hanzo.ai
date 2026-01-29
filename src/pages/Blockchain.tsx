@@ -152,20 +152,21 @@ const CAPABILITIES = [
 
 // Roadmap items
 const ROADMAP = [
-  { phase: "Q4 2025", title: "Nodes & Indexing", status: "complete" },
-  { phase: "Q1 2026", title: "Token & NFT APIs", status: "complete" },
-  { phase: "Q1 2026", title: "Smart Wallets (ERC-4337)", status: "in-progress" },
-  { phase: "Q2 2026", title: "Cross-Chain & Oracles", status: "planned" },
-  { phase: "Q2 2026", title: "DeFi Integrations", status: "planned" },
+  { phase: "Q4 2025", title: "Multi-Chain RPC & Indexing", status: "complete" },
+  { phase: "Q1 2026", title: "Token, NFT & Transfers APIs", status: "complete" },
+  { phase: "Q1 2026", title: "Smart Wallets & ERC-4337 Bundler", status: "complete" },
+  { phase: "Q1 2026", title: "Webhooks, WebSockets & Gas Manager", status: "complete" },
+  { phase: "Q2 2026", title: "Cross-Chain Bridges & Oracles", status: "in-progress" },
+  { phase: "Q2 2026", title: "DeFi Aggregation & DEX APIs", status: "planned" },
 ];
 
 // Product pages - Core APIs
 const PRODUCTS = [
   // Core Infrastructure
-  { id: "chains", name: "Hanzo Chains", description: "Multi-chain RPC endpoints & infrastructure", icon: Server, color: "#3b82f6", href: "/blockchain/chains" },
+  { id: "chains", name: "Hanzo Chains", description: "Multi-chain RPC endpoints & infrastructure", icon: Server, color: "#f97316", href: "/blockchain/chains" },
   { id: "indexer", name: "Indexer", description: "Query blockchain data with GraphQL", icon: Search, color: "#10b981", href: "/blockchain/indexer" },
   { id: "wallets", name: "Smart Wallets", description: "ERC-4337 account abstraction wallets", icon: Wallet, color: "#f59e0b", href: "/blockchain/wallets" },
-  { id: "rollups", name: "Rollups", description: "L2 scaling & rollup infrastructure", icon: Blocks, color: "#8b5cf6", href: "/blockchain/rollups" },
+  { id: "rollups", name: "Rollups", description: "L2 scaling & rollup infrastructure", icon: Blocks, color: "#fd4444", href: "/blockchain/rollups" },
   // Data APIs
   { id: "tokens", name: "Token API", description: "ERC-20 balances, prices & metadata", icon: Database, color: "#22c55e", href: "/blockchain/tokens" },
   { id: "nft", name: "NFT API", description: "NFT metadata, ownership & transfers", icon: Blocks, color: "#ec4899", href: "/blockchain/nft" },
@@ -173,7 +174,7 @@ const PRODUCTS = [
   // Trading & DeFi APIs
   { id: "prices", name: "Prices API", description: "Real-time & historical price feeds", icon: Database, color: "#22c55e", href: "/blockchain/prices" },
   { id: "dex", name: "DEX API", description: "Swap routing & liquidity aggregation", icon: ArrowLeftRight, color: "#f59e0b", href: "/blockchain/dex" },
-  { id: "oracle", name: "Oracle API", description: "On-chain price oracles & data feeds", icon: Radio, color: "#8b5cf6", href: "/blockchain/oracle" },
+  { id: "oracle", name: "Oracle API", description: "On-chain price oracles & data feeds", icon: Radio, color: "#fd4444", href: "/blockchain/oracle" },
   // Realtime & Events
   { id: "webhooks", name: "Webhooks", description: "Real-time blockchain event notifications", icon: Radio, color: "#f97316", href: "/blockchain/webhooks" },
   { id: "websockets", name: "Websockets", description: "Live blockchain data streaming", icon: Radio, color: "#a855f7", href: "/blockchain/websockets" },
@@ -185,7 +186,7 @@ const PRODUCTS = [
   { id: "debug", name: "Debug API", description: "Transaction tracing & debugging", icon: Code, color: "#64748b", href: "/blockchain/debug" },
   { id: "trace", name: "Trace API", description: "Internal transaction traces", icon: Search, color: "#94a3b8", href: "/blockchain/trace" },
   // Payments
-  { id: "pay", name: "Payments", description: "Crypto payments gateway", icon: CreditCard, color: "#3b82f6", href: "/blockchain/pay" },
+  { id: "pay", name: "Payments", description: "Crypto payments gateway", icon: CreditCard, color: "#f97316", href: "/blockchain/pay" },
 ];
 
 const Blockchain = () => {
@@ -222,13 +223,13 @@ const Blockchain = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6">
-              <span className="text-white">Web3 Infrastructure.</span>
+              <span className="text-white">The Web3 Developer Platform.</span>
               <br />
-              <span className="text-neutral-400">For the AI Era.</span>
+              <span className="text-neutral-400">AI-Native. Blazing Fast.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8">
-              Multi-chain RPC nodes, Token & NFT APIs, Smart Wallets, indexing, and more—all integrated into the Hanzo platform. Build decentralized applications with the same simplicity as traditional apps.
+              Ship your first blockchain request in under 5 minutes. Multi-chain RPC, Token & NFT APIs, Smart Wallets, webhooks, and more—with AI agent integration built-in.
             </p>
 
             {/* CTA Buttons */}
@@ -296,6 +297,38 @@ const Blockchain = () => {
         </div>
       </section>
 
+      {/* Performance Metrics */}
+      <section className="py-16 px-4 md:px-8 border-t border-neutral-900">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {[
+              { value: "99.999%", label: "Uptime SLA", detail: "7+ years running" },
+              { value: "<50ms", label: "Avg Latency", detail: "Global edge network" },
+              { value: "100+", label: "Chains Supported", detail: "EVM, Solana, Cosmos" },
+              { value: "10B+", label: "Requests Served", detail: "And counting" },
+            ].map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm font-medium text-[#fd4444]">{stat.label}</div>
+                <div className="text-xs text-neutral-500 mt-1">{stat.detail}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Products Section */}
       <section className="py-24 px-4 md:px-8 bg-neutral-950">
         <div className="max-w-6xl mx-auto">
@@ -306,10 +339,10 @@ const Blockchain = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
-              Web3 Products
+              Developer Suite
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-              A complete suite of blockchain APIs and services. Build, deploy, and scale your Web3 applications.
+              Everything you need to build, deploy, and scale Web3 applications. One API key, every chain.
             </p>
           </motion.div>
 

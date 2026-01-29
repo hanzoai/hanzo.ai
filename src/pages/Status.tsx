@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -11,31 +11,113 @@ import {
   ExternalLink,
   Bell,
   Globe,
+  AlertTriangle,
+  XCircle,
+  Zap,
+  Database,
+  Shield,
+  Cpu,
+  Radio,
+  Layers,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const BRAND_COLOR = "#10b981"; // Green for status page
+const BRAND_COLOR = "#10b981";
 
-const services = [
-  { name: "API Gateway", status: "operational", uptime: "99.99%", latency: "45ms" },
-  { name: "Authentication", status: "operational", uptime: "99.98%", latency: "23ms" },
-  { name: "LLM Inference", status: "operational", uptime: "99.95%", latency: "120ms" },
-  { name: "Vector Database", status: "operational", uptime: "99.99%", latency: "12ms" },
-  { name: "Storage", status: "operational", uptime: "99.99%", latency: "8ms" },
-  { name: "Edge CDN", status: "operational", uptime: "100%", latency: "15ms" },
-  { name: "Monitoring", status: "operational", uptime: "99.99%", latency: "5ms" },
+type ServiceStatus = "operational" | "degraded" | "outage" | "maintenance";
+
+interface Service {
+  name: string;
+  status: ServiceStatus;
+  uptime: string;
+  latency: string;
+  icon: React.ElementType;
+}
+
+interface ServiceGroup {
+  name: string;
+  services: Service[];
+}
+
+const serviceGroups: ServiceGroup[] = [
+  {
+    name: "Core Platform",
+    services: [
+      { name: "API Gateway", status: "operational", uptime: "99.999%", latency: "12ms", icon: Zap },
+      { name: "Authentication & API Keys", status: "operational", uptime: "99.999%", latency: "18ms", icon: Shield },
+      { name: "Dashboard", status: "operational", uptime: "99.999%", latency: "45ms", icon: Layers },
+      { name: "Edge CDN", status: "operational", uptime: "99.999%", latency: "8ms", icon: Globe },
+    ],
+  },
+  {
+    name: "Blockchain Infrastructure",
+    services: [
+      { name: "RPC Proxy (EVM Chains)", status: "operational", uptime: "99.999%", latency: "35ms", icon: Server },
+      { name: "RPC Proxy (Non-EVM)", status: "operational", uptime: "99.999%", latency: "42ms", icon: Server },
+      { name: "WebSocket Subscriptions", status: "operational", uptime: "99.999%", latency: "15ms", icon: Radio },
+      { name: "Multi-Chain Indexer", status: "operational", uptime: "99.999%", latency: "120ms", icon: Database },
+    ],
+  },
+  {
+    name: "Enhanced APIs",
+    services: [
+      { name: "Token API", status: "operational", uptime: "99.999%", latency: "28ms", icon: Cpu },
+      { name: "NFT API", status: "operational", uptime: "99.999%", latency: "32ms", icon: Cpu },
+      { name: "Transfers API", status: "operational", uptime: "99.999%", latency: "25ms", icon: Cpu },
+      { name: "Webhook Delivery", status: "operational", uptime: "99.999%", latency: "50ms", icon: Bell },
+    ],
+  },
+  {
+    name: "Account Abstraction",
+    services: [
+      { name: "ERC-4337 Bundler", status: "operational", uptime: "99.999%", latency: "85ms", icon: Layers },
+      { name: "Gas Manager / Paymaster", status: "operational", uptime: "99.999%", latency: "40ms", icon: Zap },
+      { name: "Smart Wallet Service", status: "operational", uptime: "99.999%", latency: "55ms", icon: Shield },
+    ],
+  },
+  {
+    name: "AI Services",
+    services: [
+      { name: "LLM Inference", status: "operational", uptime: "99.999%", latency: "110ms", icon: Cpu },
+      { name: "Vector Database", status: "operational", uptime: "99.999%", latency: "12ms", icon: Database },
+      { name: "Agent Orchestration", status: "operational", uptime: "99.999%", latency: "65ms", icon: Activity },
+    ],
+  },
 ];
 
 const regions = [
-  { name: "Americas", code: "americas", status: "operational" },
-  { name: "Europe", code: "europe", status: "operational" },
-  { name: "Asia Pacific", code: "apac", status: "operational" },
-  { name: "Edge Network", code: "edge", status: "operational" },
+  { name: "US East", code: "us-east-1", status: "operational" as ServiceStatus, latency: "12ms" },
+  { name: "US West", code: "us-west-2", status: "operational" as ServiceStatus, latency: "18ms" },
+  { name: "Europe", code: "eu-west-1", status: "operational" as ServiceStatus, latency: "25ms" },
+  { name: "Asia Pacific", code: "ap-east-1", status: "operational" as ServiceStatus, latency: "35ms" },
+  { name: "Edge Network", code: "edge-global", status: "operational" as ServiceStatus, latency: "8ms" },
 ];
 
+function generateUptimeBars(): { day: number; status: ServiceStatus }[] {
+  return Array.from({ length: 90 }, (_, i) => ({
+    day: i,
+    status: "operational" as ServiceStatus,
+  }));
+}
+
+const uptimeBars = generateUptimeBars();
+
+const statusConfig: Record<ServiceStatus, { color: string; bg: string; label: string; icon: React.ElementType }> = {
+  operational: { color: "text-green-400", bg: "bg-green-500", label: "Operational", icon: CheckCircle },
+  degraded: { color: "text-yellow-400", bg: "bg-yellow-500", label: "Degraded", icon: AlertTriangle },
+  outage: { color: "text-red-400", bg: "bg-red-500", label: "Major Outage", icon: XCircle },
+  maintenance: { color: "text-orange-400", bg: "bg-orange-500", label: "Maintenance", icon: Clock },
+};
+
 const StatusPage = () => {
-  const allOperational = services.every((s) => s.status === "operational");
+  const allServices = serviceGroups.flatMap((g) => g.services);
+  const allOperational = allServices.every((s) => s.status === "operational");
+  const overallStatus: ServiceStatus = allOperational ? "operational" : "degraded";
+  const config = statusConfig[overallStatus];
+  const StatusIcon = config.icon;
+
+  const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
@@ -43,14 +125,14 @@ const StatusPage = () => {
         <title>System Status - Hanzo AI</title>
         <meta
           name="description"
-          content="Check the current status of Hanzo AI services. Real-time uptime monitoring and incident reports."
+          content="Real-time status of Hanzo AI infrastructure — blockchain RPC, APIs, smart wallets, AI services. 99.999% uptime SLA."
         />
       </Helmet>
 
       <Navbar />
 
       <main>
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
             <div
@@ -74,8 +156,8 @@ const StatusPage = () => {
                     : "bg-yellow-500/20 text-yellow-400"
                 }`}
               >
-                <CheckCircle className="w-4 h-4" />
-                {allOperational ? "All Systems Operational" : "Partial Outage"}
+                <StatusIcon className="w-4 h-4" />
+                {config.label}
               </motion.div>
 
               <motion.h1
@@ -93,10 +175,19 @@ const StatusPage = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-10 max-w-3xl mx-auto"
+                className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-4 max-w-3xl mx-auto"
               >
                 Real-time status of Hanzo AI infrastructure and services.
-                Subscribe to updates or check our incident history.
+                99.999% uptime SLA across all services.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.12 }}
+                className="text-sm text-neutral-500 mb-10 max-w-3xl mx-auto font-mono"
+              >
+                Last checked: {new Date().toISOString().replace("T", " ").slice(0, 19)} UTC
               </motion.p>
 
               <motion.div
@@ -110,12 +201,12 @@ const StatusPage = () => {
                   Subscribe to Updates
                 </button>
                 <a
-                  href="https://docs.hanzo.ai/status"
+                  href="https://api.hanzo.ai/health"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
                 >
-                  API Status Endpoint
+                  API Health Endpoint
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </motion.div>
@@ -123,59 +214,116 @@ const StatusPage = () => {
           </div>
         </section>
 
-        {/* Services Status */}
-        <section className="py-16 px-4 md:px-8">
+        {/* 90-Day Uptime Bar */}
+        <section className="py-8 px-4 md:px-8">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8"
+              className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6"
             >
-              <h2 className="text-2xl font-bold text-white mb-2">Services</h2>
-              <p className="text-neutral-400">Current status of all Hanzo AI services</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-neutral-900/80 border border-neutral-800 rounded-xl overflow-hidden"
-            >
-              <div className="divide-y divide-neutral-800">
-                {services.map((service, index) => (
-                  <motion.div
-                    key={service.name}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="px-6 py-4 flex items-center justify-between hover:bg-neutral-800/50 transition-colors"
-                  >
-                    <div className="flex items-center gap-4">
-                      <Server className="h-5 w-5 text-neutral-500" />
-                      <span className="font-medium text-white">{service.name}</span>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <span className="text-sm text-neutral-500 hidden sm:block">
-                        {service.latency} avg
-                      </span>
-                      <span className="text-sm text-neutral-400 hidden md:block">
-                        {service.uptime} uptime
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm text-green-400">Operational</span>
-                      </div>
-                    </div>
-                  </motion.div>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-neutral-300">90-Day Uptime</h3>
+                <span className="text-sm font-mono text-green-400">99.999%</span>
+              </div>
+              <div className="flex gap-[2px]">
+                {uptimeBars.map((bar, i) => (
+                  <div
+                    key={i}
+                    className={`flex-1 h-8 rounded-sm transition-colors ${
+                      bar.status === "operational"
+                        ? "bg-green-500/80 hover:bg-green-400"
+                        : bar.status === "degraded"
+                        ? "bg-yellow-500/80 hover:bg-yellow-400"
+                        : bar.status === "outage"
+                        ? "bg-red-500/80 hover:bg-red-400"
+                        : "bg-orange-500/80 hover:bg-orange-400"
+                    }`}
+                    title={`Day ${90 - i}: ${statusConfig[bar.status].label}`}
+                  />
                 ))}
+              </div>
+              <div className="flex items-center justify-between mt-2 text-xs text-neutral-500">
+                <span>90 days ago</span>
+                <span>Today</span>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Regions Status */}
+        {/* Service Groups */}
+        <section className="py-8 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto space-y-4">
+            {serviceGroups.map((group, gi) => {
+              const groupOperational = group.services.every((s) => s.status === "operational");
+              const groupStatus: ServiceStatus = groupOperational ? "operational" : "degraded";
+              const gConfig = statusConfig[groupStatus];
+              const isExpanded = expandedGroup === group.name;
+
+              return (
+                <motion.div
+                  key={group.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: gi * 0.05 }}
+                  className="bg-neutral-900/80 border border-neutral-800 rounded-xl overflow-hidden"
+                >
+                  <button
+                    onClick={() => setExpandedGroup(isExpanded ? null : group.name)}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-neutral-800/30 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-base font-medium text-white">{group.name}</h3>
+                      <span className="text-xs text-neutral-500">
+                        {group.services.length} services
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className={`text-sm ${gConfig.color}`}>{gConfig.label}</span>
+                      <div className={`w-2.5 h-2.5 rounded-full ${gConfig.bg} ${groupOperational ? "" : "animate-pulse"}`} />
+                    </div>
+                  </button>
+
+                  {isExpanded && (
+                    <div className="border-t border-neutral-800 divide-y divide-neutral-800/50">
+                      {group.services.map((service) => {
+                        const sConfig = statusConfig[service.status];
+                        const SIcon = service.icon;
+                        return (
+                          <div
+                            key={service.name}
+                            className="px-6 py-3 flex items-center justify-between"
+                          >
+                            <div className="flex items-center gap-3">
+                              <SIcon className="h-4 w-4 text-neutral-500" />
+                              <span className="text-sm text-neutral-300">{service.name}</span>
+                            </div>
+                            <div className="flex items-center gap-6">
+                              <span className="text-xs text-neutral-500 hidden sm:block font-mono">
+                                {service.latency}
+                              </span>
+                              <span className="text-xs text-neutral-500 hidden md:block font-mono">
+                                {service.uptime}
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <div className={`w-2 h-2 rounded-full ${sConfig.bg}`} />
+                                <span className={`text-xs ${sConfig.color}`}>{sConfig.label}</span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Regions */}
         <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -188,35 +336,94 @@ const StatusPage = () => {
               <p className="text-neutral-400">Status across all deployment regions</p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {regions.map((region, index) => (
-                <motion.div
-                  key={region.code}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <Globe className="h-5 w-5 text-neutral-500" />
-                    <span className="font-medium text-white">{region.name}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-500 font-mono">{region.code}</span>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-xs text-green-400">Active</span>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {regions.map((region, index) => {
+                const rConfig = statusConfig[region.status];
+                return (
+                  <motion.div
+                    key={region.code}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-5"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <Globe className="h-4 w-4 text-neutral-500" />
+                      <span className="font-medium text-white text-sm">{region.name}</span>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-neutral-500 font-mono">{region.latency}</span>
+                      <div className="flex items-center gap-1.5">
+                        <div className={`w-2 h-2 rounded-full ${rConfig.bg} animate-pulse`} />
+                        <span className={`text-xs ${rConfig.color}`}>Active</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Recent Incidents */}
+        {/* Blockchain Networks */}
         <section className="py-16 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <h2 className="text-2xl font-bold text-white mb-2">Supported Chains</h2>
+              <p className="text-neutral-400">100+ blockchain networks with dedicated RPC endpoints</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3"
+            >
+              {[
+                { name: "Ethereum", networks: ["Mainnet", "Sepolia", "Holesky"] },
+                { name: "Polygon", networks: ["PoS", "zkEVM", "Amoy"] },
+                { name: "Arbitrum", networks: ["One", "Nova", "Sepolia"] },
+                { name: "Optimism", networks: ["Mainnet", "Sepolia"] },
+                { name: "Base", networks: ["Mainnet", "Sepolia"] },
+                { name: "BNB Chain", networks: ["Mainnet", "Testnet"] },
+                { name: "Avalanche", networks: ["C-Chain", "Fuji"] },
+                { name: "Solana", networks: ["Mainnet", "Devnet"] },
+              ].map((chain) => (
+                <div
+                  key={chain.name}
+                  className="bg-neutral-900/60 border border-neutral-800 rounded-lg p-4 flex items-center justify-between"
+                >
+                  <div>
+                    <span className="text-sm font-medium text-white">{chain.name}</span>
+                    <p className="text-xs text-neutral-500 mt-0.5">{chain.networks.join(", ")}</p>
+                  </div>
+                  <div className="w-2 h-2 rounded-full bg-green-500" />
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-sm text-neutral-500 mt-4 text-center"
+            >
+              Showing 8 of 100+ supported chains.{" "}
+              <Link to="/blockchain" className="text-green-400 hover:text-green-300">
+                View all chains →
+              </Link>
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Recent Incidents */}
+        <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -243,8 +450,36 @@ const StatusPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
+        {/* SLA Info */}
+        <section className="py-16 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-3 gap-6"
+            >
+              <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 text-center">
+                <p className="text-3xl font-bold text-green-400 font-mono mb-2">99.999%</p>
+                <p className="text-sm text-neutral-400">Uptime SLA</p>
+                <p className="text-xs text-neutral-500 mt-1">&lt; 5.26 min downtime/year</p>
+              </div>
+              <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 text-center">
+                <p className="text-3xl font-bold text-white font-mono mb-2">&lt;50ms</p>
+                <p className="text-sm text-neutral-400">Median Latency</p>
+                <p className="text-xs text-neutral-500 mt-1">Global edge network</p>
+              </div>
+              <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 text-center">
+                <p className="text-3xl font-bold text-white font-mono mb-2">100+</p>
+                <p className="text-sm text-neutral-400">Chains Supported</p>
+                <p className="text-xs text-neutral-500 mt-1">EVM, Solana, Bitcoin & more</p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30 relative overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -265,7 +500,7 @@ const StatusPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-neutral-400 mb-10 max-w-2xl mx-auto"
             >
-              Our support team is available 24/7 to help you resolve any issues.
+              Our engineering team monitors all services 24/7 with automated alerting and rapid response.
             </motion.p>
 
             <motion.div

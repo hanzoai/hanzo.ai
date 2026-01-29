@@ -75,7 +75,7 @@ const HanzoAppPricing = () => {
     "LDAP & RBAC",
     "Versioning",
     "Audit Logs",
-    "99.99% Uptime SLA"
+    "99.999% Uptime SLA"
   ];
 
   return (

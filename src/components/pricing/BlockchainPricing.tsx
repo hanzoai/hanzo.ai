@@ -65,7 +65,7 @@ const BlockchainPricing = () => {
         "All supported chains",
         "Dedicated infrastructure",
         "Solution architect",
-        "Custom SLA (99.99%)",
+        "Custom SLA (99.999%)",
         "On-premise option",
         "White-glove onboarding",
         "Committed use discounts",

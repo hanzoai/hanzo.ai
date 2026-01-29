@@ -221,7 +221,7 @@ const DeveloperExperienceSection = () => {
               <div className="mb-4">
                 <span className="text-neutral-500">$ </span>
                 <span className="text-[#fd4444]">hanzo</span>
-                <span className="text-cyan-400"> dev</span>
+                <span className="text-orange-300"> dev</span>
                 <span className="text-green-400"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
               </div>
               <div className="text-green-400 mb-1">

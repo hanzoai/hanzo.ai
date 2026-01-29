@@ -20,7 +20,7 @@ const SectionHeader = ({ title, link, linkText }: SectionHeaderProps) => {
       <Link 
         to={link} 
         className={cn(
-          "text-sm text-purple-400 hover:text-purple-300 flex items-center group"
+          "text-sm text-red-400 hover:text-red-300 flex items-center group"
         )}
       >
         {linkText}

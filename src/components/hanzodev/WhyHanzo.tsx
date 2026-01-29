@@ -21,7 +21,7 @@ const VALUE_PROPS = [
   {
     title: "Stay in your flow",
     subtitle: "The all-in-one agentic engineering platform",
-    color: "#3b82f6",
+    color: "#f97316",
     features: [
       {
         icon: Smartphone,
@@ -83,7 +83,7 @@ const VALUE_PROPS = [
   {
     title: "Accelerate AI ROI",
     subtitle: "Enterprise-grade AI management",
-    color: "#8b5cf6",
+    color: "#fd4444",
     features: [
       {
         icon: Shield,

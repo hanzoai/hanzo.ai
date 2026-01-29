@@ -174,7 +174,7 @@ const ChatExample = () => {
           <div 
             key={index} 
             className={`mb-3 p-2 rounded ${
-              msg.role === "user" ? "bg-blue-900/30 ml-12" : "bg-gray-800/50"
+              msg.role === "user" ? "bg-red-900/30 ml-12" : "bg-gray-800/50"
             }`}
           >
             <div className="text-xs text-neutral-400 mb-1">
@@ -185,9 +185,9 @@ const ChatExample = () => {
         ))}
         {isLoading && (
           <div className="flex items-center space-x-2 p-2">
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse delay-100"></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse delay-200"></div>
+            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse delay-100"></div>
+            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse delay-200"></div>
           </div>
         )}
       </div>
@@ -197,9 +197,9 @@ const ChatExample = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Ask Hanzo AI something..."
-          className="flex-1 bg-gray-800 text-[var(--white)] border border-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="flex-1 bg-gray-800 text-[var(--white)] border border-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-orange-500"
         />
-        <Button type="submit" disabled={isLoading} className="bg-blue-600 hover:bg-blue-500">
+        <Button type="submit" disabled={isLoading} className="bg-orange-600 hover:bg-orange-500">
           Send
         </Button>
       </form>
@@ -254,10 +254,10 @@ const Products = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-blue-500/20 transition-colors"
+              className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-orange-500/20 transition-colors"
             >
               <div className="flex items-center mb-4">
-                <div className="h-12 w-12 bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+                <div className="h-12 w-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
                   {product.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--white)]">{product.title}</h3>
@@ -269,7 +269,7 @@ const Products = () => {
               <ul className="space-y-2 mb-6">
                 {product.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">{feature.icon}</span>
+                    <span className="text-orange-400 mr-2 mt-1">{feature.icon}</span>
                     <span className="text-neutral-400 text-sm">{feature.text}</span>
                   </li>
                 ))}
@@ -303,7 +303,7 @@ const Products = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: products.length * 0.1 }}
-          className="mt-20 p-8 bg-gradient-to-r from-blue-900/40 via-purple-900/40 to-blue-900/40 rounded-xl ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300"
+          className="mt-20 p-8 bg-gradient-to-r from-red-900/40 via-red-900/40 to-red-900/40 rounded-xl ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300"
         >
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl font-semibold text-[var(--white)] mb-4">Ready to Start Building?</h3>

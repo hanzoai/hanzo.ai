@@ -100,7 +100,7 @@ const DeploymentOptions = () => {
                 <span className="text-[#fd4444]">✓</span> Zero-config deployments
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#fd4444]">✓</span> 99.99% SLA
+                <span className="text-[#fd4444]">✓</span> 99.999% SLA
               </li>
             </ul>
             <Link

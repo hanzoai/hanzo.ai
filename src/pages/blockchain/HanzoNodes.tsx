@@ -20,7 +20,7 @@ const HanzoNodes = () => {
       tagline="Managed RPC endpoints for every chain"
       description="Access blockchain data without running your own infrastructure. High-availability nodes for Lux, Ethereum, Polygon, Avalanche, Solana, and more—with realtime subscriptions and historical queries."
       icon={Server}
-      accentColor="#3b82f6"
+      accentColor="#f97316"
       features={[
         {
           icon: Globe,

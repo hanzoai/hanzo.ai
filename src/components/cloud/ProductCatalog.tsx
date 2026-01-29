@@ -89,7 +89,7 @@ const CATEGORIES: Category[] = [
     name: "AI & Agents",
     description: "Build intelligent applications with foundation models and agent frameworks",
     icon: Brain,
-    color: "#8b5cf6",
+    color: "#fd4444",
     products: [
       { name: "Hanzo Models", description: "Foundation models API", icon: Brain, href: "/ai" },
       { name: "Zen", description: "Multimodal AI engine", icon: Sparkles, href: "/ai" },
@@ -143,7 +143,7 @@ const CATEGORIES: Category[] = [
     name: "Cloud Infrastructure",
     description: "Global infrastructure for compute, networking, and storage",
     icon: CloudCog,
-    color: "#3b82f6",
+    color: "#f97316",
     products: [
       { name: "Edge", description: "Edge computing", icon: Globe, href: "/edge" },
       { name: "Gateway", description: "API gateway", icon: Router },

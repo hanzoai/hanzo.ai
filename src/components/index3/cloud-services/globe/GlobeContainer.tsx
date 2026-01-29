@@ -45,7 +45,7 @@ const GlobeContainer: React.FC = () => {
         <div className="mt-8 bg-[var(--black)]/30 backdrop-blur-sm rounded-xl p-4 border border-[#fd4444]/20">
           <h3 className="text-2xl font-semibold text-[var(--white)] mb-2">Global Network</h3>
           <p className="text-neutral-300 text-sm max-w-md mx-auto">
-            Deploy to 35+ regions around the world with 99.99% uptime SLA and automatic failover.
+            Deploy to 35+ regions around the world with 99.999% uptime SLA and automatic failover.
           </p>
         </div>
       </div>

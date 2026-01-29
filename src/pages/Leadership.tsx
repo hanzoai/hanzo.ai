@@ -28,7 +28,7 @@ const leaders = [
     bio: "As CEO, Michael leads Hanzo's mission to democratize access to AI with a focus on sustainable, responsible technology that empowers developers worldwide.",
     tags: [
       { icon: Briefcase, text: "20+ years experience", color: "#fd4444" },
-      { icon: Database, text: "AI Infrastructure", color: "#3b82f6" },
+      { icon: Database, text: "AI Infrastructure", color: "#f97316" },
       { icon: BookOpen, text: "3x Startup Founder", color: "#22c55e" }
     ],
     social: {
@@ -43,7 +43,7 @@ const leaders = [
     bio: "Sarah drives Hanzo's technical vision and engineering culture, bringing expertise from her background at leading AI research labs and tech companies.",
     tags: [
       { icon: Briefcase, text: "15+ years experience", color: "#fd4444" },
-      { icon: Database, text: "ML Systems", color: "#3b82f6" },
+      { icon: Database, text: "ML Systems", color: "#f97316" },
       { icon: BookOpen, text: "Ph.D. in Computer Science", color: "#22c55e" }
     ],
     social: {
@@ -85,7 +85,7 @@ const Leadership = () => {
             <div
               className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-10"
               style={{
-                background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+                background: `radial-gradient(circle, #fd4444 0%, transparent 70%)`,
                 filter: "blur(80px)",
               }}
             />

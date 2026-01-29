@@ -296,7 +296,7 @@ const Analytics = () => {
               
               {/* Third Milestone */}
               <div className="text-center relative w-1/3 pl-4">
-                <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-cyan-400 flex items-center justify-center mx-auto" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
+                <motion.div className="w-12 h-12 rounded-full bg-gray-900 border-2 border-orange-300 flex items-center justify-center mx-auto" variants={milestoneCircleVariants} initial="hidden" whileInView="visible" viewport={{
                 once: true,
                 margin: "-100px"
               }} custom={3}>

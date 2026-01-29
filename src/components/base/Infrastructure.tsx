@@ -65,7 +65,7 @@ const Infrastructure = () => {
             </div>
             <h3 className="text-xl font-semibold text-[var(--white)] mb-3">High Redundancy</h3>
             <p className="text-neutral-300">
-              Fault-tolerant architecture with redundancy and failover capabilities to ensure 99.99% uptime.
+              Fault-tolerant architecture with redundancy and failover capabilities to ensure 99.999% uptime.
             </p>
           </motion.div>
         </div>

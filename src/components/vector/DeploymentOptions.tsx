@@ -53,7 +53,7 @@ const DeploymentOptions = () => {
         "Pay-as-you-go serverless option",
         "Dedicated clusters for enterprise needs",
         "10x faster than self-hosted solutions",
-        "99.99% uptime SLA and global availability"
+        "99.999% uptime SLA and global availability"
       ],
       cta: "Try Free",
       color: "red"

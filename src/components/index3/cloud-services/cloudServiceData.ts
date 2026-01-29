@@ -27,7 +27,7 @@ export const cloudServiceData: CloudServiceItem[] = [
       "Accessible via the intuitive @hanzo/ai SDK",
       "Fine-tuning and custom model deployment capabilities"
     ],
-    color: "purple"
+    color: "red"
   },
   {
     id: "chat",
@@ -92,7 +92,7 @@ export const cloudServiceData: CloudServiceItem[] = [
       "Compliance with global identity regulations",
       "Social login integrations and custom flows"
     ],
-    color: "violet"
+    color: "red"
   },
   {
     id: "machines",

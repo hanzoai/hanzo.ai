@@ -287,9 +287,9 @@ const HanzoDeFiStack = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-              <Shield className="w-4 h-4 text-purple-500" />
-              <span className="text-sm font-medium text-purple-400">Post-Quantum Ready</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6">
+              <Shield className="w-4 h-4 text-red-500" />
+              <span className="text-sm font-medium text-red-400">Post-Quantum Ready</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Quantum-Resistant Cryptography
@@ -309,7 +309,7 @@ const HanzoDeFiStack = () => {
                 transition={{ delay: index * 0.05 }}
                 className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4"
               >
-                <h3 className="font-semibold text-purple-400 mb-1">{scheme.name}</h3>
+                <h3 className="font-semibold text-red-400 mb-1">{scheme.name}</h3>
                 <p className="text-sm text-neutral-400">{scheme.description}</p>
               </motion.div>
             ))}

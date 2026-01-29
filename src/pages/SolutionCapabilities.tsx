@@ -141,7 +141,7 @@ const SolutionCapabilities: React.FC = () => {
             </div>
             <div className="flex items-start gap-2">
               <CheckCircle className="h-5 w-5 text-[#fd4444] flex-shrink-0 mt-0.5" />
-              <p className="text-neutral-400">Achieved 99.99% uptime with Hanzo's enterprise-grade infrastructure</p>
+              <p className="text-neutral-400">Achieved 99.999% uptime with Hanzo's enterprise-grade infrastructure</p>
             </div>
           </div>
           

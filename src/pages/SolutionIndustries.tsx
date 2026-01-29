@@ -155,7 +155,7 @@ const SolutionIndustries: React.FC = () => {
             "45% faster transaction processing",
             "68% improvement in customer satisfaction",
             "30% reduction in operational costs",
-            "99.99% system uptime"
+            "99.999% system uptime"
           ]
         }
       },

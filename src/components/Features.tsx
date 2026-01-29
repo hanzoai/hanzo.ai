@@ -41,7 +41,7 @@ const allFeatures = [{
 
 const industriesData = [{
   name: "Cloud",
-  icon: <Globe className="h-5 w-5 text-blue-400 mb-2" />,
+  icon: <Globe className="h-5 w-5 text-orange-400 mb-2" />,
   image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
   description: "Cloud orchestration with rapid deployment"
 }, {
@@ -51,7 +51,7 @@ const industriesData = [{
   description: "Advanced security solutions for business"
 }, {
   name: "Data and Artificial Intelligence",
-  icon: <Brain className="h-5 w-5 text-purple-400 mb-2" />,
+  icon: <Brain className="h-5 w-5 text-red-400 mb-2" />,
   image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
   description: "Cutting-edge AI solutions for business transformation"
 }, {
@@ -66,7 +66,7 @@ const industriesData = [{
   description: "Frontier technology solutions"
 }, {
   name: "Ecosystem Partners",
-  icon: <Network className="h-5 w-5 text-indigo-400 mb-2" />,
+  icon: <Network className="h-5 w-5 text-orange-400 mb-2" />,
   image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
   description: "Collaborative partnership networks"
 }, {
@@ -81,7 +81,7 @@ const industriesData = [{
   description: "Infrastructure development and capital management"
 }, {
   name: "Learning",
-  icon: <GraduationCap className="h-5 w-5 text-blue-400 mb-2" />,
+  icon: <GraduationCap className="h-5 w-5 text-orange-400 mb-2" />,
   image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
   description: "Educational technology and learning solutions"
 }, {
@@ -91,7 +91,7 @@ const industriesData = [{
   description: "Marketing solutions and experience design"
 }, {
   name: "Metaverse",
-  icon: <LineChart className="h-5 w-5 text-cyan-400 mb-2" />,
+  icon: <LineChart className="h-5 w-5 text-orange-300 mb-2" />,
   image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
   description: "Metaverse development and integration"
 }, {
@@ -138,16 +138,16 @@ const Features = () => {
   const hasMoreFeatures = allFeatures.length > 16;
   const isRealImage = (src?: string) => Boolean(src && !src.includes("placeholder"));
   const industryIcons = {
-    "Artificial Intelligence": <Brain className="h-5 w-5 text-purple-400 mb-2" />,
-    "Adtech": <Target className="h-5 w-5 text-blue-400 mb-2" />,
+    "Artificial Intelligence": <Brain className="h-5 w-5 text-red-400 mb-2" />,
+    "Adtech": <Target className="h-5 w-5 text-orange-400 mb-2" />,
     "Blockchain": <Blocks className="h-5 w-5 text-orange-400 mb-2" />,
-    "Cloud Computing": <Cloud className="h-5 w-5 text-cyan-400 mb-2" />,
+    "Cloud Computing": <Cloud className="h-5 w-5 text-orange-300 mb-2" />,
     "GPU": <Cpu className="h-5 w-5 text-red-400 mb-2" />,
     "Hardware": <HardDrive className="h-5 w-5 text-neutral-400 mb-2" />,
     "Machine Learning": <Brain className="h-5 w-5 text-green-400 mb-2" />,
     "Software": <Code className="h-5 w-5 text-yellow-400 mb-2" />,
     "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
-    "Confidential Computing": <KeyRound className="h-5 w-5 text-indigo-400 mb-2" />
+    "Confidential Computing": <KeyRound className="h-5 w-5 text-orange-400 mb-2" />
   };
   const containerVariants = {
     hidden: {
@@ -310,7 +310,7 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="mt-12 text-center">
-            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-purple-400 transition-colors">
+            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-red-400 transition-colors">
               View All Solutions
             </Button>
           </motion.div>}
@@ -328,7 +328,7 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="text-center mb-12">
-            <h2 className="font-display text-[var(--white)] bg-gradient-to-r from-orange-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-4xl">
+            <h2 className="font-display text-[var(--white)] bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent text-4xl">
               Hanzo has an impressive track record...
             </h2>
           </motion.div>

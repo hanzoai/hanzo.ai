@@ -21,7 +21,7 @@ const HanzoChains = () => {
       tagline="Multi-chain RPC infrastructure for every network"
       description="Access 100+ blockchain networks through a unified API. High-availability managed nodes with archive data access, WebSocket subscriptions, and enterprise-grade reliability. From Ethereum and Solana to Lux ecosystem chains (Hanzo Network, Zoo Network, Pars Network), EVM L2s, and Cosmos chains."
       icon={Server}
-      accentColor="#3b82f6"
+      accentColor="#f97316"
       features={[
         {
           icon: Globe,

@@ -40,7 +40,7 @@ const aiCloudFeatures: Feature[] = [
     title: "Datastore",
     description: "Scalable data storage with built-in AI capabilities for intelligent data analysis and management.",
     icon: HardDrive,
-    color: "bg-gradient-to-br from-cyan-600 to-cyan-700",
+    color: "bg-gradient-to-br from-orange-500 to-cyan-700",
     link: "/datastore",
     category: "ai-cloud"
   },
@@ -56,7 +56,7 @@ const aiCloudFeatures: Feature[] = [
     title: "Observability",
     description: "Full visibility into your AI systems with comprehensive logging, monitoring, and analytics tools.",
     icon: Eye,
-    color: "bg-gradient-to-br from-cyan-600 to-blue-700",
+    color: "bg-gradient-to-br from-orange-500 to-orange-700",
     link: "/observability",
     category: "ai-cloud"
   }

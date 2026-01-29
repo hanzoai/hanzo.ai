@@ -19,7 +19,7 @@ export const aiPlatformFeatures: AIPlatformFeature[] = [
     title: "Inference API",
     description: "Flexible inference API across all ML models with a single unified interface.",
     icon: Brain,
-    color: "purple"
+    color: "red"
   },
   {
     id: "vector-engine",
@@ -47,7 +47,7 @@ export const aiPlatformFeatures: AIPlatformFeature[] = [
     title: "Reasoning",
     description: "Context-aware reasoning with logic, math, and spatial understanding.",
     icon: Brain,
-    color: "purple"
+    color: "red"
   },
   {
     id: "workflow-automation",

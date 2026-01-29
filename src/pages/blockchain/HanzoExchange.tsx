@@ -58,7 +58,7 @@ const exchangeProducts = [
     name: "Order Book Engine",
     description: "High-performance matching engine for CEX-grade trading",
     icon: BarChart3,
-    color: "#3b82f6",
+    color: "#f97316",
     features: [
       "Sub-millisecond matching",
       "Millions of orders/second",
@@ -74,7 +74,7 @@ const exchangeProducts = [
     name: "Liquidity Network",
     description: "Access deep liquidity pools and market makers",
     icon: Layers,
-    color: "#8b5cf6",
+    color: "#fd4444",
     features: [
       "Institutional liquidity",
       "RFQ (Request for Quote)",

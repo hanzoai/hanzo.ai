@@ -39,7 +39,7 @@ const features = [
   {
     icon: Shield,
     title: "High Availability",
-    description: "99.99% uptime SLA. Redundant infrastructure across regions.",
+    description: "99.999% uptime SLA. Redundant infrastructure across regions.",
   },
   {
     icon: RefreshCw,
@@ -84,10 +84,10 @@ const HanzoGraph = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-8"
           >
-            <Database className="w-4 h-4 text-purple-500" />
-            <span className="text-sm font-medium text-purple-400">Hosted Subgraphs</span>
+            <Database className="w-4 h-4 text-red-500" />
+            <span className="text-sm font-medium text-red-400">Hosted Subgraphs</span>
           </motion.div>
 
           <motion.h1
@@ -97,7 +97,7 @@ const HanzoGraph = () => {
             className="text-5xl md:text-7xl font-bold mb-6"
           >
             <span className="text-white">Hanzo</span>{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
               Graph
             </span>
           </motion.h1>
@@ -129,19 +129,19 @@ const HanzoGraph = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">100+</div>
+              <div className="text-2xl font-bold text-red-500">100+</div>
               <div className="text-sm text-neutral-400">Chains</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">&lt;1s</div>
+              <div className="text-2xl font-bold text-red-500">&lt;1s</div>
               <div className="text-sm text-neutral-400">Index Latency</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">99.99%</div>
+              <div className="text-2xl font-bold text-red-500">99.999%</div>
               <div className="text-sm text-neutral-400">Uptime</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-purple-500">∞</div>
+              <div className="text-2xl font-bold text-red-500">∞</div>
               <div className="text-sm text-neutral-400">Queries</div>
             </div>
           </motion.div>
@@ -155,7 +155,7 @@ const HanzoGraph = () => {
           >
             <a
               href="https://cloud.hanzo.ai/graph"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors"
             >
               Deploy Subgraph
               <ArrowRight className="w-4 h-4" />
@@ -181,10 +181,10 @@ const HanzoGraph = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-purple-500/30 transition-colors"
+                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-red-500/30 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-purple-500" />
+                <div className="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-red-500" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
@@ -221,7 +221,7 @@ const HanzoGraph = () => {
                 {chain}
               </span>
             ))}
-            <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-sm text-purple-400">
+            <span className="px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full text-sm text-red-400">
               +88 more chains
             </span>
           </motion.div>
@@ -314,12 +314,12 @@ query GetTopHolders($tokenId: ID!) {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-4 bg-neutral-900/50 border border-neutral-800 rounded-xl p-4"
               >
-                <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white font-bold flex-shrink-0">
                   {item.step}
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-white mb-2">{item.title}</h3>
-                  <code className="text-sm text-purple-400 bg-neutral-800 px-2 py-1 rounded">
+                  <code className="text-sm text-red-400 bg-neutral-800 px-2 py-1 rounded">
                     {item.code}
                   </code>
                 </div>
@@ -336,7 +336,7 @@ query GetTopHolders($tokenId: ID!) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-purple-500/20 to-pink-500/10 border border-purple-500/30 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-red-500/20 to-pink-500/10 border border-red-500/30 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Index Everything
@@ -348,7 +348,7 @@ query GetTopHolders($tokenId: ID!) {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://cloud.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors"
               >
                 Start Free
                 <ArrowRight className="w-4 h-4" />

@@ -48,7 +48,7 @@ const registryColors: Record<string, string> = {
   npm: "bg-red-500/10 text-red-400 border-red-500/30",
   pypi: "bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30",
   "crates.io": "bg-orange-500/10 text-orange-400 border-orange-500/30",
-  "go modules": "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
+  "go modules": "bg-orange-400/10 text-orange-300 border-orange-400/30",
 };
 
 export function SDKSection({ productName, sdks }: SDKSectionProps) {

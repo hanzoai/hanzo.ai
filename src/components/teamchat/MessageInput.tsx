@@ -36,12 +36,12 @@ const MessageInput: React.FC<MessageInputProps> = ({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type your message..."
-          className="flex-1 bg-gray-800/50 border border-gray-700 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 bg-gray-800/50 border border-gray-700 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
         <Button 
           type="submit" 
           disabled={isTyping}
-          className="rounded-l-none bg-blue-600 hover:bg-blue-700 h-[42px]"
+          className="rounded-l-none bg-orange-600 hover:bg-orange-700 h-[42px]"
         >
           {isTyping ? (
             <RefreshCw className="h-5 w-5 animate-spin" />

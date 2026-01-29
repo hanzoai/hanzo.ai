@@ -88,10 +88,10 @@ const HanzoIPFS = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8"
           >
-            <Database className="w-4 h-4 text-blue-500" />
-            <span className="text-sm font-medium text-blue-400">Decentralized Storage</span>
+            <Database className="w-4 h-4 text-orange-500" />
+            <span className="text-sm font-medium text-orange-400">Decentralized Storage</span>
           </motion.div>
 
           <motion.h1
@@ -101,7 +101,7 @@ const HanzoIPFS = () => {
             className="text-5xl md:text-7xl font-bold mb-6"
           >
             <span className="text-white">Hanzo</span>{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 to-orange-400 bg-clip-text text-transparent">
               IPFS
             </span>
           </motion.h1>
@@ -134,7 +134,7 @@ const HanzoIPFS = () => {
           >
             <a
               href="https://cloud.hanzo.ai/ipfs"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
@@ -160,10 +160,10 @@ const HanzoIPFS = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-blue-500/30 transition-colors"
+                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-orange-500/30 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-blue-500" />
+                <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-orange-500" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
@@ -265,7 +265,7 @@ await ipfs.unpin(cid);`}</code>
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/30 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-orange-500/20 to-transparent border border-orange-500/30 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Store Forever, Serve Instantly
@@ -277,7 +277,7 @@ await ipfs.unpin(cid);`}</code>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://cloud.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-full transition-colors"
               >
                 Start Free
                 <ArrowRight className="w-4 h-4" />

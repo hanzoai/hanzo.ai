@@ -9,7 +9,7 @@ const quickApps = [{
   title: "AI Chat Assistant",
   description: "Launch your own ChatGPT-style AI assistant",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(96,165,250,0.3)]",
-  borderColor: "group-hover:border-blue-400/30"
+  borderColor: "group-hover:border-orange-400/30"
 }, {
   icon: <ShoppingCart className="h-6 w-6 text-[var(--white)]" />,
   title: "E-commerce Store",
@@ -21,7 +21,7 @@ const quickApps = [{
   title: "Web3 dApp",
   description: "Build a decentralized application",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.3)]",
-  borderColor: "group-hover:border-purple-400/30"
+  borderColor: "group-hover:border-red-400/30"
 }, {
   icon: <Rocket className="h-6 w-6 text-[var(--white)]" />,
   title: "Custom App",

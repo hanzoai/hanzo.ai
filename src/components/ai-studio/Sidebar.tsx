@@ -35,7 +35,7 @@ const Sidebar = ({
                 key={model.id}
                 onClick={() => setModelSelection(model.id)}
                 className={`w-full text-left px-3 py-2 rounded-md text-sm flex items-center ${
-                  modelSelection === model.id ? "bg-purple-900/50 text-[var(--white)]" : "text-neutral-300 hover:bg-gray-800"
+                  modelSelection === model.id ? "bg-red-900/50 text-[var(--white)]" : "text-neutral-300 hover:bg-gray-800"
                 }`}
               >
                 <Cpu className="w-4 h-4 mr-2" />

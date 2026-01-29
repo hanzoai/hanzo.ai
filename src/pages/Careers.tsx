@@ -135,7 +135,7 @@ const Careers = () => {
             <div
               className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10"
               style={{
-                background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+                background: `radial-gradient(circle, #fd4444 0%, transparent 70%)`,
                 filter: "blur(80px)",
               }}
             />

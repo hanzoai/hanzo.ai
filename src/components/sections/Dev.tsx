@@ -129,7 +129,7 @@ const Dev = () => {
                     <h3 className="text-sm font-medium text-[#fd4444] dark:text-[#ff6b6b]">
                       Beta Release
                     </h3>
-                    <div className="mt-2 text-sm text-blue-700 dark:text-[#fd4444]">
+                    <div className="mt-2 text-sm text-orange-700 dark:text-[#fd4444]">
                       <p>
                         Hanzo Dev is currently in beta. We're gathering developer feedback to improve the experience.
                         Please report any issues directly through our GitHub repository.

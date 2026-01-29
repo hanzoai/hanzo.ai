@@ -21,14 +21,14 @@ const TeamHero = () => {
         <div
           className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-10"
           style={{
-            background: `radial-gradient(circle, #8b5cf6 0%, transparent 70%)`,
+            background: `radial-gradient(circle, #fd4444 0%, transparent 70%)`,
             filter: "blur(80px)",
           }}
         />
         <div
           className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full opacity-10"
           style={{
-            background: `radial-gradient(circle, #3b82f6 0%, transparent 70%)`,
+            background: `radial-gradient(circle, #f97316 0%, transparent 70%)`,
             filter: "blur(80px)",
           }}
         />
@@ -147,19 +147,19 @@ const TeamHero = () => {
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
           className="w-1 h-8 rounded-full opacity-70"
-          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #8b5cf6)` }}
+          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #fd4444)` }}
         />
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.5, delay: 0.2, repeat: Infinity, repeatType: "loop" }}
           className="w-1 h-6 rounded-full opacity-40"
-          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #8b5cf6)` }}
+          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #fd4444)` }}
         />
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.5, delay: 0.4, repeat: Infinity, repeatType: "loop" }}
           className="w-1 h-4 rounded-full opacity-20"
-          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #8b5cf6)` }}
+          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #fd4444)` }}
         />
       </div>
     </section>

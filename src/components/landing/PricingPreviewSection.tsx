@@ -48,7 +48,7 @@ const PricingPreviewSection = () => {
           {/* Glow effect */}
           <div
             className="absolute inset-0 rounded-2xl blur-xl opacity-20"
-            style={{ background: "linear-gradient(135deg, #fd4444, #8b5cf6)" }}
+            style={{ background: "linear-gradient(135deg, #fd4444, #fd4444)" }}
           />
 
           <div className="relative p-8 md:p-12 rounded-2xl border border-neutral-800 bg-neutral-900/80 backdrop-blur-sm">

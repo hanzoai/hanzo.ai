@@ -1,29 +1,58 @@
 /* Neo-blur effect (glass morphism) */
 .neo-blur {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.5px);
-  -webkit-backdrop-filter: blur(8.5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Glass morphism card */
-.glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Premium glass card - used for featured/highlighted elements */
+.glass-card-premium {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card-premium:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(253, 68, 68, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16), 0 0 40px rgba(253, 68, 68, 0.06);
 }
 
 /* Basic card */
 .card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Chrome text effect */
@@ -85,8 +114,8 @@
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
-  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(253, 68, 68, 0.15);
+  border-color: rgba(253, 68, 68, 0.3);
 }
 
 .feature-slide-container {
@@ -117,7 +146,7 @@
 
 .progress-bar {
   height: 4px;
-  background: linear-gradient(to right, #8b5cf6, #3b82f6);
+  background: linear-gradient(to right, #fd4444, #f97316);
   transition: width 0.3s ease-in-out;
   border-radius: 2px;
 }
@@ -132,7 +161,7 @@
 }
 
 .tab-button.active {
-  background-color: rgba(124, 58, 237, 0.9);
+  background-color: rgba(253, 68, 68, 0.9);
   color: white;
 }
 
@@ -161,7 +190,7 @@
   left: -1px;
   right: -1px;
   bottom: -1px;
-  background: linear-gradient(45deg, #8b5cf6, #3b82f6, #8b5cf6);
+  background: linear-gradient(45deg, #fd4444, #f97316, #fd4444);
   z-index: -1;
   border-radius: 0.85rem;
   opacity: 0.5;
@@ -200,7 +229,7 @@
 
 .testimonial-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 10px 25px -5px rgba(253, 68, 68, 0.15);
 }
 
 /* Ambient background animation */
@@ -217,7 +246,7 @@
 .ambient-bg-dot {
   position: absolute;
   border-radius: 50%;
-  background-color: rgba(139, 92, 246, 0.15);
+  background-color: rgba(253, 68, 68, 0.12);
   filter: blur(80px);
   animation: float 10s infinite ease-in-out;
 }
