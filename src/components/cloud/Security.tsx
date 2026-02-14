@@ -63,7 +63,7 @@ const Security = () => {
                 Our security team works around the clock to ensure your applications and data are protected. We employ industry-leading practices and regularly undergo independent security audits.
               </p>
               <Button variant="outline" className="bg-transparent text-[var(--white)] hover:bg-[var(--white)] hover:text-black border border-white">
-                <a href="https://hanzo.io/security">Security Details</a>
+                <a href="https://hanzo.ai/security">Security Details</a>
               </Button>
             </div>
           </motion.div>
