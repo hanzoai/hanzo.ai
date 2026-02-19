@@ -41,18 +41,8 @@ export const partnerLogos: PartnerLogo[] = [
     className: "h-6",
   },
   {
-    name: "Lux Industries",
-    src: "/logos/partners/lux-industries.svg",
-    className: "h-6",
-  },
-  {
     name: "Lux Network",
     src: "/logos/partners/lux-network.svg",
-    className: "h-6",
-  },
-  {
-    name: "Lux Partners",
-    src: "/logos/partners/lux-partners.svg",
     className: "h-6",
   },
 ];
