@@ -20,25 +20,6 @@
         "cacheRead": null,
         "cacheWrite": null
       }
-    },
-    {
-      "name": "Sho",
-      "fullName": "Sho - Next-Gen Diffusion LLM",
-      "description": "Revolutionary diffusion model with breakthrough efficiency.",
-      "features": [
-        "200k context window",
-        "Diffusion architecture",
-        "Ultra-fast inference",
-        "50% discount with batch processing*"
-      ],
-      "baseModel": "deepseek/deepseek-chat",
-      "multiplier": 3,
-      "pricing": {
-        "input": 1.15,
-        "output": 3.21,
-        "cacheRead": null,
-        "cacheWrite": null
-      }
     }
   ],
   "thirdPartyModels": [
