@@ -6,6 +6,7 @@ import PersonalPlans from "@/components/pricing/PersonalPlans";
 import TeamEnterprisePlans from "@/components/pricing/TeamEnterprisePlans";
 import APIPricing from "@/components/pricing/APIPricing";
 import BlockchainPricing from "@/components/pricing/BlockchainPricing";
+import InfrastructurePricing from "@/components/pricing/InfrastructurePricing";
 import FeatureComparison from "@/components/pricing/FeatureComparison";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
 import BillingManagement from "@/components/pricing/BillingManagement";
@@ -17,6 +18,7 @@ const PricingPlans = () => {
     { id: "personal", label: "Personal" },
     { id: "team", label: "Team & Enterprise" },
     { id: "api", label: "API" },
+    { id: "infrastructure", label: "Infrastructure" },
     { id: "blockchain", label: "Blockchain" }
   ];
 
@@ -42,6 +44,8 @@ const PricingPlans = () => {
         );
       case "api":
         return <APIPricing />;
+      case "infrastructure":
+        return <InfrastructurePricing />;
       case "blockchain":
         return <BlockchainPricing />;
       default:
