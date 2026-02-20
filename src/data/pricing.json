@@ -1,7 +1,7 @@
 {
   "markup": 1.2,
   "zenMultiplier": 3,
-  "updated": "2026-02-20T01:01:04.092Z",
+  "updated": "2026-02-20T01:51:49.187Z",
   "hanzoModels": [
     {
       "name": "zen4",
@@ -11,7 +11,7 @@
         "202k context window",
         "Flagship intelligence"
       ],
-      "tier": "pro",
+      "tier": "ultra max",
       "pricing": {
         "input": 3,
         "output": 9.6,
@@ -27,7 +27,7 @@
         "131k context window",
         "MoE architecture"
       ],
-      "tier": "pro",
+      "tier": "ultra",
       "pricing": {
         "input": 2.7,
         "output": 2.7,
@@ -43,7 +43,7 @@
         "131k context window",
         "235B MoE parameters"
       ],
-      "tier": "pro",
+      "tier": "ultra",
       "pricing": {
         "input": 3.6,
         "output": 3.6,
@@ -59,7 +59,7 @@
         "40k context window",
         "Ultra-fast inference"
       ],
-      "tier": "free",
+      "tier": "pro",
       "pricing": {
         "input": 0.6,
         "output": 0.6,
@@ -75,7 +75,7 @@
         "202k context window",
         "Deep reasoning"
       ],
-      "tier": "pro",
+      "tier": "ultra max",
       "pricing": {
         "input": 3,
         "output": 9.6,
@@ -91,7 +91,7 @@
         "131k context window",
         "Chain-of-thought"
       ],
-      "tier": "standard",
+      "tier": "pro max",
       "pricing": {
         "input": 2.7,
         "output": 2.7,
@@ -107,7 +107,7 @@
         "262k context window",
         "480B MoE parameters"
       ],
-      "tier": "pro",
+      "tier": "ultra",
       "pricing": {
         "input": 3.6,
         "output": 3.6,
@@ -123,7 +123,7 @@
         "262k context window",
         "Fast inference"
       ],
-      "tier": "standard",
+      "tier": "pro max",
       "pricing": {
         "input": 1.5,
         "output": 1.5,
@@ -139,7 +139,7 @@
         "262k context window",
         "BF16 full precision"
       ],
-      "tier": "pro",
+      "tier": "ultra max",
       "pricing": {
         "input": 4.5,
         "output": 4.5,
@@ -155,7 +155,7 @@
         "202k context window",
         "Multimodal"
       ],
-      "tier": "standard",
+      "tier": "pro max",
       "pricing": {
         "input": 1.8,
         "output": 6.6,
@@ -171,7 +171,7 @@
         "131k context window",
         "Vision + language"
       ],
-      "tier": "standard",
+      "tier": "pro max",
       "pricing": {
         "input": 0.45,
         "output": 1.8,
@@ -187,7 +187,7 @@
         "40k context window",
         "4B parameters"
       ],
-      "tier": "free",
+      "tier": "pro",
       "pricing": {
         "input": 0.3,
         "output": 0.3,
@@ -203,7 +203,7 @@
         "40k context window",
         "Safety classifier"
       ],
-      "tier": "free",
+      "tier": "pro",
       "pricing": {
         "input": 0.3,
         "output": 0.3,
@@ -219,7 +219,7 @@
         "8k context window",
         "3072 dimensions"
       ],
-      "tier": "standard",
+      "tier": "pro max",
       "pricing": {
         "input": 0.39,
         "output": 0.39,
