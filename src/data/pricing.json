@@ -1,0 +1,297 @@
+{
+  "markup": 1.2,
+  "zenMultiplier": 3,
+  "updated": "2026-02-19T23:41:49.060Z",
+  "hanzoModels": [
+    {
+      "name": "Zen",
+      "fullName": "Zen - Flagship 1T+ Parameter MoDE LLM",
+      "description": "Our flagship model with 1T+ parameters using Mixture of Diverse Experts (MoDE) architecture.",
+      "features": [
+        "200k context window",
+        "MoDE architecture",
+        "50% discount with batch processing*"
+      ],
+      "baseModel": "z-ai/glm-5",
+      "multiplier": 3,
+      "pricing": {
+        "input": 1.08,
+        "output": 9.18,
+        "cacheRead": null,
+        "cacheWrite": null
+      }
+    },
+    {
+      "name": "Sho",
+      "fullName": "Sho - Next-Gen Diffusion LLM",
+      "description": "Revolutionary diffusion model with breakthrough efficiency.",
+      "features": [
+        "200k context window",
+        "Diffusion architecture",
+        "Ultra-fast inference",
+        "50% discount with batch processing*"
+      ],
+      "baseModel": "deepseek/deepseek-chat",
+      "multiplier": 3,
+      "pricing": {
+        "input": 1.15,
+        "output": 3.21,
+        "cacheRead": null,
+        "cacheWrite": null
+      }
+    }
+  ],
+  "thirdPartyModels": [
+    {
+      "name": "Claude Opus 4.6",
+      "openrouterId": "anthropic/claude-opus-4.6",
+      "features": [
+        "1000k context window",
+        "Most capable model"
+      ],
+      "contextWindow": 1000000,
+      "pricing": {
+        "input": 6,
+        "output": 30,
+        "cacheRead": 0.6,
+        "cacheWrite": 7.5
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "Claude Sonnet 4.6",
+      "openrouterId": "anthropic/claude-sonnet-4.6",
+      "features": [
+        "1000k context window",
+        "Best balance of speed and intelligence"
+      ],
+      "contextWindow": 1000000,
+      "pricing": {
+        "input": 3.6,
+        "output": 18,
+        "cacheRead": 0.36,
+        "cacheWrite": 4.5
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "Claude Haiku 4.5",
+      "openrouterId": "anthropic/claude-haiku-4.5",
+      "features": [
+        "200k context window",
+        "Fastest and most affordable"
+      ],
+      "contextWindow": 200000,
+      "pricing": {
+        "input": 1.2,
+        "output": 6,
+        "cacheRead": 0.12,
+        "cacheWrite": 1.5
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "GPT-5",
+      "openrouterId": "openai/gpt-5",
+      "features": [
+        "400k context window",
+        "OpenAI flagship"
+      ],
+      "contextWindow": 400000,
+      "pricing": {
+        "input": 1.5,
+        "output": 12,
+        "cacheRead": 0.15,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "GPT-5 Mini",
+      "openrouterId": "openai/gpt-5-mini",
+      "features": [
+        "400k context window",
+        "Fast and affordable"
+      ],
+      "contextWindow": 400000,
+      "pricing": {
+        "input": 0.3,
+        "output": 2.4,
+        "cacheRead": 0.03,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "Qwen3-235B",
+      "openrouterId": "qwen/qwen3-235b-a22b",
+      "features": [
+        "131k context window",
+        "Open-weight MoE"
+      ],
+      "contextWindow": 131072,
+      "pricing": {
+        "input": 0.546,
+        "output": 2.18,
+        "cacheRead": null,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "DeepSeek R1",
+      "openrouterId": "deepseek/deepseek-r1",
+      "features": [
+        "64k context window",
+        "Reasoning model"
+      ],
+      "contextWindow": 64000,
+      "pricing": {
+        "input": 0.84,
+        "output": 3,
+        "cacheRead": null,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "DeepSeek V3",
+      "openrouterId": "deepseek/deepseek-chat",
+      "features": [
+        "164k context window",
+        "Fast and efficient"
+      ],
+      "contextWindow": 163840,
+      "pricing": {
+        "input": 0.384,
+        "output": 1.07,
+        "cacheRead": null,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "Kimi K2.5",
+      "openrouterId": "moonshotai/kimi-k2.5",
+      "features": [
+        "262k context window",
+        "Multimodal reasoning"
+      ],
+      "contextWindow": 262144,
+      "pricing": {
+        "input": 0.276,
+        "output": 3.6,
+        "cacheRead": null,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    },
+    {
+      "name": "GLM-5",
+      "openrouterId": "z-ai/glm-5",
+      "features": [
+        "205k context window",
+        "Multilingual"
+      ],
+      "contextWindow": 204800,
+      "pricing": {
+        "input": 0.36,
+        "output": 3.06,
+        "cacheRead": null,
+        "cacheWrite": null
+      },
+      "openrouterAvailable": true
+    }
+  ],
+  "tools": [
+    {
+      "name": "Web Search",
+      "unit": "per query",
+      "price": 0.005
+    },
+    {
+      "name": "Code Interpreter",
+      "unit": "per session minute",
+      "price": 0.03
+    },
+    {
+      "name": "File Storage",
+      "unit": "per GB/month",
+      "price": 0.2
+    },
+    {
+      "name": "Image Generation",
+      "unit": "per image",
+      "price": 0.04
+    },
+    {
+      "name": "Speech-to-Text",
+      "unit": "per minute",
+      "price": 0.006
+    },
+    {
+      "name": "Text-to-Speech",
+      "unit": "per 1M characters",
+      "price": 15
+    }
+  ],
+  "infrastructure": {
+    "compute": [
+      {
+        "name": "Starter",
+        "vcpus": 1,
+        "memory": "2 GB",
+        "storage": "50 GB",
+        "price": 8.4
+      },
+      {
+        "name": "Basic",
+        "vcpus": 2,
+        "memory": "4 GB",
+        "storage": "80 GB",
+        "price": 21.6
+      },
+      {
+        "name": "Standard",
+        "vcpus": 4,
+        "memory": "8 GB",
+        "storage": "160 GB",
+        "price": 57.6
+      },
+      {
+        "name": "Professional",
+        "vcpus": 8,
+        "memory": "16 GB",
+        "storage": "320 GB",
+        "price": 115.2
+      },
+      {
+        "name": "Enterprise",
+        "vcpus": 16,
+        "memory": "32 GB",
+        "storage": "640 GB",
+        "price": 230.4
+      }
+    ],
+    "gpu": [
+      {
+        "name": "GPU Standard",
+        "gpu": "1x H100",
+        "vram": "80 GB",
+        "price": 3.48
+      },
+      {
+        "name": "GPU Pro",
+        "gpu": "2x H100",
+        "vram": "160 GB",
+        "price": 6.96
+      },
+      {
+        "name": "GPU Ultra",
+        "gpu": "4x H100",
+        "vram": "320 GB",
+        "price": 13.92
+      }
+    ]
+  }
+}
