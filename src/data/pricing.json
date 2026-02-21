@@ -15,8 +15,8 @@
       "upstream": {
         "model": "GLM-5",
         "provider": "Zhipu AI",
-        "params": "~400B",
-        "arch": "Dense Transformer"
+        "params": "744B (40B active)",
+        "arch": "MoE"
       },
       "pricing": {
         "input": 3,
@@ -49,17 +49,17 @@
     },
     {
       "name": "zen4-max",
-      "fullName": "Zen4 Max — Extended Context",
-      "description": "Extended context MoE model for large document processing and analysis.",
+      "fullName": "Zen4 Max — Maximum Scale",
+      "description": "Trillion-parameter frontier model with deep reasoning capabilities.",
       "features": [
-        "131k context window",
-        "235B MoE parameters"
+        "256k context window",
+        "1.04T MoE parameters"
       ],
-      "tier": "ultra",
+      "tier": "ultra max",
       "upstream": {
-        "model": "Qwen3-235B-A22B",
-        "provider": "Alibaba Qwen",
-        "params": "235B (22B active)",
+        "model": "Kimi K2-Thinking",
+        "provider": "Moonshot AI",
+        "params": "1.04T (32B active)",
         "arch": "MoE"
       },
       "pricing": {
@@ -103,8 +103,8 @@
       "upstream": {
         "model": "GLM-5 (thinking)",
         "provider": "Zhipu AI",
-        "params": "~400B",
-        "arch": "Dense Transformer + CoT"
+        "params": "744B (40B active)",
+        "arch": "MoE + CoT"
       },
       "pricing": {
         "input": 3,
