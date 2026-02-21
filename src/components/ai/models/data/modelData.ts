@@ -1,67 +1,105 @@
 // Frontier AI model families from Hanzo
 const modelCategories = [
   {
-    name: "Frontier AI",
-    description: "Hanzo's cutting-edge model families pushing the boundaries of AI capabilities",
+    name: "Hanzo Zen Models",
+    description: "14 foundation models across language, code, vision, multimodal, and specialized tasks",
     models: [
-      { 
-        name: "Zen Family", 
-        provider: "Hanzo", 
-        features: ["1T+ parameter MoE LLM", "Fused top language models", "Unmatched efficiency", "Peak performance"],
-        description: "🪷 Hanzo's flagship large language model that combines multiple expert models for unprecedented capability."
+      {
+        name: "Zen4 -- Flagship",
+        provider: "Hanzo",
+        features: ["~400B Dense Transformer (GLM-5)", "202K context window", "Ultra Max tier", "$3 / $9.60 per MTok"],
+        description: "Flagship model built on GLM-5. Optimal for complex reasoning and multi-domain tasks."
       },
-      { 
-        name: "Sho Family", 
-        provider: "Hanzo", 
-        features: ["High-performance text diffusion", "Latency-aware generation", "Expert-guided semantic control", "Fluency and depth"],
-        description: "🌀 Purpose-built for high-coherence generation with expert semantic control."
+      {
+        name: "Zen4 Ultra -- Maximum Reasoning",
+        provider: "Hanzo",
+        features: ["~400B Dense + CoT (GLM-5 thinking)", "202K context window", "Ultra Max tier", "Deep reasoning with chain-of-thought"],
+        description: "Maximum reasoning capability with extended thinking for complex problems."
       },
-      { 
-        name: "Enso Family", 
-        provider: "Hanzo", 
-        features: ["Multimodal MUEN architecture", "Text, vision, and audio", "Diffusion-based intelligence", "Unified understanding"],
-        description: "◯ Multimodal Mixture of Unbound Experts unifying understanding across modalities."
+      {
+        name: "Zen4 Pro -- High Capability",
+        provider: "Hanzo",
+        features: ["80B MoE (3B active) via Qwen3-Next-80B-A3B", "131K context window", "Ultra tier", "Efficient MoE architecture"],
+        description: "High-capability model with efficient MoE architecture for demanding workloads."
       },
-      { 
-        name: "Satori Family", 
-        provider: "Hanzo", 
-        features: ["Efficient video generation", "Latent space diffusion", "Temporal dynamics", "Frame coherence"],
-        description: "🎥 Advanced video generation with explicit temporal modeling and reduced computational overhead."
+      {
+        name: "Zen4 Max -- Extended Context",
+        provider: "Hanzo",
+        features: ["235B MoE (22B active) via Qwen3-235B-A22B", "131K context window", "Ultra tier", "Large-scale MoE"],
+        description: "Extended context MoE model for large document processing and analysis."
       },
-      { 
-        name: "Mugen Family", 
-        provider: "Hanzo", 
-        features: ["Infinite context capability", "Unbounded sequence processing", "Memory-efficient architecture", "Continuous learning"],
-        description: "∞ Breaking the boundaries of context length for truly unlimited AI reasoning."
+      {
+        name: "Zen4 Coder -- Code Generation",
+        provider: "Hanzo",
+        features: ["480B MoE (35B active) via Qwen3-Coder-480B-A35B", "262K context window", "Ultra tier", "Code generation and review"],
+        description: "Code-specialized model for generation, review, and debugging."
       },
-      { 
-        name: "Koe Family", 
-        provider: "Hanzo", 
-        features: ["Advanced speech synthesis", "Multimodal voice generation", "Emotional expression", "Real-time processing"],
-        description: "🗣️ Next-generation voice AI with human-like expressiveness and natural interaction."
-      }
+      {
+        name: "Zen4 Coder Pro -- Premium Code",
+        provider: "Hanzo",
+        features: ["480B BF16 via Qwen3-Coder-480B", "262K context window", "Ultra Max tier", "Full-precision code analysis"],
+        description: "Full-precision code model for maximum accuracy on complex codebases."
+      },
+      {
+        name: "Zen4 Coder Flash -- Fast Code",
+        provider: "Hanzo",
+        features: ["30B MoE (3B active) via Qwen3-Coder-30B-A3B", "262K context window", "Pro Max tier", "Fast inline completions"],
+        description: "Lightweight code model optimized for speed and inline completions."
+      },
+      {
+        name: "Zen4 Thinking -- Deep Reasoning",
+        provider: "Hanzo",
+        features: ["80B MoE (3B active) via Qwen3-Next-80B-A3B (thinking)", "131K context window", "Pro Max tier", "Chain-of-thought"],
+        description: "Dedicated reasoning model with explicit chain-of-thought capabilities."
+      },
+      {
+        name: "Zen4 Mini -- Fast & Efficient",
+        provider: "Hanzo",
+        features: ["8B Dense Transformer via Qwen3-8B", "40K context window", "Pro tier", "Ultra-fast inference"],
+        description: "Lightweight model optimized for speed and cost efficiency."
+      },
+      {
+        name: "Zen3 Omni -- Hypermodal",
+        provider: "Hanzo",
+        features: ["~200B Dense Multimodal via GLM-4.7", "202K context window", "Pro Max tier", "Text, vision, and audio"],
+        description: "Multimodal model supporting text, vision, and structured output."
+      },
+      {
+        name: "Zen3 VL -- Vision-Language",
+        provider: "Hanzo",
+        features: ["30B MoE (3B active) via Qwen3-VL-30B-A3B", "131K context window", "Pro Max tier", "Image understanding"],
+        description: "Vision-language model for image understanding and visual reasoning."
+      },
+      {
+        name: "Zen3 Nano -- Edge",
+        provider: "Hanzo",
+        features: ["4B Dense Transformer via Qwen3-4B", "40K context window", "Pro tier", "Edge deployment"],
+        description: "Ultra-lightweight model for edge deployment and low-latency tasks."
+      },
+      {
+        name: "Zen3 Guard -- Content Safety",
+        provider: "Hanzo",
+        features: ["4B Dense Transformer via Qwen3-4B", "40K context window", "Pro tier", "Content moderation"],
+        description: "Content safety classifier for moderation and guardrails."
+      },
+      {
+        name: "Zen3 Embedding -- Text Embeddings",
+        provider: "Hanzo",
+        features: ["text-embedding-3-large via OpenAI", "8K context window", "Pro Max tier", "3072 dimensions"],
+        description: "High-quality text embeddings for search, clustering, and retrieval."
+      },
     ]
   },
   {
-    name: "Foundation Models",
-    description: "Industry-leading open-source models optimized for the Hanzo platform",
+    name: "Third-Party Models",
+    description: "Industry-leading models available through the Hanzo API gateway",
     models: [
-      { name: "GPT-4o", provider: "Open Source", features: ["Multimodal capabilities", "Advanced reasoning", "High accuracy", "Fast performance"] },
-      { name: "Claude 3 Opus", provider: "Open Source", features: ["Best reasoning", "Strong knowledge retrieval", "Long context window", "Low hallucination rate"] },
-      { name: "Llama 3 70B", provider: "Open Source", features: ["Strong multilingual support", "Open weights", "Fast inference", "Cost-effective"] },
-      { name: "Gemini Pro", provider: "Open Source", features: ["Multimodal reasoning", "Good tool use", "State-of-the-art performance", "Works in many languages"] },
-      { name: "Mixtral 8x7B", provider: "Open Source", features: ["Mixture of experts", "Good performance-to-cost ratio", "Open weights", "Efficient context handling"] },
-      { name: "Phi-3", provider: "Open Source", features: ["Compact yet powerful", "Fast inference speeds", "Excellent performance per parameter", "Low resource requirements"] },
-    ]
-  },
-  {
-    name: "Specialized Models",
-    description: "Domain-specific models optimized for particular tasks",
-    models: [
-      { name: "CodeLlama", provider: "Open Source", features: ["Code generation", "Code completion", "Documentation", "Multi-language support"] },
-      { name: "DALL-E 3", provider: "Open Source", features: ["Image generation", "High fidelity", "Text-to-image", "Creative outputs"] },
-      { name: "Whisper", provider: "Open Source", features: ["Speech-to-text", "Multi-language ASR", "Low error rate", "Robust to background noise"] },
-      { name: "Stable Diffusion XL", provider: "Open Source", features: ["High resolution images", "Open weights", "Multiple styles", "Fast generation"] },
+      { name: "Claude Opus 4.6", provider: "Anthropic", features: ["1M context window", "Most capable model", "Complex reasoning", "Extended thinking"] },
+      { name: "Claude Sonnet 4.6", provider: "Anthropic", features: ["1M context window", "Best balance of speed and intelligence", "Strong coding", "Fast inference"] },
+      { name: "GPT-5", provider: "OpenAI", features: ["400K context window", "Multimodal", "Advanced reasoning", "Tool use"] },
+      { name: "GPT-5 Mini", provider: "OpenAI", features: ["400K context window", "Fast and affordable", "Good quality", "Low latency"] },
+      { name: "Qwen3-235B", provider: "Alibaba", features: ["131K context window", "Open-weight MoE", "Strong multilingual", "Cost-effective"] },
+      { name: "DeepSeek R1", provider: "DeepSeek", features: ["64K context window", "Reasoning model", "Chain-of-thought", "Math and code"] },
     ]
   },
   {

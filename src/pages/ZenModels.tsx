@@ -4,570 +4,283 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import pricingData from "@/data/pricing.json";
 import {
   ArrowRight,
   Code2,
-  Eye,
-  Box,
-  Video,
-  Music,
   Zap,
   ExternalLink,
-  Check,
-  Github,
-  ChevronDown,
   Brain,
-  Layers,
-  Database,
-  Shield,
   Globe,
   BookOpen,
   Terminal,
   Download,
+  Eye,
+  Shield,
+  Cpu,
+  Search,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
-// Zen4 model lineup from zenlm.org
-const ZEN4_CONSUMER_MODELS = [
-  { name: "Zen4 Mini", size: "4B", base: "Qwen3-4B-Instruct-2507", context: "32K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4-mini" },
-  { name: "Zen4", size: "8B", base: "Qwen3-8B", context: "32K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4" },
-  { name: "Zen4 Pro", size: "14B", base: "Qwen3-14B", context: "32K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4-pro" },
-  { name: "Zen4 Max", size: "30B MoE (3B active)", base: "Qwen3-30B-A3B", flagship: true, context: "256K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4-max" },
-  { name: "Zen4 Pro Max", size: "80B MoE (3B active)", base: "Qwen3-Next-80B-A3B", flagship: true, context: "256K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4-pro-max" },
-];
+const BRAND_COLOR = "#fd4444";
 
-const ZEN4_CODER_MODELS = [
-  { name: "Zen4 Coder Flash", size: "31B MoE (3B active)", base: "GLM-4.7-Flash", context: "131K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4-coder-flash" },
-  { name: "Zen4 Coder", size: "80B MoE (3B active)", base: "Qwen3-Coder-Next", flagship: true, context: "256K", status: "Available", huggingface: "https://huggingface.co/zenlm/zen4-coder" },
-  { name: "Zen4 Coder Pro", size: "355B", base: "GLM-4.7", context: "200K", status: "Cloud Only", frontier: true, huggingface: "https://huggingface.co/zenlm/zen4-coder-pro" },
-];
-
-const ZEN4_ULTRA_MODELS = [
-  { name: "Zen4 Ultra", size: "1.04T MoE (32B active)", base: "Kimi K2.5 Thinking", context: "256K", status: "Cloud Only", frontier: true, huggingface: "https://huggingface.co/zenlm/zen4-ultra" },
-  { name: "Zen4 Ultra Max", size: "1T+ MoE", base: "DeepSeek V4", context: "1M", status: "Coming Soon" },
-];
-
-// Dataset stats from zenlm.org
-const DATASET_STATS = [
-  { value: "8.47B", label: "Tokens", description: "Total training tokens across all data sources" },
-  { value: "3.35M", label: "Samples", description: "Training samples with conversation context" },
-  { value: "1,452", label: "Repositories", description: "Open source and private codebases" },
-  { value: "15yr", label: "History", description: "Years of development history (2010-2025)" },
-];
-
-// AI Ecosystem categories from zenlm.org
-const ECOSYSTEM_CATEGORIES = [
-  {
-    icon: Brain,
-    title: "Language Models",
-    description: "Zen4 consumer line from 4B to 80B MoE. Zen4 Mini for edge, Zen4 Pro for balanced performance, Zen4 Max and Pro Max for frontier reasoning with MoE efficiency.",
-  },
-  {
-    icon: Code2,
-    title: "Zen4 Coder",
-    description: "3 coding models from 31B to 355B plus Ultra line up to 1T+. Trained on 8.47B tokens of agentic programming data with state-of-the-art tool use.",
-  },
-  {
-    icon: Eye,
-    title: "Vision & Multimodal",
-    description: "zen-vl for vision-language, zen-designer for visual understanding, zen-artist for image generation, zen-omni for unified multimodal.",
-  },
-  {
-    icon: Video,
-    title: "Video & 3D",
-    description: "zen-director for video generation, zen-video for high-quality synthesis, zen-3d for 3D assets, zen-world for world simulation.",
-  },
-  {
-    icon: Music,
-    title: "Audio",
-    description: "zen-musician for music generation, zen-foley for sound effects, zen-scribe for transcription, zen-dub for voice dubbing.",
-  },
-  {
-    icon: Shield,
-    title: "Specialized",
-    description: "zen-guard for safety, zen-embedding for vectors, zen-reranker for search, zen-translator for translation, zen-agent for tool use.",
-  },
-];
-
-// Model families with full details
-const MODEL_FAMILIES = {
-  coder: {
-    title: "Zen4 Coder",
-    description: "Agentic coding models from 31B to 355B trained on 8.47B tokens of real programming sessions",
-    icon: Code2,
-    models: [
-      {
-        name: "Zen4 Coder Flash",
-        params: "31B MoE (3B active)",
-        context: "131K tokens",
-        license: "Apache 2.0",
-        base: "GLM-4.7-Flash",
-        features: [
-          "Lightweight MoE efficiency",
-          "Fast agentic coding",
-          "Multi-file refactoring",
-          "Tool use patterns",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen4-coder-flash",
-      },
-      {
-        name: "Zen4 Coder",
-        badge: "FLAGSHIP",
-        params: "80B MoE (3B active)",
-        context: "256K tokens",
-        license: "Apache 2.0",
-        base: "Qwen3-Coder-Next",
-        features: [
-          "Production-ready agentic coding",
-          "Long context understanding",
-          "Real debugging workflows",
-          "Professional development patterns",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen4-coder",
-      },
-      {
-        name: "Zen4 Coder Pro",
-        badge: "FRONTIER",
-        params: "355B",
-        context: "200K tokens",
-        license: "Apache 2.0",
-        base: "GLM-4.7",
-        features: [
-          "Frontier agentic capability",
-          "State-of-the-art SWE-bench",
-          "Complex multi-step coding",
-          "Enterprise-grade performance",
-        ],
-        status: "Cloud Only",
-        huggingface: "https://huggingface.co/zenlm/zen4-coder-pro",
-      },
-    ],
-  },
-  language: {
-    title: "Language Models",
-    description: "Efficient general-purpose language understanding",
-    icon: Brain,
-    models: [
-      {
-        name: "zen-nano",
-        params: "0.6B",
-        context: "40K tokens",
-        license: "Apache 2.0",
-        base: "Qwen3-0.6B",
-        performance: "44K tokens/sec (M3 Max)",
-        memory: "0.4-1.2GB",
-        features: [
-          "Edge deployment",
-          "Mobile devices",
-          "Embedded systems",
-          "On-device AI",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-nano-0.6b",
-      },
-      {
-        name: "zen-eco",
-        params: "4B",
-        context: "32K tokens",
-        license: "Apache 2.0",
-        base: "Qwen3-3B",
-        performance: "28K tokens/sec (RTX 4090)",
-        memory: "2-8GB",
-        features: [
-          "General-purpose",
-          "Instruction following",
-          "Thinking variants",
-          "Agent variants",
-        ],
-        status: "In Development",
-        huggingface: "https://huggingface.co/zenlm/zen-eco-4b-instruct",
-      },
-      {
-        name: "zen-agent",
-        params: "4B",
-        context: "32K tokens",
-        license: "Apache 2.0",
-        base: "Qwen3-3B",
-        features: [
-          "Tool calling",
-          "MCP support",
-          "Agentic workflows",
-          "Function execution",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-agent-4b",
-      },
-      {
-        name: "zen-omni",
-        badge: "MULTIMODAL",
-        params: "7B",
-        context: "32K tokens",
-        license: "Apache 2.0",
-        base: "Qwen3-Omni",
-        features: [
-          "Text + Vision + Audio",
-          "Unified multimodal",
-          "Cross-modal reasoning",
-          "Speech interaction",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-omni",
-      },
-    ],
-  },
-  vision: {
-    title: "Vision-Language Models",
-    description: "Advanced visual understanding and multimodal reasoning",
-    icon: Eye,
-    models: [
-      {
-        name: "zen-vl-4b-instruct",
-        params: "4B",
-        context: "32K (256K expandable)",
-        license: "Apache 2.0",
-        base: "Qwen3-VL-4B",
-        features: [
-          "Image analysis",
-          "OCR (32 languages)",
-          "Multimodal reasoning",
-          "Zen persona",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-vl-4b-instruct",
-      },
-      {
-        name: "zen-vl-4b-agent",
-        params: "4B",
-        context: "32K (256K expandable)",
-        license: "Apache 2.0",
-        features: [
-          "Function calling",
-          "GUI interaction",
-          "Visual agent",
-          "Tool use",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-vl-4b-agent",
-      },
-      {
-        name: "zen-vl-8b-instruct",
-        params: "8B",
-        context: "256K (1M expandable)",
-        license: "Apache 2.0",
-        base: "Qwen3-VL-8B",
-        features: [
-          "Video comprehension",
-          "Spatial reasoning",
-          "STEM/math/code",
-          "Comprehensive analysis",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-vl-8b-instruct",
-      },
-      {
-        name: "zen-vl-30b-instruct",
-        params: "30B (31B MoE)",
-        context: "256K (1M expandable)",
-        license: "Apache 2.0",
-        base: "Qwen3-VL-30B",
-        features: [
-          "Comprehensive vision",
-          "OCR (32 languages)",
-          "STEM reasoning",
-          "Video comprehension",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-vl-30b-instruct",
-      },
-    ],
-  },
-  generative3d: {
-    title: "3D Generation",
-    description: "Create 3D assets and worlds from text and images",
-    icon: Box,
-    models: [
-      {
-        name: "zen-3d",
-        params: "3.3B",
-        license: "Apache 2.0",
-        features: [
-          "Point cloud control",
-          "OBJ/GLB/USD/FBX output",
-          "~30s per model",
-          "10GB memory",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-3d",
-      },
-      {
-        name: "zen-voyager",
-        license: "Apache 2.0",
-        features: [
-          "Image → 3D video",
-          "Camera control",
-          "RGB + depth output",
-          "Point clouds",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-voyager",
-      },
-      {
-        name: "zen-world",
-        license: "Apache 2.0",
-        features: [
-          "City-scale environments",
-          "Complete world synthesis",
-          "Large-scale generation",
-          "24GB+ memory",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-world",
-      },
-    ],
-  },
-  video: {
-    title: "Video Generation",
-    description: "Create videos from text and images",
-    icon: Video,
-    models: [
-      {
-        name: "zen-director",
-        params: "5B",
-        license: "Apache 2.0",
-        features: [
-          "Text/Image to video",
-          "Up to 10s, 24 FPS",
-          "1280x720 output",
-          "~60s generation",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-director-5b",
-      },
-      {
-        name: "zen-video",
-        license: "Apache 2.0",
-        features: [
-          "High-quality video",
-          "Professional synthesis",
-          "High-resolution",
-          "Variable length",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-video",
-      },
-      {
-        name: "zen-video-i2v",
-        license: "Apache 2.0",
-        features: [
-          "Image to video",
-          "Animate static images",
-          "~45s generation",
-          "5 second output",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-video-i2v",
-      },
-    ],
-  },
-  audio: {
-    title: "Audio Generation",
-    description: "Create music and sound effects",
-    icon: Music,
-    models: [
-      {
-        name: "zen-musician",
-        params: "7B",
-        license: "Apache 2.0",
-        features: [
-          "Lyrics → full songs",
-          "Vocals + accompaniment",
-          "5 languages",
-          "~360s for 30s audio",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-musician-7b",
-      },
-      {
-        name: "zen-foley",
-        license: "Apache 2.0",
-        features: [
-          "Video → sound effects",
-          "Professional foley",
-          "48kHz audio",
-          "~15s for 10s audio",
-        ],
-        status: "Released",
-        huggingface: "https://huggingface.co/zenlm/zen-foley",
-      },
-    ],
-  },
-};
-
-interface ZenModel {
-  name: string;
-  params?: string;
-  context?: string;
-  vram?: string;
-  license?: string;
-  base?: string;
-  badge?: string;
-  status: string;
-  features?: string[];
-  performance?: string;
-  memory?: string;
-  huggingface?: string;
+// Derive context window from features string (e.g. "202k context window" -> "202K")
+function extractContext(features: string[]): string {
+  const ctx = features.find((f) => f.toLowerCase().includes("context"));
+  if (!ctx) return "N/A";
+  const match = ctx.match(/(\d+[kK]?)/);
+  return match ? match[1].toUpperCase() : ctx;
 }
 
-const ModelCard = ({ model }: { model: ZenModel }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+// Tier badge colors
+const TIER_STYLES: Record<string, { bg: string; text: string; border: string }> = {
+  "ultra max": { bg: "bg-[#fd4444]/15", text: "text-[#fd4444]", border: "border-[#fd4444]/30" },
+  ultra: { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30" },
+  "pro max": { bg: "bg-violet-500/15", text: "text-violet-400", border: "border-violet-500/30" },
+  pro: { bg: "bg-sky-500/15", text: "text-sky-400", border: "border-sky-500/30" },
+};
+
+function TierBadge({ tier }: { tier: string }) {
+  const style = TIER_STYLES[tier] || TIER_STYLES.pro;
+  return (
+    <span
+      className={`inline-flex items-center px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full ${style.bg} ${style.text} border ${style.border}`}
+    >
+      {tier}
+    </span>
+  );
+}
+
+const fmt = (val: number | null) => {
+  if (val == null) return "N/A";
+  return `$${val}`;
+};
+
+// Group models by generation + purpose
+type HanzoModel = (typeof pricingData.hanzoModels)[number];
+
+interface ModelGroup {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  models: HanzoModel[];
+}
+
+function groupModels(models: HanzoModel[]): ModelGroup[] {
+  const zen4General = models.filter(
+    (m) =>
+      m.name.startsWith("zen4") &&
+      !m.name.includes("coder") &&
+      !m.name.includes("thinking")
+  );
+  const zen4Thinking = models.filter((m) => m.name === "zen4-thinking");
+  const zen4Coder = models.filter((m) => m.name.startsWith("zen4-coder"));
+  const zen3 = models.filter((m) => m.name.startsWith("zen3"));
+
+  return [
+    {
+      id: "zen4",
+      title: "Zen4 -- Flagship Language Models",
+      description:
+        "Flagship and high-capability language models for general reasoning, analysis, and generation.",
+      icon: Brain,
+      models: [...zen4General, ...zen4Thinking],
+    },
+    {
+      id: "zen4-coder",
+      title: "Zen4 Coder -- Code Generation",
+      description:
+        "Specialized code models for generation, review, debugging, and full-precision analysis.",
+      icon: Code2,
+      models: zen4Coder,
+    },
+    {
+      id: "zen3",
+      title: "Zen3 -- Multimodal & Specialized",
+      description:
+        "Multimodal, vision-language, edge, safety, and embedding models.",
+      icon: Eye,
+      models: zen3,
+    },
+  ];
+}
+
+const ModelRow = ({ model }: { model: HanzoModel }) => {
+  const [expanded, setExpanded] = useState(false);
+  const isUltraMax = model.tier === "ultra max";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className={`bg-neutral-950 border rounded-xl p-6 ${
-        model.badge === "FLAGSHIP"
-          ? "border-white/30 ring-1 ring-white/10"
-          : "border-neutral-800"
-      }`}
-    >
-      <div className="flex items-start justify-between mb-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <h3 className="text-lg font-bold text-white">{model.name}</h3>
-            {model.badge && (
-              <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
-                {model.badge}
-              </span>
-            )}
+    <>
+      <tr
+        className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors cursor-pointer ${
+          isUltraMax ? "bg-[#fd4444]/5" : ""
+        }`}
+        onClick={() => setExpanded(!expanded)}
+      >
+        <td className="px-4 md:px-6 py-4">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="font-semibold text-white text-sm md:text-base">
+              {model.fullName?.split(" -- ")[0] || model.name}
+            </span>
+            <TierBadge tier={model.tier} />
           </div>
-          {model.base && (
-            <p className="text-xs text-neutral-500">Based on {model.base}</p>
+          <p className="text-xs text-neutral-500 mt-1 hidden md:block">
+            {model.description}
+          </p>
+        </td>
+        <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm">
+          {model.upstream.params}
+        </td>
+        <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm hidden md:table-cell">
+          {extractContext(model.features)}
+        </td>
+        <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm hidden lg:table-cell">
+          {model.upstream.arch}
+        </td>
+        <td className="px-4 md:px-6 py-4 text-right text-sm">
+          <span className="text-white font-medium">
+            {fmt(model.pricing.input)}
+          </span>
+          <span className="text-neutral-500"> / </span>
+          <span className="text-white font-medium">
+            {fmt(model.pricing.output)}
+          </span>
+        </td>
+        <td className="px-2 py-4 text-neutral-500">
+          {expanded ? (
+            <ChevronUp className="w-4 h-4" />
+          ) : (
+            <ChevronDown className="w-4 h-4" />
           )}
-        </div>
-        <span
-          className={`text-xs px-2 py-1 rounded-full ${
-            model.status === "Released" || model.status === "Latest" || model.status === "Trained" || model.status === "Available"
-              ? "bg-white/10 text-white border border-white/20"
-              : model.status === "Training" || model.status === "Cloud Only"
-              ? "bg-neutral-800 text-neutral-300 border border-neutral-700"
-              : "bg-neutral-900 text-neutral-400 border border-neutral-800"
-          }`}
-        >
-          {model.status}
-        </span>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        {model.params && (
-          <div>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
-              Parameters
-            </p>
-            <p className="text-sm font-medium text-white">{model.params}</p>
-          </div>
-        )}
-        {model.context && (
-          <div>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
-              Context
-            </p>
-            <p className="text-sm font-medium text-white">{model.context}</p>
-          </div>
-        )}
-        {model.license && (
-          <div>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
-              License
-            </p>
-            <p className="text-sm font-medium text-white">{model.license}</p>
-          </div>
-        )}
-        {model.performance && (
-          <div>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
-              Performance
-            </p>
-            <p className="text-sm font-medium text-white">{model.performance}</p>
-          </div>
-        )}
-      </div>
-
-      <div className="space-y-2 mb-4">
-        {model.features.slice(0, isExpanded ? undefined : 3).map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center gap-2">
-            <Check className="w-3 h-3 text-neutral-400" />
-            <span className="text-sm text-neutral-300">{feature}</span>
-          </div>
-        ))}
-        {model.features.length > 3 && !isExpanded && (
-          <button
-            onClick={() => setIsExpanded(true)}
-            className="text-xs text-neutral-500 hover:text-white flex items-center gap-1"
-          >
-            +{model.features.length - 3} more
-            <ChevronDown className="w-3 h-3" />
-          </button>
-        )}
-      </div>
-
-      {model.huggingface && (
-        <a
-          href={model.huggingface}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
-        >
-          <span>View on HuggingFace</span>
-          <ExternalLink className="w-3 h-3" />
-        </a>
+        </td>
+      </tr>
+      {expanded && (
+        <tr className="border-t border-neutral-800/50">
+          <td colSpan={6} className="px-4 md:px-6 py-4 bg-neutral-950/80">
+            <div className="grid md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
+                  Upstream OSS
+                </h4>
+                <p className="text-neutral-300">
+                  <span className="text-white font-medium">
+                    {model.upstream.model}
+                  </span>
+                </p>
+                <p className="text-neutral-500">{model.upstream.provider}</p>
+              </div>
+              <div>
+                <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
+                  Features
+                </h4>
+                <div className="space-y-1">
+                  {model.features.map((f, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#fd4444]" />
+                      <span className="text-neutral-300">{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
+                  Pricing per MTok
+                </h4>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2 bg-neutral-900 rounded border border-neutral-800">
+                    <span className="text-[10px] text-neutral-500 block">
+                      Input
+                    </span>
+                    <span className="text-white font-medium">
+                      {fmt(model.pricing.input)}
+                    </span>
+                  </div>
+                  <div className="p-2 bg-neutral-900 rounded border border-neutral-800">
+                    <span className="text-[10px] text-neutral-500 block">
+                      Output
+                    </span>
+                    <span className="text-white font-medium">
+                      {fmt(model.pricing.output)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
       )}
-    </motion.div>
+    </>
   );
 };
 
-const FamilySection = ({
-  familyKey,
-  family,
-}: {
-  familyKey: string;
-  family: (typeof MODEL_FAMILIES)[keyof typeof MODEL_FAMILIES];
-}) => {
-  const Icon = family.icon;
+const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
+  const Icon = group.icon;
 
   return (
-    <section id={familyKey} className="py-16 border-t border-neutral-800 first:border-t-0">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/5 border border-white/10">
-          <Icon className="w-6 h-6 text-white" />
+    <section id={group.id} className="mb-16">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[#fd4444]/10 border border-[#fd4444]/20">
+          <Icon className="w-6 h-6 text-[#fd4444]" />
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-white">{family.title}</h2>
-          <p className="text-neutral-400">{family.description}</p>
+          <h2 className="text-2xl font-bold text-white">{group.title}</h2>
+          <p className="text-neutral-400 text-sm">{group.description}</p>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {family.models.map((model) => (
-          <ModelCard key={model.name} model={model} />
-        ))}
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
+          <thead>
+            <tr className="bg-neutral-900/80">
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+                Model
+              </th>
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+                Params
+              </th>
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider hidden md:table-cell">
+                Context
+              </th>
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider hidden lg:table-cell">
+                Arch
+              </th>
+              <th className="px-4 md:px-6 py-3 text-right text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+                Input / Output
+              </th>
+              <th className="px-2 py-3 w-8"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {group.models.map((model) => (
+              <ModelRow key={model.name} model={model} />
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   );
 };
 
-const BRAND_COLOR = "#fd4444"; // Brand primary red
-
 const ZenModels = () => {
+  const { hanzoModels } = pricingData;
+  const groups = groupModels(hanzoModels);
+
+  // Quick stats
+  const totalModels = hanzoModels.length;
+  const minPrice = Math.min(...hanzoModels.map((m) => m.pricing.input));
+  const maxCtx = "262K";
+
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
-        <title>Zen4 - Open Foundation Models for Agentic AI | Hanzo AI</title>
+        <title>
+          Hanzo Zen Models -- 14 Foundation Models for AI | Hanzo AI
+        </title>
         <meta
           name="description"
-          content="Zen4 models from 4B to 1T+ parameters across consumer, coder, and ultra lines. Production-ready AI models for agentic coding, multimodal understanding, and creative generation."
+          content="Complete Hanzo Zen model catalog. 14 foundation models from 4B to 480B parameters across language, code, vision, and specialized tasks. Built on Qwen3+ and GLM-5."
         />
       </Helmet>
       <Navbar />
@@ -575,7 +288,6 @@ const ZenModels = () => {
       <main>
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
-          {/* Background gradient */}
           <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
@@ -594,8 +306,8 @@ const ZenModels = () => {
               className="mb-6 text-center"
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[#fd4444]/10 text-[#fd4444] border border-[#fd4444]/20">
-                <Code2 className="w-3 h-3" />
-                Zen4 - 4B to 1T+ Parameters
+                <Zap className="w-3 h-3" />
+                {totalModels} Models -- Zen3 & Zen4
               </span>
             </motion.div>
 
@@ -605,9 +317,9 @@ const ZenModels = () => {
               transition={{ duration: 0.4, delay: 0.05 }}
               className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6 text-center"
             >
-              <span className="text-white">Zen4 Foundation Models</span>
+              <span className="text-white">Hanzo Zen Models</span>
               <br />
-              <span className="text-neutral-400">for Agentic AI</span>
+              <span className="text-neutral-400">Complete API Catalog</span>
             </motion.h1>
 
             <motion.p
@@ -616,625 +328,147 @@ const ZenModels = () => {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl mx-auto text-center"
             >
-              The Zen4 family spans 4B to 1T+ parameters across consumer, coder, and ultra lines.
-              Built on Qwen3+ foundations with MoE efficiency, trained on 8.47B tokens
-              of real agentic programming sessions.
+              {totalModels} foundation models across language, code, vision,
+              multimodal, and specialized tasks. Built on Qwen3+ and GLM-5
+              architectures. From ${minPrice}/MTok.
             </motion.p>
+
+            {/* Quick stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="flex flex-wrap justify-center gap-6 mb-8"
+            >
+              {[
+                { label: "Models", value: String(totalModels) },
+                { label: "Max Context", value: maxCtx },
+                { label: "From", value: `$${minPrice}/MTok` },
+                { label: "Architectures", value: "MoE + Dense" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-neutral-500 uppercase tracking-wider">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Tier legend */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-3 mb-8"
+            >
+              {Object.keys(TIER_STYLES).map((tier) => (
+                <TierBadge key={tier} tier={tier} />
+              ))}
+            </motion.div>
 
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.15 }}
-              className="flex flex-wrap justify-center items-center gap-4 mb-8"
+              transition={{ duration: 0.4, delay: 0.25 }}
+              className="flex flex-wrap justify-center items-center gap-4"
             >
               <a
-                href="#models"
+                href="#zen4"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
                 style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
               >
                 Explore Models
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
-              <a
-                href="#dataset"
+              <Link
+                to="/pricing"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
               >
-                <Database className="mr-2 h-4 w-4" />
-                Training Data
-              </a>
+                Full Pricing
+              </Link>
               <a
-                href="https://zenlm.org/research"
+                href="https://cloud.hanzo.ai/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
               >
-                <BookOpen className="mr-2 h-4 w-4" />
-                Research Papers
-              </a>
-            </motion.div>
-
-            {/* Quick links */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="flex flex-wrap justify-center gap-3"
-            >
-              <a
-                href="https://huggingface.co/zenlm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
-              >
-                🤗 HuggingFace
-              </a>
-              <a
-                href="https://github.com/zenlm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </a>
-              <a
-                href="https://zenlm.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
-              >
-                <Globe className="w-4 h-4" />
-                zenlm.org
+                <Terminal className="mr-2 h-4 w-4" />
+                Get API Key
               </a>
             </motion.div>
           </div>
         </section>
 
-        {/* Zen4 Model Lineup Section */}
-        <section id="zen-coder" className="py-20 px-4 md:px-8">
-          <div className="max-w-7xl mx-auto py-12 px-8 rounded-2xl bg-neutral-950 border border-neutral-800">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-10"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Zen4 Model Lineup
-              </h2>
-              <p className="text-neutral-400 text-lg">
-                Consumer, Coder, and Ultra lines -- 4B to 1T+ parameters
-              </p>
-            </motion.div>
-
-            {/* Consumer Line Table */}
-            <h3 className="text-xl font-bold text-white mb-4">Consumer Line</h3>
-            <div className="overflow-x-auto mb-10">
-              <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
-                <thead>
-                  <tr className="bg-neutral-900/80">
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Model</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Size</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Base</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Context</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Status</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ZEN4_CONSUMER_MODELS.map((model) => (
-                    <tr
-                      key={model.name}
-                      className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors ${model.flagship ? "bg-white/5" : ""}`}
-                    >
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-white">{model.name}</span>
-                          {model.flagship && (
-                            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
-                              FLAGSHIP
-                            </span>
-                          )}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-neutral-300">{model.size}</td>
-                      <td className="px-6 py-4 text-neutral-300">{model.base}</td>
-                      <td className="px-6 py-4 text-neutral-300">{model.context}</td>
-                      <td className="px-6 py-4">
-                        <span
-                          className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase ${
-                            model.status === "Available"
-                              ? "bg-white/10 text-white border border-white/20"
-                              : "bg-neutral-900 text-neutral-400 border border-neutral-800"
-                          }`}
-                        >
-                          {model.status}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4">
-                        {model.huggingface && (
-                          <a href={model.huggingface} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-neutral-400 hover:text-white transition-colors">
-                            HuggingFace <ExternalLink className="w-3 h-3" />
-                          </a>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Coder Line Table */}
-            <h3 className="text-xl font-bold text-white mb-4">Coder Line</h3>
-            <div className="overflow-x-auto mb-10">
-              <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
-                <thead>
-                  <tr className="bg-neutral-900/80">
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Model</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Size</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Base</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Context</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Status</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ZEN4_CODER_MODELS.map((model) => (
-                    <tr
-                      key={model.name}
-                      className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors ${model.flagship ? "bg-white/5" : ""}`}
-                    >
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-white">{model.name}</span>
-                          {model.flagship && (
-                            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
-                              FLAGSHIP
-                            </span>
-                          )}
-                          {model.frontier && (
-                            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
-                              FRONTIER
-                            </span>
-                          )}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-neutral-300">{model.size}</td>
-                      <td className="px-6 py-4 text-neutral-300">{model.base}</td>
-                      <td className="px-6 py-4 text-neutral-300">{model.context}</td>
-                      <td className="px-6 py-4">
-                        <span
-                          className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase ${
-                            model.status === "Available"
-                              ? "bg-white/10 text-white border border-white/20"
-                              : model.status === "Cloud Only"
-                              ? "bg-neutral-800 text-neutral-300 border border-neutral-700"
-                              : "bg-neutral-900 text-neutral-400 border border-neutral-800"
-                          }`}
-                        >
-                          {model.status}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4">
-                        {model.huggingface && (
-                          <a href={model.huggingface} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-neutral-400 hover:text-white transition-colors">
-                            HuggingFace <ExternalLink className="w-3 h-3" />
-                          </a>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Ultra Line Table */}
-            <h3 className="text-xl font-bold text-white mb-4">Ultra Line</h3>
-            <div className="overflow-x-auto mb-10">
-              <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
-                <thead>
-                  <tr className="bg-neutral-900/80">
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Model</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Size</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Base</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Context</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">Status</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ZEN4_ULTRA_MODELS.map((model) => (
-                    <tr
-                      key={model.name}
-                      className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors ${model.frontier ? "bg-white/5" : ""}`}
-                    >
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-white">{model.name}</span>
-                          {model.frontier && (
-                            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white/10 text-white border border-white/20">
-                              FRONTIER
-                            </span>
-                          )}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-neutral-300">{model.size}</td>
-                      <td className="px-6 py-4 text-neutral-300">{model.base}</td>
-                      <td className="px-6 py-4 text-neutral-300">{model.context}</td>
-                      <td className="px-6 py-4">
-                        <span
-                          className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase ${
-                            model.status === "Cloud Only"
-                              ? "bg-neutral-800 text-neutral-300 border border-neutral-700"
-                              : "bg-neutral-900 text-neutral-400 border border-neutral-800"
-                          }`}
-                          style={model.status === "Coming Soon" ? { animation: "pulse 2s infinite" } : {}}
-                        >
-                          {model.status}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4">
-                        {model.huggingface && (
-                          <a href={model.huggingface} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-neutral-400 hover:text-white transition-colors">
-                            HuggingFace <ExternalLink className="w-3 h-3" />
-                          </a>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Coder Features Grid */}
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2">Real Agentic Data</h3>
-                <p className="text-neutral-400 text-sm">
-                  Trained on actual agentic debug sessions - not synthetic data. Real debugging workflows,
-                  multi-file refactoring, and tool use patterns.
-                </p>
-              </div>
-              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2">Production Code</h3>
-                <p className="text-neutral-400 text-sm">
-                  15 years of professional development across AI, Web3, cryptography, and modern software
-                  engineering from 1,452 repositories.
-                </p>
-              </div>
-              <div className="p-6 bg-black border border-neutral-800 rounded-xl hover:border-neutral-600 transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2">Open Training</h3>
-                <p className="text-neutral-400 text-sm">
-                  Use{" "}
-                  <a
-                    href="https://github.com/zenlm/zen-trainer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-white hover:text-neutral-300"
-                  >
-                    zen-trainer
-                  </a>
-                  {" "}to fine-tune on your own data. Supports MLX (Apple Silicon), Unsloth, and DeepSpeed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Complete AI Model Ecosystem */}
-        <section id="overview" className="py-20 px-4 md:px-8">
+        {/* Model Groups */}
+        <section className="py-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Complete AI Model Ecosystem
-              </h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ECOSYSTEM_CATEGORIES.map((category, idx) => {
-                const Icon = category.icon;
-                return (
-                  <motion.div
-                    key={category.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
-                  >
-                    <div className="text-4xl mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-xl bg-[#fd4444]/10 border border-[#fd4444]/20">
-                      <Icon className="w-8 h-8 text-[#fd4444]" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{category.title}</h3>
-                    <p className="text-neutral-400 text-sm">{category.description}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Dataset Section */}
-        <section id="dataset" className="py-20 px-4 md:px-8 bg-neutral-950/50">
-          <div className="max-w-7xl mx-auto py-12 px-8 rounded-2xl bg-neutral-950 border border-neutral-800">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-10"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Zen Agentic Dataset
-              </h2>
-              <p className="text-neutral-400 text-lg">
-                8.47 Billion Tokens of Real-World Agentic Programming
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-              {DATASET_STATS.map((stat, idx) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-neutral-600 transition-all"
-                >
-                  <div className="text-3xl font-bold text-white mb-2">
-                    {stat.value}
-                  </div>
-                  <h3 className="text-lg font-semibold text-neutral-300 mb-1">{stat.label}</h3>
-                  <p className="text-neutral-500 text-sm">{stat.description}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <p className="text-neutral-400 mb-6">Available for research and commercial licensing.</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="mailto:z@hanzo.ai"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
-                >
-                  Request Access
-                </a>
-                <a
-                  href="https://huggingface.co/datasets/hanzoai/zen-agentic-dataset"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 text-white hover:bg-neutral-900 text-sm"
-                >
-                  View on HuggingFace
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Model Families Section */}
-        <section className="py-20 px-4 md:px-8">
-          <div className="max-w-7xl mx-auto">
-            {/* Quick Nav */}
-            <div id="models" className="mb-12 flex flex-wrap gap-3 justify-center">
-              {Object.entries(MODEL_FAMILIES).map(([key, family]) => {
-                const Icon = family.icon;
+            {/* Quick nav */}
+            <div className="mb-12 flex flex-wrap gap-3 justify-center">
+              {groups.map((group) => {
+                const Icon = group.icon;
                 return (
                   <a
-                    key={key}
-                    href={`#${key}`}
+                    key={group.id}
+                    href={`#${group.id}`}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-[#fd4444]/30 transition-colors text-sm text-neutral-400 hover:text-white"
                   >
                     <Icon className="w-4 h-4" />
-                    {family.title}
+                    {group.title.split(" -- ")[0]}
                   </a>
                 );
               })}
             </div>
 
-            {/* Model Families */}
-            {Object.entries(MODEL_FAMILIES).map(([key, family]) => (
-              <FamilySection key={key} familyKey={key} family={family} />
+            {groups.map((group) => (
+              <ModelGroupSection key={group.id} group={group} />
             ))}
           </div>
         </section>
 
-        {/* Get Started Section */}
-        <section id="downloads" className="py-20 px-4 md:px-8 border-t border-neutral-800">
-          <div className="max-w-7xl mx-auto">
+        {/* API Usage Example */}
+        <section className="py-16 px-4 md:px-8 bg-neutral-950/50 border-t border-neutral-800">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Get Started
-              </h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
-              >
-                <Download className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
-                <h3 className="text-xl font-semibold text-white mb-2">HuggingFace</h3>
-                <p className="text-neutral-400 text-sm mb-4">Access all 30+ models via HuggingFace Hub</p>
-                <a
-                  href="https://huggingface.co/zenlm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
-                >
-                  Visit HuggingFace
-                </a>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
-              >
-                <Github className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
-                <h3 className="text-xl font-semibold text-white mb-2">GitHub</h3>
-                <p className="text-neutral-400 text-sm mb-4">Training code, documentation, and source</p>
-                <a
-                  href="https://github.com/zenlm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
-                >
-                  View on GitHub
-                </a>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
-              >
-                <Terminal className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
-                <h3 className="text-xl font-semibold text-white mb-2">zen-trainer</h3>
-                <p className="text-neutral-400 text-sm mb-4">Fine-tune models on your own data</p>
-                <div className="bg-black border border-neutral-800 rounded-lg p-3">
-                  <code className="text-sm text-white">pip install zen-trainer</code>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#fd4444]/30 transition-all hover:-translate-y-1"
-              >
-                <BookOpen className="w-8 h-8 mx-auto mb-4 text-[#fd4444]" />
-                <h3 className="text-xl font-semibold text-white mb-2">Research</h3>
-                <p className="text-neutral-400 text-sm mb-4">Technical papers and whitepapers</p>
-                <a
-                  href="https://zenlm.org/research"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
-                >
-                  Read Papers
-                </a>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Infrastructure Section */}
-        <section className="py-20 px-4 md:px-8 bg-neutral-950/50 border-t border-neutral-800">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Infrastructure
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                Quick Start
               </h2>
               <p className="text-neutral-400">
-                Train and deploy Zen models with our optimized platforms
+                Drop-in OpenAI-compatible API. Switch models with one line.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-[#fd4444]/30 transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Layers className="w-6 h-6 text-[#fd4444]" />
-                  <h3 className="text-xl font-bold text-white">Zen Gym</h3>
+            <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
-                <p className="text-neutral-400 mb-4">
-                  Unified training platform for all Zen models with 2-5x
-                  speedup.
-                </p>
-                <div className="space-y-2 mb-6">
-                  {[
-                    "LoRA, QLoRA, GRPO, GSPO, DPO, PPO",
-                    "Unsloth acceleration",
-                    "FlashAttention-2",
-                    "Liger Kernel optimization",
-                  ].map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-[#fd4444]" />
-                      <span className="text-sm text-neutral-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href="https://github.com/zenlm/zen-gym"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
-                >
-                  View on GitHub
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </motion.div>
+                <span className="text-xs text-neutral-500 font-mono ml-2">
+                  python
+                </span>
+              </div>
+              <pre className="p-6 text-sm font-mono text-neutral-300 overflow-x-auto">
+                <code>{`from hanzoai import Hanzo
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-black border border-neutral-800 rounded-xl p-8 hover:border-[#fd4444]/30 transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Zap className="w-6 h-6 text-[#fd4444]" />
-                  <h3 className="text-xl font-bold text-white">Zen Engine</h3>
-                </div>
-                <p className="text-neutral-400 mb-4">
-                  High-performance inference for all Zen models with
-                  OpenAI-compatible API.
-                </p>
-                <div className="space-y-2 mb-6">
-                  {[
-                    "44K tokens/sec (M3 Max)",
-                    "OpenAI-compatible REST API",
-                    "PyTorch, MLX, GGUF formats",
-                    "MCP integration",
-                  ].map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-[#fd4444]" />
-                      <span className="text-sm text-neutral-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href="https://github.com/zenlm/zen-engine"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
-                >
-                  View on GitHub
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </motion.div>
+client = Hanzo()
+
+# Use any Zen model
+response = client.chat.completions.create(
+    model="zen4",           # or zen4-coder, zen3-vl, etc.
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+print(response.choices[0].message.content)`}</code>
+              </pre>
             </div>
           </div>
         </section>
@@ -1252,12 +486,12 @@ const ZenModels = () => {
                 Ready to build with Zen?
               </h2>
               <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
-                All models are open source under Apache 2.0 or MIT license. Start
-                building today.
+                All {totalModels} Zen models available via OpenAI-compatible
+                API. Start building today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="https://huggingface.co/zenlm"
+                  href="https://cloud.hanzo.ai/signup"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
@@ -1272,15 +506,12 @@ const ZenModels = () => {
                 >
                   Try Hanzo Dev
                 </Link>
-                <a
-                  href="https://zenlm.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/pricing"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
                 >
-                  <Globe className="mr-2 h-4 w-4" />
-                  Visit zenlm.org
-                </a>
+                  View Pricing
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -1288,14 +519,6 @@ const ZenModels = () => {
       </main>
 
       <Footer />
-
-      {/* Add pulse animation for training status */}
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.7; }
-        }
-      `}</style>
     </div>
   );
 };
