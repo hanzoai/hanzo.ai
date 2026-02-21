@@ -162,14 +162,14 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
             <div className="grid md:grid-cols-3 gap-6 text-sm">
               <div>
                 <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
-                  Upstream OSS
+                  Architecture
                 </h4>
                 <p className="text-neutral-300">
                   <span className="text-white font-medium">
-                    {model.upstream.model}
+                    {model.upstream.params}
                   </span>
                 </p>
-                <p className="text-neutral-500">{model.upstream.provider}</p>
+                <p className="text-neutral-500">{model.upstream.arch}</p>
               </div>
               <div>
                 <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">

@@ -42,19 +42,13 @@ const APIPricing = () => {
             <p className="text-neutral-400 mb-3">{model.description}</p>
           )}
 
-          {/* Upstream info */}
+          {/* Architecture info */}
           <div className="flex items-center gap-4 text-xs text-neutral-500 mb-3 flex-wrap">
             <span>
-              Upstream: <span className="text-neutral-300">{model.upstream.model}</span>
+              Parameters: <span className="text-neutral-300">{model.upstream.params}</span>
             </span>
             <span>
-              Provider: <span className="text-neutral-300">{model.upstream.provider}</span>
-            </span>
-            <span>
-              Params: <span className="text-neutral-300">{model.upstream.params}</span>
-            </span>
-            <span>
-              Arch: <span className="text-neutral-300">{model.upstream.arch}</span>
+              Architecture: <span className="text-neutral-300">{model.upstream.arch}</span>
             </span>
           </div>
 

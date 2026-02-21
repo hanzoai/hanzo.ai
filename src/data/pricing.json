@@ -6,15 +6,13 @@
     {
       "name": "zen4",
       "fullName": "Zen4 — Flagship",
-      "description": "Flagship model built on GLM-5. Optimal for complex reasoning and multi-domain tasks.",
+      "description": "Flagship model. Optimal for complex reasoning and multi-domain tasks.",
       "features": [
         "202k context window",
         "Flagship intelligence"
       ],
       "tier": "ultra max",
       "upstream": {
-        "model": "GLM-5",
-        "provider": "Zhipu AI",
         "params": "744B (40B active)",
         "arch": "MoE"
       },
@@ -35,8 +33,6 @@
       ],
       "tier": "ultra",
       "upstream": {
-        "model": "Qwen3-Next-80B-A3B",
-        "provider": "Alibaba Qwen",
         "params": "80B (3B active)",
         "arch": "MoE"
       },
@@ -57,8 +53,6 @@
       ],
       "tier": "ultra max",
       "upstream": {
-        "model": "Kimi K2-Thinking",
-        "provider": "Moonshot AI",
         "params": "1.04T (32B active)",
         "arch": "MoE"
       },
@@ -79,10 +73,8 @@
       ],
       "tier": "pro",
       "upstream": {
-        "model": "Qwen3-8B",
-        "provider": "Alibaba Qwen",
         "params": "8B",
-        "arch": "Dense Transformer"
+        "arch": "Dense"
       },
       "pricing": {
         "input": 0.6,
@@ -101,8 +93,6 @@
       ],
       "tier": "ultra max",
       "upstream": {
-        "model": "GLM-5 (thinking)",
-        "provider": "Zhipu AI",
         "params": "744B (40B active)",
         "arch": "MoE + CoT"
       },
@@ -123,8 +113,6 @@
       ],
       "tier": "pro max",
       "upstream": {
-        "model": "Qwen3-Next-80B-A3B (thinking)",
-        "provider": "Alibaba Qwen",
         "params": "80B (3B active)",
         "arch": "MoE + CoT"
       },
@@ -145,8 +133,6 @@
       ],
       "tier": "ultra",
       "upstream": {
-        "model": "Qwen3-Coder-480B-A35B",
-        "provider": "Alibaba Qwen",
         "params": "480B (35B active)",
         "arch": "MoE"
       },
@@ -167,8 +153,6 @@
       ],
       "tier": "pro max",
       "upstream": {
-        "model": "Qwen3-Coder-30B-A3B",
-        "provider": "Alibaba Qwen",
         "params": "30B (3B active)",
         "arch": "MoE"
       },
@@ -189,8 +173,6 @@
       ],
       "tier": "ultra max",
       "upstream": {
-        "model": "Qwen3-Coder-480B BF16",
-        "provider": "Alibaba Qwen",
         "params": "480B",
         "arch": "Dense BF16"
       },
@@ -211,8 +193,6 @@
       ],
       "tier": "pro max",
       "upstream": {
-        "model": "GLM-4.7",
-        "provider": "Zhipu AI",
         "params": "~200B",
         "arch": "Dense Multimodal"
       },
@@ -233,8 +213,6 @@
       ],
       "tier": "pro max",
       "upstream": {
-        "model": "Qwen3-VL-30B-A3B",
-        "provider": "Alibaba Qwen",
         "params": "30B (3B active)",
         "arch": "MoE Vision-Language"
       },
@@ -255,10 +233,8 @@
       ],
       "tier": "pro",
       "upstream": {
-        "model": "Qwen3-4B",
-        "provider": "Alibaba Qwen",
         "params": "4B",
-        "arch": "Dense Transformer"
+        "arch": "Dense"
       },
       "pricing": {
         "input": 0.3,
@@ -277,10 +253,8 @@
       ],
       "tier": "pro",
       "upstream": {
-        "model": "Qwen3-4B",
-        "provider": "Alibaba Qwen",
         "params": "4B",
-        "arch": "Dense Transformer"
+        "arch": "Dense"
       },
       "pricing": {
         "input": 0.3,
@@ -299,9 +273,7 @@
       ],
       "tier": "pro max",
       "upstream": {
-        "model": "text-embedding-3-large",
-        "provider": "OpenAI",
-        "params": "N/A",
+        "params": "3072 dimensions",
         "arch": "Embedding"
       },
       "pricing": {
