@@ -66,7 +66,7 @@ interface HanzoModel {
   description: string;
   features: string[];
   tier: string;
-  upstream: { params: string; arch: string };
+  specs: { params: string; arch: string };
   pricing: { input: number; output: number; cacheRead: number | null; cacheWrite: number | null };
 }
 
@@ -141,13 +141,13 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
           </p>
         </td>
         <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm">
-          {model.upstream.params}
+          {model.specs.params}
         </td>
         <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm hidden md:table-cell">
           {extractContext(model.features)}
         </td>
         <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm hidden lg:table-cell">
-          {model.upstream.arch}
+          {model.specs.arch}
         </td>
         <td className="px-4 md:px-6 py-4 text-right text-sm">
           <span className="text-white font-medium">
@@ -176,10 +176,10 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
                 </h4>
                 <p className="text-neutral-300">
                   <span className="text-white font-medium">
-                    {model.upstream.params}
+                    {model.specs.params}
                   </span>
                 </p>
-                <p className="text-neutral-500">{model.upstream.arch}</p>
+                <p className="text-neutral-500">{model.specs.arch}</p>
               </div>
               <div>
                 <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">

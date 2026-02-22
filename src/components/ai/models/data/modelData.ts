@@ -92,14 +92,16 @@ const modelCategories = [
   },
   {
     name: "Third-Party Models",
-    description: "Industry-leading models available through the Hanzo API gateway",
+    description: "100+ industry-leading models available through the Hanzo AI Cloud gateway",
     models: [
-      { name: "Claude Opus 4.6", provider: "Anthropic", features: ["1M context window", "Most capable model", "Complex reasoning", "Extended thinking"] },
-      { name: "Claude Sonnet 4.6", provider: "Anthropic", features: ["1M context window", "Best balance of speed and intelligence", "Strong coding", "Fast inference"] },
-      { name: "GPT-5", provider: "OpenAI", features: ["400K context window", "Multimodal", "Advanced reasoning", "Tool use"] },
-      { name: "GPT-5 Mini", provider: "OpenAI", features: ["400K context window", "Fast and affordable", "Good quality", "Low latency"] },
-      { name: "DeepSeek R1", provider: "DeepSeek", features: ["64K context window", "Reasoning model", "Chain-of-thought", "Math and code"] },
-      { name: "Gemini 2.5 Pro", provider: "Google", features: ["1M context window", "Multimodal", "Long-context reasoning", "Code generation"] },
+      { name: "Claude Opus 4.6", provider: "Anthropic", features: ["1M context window", "Most capable model", "Complex reasoning", "Extended thinking"], description: "Anthropic's most powerful model for the hardest tasks." },
+      { name: "Claude Sonnet 4.6", provider: "Anthropic", features: ["1M context window", "Best balance of speed and intelligence", "Strong coding", "Fast inference"], description: "Ideal balance of capability and speed for production workloads." },
+      { name: "Claude Haiku 4.5", provider: "Anthropic", features: ["200K context window", "Fastest Anthropic model", "Cost efficient", "Low latency"], description: "Fastest and most affordable Claude model for high-throughput tasks." },
+      { name: "GPT-5", provider: "OpenAI", features: ["400K context window", "Multimodal", "Advanced reasoning", "Tool use"], description: "OpenAI's flagship model with advanced reasoning capabilities." },
+      { name: "GPT-5 Mini", provider: "OpenAI", features: ["400K context window", "Fast and affordable", "Good quality", "Low latency"], description: "Cost-efficient OpenAI model for everyday tasks." },
+      { name: "DeepSeek R1", provider: "DeepSeek", features: ["64K context window", "Reasoning model", "Chain-of-thought", "Math and code"], description: "Specialized reasoning model excelling at math and code." },
+      { name: "DeepSeek V3", provider: "DeepSeek", features: ["164K context window", "Fast and efficient", "Strong general performance", "Open-weight"], description: "Fast general-purpose model with strong benchmarks." },
+      { name: "Gemini 2.5 Pro", provider: "Google", features: ["1M context window", "Multimodal", "Long-context reasoning", "Code generation"], description: "Google's flagship with the longest context window." },
     ]
   },
   {
