@@ -1,7 +1,7 @@
 
-import { 
+import {
   Brain, Database, Server, ShoppingCart, UserCircle, CreditCard, Workflow,
-  Cloud, Network, HardDrive, Activity, Share, Box, Plus,
+  Cloud, Network, HardDrive, Activity, Share, Box, Plus, Radio,
   Cpu, BarChart, LineChart, MessageSquare, Code
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
@@ -147,17 +147,30 @@ export const cloudServiceData: CloudServiceItem[] = [
     color: "rose"
   },
   {
-    id: "realtime",
-    title: "Realtime",
-    description: "Real-time data synchronization and messaging across clients.",
+    id: "pubsub",
+    title: "PubSub",
+    description: "Pub/sub messaging with JetStream persistence. NATS-compatible.",
+    icon: Radio,
+    features: [
+      "Pub/sub, request-reply, and streaming",
+      "JetStream for durable, exactly-once delivery",
+      "Wildcard subjects and queue groups",
+      "Clustered with automatic failover"
+    ],
+    color: "purple"
+  },
+  {
+    id: "stream",
+    title: "Stream",
+    description: "Kafka wire protocol gateway over PubSub.",
     icon: Activity,
     features: [
-      "WebSocket and pub/sub messaging for real-time communication",
-      "Automatic client state synchronization",
-      "Presence and status tracking for users",
-      "Collaborative editing and real-time updates"
+      "Kafka wire protocol — any Kafka client works",
+      "Stateless: all storage in PubSub",
+      "Consumer groups, topics, and offset tracking",
+      "Scales horizontally behind a load balancer"
     ],
-    color: "fuchsia"
+    color: "indigo"
   },
   {
     id: "storage",

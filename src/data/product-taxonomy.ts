@@ -510,7 +510,7 @@ export const asyncProducts: Product[] = [
     name: 'Hanzo PubSub',
     shortName: 'PubSub',
     tagline: 'Event streaming & messaging',
-    description: 'Publish-subscribe messaging for real-time event streaming. High-throughput, low-latency message delivery at scale. NATS-compatible.',
+    description: 'High-throughput pub/sub messaging with JetStream persistence. NATS-compatible.',
     category: 'async',
     icon: 'Radio',
     href: '/products/async/pubsub',
@@ -520,7 +520,27 @@ export const asyncProducts: Product[] = [
       cli: 'hanzo pubsub create mytopic',
       docker: 'docker run -d hanzo/pubsub'
     },
-    features: ['Pub/sub', 'Streaming', 'JetStream', 'Request-reply', 'Wildcard subjects', 'Clustering', 'Self-hostable'],
+    features: ['Pub/sub', 'Hanzo Stream persistence', 'Request-reply', 'Wildcard subjects', 'Clustering', 'Self-hostable'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'stream',
+    name: 'Hanzo Stream',
+    shortName: 'Stream',
+    tagline: 'Kafka-compatible streaming gateway',
+    description: 'Kafka wire protocol gateway over Hanzo PubSub. Use any Kafka client; storage and replication handled by PubSub.',
+    category: 'async',
+    icon: 'ArrowLeftRight',
+    href: '/products/async/stream',
+    github: 'https://github.com/hanzoai/stream',
+    docs: 'https://docs.hanzo.ai/stream',
+    install: {
+      cli: 'hanzo stream create',
+      docker: 'docker run -d hanzo/stream'
+    },
+    features: ['Kafka compatible', 'Stateless gateway', 'PubSub backend', 'Consumer groups', 'Topic management', 'Horizontally scalable', 'Self-hostable'],
     status: 'ga',
     openSource: true,
     pricing: 'freemium'
