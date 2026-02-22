@@ -62,7 +62,7 @@ const BENEFITS = [
     icon: Globe,
     title: "Open Source Upstream",
     description:
-      "Built on Qwen3+ and GLM-5 open-weight models. Full transparency on architecture and training.",
+      "Zen MoDE (Mixture of Distilled Experts). Curating the best open-source foundations into a unified family.",
   },
   {
     icon: Layers,
@@ -94,7 +94,7 @@ const Zen = () => {
         <title>Zen -- Hanzo Foundation Models for AI | Hanzo AI</title>
         <meta
           name="description"
-          content="14 Hanzo Zen foundation models from 4B to 480B parameters. Language, code, vision, multimodal, and specialized models built on Qwen3+ and GLM-5."
+          content="14 Hanzo Zen foundation models from 4B to 1T+ parameters. Language, code, vision, multimodal, and specialized models built with Zen MoDE architecture."
         />
       </Helmet>
       <Navbar />
@@ -148,8 +148,8 @@ const Zen = () => {
                   transition={{ duration: 0.4, delay: 0.1 }}
                   className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-xl"
                 >
-                  14 foundation models across four tiers. Built on Qwen3+ and
-                  GLM-5 open-weight architectures. From $0.30/MTok for edge
+                  14 foundation models across four tiers. Zen MoDE (Mixture of
+                  Distilled Experts) architecture. From $0.30/MTok for edge
                   models to flagship reasoning at $9.60/MTok.
                 </motion.p>
 
@@ -255,7 +255,7 @@ const Zen = () => {
                       <div className="flex items-center gap-2 text-sm">
                         <Code2 className="w-4 h-4 text-[#fd4444]" />
                         <span className="text-neutral-300">
-                          Qwen3+ and GLM-5 architectures
+                          Zen MoDE architecture
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">

@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import pricingData from "@/data/pricing.json";
+import { Loader2 } from "lucide-react";
+
+const PRICING_API = "https://api.hanzo.ai/v1/pricing";
+
+interface HanzoModel {
+  name: string;
+  fullName: string;
+  description: string;
+  features: string[];
+  tier: string;
+  upstream: { params: string; arch: string };
+  pricing: { input: number; output: number; cacheRead: number | null; cacheWrite: number | null };
+}
+
+interface ThirdPartyModel {
+  name: string;
+  features: string[];
+  contextWindow: number;
+  pricing: { input: number; output: number; cacheRead: number | null; cacheWrite: number | null };
+}
+
+interface ToolEntry {
+  name: string;
+  unit: string;
+  price: number;
+}
+
+interface PricingResponse {
+  updated: string;
+  hanzoModels: HanzoModel[];
+  thirdPartyModels: ThirdPartyModel[];
+  tools: ToolEntry[];
+}
 
 const fmt = (val: number | null) => {
   if (val == null) return "N/A";
@@ -28,9 +60,42 @@ function TierBadge({ tier }: { tier: string }) {
 }
 
 const APIPricing = () => {
-  const { hanzoModels, thirdPartyModels, tools } = pricingData;
+  const [data, setData] = useState<PricingResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const HanzoModelCard = ({ model }: { model: (typeof hanzoModels)[number] }) => (
+  useEffect(() => {
+    fetch(PRICING_API)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((d) => { setData(d); setLoading(false); })
+      .catch((err) => {
+        console.error("Failed to fetch pricing:", err);
+        setError("Unable to load live pricing.");
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-24">
+        <Loader2 className="w-6 h-6 animate-spin mr-2 text-neutral-400" />
+        <span className="text-neutral-400">Loading live pricing...</span>
+      </div>
+    );
+  }
+
+  if (error || !data) {
+    return (
+      <div className="text-center py-24 text-neutral-500">{error || "Failed to load pricing."}</div>
+    );
+  }
+
+  const { hanzoModels, thirdPartyModels, tools } = data;
+
+  const HanzoModelCard = ({ model }: { model: HanzoModel }) => (
     <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50 mb-4">
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
@@ -42,7 +107,7 @@ const APIPricing = () => {
             <p className="text-neutral-400 mb-3">{model.description}</p>
           )}
 
-          {/* Architecture info */}
+          {/* Architecture info (public specs only, no upstream model names) */}
           <div className="flex items-center gap-4 text-xs text-neutral-500 mb-3 flex-wrap">
             <span>
               Parameters: <span className="text-neutral-300">{model.upstream.params}</span>
@@ -97,7 +162,7 @@ const APIPricing = () => {
     </div>
   );
 
-  const ThirdPartyModelCard = ({ model }: { model: (typeof thirdPartyModels)[number] }) => (
+  const ThirdPartyModelCard = ({ model }: { model: ThirdPartyModel }) => (
     <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50">
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
@@ -148,7 +213,7 @@ const APIPricing = () => {
     </div>
   );
 
-  const ToolCard = ({ tool }: { tool: (typeof tools)[number] }) => (
+  const ToolCard = ({ tool }: { tool: ToolEntry }) => (
     <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50">
       <h3 className="text-xl font-semibold mb-2">{tool.name}</h3>
       <div className="text-right">
@@ -166,7 +231,12 @@ const APIPricing = () => {
           <div>
             <h2 className="text-3xl font-bold">Hanzo Zen Models</h2>
             <p className="text-neutral-400 text-lg mt-2">
-              14 foundation models across 4 tiers -- built on Qwen3+ and GLM-5
+              {hanzoModels.length} foundation models across 4 tiers -- Zen MoDE architecture
+              {data.updated && (
+                <span className="ml-2 text-xs text-neutral-600">
+                  Updated {new Date(data.updated).toLocaleDateString()}
+                </span>
+              )}
             </p>
           </div>
           <Link
@@ -215,34 +285,38 @@ const APIPricing = () => {
       </div>
 
       {/* Tools Section */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-8">Explore pricing for tools</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {tools.map((tool) => (
-            <ToolCard key={tool.name} tool={tool} />
-          ))}
-        </div>
+      {tools && tools.length > 0 && (
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-8">Explore pricing for tools</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {tools.map((tool) => (
+              <ToolCard key={tool.name} tool={tool} />
+            ))}
+          </div>
 
-        <div className="text-sm text-neutral-500 mb-8">
-          *Does not include input and output tokens required to process requests
-        </div>
+          <div className="text-sm text-neutral-500 mb-8">
+            *Does not include input and output tokens required to process requests
+          </div>
 
-        <div className="flex justify-center">
-          <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-3">
-            Start building
-          </Button>
+          <div className="flex justify-center">
+            <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-3">
+              Start building
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Third-party Models Section */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-8">Explore third-party models</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {thirdPartyModels.map((model) => (
-            <ThirdPartyModelCard key={model.name} model={model} />
-          ))}
+      {thirdPartyModels && thirdPartyModels.length > 0 && (
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-8">Explore third-party models</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {thirdPartyModels.map((model) => (
+              <ThirdPartyModelCard key={model.name} model={model} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

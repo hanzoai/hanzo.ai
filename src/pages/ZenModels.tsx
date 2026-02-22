@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import pricingData from "@/data/pricing.json";
+import { Loader2 } from "lucide-react";
+
+const PRICING_API = "https://api.hanzo.ai/v1/pricing";
 import {
   ArrowRight,
   Code2,
@@ -58,7 +60,15 @@ const fmt = (val: number | null) => {
 };
 
 // Group models by generation + purpose
-type HanzoModel = (typeof pricingData.hanzoModels)[number];
+interface HanzoModel {
+  name: string;
+  fullName: string;
+  description: string;
+  features: string[];
+  tier: string;
+  upstream: { params: string; arch: string };
+  pricing: { input: number; output: number; cacheRead: number | null; cacheWrite: number | null };
+}
 
 interface ModelGroup {
   id: string;
@@ -264,23 +274,30 @@ const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
 };
 
 const ZenModels = () => {
-  const { hanzoModels } = pricingData;
-  const groups = groupModels(hanzoModels);
+  const [hanzoModels, setHanzoModels] = useState<HanzoModel[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Quick stats
+  useEffect(() => {
+    fetch(PRICING_API)
+      .then((res) => res.json())
+      .then((data) => { setHanzoModels(data.hanzoModels || []); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, []);
+
+  const groups = groupModels(hanzoModels);
   const totalModels = hanzoModels.length;
-  const minPrice = Math.min(...hanzoModels.map((m) => m.pricing.input));
+  const minPrice = hanzoModels.length > 0 ? Math.min(...hanzoModels.map((m) => m.pricing.input)) : 0.30;
   const maxCtx = "262K";
 
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       <Helmet>
         <title>
-          Hanzo Zen Models -- 14 Foundation Models for AI | Hanzo AI
+          Hanzo Zen Models -- Foundation Models for AI | Hanzo AI
         </title>
         <meta
           name="description"
-          content="Complete Hanzo Zen model catalog. 14 foundation models from 4B to 480B parameters across language, code, vision, and specialized tasks. Built on Qwen3+ and GLM-5."
+          content="Complete Hanzo Zen model catalog. 14 foundation models from 4B to 1T+ parameters across language, code, vision, and specialized tasks. Zen MoDE architecture."
         />
       </Helmet>
       <Navbar />
@@ -329,8 +346,8 @@ const ZenModels = () => {
               className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl mx-auto text-center"
             >
               {totalModels} foundation models across language, code, vision,
-              multimodal, and specialized tasks. Built on Qwen3+ and GLM-5
-              architectures. From ${minPrice}/MTok.
+              multimodal, and specialized tasks. Zen MoDE (Mixture of Distilled
+              Experts) architecture. From ${minPrice}/MTok.
             </motion.p>
 
             {/* Quick stats */}
@@ -406,6 +423,13 @@ const ZenModels = () => {
         {/* Model Groups */}
         <section className="py-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
+            {loading ? (
+              <div className="flex items-center justify-center py-24">
+                <Loader2 className="w-6 h-6 animate-spin mr-2 text-neutral-400" />
+                <span className="text-neutral-400">Loading live pricing...</span>
+              </div>
+            ) : (
+            <>
             {/* Quick nav */}
             <div className="mb-12 flex flex-wrap gap-3 justify-center">
               {groups.map((group) => {
@@ -426,6 +450,8 @@ const ZenModels = () => {
             {groups.map((group) => (
               <ModelGroupSection key={group.id} group={group} />
             ))}
+            </>
+            )}
           </div>
         </section>
 
