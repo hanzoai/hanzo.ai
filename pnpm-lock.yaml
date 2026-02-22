@@ -122,6 +122,9 @@ importers:
       '@xyflow/react':
         specifier: ^12.4.4
         version: 12.6.0(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@zenlm/models':
+        specifier: ^1.0.0
+        version: 1.0.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1857,6 +1860,9 @@ packages:
 
   '@xyflow/system@0.0.57':
     resolution: {integrity: sha512-1YpBo0WgmZLR5wQw9Jvk3Tu0gISi/oYc4uSimrDuAsA/G2rGleulLrKkM59uuT/QU5m6DYC2VdBDAzjSNMGuBA==}
+
+  '@zenlm/models@1.0.0':
+    resolution: {integrity: sha512-F7IErOK3iTXkwV+qMqPALTWlwdu2ag29pmyT+0UVKLRcUUf4ft3iWoDfW212Lq4vCy1/DEMLH3zm3wRcidSQlQ==}
 
   abitype@1.2.3:
     resolution: {integrity: sha512-Ofer5QUnuUdTFsBRwARMoWKOH1ND5ehwYhJ3OJ/BQO+StkwQjHw0XyVh4vDttzHB7QOFhPHa/o413PJ82gU/Tg==}
@@ -4765,6 +4771,8 @@ snapshots:
       d3-drag: 3.0.0
       d3-selection: 3.0.0
       d3-zoom: 3.0.0
+
+  '@zenlm/models@1.0.0': {}
 
   abitype@1.2.3(typescript@5.8.3)(zod@3.24.3):
     optionalDependencies:
