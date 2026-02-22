@@ -53,6 +53,7 @@
     "@types/styled-components": "^5.1.34",
     "@types/uuid": "^10.0.0",
     "@xyflow/react": "^12.4.4",
+    "@zenlm/models": "^1.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

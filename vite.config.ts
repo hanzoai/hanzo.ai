@@ -37,7 +37,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@hanzo/zen-models": path.resolve(__dirname, "../docs/packages/zen-models/src"),
     },
   },
 });

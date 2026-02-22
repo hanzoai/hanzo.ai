@@ -23,10 +23,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@hanzo/zen-models": ["../docs/packages/zen-models/src/index.ts"],
-      "@hanzo/zen-models/*": ["../docs/packages/zen-models/src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "../docs/packages/zen-models/src"]
+  "include": ["src"]
 }

@@ -1,8 +1,8 @@
 /**
- * Zen model data for hanzo.ai — imported from @hanzo/zen-models.
+ * Zen model data for hanzo.ai — imported from @zenlm/models.
  *
  * This file re-exports the canonical model definitions.
- * Do NOT define model specs here. Edit @hanzo/zen-models instead.
+ * Do NOT define model specs here. Edit @zenlm/models instead.
  *
  * @see ~/work/hanzo/docs/packages/zen-models/src/models.ts
  */
@@ -16,9 +16,9 @@ export {
   foundationModels,
   getModel,
   modelById,
-} from '@hanzo/zen-models'
+} from '@zenlm/models'
 
-export { families } from '@hanzo/zen-models'
+export { families } from '@zenlm/models'
 
 export {
   MARKUP,
@@ -27,11 +27,11 @@ export {
   compute,
   gpu,
   thirdPartyModels,
-} from '@hanzo/zen-models'
+} from '@zenlm/models'
 
 export type {
   ZenModel,
   ModelFamily,
   ModelPricing,
   ModelSpec,
-} from '@hanzo/zen-models'
+} from '@zenlm/models'
