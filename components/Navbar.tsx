@@ -10,10 +10,10 @@ import NavbarContainer from "./navigation/NavbarContainer";
 import CommandPalette from "./CommandPalette";
 
 const isAccountRoute = () => {
-  return window.pathname.startsWith('/account') ||
-    window.pathname === '/dashboard' ||
-    window.pathname === '/user-profile' ||
-    window.pathname === '/organization-profile';
+  return window.location.pathname.startsWith('/account') ||
+    window.location.pathname === '/dashboard' ||
+    window.location.pathname === '/user-profile' ||
+    window.location.pathname === '/organization-profile';
 };
 
 const Navbar = () => {
