@@ -38,7 +38,7 @@ const entryPoints = [
 
 const CuratedEntryPointsSection = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-black relative overflow-hidden">
+    <section className="py-24 px-4 md:px-8 bg-background relative overflow-hidden">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-[0.02]"
@@ -56,10 +56,10 @@ const CuratedEntryPointsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-medium text-foreground mb-4">
             Start building
           </h2>
-          <p className="text-lg text-neutral-400">
+          <p className="text-lg text-muted-foreground">
             Four paths into the platform.
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ const CuratedEntryPointsSection = () => {
               >
                 <Link href={entry.link || "#"} className="block h-full group">
                   <motion.div
-                    className="h-full p-6 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-white/30/50 transition-all duration-300 relative overflow-hidden"
+                    className="h-full p-6 rounded-xl border border-border bg-secondary/50 hover:border-white/30/50 transition-all duration-300 relative overflow-hidden"
                     whileHover={{
                       y: -4,
                       boxShadow: "0 0 40px -10px rgba(255, 255, 255, 0.15)",
@@ -97,17 +97,17 @@ const CuratedEntryPointsSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-white transition-colors">
+                    <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-foreground transition-colors">
                       {entry.title}
                     </h3>
 
                     {/* Tagline */}
-                    <p className="text-xs font-medium text-neutral-500 mb-3">
+                    <p className="text-xs font-medium text-muted-foreground mb-3">
                       {entry.tagline}
                     </p>
 
                     {/* Description */}
-                    <p className="text-sm text-neutral-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {entry.description}
                     </p>
 
@@ -136,7 +136,7 @@ const CuratedEntryPointsSection = () => {
         >
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             View all products
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

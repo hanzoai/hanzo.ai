@@ -34,7 +34,7 @@ const TerminalDemo = () => {
           
           <div className="p-6 font-mono text-sm">
             <div className="flex items-start mb-4">
-              <span className="text-white/70 mr-2">$</span>
+              <span className="text-foreground/70 mr-2">$</span>
               <span className="text-zinc-300">hanzo deploy</span>
             </div>
             
@@ -43,13 +43,13 @@ const TerminalDemo = () => {
               <p>Building application <span className="text-zinc-400">v2.3.5</span></p>
               <p className="text-zinc-400">Installing dependencies...</p>
               <p className="text-zinc-400">Running build command...</p>
-              <p className="text-white/70">✓ Build successful</p>
+              <p className="text-foreground/70">✓ Build successful</p>
               <p className="text-zinc-400">Uploading artifacts...</p>
-              <p className="text-white/70">✓ Deployment complete</p>
+              <p className="text-foreground/70">✓ Deployment complete</p>
             </div>
             
             <div className="mt-6 flex items-start">
-              <span className="text-white/70 mr-2">$</span>
+              <span className="text-foreground/70 mr-2">$</span>
               <span className="text-zinc-300">_</span>
             </div>
           </div>

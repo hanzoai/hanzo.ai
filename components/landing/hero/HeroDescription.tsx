@@ -14,7 +14,7 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({ titleAnimationComplet
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="text-xl text-neutral-300 max-w-3xl mx-auto mt-6"
+      className="text-xl text-foreground/80 max-w-3xl mx-auto mt-6"
     >
       A complete platform for developers to build, deploy, and scale AI applications
       with enterprise-grade reliability and open-source transparency.

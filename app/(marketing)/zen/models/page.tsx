@@ -26,8 +26,6 @@ import {
   ChevronUp
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 // Derive context window from features string (e.g. "202k context window" -> "202K")
 function extractContext(features: string[]): string {
   const ctx = features.find((f) => f.toLowerCase().includes("context"));
@@ -38,10 +36,10 @@ function extractContext(features: string[]): string {
 
 // Tier badge colors
 const TIER_STYLES: Record<string, { bg: string; text: string; border: string }> = {
-  "ultra max": { bg: "bg-white/15", text: "text-white", border: "border-white/30" },
-  ultra: { bg: "bg-white/10", text: "text-white/60", border: "border-white/20" },
-  "pro max": { bg: "bg-white/10", text: "text-white/70", border: "border-white/20" },
-  pro: { bg: "bg-white/10", text: "text-white/70", border: "border-white/20" },
+  "ultra max": { bg: "bg-primary/15", text: "text-foreground", border: "border-white/30" },
+  ultra: { bg: "bg-primary/10", text: "text-foreground/60", border: "border-border" },
+  "pro max": { bg: "bg-primary/10", text: "text-foreground/70", border: "border-border" },
+  pro: { bg: "bg-primary/10", text: "text-foreground/70", border: "border-border" },
 };
 
 function TierBadge({ tier }: { tier: string }) {
@@ -125,41 +123,41 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
   return (
     <>
       <tr
-        className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors cursor-pointer ${
-          isUltraMax ? "bg-white/5" : ""
+        className={`border-t border-border hover:bg-secondary/50 transition-colors cursor-pointer ${
+          isUltraMax ? "bg-primary/5" : ""
         }`}
         onClick={() => setExpanded(!expanded)}
       >
         <td className="px-4 md:px-6 py-4">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-semibold text-white text-sm md:text-base">
+            <span className="font-semibold text-foreground text-sm md:text-base">
               {model.fullName?.split(" -- ")[0] || model.name}
             </span>
             <TierBadge tier={model.tier} />
           </div>
-          <p className="text-xs text-neutral-500 mt-1 hidden md:block">
+          <p className="text-xs text-muted-foreground mt-1 hidden md:block">
             {model.description}
           </p>
         </td>
-        <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm">
+        <td className="px-4 md:px-6 py-4 text-foreground/80 text-sm">
           {model.specs.params}
         </td>
-        <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm hidden md:table-cell">
+        <td className="px-4 md:px-6 py-4 text-foreground/80 text-sm hidden md:table-cell">
           {extractContext(model.features)}
         </td>
-        <td className="px-4 md:px-6 py-4 text-neutral-300 text-sm hidden lg:table-cell">
+        <td className="px-4 md:px-6 py-4 text-foreground/80 text-sm hidden lg:table-cell">
           {model.specs.arch}
         </td>
         <td className="px-4 md:px-6 py-4 text-right text-sm">
-          <span className="text-white font-medium">
+          <span className="text-foreground font-medium">
             {fmt(model.pricing.input)}
           </span>
-          <span className="text-neutral-500"> / </span>
-          <span className="text-white font-medium">
+          <span className="text-muted-foreground"> / </span>
+          <span className="text-foreground font-medium">
             {fmt(model.pricing.output)}
           </span>
         </td>
-        <td className="px-2 py-4 text-neutral-500">
+        <td className="px-2 py-4 text-muted-foreground">
           {expanded ? (
             <ChevronUp className="w-4 h-4" />
           ) : (
@@ -168,51 +166,51 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
         </td>
       </tr>
       {expanded && (
-        <tr className="border-t border-neutral-800/50">
-          <td colSpan={6} className="px-4 md:px-6 py-4 bg-neutral-950/80">
+        <tr className="border-t border-border/50">
+          <td colSpan={6} className="px-4 md:px-6 py-4 bg-background/80">
             <div className="grid md:grid-cols-3 gap-6 text-sm">
               <div>
-                <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
+                <h4 className="text-[10px] text-muted-foreground uppercase tracking-wider mb-2">
                   Architecture
                 </h4>
-                <p className="text-neutral-300">
-                  <span className="text-white font-medium">
+                <p className="text-foreground/80">
+                  <span className="text-foreground font-medium">
                     {model.specs.params}
                   </span>
                 </p>
-                <p className="text-neutral-500">{model.specs.arch}</p>
+                <p className="text-muted-foreground">{model.specs.arch}</p>
               </div>
               <div>
-                <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
+                <h4 className="text-[10px] text-muted-foreground uppercase tracking-wider mb-2">
                   Features
                 </h4>
                 <div className="space-y-1">
                   {model.features.map((f, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                      <span className="text-neutral-300">{f}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <span className="text-foreground/80">{f}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className="text-[10px] text-neutral-500 uppercase tracking-wider mb-2">
+                <h4 className="text-[10px] text-muted-foreground uppercase tracking-wider mb-2">
                   Pricing per MTok
                 </h4>
                 <div className="grid grid-cols-2 gap-2">
-                  <div className="p-2 bg-neutral-900 rounded border border-neutral-800">
-                    <span className="text-[10px] text-neutral-500 block">
+                  <div className="p-2 bg-secondary rounded border border-border">
+                    <span className="text-[10px] text-muted-foreground block">
                       Input
                     </span>
-                    <span className="text-white font-medium">
+                    <span className="text-foreground font-medium">
                       {fmt(model.pricing.input)}
                     </span>
                   </div>
-                  <div className="p-2 bg-neutral-900 rounded border border-neutral-800">
-                    <span className="text-[10px] text-neutral-500 block">
+                  <div className="p-2 bg-secondary rounded border border-border">
+                    <span className="text-[10px] text-muted-foreground block">
                       Output
                     </span>
-                    <span className="text-white font-medium">
+                    <span className="text-foreground font-medium">
                       {fmt(model.pricing.output)}
                     </span>
                   </div>
@@ -232,32 +230,32 @@ const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
   return (
     <section id={group.id} className="mb-16">
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/20">
-          <Icon className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/10 border border-border">
+          <Icon className="w-6 h-6 text-foreground" />
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-white">{group.title}</h2>
-          <p className="text-neutral-400 text-sm">{group.description}</p>
+          <h2 className="text-2xl font-bold text-foreground">{group.title}</h2>
+          <p className="text-muted-foreground text-sm">{group.description}</p>
         </div>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse bg-black border border-neutral-800 rounded-xl overflow-hidden">
+        <table className="w-full border-collapse bg-background border border-border rounded-xl overflow-hidden">
           <thead>
-            <tr className="bg-neutral-900/80">
-              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+            <tr className="bg-secondary/80">
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Model
               </th>
-              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Params
               </th>
-              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider hidden md:table-cell">
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider hidden md:table-cell">
                 Context
               </th>
-              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-neutral-400 uppercase tracking-wider hidden lg:table-cell">
+              <th className="px-4 md:px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider hidden lg:table-cell">
                 Arch
               </th>
-              <th className="px-4 md:px-6 py-3 text-right text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+              <th className="px-4 md:px-6 py-3 text-right text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Input / Output
               </th>
               <th className="px-2 py-3 w-8"></th>
@@ -301,7 +299,7 @@ const ZenModels = () => {
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
               style={{
-                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+                background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
                 filter: "blur(100px)",
               }}
             />
@@ -314,7 +312,7 @@ const ZenModels = () => {
               transition={{ duration: 0.4 }}
               className="mb-6 text-center"
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/20">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-foreground border border-border">
                 <Zap className="w-3 h-3" />
                 {totalModels} Models -- Zen3 & Zen4
               </span>
@@ -326,16 +324,16 @@ const ZenModels = () => {
               transition={{ duration: 0.4, delay: 0.05 }}
               className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6 text-center"
             >
-              <span className="text-white">Hanzo Zen Models</span>
+              <span className="text-foreground">Hanzo Zen Models</span>
               <br />
-              <span className="text-neutral-400">Complete API Catalog</span>
+              <span className="text-muted-foreground">Complete API Catalog</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl mx-auto text-center"
+              className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto text-center"
             >
               {totalModels} foundation models across language, code, vision,
               multimodal, and specialized tasks. Zen MoDE (Mixture of Distilled
@@ -356,10 +354,10 @@ const ZenModels = () => {
                 { label: "Architectures", value: "MoE + Dense" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-xl font-bold text-white">
+                  <div className="text-xl font-bold text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-neutral-500 uppercase tracking-wider">
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -387,15 +385,15 @@ const ZenModels = () => {
             >
               <a
                 href="#zen4"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
               >
                 Explore Models
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <Link
                 href="/pricing"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
               >
                 Full Pricing
               </Link>
@@ -403,7 +401,7 @@ const ZenModels = () => {
                 href="https://cloud.hanzo.ai/signup"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
               >
                 <Terminal className="mr-2 h-4 w-4" />
                 Get API Key
@@ -417,8 +415,8 @@ const ZenModels = () => {
           <div className="max-w-7xl mx-auto">
             {loading ? (
               <div className="flex items-center justify-center py-24">
-                <Loader2 className="w-6 h-6 animate-spin mr-2 text-neutral-400" />
-                <span className="text-neutral-400">Loading live pricing...</span>
+                <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
+                <span className="text-muted-foreground">Loading live pricing...</span>
               </div>
             ) : (
             <>
@@ -430,7 +428,7 @@ const ZenModels = () => {
                   <a
                     key={group.id}
                     href={`#${group.id}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-white/30 transition-colors text-sm text-neutral-400 hover:text-white"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:border-white/30 transition-colors text-sm text-muted-foreground hover:text-foreground"
                   >
                     <Icon className="w-4 h-4" />
                     {group.title.split(" -- ")[0]}
@@ -448,7 +446,7 @@ const ZenModels = () => {
         </section>
 
         {/* API Usage Example */}
-        <section className="py-16 px-4 md:px-8 bg-neutral-950/50 border-t border-neutral-800">
+        <section className="py-16 px-4 md:px-8 bg-background/50 border-t border-border">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -456,26 +454,26 @@ const ZenModels = () => {
               viewport={{ once: true }}
               className="text-center mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Quick Start
               </h2>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Drop-in OpenAI-compatible API. Switch models with one line.
               </p>
             </motion.div>
 
-            <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+            <div className="rounded-xl border border-border bg-secondary/95 overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-white/10" />
-                  <div className="w-3 h-3 rounded-full bg-white/10" />
-                  <div className="w-3 h-3 rounded-full bg-white/10" />
+                  <div className="w-3 h-3 rounded-full bg-primary/10" />
+                  <div className="w-3 h-3 rounded-full bg-primary/10" />
+                  <div className="w-3 h-3 rounded-full bg-primary/10" />
                 </div>
-                <span className="text-xs text-neutral-500 font-mono ml-2">
+                <span className="text-xs text-muted-foreground font-mono ml-2">
                   python
                 </span>
               </div>
-              <pre className="p-6 text-sm font-mono text-neutral-300 overflow-x-auto">
+              <pre className="p-6 text-sm font-mono text-foreground/80 overflow-x-auto">
                 <code>{`from hanzoai import Hanzo
 
 client = Hanzo()
@@ -492,7 +490,7 @@ print(response.choices[0].message.content)`}</code>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+        <section className="py-20 px-4 md:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -500,10 +498,10 @@ print(response.choices[0].message.content)`}</code>
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
                 Ready to build with Zen?
               </h2>
-              <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
                 All {totalModels} Zen models available via OpenAI-compatible
                 API. Start building today.
               </p>
@@ -512,21 +510,21 @@ print(response.choices[0].message.content)`}</code>
                   href="https://cloud.hanzo.ai/signup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
                 <Link
                   href="/dev"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
                 >
                   Try Hanzo Dev
                 </Link>
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
                 >
                   View Pricing
                 </Link>

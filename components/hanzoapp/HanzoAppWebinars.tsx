@@ -14,10 +14,10 @@ const WebinarCard = ({ title, partner }: { title: string; partner: string }) => 
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden group hover:border-gray-700 transition-colors"
     >
-      <div className="h-48 bg-gradient-to-br from-white/25 via-black/40 to-white/10 relative">
+      <div className="h-48 bg-gradient-to-br from-white/25 via-background/40 to-white/10 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_55%)]" />
         <div className="absolute bottom-4 left-4 right-4">
-          <div className="text-sm uppercase tracking-widest text-neutral-400">Webinar</div>
+          <div className="text-sm uppercase tracking-widest text-muted-foreground">Webinar</div>
           <div className="text-lg font-semibold text-[var(--white)] mt-1 line-clamp-2">
             {title}
           </div>
@@ -26,7 +26,7 @@ const WebinarCard = ({ title, partner }: { title: string; partner: string }) => 
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="text-lg font-semibold">{title}</div>
-          <div className="text-neutral-500">{partner}</div>
+          <div className="text-muted-foreground">{partner}</div>
         </div>
         <Button className="w-full bg-gray-800 hover:bg-gray-700">
           Learn More
@@ -71,7 +71,7 @@ const HanzoAppWebinars = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Webinars</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             Learn how to use Hanzo AI from different webinar series with our partners
           </p>
         </motion.div>

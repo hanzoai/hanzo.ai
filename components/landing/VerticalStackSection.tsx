@@ -27,16 +27,14 @@ const layers = [
   },
 ];
 
-const BRAND_COLOR = "#ffffff";
-
 const VerticalStackSection = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-black relative overflow-hidden">
+    <section className="py-24 px-4 md:px-8 bg-background relative overflow-hidden">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: `radial-gradient(circle at center, ${BRAND_COLOR} 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle at center, var(--primary) 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
         }}
       />
@@ -52,14 +50,14 @@ const VerticalStackSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
           >
             Architecture
           </p>
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-medium text-foreground mb-6">
             The vertically integrated stack
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Identity to production in one platform.
           </p>
         </motion.div>
@@ -69,7 +67,7 @@ const VerticalStackSection = () => {
           {/* Vertical connecting line */}
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 z-0"
-            style={{ backgroundColor: `${BRAND_COLOR}30` }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)" }}
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -93,8 +91,8 @@ const VerticalStackSection = () => {
                 >
                   {/* Connection dot */}
                   <motion.div
-                    className="absolute left-1/2 -translate-x-1/2 -top-3 w-3 h-3 rounded-full border-2 bg-black z-20"
-                    style={{ borderColor: BRAND_COLOR }}
+                    className="absolute left-1/2 -translate-x-1/2 -top-3 w-3 h-3 rounded-full border-2 bg-background z-20"
+
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -103,21 +101,21 @@ const VerticalStackSection = () => {
 
                   {/* Card */}
                   <motion.div
-                    className="relative p-6 rounded-xl border border-neutral-800 bg-neutral-900/80 backdrop-blur-sm hover:border-neutral-700 transition-all duration-300"
+                    className="relative p-6 rounded-xl border border-border bg-secondary/80 backdrop-blur-sm hover:border-border transition-all duration-300"
                     whileHover={{
-                      boxShadow: `0 0 40px -10px ${BRAND_COLOR}40`,
-                      borderColor: `${BRAND_COLOR}40`,
+                      boxShadow: `0 0 40px -10px var(--primary)40`,
+                      borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)",
                     }}
                   >
                     {/* Layer Header */}
                     <div className="flex items-center gap-4 mb-4">
                       <div
                         className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ backgroundColor: `${BRAND_COLOR}20` }}
+                        style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
                       >
-                        <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
+                        <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white">
+                      <h3 className="text-lg md:text-xl font-semibold text-foreground">
                         {layer.name}
                       </h3>
                     </div>
@@ -127,7 +125,7 @@ const VerticalStackSection = () => {
                       {layer.items.map((item) => (
                         <span
                           key={item}
-                          className="px-3 py-1.5 text-sm font-medium rounded-lg bg-neutral-800/80 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-colors cursor-default"
+                          className="px-3 py-1.5 text-sm font-medium rounded-lg bg-neutral-800/80 text-foreground/80 hover:bg-neutral-700 hover:text-foreground transition-colors cursor-default"
                         >
                           {item}
                         </span>
@@ -137,7 +135,7 @@ const VerticalStackSection = () => {
                     {/* Flow arrow indicator */}
                     {!isLast && (
                       <motion.div
-                        className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-neutral-600"
+                        className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground/60"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -152,7 +150,7 @@ const VerticalStackSection = () => {
                         >
                           <path
                             d="M6 0L12 8H0L6 0Z"
-                            fill={BRAND_COLOR}
+                            fill={"var(--primary)"}
                             fillOpacity="0.5"
                           />
                         </svg>
@@ -167,7 +165,7 @@ const VerticalStackSection = () => {
           {/* Bottom endpoint */}
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-4 h-4 rounded-full z-20"
-            style={{ backgroundColor: BRAND_COLOR }}
+
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -183,7 +181,7 @@ const VerticalStackSection = () => {
           transition={{ duration: 0.5, delay: 0.9 }}
           className="text-center mt-16"
         >
-          <p className="text-neutral-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             From identity management to edge deployment, every layer works together seamlessly.
           </p>
         </motion.div>

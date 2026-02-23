@@ -43,16 +43,16 @@ const StarRating = ({ rating }) => {
   const stars = [];
 
   for (let i = 0; i < fullStars; i++) {
-    stars.push(<span key={`full-${i}`} className="text-white/60">★</span>);
+    stars.push(<span key={`full-${i}`} className="text-foreground/60">★</span>);
   }
 
   if (halfStar) {
-    stars.push(<span key="half" className="text-white/60">★</span>);
+    stars.push(<span key="half" className="text-foreground/60">★</span>);
   }
 
   const emptyStars = 5 - stars.length;
   for (let i = 0; i < emptyStars; i++) {
-    stars.push(<span key={`empty-${i}`} className="text-neutral-500">★</span>);
+    stars.push(<span key={`empty-${i}`} className="text-muted-foreground">★</span>);
   }
 
   return <div className="flex">{stars}</div>;
@@ -61,8 +61,8 @@ const StarRating = ({ rating }) => {
 const Testimonials = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30 relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -73,7 +73,7 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What Our Users Are Saying</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             Join the growing number of users who trust Hanzo Balancer.
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ const Testimonials = () => {
               <StarRating rating={testimonial.rating} />
               <div className="mt-4">
                 <p className="font-medium">{testimonial.author}</p>
-                <p className="text-neutral-400 text-sm">{testimonial.role}</p>
+                <p className="text-muted-foreground text-sm">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}

@@ -9,7 +9,7 @@ const OperativeModels = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-background"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ModelHeader />

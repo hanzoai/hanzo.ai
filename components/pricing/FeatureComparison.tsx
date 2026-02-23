@@ -47,12 +47,12 @@ const FeatureComparison = () => {
   const renderFeatureValue = (value: boolean | string) => {
     if (typeof value === "boolean") {
       return value ? (
-        <Check className="h-5 w-5 text-neutral-300 mx-auto" />
+        <Check className="h-5 w-5 text-foreground/80 mx-auto" />
       ) : (
-        <X className="h-5 w-5 text-neutral-600 mx-auto" />
+        <X className="h-5 w-5 text-muted-foreground/60 mx-auto" />
       );
     }
-    return <span className="text-neutral-300 text-center block">{value}</span>;
+    return <span className="text-foreground/80 text-center block">{value}</span>;
   };
 
   return (
@@ -74,13 +74,13 @@ const FeatureComparison = () => {
             {featureCategories.map((category) => (
               <React.Fragment key={category.name}>
                 <tr className="bg-gray-900/30">
-                  <td colSpan={5} className="py-3 px-4 font-medium text-neutral-300">
+                  <td colSpan={5} className="py-3 px-4 font-medium text-foreground/80">
                     {category.name}
                   </td>
                 </tr>
                 {category.features.map((feature) => (
                   <tr key={feature.name} className="border-b border-gray-800/50">
-                    <td className="py-3 px-4 text-neutral-400">{feature.name}</td>
+                    <td className="py-3 px-4 text-muted-foreground">{feature.name}</td>
                     <td className="py-3 px-6">{renderFeatureValue(feature.pro)}</td>
                     <td className="py-3 px-6">{renderFeatureValue(feature.max)}</td>
                     <td className="py-3 px-6">{renderFeatureValue(feature.team)}</td>

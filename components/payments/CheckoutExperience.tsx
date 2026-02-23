@@ -17,7 +17,7 @@ const CheckoutExperience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Customizable Checkout Experiences</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Create beautiful, high-converting checkout flows that drive revenue growth and customer satisfaction.
           </p>
         </motion.div>
@@ -34,22 +34,22 @@ const CheckoutExperience = () => {
               <h3 className="text-2xl font-bold mb-4">Global Payment Methods</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
-                  <span className="text-white">•</span>
+                  <span className="text-foreground">•</span>
                   <span>Over 200 currencies and local payment methods</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-white">•</span>
+                  <span className="text-foreground">•</span>
                   <span>Optimized global payment acceptance with Adaptive Acceptance</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-white">•</span>
+                  <span className="text-foreground">•</span>
                   <span>Smart routing for higher authorization rates</span>
                 </li>
               </ul>
 
               <div className="flex flex-wrap gap-2 mt-4">
                 {['Visa', 'Mastercard', 'Amex', 'PayPal', 'Apple Pay', 'Google Pay', 'iDEAL', 'Bancontact', 'SOFORT', '+190 more'].map((method, index) => (
-                  <span key={index} className="inline-block px-3 py-1 bg-gray-800 rounded-full text-sm text-neutral-300">
+                  <span key={index} className="inline-block px-3 py-1 bg-gray-800 rounded-full text-sm text-foreground/80">
                     {method}
                   </span>
                 ))}
@@ -66,7 +66,7 @@ const CheckoutExperience = () => {
           >
             <div className="p-6">
               <h3 className="text-2xl font-bold mb-4">Checkout Interface</h3>
-              <p className="text-neutral-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Fully customizable checkout UI that matches your brand and maximizes conversions.
               </p>
               
@@ -77,10 +77,10 @@ const CheckoutExperience = () => {
                   <div className="h-10 bg-gray-800 rounded"></div>
                 </div>
                 <div className="h-10 bg-gray-800 rounded mb-3"></div>
-                <div className="h-10 bg-white rounded"></div>
+                <div className="h-10 bg-primary rounded"></div>
               </div>
               
-              <div className="text-sm text-neutral-400 mt-2 text-center">Customizable checkout flow</div>
+              <div className="text-sm text-muted-foreground mt-2 text-center">Customizable checkout flow</div>
             </div>
           </motion.div>
         </div>
@@ -94,10 +94,10 @@ const CheckoutExperience = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Globe className="h-6 w-6 text-white" />
+              <Globe className="h-6 w-6 text-foreground" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Global Reach</h3>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground">
               Accept payments in 200+ countries and territories with localized experiences for each market.
             </p>
           </motion.div>
@@ -110,10 +110,10 @@ const CheckoutExperience = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Smartphone className="h-6 w-6 text-white" />
+              <Smartphone className="h-6 w-6 text-foreground" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Mobile Optimized</h3>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground">
               Responsive checkout flows designed for high conversion on all devices and screen sizes.
             </p>
           </motion.div>
@@ -126,10 +126,10 @@ const CheckoutExperience = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Paintbrush className="h-6 w-6 text-white" />
+              <Paintbrush className="h-6 w-6 text-foreground" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Fully Customizable</h3>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground">
               Customize every aspect of the checkout experience to match your brand identity.
             </p>
           </motion.div>

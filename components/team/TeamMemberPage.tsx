@@ -54,7 +54,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               {member.title}
             </h1>
-            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               {member.description}
             </p>
           </div>
@@ -66,11 +66,11 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 <motion.div 
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="p-6 rounded-2xl border border-gray-800 bg-black/50 backdrop-blur-lg"
+                  className="p-6 rounded-2xl border border-gray-800 bg-background/50 backdrop-blur-lg"
                 >
                   <FeatureIcon className={`h-8 w-8 ${feature.color} mb-4`} />
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-neutral-400">{feature.description}</p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -84,24 +84,24 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {/* Hanzo Agency Card */}
-              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
-                <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
-                  <Users className="h-6 w-6 text-white" strokeWidth={1.5} />
+              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-border hover:border-white/40 transition-colors">
+                <div className="p-3 rounded-lg bg-primary/20 self-start inline-block mb-4">
+                  <Users className="h-6 w-6 text-foreground" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
-                <p className="text-neutral-300 mb-5">
+                <p className="text-foreground/80 mb-5">
                   {member.name} collaborates with our creative agency to help brands transform their digital
                   presence using cutting-edge AI-powered design and marketing strategies.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button
                     onClick={handleContactAgency}
-                    className="bg-white hover:bg-[#cccccc] text-[var(--white)]"
+                    className="bg-primary hover:bg-[#cccccc] text-[var(--white)]"
                   >
                     Work with Hanzo Agency
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
-                  <a href="/contact" className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-white hover:text-white/70 transition-colors">
+                  <a href="/contact" className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-foreground hover:text-foreground/70 transition-colors">
                     <span>Learn more</span>
                     <Mail size={14} />
                   </a>
@@ -109,24 +109,24 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
               </div>
               
               {/* Sensei Group Card */}
-              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-white/20 hover:border-white/20 transition-colors">
-                <div className="p-3 rounded-lg bg-white/10 self-start inline-block mb-4">
-                  <Shield className="h-6 w-6 text-white/70" strokeWidth={1.5} />
+              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-border hover:border-border transition-colors">
+                <div className="p-3 rounded-lg bg-primary/10 self-start inline-block mb-4">
+                  <Shield className="h-6 w-6 text-foreground/70" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
-                <p className="text-neutral-300 mb-5">
+                <p className="text-foreground/80 mb-5">
                   When your project requires human expertise, {member.name} works alongside our collective of 
                   CXOs and industry specialists to implement enterprise-grade solutions.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button 
                     onClick={handleContactSensei}
-                    className="bg-white/10 hover:bg-white/10 text-[var(--white)]"
+                    className="bg-primary/10 hover:bg-primary/10 text-[var(--white)]"
                   >
                     Contact Sensei Group
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
-                  <a href="tel:+1234567890" className="flex items-center gap-2 px-5 py-2.5 border border-white/20 hover:border-white/20 rounded-md text-white/70 hover:text-white/70 transition-colors">
+                  <a href="tel:+1234567890" className="flex items-center gap-2 px-5 py-2.5 border border-border hover:border-border rounded-md text-foreground/70 hover:text-foreground/70 transition-colors">
                     <span>Schedule a call</span>
                     <Phone size={14} />
                   </a>
@@ -138,7 +138,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
           {/* Use Cases Section */}
           <div className="text-center max-w-3xl mx-auto mt-16">
             <h2 className="text-2xl font-semibold mb-6">What {member.name} Can Do For You</h2>
-            <p className="text-neutral-400 mb-8">
+            <p className="text-muted-foreground mb-8">
               {member.name} specializes in {specialty} to help you achieve your goals.
               For the best results, consider working with our expert human teams at Hanzo Agency or Sensei Group.
             </p>

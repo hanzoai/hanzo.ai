@@ -8,7 +8,7 @@ import { FileText, ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/30 to-black relative overflow-hidden">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/30 to-background relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-70"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
@@ -28,7 +28,7 @@ const CallToAction = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button size="lg" className="text-lg px-8 py-6 bg-white hover:bg-[#cccccc] border-none">
+              <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-[#cccccc] border-none">
                 Get Started
               </Button>
             </motion.div>
@@ -78,7 +78,7 @@ const CallToAction = () => {
                 className="bg-gray-900/20 p-6 rounded-xl border border-gray-800"
               >
                 <h3 className="text-lg font-bold mb-2">{option.title}</h3>
-                <p className="text-neutral-400 text-sm">{option.description}</p>
+                <p className="text-muted-foreground text-sm">{option.description}</p>
               </motion.div>
             ))}
           </div>
@@ -88,7 +88,7 @@ const CallToAction = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 text-center text-neutral-500 text-sm"
+            className="mt-12 text-center text-muted-foreground text-sm"
           >
             Free 14-day trial, no credit card required.
           </motion.div>

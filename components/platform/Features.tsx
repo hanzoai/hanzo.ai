@@ -62,7 +62,7 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-neutral-300 max-w-3xl mx-auto"
+            className="text-xl text-foreground/80 max-w-3xl mx-auto"
           >
             Everything you love about Hanzo Cloud, available as free and open source software you can run anywhere.
           </motion.p>
@@ -79,23 +79,23 @@ const Features = () => {
           >
             <div className="w-full lg:w-1/2">
               <div className="flex items-center mb-4">
-                <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-white/10 text-white/70 mr-4">
+                <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-primary/10 text-foreground/70 mr-4">
                   <feature.icon className="h-6 w-6" />
                 </div>
                 <h2 className="text-3xl font-bold">{feature.title}</h2>
               </div>
-              <p className="text-xl text-neutral-300 mb-4">{feature.description}</p>
-              <p className="text-neutral-400 mb-6">{feature.details}</p>
+              <p className="text-xl text-foreground/80 mb-4">{feature.description}</p>
+              <p className="text-muted-foreground mb-6">{feature.details}</p>
               
-              <a href="#learn-more" className="inline-flex items-center text-white/70 hover:text-white/70 transition-colors">
+              <a href="#learn-more" className="inline-flex items-center text-foreground/70 hover:text-foreground/70 transition-colors">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               
               <div className="mt-8">
-                <p className="text-sm text-neutral-500 mb-2">Replaces</p>
+                <p className="text-sm text-muted-foreground mb-2">Replaces</p>
                 <div className="flex flex-wrap gap-4">
                   {feature.replaces.map((replace, i) => (
-                    <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-neutral-400">
+                    <span key={i} className="px-3 py-1 bg-gray-800 rounded-full text-xs text-muted-foreground">
                       {replace}
                     </span>
                   ))}
@@ -105,7 +105,7 @@ const Features = () => {
             
             <div className="w-full lg:w-1/2 bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800">
               <div className="aspect-video p-8 flex items-center justify-center bg-gradient-to-br from-white/20 to-white/10">
-                <feature.icon className="h-24 w-24 text-white/70" />
+                <feature.icon className="h-24 w-24 text-foreground/70" />
               </div>
             </div>
           </motion.div>
@@ -120,21 +120,21 @@ const Features = () => {
         >
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <Code2 className="h-10 w-10 text-white/70" />
+              <Code2 className="h-10 w-10 text-foreground/70" />
               <h3 className="text-xl font-bold">MIT Licensed</h3>
-              <p className="text-neutral-400">Fork it, modify it, use it commercially. We believe in true open source.</p>
+              <p className="text-muted-foreground">Fork it, modify it, use it commercially. We believe in true open source.</p>
             </div>
             
             <div className="space-y-4">
-              <Lock className="h-10 w-10 text-white/70" />
+              <Lock className="h-10 w-10 text-foreground/70" />
               <h3 className="text-xl font-bold">Data Sovereignty</h3>
-              <p className="text-neutral-400">Keep your code, data, and models on your infrastructure. No vendor lock-in.</p>
+              <p className="text-muted-foreground">Keep your code, data, and models on your infrastructure. No vendor lock-in.</p>
             </div>
             
             <div className="space-y-4">
-              <Network className="h-10 w-10 text-white/70" />
+              <Network className="h-10 w-10 text-foreground/70" />
               <h3 className="text-xl font-bold">Enterprise Ready</h3>
-              <p className="text-neutral-400">Scale from a laptop to a data center with enterprise support available.</p>
+              <p className="text-muted-foreground">Scale from a laptop to a data center with enterprise support available.</p>
             </div>
           </div>
         </motion.div>

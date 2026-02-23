@@ -23,14 +23,14 @@ const ProductGrid = ({ items }: ProductGridProps) => {
         >
           <item.icon
             className={`h-6 w-6 mt-1 transition-colors duration-200 ${
-              hoveredItem === item.name ? 'text-white' : 'text-neutral-400 group-hover:text-[var(--white)]'
+              hoveredItem === item.name ? 'text-foreground' : 'text-muted-foreground group-hover:text-[var(--white)]'
             }`}
           />
           <div className="flex-1">
-            <Link href={item.link || "#"} className="text-neutral-300 group-hover:text-[var(--white)] font-medium">
+            <Link href={item.link || "#"} className="text-foreground/80 group-hover:text-[var(--white)] font-medium">
               {item.name}
             </Link>
-            <div className="text-sm text-neutral-500">{item.description}</div>
+            <div className="text-sm text-muted-foreground">{item.description}</div>
           </div>
         </div>
       ))}

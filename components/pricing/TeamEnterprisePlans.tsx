@@ -25,7 +25,7 @@ const TeamEnterprisePlans = () => {
   const plans = [
     {
       name: "Team",
-      icon: <Users className="h-6 w-6 text-neutral-400" />,
+      icon: <Users className="h-6 w-6 text-muted-foreground" />,
       price: "$30",
       billingPeriod: "/user/month",
       description: "Collaborative teams requiring unified billing",
@@ -44,7 +44,7 @@ const TeamEnterprisePlans = () => {
     },
     {
       name: "Enterprise",
-      icon: <Shield className="h-6 w-6 text-neutral-400" />,
+      icon: <Shield className="h-6 w-6 text-muted-foreground" />,
       price: "Custom",
       description: "For large businesses requiring enterprise-grade security",
       features: [

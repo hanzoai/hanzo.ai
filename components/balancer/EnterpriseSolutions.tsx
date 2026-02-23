@@ -18,7 +18,7 @@ const EnterpriseSolutions = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Enterprise Solutions</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Power your mission-critical applications with enterprise-grade features designed for reliability, security, and compliance.
           </p>
         </motion.div>
@@ -32,23 +32,23 @@ const EnterpriseSolutions = () => {
             className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 p-8 rounded-xl border border-gray-700/50"
           >
             <div className="flex items-start mb-6">
-              <div className="bg-white/10 p-3 rounded-full mr-4">
-                <Shield className="h-6 w-6 text-white" />
+              <div className="bg-primary/10 p-3 rounded-full mr-4">
+                <Shield className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Enhanced Security Suite</h3>
-                <p className="text-neutral-300">
+                <p className="text-foreground/80">
                   Advanced WAF protection, multi-factor authentication, and zero-trust network access controls to protect your infrastructure from sophisticated threats.
                 </p>
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-white/10 p-3 rounded-full mr-4">
-                <Building2 className="h-6 w-6 text-white" />
+              <div className="bg-primary/10 p-3 rounded-full mr-4">
+                <Building2 className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">High Availability Clustering</h3>
-                <p className="text-neutral-300">
+                <p className="text-foreground/80">
                   Multi-region and multi-zone failover capabilities with automated health checks and self-healing for 99.999% uptime SLAs.
                 </p>
               </div>
@@ -63,23 +63,23 @@ const EnterpriseSolutions = () => {
             className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 p-8 rounded-xl border border-gray-700/50"
           >
             <div className="flex items-start mb-6">
-              <div className="bg-white/10 p-3 rounded-full mr-4">
-                <FileCode className="h-6 w-6 text-white" />
+              <div className="bg-primary/10 p-3 rounded-full mr-4">
+                <FileCode className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Advanced Traffic Policies</h3>
-                <p className="text-neutral-300">
+                <p className="text-foreground/80">
                   Sophisticated traffic management with circuit breaking, API rate limiting, and content-based routing for granular control.
                 </p>
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-white/10 p-3 rounded-full mr-4">
-                <Users className="h-6 w-6 text-white" />
+              <div className="bg-primary/10 p-3 rounded-full mr-4">
+                <Users className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Enterprise Support</h3>
-                <p className="text-neutral-300">
+                <p className="text-foreground/80">
                   24/7/365 priority support, dedicated technical account managers, and professional services to ensure your success.
                 </p>
               </div>

@@ -33,18 +33,18 @@ const InteractiveHexagram: React.FC<InteractiveHexagramProps> = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, delay: index * 0.02 }}
-      className={`p-3 border ${isSelected ? 'border-white/50 bg-white/10' : 'border-gray-800/50 bg-gray-900/30'}
+      className={`p-3 border ${isSelected ? 'border-white/50 bg-primary/10' : 'border-gray-800/50 bg-gray-900/30'}
                  rounded-md cursor-pointer hover:bg-gray-800/40 transition-all duration-200 flex flex-col items-center justify-center`}
       onClick={() => onClick(hexagram)}
       whileHover={{ y: -2 }}
     >
-      <div className="text-xs text-neutral-500 mb-1">{hexagram.id}</div>
+      <div className="text-xs text-muted-foreground mb-1">{hexagram.id}</div>
       <IChingHexagram 
         lines={hexagram.lines} 
         size={32} 
-        className={`${isSelected ? 'text-white' : 'text-[var(--white)]/80'} mb-2`} 
+        className={`${isSelected ? 'text-foreground' : 'text-[var(--white)]/80'} mb-2`} 
       />
-      <div className="text-center text-xs text-neutral-400">
+      <div className="text-center text-xs text-muted-foreground">
         {hexagram.chineseName}
       </div>
     </motion.div>

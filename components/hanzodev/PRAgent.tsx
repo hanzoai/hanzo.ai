@@ -7,7 +7,7 @@ import { GitPullRequest, MessageSquare, Shield, Clock } from "lucide-react";
 
 const PRAgent = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -16,49 +16,49 @@ const PRAgent = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white/10 border border-white/30 rounded-full px-4 py-1 inline-flex items-center mb-6">
-              <GitPullRequest className="h-4 w-4 mr-2 text-white" />
-              <span className="text-sm font-medium text-white/70">PR Agent</span>
+            <div className="bg-primary/10 border border-white/30 rounded-full px-4 py-1 inline-flex items-center mb-6">
+              <GitPullRequest className="h-4 w-4 mr-2 text-foreground" />
+              <span className="text-sm font-medium text-foreground/70">PR Agent</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Resolve Pull Requests 10x Faster.
             </h2>
-            <p className="text-xl text-neutral-300 mb-8">
+            <p className="text-xl text-foreground/80 mb-8">
               Bring-in @hanzo-dev into any conversation on GitHub to automatically resolve feedback in the speed.
             </p>
 
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="bg-white/10 p-3 rounded-lg">
-                  <MessageSquare className="h-6 w-6 text-white" />
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <MessageSquare className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Fast revisions.</h3>
-                  <p className="text-neutral-300">
+                  <p className="text-foreground/80">
                     Skip the back-and-forth. Mention @hanzo-dev in a review comment to automatically resolve feedback in the speed.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="bg-white/10 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-white" />
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Clock className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Acclerate not just your product development, but your code quality.</h3>
-                  <p className="text-neutral-300">
+                  <p className="text-foreground/80">
                     Automatically solve conflicts, add tests, docs, and more. Everything you need to ship better code, faster.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="bg-white/10 p-3 rounded-lg">
-                  <Shield className="h-6 w-6 text-white" />
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Shield className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">AI Agents You Can Trust.</h3>
-                  <p className="text-neutral-300">
+                  <p className="text-foreground/80">
                     With complete oversight of every thought and step you are always in full control. Provide feedback and and roll-back in one click if you need to.
                   </p>
                 </div>
@@ -76,9 +76,9 @@ const PRAgent = () => {
             <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg overflow-hidden">
               <div className="p-4 bg-gray-900/70 border-b border-gray-700/50">
                 <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-primary/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-primary/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-primary/10"></div>
                 </div>
               </div>
               <div className="p-6">
@@ -87,7 +87,7 @@ const PRAgent = () => {
                     <div className="w-8 h-8 rounded-full bg-gray-700"></div>
                     <div>
                       <div className="font-medium">Senior Developer</div>
-                      <div className="text-neutral-400 text-sm">2 hours ago</div>
+                      <div className="text-muted-foreground text-sm">2 hours ago</div>
                       <div className="mt-2 p-3 bg-gray-800 rounded-lg">
                         <p>Could you add error handling to this component and improve the accessibility?</p>
                       </div>
@@ -95,16 +95,16 @@ const PRAgent = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-xs font-bold">H</div>
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-xs font-bold">H</div>
                     <div>
                       <div className="font-medium">Hanzo Dev</div>
-                      <div className="text-neutral-400 text-sm">1 hour ago</div>
+                      <div className="text-muted-foreground text-sm">1 hour ago</div>
                       <div className="mt-2 p-3 bg-gray-800 rounded-lg">
                         <p>I've added comprehensive error handling with try/catch blocks and implemented proper ARIA attributes to improve accessibility. The changes have been committed to the PR.</p>
                       </div>
                       <div className="bg-gray-800/70 rounded mt-3 p-2 text-sm border border-gray-700">
-                        <div className="text-white/70">+ 15 lines added</div>
-                        <div className="text-white/70">- 3 lines removed</div>
+                        <div className="text-foreground/70">+ 15 lines added</div>
+                        <div className="text-foreground/70">- 3 lines removed</div>
                       </div>
                     </div>
                   </div>
@@ -112,16 +112,16 @@ const PRAgent = () => {
 
                 <div className="flex justify-between items-center text-sm">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-black">✓</div>
-                    <span className="text-white/70">Changes approved</span>
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary-foreground">✓</div>
+                    <span className="text-foreground/70">Changes approved</span>
                   </div>
-                  <div className="text-neutral-400">Ready to merge</div>
+                  <div className="text-muted-foreground">Ready to merge</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-3xl"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-3xl"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/20 rounded-full blur-3xl"></div>
           </motion.div>
         </div>
       </div>

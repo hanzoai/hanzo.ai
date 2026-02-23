@@ -28,7 +28,7 @@ const ExploreCard: React.FC<ExploreCardProps> = ({
       
       <h3 className="text-xl font-bold mb-3 text-[var(--white)] text-center">{title}</h3>
       
-      <p className="text-neutral-300 text-center mb-6 flex-grow">
+      <p className="text-foreground/80 text-center mb-6 flex-grow">
         {description}
       </p>
       

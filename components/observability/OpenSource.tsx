@@ -8,21 +8,21 @@ import { Button } from "@hanzo/ui";
 
 const statsItems = [
   { 
-    icon: <Download className="h-6 w-6 text-white/70" />,
+    icon: <Download className="h-6 w-6 text-foreground/70" />,
     value: 17,
     suffix: "M+",
     label: "Downloads",
     countUpDuration: 2
   },
   { 
-    icon: <Star className="h-6 w-6 text-white/60" />,
+    icon: <Star className="h-6 w-6 text-foreground/60" />,
     value: 25,
     suffix: "K+",
     label: "GitHub Stars",
     countUpDuration: 2.2
   },
   { 
-    icon: <Users className="h-6 w-6 text-white/70" />,
+    icon: <Users className="h-6 w-6 text-foreground/70" />,
     value: 280,
     suffix: "+",
     label: "Contributors",
@@ -34,7 +34,7 @@ const OpenSource = () => {
   const [isInView, setIsInView] = useState(false);
   
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/20 to-black relative">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/20 to-background relative">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,11 +43,11 @@ const OpenSource = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center mb-6 bg-white/10 p-3 rounded-full">
-            <Github className="h-7 w-7 text-white" />
+          <div className="inline-flex items-center justify-center mb-6 bg-primary/10 p-3 rounded-full">
+            <Github className="h-7 w-7 text-foreground" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Proudly Open Source</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Transparency is at the core of Hanzo Observability. Deploy it locally, self-host on your own infrastructure, or leverage our managed cloud solution.
           </p>
         </motion.div>
@@ -89,16 +89,16 @@ const OpenSource = () => {
                 </motion.span>
                 <span className="text-4xl font-bold">{item.suffix}</span>
               </div>
-              <div className="text-neutral-400 mt-2">{item.label}</div>
+              <div className="text-muted-foreground mt-2">{item.label}</div>
             </motion.div>
           ))}
         </div>
         
         <div className="flex justify-center gap-4">
-          <Button variant="outline" size="lg" className="text-[var(--white)] border-white/20 hover:bg-[var(--white)]/10">
+          <Button variant="outline" size="lg" className="text-[var(--white)] border-border hover:bg-[var(--white)]/10">
             <Github className="mr-2 h-5 w-5" /> Read Documentation
           </Button>
-          <Button variant="outline" size="lg" className="text-[var(--white)] border-white/20 hover:bg-[var(--white)]/10">
+          <Button variant="outline" size="lg" className="text-[var(--white)] border-border hover:bg-[var(--white)]/10">
             <Github className="mr-2 h-5 w-5" /> View GitHub Repository
           </Button>
         </div>

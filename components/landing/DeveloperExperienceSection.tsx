@@ -34,8 +34,6 @@ import {
 } from "lucide-react";
 import { CodeTabs } from "@/components/ui/code-tabs";
 
-const BRAND_COLOR = "#ffffff";
-
 // Multi-language code examples for the API section
 const API_CODE_EXAMPLES = [
   {
@@ -123,7 +121,7 @@ const DeveloperExperienceSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 md:px-8 bg-black">
+    <section className="py-24 px-4 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto space-y-24">
 
         {/* IDE Agents Section */}
@@ -137,19 +135,19 @@ const DeveloperExperienceSection = () => {
           <div>
             <p
               className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+              style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
             >
               Works where developers live
             </p>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               VS Code. JetBrains. Terminal. Remote.
             </h2>
-            <p className="text-lg text-neutral-400 mb-8">
+            <p className="text-lg text-muted-foreground mb-8">
               Hanzo reads your repo structure first, edits across files coherently, and executes tasks step-by-step—locally or in isolated remote sandboxes.
             </p>
             <Link
               href="/extensions"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-black hover:opacity-90"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-primary text-primary-foreground hover:opacity-90"
             >
               Install the IDE extension
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -157,27 +155,27 @@ const DeveloperExperienceSection = () => {
           </div>
 
           {/* IDE Preview */}
-          <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+          <div className="rounded-xl border border-border bg-secondary/80 overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-white/10" />
-                <div className="w-3 h-3 rounded-full bg-white/10" />
-                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-primary/10" />
+                <div className="w-3 h-3 rounded-full bg-primary/10" />
+                <div className="w-3 h-3 rounded-full bg-primary/10" />
               </div>
-              <span className="ml-2 text-xs text-neutral-500">VS Code - Hanzo Extension</span>
+              <span className="ml-2 text-xs text-muted-foreground">VS Code - Hanzo Extension</span>
             </div>
-            <div className="p-4 space-y-3 bg-neutral-950">
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
-                <MonitorUp className="w-4 h-4 text-white" />
-                <span className="text-sm text-neutral-300">Reading repo structure...</span>
+            <div className="p-4 space-y-3 bg-background">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary border border-border">
+                <MonitorUp className="w-4 h-4 text-foreground" />
+                <span className="text-sm text-foreground/80">Reading repo structure...</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
-                <Check className="w-4 h-4 text-white/70" />
-                <span className="text-sm text-neutral-300">Edited 4 files cohesively</span>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary border border-border">
+                <Check className="w-4 h-4 text-foreground/70" />
+                <span className="text-sm text-foreground/80">Edited 4 files cohesively</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/20">
-                <Check className="w-4 h-4 text-white/70" />
-                <span className="text-sm text-white/70">All tests passing</span>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/5 border border-border">
+                <Check className="w-4 h-4 text-foreground/70" />
+                <span className="text-sm text-foreground/70">All tests passing</span>
               </div>
             </div>
           </div>
@@ -192,51 +190,51 @@ const DeveloperExperienceSection = () => {
           className="grid lg:grid-cols-2 gap-12 items-center"
         >
           {/* Terminal Preview */}
-          <div className="order-2 lg:order-1 rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+          <div className="order-2 lg:order-1 rounded-xl border border-border bg-secondary/80 overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-white/10" />
-                <div className="w-3 h-3 rounded-full bg-white/10" />
-                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-primary/10" />
+                <div className="w-3 h-3 rounded-full bg-primary/10" />
+                <div className="w-3 h-3 rounded-full bg-primary/10" />
               </div>
-              <span className="ml-2 text-xs text-neutral-500 font-mono">terminal</span>
+              <span className="ml-2 text-xs text-muted-foreground font-mono">terminal</span>
               <button
                 onClick={handleCopyInstall}
-                className="ml-auto p-1 rounded hover:bg-neutral-800 transition-colors"
+                className="ml-auto p-1 rounded hover:bg-accent transition-colors"
               >
                 {copied ? (
-                  <Check className="h-3 w-3 text-white/70" />
+                  <Check className="h-3 w-3 text-foreground/70" />
                 ) : (
-                  <Copy className="h-3 w-3 text-neutral-500" />
+                  <Copy className="h-3 w-3 text-muted-foreground" />
                 )}
               </button>
             </div>
-            <div className="p-4 font-mono text-sm bg-neutral-950">
+            <div className="p-4 font-mono text-sm bg-background">
               <div className="mb-2">
-                <span className="text-neutral-500">$ </span>
-                <span className="text-white">curl</span>
-                <span className="text-neutral-300"> -fsSL </span>
-                <span className="text-white/70">hanzo.sh</span>
-                <span className="text-neutral-300"> | </span>
-                <span className="text-white">bash</span>
+                <span className="text-muted-foreground">$ </span>
+                <span className="text-foreground">curl</span>
+                <span className="text-foreground/80"> -fsSL </span>
+                <span className="text-foreground/70">hanzo.sh</span>
+                <span className="text-foreground/80"> | </span>
+                <span className="text-foreground">bash</span>
               </div>
               <div className="mb-4">
-                <span className="text-neutral-500">$ </span>
-                <span className="text-white">hanzo</span>
-                <span className="text-white/70"> dev</span>
-                <span className="text-white/70"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
+                <span className="text-muted-foreground">$ </span>
+                <span className="text-foreground">hanzo</span>
+                <span className="text-foreground/70"> dev</span>
+                <span className="text-foreground/70"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
               </div>
-              <div className="text-white/70 mb-1">
-                <span className="text-white/70">✓ </span>Plan created
+              <div className="text-foreground/70 mb-1">
+                <span className="text-foreground/70">✓ </span>Plan created
               </div>
-              <div className="text-white/70 mb-1">
-                <span className="text-white/70">✓ </span>Implementation complete
+              <div className="text-foreground/70 mb-1">
+                <span className="text-foreground/70">✓ </span>Implementation complete
               </div>
-              <div className="text-white/70 mb-1">
-                <span className="text-white/70">✓ </span>Tests passing (12/12)
+              <div className="text-foreground/70 mb-1">
+                <span className="text-foreground/70">✓ </span>Tests passing (12/12)
               </div>
-              <div className="text-white">
-                <span className="text-white/70">✓ </span>PR opened: #247
+              <div className="text-foreground">
+                <span className="text-foreground/70">✓ </span>PR opened: #247
               </div>
             </div>
           </div>
@@ -244,39 +242,39 @@ const DeveloperExperienceSection = () => {
           <div className="order-1 lg:order-2">
             <p
               className="inline-flex items-center text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+              style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
             >
               <Bot className="w-3.5 h-3.5 mr-1.5" />
               Hanzo Dev
             </p>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               AI coding agent in your terminal.
             </h2>
-            <p className="text-neutral-400 mb-6">
-              Install <code className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 text-sm">@hanzo/dev</code> and <code className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 text-sm">@hanzo/cli</code> via curl.
+            <p className="text-muted-foreground mb-6">
+              Install <code className="px-1.5 py-0.5 rounded bg-neutral-800 text-foreground/80 text-sm">@hanzo/dev</code> and <code className="px-1.5 py-0.5 rounded bg-neutral-800 text-foreground/80 text-sm">@hanzo/cli</code> via curl.
             </p>
-            <ul className="space-y-3 text-neutral-400 mb-8">
+            <ul className="space-y-3 text-muted-foreground mb-8">
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
-                  <Code className="w-3.5 h-3.5 text-neutral-500" />
+                  <Code className="w-3.5 h-3.5 text-muted-foreground" />
                 </div>
                 Generate APIs, scripts, components, and tests
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
-                  <Bug className="w-3.5 h-3.5 text-neutral-500" />
+                  <Bug className="w-3.5 h-3.5 text-muted-foreground" />
                 </div>
                 Debug and fix using your real codebase context
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
-                  <Workflow className="w-3.5 h-3.5 text-neutral-500" />
+                  <Workflow className="w-3.5 h-3.5 text-muted-foreground" />
                 </div>
                 Scaffold CI/CD and release workflows
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
-                  <Box className="w-3.5 h-3.5 text-neutral-500" />
+                  <Box className="w-3.5 h-3.5 text-muted-foreground" />
                 </div>
                 No framework lock-in
               </li>
@@ -294,14 +292,14 @@ const DeveloperExperienceSection = () => {
           <div className="text-center mb-12">
             <p
               className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+              style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
             >
               Unified AI Platform
             </p>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               One platform. Every AI tool. Shared everything.
             </h2>
-            <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Stop context-switching between AI tools. Hanzo unifies memory, history, and context across all your AI interactions—terminal, IDE, browser, and API.
             </p>
           </div>
@@ -325,15 +323,15 @@ const DeveloperExperienceSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="p-4 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 hover:border-neutral-700 transition-all"
+                  className="p-4 rounded-xl border border-border bg-secondary/50 hover:bg-secondary hover:border-border transition-all"
                 >
                   <div className="flex items-start gap-3">
                     <div className="w-9 h-9 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-4 h-4 text-neutral-400" />
+                      <Icon className="w-4 h-4 text-muted-foreground" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-white mb-0.5">{item.title}</h3>
-                      <p className="text-xs text-neutral-500">{item.desc}</p>
+                      <h3 className="text-sm font-semibold text-foreground mb-0.5">{item.title}</h3>
+                      <p className="text-xs text-muted-foreground">{item.desc}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -347,11 +345,11 @@ const DeveloperExperienceSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 mb-8"
+            className="rounded-xl border border-border bg-secondary/50 p-6 mb-8"
           >
             <div className="text-center mb-6">
-              <h3 className="text-lg font-semibold text-white mb-2">How Hanzo Unifies Your AI Stack</h3>
-              <p className="text-sm text-neutral-500">All your tools, one shared brain</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">How Hanzo Unifies Your AI Stack</h3>
+              <p className="text-sm text-muted-foreground">All your tools, one shared brain</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 items-center">
               {/* Entry points */}
@@ -364,9 +362,9 @@ const DeveloperExperienceSection = () => {
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.label} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-800/50 border border-neutral-700/50">
-                      <Icon className="w-4 h-4 text-neutral-400" />
-                      <span className="text-sm text-neutral-300">{item.label}</span>
+                    <div key={item.label} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-800/50 border border-border/50">
+                      <Icon className="w-4 h-4 text-muted-foreground" />
+                      <span className="text-sm text-foreground/80">{item.label}</span>
                     </div>
                   );
                 })}
@@ -374,20 +372,20 @@ const DeveloperExperienceSection = () => {
 
               {/* Arrow */}
               <div className="hidden md:flex justify-center">
-                <ArrowRight className="w-6 h-6 text-neutral-600" />
+                <ArrowRight className="w-6 h-6 text-muted-foreground/60" />
               </div>
 
               {/* Core */}
-              <div className="col-span-2 md:col-span-2 p-4 rounded-xl border-2 border-white/30 bg-white/5">
+              <div className="col-span-2 md:col-span-2 p-4 rounded-xl border-2 border-white/30 bg-primary/5">
                 <div className="text-center">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-3">
-                    <Brain className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-3">
+                    <Brain className="w-6 h-6 text-foreground" />
                   </div>
-                  <h4 className="text-sm font-semibold text-white mb-1">Hanzo Core</h4>
-                  <p className="text-xs text-neutral-500 mb-3">Unified memory • Vector index • Tool registry</p>
+                  <h4 className="text-sm font-semibold text-foreground mb-1">Hanzo Core</h4>
+                  <p className="text-xs text-muted-foreground mb-3">Unified memory • Vector index • Tool registry</p>
                   <div className="flex flex-wrap justify-center gap-1">
                     {["Memory", "Context", "History", "Tools"].map((tag) => (
-                      <span key={tag} className="px-2 py-0.5 rounded-full bg-neutral-800 text-[10px] text-neutral-400">
+                      <span key={tag} className="px-2 py-0.5 rounded-full bg-neutral-800 text-[10px] text-muted-foreground">
                         {tag}
                       </span>
                     ))}
@@ -400,7 +398,7 @@ const DeveloperExperienceSection = () => {
           <div className="text-center">
             <Link
               href="/products"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-black hover:opacity-90"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-primary text-primary-foreground hover:opacity-90"
             >
               Explore all capabilities
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -418,11 +416,11 @@ const DeveloperExperienceSection = () => {
           <div className="text-center mb-12">
             <p
               className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-              style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+              style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
             >
               Remote Agents
             </p>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               Secure remote execution for teams
             </h2>
           </div>
@@ -442,13 +440,13 @@ const DeveloperExperienceSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/50 text-center"
+                  className="p-5 rounded-xl border border-border bg-secondary/50 text-center"
                 >
                   <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center mb-4 mx-auto">
-                    <Icon className="w-5 h-5 text-neutral-400" />
+                    <Icon className="w-5 h-5 text-muted-foreground" />
                   </div>
-                  <h3 className="text-base font-semibold text-white mb-1">{item.title}</h3>
-                  <p className="text-sm text-neutral-500">{item.desc}</p>
+                  <h3 className="text-base font-semibold text-foreground mb-1">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </motion.div>
               );
             })}
@@ -457,7 +455,7 @@ const DeveloperExperienceSection = () => {
           <div className="text-center">
             <Link
               href="/operative"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors border border-neutral-700 hover:bg-neutral-900 text-white"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors border border-border hover:bg-secondary text-foreground"
             >
               Enable Remote Agents
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -477,21 +475,21 @@ const DeveloperExperienceSection = () => {
             <div>
               <p
                 className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-                style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+                style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
               >
                 Hanzo AI API
               </p>
-              <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
                 One API for models + tools.
               </h2>
-              <p className="text-lg text-neutral-400 mb-6">
+              <p className="text-lg text-muted-foreground mb-6">
                 Streaming, tool calling, and agent execution behind a single endpoint. Compatible with existing OpenAI SDKs by switching the base URL.
               </p>
               <a
                 href="https://docs.hanzo.ai/api"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-black hover:bg-neutral-200"
+                className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-primary text-primary-foreground hover:bg-accent"
               >
                 View API reference
                 <ExternalLink className="ml-2 h-4 w-4" />

@@ -67,19 +67,19 @@ const HanzoDev = () => {
             For Developers
           </h2>
 
-          <p className="text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 mb-10 max-w-2xl mx-auto">
             Install the complete Hanzo AI toolkit in one command. CLI, MCP, Agents, Dev tools — in Python, Rust, or JavaScript.
           </p>
 
           {/* Main install command */}
           <div className="flex justify-center mb-8">
             <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-4 flex items-center">
-              <Terminal className="h-5 w-5 text-white mr-3 flex-shrink-0" />
-              <code className="text-neutral-300 font-mono text-lg">curl -fsSL hanzo.sh | bash</code>
+              <Terminal className="h-5 w-5 text-foreground mr-3 flex-shrink-0" />
+              <code className="text-foreground/80 font-mono text-lg">curl -fsSL hanzo.sh | bash</code>
               <Button
                 variant="ghost"
                 size="sm"
-                className="ml-4 text-neutral-400 hover:text-[var(--white)]"
+                className="ml-4 text-muted-foreground hover:text-[var(--white)]"
                 onClick={() => copyCommand('curl -fsSL hanzo.sh | bash', -1)}
               >
                 {copiedIdx === -1 ? 'Copied!' : 'Copy'}
@@ -99,10 +99,10 @@ const HanzoDev = () => {
                   rel="noopener noreferrer"
                   className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 hover:border-white/30/50 transition-colors text-left"
                 >
-                  <Icon className="h-5 w-5 text-white mb-2" />
-                  <div className="font-mono text-sm text-neutral-300">{s.name}</div>
-                  <div className="text-xs text-neutral-500">{s.desc}</div>
-                  <div className="text-xs text-neutral-600 mt-1">hanzo.sh{s.path}</div>
+                  <Icon className="h-5 w-5 text-foreground mb-2" />
+                  <div className="font-mono text-sm text-foreground/80">{s.name}</div>
+                  <div className="text-xs text-muted-foreground">{s.desc}</div>
+                  <div className="text-xs text-muted-foreground/60 mt-1">hanzo.sh{s.path}</div>
                 </a>
               );
             })}
@@ -120,7 +120,7 @@ const HanzoDev = () => {
             </a>
             <a
               href="/hanzodev"
-              className="inline-flex items-center justify-center border border-neutral-700 bg-transparent hover:bg-neutral-900 text-[var(--white)] px-8 py-4 rounded-lg text-lg font-medium transition-all"
+              className="inline-flex items-center justify-center border border-border bg-transparent hover:bg-secondary text-[var(--white)] px-8 py-4 rounded-lg text-lg font-medium transition-all"
             >
               Learn More
             </a>

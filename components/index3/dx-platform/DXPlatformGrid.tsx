@@ -31,7 +31,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           {/* Background grid pattern with enhanced visibility */}
           <div className="absolute inset-0 grid grid-cols-16 grid-rows-8 gap-4 p-4 opacity-30">
             {Array(16 * 8).fill(0).map((_, i) => (
-              <div key={i} className="border border-white/20 rounded-sm"></div>
+              <div key={i} className="border border-border rounded-sm"></div>
             ))}
           </div>
           
@@ -110,20 +110,20 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
           onMouseLeave={() => setIsHovered(null)}
         >
           <Link href="/platform" className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 group hover:bg-gray-900/30 transition-colors h-full flex flex-col">
-            <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 bg-white/20 group-hover:bg-[#cccccc]/30">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white group-hover:text-white/70 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 bg-primary/20 group-hover:bg-[#cccccc]/30">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-foreground group-hover:text-foreground/70 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
             <ChromeText as="h3" className="text-xl font-bold mb-2">
               Explore More
             </ChromeText>
-            <p className="text-neutral-300 mb-4 text-sm">
+            <p className="text-foreground/80 mb-4 text-sm">
               Discover our complete DX Platform and developer tools ecosystem
             </p>
             <div className="mt-auto">
               <Button 
-                className="bg-white hover:bg-[#cccccc] text-[var(--white)] w-full"
+                className="bg-primary hover:bg-[#cccccc] text-[var(--white)] w-full"
                 radius="full"
               >
                 View All Tools
@@ -139,25 +139,25 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mt-16 p-8 bg-gradient-to-r from-white/20 to-white/10 rounded-xl border border-white/20"
+        className="mt-16 p-8 bg-gradient-to-r from-white/20 to-white/10 rounded-xl border border-border"
       >
         <div className="max-w-4xl mx-auto text-center">
           <ChromeText as="h2" className="text-2xl md:text-3xl font-bold mb-4">
             Start Building Today, Risk-Free
           </ChromeText>
-          <p className="text-lg text-neutral-300 mb-6">
+          <p className="text-lg text-foreground/80 mb-6">
             Sign up now and receive $5 in free credits. Earn an additional $5 credit for every friend who joins through your referral link.
           </p>
           <Button 
             asChild
             size="lg"
-            className="px-8 py-3 bg-white hover:bg-[#cccccc] text-[var(--white)] font-medium shadow-lg transition-all duration-300"
+            className="px-8 py-3 bg-primary hover:bg-[#cccccc] text-[var(--white)] font-medium shadow-lg transition-all duration-300"
             radius="full"
           >
             <Link href="/signup">Get Started Free</Link>
           </Button>
-          <p className="mt-4 text-sm text-neutral-400">
-            No credit card required. <Link href="/referrals" className="text-white hover:text-white/70 underline">Learn more</Link> about our referral program.
+          <p className="mt-4 text-sm text-muted-foreground">
+            No credit card required. <Link href="/referrals" className="text-foreground hover:text-foreground/70 underline">Learn more</Link> about our referral program.
           </p>
         </div>
       </motion.div>

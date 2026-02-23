@@ -48,14 +48,14 @@ const AIFeatureCard = ({
           <h3 className="text-xl font-semibold text-[var(--white)]">{title}</h3>
         </div>
       </div>
-      <p className="text-neutral-300 mb-6">
+      <p className="text-foreground/80 mb-6">
         {description}
       </p>
       <ul className="space-y-3">
         {featurePoints.map((point, index) => (
           <li key={index} className="flex items-start">
             <span className={`${bulletColor} mr-2`}>•</span>
-            <span className="text-neutral-300">{point.text}</span>
+            <span className="text-foreground/80">{point.text}</span>
           </li>
         ))}
       </ul>

@@ -73,7 +73,7 @@ const Community = () => {
   };
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/30 relative overflow-hidden">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/30 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -85,7 +85,7 @@ const Community = () => {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Powered by Community, Improved by Collaboration</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Join thousands of developers building the future of analytics together.
           </p>
         </motion.div>
@@ -104,7 +104,7 @@ const Community = () => {
                 className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 text-center"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-white/10 rounded-full border border-white/20 text-white">
+                  <div className="p-3 bg-primary/10 rounded-full border border-border text-foreground">
                     {item.icon}
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Community = () => {
                   <span>{item.suffix}</span>
                 </div>
                 
-                <div className="text-neutral-400">{item.label}</div>
+                <div className="text-muted-foreground">{item.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -134,11 +134,11 @@ const Community = () => {
               className="bg-gray-900/50 rounded-xl border border-gray-800 p-8"
             >
               <div className="flex items-center mb-6">
-                <Github className="h-6 w-6 text-white mr-3" />
+                <Github className="h-6 w-6 text-foreground mr-3" />
                 <h3 className="text-2xl font-bold">Open Source</h3>
               </div>
               
-              <p className="text-neutral-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Hanzo Analytics is fully open source, with a vibrant community of developers contributing from around the world. Join us on GitHub to collaborate on the future of analytics.
               </p>
               
@@ -178,11 +178,11 @@ const Community = () => {
               className="bg-gray-900/50 rounded-xl border border-gray-800 p-8"
             >
               <div className="flex items-center mb-6">
-                <BookOpen className="h-6 w-6 text-white/70 mr-3" />
+                <BookOpen className="h-6 w-6 text-foreground/70 mr-3" />
                 <h3 className="text-2xl font-bold">Resources</h3>
               </div>
               
-              <p className="text-neutral-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Access comprehensive documentation, tutorials, and examples to help you make the most of Hanzo Analytics.
               </p>
               
@@ -215,7 +215,7 @@ const Community = () => {
                     className="block p-4 bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
                   >
                     <h4 className="font-medium text-[var(--white)] mb-1">{resource.title}</h4>
-                    <p className="text-sm text-neutral-400">{resource.description}</p>
+                    <p className="text-sm text-muted-foreground">{resource.description}</p>
                   </a>
                 ))}
               </div>

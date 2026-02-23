@@ -134,7 +134,7 @@ const FeatureShowcaseSlider: React.FC<FeatureShowcaseSliderProps> = ({ features 
       
       <div className="flex justify-center mt-6 gap-2">
         <div className="bg-gray-700 h-1 w-20 rounded-full overflow-hidden">
-          <div className="bg-white h-full w-1/3 rounded-full"></div>
+          <div className="bg-primary h-full w-1/3 rounded-full"></div>
         </div>
       </div>
     </div>

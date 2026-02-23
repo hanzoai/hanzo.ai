@@ -15,21 +15,21 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       transition={{ duration: 0.5 }}
       className={`border rounded-xl p-8 h-full ${
         highlight
-          ? "border-white bg-gradient-to-b from-white/10 to-black"
+          ? "border-white bg-gradient-to-b from-white/10 to-background"
           : "border-gray-800 bg-gray-900/20"
       }`}
     >
       <h3 className="text-2xl font-semibold mb-2">{title}</h3>
       <div className="mb-4">
         <div className="text-3xl font-bold">{price}</div>
-        <p className="text-neutral-400">{description}</p>
+        <p className="text-muted-foreground">{description}</p>
       </div>
       
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-2">
-            <Check className="h-5 w-5 text-white/70 mt-1 flex-shrink-0" />
-            <span className="text-neutral-300">{feature}</span>
+            <Check className="h-5 w-5 text-foreground/70 mt-1 flex-shrink-0" />
+            <span className="text-foreground/80">{feature}</span>
           </li>
         ))}
       </ul>
@@ -37,7 +37,7 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       <Button
         className={`w-full ${
           highlight
-            ? "bg-white hover:bg-[#cccccc] text-[var(--white)]"
+            ? "bg-primary hover:bg-[#cccccc] text-[var(--white)]"
             : "bg-gray-800 text-[var(--white)] hover:bg-gray-700"
         }`}
       >
@@ -91,7 +91,7 @@ const HanzoAppPricing = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Pricing</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             Free 14 day trial. No credit card required.
           </p>
         </motion.div>

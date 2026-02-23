@@ -40,14 +40,14 @@ const ENTERPRISE_BENEFITS = [
 
 export default function ContactSalesPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <main>
         {/* Hero Section */}
         <section className="relative pt-28 pb-8 px-4 md:px-8 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Contact
@@ -62,7 +62,7 @@ export default function ContactSalesPage() {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight mb-4">
                 Talk to Sales
               </h1>
-              <p className="text-base lg:text-lg text-neutral-400 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 Book a call to discuss your needs. We&apos;ll help you find the right solution for your team.
               </p>
             </motion.div>
@@ -97,7 +97,7 @@ export default function ContactSalesPage() {
         </section>
 
         {/* Quick Contact Options */}
-        <section className="py-12 px-4 md:px-8 lg:px-12 border-t border-neutral-800">
+        <section className="py-12 px-4 md:px-8 lg:px-12 border-t border-border">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.a
@@ -106,14 +106,14 @@ export default function ContactSalesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-neutral-700 hover:bg-neutral-800/50 transition-all group"
+                className="flex items-center gap-4 p-5 rounded-xl border border-border bg-secondary hover:border-border hover:bg-accent/50 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                  <Mail className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
                 <div>
-                  <p className="text-sm text-neutral-400">Email</p>
-                  <p className="text-white font-medium">enterprise@hanzo.ai</p>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <p className="text-foreground font-medium">enterprise@hanzo.ai</p>
                 </div>
               </motion.a>
 
@@ -122,14 +122,14 @@ export default function ContactSalesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900"
+                className="flex items-center gap-4 p-5 rounded-xl border border-border bg-secondary"
               >
                 <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-neutral-400" />
+                  <MapPin className="w-5 h-5 text-muted-foreground" />
                 </div>
                 <div>
-                  <p className="text-sm text-neutral-400">Location</p>
-                  <p className="text-white font-medium">995 Market St, San Francisco</p>
+                  <p className="text-sm text-muted-foreground">Location</p>
+                  <p className="text-foreground font-medium">995 Market St, San Francisco</p>
                 </div>
               </motion.div>
 
@@ -141,23 +141,23 @@ export default function ContactSalesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-neutral-700 hover:bg-neutral-800/50 transition-all group"
+                className="flex items-center gap-4 p-5 rounded-xl border border-border bg-secondary hover:border-border hover:bg-accent/50 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                  <MessageSquare className="w-5 h-5 text-neutral-400 group-hover:text-white/70 transition-colors" />
+                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <MessageSquare className="w-5 h-5 text-muted-foreground group-hover:text-foreground/70 transition-colors" />
                 </div>
                 <div>
-                  <p className="text-sm text-neutral-400">Community</p>
-                  <p className="text-white font-medium">Join Discord</p>
+                  <p className="text-sm text-muted-foreground">Community</p>
+                  <p className="text-foreground font-medium">Join Discord</p>
                 </div>
-                <ExternalLink className="w-4 h-4 text-neutral-500 ml-auto" />
+                <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto" />
               </motion.a>
             </div>
           </div>
         </section>
 
         {/* Enterprise Benefits */}
-        <section className="py-16 px-4 md:px-8 lg:px-12 bg-neutral-900/20">
+        <section className="py-16 px-4 md:px-8 lg:px-12 bg-secondary/20">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -166,10 +166,10 @@ export default function ContactSalesPage() {
               transition={{ duration: 0.5 }}
               className="text-center mb-10"
             >
-              <h2 className="text-2xl font-semibold text-white mb-2">
+              <h2 className="text-2xl font-semibold text-foreground mb-2">
                 Enterprise Solutions
               </h2>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Transform your business with our enterprise AI platform.
               </p>
             </motion.div>
@@ -184,13 +184,13 @@ export default function ContactSalesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-4 rounded-xl border border-neutral-800 bg-neutral-900 text-center"
+                    className="p-4 rounded-xl border border-border bg-secondary text-center"
                   >
-                    <Icon className="w-6 h-6 text-white mx-auto mb-3" />
-                    <h3 className="text-sm font-semibold text-white mb-1">
+                    <Icon className="w-6 h-6 text-foreground mx-auto mb-3" />
+                    <h3 className="text-sm font-semibold text-foreground mb-1">
                       {benefit.title}
                     </h3>
-                    <p className="text-xs text-neutral-400">
+                    <p className="text-xs text-muted-foreground">
                       {benefit.description}
                     </p>
                   </motion.div>

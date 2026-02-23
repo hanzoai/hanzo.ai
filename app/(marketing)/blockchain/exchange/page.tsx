@@ -129,10 +129,10 @@ const HanzoExchange = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-border mb-8"
           >
-            <TrendingUp className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white/70">Exchange Infrastructure</span>
+            <TrendingUp className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground/70">Exchange Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -141,7 +141,7 @@ const HanzoExchange = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">Hanzo</span>{" "}
+            <span className="text-foreground">Hanzo</span>{" "}
             <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               Exchange
             </span>
@@ -151,7 +151,7 @@ const HanzoExchange = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-medium text-white mb-4"
+            className="text-2xl md:text-3xl font-medium text-foreground mb-4"
           >
             AMM. DEX. Order Books. All-in-One.
           </motion.p>
@@ -160,7 +160,7 @@ const HanzoExchange = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto"
           >
             Build trading platforms with institutional-grade infrastructure. From AMM pools to
             high-frequency order books—everything you need to power digital asset trading.
@@ -175,14 +175,14 @@ const HanzoExchange = () => {
           >
             <a
               href="https://docs.hanzo.ai/exchange"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/20 text-foreground font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="/contact/sales"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               Contact Sales
             </a>
@@ -191,7 +191,7 @@ const HanzoExchange = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -199,8 +199,8 @@ const HanzoExchange = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Exchange Products</h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Exchange Products</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose your trading model or combine them for hybrid exchanges
             </p>
           </motion.div>
@@ -215,7 +215,7 @@ const HanzoExchange = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-white/30 transition-colors"
                 >
                   <div className="flex items-start gap-4 mb-4">
                     <div
@@ -225,15 +225,15 @@ const HanzoExchange = () => {
                       <Icon className="w-6 h-6" style={{ color: product.color }} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white">{product.name}</h3>
-                      <p className="text-neutral-400 text-sm">{product.description}</p>
+                      <h3 className="text-xl font-semibold text-foreground">{product.name}</h3>
+                      <p className="text-muted-foreground text-sm">{product.description}</p>
                     </div>
                   </div>
 
                   <ul className="grid grid-cols-2 gap-2 mb-4">
                     {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-neutral-300">
-                        <Check className="w-4 h-4 text-white" />
+                      <li key={idx} className="flex items-center gap-2 text-sm text-foreground/80">
+                        <Check className="w-4 h-4 text-foreground" />
                         {feature}
                       </li>
                     ))}
@@ -241,7 +241,7 @@ const HanzoExchange = () => {
 
                   <Link
                     href={product.href || "#"}
-                    className="inline-flex items-center gap-2 text-white hover:text-white/70 text-sm font-medium"
+                    className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 text-sm font-medium"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -253,7 +253,7 @@ const HanzoExchange = () => {
       </section>
 
       {/* Capabilities */}
-      <section className="py-20 px-4 md:px-8 bg-neutral-950">
+      <section className="py-20 px-4 md:px-8 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -261,7 +261,7 @@ const HanzoExchange = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Institutional-Grade Infrastructure
             </h2>
           </motion.div>
@@ -274,13 +274,13 @@ const HanzoExchange = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-center"
+                className="bg-secondary/50 border border-border rounded-xl p-4 text-center"
               >
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-3">
-                  <cap.icon className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <cap.icon className="w-5 h-5 text-foreground" />
                 </div>
-                <h3 className="font-semibold text-white text-sm mb-1">{cap.title}</h3>
-                <p className="text-xs text-neutral-500">{cap.description}</p>
+                <h3 className="font-semibold text-foreground text-sm mb-1">{cap.title}</h3>
+                <p className="text-xs text-muted-foreground">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -294,18 +294,18 @@ const HanzoExchange = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden"
+            className="bg-secondary border border-border rounded-xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-border">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
               </div>
-              <span className="text-xs text-neutral-500 ml-2">exchange.ts</span>
+              <span className="text-xs text-muted-foreground ml-2">exchange.ts</span>
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
-              <code className="text-neutral-300">{`import { HanzoExchange } from "@hanzo/blockchain";
+              <code className="text-foreground/80">{`import { HanzoExchange } from "@hanzo/blockchain";
 
 const exchange = new HanzoExchange({
   apiKey: process.env.HANZO_API_KEY,
@@ -342,7 +342,7 @@ await exchange.orderbook.placeLimitOrder({
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -350,24 +350,24 @@ await exchange.orderbook.placeLimitOrder({
             viewport={{ once: true }}
             className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/30 rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Build Your Exchange
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
               From DeFi protocols to institutional trading platforms—we have the infrastructure.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://docs.hanzo.ai/exchange"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/20 text-foreground font-medium rounded-full transition-colors"
               >
                 Read the Docs
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/pricing?tab=blockchain"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
               >
                 View Pricing
               </a>

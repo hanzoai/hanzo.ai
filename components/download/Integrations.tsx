@@ -12,7 +12,7 @@ const IntegrationCard = ({ icon, title, description }: { icon: React.ReactNode, 
     </div>
     <div>
       <h3 className="text-lg font-semibold text-[var(--white)] mb-1">{title}</h3>
-      <p className="text-neutral-400 text-sm">{description}</p>
+      <p className="text-muted-foreground text-sm">{description}</p>
     </div>
   </div>
 );
@@ -41,37 +41,37 @@ const Integrations = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <IntegrationCard 
-            icon={<Github className="h-8 w-8 text-white" />}
+            icon={<Github className="h-8 w-8 text-foreground" />}
             title="GitHub"
             description="Automatically manage development work and more"
           />
           
           <IntegrationCard 
-            icon={<FileEdit className="h-8 w-8 text-white" />}
+            icon={<FileEdit className="h-8 w-8 text-foreground" />}
             title="Notion"
             description="Seamlessly sync notes and tasks with your Notion workspace"
           />
           
           <IntegrationCard 
-            icon={<CalendarDays className="h-8 w-8 text-white" />}
+            icon={<CalendarDays className="h-8 w-8 text-foreground" />}
             title="Google Calendar"
             description="Connect your calendar to automate meeting workflows"
           />
           
           <IntegrationCard 
-            icon={<Trello className="h-8 w-8 text-white" />}
+            icon={<Trello className="h-8 w-8 text-foreground" />}
             title="Linear"
             description="Create Linear issues directly from any context"
           />
           
           <IntegrationCard 
-            icon={<MessageSquare className="h-8 w-8 text-white" />}
+            icon={<MessageSquare className="h-8 w-8 text-foreground" />}
             title="Slack"
             description="Summarize channels and post meeting notes to Slack"
           />
           
           <IntegrationCard 
-            icon={<Code className="h-8 w-8 text-white" />}
+            icon={<Code className="h-8 w-8 text-foreground" />}
             title="MCP"
             description="Add your own tooling securely using Model Context Protocol"
           />

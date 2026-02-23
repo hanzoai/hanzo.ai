@@ -53,17 +53,17 @@ const ExpandableFeatureCard: React.FC<ExpandableFeatureCardProps> = ({
         </div>
         <button 
           onClick={toggleExpand}
-          className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isExpanded ? 'bg-white/20' : 'bg-gray-800/50 hover:bg-gray-700/50'}`}
+          className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isExpanded ? 'bg-primary/20' : 'bg-gray-800/50 hover:bg-gray-700/50'}`}
         >
           {isExpanded ? (
-            <Minus className="h-4 w-4 text-white/70" />
+            <Minus className="h-4 w-4 text-foreground/70" />
           ) : (
-            <Plus className="h-4 w-4 text-neutral-300" />
+            <Plus className="h-4 w-4 text-foreground/80" />
           )}
         </button>
       </div>
       
-      <p className="text-neutral-300 mb-4">{description}</p>
+      <p className="text-foreground/80 mb-4">{description}</p>
       
       <AnimatePresence>
         {isExpanded && (
@@ -80,7 +80,7 @@ const ExpandableFeatureCard: React.FC<ExpandableFeatureCardProps> = ({
                 {featurePoints.map((point, index) => (
                   <li key={index} className="flex items-start">
                     <span className={`${bulletColor} mr-2 text-lg`}>•</span>
-                    <span className="text-sm text-neutral-300">{point.text}</span>
+                    <span className="text-sm text-foreground/80">{point.text}</span>
                   </li>
                 ))}
               </ul>

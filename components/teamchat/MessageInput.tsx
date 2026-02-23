@@ -21,13 +21,13 @@ const MessageInput: React.FC<MessageInputProps> = ({
     <div className="p-4 border-t border-gray-800">
       <form onSubmit={handleSendMessage} className="flex items-center">
         <div className="flex items-center space-x-2 mr-2">
-          <Button type="button" variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
+          <Button type="button" variant="ghost" size="icon" className="text-muted-foreground hover:text-[var(--white)]">
             <Paperclip className="h-5 w-5" />
           </Button>
-          <Button type="button" variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
+          <Button type="button" variant="ghost" size="icon" className="text-muted-foreground hover:text-[var(--white)]">
             <Camera className="h-5 w-5" />
           </Button>
-          <Button type="button" variant="ghost" size="icon" className="text-neutral-400 hover:text-[var(--white)]">
+          <Button type="button" variant="ghost" size="icon" className="text-muted-foreground hover:text-[var(--white)]">
             <Mic className="h-5 w-5" />
           </Button>
         </div>
@@ -42,7 +42,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
         <Button 
           type="submit" 
           disabled={isTyping}
-          className="rounded-l-none bg-white/10 hover:bg-white/10 h-[42px]"
+          className="rounded-l-none bg-primary/10 hover:bg-primary/10 h-[42px]"
         >
           {isTyping ? (
             <RefreshCw className="h-5 w-5 animate-spin" />

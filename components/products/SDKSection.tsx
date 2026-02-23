@@ -47,10 +47,10 @@ const languageLogos: Record<string, JSX.Element> = {
 };
 
 const registryColors: Record<string, string> = {
-  npm: "bg-white/5 text-white/70 border-white/20",
-  pypi: "bg-white/10 text-white border-white/30",
-  "crates.io": "bg-white/5 text-white/70 border-white/20",
-  "go modules": "bg-white/5 text-white/70 border-white/20",
+  npm: "bg-primary/5 text-foreground/70 border-border",
+  pypi: "bg-primary/10 text-foreground border-white/30",
+  "crates.io": "bg-primary/5 text-foreground/70 border-border",
+  "go modules": "bg-primary/5 text-foreground/70 border-border",
 };
 
 export function SDKSection({ productName, sdks }: SDKSectionProps) {
@@ -64,16 +64,16 @@ export function SDKSection({ productName, sdks }: SDKSectionProps) {
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-2 mb-2">
-          <Package className="w-5 h-5 text-white" />
-          <span className="text-sm font-medium text-white uppercase tracking-wider">
+          <Package className="w-5 h-5 text-foreground" />
+          <span className="text-sm font-medium text-foreground uppercase tracking-wider">
             SDKs & Libraries
           </span>
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
           Official {productName} SDKs
         </h2>
-        <p className="text-neutral-400 mb-8">
+        <p className="text-muted-foreground mb-8">
           Use our official SDKs to integrate {productName} into your application
         </p>
 
@@ -85,23 +85,23 @@ export function SDKSection({ productName, sdks }: SDKSectionProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-neutral-700 transition-colors"
+              className="bg-secondary/50 border border-border rounded-xl p-5 hover:border-border transition-colors"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center text-neutral-300">
+                  <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center text-foreground/80">
                     {languageLogos[sdk.language.toLowerCase()] || <Package className="w-5 h-5" />}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">{sdk.name}</h3>
-                    <span className={`inline-flex items-center px-2 py-0.5 text-xs rounded border ${registryColors[sdk.registry.toLowerCase()] || "bg-neutral-800 text-neutral-400 border-neutral-700"}`}>
+                    <h3 className="font-semibold text-foreground">{sdk.name}</h3>
+                    <span className={`inline-flex items-center px-2 py-0.5 text-xs rounded border ${registryColors[sdk.registry.toLowerCase()] || "bg-neutral-800 text-muted-foreground border-border"}`}>
                       {sdk.registry}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-neutral-950 rounded-lg p-3 mb-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+              <div className="bg-background rounded-lg p-3 mb-4 font-mono text-sm text-foreground/80 overflow-x-auto">
                 {sdk.installCommand}
               </div>
 
@@ -110,7 +110,7 @@ export function SDKSection({ productName, sdks }: SDKSectionProps) {
                   href={sdk.url || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-white hover:text-white/80 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-foreground hover:text-foreground/80 transition-colors"
                 >
                   <Package className="w-3.5 h-3.5" />
                   {sdk.package}
@@ -121,7 +121,7 @@ export function SDKSection({ productName, sdks }: SDKSectionProps) {
                     href={sdk.docsUrl || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-neutral-400 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Docs
                     <ExternalLink className="w-3 h-3" />

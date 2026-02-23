@@ -66,7 +66,7 @@ const FeatureShowcase: React.FC = () => {
   return (
     <section className="py-24 bg-[var(--black)] relative overflow-hidden" id="features-showcase" ref={scrollRef}>
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-background/80"></div>
       </div>
       
       <motion.div 
@@ -79,21 +79,21 @@ const FeatureShowcase: React.FC = () => {
           <div className="inline-flex rounded-full bg-gray-900/50 p-1.5 backdrop-blur-sm">
             <Button
               variant={activeTab === 'all' ? 'default' : 'ghost'}
-              className={`rounded-full px-6 ${activeTab === 'all' ? 'bg-white hover:bg-[#cccccc]' : 'text-neutral-300 hover:text-[var(--white)] hover:bg-gray-800/50'}`}
+              className={`rounded-full px-6 ${activeTab === 'all' ? 'bg-primary hover:bg-[#cccccc]' : 'text-foreground/80 hover:text-[var(--white)] hover:bg-gray-800/50'}`}
               onClick={() => setActiveTab('all')}
             >
               All
             </Button>
             <Button
               variant={activeTab === 'ai-cloud' ? 'default' : 'ghost'}
-              className={`rounded-full px-6 ${activeTab === 'ai-cloud' ? 'bg-white hover:bg-[#cccccc]' : 'text-neutral-300 hover:text-[var(--white)] hover:bg-gray-800/50'}`}
+              className={`rounded-full px-6 ${activeTab === 'ai-cloud' ? 'bg-primary hover:bg-[#cccccc]' : 'text-foreground/80 hover:text-[var(--white)] hover:bg-gray-800/50'}`}
               onClick={() => setActiveTab('ai-cloud')}
             >
               AI Cloud
             </Button>
             <Button
               variant={activeTab === 'dx-platform' ? 'default' : 'ghost'}
-              className={`rounded-full px-6 ${activeTab === 'dx-platform' ? 'bg-white hover:bg-[#cccccc]' : 'text-neutral-300 hover:text-[var(--white)] hover:bg-gray-800/50'}`}
+              className={`rounded-full px-6 ${activeTab === 'dx-platform' ? 'bg-primary hover:bg-[#cccccc]' : 'text-foreground/80 hover:text-[var(--white)] hover:bg-gray-800/50'}`}
               onClick={() => setActiveTab('dx-platform')}
             >
               DX Platform

@@ -86,7 +86,7 @@ const SignUp = () => {
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Create Account</h1>
-          <p className="text-neutral-400 mt-2">
+          <p className="text-muted-foreground mt-2">
             {step === 1 ? 'Enter your details to get started' : 'Set up your profile'}
           </p>
         </div>
@@ -98,7 +98,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
+                    <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="email"
                       name="email"
@@ -114,7 +114,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
+                    <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="password"
                       name="password"
@@ -130,7 +130,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword">Confirm Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
+                    <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="confirmPassword"
                       name="confirmPassword"
@@ -150,7 +150,7 @@ const SignUp = () => {
                     onCheckedChange={handleCheckboxChange}
                   />
                   <Label htmlFor="terms" className="text-sm">
-                    I agree to the <a href="/terms" className="text-white hover:underline">Terms of Service</a> and <a href="/privacy" className="text-white hover:underline">Privacy Policy</a>
+                    I agree to the <a href="/terms" className="text-foreground hover:underline">Terms of Service</a> and <a href="/privacy" className="text-foreground hover:underline">Privacy Policy</a>
                   </Label>
                 </div>
               </>
@@ -159,7 +159,7 @@ const SignUp = () => {
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
+                    <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="name"
                       name="name"
@@ -201,7 +201,7 @@ const SignUp = () => {
             
             <Button 
               type="submit" 
-              className="w-full mt-6 bg-white hover:bg-[#cccccc] text-[var(--white)]"
+              className="w-full mt-6 bg-primary hover:bg-[#cccccc] text-[var(--white)]"
             >
               {step === 1 ? 'Continue' : 'Create Account'}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -209,9 +209,9 @@ const SignUp = () => {
           </form>
         </div>
         
-        <div className="text-center text-sm text-neutral-400">
+        <div className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
-          <a href="/login" className="text-white hover:underline">
+          <a href="/login" className="text-foreground hover:underline">
             Sign in
           </a>
         </div>

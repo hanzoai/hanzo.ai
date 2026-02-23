@@ -31,7 +31,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-white text-[var(--white)] hover:bg-white/10"
+              className="w-full gap-2 border-white text-[var(--white)] hover:bg-primary/10"
             >
               <Github className="h-5 w-5" />
               View on GitHub
@@ -48,7 +48,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-white text-[var(--white)] hover:bg-white/10"
+              className="w-full gap-2 border-white text-[var(--white)] hover:bg-primary/10"
             >
               <FileText className="h-5 w-5" />
               Learn more in Docs
@@ -65,7 +65,7 @@ const CallToAction = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full gap-2 border-white text-[var(--white)] hover:bg-white/10"
+              className="w-full gap-2 border-white text-[var(--white)] hover:bg-primary/10"
             >
               <Server className="h-5 w-5" />
               Get Commercial Support
@@ -88,14 +88,14 @@ const CallToAction = () => {
                 placeholder="Enter your email" 
                 className="w-full px-4 py-2 bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ffffff]"
               />
-              <Button className="bg-white hover:bg-[#cccccc]">
+              <Button className="bg-primary hover:bg-[#cccccc]">
                 Subscribe
               </Button>
             </div>
             <div className="mt-2 text-left">
               <label className="inline-flex items-center">
-                <input type="checkbox" className="rounded bg-gray-800 border-gray-700 text-white" />
-                <span className="ml-2 text-sm text-neutral-400">
+                <input type="checkbox" className="rounded bg-gray-800 border-gray-700 text-foreground" />
+                <span className="ml-2 text-sm text-muted-foreground">
                   I agree to receive communications from Hanzo
                 </span>
               </label>

@@ -33,7 +33,7 @@ const CommerceAnalytics = () => {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Commerce-Focused Analytics</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Optimize your sales funnel and boost revenue with insights designed specifically for commerce.
           </p>
         </motion.div>
@@ -65,12 +65,12 @@ const CommerceAnalytics = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex"
               >
-                <div className="mr-4 p-3 rounded-xl bg-gradient-to-br from-white/20 to-white/10 border border-white/20 text-white">
+                <div className="mr-4 p-3 rounded-xl bg-gradient-to-br from-white/20 to-white/10 border border-border text-foreground">
                   {feature.icon}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-neutral-400">{feature.description}</p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -78,11 +78,11 @@ const CommerceAnalytics = () => {
           
           <motion.div
             style={{ scale, opacity }}
-            className="rounded-xl overflow-hidden bg-gradient-to-br from-gray-900 to-black border border-gray-800 shadow-xl"
+            className="rounded-xl overflow-hidden bg-gradient-to-br from-gray-900 to-background border border-gray-800 shadow-xl"
           >
             <div className="p-4 border-b border-gray-800">
               <div className="flex items-center">
-                <ShoppingCart className="h-5 w-5 text-white mr-2" />
+                <ShoppingCart className="h-5 w-5 text-foreground mr-2" />
                 <span className="text-[var(--white)] font-medium">Commerce Dashboard</span>
               </div>
             </div>
@@ -109,9 +109,9 @@ const CommerceAnalytics = () => {
               
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-gray-800/30 p-4 rounded-lg">
-                  <div className="text-sm text-neutral-400">Conversion Rate</div>
+                  <div className="text-sm text-muted-foreground">Conversion Rate</div>
                   <div className="text-2xl font-bold mt-2">4.78%</div>
-                  <div className="text-white/70 text-sm flex items-center mt-1">
+                  <div className="text-foreground/70 text-sm flex items-center mt-1">
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                     </svg>
@@ -119,9 +119,9 @@ const CommerceAnalytics = () => {
                   </div>
                 </div>
                 <div className="bg-gray-800/30 p-4 rounded-lg">
-                  <div className="text-sm text-neutral-400">Avg. Order Value</div>
+                  <div className="text-sm text-muted-foreground">Avg. Order Value</div>
                   <div className="text-2xl font-bold mt-2">$87.32</div>
-                  <div className="text-white/70 text-sm flex items-center mt-1">
+                  <div className="text-foreground/70 text-sm flex items-center mt-1">
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                     </svg>
@@ -139,18 +139,18 @@ const CommerceAnalytics = () => {
                     { name: "Smart Watch", score: 79 }
                   ].map((product, i) => (
                     <div key={i} className="flex items-center justify-between">
-                      <span className="text-neutral-300">{product.name}</span>
+                      <span className="text-foreground/80">{product.name}</span>
                       <div className="flex items-center">
                         <div className="w-24 h-2 bg-gray-800 rounded-full mr-2 overflow-hidden">
                           <motion.div
-                            className="h-full bg-white"
+                            className="h-full bg-primary"
                             initial={{ width: 0 }}
                             whileInView={{ width: `${product.score}%` }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 + i * 0.1 }}
                           ></motion.div>
                         </div>
-                        <span className="text-sm text-white">{product.score}%</span>
+                        <span className="text-sm text-foreground">{product.score}%</span>
                       </div>
                     </div>
                   ))}

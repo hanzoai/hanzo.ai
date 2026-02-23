@@ -12,22 +12,22 @@ import {
 
 const benefits = [
   {
-    icon: <Zap className="h-6 w-6 text-white/60" />,
+    icon: <Zap className="h-6 w-6 text-foreground/60" />,
     title: "Precision Monitoring",
     description: "Identify exactly where and why issues occur in real-time."
   },
   {
-    icon: <Target className="h-6 w-6 text-white/70" />,
+    icon: <Target className="h-6 w-6 text-foreground/70" />,
     title: "Faster Debugging",
     description: "Detailed traces and logs provide the clarity needed for rapid resolution."
   },
   {
-    icon: <Lightbulb className="h-6 w-6 text-white/60" />,
+    icon: <Lightbulb className="h-6 w-6 text-foreground/60" />,
     title: "Optimized User Experiences",
     description: "Understand user behavior deeply, driving improvements that matter."
   },
   {
-    icon: <BarChart4 className="h-6 w-6 text-white/70" />,
+    icon: <BarChart4 className="h-6 w-6 text-foreground/70" />,
     title: "Informed Decisions",
     description: "Reliable analytics and predictive insights empower smarter product and operational decisions."
   }
@@ -35,7 +35,7 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/20 to-black relative">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/20 to-background relative">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ const Benefits = () => {
                 {benefit.icon}
               </div>
               <h3 className="text-lg font-bold mb-3">{benefit.title}</h3>
-              <p className="text-neutral-400 text-sm">{benefit.description}</p>
+              <p className="text-muted-foreground text-sm">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
@@ -74,10 +74,10 @@ const Benefits = () => {
           className="mt-20 text-center"
         >
           <div className="inline-block p-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-xl">
-            <blockquote className="text-xl italic text-neutral-300 max-w-2xl mx-auto">
+            <blockquote className="text-xl italic text-foreground/80 max-w-2xl mx-auto">
               "Hanzo Observability has been critical to our AI operations, giving us unprecedented visibility into our models' performance and significantly improving our debugging time."
             </blockquote>
-            <div className="mt-4 text-neutral-400">
+            <div className="mt-4 text-muted-foreground">
               <div className="font-medium">Alex Chen</div>
               <div className="text-sm">AI Engineering Lead, Triller</div>
             </div>

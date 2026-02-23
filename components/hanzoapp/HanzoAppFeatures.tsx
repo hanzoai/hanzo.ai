@@ -18,20 +18,20 @@ const FeatureCard = ({ title, description, icon, list, code = null }) => {
         <div className="mb-6">
           {icon}
           <h3 className="text-2xl font-semibold mt-4 mb-2">{title}</h3>
-          <p className="text-neutral-300 mb-4">{description}</p>
+          <p className="text-foreground/80 mb-4">{description}</p>
         </div>
         
         {list && (
           <div className="mb-4">
             {list.map((item, index) => (
-              <div key={index} className="text-neutral-400 mb-2">{item}</div>
+              <div key={index} className="text-muted-foreground mb-2">{item}</div>
             ))}
           </div>
         )}
         
         {code && (
           <div className="mt-auto">
-            <div className="bg-gray-950 rounded-lg p-4 font-mono text-xs text-neutral-300 text-left overflow-auto">
+            <div className="bg-gray-950 rounded-lg p-4 font-mono text-xs text-foreground/80 text-left overflow-auto">
               <pre>{code}</pre>
             </div>
           </div>
@@ -59,14 +59,14 @@ const HanzoAppFeatures = () => {
           <FeatureCard 
             title="Chatflow LLM Orchestration"
             description="Connect LLMs with memory, data loaders, cache, moderation and many more"
-            icon={<MessageCircle className="h-10 w-10 text-white" />}
+            icon={<MessageCircle className="h-10 w-10 text-foreground" />}
             list={["Langchain", "LlamaIndex", "100+ integrations"]}
           />
           
           <FeatureCard 
             title="Agents & Assistants"
             description="Create autonomous agent that can uses tools to execute different tasks"
-            icon={<Bot className="h-10 w-10 text-white" />}
+            icon={<Bot className="h-10 w-10 text-foreground" />}
             list={["Custom Tools", "OpenAI Assistant", "Function Agent"]}
             code={`import requests
  
@@ -87,7 +87,7 @@ output = query({
           <FeatureCard 
             title="Developer Friendly API, SDK, Embed"
             description="Extend and integrate to your applications using APIs, SDK and Embedded Chat"
-            icon={<Code className="h-10 w-10 text-white" />}
+            icon={<Code className="h-10 w-10 text-foreground" />}
             list={["APIs", "Embedded Widget", "React SDK"]}
           />
         </div>
@@ -106,7 +106,7 @@ output = query({
           <FeatureCard 
             title="Platform Agnostic Open source LLMs"
             description="Run in air-gapped environment with local LLMs, embeddings and vector databases"
-            icon={<ServerIcon className="h-10 w-10 text-white" />}
+            icon={<ServerIcon className="h-10 w-10 text-foreground" />}
             list={[
               "HuggingFace, Ollama, LocalAI, Replicate", 
               "Llama2, Mistral, Vicuna, Orca, Llava", 

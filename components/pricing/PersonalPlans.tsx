@@ -6,7 +6,7 @@ const PersonalPlans = () => {
   const plans = [
     {
       name: "Dev",
-      icon: <Github className="h-6 w-6 text-neutral-400" />,
+      icon: <Github className="h-6 w-6 text-muted-foreground" />,
       price: "Free",
       billingPeriod: " forever",
       description: "Open source tools, run locally and privately",
@@ -24,7 +24,7 @@ const PersonalPlans = () => {
     },
     {
       name: "Pro",
-      icon: <Code className="h-6 w-6 text-neutral-400" />,
+      icon: <Code className="h-6 w-6 text-muted-foreground" />,
       price: "$20",
       billingPeriod: "/month",
       description: "Ideal for hobbyists and occasional use",
@@ -42,7 +42,7 @@ const PersonalPlans = () => {
     },
     {
       name: "Max",
-      icon: <Zap className="h-6 w-6 text-neutral-400" />,
+      icon: <Zap className="h-6 w-6 text-muted-foreground" />,
       price: "$200",
       billingPeriod: "/month",
       description: "For professionals and small businesses",

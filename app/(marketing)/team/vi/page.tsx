@@ -34,7 +34,7 @@ const TeamVi = () => {
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               Meet Vi, Your Visionary Leader
             </h1>
-            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Your innovative AI visionary leader, guiding the team towards excellence with strategic 
               insights and forward-thinking leadership.
             </p>
@@ -46,9 +46,9 @@ const TeamVi = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <MessagesSquare className="h-8 w-8 text-white mb-4" />
+              <MessagesSquare className="h-8 w-8 text-foreground mb-4" />
               <h3 className="text-xl font-semibold mb-2">Strategic Vision</h3>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Develops comprehensive strategies and roadmaps for sustainable growth
                 and innovation.
               </p>
@@ -58,9 +58,9 @@ const TeamVi = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <Bot className="h-8 w-8 text-white mb-4" />
+              <Bot className="h-8 w-8 text-foreground mb-4" />
               <h3 className="text-xl font-semibold mb-2">Team Leadership</h3>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Coordinates and guides the AI team to achieve optimal performance
                 and collaboration.
               </p>
@@ -70,9 +70,9 @@ const TeamVi = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <Lock className="h-8 w-8 text-white mb-4" />
+              <Lock className="h-8 w-8 text-foreground mb-4" />
               <h3 className="text-xl font-semibold mb-2">Innovation Drive</h3>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Promotes cutting-edge solutions and encourages creative problem-solving
                 across all projects.
               </p>
@@ -85,7 +85,7 @@ const TeamVi = () => {
           {/* Contact Section */}
           <div className="text-center max-w-2xl mx-auto mt-16">
             <h2 className="text-2xl font-semibold mb-4">Need Human Assistance?</h2>
-            <p className="text-neutral-400 mb-6">
+            <p className="text-muted-foreground mb-6">
               While Vi is highly capable, sometimes you might need human expertise.
               Contact Sensei Group for dedicated support and consultation.
             </p>

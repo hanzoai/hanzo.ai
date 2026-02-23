@@ -140,10 +140,10 @@ const DigitalAssets = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-border mb-8"
           >
-            <Building2 className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white/70">Digital Asset Infrastructure</span>
+            <Building2 className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground/70">Digital Asset Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -152,7 +152,7 @@ const DigitalAssets = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">Move. Hold.</span>
+            <span className="text-foreground">Move. Hold.</span>
             <br />
             <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               Manage. Issue.
@@ -163,7 +163,7 @@ const DigitalAssets = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto"
           >
             Complete infrastructure for digital assets. From payments to tokenization,
             custody to compliance—everything you need to build financial applications.
@@ -178,14 +178,14 @@ const DigitalAssets = () => {
           >
             <a
               href="https://cloud.hanzo.ai/signup"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/20 text-foreground font-medium rounded-full transition-colors"
             >
               Start Building
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="/contact/sales"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               Talk to Sales
             </a>
@@ -197,7 +197,7 @@ const DigitalAssets = () => {
       {infrastructureCategories.map((category, categoryIndex) => (
         <section
           key={category.title}
-          className={`py-20 px-4 md:px-8 ${categoryIndex % 2 === 1 ? "bg-neutral-950" : ""}`}
+          className={`py-20 px-4 md:px-8 ${categoryIndex % 2 === 1 ? "bg-background" : ""}`}
         >
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -206,8 +206,8 @@ const DigitalAssets = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{category.title}</h2>
-              <p className="text-xl text-neutral-400">{category.subtitle}</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">{category.title}</h2>
+              <p className="text-xl text-muted-foreground">{category.subtitle}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -223,15 +223,15 @@ const DigitalAssets = () => {
                   >
                     <Link
                       href={product.href || "#"}
-                      className="block bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-white/30 transition-colors group h-full"
+                      className="block bg-secondary/50 border border-border rounded-xl p-5 hover:border-white/30 transition-colors group h-full"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-3">
-                        <Icon className="w-5 h-5 text-white" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                        <Icon className="w-5 h-5 text-foreground" />
                       </div>
-                      <h3 className="font-semibold text-white mb-1 group-hover:text-white transition-colors">
+                      <h3 className="font-semibold text-foreground mb-1 group-hover:text-foreground transition-colors">
                         {product.name}
                       </h3>
-                      <p className="text-sm text-neutral-500">{product.description}</p>
+                      <p className="text-sm text-muted-foreground">{product.description}</p>
                     </Link>
                   </motion.div>
                 );
@@ -242,7 +242,7 @@ const DigitalAssets = () => {
       ))}
 
       {/* White Label Products */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,14 +250,14 @@ const DigitalAssets = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
-              <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white/70">White-Label Solutions</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-border mb-6">
+              <Sparkles className="w-4 h-4 text-foreground" />
+              <span className="text-sm font-medium text-foreground/70">White-Label Solutions</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Launch Your Own Products
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Deploy fully-branded blockchain infrastructure on your chain with your tokens.
               Powered by Hanzo, owned by you.
             </p>
@@ -273,17 +273,17 @@ const DigitalAssets = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-white/30 transition-colors"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-6 h-6 text-foreground" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
-                  <p className="text-neutral-400 text-sm mb-4">{product.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{product.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
                   <ul className="space-y-1">
                     {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-xs text-neutral-500">
-                        <Check className="w-3 h-3 text-white" />
+                      <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Check className="w-3 h-3 text-foreground" />
                         {feature}
                       </li>
                     ))}
@@ -299,12 +299,12 @@ const DigitalAssets = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <p className="text-neutral-500 mb-4">
+            <p className="text-muted-foreground mb-4">
               All products deploy from your Hanzo dashboard with custom branding
             </p>
             <Link
               href="/contact/sales"
-              className="inline-flex items-center gap-2 text-white hover:text-white/70 font-medium"
+              className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 font-medium"
             >
               Contact sales for white-label pricing <ArrowRight className="w-4 h-4" />
             </Link>
@@ -321,24 +321,24 @@ const DigitalAssets = () => {
             viewport={{ once: true }}
             className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/30 rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Ready to Build?
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
               From simple payment integration to launching your own chain—we scale with you.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://cloud.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/20 text-foreground font-medium rounded-full transition-colors"
               >
                 Get Started Free
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="https://docs.hanzo.ai/blockchain"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
               >
                 Read Documentation
               </a>

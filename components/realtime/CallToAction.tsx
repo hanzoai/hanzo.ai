@@ -15,10 +15,10 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/30 mb-6"
+          className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-white/30 mb-6"
         >
-          <Activity className="h-4 w-4 text-white mr-2" />
-          <span className="text-sm text-white/70">Get Started Today</span>
+          <Activity className="h-4 w-4 text-foreground mr-2" />
+          <span className="text-sm text-foreground/70">Get Started Today</span>
         </motion.div>
         
         <motion.h2
@@ -36,7 +36,7 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl text-neutral-300 mb-8"
+          className="text-xl text-foreground/80 mb-8"
         >
           Join thousands of developers building with Hanzo Realtime.
           No credit card required to get started.
@@ -51,7 +51,7 @@ const CallToAction = () => {
         >
           <Button
             size="lg"
-            className="bg-white hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg w-full sm:w-auto"
+            className="bg-primary hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg w-full sm:w-auto"
           >
             Start Building <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

@@ -27,8 +27,6 @@ import {
   ExternalLink
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const RECENTLY_SHIPPED = [
   {
     icon: Cloud,
@@ -173,7 +171,7 @@ const ALL_FEATURES = [
 
 const Features = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/50">
+    <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-background to-neutral-900/50">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div
@@ -182,10 +180,10 @@ const Features = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Features
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Everything you need for agentic development
           </p>
         </motion.div>
@@ -200,7 +198,7 @@ const Features = () => {
           <div className="flex items-center gap-3 mb-8">
             <div
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+              style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
             >
               Recently Shipped
             </div>
@@ -219,26 +217,26 @@ const Features = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 hover:border-white/30/50 transition-all group"
+                  className="bg-secondary/80 border border-border rounded-xl p-6 hover:border-white/30/50 transition-all group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: `${BRAND_COLOR}20` }}
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
                     >
-                      <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-white/10 text-white/70">
+                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-primary/10 text-foreground/70">
                       New
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-white transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-foreground transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-neutral-400 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     {feature.description}
                   </p>
-                  <span className="text-sm text-white flex items-center gap-1">
+                  <span className="text-sm text-foreground flex items-center gap-1">
                     View Documentation
                     <ExternalLink className="w-3.5 h-3.5" />
                   </span>
@@ -259,15 +257,15 @@ const Features = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (index % 6) * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-neutral-700 transition-colors"
+                className="bg-secondary/50 border border-border rounded-xl p-5 hover:border-border transition-colors"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <Icon className="w-5 h-5 text-neutral-400" />
-                  <h4 className="text-sm font-medium text-white">
+                  <Icon className="w-5 h-5 text-muted-foreground" />
+                  <h4 className="text-sm font-medium text-foreground">
                     {feature.title}
                   </h4>
                 </div>
-                <p className="text-xs text-neutral-500 leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -286,7 +284,7 @@ const Features = () => {
             href="https://docs.hanzo.ai/roadmap"
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             See upcoming features
             <ArrowRight className="w-4 h-4" />

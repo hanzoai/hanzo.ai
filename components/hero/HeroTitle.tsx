@@ -59,7 +59,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         transition={{ duration: 0.5 }}
         className="mb-4 text-center"
       >
-        <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm font-medium mb-4">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-border text-foreground/70 text-sm font-medium mb-4">
           AI Engineering Platform
         </div>
       </motion.div>

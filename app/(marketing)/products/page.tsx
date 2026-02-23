@@ -127,22 +127,22 @@ const CopyButton = ({ text }: { text: string }) => {
   return (
     <button
       onClick={copy}
-      className="p-2 hover:bg-white/10 rounded transition-colors"
+      className="p-2 hover:bg-primary/10 rounded transition-colors"
       title="Copy to clipboard"
     >
-      {copied ? <Check className="h-4 w-4 text-white/70" /> : <Copy className="h-4 w-4 text-neutral-400" />}
+      {copied ? <Check className="h-4 w-4 text-foreground/70" /> : <Copy className="h-4 w-4 text-muted-foreground" />}
     </button>
   );
 };
 
 export default function Products() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/50 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)]" />
 
         <div className="max-w-6xl mx-auto relative z-10">
@@ -156,20 +156,20 @@ export default function Products() {
               The Complete AI Infrastructure
             </h1>
 
-            <p className="text-xl md:text-2xl text-neutral-400 mb-6">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6">
               The complete stack for AI-native applications.
             </p>
 
-            <p className="text-lg text-neutral-500 max-w-3xl mx-auto mb-10">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
               From databases to ML pipelines, serverless compute to observability.
               Everything you need to build, deploy, and scale AI applications.
             </p>
 
             {/* Quick Install */}
-            <div className="bg-neutral-900/50 rounded-2xl p-6 max-w-2xl mx-auto mb-10 border border-neutral-800">
-              <p className="text-sm text-neutral-400 mb-3">Get started in seconds</p>
-              <div className="flex items-center justify-between bg-black rounded-xl p-4 font-mono">
-                <code className="text-white/70">curl -fsSL hanzo.sh | bash</code>
+            <div className="bg-secondary/50 rounded-2xl p-6 max-w-2xl mx-auto mb-10 border border-border">
+              <p className="text-sm text-muted-foreground mb-3">Get started in seconds</p>
+              <div className="flex items-center justify-between bg-background rounded-xl p-4 font-mono">
+                <code className="text-foreground/70">curl -fsSL hanzo.sh | bash</code>
                 <CopyButton text="curl -fsSL hanzo.sh | bash" />
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function Products() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-white/20"
+                className="bg-primary text-primary-foreground hover:bg-primary/20"
                 asChild
               >
                 <Link href="/pricing">
@@ -188,7 +188,7 @@ export default function Products() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-neutral-700 hover:bg-neutral-900 hover:border-neutral-600"
+                className="border-border hover:bg-secondary hover:border-neutral-600"
                 asChild
               >
                 <a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer">
@@ -202,9 +202,9 @@ export default function Products() {
       </section>
 
       {/* Partners */}
-      <section className="py-12 px-4 border-t border-white/5">
+      <section className="py-12 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">
             Trusted by teams at
           </p>
           <PartnerLogoRow
@@ -231,26 +231,26 @@ export default function Products() {
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
                   <Link href={category.href || "#"}>
-                    <Card className="bg-neutral-900/50 border-neutral-800 hover:border-neutral-600 transition-all duration-300 h-full group cursor-pointer hover:bg-neutral-900/80">
+                    <Card className="bg-secondary/50 border-border hover:border-neutral-600 transition-all duration-300 h-full group cursor-pointer hover:bg-secondary/80">
                       <CardHeader>
                         <div className="flex items-start justify-between">
-                          <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
-                            <IconComponent className="h-6 w-6 text-white" />
+                          <div className="p-3 rounded-xl bg-primary/5 border border-border group-hover:border-border transition-colors">
+                            <IconComponent className="h-6 w-6 text-foreground" />
                           </div>
-                          <span className="text-sm text-neutral-500">
+                          <span className="text-sm text-muted-foreground">
                             {productCount} products
                           </span>
                         </div>
-                        <CardTitle className="text-xl mt-4 group-hover:text-white transition-colors flex items-center gap-2">
+                        <CardTitle className="text-xl mt-4 group-hover:text-foreground transition-colors flex items-center gap-2">
                           {category.name}
                           <ArrowRight className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </CardTitle>
-                        <CardDescription className="text-neutral-400">
+                        <CardDescription className="text-muted-foreground">
                           {category.tagline}
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm text-neutral-500">
+                        <p className="text-sm text-muted-foreground">
                           {category.description}
                         </p>
                       </CardContent>
@@ -269,15 +269,15 @@ export default function Products() {
         const CategoryIcon = iconMap[category.icon] || Database;
 
         return (
-          <section key={category.id} className="py-16 px-4 border-t border-white/5">
+          <section key={category.id} className="py-16 px-4 border-t border-border">
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                  <CategoryIcon className="h-5 w-5 text-white" />
+                <div className="p-2 rounded-lg bg-primary/5 border border-border">
+                  <CategoryIcon className="h-5 w-5 text-foreground" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold">{category.name}</h2>
-                  <p className="text-sm text-neutral-500">{category.tagline}</p>
+                  <p className="text-sm text-muted-foreground">{category.tagline}</p>
                 </div>
               </div>
 
@@ -292,24 +292,24 @@ export default function Products() {
                       transition={{ duration: 0.2, delay: idx * 0.03 }}
                     >
                       <Link href={product.href || "#"}>
-                        <div className="group p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-neutral-600 hover:bg-neutral-900/80 transition-all h-full">
+                        <div className="group p-4 rounded-xl bg-secondary/50 border border-border hover:border-neutral-600 hover:bg-secondary/80 transition-all h-full">
                           <div className="flex items-start gap-3">
-                            <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
-                              <ProductIcon className="h-4 w-4 text-neutral-400 group-hover:text-white transition-colors" />
+                            <div className="p-2 rounded-lg bg-primary/5 border border-border group-hover:border-border transition-colors">
+                              <ProductIcon className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2">
-                                <h3 className="font-medium text-sm group-hover:text-white transition-colors truncate">
+                                <h3 className="font-medium text-sm group-hover:text-foreground transition-colors truncate">
                                   {product.shortName}
                                 </h3>
                                 {product.status === 'beta' && (
-                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-white/60">beta</span>
+                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-foreground/60">beta</span>
                                 )}
                                 {product.status === 'coming' && (
-                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-500/20 text-neutral-400">soon</span>
+                                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-500/20 text-muted-foreground">soon</span>
                                 )}
                               </div>
-                              <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
+                              <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
                                 {product.tagline}
                               </p>
                             </div>
@@ -326,18 +326,18 @@ export default function Products() {
       })}
 
       {/* Zen Section */}
-      <section className="py-20 px-4 border-t border-white/10 bg-neutral-900/30">
+      <section className="py-20 px-4 border-t border-border bg-secondary/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Built on Zen
           </h2>
-          <p className="text-lg text-neutral-400 mb-8">
+          <p className="text-lg text-muted-foreground mb-8">
             Our flagship MoDE architecture LLM powers intelligent features across all Hanzo products.
             Context-aware, efficient, and designed for developers.
           </p>
           <Button
             variant="outline"
-            className="border-white/20 hover:bg-white/5"
+            className="border-border hover:bg-primary/5"
             asChild
           >
             <Link href="/zen">
@@ -349,18 +349,18 @@ export default function Products() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 border-t border-white/10">
+      <section className="py-24 px-4 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to build?
           </h2>
-          <p className="text-lg text-neutral-400 mb-10">
+          <p className="text-lg text-muted-foreground mb-10">
             Free tier for all products. No credit card required. Scale as you grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-white/20"
+              className="bg-primary text-primary-foreground hover:bg-primary/20"
               asChild
             >
               <Link href="/pricing">
@@ -371,7 +371,7 @@ export default function Products() {
             <Button
               size="lg"
               variant="outline"
-              className="border-neutral-700 hover:bg-neutral-900 hover:border-neutral-600"
+              className="border-border hover:bg-secondary hover:border-neutral-600"
               asChild
             >
               <Link href="/contact">

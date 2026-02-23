@@ -26,10 +26,10 @@ const ZapCodeExample = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Simple to Use
           </h2>
-          <p className="text-xl text-neutral-400">
+          <p className="text-xl text-muted-foreground">
             One daemon, multiple backends. Agents maintain a single long-lived connection.
           </p>
         </motion.div>
@@ -42,37 +42,37 @@ const ZapCodeExample = () => {
           className="relative"
         >
           {/* Terminal header */}
-          <div className="flex items-center gap-2 px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-t-xl">
+          <div className="flex items-center gap-2 px-4 py-3 bg-secondary border border-border rounded-t-xl">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-primary/10" />
+              <div className="w-3 h-3 rounded-full bg-primary/10" />
+              <div className="w-3 h-3 rounded-full bg-primary/10" />
             </div>
-            <div className="flex-1 flex items-center justify-center gap-2 text-sm text-neutral-500">
+            <div className="flex-1 flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <Terminal className="w-4 h-4" />
               <span>Terminal</span>
             </div>
-            <button className="p-1 hover:bg-neutral-800 rounded transition-colors">
-              <Copy className="w-4 h-4 text-neutral-500" />
+            <button className="p-1 hover:bg-accent rounded transition-colors">
+              <Copy className="w-4 h-4 text-muted-foreground" />
             </button>
           </div>
 
           {/* Terminal content */}
-          <div className="bg-black/80 backdrop-blur-sm border border-t-0 border-neutral-800 rounded-b-xl p-6 font-mono text-sm">
+          <div className="bg-background/80 backdrop-blur-sm border border-t-0 border-border rounded-b-xl p-6 font-mono text-sm">
             {codeLines.map((line, index) => (
               <div key={index} className={line.type === "empty" ? "h-4" : ""}>
                 {line.type === "comment" && (
-                  <span className="text-neutral-500">{line.text}</span>
+                  <span className="text-muted-foreground">{line.text}</span>
                 )}
                 {line.type === "command" && (
-                  <span className="text-white/70">{line.text}</span>
+                  <span className="text-foreground/70">{line.text}</span>
                 )}
               </div>
             ))}
           </div>
 
           {/* Decorative glow */}
-          <div className="absolute -inset-4 bg-white/5 rounded-2xl blur-2xl -z-10" />
+          <div className="absolute -inset-4 bg-primary/5 rounded-2xl blur-2xl -z-10" />
         </motion.div>
 
         <motion.p
@@ -80,9 +80,9 @@ const ZapCodeExample = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mt-8 text-neutral-400"
+          className="text-center mt-8 text-muted-foreground"
         >
-          <span className="text-white/70 font-mono">zapd</span> multiplexes tools/resources
+          <span className="text-foreground/70 font-mono">zapd</span> multiplexes tools/resources
           across MCP servers (or ZAP-native servers).
         </motion.p>
       </div>

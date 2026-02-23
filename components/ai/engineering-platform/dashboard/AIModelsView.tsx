@@ -14,11 +14,11 @@ const AIModelsView = () => {
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-medium text-[var(--white)]">AI Model Registry</h3>
         <div className="flex space-x-2">
-          <button className="px-2 py-1 bg-white/40 rounded-md text-xs text-white/70 flex items-center">
+          <button className="px-2 py-1 bg-primary/40 rounded-md text-xs text-foreground/70 flex items-center">
             <BrainCog className="w-3 h-3 mr-1" />
             Deploy Model
           </button>
-          <button className="px-2 py-1 bg-gray-800 rounded-md text-xs text-neutral-400 flex items-center">
+          <button className="px-2 py-1 bg-gray-800 rounded-md text-xs text-muted-foreground flex items-center">
             <Terminal className="w-3 h-3 mr-1" />
             Import
           </button>
@@ -29,7 +29,7 @@ const AIModelsView = () => {
         {aiModels.map((model) => (
           <motion.div
             key={model.id}
-            className={`p-3 rounded-lg border ${selectedModel === model.id ? "bg-white/10 border-white/40" : "bg-gray-800/40 border-gray-700/40"} hover:bg-gray-800/60 transition-colors cursor-pointer`}
+            className={`p-3 rounded-lg border ${selectedModel === model.id ? "bg-primary/10 border-white/40" : "bg-gray-800/40 border-gray-700/40"} hover:bg-gray-800/60 transition-colors cursor-pointer`}
             onClick={() => setSelectedModel(model.id)}
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
@@ -37,20 +37,20 @@ const AIModelsView = () => {
             <div className="flex items-start justify-between">
               <div>
                 <div className="flex items-center">
-                  <BrainCircuit className="w-4 h-4 text-white mr-2" />
+                  <BrainCircuit className="w-4 h-4 text-foreground mr-2" />
                   <span className="font-medium text-[var(--white)] text-sm">{model.name}</span>
-                  <span className="ml-2 px-1.5 py-0.5 bg-gray-700/60 rounded text-xs text-neutral-300">{model.type}</span>
+                  <span className="ml-2 px-1.5 py-0.5 bg-gray-700/60 rounded text-xs text-foreground/80">{model.type}</span>
                 </div>
-                <div className="text-xs text-neutral-400 mt-1">Provider: {model.provider}</div>
+                <div className="text-xs text-muted-foreground mt-1">Provider: {model.provider}</div>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="text-right">
-                  <div className="text-xs text-neutral-400">Accuracy</div>
-                  <div className="text-sm font-medium text-white/70">{model.accuracy}%</div>
+                  <div className="text-xs text-muted-foreground">Accuracy</div>
+                  <div className="text-sm font-medium text-foreground/70">{model.accuracy}%</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-neutral-400">Latency</div>
-                  <div className="text-sm font-medium text-white/70">{model.latency}ms</div>
+                  <div className="text-xs text-muted-foreground">Latency</div>
+                  <div className="text-sm font-medium text-foreground/70">{model.latency}ms</div>
                 </div>
               </div>
             </div>
@@ -62,15 +62,15 @@ const AIModelsView = () => {
                 animate={{ opacity: 1, height: "auto" }}
                 transition={{ duration: 0.3 }}
               >
-                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-neutral-300 flex items-center justify-center">
+                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-foreground/80 flex items-center justify-center">
                   <Activity className="w-3 h-3 mr-1.5" />
                   Benchmark
                 </button>
-                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-neutral-300 flex items-center justify-center">
+                <button className="px-2 py-1.5 bg-gray-700/40 rounded text-xs text-foreground/80 flex items-center justify-center">
                   <ServerCog className="w-3 h-3 mr-1.5" />
                   Fine-tune
                 </button>
-                <button className="px-2 py-1.5 bg-white/30 rounded text-xs text-white/70 flex items-center justify-center">
+                <button className="px-2 py-1.5 bg-primary/30 rounded text-xs text-foreground/70 flex items-center justify-center">
                   <Zap className="w-3 h-3 mr-1.5" />
                   Deploy
                 </button>

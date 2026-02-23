@@ -17,14 +17,14 @@ const StatusSelector: React.FC<StatusSelectorProps> = ({ status, onChange }) => 
 
   return (
     <div>
-      <label className="block text-sm font-medium text-neutral-400 mb-1">Status</label>
+      <label className="block text-sm font-medium text-muted-foreground mb-1">Status</label>
       <div className="space-y-1">
         {statusOptions.map(option => (
           <div 
             key={option.value}
             className={`px-3 py-2 rounded cursor-pointer ${
               status === option.value 
-                ? 'bg-white/10 border border-white/20' 
+                ? 'bg-primary/10 border border-border' 
                 : 'hover:bg-gray-800'
             }`}
             onClick={() => onChange(option.value)}

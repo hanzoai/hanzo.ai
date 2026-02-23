@@ -41,8 +41,8 @@ const Testimonials = () => {
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -55,7 +55,7 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Loved by GenAI Developers
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Hear what our users say about building with Hanzo Vector
           </p>
         </motion.div>
@@ -70,13 +70,13 @@ const Testimonials = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 relative"
             >
-              <div className="absolute -top-4 left-8 text-5xl text-white">"</div>
-              <p className="text-neutral-300 mb-8 relative z-10 pt-4">
+              <div className="absolute -top-4 left-8 text-5xl text-foreground">"</div>
+              <p className="text-foreground/80 mb-8 relative z-10 pt-4">
                 {testimonial.quote}
               </p>
               <div>
                 <h4 className="text-[var(--white)] font-semibold">{testimonial.author}</h4>
-                <p className="text-neutral-400 text-sm">{testimonial.position}, {testimonial.company}</p>
+                <p className="text-muted-foreground text-sm">{testimonial.position}, {testimonial.company}</p>
               </div>
             </motion.div>
           ))}
@@ -101,7 +101,7 @@ const Testimonials = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="text-neutral-500 font-medium text-lg"
+                className="text-muted-foreground font-medium text-lg"
               >
                 {company}
               </motion.div>

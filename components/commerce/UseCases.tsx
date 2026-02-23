@@ -16,8 +16,8 @@ const UseCaseCard = ({ title, description, image, color, index }: UseCaseCardPro
     <div className={`relative overflow-hidden rounded-xl border border-gray-800 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} flex flex-col h-full`}>
       <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
         <h3 className={`text-2xl font-bold mb-4 text-${color}-400`}>{title}</h3>
-        <p className="text-neutral-400 mb-4">{description}</p>
-        <Button variant="link" size="sm" className="text-white/60 hover:text-white/60 p-0 w-fit">
+        <p className="text-muted-foreground mb-4">{description}</p>
+        <Button variant="link" size="sm" className="text-foreground/60 hover:text-foreground/60 p-0 w-fit">
           Learn more <ArrowRight className="ml-1 h-4 w-4" />
         </Button>
       </div>
@@ -60,7 +60,7 @@ const UseCases = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Use Cases</h2>
-          <p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             See how businesses leverage Hanzo Commerce to create exceptional shopping experiences.
           </p>
         </div>

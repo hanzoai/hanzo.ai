@@ -4,8 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Download, Settings, Rocket, ArrowRight } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const steps = [
   {
     number: "01",
@@ -32,7 +30,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-black">
+    <section className="py-24 px-4 md:px-8 bg-background">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,10 +38,10 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Get started in minutes
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Three steps to productive AI-assisted development.
           </p>
         </motion.div>
@@ -66,31 +64,31 @@ const HowItWorks = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-8 h-8 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: `${BRAND_COLOR}20` }}
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
                     >
-                      <span className="text-sm font-bold" style={{ color: BRAND_COLOR }}>
+                      <span className="text-sm font-bold">
                         {step.number}
                       </span>
                     </div>
-                    <Icon className="w-5 h-5 text-neutral-400" />
+                    <Icon className="w-5 h-5 text-muted-foreground" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-neutral-400 mb-4">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground mb-4">{step.description}</p>
                 </div>
 
                 <div className={isEven ? "lg:order-1" : ""}>
-                  <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-4">
+                  <div className="bg-secondary/80 border border-border rounded-xl p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-white/10" />
-                        <div className="w-3 h-3 rounded-full bg-white/10" />
-                        <div className="w-3 h-3 rounded-full bg-white/10" />
+                        <div className="w-3 h-3 rounded-full bg-primary/10" />
+                        <div className="w-3 h-3 rounded-full bg-primary/10" />
+                        <div className="w-3 h-3 rounded-full bg-primary/10" />
                       </div>
-                      <span className="text-xs text-neutral-500 font-mono">terminal</span>
+                      <span className="text-xs text-muted-foreground font-mono">terminal</span>
                     </div>
                     <div className="font-mono text-sm">
-                      <span className="text-neutral-500">$ </span>
-                      <span className="text-white/70">{step.code}</span>
+                      <span className="text-muted-foreground">$ </span>
+                      <span className="text-foreground/70">{step.code}</span>
                     </div>
                   </div>
                 </div>

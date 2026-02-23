@@ -22,13 +22,13 @@ const UnifiedAICloud: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="bg-gradient-to-br from-white/20 to-white/5 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
+          className="bg-gradient-to-br from-white/20 to-white/5 p-6 rounded-xl border border-border hover:border-white/40 transition-all duration-300"
         >
-          <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <Users className="h-6 w-6 text-white" />
+          <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <Users className="h-6 w-6 text-foreground" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Enterprise Infrastructure</h3>
-          <p className="text-neutral-300">
+          <p className="text-foreground/80">
             Scalable, secure infrastructure designed for enterprise AI workloads, with global availability, 
             compliance-ready security, and managed services.
           </p>
@@ -39,13 +39,13 @@ const UnifiedAICloud: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
+          className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-xl border border-border hover:border-white/40 transition-all duration-300"
         >
-          <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <BookOpen className="h-6 w-6 text-white" />
+          <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <BookOpen className="h-6 w-6 text-foreground" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Developer Experience</h3>
-          <p className="text-neutral-300">
+          <p className="text-foreground/80">
             Comprehensive tooling and frameworks that accelerate development, simplify deployments, and reduce 
             time-to-market for AI-powered applications.
           </p>
@@ -56,13 +56,13 @@ const UnifiedAICloud: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="bg-gradient-to-br from-white/20 to-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
+          className="bg-gradient-to-br from-white/20 to-white/10 p-6 rounded-xl border border-border hover:border-white/40 transition-all duration-300"
         >
-          <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <Shield className="h-6 w-6 text-white/70" />
+          <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <Shield className="h-6 w-6 text-foreground/70" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Expert Services</h3>
-          <p className="text-neutral-300">
+          <p className="text-foreground/80">
             Access to industry and technical experts who help you strategize, implement, and optimize your AI 
             initiatives for maximum business impact.
           </p>
@@ -70,7 +70,7 @@ const UnifiedAICloud: React.FC = () => {
       </div>
       
       <div className="text-center">
-        <Button asChild size="lg" className="bg-white hover:bg-[#cccccc]">
+        <Button asChild size="lg" className="bg-primary hover:bg-[#cccccc]">
           <Link href="/cloud">
             Explore Our AI Cloud Platform <ChevronRight className="ml-2 h-5 w-5" />
           </Link>

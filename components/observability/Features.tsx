@@ -16,42 +16,42 @@ import {
 
 const features = [
   {
-    icon: <History className="h-7 w-7 text-white" />,
+    icon: <History className="h-7 w-7 text-foreground" />,
     title: "Tracing and Logging",
     description: "End-to-end traces for rapid debugging, detailed logs for every inference request."
   },
   {
-    icon: <BarChart className="h-7 w-7 text-white/70" />,
+    icon: <BarChart className="h-7 w-7 text-foreground/70" />,
     title: "Real-time Metrics",
     description: "Instant visibility into system health, latency, throughput, and cost efficiency."
   },
   {
-    icon: <MessageSquare className="h-7 w-7 text-white" />,
+    icon: <MessageSquare className="h-7 w-7 text-foreground" />,
     title: "Prompt Management",
     description: "Collaboratively version, test, and deploy prompts with low-latency retrieval."
   },
   {
-    icon: <Sparkles className="h-7 w-7 text-white/70" />,
+    icon: <Sparkles className="h-7 w-7 text-foreground/70" />,
     title: "Playground",
     description: "Experiment rapidly with different prompts and models directly in the Hanzo interface."
   },
   {
-    icon: <FileBadge className="h-7 w-7 text-white/70" />,
+    icon: <FileBadge className="h-7 w-7 text-foreground/70" />,
     title: "Evaluation & Feedback",
     description: "Collect, annotate, and systematically evaluate model outputs and user feedback."
   },
   {
-    icon: <Database className="h-7 w-7 text-white" />,
+    icon: <Database className="h-7 w-7 text-foreground" />,
     title: "Datasets",
     description: "Generate robust datasets from live production data to enhance model training and evaluation."
   },
   {
-    icon: <Users className="h-7 w-7 text-white/70" />,
+    icon: <Users className="h-7 w-7 text-foreground/70" />,
     title: "User Journey Analytics",
     description: "Visualize and optimize user paths, retention rates, and conversion funnels."
   },
   {
-    icon: <AlertTriangle className="h-7 w-7 text-white/60" />,
+    icon: <AlertTriangle className="h-7 w-7 text-foreground/60" />,
     title: "Predictive Analytics",
     description: "AI-driven anomaly detection and predictive alerts prevent downtime and performance degradation."
   }
@@ -59,7 +59,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/20 to-black relative">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900/20 to-background relative">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -71,7 +71,7 @@ const Features = () => {
           className="max-w-3xl mx-auto text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Complete Observability for Your AI Stack</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             Hanzo Observability equips your team with powerful tools for real-time monitoring, comprehensive tracing, and actionable insights.
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ const Features = () => {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-neutral-400">{feature.description}</p>
+              <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </div>

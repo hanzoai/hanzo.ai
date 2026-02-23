@@ -6,8 +6,6 @@ import Link from "next/link";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const BRAND_COLOR = "#ffffff";
-
 const plans = [
   {
     name: "Pro",
@@ -54,7 +52,7 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section className="py-24 px-4 bg-black">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,14 +62,14 @@ const PricingSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
           >
             Pricing
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Choose your plan
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Start building with Hanzo Dev today. Scale as your needs grow.
           </p>
         </motion.div>
@@ -87,38 +85,38 @@ const PricingSection = () => {
               className={`relative rounded-2xl p-8 ${
                 plan.highlight
                   ? "bg-gradient-to-b from-white/20 to-transparent border-2"
-                  : "bg-neutral-900/50 border"
-              } border-neutral-800`}
-              style={plan.highlight ? { borderColor: BRAND_COLOR } : {}}
+                  : "bg-secondary/50 border"
+              } border-border`}
+              style={plan.highlight ? { borderColor: "var(--primary)" } : {}}
             >
               {plan.highlight && (
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium text-black"
-                  style={{ backgroundColor: BRAND_COLOR }}
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium text-primary-foreground"
+
                 >
                   Most Popular
                 </div>
               )}
 
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{plan.name}</h3>
-                <p className="text-sm text-neutral-400">{plan.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground">{plan.description}</p>
               </div>
 
               <div className="mb-6">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
                 </div>
-                <p className="text-xs text-neutral-500 mt-2">{plan.period}</p>
+                <p className="text-xs text-muted-foreground mt-2">{plan.period}</p>
               </div>
 
               <Button
                 className={`w-full mb-6 ${
                   plan.highlight
-                    ? "text-black"
-                    : "bg-white/10 hover:bg-white/20 text-white"
+                    ? "text-primary-foreground"
+                    : "bg-primary/10 hover:bg-primary/20 text-foreground"
                 }`}
-                style={plan.highlight ? { backgroundColor: BRAND_COLOR } : {}}
+                style={plan.highlight ? { backgroundColor: "var(--primary)" } : {}}
                 asChild
               >
                 <Link href="/signup">
@@ -130,8 +128,8 @@ const PricingSection = () => {
               <ul className="space-y-3">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-white/70 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-neutral-300">{feature}</span>
+                    <Check className="w-5 h-5 text-foreground/70 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-foreground/80">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -143,7 +141,7 @@ const PricingSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-neutral-500 mt-8"
+          className="text-center text-sm text-muted-foreground mt-8"
         >
           Extra usage limits apply. Prices shown don't include applicable tax.
         </motion.p>

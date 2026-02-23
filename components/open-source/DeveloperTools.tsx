@@ -20,7 +20,7 @@ const DeveloperTools = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Developer Tools
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Tools and libraries that enhance developer productivity
           </p>
         </motion.div>
@@ -32,16 +32,16 @@ const DeveloperTools = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Code className="h-8 w-8 text-white/70 mr-3" />
+              <Code className="h-8 w-8 text-foreground/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo Dev</h3>
             </div>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               AI-powered software engineering assistant that helps you write, debug, and document code.
             </p>
-            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>3.2k stars</span>
@@ -57,7 +57,7 @@ const DeveloperTools = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-white/10 hover:bg-white/10"
+              className="w-full bg-primary/10 hover:bg-primary/10"
             >
               <a href="https://github.com/hanzoai/dev" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -71,16 +71,16 @@ const DeveloperTools = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Users className="h-8 w-8 text-white/70 mr-3" />
+              <Users className="h-8 w-8 text-foreground/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo Team</h3>
             </div>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               An integrated collaboration platform with AI-powered tools for remote teams.
             </p>
-            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>2.7k stars</span>
@@ -96,7 +96,7 @@ const DeveloperTools = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-white/10 hover:bg-white/10"
+              className="w-full bg-primary/10 hover:bg-primary/10"
             >
               <a href="https://github.com/hanzoai/team" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -110,16 +110,16 @@ const DeveloperTools = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Terminal className="h-8 w-8 text-white/70 mr-3" />
+              <Terminal className="h-8 w-8 text-foreground/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo CLI</h3>
             </div>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               Command-line interface for scaffolding and managing Hanzo applications. Create, deploy, and manage with ease.
             </p>
-            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>1.9k stars</span>
@@ -135,7 +135,7 @@ const DeveloperTools = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-white/10 hover:bg-white/10"
+              className="w-full bg-primary/10 hover:bg-primary/10"
             >
               <a href="https://github.com/hanzoai/cli" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -145,7 +145,7 @@ const DeveloperTools = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-white/20 text-[var(--white)] hover:bg-white/10">
+          <Button size="lg" variant="outline" className="border-border text-[var(--white)] hover:bg-primary/10">
             <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Github className="mr-2 h-5 w-5" /> View All Projects
             </a>

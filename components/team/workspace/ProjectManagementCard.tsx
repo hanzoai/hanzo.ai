@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { Kanban, CheckCircle, Bot } from "lucide-react";
 import { Badge } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const ProjectManagementCard = () => {
   return (
     <motion.div
@@ -18,12 +16,12 @@ const ProjectManagementCard = () => {
       className="bg-card border border-border rounded-xl overflow-hidden shadow-xl"
     >
       <div className="border-b border-border p-3 flex items-center">
-        <Kanban className="h-5 w-5 mr-2" style={{ color: BRAND_COLOR }} />
+        <Kanban className="h-5 w-5 mr-2" />
         <span className="font-medium text-foreground">Project Management</span>
         <Badge
           variant="outline"
           className="ml-auto"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Linear-style
         </Badge>
@@ -33,34 +31,34 @@ const ProjectManagementCard = () => {
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
               <h3 className="font-medium text-foreground">Website Redesign</h3>
-              <Badge className="ml-2 bg-white/20 text-white border-white/30">In Progress</Badge>
+              <Badge className="ml-2 bg-primary/20 text-foreground border-white/30">In Progress</Badge>
             </div>
             <div className="flex space-x-2">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-black" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+              <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-primary-foreground">AI</div>
               <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs text-muted-foreground">JD</div>
             </div>
           </div>
 
           <div className="space-y-3">
             <div className="flex items-center p-2 bg-secondary/50 rounded-md border border-border">
-              <CheckCircle className="h-4 w-4 text-white/70 mr-2" />
+              <CheckCircle className="h-4 w-4 text-foreground/70 mr-2" />
               <span className="text-sm text-foreground">Create wireframes</span>
               <div className="ml-auto flex items-center space-x-1">
                 <div className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-xs text-muted-foreground">JD</div>
               </div>
             </div>
             <div className="flex items-center p-2 bg-secondary/50 rounded-md border border-border">
-              <CheckCircle className="h-4 w-4 text-white/70 mr-2" />
+              <CheckCircle className="h-4 w-4 text-foreground/70 mr-2" />
               <span className="text-sm text-foreground">Design homepage</span>
               <div className="ml-auto flex items-center space-x-1">
-                <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs text-black" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+                <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs text-primary-foreground">AI</div>
               </div>
             </div>
             <div
               className="flex items-center p-2 rounded-md"
-              style={{ backgroundColor: `${BRAND_COLOR}20`, border: `1px solid ${BRAND_COLOR}50` }}
+              style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 30%, transparent)" }}
             >
-              <Bot className="h-4 w-4 mr-2" style={{ color: BRAND_COLOR }} />
+              <Bot className="h-4 w-4 mr-2" />
               <span className="text-sm text-foreground">AI working: Implementing frontend code</span>
             </div>
           </div>

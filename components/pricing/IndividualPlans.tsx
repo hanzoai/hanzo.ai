@@ -26,7 +26,7 @@ const IndividualPlans = () => {
   const plans = [
     {
       name: "Pro",
-      icon: <Code className="h-6 w-6 text-neutral-400" />,
+      icon: <Code className="h-6 w-6 text-muted-foreground" />,
       price: "$20",
       billingPeriod: "/month",
       description: "Ideal for hobbyists and occasional use",
@@ -44,7 +44,7 @@ const IndividualPlans = () => {
     },
     {
       name: "Max",
-      icon: <Zap className="h-6 w-6 text-neutral-400" />,
+      icon: <Zap className="h-6 w-6 text-muted-foreground" />,
       price: "$200",
       billingPeriod: "/month",
       description: "For professionals and small businesses",
@@ -63,7 +63,7 @@ const IndividualPlans = () => {
     },
     {
       name: "Team",
-      icon: <Users className="h-6 w-6 text-neutral-400" />,
+      icon: <Users className="h-6 w-6 text-muted-foreground" />,
       price: "$30",
       billingPeriod: "/user/month",
       description: "Collaborative teams requiring unified billing",

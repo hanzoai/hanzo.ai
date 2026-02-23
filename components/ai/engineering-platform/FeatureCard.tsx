@@ -41,13 +41,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       </div>
       
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-neutral-400 mb-4 flex-grow">{description}</p>
+      <p className="text-muted-foreground mb-4 flex-grow">{description}</p>
       
       <ul className="space-y-2">
         {featurePoints.map((point, index) => (
           <li key={index} className="flex items-start">
             <span className={`${bulletColor} mr-2 text-lg`}>•</span>
-            <span className="text-sm text-neutral-300">{point.text}</span>
+            <span className="text-sm text-foreground/80">{point.text}</span>
           </li>
         ))}
       </ul>

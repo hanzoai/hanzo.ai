@@ -34,7 +34,7 @@ const TeamDev = () => {
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               Meet Dev, Your AI Developer
             </h1>
-            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Your expert AI developer, specializing in full-stack development and system architecture.
               Working alongside you in various platforms to bring your ideas to life.
             </p>
@@ -46,9 +46,9 @@ const TeamDev = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <MessagesSquare className="h-8 w-8 text-white mb-4" />
+              <MessagesSquare className="h-8 w-8 text-foreground mb-4" />
               <h3 className="text-xl font-semibold mb-2">Chat Integration</h3>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Available on Slack, Mattermost, and Hanzo Chat for seamless collaboration
                 and real-time assistance.
               </p>
@@ -58,9 +58,9 @@ const TeamDev = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <Bot className="h-8 w-8 text-white/70 mb-4" />
+              <Bot className="h-8 w-8 text-foreground/70 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Hanzo Works</h3>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Our private AI-powered alternative to Google Apps, ensuring your data
                 stays secure and under your control.
               </p>
@@ -70,9 +70,9 @@ const TeamDev = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <Lock className="h-8 w-8 text-white/70 mb-4" />
+              <Lock className="h-8 w-8 text-foreground/70 mb-4" />
               <h3 className="text-xl font-semibold mb-2">On-Premise AI</h3>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Deploy Dev locally in your infrastructure for maximum security and
                 compliance with your organization's requirements.
               </p>
@@ -85,13 +85,13 @@ const TeamDev = () => {
           {/* Contact Section */}
           <div className="text-center max-w-2xl mx-auto mt-16">
             <h2 className="text-2xl font-semibold mb-4">Need Human Assistance?</h2>
-            <p className="text-neutral-400 mb-6">
+            <p className="text-muted-foreground mb-6">
               While Dev is highly capable, sometimes you might need human expertise.
               Contact Sensei Group for dedicated support and consultation.
             </p>
             <Button 
               onClick={handleContactSensei}
-              className="bg-white hover:bg-white/20"
+              className="bg-primary hover:bg-primary/20"
             >
               Contact Sensei Group
             </Button>

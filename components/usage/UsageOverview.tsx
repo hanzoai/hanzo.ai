@@ -49,36 +49,36 @@ const UsageOverview = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-neutral-400">Current Usage</span>
+              <span className="text-muted-foreground">Current Usage</span>
               <span>{currentUsage}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-neutral-400">Discounts</span>
+              <span className="text-muted-foreground">Discounts</span>
               <span>{discounts}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-neutral-400">Credits Used</span>
+              <span className="text-muted-foreground">Credits Used</span>
               <span>{creditsUsed}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-neutral-400">Estimated Month's Cost</span>
+              <span className="text-muted-foreground">Estimated Month's Cost</span>
               <span>{estimatedCost}</span>
             </div>
           </div>
           
           <div className="bg-gray-900/30 rounded-xl p-6 flex flex-col items-center justify-center text-center">
             <div className="mb-2">
-              <div className="text-sm text-neutral-400">Credits Available</div>
+              <div className="text-sm text-muted-foreground">Credits Available</div>
               <div className="text-3xl font-bold">{creditsAvailable}</div>
             </div>
             
             <div className="mb-6">
-              <div className="text-sm text-white/70">Est Credits Required</div>
-              <div className="text-3xl font-bold text-white/70">{creditsRequired}</div>
+              <div className="text-sm text-foreground/70">Est Credits Required</div>
+              <div className="text-3xl font-bold text-foreground/70">{creditsRequired}</div>
             </div>
             
             <Button 
-              className="bg-white hover:bg-[#cccccc] text-[var(--white)] w-full"
+              className="bg-primary hover:bg-[#cccccc] text-[var(--white)] w-full"
             >
               Purchase Credits
             </Button>

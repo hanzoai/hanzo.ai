@@ -56,24 +56,24 @@ const ResourceBreakdown = () => {
             className="bg-[var(--black)]/30 rounded-xl p-5 border border-gray-800"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="text-neutral-400">
+              <div className="text-muted-foreground">
                 {resource.icon}
               </div>
               <div className="font-medium">{resource.name}</div>
             </div>
             
             <div className="mb-4">
-              <div className="text-sm text-neutral-400 mb-1">{resource.description}</div>
+              <div className="text-sm text-muted-foreground mb-1">{resource.description}</div>
               <div className="font-medium">{resource.cost}</div>
             </div>
             
             <div className="w-full bg-gray-800 rounded-full h-2.5">
               <div 
-                className="bg-white h-2.5 rounded-full" 
+                className="bg-primary h-2.5 rounded-full" 
                 style={{ width: `${resource.percentage}%` }}
               ></div>
             </div>
-            <div className="text-sm text-neutral-400 mt-1">
+            <div className="text-sm text-muted-foreground mt-1">
               {resource.percentage}% of total cost
             </div>
           </div>

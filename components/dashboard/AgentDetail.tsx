@@ -101,8 +101,8 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex items-center">
-            <div className="w-8 h-8 rounded-md bg-white/10 border border-white/20 flex items-center justify-center mr-3">
-              <Bot className="h-4 w-4 text-white" />
+            <div className="w-8 h-8 rounded-md bg-primary/10 border border-border flex items-center justify-center mr-3">
+              <Bot className="h-4 w-4 text-foreground" />
             </div>
             <Input 
               name="name"
@@ -115,19 +115,19 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
 
         <div className="flex border-b border-gray-800 mt-2">
           <button 
-            className={`px-4 py-2 text-sm font-medium ${activeTab === 'overview' ? 'text-[var(--white)] border-b-2 border-white' : 'text-neutral-400 hover:text-[var(--white)]'}`}
+            className={`px-4 py-2 text-sm font-medium ${activeTab === 'overview' ? 'text-[var(--white)] border-b-2 border-white' : 'text-muted-foreground hover:text-[var(--white)]'}`}
             onClick={() => setActiveTab('overview')}
           >
             Overview
           </button>
           <button 
-            className={`px-4 py-2 text-sm font-medium ${activeTab === 'rag' ? 'text-[var(--white)] border-b-2 border-white' : 'text-neutral-400 hover:text-[var(--white)]'}`}
+            className={`px-4 py-2 text-sm font-medium ${activeTab === 'rag' ? 'text-[var(--white)] border-b-2 border-white' : 'text-muted-foreground hover:text-[var(--white)]'}`}
             onClick={() => setActiveTab('rag')}
           >
             RAG Sources
           </button>
           <button 
-            className={`px-4 py-2 text-sm font-medium ${activeTab === 'settings' ? 'text-[var(--white)] border-b-2 border-white' : 'text-neutral-400 hover:text-[var(--white)]'}`}
+            className={`px-4 py-2 text-sm font-medium ${activeTab === 'settings' ? 'text-[var(--white)] border-b-2 border-white' : 'text-muted-foreground hover:text-[var(--white)]'}`}
             onClick={() => setActiveTab('settings')}
           >
             Settings
@@ -138,7 +138,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
           {activeTab === 'overview' && (
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-1">Description</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-1">Description</label>
                 <Textarea 
                   name="description"
                   value={editedAgent.description || ""}
@@ -150,24 +150,24 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-400 mb-1">Status</label>
+                  <label className="block text-sm font-medium text-muted-foreground mb-1">Status</label>
                   <div className="flex items-center justify-between p-3 bg-gray-900 border border-gray-800 rounded-md">
                     <div className="flex items-center">
                       <div className={`h-2 w-2 rounded-full mr-2 ${
-                        editedAgent.status === 'running' ? 'bg-white/10' : 
-                        editedAgent.status === 'paused' ? 'bg-white/10' : 
-                        editedAgent.status === 'error' ? 'bg-white/10' : 'bg-gray-500'
+                        editedAgent.status === 'running' ? 'bg-primary/10' : 
+                        editedAgent.status === 'paused' ? 'bg-primary/10' : 
+                        editedAgent.status === 'error' ? 'bg-primary/10' : 'bg-gray-500'
                       }`}></div>
                       <span>{
                         editedAgent.status.charAt(0).toUpperCase() + editedAgent.status.slice(1)
                       }</span>
                     </div>
                     {editedAgent.status === 'running' ? (
-                      <Button size="sm" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]">
+                      <Button size="sm" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]">
                         <StopCircle className="h-4 w-4" />
                       </Button>
                     ) : (
-                      <Button size="sm" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]">
+                      <Button size="sm" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]">
                         <PlayCircle className="h-4 w-4" />
                       </Button>
                     )}
@@ -175,7 +175,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-neutral-400 mb-1">Model</label>
+                  <label className="block text-sm font-medium text-muted-foreground mb-1">Model</label>
                   <div className="flex items-center p-3 bg-gray-900 border border-gray-800 rounded-md">
                     <Input 
                       name="model"
@@ -188,32 +188,32 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-neutral-400 mb-2">Resource Usage</h3>
+                <h3 className="text-sm font-medium text-muted-foreground mb-2">Resource Usage</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm text-neutral-400">CPU</span>
+                      <span className="text-sm text-muted-foreground">CPU</span>
                       <span className="text-sm">{editedAgent.cpu || 0}%</span>
                     </div>
                     <Progress value={editedAgent.cpu || 0} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm text-neutral-400">GPU</span>
+                      <span className="text-sm text-muted-foreground">GPU</span>
                       <span className="text-sm">{editedAgent.gpu || 0}%</span>
                     </div>
                     <Progress value={editedAgent.gpu || 0} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm text-neutral-400">Memory</span>
+                      <span className="text-sm text-muted-foreground">Memory</span>
                       <span className="text-sm">{editedAgent.memory}%</span>
                     </div>
                     <Progress value={editedAgent.memory} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm text-neutral-400">Storage</span>
+                      <span className="text-sm text-muted-foreground">Storage</span>
                       <span className="text-sm">{editedAgent.storage || 0}%</span>
                     </div>
                     <Progress value={editedAgent.storage || 0} className="h-2" />
@@ -222,22 +222,22 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-neutral-400 mb-2">Usage Statistics</h3>
+                <h3 className="text-sm font-medium text-muted-foreground mb-2">Usage Statistics</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div className="bg-gray-900 border border-gray-800 rounded-md p-3">
-                    <h4 className="text-xs text-neutral-500 mb-1">Tokens Used</h4>
+                    <h4 className="text-xs text-muted-foreground mb-1">Tokens Used</h4>
                     <p className="text-lg font-medium">{editedAgent.tokens.toLocaleString()}</p>
                   </div>
                   <div className="bg-gray-900 border border-gray-800 rounded-md p-3">
-                    <h4 className="text-xs text-neutral-500 mb-1">Cost</h4>
+                    <h4 className="text-xs text-muted-foreground mb-1">Cost</h4>
                     <p className="text-lg font-medium">${editedAgent.cost.toFixed(2)}</p>
                   </div>
                   <div className="bg-gray-900 border border-gray-800 rounded-md p-3">
-                    <h4 className="text-xs text-neutral-500 mb-1">Tasks Assigned</h4>
+                    <h4 className="text-xs text-muted-foreground mb-1">Tasks Assigned</h4>
                     <p className="text-lg font-medium">{editedAgent.tasks}</p>
                   </div>
                   <div className="bg-gray-900 border border-gray-800 rounded-md p-3">
-                    <h4 className="text-xs text-neutral-500 mb-1">Last Active</h4>
+                    <h4 className="text-xs text-muted-foreground mb-1">Last Active</h4>
                     <p className="text-lg font-medium">{editedAgent.lastActive}</p>
                   </div>
                 </div>
@@ -264,17 +264,17 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                       onClick={() => setSelectedRagSource(source)}
                     >
                       <div className="flex items-center">
-                        {source.type === 'database' && <Database className="h-4 w-4 text-white mr-2" />}
-                        {source.type === 'vector' && <Activity className="h-4 w-4 text-white/70 mr-2" />}
-                        {source.type === 'file' && <FileText className="h-4 w-4 text-white/60 mr-2" />}
-                        {source.type === 'api' && <Globe className="h-4 w-4 text-white/70 mr-2" />}
+                        {source.type === 'database' && <Database className="h-4 w-4 text-foreground mr-2" />}
+                        {source.type === 'vector' && <Activity className="h-4 w-4 text-foreground/70 mr-2" />}
+                        {source.type === 'file' && <FileText className="h-4 w-4 text-foreground/60 mr-2" />}
+                        {source.type === 'api' && <Globe className="h-4 w-4 text-foreground/70 mr-2" />}
                         <span className="text-sm truncate">{source.name}</span>
                       </div>
-                      <ChevronRight className="h-4 w-4 text-neutral-500" />
+                      <ChevronRight className="h-4 w-4 text-muted-foreground" />
                     </div>
                   ))}
                   {!editedAgent.ragSources?.length && (
-                    <div className="text-sm text-neutral-500 p-2">
+                    <div className="text-sm text-muted-foreground p-2">
                       No knowledge sources added
                     </div>
                   )}
@@ -289,7 +289,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                       <Button 
                         size="sm" 
                         variant="ghost" 
-                        className="text-white/70 hover:text-white/70"
+                        className="text-foreground/70 hover:text-foreground/70"
                         onClick={() => handleRemoveRagSource(selectedRagSource.id)}
                       >
                         <Trash2 className="h-4 w-4 mr-1" />
@@ -298,7 +298,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                     </div>
 
                     <div>
-                      <label className="block text-xs text-neutral-400 mb-1">Name</label>
+                      <label className="block text-xs text-muted-foreground mb-1">Name</label>
                       <Input 
                         value={selectedRagSource.name}
                         onChange={(e) => {
@@ -311,14 +311,14 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                     </div>
 
                     <div>
-                      <label className="block text-xs text-neutral-400 mb-1">Type</label>
+                      <label className="block text-xs text-muted-foreground mb-1">Type</label>
                       <div className="grid grid-cols-4 gap-2">
                         {(['database', 'vector', 'file', 'api'] as const).map(type => (
                           <div 
                             key={type}
                             className={`p-2 border rounded flex flex-col items-center justify-center cursor-pointer ${
                               selectedRagSource.type === type 
-                                ? 'border-white bg-white/10' 
+                                ? 'border-white bg-primary/10' 
                                 : 'border-gray-800 hover:border-gray-700'
                             }`}
                             onClick={() => {
@@ -327,10 +327,10 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                               setSelectedRagSource(updated);
                             }}
                           >
-                            {type === 'database' && <Database className="h-5 w-5 text-white mb-1" />}
-                            {type === 'vector' && <Activity className="h-5 w-5 text-white/70 mb-1" />}
-                            {type === 'file' && <FileText className="h-5 w-5 text-white/60 mb-1" />}
-                            {type === 'api' && <Globe className="h-5 w-5 text-white/70 mb-1" />}
+                            {type === 'database' && <Database className="h-5 w-5 text-foreground mb-1" />}
+                            {type === 'vector' && <Activity className="h-5 w-5 text-foreground/70 mb-1" />}
+                            {type === 'file' && <FileText className="h-5 w-5 text-foreground/60 mb-1" />}
+                            {type === 'api' && <Globe className="h-5 w-5 text-foreground/70 mb-1" />}
                             <span className="text-xs capitalize">{type}</span>
                           </div>
                         ))}
@@ -338,7 +338,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                     </div>
 
                     <div>
-                      <label className="block text-xs text-neutral-400 mb-1">Connection String</label>
+                      <label className="block text-xs text-muted-foreground mb-1">Connection String</label>
                       <Input 
                         value={selectedRagSource.connection}
                         onChange={(e) => {
@@ -357,7 +357,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                     </div>
                   </div>
                 ) : (
-                  <div className="h-full flex items-center justify-center text-neutral-500 text-sm">
+                  <div className="h-full flex items-center justify-center text-muted-foreground text-sm">
                     Select a knowledge source or add a new one
                   </div>
                 )}
@@ -368,7 +368,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
           {activeTab === 'settings' && (
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-1">Agent Type</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-1">Agent Type</label>
                 <Input 
                   name="type"
                   value={editedAgent.type}
@@ -378,10 +378,10 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-neutral-400 mb-2">Advanced Settings</h3>
+                <h3 className="text-sm font-medium text-muted-foreground mb-2">Advanced Settings</h3>
                 <div className="space-y-4 bg-gray-900 border border-gray-800 rounded-md p-4">
                   <div>
-                    <label className="block text-xs text-neutral-400 mb-1">Memory Limit (%)</label>
+                    <label className="block text-xs text-muted-foreground mb-1">Memory Limit (%)</label>
                     <Input 
                       type="number"
                       name="memory"
@@ -394,7 +394,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                   </div>
                   
                   <div>
-                    <label className="block text-xs text-neutral-400 mb-1">Execution Priority</label>
+                    <label className="block text-xs text-muted-foreground mb-1">Execution Priority</label>
                     <select className="w-full bg-gray-900 border-gray-800 rounded-md p-2 text-sm">
                       <option>Normal</option>
                       <option>High</option>
@@ -403,7 +403,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
                   </div>
 
                   <div>
-                    <label className="block text-xs text-neutral-400 mb-1">Execution Mode</label>
+                    <label className="block text-xs text-muted-foreground mb-1">Execution Mode</label>
                     <select className="w-full bg-gray-900 border-gray-800 rounded-md p-2 text-sm">
                       <option>Automatic</option>
                       <option>Manual</option>

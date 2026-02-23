@@ -7,7 +7,7 @@ import { BrainCog, Cloud, Server, Database, Monitor, Network, Activity } from "l
 
 const CloudInfrastructure = () => {
   return (
-    <div className="relative h-64 w-full rounded-xl bg-gradient-to-br from-black to-gray-900 overflow-hidden">
+    <div className="relative h-64 w-full rounded-xl bg-gradient-to-br from-background to-gray-900 overflow-hidden">
       <div className="absolute inset-0" style={{
         backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px)",
         backgroundSize: "20px 20px",
@@ -20,7 +20,7 @@ const CloudInfrastructure = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <BrainCog className="h-8 w-8 text-white" />
+          <BrainCog className="h-8 w-8 text-foreground" />
         </motion.div>
         
         {[...Array(6)].map((_, i) => {
@@ -29,12 +29,12 @@ const CloudInfrastructure = () => {
           const x = Math.cos(angle) * distance;
           const y = Math.sin(angle) * distance;
           const icons = [
-            <Cloud key={0} className="h-5 w-5 text-white" />,
-            <Server key={1} className="h-5 w-5 text-white" />,
-            <Database key={2} className="h-5 w-5 text-white" />,
-            <Monitor key={3} className="h-5 w-5 text-white" />,
-            <Network key={4} className="h-5 w-5 text-white" />,
-            <Activity key={5} className="h-5 w-5 text-white" />
+            <Cloud key={0} className="h-5 w-5 text-foreground" />,
+            <Server key={1} className="h-5 w-5 text-foreground" />,
+            <Database key={2} className="h-5 w-5 text-foreground" />,
+            <Monitor key={3} className="h-5 w-5 text-foreground" />,
+            <Network key={4} className="h-5 w-5 text-foreground" />,
+            <Activity key={5} className="h-5 w-5 text-foreground" />
           ];
           
           return (
@@ -107,7 +107,7 @@ const CloudInfrastructure = () => {
           return (
             <motion.div
               key={`particle-${i}`}
-              className="absolute h-1.5 w-1.5 rounded-full bg-white"
+              className="absolute h-1.5 w-1.5 rounded-full bg-primary"
               style={{
                 left: "50%",
                 top: "50%",

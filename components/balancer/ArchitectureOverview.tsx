@@ -16,7 +16,7 @@ const ArchitectureOverview = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Hanzo Balancer Architecture Overview</h2>
-          <p className="text-xl text-neutral-300 max-w-4xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-4xl mx-auto">
             Unlike a traditional reverse proxy, which requires manual configuration, Hanzo Balancer uses service 
             discovery to dynamically configure routing. Hanzo Balancer supports all major protocols, leveraging a rich set 
             of middleware for load balancing, rate-limiting, circuit-breakers, mirroring, authentication, and more.
@@ -32,7 +32,7 @@ const ArchitectureOverview = () => {
             className="w-full md:w-1/2"
           >
             <div className="bg-gray-800/30 border border-gray-700 rounded-lg p-4 aspect-video flex items-center justify-center">
-              <p className="text-xl text-neutral-400">Hanzo Balancer Architecture Diagram</p>
+              <p className="text-xl text-muted-foreground">Hanzo Balancer Architecture Diagram</p>
               {/* Replace with actual diagram image when available */}
             </div>
           </motion.div>
@@ -44,19 +44,19 @@ const ArchitectureOverview = () => {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2"
           >
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               Hanzo Balancer also supports SSL termination and works with ACME providers (like Let's Encrypt) 
               for automatic certificate generation. Hanzo Balancer's extensive features and capabilities make it 
               the comprehensive gateway to all your applications.
             </p>
-            <div className="bg-gradient-to-r from-white/20 to-white/10 border border-white/20 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-white/20 to-white/10 border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Maximize Uptime, Solve Issues Quickly</h3>
-              <p className="text-neutral-300 mb-4">
+              <p className="text-foreground/80 mb-4">
                 Need support with Hanzo Balancer? Our team of experts is here to help 24/7/365!
               </p>
               <a
                 href="#support"
-                className="inline-block px-4 py-2 bg-white hover:bg-[#cccccc] rounded-md font-medium transition-colors"
+                className="inline-block px-4 py-2 bg-primary hover:bg-[#cccccc] rounded-md font-medium transition-colors"
               >
                 REQUEST COMMERCIAL SUPPORT
               </a>

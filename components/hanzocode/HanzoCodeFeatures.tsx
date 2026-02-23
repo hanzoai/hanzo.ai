@@ -18,7 +18,7 @@ const FeatureCard = ({ title, description, icon }) => {
         <div className="mb-6">
           {icon}
           <h3 className="text-2xl font-semibold mt-4 mb-2">{title}</h3>
-          <p className="text-neutral-300 mb-4">{description}</p>
+          <p className="text-foreground/80 mb-4">{description}</p>
         </div>
       </div>
     </motion.div>
@@ -37,7 +37,7 @@ const HanzoCodeFeatures = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Beyond Other AI Editors</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             Capabilities that leave Cursor, Windsurf, and other AI editors far behind
           </p>
         </motion.div>
@@ -46,49 +46,49 @@ const HanzoCodeFeatures = () => {
           <FeatureCard 
             title="Holistic Understanding"
             description="Unlike others, we analyze your entire codebase, not just the current file or context window"
-            icon={<Code className="h-10 w-10 text-white" />}
+            icon={<Code className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Parallel Execution"
             description="Run multiple autonomous agents simultaneously to solve different parts of your project"
-            icon={<Zap className="h-10 w-10 text-white" />}
+            icon={<Zap className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Advanced Reasoning"
             description="Complex problem solving with multi-step reasoning that other AI tools can't match"
-            icon={<MessageSquare className="h-10 w-10 text-white" />}
+            icon={<MessageSquare className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Multi-repo Context"
             description="Understand dependencies across multiple repositories and codebases simultaneously"
-            icon={<Globe className="h-10 w-10 text-white" />}
+            icon={<Globe className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Complete Autonomy"
             description="Agents can work independently, making decisions without constant human guidance"
-            icon={<Bot className="h-10 w-10 text-white" />}
+            icon={<Bot className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Full System Access"
             description="Agents have controlled access to your file system, dev environment, and tooling"
-            icon={<FileCode className="h-10 w-10 text-white" />}
+            icon={<FileCode className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Unlimited Context"
             description="No token limits or context windows - process entire codebases at once"
-            icon={<Infinity className="h-10 w-10 text-white" />}
+            icon={<Infinity className="h-10 w-10 text-foreground" />}
           />
           
           <FeatureCard 
             title="Agent Collaboration"
             description="Multiple agents working together with different roles and responsibilities"
-            icon={<Network className="h-10 w-10 text-white" />}
+            icon={<Network className="h-10 w-10 text-foreground" />}
           />
         </div>
       </div>

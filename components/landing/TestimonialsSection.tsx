@@ -21,11 +21,11 @@ const Testimonial: React.FC<TestimonialProps> = ({ quote, name, title, delay }) 
       transition={{ duration: 0.5, delay }}
       className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-6 shadow-lg"
     >
-      <Quote className="h-8 w-8 text-white mb-4" />
-      <p className="text-neutral-300 text-lg mb-6">{quote}</p>
+      <Quote className="h-8 w-8 text-foreground mb-4" />
+      <p className="text-foreground/80 text-lg mb-6">{quote}</p>
       <div>
         <p className="font-bold text-[var(--white)]">{name}</p>
-        <p className="text-neutral-400 text-sm">{title}</p>
+        <p className="text-muted-foreground text-sm">{title}</p>
       </div>
     </motion.div>
   );
@@ -60,13 +60,13 @@ const TestimonialsSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-white/30 text-foreground text-sm font-medium mb-6">
             Testimonials
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Trusted by Leading AI Teams
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Hear from developers and teams who are building the future with Hanzo.
           </p>
         </motion.div>

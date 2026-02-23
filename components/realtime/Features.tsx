@@ -19,13 +19,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6"
+      className="bg-gradient-to-br from-gray-900 to-background border border-gray-800 rounded-xl p-6"
     >
-      <div className="h-12 w-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 text-white" />
+      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+        <Icon className="h-6 w-6 text-foreground" />
       </div>
       <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{title}</h3>
-      <p className="text-neutral-400">{description}</p>
+      <p className="text-muted-foreground">{description}</p>
     </motion.div>
   );
 };
@@ -87,7 +87,7 @@ const Features = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Key Features
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Everything you need to build scalable real-time applications
           </p>
         </motion.div>

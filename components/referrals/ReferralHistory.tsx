@@ -47,8 +47,8 @@ const ReferralHistory = ({ referralHistory }: ReferralHistoryProps) => {
                 <TableCell>
                   <span className={`px-2 py-1 rounded-full text-xs ${
                     referral.status === 'Completed' 
-                      ? 'bg-white/10 text-white/70' 
-                      : 'bg-white/10 text-white/60'
+                      ? 'bg-primary/10 text-foreground/70' 
+                      : 'bg-primary/10 text-foreground/60'
                   }`}>
                     {referral.status}
                   </span>

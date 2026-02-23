@@ -21,15 +21,15 @@ interface TaskCardProps {
 const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   const priorityColors = {
     low: "bg-gray-500",
-    medium: "bg-white/10",
-    high: "bg-white/10"
+    medium: "bg-primary/10",
+    high: "bg-primary/10"
   };
 
   return (
     <div className="bg-gray-900 rounded-md p-3 border border-gray-800 hover:border-gray-700 cursor-pointer transition-colors">
       {/* Task ID and Priority */}
       <div className="flex items-center justify-between mb-2">
-        <div className="text-xs text-neutral-500 flex items-center">
+        <div className="text-xs text-muted-foreground flex items-center">
           <span>HAN-{task.id}</span>
         </div>
         {task.priority && (
@@ -42,7 +42,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
       
       {/* Description (optional) */}
       {task.description && (
-        <p className="text-xs text-neutral-400 mb-3 line-clamp-2">{task.description}</p>
+        <p className="text-xs text-muted-foreground mb-3 line-clamp-2">{task.description}</p>
       )}
       
       {/* Labels */}
@@ -80,16 +80,16 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
           
           {task.agentCount && task.agentCount > 0 && (
             <div 
-              className="h-6 w-6 rounded-full bg-white/10 border-2 border-gray-900 flex items-center justify-center"
+              className="h-6 w-6 rounded-full bg-primary/10 border-2 border-gray-900 flex items-center justify-center"
               title={`${task.agentCount} AI agents`}
             >
-              <Bot className="h-3 w-3 text-white" />
+              <Bot className="h-3 w-3 text-foreground" />
             </div>
           )}
         </div>
         
         {/* Metadata */}
-        <div className="flex items-center space-x-2 text-neutral-400">
+        <div className="flex items-center space-x-2 text-muted-foreground">
           {task.messageCount && task.messageCount > 0 && (
             <div className="flex items-center text-xs">
               <MessageSquare className="h-3 w-3 mr-1" />

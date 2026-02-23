@@ -30,7 +30,7 @@ const ScalabilitySection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 to-black">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 to-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ const ScalabilitySection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Why Developers Prefer Hanzo Vector
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             The preferred choice for vector database needs from prototype to production
           </p>
         </motion.div>
@@ -57,9 +57,9 @@ const ScalabilitySection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gradient-to-br from-gray-900/50 to-gray-900/30 border border-gray-800 rounded-xl p-8 hover:border-white/30 transition-colors"
             >
-              <feature.icon className="h-10 w-10 text-white mb-6" />
+              <feature.icon className="h-10 w-10 text-foreground mb-6" />
               <h3 className="text-xl font-semibold text-[var(--white)] mb-3">{feature.title}</h3>
-              <p className="text-neutral-400">{feature.description}</p>
+              <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </div>

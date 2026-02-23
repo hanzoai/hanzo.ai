@@ -4,8 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const testimonials = [
   {
     company: "Ramp",
@@ -40,7 +38,7 @@ const companyLogos = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 px-4 bg-black">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,11 +48,11 @@ const Testimonials = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
           >
             Testimonials
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             What developers are saying
           </h2>
         </motion.div>
@@ -70,7 +68,7 @@ const Testimonials = () => {
             {[...companyLogos, ...companyLogos].map((logo, i) => (
               <div
                 key={i}
-                className="text-neutral-600 text-lg font-medium whitespace-nowrap"
+                className="text-muted-foreground/60 text-lg font-medium whitespace-nowrap"
               >
                 {logo}
               </div>
@@ -87,34 +85,34 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors group"
+              className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-white/30 transition-colors group"
             >
               {/* Company logo */}
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold"
-                  style={{ backgroundColor: `${BRAND_COLOR}40` }}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center text-foreground font-bold"
+                  style={{ backgroundColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
                 >
                   {testimonial.logo}
                 </div>
-                <span className="text-white font-semibold">{testimonial.company}</span>
+                <span className="text-foreground font-semibold">{testimonial.company}</span>
               </div>
 
               {/* Quote */}
-              <blockquote className="text-neutral-300 text-sm mb-6 leading-relaxed">
+              <blockquote className="text-foreground/80 text-sm mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-white font-medium text-sm">{testimonial.author}</div>
-                  <div className="text-neutral-500 text-xs">{testimonial.title}</div>
+                  <div className="text-foreground font-medium text-sm">{testimonial.author}</div>
+                  <div className="text-muted-foreground text-xs">{testimonial.title}</div>
                 </div>
                 <a
                   href={testimonial.link || "#"}
                   className="text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ color: BRAND_COLOR }}
+
                 >
                   Read story
                   <ArrowRight className="w-3 h-3" />

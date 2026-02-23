@@ -18,7 +18,7 @@ const HanzoCodeCompanies = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <p className="text-xl text-neutral-400">Trusted by engineers at</p>
+          <p className="text-xl text-muted-foreground">Trusted by engineers at</p>
         </motion.div>
         
         <motion.div

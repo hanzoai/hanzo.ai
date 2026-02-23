@@ -41,8 +41,8 @@ const PricingPlan = ({
 
   // Button color - prominent option gets white bg, others get outline
   const buttonClass = popular 
-    ? "bg-[var(--white)] text-black border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300" 
-    : "bg-transparent border border-white/20 text-white hover:bg-[var(--white)] hover:text-black transition-all duration-300";
+    ? "bg-[var(--white)] text-primary-foreground border border-gray-300 hover:bg-transparent hover:text-[var(--white)] hover:border-[var(--white)] transition-all duration-300" 
+    : "bg-transparent border border-border text-foreground hover:bg-[var(--white)] hover:text-primary-foreground transition-all duration-300";
 
   const renderButton = () => {
     if (githubLink || name === "Dev") {
@@ -100,7 +100,7 @@ const PricingPlan = ({
     >
       {popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <div className="bg-[var(--white)] text-black px-3 py-1 rounded-full text-sm font-medium">
+          <div className="bg-[var(--white)] text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
             Most Popular
           </div>
         </div>
@@ -115,10 +115,10 @@ const PricingPlan = ({
         <div className="flex items-baseline gap-1 mb-2">
           <span className="text-4xl font-bold">{price}</span>
           {billingPeriod && (
-            <span className="text-neutral-400">{billingPeriod}</span>
+            <span className="text-muted-foreground">{billingPeriod}</span>
           )}
         </div>
-        <p className="text-neutral-400">{description}</p>
+        <p className="text-muted-foreground">{description}</p>
       </div>
 
       {renderButton()}
@@ -126,8 +126,8 @@ const PricingPlan = ({
       <ul className="space-y-4">
         {features.map((feature) => (
           <li key={feature} className="flex items-start gap-3">
-            <Check className="h-5 w-5 text-neutral-400 mt-0.5 flex-shrink-0" />
-            <span className="text-neutral-300">{feature}</span>
+            <Check className="h-5 w-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+            <span className="text-foreground/80">{feature}</span>
           </li>
         ))}
       </ul>

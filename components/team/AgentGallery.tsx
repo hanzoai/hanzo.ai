@@ -44,8 +44,6 @@ interface AgentDetailModalProps {
   onClose: () => void;
 }
 
-const BRAND_COLOR = "#ffffff";
-
 const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onClose }) => {
   if (!agent) return null;
 
@@ -58,7 +56,7 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={onClose}
         >
           <motion.div
@@ -72,7 +70,7 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
             <div className="flex items-start justify-between mb-6">
               <div className="flex items-center">
                 <div className={`p-3 rounded-xl bg-gradient-to-br ${agent.gradient} mr-4`}>
-                  <Icon className="h-6 w-6 text-white" />
+                  <Icon className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-foreground">{agent.name}</h3>
@@ -96,15 +94,15 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
                 <h4 className="text-lg font-medium text-foreground mb-2">Expertise</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center text-muted-foreground">
-                    <span className="mr-2" style={{ color: BRAND_COLOR }}>•</span>
+                    <span className="mr-2">•</span>
                     Machine learning & data processing
                   </li>
                   <li className="flex items-center text-muted-foreground">
-                    <span className="mr-2" style={{ color: BRAND_COLOR }}>•</span>
+                    <span className="mr-2">•</span>
                     Neural network optimization
                   </li>
                   <li className="flex items-center text-muted-foreground">
-                    <span className="mr-2" style={{ color: BRAND_COLOR }}>•</span>
+                    <span className="mr-2">•</span>
                     Natural language processing
                   </li>
                 </ul>
@@ -122,8 +120,8 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
             <div className="flex justify-center">
               <Link
                 href={`/team/${agent.name.toLowerCase()}`}
-                className="inline-flex items-center px-4 py-2 rounded-xl text-black"
-                style={{ backgroundColor: BRAND_COLOR }}
+                className="inline-flex items-center px-4 py-2 rounded-xl text-primary-foreground"
+
               >
                 View Full Profile
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -285,7 +283,7 @@ const AgentGallery = () => {
         >
           <div
             className="inline-flex p-2 rounded-full mb-4"
-            style={{ backgroundColor: `${BRAND_COLOR}20`, borderColor: `${BRAND_COLOR}30`, color: BRAND_COLOR, border: '1px solid' }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 20%, transparent)", color: "var(--primary)", border: '1px solid' }}
           >
             <Bot className="h-6 w-6" />
           </div>

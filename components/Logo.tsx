@@ -38,7 +38,7 @@ export default function Logo({ className = '', showText = true, size = 'md' }: L
         <span className={cn(
           'font-semibold transition-colors duration-300',
           sizes[size].text,
-          'text-white group-hover:text-white/90'
+          'text-foreground group-hover:text-foreground/90'
         )}>
           Hanzo
         </span>

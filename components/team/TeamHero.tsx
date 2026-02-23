@@ -6,8 +6,6 @@ import Link from "next/link";
 import { Button } from "@hanzo/ui";
 import { BrainCircuit, Zap, Users, ArrowRight, Bot } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const TeamHero = () => {
   return (
     <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
@@ -16,7 +14,7 @@ const TeamHero = () => {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
           style={{
-            background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+            background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
             filter: "blur(100px)",
           }}
         />
@@ -56,7 +54,7 @@ const TeamHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
-            style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
           >
             <Bot className="w-3.5 h-3.5" />
             AI + Human Integration
@@ -92,8 +90,8 @@ const TeamHero = () => {
           >
             <Link
               href="/signup"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-              style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
             >
               Get Started
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -129,11 +127,11 @@ const TeamHero = () => {
                   <div
                     className="p-3 rounded-full mb-3 border"
                     style={{
-                      backgroundColor: `${BRAND_COLOR}15`,
-                      borderColor: `${BRAND_COLOR}30`
+                      backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)",
+                      borderColor: "color-mix(in srgb, var(--primary) 20%, transparent)"
                     }}
                   >
-                    <Icon className="h-6 w-6" style={{ color: BRAND_COLOR }} />
+                    <Icon className="h-6 w-6" />
                   </div>
                   <span className="text-sm text-muted-foreground">{item.label}</span>
                 </motion.div>
@@ -149,19 +147,19 @@ const TeamHero = () => {
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
           className="w-1 h-8 rounded-full opacity-70"
-          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #ffffff)` }}
+          style={{ background: `linear-gradient(to bottom, var(--primary), #ffffff)` }}
         />
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.5, delay: 0.2, repeat: Infinity, repeatType: "loop" }}
           className="w-1 h-6 rounded-full opacity-40"
-          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #ffffff)` }}
+          style={{ background: `linear-gradient(to bottom, var(--primary), #ffffff)` }}
         />
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.5, delay: 0.4, repeat: Infinity, repeatType: "loop" }}
           className="w-1 h-4 rounded-full opacity-20"
-          style={{ background: `linear-gradient(to bottom, ${BRAND_COLOR}, #ffffff)` }}
+          style={{ background: `linear-gradient(to bottom, var(--primary), #ffffff)` }}
         />
       </div>
     </section>

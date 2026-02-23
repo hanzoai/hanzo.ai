@@ -88,10 +88,10 @@ const HanzoIPFS = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-8"
           >
-            <Database className="w-4 h-4 text-white/70" />
-            <span className="text-sm font-medium text-white/70">Decentralized Storage</span>
+            <Database className="w-4 h-4 text-foreground/70" />
+            <span className="text-sm font-medium text-foreground/70">Decentralized Storage</span>
           </motion.div>
 
           <motion.h1
@@ -100,7 +100,7 @@ const HanzoIPFS = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">Hanzo</span>{" "}
+            <span className="text-foreground">Hanzo</span>{" "}
             <span className="bg-gradient-to-r from-white/20 to-white/10 bg-clip-text text-transparent">
               IPFS
             </span>
@@ -110,7 +110,7 @@ const HanzoIPFS = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-medium text-white mb-4"
+            className="text-2xl md:text-3xl font-medium text-foreground mb-4"
           >
             Managed IPFS Pinning & Gateway
           </motion.p>
@@ -119,7 +119,7 @@ const HanzoIPFS = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto"
           >
             Pin content to IPFS with a single API call. Dedicated gateways with global CDN.
             No infrastructure to manage.
@@ -134,14 +134,14 @@ const HanzoIPFS = () => {
           >
             <a
               href="https://cloud.hanzo.ai/ipfs"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/10 text-foreground font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="https://docs.hanzo.ai/ipfs"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               Documentation
             </a>
@@ -150,7 +150,7 @@ const HanzoIPFS = () => {
       </section>
 
       {/* Features */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
@@ -160,13 +160,13 @@ const HanzoIPFS = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+                className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-white/70" />
+                <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-foreground/70" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-neutral-400">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -174,24 +174,24 @@ const HanzoIPFS = () => {
       </section>
 
       {/* Code Example */}
-      <section className="py-20 px-4 md:px-8 bg-neutral-950">
+      <section className="py-20 px-4 md:px-8 bg-background">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden"
+            className="bg-secondary border border-border rounded-xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-border">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
               </div>
-              <span className="text-xs text-neutral-500 ml-2">ipfs.ts</span>
+              <span className="text-xs text-muted-foreground ml-2">ipfs.ts</span>
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
-              <code className="text-neutral-300">{`import { HanzoIPFS } from "@hanzo/storage";
+              <code className="text-foreground/80">{`import { HanzoIPFS } from "@hanzo/storage";
 
 const ipfs = new HanzoIPFS({
   apiKey: process.env.HANZO_API_KEY,
@@ -237,7 +237,7 @@ await ipfs.unpin(cid);`}</code>
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Use Cases</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Use Cases</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -248,10 +248,10 @@ await ipfs.unpin(cid);`}</code>
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-5"
+                className="bg-secondary/50 border border-border rounded-xl p-5"
               >
-                <h3 className="font-semibold text-white mb-1">{useCase.name}</h3>
-                <p className="text-sm text-neutral-400">{useCase.description}</p>
+                <h3 className="font-semibold text-foreground mb-1">{useCase.name}</h3>
+                <p className="text-sm text-muted-foreground">{useCase.description}</p>
               </motion.div>
             ))}
           </div>
@@ -259,32 +259,32 @@ await ipfs.unpin(cid);`}</code>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/20 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-white/20 to-transparent border border-border rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Store Forever, Serve Instantly
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
               1GB free. Pay only for what you pin. No egress fees.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://cloud.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/10 text-foreground font-medium rounded-full transition-colors"
               >
                 Start Free
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/pricing?tab=storage"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
               >
                 View Pricing
               </a>

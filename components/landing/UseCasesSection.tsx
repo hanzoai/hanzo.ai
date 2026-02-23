@@ -4,8 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check, X, Minus } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const features = [
   { name: "Multi-agent parallelism + consensus", hanzo: "full", others: "none", desc: "Best patch wins" },
   { name: "Policy / approvals / audit by default", hanzo: "full", others: "none", desc: "Humans + agents" },
@@ -19,19 +17,19 @@ const renderStatus = (status: string) => {
     case "full":
       return (
         <div className="flex items-center justify-center">
-          <Check className="w-5 h-5 text-white/70" />
+          <Check className="w-5 h-5 text-foreground/70" />
         </div>
       );
     case "partial":
       return (
         <div className="flex items-center justify-center">
-          <Minus className="w-5 h-5 text-white/60" />
+          <Minus className="w-5 h-5 text-foreground/60" />
         </div>
       );
     case "none":
       return (
         <div className="flex items-center justify-center">
-          <X className="w-5 h-5 text-neutral-600" />
+          <X className="w-5 h-5 text-muted-foreground/60" />
         </div>
       );
     default:
@@ -41,7 +39,7 @@ const renderStatus = (status: string) => {
 
 const UseCasesSection = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-black">
+    <section className="py-24 px-4 md:px-8 bg-background">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,14 +50,14 @@ const UseCasesSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}4d` }}
+            style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
           >
             Comparison
           </p>
-          <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
             Why Hanzo vs agents + glue
           </h2>
-          <p className="text-lg text-neutral-400">
+          <p className="text-lg text-muted-foreground">
             Production software needs more than autocomplete.
           </p>
         </motion.div>
@@ -70,13 +68,13 @@ const UseCasesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-xl border border-neutral-800 overflow-hidden"
+          className="rounded-xl border border-border overflow-hidden"
         >
           {/* Header */}
-          <div className="grid grid-cols-3 gap-4 p-4 bg-neutral-900 border-b border-neutral-800">
-            <div className="text-sm font-medium text-neutral-500">Capability</div>
-            <div className="text-sm font-medium text-center" style={{ color: BRAND_COLOR }}>Hanzo</div>
-            <div className="text-sm font-medium text-neutral-500 text-center">Others</div>
+          <div className="grid grid-cols-3 gap-4 p-4 bg-secondary border-b border-border">
+            <div className="text-sm font-medium text-muted-foreground">Capability</div>
+            <div className="text-sm font-medium text-center">Hanzo</div>
+            <div className="text-sm font-medium text-muted-foreground text-center">Others</div>
           </div>
 
           {/* Rows */}
@@ -88,12 +86,12 @@ const UseCasesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               className={`grid grid-cols-3 gap-4 p-4 ${
-                index !== features.length - 1 ? "border-b border-neutral-800" : ""
-              } hover:bg-neutral-900/50 transition-colors`}
+                index !== features.length - 1 ? "border-b border-border" : ""
+              } hover:bg-secondary/50 transition-colors`}
             >
               <div>
-                <div className="text-sm text-white font-medium">{feature.name}</div>
-                <div className="text-xs text-neutral-500 mt-0.5">{feature.desc}</div>
+                <div className="text-sm text-foreground font-medium">{feature.name}</div>
+                <div className="text-xs text-muted-foreground mt-0.5">{feature.desc}</div>
               </div>
               <div className="flex justify-center items-center">{renderStatus(feature.hanzo)}</div>
               <div className="flex justify-center items-center">{renderStatus(feature.others)}</div>
@@ -104,16 +102,16 @@ const UseCasesSection = () => {
         {/* Legend */}
         <div className="flex justify-center gap-6 mt-6">
           <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-white/70" />
-            <span className="text-xs text-neutral-500">Full support</span>
+            <Check className="w-4 h-4 text-foreground/70" />
+            <span className="text-xs text-muted-foreground">Full support</span>
           </div>
           <div className="flex items-center gap-2">
-            <Minus className="w-4 h-4 text-white/60" />
-            <span className="text-xs text-neutral-500">Partial / varies</span>
+            <Minus className="w-4 h-4 text-foreground/60" />
+            <span className="text-xs text-muted-foreground">Partial / varies</span>
           </div>
           <div className="flex items-center gap-2">
-            <X className="w-4 h-4 text-neutral-600" />
-            <span className="text-xs text-neutral-500">Not available</span>
+            <X className="w-4 h-4 text-muted-foreground/60" />
+            <span className="text-xs text-muted-foreground">Not available</span>
           </div>
         </div>
       </div>

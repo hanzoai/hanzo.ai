@@ -15,37 +15,35 @@ import {
 } from "lucide-react";
 import { Card, CardHeader, CardContent } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const EnterpriseReadiness = () => {
   const enterpriseFeatures = [
     {
-      icon: <Building className="h-8 w-8" style={{ color: BRAND_COLOR }} />,
+      icon: <Building className="h-8 w-8" />,
       title: "Custom Deployment",
       description: "On-premises, private cloud, or hybrid deployment options to meet your specific security and compliance requirements."
     },
     {
-      icon: <Users className="h-8 w-8" style={{ color: BRAND_COLOR }} />,
+      icon: <Users className="h-8 w-8" />,
       title: "Team Management",
       description: "Comprehensive tools for managing teams, permissions, and access controls across your organization."
     },
     {
-      icon: <ShieldCheck className="h-8 w-8" style={{ color: BRAND_COLOR }} />,
+      icon: <ShieldCheck className="h-8 w-8" />,
       title: "Data Sovereignty",
       description: "Control where your data is stored and processed to meet regional compliance requirements."
     },
     {
-      icon: <BadgeCheck className="h-8 w-8" style={{ color: BRAND_COLOR }} />,
+      icon: <BadgeCheck className="h-8 w-8" />,
       title: "Custom AI Training",
       description: "Train AI agents on your proprietary data and workflows for specialized domain expertise."
     },
     {
-      icon: <Clock className="h-8 w-8" style={{ color: BRAND_COLOR }} />,
+      icon: <Clock className="h-8 w-8" />,
       title: "24/7 Support",
       description: "Round-the-clock dedicated support team and guaranteed response times for critical issues."
     },
     {
-      icon: <Briefcase className="h-8 w-8" style={{ color: BRAND_COLOR }} />,
+      icon: <Briefcase className="h-8 w-8" />,
       title: "Implementation Services",
       description: "Professional services for seamless integration, migration, and onboarding with your existing systems."
     }
@@ -63,7 +61,7 @@ const EnterpriseReadiness = () => {
         >
           <div
             className="inline-flex p-2 rounded-full mb-4"
-            style={{ backgroundColor: `${BRAND_COLOR}20`, border: `1px solid ${BRAND_COLOR}30`, color: BRAND_COLOR }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)", color: "var(--primary)" }}
           >
             <Briefcase className="h-6 w-6" />
           </div>
@@ -89,7 +87,7 @@ const EnterpriseReadiness = () => {
                 <CardHeader className="pb-2">
                   <div
                     className="p-3 rounded-lg inline-flex mb-4"
-                    style={{ backgroundColor: `${BRAND_COLOR}20` }}
+                    style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
                   >
                     {feature.icon}
                   </div>
@@ -109,7 +107,7 @@ const EnterpriseReadiness = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="rounded-xl p-8 text-center"
-          style={{ backgroundColor: `${BRAND_COLOR}10`, border: `1px solid ${BRAND_COLOR}30` }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)" }}
         >
           <h3 className="text-2xl font-bold text-foreground mb-4">Ready to equip your enterprise?</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -117,8 +115,8 @@ const EnterpriseReadiness = () => {
           </p>
           <Button
             size="lg"
-            className="text-black"
-            style={{ backgroundColor: BRAND_COLOR }}
+            className="text-primary-foreground"
+
           >
             Contact Enterprise Sales
             <ArrowRight className="ml-2 h-4 w-4" />

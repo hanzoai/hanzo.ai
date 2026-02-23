@@ -12,19 +12,19 @@ const AIFeatureList = () => {
   
   const features = [
     {
-      icon: <Eye className="h-10 w-10 text-white" />,
+      icon: <Eye className="h-10 w-10 text-foreground" />,
       title: "Real-time anomaly detection",
       description: "Automatically identify unusual patterns and potential issues before they impact your business.",
       delay: 0
     },
     {
-      icon: <AlertTriangle className="h-10 w-10 text-white/70" />,
+      icon: <AlertTriangle className="h-10 w-10 text-foreground/70" />,
       title: "Predictive alerts and proactive monitoring",
       description: "Get alerted about potential problems before they occur with AI-powered predictive monitoring.",
       delay: 0.1
     },
     {
-      icon: <Zap className="h-10 w-10 text-white/70" />,
+      icon: <Zap className="h-10 w-10 text-foreground/70" />,
       title: "Deep integration with Hanzo Cloud and Base",
       description: "Seamlessly connect your analytics with your entire infrastructure for comprehensive visibility.",
       delay: 0.2

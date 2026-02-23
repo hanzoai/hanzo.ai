@@ -149,10 +149,10 @@ const HanzoDeFiStack = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-border mb-8"
           >
-            <TrendingUp className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white/70">DeFi Infrastructure</span>
+            <TrendingUp className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground/70">DeFi Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -161,7 +161,7 @@ const HanzoDeFiStack = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">Hanzo</span>{" "}
+            <span className="text-foreground">Hanzo</span>{" "}
             <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               DeFi
             </span>
@@ -171,7 +171,7 @@ const HanzoDeFiStack = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-medium text-white mb-4"
+            className="text-2xl md:text-3xl font-medium text-foreground mb-4"
           >
             Production-Ready DeFi Contracts
           </motion.p>
@@ -180,7 +180,7 @@ const HanzoDeFiStack = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
             The complete DeFi stack: tokens, AMMs, lending, perps, governance, and post-quantum security.
             Built on OpenZeppelin, hardened for production.
@@ -193,21 +193,21 @@ const HanzoDeFiStack = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">709</div>
-              <div className="text-sm text-neutral-400">Tests Passing</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">709</div>
+              <div className="text-sm text-muted-foreground">Tests Passing</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">50+</div>
-              <div className="text-sm text-neutral-400">Contracts</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">50+</div>
+              <div className="text-sm text-muted-foreground">Contracts</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">PQ</div>
-              <div className="text-sm text-neutral-400">Quantum-Safe</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">PQ</div>
+              <div className="text-sm text-muted-foreground">Quantum-Safe</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">BSD-3</div>
-              <div className="text-sm text-neutral-400">Open Source</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">BSD-3</div>
+              <div className="text-sm text-muted-foreground">Open Source</div>
             </div>
           </motion.div>
 
@@ -220,13 +220,13 @@ const HanzoDeFiStack = () => {
           >
             <a
               href="https://www.npmjs.com/package/@luxfi/contracts"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/10 text-foreground font-medium rounded-full transition-colors"
             >
               npm install @luxfi/contracts
             </a>
             <a
               href="https://standard.lux.network"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               View Documentation
             </a>
@@ -238,7 +238,7 @@ const HanzoDeFiStack = () => {
       {defiProducts.map((category, categoryIndex) => (
         <section
           key={category.category}
-          className={`py-16 px-4 md:px-8 ${categoryIndex % 2 === 0 ? "" : "bg-neutral-950"}`}
+          className={`py-16 px-4 md:px-8 ${categoryIndex % 2 === 0 ? "" : "bg-background"}`}
         >
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -247,8 +247,8 @@ const HanzoDeFiStack = () => {
               viewport={{ once: true }}
               className="mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{category.category}</h2>
-              <p className="text-neutral-400">{category.description}</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">{category.category}</h2>
+              <p className="text-muted-foreground">{category.description}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -261,15 +261,15 @@ const HanzoDeFiStack = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/20 transition-colors"
+                    className="bg-secondary/50 border border-border rounded-xl p-4 hover:border-border transition-colors"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
-                        <Icon className="w-4 h-4 text-white" />
+                      <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center">
+                        <Icon className="w-4 h-4 text-foreground" />
                       </div>
-                      <h3 className="font-semibold text-white">{product.name}</h3>
+                      <h3 className="font-semibold text-foreground">{product.name}</h3>
                     </div>
-                    <p className="text-sm text-neutral-400">{product.description}</p>
+                    <p className="text-sm text-muted-foreground">{product.description}</p>
                   </motion.div>
                 );
               })}
@@ -279,7 +279,7 @@ const HanzoDeFiStack = () => {
       ))}
 
       {/* Post-Quantum Cryptography */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -287,14 +287,14 @@ const HanzoDeFiStack = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 mb-6">
-              <Shield className="w-4 h-4 text-white/70" />
-              <span className="text-sm font-medium text-white/70">Post-Quantum Ready</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-6">
+              <Shield className="w-4 h-4 text-foreground/70" />
+              <span className="text-sm font-medium text-foreground/70">Post-Quantum Ready</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Quantum-Resistant Cryptography
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               EVM precompiles for next-generation signature schemes
             </p>
           </motion.div>
@@ -307,10 +307,10 @@ const HanzoDeFiStack = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4"
+                className="bg-secondary/50 border border-border rounded-xl p-4"
               >
-                <h3 className="font-semibold text-white/70 mb-1">{scheme.name}</h3>
-                <p className="text-sm text-neutral-400">{scheme.description}</p>
+                <h3 className="font-semibold text-foreground/70 mb-1">{scheme.name}</h3>
+                <p className="text-sm text-muted-foreground">{scheme.description}</p>
               </motion.div>
             ))}
           </div>
@@ -318,24 +318,24 @@ const HanzoDeFiStack = () => {
       </section>
 
       {/* Code Example */}
-      <section className="py-20 px-4 md:px-8 bg-neutral-950">
+      <section className="py-20 px-4 md:px-8 bg-background">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden"
+            className="bg-secondary border border-border rounded-xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-border">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
               </div>
-              <span className="text-xs text-neutral-500 ml-2">MyDeFi.sol</span>
+              <span className="text-xs text-muted-foreground ml-2">MyDeFi.sol</span>
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
-              <code className="text-neutral-300">{`// SPDX-License-Identifier: MIT
+              <code className="text-foreground/80">{`// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 import "@luxfi/contracts/tokens/LRC20.sol";
@@ -383,26 +383,26 @@ contract QuantumSafe {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/20 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-white/20 to-transparent border border-border rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Build DeFi with Confidence
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
               Production-ready contracts. Comprehensive tests. Post-quantum security.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://github.com/luxfi/standard"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/10 text-foreground font-medium rounded-full transition-colors"
               >
                 View on GitHub
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="https://standard.lux.network"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
               >
                 Read Documentation
               </a>

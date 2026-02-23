@@ -62,20 +62,20 @@ const AuthCallbackInner = () => {
   }, [searchParams, handleCallback, router]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background">
       <div className="text-center space-y-6">
         {error ? (
           <>
-            <div className="text-white/70 text-xl font-medium">{error}</div>
-            <p className="text-neutral-400">Redirecting to login...</p>
+            <div className="text-foreground/70 text-xl font-medium">{error}</div>
+            <p className="text-muted-foreground">Redirecting to login...</p>
           </>
         ) : (
           <>
-            <Loader2 className="w-12 h-12 animate-spin text-white mx-auto" />
-            <h1 className="text-xl font-medium text-white">
+            <Loader2 className="w-12 h-12 animate-spin text-foreground mx-auto" />
+            <h1 className="text-xl font-medium text-foreground">
               Completing authentication...
             </h1>
-            <p className="text-neutral-400">Please wait while we sign you in.</p>
+            <p className="text-muted-foreground">Please wait while we sign you in.</p>
           </>
         )}
       </div>
@@ -84,7 +84,7 @@ const AuthCallbackInner = () => {
 };
 
 const AuthCallback = () => (
-  <Suspense fallback={<div className="min-h-screen bg-black" />}>
+  <Suspense fallback={<div className="min-h-screen bg-background" />}>
     <AuthCallbackInner />
   </Suspense>
 );

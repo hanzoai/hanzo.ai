@@ -63,10 +63,10 @@ const InvoicesList = () => {
   });
 
   const statusColors = {
-    Paid: "bg-white/30 text-white/70",
-    Due: "bg-white/20 text-white/50",
-    Overdue: "bg-white/10 text-white/40",
-    Processing: "bg-white/15 text-white/60"
+    Paid: "bg-primary/30 text-foreground/70",
+    Due: "bg-primary/20 text-foreground/50",
+    Overdue: "bg-primary/10 text-foreground/40",
+    Processing: "bg-primary/15 text-foreground/60"
   };
 
   return (
@@ -76,10 +76,10 @@ const InvoicesList = () => {
     >
       <div className="p-6 border-b border-gray-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex items-center gap-3">
-          <Calendar className="h-5 w-5 text-neutral-400" />
+          <Calendar className="h-5 w-5 text-muted-foreground" />
           <div className="space-y-1">
             <h3 className="text-xl font-medium">Invoice History</h3>
-            <p className="text-sm text-neutral-400">View and download past invoices</p>
+            <p className="text-sm text-muted-foreground">View and download past invoices</p>
           </div>
         </div>
         
@@ -89,7 +89,7 @@ const InvoicesList = () => {
             Filter
           </Button>
           
-          <Button className="bg-[var(--white)] hover:bg-gray-200 text-black">
+          <Button className="bg-[var(--white)] hover:bg-gray-200 text-primary-foreground">
             <Download className="h-4 w-4 mr-2" />
             Export All
           </Button>
@@ -101,12 +101,12 @@ const InvoicesList = () => {
           <Table>
             <TableHeader className="bg-[var(--black)]">
               <TableRow className="border-b border-gray-800 hover:bg-transparent">
-                <TableHead className="text-neutral-400 font-medium py-3 px-6">Invoice</TableHead>
-                <TableHead className="text-neutral-400 font-medium py-3 px-6">Date</TableHead>
-                <TableHead className="text-neutral-400 font-medium py-3 px-6">Due Date</TableHead>
-                <TableHead className="text-neutral-400 font-medium py-3 px-6">Amount</TableHead>
-                <TableHead className="text-neutral-400 font-medium py-3 px-6">Status</TableHead>
-                <TableHead className="text-right text-neutral-400 font-medium py-3 px-6">Actions</TableHead>
+                <TableHead className="text-muted-foreground font-medium py-3 px-6">Invoice</TableHead>
+                <TableHead className="text-muted-foreground font-medium py-3 px-6">Date</TableHead>
+                <TableHead className="text-muted-foreground font-medium py-3 px-6">Due Date</TableHead>
+                <TableHead className="text-muted-foreground font-medium py-3 px-6">Amount</TableHead>
+                <TableHead className="text-muted-foreground font-medium py-3 px-6">Status</TableHead>
+                <TableHead className="text-right text-muted-foreground font-medium py-3 px-6">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -125,7 +125,7 @@ const InvoicesList = () => {
                     <Button 
                       variant="ghost" 
                       size="sm"
-                      className="text-neutral-400 hover:text-[var(--white)] hover:bg-gray-800"
+                      className="text-muted-foreground hover:text-[var(--white)] hover:bg-gray-800"
                     >
                       <Download className="h-4 w-4 mr-2" />
                       Download
@@ -138,9 +138,9 @@ const InvoicesList = () => {
         </div>
       ) : (
         <div className="py-16 text-center">
-          <FileText className="h-12 w-12 mx-auto mb-4 text-neutral-600" />
+          <FileText className="h-12 w-12 mx-auto mb-4 text-muted-foreground/60" />
           <h3 className="text-xl font-medium mb-2">No Invoices Found</h3>
-          <p className="text-neutral-400 max-w-md mx-auto">
+          <p className="text-muted-foreground max-w-md mx-auto">
             Once you start using our services, your invoices will appear here.
           </p>
         </div>

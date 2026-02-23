@@ -8,7 +8,7 @@ import { Button } from "@hanzo/ui";
 
 const Security = () => {
   return (
-    <section id="security" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
+    <section id="security" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-background">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -17,11 +17,11 @@ const Security = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <Shield className="w-16 h-16 text-white mx-auto mb-6" />
+          <Shield className="w-16 h-16 text-foreground mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Enterprise-Ready
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Apps running on Hanzo Machines are KVM hardware-isolated, built on a memory-safe stack and running directly on our own metal.
           </p>
         </motion.div>
@@ -44,8 +44,8 @@ const Security = () => {
                 "CI/CD Integration"
               ].map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-white mr-3 mt-1" />
-                  <span className="text-neutral-300">{feature}</span>
+                  <CheckCircle className="w-5 h-5 text-foreground mr-3 mt-1" />
+                  <span className="text-foreground/80">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -59,12 +59,12 @@ const Security = () => {
             className="flex-1"
           >
             <div className="bg-gradient-to-br from-white/10 to-white/10 rounded-xl p-8 border border-white/30">
-              <Lock className="w-12 h-12 text-white mb-6" />
+              <Lock className="w-12 h-12 text-foreground mb-6" />
               <h3 className="text-xl font-bold mb-4">Hanzo.io Security</h3>
-              <p className="text-neutral-300 mb-8">
+              <p className="text-foreground/80 mb-8">
                 Our security team works around the clock to ensure your applications and data are protected. We employ industry-leading practices and regularly undergo independent security audits.
               </p>
-              <Button variant="outline" className="bg-transparent text-[var(--white)] hover:bg-[var(--white)] hover:text-black border border-white">
+              <Button variant="outline" className="bg-transparent text-[var(--white)] hover:bg-[var(--white)] hover:text-primary-foreground border border-white">
                 <a href="https://hanzo.ai/security">Security Details</a>
               </Button>
             </div>

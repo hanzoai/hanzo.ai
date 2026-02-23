@@ -16,16 +16,16 @@ interface DeploymentNodeProps {
 const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
   const getNodeBackgroundClass = () => {
     switch(node.type) {
-      case 'app': return 'bg-white/20 border border-white/30';
-      case 'redis': return 'bg-white/10 border border-white/20';
-      case 'postgres': return 'bg-white/20 border border-white/30';
+      case 'app': return 'bg-primary/20 border border-white/30';
+      case 'redis': return 'bg-primary/10 border border-border';
+      case 'postgres': return 'bg-primary/20 border border-white/30';
       case 'github': return 'bg-gray-500/20 border border-gray-500/30';
-      case 'volume': return 'bg-white/10 border border-white/20';
+      case 'volume': return 'bg-primary/10 border border-border';
       case 'network': 
         return node.id === 'network-public' 
-          ? 'bg-white/10 border-2 border-white/20' // Highlighted yellow for public network
-          : 'bg-white/20 border-2 border-white/20'; // Yellow outline for private network
-      default: return 'bg-white/20 border border-white/30';
+          ? 'bg-primary/10 border-2 border-border' // Highlighted yellow for public network
+          : 'bg-primary/20 border-2 border-border'; // Yellow outline for private network
+      default: return 'bg-primary/20 border border-white/30';
     }
   };
 
@@ -54,22 +54,22 @@ const DeploymentNode: React.FC<DeploymentNodeProps> = ({ node, onClick }) => {
         {renderIcon(node.iconType, node.iconProps)}
         {node.status && (
           <div className="absolute -right-1 -bottom-1 rounded-full bg-gray-800 border border-gray-700 p-0.5">
-            {node.status === 'deployed' && <Check className="h-3 w-3 text-white/70" />}
+            {node.status === 'deployed' && <Check className="h-3 w-3 text-foreground/70" />}
             {node.status === 'pending' && (
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
-                <svg className="h-3 w-3 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="h-3 w-3 text-foreground" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 9.27455 20.9097 6.80375 19.1414 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </motion.div>
             )}
-            {node.status === 'error' && <X className="h-3 w-3 text-white/70" />}
+            {node.status === 'error' && <X className="h-3 w-3 text-foreground/70" />}
           </div>
         )}
       </div>
-      <span className="mt-2 text-xs text-neutral-300 whitespace-nowrap">{node.label}</span>
+      <span className="mt-2 text-xs text-foreground/80 whitespace-nowrap">{node.label}</span>
     </motion.div>
   );
 };

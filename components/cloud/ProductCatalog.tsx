@@ -66,8 +66,6 @@ import {
   ChevronRight
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 interface Product {
   name: string;
   description: string;
@@ -263,10 +261,10 @@ const ProductCatalog = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Complete Cloud Platform
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Everything you need to build, deploy, and scale modern applications.
             90+ managed services, one unified platform.
           </p>
@@ -285,10 +283,10 @@ const ProductCatalog = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className={`bg-neutral-900/50 border rounded-xl overflow-hidden transition-all duration-300 ${
+                className={`bg-secondary/50 border rounded-xl overflow-hidden transition-all duration-300 ${
                   isExpanded
-                    ? "border-neutral-700 ring-1 ring-neutral-700"
-                    : "border-neutral-800 hover:border-neutral-700"
+                    ? "border-border ring-1 ring-neutral-700"
+                    : "border-border hover:border-border"
                 }`}
               >
                 {/* Category header */}
@@ -309,19 +307,19 @@ const ProductCatalog = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-white">
+                      <h3 className="text-lg font-semibold text-foreground">
                         {category.name}
                       </h3>
                       <ChevronRight
-                        className={`w-5 h-5 text-neutral-500 transition-transform ${
+                        className={`w-5 h-5 text-muted-foreground transition-transform ${
                           isExpanded ? "rotate-90" : ""
                         }`}
                       />
                     </div>
-                    <p className="text-sm text-neutral-400 mt-1">
+                    <p className="text-sm text-muted-foreground mt-1">
                       {category.description}
                     </p>
-                    <div className="text-xs text-neutral-500 mt-2">
+                    <div className="text-xs text-muted-foreground mt-2">
                       {category.products.length} services
                     </div>
                   </div>
@@ -333,23 +331,23 @@ const ProductCatalog = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="border-t border-neutral-800"
+                    className="border-t border-border"
                   >
                     <div className="p-4 grid grid-cols-3 gap-2">
                       {category.products.map((product) => {
                         const ProductIcon = product.icon;
                         const content = (
-                          <div className="p-3 rounded-lg bg-neutral-950/50 hover:bg-neutral-800/50 transition-colors text-center group">
+                          <div className="p-3 rounded-lg bg-background/50 hover:bg-accent/50 transition-colors text-center group">
                             <ProductIcon
-                              className="w-5 h-5 mx-auto mb-2 text-neutral-400 group-hover:text-white transition-colors"
+                              className="w-5 h-5 mx-auto mb-2 text-muted-foreground group-hover:text-foreground transition-colors"
                               style={{
                                 color: product.href ? category.color : undefined,
                               }}
                             />
-                            <div className="text-xs font-medium text-white truncate">
+                            <div className="text-xs font-medium text-foreground truncate">
                               {product.name}
                             </div>
-                            <div className="text-[10px] text-neutral-500 truncate">
+                            <div className="text-[10px] text-muted-foreground truncate">
                               {product.description}
                             </div>
                           </div>
@@ -378,14 +376,14 @@ const ProductCatalog = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-neutral-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             All services available via API, CLI, Console, and SDKs
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/pricing"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-              style={{ backgroundColor: BRAND_COLOR, color: "#000" }}
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
             >
               View Pricing
               <ChevronRight className="ml-2 h-4 w-4" />
@@ -394,7 +392,7 @@ const ProductCatalog = () => {
               href="https://docs.hanzo.ai/cloud"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
             >
               Read Documentation
               <ChevronRight className="ml-2 h-4 w-4" />

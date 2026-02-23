@@ -21,7 +21,7 @@ const testimonial = {
 
 const TrustedBy = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const TrustedBy = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Trusted Globally</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Industry leaders trust Hanzo Payments to manage their complex financial operations.
           </p>
         </motion.div>
@@ -59,13 +59,13 @@ const TrustedBy = () => {
           className="bg-gray-900/30 border border-gray-800 rounded-lg p-8 max-w-3xl mx-auto"
         >
           <div className="flex flex-col items-center text-center">
-            <div className="text-5xl text-white mb-4">"</div>
+            <div className="text-5xl text-foreground mb-4">"</div>
             <p className="text-xl text-neutral-200 italic mb-6">
               {testimonial.quote}
             </p>
             <div className="mt-4">
               <p className="font-semibold">{testimonial.author}</p>
-              <p className="text-neutral-400 text-sm">{testimonial.role}</p>
+              <p className="text-muted-foreground text-sm">{testimonial.role}</p>
             </div>
           </div>
         </motion.div>
@@ -78,8 +78,8 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-white mb-2">200+</div>
-            <div className="text-neutral-400">Currencies Supported</div>
+            <div className="text-3xl font-bold text-foreground mb-2">200+</div>
+            <div className="text-muted-foreground">Currencies Supported</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -88,8 +88,8 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-white mb-2">99.999%</div>
-            <div className="text-neutral-400">Uptime SLA</div>
+            <div className="text-3xl font-bold text-foreground mb-2">99.999%</div>
+            <div className="text-muted-foreground">Uptime SLA</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -98,8 +98,8 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-white mb-2">190+</div>
-            <div className="text-neutral-400">Countries Served</div>
+            <div className="text-3xl font-bold text-foreground mb-2">190+</div>
+            <div className="text-muted-foreground">Countries Served</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -108,8 +108,8 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="p-4"
           >
-            <div className="text-3xl font-bold text-white mb-2">24/7</div>
-            <div className="text-neutral-400">Global Support</div>
+            <div className="text-3xl font-bold text-foreground mb-2">24/7</div>
+            <div className="text-muted-foreground">Global Support</div>
           </motion.div>
         </div>
       </div>

@@ -364,17 +364,17 @@ const ChainDirectory = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 mb-6">
-              <Globe className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white">Chain Resource Directory</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-primary/10 mb-6">
+              <Globe className="w-4 h-4 text-foreground" />
+              <span className="text-sm font-medium text-foreground">Chain Resource Directory</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">100+ Chains.</span>{" "}
-              <span className="text-neutral-400">One API.</span>
+              <span className="text-foreground">100+ Chains.</span>{" "}
+              <span className="text-muted-foreground">One API.</span>
             </h1>
 
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               RPC endpoints, chain IDs, WebSockets, explorers, and Hanzo product support for every network.
             </p>
           </motion.div>
@@ -387,13 +387,13 @@ const ChainDirectory = () => {
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             {/* Search */}
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <input
                 type="text"
                 placeholder="Search chains..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-white/50"
+                className="w-full pl-10 pr-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-white/50"
               />
             </div>
 
@@ -403,8 +403,8 @@ const ChainDirectory = () => {
                 onClick={() => setSelectedCategory("all")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   selectedCategory === "all"
-                    ? "bg-white text-black"
-                    : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-neutral-700"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary border border-border text-muted-foreground hover:border-border"
                 }`}
               >
                 All
@@ -415,8 +415,8 @@ const ChainDirectory = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedCategory === cat.id
-                      ? "bg-white text-black"
-                      : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-neutral-700"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary border border-border text-muted-foreground hover:border-border"
                   }`}
                 >
                   {cat.name}
@@ -426,12 +426,12 @@ const ChainDirectory = () => {
           </div>
 
           {/* Product Support Legend */}
-          <div className="flex flex-wrap gap-4 mb-8 p-4 rounded-lg bg-neutral-900/50 border border-neutral-800">
-            <span className="text-sm text-neutral-500">Hanzo Products:</span>
+          <div className="flex flex-wrap gap-4 mb-8 p-4 rounded-lg bg-secondary/50 border border-border">
+            <span className="text-sm text-muted-foreground">Hanzo Products:</span>
             {PRODUCTS.map((product) => {
               const Icon = product.icon;
               return (
-                <div key={product.key} className="flex items-center gap-1.5 text-xs text-neutral-400">
+                <div key={product.key} className="flex items-center gap-1.5 text-xs text-muted-foreground">
                   <Icon className="w-3.5 h-3.5" />
                   {product.name}
                 </div>
@@ -447,20 +447,20 @@ const ChainDirectory = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.02 }}
-                className="rounded-xl border border-neutral-800 bg-neutral-900/50 overflow-hidden"
+                className="rounded-xl border border-border bg-secondary/50 overflow-hidden"
               >
                 {/* Chain Header */}
                 <button
                   onClick={() => setExpandedChain(expandedChain === chain.id ? null : chain.id)}
-                  className="w-full p-4 flex items-center justify-between hover:bg-neutral-800/50 transition-colors"
+                  className="w-full p-4 flex items-center justify-between hover:bg-accent/50 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                      <Globe className="w-5 h-5 text-white" />
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Globe className="w-5 h-5 text-foreground" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-white">{chain.name}</h3>
-                      <div className="flex items-center gap-3 text-xs text-neutral-500">
+                      <h3 className="font-semibold text-foreground">{chain.name}</h3>
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
                         {chain.chainId && <span>Chain ID: {chain.chainId}</span>}
                         <span className="capitalize">{chain.category === "lux" ? "Lux Ecosystem" : chain.category.toUpperCase()}</span>
                       </div>
@@ -476,7 +476,7 @@ const ChainDirectory = () => {
                           <div
                             key={product.key}
                             className={`w-6 h-6 rounded flex items-center justify-center ${
-                              supported ? "bg-white/10 text-white/70" : "bg-neutral-800 text-neutral-600"
+                              supported ? "bg-primary/10 text-foreground/70" : "bg-neutral-800 text-muted-foreground/60"
                             }`}
                             title={product.name}
                           >
@@ -485,26 +485,26 @@ const ChainDirectory = () => {
                         );
                       })}
                     </div>
-                    <ChevronDown className={`w-5 h-5 text-neutral-500 transition-transform ${expandedChain === chain.id ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform ${expandedChain === chain.id ? "rotate-180" : ""}`} />
                   </div>
                 </button>
 
                 {/* Expanded Details */}
                 {expandedChain === chain.id && (
-                  <div className="px-4 pb-4 border-t border-neutral-800">
+                  <div className="px-4 pb-4 border-t border-border">
                     <div className="grid md:grid-cols-2 gap-6 pt-4">
                       {/* Endpoints */}
                       <div>
-                        <h4 className="text-sm font-medium text-neutral-400 mb-3">Endpoints</h4>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-3">Endpoints</h4>
                         <div className="space-y-2">
-                          <div className="p-3 rounded-lg bg-neutral-950 font-mono text-xs">
-                            <span className="text-neutral-500">RPC:</span>{" "}
-                            <span className="text-white">{chain.rpcEndpoint}</span>
+                          <div className="p-3 rounded-lg bg-background font-mono text-xs">
+                            <span className="text-muted-foreground">RPC:</span>{" "}
+                            <span className="text-foreground">{chain.rpcEndpoint}</span>
                           </div>
                           {chain.wsEndpoint && (
-                            <div className="p-3 rounded-lg bg-neutral-950 font-mono text-xs">
-                              <span className="text-neutral-500">WS:</span>{" "}
-                              <span className="text-white">{chain.wsEndpoint}</span>
+                            <div className="p-3 rounded-lg bg-background font-mono text-xs">
+                              <span className="text-muted-foreground">WS:</span>{" "}
+                              <span className="text-foreground">{chain.wsEndpoint}</span>
                             </div>
                           )}
                         </div>
@@ -512,14 +512,14 @@ const ChainDirectory = () => {
 
                       {/* Resources */}
                       <div>
-                        <h4 className="text-sm font-medium text-neutral-400 mb-3">Resources</h4>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-3">Resources</h4>
                         <div className="flex flex-wrap gap-2">
                           {chain.explorer && (
                             <a
                               href={chain.explorer || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-neutral-300 hover:bg-neutral-700"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-foreground/80 hover:bg-neutral-700"
                             >
                               Explorer <ExternalLink className="w-3 h-3" />
                             </a>
@@ -529,7 +529,7 @@ const ChainDirectory = () => {
                               href={chain.github || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-neutral-300 hover:bg-neutral-700"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-foreground/80 hover:bg-neutral-700"
                             >
                               GitHub <ExternalLink className="w-3 h-3" />
                             </a>
@@ -539,7 +539,7 @@ const ChainDirectory = () => {
                               href={chain.docs || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-neutral-300 hover:bg-neutral-700"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-foreground/80 hover:bg-neutral-700"
                             >
                               Docs <ExternalLink className="w-3 h-3" />
                             </a>
@@ -549,7 +549,7 @@ const ChainDirectory = () => {
                               href={chain.faucet || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-neutral-300 hover:bg-neutral-700"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 text-xs text-foreground/80 hover:bg-neutral-700"
                             >
                               Faucet <ExternalLink className="w-3 h-3" />
                             </a>
@@ -560,7 +560,7 @@ const ChainDirectory = () => {
 
                     {/* Product Support Grid (Mobile) */}
                     <div className="md:hidden mt-4">
-                      <h4 className="text-sm font-medium text-neutral-400 mb-3">Product Support</h4>
+                      <h4 className="text-sm font-medium text-muted-foreground mb-3">Product Support</h4>
                       <div className="grid grid-cols-5 gap-2">
                         {PRODUCTS.map((product) => {
                           const supported = chain.support[product.key as keyof typeof chain.support];
@@ -569,7 +569,7 @@ const ChainDirectory = () => {
                             <div
                               key={product.key}
                               className={`p-2 rounded-lg text-center ${
-                                supported ? "bg-white/5 text-white/70" : "bg-neutral-800 text-neutral-600"
+                                supported ? "bg-primary/5 text-foreground/70" : "bg-neutral-800 text-muted-foreground/60"
                               }`}
                             >
                               <Icon className="w-4 h-4 mx-auto mb-1" />
@@ -586,7 +586,7 @@ const ChainDirectory = () => {
           </div>
 
           {filteredChains.length === 0 && (
-            <div className="text-center py-12 text-neutral-500">
+            <div className="text-center py-12 text-muted-foreground">
               No chains found matching your search.
             </div>
           )}

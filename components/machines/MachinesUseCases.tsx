@@ -2,8 +2,6 @@
 import React from 'react';
 import ChromeText from "@/components/ui/chrome-text";
 
-const BRAND_COLOR = "#ffffff";
-
 interface UseCaseCardProps {
   title: string;
   description: string;
@@ -14,7 +12,7 @@ const UseCaseCard = ({ title, description, features }: UseCaseCardProps) => {
   return (
     <div
       className="bg-card rounded-xl p-8"
-      style={{ backgroundColor: `${BRAND_COLOR}08`, border: `1px solid ${BRAND_COLOR}30` }}
+      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 5%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)" }}
     >
       <h3 className="text-2xl font-bold text-foreground mb-4">{title}</h3>
       <p className="text-muted-foreground mb-4">
@@ -23,7 +21,7 @@ const UseCaseCard = ({ title, description, features }: UseCaseCardProps) => {
       <ul className="space-y-2 text-muted-foreground">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="mr-2" style={{ color: BRAND_COLOR }}>•</span>
+            <span className="mr-2">•</span>
             <span>{feature}</span>
           </li>
         ))}
@@ -75,7 +73,7 @@ const MachinesUseCases = () => {
   return (
     <section
       className="py-20"
-      style={{ background: `linear-gradient(to bottom, transparent, ${BRAND_COLOR}10)` }}
+      style={{ background: `linear-gradient(to bottom, transparent, var(--primary)10)` }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

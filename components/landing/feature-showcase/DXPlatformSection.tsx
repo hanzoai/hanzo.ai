@@ -16,7 +16,7 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
     <div className="mb-20">
       <SectionHeader
         badge="DX Platform"
-        badgeColor="bg-white/20 border border-white/30 text-white/70"
+        badgeColor="bg-primary/20 border border-white/30 text-foreground/70"
         title="Developer Experience Tools for AI Engineering"
         description="Supercharge your AI development workflow with purpose-built tools for engineers."
       />
@@ -35,10 +35,10 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <div className="h-full">
                   <ProductCard
-                    icon={<product.icon className="text-white" />}
+                    icon={<product.icon className="text-foreground" />}
                     title={product.name}
                     description={product.description}
-                    color="bg-white/20"
+                    color="bg-primary/20"
                     hoverColor="bg-[#cccccc]/40"
                     link={product.link || "#"}
                   />
@@ -60,10 +60,10 @@ const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
             {products.map((product, index) => (
               <div key={index} className="w-[300px] flex-shrink-0">
                 <ProductCard
-                  icon={<product.icon className="text-white" />}
+                  icon={<product.icon className="text-foreground" />}
                   title={product.name}
                   description={product.description}
-                  color="bg-white/20"
+                  color="bg-primary/20"
                   hoverColor="bg-[#cccccc]/40"
                   link={product.link || "#"}
                 />

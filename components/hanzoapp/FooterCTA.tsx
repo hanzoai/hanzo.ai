@@ -5,16 +5,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const FooterCTA = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-black relative overflow-hidden">
+    <section className="py-24 px-4 md:px-8 bg-background relative overflow-hidden">
       {/* Background gradient */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20"
         style={{
-          background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+          background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
           filter: "blur(100px)",
         }}
       />
@@ -25,10 +23,10 @@ const FooterCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Start building today
           </h2>
-          <p className="text-xl text-neutral-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Web, desktop, local, or decentralized. Choose your way.
           </p>
 
@@ -37,15 +35,15 @@ const FooterCTA = () => {
               href="https://hanzo.app"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-black text-lg transition-all hover:opacity-90"
-              style={{ backgroundColor: BRAND_COLOR }}
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-primary-foreground text-lg transition-all hover:opacity-90 bg-primary text-primary-foreground"
+
             >
               Open hanzo.app
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             <Link
               href="/download"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-white text-lg border border-neutral-700 hover:bg-neutral-900 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-foreground text-lg border border-border hover:bg-secondary transition-colors"
             >
               <Download className="mr-2 h-5 w-5" />
               Download desktop

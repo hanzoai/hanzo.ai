@@ -24,8 +24,8 @@ const ModelCategoryCard = ({ model, modelIndex, categoryIndex }: ModelCategoryCa
     ? "bg-[var(--black)]/50 border border-gray-800/50 rounded-xl p-6 hover:border-gray-700/50 transition-colors"
     : "bg-[var(--black)]/30 border border-gray-800/30 rounded-xl p-6 hover:border-gray-700/30 transition-colors";
     
-  const iconColor = isFrontierAI ? "text-neutral-400" : "text-neutral-500";
-  const checkColor = isFrontierAI ? "text-neutral-400" : "text-neutral-500";
+  const iconColor = isFrontierAI ? "text-muted-foreground" : "text-muted-foreground";
+  const checkColor = isFrontierAI ? "text-muted-foreground" : "text-muted-foreground";
 
   return (
     <motion.div
@@ -42,16 +42,16 @@ const ModelCategoryCard = ({ model, modelIndex, categoryIndex }: ModelCategoryCa
       </div>
       
       {model.description && (
-        <p className="text-sm text-neutral-400 mb-4 italic">{model.description}</p>
+        <p className="text-sm text-muted-foreground mb-4 italic">{model.description}</p>
       )}
       
-      <p className="text-sm text-neutral-500 mb-4">via {model.provider}</p>
+      <p className="text-sm text-muted-foreground mb-4">via {model.provider}</p>
       
       <ul className="space-y-2 mb-6">
         {model.features.map((feature, i) => (
           <li key={i} className="flex items-start">
             <Check className={`h-5 w-5 ${checkColor} mr-2 flex-shrink-0 mt-0.5`} />
-            <span className="text-neutral-300 text-sm">{feature}</span>
+            <span className="text-foreground/80 text-sm">{feature}</span>
           </li>
         ))}
       </ul>

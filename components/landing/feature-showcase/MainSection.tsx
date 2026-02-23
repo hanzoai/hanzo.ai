@@ -19,13 +19,13 @@ const MainSection: React.FC<MainSectionProps> = ({ children }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium mb-6">
+            <div className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-white/30 text-foreground/70 text-sm font-medium mb-6">
               Open Source AI Engineering
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--white)] mb-6">
               Build the Future with AI
             </h2>
-            <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-10">
               A complete platform for developers to build, deploy, and scale AI
               applications with unprecedented speed and complete control.
             </p>

@@ -19,7 +19,7 @@ const VoiceFeature = () => {
           <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-2xl border border-gray-800">
             <div className="relative pb-[120%] h-0 bg-gray-900">
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-neutral-400">Voice input preview</span>
+                <span className="text-muted-foreground">Voice input preview</span>
               </div>
             </div>
           </div>
@@ -28,16 +28,16 @@ const VoiceFeature = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[var(--white)]">
               Hold command anywhere to talk
             </h2>
-            <p className="text-xl text-neutral-300 mb-6">
+            <p className="text-xl text-foreground/80 mb-6">
               Control apps, dictate content, and ask questions completely hands-free
             </p>
             
-            <div className="flex items-center space-x-4 text-neutral-400">
-              <Command className="h-6 w-6 text-white" />
+            <div className="flex items-center space-x-4 text-muted-foreground">
+              <Command className="h-6 w-6 text-foreground" />
               <span>Use system-wide keyboard shortcuts</span>
             </div>
-            <div className="flex items-center space-x-4 text-neutral-400 mt-3">
-              <Mic className="h-6 w-6 text-white" />
+            <div className="flex items-center space-x-4 text-muted-foreground mt-3">
+              <Mic className="h-6 w-6 text-foreground" />
               <span>Seamless voice recognition</span>
             </div>
           </div>

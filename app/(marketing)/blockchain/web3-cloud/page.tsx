@@ -146,10 +146,10 @@ const HanzoWeb3Cloud = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-border mb-8"
           >
-            <Cloud className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white/70">Blockchain Infrastructure</span>
+            <Cloud className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground/70">Blockchain Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -158,7 +158,7 @@ const HanzoWeb3Cloud = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">Hanzo</span>{" "}
+            <span className="text-foreground">Hanzo</span>{" "}
             <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               Nodes
             </span>
@@ -168,7 +168,7 @@ const HanzoWeb3Cloud = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-medium text-white mb-4"
+            className="text-2xl md:text-3xl font-medium text-foreground mb-4"
           >
             100+ Chains. One API. Infinite Scale.
           </motion.p>
@@ -177,7 +177,7 @@ const HanzoWeb3Cloud = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
             Complete blockchain infrastructure for developers. RPC, WebSockets, Token APIs,
             NFT APIs, Account Abstraction—everything you need to build Web3 applications.
@@ -190,21 +190,21 @@ const HanzoWeb3Cloud = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">100+</div>
-              <div className="text-sm text-neutral-400">Chains Supported</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">100+</div>
+              <div className="text-sm text-muted-foreground">Chains Supported</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">99.999%</div>
-              <div className="text-sm text-neutral-400">Uptime SLA</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">99.999%</div>
+              <div className="text-sm text-muted-foreground">Uptime SLA</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">&lt;50ms</div>
-              <div className="text-sm text-neutral-400">Global Latency</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">&lt;50ms</div>
+              <div className="text-sm text-muted-foreground">Global Latency</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">ERC-4337</div>
-              <div className="text-sm text-neutral-400">Account Abstraction</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">ERC-4337</div>
+              <div className="text-sm text-muted-foreground">Account Abstraction</div>
             </div>
           </motion.div>
 
@@ -217,14 +217,14 @@ const HanzoWeb3Cloud = () => {
           >
             <a
               href="https://web3.hanzo.ai"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/20 text-foreground font-medium rounded-full transition-colors"
             >
               Launch Console
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="https://docs.hanzo.ai/web3"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               View Documentation
             </a>
@@ -233,7 +233,7 @@ const HanzoWeb3Cloud = () => {
       </section>
 
       {/* Core APIs */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -241,8 +241,8 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core APIs</h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Core APIs</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Everything you need to build blockchain applications
             </p>
           </motion.div>
@@ -257,18 +257,18 @@ const HanzoWeb3Cloud = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-white/30 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-foreground" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{api.name}</h3>
-                  <p className="text-neutral-400 text-sm mb-4">{api.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{api.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{api.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {api.features.map((feature, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-neutral-800 rounded text-xs text-neutral-300"
+                        className="px-2 py-1 bg-neutral-800 rounded text-xs text-foreground/80"
                       >
                         {feature}
                       </span>
@@ -282,7 +282,7 @@ const HanzoWeb3Cloud = () => {
       </section>
 
       {/* Account Abstraction */}
-      <section className="py-20 px-4 md:px-8 bg-neutral-950">
+      <section className="py-20 px-4 md:px-8 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -290,14 +290,14 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
-              <Wallet className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white/70">ERC-4337</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-border mb-6">
+              <Wallet className="w-4 h-4 text-foreground" />
+              <span className="text-sm font-medium text-foreground/70">ERC-4337</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Account Abstraction
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Smart wallets, gasless transactions, and programmable accounts
             </p>
           </motion.div>
@@ -315,13 +315,13 @@ const HanzoWeb3Cloud = () => {
                 >
                   <Link
                     href={product.href || "#"}
-                    className="block bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors h-full"
+                    className="block bg-secondary/50 border border-border rounded-xl p-6 hover:border-white/30 transition-colors h-full"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
-                    <p className="text-neutral-400">{product.description}</p>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{product.name}</h3>
+                    <p className="text-muted-foreground">{product.description}</p>
                   </Link>
                 </motion.div>
               );
@@ -339,10 +339,10 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               100+ Supported Chains
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From Ethereum to Solana, L1s to ZK rollups—we support them all
             </p>
           </motion.div>
@@ -355,13 +355,13 @@ const HanzoWeb3Cloud = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6"
+                className="bg-secondary/50 border border-border rounded-xl p-6"
               >
-                <h3 className="text-lg font-semibold text-white mb-4">{category}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-4">{category}</h3>
                 <ul className="space-y-2">
                   {chains.map((chain, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-neutral-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                    <li key={idx} className="flex items-center gap-2 text-sm text-foreground/80">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {chain}
                     </li>
                   ))}
@@ -378,7 +378,7 @@ const HanzoWeb3Cloud = () => {
           >
             <Link
               href="/blockchain/directory"
-              className="inline-flex items-center gap-2 text-white hover:text-white/70 font-medium"
+              className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 font-medium"
             >
               View All Chains & Endpoints <ArrowRight className="w-4 h-4" />
             </Link>
@@ -387,7 +387,7 @@ const HanzoWeb3Cloud = () => {
       </section>
 
       {/* White Label Products */}
-      <section className="py-20 px-4 md:px-8 bg-neutral-950">
+      <section className="py-20 px-4 md:px-8 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -395,10 +395,10 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               White-Label Products
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Deploy branded blockchain infrastructure on your domain
             </p>
           </motion.div>
@@ -413,15 +413,15 @@ const HanzoWeb3Cloud = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-white/30 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-xl p-5 hover:border-white/30 transition-colors"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-white" />
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-foreground" />
                     </div>
-                    <h3 className="font-semibold text-white">{product.name}</h3>
+                    <h3 className="font-semibold text-foreground">{product.name}</h3>
                   </div>
-                  <p className="text-sm text-neutral-400">{product.description}</p>
+                  <p className="text-sm text-muted-foreground">{product.description}</p>
                 </motion.div>
               );
             })}
@@ -438,10 +438,10 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Deploy Anywhere
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Managed cloud or self-hosted—your infrastructure, your way
             </p>
           </motion.div>
@@ -456,15 +456,15 @@ const HanzoWeb3Cloud = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/30 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-xl p-4 hover:border-white/30 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-white" />
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white">{option.name}</h3>
-                      <p className="text-xs text-neutral-400">{option.description}</p>
+                      <h3 className="font-semibold text-foreground">{option.name}</h3>
+                      <p className="text-xs text-muted-foreground">{option.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -475,7 +475,7 @@ const HanzoWeb3Cloud = () => {
       </section>
 
       {/* Code Example */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -483,25 +483,25 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get Started in Minutes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Get Started in Minutes</h2>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden"
+            className="bg-secondary border border-border rounded-xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-border">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
               </div>
-              <span className="text-xs text-neutral-500 ml-2">web3.ts</span>
+              <span className="text-xs text-muted-foreground ml-2">web3.ts</span>
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
-              <code className="text-neutral-300">{`import { HanzoWeb3 } from "@hanzo/web3";
+              <code className="text-foreground/80">{`import { HanzoWeb3 } from "@hanzo/web3";
 
 const web3 = new HanzoWeb3({
   apiKey: process.env.HANZO_API_KEY,
@@ -557,24 +557,24 @@ await smartWallet.execute({
             viewport={{ once: true }}
             className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/30 rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Start Building on Hanzo Web3 Cloud
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
               Free tier includes 3M compute units/month. Scale to enterprise with dedicated infrastructure.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://web3.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary/20 text-foreground font-medium rounded-full transition-colors"
               >
                 Get Free API Key
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/contact/sales"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
               >
                 Contact Enterprise Sales
               </a>

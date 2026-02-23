@@ -112,7 +112,7 @@ const CoreFeatures = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-[var(--white)] mb-4">Core Features</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Everything you need to build modern, scalable applications
           </p>
         </motion.div>

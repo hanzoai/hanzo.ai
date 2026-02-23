@@ -29,7 +29,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
         onTitleAnimationComplete();
       }}
     >
-      <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium mb-6">
+      <div className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-white/30 text-foreground/70 text-sm font-medium mb-6">
         Open Source AI Engineering Platform
       </div>
       

@@ -19,7 +19,7 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
         <h3 className="text-lg font-semibold text-[var(--white)]">{title}</h3>
         <Link
           href="/solutions"
-          className="text-white hover:text-white/70 text-sm font-medium"
+          className="text-foreground hover:text-foreground/70 text-sm font-medium"
           onClick={onItemClick}
         >
           View all
@@ -38,10 +38,10 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
               onClick={onItemClick}
             >
               <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <Icon className="h-5 w-5 text-neutral-400 group-hover:text-[var(--white)] transition-colors" strokeWidth={1.5} />
+                <Icon className="h-5 w-5 text-muted-foreground group-hover:text-[var(--white)] transition-colors" strokeWidth={1.5} />
               </div>
               <div className="flex-1">
-                <div className="text-neutral-300 group-hover:text-[var(--white)] font-medium truncate">{item}</div>
+                <div className="text-foreground/80 group-hover:text-[var(--white)] font-medium truncate">{item}</div>
               </div>
             </Link>
           );

@@ -13,37 +13,35 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const HumanAIIntegration = () => {
   const features = [
     {
-      icon: <Video className="h-10 w-10" style={{ color: BRAND_COLOR }} />,
+      icon: <Video className="h-10 w-10" />,
       title: "Train via Zoom",
       description: "Simply have a Zoom call with your AI agents. They learn by watching and listening, just like a human team member would."
     },
     {
-      icon: <Monitor className="h-10 w-10" style={{ color: BRAND_COLOR }} />,
+      icon: <Monitor className="h-10 w-10" />,
       title: "Watch Them Work",
       description: "View your AI agents' work in real-time through a virtual desktop. Provide feedback and guidance as needed."
     },
     {
-      icon: <MessageSquare className="h-10 w-10" style={{ color: BRAND_COLOR }} />,
+      icon: <MessageSquare className="h-10 w-10" />,
       title: "Seamless Communication",
       description: "Chat with your AI team members through your existing communication channels like Slack, Teams, or email."
     },
     {
-      icon: <Lightbulb className="h-10 w-10" style={{ color: BRAND_COLOR }} />,
+      icon: <Lightbulb className="h-10 w-10" />,
       title: "Proactive Suggestions",
       description: "AI agents will proactively offer insights and suggestions based on their observations of your workflow."
     },
     {
-      icon: <Workflow className="h-10 w-10" style={{ color: BRAND_COLOR }} />,
+      icon: <Workflow className="h-10 w-10" />,
       title: "Workflow Automation",
       description: "Agents learn your repetitive tasks and offer to automate them, saving you time for more creative work."
     },
     {
-      icon: <Users className="h-10 w-10" style={{ color: BRAND_COLOR }} />,
+      icon: <Users className="h-10 w-10" />,
       title: "Human Escalation",
       description: "When tasks require human judgment, agents automatically escalate to the appropriate team member."
     }
@@ -61,7 +59,7 @@ const HumanAIIntegration = () => {
           >
             <div
               className="inline-flex p-2 rounded-full mb-4"
-              style={{ backgroundColor: `${BRAND_COLOR}20`, border: `1px solid ${BRAND_COLOR}30`, color: BRAND_COLOR }}
+              style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)", color: "var(--primary)" }}
             >
               <Users className="h-6 w-6" />
             </div>
@@ -75,12 +73,12 @@ const HumanAIIntegration = () => {
 
             <div
               className="relative aspect-video rounded-xl overflow-hidden bg-card/50"
-              style={{ border: `1px solid ${BRAND_COLOR}30` }}
+              style={{ border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)" }}
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* This would be a real video in production */}
                 <div className="text-center p-8">
-                  <Video className="h-16 w-16 mx-auto mb-4 opacity-70" style={{ color: BRAND_COLOR }} />
+                  <Video className="h-16 w-16 mx-auto mb-4 opacity-70" />
                   <p className="text-muted-foreground">Interactive demo video would be here</p>
                 </div>
               </div>
@@ -102,7 +100,7 @@ const HumanAIIntegration = () => {
                   <CardContent className="p-6">
                     <div
                       className="p-3 rounded-lg inline-flex mb-4"
-                      style={{ backgroundColor: `${BRAND_COLOR}20` }}
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
                     >
                       {feature.icon}
                     </div>

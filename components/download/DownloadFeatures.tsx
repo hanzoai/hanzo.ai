@@ -20,16 +20,16 @@ const DownloadFeatures = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[var(--white)]">
               Local audio and mic transcription
             </h2>
-            <p className="text-xl text-neutral-300 mb-6">
+            <p className="text-xl text-foreground/80 mb-6">
               Automatically capture and share meeting notes, saving hours of manual work
             </p>
             
-            <div className="flex items-center space-x-4 text-neutral-400">
-              <Mic className="h-6 w-6 text-white" />
+            <div className="flex items-center space-x-4 text-muted-foreground">
+              <Mic className="h-6 w-6 text-foreground" />
               <span>Private, secure, and processed on-device</span>
             </div>
-            <div className="flex items-center space-x-4 text-neutral-400 mt-3">
-              <Headphones className="h-6 w-6 text-white" />
+            <div className="flex items-center space-x-4 text-muted-foreground mt-3">
+              <Headphones className="h-6 w-6 text-foreground" />
               <span>Works with all major conferencing apps</span>
             </div>
           </div>
@@ -37,7 +37,7 @@ const DownloadFeatures = () => {
           <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-800">
             <div className="relative pb-[120%] h-0 bg-gray-900">
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-neutral-400">Transcription preview</span>
+                <span className="text-muted-foreground">Transcription preview</span>
               </div>
             </div>
           </div>

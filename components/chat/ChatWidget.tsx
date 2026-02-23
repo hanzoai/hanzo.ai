@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send, ExternalLink, Bot } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 // Quick action buttons
 const quickActions = [
   { label: "What is Hanzo?", value: "What is Hanzo AI and what can I build with it?" },
@@ -143,7 +141,7 @@ const ChatWidget = () => {
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-colors"
-        style={{ backgroundColor: BRAND_COLOR }}
+
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -155,7 +153,7 @@ const ChatWidget = () => {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: 90 }}
             >
-              <X className="w-6 h-6 text-black" />
+              <X className="w-6 h-6 text-primary-foreground" />
             </motion.div>
           ) : (
             <motion.div
@@ -164,7 +162,7 @@ const ChatWidget = () => {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: -90 }}
             >
-              <MessageSquare className="w-6 h-6 text-black" />
+              <MessageSquare className="w-6 h-6 text-primary-foreground" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -178,24 +176,24 @@ const ChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-8rem)] rounded-2xl border border-neutral-800 bg-neutral-950 shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-8rem)] rounded-2xl border border-border bg-background shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800 bg-neutral-900">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-secondary">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: BRAND_COLOR }}>
-                  <Bot className="w-4 h-4 text-black" />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-white">Hanzo AI</div>
-                  <div className="text-[10px] text-neutral-500">Ask me anything</div>
+                  <div className="text-sm font-medium text-foreground">Hanzo AI</div>
+                  <div className="text-[10px] text-muted-foreground">Ask me anything</div>
                 </div>
               </div>
               <a
                 href="https://hanzo.chat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-neutral-500 hover:text-white transition-colors flex items-center gap-1"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
               >
                 Full chat
                 <ExternalLink className="w-3 h-3" />
@@ -212,8 +210,8 @@ const ChatWidget = () => {
                   <div
                     className={`max-w-[85%] rounded-xl px-3 py-2 text-sm ${
                       message.role === "user"
-                        ? "bg-white text-black"
-                        : "bg-neutral-900 text-neutral-300 border border-neutral-800"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-foreground/80 border border-border"
                     }`}
                   >
                     {message.content}
@@ -222,7 +220,7 @@ const ChatWidget = () => {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-2">
+                  <div className="bg-secondary border border-border rounded-xl px-4 py-2">
                     <div className="flex gap-1">
                       <div className="w-2 h-2 bg-neutral-600 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                       <div className="w-2 h-2 bg-neutral-600 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -241,7 +239,7 @@ const ChatWidget = () => {
                     <button
                       key={action.label}
                       onClick={() => handleQuickAction(action.value)}
-                      className="text-xs px-3 py-1.5 rounded-full border border-neutral-800 text-neutral-400 hover:bg-neutral-900 hover:text-white transition-colors"
+                      className="text-xs px-3 py-1.5 rounded-full border border-border text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
                     >
                       {action.label}
                     </button>
@@ -251,7 +249,7 @@ const ChatWidget = () => {
             )}
 
             {/* Input */}
-            <div className="p-4 border-t border-neutral-800">
+            <div className="p-4 border-t border-border">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -264,16 +262,16 @@ const ChatWidget = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask anything..."
-                  className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-neutral-700"
+                  className="flex-1 bg-secondary border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-border"
                   disabled={isLoading}
                 />
                 <button
                   type="submit"
                   disabled={isLoading || !input.trim()}
                   className="p-2 rounded-lg transition-colors disabled:opacity-50"
-                  style={{ backgroundColor: BRAND_COLOR }}
+
                 >
-                  <Send className="w-4 h-4 text-black" />
+                  <Send className="w-4 h-4 text-primary-foreground" />
                 </button>
               </form>
             </div>

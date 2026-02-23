@@ -16,7 +16,7 @@ const ModelHeader = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
           Supported Models
         </h2>
-        <p className="text-xl text-neutral-300">
+        <p className="text-xl text-foreground/80">
           Hanzo Operative works with multiple multimodal AI models, 
           each with different capabilities and strengths
         </p>

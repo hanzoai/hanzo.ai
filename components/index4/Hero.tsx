@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
             size="sm" 
-            className="bg-[var(--white)] hover:bg-zinc-200 text-black transition-colors duration-300"
+            className="bg-[var(--white)] hover:bg-zinc-200 text-primary-foreground transition-colors duration-300"
           >
             Start building <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

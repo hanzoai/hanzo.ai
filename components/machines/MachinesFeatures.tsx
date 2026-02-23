@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { Cpu, Server, Zap, Network, BarChart, Globe } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 
-const BRAND_COLOR = "#ffffff";
-
 interface FeatureCardProps {
   icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
   title: string;
@@ -23,9 +21,9 @@ const FeatureCard = ({ icon: Icon, title, description, delay }: FeatureCardProps
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className="bg-card rounded-xl p-6"
-      style={{ backgroundColor: `${BRAND_COLOR}10`, border: `1px solid ${BRAND_COLOR}40` }}
+      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 25%, transparent)" }}
     >
-      <Icon className="h-10 w-10 mb-4" style={{ color: BRAND_COLOR }} />
+      <Icon className="h-10 w-10 mb-4" />
       <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
       <p className="text-muted-foreground">
         {description}

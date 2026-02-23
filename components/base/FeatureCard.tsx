@@ -24,39 +24,39 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   const colorClasses: Record<string, { bg: string, text: string, border: string }> = {
     blue: {
-      bg: "bg-white/10",
-      text: "text-white",
+      bg: "bg-primary/10",
+      text: "text-foreground",
       border: "border-white/30"
     },
     purple: {
-      bg: "bg-white/10",
-      text: "text-white",
+      bg: "bg-primary/10",
+      text: "text-foreground",
       border: "border-white/30"
     },
     green: {
-      bg: "bg-white/10",
-      text: "text-white/70",
-      border: "border-white/20"
+      bg: "bg-primary/10",
+      text: "text-foreground/70",
+      border: "border-border"
     },
     amber: {
-      bg: "bg-white/10",
-      text: "text-white/60",
-      border: "border-white/20"
+      bg: "bg-primary/10",
+      text: "text-foreground/60",
+      border: "border-border"
     },
     indigo: {
-      bg: "bg-white/10",
-      text: "text-white",
+      bg: "bg-primary/10",
+      text: "text-foreground",
       border: "border-white/30"
     },
     cyan: {
-      bg: "bg-white/10",
-      text: "text-white/70",
+      bg: "bg-primary/10",
+      text: "text-foreground/70",
       border: "border-white/30"
     },
     rose: {
-      bg: "bg-white/10",
-      text: "text-white/70",
-      border: "border-white/20"
+      bg: "bg-primary/10",
+      text: "text-foreground/70",
+      border: "border-border"
     },
   };
 
@@ -76,12 +76,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         </div>
         <h3 className="text-xl font-semibold text-[var(--white)]">{title}</h3>
       </div>
-      <p className="text-neutral-300 mb-4">{description}</p>
+      <p className="text-foreground/80 mb-4">{description}</p>
       <ul className="space-y-2">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <span className={`mr-2 ${classes.text}`}>•</span>
-            <span className="text-neutral-300 text-sm">{feature}</span>
+            <span className="text-foreground/80 text-sm">{feature}</span>
           </li>
         ))}
       </ul>

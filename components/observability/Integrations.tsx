@@ -24,7 +24,7 @@ const integrationGroups = [
 
 const Integrations = () => {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20 relative">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/20 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,11 +33,11 @@ const Integrations = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          <div className="inline-flex items-center justify-center mb-6 bg-white/10 p-3 rounded-full">
-            <Braces className="h-7 w-7 text-white" />
+          <div className="inline-flex items-center justify-center mb-6 bg-primary/10 p-3 rounded-full">
+            <Braces className="h-7 w-7 text-foreground" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Integrated Across Your Development Workflow</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             Hanzo Observability seamlessly integrates with your existing stack, supporting your AI operations from prototype to production.
           </p>
         </motion.div>
@@ -48,31 +48,31 @@ const Integrations = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 p-8"
+            className="bg-gradient-to-br from-gray-900 to-background rounded-xl overflow-hidden border border-gray-800 p-8"
           >
             <div className="flex items-center mb-6">
-              <Code className="h-6 w-6 text-white mr-3" />
+              <Code className="h-6 w-6 text-foreground mr-3" />
               <h3 className="text-2xl font-bold">Import & Initialize</h3>
             </div>
             
             <div className="bg-[var(--black)]/50 rounded-lg p-6 font-mono text-sm">
               <div className="mb-4">
-                <span className="text-white">import</span> <span className="text-white/70">{'{'}</span> <span className="text-white/60">HanzoObservability</span> <span className="text-white/70">{'}'}</span> <span className="text-white">from</span> <span className="text-white/70">'hanzo-observability'</span>
+                <span className="text-foreground">import</span> <span className="text-foreground/70">{'{'}</span> <span className="text-foreground/60">HanzoObservability</span> <span className="text-foreground/70">{'}'}</span> <span className="text-foreground">from</span> <span className="text-foreground/70">'hanzo-observability'</span>
               </div>
               <div className="mb-4">
-                <span className="text-neutral-500">// Initialize with your project token</span>
+                <span className="text-muted-foreground">// Initialize with your project token</span>
               </div>
               <div className="mb-4">
-                <span className="text-white">const</span> observability <span className="text-[var(--white)]">=</span> <span className="text-white">new</span> <span className="text-white/60">HanzoObservability</span><span className="text-[var(--white)]">(</span><span className="text-white/70">'YOUR_PROJECT_TOKEN'</span><span className="text-[var(--white)]">);</span>
+                <span className="text-foreground">const</span> observability <span className="text-[var(--white)]">=</span> <span className="text-foreground">new</span> <span className="text-foreground/60">HanzoObservability</span><span className="text-[var(--white)]">(</span><span className="text-foreground/70">'YOUR_PROJECT_TOKEN'</span><span className="text-[var(--white)]">);</span>
               </div>
               <div className="mb-4">
-                <span className="text-neutral-500">// Trace AI model calls</span>
+                <span className="text-muted-foreground">// Trace AI model calls</span>
               </div>
               <div>
-                <span className="text-white">await</span> observability.<span className="text-white/60">trace</span><span className="text-[var(--white)]">(</span><span className="text-white/70">'chatCompletion'</span><span className="text-[var(--white)]">, {'async () => {'}</span>
+                <span className="text-foreground">await</span> observability.<span className="text-foreground/60">trace</span><span className="text-[var(--white)]">(</span><span className="text-foreground/70">'chatCompletion'</span><span className="text-[var(--white)]">, {'async () => {'}</span>
                 <div className="pl-5 text-[var(--white)]">
-                  <span className="text-white">const</span> response <span className="text-[var(--white)]">=</span> <span className="text-white">await</span> openai.<span className="text-white/60">createChatCompletion</span><span className="text-[var(--white)]">({'{...}'})</span>
-                  <div><span className="text-white">return</span> response</div>
+                  <span className="text-foreground">const</span> response <span className="text-[var(--white)]">=</span> <span className="text-foreground">await</span> openai.<span className="text-foreground/60">createChatCompletion</span><span className="text-[var(--white)]">({'{...}'})</span>
+                  <div><span className="text-foreground">return</span> response</div>
                 </div>
                 <span className="text-[var(--white)]">{'}'})</span>
               </div>
@@ -87,7 +87,7 @@ const Integrations = () => {
           >
             {integrationGroups.map((group, groupIndex) => (
               <div key={groupIndex} className="mb-10">
-                <h3 className="text-xl font-bold mb-6 text-neutral-300">{group.title}</h3>
+                <h3 className="text-xl font-bold mb-6 text-foreground/80">{group.title}</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {group.items.map((item, index) => (
                     <motion.div
@@ -98,8 +98,8 @@ const Integrations = () => {
                       transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
                       className="flex items-center p-3 bg-gray-800/30 rounded-lg border border-gray-700/40"
                     >
-                      <CheckCircle className="h-4 w-4 text-white mr-2 flex-shrink-0" />
-                      <span className="text-neutral-300 text-sm">{item}</span>
+                      <CheckCircle className="h-4 w-4 text-foreground mr-2 flex-shrink-0" />
+                      <span className="text-foreground/80 text-sm">{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -113,7 +113,7 @@ const Integrations = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center mt-8"
             >
-              <a href="#integrations" className="inline-flex items-center text-white hover:text-white/70 transition-colors text-sm">
+              <a href="#integrations" className="inline-flex items-center text-foreground hover:text-foreground/70 transition-colors text-sm">
                 View all integrations <Code className="ml-1 h-4 w-4" />
               </a>
             </motion.div>

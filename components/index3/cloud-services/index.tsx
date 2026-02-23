@@ -88,25 +88,25 @@ const CloudServices: React.FC<CloudServicesProps> = ({ onDeploymentEvent }) => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--white)]">
               Intelligent Architecture Canvas
             </h3>
-            <p className="text-neutral-300 mb-8 text-lg">
+            <p className="text-foreground/80 mb-8 text-lg">
               Visually compose and deploy entire cloud architectures with our drag-and-drop canvas. 
               Connect services, configure dependencies, and deploy with a single click.
             </p>
-            <ul className="space-y-4 text-neutral-400">
+            <ul className="space-y-4 text-muted-foreground">
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-white">•</div>
+                <div className="mr-2 mt-1 text-foreground">•</div>
                 <span>Automatic resource provisioning and configuration</span>
               </li>
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-white">•</div>
+                <div className="mr-2 mt-1 text-foreground">•</div>
                 <span>Real-time deployment status and monitoring</span>
               </li>
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-white">•</div>
+                <div className="mr-2 mt-1 text-foreground">•</div>
                 <span>AI-powered recommendations for optimizing your architecture</span>
               </li>
               <li className="flex items-start">
-                <div className="mr-2 mt-1 text-white">•</div>
+                <div className="mr-2 mt-1 text-foreground">•</div>
                 <span>Version control and rollback capabilities</span>
               </li>
             </ul>

@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navbar />
 
       <main className="flex-grow flex items-center justify-center px-4 py-24">
@@ -30,8 +30,8 @@ export default function NotFound() {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <div className="w-24 h-24 rounded-2xl mx-auto flex items-center justify-center mb-6 bg-white/5">
-                <FileQuestion className="w-12 h-12 text-white/50" />
+              <div className="w-24 h-24 rounded-2xl mx-auto flex items-center justify-center mb-6 bg-primary/5">
+                <FileQuestion className="w-12 h-12 text-foreground/50" />
               </div>
 
               <h1 className="text-8xl md:text-9xl font-bold mb-4 bg-gradient-to-b from-white to-neutral-600 bg-clip-text text-transparent">
@@ -44,10 +44,10 @@ export default function NotFound() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                 Page not found
               </h2>
-              <p className="text-neutral-400 text-lg mb-10 max-w-md mx-auto">
+              <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
                 The page you&apos;re looking for doesn&apos;t exist or has been moved.
               </p>
             </motion.div>
@@ -60,14 +60,14 @@ export default function NotFound() {
             >
               <Link
                 href="/"
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-white text-black"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
               >
                 <Home className="w-4 h-4 mr-2" />
                 Go to Homepage
               </Link>
               <button
                 onClick={() => window.history.back()}
-                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Go Back
@@ -80,7 +80,7 @@ export default function NotFound() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-12"
             >
-              <p className="text-neutral-500 text-sm mb-4">Looking for something?</p>
+              <p className="text-muted-foreground text-sm mb-4">Looking for something?</p>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
                   { href: '/products', label: 'Products' },
@@ -91,7 +91,7 @@ export default function NotFound() {
                   <Link
                     key={link.href}
                     href={link.href || "#"}
-                    className="px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-sm text-neutral-300 hover:text-white hover:border-neutral-700 transition-colors"
+                    className="px-4 py-2 rounded-lg bg-secondary border border-border text-sm text-foreground/80 hover:text-foreground hover:border-border transition-colors"
                   >
                     {link.label}
                   </Link>

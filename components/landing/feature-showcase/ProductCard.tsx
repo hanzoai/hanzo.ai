@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   icon, 
   title, 
   description, 
-  color = "bg-white/20",
+  color = "bg-primary/20",
   hoverColor = "bg-[#cccccc]/40",
   link = "#"
 }) => {
@@ -54,14 +54,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {React.cloneElement(icon as React.ReactElement, { className: "h-12 w-12" })}
         </div>
         
-        <h3 className="text-xl font-bold mb-3 text-[var(--white)] group-hover:text-white/70 transition-colors">{title}</h3>
-        <p className="text-neutral-400 mb-5 group-hover:text-neutral-300 transition-colors">{description}</p>
+        <h3 className="text-xl font-bold mb-3 text-[var(--white)] group-hover:text-foreground/70 transition-colors">{title}</h3>
+        <p className="text-muted-foreground mb-5 group-hover:text-foreground/80 transition-colors">{description}</p>
         
         {/* Learn more button - now more visible with improved styling */}
         <Button 
           variant="ghost" 
           size="sm" 
-          className="text-white hover:text-white/70 hover:bg-white/20 p-2 flex items-center gap-1 transition-all opacity-80 group-hover:opacity-100"
+          className="text-foreground hover:text-foreground/70 hover:bg-primary/20 p-2 flex items-center gap-1 transition-all opacity-80 group-hover:opacity-100"
           asChild
         >
           <a href={link || "#"}>

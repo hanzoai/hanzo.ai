@@ -23,22 +23,22 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications, onDismiss 
             exit={{ opacity: 0, x: 20, scale: 0.95 }}
             className={`rounded-md p-3 shadow-lg ${
               notification.type === 'success' ? 'bg-gray-900/90 border border-gray-700' :
-              notification.type === 'error' ? 'bg-white/10 border border-white/20' :
-              'bg-white/10 border border-white/20'
+              notification.type === 'error' ? 'bg-primary/10 border border-border' :
+              'bg-primary/10 border border-border'
             }`}
           >
             <div className="flex items-start">
               <div className="flex-shrink-0 mt-0.5">
-                {notification.type === 'success' && <Check className="h-4 w-4 text-white/70" />}
-                {notification.type === 'error' && <X className="h-4 w-4 text-white/70" />}
-                {notification.type === 'info' && <Cloud className="h-4 w-4 text-white/70" />}
+                {notification.type === 'success' && <Check className="h-4 w-4 text-foreground/70" />}
+                {notification.type === 'error' && <X className="h-4 w-4 text-foreground/70" />}
+                {notification.type === 'info' && <Cloud className="h-4 w-4 text-foreground/70" />}
               </div>
               <div className="ml-2">
                 <p className="text-sm font-medium text-neutral-100">{notification.title}</p>
-                <p className="text-xs text-neutral-300">{notification.message}</p>
+                <p className="text-xs text-foreground/80">{notification.message}</p>
               </div>
               <button 
-                className="ml-4 flex-shrink-0 text-neutral-400 hover:text-neutral-300"
+                className="ml-4 flex-shrink-0 text-muted-foreground hover:text-foreground/80"
                 onClick={() => onDismiss(notification.id)}
               >
                 <X className="h-4 w-4" />

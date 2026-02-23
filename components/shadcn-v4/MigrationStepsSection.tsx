@@ -46,7 +46,7 @@ const steps = [
 
 const MigrationStepsSection = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/30 to-white/10">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background/30 to-white/10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,8 +55,8 @@ const MigrationStepsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Migration Steps</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Migration Steps</h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Follow these steps to upgrade your existing shadcn/ui projects to Tailwind v4 and React 19.
           </p>
         </motion.div>
@@ -72,12 +72,12 @@ const MigrationStepsSection = () => {
             >
               <Card className="bg-gray-900/50 border-gray-800 hover:border-white/30 transition-all duration-300">
                 <CardHeader className="flex flex-row items-start gap-4">
-                  <div className="bg-white/20 rounded-lg p-2 w-12 h-12 flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-white">{step.number}</span>
+                  <div className="bg-primary/20 rounded-lg p-2 w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold text-foreground">{step.number}</span>
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-white">{step.title}</CardTitle>
-                    <CardDescription className="text-neutral-400 mt-2">
+                    <CardTitle className="text-xl text-foreground">{step.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground mt-2">
                       {step.description}
                     </CardDescription>
                   </div>

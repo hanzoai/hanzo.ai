@@ -68,13 +68,13 @@ const SolutionIndustries: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative">
                     <div className="flex items-center justify-between mb-4">
-                      <Icon className="h-6 w-6 text-white" strokeWidth={1.5} />
-                      <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-white transition-colors" />
+                      <Icon className="h-6 w-6 text-foreground" strokeWidth={1.5} />
+                      <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-foreground transition-colors">
                       {typeof item === 'string' ? item : item.name}
                     </h3>
-                    <p className="text-neutral-400 text-sm mb-4">
+                    <p className="text-muted-foreground text-sm mb-4">
                       {typeof item === 'string'
                         ? `Explore our specialized solutions for the ${item.toLowerCase()} industry, designed to address your sector's unique challenges.`
                         : item.description || `Explore our specialized solutions for the ${item.name.toLowerCase()} industry.`
@@ -84,14 +84,14 @@ const SolutionIndustries: React.FC = () => {
                     <div className="flex flex-wrap gap-2 mt-4">
                       <button
                         onClick={() => setActiveIndustry(itemName)}
-                        className="text-xs flex items-center text-white hover:text-white/70"
+                        className="text-xs flex items-center text-foreground hover:text-foreground/70"
                       >
                         <LinkIcon className="h-3 w-3 mr-1" /> Learn more
                       </button>
-                      <a href="#" className="text-xs flex items-center text-white hover:text-white/70">
+                      <a href="#" className="text-xs flex items-center text-foreground hover:text-foreground/70">
                         <FileText className="h-3 w-3 mr-1" /> Case study
                       </a>
-                      <a href="#" className="text-xs flex items-center text-white/70 hover:text-white">
+                      <a href="#" className="text-xs flex items-center text-foreground/70 hover:text-foreground">
                         <BookOpen className="h-3 w-3 mr-1" /> White paper
                       </a>
                     </div>
@@ -110,7 +110,7 @@ const SolutionIndustries: React.FC = () => {
           >
             <button
               onClick={() => toggleSection("Industries")}
-              className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-foreground hover:bg-primary/10 transition-colors"
             >
               View More Industries
               <ChevronRight className="ml-2 h-5 w-5" />
@@ -135,7 +135,7 @@ const SolutionIndustries: React.FC = () => {
       }
     }> = {
       "Financial Services": {
-        icon: <Building className="h-10 w-10 text-white" />,
+        icon: <Building className="h-10 w-10 text-foreground" />,
         color: "brand",
         description: "We help banks, insurance companies, and investment firms transform their digital infrastructure, improve security, and deliver innovative customer experiences.",
         challenges: [
@@ -164,7 +164,7 @@ const SolutionIndustries: React.FC = () => {
         }
       },
       "Healthcare": {
-        icon: <Heart className="h-10 w-10 text-white/70" />,
+        icon: <Heart className="h-10 w-10 text-foreground/70" />,
         color: "brand",
         description: "Our healthcare solutions help providers, payers, and life sciences companies improve patient outcomes, optimize operations, and ensure security and compliance.",
         challenges: [
@@ -193,7 +193,7 @@ const SolutionIndustries: React.FC = () => {
         }
       },
       "Retail": {
-        icon: <ShoppingBag className="h-10 w-10 text-white" />,
+        icon: <ShoppingBag className="h-10 w-10 text-foreground" />,
         color: "brand",
         description: "We help retailers create seamless omnichannel experiences, optimize supply chains, and leverage data for personalized customer engagement.",
         challenges: [
@@ -222,7 +222,7 @@ const SolutionIndustries: React.FC = () => {
         }
       },
       "Technology": {
-        icon: <ServerCrash className="h-10 w-10 text-white/70" />,
+        icon: <ServerCrash className="h-10 w-10 text-foreground/70" />,
         color: "brand",
         description: "We help technology companies innovate faster, scale efficiently, and deliver secure, high-performance products and services.",
         challenges: [
@@ -254,11 +254,11 @@ const SolutionIndustries: React.FC = () => {
 
     const industry = industryData[activeIndustry] || industryData["Financial Services"];
     const colorClasses = {
-      brand: "from-white/20 to-white/10 border-white/20",
-      blue: "from-white/20 to-white/10 border-white/20",
-      pink: "from-white/20 to-white/10 border-white/20",
-      green: "from-white/20 to-white/10 border-white/20",
-      indigo: "from-white/20 to-white/10 border-white/20"
+      brand: "from-white/20 to-white/10 border-border",
+      blue: "from-white/20 to-white/10 border-border",
+      pink: "from-white/20 to-white/10 border-border",
+      green: "from-white/20 to-white/10 border-border",
+      indigo: "from-white/20 to-white/10 border-border"
     };
     
     return (
@@ -276,7 +276,7 @@ const SolutionIndustries: React.FC = () => {
             </div>
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-4">{activeIndustry} Solutions</h3>
-              <p className="text-neutral-300">{industry.description}</p>
+              <p className="text-foreground/80">{industry.description}</p>
             </div>
           </div>
         </div>
@@ -290,8 +290,8 @@ const SolutionIndustries: React.FC = () => {
             <ul className="space-y-4">
               {industry.challenges.map((challenge, idx) => (
                 <li key={idx} className="flex items-start gap-3 bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
-                  <CheckCircle className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-300">{challenge}</span>
+                  <CheckCircle className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground/80">{challenge}</span>
                 </li>
               ))}
             </ul>
@@ -305,35 +305,35 @@ const SolutionIndustries: React.FC = () => {
             <ul className="space-y-4">
               {industry.solutions.map((solution, idx) => (
                 <li key={idx} className="flex items-start gap-3 bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
-                  <ArrowRight className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-300">{solution}</span>
+                  <ArrowRight className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground/80">{solution}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
         
-        <div className="bg-gradient-to-br from-gray-900/50 to-black/90 rounded-xl border border-gray-800 p-8 mb-10">
+        <div className="bg-gradient-to-br from-gray-900/50 to-background/90 rounded-xl border border-gray-800 p-8 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <h4 className="text-xl font-semibold mb-4">Case Study: {industry.caseStudy.title}</h4>
-              <p className="text-neutral-300 mb-6">{industry.caseStudy.description}</p>
+              <p className="text-foreground/80 mb-6">{industry.caseStudy.description}</p>
               <Button className="mb-8">Read Full Case Study <ArrowUpRight className="ml-2 h-4 w-4" /></Button>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {industry.caseStudy.results.map((result, idx) => (
                   <div key={idx} className="bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
-                    <CheckCircle className="h-5 w-5 text-white mb-2" />
-                    <p className="text-neutral-300">{result}</p>
+                    <CheckCircle className="h-5 w-5 text-foreground mb-2" />
+                    <p className="text-foreground/80">{result}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="lg:col-span-2 flex items-center justify-center">
               <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-xl border border-gray-700 flex flex-col items-center">
-                <Briefcase className="h-16 w-16 text-white mb-4" />
+                <Briefcase className="h-16 w-16 text-foreground mb-4" />
                 <span className="text-3xl font-bold text-[var(--white)] mb-2">25+</span>
-                <span className="text-white">{activeIndustry} Clients</span>
+                <span className="text-foreground">{activeIndustry} Clients</span>
               </div>
             </div>
           </div>
@@ -342,32 +342,32 @@ const SolutionIndustries: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <a
             href="#"
-            className="block p-6 bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 hover:border-white/30 transition-colors"
+            className="block p-6 bg-gradient-to-br from-gray-900/70 to-background/90 rounded-xl border border-gray-800 hover:border-white/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-3">
-              <FileText className="h-5 w-5 text-white" />
+              <FileText className="h-5 w-5 text-foreground" />
               <h4 className="font-medium">White Paper</h4>
             </div>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground">
               Download our industry trends report: The Future of {activeIndustry} Technology
             </p>
-            <div className="mt-4 text-white flex items-center gap-1.5">
+            <div className="mt-4 text-foreground flex items-center gap-1.5">
               Download Now <ArrowRight size={16} />
             </div>
           </a>
 
           <a
             href="#"
-            className="block p-6 bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 hover:border-white/30 transition-colors"
+            className="block p-6 bg-gradient-to-br from-gray-900/70 to-background/90 rounded-xl border border-gray-800 hover:border-white/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-3">
-              <BookOpen className="h-5 w-5 text-white/70" />
+              <BookOpen className="h-5 w-5 text-foreground/70" />
               <h4 className="font-medium">Webinar</h4>
             </div>
-            <p className="text-neutral-400">
+            <p className="text-muted-foreground">
               Register for our upcoming webinar: Digital Transformation in {activeIndustry}
             </p>
-            <div className="mt-4 text-white/70 flex items-center gap-1.5">
+            <div className="mt-4 text-foreground/70 flex items-center gap-1.5">
               Register Now <ArrowRight size={16} />
             </div>
           </a>
@@ -384,71 +384,71 @@ const SolutionIndustries: React.FC = () => {
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
-        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-white/20">
+        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-border">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">Case Studies</h3>
-          <p className="text-neutral-300 mb-6">
+          <p className="text-foreground/80 mb-6">
             See how we've helped organizations like yours achieve their goals through innovative solutions.
           </p>
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-white mr-3" />
+                <FileText className="h-5 w-5 text-foreground mr-3" />
                 <span className="text-[var(--white)]">Financial Services Digital Transformation</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-white mr-3" />
+                <FileText className="h-5 w-5 text-foreground mr-3" />
                 <span className="text-[var(--white)]">Healthcare AI Implementation</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-white mr-3" />
+                <FileText className="h-5 w-5 text-foreground mr-3" />
                 <span className="text-[var(--white)]">Retail Analytics Platform</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-white/40 text-white hover:bg-white/10">
+            <Button variant="outline" className="border-white/40 text-foreground hover:bg-primary/10">
               View all case studies <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-white/20">
+        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-border">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">White Papers</h3>
-          <p className="text-neutral-300 mb-6">
+          <p className="text-foreground/80 mb-6">
             Access our thought leadership and research on the latest industry trends and technologies.
           </p>
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
+                <BookOpen className="h-5 w-5 text-foreground/70 mr-3" />
                 <span className="text-[var(--white)]">The Future of AI in Financial Services</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
+                <BookOpen className="h-5 w-5 text-foreground/70 mr-3" />
                 <span className="text-[var(--white)]">Healthcare Interoperability Challenges</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
+                <BookOpen className="h-5 w-5 text-foreground/70 mr-3" />
                 <span className="text-[var(--white)]">Digital Transformation in Retail</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-white/40 text-white/70 hover:bg-white/10">
+            <Button variant="outline" className="border-white/40 text-foreground/70 hover:bg-primary/10">
               View all white papers <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -458,19 +458,19 @@ const SolutionIndustries: React.FC = () => {
   );
 
   const renderPartnerSection = () => (
-    <div className="mb-20 bg-gradient-to-br from-gray-900/70 to-black/90 p-10 rounded-2xl border border-gray-800">
+    <div className="mb-20 bg-gradient-to-br from-gray-900/70 to-background/90 p-10 rounded-2xl border border-gray-800">
       <SectionHeader 
         title="Expert Partners" 
         description="Access our specialized agencies and expert talent to accelerate your success"
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="p-6 bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
-          <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
-            <Users className="h-6 w-6 text-white" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-border hover:border-white/40 transition-colors">
+          <div className="p-3 rounded-lg bg-primary/20 self-start inline-block mb-4">
+            <Users className="h-6 w-6 text-foreground" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
-          <p className="text-neutral-300 mb-5">
+          <p className="text-foreground/80 mb-5">
             Our AI-powered creative agency helps brands transform their digital presence with cutting-edge design,
             content, and marketing strategies powered by artificial intelligence.
           </p>
@@ -479,26 +479,26 @@ const SolutionIndustries: React.FC = () => {
               href="https://hanzo.agency"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-white/20 rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/20 rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Hanzo Agency</span>
               <ExternalLink size={14} />
             </a>
             <a
               href="/contact"
-              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-white hover:text-white/70 transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-foreground hover:text-foreground/70 transition-colors"
             >
               <span>Contact us</span>
               <Mail size={14} />
             </a>
           </div>
         </div>
-        <div className="p-6 bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
-          <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
-            <Shield className="h-6 w-6 text-white/70" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-border hover:border-white/40 transition-colors">
+          <div className="p-3 rounded-lg bg-primary/20 self-start inline-block mb-4">
+            <Shield className="h-6 w-6 text-foreground/70" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
-          <p className="text-neutral-300 mb-5">
+          <p className="text-foreground/80 mb-5">
             Our collective of fractional CXOs and industry experts help enterprises implement transformative
             technology solutions and drive strategic growth initiatives.
           </p>
@@ -507,14 +507,14 @@ const SolutionIndustries: React.FC = () => {
               href="https://sensei.group"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary/10 hover:bg-primary rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Sensei Group</span>
               <ExternalLink size={14} />
             </a>
             <a
               href="tel:+1234567890"
-              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/20 rounded-md text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-border rounded-md text-foreground/70 hover:text-foreground transition-colors"
             >
               <span>Schedule a call</span>
               <Phone size={14} />
@@ -533,14 +533,14 @@ const SolutionIndustries: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-block mb-4">
-              <Link href="/solutions" className="text-sm text-neutral-400 hover:text-[var(--white)] flex items-center gap-1">
+              <Link href="/solutions" className="text-sm text-muted-foreground hover:text-[var(--white)] flex items-center gap-1">
                 <ChevronRight className="h-4 w-4 rotate-180" /> Back to Solutions
               </Link>
             </div>
             <ChromeText as="h1" className="text-4xl sm:text-5xl font-bold mb-6">
               Industry Solutions
             </ChromeText>
-            <p className="text-neutral-400 text-lg">
+            <p className="text-muted-foreground text-lg">
               We deliver specialized solutions across a wide range of industries, tailored to address your unique 
               challenges and opportunities.
             </p>
@@ -554,8 +554,8 @@ const SolutionIndustries: React.FC = () => {
                   onClick={() => setActiveIndustry(industry)}
                   className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
                     activeIndustry === industry
-                      ? "bg-white text-[var(--white)]"
-                      : "bg-gray-900 text-neutral-300 hover:bg-gray-800"
+                      ? "bg-primary text-[var(--white)]"
+                      : "bg-gray-900 text-foreground/80 hover:bg-gray-800"
                   }`}
                 >
                   {industry}
@@ -586,20 +586,20 @@ const SolutionIndustries: React.FC = () => {
           <div className="mt-20 text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6">Industry-Specific Solutions</h2>
-              <p className="text-neutral-400 mb-8">
+              <p className="text-muted-foreground mb-8">
                 Discover how our tailored industry solutions can address your specific challenges and opportunities.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg bg-white hover:bg-white/20 text-[var(--white)] font-medium transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-primary hover:bg-primary/20 text-[var(--white)] font-medium transition-colors"
                 >
                   Get Started
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </a>
                 <a
                   href="mailto:solutions@hanzo.ai"
-                  className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-white hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-foreground hover:bg-primary/10 transition-colors"
                 >
                   Email Us
                   <Mail className="ml-2 h-5 w-5" />

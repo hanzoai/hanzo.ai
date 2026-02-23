@@ -74,20 +74,20 @@ export default function IntegrationsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       
       <div className="pt-24 pb-16">
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 border-white/20 text-white/70">
+            <Badge variant="outline" className="mb-4 border-border text-foreground/70">
               <Plug className="w-3 h-3 mr-1" />
               280+ Integrations
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Connect to <span className="text-white/70">Everything</span>
+              Connect to <span className="text-foreground/70">Everything</span>
             </h1>
-            <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Hanzo Auto comes with 280+ pre-built integrations to connect your favorite apps and services.
               All integrations are also available as MCP servers for use with Claude, Cursor, and other AI tools.
             </p>
@@ -96,12 +96,12 @@ export default function IntegrationsPage() {
           {/* Search and Filter */}
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search integrations..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-neutral-900 border-neutral-800"
+                className="pl-10 bg-secondary border-border"
               />
             </div>
             <div className="flex gap-2 flex-wrap">
@@ -109,7 +109,7 @@ export default function IntegrationsPage() {
                 variant={selectedCategory === null ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(null)}
-                className={selectedCategory === null ? "bg-white/10 hover:bg-white/10" : ""}
+                className={selectedCategory === null ? "bg-primary/10 hover:bg-primary/10" : ""}
               >
                 All
               </Button>
@@ -119,7 +119,7 @@ export default function IntegrationsPage() {
                   variant={selectedCategory === category ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
-                  className={selectedCategory === category ? "bg-white/10 hover:bg-white/10" : ""}
+                  className={selectedCategory === category ? "bg-primary/10 hover:bg-primary/10" : ""}
                 >
                   {category}
                 </Button>
@@ -132,13 +132,13 @@ export default function IntegrationsPage() {
             {filteredIntegrations.map((integration, index) => (
               <div
                 key={index}
-                className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-white/20 transition-colors group cursor-pointer"
+                className="p-4 rounded-xl bg-secondary/50 border border-border hover:border-border transition-colors group cursor-pointer"
               >
                 <div className="text-3xl mb-2">{integration.logo}</div>
-                <h3 className="font-semibold text-white group-hover:text-white/70 transition-colors">
+                <h3 className="font-semibold text-foreground group-hover:text-foreground/70 transition-colors">
                   {integration.name}
                 </h3>
-                <p className="text-sm text-neutral-500">{integration.description}</p>
+                <p className="text-sm text-muted-foreground">{integration.description}</p>
                 <Badge variant="outline" className="mt-2 text-xs">
                   {integration.category}
                 </Badge>
@@ -147,9 +147,9 @@ export default function IntegrationsPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-b from-white/20 to-white/10 border border-white/20">
+          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-b from-white/20 to-white/10 border border-border">
             <h2 className="text-2xl font-bold mb-4">Need a custom integration?</h2>
-            <p className="text-neutral-400 mb-6">
+            <p className="text-muted-foreground mb-6">
               All integrations are built with TypeScript and are open source.
               Create your own pieces or request new integrations.
             </p>

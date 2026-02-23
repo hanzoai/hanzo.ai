@@ -8,7 +8,7 @@ import { CreditCard, Lock, Globe, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20">
+    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,16 +16,16 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/30 text-white/70 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-white/30 text-foreground/70 text-sm font-medium mb-4">
             Integrated Global Payments Platform
           </span>
           <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
             Hanzo Payments
           </h1>
-          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-8">
             Effortlessly accept payments, manage subscriptions, and scale globally.
           </p>
-          <p className="text-neutral-300 max-w-3xl mx-auto mb-10">
+          <p className="text-foreground/80 max-w-3xl mx-auto mb-10">
             Hanzo Payments is a unified financial infrastructure that simplifies and automates payments, 
             subscriptions, and global financial compliance. From innovative startups to enterprise giants, 
             Hanzo Payments delivers customizable checkout experiences, seamless integrations, and powerful 
@@ -55,10 +55,10 @@ const HeroSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
         >
           {[
-            { icon: <CreditCard className="h-6 w-6 text-white" />, title: "200+ Currencies", text: "Accept payments in local currencies worldwide" },
-            { icon: <Lock className="h-6 w-6 text-white" />, title: "Automatic Compliance", text: "Global tax and regulatory compliance built-in" },
-            { icon: <Globe className="h-6 w-6 text-white" />, title: "Global Reach", text: "Scale your business to new markets instantly" },
-            { icon: <Zap className="h-6 w-6 text-white" />, title: "Instant Setup", text: "Go live with payments in minutes" }
+            { icon: <CreditCard className="h-6 w-6 text-foreground" />, title: "200+ Currencies", text: "Accept payments in local currencies worldwide" },
+            { icon: <Lock className="h-6 w-6 text-foreground" />, title: "Automatic Compliance", text: "Global tax and regulatory compliance built-in" },
+            { icon: <Globe className="h-6 w-6 text-foreground" />, title: "Global Reach", text: "Scale your business to new markets instantly" },
+            { icon: <Zap className="h-6 w-6 text-foreground" />, title: "Instant Setup", text: "Go live with payments in minutes" }
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -71,7 +71,7 @@ const HeroSection = () => {
                 {item.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-neutral-400">{item.text}</p>
+              <p className="text-muted-foreground">{item.text}</p>
             </motion.div>
           ))}
         </motion.div>

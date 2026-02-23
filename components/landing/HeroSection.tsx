@@ -22,9 +22,6 @@ import {
   Brain
 } from "lucide-react";
 
-// Brand color
-const BRAND_COLOR = "#ffffff";
-
 // Proof chips data - communicates the vertical stack
 const PROOF_CHIPS = [
   { label: "Agents", icon: Bot },
@@ -98,16 +95,16 @@ const HeroSection = () => {
 
   // Dashboard Mock Component
   const DashboardMock = ({ className = "" }: { className?: string }) => (
-    <div className={`rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl ${className}`}>
+    <div className={`rounded-xl border border-border bg-secondary/95 backdrop-blur-sm overflow-hidden shadow-2xl ${className}`}>
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-neutral-800 bg-neutral-900">
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border bg-secondary">
         <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-white/10" />
-          <div className="w-3 h-3 rounded-full bg-white/10" />
-          <div className="w-3 h-3 rounded-full bg-white/10" />
+          <div className="w-3 h-3 rounded-full bg-primary/10" />
+          <div className="w-3 h-3 rounded-full bg-primary/10" />
+          <div className="w-3 h-3 rounded-full bg-primary/10" />
         </div>
         <div className="flex-1 mx-4">
-          <div className="bg-neutral-800 rounded-md px-3 py-1 text-xs text-neutral-400 text-center max-w-[200px] mx-auto">
+          <div className="bg-neutral-800 rounded-md px-3 py-1 text-xs text-muted-foreground text-center max-w-[200px] mx-auto">
             cloud.hanzo.ai
           </div>
         </div>
@@ -116,12 +113,12 @@ const HeroSection = () => {
       {/* Dashboard content */}
       <div className="flex min-h-[320px]">
         {/* Left nav */}
-        <div className="w-[140px] lg:w-[160px] border-r border-neutral-800 bg-neutral-950 p-2 hidden sm:block">
+        <div className="w-[140px] lg:w-[160px] border-r border-border bg-background p-2 hidden sm:block">
           <div className="flex items-center gap-2 px-2 py-2 mb-3">
             <div className="w-6 h-6 rounded-md bg-gradient-to-br from-white to-white/60 flex items-center justify-center">
-              <span className="text-white text-[10px] font-bold">H</span>
+              <span className="text-foreground text-[10px] font-bold">H</span>
             </div>
-            <span className="text-white text-xs font-medium">Hanzo</span>
+            <span className="text-foreground text-xs font-medium">Hanzo</span>
           </div>
           <nav className="space-y-0.5">
             {DASHBOARD_NAV.map((item) => (
@@ -129,8 +126,8 @@ const HeroSection = () => {
                 key={item.label}
                 className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-[11px] cursor-pointer transition-colors ${
                   item.active
-                    ? "bg-white/20 text-white"
-                    : "text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300"
+                    ? "bg-primary/20 text-foreground"
+                    : "text-muted-foreground hover:bg-accent hover:text-foreground/80"
                 }`}
               >
                 <item.icon className="w-3 h-3" />
@@ -141,12 +138,12 @@ const HeroSection = () => {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 p-4 bg-neutral-950">
+        <div className="flex-1 p-4 bg-background">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-white text-sm font-medium">Project Overview</h3>
+            <h3 className="text-foreground text-sm font-medium">Project Overview</h3>
             <div className="flex items-center gap-2">
-              <div className="px-2 py-1 rounded-md bg-white/10 text-white/70 text-[10px] flex items-center gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+              <div className="px-2 py-1 rounded-md bg-primary/10 text-foreground/70 text-[10px] flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/10" />
                 All systems operational
               </div>
             </div>
@@ -154,55 +151,55 @@ const HeroSection = () => {
 
           {/* Stats cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-            <div className="bg-neutral-900 rounded-lg p-3 border border-neutral-800">
+            <div className="bg-secondary rounded-lg p-3 border border-border">
               <div className="flex items-center gap-2 mb-1">
-                <Rocket className="w-3 h-3 text-neutral-500" />
-                <span className="text-[10px] text-neutral-500">Deployments</span>
+                <Rocket className="w-3 h-3 text-muted-foreground" />
+                <span className="text-[10px] text-muted-foreground">Deployments</span>
               </div>
-              <div className="text-lg font-semibold text-white">24</div>
-              <div className="text-[10px] text-white/70">+3 this week</div>
+              <div className="text-lg font-semibold text-foreground">24</div>
+              <div className="text-[10px] text-foreground/70">+3 this week</div>
             </div>
-            <div className="bg-neutral-900 rounded-lg p-3 border border-neutral-800">
+            <div className="bg-secondary rounded-lg p-3 border border-border">
               <div className="flex items-center gap-2 mb-1">
-                <Bot className="w-3 h-3 text-neutral-500" />
-                <span className="text-[10px] text-neutral-500">Agent Runs</span>
+                <Bot className="w-3 h-3 text-muted-foreground" />
+                <span className="text-[10px] text-muted-foreground">Agent Runs</span>
               </div>
-              <div className="text-lg font-semibold text-white">1.2K</div>
-              <div className="text-[10px] text-neutral-400">Today</div>
+              <div className="text-lg font-semibold text-foreground">1.2K</div>
+              <div className="text-[10px] text-muted-foreground">Today</div>
             </div>
-            <div className="bg-neutral-900 rounded-lg p-3 border border-neutral-800">
+            <div className="bg-secondary rounded-lg p-3 border border-border">
               <div className="flex items-center gap-2 mb-1">
-                <Database className="w-3 h-3 text-neutral-500" />
-                <span className="text-[10px] text-neutral-500">Vector Indexes</span>
+                <Database className="w-3 h-3 text-muted-foreground" />
+                <span className="text-[10px] text-muted-foreground">Vector Indexes</span>
               </div>
-              <div className="text-lg font-semibold text-white">8</div>
-              <div className="text-[10px] text-neutral-400">2.4M vectors</div>
+              <div className="text-lg font-semibold text-foreground">8</div>
+              <div className="text-[10px] text-muted-foreground">2.4M vectors</div>
             </div>
-            <div className="bg-neutral-900 rounded-lg p-3 border border-neutral-800">
+            <div className="bg-secondary rounded-lg p-3 border border-border">
               <div className="flex items-center gap-2 mb-1">
-                <Key className="w-3 h-3 text-neutral-500" />
-                <span className="text-[10px] text-neutral-500">Keys/Secrets</span>
+                <Key className="w-3 h-3 text-muted-foreground" />
+                <span className="text-[10px] text-muted-foreground">Keys/Secrets</span>
               </div>
-              <div className="text-lg font-semibold text-white">47</div>
-              <div className="text-[10px] text-neutral-400">Encrypted</div>
+              <div className="text-lg font-semibold text-foreground">47</div>
+              <div className="text-[10px] text-muted-foreground">Encrypted</div>
             </div>
           </div>
 
           {/* Recent deployments */}
           <div className="space-y-2">
-            <div className="text-[11px] text-neutral-500 mb-2">Recent Deployments</div>
+            <div className="text-[11px] text-muted-foreground mb-2">Recent Deployments</div>
             {[
               { name: "docs-api", status: "live", region: "us-east-1", time: "2m ago" },
               { name: "chat-service", status: "live", region: "eu-west-1", time: "1h ago" },
               { name: "ml-pipeline", status: "building", region: "us-west-2", time: "now" },
             ].map((deploy) => (
-              <div key={deploy.name} className="flex items-center justify-between p-2.5 rounded-lg bg-neutral-900 border border-neutral-800">
+              <div key={deploy.name} className="flex items-center justify-between p-2.5 rounded-lg bg-secondary border border-border">
                 <div className="flex items-center gap-2">
-                  <div className={`w-2 h-2 rounded-full ${deploy.status === "live" ? "bg-white/10" : "bg-white/10 animate-pulse"}`} />
-                  <span className="text-sm text-white">{deploy.name}</span>
-                  <span className="text-[10px] text-neutral-500 px-1.5 py-0.5 bg-neutral-800 rounded">{deploy.region}</span>
+                  <div className={`w-2 h-2 rounded-full ${deploy.status === "live" ? "bg-primary/10" : "bg-primary/10 animate-pulse"}`} />
+                  <span className="text-sm text-foreground">{deploy.name}</span>
+                  <span className="text-[10px] text-muted-foreground px-1.5 py-0.5 bg-neutral-800 rounded">{deploy.region}</span>
                 </div>
-                <span className="text-xs text-neutral-500">{deploy.time}</span>
+                <span className="text-xs text-muted-foreground">{deploy.time}</span>
               </div>
             ))}
           </div>
@@ -213,30 +210,30 @@ const HeroSection = () => {
 
   // Terminal Mock Component - fixed height with scrolling content
   const TerminalMock = ({ className = "" }: { className?: string }) => (
-    <div className={`rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl ${className}`}>
+    <div className={`rounded-xl border border-border bg-secondary/95 backdrop-blur-sm overflow-hidden shadow-2xl ${className}`}>
       {/* Terminal header */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-neutral-800 bg-neutral-900 shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-border bg-secondary shrink-0">
         <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-primary/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-primary/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-primary/10" />
         </div>
-        <span className="ml-2 text-[10px] text-neutral-500 font-mono">terminal</span>
+        <span className="ml-2 text-[10px] text-muted-foreground font-mono">terminal</span>
         <div className="ml-auto flex items-center gap-2">
           <button
             onClick={handleCopy}
-            className="p-1 rounded hover:bg-neutral-800 transition-colors"
+            className="p-1 rounded hover:bg-accent transition-colors"
           >
             {copied ? (
-              <Check className="h-3 w-3 text-white/70" />
+              <Check className="h-3 w-3 text-foreground/70" />
             ) : (
-              <Copy className="h-3 w-3 text-neutral-500" />
+              <Copy className="h-3 w-3 text-muted-foreground" />
             )}
           </button>
         </div>
       </div>
       {/* Terminal content - fixed height with scroll */}
-      <div className="p-4 font-mono text-xs bg-neutral-950 h-[220px] overflow-y-auto">
+      <div className="p-4 font-mono text-xs bg-background h-[220px] overflow-y-auto">
         {TERMINAL_LINES.slice(0, terminalStep).map((line, idx) => (
           <motion.div
             key={idx}
@@ -244,32 +241,32 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.15 }}
             className={`mb-1 ${
-              line.type === "command" ? "text-neutral-300" :
-              line.type === "success" ? "text-neutral-400" :
-              line.type === "prompt" ? "text-white/60" : "text-neutral-400"
+              line.type === "command" ? "text-foreground/80" :
+              line.type === "success" ? "text-muted-foreground" :
+              line.type === "prompt" ? "text-foreground/60" : "text-muted-foreground"
             }`}
           >
             {line.type === "success" && (
-              <span className="text-white/70">✓ </span>
+              <span className="text-foreground/70">✓ </span>
             )}
             {line.type === "prompt" && (
-              <span className="text-white/60">? </span>
+              <span className="text-foreground/60">? </span>
             )}
-            <span className={line.highlight ? "text-white" : ""}>
+            <span className={line.highlight ? "text-foreground" : ""}>
               {line.text.replace(/^[✓?]\s*/, "")}
             </span>
           </motion.div>
         ))}
         {terminalStep < TERMINAL_LINES.length && (
           <div className="flex items-center gap-1">
-            <span className="text-neutral-500">$</span>
-            <span className="w-2 h-4 bg-white/80 animate-pulse" />
+            <span className="text-muted-foreground">$</span>
+            <span className="w-2 h-4 bg-primary/80 animate-pulse" />
           </div>
         )}
         {terminalStep >= TERMINAL_LINES.length && (
           <div className="flex items-center gap-1 mt-2">
-            <span className="text-neutral-500">$</span>
-            <span className="w-2 h-4 bg-white/80 animate-pulse" />
+            <span className="text-muted-foreground">$</span>
+            <span className="w-2 h-4 bg-primary/80 animate-pulse" />
           </div>
         )}
       </div>
@@ -279,21 +276,21 @@ const HeroSection = () => {
   // Mobile Device Mock Component - iPhone 15 Pro dimensions (71.6mm x 146.6mm = ~2.05:1 ratio)
   // Using w-[150px] = h-[308px] for proper iPhone proportions
   const MobileDeviceMock = ({ className = "" }: { className?: string }) => (
-    <div className={`w-[150px] h-[308px] rounded-[32px] border-[3px] border-neutral-600 bg-neutral-900 overflow-hidden shadow-2xl flex flex-col ${className}`}>
+    <div className={`w-[150px] h-[308px] rounded-[32px] border-[3px] border-neutral-600 bg-secondary overflow-hidden shadow-2xl flex flex-col ${className}`}>
       {/* Dynamic Island */}
-      <div className="bg-neutral-950 pt-2 pb-1 flex justify-center shrink-0">
-        <div className="w-[60px] h-[18px] bg-black rounded-full" />
+      <div className="bg-background pt-2 pb-1 flex justify-center shrink-0">
+        <div className="w-[60px] h-[18px] bg-background rounded-full" />
       </div>
       {/* App content */}
-      <div className="bg-neutral-950 p-2.5 flex-1 overflow-hidden flex flex-col">
+      <div className="bg-background p-2.5 flex-1 overflow-hidden flex flex-col">
         <div className="flex items-center justify-between mb-2 shrink-0">
           <div className="flex items-center gap-1.5">
-            <div className="w-5 h-5 rounded-md bg-white flex items-center justify-center">
-              <span className="text-white text-[7px] font-bold">H</span>
+            <div className="w-5 h-5 rounded-md bg-primary flex items-center justify-center">
+              <span className="text-foreground text-[7px] font-bold">H</span>
             </div>
-            <span className="text-white text-[10px] font-medium">Hanzo</span>
+            <span className="text-foreground text-[10px] font-medium">Hanzo</span>
           </div>
-          <Bell className="w-3.5 h-3.5 text-neutral-500" />
+          <Bell className="w-3.5 h-3.5 text-muted-foreground" />
         </div>
 
         {/* Push notification style */}
@@ -301,32 +298,32 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 1.5, duration: 0.3 }}
-          className="bg-neutral-900 rounded-lg p-2 border border-neutral-800 mb-2 shrink-0"
+          className="bg-secondary rounded-lg p-2 border border-border mb-2 shrink-0"
         >
           <div className="flex items-center gap-1.5 mb-0.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-            <span className="text-[9px] text-white/70 font-medium">Deploy Complete</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/10" />
+            <span className="text-[9px] text-foreground/70 font-medium">Deploy Complete</span>
           </div>
-          <div className="text-[10px] text-white">docs-api is now live</div>
-          <div className="text-[8px] text-neutral-500 mt-0.5 truncate">https://docs-api.acme.dev</div>
+          <div className="text-[10px] text-foreground">docs-api is now live</div>
+          <div className="text-[8px] text-muted-foreground mt-0.5 truncate">https://docs-api.acme.dev</div>
         </motion.div>
 
         <div className="space-y-1.5 flex-1 overflow-hidden">
-          <div className="bg-neutral-900 rounded-lg p-1.5 border border-neutral-800">
-            <div className="text-[8px] text-neutral-500">Status</div>
+          <div className="bg-secondary rounded-lg p-1.5 border border-border">
+            <div className="text-[8px] text-muted-foreground">Status</div>
             <div className="flex items-center gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-              <span className="text-[9px] text-white/70">All systems operational</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-primary/10" />
+              <span className="text-[9px] text-foreground/70">All systems operational</span>
             </div>
           </div>
-          <div className="bg-neutral-900 rounded-lg p-1.5 border border-neutral-800">
-            <div className="text-[8px] text-neutral-500">Active Deployments</div>
-            <div className="text-[10px] text-white">24 services</div>
+          <div className="bg-secondary rounded-lg p-1.5 border border-border">
+            <div className="text-[8px] text-muted-foreground">Active Deployments</div>
+            <div className="text-[10px] text-foreground">24 services</div>
           </div>
         </div>
       </div>
       {/* Home indicator */}
-      <div className="bg-neutral-950 py-1.5 flex justify-center shrink-0">
+      <div className="bg-background py-1.5 flex justify-center shrink-0">
         <div className="w-[40px] h-[4px] bg-neutral-600 rounded-full" />
       </div>
     </div>
@@ -334,15 +331,15 @@ const HeroSection = () => {
 
   // Mobile Tab Selector
   const MobileTabSelector = () => (
-    <div className="flex bg-neutral-900 rounded-lg p-1 border border-neutral-800">
+    <div className="flex bg-secondary rounded-lg p-1 border border-border">
       {(["dashboard", "terminal", "mobile"] as MobileTab[]).map((tab) => (
         <button
           key={tab}
           onClick={() => setMobileTab(tab)}
           className={`flex-1 px-3 py-2 text-xs font-medium rounded-md transition-colors capitalize ${
             mobileTab === tab
-              ? "bg-white text-black"
-              : "text-neutral-400 hover:text-white"
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:text-foreground"
           }`}
         >
           {tab}
@@ -354,7 +351,7 @@ const HeroSection = () => {
   return (
     <section className="pt-20 pb-8 px-4 md:px-8 lg:px-12">
       {/* Main Hero Container */}
-      <div className="relative mx-auto w-full max-w-[1400px] min-h-[700px] rounded-2xl border border-neutral-800 overflow-hidden bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950">
+      <div className="relative mx-auto w-full max-w-[1400px] min-h-[700px] rounded-2xl border border-border overflow-hidden bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950">
 
         {/* Background gradients - z-0 */}
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -365,7 +362,7 @@ const HeroSection = () => {
             transition={{ duration: 1.5 }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
             style={{
-              background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+              background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
               filter: "blur(100px)",
             }}
           />
@@ -376,7 +373,7 @@ const HeroSection = () => {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full"
             style={{
-              background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+              background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
               filter: "blur(80px)",
             }}
           />
@@ -419,7 +416,7 @@ const HeroSection = () => {
                 {/* Badge */}
                 <p
                   className="inline-flex text-xs font-medium rounded-full px-4 py-2 border w-fit mb-6"
-                  style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}40` }}
+                  style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
                 >
                   Open-source AI Cloud for builders.
                 </p>
@@ -432,9 +429,9 @@ const HeroSection = () => {
               >
                 {/* Main Headline */}
                 <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6">
-                  <span className="text-white">A vertically integrated</span>
+                  <span className="text-foreground">A vertically integrated</span>
                   <br />
-                  <span style={{ color: BRAND_COLOR }}>AI platform.</span>
+                  <span>AI platform.</span>
                 </h1>
               </motion.div>
 
@@ -444,7 +441,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
                 {/* Subhead */}
-                <p className="text-base xl:text-lg text-neutral-400 leading-relaxed mb-8 max-w-[500px]">
+                <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-8 max-w-[500px]">
                   Agents, models, data, and deployment—with Team, IAM, KMS, and Audit built in. One platform from identity to production.
                 </p>
               </motion.div>
@@ -457,8 +454,8 @@ const HeroSection = () => {
               >
                 <Link
                   href="/products"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: '#000000' }}
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -467,7 +464,7 @@ const HeroSection = () => {
                   href="https://docs.hanzo.ai"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 hover:border-neutral-600 text-sm"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-border bg-transparent hover:bg-secondary hover:border-neutral-600 text-sm"
                 >
                   Documentation
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -484,7 +481,7 @@ const HeroSection = () => {
                 {PROOF_CHIPS.map((chip) => (
                   <div
                     key={chip.label}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-xs text-neutral-400"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/80 border border-border text-xs text-muted-foreground"
                   >
                     <chip.icon className="w-3 h-3" />
                     {chip.label}
@@ -538,7 +535,7 @@ const HeroSection = () => {
               >
                 <p
                   className="inline-flex text-xs font-medium rounded-full px-4 py-2 border w-fit mb-6"
-                  style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}40` }}
+                  style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
                 >
                   Open-source AI Cloud for builders.
                 </p>
@@ -550,9 +547,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <h1 className="text-4xl font-medium tracking-tight leading-[1.1] mb-6">
-                  <span className="text-white">A vertically integrated</span>
+                  <span className="text-foreground">A vertically integrated</span>
                   <br />
-                  <span style={{ color: BRAND_COLOR }}>AI platform.</span>
+                  <span>AI platform.</span>
                 </h1>
               </motion.div>
 
@@ -561,7 +558,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <p className="text-base text-neutral-400 leading-relaxed mb-6 max-w-[500px] mx-auto">
+                <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-[500px] mx-auto">
                   Agents, models, data, and deployment—with Team, IAM, KMS, and Audit built in.
                 </p>
               </motion.div>
@@ -574,8 +571,8 @@ const HeroSection = () => {
               >
                 <Link
                   href="/products"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: '#000000' }}
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -584,7 +581,7 @@ const HeroSection = () => {
                   href="https://docs.hanzo.ai"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 hover:border-neutral-600 text-sm"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-border bg-transparent hover:bg-secondary hover:border-neutral-600 text-sm"
                 >
                   Documentation
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -601,7 +598,7 @@ const HeroSection = () => {
                 {PROOF_CHIPS.map((chip) => (
                   <div
                     key={chip.label}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-xs text-neutral-400"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/80 border border-border text-xs text-muted-foreground"
                   >
                     <chip.icon className="w-3 h-3" />
                     {chip.label}
@@ -651,7 +648,7 @@ const HeroSection = () => {
               >
                 <p
                   className="inline-flex text-[11px] font-medium rounded-full px-3 py-1.5 border w-fit mb-4"
-                  style={{ color: BRAND_COLOR, borderColor: `${BRAND_COLOR}40` }}
+                  style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
                 >
                   Open-source AI Cloud for builders.
                 </p>
@@ -663,9 +660,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <h1 className="text-2xl font-medium tracking-tight leading-[1.1] mb-4">
-                  <span className="text-white">A vertically integrated</span>
+                  <span className="text-foreground">A vertically integrated</span>
                   <br />
-                  <span style={{ color: BRAND_COLOR }}>AI platform.</span>
+                  <span>AI platform.</span>
                 </h1>
               </motion.div>
 
@@ -674,7 +671,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   Agents, models, data, and deployment—with Team, IAM, KMS, and Audit built in.
                 </p>
               </motion.div>
@@ -687,8 +684,8 @@ const HeroSection = () => {
               >
                 <Link
                   href="/products"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm w-full max-w-[200px]"
-                  style={{ backgroundColor: BRAND_COLOR, color: '#000000' }}
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm w-full max-w-[200px] bg-primary text-primary-foreground"
+
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -697,7 +694,7 @@ const HeroSection = () => {
                   href="https://docs.hanzo.ai"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 hover:border-neutral-600 text-sm w-full max-w-[200px]"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-border bg-transparent hover:bg-secondary hover:border-neutral-600 text-sm w-full max-w-[200px]"
                 >
                   Documentation
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -714,7 +711,7 @@ const HeroSection = () => {
                 {PROOF_CHIPS.slice(0, 4).map((chip) => (
                   <div
                     key={chip.label}
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-neutral-900/80 border border-neutral-800 text-[10px] text-neutral-400"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-secondary/80 border border-border text-[10px] text-muted-foreground"
                   >
                     <chip.icon className="w-2.5 h-2.5" />
                     {chip.label}

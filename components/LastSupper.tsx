@@ -54,7 +54,7 @@ const LastSupper = ({ members }: { members: TeamMember[] }) => {
                     <Icon className="w-full h-full text-[var(--white)]" />
                   </div>
                   <p className="text-[var(--white)] font-medium">{member.name}</p>
-                  <p className="text-white/70 text-sm">{member.role}</p>
+                  <p className="text-foreground/70 text-sm">{member.role}</p>
                 </motion.div>
               );
             })}

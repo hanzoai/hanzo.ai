@@ -11,8 +11,8 @@ const HeroSection = () => {
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       {/* Gradient effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-70"></div>
-      <div className="absolute top-40 left-20 w-96 h-96 bg-white/15 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-white/15 rounded-full blur-[100px]"></div>
+      <div className="absolute top-40 left-20 w-96 h-96 bg-primary/15 rounded-full blur-[100px]"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary/15 rounded-full blur-[100px]"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -22,7 +22,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex justify-center mb-6"
           >
-            <div className="bg-white p-3 rounded-lg">
+            <div className="bg-primary p-3 rounded-lg">
               <Activity className="h-8 w-8 text-[var(--white)]" />
             </div>
           </motion.div>
@@ -40,7 +40,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-neutral-300 mb-10 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-foreground/80 mb-10 max-w-3xl mx-auto"
           >
             Hanzo Observability provides end-to-end visibility and proactive insights designed specifically for debugging, optimizing, and improving your AI applications.
           </motion.p>
@@ -51,7 +51,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button size="lg" className="bg-white hover:bg-[#cccccc] text-[var(--white)] border-none px-8 py-6 rounded-md text-lg">
+            <Button size="lg" className="bg-primary hover:bg-[#cccccc] text-[var(--white)] border-none px-8 py-6 rounded-md text-lg">
               Get Started
             </Button>
             <Button size="lg" variant="outline" className="border-gray-600 hover:bg-gray-800/50 px-8 py-6 rounded-md text-lg">
@@ -66,8 +66,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 h-20 bottom-0"></div>
-          <div className="bg-gradient-to-br from-gray-900 to-black p-2 rounded-xl border border-gray-800/50 shadow-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 h-20 bottom-0"></div>
+          <div className="bg-gradient-to-br from-gray-900 to-background p-2 rounded-xl border border-gray-800/50 shadow-2xl overflow-hidden">
             <div className="grid grid-cols-5 gap-3 p-4 bg-[var(--black)]/60 rounded-lg">
               <div className="col-span-1 space-y-4">
                 <div className="h-8 bg-gray-800 rounded-md"></div>
@@ -93,8 +93,8 @@ const HeroSection = () => {
                     </svg>
                   </div>
                   <div className="absolute top-4 left-4 flex space-x-2">
-                    <div className="h-3 w-3 rounded-full bg-white/10"></div>
-                    <div className="h-3 w-3 rounded-full bg-white"></div>
+                    <div className="h-3 w-3 rounded-full bg-primary/10"></div>
+                    <div className="h-3 w-3 rounded-full bg-primary"></div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">

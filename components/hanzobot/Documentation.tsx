@@ -40,7 +40,7 @@ const Documentation = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">Documentation</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Comprehensive guides to help you build, deploy, and manage your agents
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ const Documentation = () => {
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-6"
             >
               <div className="flex items-center mb-4">
-                <section.icon className="h-5 w-5 text-white mr-2" />
+                <section.icon className="h-5 w-5 text-foreground mr-2" />
                 <h3 className="text-lg font-semibold text-[var(--white)]">{section.title}</h3>
               </div>
               
@@ -65,7 +65,7 @@ const Documentation = () => {
                   <li key={i}>
                     <a 
                       href="#" 
-                      className="text-neutral-400 hover:text-white transition-colors flex items-center py-1"
+                      className="text-muted-foreground hover:text-foreground transition-colors flex items-center py-1"
                     >
                       <div className="w-1 h-1 bg-gray-600 rounded-full mr-2"></div>
                       {item}
@@ -86,7 +86,7 @@ const Documentation = () => {
         >
           <a 
             href="#" 
-            className="inline-flex items-center text-white hover:text-white/70"
+            className="inline-flex items-center text-foreground hover:text-foreground/70"
           >
             <Book className="h-5 w-5 mr-2" />
             View Complete Documentation

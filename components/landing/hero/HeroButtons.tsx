@@ -22,7 +22,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
     >
       <Button 
         size="sm" 
-        className="bg-white hover:bg-[#cccccc] text-[var(--white)] rounded-full px-4 py-2 h-10 min-w-[120px]"
+        className="bg-primary hover:bg-[#cccccc] text-[var(--white)] rounded-full px-4 py-2 h-10 min-w-[120px]"
         onClick={() => router.push('/signup')}
       >
         Get Started

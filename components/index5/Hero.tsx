@@ -24,8 +24,8 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
         style={{ opacity, scale }}
       >
         {/* Floating orbs in background */}
-        <div className="absolute top-1/4 -right-20 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 -left-20 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/4 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 -left-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
           transition={{ duration: 0.7 }}
           className="mb-6"
         >
-          <span className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-white/30 to-white/10 text-[var(--white)] text-sm font-medium border border-white/20">
+          <span className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-white/30 to-white/10 text-[var(--white)] text-sm font-medium border border-border">
             The Future of AI Development
           </span>
         </motion.div>
@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
             AI Cloud + DX Platform
           </ChromeText>
           
-          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mt-6 leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mt-6 leading-relaxed">
             Build, deploy, and scale AI applications with unmatched speed and efficiency.
             From development to production, Hanzo provides everything you need.
           </p>
@@ -68,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
         >
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 bg-white hover:bg-[#cccccc] border-none"
+            className="text-lg px-8 py-6 bg-primary hover:bg-[#cccccc] border-none"
             onClick={() => router.push('/signup')}
           >
             Start Building <ArrowRight className="ml-2 h-5 w-5" />
@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ mousePosition, opacity, scale }) => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg px-8 py-6 border-white/20 bg-[var(--black)]/50 backdrop-blur-sm hover:bg-[var(--white)]/10"
+            className="text-lg px-8 py-6 border-border bg-[var(--black)]/50 backdrop-blur-sm hover:bg-[var(--white)]/10"
             onClick={() => router.push('/pricing')}
           >
             View Pricing

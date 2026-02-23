@@ -42,7 +42,7 @@ const buildCards: BuildCard[] = [
 
 const WhatYouCanBuildSection: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-black">
+    <section className="py-24 px-4 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -52,10 +52,10 @@ const WhatYouCanBuildSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-medium text-foreground mb-4">
             What you can build
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Templates and primitives for any stack.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ const WhatYouCanBuildSection: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="group"
               >
-                <div className="h-full p-8 rounded-2xl border border-neutral-800 bg-neutral-950 hover:bg-neutral-900/50 transition-all duration-300 hover:border-neutral-700">
+                <div className="h-full p-8 rounded-2xl border border-border bg-background hover:bg-secondary/50 transition-all duration-300 hover:border-border">
                   {/* Icon */}
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
@@ -83,12 +83,12 @@ const WhatYouCanBuildSection: React.FC = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-white mb-3">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
                     {card.title}
                   </h3>
 
                   {/* Sentence */}
-                  <p className="text-neutral-400 mb-6 leading-relaxed">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
                     {card.sentence}
                   </p>
 
@@ -100,7 +100,7 @@ const WhatYouCanBuildSection: React.FC = () => {
                           className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                           style={{ backgroundColor: "#ffffff" }}
                         />
-                        <span className="text-neutral-300">{bullet}</span>
+                        <span className="text-foreground/80">{bullet}</span>
                       </li>
                     ))}
                   </ul>

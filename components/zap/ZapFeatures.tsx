@@ -75,10 +75,10 @@ const ZapFeatures = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Why ZAP?
           </h2>
-          <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Purpose-built for agent swarms. Every design decision optimizes for
             low latency and minimal resource consumption.
           </p>
@@ -92,15 +92,15 @@ const ZapFeatures = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+              className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/5">
-                <feature.icon className="h-6 w-6 text-white/70" />
+              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/5">
+                <feature.icon className="h-6 w-6 text-foreground/70" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
-              <p className="text-neutral-400 text-sm">{feature.description}</p>
+              <p className="text-muted-foreground text-sm">{feature.description}</p>
             </motion.div>
           ))}
         </div>

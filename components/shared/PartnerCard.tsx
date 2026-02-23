@@ -32,22 +32,22 @@ const PartnerCard: React.FC<PartnerCardProps> = ({
   const isPrimary = color === "primary";
 
   const cardClass = isPrimary
-    ? "bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-white/20 hover:border-white/40"
-    : "bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-white/20 hover:border-white/40";
+    ? "bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-border hover:border-white/40"
+    : "bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-border hover:border-white/40";
 
   const iconWrapperClass = isPrimary
-    ? "p-3 rounded-lg bg-white/20"
-    : "p-3 rounded-lg bg-white/20";
+    ? "p-3 rounded-lg bg-primary/20"
+    : "p-3 rounded-lg bg-primary/20";
 
-  const iconClass = isPrimary ? "text-white" : "text-white/70";
+  const iconClass = isPrimary ? "text-foreground" : "text-foreground/70";
 
   const primaryBtnClass = isPrimary
-    ? "bg-white hover:bg-[#cccccc]"
-    : "bg-white/10 hover:bg-white";
+    ? "bg-primary hover:bg-[#cccccc]"
+    : "bg-primary/10 hover:bg-primary";
 
   const outlineBtnClass = isPrimary
-    ? "border border-white/40 hover:border-white/30 text-white hover:text-white/70"
-    : "border border-white/40 hover:border-white/20 text-white/70 hover:text-white";
+    ? "border border-white/40 hover:border-white/30 text-foreground hover:text-foreground/70"
+    : "border border-white/40 hover:border-border text-foreground/70 hover:text-foreground";
 
   const getSecondaryIcon = () => {
     switch (secondaryAction?.type) {
@@ -65,15 +65,15 @@ const PartnerCard: React.FC<PartnerCardProps> = ({
       <div className={`${iconWrapperClass} self-start inline-block mb-4`}>
         <Icon className={`h-6 w-6 ${iconClass}`} strokeWidth={1.5} />
       </div>
-      <h3 className="text-2xl font-bold text-white mb-3">{name}</h3>
-      <p className="text-neutral-300 mb-5">{description}</p>
+      <h3 className="text-2xl font-bold text-foreground mb-3">{name}</h3>
+      <p className="text-foreground/80 mb-5">{description}</p>
       <div className="flex flex-wrap gap-4">
         {primaryAction && (
           <a
             href={primaryAction.href || "#"}
             target={primaryAction.external ? "_blank" : undefined}
             rel={primaryAction.external ? "noopener noreferrer" : undefined}
-            className={`flex items-center gap-2 px-5 py-2.5 ${primaryBtnClass} rounded-md text-white transition-colors`}
+            className={`flex items-center gap-2 px-5 py-2.5 ${primaryBtnClass} rounded-md text-foreground transition-colors`}
           >
             <span>{primaryAction.label}</span>
             {primaryAction.external && <ExternalLink size={14} />}
@@ -102,7 +102,7 @@ interface PartnersSectionProps {
 
 export const PartnersSection: React.FC<PartnersSectionProps> = ({ className = "" }) => {
   return (
-    <div className={`bg-gradient-to-br from-gray-900/70 to-black/90 p-10 rounded-2xl border border-gray-800 ${className}`}>
+    <div className={`bg-gradient-to-br from-gray-900/70 to-background/90 p-10 rounded-2xl border border-gray-800 ${className}`}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <PartnerCard
           name="Hanzo Agency"

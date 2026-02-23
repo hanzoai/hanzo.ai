@@ -74,10 +74,10 @@ interface CategoryPageTemplateProps {
 
 const StatusBadge = ({ status }: { status: Product['status'] }) => {
   const variants = {
-    ga: { label: 'GA', className: 'bg-white/10 text-white/70 border-white/20' },
-    beta: { label: 'Beta', className: 'bg-white/10 text-white/60 border-white/20' },
-    alpha: { label: 'Alpha', className: 'bg-white/10 text-white/70 border-white/20' },
-    coming: { label: 'Coming Soon', className: 'bg-neutral-500/20 text-neutral-400 border-neutral-500/30' }
+    ga: { label: 'GA', className: 'bg-primary/10 text-foreground/70 border-border' },
+    beta: { label: 'Beta', className: 'bg-primary/10 text-foreground/60 border-border' },
+    alpha: { label: 'Alpha', className: 'bg-primary/10 text-foreground/70 border-border' },
+    coming: { label: 'Coming Soon', className: 'bg-neutral-500/20 text-muted-foreground border-neutral-500/30' }
   };
   return (
     <Badge variant="outline" className={`${variants[status].className} text-xs`}>
@@ -102,10 +102,10 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
     : { all: products };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section className="relative py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/50 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)]" />
 
         <div className="max-w-6xl mx-auto relative z-10">
@@ -116,8 +116,8 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
             className="text-center"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <CategoryIcon className="h-10 w-10 text-white" />
+              <div className="p-4 rounded-2xl bg-primary/5 border border-border">
+                <CategoryIcon className="h-10 w-10 text-foreground" />
               </div>
             </div>
 
@@ -125,18 +125,18 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
               Hanzo {category.name}
             </h1>
 
-            <p className="text-xl md:text-2xl text-neutral-400 mb-6">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6">
               {category.tagline}
             </p>
 
-            <p className="text-lg text-neutral-500 max-w-3xl mx-auto mb-10">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
               {category.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-neutral-200"
+                className="bg-primary text-primary-foreground hover:bg-accent"
                 asChild
               >
                 <Link href="/pricing">
@@ -147,7 +147,7 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/20 hover:bg-white/5"
+                className="border-border hover:bg-primary/5"
                 asChild
               >
                 <a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer">
@@ -161,7 +161,7 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 px-4 border-t border-white/10">
+      <section className="py-16 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto">
           {subcategories ? (
             // Render grouped by subcategory (for ML products)
@@ -172,7 +172,7 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
               return (
                 <div key={subcategory} className="mb-16 last:mb-0">
                   <h2 className="text-2xl font-bold mb-2">{subcategory}</h2>
-                  <p className="text-neutral-500 mb-8">
+                  <p className="text-muted-foreground mb-8">
                     {getSubcategoryDescription(subcategory)}
                   </p>
 
@@ -200,41 +200,41 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
       </section>
 
       {/* Quick Start Section */}
-      <section className="py-16 px-4 border-t border-white/10 bg-neutral-900/30">
+      <section className="py-16 px-4 border-t border-border bg-secondary/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-6">Quick Start</h2>
-          <p className="text-neutral-400 mb-8">
+          <p className="text-muted-foreground mb-8">
             Install the Hanzo CLI to get started with any {category.name} product
           </p>
 
-          <div className="bg-black rounded-xl p-6 max-w-2xl mx-auto">
+          <div className="bg-background rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-between font-mono text-sm">
-              <code className="text-white/70">curl -fsSL hanzo.sh | bash</code>
-              <Button variant="ghost" size="sm" className="text-neutral-400 hover:text-white">
+              <code className="text-foreground/70">curl -fsSL hanzo.sh | bash</code>
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
                 Copy
               </Button>
             </div>
           </div>
 
-          <p className="text-neutral-500 mt-6 text-sm">
+          <p className="text-muted-foreground mt-6 text-sm">
             Then run <code className="bg-neutral-800 px-2 py-1 rounded">hanzo --help</code> to see available commands
           </p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 border-t border-white/10">
+      <section className="py-24 px-4 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Build with Hanzo {category.name}
           </h2>
-          <p className="text-lg text-neutral-400 mb-10">
+          <p className="text-lg text-muted-foreground mb-10">
             Open source, self-hostable, and available on Hanzo Cloud.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-neutral-200"
+              className="bg-primary text-primary-foreground hover:bg-accent"
               asChild
             >
               <Link href="/pricing">
@@ -245,7 +245,7 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
             <Button
               size="lg"
               variant="outline"
-              className="border-white/20 hover:bg-white/5"
+              className="border-border hover:bg-primary/5"
               asChild
             >
               <Link href="/contact">
@@ -270,24 +270,24 @@ const ProductCard: React.FC<{ product: Product; index: number }> = ({ product, i
       transition={{ duration: 0.3, delay: index * 0.05 }}
     >
       <Link href={product.href || "#"}>
-        <Card className="bg-neutral-900/50 border-neutral-800 hover:border-neutral-600 transition-all duration-300 h-full group cursor-pointer hover:bg-neutral-900/80">
+        <Card className="bg-secondary/50 border-border hover:border-neutral-600 transition-all duration-300 h-full group cursor-pointer hover:bg-secondary/80">
           <CardHeader>
             <div className="flex items-start justify-between">
-              <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
-                <IconComponent className="h-5 w-5 text-white" />
+              <div className="p-2 rounded-lg bg-primary/5 border border-border group-hover:border-border transition-colors">
+                <IconComponent className="h-5 w-5 text-foreground" />
               </div>
               <StatusBadge status={product.status} />
             </div>
-            <CardTitle className="text-lg mt-4 group-hover:text-white transition-colors flex items-center gap-2">
+            <CardTitle className="text-lg mt-4 group-hover:text-foreground transition-colors flex items-center gap-2">
               {product.shortName}
               <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardTitle>
-            <CardDescription className="text-neutral-400">
+            <CardDescription className="text-muted-foreground">
               {product.tagline}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-neutral-500 line-clamp-2">
+            <p className="text-sm text-muted-foreground line-clamp-2">
               {product.description}
             </p>
 
@@ -296,7 +296,7 @@ const ProductCard: React.FC<{ product: Product; index: number }> = ({ product, i
                 <Badge
                   key={feature}
                   variant="outline"
-                  className="bg-neutral-800/50 border-neutral-700 text-neutral-400 text-xs"
+                  className="bg-neutral-800/50 border-border text-muted-foreground text-xs"
                 >
                   {feature}
                 </Badge>

@@ -11,8 +11,8 @@ const CallToAction = () => {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-white/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div 
@@ -26,7 +26,7 @@ const CallToAction = () => {
             Start building locally today
           </ChromeText>
           
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-12">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-12">
             Join our community of developers building the future of AI applications with open source tools.
           </p>
           
@@ -49,8 +49,8 @@ const CallToAction = () => {
             </Button>
           </div>
           
-          <div className="mt-12 text-neutral-400 text-sm">
-            Need enterprise features? <a href="/cloud" className="text-white hover:text-white/70 underline">Check out Hanzo Cloud</a>
+          <div className="mt-12 text-muted-foreground text-sm">
+            Need enterprise features? <a href="/cloud" className="text-foreground hover:text-foreground/70 underline">Check out Hanzo Cloud</a>
           </div>
         </motion.div>
       </div>

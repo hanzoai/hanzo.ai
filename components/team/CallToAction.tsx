@@ -3,8 +3,6 @@
 import { Button } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const CallToAction = () => {
   return (
     <div className="mt-16 text-center">
@@ -15,8 +13,8 @@ const CallToAction = () => {
       <div className="flex flex-wrap justify-center gap-4">
         <Button
           size="lg"
-          className="text-black"
-          style={{ backgroundColor: BRAND_COLOR }}
+          className="text-primary-foreground"
+
           onClick={() => window.open('https://hanzo.chat', '_blank')}
         >
           Try Hanzo Chat

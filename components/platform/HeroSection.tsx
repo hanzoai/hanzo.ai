@@ -34,8 +34,8 @@ const HeroSection = () => {
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.div
@@ -44,7 +44,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-white/30 text-foreground text-sm font-medium">
             Open Source
           </span>
         </motion.div>
@@ -64,13 +64,13 @@ const HeroSection = () => {
           >
             Hanzo Platform
           </ChromeText>
-          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-8">
             The free, forever, open-source version of our cloud infrastructure.
           </p>
-          <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Build locally, deploy anywhere. Hanzo Platform gives developers the same powerful experience as our cloud offering, but with the freedom to run it on your own hardware.
           </p>
-          <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
             Permissively licensed, community-driven, and built for the modern developer who values sovereignty and control over their stack.
           </p>
         </motion.div>
@@ -114,7 +114,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 px-4 py-3 bg-gray-900/50 rounded-lg inline-block"
         >
-          <code className="text-sm text-neutral-300">
+          <code className="text-sm text-foreground/80">
             npx @hanzo/cli create my-new-project
           </code>
         </motion.div>

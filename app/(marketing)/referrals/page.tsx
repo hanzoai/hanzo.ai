@@ -34,8 +34,8 @@ const Referrals = () => {
       {/* Background elements */}
       <div className="fixed inset-0 -z-10">
         <GridLines spacing={100} opacity={0.07} />
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white/10 rounded-full blur-3xl transform translate-x-1/4 -translate-y-1/4"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-white/5 rounded-full blur-3xl transform -translate-x-1/4 translate-y-1/4"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/10 rounded-full blur-3xl transform translate-x-1/4 -translate-y-1/4"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl transform -translate-x-1/4 translate-y-1/4"></div>
       </div>
       
       
@@ -50,13 +50,13 @@ const Referrals = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <div className="inline-block p-3 rounded-full bg-white/20 border border-white/30 text-white mb-6">
+              <div className="inline-block p-3 rounded-full bg-primary/20 border border-white/30 text-foreground mb-6">
                 <Gift className="h-8 w-8" />
               </div>
               <ChromeText as="h1" className="text-4xl md:text-6xl font-bold mb-6">
                 Hanzo Referral Program
               </ChromeText>
-              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+              <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
                 Share Hanzo with friends and colleagues to earn rewards. For every person who signs up and starts using our platform, you'll receive $5 in credits.
               </p>
             </motion.div>
@@ -70,12 +70,12 @@ const Referrals = () => {
             >
               <h2 className="text-2xl font-bold mb-4">Your Referral Link</h2>
               <div className="flex items-center gap-2 mb-6">
-                <div className="flex-1 bg-gray-800 p-4 rounded-lg text-neutral-300 font-mono text-sm overflow-hidden">
+                <div className="flex-1 bg-gray-800 p-4 rounded-lg text-foreground/80 font-mono text-sm overflow-hidden">
                   {referralLink}
                 </div>
                 <Button
                   onClick={copyToClipboard}
-                  className="flex-shrink-0 bg-white hover:bg-white/20"
+                  className="flex-shrink-0 bg-primary hover:bg-primary/20"
                 >
                   {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
                 </Button>
@@ -127,27 +127,27 @@ const Referrals = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
-                    icon: <Share2 className="h-8 w-8 text-white" />,
+                    icon: <Share2 className="h-8 w-8 text-foreground" />,
                     title: "Share Your Link",
                     description: "Send your unique referral link to friends and colleagues."
                   },
                   {
-                    icon: <Users className="h-8 w-8 text-white" />,
+                    icon: <Users className="h-8 w-8 text-foreground" />,
                     title: "Friends Sign Up",
                     description: "They create an account using your referral link and start using Hanzo."
                   },
                   {
-                    icon: <DollarSign className="h-8 w-8 text-white" />,
+                    icon: <DollarSign className="h-8 w-8 text-foreground" />,
                     title: "Earn Rewards",
                     description: "You receive $5 in credits for each successful referral, automatically added to your account."
                   }
                 ].map((step, index) => (
                   <div key={index} className="bg-gray-900/20 border border-gray-800 rounded-xl p-6">
-                    <div className="h-16 w-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4">
+                    <div className="h-16 w-16 rounded-full bg-primary/10 border border-border flex items-center justify-center mb-4">
                       {step.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-neutral-300">{step.description}</p>
+                    <p className="text-foreground/80">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -187,7 +187,7 @@ const Referrals = () => {
                 ].map((faq, index) => (
                   <div key={index} className="bg-gray-900/20 border border-gray-800 rounded-xl p-6">
                     <h3 className="text-xl font-bold mb-2">{faq.question}</h3>
-                    <p className="text-neutral-300">{faq.answer}</p>
+                    <p className="text-foreground/80">{faq.answer}</p>
                   </div>
                 ))}
               </div>
@@ -197,15 +197,15 @@ const Referrals = () => {
         
         {/* CTA Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto bg-gradient-to-r from-white/10 to-white/10 rounded-xl border border-white/20 p-10 text-center">
+          <div className="max-w-5xl mx-auto bg-gradient-to-r from-white/10 to-white/10 rounded-xl border border-border p-10 text-center">
             <ChromeText as="h2" className="text-3xl font-bold mb-4">
               Ready to Start Earning?
             </ChromeText>
-            <p className="text-xl text-neutral-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-3xl mx-auto">
               Sign up for a Hanzo account today, get your referral link, and start sharing with friends to earn rewards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white hover:bg-white/20 px-8">
+              <Button size="lg" className="bg-primary hover:bg-primary/20 px-8">
                 <Link href="/signup">Create Account</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-gray-700 hover:bg-gray-800 px-8">

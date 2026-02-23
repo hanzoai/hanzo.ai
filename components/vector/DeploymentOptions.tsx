@@ -65,9 +65,9 @@ const DeploymentOptions = () => {
   const getColorClasses = (color: string, isHovered: boolean = false) => {
     const colorMap: Record<string, { bg: string, text: string, border: string }> = {
       red: {
-        bg: isHovered ? "bg-white/10" : "bg-white/10",
-        text: "text-white",
-        border: isHovered ? "border-white/50" : "border-white/20"
+        bg: isHovered ? "bg-primary/10" : "bg-primary/10",
+        text: "text-foreground",
+        border: isHovered ? "border-white/50" : "border-border"
       }
     };
 
@@ -87,7 +87,7 @@ const DeploymentOptions = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Deployment Options to Match Your Journey
             </h2>
-            <p className="text-xl text-neutral-300">
+            <p className="text-xl text-foreground/80">
               From local development to global-scale production, Hanzo Vector offers flexible deployment options to fit your needs.
             </p>
           </motion.div>
@@ -109,13 +109,13 @@ const DeploymentOptions = () => {
                   <option.icon className={`h-6 w-6 ${text}`} />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--white)] mb-2">{option.title}</h3>
-                <p className="text-neutral-300 mb-6">{option.description}</p>
+                <p className="text-foreground/80 mb-6">{option.description}</p>
                 
                 <ul className="space-y-2 mb-8 flex-grow">
                   {option.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start">
                       <span className={`mr-2 ${text}`}>•</span>
-                      <span className="text-neutral-400 text-sm">{feature}</span>
+                      <span className="text-muted-foreground text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>

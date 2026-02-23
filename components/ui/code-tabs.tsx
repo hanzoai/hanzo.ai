@@ -18,8 +18,8 @@ export const CodeTabs = ({ tabs, className }: CodeTabsProps) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className={cn("rounded-lg border border-neutral-800 bg-neutral-950 overflow-hidden", className)}>
-      <div className="flex border-b border-neutral-800 overflow-x-auto">
+    <div className={cn("rounded-lg border border-border bg-background overflow-hidden", className)}>
+      <div className="flex border-b border-border overflow-x-auto">
         {tabs.map((tab, index) => (
           <button
             key={index}
@@ -27,8 +27,8 @@ export const CodeTabs = ({ tabs, className }: CodeTabsProps) => {
             className={cn(
               "px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors",
               activeTab === index
-                ? "text-white bg-neutral-800/50 border-b-2 border-white"
-                : "text-neutral-400 hover:text-neutral-200"
+                ? "text-foreground bg-neutral-800/50 border-b-2 border-white"
+                : "text-muted-foreground hover:text-neutral-200"
             )}
           >
             {tab.label}
@@ -36,7 +36,7 @@ export const CodeTabs = ({ tabs, className }: CodeTabsProps) => {
         ))}
       </div>
       <div className="p-4 overflow-x-auto">
-        <pre className="text-sm text-neutral-300 font-mono">
+        <pre className="text-sm text-foreground/80 font-mono">
           <code>{tabs[activeTab]?.code}</code>
         </pre>
       </div>

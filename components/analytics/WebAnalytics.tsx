@@ -101,7 +101,7 @@ const WebAnalytics = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Comprehensive Web Analytics</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Hanzo Analytics delivers real-time insights into every interaction, from clicks to conversions.
           </p>
         </motion.div>
@@ -117,12 +117,12 @@ const WebAnalytics = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex"
               >
-                <div className="mr-4 mt-1 bg-white/10 p-2 rounded-lg text-white">
+                <div className="mr-4 mt-1 bg-primary/10 p-2 rounded-lg text-foreground">
                   {feature.icon}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[var(--white)] mb-2">{feature.title}</h3>
-                  <p className="text-neutral-400">{feature.description}</p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -139,7 +139,7 @@ const WebAnalytics = () => {
             <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-medium">Live User Activity</h3>
-                <div className="bg-white/10 animate-pulse h-2 w-2 rounded-full"></div>
+                <div className="bg-primary/10 animate-pulse h-2 w-2 rounded-full"></div>
               </div>
               
               <div className="h-80 w-full relative">
@@ -219,11 +219,11 @@ const WebAnalytics = () => {
                     <span>Users</span>
                     <span className="font-bold">876</span>
                   </div>
-                  <div className="text-white/70 text-right mt-1">+24.5%</div>
+                  <div className="text-foreground/70 text-right mt-1">+24.5%</div>
                 </motion.div>
               </div>
               
-              <div className="flex justify-between text-sm text-neutral-400 mt-2">
+              <div className="flex justify-between text-sm text-muted-foreground mt-2">
                 <span>00:00</span>
                 <span>06:00</span>
                 <span>12:00</span>

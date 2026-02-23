@@ -17,7 +17,7 @@ const clients = [
 
 const TrustedBy = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ const TrustedBy = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <h2 className="text-2xl font-medium text-neutral-400">Trusted by Industry Leaders</h2>
+          <h2 className="text-2xl font-medium text-muted-foreground">Trusted by Industry Leaders</h2>
         </motion.div>
         
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 px-4">

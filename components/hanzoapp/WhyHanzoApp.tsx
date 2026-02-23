@@ -17,8 +17,6 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const modes = [
   {
     id: "web",
@@ -70,13 +68,13 @@ const modes = [
       { icon: Shield, text: "Proof of AI consensus" },
       { icon: Users, text: "Decentralized network" },
     ],
-    color: BRAND_COLOR,
+    color: "var(--primary)",
   },
 ];
 
 const WhyHanzoApp = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/50">
+    <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-background to-neutral-900/50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,10 +82,10 @@ const WhyHanzoApp = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Four ways to Hanzo
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Choose how you want to work. All modes sync seamlessly when connected.
           </p>
         </motion.div>
@@ -102,7 +100,7 @@ const WhyHanzoApp = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors group"
+                className="bg-secondary/80 border border-border rounded-xl p-6 hover:border-border transition-colors group"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -112,15 +110,15 @@ const WhyHanzoApp = () => {
                     <Icon className="w-6 h-6" style={{ color: mode.color }} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-1">{mode.title}</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">{mode.title}</h3>
                     <p className="text-sm mb-3" style={{ color: mode.color }}>{mode.tagline}</p>
-                    <p className="text-sm text-neutral-400 mb-4">{mode.description}</p>
+                    <p className="text-sm text-muted-foreground mb-4">{mode.description}</p>
                     <div className="space-y-2">
                       {mode.features.map((feature) => {
                         const FeatureIcon = feature.icon;
                         return (
-                          <div key={feature.text} className="flex items-center gap-2 text-sm text-neutral-400">
-                            <FeatureIcon className="w-4 h-4 text-neutral-500" />
+                          <div key={feature.text} className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <FeatureIcon className="w-4 h-4 text-muted-foreground" />
                             <span>{feature.text}</span>
                           </div>
                         );

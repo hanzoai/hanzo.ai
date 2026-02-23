@@ -91,10 +91,10 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-4">
-                <span className="text-white">{name}</span>
+                <span className="text-foreground">{name}</span>
               </h1>
-              <p className="text-xl md:text-2xl text-neutral-400 mb-6">{tagline}</p>
-              <p className="text-lg text-neutral-400 mb-8">{description}</p>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-6">{tagline}</p>
+              <p className="text-lg text-muted-foreground mb-8">{description}</p>
 
               {/* Quick Features */}
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -109,8 +109,8 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                         <Icon className="w-4 h-4" style={{ color: accentColor }} />
                       </div>
                       <div>
-                        <h3 className="font-medium text-white text-sm">{feature.title}</h3>
-                        <p className="text-xs text-neutral-500">{feature.description}</p>
+                        <h3 className="font-medium text-foreground text-sm">{feature.title}</h3>
+                        <p className="text-xs text-muted-foreground">{feature.description}</p>
                       </div>
                     </div>
                   );
@@ -119,7 +119,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
 
               <Link
                 href="/blockchain"
-                className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ArrowRight className="w-4 h-4 rotate-180" />
                 Back to Web3 Overview
@@ -131,7 +131,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900/80 p-6 md:p-8"
+              className="rounded-2xl border border-border bg-secondary/80 p-6 md:p-8"
             >
               {/* Quick Start */}
               <div className="flex items-center gap-3 mb-6">
@@ -142,8 +142,8 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                   <ProductIcon className="w-6 h-6" style={{ color: accentColor }} />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-white">Get Your API Key</h2>
-                  <p className="text-sm text-neutral-400">Start building in under 5 minutes</p>
+                  <h2 className="text-lg font-semibold text-foreground">Get Your API Key</h2>
+                  <p className="text-sm text-muted-foreground">Start building in under 5 minutes</p>
                 </div>
               </div>
 
@@ -155,8 +155,8 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                   { value: "100+", label: "Chains" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-xl font-bold text-white">{stat.value}</div>
-                    <div className="text-xs text-neutral-500">{stat.label}</div>
+                    <div className="text-xl font-bold text-foreground">{stat.value}</div>
+                    <div className="text-xs text-muted-foreground">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -175,23 +175,23 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full py-3 rounded-lg font-medium border-neutral-700 hover:border-neutral-600"
+                  className="w-full py-3 rounded-lg font-medium border-border hover:border-neutral-600"
                   onClick={() => window.open('https://docs.hanzo.ai/blockchain', '_blank')}
                 >
                   View Documentation
                 </Button>
               </div>
 
-              <p className="text-xs text-neutral-500 text-center mt-4">
+              <p className="text-xs text-muted-foreground text-center mt-4">
                 No credit card required. Free tier includes 300M compute units/month.
               </p>
 
               {/* Trust Signals */}
-              <div className="mt-6 pt-6 border-t border-neutral-800">
-                <p className="text-xs text-neutral-500 mb-3">Trusted by developers building:</p>
+              <div className="mt-6 pt-6 border-t border-border">
+                <p className="text-xs text-muted-foreground mb-3">Trusted by developers building:</p>
                 <div className="flex flex-wrap gap-2">
                   {["DeFi", "NFTs", "Payments", "Gaming", "AI Agents"].map((tag) => (
-                    <span key={tag} className="px-2 py-1 text-xs rounded-full border border-neutral-800 text-neutral-400">
+                    <span key={tag} className="px-2 py-1 text-xs rounded-full border border-border text-muted-foreground">
                       {tag}
                     </span>
                   ))}
@@ -203,7 +203,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-4 md:px-8 bg-neutral-950">
+      <section className="py-24 px-4 md:px-8 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -211,10 +211,10 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               Key Capabilities
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Everything you need, nothing you don't.
             </p>
           </motion.div>
@@ -229,7 +229,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="p-6 rounded-xl border border-neutral-800 bg-neutral-900/50"
+                  className="p-6 rounded-xl border border-border bg-secondary/50"
                 >
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
@@ -237,8 +237,8 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                   >
                     <Icon className="w-5 h-5" style={{ color: accentColor }} />
                   </div>
-                  <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-sm text-neutral-400">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -256,10 +256,10 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
                 Simple to Integrate
               </h2>
-              <p className="text-lg text-neutral-400">
+              <p className="text-lg text-muted-foreground">
                 Get started with just a few lines of code. SDKs for every language.
               </p>
             </motion.div>
@@ -268,18 +268,18 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden"
+              className="rounded-xl border border-border bg-secondary/80 overflow-hidden"
             >
               {/* Language Tabs */}
-              <div className="flex items-center gap-1 px-4 py-2 border-b border-neutral-800 bg-neutral-950 overflow-x-auto">
+              <div className="flex items-center gap-1 px-4 py-2 border-b border-border bg-background overflow-x-auto">
                 {codeExamples.map((example, idx) => (
                   <button
                     key={example.language}
                     onClick={() => setActiveTab(idx)}
                     className={`px-3 py-1.5 text-xs font-medium rounded transition-colors ${
                       activeTab === idx
-                        ? "bg-neutral-800 text-white"
-                        : "text-neutral-500 hover:text-neutral-300"
+                        ? "bg-neutral-800 text-foreground"
+                        : "text-muted-foreground hover:text-foreground/80"
                     }`}
                   >
                     {example.language}
@@ -287,18 +287,18 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                 ))}
               </div>
               {/* File Header */}
-              <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800 bg-neutral-900/50">
+              <div className="flex items-center gap-2 px-4 py-2 border-b border-border bg-secondary/50">
                 <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary/10" />
                 </div>
-                <span className="ml-2 text-xs text-neutral-500 font-mono">
+                <span className="ml-2 text-xs text-muted-foreground font-mono">
                   {codeExamples[activeTab]?.filename}
                 </span>
               </div>
-              <div className="p-4 font-mono text-sm bg-neutral-950 overflow-x-auto max-h-[500px]">
-                <pre className="text-neutral-300">{codeExamples[activeTab]?.code}</pre>
+              <div className="p-4 font-mono text-sm bg-background overflow-x-auto max-h-[500px]">
+                <pre className="text-foreground/80">{codeExamples[activeTab]?.code}</pre>
               </div>
             </motion.div>
           </div>
@@ -315,10 +315,10 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
                 Simple to Integrate
               </h2>
-              <p className="text-lg text-neutral-400">
+              <p className="text-lg text-muted-foreground">
                 Get started with just a few lines of code.
               </p>
             </motion.div>
@@ -327,18 +327,18 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden"
+              className="rounded-xl border border-border bg-secondary/80 overflow-hidden"
             >
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-white/10" />
-                  <div className="w-3 h-3 rounded-full bg-white/10" />
-                  <div className="w-3 h-3 rounded-full bg-white/10" />
+                  <div className="w-3 h-3 rounded-full bg-primary/10" />
+                  <div className="w-3 h-3 rounded-full bg-primary/10" />
+                  <div className="w-3 h-3 rounded-full bg-primary/10" />
                 </div>
-                <span className="ml-2 text-xs text-neutral-500 font-mono">{codeExample.filename}</span>
+                <span className="ml-2 text-xs text-muted-foreground font-mono">{codeExample.filename}</span>
               </div>
-              <div className="p-4 font-mono text-sm bg-neutral-950 overflow-x-auto">
-                <pre className="text-neutral-300">{codeExample.code}</pre>
+              <div className="p-4 font-mono text-sm bg-background overflow-x-auto">
+                <pre className="text-foreground/80">{codeExample.code}</pre>
               </div>
             </motion.div>
           </div>
@@ -346,7 +346,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
       )}
 
       {/* Use Cases */}
-      <section className="py-24 px-4 md:px-8 bg-neutral-950">
+      <section className="py-24 px-4 md:px-8 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -354,7 +354,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               Built For
             </h2>
           </motion.div>
@@ -367,10 +367,10 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-6 rounded-xl border border-neutral-800 bg-neutral-900/30"
+                className="p-6 rounded-xl border border-border bg-secondary/30"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{useCase.title}</h3>
-                <p className="text-neutral-400">{useCase.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{useCase.title}</h3>
+                <p className="text-muted-foreground">{useCase.description}</p>
               </motion.div>
             ))}
           </div>
@@ -387,7 +387,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
                 Supported Chains
               </h2>
             </motion.div>
@@ -401,7 +401,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               {chains.map((chain) => (
                 <div
                   key={chain}
-                  className="px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/50 text-sm text-neutral-300"
+                  className="px-4 py-2 rounded-full border border-border bg-secondary/50 text-sm text-foreground/80"
                 >
                   {chain}
                 </div>
@@ -419,10 +419,10 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               Start Building with {name}
             </h2>
-            <p className="text-lg text-neutral-400 mb-8">
+            <p className="text-lg text-muted-foreground mb-8">
               Get your free API key and ship your first request in under 5 minutes. No credit card required.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -436,7 +436,7 @@ const BlockchainProductLayout: React.FC<BlockchainProductProps> = ({
               </Button>
               <Link
                 href="/blockchain"
-                className="px-6 py-3 rounded-lg font-medium border border-neutral-700 text-white hover:bg-neutral-900 transition-colors"
+                className="px-6 py-3 rounded-lg font-medium border border-border text-foreground hover:bg-secondary transition-colors"
               >
                 Explore All Web3 Products
               </Link>

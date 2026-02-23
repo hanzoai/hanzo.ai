@@ -18,7 +18,7 @@ const AIPlatformSection = () => {
     <section className="relative py-20 sm:py-32 overflow-hidden">
       {/* Background elements - simplified */}
       <div className="absolute inset-0 bg-[var(--black)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-background/90"></div>
       
       <GridLines spacing={60} opacity={0.2} color="rgba(255, 255, 255, 0.08)" />
       
@@ -31,7 +31,7 @@ const AIPlatformSection = () => {
           className="text-center mb-16"
         >
           <div className="flex justify-center mb-4">
-            <span className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm font-medium">
+            <span className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-border text-foreground/70 text-sm font-medium">
               Unified AI Development
             </span>
           </div>
@@ -40,7 +40,7 @@ const AIPlatformSection = () => {
               AI Engineering Platform
             </ChromeText>
           </div>
-          <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
             Build powerful AI experiences with our comprehensive platform designed for developers,
             researchers, and enterprises to create, deploy, and scale AI applications.
           </p>
@@ -81,7 +81,7 @@ const AIPlatformSection = () => {
                         })}
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-neutral-400">{feature.description}</p>
+                      <p className="text-muted-foreground">{feature.description}</p>
                     </ArchitecturalBox>
                   </motion.div>
                 </MasonryItem>

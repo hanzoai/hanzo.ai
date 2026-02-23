@@ -63,25 +63,25 @@ const SolutionCapabilities: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative">
                     <div className="flex items-center justify-between mb-4">
-                      <Icon className="h-6 w-6 text-white" strokeWidth={1.5} />
-                      <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-white transition-colors" />
+                      <Icon className="h-6 w-6 text-foreground" strokeWidth={1.5} />
+                      <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-foreground transition-colors">
                       {item}
                     </h3>
-                    <p className="text-neutral-400 text-sm mb-4">
+                    <p className="text-muted-foreground text-sm mb-4">
                       Our specialists deliver comprehensive {item.toLowerCase()} solutions tailored to your 
                       organization's unique challenges and goals.
                     </p>
                     
                     <div className="flex flex-wrap gap-2 mt-4">
-                      <Link href={`/solutions/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-xs flex items-center text-white hover:text-white/70">
+                      <Link href={`/solutions/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-xs flex items-center text-foreground hover:text-foreground/70">
                         <LinkIcon className="h-3 w-3 mr-1" /> Learn more
                       </Link>
-                      <a href="#" className="text-xs flex items-center text-white hover:text-white/70">
+                      <a href="#" className="text-xs flex items-center text-foreground hover:text-foreground/70">
                         <FileText className="h-3 w-3 mr-1" /> Case study
                       </a>
-                      <a href="#" className="text-xs flex items-center text-white/70 hover:text-white">
+                      <a href="#" className="text-xs flex items-center text-foreground/70 hover:text-foreground">
                         <BookOpen className="h-3 w-3 mr-1" /> White paper
                       </a>
                     </div>
@@ -100,7 +100,7 @@ const SolutionCapabilities: React.FC = () => {
           >
             <button
               onClick={() => toggleSection("Capabilities")}
-              className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-foreground hover:bg-primary/10 transition-colors"
             >
               View More Capabilities
               <ChevronRight className="ml-2 h-5 w-5" />
@@ -117,44 +117,44 @@ const SolutionCapabilities: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="bg-gradient-to-br from-gray-900/70 to-black/80 rounded-xl border border-gray-800 overflow-hidden"
+      className="bg-gradient-to-br from-gray-900/70 to-background/80 rounded-xl border border-gray-800 overflow-hidden"
     >
       <div className="grid grid-cols-1 lg:grid-cols-5">
         <div className="col-span-3 p-8">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs text-neutral-400">Case Study</span>
+            <span className="text-xs text-muted-foreground">Case Study</span>
             <span className="w-1 h-1 rounded-full bg-gray-500"></span>
-            <span className="text-xs px-2 py-1 bg-white/20 rounded-full text-white border border-white/30">
+            <span className="text-xs px-2 py-1 bg-primary/20 rounded-full text-foreground border border-white/30">
               {industry}
             </span>
           </div>
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">{title}</h3>
-          <p className="text-neutral-300 mb-6">{description}</p>
+          <p className="text-foreground/80 mb-6">{description}</p>
           
           <div className="space-y-4 mb-6">
             <div className="flex items-start gap-2">
-              <CheckCircle className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-              <p className="text-neutral-400">Reduced development time by 40% through AI-powered automation</p>
+              <CheckCircle className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
+              <p className="text-muted-foreground">Reduced development time by 40% through AI-powered automation</p>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-              <p className="text-neutral-400">Improved customer satisfaction scores by 35% with new digital experiences</p>
+              <CheckCircle className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
+              <p className="text-muted-foreground">Improved customer satisfaction scores by 35% with new digital experiences</p>
             </div>
             <div className="flex items-start gap-2">
-              <CheckCircle className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-              <p className="text-neutral-400">Achieved 99.999% uptime with Hanzo's enterprise-grade infrastructure</p>
+              <CheckCircle className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
+              <p className="text-muted-foreground">Achieved 99.999% uptime with Hanzo's enterprise-grade infrastructure</p>
             </div>
           </div>
           
-          <Button className="flex items-center gap-2 bg-[var(--white)] text-black hover:bg-gray-200">
+          <Button className="flex items-center gap-2 bg-[var(--white)] text-primary-foreground hover:bg-gray-200">
             Read Full Case Study <ArrowRight size={16} />
           </Button>
         </div>
         <div className="col-span-2 bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center p-8">
           <div className="flex flex-col items-center text-center">
-            <Award className="h-16 w-16 text-white mb-4" />
+            <Award className="h-16 w-16 text-foreground mb-4" />
             <div className="text-4xl font-bold text-[var(--white)] mb-2">200%</div>
-            <div className="text-white">Return on Investment</div>
+            <div className="text-foreground">Return on Investment</div>
           </div>
         </div>
       </div>
@@ -175,13 +175,13 @@ const SolutionCapabilities: React.FC = () => {
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-white/20 p-8">
+          <div className="bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-border p-8">
             <div className="mb-6">
-              <div className="h-16 w-16 rounded-lg bg-white/20 flex items-center justify-center mb-4">
-                <Icon className="h-10 w-10 text-white" />
+              <div className="h-16 w-16 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                <Icon className="h-10 w-10 text-foreground" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Enterprise AI Solutions</h3>
-              <p className="text-neutral-300">
+              <p className="text-foreground/80">
                 Deploy, manage, and scale AI models with unmatched performance and security. Our AI platform
                 provides seamless access to frontier models, private model customization, and robust security for
                 enterprise deployments.
@@ -191,52 +191,52 @@ const SolutionCapabilities: React.FC = () => {
             <div className="space-y-4 mb-8">
               {featuredService.features.map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                  <p className="text-neutral-300">{feature}</p>
+                  <CheckCircle className="h-5 w-5 text-foreground flex-shrink-0 mt-0.5" />
+                  <p className="text-foreground/80">{feature}</p>
                 </div>
               ))}
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Button asChild className="bg-white hover:bg-white/20">
+              <Button asChild className="bg-primary hover:bg-primary/20">
                 <Link href="/ai">Explore AI Solutions</Link>
               </Button>
-              <Button asChild variant="outline" className="border-white/40 text-white hover:bg-white/10">
+              <Button asChild variant="outline" className="border-white/40 text-foreground hover:bg-primary/10">
                 <a href="#">Request Demo</a>
               </Button>
             </div>
           </div>
           
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 p-6">
+            <div className="bg-gradient-to-br from-gray-900/70 to-background/90 rounded-xl border border-gray-800 p-6">
               <h4 className="text-lg font-semibold mb-3">Case Study: Financial Services</h4>
-              <p className="text-neutral-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 How a leading investment firm used Hanzo's AI platform to analyze market trends and automate 
                 investment decisions, resulting in a 32% increase in portfolio performance.
               </p>
-              <a href="#" className="text-white hover:text-white/70 flex items-center gap-1.5">
+              <a href="#" className="text-foreground hover:text-foreground/70 flex items-center gap-1.5">
                 Read case study <ArrowRight size={16} />
               </a>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 p-6">
+            <div className="bg-gradient-to-br from-gray-900/70 to-background/90 rounded-xl border border-gray-800 p-6">
               <h4 className="text-lg font-semibold mb-3">White Paper: Enterprise AI Adoption</h4>
-              <p className="text-neutral-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Download our comprehensive guide to implementing AI across large organizations, addressing
                 challenges around security, compliance, and organizational change.
               </p>
-              <a href="#" className="text-white hover:text-white/70 flex items-center gap-1.5">
+              <a href="#" className="text-foreground hover:text-foreground/70 flex items-center gap-1.5">
                 Download white paper <ArrowRight size={16} />
               </a>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 p-6">
+            <div className="bg-gradient-to-br from-gray-900/70 to-background/90 rounded-xl border border-gray-800 p-6">
               <h4 className="text-lg font-semibold mb-3">Webinar: The Future of GenAI in Enterprise</h4>
-              <p className="text-neutral-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Join our expert panel discussing how generative AI is transforming enterprise operations and
                 creating new business opportunities across industries.
               </p>
-              <a href="#" className="text-white/70 hover:text-white flex items-center gap-1.5">
+              <a href="#" className="text-foreground/70 hover:text-foreground flex items-center gap-1.5">
                 Register now <ArrowRight size={16} />
               </a>
             </div>
@@ -254,71 +254,71 @@ const SolutionCapabilities: React.FC = () => {
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
-        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-white/20">
+        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-border">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">Case Studies</h3>
-          <p className="text-neutral-300 mb-6">
+          <p className="text-foreground/80 mb-6">
             See how we've helped organizations like yours achieve their goals through innovative solutions.
           </p>
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-white mr-3" />
+                <FileText className="h-5 w-5 text-foreground mr-3" />
                 <span className="text-[var(--white)]">Financial Services Digital Transformation</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-white mr-3" />
+                <FileText className="h-5 w-5 text-foreground mr-3" />
                 <span className="text-[var(--white)]">Healthcare AI Implementation</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-white mr-3" />
+                <FileText className="h-5 w-5 text-foreground mr-3" />
                 <span className="text-[var(--white)]">Retail Analytics Platform</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-white/40 text-white hover:bg-white/10">
+            <Button variant="outline" className="border-white/40 text-foreground hover:bg-primary/10">
               View all case studies <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-white/20">
+        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-border">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">White Papers</h3>
-          <p className="text-neutral-300 mb-6">
+          <p className="text-foreground/80 mb-6">
             Access our thought leadership and research on the latest industry trends and technologies.
           </p>
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
+                <BookOpen className="h-5 w-5 text-foreground/70 mr-3" />
                 <span className="text-[var(--white)]">The Future of AI in Enterprise</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
+                <BookOpen className="h-5 w-5 text-foreground/70 mr-3" />
                 <span className="text-[var(--white)]">Cloud Security Best Practices</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
+                <BookOpen className="h-5 w-5 text-foreground/70 mr-3" />
                 <span className="text-[var(--white)]">Digital Transformation Playbook</span>
               </div>
-              <ExternalLink className="h-4 w-4 text-neutral-400" />
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-white/40 text-white/70 hover:bg-white/10">
+            <Button variant="outline" className="border-white/40 text-foreground/70 hover:bg-primary/10">
               View all white papers <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -328,19 +328,19 @@ const SolutionCapabilities: React.FC = () => {
   );
   
   const renderPartnerSection = () => (
-    <div className="mb-20 bg-gradient-to-br from-gray-900/70 to-black/90 p-10 rounded-2xl border border-gray-800">
+    <div className="mb-20 bg-gradient-to-br from-gray-900/70 to-background/90 p-10 rounded-2xl border border-gray-800">
       <SectionHeader 
         title="Expert Partners" 
         description="Access our specialized agencies and expert talent to accelerate your success"
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="p-6 bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
-          <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
-            <Users className="h-6 w-6 text-white" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-border hover:border-white/40 transition-colors">
+          <div className="p-3 rounded-lg bg-primary/20 self-start inline-block mb-4">
+            <Users className="h-6 w-6 text-foreground" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
-          <p className="text-neutral-300 mb-5">
+          <p className="text-foreground/80 mb-5">
             Our AI-powered creative agency helps brands transform their digital presence with cutting-edge design,
             content, and marketing strategies powered by artificial intelligence.
           </p>
@@ -349,26 +349,26 @@ const SolutionCapabilities: React.FC = () => {
               href="https://hanzo.agency"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-white/20 rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/20 rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Hanzo Agency</span>
               <ExternalLink size={14} />
             </a>
             <a
               href="/contact"
-              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-white hover:text-white/70 transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-foreground hover:text-foreground/70 transition-colors"
             >
               <span>Contact us</span>
               <Mail size={14} />
             </a>
           </div>
         </div>
-        <div className="p-6 bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
-          <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
-            <Shield className="h-6 w-6 text-white/70" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-border hover:border-white/40 transition-colors">
+          <div className="p-3 rounded-lg bg-primary/20 self-start inline-block mb-4">
+            <Shield className="h-6 w-6 text-foreground/70" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
-          <p className="text-neutral-300 mb-5">
+          <p className="text-foreground/80 mb-5">
             Our collective of fractional CXOs and industry experts help enterprises implement transformative
             technology solutions and drive strategic growth initiatives.
           </p>
@@ -377,14 +377,14 @@ const SolutionCapabilities: React.FC = () => {
               href="https://sensei.group"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-primary/10 hover:bg-primary rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Sensei Group</span>
               <ExternalLink size={14} />
             </a>
             <a
               href="tel:+1234567890"
-              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/20 rounded-md text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-border rounded-md text-foreground/70 hover:text-foreground transition-colors"
             >
               <span>Schedule a call</span>
               <Phone size={14} />
@@ -403,14 +403,14 @@ const SolutionCapabilities: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-block mb-4">
-              <Link href="/solutions" className="text-sm text-neutral-400 hover:text-[var(--white)] flex items-center gap-1">
+              <Link href="/solutions" className="text-sm text-muted-foreground hover:text-[var(--white)] flex items-center gap-1">
                 <ChevronRight className="h-4 w-4 rotate-180" /> Back to Solutions
               </Link>
             </div>
             <ChromeText as="h1" className="text-4xl sm:text-5xl font-bold mb-6">
               Technical Capabilities
             </ChromeText>
-            <p className="text-neutral-400 text-lg">
+            <p className="text-muted-foreground text-lg">
               Our comprehensive technical capabilities span across a wide range of disciplines, empowering your 
               organization to stay at the forefront of innovation.
             </p>
@@ -460,20 +460,20 @@ const SolutionCapabilities: React.FC = () => {
           <div className="mt-20 text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
-              <p className="text-neutral-400 mb-8">
+              <p className="text-muted-foreground mb-8">
                 Connect with our team to learn how our capabilities can help you achieve your goals.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg bg-white hover:bg-white/20 text-[var(--white)] font-medium transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-primary hover:bg-primary/20 text-[var(--white)] font-medium transition-colors"
                 >
                   Get Started
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </a>
                 <a
                   href="tel:+1234567890"
-                  className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-white hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-foreground hover:bg-primary/10 transition-colors"
                 >
                   Schedule a Call
                   <Phone className="ml-2 h-5 w-5" />

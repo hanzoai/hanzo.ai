@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[var(--black)]" />
       
       {/* Enhanced background with subtle animated gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/10 to-black opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/10 to-background opacity-40"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.06),transparent_50%)] opacity-60"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -23,14 +23,14 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-white/30 text-foreground text-sm font-medium mb-6">
             Hanzo Cloud - Built for Production
           </div>
           <ChromeText as="h1" className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             A High-Performance Cloud 
             <span className="block mt-2">Optimized for AI Workloads</span>
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Powering over 100 award-winning AI products with global infrastructure that scales from prototype to planet-scale. Deploy in seconds with zero configuration and scale limitlessly.
           </p>
         </motion.div>
@@ -48,7 +48,7 @@ const HeroSection = () => {
           <Button 
             variant="outline"
             size="lg" 
-            className="text-lg px-8 text-[var(--white)] border-white/30 hover:bg-white/10"
+            className="text-lg px-8 text-[var(--white)] border-white/30 hover:bg-primary/10"
           >
             <a href="/platform">Try Open Source</a>
           </Button>
@@ -61,22 +61,22 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
-          <div className="bg-gray-900/30 border border-white/20 rounded-xl p-6 text-center">
-            <Server className="h-8 w-8 text-white mx-auto mb-4" />
+          <div className="bg-gray-900/30 border border-border rounded-xl p-6 text-center">
+            <Server className="h-8 w-8 text-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Global Infrastructure</h3>
-            <p className="text-neutral-400 text-sm">35+ regions worldwide for ultra-low latency at the edge</p>
+            <p className="text-muted-foreground text-sm">35+ regions worldwide for ultra-low latency at the edge</p>
           </div>
           
-          <div className="bg-gray-900/30 border border-white/20 rounded-xl p-6 text-center">
-            <Zap className="h-8 w-8 text-white mx-auto mb-4" />
+          <div className="bg-gray-900/30 border border-border rounded-xl p-6 text-center">
+            <Zap className="h-8 w-8 text-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Instant Deployment</h3>
-            <p className="text-neutral-400 text-sm">Deploy in seconds with push-button simplicity</p>
+            <p className="text-muted-foreground text-sm">Deploy in seconds with push-button simplicity</p>
           </div>
           
-          <div className="bg-gray-900/30 border border-white/20 rounded-xl p-6 text-center">
-            <Globe className="h-8 w-8 text-white mx-auto mb-4" />
+          <div className="bg-gray-900/30 border border-border rounded-xl p-6 text-center">
+            <Globe className="h-8 w-8 text-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">AI-Optimized</h3>
-            <p className="text-neutral-400 text-sm">Purpose-built for complex AI workloads and inference</p>
+            <p className="text-muted-foreground text-sm">Purpose-built for complex AI workloads and inference</p>
           </div>
         </motion.div>
         
@@ -86,12 +86,12 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-6 gap-6 text-center"
         >
-          <a href="#security" className="text-neutral-400 hover:text-[var(--white)] transition-colors">Security</a>
-          <a href="#infra-log" className="text-neutral-400 hover:text-[var(--white)] transition-colors">Infra Log</a>
-          <a href="https://docs.hanzo.cloud" className="text-neutral-400 hover:text-[var(--white)] transition-colors">Docs</a>
-          <a href="https://community.hanzo.cloud" className="text-neutral-400 hover:text-[var(--white)] transition-colors">Community</a>
-          <a href="https://status.hanzo.cloud" className="text-neutral-400 hover:text-[var(--white)] transition-colors">Status</a>
-          <a href="/pricing" className="text-neutral-400 hover:text-[var(--white)] transition-colors">Pricing</a>
+          <a href="#security" className="text-muted-foreground hover:text-[var(--white)] transition-colors">Security</a>
+          <a href="#infra-log" className="text-muted-foreground hover:text-[var(--white)] transition-colors">Infra Log</a>
+          <a href="https://docs.hanzo.cloud" className="text-muted-foreground hover:text-[var(--white)] transition-colors">Docs</a>
+          <a href="https://community.hanzo.cloud" className="text-muted-foreground hover:text-[var(--white)] transition-colors">Community</a>
+          <a href="https://status.hanzo.cloud" className="text-muted-foreground hover:text-[var(--white)] transition-colors">Status</a>
+          <a href="/pricing" className="text-muted-foreground hover:text-[var(--white)] transition-colors">Pricing</a>
         </motion.div>
       </div>
     </section>

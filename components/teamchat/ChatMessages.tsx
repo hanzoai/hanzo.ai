@@ -34,7 +34,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
       
       {isTyping && (
         <div className="flex justify-start mb-4">
-          <div className="bg-white/10 h-8 w-8 rounded-full flex items-center justify-center mr-2">
+          <div className="bg-primary/10 h-8 w-8 rounded-full flex items-center justify-center mr-2">
             <Bot className="h-4 w-4 text-[var(--white)]" />
           </div>
           <div className="bg-gray-800/60 py-3 px-4 rounded-lg border border-gray-700/50">

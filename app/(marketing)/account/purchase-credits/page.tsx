@@ -73,7 +73,7 @@ const PurchaseCredits = () => {
                 <div className="space-y-2">
                   <Label htmlFor="creditAmount">Amount (USD)</Label>
                   <div className="relative">
-                    <div className="absolute left-3 top-3 text-neutral-400">$</div>
+                    <div className="absolute left-3 top-3 text-muted-foreground">$</div>
                     <Input
                       id="creditAmount"
                       name="creditAmount"
@@ -83,7 +83,7 @@ const PurchaseCredits = () => {
                       className="bg-gray-900/20 border-gray-800/30 pl-8"
                     />
                   </div>
-                  <p className="text-sm text-neutral-400">Minimum amount: $10</p>
+                  <p className="text-sm text-muted-foreground">Minimum amount: $10</p>
                 </div>
                 
                 {/* Preset amounts */}
@@ -94,7 +94,7 @@ const PurchaseCredits = () => {
                       type="button"
                       variant="outline"
                       className={`bg-[var(--black)] border-gray-800/30 hover:bg-gray-900/30 ${
-                        creditAmount === amount ? 'border-white/30 bg-white/10' : ''
+                        creditAmount === amount ? 'border-white/30 bg-primary/10' : ''
                       }`}
                       onClick={() => setCreditAmount(amount)}
                     >
@@ -107,23 +107,23 @@ const PurchaseCredits = () => {
                   <Label htmlFor="card">Payment Method</Label>
                   <div className="p-4 border-0 rounded-lg bg-gray-900/20 flex items-center">
                     <div className="h-10 w-14 bg-gray-900/50 rounded flex items-center justify-center mr-4">
-                      <div className="text-white font-bold text-xs">VISA</div>
+                      <div className="text-foreground font-bold text-xs">VISA</div>
                     </div>
                     <div>
                       <div className="font-medium">
                         Visa ending in 4242
-                        <span className="ml-2 text-xs bg-white/20 text-white px-2 py-0.5 rounded-full">
+                        <span className="ml-2 text-xs bg-primary/20 text-foreground px-2 py-0.5 rounded-full">
                           Default
                         </span>
                       </div>
-                      <div className="text-sm text-neutral-400">Expires 12/25</div>
+                      <div className="text-sm text-muted-foreground">Expires 12/25</div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-2 pt-2">
                   <Checkbox id="terms" checked={true} />
-                  <Label htmlFor="terms" className="text-sm text-neutral-400">
+                  <Label htmlFor="terms" className="text-sm text-muted-foreground">
                     I agree to the terms and conditions
                   </Label>
                 </div>
@@ -162,7 +162,7 @@ const PurchaseCredits = () => {
                 </div>
               </div>
               
-              <div className="pt-4 text-sm text-neutral-400">
+              <div className="pt-4 text-sm text-muted-foreground">
                 <p>Credits never expire and can be used for any Hanzo AI service.</p>
                 <p className="mt-2">Need help? Contact our support team.</p>
               </div>

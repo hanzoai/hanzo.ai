@@ -20,8 +20,6 @@ import {
   ChevronRight
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff"; // Brand color
-
 interface Service {
   name: string;
   description: string;
@@ -101,7 +99,7 @@ const ADDITIONAL_SERVICES: Service[] = [
 
 const PaaSCapabilities = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30">
+    <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-background to-neutral-900/30">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div
@@ -112,15 +110,15 @@ const PaaSCapabilities = () => {
         >
           <div
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-4"
-            style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
           >
             <Terminal className="w-3.5 h-3.5" />
             Platform-as-a-Service
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Backend Services, Ready to Deploy
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Everything you need to build production applications. Self-host on your infrastructure,
             or deploy to Hanzo Cloud with zero changes.
           </p>
@@ -132,7 +130,7 @@ const PaaSCapabilities = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg font-semibold text-white mb-6"
+            className="text-lg font-semibold text-foreground mb-6"
           >
             Core Services
           </motion.h3>
@@ -145,20 +143,20 @@ const PaaSCapabilities = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className={`p-6 rounded-xl bg-neutral-900/50 border border-neutral-800 transition-all ${
+                  className={`p-6 rounded-xl bg-secondary/50 border border-border transition-all ${
                     service.href ? "hover:border-white/30 cursor-pointer" : ""
                   }`}
                 >
                   <div className="flex items-start gap-4">
                     <div
                       className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: `${BRAND_COLOR}20` }}
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
                     >
-                      <Icon className="w-5 h-5" style={{ color: BRAND_COLOR }} />
+                      <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-medium mb-1">{service.name}</h4>
-                      <p className="text-sm text-neutral-400">{service.description}</p>
+                      <h4 className="text-foreground font-medium mb-1">{service.name}</h4>
+                      <p className="text-sm text-muted-foreground">{service.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -181,7 +179,7 @@ const PaaSCapabilities = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg font-semibold text-white mb-6"
+            className="text-lg font-semibold text-foreground mb-6"
           >
             Additional Services
           </motion.h3>
@@ -195,13 +193,13 @@ const PaaSCapabilities = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="p-4 rounded-lg bg-neutral-950/50 border border-neutral-800/50"
+                  className="p-4 rounded-lg bg-background/50 border border-border/50"
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className="w-4 h-4 text-neutral-500" />
+                    <Icon className="w-4 h-4 text-muted-foreground" />
                     <div>
-                      <span className="text-sm font-medium text-white">{service.name}</span>
-                      <span className="text-xs text-neutral-500 ml-2">{service.description}</span>
+                      <span className="text-sm font-medium text-foreground">{service.name}</span>
+                      <span className="text-xs text-muted-foreground ml-2">{service.description}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -215,51 +213,51 @@ const PaaSCapabilities = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-neutral-900/80 border border-neutral-800 rounded-xl overflow-hidden"
+          className="bg-secondary/80 border border-border rounded-xl overflow-hidden"
         >
-          <div className="flex items-center gap-3 px-4 py-3 border-b border-neutral-800">
+          <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-primary/10" />
+              <div className="w-3 h-3 rounded-full bg-primary/10" />
+              <div className="w-3 h-3 rounded-full bg-primary/10" />
             </div>
-            <span className="text-xs text-neutral-500 font-mono">hanzo platform</span>
+            <span className="text-xs text-muted-foreground font-mono">hanzo platform</span>
           </div>
           <div className="p-6 font-mono text-sm">
             <div className="space-y-3">
-              <div className="text-neutral-500">
-                <span className="text-white">$</span> hanzo init my-app
+              <div className="text-muted-foreground">
+                <span className="text-foreground">$</span> hanzo init my-app
               </div>
-              <div className="text-neutral-400">
+              <div className="text-muted-foreground">
                 ✓ Created project configuration
               </div>
-              <div className="text-neutral-400">
+              <div className="text-muted-foreground">
                 ✓ Initialized Auth, Database, Storage
               </div>
-              <div className="text-neutral-400">
+              <div className="text-muted-foreground">
                 ✓ Generated TypeScript types
               </div>
-              <div className="mt-4 text-neutral-500">
-                <span className="text-white">$</span> hanzo dev
+              <div className="mt-4 text-muted-foreground">
+                <span className="text-foreground">$</span> hanzo dev
               </div>
-              <div className="text-neutral-400">
+              <div className="text-muted-foreground">
                 Starting local development server...
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-white" />
-                <span className="text-white">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-foreground">
                   Platform running at http://localhost:8000
                 </span>
               </div>
-              <div className="mt-4 text-neutral-500">
-                <span className="text-white">$</span> hanzo deploy
+              <div className="mt-4 text-muted-foreground">
+                <span className="text-foreground">$</span> hanzo deploy
               </div>
-              <div className="text-neutral-400">
+              <div className="text-muted-foreground">
                 Deploying to production...
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-white" />
-                <span className="text-white">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-foreground">
                   Live at https://my-app.hanzo.app
                 </span>
               </div>
@@ -279,15 +277,15 @@ const PaaSCapabilities = () => {
               href="https://docs.hanzo.ai/platform/quickstart"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-              style={{ backgroundColor: BRAND_COLOR, color: "#000" }}
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
             >
               Get Started
               <ChevronRight className="ml-2 h-4 w-4" />
             </a>
             <Link
               href="/cloud"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
             >
               Compare to Cloud
               <ChevronRight className="ml-2 h-4 w-4" />

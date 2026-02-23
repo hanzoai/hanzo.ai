@@ -18,14 +18,14 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10 mb-6">
             Built in the Open, For Everyone
           </h1>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-10">
             Hanzo is proudly open source. We believe in transparency, collaboration, and community-driven innovation.
             Everything we build is available for you to use, modify, and contribute to.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="sm"
-              className="bg-white hover:bg-[#cccccc]"
+              className="bg-primary hover:bg-[#cccccc]"
             >
               <Github className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -33,7 +33,7 @@ const HeroSection = () => {
             <Button
               size="sm"
               variant="outline"
-              className="border-white/30 text-[var(--white)] hover:bg-white/10"
+              className="border-white/30 text-[var(--white)] hover:bg-primary/10"
             >
               <Star className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer">Star Platform Repo</a>
@@ -41,7 +41,7 @@ const HeroSection = () => {
             <Button
               size="sm"
               variant="outline"
-              className="border-white/30 text-[var(--white)] hover:bg-white/10"
+              className="border-white/30 text-[var(--white)] hover:bg-primary/10"
             >
               <GitBranch className="mr-2 h-4 w-4" />
               <a href="https://github.com/hanzoai/platform/fork" target="_blank" rel="noopener noreferrer">Fork & Contribute</a>

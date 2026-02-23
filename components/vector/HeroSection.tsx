@@ -19,12 +19,12 @@ const HeroSection = () => {
   return (
     <AnimatedSection className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
 
       <AnimatedStaggerContainer className="max-w-5xl mx-auto text-center relative z-10" delayFactor={0.07}>
         <AnimatedHeading>
-          <div className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/30 text-white/70 text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-white/30 text-foreground/70 text-sm font-medium mb-6">
             Vector Database for AI
           </div>
         </AnimatedHeading>
@@ -35,7 +35,7 @@ const HeroSection = () => {
           </ChromeText>
         </AnimatedHeading>
         
-        <motion.p variants={fadeInUpVariant} className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
+        <motion.p variants={fadeInUpVariant} className="text-xl text-foreground/80 max-w-3xl mx-auto mb-10">
           Hanzo Vector is a high-performance vector database designed for AI applications,
           with advanced similarity search and seamless integrations with popular ML frameworks.
         </motion.p>

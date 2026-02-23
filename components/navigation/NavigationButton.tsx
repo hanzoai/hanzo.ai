@@ -19,7 +19,7 @@ export const NavigationButton = forwardRef<HTMLButtonElement, NavigationButtonPr
         ref={ref}
         className={cn(
           "inline-flex items-center outline-none focus:outline-none transition-colors",
-          isActive ? "text-white" : "text-neutral-300 hover:text-white"
+          isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"
         )}
         onMouseEnter={onHoverStart}
         onClick={onClick}

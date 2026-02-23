@@ -27,8 +27,8 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
     if (!category) return null;
 
     const badgeStyles = {
-      'ai-cloud': 'bg-white/20 border-white/30 text-white',
-      'dx-platform': 'bg-white/20 border-white/30 text-white'
+      'ai-cloud': 'bg-primary/20 border-white/30 text-foreground',
+      'dx-platform': 'bg-primary/20 border-white/30 text-foreground'
     };
 
     const badgeText = {
@@ -61,13 +61,13 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
       
       <h3 className="text-xl font-bold mb-3 text-[var(--white)]">{title}</h3>
       
-      <p className="text-neutral-300 mb-6">
+      <p className="text-foreground/80 mb-6">
         {description}
       </p>
       
       <a
         href={link || "#"}
-        className="inline-flex items-center text-sm text-white hover:text-white/70 transition-colors"
+        className="inline-flex items-center text-sm text-foreground hover:text-foreground/70 transition-colors"
       >
         Learn More
         <svg 

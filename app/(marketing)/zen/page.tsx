@@ -78,8 +78,6 @@ const BENEFITS = [
   },
 ];
 
-const BRAND_COLOR = "#ffffff";
-
 const QUICK_STATS = [
   { label: "Models", value: "14" },
   { label: "Max Params", value: "480B" },
@@ -100,7 +98,7 @@ const Zen = () => {
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20"
               style={{
-                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+                background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
                 filter: "blur(100px)",
               }}
             />
@@ -116,7 +114,7 @@ const Zen = () => {
                   transition={{ duration: 0.4 }}
                   className="mb-6"
                 >
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/20">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-foreground border border-border">
                     <Zap className="w-3 h-3" />
                     14 Foundation Models
                   </span>
@@ -128,9 +126,9 @@ const Zen = () => {
                   transition={{ duration: 0.4, delay: 0.05 }}
                   className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
                 >
-                  <span className="text-white">Hanzo Zen Models</span>
+                  <span className="text-foreground">Hanzo Zen Models</span>
                   <br />
-                  <span className="text-neutral-400">
+                  <span className="text-muted-foreground">
                     Language, Code, Vision
                   </span>
                 </motion.h1>
@@ -139,7 +137,7 @@ const Zen = () => {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 }}
-                  className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-xl"
+                  className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl"
                 >
                   14 foundation models across four tiers. Zen MoDE (Mixture of
                   Distilled Experts) architecture. From $0.30/MTok for edge
@@ -155,15 +153,15 @@ const Zen = () => {
                 >
                   <Link
                     href="/zen/models"
-                    className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                    style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+                    className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
                   >
                     Explore All 14 Models
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                   <Link
                     href="/pricing"
-                    className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                    className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
                   >
                     View Pricing
                   </Link>
@@ -180,7 +178,7 @@ const Zen = () => {
                     href="https://cloud.hanzo.ai/signup"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-secondary border border-border text-muted-foreground hover:text-foreground hover:border-border transition-all"
                   >
                     <Globe className="w-4 h-4" />
                     Get API Key
@@ -189,7 +187,7 @@ const Zen = () => {
                     href="https://huggingface.co/zenlm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-secondary border border-border text-muted-foreground hover:text-foreground hover:border-border transition-all"
                   >
                     HuggingFace
                   </a>
@@ -197,7 +195,7 @@ const Zen = () => {
                     href="https://github.com/zenlm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-secondary border border-border text-muted-foreground hover:text-foreground hover:border-border transition-all"
                   >
                     <Globe className="w-4 h-4" />
                     GitHub
@@ -211,28 +209,28 @@ const Zen = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.25 }}
               >
-                <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl">
-                  <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
+                <div className="rounded-xl border border-border bg-secondary/95 backdrop-blur-sm overflow-hidden shadow-2xl">
+                  <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
                     <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-white/10" />
-                      <div className="w-3 h-3 rounded-full bg-white/10" />
-                      <div className="w-3 h-3 rounded-full bg-white/10" />
+                      <div className="w-3 h-3 rounded-full bg-primary/10" />
+                      <div className="w-3 h-3 rounded-full bg-primary/10" />
+                      <div className="w-3 h-3 rounded-full bg-primary/10" />
                     </div>
-                    <span className="text-xs text-neutral-500 font-mono ml-2">
+                    <span className="text-xs text-muted-foreground font-mono ml-2">
                       zen-models
                     </span>
                   </div>
-                  <div className="p-6 bg-neutral-950">
+                  <div className="p-6 bg-background">
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       {QUICK_STATS.map((stat) => (
                         <div
                           key={stat.label}
-                          className="p-4 bg-neutral-900/50 rounded-lg border border-neutral-800 text-center"
+                          className="p-4 bg-secondary/50 rounded-lg border border-border text-center"
                         >
-                          <div className="text-2xl font-bold text-white mb-1">
+                          <div className="text-2xl font-bold text-foreground mb-1">
                             {stat.value}
                           </div>
-                          <div className="text-xs text-neutral-500 uppercase tracking-wider">
+                          <div className="text-xs text-muted-foreground uppercase tracking-wider">
                             {stat.label}
                           </div>
                         </div>
@@ -240,20 +238,20 @@ const Zen = () => {
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm">
-                        <Brain className="w-4 h-4 text-white" />
-                        <span className="text-neutral-300">
+                        <Brain className="w-4 h-4 text-foreground" />
+                        <span className="text-foreground/80">
                           Language + Code + Vision + Multimodal
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <Code2 className="w-4 h-4 text-white" />
-                        <span className="text-neutral-300">
+                        <Code2 className="w-4 h-4 text-foreground" />
+                        <span className="text-foreground/80">
                           Zen MoDE architecture
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <Shield className="w-4 h-4 text-white" />
-                        <span className="text-neutral-300">
+                        <Shield className="w-4 h-4 text-foreground" />
+                        <span className="text-foreground/80">
                           OpenAI-compatible API
                         </span>
                       </div>
@@ -274,7 +272,7 @@ const Zen = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
                 14 Models Across 4 Categories
               </h2>
             </motion.div>
@@ -289,18 +287,18 @@ const Zen = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
+                    className="p-6 bg-background border border-border rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
                   >
-                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-white/10 border border-white/20">
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-primary/10 border border-border">
+                      <Icon className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-1">
                       {category.title}
                     </h3>
-                    <p className="text-sm text-white mb-2">
+                    <p className="text-sm text-foreground mb-2">
                       {category.count}
                     </p>
-                    <p className="text-neutral-500 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {category.description}
                     </p>
                   </motion.div>
@@ -311,7 +309,7 @@ const Zen = () => {
         </section>
 
         {/* Why Zen Section */}
-        <section className="py-20 px-4 md:px-8 bg-neutral-950/50">
+        <section className="py-20 px-4 md:px-8 bg-background/50">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -319,7 +317,7 @@ const Zen = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
                 Why Zen Models?
               </h2>
             </motion.div>
@@ -334,15 +332,15 @@ const Zen = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all"
+                    className="p-6 bg-background border border-border rounded-xl text-center hover:border-white/30 transition-all"
                   >
-                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-white/10 border border-white/20">
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-primary/10 border border-border">
+                      <Icon className="w-6 h-6 text-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       {benefit.title}
                     </h3>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -359,43 +357,43 @@ const Zen = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative p-8 md:p-12 rounded-2xl border border-neutral-700 bg-neutral-950/80 overflow-hidden"
+              className="relative p-8 md:p-12 rounded-2xl border border-border bg-background/80 overflow-hidden"
             >
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black">
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary text-primary-foreground">
                 Coming Soon
               </div>
               <div className="flex items-center gap-2 mb-4">
-                <Zap className="w-6 h-6 text-white" />
-                <span className="text-sm font-medium uppercase tracking-wider text-neutral-500">Next Generation</span>
+                <Zap className="w-6 h-6 text-foreground" />
+                <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Next Generation</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Zen 5 Ultra
               </h2>
-              <p className="text-xl text-neutral-400 mb-6 max-w-2xl">
+              <p className="text-xl text-muted-foreground mb-6 max-w-2xl">
                 2T+ parameter MoDE (Mixture of Distilled Experts). The largest open-weight model in history — trained on-chain via NVIDIA TEE confidential compute on{" "}
-                <a href="https://hanzo.network" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline text-white">hanzo.network</a>.
+                <a href="https://hanzo.network" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline text-foreground">hanzo.network</a>.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div className="p-4 rounded-lg bg-white/5">
-                  <div className="text-2xl font-bold text-white mb-1">2T+</div>
-                  <div className="text-sm text-neutral-500">Parameters</div>
+                <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="text-2xl font-bold text-foreground mb-1">2T+</div>
+                  <div className="text-sm text-muted-foreground">Parameters</div>
                 </div>
-                <div className="p-4 rounded-lg bg-white/5">
-                  <div className="text-2xl font-bold text-white mb-1">MoDE</div>
-                  <div className="text-sm text-neutral-500">Mixture of Distilled Experts</div>
+                <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="text-2xl font-bold text-foreground mb-1">MoDE</div>
+                  <div className="text-sm text-muted-foreground">Mixture of Distilled Experts</div>
                 </div>
-                <div className="p-4 rounded-lg bg-white/5">
-                  <div className="text-2xl font-bold text-white mb-1">TEE</div>
-                  <div className="text-sm text-neutral-500">On-Chain Verifiable Training</div>
+                <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="text-2xl font-bold text-foreground mb-1">TEE</div>
+                  <div className="text-sm text-muted-foreground">On-Chain Verifiable Training</div>
                 </div>
               </div>
-              <p className="text-sm text-neutral-500 mb-6">
+              <p className="text-sm text-muted-foreground mb-6">
                 Private beta available. Researchers can request early access to preprints and weights under a special research license.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium bg-white text-black hover:bg-white/90 transition-all text-sm gap-2"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm gap-2"
                 >
                   Request Research Access
                   <ArrowRight className="w-4 h-4" />
@@ -404,7 +402,7 @@ const Zen = () => {
                   href="https://hanzo.network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-neutral-700 bg-transparent hover:bg-neutral-900 transition-colors text-sm text-white gap-2"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-border bg-transparent hover:bg-secondary transition-colors text-sm text-foreground gap-2"
                 >
                   <Globe className="w-4 h-4" />
                   On-Chain Training
@@ -413,7 +411,7 @@ const Zen = () => {
                   href="https://zenlm.org/docs/models#zen5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-neutral-700 bg-transparent hover:bg-neutral-900 transition-colors text-sm text-white gap-2"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-border bg-transparent hover:bg-secondary transition-colors text-sm text-foreground gap-2"
                 >
                   Learn More
                   <ExternalLink className="w-4 h-4" />
@@ -432,7 +430,7 @@ const Zen = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
                 Get Started
               </h2>
             </motion.div>
@@ -442,14 +440,14 @@ const Zen = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-background border border-border rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
               >
                 <Link href="/zen/models" className="block">
-                  <Brain className="w-8 h-8 mx-auto mb-4 text-white" />
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <Brain className="w-8 h-8 mx-auto mb-4 text-foreground" />
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
                     Model Catalog
                   </h3>
-                  <p className="text-neutral-400 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     All 14 models with specs, tiers, and pricing
                   </p>
                 </Link>
@@ -460,14 +458,14 @@ const Zen = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-background border border-border rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
               >
                 <Link href="/pricing" className="block">
-                  <Layers className="w-8 h-8 mx-auto mb-4 text-white" />
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <Layers className="w-8 h-8 mx-auto mb-4 text-foreground" />
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
                     API Pricing
                   </h3>
-                  <p className="text-neutral-400 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     Transparent per-token pricing for all tiers
                   </p>
                 </Link>
@@ -481,13 +479,13 @@ const Zen = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-background border border-border rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
               >
-                <Globe className="w-8 h-8 mx-auto mb-4 text-white" />
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <Globe className="w-8 h-8 mx-auto mb-4 text-foreground" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">
                   API Access
                 </h3>
-                <p className="text-neutral-400 text-sm">
+                <p className="text-muted-foreground text-sm">
                   Get your API key and start building
                 </p>
               </motion.a>
@@ -496,7 +494,7 @@ const Zen = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+        <section className="py-20 px-4 md:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -504,24 +502,24 @@ const Zen = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
                 Ready to build with Zen?
               </h2>
-              <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
                 14 models, four tiers, one API. Start building today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/zen/models"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
                 >
                   Explore All Models
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
                   href="/dev"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
                 >
                   Try Hanzo Dev
                 </Link>
@@ -529,7 +527,7 @@ const Zen = () => {
                   href="https://cloud.hanzo.ai/signup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
                 >
                   <Globe className="mr-2 h-4 w-4" />
                   Get API Key

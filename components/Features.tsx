@@ -43,62 +43,62 @@ const allFeatures = [{
 
 const industriesData = [{
   name: "Cloud",
-  icon: <Globe className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <Globe className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
   description: "Cloud orchestration with rapid deployment"
 }, {
   name: "Cybersecurity",
-  icon: <Shield className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <Shield className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/97902904-f9ea-475e-9c65-5664eab422e5.png",
   description: "Advanced security solutions for business"
 }, {
   name: "Data and Artificial Intelligence",
-  icon: <Brain className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <Brain className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
   description: "Cutting-edge AI solutions for business transformation"
 }, {
   name: "Digital Engineering and Manufacturing",
-  icon: <Code className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <Code className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/a1e0f18b-41a7-4f58-ac3b-7272aa8e7a77.png",
   description: "Engineering solutions for manufacturing"
 }, {
   name: "Emerging Technology",
-  icon: <Cpu className="h-5 w-5 text-white/60 mb-2" />,
+  icon: <Cpu className="h-5 w-5 text-foreground/60 mb-2" />,
   image: "/lovable-uploads/41fa31ba-8c5b-4553-afeb-ba51591f7024.png",
   description: "Frontier technology solutions"
 }, {
   name: "Ecosystem Partners",
-  icon: <Network className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <Network className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
   description: "Collaborative partnership networks"
 }, {
   name: "Finance and Risk Management",
-  icon: <DollarSign className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <DollarSign className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/22f3cbb5-8cd9-48e2-92bc-8b084da1f4ff.png",
   description: "Financial solutions and risk assessment"
 }, {
   name: "Infrastructure and Capital Projects",
-  icon: <Building2 className="h-5 w-5 text-neutral-400 mb-2" />,
+  icon: <Building2 className="h-5 w-5 text-muted-foreground mb-2" />,
   image: "/lovable-uploads/f1241c85-7df8-45b5-a92a-263554ff10cd.png",
   description: "Infrastructure development and capital management"
 }, {
   name: "Learning",
-  icon: <GraduationCap className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <GraduationCap className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
   description: "Educational technology and learning solutions"
 }, {
   name: "Marketing and Experience",
-  icon: <Newspaper className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <Newspaper className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/96d1e3da-614a-4809-98e4-30d8a868dc11.png",
   description: "Marketing solutions and experience design"
 }, {
   name: "Metaverse",
-  icon: <LineChart className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <LineChart className="h-5 w-5 text-foreground/70 mb-2" />,
   image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
   description: "Metaverse development and integration"
 }, {
   name: "Sales and Commerce",
-  icon: <ShoppingCart className="h-5 w-5 text-white/70 mb-2" />,
+  icon: <ShoppingCart className="h-5 w-5 text-foreground/70 mb-2" />,
   description: "Sales enablement and commerce solutions"
 }];
 
@@ -140,16 +140,16 @@ const Features = () => {
   const hasMoreFeatures = allFeatures.length > 16;
   const isRealImage = (src?: string) => Boolean(src && !src.includes("placeholder"));
   const industryIcons = {
-    "Artificial Intelligence": <Brain className="h-5 w-5 text-white/70 mb-2" />,
-    "Adtech": <Target className="h-5 w-5 text-white/70 mb-2" />,
-    "Blockchain": <Blocks className="h-5 w-5 text-white/70 mb-2" />,
-    "Cloud Computing": <Cloud className="h-5 w-5 text-white/70 mb-2" />,
-    "GPU": <Cpu className="h-5 w-5 text-white/70 mb-2" />,
-    "Hardware": <HardDrive className="h-5 w-5 text-neutral-400 mb-2" />,
-    "Machine Learning": <Brain className="h-5 w-5 text-white/70 mb-2" />,
-    "Software": <Code className="h-5 w-5 text-white/60 mb-2" />,
-    "Cyber Security": <Shield className="h-5 w-5 text-white/70 mb-2" />,
-    "Confidential Computing": <KeyRound className="h-5 w-5 text-white/70 mb-2" />
+    "Artificial Intelligence": <Brain className="h-5 w-5 text-foreground/70 mb-2" />,
+    "Adtech": <Target className="h-5 w-5 text-foreground/70 mb-2" />,
+    "Blockchain": <Blocks className="h-5 w-5 text-foreground/70 mb-2" />,
+    "Cloud Computing": <Cloud className="h-5 w-5 text-foreground/70 mb-2" />,
+    "GPU": <Cpu className="h-5 w-5 text-foreground/70 mb-2" />,
+    "Hardware": <HardDrive className="h-5 w-5 text-muted-foreground mb-2" />,
+    "Machine Learning": <Brain className="h-5 w-5 text-foreground/70 mb-2" />,
+    "Software": <Code className="h-5 w-5 text-foreground/60 mb-2" />,
+    "Cyber Security": <Shield className="h-5 w-5 text-foreground/70 mb-2" />,
+    "Confidential Computing": <KeyRound className="h-5 w-5 text-foreground/70 mb-2" />
   };
   const containerVariants = {
     hidden: {
@@ -273,7 +273,7 @@ const Features = () => {
             }} transition={{
               duration: 0.5,
               delay: 0.1
-            }} className="mt-4 text-lg text-neutral-300 max-w-3xl mx-auto">
+            }} className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
               Hanzo is a developer-first AI platform bringing frontier research directly into your workflow with open, private, and decentralized solutions.
             </motion.p>
           </div>
@@ -290,14 +290,14 @@ const Features = () => {
             }} transition={{
               duration: 0.5,
               delay: index * 0.1
-            }} className="relative p-6 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-white/10 hover:ring-white/20 transition-all flex flex-col items-center text-center my-0">
+            }} className="relative p-6 backdrop-blur-sm rounded-xl shadow-lg ring-1 ring-border hover:ring-border transition-all flex flex-col items-center text-center my-0">
                 <div className="p-2 bg-[var(--white)]/10 w-fit rounded-lg text-[var(--white)]">
                   {feature.icon}
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-[var(--white)]">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-neutral-300">{feature.description}</p>
+                <p className="mt-2 text-foreground/80">{feature.description}</p>
               </motion.div>)}
           </div>
 
@@ -312,13 +312,13 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="mt-12 text-center">
-            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-white/70 transition-colors">
+            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-foreground/70 transition-colors">
               View All Solutions
             </Button>
           </motion.div>}
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-border">
           <motion.div initial={{
             opacity: 0,
             y: 20
@@ -346,51 +346,51 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
+            <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-border">
               <div className="max-w-md overflow-hidden">
                 <motion.div variants={textContainerVariants} initial="hidden" whileInView="visible" viewport={{
               once: true,
               amount: 0.8
-            }} className="text-lg text-neutral-300 overflow-hidden">
+            }} className="text-lg text-foreground/80 overflow-hidden">
                   <span>We've helped businesses and individuals harness the </span> 
                   <span className="text-[var(--white)] font-bold">power of AI</span>
                   <span> to drive growth, efficiency, and innovation.</span>
                 </motion.div>
-                <Button variant="outline" className="mt-6 bg-[var(--white)] text-black border-white hover:bg-gray-100 hover:text-black">
+                <Button variant="outline" className="mt-6 bg-[var(--white)] text-primary-foreground border-white hover:bg-gray-100 hover:text-primary-foreground">
                   Our Testimonial
                 </Button>
               </div>
             </div>
             
             <div className="grid grid-cols-2 gap-8 md:col-span-2">
-              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-border flex flex-col items-center text-center">
                 <h3 className="text-4xl font-medium text-[var(--white)]">1M<sup>+</sup></h3>
-                <p className="mt-2 text-neutral-300">Users benefiting from our AI-powered solutions</p>
+                <p className="mt-2 text-foreground/80">Users benefiting from our AI-powered solutions</p>
               </div>
               
-              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-border flex flex-col items-center text-center">
                 <h3 className="text-4xl font-medium text-[var(--white)]">4.9<span className="text-2xl">/5</span></h3>
-                <p className="mt-2 text-neutral-300">Average rating across all AI-driven applications</p>
+                <p className="mt-2 text-foreground/80">Average rating across all AI-driven applications</p>
               </div>
               
-              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-border flex flex-col items-center text-center">
                 <h3 className="text-4xl font-medium text-[var(--white)]">80<sup>%</sup></h3>
-                <p className="mt-2 text-neutral-300">Faster decision-making with AI recommendations</p>
+                <p className="mt-2 text-foreground/80">Faster decision-making with AI recommendations</p>
               </div>
               
-              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-white/10 flex flex-col items-center text-center">
+              <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-border flex flex-col items-center text-center">
                 <h3 className="text-4xl font-medium text-[var(--white)]">99<sup>%</sup></h3>
-                <p className="mt-2 text-neutral-300">Uptime guarantee for seamless AI experience</p>
+                <p className="mt-2 text-foreground/80">Uptime guarantee for seamless AI experience</p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-white/5 relative">
+        <div ref={industriesSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-border relative">
           <div className="text-center mb-6">
             <motion.h3 style={{
               y: industriesTitleY
-            }} className="text-white/70 font-medium text-lg mb-2">
+            }} className="text-foreground/70 font-medium text-lg mb-2">
               Industries we serve
             </motion.h3>
             <motion.h2 style={{
@@ -400,7 +400,7 @@ const Features = () => {
             </motion.h2>
             <motion.p style={{
               y: industriesDescriptionY
-            }} className="text-neutral-300 max-w-3xl mx-auto mb-8">
+            }} className="text-foreground/80 max-w-3xl mx-auto mb-8">
               We have a proven track record of delivering impactful solutions tailored to various industries, 
               driving success and innovation across diverse business sectors.
             </motion.p>
@@ -416,18 +416,18 @@ const Features = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {industriesData.map((industry, index) => <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                     <div className="group h-[400px] relative overflow-hidden rounded-xl">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
                       {isRealImage(industry.image) ? (
                         <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                       ) : (
-                        <div className="h-full w-full bg-gradient-to-br from-white/20 via-black/50 to-white/10" />
+                        <div className="h-full w-full bg-gradient-to-br from-white/20 via-background/50 to-white/10" />
                       )}
                       <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                         <div className="flex items-center mb-2">
                           {industry.icon}
                           <h3 className="text-xl font-medium text-[var(--white)] ml-2">{industry.name}</h3>
                         </div>
-                        <p className="text-neutral-300">{industry.description}</p>
+                        <p className="text-foreground/80">{industry.description}</p>
                       </div>
                     </div>
                   </CarouselItem>)}

@@ -36,33 +36,33 @@ const UserProfile = () => {
       <div className="space-y-8">
         {/* Profile Header */}
         <div className="flex flex-col md:flex-row gap-8 items-start">
-          <Avatar className="h-32 w-32 border-4 border-white/20">
+          <Avatar className="h-32 w-32 border-4 border-border">
             <AvatarImage src={user.avatar} />
-            <AvatarFallback className="text-4xl bg-white">{user.name.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="text-4xl bg-primary">{user.name.charAt(0)}</AvatarFallback>
           </Avatar>
           
           <div className="flex-1">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold">{user.name}</h1>
-                <p className="text-neutral-400 mt-1">{userProfile.bio}</p>
+                <p className="text-muted-foreground mt-1">{userProfile.bio}</p>
                 
                 <div className="flex flex-wrap gap-4 mt-4">
-                  <div className="flex items-center text-neutral-400">
+                  <div className="flex items-center text-muted-foreground">
                     <MapPin className="h-4 w-4 mr-2" />
                     {userProfile.location}
                   </div>
-                  <div className="flex items-center text-neutral-400">
+                  <div className="flex items-center text-muted-foreground">
                     <Calendar className="h-4 w-4 mr-2" />
                     Joined {userProfile.joinedDate}
                   </div>
-                  <div className="flex items-center text-neutral-400">
+                  <div className="flex items-center text-muted-foreground">
                     <Mail className="h-4 w-4 mr-2" />
                     {user.email}
                   </div>
-                  <div className="flex items-center text-neutral-400">
+                  <div className="flex items-center text-muted-foreground">
                     <LinkIcon className="h-4 w-4 mr-2" />
-                    <a href={userProfile.website || "#"} target="_blank" rel="noopener noreferrer" className="text-white hover:underline">
+                    <a href={userProfile.website || "#"} target="_blank" rel="noopener noreferrer" className="text-foreground hover:underline">
                       {userProfile.website.replace('https://', '')}
                     </a>
                   </div>
@@ -90,7 +90,7 @@ const UserProfile = () => {
             </div>
             <div>
               <div className="font-medium text-lg">{currentOrganization?.name}</div>
-              <div className="text-sm text-neutral-400">Role: {currentOrganization?.role}</div>
+              <div className="text-sm text-muted-foreground">Role: {currentOrganization?.role}</div>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const UserProfile = () => {
             {userProfile.projects.map(project => (
               <div key={project.id} className="bg-gray-800/50 rounded-lg p-4 hover:bg-gray-800 transition-colors">
                 <h3 className="font-medium">{project.name}</h3>
-                <p className="text-sm text-neutral-400 mt-1">{project.description}</p>
+                <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
               </div>
             ))}
           </div>

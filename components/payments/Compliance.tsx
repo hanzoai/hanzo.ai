@@ -7,7 +7,7 @@ import { ShieldCheck, Receipt, AlertTriangle } from "lucide-react";
 
 const Compliance = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/20">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -17,7 +17,7 @@ const Compliance = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Automatic Global Tax Compliance</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Focus on your business while Hanzo handles the complexity of global tax regulations and compliance.
           </p>
         </motion.div>
@@ -31,23 +31,23 @@ const Compliance = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <ShieldCheck className="h-6 w-6 text-white" />
+              <ShieldCheck className="h-6 w-6 text-foreground" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Automated Tax Management</h3>
-            <p className="text-neutral-400 mb-4">
+            <p className="text-muted-foreground mb-4">
               Automatically handle VAT, GST, and regional taxes (including sales tax).
             </p>
-            <ul className="space-y-2 text-neutral-400">
+            <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Real-time tax rate calculation</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Tax exemption handling</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Automated tax reporting</span>
               </li>
             </ul>
@@ -61,23 +61,23 @@ const Compliance = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Receipt className="h-6 w-6 text-white" />
+              <Receipt className="h-6 w-6 text-foreground" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Merchant of Record</h3>
-            <p className="text-neutral-400 mb-4">
+            <p className="text-muted-foreground mb-4">
               Hanzo takes liability for taxes and compliance, acting as your merchant of record.
             </p>
-            <ul className="space-y-2 text-neutral-400">
+            <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Simplified global expansion</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Legal entity management</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Compliant invoicing worldwide</span>
               </li>
             </ul>
@@ -91,23 +91,23 @@ const Compliance = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <AlertTriangle className="h-6 w-6 text-white" />
+              <AlertTriangle className="h-6 w-6 text-foreground" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Fraud Protection</h3>
-            <p className="text-neutral-400 mb-4">
+            <p className="text-muted-foreground mb-4">
               Automatic fraud detection and prevention built-in to protect your business.
             </p>
-            <ul className="space-y-2 text-neutral-400">
+            <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Machine learning fraud detection</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Adaptive risk rules</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-white">•</span>
+                <span className="text-foreground">•</span>
                 <span>Chargeback protection</span>
               </li>
             </ul>

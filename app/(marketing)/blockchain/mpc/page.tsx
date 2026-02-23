@@ -112,10 +112,10 @@ const HanzoMPC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-8"
           >
-            <Shield className="w-4 h-4 text-white/70" />
-            <span className="text-sm font-medium text-white/70">Next-Gen Key Infrastructure</span>
+            <Shield className="w-4 h-4 text-foreground/70" />
+            <span className="text-sm font-medium text-foreground/70">Next-Gen Key Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -124,7 +124,7 @@ const HanzoMPC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">MPC + FHE</span>
+            <span className="text-foreground">MPC + FHE</span>
             <br />
             <span className="bg-gradient-to-r from-white/20 to-white/10 bg-clip-text text-transparent">
               Wallets
@@ -135,7 +135,7 @@ const HanzoMPC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-medium text-white mb-4"
+            className="text-2xl md:text-3xl font-medium text-foreground mb-4"
           >
             Keys that can't be stolen. Rules that can't be seen.
           </motion.p>
@@ -144,7 +144,7 @@ const HanzoMPC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
             Multi-Party Computation distributes trust. Fully Homomorphic Encryption keeps policies private.
             Together, they're the future of digital asset security.
@@ -157,21 +157,21 @@ const HanzoMPC = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white/70">0</div>
-              <div className="text-sm text-neutral-400">Single points of failure</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground/70">0</div>
+              <div className="text-sm text-muted-foreground">Single points of failure</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white/70">M-of-N</div>
-              <div className="text-sm text-neutral-400">Threshold schemes</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground/70">M-of-N</div>
+              <div className="text-sm text-muted-foreground">Threshold schemes</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white/70">&lt;200ms</div>
-              <div className="text-sm text-neutral-400">Signing latency</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground/70">&lt;200ms</div>
+              <div className="text-sm text-muted-foreground">Signing latency</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white/70">FHE</div>
-              <div className="text-sm text-neutral-400">Encrypted rules</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground/70">FHE</div>
+              <div className="text-sm text-muted-foreground">Encrypted rules</div>
             </div>
           </motion.div>
 
@@ -184,14 +184,14 @@ const HanzoMPC = () => {
           >
             <a
               href="https://docs.hanzo.ai/mpc"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/10 text-foreground font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="/contact/sales"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               Contact Sales
             </a>
@@ -200,7 +200,7 @@ const HanzoMPC = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -208,8 +208,8 @@ const HanzoMPC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How MPC + FHE Works</h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">How MPC + FHE Works</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Cryptographic security without compromising on speed or flexibility
             </p>
           </motion.div>
@@ -222,11 +222,11 @@ const HanzoMPC = () => {
               transition={{ delay: 0 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4">
-                <Key className="w-8 h-8 text-white/70" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-4">
+                <Key className="w-8 h-8 text-foreground/70" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">1. Key Generation</h3>
-              <p className="text-neutral-400">
+              <h3 className="text-xl font-semibold text-foreground mb-2">1. Key Generation</h3>
+              <p className="text-muted-foreground">
                 Private key is generated as distributed shares. No single party ever holds the complete key.
               </p>
             </motion.div>
@@ -238,11 +238,11 @@ const HanzoMPC = () => {
               transition={{ delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4">
-                <Lock className="w-8 h-8 text-white/70" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-4">
+                <Lock className="w-8 h-8 text-foreground/70" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">2. Policy Encryption</h3>
-              <p className="text-neutral-400">
+              <h3 className="text-xl font-semibold text-foreground mb-2">2. Policy Encryption</h3>
+              <p className="text-muted-foreground">
                 Spending rules are encrypted with FHE. Policies can be evaluated without decryption.
               </p>
             </motion.div>
@@ -254,11 +254,11 @@ const HanzoMPC = () => {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white/70" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-foreground/70" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">3. Threshold Signing</h3>
-              <p className="text-neutral-400">
+              <h3 className="text-xl font-semibold text-foreground mb-2">3. Threshold Signing</h3>
+              <p className="text-muted-foreground">
                 Parties collaborate to sign. Transaction is broadcast only if policies pass.
               </p>
             </motion.div>
@@ -267,7 +267,7 @@ const HanzoMPC = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 px-4 md:px-8 bg-neutral-950">
+      <section className="py-20 px-4 md:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -275,7 +275,7 @@ const HanzoMPC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Enterprise-Grade Features</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Enterprise-Grade Features</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -286,13 +286,13 @@ const HanzoMPC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+                className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
               >
-                <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/5">
-                  <feature.icon className="h-6 w-6 text-white/70" />
+                <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/5">
+                  <feature.icon className="h-6 w-6 text-foreground/70" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-neutral-400 text-sm">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -308,7 +308,7 @@ const HanzoMPC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Use Cases</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Use Cases</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -319,10 +319,10 @@ const HanzoMPC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6"
+                className="bg-secondary/50 border border-border rounded-xl p-6"
               >
-                <h3 className="text-xl font-semibold text-white mb-2">{useCase.title}</h3>
-                <p className="text-neutral-400">{useCase.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{useCase.title}</h3>
+                <p className="text-muted-foreground">{useCase.description}</p>
               </motion.div>
             ))}
           </div>
@@ -330,24 +330,24 @@ const HanzoMPC = () => {
       </section>
 
       {/* Code Example */}
-      <section className="py-20 px-4 md:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 md:px-8 border-t border-border">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden"
+            className="bg-secondary border border-border rounded-xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-border">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
               </div>
-              <span className="text-xs text-neutral-500 ml-2">mpc-wallet.ts</span>
+              <span className="text-xs text-muted-foreground ml-2">mpc-wallet.ts</span>
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
-              <code className="text-neutral-300">{`import { HanzoMPC } from "@hanzo/blockchain";
+              <code className="text-foreground/80">{`import { HanzoMPC } from "@hanzo/blockchain";
 
 // Create MPC wallet with 2-of-3 threshold
 const wallet = await HanzoMPC.createWallet({
@@ -386,26 +386,26 @@ await wallet.broadcast(signature);`}</code>
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-white/20 to-white/10 border border-white/20 rounded-2xl p-8 md:p-12 text-center overflow-hidden"
+            className="relative bg-gradient-to-br from-white/20 to-white/10 border border-border rounded-2xl p-8 md:p-12 text-center overflow-hidden"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Ready for Next-Gen Security?
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-xl mx-auto">
               MPC + FHE is the future of digital asset custody. Be among the first to adopt.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://docs.hanzo.ai/mpc"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/10 text-foreground font-medium rounded-full transition-colors"
               >
                 Read the Docs
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/contact/sales"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-600 hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
               >
                 Talk to an Expert
               </a>

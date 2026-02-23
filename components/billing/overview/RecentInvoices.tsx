@@ -19,10 +19,10 @@ const RecentInvoices = () => {
       <div className="space-y-4">
         <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-lg">
           <div className="flex items-center">
-            <Clock className="h-5 w-5 text-neutral-400 mr-3" />
+            <Clock className="h-5 w-5 text-muted-foreground mr-3" />
             <div>
               <div className="font-medium">June 15, 2024</div>
-              <div className="text-sm text-neutral-400">Pro Plan - $49.00</div>
+              <div className="text-sm text-muted-foreground">Pro Plan - $49.00</div>
             </div>
           </div>
           <Button variant="ghost" size="sm">
@@ -33,10 +33,10 @@ const RecentInvoices = () => {
         
         <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-lg">
           <div className="flex items-center">
-            <Clock className="h-5 w-5 text-neutral-400 mr-3" />
+            <Clock className="h-5 w-5 text-muted-foreground mr-3" />
             <div>
               <div className="font-medium">May 15, 2024</div>
-              <div className="text-sm text-neutral-400">Pro Plan - $49.00</div>
+              <div className="text-sm text-muted-foreground">Pro Plan - $49.00</div>
             </div>
           </div>
           <Button variant="ghost" size="sm">

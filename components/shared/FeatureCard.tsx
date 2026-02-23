@@ -29,14 +29,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   const isPrimary = color === "primary";
 
   const cardClass = isPrimary
-    ? "bg-gradient-to-br from-white/20 to-white/5 border border-white/20 hover:border-white/40"
-    : "bg-gradient-to-br from-white/20 to-white/10 border border-white/20 hover:border-white/40";
+    ? "bg-gradient-to-br from-white/20 to-white/5 border border-border hover:border-white/40"
+    : "bg-gradient-to-br from-white/20 to-white/10 border border-border hover:border-white/40";
 
   const iconWrapperClass = isPrimary
-    ? "bg-white/10"
-    : "bg-white/10";
+    ? "bg-primary/10"
+    : "bg-primary/10";
 
-  const iconClass = isPrimary ? "text-white" : "text-white/70";
+  const iconClass = isPrimary ? "text-foreground" : "text-foreground/70";
 
   return (
     <motion.div
@@ -50,7 +50,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <Icon className={`h-6 w-6 ${iconClass}`} />
       </div>
       <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{title}</h3>
-      <p className="text-neutral-300">{description}</p>
+      <p className="text-foreground/80">{description}</p>
     </motion.div>
   );
 };
@@ -96,8 +96,8 @@ export const FeatureListItem: React.FC<FeatureListItemProps> = ({
 }) => {
   return (
     <div className="flex items-start">
-      <div className="p-2 bg-white/10 rounded-lg mr-4">
-        <Icon className="h-6 w-6 text-white" />
+      <div className="p-2 bg-primary/10 rounded-lg mr-4">
+        <Icon className="h-6 w-6 text-foreground" />
       </div>
       <div>
         <h3 className="text-xl font-semibold text-foreground mb-1">{title}</h3>

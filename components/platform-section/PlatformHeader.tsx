@@ -17,7 +17,7 @@ const PlatformHeader: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium">
+          <span className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-white/30 text-foreground text-sm font-medium">
             AI Engineering Platform
           </span>
         </motion.div>
@@ -33,7 +33,7 @@ const PlatformHeader: React.FC = () => {
           >
             Your AI future belongs to you
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-2xl">
+          <p className="text-xl text-foreground/80 max-w-2xl">
             Pioneer the next wave of intelligence with an integrated ecosystem that gives you full control over your AI journey.
           </p>
         </motion.div>

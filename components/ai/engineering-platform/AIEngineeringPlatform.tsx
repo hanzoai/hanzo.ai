@@ -16,7 +16,7 @@ const AIEngineeringPlatform: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10">
             AI Engineering Platform
           </h2>
-          <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
             Build, deploy, and scale AI applications with an integrated suite of tools designed for modern engineering teams.
           </p>
         </div>

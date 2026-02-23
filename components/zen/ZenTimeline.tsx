@@ -58,13 +58,13 @@ const ZenTimeline: React.FC = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={`relative mb-16 flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
           >
-            <div className="absolute left-1/2 top-5 w-5 h-5 rounded-full bg-white transform -translate-x-1/2 z-10"></div>
+            <div className="absolute left-1/2 top-5 w-5 h-5 rounded-full bg-primary transform -translate-x-1/2 z-10"></div>
 
             <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
-              <div className="bg-[var(--black)]/30 backdrop-blur-sm border border-white/20 rounded-lg p-6">
-                <div className="text-white font-bold mb-2">{event.year}</div>
+              <div className="bg-[var(--black)]/30 backdrop-blur-sm border border-border rounded-lg p-6">
+                <div className="text-foreground font-bold mb-2">{event.year}</div>
                 <h3 className="text-xl text-[var(--white)] font-bold mb-2">{event.title}</h3>
-                <p className="text-neutral-300">{event.description}</p>
+                <p className="text-foreground/80">{event.description}</p>
               </div>
             </div>
           </motion.div>

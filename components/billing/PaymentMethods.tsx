@@ -29,11 +29,11 @@ const PaymentMethods = () => {
   const getCardIcon = (type: string) => {
     switch (type) {
       case 'visa':
-        return <div className="text-white font-bold text-xs">VISA</div>;
+        return <div className="text-foreground font-bold text-xs">VISA</div>;
       case 'mastercard':
-        return <div className="text-white/70 font-bold text-xs">MC</div>;
+        return <div className="text-foreground/70 font-bold text-xs">MC</div>;
       default:
-        return <CreditCard className="h-4 w-4 text-neutral-400" />;
+        return <CreditCard className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
@@ -207,7 +207,7 @@ const PaymentMethods = () => {
             key={card.id} 
             className={`flex items-center justify-between p-4 rounded-lg border ${
               card.isDefault 
-                ? 'border-white bg-white/5' 
+                ? 'border-white bg-primary/5' 
                 : 'border-gray-800 bg-gray-900/30'
             }`}
           >
@@ -219,12 +219,12 @@ const PaymentMethods = () => {
                 <div className="font-medium">
                   {card.type.charAt(0).toUpperCase() + card.type.slice(1)} ending in {card.last4}
                   {card.isDefault && (
-                    <span className="ml-2 text-xs bg-white/10 text-white px-2 py-0.5 rounded-full">
+                    <span className="ml-2 text-xs bg-primary/10 text-foreground px-2 py-0.5 rounded-full">
                       Default
                     </span>
                   )}
                 </div>
-                <div className="text-sm text-neutral-400">Expires {card.expMonth}/{card.expYear}</div>
+                <div className="text-sm text-muted-foreground">Expires {card.expMonth}/{card.expYear}</div>
               </div>
             </div>
             
@@ -246,7 +246,7 @@ const PaymentMethods = () => {
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className="text-white/70 hover:text-white/70 hover:bg-white/10"
+                className="text-foreground/70 hover:text-foreground/70 hover:bg-primary/10"
                 onClick={() => handleDeleteCard(card.id)}
               >
                 <Trash2 className="h-4 w-4" />

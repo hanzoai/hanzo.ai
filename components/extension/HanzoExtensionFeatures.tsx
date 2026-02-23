@@ -14,11 +14,11 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 h-full"
     >
-      <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/20">
-        <Icon className="h-6 w-6 text-white" />
+      <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/20">
+        <Icon className="h-6 w-6 text-foreground" />
       </div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-neutral-300">{description}</p>
+      <p className="text-foreground/80">{description}</p>
     </motion.div>
   );
 };
@@ -78,7 +78,7 @@ const HanzoExtensionFeatures = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Powerful Features</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Enhance your browsing experience with AI-powered capabilities
           </p>
         </motion.div>

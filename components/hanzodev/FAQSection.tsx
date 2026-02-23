@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
-const BRAND_COLOR = "#ffffff";
-
 const faqs = [
   {
     question: "Can I try Hanzo AI Enterprise before committing?",
@@ -36,16 +34,16 @@ const faqs = [
 
 const FAQItem = ({ faq, isOpen, onClick }: { faq: typeof faqs[0]; isOpen: boolean; onClick: () => void }) => {
   return (
-    <div className="border-b border-neutral-800">
+    <div className="border-b border-border">
       <button
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
-        <span className="text-lg text-white group-hover:text-white transition-colors pr-4">
+        <span className="text-lg text-foreground group-hover:text-foreground transition-colors pr-4">
           {faq.question}
         </span>
         <ChevronDown
-          className={`w-5 h-5 text-neutral-500 transition-transform flex-shrink-0 ${
+          className={`w-5 h-5 text-muted-foreground transition-transform flex-shrink-0 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -59,7 +57,7 @@ const FAQItem = ({ faq, isOpen, onClick }: { faq: typeof faqs[0]; isOpen: boolea
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-neutral-400 leading-relaxed">
+            <p className="pb-6 text-muted-foreground leading-relaxed">
               {faq.answer}
             </p>
           </motion.div>
@@ -73,7 +71,7 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 px-4 bg-black">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,13 +79,13 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Frequently Asked{" "}
-            <span style={{ color: BRAND_COLOR }}>Questions</span>
+            <span>Questions</span>
           </h2>
-          <p className="text-neutral-400">
+          <p className="text-muted-foreground">
             Looking for something in particular?{" "}
-            <Link href="/contact" className="hover:underline" style={{ color: BRAND_COLOR }}>
+            <Link href="/contact" className="hover:underline">
               Don't hesitate to reach out.
             </Link>
           </p>
@@ -97,7 +95,7 @@ const FAQSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="border-t border-neutral-800"
+          className="border-t border-border"
         >
           {faqs.map((faq, index) => (
             <FAQItem

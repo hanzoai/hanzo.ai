@@ -18,8 +18,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     
     const variantClasses = {
       default: "bg-gray-900 text-[var(--white)] hover:bg-gray-800",
-      destructive: "bg-white/10 text-[var(--white)] hover:bg-white/10",
-      outline: "border border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)]",
+      destructive: "bg-primary/10 text-[var(--white)] hover:bg-primary/10",
+      outline: "border border-border bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)]",
       secondary: "bg-gray-800 text-[var(--white)] hover:bg-gray-700",
       ghost: "hover:bg-[var(--white)]/10 text-[var(--white)]",
       link: "text-[var(--white)] underline-offset-4 hover:underline"
@@ -35,7 +35,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
-          "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           variantClasses[variant],
           sizeClasses[size],
           className

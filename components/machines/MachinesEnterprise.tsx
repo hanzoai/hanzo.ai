@@ -3,8 +3,6 @@ import React from 'react';
 import { Shield, Database, Server } from "lucide-react";
 import ChromeText from "@/components/ui/chrome-text";
 
-const BRAND_COLOR = "#ffffff";
-
 interface EnterpriseFeatureProps {
   icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
   title: string;
@@ -15,9 +13,9 @@ const EnterpriseFeature = ({ icon: Icon, title, description }: EnterpriseFeature
   return (
     <div
       className="bg-card rounded-xl p-6 flex flex-col items-center text-center"
-      style={{ backgroundColor: `${BRAND_COLOR}08`, border: `1px solid ${BRAND_COLOR}30` }}
+      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 5%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)" }}
     >
-      <Icon className="h-12 w-12 mb-4" style={{ color: BRAND_COLOR }} />
+      <Icon className="h-12 w-12 mb-4" />
       <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
       <p className="text-muted-foreground">
         {description}

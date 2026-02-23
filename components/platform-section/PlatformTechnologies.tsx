@@ -13,7 +13,7 @@ const PlatformTechnologies: React.FC = () => {
       transition={{ duration: 0.5, delay: 0.3 }}
       className="mt-16 text-center"
     >
-      <p className="text-neutral-400 mb-8 max-w-3xl mx-auto">
+      <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
         Join the global pioneers who are 100x-ing their capabilities with the world's most comprehensive AI platform.
       </p>
       

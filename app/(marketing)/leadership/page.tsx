@@ -20,8 +20,6 @@ import {
 } from "lucide-react";
 import { Toaster } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const leaders = [
   {
     name: "Michael Kelling",
@@ -75,7 +73,7 @@ const Leadership = () => {
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
               style={{
-                background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+                background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
                 filter: "blur(100px)",
               }}
             />
@@ -95,7 +93,7 @@ const Leadership = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
-                style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+                style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
               >
                 <Award className="w-3.5 h-3.5" />
                 Techstars
@@ -107,16 +105,16 @@ const Leadership = () => {
                 transition={{ duration: 0.4, delay: 0.05 }}
                 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
               >
-                <span className="text-white">Our</span>
+                <span className="text-foreground">Our</span>
                 <br />
-                <span className="text-neutral-400">Leadership.</span>
+                <span className="text-muted-foreground">Leadership.</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl mx-auto"
+                className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto"
               >
                 Meet the team behind Hanzo AI, dedicated to democratizing access to
                 Amazon-level AI infrastructure for everyone.
@@ -132,10 +130,10 @@ const Leadership = () => {
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4"
+                    className="bg-secondary/50 border border-border rounded-xl p-4"
                   >
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
-                    <div className="text-xs text-neutral-500">{stat.label}</div>
+                    <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                    <div className="text-xs text-muted-foreground">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -144,7 +142,7 @@ const Leadership = () => {
         </section>
 
         {/* Leadership Cards */}
-        <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30">
+        <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-background to-neutral-900/30">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {leaders.map((leader, index) => (
@@ -154,19 +152,19 @@ const Leadership = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-8 hover:border-white/30 transition-colors"
+                  className="bg-secondary/50 border border-border rounded-xl p-8 hover:border-white/30 transition-colors"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
                     <div
                       className="w-24 h-24 rounded-xl flex-shrink-0 flex items-center justify-center"
-                      style={{ backgroundColor: `${BRAND_COLOR}15` }}
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)" }}
                     >
-                      <Users className="w-12 h-12" style={{ color: BRAND_COLOR }} />
+                      <Users className="w-12 h-12" />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-bold text-white mb-1">{leader.name}</h2>
-                      <p className="text-neutral-400 font-medium mb-4">{leader.title}</p>
-                      <p className="text-neutral-300">{leader.bio}</p>
+                      <h2 className="text-2xl font-bold text-foreground mb-1">{leader.name}</h2>
+                      <p className="text-muted-foreground font-medium mb-4">{leader.title}</p>
+                      <p className="text-foreground/80">{leader.bio}</p>
                     </div>
                   </div>
 
@@ -176,10 +174,10 @@ const Leadership = () => {
                       return (
                         <div
                           key={tag.text}
-                          className="flex items-center text-sm px-3 py-1 bg-neutral-800/50 rounded-full border border-neutral-700"
+                          className="flex items-center text-sm px-3 py-1 bg-neutral-800/50 rounded-full border border-border"
                         >
                           <Icon className="h-4 w-4 mr-2" style={{ color: tag.color }} />
-                          <span className="text-neutral-300">{tag.text}</span>
+                          <span className="text-foreground/80">{tag.text}</span>
                         </div>
                       );
                     })}
@@ -190,25 +188,25 @@ const Leadership = () => {
                       href={leader.social.linkedin || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-neutral-800/50 hover:bg-neutral-700/50 transition-colors border border-neutral-700"
+                      className="p-2 rounded-full bg-neutral-800/50 hover:bg-neutral-700/50 transition-colors border border-border"
                     >
-                      <Linkedin className="h-5 w-5 text-neutral-300" />
+                      <Linkedin className="h-5 w-5 text-foreground/80" />
                     </a>
                     <a
                       href={leader.social.twitter || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-neutral-800/50 hover:bg-neutral-700/50 transition-colors border border-neutral-700"
+                      className="p-2 rounded-full bg-neutral-800/50 hover:bg-neutral-700/50 transition-colors border border-border"
                     >
-                      <Twitter className="h-5 w-5 text-neutral-300" />
+                      <Twitter className="h-5 w-5 text-foreground/80" />
                     </a>
                     <a
                       href={leader.social.github || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-neutral-800/50 hover:bg-neutral-700/50 transition-colors border border-neutral-700"
+                      className="p-2 rounded-full bg-neutral-800/50 hover:bg-neutral-700/50 transition-colors border border-border"
                     >
-                      <Github className="h-5 w-5 text-neutral-300" />
+                      <Github className="h-5 w-5 text-foreground/80" />
                     </a>
                   </div>
                 </motion.div>
@@ -226,8 +224,8 @@ const Leadership = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Our Values</h2>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Values</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 The principles that guide everything we do at Hanzo.
               </p>
             </motion.div>
@@ -258,16 +256,16 @@ const Leadership = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors text-center"
+                    className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-white/30 transition-colors text-center"
                   >
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto"
-                      style={{ backgroundColor: `${BRAND_COLOR}15` }}
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)" }}
                     >
-                      <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                    <p className="text-sm text-neutral-400">{value.description}</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{value.title}</h3>
+                    <p className="text-sm text-muted-foreground">{value.description}</p>
                   </motion.div>
                 );
               })}
@@ -276,16 +274,16 @@ const Leadership = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+        <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-background relative overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
             >
               Join Our Team
             </motion.h2>
@@ -295,7 +293,7 @@ const Leadership = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-neutral-400 mb-10 max-w-2xl mx-auto"
+              className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto"
             >
               We're always looking for talented individuals who are passionate about AI
               and building the future of technology.
@@ -310,15 +308,15 @@ const Leadership = () => {
             >
               <Link
                 href="/careers"
-                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base"
-                style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base bg-primary text-primary-foreground"
+
               >
                 View Open Positions
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-base text-white"
+                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-base text-foreground"
               >
                 Learn About Us
               </Link>

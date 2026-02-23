@@ -17,7 +17,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
               Have questions or need assistance? Our team is here to help. 
               Reach out to us through any of the channels below.
             </p>
@@ -30,7 +30,7 @@ const Contact = () => {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-1">
                       Name
                     </label>
                     <input
@@ -41,7 +41,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-1">
                       Email
                     </label>
                     <input
@@ -54,7 +54,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-1">
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-1">
                     Subject
                   </label>
                   <input
@@ -66,7 +66,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-1">
                     Message
                   </label>
                   <textarea
@@ -77,7 +77,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="w-full flex items-center justify-center bg-white/10 hover:bg-white/10" size="sm">
+                <Button type="submit" className="w-full flex items-center justify-center bg-primary/10 hover:bg-primary/10" size="sm">
                   <Send className="mr-2 h-4 w-4" />
                   Send Message
                 </Button>
@@ -86,15 +86,15 @@ const Contact = () => {
             
             {/* Contact Information */}
             <div className="flex flex-col">
-              <div className="bg-gradient-to-br from-white/20 to-white/10 rounded-xl p-8 border border-white/20 mb-8">
+              <div className="bg-gradient-to-br from-white/20 to-white/10 rounded-xl p-8 border border-border mb-8">
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <Mail className="h-6 w-6 text-white/70 mr-4 mt-1" />
+                    <Mail className="h-6 w-6 text-foreground/70 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-neutral-300">
-                        <a href="mailto:info@hanzo.ai" className="hover:text-white/70 transition-colors">
+                      <p className="text-foreground/80">
+                        <a href="mailto:info@hanzo.ai" className="hover:text-foreground/70 transition-colors">
                           info@hanzo.ai
                         </a>
                       </p>
@@ -102,11 +102,11 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <Phone className="h-6 w-6 text-white/70 mr-4 mt-1" />
+                    <Phone className="h-6 w-6 text-foreground/70 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <p className="text-neutral-300">
-                        <a href="tel:+18005551234" className="hover:text-white/70 transition-colors">
+                      <p className="text-foreground/80">
+                        <a href="tel:+18005551234" className="hover:text-foreground/70 transition-colors">
                           +1 (800) 555-1234
                         </a>
                       </p>
@@ -114,10 +114,10 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <MapPin className="h-6 w-6 text-white/70 mr-4 mt-1" />
+                    <MapPin className="h-6 w-6 text-foreground/70 mr-4 mt-1" />
                     <div>
                       <h3 className="font-medium">Location</h3>
-                      <p className="text-neutral-300">
+                      <p className="text-foreground/80">
                         Kansas City, MO<br />
                         United States
                       </p>
@@ -128,39 +128,39 @@ const Contact = () => {
               
               <div className="bg-gray-900/30 rounded-xl p-8 border border-gray-800 flex-grow">
                 <h2 className="text-2xl font-semibold mb-6">Connect With Us</h2>
-                <p className="text-neutral-300 mb-6">
+                <p className="text-foreground/80 mb-6">
                   Follow us on social media or join our community platforms to stay updated
                   on the latest news and engage with other Hanzo users.
                 </p>
                 
                 <div className="space-y-4">
                   <a href="https://discord.gg/XthHQQj" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <MessageSquare className="h-5 w-5 text-white/70 mr-3" />
+                    <MessageSquare className="h-5 w-5 text-foreground/70 mr-3" />
                     <span>Join our Discord Community</span>
                   </a>
                   
                   <a href="https://github.com/hanzoai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Github className="h-5 w-5 text-white/70 mr-3" />
+                    <Github className="h-5 w-5 text-foreground/70 mr-3" />
                     <span>Follow us on GitHub</span>
                   </a>
                   
                   <a href="https://twitter.com/hanzoai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Twitter className="h-5 w-5 text-white/70 mr-3" />
+                    <Twitter className="h-5 w-5 text-foreground/70 mr-3" />
                     <span>Follow us on Twitter</span>
                   </a>
 
                   <a href="https://linkedin.com/company/hanzo-ai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Linkedin className="h-5 w-5 text-white/70 mr-3" />
+                    <Linkedin className="h-5 w-5 text-foreground/70 mr-3" />
                     <span>Connect on LinkedIn</span>
                   </a>
 
                   <a href="https://facebook.com/hanzo-inc" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Facebook className="h-5 w-5 text-white/70 mr-3" />
+                    <Facebook className="h-5 w-5 text-foreground/70 mr-3" />
                     <span>Like us on Facebook</span>
                   </a>
 
                   <a href="https://instagram.com/hanzoai" className="flex items-center px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
-                    <Instagram className="h-5 w-5 text-white/70 mr-3" />
+                    <Instagram className="h-5 w-5 text-foreground/70 mr-3" />
                     <span>Follow us on Instagram</span>
                   </a>
                 </div>
@@ -171,10 +171,10 @@ const Contact = () => {
           {/* FAQ Section */}
           <div className="text-center">
             <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-            <p className="text-neutral-300 mb-4">
+            <p className="text-foreground/80 mb-4">
               Can't find what you're looking for? Check our comprehensive FAQ section.
             </p>
-            <Button variant="outline" className="border-white/20 text-[var(--white)] hover:bg-white/10" size="sm">
+            <Button variant="outline" className="border-border text-[var(--white)] hover:bg-primary/10" size="sm">
               <a href="/pricing#faq">View FAQ</a>
             </Button>
           </div>

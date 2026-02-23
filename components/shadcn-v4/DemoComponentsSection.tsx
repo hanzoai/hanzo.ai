@@ -35,8 +35,8 @@ const DemoComponentsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Updated Components</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Updated Components</h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Check out these updated shadcn/ui components with Tailwind v4 and React 19.
           </p>
         </motion.div>
@@ -49,7 +49,7 @@ const DemoComponentsSection = () => {
             transition={{ duration: 0.5 }}
             className="bg-gray-900/50 p-8 rounded-lg border border-gray-800"
           >
-            <h3 className="text-xl font-semibold mb-6 text-white">Form Elements</h3>
+            <h3 className="text-xl font-semibold mb-6 text-foreground">Form Elements</h3>
             
             <div className="space-y-6">
               <div className="space-y-2">
@@ -97,7 +97,7 @@ const DemoComponentsSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-gray-900/50 p-8 rounded-lg border border-gray-800"
           >
-            <h3 className="text-xl font-semibold mb-6 text-white">Interactive Components</h3>
+            <h3 className="text-xl font-semibold mb-6 text-foreground">Interactive Components</h3>
             
             <div className="space-y-6">
               <Tabs defaultValue="buttons" className="w-full">
@@ -156,7 +156,7 @@ const DemoComponentsSection = () => {
         <div className="flex justify-center">
           <Button 
             variant="outline" 
-            className="text-white border-white/30 hover:border-white/30/50"
+            className="text-foreground border-white/30 hover:border-white/30/50"
             onClick={() => window.open("https://v4.shadcn.com", "_blank")}
           >
             View All Components

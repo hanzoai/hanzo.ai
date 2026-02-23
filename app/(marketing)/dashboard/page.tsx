@@ -51,7 +51,7 @@ const Dashboard = () => {
           <div className="bg-[var(--black)] border border-gray-800 rounded-lg p-6">
             <h3 className="text-lg font-medium mb-4">Usage Overview</h3>
             <p className="text-2xl font-semibold">24.5K</p>
-            <p className="text-neutral-400 text-sm">Total tokens used today</p>
+            <p className="text-muted-foreground text-sm">Total tokens used today</p>
             <div className="h-40 mt-4 flex items-end">
               {[45, 35, 65, 50, 75, 55, 70].map((height, index) => (
                 <div 
@@ -66,13 +66,13 @@ const Dashboard = () => {
           <div className="bg-[var(--black)] border border-gray-800 rounded-lg p-6">
             <h3 className="text-lg font-medium mb-4">Agent Activity</h3>
             <p className="text-2xl font-semibold">8</p>
-            <p className="text-neutral-400 text-sm">Active agents</p>
+            <p className="text-muted-foreground text-sm">Active agents</p>
             <div className="h-40 mt-4 flex items-center justify-center">
               <div className="w-40 h-40 relative rounded-full border-4 border-gray-800 flex items-center justify-center">
                 <div className="w-28 h-28 rounded-full bg-gray-800"></div>
-                <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-white/10"></div>
-                <div className="absolute bottom-4 left-4 w-4 h-4 rounded-full bg-white/10"></div>
-                <div className="absolute top-10 left-0 w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-primary/10"></div>
+                <div className="absolute bottom-4 left-4 w-4 h-4 rounded-full bg-primary/10"></div>
+                <div className="absolute top-10 left-0 w-3 h-3 rounded-full bg-primary/10"></div>
               </div>
             </div>
           </div>
@@ -80,20 +80,20 @@ const Dashboard = () => {
           <div className="bg-[var(--black)] border border-gray-800 rounded-lg p-6">
             <h3 className="text-lg font-medium mb-4">Cost Tracking</h3>
             <p className="text-2xl font-semibold">$12.85</p>
-            <p className="text-neutral-400 text-sm">Spent this month</p>
+            <p className="text-muted-foreground text-sm">Spent this month</p>
             <div className="h-40 mt-4">
               <div className="h-full flex flex-col justify-between">
                 <div className="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
-                  <div className="bg-white/10 h-full rounded-full" style={{ width: '65%' }}></div>
+                  <div className="bg-primary/10 h-full rounded-full" style={{ width: '65%' }}></div>
                 </div>
                 <div className="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
-                  <div className="bg-white/10 h-full rounded-full" style={{ width: '42%' }}></div>
+                  <div className="bg-primary/10 h-full rounded-full" style={{ width: '42%' }}></div>
                 </div>
                 <div className="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
-                  <div className="bg-white/10 h-full rounded-full" style={{ width: '28%' }}></div>
+                  <div className="bg-primary/10 h-full rounded-full" style={{ width: '28%' }}></div>
                 </div>
                 <div className="w-full bg-gray-900 h-4 rounded-full overflow-hidden">
-                  <div className="bg-white/10 h-full rounded-full" style={{ width: '13%' }}></div>
+                  <div className="bg-primary/10 h-full rounded-full" style={{ width: '13%' }}></div>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ const Dashboard = () => {
         <div className="flex justify-between items-center mb-4">
           <div>
             <h1 className="text-2xl font-semibold">Workspace</h1>
-            <p className="text-neutral-400 text-sm mt-1">Manage your AI tasks and agents</p>
+            <p className="text-muted-foreground text-sm mt-1">Manage your AI tasks and agents</p>
           </div>
         </div>
 
@@ -171,7 +171,7 @@ const Dashboard = () => {
 
 function DashboardPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-black" />}>
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
       <Dashboard />
     </Suspense>
   );

@@ -30,7 +30,7 @@ const TrustedBy = () => {
           <h2 className="text-3xl font-bold text-[var(--white)] mb-6">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Powering AI innovation at organizations of all sizes, from startups to Fortune 500 companies
           </p>
         </motion.div>
@@ -46,7 +46,7 @@ const TrustedBy = () => {
               className="flex items-center justify-center p-6 bg-gray-900/50 rounded-xl border border-gray-800 hover:bg-gray-900/80 transition-colors"
             >
               {/* In a real implementation, this would be an image */}
-              <div className={`text-neutral-400 font-semibold text-xl ${logo.class}`}>
+              <div className={`text-muted-foreground font-semibold text-xl ${logo.class}`}>
                 {logo.name}
               </div>
             </motion.div>
@@ -66,7 +66,7 @@ const TrustedBy = () => {
                 {[...Array(5)].map((_, i) => (
                   <svg 
                     key={i} 
-                    className="h-5 w-5 text-white/60" 
+                    className="h-5 w-5 text-foreground/60" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -76,14 +76,14 @@ const TrustedBy = () => {
               </div>
               <span className="ml-2 text-[var(--white)] font-medium">5.0</span>
             </div>
-            <p className="text-neutral-300 mb-4">
+            <p className="text-foreground/80 mb-4">
               "Hanzo's AI platform has transformed our ability to ship AI features quickly. What used to take months now takes days."
             </p>
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-white/30 flex items-center justify-center text-white/70 font-bold">JD</div>
+              <div className="h-10 w-10 rounded-full bg-primary/30 flex items-center justify-center text-foreground/70 font-bold">JD</div>
               <div className="ml-3">
                 <div className="text-[var(--white)] font-medium">Jane Doe</div>
-                <div className="text-neutral-400 text-sm">CTO, TechInnovate</div>
+                <div className="text-muted-foreground text-sm">CTO, TechInnovate</div>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ const TrustedBy = () => {
                 {[...Array(5)].map((_, i) => (
                   <svg 
                     key={i} 
-                    className="h-5 w-5 text-white/60" 
+                    className="h-5 w-5 text-foreground/60" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -104,14 +104,14 @@ const TrustedBy = () => {
               </div>
               <span className="ml-2 text-[var(--white)] font-medium">5.0</span>
             </div>
-            <p className="text-neutral-300 mb-4">
+            <p className="text-foreground/80 mb-4">
               "The observability features are game-changing. We finally have full visibility into our AI systems in production."
             </p>
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-white/30 flex items-center justify-center text-white/70 font-bold">MS</div>
+              <div className="h-10 w-10 rounded-full bg-primary/30 flex items-center justify-center text-foreground/70 font-bold">MS</div>
               <div className="ml-3">
                 <div className="text-[var(--white)] font-medium">Michael Smith</div>
-                <div className="text-neutral-400 text-sm">AI Lead, EnterpriseAI</div>
+                <div className="text-muted-foreground text-sm">AI Lead, EnterpriseAI</div>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ const TrustedBy = () => {
                 {[...Array(5)].map((_, i) => (
                   <svg 
                     key={i} 
-                    className="h-5 w-5 text-white/60" 
+                    className="h-5 w-5 text-foreground/60" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -132,14 +132,14 @@ const TrustedBy = () => {
               </div>
               <span className="ml-2 text-[var(--white)] font-medium">5.0</span>
             </div>
-            <p className="text-neutral-300 mb-4">
+            <p className="text-foreground/80 mb-4">
               "Our team went from prototype to production in just days. The SDK is intuitive and the documentation is excellent."
             </p>
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-white/30 flex items-center justify-center text-white/70 font-bold">EJ</div>
+              <div className="h-10 w-10 rounded-full bg-primary/30 flex items-center justify-center text-foreground/70 font-bold">EJ</div>
               <div className="ml-3">
                 <div className="text-[var(--white)] font-medium">Emma Johnson</div>
-                <div className="text-neutral-400 text-sm">VP Engineering, StartupX</div>
+                <div className="text-muted-foreground text-sm">VP Engineering, StartupX</div>
               </div>
             </div>
           </div>

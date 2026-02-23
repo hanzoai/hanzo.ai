@@ -5,8 +5,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const WorkspaceFooter = () => {
   return (
     <motion.div
@@ -24,31 +22,31 @@ const WorkspaceFooter = () => {
       <div className="inline-flex flex-wrap justify-center gap-4">
         <Badge
           className="px-3 py-2"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Real-time collaboration
         </Badge>
         <Badge
           className="px-3 py-2"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Full audit history
         </Badge>
         <Badge
           className="px-3 py-2"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Seamless integrations
         </Badge>
         <Badge
           className="px-3 py-2"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Human oversight
         </Badge>
         <Badge
           className="px-3 py-2"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Enterprise security
         </Badge>

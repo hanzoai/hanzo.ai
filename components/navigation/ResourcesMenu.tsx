@@ -11,7 +11,7 @@ export const ResourcesMenu = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {resourcesNav.map(category => (
               <div key={category.title}>
-                <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-4">{category.title}</h3>
                 <div className="space-y-4">
                   {category.items.map(item => {
                     const Icon = item.icon;
@@ -25,11 +25,11 @@ export const ResourcesMenu = () => {
                         className="flex items-start space-x-3 group"
                         onClick={closeMenu}
                       >
-                        {Icon && <Icon className="h-5 w-5 min-w-5 text-neutral-400 group-hover:text-white mt-1" />}
+                        {Icon && <Icon className="h-5 w-5 min-w-5 text-muted-foreground group-hover:text-foreground mt-1" />}
                         <div className="min-w-0">
-                          <div className="text-neutral-300 group-hover:text-white font-medium truncate">{item.title}</div>
+                          <div className="text-foreground/80 group-hover:text-foreground font-medium truncate">{item.title}</div>
                           {item.description && (
-                            <div className="text-sm text-neutral-500 truncate">{item.description}</div>
+                            <div className="text-sm text-muted-foreground truncate">{item.description}</div>
                           )}
                         </div>
                       </a>

@@ -42,7 +42,7 @@ const CostSummary = ({
           { label: "Observability", cost: costs.observability }
         ].map(({ label, cost }) => (
           <div key={label} className="flex justify-between items-center">
-            <span className="text-neutral-400">{label}</span>
+            <span className="text-muted-foreground">{label}</span>
             <span>${cost.toFixed(2)}</span>
           </div>
         ))}
@@ -51,8 +51,8 @@ const CostSummary = ({
       <div className="space-y-4 mb-8 border-t border-[#333] pt-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-neutral-400" />
-            <span className="text-neutral-400">Enhanced Security</span>
+            <Shield className="h-4 w-4 text-muted-foreground" />
+            <span className="text-muted-foreground">Enhanced Security</span>
           </div>
           <div className="flex items-center gap-3">
             <span>${costs.compliance.toFixed(2)}</span>
@@ -62,8 +62,8 @@ const CostSummary = ({
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <HeadsetIcon className="h-4 w-4 text-neutral-400" />
-            <span className="text-neutral-400">Enterprise Support</span>
+            <HeadsetIcon className="h-4 w-4 text-muted-foreground" />
+            <span className="text-muted-foreground">Enterprise Support</span>
           </div>
           <div className="flex items-center gap-3">
             <span>${costs.support.toFixed(2)}</span>
@@ -77,7 +77,7 @@ const CostSummary = ({
           <span className="text-lg font-semibold">Estimated Total</span>
           <span className="text-lg font-semibold">${costs.total.toFixed(2)}/mo</span>
         </div>
-        <p className="text-sm text-neutral-400 mt-2">
+        <p className="text-sm text-muted-foreground mt-2">
           Actual costs may vary based on usage and additional services.
         </p>
       </div>

@@ -20,7 +20,7 @@ const CoreProjects = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Core Projects
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Our flagship open source technologies that power the Hanzo Platform
           </p>
         </motion.div>
@@ -32,37 +32,37 @@ const CoreProjects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-8 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-8 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Server className="h-12 w-12 text-white/70 mr-4" />
+              <Server className="h-12 w-12 text-foreground/70 mr-4" />
               <div>
                 <h3 className="text-2xl font-semibold text-[var(--white)]">Hanzo Platform</h3>
                 <div className="flex items-center mt-1">
-                  <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white/70">github.com/hanzoai/platform</a>
+                  <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/70 hover:text-foreground/70">github.com/hanzoai/platform</a>
                 </div>
               </div>
             </div>
-            <p className="text-neutral-300 mb-6 text-lg">
+            <p className="text-foreground/80 mb-6 text-lg">
               The free, forever, open-source version of our cloud infrastructure. Run the entire Hanzo stack locally with a single command.
             </p>
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
-                <Star className="h-5 w-5 text-white/60 mr-2" />
-                <span className="text-neutral-300">5.2k stars</span>
+                <Star className="h-5 w-5 text-foreground/60 mr-2" />
+                <span className="text-foreground/80">5.2k stars</span>
               </div>
               <div className="flex items-center">
-                <GitBranch className="h-5 w-5 text-neutral-400 mr-2" />
-                <span className="text-neutral-300">742 forks</span>
+                <GitBranch className="h-5 w-5 text-muted-foreground mr-2" />
+                <span className="text-foreground/80">742 forks</span>
               </div>
               <div className="flex items-center">
-                <div className="h-3 w-3 rounded-full bg-white/10 mr-2"></div>
-                <span className="text-neutral-300">Active</span>
+                <div className="h-3 w-3 rounded-full bg-primary/10 mr-2"></div>
+                <span className="text-foreground/80">Active</span>
               </div>
             </div>
             <div className="flex space-x-3">
               <Button 
-                className="flex-1 bg-white/10 hover:bg-white/10"
+                className="flex-1 bg-primary/10 hover:bg-primary/10"
                 size="sm"
               >
                 <a href="https://github.com/hanzoai/platform" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
@@ -87,37 +87,37 @@ const CoreProjects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-8 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-8 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Bot className="h-12 w-12 text-white/70 mr-4" />
+              <Bot className="h-12 w-12 text-foreground/70 mr-4" />
               <div>
                 <h3 className="text-2xl font-semibold text-[var(--white)]">Hanzo Bot</h3>
                 <div className="flex items-center mt-1">
-                  <a href="https://github.com/hanzoai/bot" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white/70">github.com/hanzoai/bot</a>
+                  <a href="https://github.com/hanzoai/bot" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/70 hover:text-foreground/70">github.com/hanzoai/bot</a>
                 </div>
               </div>
             </div>
-            <p className="text-neutral-300 mb-6 text-lg">
+            <p className="text-foreground/80 mb-6 text-lg">
               Agentic framework for building advanced AI assistants with custom tool integration. Create powerful workflows with LLMs.
             </p>
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center">
-                <Star className="h-5 w-5 text-white/60 mr-2" />
-                <span className="text-neutral-300">4.8k stars</span>
+                <Star className="h-5 w-5 text-foreground/60 mr-2" />
+                <span className="text-foreground/80">4.8k stars</span>
               </div>
               <div className="flex items-center">
-                <GitBranch className="h-5 w-5 text-neutral-400 mr-2" />
-                <span className="text-neutral-300">623 forks</span>
+                <GitBranch className="h-5 w-5 text-muted-foreground mr-2" />
+                <span className="text-foreground/80">623 forks</span>
               </div>
               <div className="flex items-center">
-                <div className="h-3 w-3 rounded-full bg-white/10 mr-2"></div>
-                <span className="text-neutral-300">Active</span>
+                <div className="h-3 w-3 rounded-full bg-primary/10 mr-2"></div>
+                <span className="text-foreground/80">Active</span>
               </div>
             </div>
             <div className="flex space-x-3">
               <Button 
-                className="flex-1 bg-white/10 hover:bg-white/10"
+                className="flex-1 bg-primary/10 hover:bg-primary/10"
                 size="sm"
               >
                 <a href="https://github.com/hanzoai/bot" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">

@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const AboutHero = () => {
   return (
     <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
@@ -15,7 +13,7 @@ const AboutHero = () => {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
           style={{
-            background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+            background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
             filter: "blur(100px)",
           }}
         />
@@ -40,7 +38,7 @@ const AboutHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
-            style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
           >
             <Sparkles className="w-3.5 h-3.5" />
             Our Journey
@@ -74,8 +72,8 @@ const AboutHero = () => {
           >
             <a
               href="#timeline"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-              style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
             >
               Explore Our Timeline
               <ArrowRight className="ml-2 h-4 w-4" />

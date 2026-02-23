@@ -49,7 +49,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-display text-[var(--white)]">Our Impact</h2>
-          <p className="mt-4 text-lg text-neutral-300">Transforming businesses through innovation.</p>
+          <p className="mt-4 text-lg text-foreground/80">Transforming businesses through innovation.</p>
         </div>
 
         {/* Partner Logos */}
@@ -115,11 +115,11 @@ const Testimonials = () => {
                 </div>
                 <div className="p-6">
                   <h4 className="text-[var(--white)] mb-2 text-3xl font-normal">{study.title}</h4>
-                  <p className="text-neutral-300 mb-4">{study.description}</p>
+                  <p className="text-foreground/80 mb-4">{study.description}</p>
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     {Object.entries(study.stats).map(([key, value], i) => <div key={i} className="text-center">
                         <div className="text-2xl font-bold text-[var(--white)]">{value}</div>
-                        <div className="text-sm text-neutral-400">{key}</div>
+                        <div className="text-sm text-muted-foreground">{key}</div>
                       </div>)}
                   </div>
                   <Button variant="outline" className="w-full" onClick={() => window.open(study.learnMoreUrl, '_blank')}>
@@ -143,11 +143,11 @@ const Testimonials = () => {
         }} transition={{
           duration: 0.5,
           delay: index * 0.1
-        }} className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-white/10">
-              <p className="text-neutral-300 italic">{testimonial.quote}</p>
+        }} className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl ring-1 ring-border">
+              <p className="text-foreground/80 italic">{testimonial.quote}</p>
               <div className="mt-4">
                 <p className="text-[var(--white)] font-semibold">{testimonial.author}</p>
-                <p className="text-neutral-400">{testimonial.role}</p>
+                <p className="text-muted-foreground">{testimonial.role}</p>
               </div>
             </motion.div>)}
         </div>

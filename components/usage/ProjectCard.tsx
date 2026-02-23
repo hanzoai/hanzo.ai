@@ -32,19 +32,19 @@ const ProjectCard = ({ project, onToggleExpand }: ProjectCardProps) => {
       >
         <div className="flex items-center gap-4">
           {project.expanded ? (
-            <ChevronUp className="h-5 w-5 text-neutral-400" />
+            <ChevronUp className="h-5 w-5 text-muted-foreground" />
           ) : (
-            <ChevronDown className="h-5 w-5 text-neutral-400" />
+            <ChevronDown className="h-5 w-5 text-muted-foreground" />
           )}
           <span className="font-medium">{project.name}</span>
         </div>
         <div className="flex items-center gap-8">
           <div>
-            <div className="text-sm text-neutral-400">Current Cost</div>
+            <div className="text-sm text-muted-foreground">Current Cost</div>
             <div className="font-medium">{project.currentCost}</div>
           </div>
           <div>
-            <div className="text-sm text-neutral-400">Estimated</div>
+            <div className="text-sm text-muted-foreground">Estimated</div>
             <div className="font-medium">{project.estimatedCost}</div>
           </div>
         </div>

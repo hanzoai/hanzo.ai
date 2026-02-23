@@ -24,7 +24,7 @@ const Integrations = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
             Plays Nicely With Your Favorite AI Dev Tools
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Seamlessly integrate Hanzo Vector with popular AI frameworks, libraries, and platforms.
           </p>
         </motion.div>
@@ -39,7 +39,7 @@ const Integrations = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 flex flex-col items-center justify-center aspect-square hover:bg-gray-900/50 transition-colors group"
             >
-              <div className="text-xl font-semibold text-neutral-300 group-hover:text-white transition-colors">
+              <div className="text-xl font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
                 {tool}
               </div>
             </motion.div>

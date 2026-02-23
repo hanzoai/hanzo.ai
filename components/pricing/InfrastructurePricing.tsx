@@ -31,7 +31,7 @@ const InfrastructurePricing = () => {
     <div className="max-w-7xl mx-auto mb-16">
       <div className="mb-4">
         <h2 className="text-3xl font-bold mb-2">Hanzo PaaS Infrastructure</h2>
-        <p className="text-neutral-400 text-lg mb-8">
+        <p className="text-muted-foreground text-lg mb-8">
           Deploy AI applications, workflows, and agents on fully managed infrastructure.
           Per-org isolation with zero-trust networking, KMS-managed secrets, and IAM SSO.
         </p>
@@ -44,25 +44,25 @@ const InfrastructurePricing = () => {
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-gray-800">
-                <th className="py-3 px-4 text-neutral-400 font-medium">Tier</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">vCPUs</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">RAM</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">Storage</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">Transfer</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium text-right">Monthly</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium text-right">Hourly</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">Tier</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">vCPUs</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">RAM</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">Storage</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">Transfer</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium text-right">Monthly</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium text-right">Hourly</th>
               </tr>
             </thead>
             <tbody>
               {computeTiers.map((tier) => (
                 <tr key={tier.slug} className="border-b border-gray-800/50 hover:bg-gray-900/30 transition-colors">
                   <td className="py-4 px-4 font-medium">{tier.name}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.vcpus}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.ram}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.storage}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.transfer}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.vcpus}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.ram}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.storage}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.transfer}</td>
                   <td className="py-4 px-4 text-right font-medium">{tier.price}</td>
-                  <td className="py-4 px-4 text-right text-neutral-400">{tier.hourly}</td>
+                  <td className="py-4 px-4 text-right text-muted-foreground">{tier.hourly}</td>
                 </tr>
               ))}
             </tbody>
@@ -77,29 +77,29 @@ const InfrastructurePricing = () => {
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-gray-800">
-                <th className="py-3 px-4 text-neutral-400 font-medium">Tier</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">GPUs</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">VRAM</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">vCPUs</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium">RAM</th>
-                <th className="py-3 px-4 text-neutral-400 font-medium text-right">Hourly</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">Tier</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">GPUs</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">VRAM</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">vCPUs</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium">RAM</th>
+                <th className="py-3 px-4 text-muted-foreground font-medium text-right">Hourly</th>
               </tr>
             </thead>
             <tbody>
               {gpuTiers.map((tier) => (
                 <tr key={tier.slug} className="border-b border-gray-800/50 hover:bg-gray-900/30 transition-colors">
                   <td className="py-4 px-4 font-medium">{tier.name}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.gpus}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.vram}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.vcpus}</td>
-                  <td className="py-4 px-4 text-neutral-400">{tier.ram}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.gpus}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.vram}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.vcpus}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{tier.ram}</td>
                   <td className="py-4 px-4 text-right font-medium">{tier.price}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="text-sm text-neutral-500 mt-4">Contact sales for multi-GPU configurations and reserved pricing.</p>
+        <p className="text-sm text-muted-foreground mt-4">Contact sales for multi-GPU configurations and reserved pricing.</p>
       </div>
 
       {/* Managed Services */}
@@ -109,7 +109,7 @@ const InfrastructurePricing = () => {
           {managedServices.map((svc) => (
             <div key={svc.name} className="bg-gray-900/30 rounded-xl p-5 border border-gray-800/50">
               <h4 className="font-semibold mb-2">{svc.name}</h4>
-              <p className="text-neutral-400 text-sm mb-3">{svc.description}</p>
+              <p className="text-muted-foreground text-sm mb-3">{svc.description}</p>
               <div className="text-lg font-medium">Starting at {svc.startingAt}</div>
             </div>
           ))}
@@ -119,7 +119,7 @@ const InfrastructurePricing = () => {
       {/* Included with every deployment */}
       <div className="mb-12 bg-gray-900/30 rounded-xl p-8 border border-gray-800/50">
         <h3 className="text-xl font-semibold mb-4">Included with every deployment</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-neutral-400">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
           <div>Zero-trust networking</div>
           <div>KMS-managed secrets</div>
           <div>IAM SSO authentication</div>
@@ -134,7 +134,7 @@ const InfrastructurePricing = () => {
       <div className="flex justify-center">
         <Button
           size="lg"
-          className="bg-white text-black hover:bg-gray-100 px-8 py-3"
+          className="bg-primary text-primary-foreground hover:bg-gray-100 px-8 py-3"
           onClick={() => window.open('https://platform.hanzo.ai', '_blank')}
         >
           Deploy Now

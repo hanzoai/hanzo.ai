@@ -23,7 +23,7 @@ const HeroSection = () => {
             The Zen of Hanzo
           </h1>
           
-          <p className="text-xl text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
             Our guiding principles that shape everything we build. Distilled wisdom from ancient knowledge, 
             reimagined for modern AI engineering.
           </p>
@@ -44,7 +44,7 @@ const HeroSection = () => {
         >
           <a 
             href="#principles" 
-            className="group flex items-center gap-2 px-4 py-2 rounded-full text-neutral-400 hover:text-[var(--white)] transition-colors"
+            className="group flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-[var(--white)] transition-colors"
           >
             <span>Explore Principles</span>
             <svg 

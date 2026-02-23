@@ -8,38 +8,36 @@ import {
 import { Button } from "@hanzo/ui";
 import Link from "next/link";
 
-const BRAND_COLOR = "#ffffff";
-
 const principles = [
   {
     title: "Empower the Underdog",
     description: "Enable others to win. Democratize technology so small businesses and startups can compete with industry giants.",
-    icon: <Users className="h-10 w-10 text-white" />,
+    icon: <Users className="h-10 w-10 text-foreground" />,
   },
   {
     title: "Data-Driven Everything",
     description: "Let data be your guide. Embrace analytics and AI as the foundation of decision-making.",
-    icon: <Database className="h-10 w-10 text-white" />,
+    icon: <Database className="h-10 w-10 text-foreground" />,
   },
   {
     title: "Open Innovation",
     description: "Be open, share often. Openness accelerates growth—both for the company and its community.",
-    icon: <Share2 className="h-10 w-10 text-white" />,
+    icon: <Share2 className="h-10 w-10 text-foreground" />,
   },
   {
     title: "Adaptability",
     description: "Pivot with purpose. There is no failure, only feedback. Move quickly and strike in new directions when opportunity calls.",
-    icon: <RefreshCcw className="h-10 w-10 text-white" />,
+    icon: <RefreshCcw className="h-10 w-10 text-foreground" />,
   },
   {
     title: "Customer-Centric Growth",
     description: "Coach clients like a sensei. Treat each client as a long-term partner and guide them to success.",
-    icon: <Heart className="h-10 w-10 text-white" />,
+    icon: <Heart className="h-10 w-10 text-foreground" />,
   },
   {
     title: "First Principles Thinking",
     description: "See the invisible, do the impossible. Boil problems down to their essence and solve them in fundamentally better ways.",
-    icon: <BookOpen className="h-10 w-10 text-white" />,
+    icon: <BookOpen className="h-10 w-10 text-foreground" />,
   }
 ];
 
@@ -55,7 +53,7 @@ const ZenPrinciples = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">The Zen of Hanzo</h2>
-          <div className="h-1 w-20 bg-white mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our guiding philosophy - a set of first principles and laws that act as our north star.
           </p>
@@ -88,7 +86,7 @@ const ZenPrinciples = () => {
           <Button
             size="lg"
             className="px-8 py-6 rounded-full text-lg font-medium"
-            style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+
           >
             <Link href="/philosophy" className="flex items-center">
               Explore The Full Zen Manifesto

@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { FileText, Calendar, Bot } from "lucide-react";
 import { Badge } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const KnowledgeBaseCard = () => {
   return (
     <motion.div
@@ -18,12 +16,12 @@ const KnowledgeBaseCard = () => {
       className="bg-card border border-border rounded-xl overflow-hidden shadow-xl"
     >
       <div className="border-b border-border p-3 flex items-center">
-        <FileText className="h-5 w-5 mr-2" style={{ color: BRAND_COLOR }} />
+        <FileText className="h-5 w-5 mr-2" />
         <span className="font-medium text-foreground">Knowledge Base</span>
         <Badge
           variant="outline"
           className="ml-auto"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Notion-style
         </Badge>
@@ -33,8 +31,8 @@ const KnowledgeBaseCard = () => {
           <div className="mb-4 flex items-center justify-between">
             <h3 className="font-medium text-foreground">Company Wiki</h3>
             <div className="flex items-center space-x-2">
-              <div className="text-xs text-white/70 flex items-center">
-                <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs mr-1 text-black" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+              <div className="text-xs text-foreground/70 flex items-center">
+                <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs mr-1 text-primary-foreground">AI</div>
                 <span>Updating</span>
               </div>
             </div>
@@ -43,7 +41,7 @@ const KnowledgeBaseCard = () => {
           <div className="space-y-3">
             <div className="p-2 bg-secondary/50 rounded-md border border-border">
               <div className="flex items-center mb-1">
-                <Calendar className="h-4 w-4 mr-2" style={{ color: BRAND_COLOR }} />
+                <Calendar className="h-4 w-4 mr-2" />
                 <span className="font-medium text-foreground">Onboarding Process</span>
               </div>
               <p className="text-xs text-muted-foreground">
@@ -53,7 +51,7 @@ const KnowledgeBaseCard = () => {
 
             <div className="p-2 bg-secondary/50 rounded-md border border-border">
               <div className="flex items-center mb-1">
-                <FileText className="h-4 w-4 mr-2" style={{ color: BRAND_COLOR }} />
+                <FileText className="h-4 w-4 mr-2" />
                 <span className="font-medium text-foreground">Technical Documentation</span>
               </div>
               <p className="text-xs text-muted-foreground">
@@ -63,13 +61,13 @@ const KnowledgeBaseCard = () => {
 
             <div
               className="p-2 rounded-md"
-              style={{ backgroundColor: `${BRAND_COLOR}20`, border: `1px solid ${BRAND_COLOR}50` }}
+              style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 30%, transparent)" }}
             >
               <div className="flex items-center mb-1">
-                <Bot className="h-4 w-4 mr-2" style={{ color: BRAND_COLOR }} />
+                <Bot className="h-4 w-4 mr-2" />
                 <span className="font-medium text-foreground">AI Activity: Adding Marketing Guidelines</span>
               </div>
-              <div className="flex items-center text-xs" style={{ color: BRAND_COLOR }}>
+              <div className="flex items-center text-xs">
                 <span>ContentBot is updating brand guidelines based on latest team meeting</span>
               </div>
             </div>

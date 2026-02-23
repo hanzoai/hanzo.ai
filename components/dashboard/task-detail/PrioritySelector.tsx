@@ -10,13 +10,13 @@ interface PrioritySelectorProps {
 const PrioritySelector: React.FC<PrioritySelectorProps> = ({ priority, onChange }) => {
   const priorityOptions = [
     { value: "low", label: "Low", color: "bg-gray-500" },
-    { value: "medium", label: "Medium", color: "bg-white/10" },
-    { value: "high", label: "High", color: "bg-white/10" }
+    { value: "medium", label: "Medium", color: "bg-primary/10" },
+    { value: "high", label: "High", color: "bg-primary/10" }
   ];
 
   return (
     <div>
-      <label className="block text-sm font-medium text-neutral-400 mb-1">Priority</label>
+      <label className="block text-sm font-medium text-muted-foreground mb-1">Priority</label>
       <div className="space-y-1">
         {priorityOptions.map(option => (
           <div 

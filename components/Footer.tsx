@@ -147,7 +147,7 @@ const FooterColumn = ({
   items: Array<{ title: string; href: string; external?: boolean; highlight?: boolean }>;
 }) => (
   <div>
-    <h3 className="text-neutral-500 text-xs font-medium mb-3 uppercase tracking-wider">{title}</h3>
+    <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">{title}</h3>
     <ul className="space-y-2">
       {items.map((item) => (
         <li key={item.title}>
@@ -158,8 +158,8 @@ const FooterColumn = ({
               rel="noopener noreferrer"
               className={`text-sm transition-colors ${
                 item.highlight
-                  ? "text-white hover:text-neutral-400"
-                  : "text-neutral-400 hover:text-white"
+                  ? "text-foreground hover:text-muted-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.title}
@@ -169,8 +169,8 @@ const FooterColumn = ({
               href={item.href || "#"}
               className={`text-sm transition-colors ${
                 item.highlight
-                  ? "text-white hover:text-neutral-400"
-                  : "text-neutral-400 hover:text-white"
+                  ? "text-foreground hover:text-muted-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.title}
@@ -194,7 +194,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black border-t border-neutral-800 relative overflow-hidden">
+    <footer className="bg-background border-t border-border relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
         {/* Main footer content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
@@ -206,7 +206,7 @@ const Footer = () => {
                 alt="Hanzo"
                 className="h-6 w-6"
               />
-              <span className="text-white font-bold text-xl">Hanzo</span>
+              <span className="text-foreground font-bold text-xl">Hanzo</span>
             </Link>
 
             {/* Chat widget */}
@@ -217,13 +217,13 @@ const Footer = () => {
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
                   placeholder="How can I help you today?"
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2.5 pr-10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600 transition-colors"
+                  className="w-full bg-secondary border border-border rounded-lg px-4 py-2.5 pr-10 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring transition-colors"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded flex items-center justify-center transition-colors hover:opacity-80 bg-white"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded flex items-center justify-center transition-colors hover:opacity-80 bg-primary"
                 >
-                  <Send className="w-3 h-3 text-black" />
+                  <Send className="w-3 h-3 text-primary-foreground" />
                 </button>
               </div>
 
@@ -237,7 +237,7 @@ const Footer = () => {
                       onClick={() => {
                         window.dispatchEvent(new CustomEvent('openGlobalChat', { detail: { action: action.label } }));
                       }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-medium hover:bg-neutral-800 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-secondary border border-border text-muted-foreground text-xs font-medium hover:bg-accent hover:text-foreground transition-colors"
                     >
                       <Icon className="w-3 h-3" />
                       {action.label}
@@ -267,20 +267,20 @@ const Footer = () => {
         </div>
 
         {/* Newsletter + Social CTA */}
-        <div className="mt-10 pt-8 border-t border-neutral-800">
+        <div className="mt-10 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1 max-w-md">
-              <h4 className="text-sm font-semibold text-white mb-2">Stay updated</h4>
-              <p className="text-xs text-neutral-400 mb-3">Get the latest news, product updates, and AI insights.</p>
+              <h4 className="text-sm font-semibold text-foreground mb-2">Stay updated</h4>
+              <p className="text-xs text-muted-foreground mb-3">Get the latest news, product updates, and AI insights.</p>
               <form className="flex gap-2">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600 transition-colors"
+                  className="flex-1 bg-secondary border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring transition-colors"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-black bg-white transition-colors hover:bg-neutral-200"
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground bg-primary transition-colors hover:opacity-90"
                 >
                   Subscribe
                 </button>
@@ -295,7 +295,7 @@ const Footer = () => {
                     href={social.href || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -303,15 +303,15 @@ const Footer = () => {
                 ))}
               </div>
               <div className="flex items-center gap-3 text-xs">
-                <Link href="/referral" className="text-neutral-400 hover:text-white transition-colors">
+                <Link href="/referral" className="text-muted-foreground hover:text-foreground transition-colors">
                   Referral Program
                 </Link>
-                <span className="text-neutral-600">&#8226;</span>
-                <Link href="/affiliate" className="text-neutral-400 hover:text-white transition-colors">
+                <span className="text-muted-foreground/50">&#8226;</span>
+                <Link href="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
                   Affiliates
                 </Link>
-                <span className="text-neutral-600">&#8226;</span>
-                <Link href="/share" className="text-neutral-400 hover:text-white transition-colors">
+                <span className="text-muted-foreground/50">&#8226;</span>
+                <Link href="/share" className="text-muted-foreground hover:text-foreground transition-colors">
                   Share & Earn
                 </Link>
               </div>
@@ -320,26 +320,26 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-6 pt-4 border-t border-neutral-800">
+        <div className="mt-6 pt-4 border-t border-border">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-xs">
               <a
                 href="https://hanzo.industries"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 tracking-wider uppercase hover:text-white transition-colors"
+                className="text-muted-foreground tracking-wider uppercase hover:text-foreground transition-colors"
                 style={{ fontWeight: 100 }}
               >
                 BY HANZO INDUSTRIES
               </a>
-              <span className="text-neutral-600">
+              <span className="text-muted-foreground/50">
                 &copy; 2016-{new Date().getFullYear()} HANZO.AI
               </span>
             </div>
 
             {/* Language selector */}
             <div className="flex items-center gap-2">
-              <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs hover:bg-neutral-800 hover:text-white transition-colors">
+              <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-muted-foreground text-xs hover:bg-accent hover:text-foreground transition-colors">
                 <Globe className="w-3.5 h-3.5" />
                 English (US)
                 <ChevronDown className="w-3 h-3" />

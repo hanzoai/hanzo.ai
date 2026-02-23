@@ -30,10 +30,10 @@ const EcosystemBadge: React.FC<{ item: CompatibilityItem; index: number }> = ({
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
       whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
-      className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/50 cursor-default transition-colors"
+      className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 cursor-default transition-colors"
     >
-      <span className="text-sm font-medium text-white">{item.name}</span>
-      <span className="text-xs text-neutral-500">
+      <span className="text-sm font-medium text-foreground">{item.name}</span>
+      <span className="text-xs text-muted-foreground">
         ({item.compatible}-compatible)
       </span>
     </motion.div>
@@ -42,7 +42,7 @@ const EcosystemBadge: React.FC<{ item: CompatibilityItem; index: number }> = ({
 
 const EcosystemSection: React.FC = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-black">
+    <section className="py-16 px-4 md:px-8 bg-background">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ const EcosystemSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <h2 className="text-2xl md:text-3xl font-medium text-white mb-2">
+          <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-2">
             Ecosystem
           </h2>
-          <p className="text-neutral-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             Drop-in compatible, unified experience.
           </p>
         </motion.div>

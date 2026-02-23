@@ -10,7 +10,7 @@ const FooterSection = ({ title, links }: { title: string; links: string[] }) => 
     <ul className="space-y-2">
       {links.map((link, index) => (
         <li key={index}>
-          <a href={link === "Discord Server" ? "https://discord.gg/XthHQQj" : "#" || "#"} className="text-neutral-500 hover:text-[var(--white)] text-sm">
+          <a href={link === "Discord Server" ? "https://discord.gg/XthHQQj" : "#" || "#"} className="text-muted-foreground hover:text-[var(--white)] text-sm">
             {link}
           </a>
         </li>
@@ -48,7 +48,7 @@ const DownloadFooter = () => {
           <FooterSection title="Prompt Library" links={promptLibrary} />
         </motion.div>
         
-        <div className="mt-12 pt-6 border-t border-gray-800 text-center text-neutral-500 text-sm">
+        <div className="mt-12 pt-6 border-t border-gray-800 text-center text-muted-foreground text-sm">
           © 2025 Hanzo AI. All rights reserved. Not associated with or endorsed by ChatGPT, Perplexity, or Claude.
         </div>
       </div>

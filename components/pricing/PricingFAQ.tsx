@@ -81,7 +81,7 @@ const PricingFAQ = () => {
             <AccordionTrigger className="py-4 text-left text-neutral-200 hover:text-[var(--white)]">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-neutral-400 pb-4">
+            <AccordionContent className="text-muted-foreground pb-4">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>

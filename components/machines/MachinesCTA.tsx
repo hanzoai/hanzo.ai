@@ -2,8 +2,6 @@
 import React from 'react';
 import { Button } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const MachinesCTA = () => {
   return (
     <section className="py-20">
@@ -11,8 +9,8 @@ const MachinesCTA = () => {
         <div
           className="rounded-2xl p-8 md:p-12"
           style={{
-            background: `linear-gradient(to right, ${BRAND_COLOR}15, ${BRAND_COLOR}10)`,
-            border: `1px solid ${BRAND_COLOR}40`
+            background: `linear-gradient(to right, var(--primary)15, var(--primary)10)`,
+            border: "1px solid color-mix(in srgb, var(--primary) 25%, transparent)"
           }}
         >
           <div className="text-center">
@@ -22,15 +20,15 @@ const MachinesCTA = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                className="text-black px-8 py-6 text-lg"
-                style={{ backgroundColor: BRAND_COLOR }}
+                className="text-primary-foreground px-8 py-6 text-lg"
+
               >
                 Sign Up Free
               </Button>
               <Button
                 variant="outline"
                 className="text-foreground px-8 py-6 text-lg"
-                style={{ borderColor: `${BRAND_COLOR}50` }}
+                style={{ borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)" }}
               >
                 Contact Sales
               </Button>

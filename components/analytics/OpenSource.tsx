@@ -8,21 +8,21 @@ import { Button } from "@hanzo/ui";
 
 const statsItems = [
   { 
-    icon: <Download className="h-6 w-6 text-white/70" />,
+    icon: <Download className="h-6 w-6 text-foreground/70" />,
     value: 17,
     suffix: "M+",
     label: "Downloads",
     countUpDuration: 2
   },
   { 
-    icon: <Star className="h-6 w-6 text-white/60" />,
+    icon: <Star className="h-6 w-6 text-foreground/60" />,
     value: 25,
     suffix: "K+",
     label: "GitHub Stars",
     countUpDuration: 2.2
   },
   { 
-    icon: <Users className="h-6 w-6 text-white/70" />,
+    icon: <Users className="h-6 w-6 text-foreground/70" />,
     value: 280,
     suffix: "+",
     label: "Contributors",
@@ -34,7 +34,7 @@ const OpenSource = () => {
   const [isInView, setIsInView] = useState(false);
   
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20 relative">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/20 relative">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -46,7 +46,7 @@ const OpenSource = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Open Source at Our Core</h2>
-            <p className="text-xl text-neutral-300 mb-8">
+            <p className="text-xl text-foreground/80 mb-8">
               Hanzo Analytics is fully open-source, fostering innovation and collaboration among thousands of global developers.
             </p>
             
@@ -87,7 +87,7 @@ const OpenSource = () => {
                     </motion.span>
                     <span className="text-3xl font-bold">{item.suffix}</span>
                   </div>
-                  <div className="text-neutral-400 text-sm mt-1">{item.label}</div>
+                  <div className="text-muted-foreground text-sm mt-1">{item.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -113,80 +113,80 @@ const OpenSource = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 shadow-xl"
+            className="bg-gradient-to-br from-gray-900 to-background rounded-xl overflow-hidden border border-gray-800 shadow-xl"
           >
             <div className="flex items-center p-4 bg-gray-900 border-b border-gray-800">
               <div className="flex space-x-2 mr-4">
-                <div className="w-3 h-3 rounded-full bg-white/10"></div>
-                <div className="w-3 h-3 rounded-full bg-white/10"></div>
-                <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="w-3 h-3 rounded-full bg-primary/10"></div>
+                <div className="w-3 h-3 rounded-full bg-primary/10"></div>
+                <div className="w-3 h-3 rounded-full bg-primary/10"></div>
               </div>
-              <div className="flex-1 text-center text-neutral-300 text-sm">analytics.js</div>
+              <div className="flex-1 text-center text-foreground/80 text-sm">analytics.js</div>
             </div>
             
-            <div className="p-6 text-left font-mono text-sm text-neutral-400 overflow-x-auto">
+            <div className="p-6 text-left font-mono text-sm text-muted-foreground overflow-x-auto">
               <div className="flex">
-                <div className="mr-4 text-neutral-600">1</div>
+                <div className="mr-4 text-muted-foreground/60">1</div>
                 <div>
-                  <span className="text-white">import</span> <span className="text-white/70">{'{'}</span> <span className="text-white/60">HanzoAnalytics</span> <span className="text-white/70">{'}'}</span> <span className="text-white">from</span> <span className="text-white/70">'hanzo-analytics'</span>;
+                  <span className="text-foreground">import</span> <span className="text-foreground/70">{'{'}</span> <span className="text-foreground/60">HanzoAnalytics</span> <span className="text-foreground/70">{'}'}</span> <span className="text-foreground">from</span> <span className="text-foreground/70">'hanzo-analytics'</span>;
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">2</div>
+                <div className="mr-4 text-muted-foreground/60">2</div>
                 <div></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">3</div>
-                <div><span className="text-neutral-500">// Initialize analytics with your project ID</span></div>
+                <div className="mr-4 text-muted-foreground/60">3</div>
+                <div><span className="text-muted-foreground">// Initialize analytics with your project ID</span></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">4</div>
+                <div className="mr-4 text-muted-foreground/60">4</div>
                 <div>
-                  <span className="text-white">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-white">new</span> <span className="text-white/60">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-white/70">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
+                  <span className="text-foreground">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-foreground">new</span> <span className="text-foreground/60">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-foreground/70">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">5</div>
+                <div className="mr-4 text-muted-foreground/60">5</div>
                 <div></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">6</div>
-                <div><span className="text-neutral-500">// Track page views automatically</span></div>
+                <div className="mr-4 text-muted-foreground/60">6</div>
+                <div><span className="text-muted-foreground">// Track page views automatically</span></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">7</div>
+                <div className="mr-4 text-muted-foreground/60">7</div>
                 <div>
                   <span className="text-[var(--white)]">analytics.trackPageViews();</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">8</div>
+                <div className="mr-4 text-muted-foreground/60">8</div>
                 <div></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">9</div>
-                <div><span className="text-neutral-500">// Track custom events</span></div>
+                <div className="mr-4 text-muted-foreground/60">9</div>
+                <div><span className="text-muted-foreground">// Track custom events</span></div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">10</div>
+                <div className="mr-4 text-muted-foreground/60">10</div>
                 <div>
-                  <span className="text-[var(--white)]">analytics.track(</span><span className="text-white/70">'button_click'</span><span className="text-[var(--white)]">, {'{'}</span>
+                  <span className="text-[var(--white)]">analytics.track(</span><span className="text-foreground/70">'button_click'</span><span className="text-[var(--white)]">, {'{'}</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">11</div>
+                <div className="mr-4 text-muted-foreground/60">11</div>
                 <div>
-                  <span className="text-[var(--white)]">  buttonId: </span><span className="text-white/70">'signup_button'</span><span className="text-[var(--white)]">,</span>
+                  <span className="text-[var(--white)]">  buttonId: </span><span className="text-foreground/70">'signup_button'</span><span className="text-[var(--white)]">,</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">12</div>
+                <div className="mr-4 text-muted-foreground/60">12</div>
                 <div>
-                  <span className="text-[var(--white)]">  page: </span><span className="text-white/70">'/home'</span>
+                  <span className="text-[var(--white)]">  page: </span><span className="text-foreground/70">'/home'</span>
                 </div>
               </div>
               <div className="flex">
-                <div className="mr-4 text-neutral-600">13</div>
+                <div className="mr-4 text-muted-foreground/60">13</div>
                 <div>
                   <span className="text-[var(--white)]">{'}'});</span>
                 </div>

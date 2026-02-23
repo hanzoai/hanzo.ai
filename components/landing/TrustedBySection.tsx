@@ -32,7 +32,7 @@ const trustedBrands = [
 
 const TrustedBySection = () => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-black">
+    <section className="py-20 px-4 md:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <style>
           {`@keyframes brand-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }`}
@@ -46,10 +46,10 @@ const TrustedBySection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
             Investors & Partners
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Backed by world-class partners
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ const TrustedBySection = () => {
         <div className="flex justify-center mb-16">
           <Link
             href="/signup"
-            className="inline-flex items-center px-6 py-3 rounded-full font-medium text-sm bg-white text-black hover:bg-[#cccccc] transition-colors"
+            className="inline-flex items-center px-6 py-3 rounded-full font-medium text-sm bg-primary text-primary-foreground hover:bg-[#cccccc] transition-colors"
           >
             Create account & get started free
           </Link>
@@ -84,12 +84,12 @@ const TrustedBySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <p className="text-xs uppercase tracking-widest text-neutral-500 mb-6 text-center">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 text-center">
             Trusted By
           </p>
-          <div className="relative overflow-hidden border border-neutral-800/60 rounded-full bg-neutral-900/30">
+          <div className="relative overflow-hidden border border-border/60 rounded-full bg-secondary/30">
             <div
-              className="flex gap-10 py-4 px-6 text-sm text-neutral-400 w-max"
+              className="flex gap-10 py-4 px-6 text-sm text-muted-foreground w-max"
               style={{ animation: "brand-marquee 30s linear infinite" }}
             >
               {[...trustedBrands, ...trustedBrands].map((client, index) => (

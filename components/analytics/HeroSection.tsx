@@ -17,7 +17,7 @@ const HeroSection = () => {
         {Array(20).fill(0).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute h-1 w-1 rounded-full bg-white"
+            className="absolute h-1 w-1 rounded-full bg-primary"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -42,13 +42,13 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/30 text-white/70 text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-white/30 text-foreground/70 text-sm font-medium mb-6">
             AI-Powered Analytics for Next-Generation Growth
           </div>
           <ChromeText as="h1" className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Hanzo Analytics
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Precise, real-time insights into user behavior, product performance, and business outcomes, 
             enabling you to optimize faster, smarter, and at scale.
           </p>
@@ -60,7 +60,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
         >
-          <Button size="lg" className="text-lg px-8 bg-white hover:bg-[#cccccc] border-none">
+          <Button size="lg" className="text-lg px-8 bg-primary hover:bg-[#cccccc] border-none">
             <a href="#start-free-trial">Start Free Trial</a>
           </Button>
           <Button size="lg" variant="outline" className="text-lg px-8">
@@ -76,16 +76,16 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 max-w-5xl mx-auto relative"
         >
-          <div className="bg-gradient-to-br from-gray-900 to-black p-4 rounded-xl border border-gray-800 shadow-2xl overflow-hidden">
+          <div className="bg-gradient-to-br from-gray-900 to-background p-4 rounded-xl border border-gray-800 shadow-2xl overflow-hidden">
             <div className="flex items-center justify-between mb-4 border-b border-gray-800 pb-2">
               <div className="flex items-center">
-                <LineChart className="h-5 w-5 text-white mr-2" />
+                <LineChart className="h-5 w-5 text-foreground mr-2" />
                 <span className="text-[var(--white)] font-medium">Hanzo Analytics Dashboard</span>
               </div>
               <div className="flex space-x-1">
-                <div className="w-3 h-3 rounded-full bg-white/10"></div>
-                <div className="w-3 h-3 rounded-full bg-white/10"></div>
-                <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="w-3 h-3 rounded-full bg-primary/10"></div>
+                <div className="w-3 h-3 rounded-full bg-primary/10"></div>
+                <div className="w-3 h-3 rounded-full bg-primary/10"></div>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -120,7 +120,7 @@ const HeroSection = () => {
               </div>
               <div className="space-y-4">
                 <div className="bg-gray-800/50 rounded-lg p-4 h-[30%]">
-                  <div className="text-sm text-neutral-400">Users</div>
+                  <div className="text-sm text-muted-foreground">Users</div>
                   <motion.div 
                     className="text-2xl font-bold text-[var(--white)] mt-1"
                     initial={{ opacity: 0 }}
@@ -129,10 +129,10 @@ const HeroSection = () => {
                   >
                     127,543
                   </motion.div>
-                  <div className="text-white/70 text-xs mt-1">+12.4% vs last week</div>
+                  <div className="text-foreground/70 text-xs mt-1">+12.4% vs last week</div>
                 </div>
                 <div className="bg-gray-800/50 rounded-lg p-4 h-[30%]">
-                  <div className="text-sm text-neutral-400">Conversion Rate</div>
+                  <div className="text-sm text-muted-foreground">Conversion Rate</div>
                   <motion.div 
                     className="text-2xl font-bold text-[var(--white)] mt-1"
                     initial={{ opacity: 0 }}
@@ -141,10 +141,10 @@ const HeroSection = () => {
                   >
                     4.87%
                   </motion.div>
-                  <div className="text-white/70 text-xs mt-1">+0.8% vs last week</div>
+                  <div className="text-foreground/70 text-xs mt-1">+0.8% vs last week</div>
                 </div>
                 <div className="bg-gray-800/50 rounded-lg p-4 h-[30%]">
-                  <div className="text-sm text-neutral-400">Revenue</div>
+                  <div className="text-sm text-muted-foreground">Revenue</div>
                   <motion.div 
                     className="text-2xl font-bold text-[var(--white)] mt-1"
                     initial={{ opacity: 0 }}
@@ -153,7 +153,7 @@ const HeroSection = () => {
                   >
                     $45,892
                   </motion.div>
-                  <div className="text-white/70 text-xs mt-1">+15.2% vs last week</div>
+                  <div className="text-foreground/70 text-xs mt-1">+15.2% vs last week</div>
                 </div>
               </div>
             </div>

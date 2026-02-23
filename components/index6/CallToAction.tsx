@@ -15,7 +15,7 @@ const CallToAction: React.FC = () => {
   };
   
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-white/10 relative overflow-hidden">
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-background to-white/10 relative overflow-hidden">
       {/* Background animation elements */}
       <motion.div 
         className="absolute inset-0 opacity-20"
@@ -44,7 +44,7 @@ const CallToAction: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-lg text-neutral-300 mb-10 leading-relaxed"
+          className="text-lg text-foreground/80 mb-10 leading-relaxed"
         >
           Join thousands of developers and companies building the future with Hanzo AI.
         </motion.p>
@@ -63,7 +63,7 @@ const CallToAction: React.FC = () => {
           >
             <Button 
               size="lg" 
-              className="bg-white hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg relative overflow-hidden group rounded-full"
+              className="bg-primary hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg relative overflow-hidden group rounded-full"
               onClick={handleGetStarted}
             >
               <span className="relative z-10 flex items-center py-1 leading-relaxed">

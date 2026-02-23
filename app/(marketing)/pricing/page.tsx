@@ -54,7 +54,7 @@ export default function PricingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <PricingHeader />
 
@@ -68,8 +68,8 @@ export default function PricingPage() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
                     activeTab === tab.id
-                      ? "bg-white text-black"
-                      : "text-neutral-400 hover:text-white"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {tab.label}

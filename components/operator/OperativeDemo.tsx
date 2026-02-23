@@ -12,7 +12,7 @@ const OperativeDemo = () => {
   return (
     <section className="py-24 relative overflow-hidden" id="demo">
       {/* Background gradient */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-gray-950"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background to-gray-950"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -25,7 +25,7 @@ const OperativeDemo = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               See Operative in Action
             </h2>
-            <p className="text-xl text-neutral-300">
+            <p className="text-xl text-foreground/80">
               Watch as Hanzo Operative uses multimodal AI to router interfaces, 
               complete tasks, and solve problems autonomously.
             </p>
@@ -47,13 +47,13 @@ const OperativeDemo = () => {
               </Button>
               
               <div className="absolute bottom-6 w-full max-w-sm flex items-center justify-center space-x-4">
-                <Button size="sm" variant="ghost" className="text-neutral-400 hover:text-[var(--white)]">
+                <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-[var(--white)]">
                   <SkipBack className="h-5 w-5" />
                 </Button>
                 <div className="w-full bg-gray-700/30 h-1 rounded-full overflow-hidden">
-                  <div className="bg-white h-full w-1/3 rounded-full"></div>
+                  <div className="bg-primary h-full w-1/3 rounded-full"></div>
                 </div>
-                <Button size="sm" variant="ghost" className="text-neutral-400 hover:text-[var(--white)]">
+                <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-[var(--white)]">
                   <SkipForward className="h-5 w-5" />
                 </Button>
               </div>
@@ -64,7 +64,7 @@ const OperativeDemo = () => {
         <div className="mt-12 text-center">
           <a 
             href="https://docs.hanzo.ai/operative/examples"
-            className="text-white hover:text-white/70 transition-colors"
+            className="text-foreground hover:text-foreground/70 transition-colors"
           >
             View more examples →
           </a>

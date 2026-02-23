@@ -87,7 +87,7 @@ const TrustedBy = () => {
           >
             Trusted by the best in business
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Industry leaders across various sectors rely on Hanzo for their technological needs. Here's what they have to say.
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ const TrustedBy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-[var(--black)]/50 backdrop-blur-sm rounded-xl p-8 border border-neutral-800/20"
+              className="bg-[var(--black)]/50 backdrop-blur-sm rounded-xl p-8 border border-border/20"
             >
               <div className="mb-4">
                 <h3 
@@ -113,17 +113,17 @@ const TrustedBy = () => {
                 </h3>
               </div>
               
-              <p className="text-neutral-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
+              <p className="text-foreground/80 mb-6 leading-relaxed">"{testimonial.quote}"</p>
               
               <div className="flex items-center">
                 <div className="mr-4">
-                  <div className="h-12 w-12 rounded-full bg-white/20 border border-white/30 text-[var(--white)] flex items-center justify-center font-semibold">
+                  <div className="h-12 w-12 rounded-full bg-primary/20 border border-white/30 text-[var(--white)] flex items-center justify-center font-semibold">
                     {getInitials(testimonial.author)}
                   </div>
                 </div>
                 <div>
                   <h4 className="font-medium text-[var(--white)]">{testimonial.author}</h4>
-                  <p className="text-sm text-neutral-400">{testimonial.role}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>

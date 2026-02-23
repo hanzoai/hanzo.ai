@@ -24,7 +24,7 @@ const CallToAction = () => {
         </p>
         <Button 
           size="lg" 
-          className="h-12 px-8 bg-[var(--white)] hover:bg-zinc-200 text-black transition-colors duration-300"
+          className="h-12 px-8 bg-[var(--white)] hover:bg-zinc-200 text-primary-foreground transition-colors duration-300"
         >
           Deploy your first project <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

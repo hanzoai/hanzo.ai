@@ -14,7 +14,7 @@ const NavbarContainer = ({ children, isScrolled }: NavbarContainerProps) => {
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         isScrolled ? "backdrop-blur-md shadow-sm" : "backdrop-blur-sm",
-        "bg-black/50 backdrop-blur-lg"
+        "bg-background/50 backdrop-blur-lg"
       )}
     >
       <div className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">

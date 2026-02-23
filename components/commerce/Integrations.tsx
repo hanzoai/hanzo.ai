@@ -9,8 +9,8 @@ const IntegrationCategory = ({ title, items }: { title: string, items: string[] 
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-white/60 mr-2 flex-shrink-0" />
-            <span className="text-neutral-300">{item}</span>
+            <CheckCircle className="h-5 w-5 text-foreground/60 mr-2 flex-shrink-0" />
+            <span className="text-foreground/80">{item}</span>
           </li>
         ))}
       </ul>
@@ -43,7 +43,7 @@ const Integrations = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Integrations</h2>
-          <p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             Connect seamlessly with your existing technology stack and third-party services.
           </p>
         </div>

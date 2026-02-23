@@ -8,24 +8,24 @@ import { Scale, Network, Shield } from "lucide-react";
 const PlatformVision = () => {
   const visionPoints = [
     {
-      icon: <Scale className="h-10 w-10 text-white" />,
+      icon: <Scale className="h-10 w-10 text-foreground" />,
       title: "Intelligent Load Distribution",
       description: "Hanzo Balancer dynamically routes traffic based on real-time service health, load, and AI-driven insights to ensure optimal performance and resource utilization."
     },
     {
-      icon: <Network className="h-10 w-10 text-white" />,
+      icon: <Network className="h-10 w-10 text-foreground" />,
       title: "Global Edge Network",
       description: "Deploy your services globally with our planetary-scale edge network, providing ultra-low latency and instant scaling for AI workloads anywhere in the world."
     },
     {
-      icon: <Shield className="h-10 w-10 text-white" />,
+      icon: <Shield className="h-10 w-10 text-foreground" />,
       title: "Always-On Security",
       description: "Built-in Web Application Firewall (WAF), DDoS protection, and AI-powered threat detection ensure your services are secured against evolving cyber threats."
     }
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/30">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ const PlatformVision = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Platform Vision</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Hanzo Balancer represents the next evolution in intelligent traffic management, designed for the AI-first era
             of cloud computing where millisecond performance and dynamic scaling are non-negotiable.
           </p>
@@ -53,7 +53,7 @@ const PlatformVision = () => {
             >
               <div className="mb-4">{point.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{point.title}</h3>
-              <p className="text-neutral-300">{point.description}</p>
+              <p className="text-foreground/80">{point.description}</p>
             </motion.div>
           ))}
         </div>

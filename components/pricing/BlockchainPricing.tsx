@@ -153,7 +153,7 @@ const BlockchainPricing = () => {
       {/* RPC Plans */}
       <div className="mb-20">
         <h2 className="text-3xl font-bold mb-4">RPC Node Access</h2>
-        <p className="text-neutral-400 text-lg mb-8">
+        <p className="text-muted-foreground text-lg mb-8">
           Multi-chain RPC endpoints with 100+ chains, archive data, and enterprise-grade reliability
         </p>
 
@@ -163,30 +163,30 @@ const BlockchainPricing = () => {
               key={plan.name}
               className={`rounded-xl p-6 border ${
                 plan.highlighted
-                  ? "border-white bg-white/5"
+                  ? "border-white bg-primary/5"
                   : "border-gray-800 bg-gray-900/30"
               }`}
             >
               {plan.highlighted && (
-                <div className="text-xs font-semibold text-white uppercase tracking-wider mb-2">
+                <div className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">
                   Most Popular
                 </div>
               )}
               <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-              <p className="text-neutral-500 text-sm mb-4">{plan.description}</p>
+              <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
 
               <div className="mb-6">
                 <span className="text-3xl font-bold">{plan.price}</span>
-                <span className="text-neutral-500">{plan.period}</span>
+                <span className="text-muted-foreground">{plan.period}</span>
                 {plan.cuRate && (
-                  <div className="text-xs text-neutral-500 mt-1">{plan.cuRate}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{plan.cuRate}</div>
                 )}
               </div>
 
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-neutral-300">
-                    <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                    <Check className="w-4 h-4 text-foreground shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
@@ -195,8 +195,8 @@ const BlockchainPricing = () => {
               <Button
                 className={`w-full ${
                   plan.highlighted
-                    ? "bg-white hover:bg-[#cccccc] text-black"
-                    : "bg-white text-black hover:bg-gray-100"
+                    ? "bg-primary hover:bg-[#cccccc] text-primary-foreground"
+                    : "bg-primary text-primary-foreground hover:bg-gray-100"
                 }`}
               >
                 {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
@@ -205,16 +205,16 @@ const BlockchainPricing = () => {
           ))}
         </div>
 
-        <p className="text-sm text-neutral-500 text-center">
+        <p className="text-sm text-muted-foreground text-center">
           All plans include WebSocket support, JSON-RPC & REST APIs, and auto-scaling.
-          <a href="/blockchain" className="text-white hover:underline ml-1">Compare all features →</a>
+          <a href="/blockchain" className="text-foreground hover:underline ml-1">Compare all features →</a>
         </p>
       </div>
 
       {/* Data APIs */}
       <div className="mb-20">
         <h2 className="text-3xl font-bold mb-4">Data APIs</h2>
-        <p className="text-neutral-400 text-lg mb-8">
+        <p className="text-muted-foreground text-lg mb-8">
           High-level APIs for tokens, NFTs, wallets, and blockchain indexing
         </p>
 
@@ -224,21 +224,21 @@ const BlockchainPricing = () => {
             return (
               <div key={api.name} className="rounded-xl p-6 border border-gray-800 bg-gray-900/30">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">{api.name}</h3>
-                    <p className="text-neutral-500 text-sm">{api.description}</p>
+                    <p className="text-muted-foreground text-sm">{api.description}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   {api.pricing.map((tier) => (
-                    <div key={tier.tier} className="text-center p-3 rounded-lg bg-black/20">
-                      <div className="text-neutral-500 text-xs mb-1">{tier.tier}</div>
+                    <div key={tier.tier} className="text-center p-3 rounded-lg bg-background/20">
+                      <div className="text-muted-foreground text-xs mb-1">{tier.tier}</div>
                       <div className="font-semibold">{tier.price}</div>
-                      <div className="text-xs text-neutral-500">{tier.requests}</div>
+                      <div className="text-xs text-muted-foreground">{tier.requests}</div>
                     </div>
                   ))}
                 </div>
@@ -251,7 +251,7 @@ const BlockchainPricing = () => {
       {/* Premium Features */}
       <div className="mb-20">
         <h2 className="text-3xl font-bold mb-4">Premium Features</h2>
-        <p className="text-neutral-400 text-lg mb-8">
+        <p className="text-muted-foreground text-lg mb-8">
           Advanced capabilities for production applications
         </p>
 
@@ -260,13 +260,13 @@ const BlockchainPricing = () => {
             const Icon = feature.icon;
             return (
               <div key={feature.name} className="rounded-xl p-6 border border-gray-800 bg-gray-900/30">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-foreground" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{feature.name}</h3>
-                <p className="text-neutral-500 text-sm mb-4">{feature.description}</p>
-                <div className="text-xl font-bold text-white">{feature.price}</div>
-                <div className="text-xs text-neutral-500 mt-1">{feature.note}</div>
+                <p className="text-muted-foreground text-sm mb-4">{feature.description}</p>
+                <div className="text-xl font-bold text-foreground">{feature.price}</div>
+                <div className="text-xs text-muted-foreground mt-1">{feature.note}</div>
               </div>
             );
           })}
@@ -276,7 +276,7 @@ const BlockchainPricing = () => {
       {/* Supported Chains */}
       <div className="mb-20">
         <h2 className="text-3xl font-bold mb-4 text-center">100+ Supported Chains</h2>
-        <p className="text-neutral-400 text-lg mb-8 text-center">
+        <p className="text-muted-foreground text-lg mb-8 text-center">
           EVM, Solana, Cosmos, and more
         </p>
 
@@ -284,12 +284,12 @@ const BlockchainPricing = () => {
           {supportedChains.map((chain) => (
             <div
               key={chain}
-              className="px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/50 text-sm text-neutral-300"
+              className="px-4 py-2 rounded-full border border-border bg-secondary/50 text-sm text-foreground/80"
             >
               {chain}
             </div>
           ))}
-          <div className="px-4 py-2 rounded-full border border-white/30 bg-white/10 text-sm text-white">
+          <div className="px-4 py-2 rounded-full border border-white/30 bg-primary/10 text-sm text-foreground">
             +80 more
           </div>
         </div>
@@ -298,14 +298,14 @@ const BlockchainPricing = () => {
       {/* CTA */}
       <div className="text-center">
         <h2 className="text-2xl font-bold mb-4">Ready to build on Web3?</h2>
-        <p className="text-neutral-400 mb-6">
+        <p className="text-muted-foreground mb-6">
           Start free and scale as you grow. No credit card required.
         </p>
         <div className="flex justify-center gap-4">
-          <Button size="lg" className="bg-white hover:bg-[#cccccc] text-black px-8">
+          <Button size="lg" className="bg-primary hover:bg-[#cccccc] text-primary-foreground px-8">
             Start Building Free
           </Button>
-          <Button size="lg" variant="outline" className="border-neutral-700 hover:border-neutral-600">
+          <Button size="lg" variant="outline" className="border-border hover:border-neutral-600">
             Talk to Sales
           </Button>
         </div>

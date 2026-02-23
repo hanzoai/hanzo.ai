@@ -8,7 +8,7 @@ import { Button } from "@hanzo/ui";
 
 const Features = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2 
@@ -25,7 +25,7 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-neutral-300 max-w-3xl mx-auto"
+            className="text-xl text-foreground/80 max-w-3xl mx-auto"
           >
             The most flexible and powerful compute platform for AI workloads. Hanzo Machines are hardware-virtualized containers, running on proprietary AI-optimized hardware, that launch instantly and scale automatically with your needs.
           </motion.p>
@@ -39,9 +39,9 @@ const Features = () => {
             transition={{ duration: 0.5 }}
             className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-white/30 transition-colors"
           >
-            <Globe className="w-12 h-12 text-white mb-6" />
+            <Globe className="w-12 h-12 text-foreground mb-6" />
             <h3 className="text-xl font-bold mb-4">Global Reach</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Deploy in 35 regions, from Sydney to São Paulo, for sub-100ms response times and native-app feel no matter where your users are.
             </p>
           </motion.div>
@@ -53,9 +53,9 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-white/30 transition-colors"
           >
-            <Server className="w-12 h-12 text-white mb-6" />
+            <Server className="w-12 h-12 text-foreground mb-6" />
             <h3 className="text-xl font-bold mb-4">Instant Scaling</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Hanzo Machines start fast enough to handle HTTP requests, run only when you need them, and scale into tens of thousands of instances.
             </p>
           </motion.div>
@@ -67,9 +67,9 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-white/30 transition-colors"
           >
-            <Cpu className="w-12 h-12 text-white mb-6" />
+            <Cpu className="w-12 h-12 text-foreground mb-6" />
             <h3 className="text-xl font-bold mb-4">GPU Acceleration</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               From LLMs to inferencing, hardware acceleration with the same developer experience as a simple CRUD app.
             </p>
           </motion.div>
@@ -81,9 +81,9 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-white/30 transition-colors"
           >
-            <Database className="w-12 h-12 text-white mb-6" />
+            <Database className="w-12 h-12 text-foreground mb-6" />
             <h3 className="text-xl font-bold mb-4">AI-Native Storage</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Vector databases, document stores, and relational databases optimized for AI workloads with automatic scaling.
             </p>
           </motion.div>
@@ -95,9 +95,9 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-white/30 transition-colors"
           >
-            <Bot className="w-12 h-12 text-white mb-6" />
+            <Bot className="w-12 h-12 text-foreground mb-6" />
             <h3 className="text-xl font-bold mb-4">Model Management</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Streamlined deployment and management of AI models with version control, A/B testing, and monitoring built-in.
             </p>
           </motion.div>
@@ -109,9 +109,9 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 1.0 }}
             className="bg-gray-900/50 rounded-xl p-8 border border-gray-800 hover:border-white/30 transition-colors"
           >
-            <Lock className="w-12 h-12 text-white mb-6" />
+            <Lock className="w-12 h-12 text-foreground mb-6" />
             <h3 className="text-xl font-bold mb-4">Enterprise Security</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Enterprise-grade security with private networking, encryption, audit logging, and GDPR controls.
             </p>
           </motion.div>
@@ -122,13 +122,13 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 bg-white/10 rounded-xl p-8 border border-white/30"
+          className="mt-16 bg-primary/10 rounded-xl p-8 border border-white/30"
         >
           <div className="flex flex-col md:flex-row items-center">
-            <Cloud className="w-14 h-14 text-white mb-6 md:mb-0 md:mr-8" />
+            <Cloud className="w-14 h-14 text-foreground mb-6 md:mb-0 md:mr-8" />
             <div>
               <h3 className="text-xl font-bold mb-3">Built for AI Engineering</h3>
-              <p className="text-neutral-300">
+              <p className="text-foreground/80">
                 Specialized infrastructure for AI workloads, with optimizations for large language models, computer vision, and other AI tasks. From prototype to production with zero re-architecture.
               </p>
             </div>
@@ -142,9 +142,9 @@ const Features = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="max-w-3xl mx-auto bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-xl p-8 ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300">
+          <div className="max-w-3xl mx-auto bg-gradient-to-r from-gray-900 via-background to-gray-900 rounded-xl p-8 ring-1 ring-border hover:ring-white/30 transition-all duration-300">
             <h3 className="text-2xl font-bold mb-4">Enterprise Support</h3>
-            <p className="text-neutral-300 mb-8">
+            <p className="text-foreground/80 mb-8">
               Paid support packages include a team of actual engineers (not chatbots) who themselves ship code on our platform. Emergency support and guaranteed response times available.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -162,8 +162,8 @@ const Features = () => {
               </Button>
             </div>
             
-            <div className="mt-6 text-neutral-400 text-sm">
-              Looking for a free, self-hosted alternative? <a href="/platform" className="text-white hover:underline">Check out Hanzo Platform</a>
+            <div className="mt-6 text-muted-foreground text-sm">
+              Looking for a free, self-hosted alternative? <a href="/platform" className="text-foreground hover:underline">Check out Hanzo Platform</a>
             </div>
           </div>
         </motion.div>

@@ -36,10 +36,10 @@ const Security = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center justify-center mb-4">
-            <ShieldCheck className="h-10 w-10 text-white" />
+            <ShieldCheck className="h-10 w-10 text-foreground" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Enterprise-Grade Security & Compliance</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Secure by design, ensuring your data meets stringent compliance standards.
           </p>
         </motion.div>
@@ -54,8 +54,8 @@ const Security = () => {
           >
             <div className="bg-gradient-to-br from-gray-900 to-gray-900/50 rounded-xl border border-gray-800 p-6 h-full">
               <div className="flex justify-center mb-6">
-                <div className="p-3 bg-white/20 rounded-full border border-white/30">
-                  <Lock className="h-8 w-8 text-white" />
+                <div className="p-3 bg-primary/20 rounded-full border border-white/30">
+                  <Lock className="h-8 w-8 text-foreground" />
                 </div>
               </div>
               
@@ -71,8 +71,8 @@ const Security = () => {
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                     className="flex items-center"
                   >
-                    <CheckCircle className="h-5 w-5 text-white mr-3 flex-shrink-0" />
-                    <span className="text-neutral-300">{feature}</span>
+                    <CheckCircle className="h-5 w-5 text-foreground mr-3 flex-shrink-0" />
+                    <span className="text-foreground/80">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -100,29 +100,29 @@ const Security = () => {
                     className="bg-gray-800/30 rounded-lg p-5 border border-gray-700"
                   >
                     <div className="flex items-center">
-                      <div className="mr-3 p-2 bg-white/30 rounded-full">
-                        <ShieldCheck className="h-6 w-6 text-white" />
+                      <div className="mr-3 p-2 bg-primary/30 rounded-full">
+                        <ShieldCheck className="h-6 w-6 text-foreground" />
                       </div>
                       <h4 className="text-lg font-medium">{cert.name}</h4>
                     </div>
-                    <p className="mt-3 text-neutral-400">{cert.details}</p>
+                    <p className="mt-3 text-muted-foreground">{cert.details}</p>
                   </motion.div>
                 ))}
               </div>
               
-              <div className="mt-8 bg-white/10 rounded-lg p-5 border border-white/20">
+              <div className="mt-8 bg-primary/10 rounded-lg p-5 border border-border">
                 <div className="flex">
-                  <div className="mr-4 p-2 bg-white/20 rounded-full">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="mr-4 p-2 bg-primary/20 rounded-full">
+                    <svg className="h-6 w-6 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-lg font-medium mb-2">Data Privacy Commitment</h4>
-                    <p className="text-neutral-400">
+                    <p className="text-muted-foreground">
                       We believe privacy is a fundamental right. Hanzo Analytics is designed with privacy-first principles and gives you full control over your data collection practices.
                     </p>
-                    <a href="#privacy-policy" className="inline-block mt-3 text-white hover:text-white/70 transition-colors">
+                    <a href="#privacy-policy" className="inline-block mt-3 text-foreground hover:text-foreground/70 transition-colors">
                       Read our privacy policy →
                     </a>
                   </div>

@@ -60,7 +60,7 @@ const Features = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">Key Features</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Designed with flexibility and extensibility in mind to power the next generation of AI agents
           </p>
         </motion.div>
@@ -75,9 +75,9 @@ const Features = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 hover:bg-gray-900/30 hover:border-white/30 transition-colors"
             >
-              <feature.icon className="h-10 w-10 text-white mb-4" />
+              <feature.icon className="h-10 w-10 text-foreground mb-4" />
               <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{feature.title}</h3>
-              <p className="text-neutral-400">{feature.description}</p>
+              <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </div>

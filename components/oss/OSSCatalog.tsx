@@ -48,8 +48,6 @@ import {
   type FeaturedCollection
 } from "@/lib/data/oss-catalog";
 
-const BRAND_COLOR = '#ffffff';
-
 // =============================================================================
 // QUICK FILTER CHIPS
 // =============================================================================
@@ -78,12 +76,12 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
 
   const getBadgeVariant = (type: string) => {
     switch (type) {
-      case 'featured': return 'bg-white/10 text-white border-white/30';
-      case 'recommended': return 'bg-white/10 text-white border-white/30';
-      case 'experimental': return 'bg-white/5 text-white/70 border-white/20';
-      case 'stable': return 'bg-white/5 text-white/70 border-white/20';
-      case 'active': return 'bg-white/10 text-white border-white/30';
-      default: return 'bg-neutral-800 text-neutral-400 border-neutral-700';
+      case 'featured': return 'bg-primary/10 text-foreground border-white/30';
+      case 'recommended': return 'bg-primary/10 text-foreground border-white/30';
+      case 'experimental': return 'bg-primary/5 text-foreground/70 border-border';
+      case 'stable': return 'bg-primary/5 text-foreground/70 border-border';
+      case 'active': return 'bg-primary/10 text-foreground border-white/30';
+      default: return 'bg-neutral-800 text-muted-foreground border-border';
     }
   };
 
@@ -103,30 +101,30 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-4 p-4 rounded-lg border border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 transition-colors"
+        className="flex items-center gap-4 p-4 rounded-lg border border-border bg-secondary/50 hover:border-border transition-colors"
       >
         {/* Icon */}
         <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0">
-          {Icon && <Icon className="w-5 h-5 text-neutral-400" />}
+          {Icon && <Icon className="w-5 h-5 text-muted-foreground" />}
         </div>
 
         {/* Content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-semibold text-white truncate">{repo.name}</h3>
+            <h3 className="font-semibold text-foreground truncate">{repo.name}</h3>
             {repo.signals.featured && (
               <Badge variant="outline" className={cn('text-xs', getBadgeVariant('featured'))}>
                 Featured
               </Badge>
             )}
           </div>
-          <p className="text-sm text-neutral-500 truncate">{repo.description}</p>
+          <p className="text-sm text-muted-foreground truncate">{repo.description}</p>
         </div>
 
         {/* Badges */}
         <div className="hidden md:flex items-center gap-2">
           {repo.languages.slice(0, 2).map(lang => (
-            <Badge key={lang} variant="outline" className="text-xs bg-neutral-800 text-neutral-400 border-neutral-700">
+            <Badge key={lang} variant="outline" className="text-xs bg-neutral-800 text-muted-foreground border-border">
               {lang}
             </Badge>
           ))}
@@ -135,13 +133,13 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
         {/* Actions */}
         <div className="flex items-center gap-2">
           {primaryAction && (
-            <Button size="sm" className="bg-white hover:bg-white/90 text-white" asChild>
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-foreground" asChild>
               <a href={primaryAction.url || "#"} target="_blank" rel="noopener noreferrer">
                 {primaryAction.label}
               </a>
             </Button>
           )}
-          <Button size="sm" variant="ghost" className="text-neutral-400 hover:text-white" asChild>
+          <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
             <a href={repo.actions.githubUrl || "#"} target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4" />
             </a>
@@ -155,13 +153,13 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group flex flex-col rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 transition-all overflow-hidden"
+      className="group flex flex-col rounded-xl border border-border bg-secondary/50 hover:border-border transition-all overflow-hidden"
     >
       {/* Header */}
       <div className="p-5 pb-3">
         <div className="flex items-start justify-between mb-3">
           <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
-            {Icon && <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />}
+            {Icon && <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />}
           </div>
           <div className="flex gap-1.5">
             {repo.signals.featured && (
@@ -180,27 +178,27 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
           </div>
         </div>
 
-        <h3 className="font-semibold text-white mb-1 group-hover:text-white transition-colors">
+        <h3 className="font-semibold text-foreground mb-1 group-hover:text-foreground transition-colors">
           {repo.name}
         </h3>
-        <p className="text-xs text-neutral-500 font-mono mb-2">{repo.slug}</p>
-        <p className="text-sm text-neutral-400 line-clamp-2">{repo.description}</p>
+        <p className="text-xs text-muted-foreground font-mono mb-2">{repo.slug}</p>
+        <p className="text-sm text-muted-foreground line-clamp-2">{repo.description}</p>
       </div>
 
       {/* Metadata */}
       <div className="px-5 pb-3 flex flex-wrap gap-1.5">
         {repo.languages.slice(0, 3).map(lang => (
-          <Badge key={lang} variant="outline" className="text-xs bg-neutral-800/50 text-neutral-400 border-neutral-700">
+          <Badge key={lang} variant="outline" className="text-xs bg-neutral-800/50 text-muted-foreground border-border">
             {lang}
           </Badge>
         ))}
         {repo.categories.slice(0, 1).map(cat => (
-          <Badge key={cat} variant="outline" className="text-xs bg-neutral-800/50 text-neutral-500 border-neutral-700">
+          <Badge key={cat} variant="outline" className="text-xs bg-neutral-800/50 text-muted-foreground border-border">
             {cat}
           </Badge>
         ))}
         {repo.signals.deployable && (
-          <Badge variant="outline" className="text-xs bg-white/5 text-white/70 border-white/20">
+          <Badge variant="outline" className="text-xs bg-primary/5 text-foreground/70 border-border">
             Deployable
           </Badge>
         )}
@@ -213,7 +211,7 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
             href={repo.upstream.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-neutral-600 hover:text-neutral-400 transition-colors"
+            className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
           >
             Powered by {repo.upstream.name} →
           </a>
@@ -221,16 +219,16 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
       )}
 
       {/* Actions */}
-      <div className="mt-auto p-4 pt-3 border-t border-neutral-800 flex items-center gap-2">
+      <div className="mt-auto p-4 pt-3 border-t border-border flex items-center gap-2">
         {primaryAction ? (
-          <Button size="sm" className="flex-1 bg-white hover:bg-white/90 text-white" asChild>
+          <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90 text-foreground" asChild>
             <a href={primaryAction.url || "#"} target="_blank" rel="noopener noreferrer">
               <primaryAction.icon className="w-3.5 h-3.5 mr-1.5" />
               {primaryAction.label}
             </a>
           </Button>
         ) : (
-          <Button size="sm" variant="outline" className="flex-1 border-neutral-700 hover:bg-neutral-800" asChild>
+          <Button size="sm" variant="outline" className="flex-1 border-border hover:bg-accent" asChild>
             <a href={repo.actions.githubUrl || "#"} target="_blank" rel="noopener noreferrer">
               <Github className="w-3.5 h-3.5 mr-1.5" />
               View Source
@@ -240,21 +238,21 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
 
         <div className="flex gap-1">
           {repo.actions.docsUrl && (
-            <Button size="sm" variant="ghost" className="px-2 text-neutral-400 hover:text-white" asChild title="Docs">
+            <Button size="sm" variant="ghost" className="px-2 text-muted-foreground hover:text-foreground" asChild title="Docs">
               <a href={repo.actions.docsUrl || "#"} target="_blank" rel="noopener noreferrer">
                 <BookOpen className="w-4 h-4" />
               </a>
             </Button>
           )}
           {repo.actions.learnUrl && (
-            <Button size="sm" variant="ghost" className="px-2 text-neutral-400 hover:text-white" asChild title="Learn">
+            <Button size="sm" variant="ghost" className="px-2 text-muted-foreground hover:text-foreground" asChild title="Learn">
               <a href={repo.actions.learnUrl || "#"}>
                 <GraduationCap className="w-4 h-4" />
               </a>
             </Button>
           )}
           {primaryAction && (
-            <Button size="sm" variant="ghost" className="px-2 text-neutral-400 hover:text-white" asChild title="GitHub">
+            <Button size="sm" variant="ghost" className="px-2 text-muted-foreground hover:text-foreground" asChild title="GitHub">
               <a href={repo.actions.githubUrl || "#"} target="_blank" rel="noopener noreferrer">
                 <Github className="w-4 h-4" />
               </a>
@@ -281,16 +279,16 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ collection, onSelect })
   return (
     <button
       onClick={() => onSelect(collection.repos)}
-      className="flex items-center gap-3 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 hover:border-white/30 hover:bg-neutral-900/50 transition-all text-left group"
+      className="flex items-center gap-3 p-4 rounded-xl border border-border bg-secondary/30 hover:border-white/30 hover:bg-secondary/50 transition-all text-left group"
     >
-      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-        <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+        <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
       </div>
       <div>
-        <h4 className="font-medium text-white text-sm group-hover:text-white transition-colors">
+        <h4 className="font-medium text-foreground text-sm group-hover:text-foreground transition-colors">
           {collection.title}
         </h4>
-        <p className="text-xs text-neutral-500">{collection.description}</p>
+        <p className="text-xs text-muted-foreground">{collection.description}</p>
       </div>
     </button>
   );
@@ -326,15 +324,15 @@ const FacetSection: React.FC<FacetSectionProps> = ({
   };
 
   return (
-    <div className="border-b border-neutral-800 pb-4 mb-4 last:border-0 last:pb-0 last:mb-0">
+    <div className="border-b border-border pb-4 mb-4 last:border-0 last:pb-0 last:mb-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full text-left mb-2"
       >
-        <span className="text-sm font-medium text-neutral-300">{title}</span>
+        <span className="text-sm font-medium text-foreground/80">{title}</span>
         <ChevronDown
           className={cn(
-            'w-4 h-4 text-neutral-500 transition-transform',
+            'w-4 h-4 text-muted-foreground transition-transform',
             isOpen && 'rotate-180'
           )}
         />
@@ -354,20 +352,20 @@ const FacetSection: React.FC<FacetSectionProps> = ({
                 className={cn(
                   'flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm transition-colors',
                   selected.includes(option.value)
-                    ? 'bg-white/10 text-white'
-                    : 'text-neutral-400 hover:bg-neutral-800 hover:text-white'
+                    ? 'bg-primary/10 text-foreground'
+                    : 'text-muted-foreground hover:bg-accent hover:text-foreground'
                 )}
               >
                 <div
                   className={cn(
                     'w-4 h-4 rounded border flex items-center justify-center',
                     selected.includes(option.value)
-                      ? 'border-white bg-white'
+                      ? 'border-white bg-primary'
                       : 'border-neutral-600'
                   )}
                 >
                   {selected.includes(option.value) && (
-                    <Check className="w-3 h-3 text-white" />
+                    <Check className="w-3 h-3 text-foreground" />
                   )}
                 </div>
                 {option.label}
@@ -530,14 +528,14 @@ const OSSCatalog: React.FC = () => {
   );
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-black min-h-screen">
+    <section className="py-16 px-4 md:px-8 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
             OSS Catalog
           </h1>
-          <p className="text-neutral-400 text-lg">
+          <p className="text-muted-foreground text-lg">
             Open source tools, templates, and infrastructure for building AI applications
           </p>
         </div>
@@ -545,7 +543,7 @@ const OSSCatalog: React.FC = () => {
         {/* Featured Collections */}
         {!selectedCollection && !searchQuery && quickFilter === 'all' && (
           <div className="mb-10">
-            <h2 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Quick Start Collections
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -564,13 +562,13 @@ const OSSCatalog: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-4 mb-6">
           {/* Search */}
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
               type="text"
               placeholder="Search repos, templates, tools..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="pl-10 bg-neutral-900 border-neutral-800 focus:border-white/50"
+              className="pl-10 bg-secondary border-border focus:border-white/50"
             />
           </div>
 
@@ -588,8 +586,8 @@ const OSSCatalog: React.FC = () => {
                 className={cn(
                   'whitespace-nowrap',
                   quickFilter === filter.value
-                    ? 'bg-white text-black hover:bg-white/90'
-                    : 'border-neutral-700 hover:bg-neutral-800'
+                    ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                    : 'border-border hover:bg-accent'
                 )}
               >
                 {filter.label}
@@ -601,19 +599,19 @@ const OSSCatalog: React.FC = () => {
           <div className="flex gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="border-neutral-700 hover:bg-neutral-800">
+                <Button variant="outline" size="sm" className="border-border hover:bg-accent">
                   {sortOptions.find(s => s.value === sortBy)?.label || 'Sort'}
                   <ChevronDown className="ml-2 w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-neutral-900 border-neutral-800">
+              <DropdownMenuContent align="end" className="bg-secondary border-border">
                 {sortOptions.map(option => (
                   <DropdownMenuItem
                     key={option.value}
                     onClick={() => setSortBy(option.value)}
                     className={cn(
                       'cursor-pointer',
-                      sortBy === option.value && 'text-white'
+                      sortBy === option.value && 'text-foreground'
                     )}
                   >
                     {option.label}
@@ -622,7 +620,7 @@ const OSSCatalog: React.FC = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="flex border border-neutral-700 rounded-md">
+            <div className="flex border border-border rounded-md">
               <Button
                 variant="ghost"
                 size="sm"
@@ -644,19 +642,19 @@ const OSSCatalog: React.FC = () => {
             {/* Mobile Filter Button */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="sm" className="lg:hidden border-neutral-700">
+                <Button variant="outline" size="sm" className="lg:hidden border-border">
                   <Filter className="w-4 h-4 mr-2" />
                   Filters
                   {hasActiveFilters && (
-                    <span className="ml-2 w-5 h-5 rounded-full bg-white text-black text-xs flex items-center justify-center">
+                    <span className="ml-2 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
                       {selectedTypes.length + selectedCategories.length + selectedLanguages.length}
                     </span>
                   )}
                 </Button>
               </SheetTrigger>
-              <SheetContent side="bottom" className="h-[80vh] bg-neutral-900 border-neutral-800">
+              <SheetContent side="bottom" className="h-[80vh] bg-secondary border-border">
                 <SheetHeader>
-                  <SheetTitle className="text-white">Filters</SheetTitle>
+                  <SheetTitle className="text-foreground">Filters</SheetTitle>
                 </SheetHeader>
                 <div className="mt-6 overflow-y-auto h-full pb-20">
                   <FacetRail />
@@ -669,9 +667,9 @@ const OSSCatalog: React.FC = () => {
         {/* Active Filters */}
         {(hasActiveFilters || selectedCollection) && (
           <div className="flex flex-wrap items-center gap-2 mb-6">
-            <span className="text-sm text-neutral-500">Active filters:</span>
+            <span className="text-sm text-muted-foreground">Active filters:</span>
             {selectedCollection && (
-              <Badge variant="outline" className="bg-white/10 text-white border-white/30">
+              <Badge variant="outline" className="bg-primary/10 text-foreground border-white/30">
                 Collection
                 <button onClick={() => setSelectedCollection(null)} className="ml-1">
                   <X className="w-3 h-3" />
@@ -679,7 +677,7 @@ const OSSCatalog: React.FC = () => {
               </Badge>
             )}
             {[...selectedTypes, ...selectedCategories, ...selectedLanguages].slice(0, 5).map(filter => (
-              <Badge key={filter} variant="outline" className="bg-neutral-800 text-neutral-300 border-neutral-700">
+              <Badge key={filter} variant="outline" className="bg-neutral-800 text-foreground/80 border-border">
                 {filter}
                 <button
                   onClick={() => {
@@ -697,7 +695,7 @@ const OSSCatalog: React.FC = () => {
               variant="ghost"
               size="sm"
               onClick={clearAllFilters}
-              className="text-neutral-400 hover:text-white"
+              className="text-muted-foreground hover:text-foreground"
             >
               Clear all
             </Button>
@@ -708,13 +706,13 @@ const OSSCatalog: React.FC = () => {
         <div className="flex gap-8">
           {/* Facet Rail - Desktop */}
           <aside className="hidden lg:block w-64 flex-shrink-0">
-            <div className="sticky top-24 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30">
+            <div className="sticky top-24 p-4 rounded-xl border border-border bg-secondary/30">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-medium text-white">Filters</h3>
+                <h3 className="font-medium text-foreground">Filters</h3>
                 {hasActiveFilters && (
                   <button
                     onClick={clearAllFilters}
-                    className="text-xs text-neutral-500 hover:text-white"
+                    className="text-xs text-muted-foreground hover:text-foreground"
                   >
                     Clear all
                   </button>
@@ -728,7 +726,7 @@ const OSSCatalog: React.FC = () => {
           <div className="flex-1 min-w-0">
             {/* Results Count */}
             <div className="flex items-center justify-between mb-4">
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-muted-foreground">
                 {filteredRepos.length} {filteredRepos.length === 1 ? 'result' : 'results'}
               </p>
             </div>
@@ -736,8 +734,8 @@ const OSSCatalog: React.FC = () => {
             {/* Featured Row */}
             {featuredRepos.length > 0 && (
               <div className="mb-8">
-                <h2 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-white" />
+                <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
                   Hanzo Picks
                 </h2>
                 <div
@@ -769,7 +767,7 @@ const OSSCatalog: React.FC = () => {
               </div>
             ) : (
               <div className="text-center py-16">
-                <p className="text-neutral-500 mb-4">No results found</p>
+                <p className="text-muted-foreground mb-4">No results found</p>
                 <Button variant="outline" onClick={clearAllFilters}>
                   Clear filters
                 </Button>

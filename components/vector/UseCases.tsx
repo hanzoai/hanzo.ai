@@ -36,44 +36,44 @@ const UseCase = ({ icon, title, description }: UseCaseProps) => (
   >
     <motion.div 
       variants={iconVariant}
-      className="h-14 w-14 rounded-full bg-white/10 border border-white/30 flex items-center justify-center mb-4 mx-auto"
+      className="h-14 w-14 rounded-full bg-primary/10 border border-white/30 flex items-center justify-center mb-4 mx-auto"
     >
       {icon}
     </motion.div>
     <h3 className="text-xl font-bold text-[var(--white)] text-center mb-2">{title}</h3>
-    <p className="text-neutral-400 text-center">{description}</p>
+    <p className="text-muted-foreground text-center">{description}</p>
   </motion.div>
 );
 
 const UseCases = () => {
   const useCases = [
     {
-      icon: <Bot className="h-6 w-6 text-white" />,
+      icon: <Bot className="h-6 w-6 text-foreground" />,
       title: "Chatbots & RAG",
       description: "Build powerful retrieval-augmented generation systems that search across your knowledge base."
     },
     {
-      icon: <Search className="h-6 w-6 text-white" />,
+      icon: <Search className="h-6 w-6 text-foreground" />,
       title: "Semantic Search",
       description: "Implement intuitive search that understands user intent beyond simple keyword matching."
     },
     {
-      icon: <BrainCircuit className="h-6 w-6 text-white" />,
+      icon: <BrainCircuit className="h-6 w-6 text-foreground" />,
       title: "Recommendation Systems",
       description: "Create personalized recommendations based on user preferences and behavior."
     },
     {
-      icon: <Image className="h-6 w-6 text-white" />,
+      icon: <Image className="h-6 w-6 text-foreground" />,
       title: "Visual Search",
       description: "Enable users to search for visually similar images or products in your catalog."
     },
     {
-      icon: <FileText className="h-6 w-6 text-white" />,
+      icon: <FileText className="h-6 w-6 text-foreground" />,
       title: "Document Intelligence",
       description: "Extract insights from documents and connect related information across sources."
     },
     {
-      icon: <Tag className="h-6 w-6 text-white" />,
+      icon: <Tag className="h-6 w-6 text-foreground" />,
       title: "Automated Tagging",
       description: "Automatically categorize and tag content based on semantic understanding."
     }
@@ -81,7 +81,7 @@ const UseCases = () => {
 
   return (
     <AnimatedSection 
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 to-black"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 to-background"
       viewportAmount={0.1}
     >
       <div className="max-w-7xl mx-auto">
@@ -89,7 +89,7 @@ const UseCases = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-4">
             Use Cases
           </ChromeText>
-          <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Powering AI applications across industries
           </p>
         </AnimatedHeading>

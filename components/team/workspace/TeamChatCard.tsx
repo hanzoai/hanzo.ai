@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { MessageSquare, FileText } from "lucide-react";
 import { Badge } from "@hanzo/ui";
 
-const BRAND_COLOR = "#ffffff";
-
 const TeamChatCard = () => {
   return (
     <motion.div
@@ -18,12 +16,12 @@ const TeamChatCard = () => {
       className="bg-card border border-border rounded-xl overflow-hidden shadow-xl"
     >
       <div className="border-b border-border p-3 flex items-center">
-        <MessageSquare className="h-5 w-5 mr-2" style={{ color: BRAND_COLOR }} />
+        <MessageSquare className="h-5 w-5 mr-2" />
         <span className="font-medium text-foreground">Team Chat</span>
         <Badge
           variant="outline"
           className="ml-auto"
-          style={{ backgroundColor: `${BRAND_COLOR}30`, borderColor: `${BRAND_COLOR}50`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
           Slack-style
         </Badge>
@@ -48,7 +46,7 @@ const TeamChatCard = () => {
             </div>
 
             <div className="flex">
-              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-black mr-3" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-primary-foreground mr-3">AI</div>
               <div>
                 <div className="flex items-center">
                   <span className="font-medium text-foreground">DesignBot</span>
@@ -59,7 +57,7 @@ const TeamChatCard = () => {
             </div>
 
             <div className="flex">
-              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-black mr-3" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-primary-foreground mr-3">AI</div>
               <div>
                 <div className="flex items-center">
                   <span className="font-medium text-foreground">DesignBot</span>
@@ -69,7 +67,7 @@ const TeamChatCard = () => {
                   <p>I've created some alternative layouts based on our brand guidelines. You can view them here:</p>
                   <div
                     className="p-1 mt-1 rounded flex items-center text-xs"
-                    style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+                    style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
                   >
                     <FileText className="h-3 w-3 mr-1" />
                     design-alternatives.figma

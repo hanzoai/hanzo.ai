@@ -38,15 +38,15 @@ const ZenPrinciples: React.FC = () => {
       {principles.map((principle, index) => (
         <motion.div
           key={principle.title}
-          className="bg-[var(--black)]/30 backdrop-blur-sm border border-white/20 rounded-lg p-6 flex flex-col"
+          className="bg-[var(--black)]/30 backdrop-blur-sm border border-border rounded-lg p-6 flex flex-col"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <div className="text-4xl text-white mb-2 font-bold">{principle.japanese}</div>
+          <div className="text-4xl text-foreground mb-2 font-bold">{principle.japanese}</div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{principle.title}</h3>
-          <p className="text-neutral-300">{principle.description}</p>
+          <p className="text-foreground/80">{principle.description}</p>
         </motion.div>
       ))}
     </div>

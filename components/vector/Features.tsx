@@ -31,13 +31,13 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
     }}
     transition={{ duration: 0.2 }}
   >
-    <div className="h-12 w-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
+    <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
       {icon}
     </div>
     <ChromeText as="h3" className="text-xl font-bold mb-2">
       {title}
     </ChromeText>
-    <p className="text-neutral-400">
+    <p className="text-muted-foreground">
       {description}
     </p>
   </motion.div>
@@ -46,32 +46,32 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
 const Features = () => {
   const features = [
     {
-      icon: <Database className="h-6 w-6 text-white" />,
+      icon: <Database className="h-6 w-6 text-foreground" />,
       title: "Vector Storage",
       description: "Store and index millions of vector embeddings with automatic sharding and high-throughput capabilities."
     },
     {
-      icon: <Search className="h-6 w-6 text-white" />,
+      icon: <Search className="h-6 w-6 text-foreground" />,
       title: "Similarity Search",
       description: "Ultra-fast nearest neighbor search using HNSW, IVF, and other algorithms for maximum performance."
     },
     {
-      icon: <Zap className="h-6 w-6 text-white" />,
+      icon: <Zap className="h-6 w-6 text-foreground" />,
       title: "Real-time Indexing",
       description: "Index new vectors instantly with zero downtime and minimal performance impact on queries."
     },
     {
-      icon: <Shield className="h-6 w-6 text-white" />,
+      icon: <Shield className="h-6 w-6 text-foreground" />,
       title: "Secure Access",
       description: "Role-based access control, end-to-end encryption, and audit logging for enterprise-grade security."
     },
     {
-      icon: <Code className="h-6 w-6 text-white" />,
+      icon: <Code className="h-6 w-6 text-foreground" />,
       title: "API & SDKs",
       description: "Well-documented REST API and client libraries for Python, JavaScript, Go, and more."
     },
     {
-      icon: <BarChart className="h-6 w-6 text-white" />,
+      icon: <BarChart className="h-6 w-6 text-foreground" />,
       title: "Analytics",
       description: "Monitor performance metrics, query patterns, and usage statistics through a built-in dashboard."
     }
@@ -84,7 +84,7 @@ const Features = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-4">
             Powerful Features
           </ChromeText>
-          <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Everything you need for building AI-powered vector search applications
           </p>
         </AnimatedHeading>

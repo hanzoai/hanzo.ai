@@ -17,7 +17,7 @@ const HanzoAppUseCases = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Use Cases</h2>
-          <p className="text-xl text-neutral-300">
+          <p className="text-xl text-foreground/80">
             One platform, endless possibilities. See some of the use cases
           </p>
         </motion.div>
@@ -30,11 +30,11 @@ const HanzoAppUseCases = () => {
             transition={{ duration: 0.5 }}
             className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 h-full"
           >
-            <div className="h-14 w-14 rounded-xl bg-white/20 flex items-center justify-center mb-6">
-              <ShoppingCart className="h-7 w-7 text-white" />
+            <div className="h-14 w-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
+              <ShoppingCart className="h-7 w-7 text-foreground" />
             </div>
             <h3 className="text-2xl font-semibold mb-4">ProductCatalog</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Product catalog chatbot to answer any questions related to the products
             </p>
           </motion.div>

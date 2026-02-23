@@ -30,7 +30,7 @@ const UseCasesSection = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
             Datastore at Scale
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8">
             Powering a wide range of applications across industries with unmatched performance
           </p>
         </div>
@@ -47,8 +47,8 @@ const UseCasesSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="bg-gray-900/20 border border-gray-800 rounded-lg p-6 text-center flex flex-col items-center hover:bg-gray-900/40 hover:border-gray-700 transition-all"
               >
-                <Icon className="h-8 w-8 text-white/70 mb-3" />
-                <p className="text-neutral-300">{useCase.name}</p>
+                <Icon className="h-8 w-8 text-foreground/70 mb-3" />
+                <p className="text-foreground/80">{useCase.name}</p>
               </motion.div>
             );
           })}

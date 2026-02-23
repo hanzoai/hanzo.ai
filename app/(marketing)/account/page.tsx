@@ -63,28 +63,28 @@ const Account = () => {
         <div className="flex flex-col md:flex-row md:items-center gap-8">
           <Avatar className="h-24 w-24">
             <AvatarImage src={user.avatar} />
-            <AvatarFallback className="text-2xl bg-neutral-900">{user.name.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="text-2xl bg-secondary">{user.name.charAt(0)}</AvatarFallback>
           </Avatar>
           
           <div>
             <h2 className="text-2xl font-medium mb-2">{user.name}</h2>
-            <div className="flex items-center text-neutral-400">
+            <div className="flex items-center text-muted-foreground">
               <Mail className="h-4 w-4 mr-2" />
               {user.email}
             </div>
             
             <div className="mt-5 space-x-4">
-              <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5">
+              <Button variant="outline" size="sm" className="bg-[var(--black)] border-border hover:bg-[var(--white)]/5">
                 Upload New Picture
               </Button>
-              <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5 text-white/70 hover:text-white/70 hover:bg-white/5">
+              <Button variant="outline" size="sm" className="bg-[var(--black)] border-border hover:bg-[var(--white)]/5 text-foreground/70 hover:text-foreground/70 hover:bg-primary/5">
                 Remove
               </Button>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-neutral-800/20 pt-8">
+        <div className="border-t border-border/20 pt-8">
           <h3 className="text-xl font-medium mb-6">Personal Information</h3>
           
           <form onSubmit={handleProfileSubmit} className="space-y-8 max-w-xl">
@@ -94,7 +94,7 @@ const Account = () => {
                 id="fullName"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
+                className="bg-[var(--black)]/40 border-border focus:border-border"
               />
             </div>
             
@@ -105,7 +105,7 @@ const Account = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
+                className="bg-[var(--black)]/40 border-border focus:border-border"
               />
             </div>
             
@@ -115,7 +115,7 @@ const Account = () => {
                 id="bio"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20 min-h-24"
+                className="bg-[var(--black)]/40 border-border focus:border-border min-h-24"
                 placeholder="Tell us about yourself"
               />
             </div>
@@ -127,7 +127,7 @@ const Account = () => {
                   id="location"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
+                  className="bg-[var(--black)]/40 border-border focus:border-border"
                   placeholder="City, Country"
                 />
               </div>
@@ -139,7 +139,7 @@ const Account = () => {
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
+                  className="bg-[var(--black)]/40 border-border focus:border-border"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
@@ -152,7 +152,7 @@ const Account = () => {
                 type="url"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                className="bg-[var(--black)]/40 border-white/10 focus:border-white/20"
+                className="bg-[var(--black)]/40 border-border focus:border-border"
                 placeholder="https://example.com"
               />
             </div>
@@ -160,7 +160,7 @@ const Account = () => {
             <div className="flex gap-4 pt-2">
               <Button 
                 type="submit" 
-                className="bg-[var(--black)] hover:bg-neutral-900 border border-white/10"
+                className="bg-[var(--black)] hover:bg-secondary border border-border"
               >
                 Update Profile
               </Button>
@@ -168,7 +168,7 @@ const Account = () => {
                 <Button 
                   type="button" 
                   variant="outline" 
-                  className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5"
+                  className="bg-[var(--black)] border-border hover:bg-[var(--white)]/5"
                 >
                   View Public Profile
                 </Button>

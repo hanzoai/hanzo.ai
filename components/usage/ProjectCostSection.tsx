@@ -16,7 +16,7 @@ const ProjectCostSection = ({ costs, currentCost }: ProjectCostSectionProps) => 
         <Button 
           variant="ghost" 
           size="sm"
-          className="text-white hover:text-white/70 hover:bg-white/10"
+          className="text-foreground hover:text-foreground/70 hover:bg-primary/10"
         >
           View Cost by Service
         </Button>
@@ -27,8 +27,8 @@ const ProjectCostSection = ({ costs, currentCost }: ProjectCostSectionProps) => 
           <div key={index} className="flex justify-between">
             <div>
               <div className="font-medium">{cost.name}</div>
-              <div className="text-xs text-neutral-400">{cost.usage}</div>
-              <div className="text-xs text-neutral-400">{cost.rate}</div>
+              <div className="text-xs text-muted-foreground">{cost.usage}</div>
+              <div className="text-xs text-muted-foreground">{cost.rate}</div>
             </div>
             <div className="font-medium">{cost.cost}</div>
           </div>

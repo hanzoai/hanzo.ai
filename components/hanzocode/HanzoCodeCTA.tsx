@@ -18,14 +18,14 @@ const HanzoCodeCTA = () => {
         >
           <h2 className="text-3xl font-bold mb-8">Upgrade Your Editor Today</h2>
           
-          <p className="text-xl text-neutral-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
             Transform your VS Code, Cursor, Windsurf, or Void experience with the most advanced AI coding tools available.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
             <Button 
               size="sm"
-              className="bg-white hover:bg-[#cccccc] text-[var(--white)] w-full sm:w-auto"
+              className="bg-primary hover:bg-[#cccccc] text-[var(--white)] w-full sm:w-auto"
             >
               <Download className="mr-2 h-4 w-4" />
               Download Hanzo Code
@@ -34,7 +34,7 @@ const HanzoCodeCTA = () => {
             <Button 
               size="sm" 
               variant="outline"
-              className="bg-transparent border-white/30 text-[var(--white)] hover:bg-white/10 w-full sm:w-auto"
+              className="bg-transparent border-white/30 text-[var(--white)] hover:bg-primary/10 w-full sm:w-auto"
             >
               <ExternalLink className="mr-2 h-4 w-4" />
               VS Code Extension
@@ -52,7 +52,7 @@ const HanzoCodeCTA = () => {
           
           <div className="bg-[var(--black)]/40 rounded-xl p-8 border border-gray-800 mb-12">
             <h3 className="text-xl font-semibold mb-4">Already Using Cursor or Windsurf?</h3>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               Install Hanzo Code alongside your current editor and supercharge it with our agentic capabilities. No need to switch or change your workflow.
             </p>
             <Button 
@@ -63,7 +63,7 @@ const HanzoCodeCTA = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-neutral-400">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
             <a href="#" className="hover:text-[var(--white)] transition-colors">Pricing</a>
             <a href="#" className="hover:text-[var(--white)] transition-colors">Downloads</a>
             <a href="#" className="hover:text-[var(--white)] transition-colors">Docs</a>

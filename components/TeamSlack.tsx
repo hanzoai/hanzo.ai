@@ -50,8 +50,8 @@ const TeamSlack = () => {
             className="col-span-1 border-r border-gray-800 p-4"
           >
             <div className="flex items-center justify-between p-2 mb-4">
-              <h3 className="text-white/70 font-semibold">Hanzo Team</h3>
-              <ChevronDown className="w-4 h-4 text-neutral-400" />
+              <h3 className="text-foreground/70 font-semibold">Hanzo Team</h3>
+              <ChevronDown className="w-4 h-4 text-muted-foreground" />
             </div>
             <div className="space-y-2">
               {channels.map((channel, idx) => (
@@ -64,8 +64,8 @@ const TeamSlack = () => {
                   whileHover={{ x: 4 }}
                   className="flex items-center gap-2 p-2 rounded hover:bg-[var(--white)]/5 cursor-pointer"
                 >
-                  <Hash className="w-4 h-4 text-neutral-400" />
-                  <span className="text-neutral-300 text-sm">{channel}</span>
+                  <Hash className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-foreground/80 text-sm">{channel}</span>
                 </motion.div>
               ))}
             </div>
@@ -86,7 +86,7 @@ const TeamSlack = () => {
               transition={{ duration: 0.3, delay: 0.6 }}
               className="flex items-center gap-4 p-4 border-b border-gray-800 mb-4"
             >
-              <Hash className="w-5 h-5 text-neutral-400" />
+              <Hash className="w-5 h-5 text-muted-foreground" />
               <span className="text-[var(--white)] font-medium">general</span>
             </motion.div>
             <div className="space-y-4">
@@ -105,9 +105,9 @@ const TeamSlack = () => {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-[var(--white)]">{msg.user}</span>
-                      <span className="text-xs text-neutral-400">{msg.time}</span>
+                      <span className="text-xs text-muted-foreground">{msg.time}</span>
                     </div>
-                    <p className="text-neutral-300">{msg.message}</p>
+                    <p className="text-foreground/80">{msg.message}</p>
                   </div>
                 </motion.div>
               ))}

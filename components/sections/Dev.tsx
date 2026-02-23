@@ -73,7 +73,7 @@ const Dev = () => {
             <div className="sticky top-24">
               <div className="mb-8">
                 <h2 className="text-lg font-medium mb-2 text-neutral-900 dark:text-[var(--white)]">Hanzo Dev</h2>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                <p className="text-sm text-muted-foreground/60 dark:text-muted-foreground">
                   Documentation and resources for developers
                 </p>
               </div>
@@ -93,13 +93,13 @@ const Dev = () => {
                     className={cn(
                       "flex items-center px-3 py-2 text-sm rounded-md group",
                       item.active 
-                        ? "bg-white/10 text-white dark:bg-white/20 dark:text-white/70" 
-                        : "text-neutral-700 hover:bg-gray-50 dark:text-neutral-300 dark:hover:bg-gray-800/50"
+                        ? "bg-primary/10 text-foreground dark:bg-primary/20 dark:text-foreground/70" 
+                        : "text-neutral-700 hover:bg-gray-50 dark:text-foreground/80 dark:hover:bg-gray-800/50"
                     )}
                   >
                     <span className={cn(
                       "mr-3", 
-                      item.active ? "text-white dark:text-white" : "text-neutral-500 dark:text-neutral-400"
+                      item.active ? "text-foreground dark:text-foreground" : "text-muted-foreground dark:text-muted-foreground"
                     )}>
                       {item.icon}
                     </span>
@@ -122,16 +122,16 @@ const Dev = () => {
                 Hanzo Dev Documentation
               </h1>
               
-              <div className="bg-white/10 dark:bg-white/20 border border-white/30 dark:border-white/30 rounded-md p-4 mb-8">
+              <div className="bg-primary/10 dark:bg-primary/20 border border-white/30 dark:border-white/30 rounded-md p-4 mb-8">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <Bot className="h-5 w-5 text-white" />
+                    <Bot className="h-5 w-5 text-foreground" />
                   </div>
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-white dark:text-white/70">
+                    <h3 className="text-sm font-medium text-foreground dark:text-foreground/70">
                       Beta Release
                     </h3>
-                    <div className="mt-2 text-sm text-white/70 dark:text-white">
+                    <div className="mt-2 text-sm text-foreground/70 dark:text-foreground">
                       <p>
                         Hanzo Dev is currently in beta. We're gathering developer feedback to improve the experience.
                         Please report any issues directly through our GitHub repository.
@@ -145,7 +145,7 @@ const Dev = () => {
                 Getting Started
               </h2>
               
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+              <p className="text-muted-foreground/60 dark:text-muted-foreground mb-6">
                 Hanzo Dev is an AI developer tool that lives in your terminal, understands your codebase, 
                 and helps you code faster through natural language commands.
               </p>
@@ -159,7 +159,7 @@ const Dev = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Operating Systems</h4>
-                    <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1 list-disc ml-4">
+                    <ul className="text-sm text-muted-foreground/60 dark:text-muted-foreground space-y-1 list-disc ml-4">
                       <li>macOS 10.15+</li>
                       <li>Ubuntu 20.04+/Debian 10+</li>
                       <li>Windows via WSL</li>
@@ -168,7 +168,7 @@ const Dev = () => {
                   
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Software</h4>
-                    <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1 list-disc ml-4">
+                    <ul className="text-sm text-muted-foreground/60 dark:text-muted-foreground space-y-1 list-disc ml-4">
                       <li>Node.js 18+</li>
                       <li>git 2.23+ (optional)</li>
                       <li>GitHub or GitLab CLI (optional)</li>
@@ -188,14 +188,14 @@ const Dev = () => {
                     <div key={index} className="border border-gray-200 dark:border-gray-800 rounded-md overflow-hidden">
                       <div className="bg-gray-50 dark:bg-gray-900 px-4 py-2 border-b border-gray-200 dark:border-gray-800">
                         <div className="flex items-center">
-                          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-white text-[var(--white)] flex items-center justify-center text-sm font-medium">
+                          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary text-[var(--white)] flex items-center justify-center text-sm font-medium">
                             {index + 1}
                           </div>
                           <h4 className="ml-3 font-medium text-neutral-900 dark:text-[var(--white)]">{step.title}</h4>
                         </div>
                       </div>
                       <div className="px-4 py-3">
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">{step.description}</p>
+                        <p className="text-sm text-muted-foreground/60 dark:text-muted-foreground mb-3">{step.description}</p>
                         {step.code && (
                           <div className="bg-gray-100 dark:bg-gray-800 rounded p-3 font-mono text-sm overflow-x-auto">
                             {step.code}
@@ -215,33 +215,33 @@ const Dev = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
-                    <Code className="h-5 w-5 text-white mb-2" />
+                    <Code className="h-5 w-5 text-foreground mb-2" />
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Understand Code</h4>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-muted-foreground/60 dark:text-muted-foreground">
                       Ask questions about your codebase architecture, logic, and functions to get immediate insights.
                     </p>
                   </div>
                   
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
-                    <Terminal className="h-5 w-5 text-white/70 mb-2" />
+                    <Terminal className="h-5 w-5 text-foreground/70 mb-2" />
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Execute Commands</h4>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-muted-foreground/60 dark:text-muted-foreground">
                       Run tests, linting, and other commands with natural language instructions.
                     </p>
                   </div>
                   
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
-                    <FileText className="h-5 w-5 text-white mb-2" />
+                    <FileText className="h-5 w-5 text-foreground mb-2" />
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Edit Files</h4>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-muted-foreground/60 dark:text-muted-foreground">
                       Make changes to your code across multiple files with simple natural language requests.
                     </p>
                   </div>
                   
                   <div className="border border-gray-200 dark:border-gray-800 rounded-md p-4">
-                    <Search className="h-5 w-5 text-white/60 mb-2" />
+                    <Search className="h-5 w-5 text-foreground/60 mb-2" />
                     <h4 className="font-medium text-neutral-900 dark:text-[var(--white)] mb-2">Search & Navigate</h4>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-muted-foreground/60 dark:text-muted-foreground">
                       Quickly search through git history, find files, and router complex codebases.
                     </p>
                   </div>
@@ -255,18 +255,18 @@ const Dev = () => {
                 </h3>
                 
                 <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 font-mono text-sm mb-6 overflow-x-auto">
-                  <div className="text-neutral-500 dark:text-neutral-400"># Ask about your codebase</div>
+                  <div className="text-muted-foreground dark:text-muted-foreground"># Ask about your codebase</div>
                   <div className="text-neutral-900 dark:text-neutral-100">hanzo</div>
-                  <div className="text-white dark:text-white">&gt; how does our authentication system work?</div>
-                  <div className="mt-2 text-neutral-500 dark:text-neutral-400"># Fix issues across files</div>
-                  <div className="text-white dark:text-white">&gt; fix the type errors in the auth module</div>
-                  <div className="mt-2 text-neutral-500 dark:text-neutral-400"># Create a commit</div>
-                  <div className="text-white dark:text-white">&gt; commit my changes</div>
+                  <div className="text-foreground dark:text-foreground">&gt; how does our authentication system work?</div>
+                  <div className="mt-2 text-muted-foreground dark:text-muted-foreground"># Fix issues across files</div>
+                  <div className="text-foreground dark:text-foreground">&gt; fix the type errors in the auth module</div>
+                  <div className="mt-2 text-muted-foreground dark:text-muted-foreground"># Create a commit</div>
+                  <div className="text-foreground dark:text-foreground">&gt; commit my changes</div>
                 </div>
               </div>
               
               <div className="flex justify-center mt-12">
-                <Button className="bg-white hover:bg-[#cccccc] text-[var(--white)]">
+                <Button className="bg-primary hover:bg-[#cccccc] text-[var(--white)]">
                   <Download className="mr-2 h-4 w-4" />
                   <a href="#download">Install Hanzo Dev</a>
                 </Button>

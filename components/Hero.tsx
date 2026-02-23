@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <div ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-background" />
 
       {/* Architectural grid background with minimal opacity */}
       <div
@@ -48,13 +48,13 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 w-full">
         <div className="text-center bg-transparent p-4 sm:p-6 md:p-8 mx-auto">
           {/* Hero Title */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-6">
             The AI Platform
-            <span className="block text-neutral-400">for Developers</span>
+            <span className="block text-muted-foreground">for Developers</span>
           </h1>
 
           {/* Hero Description */}
-          <p className="mt-6 text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto">
+          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Build, deploy, and scale AI applications with Hanzo.
             From foundation models to production infrastructure,
             everything you need in one platform.
@@ -64,13 +64,13 @@ const Hero = () => {
           <div className="flex justify-center mt-10 gap-4">
             <a
               href="https://docs.hanzo.ai"
-              className="px-8 py-3 rounded-lg bg-white text-black font-medium text-sm hover:bg-neutral-200 transition-colors"
+              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-accent transition-colors"
             >
               Get Started
             </a>
             <a
               href="/products"
-              className="px-8 py-3 rounded-lg border border-neutral-700 text-white font-medium text-sm hover:bg-neutral-900 transition-colors"
+              className="px-8 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors"
             >
               View Products
             </a>
@@ -85,8 +85,8 @@ const Hero = () => {
               { label: "Edge Deploy", detail: "Global CDN" },
             ].map((feature) => (
               <div key={feature.label} className="text-center">
-                <div className="text-white font-semibold text-lg">{feature.label}</div>
-                <div className="text-neutral-500 text-sm">{feature.detail}</div>
+                <div className="text-foreground font-semibold text-lg">{feature.label}</div>
+                <div className="text-muted-foreground text-sm">{feature.detail}</div>
               </div>
             ))}
           </div>

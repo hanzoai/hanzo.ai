@@ -17,25 +17,25 @@ const Customization = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-            <User className="h-10 w-10 text-white mb-4" />
+            <User className="h-10 w-10 text-foreground mb-4" />
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Customized to you</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Use About Me to tell Hanzo things you want it to consider when it responds
             </p>
           </div>
           
           <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-            <Laptop className="h-10 w-10 text-white mb-4" />
+            <Laptop className="h-10 w-10 text-foreground mb-4" />
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Sees files & context</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Set up key shortcuts to quickly access your most-used interactions
             </p>
           </div>
           
           <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-            <Settings className="h-10 w-10 text-white mb-4" />
+            <Settings className="h-10 w-10 text-foreground mb-4" />
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Grounded using screen data</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               We ground your requests in the context of your screen
             </p>
           </div>
@@ -50,7 +50,7 @@ const Customization = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Mix Modalities</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Apply feedback from your last meeting to your code
             </p>
           </motion.div>
@@ -63,7 +63,7 @@ const Customization = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="text-2xl font-bold mb-3 text-[var(--white)]">Generate in-context code anywhere</h3>
-            <p className="text-neutral-300">
+            <p className="text-foreground/80">
               Create code snippets in any application with the power of Hanzo
             </p>
           </motion.div>

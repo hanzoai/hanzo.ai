@@ -20,9 +20,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-6"
     >
-      <Icon className="h-10 w-10 text-white mb-4" />
+      <Icon className="h-10 w-10 text-foreground mb-4" />
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-neutral-300">{description}</p>
+      <p className="text-foreground/80">{description}</p>
     </motion.div>
   );
 };
@@ -39,7 +39,7 @@ const HanzoCodeAgents: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Autonomous Agentic Control</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Harness the full power of intelligent agents that can operate your editor alongside you
           </p>
         </motion.div>
@@ -70,40 +70,40 @@ const HanzoCodeAgents: React.FC = () => {
           />
         </div>
         
-        <div className="bg-gradient-to-br from-white/10 to-white/10 rounded-2xl p-8 border border-white/20">
+        <div className="bg-gradient-to-br from-white/10 to-white/10 rounded-2xl p-8 border border-border">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-6">Massively Parallel Development</h3>
-              <p className="text-lg text-neutral-300 mb-8">
+              <p className="text-lg text-foreground/80 mb-8">
                 Hanzo Code can create up to 1,000,000 parallel instances of your development environment, each with its own agent, to tackle the largest and most complex coding challenges.
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <Users className="h-5 w-5 text-white mr-3 mt-1" />
-                  <p className="text-neutral-300">True pair programming with agents that have full system access</p>
+                  <Users className="h-5 w-5 text-foreground mr-3 mt-1" />
+                  <p className="text-foreground/80">True pair programming with agents that have full system access</p>
                 </div>
                 
                 <div className="flex items-start">
-                  <Brain className="h-5 w-5 text-white mr-3 mt-1" />
-                  <p className="text-neutral-300">Agents learn your coding style and project patterns over time</p>
+                  <Brain className="h-5 w-5 text-foreground mr-3 mt-1" />
+                  <p className="text-foreground/80">Agents learn your coding style and project patterns over time</p>
                 </div>
                 
                 <div className="flex items-start">
-                  <Server className="h-5 w-5 text-white mr-3 mt-1" />
-                  <p className="text-neutral-300">Scale from a single helper to a massive distributed workforce</p>
+                  <Server className="h-5 w-5 text-foreground mr-3 mt-1" />
+                  <p className="text-foreground/80">Scale from a single helper to a massive distributed workforce</p>
                 </div>
                 
                 <div className="flex items-start">
-                  <Maximize className="h-5 w-5 text-white mr-3 mt-1" />
-                  <p className="text-neutral-300">Tackle enterprise-scale projects that would normally require entire teams</p>
+                  <Maximize className="h-5 w-5 text-foreground mr-3 mt-1" />
+                  <p className="text-foreground/80">Tackle enterprise-scale projects that would normally require entire teams</p>
                 </div>
               </div>
             </div>
             
             <div className="bg-[var(--black)]/40 rounded-xl p-6 border border-gray-800">
-              <div className="text-sm font-mono text-neutral-300 space-y-2">
-                <div className="text-white">// Creating a team of agents to refactor an entire codebase</div>
+              <div className="text-sm font-mono text-foreground/80 space-y-2">
+                <div className="text-foreground">// Creating a team of agents to refactor an entire codebase</div>
                 <div className="text-[var(--white)]">const project = await HanzoCode.createProject('./my-app');</div>
                 <div className="text-[var(--white)]">const agents = await project.createAgentTeam({"{"}</div>
                 <div className="text-[var(--white)] ml-4">size: 12,</div>

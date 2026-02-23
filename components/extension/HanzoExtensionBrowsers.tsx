@@ -16,13 +16,13 @@ const BrowserCard = ({ icon: Icon, title, description, buttonText }) => {
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 flex flex-col"
     >
       <div className="mb-4">
-        <Icon className="h-12 w-12 text-white mb-4" />
+        <Icon className="h-12 w-12 text-foreground mb-4" />
         <h3 className="text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-neutral-300 mb-6">{description}</p>
+        <p className="text-foreground/80 mb-6">{description}</p>
       </div>
       
       <div className="mt-auto">
-        <Button className="w-full bg-white hover:bg-[#cccccc]">
+        <Button className="w-full bg-primary hover:bg-[#cccccc]">
           {buttonText}
         </Button>
       </div>
@@ -42,7 +42,7 @@ const HanzoExtensionBrowsers = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Available on All Major Browsers</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Install the Hanzo Extension on your preferred browser
           </p>
         </motion.div>

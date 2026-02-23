@@ -19,7 +19,7 @@ const HexagramsSection = () => {
           <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/70">
             Zen of Hanzo
           </h2>
-          <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Engineering principles for building next-generation AI systems
           </p>
         </motion.div>

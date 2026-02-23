@@ -12,7 +12,7 @@ import {
 
 const AICloudSVG = () => (
   <svg 
-    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-white" 
+    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-foreground" 
     viewBox="0 0 200 200" 
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ const AICloudSVG = () => (
 
 const DxPlatformSVG = () => (
   <svg 
-    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-white" 
+    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-foreground" 
     viewBox="0 0 200 200" 
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={onClose}
         >
           <motion.div
@@ -73,17 +73,17 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25 }}
-            className="bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-2xl max-w-3xl w-full p-6 shadow-xl overflow-y-auto max-h-[80vh]"
+            className="bg-gradient-to-br from-gray-900 to-background border border-border rounded-2xl max-w-3xl w-full p-6 shadow-xl overflow-y-auto max-h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {type === 'cloud' ? (
               <>
                 <div className="mb-6">
-                  <h3 className="text-2xl font-medium text-white mb-2 flex items-center">
-                    <Cloud className="mr-2 h-6 w-6 text-white" />
+                  <h3 className="text-2xl font-medium text-foreground mb-2 flex items-center">
+                    <Cloud className="mr-2 h-6 w-6 text-foreground" />
                     Hanzo AI Cloud
                   </h3>
-                  <p className="text-neutral-400">
+                  <p className="text-muted-foreground">
                     Our comprehensive AI platform providing seamless access to cutting-edge AI capabilities with enterprise-grade reliability and security.
                   </p>
                 </div>
@@ -93,13 +93,13 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Brain className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">AI Model Hub</h4>
+                      <Brain className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">AI Model Hub</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Access to leading open and proprietary AI models with unified API, optimized inference, and cost management.
                     </p>
                   </motion.div>
@@ -108,13 +108,13 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Database className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">Vector Database</h4>
+                      <Database className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">Vector Database</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       High-performance vector storage and retrieval for AI applications with advanced filtering and hybrid search.
                     </p>
                   </motion.div>
@@ -123,13 +123,13 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Bot className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">Agent Framework</h4>
+                      <Bot className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">Agent Framework</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Build, deploy and manage intelligent agents that can reason, plan, and execute complex tasks autonomously.
                     </p>
                   </motion.div>
@@ -138,25 +138,25 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Lock className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">Enterprise Security</h4>
+                      <Lock className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">Enterprise Security</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Enterprise security, end-to-end encryption, and comprehensive audit logging for mission-critical AI systems.
                     </p>
                   </motion.div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
-                  <div className="text-neutral-500 text-sm">
+                <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
+                  <div className="text-muted-foreground text-sm">
                     Unified AI infrastructure for the enlightened engineer
                   </div>
                   <Link 
                     href="/ai" 
-                    className="text-white hover:text-white/70 transition-colors text-sm flex items-center"
+                    className="text-foreground hover:text-foreground/70 transition-colors text-sm flex items-center"
                   >
                     <span>Learn more about AI Cloud</span>
                     <ArrowRight className="ml-2 h-3 w-3" />
@@ -166,11 +166,11 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
             ) : (
               <>
                 <div className="mb-6">
-                  <h3 className="text-2xl font-medium text-white mb-2 flex items-center">
-                    <Code className="mr-2 h-6 w-6 text-white" />
+                  <h3 className="text-2xl font-medium text-foreground mb-2 flex items-center">
+                    <Code className="mr-2 h-6 w-6 text-foreground" />
                     Developer Experience Platform
                   </h3>
-                  <p className="text-neutral-400">
+                  <p className="text-muted-foreground">
                     Our integrated toolkit designed to streamline the software development lifecycle, from code to production.
                   </p>
                 </div>
@@ -180,13 +180,13 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <GitBranch className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">CI/CD Pipeline</h4>
+                      <GitBranch className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">CI/CD Pipeline</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Automated testing, integration, and deployment with intelligent optimization and failure prediction.
                     </p>
                   </motion.div>
@@ -195,13 +195,13 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Terminal className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">Dev Tools</h4>
+                      <Terminal className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">Dev Tools</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Enhanced CLI, IDE integrations, and AI-assisted coding tools that anticipate developer needs.
                     </p>
                   </motion.div>
@@ -210,13 +210,13 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Zap className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">Edge Computing</h4>
+                      <Zap className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">Edge Computing</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Global edge network for low-latency deployment with intelligent traffic routing and caching.
                     </p>
                   </motion.div>
@@ -225,25 +225,25 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-primary/5 rounded-xl p-4 border border-border"
                   >
                     <div className="flex items-center mb-2">
-                      <Network className="h-5 w-5 text-white mr-2" />
-                      <h4 className="text-white font-medium">Observability</h4>
+                      <Network className="h-5 w-5 text-foreground mr-2" />
+                      <h4 className="text-foreground font-medium">Observability</h4>
                     </div>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Comprehensive monitoring, logging, and analytics with AI-powered anomaly detection and recommendation.
                     </p>
                   </motion.div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
-                  <div className="text-neutral-500 text-sm">
+                <div className="mt-6 pt-4 border-t border-border flex justify-between items-center">
+                  <div className="text-muted-foreground text-sm">
                     Build with tranquility, deploy with confidence
                   </div>
                   <Link 
                     href="/platform" 
-                    className="text-white hover:text-white/70 transition-colors text-sm flex items-center"
+                    className="text-foreground hover:text-foreground/70 transition-colors text-sm flex items-center"
                   >
                     <span>Learn more about DX Platform</span>
                     <ArrowRight className="ml-2 h-3 w-3" />
@@ -312,7 +312,7 @@ const ProductsOverview = () => {
           <h2 className="text-3xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
             The Way of Building
           </h2>
-          <p className="text-neutral-500 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Each tool embodies our principles. Together, they form a complete system for enlightened engineering.
           </p>
         </motion.div>
@@ -325,30 +325,30 @@ const ProductsOverview = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 to-black p-6 cursor-pointer group"
+            className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-white/20 to-background p-6 cursor-pointer group"
             onClick={() => setSelectedSystem('cloud')}
           >
             <div className="relative z-10">
               <div className="flex items-center mb-4">
-                <div className="p-2 rounded-xl bg-white/10 mr-4">
-                  <Cloud className="h-8 w-8 text-white" />
+                <div className="p-2 rounded-xl bg-primary/10 mr-4">
+                  <Cloud className="h-8 w-8 text-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">AI Cloud</h3>
+                <h3 className="text-2xl font-bold text-foreground">AI Cloud</h3>
               </div>
               
-              <p className="text-neutral-300 mb-4">
+              <p className="text-foreground/80 mb-4">
                 Our unified AI infrastructure combines vector databases, model inference, 
                 and agent frameworks into a coherent platform built for enlightened engineers.
               </p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Vector DB</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Multi-Model</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Agents</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Enterprise Ready</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Vector DB</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Multi-Model</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Agents</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Enterprise Ready</span>
               </div>
               
-              <button className="flex items-center text-white group-hover:text-white/70 transition">
+              <button className="flex items-center text-foreground group-hover:text-foreground/70 transition">
                 <span>Explore AI Cloud</span>
                 <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </button>
@@ -357,7 +357,7 @@ const ProductsOverview = () => {
             <AICloudSVG />
             
             <motion.div 
-              className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
               initial={false}
               whileHover={{ opacity: 0.1 }}
             />
@@ -369,30 +369,30 @@ const ProductsOverview = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 to-black p-6 cursor-pointer group"
+            className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-white/20 to-background p-6 cursor-pointer group"
             onClick={() => setSelectedSystem('dx')}
           >
             <div className="relative z-10">
               <div className="flex items-center mb-4">
-                <div className="p-2 rounded-xl bg-white/10 mr-4">
-                  <Code className="h-8 w-8 text-white" />
+                <div className="p-2 rounded-xl bg-primary/10 mr-4">
+                  <Code className="h-8 w-8 text-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">DX Platform</h3>
+                <h3 className="text-2xl font-bold text-foreground">DX Platform</h3>
               </div>
               
-              <p className="text-neutral-300 mb-4">
+              <p className="text-foreground/80 mb-4">
                 Our developer experience platform streamlines engineering workflow with 
                 automated CI/CD, observability, and edge computing in perfect harmony.
               </p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">CI/CD</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Dev Tools</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Edge</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Observability</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">CI/CD</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Dev Tools</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Edge</span>
+                <span className="px-2 py-1 bg-primary/10 rounded-full text-xs text-foreground/70">Observability</span>
               </div>
               
-              <button className="flex items-center text-white group-hover:text-white/70 transition">
+              <button className="flex items-center text-foreground group-hover:text-foreground/70 transition">
                 <span>Explore DX Platform</span>
                 <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </button>
@@ -401,7 +401,7 @@ const ProductsOverview = () => {
             <DxPlatformSVG />
             
             <motion.div 
-              className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
               initial={false}
               whileHover={{ opacity: 0.1 }}
             />
@@ -420,7 +420,7 @@ const ProductsOverview = () => {
                 y: -5,
                 transition: { duration: 0.2 }
               }}
-              className="bg-gradient-to-br from-gray-900/40 to-black border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all duration-300 group"
+              className="bg-gradient-to-br from-gray-900/40 to-background border border-border rounded-2xl p-6 hover:border-border transition-all duration-300 group"
             >
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-[var(--white)]/5 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
@@ -428,11 +428,11 @@ const ProductsOverview = () => {
                 </div>
                 <h3 className="text-[var(--white)] text-lg font-medium">{product.name}</h3>
               </div>
-              <p className="text-neutral-400 mb-4">{product.description}</p>
-              <div className="text-neutral-600 text-sm italic mb-6">"{product.principle}"</div>
+              <p className="text-muted-foreground mb-4">{product.description}</p>
+              <div className="text-muted-foreground/60 text-sm italic mb-6">"{product.principle}"</div>
               <Link 
                 href={product.path || "#"} 
-                className="text-neutral-400 hover:text-[var(--white)] text-sm flex items-center transition-colors"
+                className="text-muted-foreground hover:text-[var(--white)] text-sm flex items-center transition-colors"
               >
                 <span className="group-hover:underline">Learn more</span>
                 <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
@@ -446,15 +446,15 @@ const ProductsOverview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 text-center border border-white/5 rounded-2xl p-8 bg-gradient-to-b from-transparent to-gray-900/20"
+          className="mt-16 text-center border border-border rounded-2xl p-8 bg-gradient-to-b from-transparent to-gray-900/20"
         >
           <h3 className="text-2xl font-medium mb-4 text-[var(--white)]">Seek guidance from a Sensei</h3>
-          <p className="text-neutral-500 max-w-2xl mx-auto mb-6">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
             Our masters can guide your team through the 64 principles and practices of enlightened engineering.
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex items-center px-6 py-3 bg-[var(--white)]/5 hover:bg-[var(--white)]/10 border border-white/10 rounded-xl text-[var(--white)] transition-all duration-300 hover:shadow-lg hover:shadow-white/10"
+            className="inline-flex items-center px-6 py-3 bg-[var(--white)]/5 hover:bg-[var(--white)]/10 border border-border rounded-xl text-[var(--white)] transition-all duration-300 hover:shadow-lg hover:shadow-white/10"
           >
             Request Sensei Consultation
           </Link>

@@ -49,14 +49,14 @@ const labelMap = {
 };
 
 const colorMap = {
-  discord: "hover:bg-white/20 hover:border-white/50",
+  discord: "hover:bg-primary/20 hover:border-white/50",
   github: "hover:bg-neutral-700",
-  docs: "hover:bg-white/10 hover:border-white/20",
-  discussions: "hover:bg-white/10 hover:border-white/20",
-  events: "hover:bg-white/10 hover:border-white/20",
-  forum: "hover:bg-white/10 hover:border-white/20",
+  docs: "hover:bg-primary/10 hover:border-border",
+  discussions: "hover:bg-primary/10 hover:border-border",
+  events: "hover:bg-primary/10 hover:border-border",
+  forum: "hover:bg-primary/10 hover:border-border",
   twitter: "hover:bg-neutral-700",
-  slack: "hover:bg-white/10 hover:border-white/20",
+  slack: "hover:bg-primary/10 hover:border-border",
 };
 
 export function CommunitySection({ productName, links, contributors, stars }: CommunitySectionProps) {
@@ -70,16 +70,16 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-2 mb-2">
-          <Users className="w-5 h-5 text-white" />
-          <span className="text-sm font-medium text-white uppercase tracking-wider">
+          <Users className="w-5 h-5 text-foreground" />
+          <span className="text-sm font-medium text-foreground uppercase tracking-wider">
             Community
           </span>
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
           Join the {productName} Community
         </h2>
-        <p className="text-neutral-400 mb-8">
+        <p className="text-muted-foreground mb-8">
           Get help, share ideas, and contribute to the project
         </p>
 
@@ -88,14 +88,14 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
           <div className="flex gap-6 mb-8">
             {stars && (
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-white">{stars}</span>
-                <span className="text-neutral-400">GitHub Stars</span>
+                <span className="text-2xl font-bold text-foreground">{stars}</span>
+                <span className="text-muted-foreground">GitHub Stars</span>
               </div>
             )}
             {contributors && (
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-white">{contributors}+</span>
-                <span className="text-neutral-400">Contributors</span>
+                <span className="text-2xl font-bold text-foreground">{contributors}+</span>
+                <span className="text-muted-foreground">Contributors</span>
               </div>
             )}
           </div>
@@ -111,12 +111,12 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
             const content = (
               <>
                 <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
-                  {typeof Icon === "function" ? <Icon /> : <Icon className="w-5 h-5 text-neutral-300" />}
+                  {typeof Icon === "function" ? <Icon /> : <Icon className="w-5 h-5 text-foreground/80" />}
                 </div>
                 <div className="flex-1">
-                  <span className="font-medium text-white">{label}</span>
+                  <span className="font-medium text-foreground">{label}</span>
                 </div>
-                {!link.internal && <ExternalLink className="w-4 h-4 text-neutral-500" />}
+                {!link.internal && <ExternalLink className="w-4 h-4 text-muted-foreground" />}
               </>
             );
 
@@ -131,7 +131,7 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
                 >
                   <Link
                     href={link.url || "#"}
-                    className={`flex items-center gap-3 p-4 bg-neutral-900/50 border border-neutral-800 rounded-xl transition-all ${colorClass}`}
+                    className={`flex items-center gap-3 p-4 bg-secondary/50 border border-border rounded-xl transition-all ${colorClass}`}
                   >
                     {content}
                   </Link>
@@ -149,7 +149,7 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`flex items-center gap-3 p-4 bg-neutral-900/50 border border-neutral-800 rounded-xl transition-all ${colorClass}`}
+                className={`flex items-center gap-3 p-4 bg-secondary/50 border border-border rounded-xl transition-all ${colorClass}`}
               >
                 {content}
               </motion.a>
@@ -158,18 +158,18 @@ export function CommunitySection({ productName, links, contributors, stars }: Co
         </div>
 
         {/* Contribute CTA */}
-        <div className="mt-8 p-6 bg-gradient-to-r from-white/10 to-transparent border border-white/20 rounded-xl">
-          <h3 className="text-lg font-semibold text-white mb-2">
+        <div className="mt-8 p-6 bg-gradient-to-r from-white/10 to-transparent border border-border rounded-xl">
+          <h3 className="text-lg font-semibold text-foreground mb-2">
             Want to Contribute?
           </h3>
-          <p className="text-neutral-400 text-sm mb-4">
+          <p className="text-muted-foreground text-sm mb-4">
             We welcome contributions of all kinds: bug reports, feature requests, documentation improvements, and code contributions.
           </p>
           <a
             href={links.find(l => l.type === "github")?.url + "/blob/main/CONTRIBUTING.md" || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white hover:text-white/80 text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/80 text-sm font-medium transition-colors"
           >
             Read our Contributing Guide
             <ExternalLink className="w-3 h-3" />

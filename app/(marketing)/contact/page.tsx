@@ -88,7 +88,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <main>
         {/* Hero Section */}
         <section className="relative pt-28 pb-12 px-4 md:px-8 lg:px-12">
@@ -106,7 +106,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-base lg:text-lg text-neutral-400 leading-relaxed max-w-2xl mx-auto"
+              className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
             >
               Have a question or want to learn more about Hanzo? Our team is here to help you.
             </motion.p>
@@ -123,19 +123,19 @@ export default function ContactPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <h2 className="text-xl font-semibold text-white mb-6">
+                <h2 className="text-xl font-semibold text-foreground mb-6">
                   Send Us a Message
                 </h2>
 
                 {submitted ? (
-                  <div className="p-8 rounded-xl border border-white/20 bg-white/5 text-center">
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
-                      <Send className="w-6 h-6 text-white/70" />
+                  <div className="p-8 rounded-xl border border-border bg-primary/5 text-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <Send className="w-6 h-6 text-foreground/70" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       Message Sent!
                     </h3>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
@@ -143,7 +143,7 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                           Name
                         </label>
                         <input
@@ -154,11 +154,11 @@ export default function ContactPage() {
                           onChange={handleChange}
                           required
                           placeholder="Your name"
-                          className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all"
+                          className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                           Email
                         </label>
                         <input
@@ -169,13 +169,13 @@ export default function ContactPage() {
                           onChange={handleChange}
                           required
                           placeholder="your.email@example.com"
-                          className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all"
+                          className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
                         Subject
                       </label>
                       <input
@@ -186,12 +186,12 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="What is this regarding?"
-                        className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all"
+                        className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                         Message
                       </label>
                       <textarea
@@ -202,14 +202,14 @@ export default function ContactPage() {
                         required
                         rows={5}
                         placeholder="Tell us how we can help..."
-                        className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all resize-none"
+                        className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all resize-none"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto bg-white text-black hover:bg-neutral-200 disabled:opacity-50"
+                      className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-accent disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         "Sending..."
@@ -232,44 +232,44 @@ export default function ContactPage() {
                 className="space-y-8"
               >
                 <div>
-                  <h2 className="text-xl font-semibold text-white mb-6">
+                  <h2 className="text-xl font-semibold text-foreground mb-6">
                     Contact Information
                   </h2>
 
                   <div className="space-y-4">
                     <a
                       href="mailto:hello@hanzo.ai"
-                      className="flex items-start gap-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-neutral-700 hover:bg-neutral-800/50 transition-all group"
+                      className="flex items-start gap-4 p-4 rounded-xl border border-border bg-secondary hover:border-border hover:bg-accent/50 transition-all group"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                        <Mail className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                       </div>
                       <div>
-                        <p className="font-medium text-white">Email</p>
-                        <p className="text-sm text-neutral-400">hello@hanzo.ai</p>
+                        <p className="font-medium text-foreground">Email</p>
+                        <p className="text-sm text-muted-foreground">hello@hanzo.ai</p>
                       </div>
                     </a>
 
                     <a
                       href="tel:+14155551234"
-                      className="flex items-start gap-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-neutral-700 hover:bg-neutral-800/50 transition-all group"
+                      className="flex items-start gap-4 p-4 rounded-xl border border-border bg-secondary hover:border-border hover:bg-accent/50 transition-all group"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                        <Phone className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <Phone className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                       </div>
                       <div>
-                        <p className="font-medium text-white">Phone</p>
-                        <p className="text-sm text-neutral-400">+1 (415) 555-1234</p>
+                        <p className="font-medium text-foreground">Phone</p>
+                        <p className="text-sm text-muted-foreground">+1 (415) 555-1234</p>
                       </div>
                     </a>
 
-                    <div className="flex items-start gap-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900">
+                    <div className="flex items-start gap-4 p-4 rounded-xl border border-border bg-secondary">
                       <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-neutral-400" />
+                        <MapPin className="w-5 h-5 text-muted-foreground" />
                       </div>
                       <div>
-                        <p className="font-medium text-white">Location</p>
-                        <p className="text-sm text-neutral-400">
+                        <p className="font-medium text-foreground">Location</p>
+                        <p className="text-sm text-muted-foreground">
                           995 Market Street<br />
                           San Francisco, CA 94103
                         </p>
@@ -279,15 +279,15 @@ export default function ContactPage() {
                 </div>
 
                 {/* Sales CTA */}
-                <div className="p-6 rounded-xl border border-white/30 bg-white/5">
+                <div className="p-6 rounded-xl border border-white/30 bg-primary/5">
                   <div className="flex items-center gap-3 mb-3">
-                    <Calendar className="w-5 h-5 text-white" />
-                    <h3 className="font-semibold text-white">Talk to Sales</h3>
+                    <Calendar className="w-5 h-5 text-foreground" />
+                    <h3 className="font-semibold text-foreground">Talk to Sales</h3>
                   </div>
-                  <p className="text-sm text-neutral-400 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     Interested in enterprise solutions? Schedule a call with our sales team.
                   </p>
-                  <Button asChild className="w-full bg-white text-black hover:bg-neutral-200">
+                  <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-accent">
                     <Link href="/contact/sales">
                       Schedule a Call
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -300,7 +300,7 @@ export default function ContactPage() {
         </section>
 
         {/* Connect With Us */}
-        <section className="py-16 px-4 md:px-8 lg:px-12 border-t border-neutral-800 bg-neutral-900/20">
+        <section className="py-16 px-4 md:px-8 lg:px-12 border-t border-border bg-secondary/20">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -309,10 +309,10 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="text-center mb-10"
             >
-              <h2 className="text-2xl font-semibold text-white mb-2">
+              <h2 className="text-2xl font-semibold text-foreground mb-2">
                 Connect With Us
               </h2>
-              <p className="text-neutral-400">
+              <p className="text-muted-foreground">
                 Follow us on social media or join our community platforms to stay updated.
               </p>
             </motion.div>
@@ -330,7 +330,7 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="flex items-center gap-3 p-4 rounded-xl border border-neutral-800 bg-neutral-900 hover:bg-neutral-800 hover:border-neutral-700 transition-all group"
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border bg-secondary hover:bg-accent hover:border-border transition-all group"
                   >
                     <div
                       className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
@@ -345,10 +345,10 @@ export default function ContactPage() {
                         />
                       )}
                     </div>
-                    <span className="text-sm font-medium text-white">
+                    <span className="text-sm font-medium text-foreground">
                       {social.label}
                     </span>
-                    <ExternalLink className="w-4 h-4 text-neutral-500 ml-auto" />
+                    <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto" />
                   </motion.a>
                 )
               })}

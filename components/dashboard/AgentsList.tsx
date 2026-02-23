@@ -28,9 +28,9 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
 
   const statusColors = {
     idle: "bg-gray-500",
-    running: "bg-white/10",
-    paused: "bg-white/10",
-    error: "bg-white/10"
+    running: "bg-primary/10",
+    paused: "bg-primary/10",
+    error: "bg-primary/10"
   };
 
   const getStatusText = (status: string) => {
@@ -71,7 +71,7 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
     <div className="h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
         <div className="relative w-80">
-          <Search className="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" />
+          <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input 
             placeholder="Search agents..." 
             className="bg-[var(--black)] border-gray-800 pl-10"
@@ -100,15 +100,15 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-[var(--black)] text-left">
-                <th className="px-4 py-3 font-medium text-neutral-400">Name</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Status</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Type</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Model</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Tasks</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Memory</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Tokens</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Cost</th>
-                <th className="px-4 py-3 font-medium text-neutral-400">Actions</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Name</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Status</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Type</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Model</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Tasks</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Memory</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Tokens</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Cost</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-800">
@@ -120,12 +120,12 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                 >
                   <td className="px-4 py-3">
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-md bg-white/10 border border-white/20 flex items-center justify-center mr-3">
-                        <Bot className="h-4 w-4 text-white" />
+                      <div className="w-8 h-8 rounded-md bg-primary/10 border border-border flex items-center justify-center mr-3">
+                        <Bot className="h-4 w-4 text-foreground" />
                       </div>
                       <div>
                         <div className="font-medium">{agent.name}</div>
-                        <div className="text-xs text-neutral-500">Last active: {agent.lastActive}</div>
+                        <div className="text-xs text-muted-foreground">Last active: {agent.lastActive}</div>
                       </div>
                     </div>
                   </td>
@@ -137,13 +137,13 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex items-center">
-                      {agent.type === "Research" && <Database className="h-4 w-4 mr-1 text-white" />}
-                      {agent.type === "Coding" && <Brain className="h-4 w-4 mr-1 text-white/70" />}
-                      {agent.type === "Assistant" && <Activity className="h-4 w-4 mr-1 text-white/70" />}
+                      {agent.type === "Research" && <Database className="h-4 w-4 mr-1 text-foreground" />}
+                      {agent.type === "Coding" && <Brain className="h-4 w-4 mr-1 text-foreground/70" />}
+                      {agent.type === "Assistant" && <Activity className="h-4 w-4 mr-1 text-foreground/70" />}
                       {agent.type}
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-neutral-300">{agent.model}</td>
+                  <td className="px-4 py-3 text-foreground/80">{agent.model}</td>
                   <td className="px-4 py-3">{agent.tasks}</td>
                   <td className="px-4 py-3">
                     <div className="flex items-center">
@@ -151,9 +151,9 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                         value={agent.memory} 
                         className="h-1.5 w-16 mr-2 bg-gray-800" 
                         style={{
-                          '--progress-background': agent.memory > 80 ? 'bg-white/10' : 
-                            agent.memory > 60 ? 'bg-white/10' : 
-                            'bg-white'
+                          '--progress-background': agent.memory > 80 ? 'bg-primary/10' : 
+                            agent.memory > 60 ? 'bg-primary/10' : 
+                            'bg-primary'
                         } as React.CSSProperties}
                       />
                       <span>{agent.memory}%</span>
@@ -164,15 +164,15 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                   <td className="px-4 py-3">
                     <div className="flex space-x-1" onClick={(e) => e.stopPropagation()}>
                       {agent.status === "running" ? (
-                        <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
+                        <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                           <StopCircle className="h-4 w-4" />
                         </Button>
                       ) : (
-                        <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
+                        <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                           <PlayCircle className="h-4 w-4" />
                         </Button>
                       )}
-                      <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]">
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]">
                         <Settings className="h-4 w-4" />
                       </Button>
                     </div>
@@ -192,12 +192,12 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
-                  <div className="w-8 h-8 rounded-md bg-white/10 border border-white/20 flex items-center justify-center mr-3">
-                    <Bot className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 rounded-md bg-primary/10 border border-border flex items-center justify-center mr-3">
+                    <Bot className="h-4 w-4 text-foreground" />
                   </div>
                   <div>
                     <div className="font-medium">{agent.name}</div>
-                    <div className="text-xs text-neutral-500">Last active: {agent.lastActive}</div>
+                    <div className="text-xs text-muted-foreground">Last active: {agent.lastActive}</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -208,42 +208,42 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
               
               <div className="mb-3 text-sm">
                 <div className="flex justify-between mb-1">
-                  <span className="text-neutral-400">Type:</span>
+                  <span className="text-muted-foreground">Type:</span>
                   <span className="flex items-center">
-                    {agent.type === "Research" && <Database className="h-3 w-3 mr-1 text-white" />}
-                    {agent.type === "Coding" && <Brain className="h-3 w-3 mr-1 text-white/70" />}
-                    {agent.type === "Assistant" && <Activity className="h-3 w-3 mr-1 text-white/70" />}
+                    {agent.type === "Research" && <Database className="h-3 w-3 mr-1 text-foreground" />}
+                    {agent.type === "Coding" && <Brain className="h-3 w-3 mr-1 text-foreground/70" />}
+                    {agent.type === "Assistant" && <Activity className="h-3 w-3 mr-1 text-foreground/70" />}
                     {agent.type}
                   </span>
                 </div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-neutral-400">Model:</span>
+                  <span className="text-muted-foreground">Model:</span>
                   <span>{agent.model}</span>
                 </div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-neutral-400">Tasks:</span>
+                  <span className="text-muted-foreground">Tasks:</span>
                   <span>{agent.tasks}</span>
                 </div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-neutral-400">Tokens:</span>
+                  <span className="text-muted-foreground">Tokens:</span>
                   <span>{agent.tokens.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-400">Cost:</span>
+                  <span className="text-muted-foreground">Cost:</span>
                   <span>${agent.cost.toFixed(2)}</span>
                 </div>
               </div>
               
               <div className="flex items-center justify-between">
                 <div className="flex items-center text-sm">
-                  <span className="text-neutral-400 mr-2">Memory:</span>
+                  <span className="text-muted-foreground mr-2">Memory:</span>
                   <Progress 
                     value={agent.memory} 
                     className="h-1.5 w-16 mr-2 bg-gray-800" 
                     style={{
-                      '--progress-background': agent.memory > 80 ? 'bg-white/10' : 
-                        agent.memory > 60 ? 'bg-white/10' : 
-                        'bg-white'
+                      '--progress-background': agent.memory > 80 ? 'bg-primary/10' : 
+                        agent.memory > 60 ? 'bg-primary/10' : 
+                        'bg-primary'
                     } as React.CSSProperties}
                   />
                   <span>{agent.memory}%</span>
@@ -251,15 +251,15 @@ const AgentsList = ({ viewMode = "grid" }: AgentsListProps) => {
                 
                 <div className="flex space-x-1" onClick={(e) => e.stopPropagation()}>
                   {agent.status === "running" ? (
-                    <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                       <StopCircle className="h-4 w-4" />
                     </Button>
                   ) : (
-                    <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]" onClick={(e) => handleStatusToggle(agent, e)}>
                       <PlayCircle className="h-4 w-4" />
                     </Button>
                   )}
-                  <Button size="icon" variant="ghost" className="h-8 w-8 text-neutral-400 hover:text-[var(--white)]">
+                  <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-[var(--white)]">
                     <Settings className="h-4 w-4" />
                   </Button>
                 </div>

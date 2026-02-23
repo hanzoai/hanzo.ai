@@ -69,7 +69,7 @@ const KonamiCode = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] bg-black"
+          className="fixed inset-0 z-[9999] bg-background"
         >
           {/* Close button */}
           <motion.button
@@ -78,7 +78,7 @@ const KonamiCode = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ delay: 0.2 }}
             onClick={() => setIsActive(false)}
-            className="absolute top-4 right-4 z-10 p-3 rounded-full bg-black/80 border border-neutral-700 text-white hover:bg-neutral-800 transition-colors shadow-lg"
+            className="absolute top-4 right-4 z-10 p-3 rounded-full bg-background/80 border border-border text-foreground hover:bg-accent transition-colors shadow-lg"
             aria-label="Close secret menu"
           >
             <X className="w-6 h-6" />
@@ -89,7 +89,7 @@ const KonamiCode = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-black/80 border border-neutral-700 text-xs text-neutral-400 font-mono"
+            className="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-background/80 border border-border text-xs text-muted-foreground font-mono"
           >
             🥷 ↑↑↓↓↓ S E ⏎ ␣
           </motion.div>

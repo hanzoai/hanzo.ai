@@ -83,12 +83,12 @@ const Organization = () => {
 
         <div className="flex flex-col md:flex-row md:items-center gap-6">
           <div className="h-24 w-24 bg-gray-900/30 rounded-xl flex items-center justify-center">
-            <Building className="h-12 w-12 text-neutral-400" />
+            <Building className="h-12 w-12 text-muted-foreground" />
           </div>
           
           <div>
             <h2 className="text-2xl font-bold mb-2">{currentOrganization.name}</h2>
-            <div className="text-neutral-400">
+            <div className="text-muted-foreground">
               {currentOrganization.role === 'owner' ? 'You are the owner of this organization' : 
                 `You are a ${currentOrganization.role} in this organization`}
             </div>
@@ -192,17 +192,17 @@ const Organization = () => {
                         </Avatar>
                         <div>
                           <div className="font-medium">{member.name}</div>
-                          <div className="text-sm text-neutral-400">{member.email}</div>
+                          <div className="text-sm text-muted-foreground">{member.email}</div>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>
                       <span className={`px-2 py-1 rounded-full text-xs ${
                         member.role === 'Owner' 
-                          ? 'bg-white/10 text-white' 
+                          ? 'bg-primary/10 text-foreground' 
                           : member.role === 'Admin' 
-                            ? 'bg-white/10 text-white/70' 
-                            : 'bg-gray-900/20 text-neutral-300'
+                            ? 'bg-primary/10 text-foreground/70' 
+                            : 'bg-gray-900/20 text-foreground/80'
                       }`}>
                         {member.role}
                       </span>
@@ -221,7 +221,7 @@ const Organization = () => {
                           <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
                             Change Role
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-white/70 hover:bg-white/5 hover:text-white/70">
+                          <DropdownMenuItem className="text-foreground/70 hover:bg-primary/5 hover:text-foreground/70">
                             Remove
                           </DropdownMenuItem>
                         </DropdownMenuContent>

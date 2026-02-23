@@ -37,7 +37,7 @@ const AuthPageContent: React.FC<AuthPageContentProps> = ({
           </a>
           <h1 className="text-3xl font-bold">{title}</h1>
           {subtitle && (
-            <p className="text-neutral-400 mt-2">{subtitle}</p>
+            <p className="text-muted-foreground mt-2">{subtitle}</p>
           )}
         </div>
         
@@ -46,7 +46,7 @@ const AuthPageContent: React.FC<AuthPageContentProps> = ({
         </div>
         
         {footer && (
-          <div className="text-center text-sm text-neutral-400">
+          <div className="text-center text-sm text-muted-foreground">
             {footer}
           </div>
         )}

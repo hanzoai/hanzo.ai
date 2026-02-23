@@ -7,27 +7,27 @@ import { CreditCard, Calendar, Send, CreditCard as CardIcon, Coins } from "lucid
 
 const suiteItems = [
   {
-    icon: <CreditCard className="h-6 w-6 text-white" />,
+    icon: <CreditCard className="h-6 w-6 text-foreground" />,
     title: "Online Payments",
     description: "Flexible integration with any website, optimized checkouts, and local payment methods."
   },
   {
-    icon: <Calendar className="h-6 w-6 text-white" />,
+    icon: <Calendar className="h-6 w-6 text-foreground" />,
     title: "Subscriptions & Billing",
     description: "Automated subscription management, recurring billing, and multilingual invoicing."
   },
   {
-    icon: <Send className="h-6 w-6 text-white" />,
+    icon: <Send className="h-6 w-6 text-foreground" />,
     title: "Embedded Finance (Connect)",
     description: "Integrate end-to-end payment experiences for marketplaces and platforms, including streamlined payouts."
   },
   {
-    icon: <CardIcon className="h-6 w-6 text-white" />,
+    icon: <CardIcon className="h-6 w-6 text-foreground" />,
     title: "Issuing",
     description: "Create and manage physical and virtual cards for your teams or customers."
   },
   {
-    icon: <Coins className="h-6 w-6 text-white" />,
+    icon: <Coins className="h-6 w-6 text-foreground" />,
     title: "Capital",
     description: "Access financing options to fuel your growth."
   }
@@ -45,7 +45,7 @@ const PaymentsSuite = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Comprehensive Payments Infrastructure</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Hanzo Payments provides the essential tools needed to process payments and optimize your financial operations, 
             fully integrated into your Hanzo workflow.
           </p>
@@ -73,7 +73,7 @@ const PaymentsSuite = () => {
                   {item.icon}
                 </div>
                 <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
-                <p className="text-neutral-400">{item.description}</p>
+                <p className="text-muted-foreground">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -92,15 +92,15 @@ const PaymentsSuite = () => {
               <h3 className="text-2xl font-bold mb-4">Optimized for Growth</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
-                  <span className="text-white">•</span>
+                  <span className="text-foreground">•</span>
                   <span>Real-time analytics and detailed financial reporting.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-white">•</span>
+                  <span className="text-foreground">•</span>
                   <span>Forecast and predict revenues with built-in AI-driven analytics.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-white">•</span>
+                  <span className="text-foreground">•</span>
                   <span>Transparent pricing with no hidden fees.</span>
                 </li>
               </ul>
@@ -117,7 +117,7 @@ const PaymentsSuite = () => {
                     ></div>
                   ))}
                 </div>
-                <div className="text-sm text-neutral-400">Last 7 days</div>
+                <div className="text-sm text-muted-foreground">Last 7 days</div>
               </div>
             </div>
           </div>

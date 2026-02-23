@@ -21,17 +21,17 @@ const InvoicesSummary = () => {
         className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
       >
         <div className="flex items-center gap-3 mb-4">
-          <CreditCard className="h-5 w-5 text-neutral-400" />
+          <CreditCard className="h-5 w-5 text-muted-foreground" />
           <h3 className="text-xl font-medium">Active Subscription</h3>
         </div>
         
         <div className="mb-6">
           <div className="text-3xl font-bold mb-1">Trial Plan</div>
-          <p className="text-neutral-400">Free credit grant of $5.00</p>
+          <p className="text-muted-foreground">Free credit grant of $5.00</p>
         </div>
         
         <Button 
-          className="bg-white hover:bg-[#cccccc] text-[var(--white)] w-full"
+          className="bg-primary hover:bg-[#cccccc] text-[var(--white)] w-full"
         >
           View Plan Details
         </Button>
@@ -42,17 +42,17 @@ const InvoicesSummary = () => {
         className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
       >
         <div className="flex items-center gap-3 mb-4">
-          <Receipt className="h-5 w-5 text-neutral-400" />
+          <Receipt className="h-5 w-5 text-muted-foreground" />
           <h3 className="text-xl font-medium">Payment Summary</h3>
         </div>
         
         <div className="space-y-2 mb-4">
           <div className="flex justify-between">
-            <span className="text-neutral-400">Current Usage</span>
+            <span className="text-muted-foreground">Current Usage</span>
             <span>$0.04</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-neutral-400">Next Invoice</span>
+            <span className="text-muted-foreground">Next Invoice</span>
             <span>$0.00</span>
           </div>
           <div className="flex justify-between font-medium">
@@ -61,7 +61,7 @@ const InvoicesSummary = () => {
           </div>
         </div>
         
-        <Button className="bg-[var(--white)] hover:bg-gray-200 text-black w-full">
+        <Button className="bg-[var(--white)] hover:bg-gray-200 text-primary-foreground w-full">
           Purchase Credits
         </Button>
       </motion.div>
@@ -71,13 +71,13 @@ const InvoicesSummary = () => {
         className="p-6 rounded-xl border border-gray-800 bg-gray-900/20"
       >
         <div className="flex items-center gap-3 mb-4">
-          <Clock className="h-5 w-5 text-neutral-400" />
+          <Clock className="h-5 w-5 text-muted-foreground" />
           <h3 className="text-xl font-medium">Upcoming Charges</h3>
         </div>
         
         <div className="bg-[var(--black)]/30 p-4 rounded-lg flex items-center gap-3 mb-6">
-          <AlertCircle className="h-5 w-5 text-white" />
-          <p className="text-neutral-300">No upcoming charges. You're on a trial plan.</p>
+          <AlertCircle className="h-5 w-5 text-foreground" />
+          <p className="text-foreground/80">No upcoming charges. You're on a trial plan.</p>
         </div>
         
         <Button 

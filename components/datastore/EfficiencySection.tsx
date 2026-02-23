@@ -24,10 +24,10 @@ const EfficiencyCard = ({ title, mainText, subText, initialY, delay }: Efficienc
       <ChromeText as="h3" className="text-2xl font-bold mb-4">
         {title}
       </ChromeText>
-      <p className="text-neutral-300 mb-4">
+      <p className="text-foreground/80 mb-4">
         {mainText}
       </p>
-      <p className="text-neutral-400">
+      <p className="text-muted-foreground">
         {subText}
       </p>
     </motion.div>
@@ -67,13 +67,13 @@ const EfficiencySection = () => {
   ];
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/50">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-gray-900/50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
             Datastore Efficiency
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8">
             Optimized for peak performance at every level
           </p>
         </div>

@@ -60,7 +60,7 @@ const Login = () => {
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Welcome Back</h1>
-          <p className="text-neutral-400 mt-2">
+          <p className="text-muted-foreground mt-2">
             Sign in to your account
           </p>
         </div>
@@ -70,7 +70,7 @@ const Login = () => {
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
+                <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="email"
                   name="email"
@@ -86,12 +86,12 @@ const Login = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <Label htmlFor="password">Password</Label>
-                <a href="/forgot-password" className="text-sm text-white hover:underline">
+                <a href="/forgot-password" className="text-sm text-foreground hover:underline">
                   Forgot password?
                 </a>
               </div>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-neutral-400" />
+                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="password"
                   name="password"
@@ -106,7 +106,7 @@ const Login = () => {
             
             <Button 
               type="submit" 
-              className="w-full mt-6 bg-white hover:bg-[#cccccc] text-[var(--white)]"
+              className="w-full mt-6 bg-primary hover:bg-[#cccccc] text-[var(--white)]"
             >
               Sign In
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -114,9 +114,9 @@ const Login = () => {
           </form>
         </div>
         
-        <div className="text-center text-sm text-neutral-400">
+        <div className="text-center text-sm text-muted-foreground">
           Don't have an account?{" "}
-          <a href="/signup" className="text-white hover:underline">
+          <a href="/signup" className="text-foreground hover:underline">
             Sign up
           </a>
         </div>

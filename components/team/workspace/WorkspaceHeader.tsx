@@ -5,8 +5,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FolderKanban } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 const WorkspaceHeader = () => {
   return (
     <motion.div
@@ -18,7 +16,7 @@ const WorkspaceHeader = () => {
     >
       <div
         className="inline-flex p-2 rounded-full mb-4"
-        style={{ backgroundColor: `${BRAND_COLOR}20`, border: `1px solid ${BRAND_COLOR}30`, color: BRAND_COLOR }}
+        style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)", color: "var(--primary)" }}
       >
         <FolderKanban className="h-6 w-6" />
       </div>

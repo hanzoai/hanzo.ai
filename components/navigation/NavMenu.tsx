@@ -85,8 +85,8 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
         className={cn(
           "inline-flex items-center outline-none focus:outline-none transition-colors text-sm font-medium",
           isOpen
-            ? "text-white"
-            : "text-neutral-400 hover:text-white"
+            ? "text-foreground"
+            : "text-muted-foreground hover:text-foreground"
         )}
       >
         {label}
@@ -105,7 +105,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
           {isDesktop ? (
             <div className={cn(
                    "fixed left-0 w-full backdrop-blur-md z-50 border-b shadow-2xl",
-                   "bg-black/95 border-gray-800/50"
+                   "bg-background/95 border-gray-800/50"
                  )}
                  style={{
                    top: 'var(--header-height)',
@@ -121,7 +121,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
             <div
               className={cn(
                 "fixed inset-0 left-0 right-0 backdrop-blur-md z-50 w-screen transition-opacity duration-300 ease-in-out",
-                "bg-black/95"
+                "bg-background/95"
               )}
               style={{
                 top: 'var(--header-height)',

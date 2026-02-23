@@ -11,43 +11,43 @@ const UseCases = () => {
       icon: MessageSquare,
       title: 'Conversational AI',
       description: 'Build intelligent chatbots, virtual assistants, and customer support agents with natural language understanding.',
-      color: 'bg-white/20',
-      textColor: 'text-white'
+      color: 'bg-primary/20',
+      textColor: 'text-foreground'
     },
     {
       icon: Brain,
       title: 'Generative Content',
       description: 'Create text, images, code, and other content with AI-powered generation and customization.',
-      color: 'bg-white/20',
-      textColor: 'text-white/70'
+      color: 'bg-primary/20',
+      textColor: 'text-foreground/70'
     },
     {
       icon: Search,
       title: 'Knowledge Retrieval',
       description: 'Implement semantic search, question answering, and information extraction from your data.',
-      color: 'bg-white/10',
-      textColor: 'text-white/70'
+      color: 'bg-primary/10',
+      textColor: 'text-foreground/70'
     },
     {
       icon: Bot,
       title: 'Autonomous Agents',
       description: 'Deploy AI agents that can perform complex tasks, make decisions, and execute workflows autonomously.',
-      color: 'bg-white/10',
-      textColor: 'text-white/70'
+      color: 'bg-primary/10',
+      textColor: 'text-foreground/70'
     },
     {
       icon: FileCode,
       title: 'Developer Tooling',
       description: 'Enhance your development workflow with AI-powered code generation, debugging, and documentation.',
-      color: 'bg-white/10',
-      textColor: 'text-white/60'
+      color: 'bg-primary/10',
+      textColor: 'text-foreground/60'
     },
     {
       icon: Headphones,
       title: 'Voice & Speech',
       description: 'Convert speech to text, text to speech, and analyze voice interactions with advanced AI models.',
-      color: 'bg-white/10',
-      textColor: 'text-white/70'
+      color: 'bg-primary/10',
+      textColor: 'text-foreground/70'
     }
   ];
 
@@ -55,8 +55,8 @@ const UseCases = () => {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-1/4 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -70,7 +70,7 @@ const UseCases = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">
               Versatile AI Use Cases
             </h2>
-            <p className="text-xl text-neutral-300">
+            <p className="text-xl text-foreground/80">
               Hanzo's AI platform supports a wide range of intelligent applications across industries
             </p>
           </motion.div>
@@ -90,7 +90,7 @@ const UseCases = () => {
                 <useCase.icon className={`h-7 w-7 ${useCase.textColor}`} />
               </div>
               <h3 className="text-xl font-semibold text-[var(--white)] mb-3">{useCase.title}</h3>
-              <p className="text-neutral-400">{useCase.description}</p>
+              <p className="text-muted-foreground">{useCase.description}</p>
             </motion.div>
           ))}
         </div>
@@ -106,10 +106,10 @@ const UseCases = () => {
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-8 flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-[var(--white)] mb-4">Simple Implementation</h3>
-              <p className="text-neutral-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Build powerful AI applications with just a few lines of code using our intuitive SDK
               </p>
-              <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+              <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-foreground/80 overflow-x-auto">
                 <pre>
 {`import { Hanzo } from '@hanzo/ai';
 
@@ -134,16 +134,16 @@ console.log(response);`}
             </div>
             <div className="lg:w-1/2 bg-gray-950 p-8 flex flex-col">
               <h4 className="text-lg font-semibold text-[var(--white)] mb-4 flex items-center">
-                <BookOpen className="h-4 w-4 mr-2 text-white" />
+                <BookOpen className="h-4 w-4 mr-2 text-foreground" />
                 Documentation Example
               </h4>
               <div className="flex flex-col h-full space-y-4 overflow-y-auto">
                 <div className="bg-gray-900 rounded-lg p-4">
                   <div className="flex items-center mb-2">
-                    <Database className="h-4 w-4 text-white mr-2" />
-                    <h5 className="text-white font-medium">Vector Search</h5>
+                    <Database className="h-4 w-4 text-foreground mr-2" />
+                    <h5 className="text-foreground font-medium">Vector Search</h5>
                   </div>
-                  <pre className="text-xs text-neutral-300 overflow-x-auto">
+                  <pre className="text-xs text-foreground/80 overflow-x-auto">
 {`// Create a vector store
 const vectorStore = hanzo.vectorStore('my-store');
 
@@ -163,10 +163,10 @@ const results = await vectorStore.search(
 
                 <div className="bg-gray-900 rounded-lg p-4">
                   <div className="flex items-center mb-2">
-                    <Bot className="h-4 w-4 text-white/70 mr-2" />
-                    <h5 className="text-white/70 font-medium">AI Agents</h5>
+                    <Bot className="h-4 w-4 text-foreground/70 mr-2" />
+                    <h5 className="text-foreground/70 font-medium">AI Agents</h5>
                   </div>
-                  <pre className="text-xs text-neutral-300 overflow-x-auto">
+                  <pre className="text-xs text-foreground/80 overflow-x-auto">
 {`// Create an agent with tools
 const agent = hanzo.agent({
   model: 'claude-3-opus',

@@ -26,12 +26,12 @@ const CreditBalance = () => {
       </div>
       
       <div className="flex items-center">
-        <div className="h-16 w-16 bg-white/10 rounded-full flex items-center justify-center mr-4">
-          <span className="text-2xl font-bold text-white">$</span>
+        <div className="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+          <span className="text-2xl font-bold text-foreground">$</span>
         </div>
         <div>
           <div className="text-3xl font-bold">${billingInfo.credits.toFixed(2)}</div>
-          <div className="text-sm text-neutral-400 mt-1">Available credits</div>
+          <div className="text-sm text-muted-foreground mt-1">Available credits</div>
         </div>
       </div>
     </div>

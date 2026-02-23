@@ -17,7 +17,7 @@ const PlatformTabs: React.FC<PlatformTabsProps> = ({ activeTab, setActiveTab }) 
         className={`px-4 py-2 rounded-t-lg whitespace-nowrap ${
           activeTab === "platform"
             ? "text-[var(--white)] border-b-2 border-white"
-            : "text-neutral-400 hover:text-[var(--white)]"
+            : "text-muted-foreground hover:text-[var(--white)]"
         }`}
       >
         Platform Vision
@@ -27,7 +27,7 @@ const PlatformTabs: React.FC<PlatformTabsProps> = ({ activeTab, setActiveTab }) 
         className={`px-4 py-2 rounded-t-lg whitespace-nowrap ${
           activeTab === "capabilities"
             ? "text-[var(--white)] border-b-2 border-white"
-            : "text-neutral-400 hover:text-[var(--white)]"
+            : "text-muted-foreground hover:text-[var(--white)]"
         }`}
       >
         Core Capabilities
@@ -37,7 +37,7 @@ const PlatformTabs: React.FC<PlatformTabsProps> = ({ activeTab, setActiveTab }) 
         className={`px-4 py-2 rounded-t-lg whitespace-nowrap ${
           activeTab === "solutions"
             ? "text-[var(--white)] border-b-2 border-white"
-            : "text-neutral-400 hover:text-[var(--white)]"
+            : "text-muted-foreground hover:text-[var(--white)]"
         }`}
       >
         Enterprise Solutions

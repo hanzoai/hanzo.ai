@@ -17,8 +17,6 @@ import {
   Check,
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 // Available Zen models for the dropdown
 const zenModels = [
   { id: "zen-eco-4b", name: "Zen Eco", params: "4B", description: "Fast general-purpose" },
@@ -258,11 +256,11 @@ const GlobalChatWidget = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-black border border-neutral-800"
+            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-background border border-border"
           >
             <img src="/zen-logo.png" alt="Zen AI" className="w-8 h-8" />
             {/* Pulse animation */}
-            <span className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ backgroundColor: BRAND_COLOR }} />
+            <span className="absolute inset-0 rounded-full animate-ping opacity-20" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -275,33 +273,33 @@ const GlobalChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className={`fixed z-50 bg-black border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col ${
+            className={`fixed z-50 bg-background border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col ${
               isExpanded
                 ? "inset-4 md:inset-8"
                 : "bottom-6 right-6 w-[380px] max-w-[calc(100vw-48px)] h-[520px] max-h-[80vh]"
             }`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-black border border-neutral-700">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-background border border-border">
                   <img src="/zen-logo.png" alt="Zen AI" className="w-5 h-5" />
                 </div>
                 {/* Model selector dropdown */}
                 <div className="relative" ref={modelDropdownRef}>
                   <button
                     onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
-                    className="flex items-center gap-1.5 hover:bg-neutral-800/50 rounded-md px-2 py-1 transition-colors"
+                    className="flex items-center gap-1.5 hover:bg-accent/50 rounded-md px-2 py-1 transition-colors"
                   >
                     <div className="text-left">
-                      <div className="text-white text-sm font-medium flex items-center gap-1.5">
+                      <div className="text-foreground text-sm font-medium flex items-center gap-1.5">
                         {selectedModel.name}
-                        <span className="text-[10px] font-mono text-neutral-500 bg-neutral-800 px-1 py-0.5 rounded">
+                        <span className="text-[10px] font-mono text-muted-foreground bg-neutral-800 px-1 py-0.5 rounded">
                           {selectedModel.params}
                         </span>
                       </div>
                     </div>
-                    <ChevronDown className={`w-3.5 h-3.5 text-neutral-500 transition-transform ${isModelDropdownOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform ${isModelDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
 
                   {/* Model dropdown menu */}
@@ -311,7 +309,7 @@ const GlobalChatWidget = () => {
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -4 }}
-                        className="absolute left-0 top-full mt-1 w-56 bg-neutral-900 border border-neutral-800 rounded-lg shadow-xl overflow-hidden z-10"
+                        className="absolute left-0 top-full mt-1 w-56 bg-secondary border border-border rounded-lg shadow-xl overflow-hidden z-10"
                       >
                         {zenModels.map((model) => (
                           <button
@@ -320,26 +318,26 @@ const GlobalChatWidget = () => {
                               setSelectedModel(model);
                               setIsModelDropdownOpen(false);
                             }}
-                            className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-neutral-800 transition-colors ${
+                            className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-accent transition-colors ${
                               selectedModel.id === model.id ? 'bg-neutral-800/50' : ''
                             }`}
                           >
                             <div>
-                              <div className="text-sm text-white flex items-center gap-2">
+                              <div className="text-sm text-foreground flex items-center gap-2">
                                 {model.name}
-                                <span className="text-[10px] font-mono text-neutral-500">{model.params}</span>
+                                <span className="text-[10px] font-mono text-muted-foreground">{model.params}</span>
                               </div>
-                              <div className="text-[10px] text-neutral-500">{model.description}</div>
+                              <div className="text-[10px] text-muted-foreground">{model.description}</div>
                             </div>
                             {selectedModel.id === model.id && (
-                              <Check className="w-4 h-4 text-white/70" />
+                              <Check className="w-4 h-4 text-foreground/70" />
                             )}
                           </button>
                         ))}
-                        <div className="border-t border-neutral-800 px-3 py-2">
+                        <div className="border-t border-border px-3 py-2">
                           <a
                             href="/zen"
-                            className="text-xs text-neutral-500 hover:text-white transition-colors"
+                            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                           >
                             View all models →
                           </a>
@@ -352,7 +350,7 @@ const GlobalChatWidget = () => {
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="p-1.5 rounded-md text-neutral-500 hover:text-white hover:bg-neutral-800 transition-colors"
+                  className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                 >
                   {isExpanded ? (
                     <Minimize2 className="w-4 h-4" />
@@ -362,7 +360,7 @@ const GlobalChatWidget = () => {
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 rounded-md text-neutral-500 hover:text-white hover:bg-neutral-800 transition-colors"
+                  className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -381,7 +379,7 @@ const GlobalChatWidget = () => {
                   <div
                     className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm ${
                       message.role === "user"
-                        ? "bg-white text-black rounded-br-md"
+                        ? "bg-primary text-primary-foreground rounded-br-md"
                         : "bg-neutral-800 text-neutral-200 rounded-bl-md"
                     }`}
                   >
@@ -413,7 +411,7 @@ const GlobalChatWidget = () => {
                       <button
                         key={preset.label}
                         onClick={() => handlePreset(preset)}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-medium hover:bg-neutral-800 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-secondary border border-border text-muted-foreground text-xs font-medium hover:bg-accent hover:text-foreground transition-colors"
                       >
                         <Icon className="w-3 h-3" />
                         {preset.label}
@@ -425,7 +423,7 @@ const GlobalChatWidget = () => {
             )}
 
             {/* Input */}
-            <div className="p-3 border-t border-neutral-800">
+            <div className="p-3 border-t border-border">
               <div className="relative">
                 <input
                   ref={inputRef}
@@ -434,20 +432,20 @@ const GlobalChatWidget = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Ask anything..."
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-full px-4 py-2.5 pr-12 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-700 transition-colors"
+                  className="w-full bg-secondary border border-border rounded-full px-4 py-2.5 pr-12 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-border transition-colors"
                 />
                 <button
                   onClick={handleSend}
                   disabled={!input.trim() || isLoading}
                   className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center transition-all disabled:opacity-50"
-                  style={{ backgroundColor: input.trim() ? BRAND_COLOR : "transparent" }}
+                  style={{ backgroundColor: input.trim() ? "var(--primary)" : "transparent" }}
                 >
-                  <Send className={`w-4 h-4 ${input.trim() ? "text-black" : "text-neutral-500"}`} />
+                  <Send className={`w-4 h-4 ${input.trim() ? "text-primary-foreground" : "text-muted-foreground"}`} />
                 </button>
               </div>
               <div className="mt-2 text-center">
-                <span className="text-neutral-600 text-[10px]">
-                  Press Enter to send • <kbd className="px-1 py-0.5 bg-neutral-800 rounded text-neutral-500">⌘K</kbd> for quick navigation
+                <span className="text-muted-foreground/60 text-[10px]">
+                  Press Enter to send • <kbd className="px-1 py-0.5 bg-neutral-800 rounded text-muted-foreground">⌘K</kbd> for quick navigation
                 </span>
               </div>
             </div>

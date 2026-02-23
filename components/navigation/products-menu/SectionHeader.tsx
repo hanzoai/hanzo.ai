@@ -13,14 +13,14 @@ const SectionHeader = ({ title, link, linkText }: SectionHeaderProps) => {
   return (
     <div className="flex items-center justify-between mb-4">
       <Link href={link || "#"}>
-        <h3 className="text-xl font-semibold text-[var(--white)] hover:text-neutral-300 transition-colors">
+        <h3 className="text-xl font-semibold text-[var(--white)] hover:text-foreground/80 transition-colors">
           {title}
         </h3>
       </Link>
       <Link 
         href={link || "#"} 
         className={cn(
-          "text-sm text-white/70 hover:text-white/70 flex items-center group"
+          "text-sm text-foreground/70 hover:text-foreground/70 flex items-center group"
         )}
       >
         {linkText}

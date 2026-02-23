@@ -30,8 +30,8 @@ const CallToAction = () => {
   return (
     <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div 
@@ -50,7 +50,7 @@ const CallToAction = () => {
             Do everything 100x faster
           </h2>
           
-          <p className="text-xl text-neutral-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
             Hanzo AI lets models understand your desktop activity. Build faster.
           </p>
           

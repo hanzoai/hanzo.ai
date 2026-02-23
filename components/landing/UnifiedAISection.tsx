@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const UnifiedAISection = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-black to-[#030014] relative">
+    <section className="py-24 px-4 bg-gradient-to-b from-background to-[#030014] relative">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* 3D Visual - Would be replaced with actual 3D cube */}
@@ -19,8 +19,8 @@ const UnifiedAISection = () => {
             className="relative aspect-square max-w-[500px] mx-auto lg:mx-0"
           >
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full h-full max-w-[400px] max-h-[400px] rounded-2xl border border-white/20 rotate-45 transform-gpu" />
-              <div className="absolute w-[90%] h-[90%] rounded-2xl border border-white/20 rotate-[30deg] transform-gpu" />
+              <div className="w-full h-full max-w-[400px] max-h-[400px] rounded-2xl border border-border rotate-45 transform-gpu" />
+              <div className="absolute w-[90%] h-[90%] rounded-2xl border border-border rotate-[30deg] transform-gpu" />
               <div className="absolute w-[80%] h-[80%] rounded-2xl border border-neutral-500/20 rotate-[15deg] transform-gpu" />
 
               <div className="absolute inset-0 flex items-center justify-center">
@@ -28,23 +28,23 @@ const UnifiedAISection = () => {
               </div>
 
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 z-10">
-                <div className="bg-[#030014]/80 backdrop-blur-sm border border-white/10 rounded-xl p-3 w-full max-w-[300px] flex items-center">
-                  <div className="p-2 rounded-lg bg-white/20 mr-3">
-                    <Layers className="h-5 w-5 text-white" />
+                <div className="bg-[#030014]/80 backdrop-blur-sm border border-border rounded-xl p-3 w-full max-w-[300px] flex items-center">
+                  <div className="p-2 rounded-lg bg-primary/20 mr-3">
+                    <Layers className="h-5 w-5 text-foreground" />
                   </div>
-                  <span className="text-white">AI Cloud</span>
+                  <span className="text-foreground">AI Cloud</span>
                 </div>
-                <div className="bg-[#030014]/80 backdrop-blur-sm border border-white/10 rounded-xl p-3 w-full max-w-[300px] flex items-center">
-                  <div className="p-2 rounded-lg bg-white/20 mr-3">
-                    <Code className="h-5 w-5 text-white/70" />
+                <div className="bg-[#030014]/80 backdrop-blur-sm border border-border rounded-xl p-3 w-full max-w-[300px] flex items-center">
+                  <div className="p-2 rounded-lg bg-primary/20 mr-3">
+                    <Code className="h-5 w-5 text-foreground/70" />
                   </div>
-                  <span className="text-white">Developer Tools</span>
+                  <span className="text-foreground">Developer Tools</span>
                 </div>
-                <div className="bg-[#030014]/80 backdrop-blur-sm border border-white/10 rounded-xl p-3 w-full max-w-[300px] flex items-center">
+                <div className="bg-[#030014]/80 backdrop-blur-sm border border-border rounded-xl p-3 w-full max-w-[300px] flex items-center">
                   <div className="p-2 rounded-lg bg-neutral-500/20 mr-3">
-                    <Puzzle className="h-5 w-5 text-neutral-400" />
+                    <Puzzle className="h-5 w-5 text-muted-foreground" />
                   </div>
-                  <span className="text-white">Human Ops & Workflow</span>
+                  <span className="text-foreground">Human Ops & Workflow</span>
                 </div>
               </div>
             </div>
@@ -62,39 +62,39 @@ const UnifiedAISection = () => {
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-medium text-white mb-2 flex items-center">
-                  <div className="p-1 rounded-lg bg-white/20 mr-2 flex items-center justify-center">
-                    <Puzzle className="h-4 w-4 text-white" />
+                <h3 className="text-xl font-medium text-foreground mb-2 flex items-center">
+                  <div className="p-1 rounded-lg bg-primary/20 mr-2 flex items-center justify-center">
+                    <Puzzle className="h-4 w-4 text-foreground" />
                   </div>
                   Human + AI Collaboration
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-muted-foreground">
                   Seamless synergy between automated intelligence and human creativity,
                   enabling teams to achieve more together than either could alone.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl font-medium text-white mb-2 flex items-center">
-                  <div className="p-1 rounded-lg bg-white/20 mr-2 flex items-center justify-center">
-                    <Layers className="h-4 w-4 text-white/70" />
+                <h3 className="text-xl font-medium text-foreground mb-2 flex items-center">
+                  <div className="p-1 rounded-lg bg-primary/20 mr-2 flex items-center justify-center">
+                    <Layers className="h-4 w-4 text-foreground/70" />
                   </div>
                   Modular & Open
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-muted-foreground">
                   Use only the layers you need; scale effortlessly as your requirements evolve.
                   Our platform grows with your ambitions.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl font-medium text-white mb-2 flex items-center">
+                <h3 className="text-xl font-medium text-foreground mb-2 flex items-center">
                   <div className="p-1 rounded-lg bg-neutral-500/20 mr-2 flex items-center justify-center">
-                    <Lock className="h-4 w-4 text-neutral-400" />
+                    <Lock className="h-4 w-4 text-muted-foreground" />
                   </div>
                   APIs for Everything
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-muted-foreground">
                   Advertising, e-commerce, payments, messaging, authentication, and more—all
                   through consistent, developer-friendly interfaces.
                 </p>
@@ -104,7 +104,7 @@ const UnifiedAISection = () => {
             <div className="mt-10">
               <Link
                 href="/platform"
-                className="inline-flex items-center text-white hover:text-white/70 font-medium transition-colors"
+                className="inline-flex items-center text-foreground hover:text-foreground/70 font-medium transition-colors"
               >
                 Explore the Platform
                 <ArrowRight className="ml-2 h-4 w-4" />

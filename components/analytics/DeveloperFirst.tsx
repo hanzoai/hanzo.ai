@@ -103,7 +103,7 @@ const DeveloperFirst = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Developer-First API & SDKs</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Easy-to-integrate SDKs and APIs designed for minimal friction and maximum flexibility.
           </p>
         </motion.div>
@@ -117,30 +117,30 @@ const DeveloperFirst = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center mb-5">
-                <Layers className="h-6 w-6 text-white mr-3" />
+                <Layers className="h-6 w-6 text-foreground mr-3" />
                 <h3 className="text-2xl font-bold">Designed for Developers</h3>
               </div>
               
               <ul className="space-y-4 mb-8">
                 <li className="flex">
-                  <div className="mr-3 text-white">•</div>
+                  <div className="mr-3 text-foreground">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">OpenTelemetry Integration</span>
-                    <p className="text-neutral-400 mt-1">Seamlessly integrate with your existing observability stack.</p>
+                    <p className="text-muted-foreground mt-1">Seamlessly integrate with your existing observability stack.</p>
                   </div>
                 </li>
                 <li className="flex">
-                  <div className="mr-3 text-white">•</div>
+                  <div className="mr-3 text-foreground">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">API-first, highly customizable</span>
-                    <p className="text-neutral-400 mt-1">Build exactly what you need with our flexible API.</p>
+                    <p className="text-muted-foreground mt-1">Build exactly what you need with our flexible API.</p>
                   </div>
                 </li>
                 <li className="flex">
-                  <div className="mr-3 text-white">•</div>
+                  <div className="mr-3 text-foreground">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">Robust documentation and code examples</span>
-                    <p className="text-neutral-400 mt-1">Comprehensive guides and examples to get you started quickly.</p>
+                    <p className="text-muted-foreground mt-1">Comprehensive guides and examples to get you started quickly.</p>
                   </div>
                 </li>
               </ul>
@@ -168,7 +168,7 @@ const DeveloperFirst = () => {
                     className={`flex items-center px-4 py-3 text-sm font-medium ${
                       activeTab === tab.id
                         ? "bg-gray-800 text-[var(--white)]"
-                        : "text-neutral-400 hover:text-[var(--white)] hover:bg-gray-800/50"
+                        : "text-muted-foreground hover:text-[var(--white)] hover:bg-gray-800/50"
                     }`}
                     onClick={() => setActiveTab(tab.id)}
                   >
@@ -179,12 +179,12 @@ const DeveloperFirst = () => {
               </div>
               
               <div className="p-5 overflow-x-auto">
-                <pre className="text-sm text-neutral-300 font-mono whitespace-pre">
+                <pre className="text-sm text-foreground/80 font-mono whitespace-pre">
                   {codeExamples[activeTab as keyof typeof codeExamples]}
                 </pre>
               </div>
               
-              <div className="bg-gray-900 p-3 border-t border-gray-800 text-sm text-neutral-400">
+              <div className="bg-gray-900 p-3 border-t border-gray-800 text-sm text-muted-foreground">
                 {activeTab === "js" && "npm install hanzo-analytics"}
                 {activeTab === "py" && "pip install hanzo-analytics"}
                 {activeTab === "api" && "API Key: Get yours from the Hanzo Analytics dashboard"}

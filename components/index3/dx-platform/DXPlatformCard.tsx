@@ -21,64 +21,64 @@ interface DXPlatformCardProps {
 const getColorClasses = (color: string = "brand", isHovered: boolean) => {
   const colorMap: Record<string, { bg: string, hoverBg: string, text: string, hoverText: string }> = {
     brand: {
-      bg: "bg-white/20",
+      bg: "bg-primary/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-white",
-      hoverText: "text-white/70"
+      text: "text-foreground",
+      hoverText: "text-foreground/70"
     },
     indigo: {
-      bg: "bg-white/20",
+      bg: "bg-primary/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-white",
-      hoverText: "text-white/70"
+      text: "text-foreground",
+      hoverText: "text-foreground/70"
     },
     purple: {
-      bg: "bg-white/20",
+      bg: "bg-primary/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-white",
-      hoverText: "text-white/70"
+      text: "text-foreground",
+      hoverText: "text-foreground/70"
     },
     blue: {
-      bg: "bg-white/20",
-      hoverBg: "bg-white/30",
-      text: "text-white/70",
-      hoverText: "text-white"
+      bg: "bg-primary/20",
+      hoverBg: "bg-primary/30",
+      text: "text-foreground/70",
+      hoverText: "text-foreground"
     },
     green: {
-      bg: "bg-white/10",
-      hoverBg: "bg-white/10",
-      text: "text-white/70",
-      hoverText: "text-white/70"
+      bg: "bg-primary/10",
+      hoverBg: "bg-primary/10",
+      text: "text-foreground/70",
+      hoverText: "text-foreground/70"
     },
     amber: {
-      bg: "bg-white/10",
-      hoverBg: "bg-white/10",
-      text: "text-white/60",
-      hoverText: "text-white/60"
+      bg: "bg-primary/10",
+      hoverBg: "bg-primary/10",
+      text: "text-foreground/60",
+      hoverText: "text-foreground/60"
     },
     teal: {
-      bg: "bg-white/20",
+      bg: "bg-primary/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-white",
-      hoverText: "text-white/70"
+      text: "text-foreground",
+      hoverText: "text-foreground/70"
     },
     rose: {
-      bg: "bg-white/20",
+      bg: "bg-primary/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-white",
-      hoverText: "text-white/70"
+      text: "text-foreground",
+      hoverText: "text-foreground/70"
     },
     cyan: {
-      bg: "bg-white/20",
-      hoverBg: "bg-white/30",
-      text: "text-white/70",
-      hoverText: "text-white"
+      bg: "bg-primary/20",
+      hoverBg: "bg-primary/30",
+      text: "text-foreground/70",
+      hoverText: "text-foreground"
     },
     gray: {
       bg: "bg-gray-900/30",
       hoverBg: "bg-gray-700/30",
-      text: "text-neutral-400",
-      hoverText: "text-neutral-300"
+      text: "text-muted-foreground",
+      hoverText: "text-foreground/80"
     }
   };
 
@@ -111,10 +111,10 @@ const DXPlatformCard: React.FC<DXPlatformCardProps> = ({
       <ChromeText as="h3" className="text-xl font-bold mb-2">
         {title}
       </ChromeText>
-      <p className="text-neutral-300 mb-4 text-sm">
+      <p className="text-foreground/80 mb-4 text-sm">
         {description}
       </p>
-      <ul className="text-neutral-400 space-y-2 text-xs mt-auto hidden lg:block">
+      <ul className="text-muted-foreground space-y-2 text-xs mt-auto hidden lg:block">
         {features.slice(0, 2).map((feature, index) => (
           <li key={`${id}-feature-${index}`} className="flex items-start">
             <span className="mr-2">•</span>

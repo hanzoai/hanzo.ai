@@ -23,13 +23,13 @@ const FeatureCard = ({
     transition={{ duration: 0.4, delay }}
     className="bg-gray-900/20 border border-gray-800 rounded-xl p-8"
   >
-    <div className="h-12 w-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
-      <Icon className="h-6 w-6 text-white/70" />
+    <div className="h-12 w-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+      <Icon className="h-6 w-6 text-foreground/70" />
     </div>
     <ChromeText as="h3" className="text-xl font-bold mb-4">
       {title}
     </ChromeText>
-    <p className="text-neutral-400">
+    <p className="text-muted-foreground">
       {description}
     </p>
   </motion.div>
@@ -76,7 +76,7 @@ const KeyFeatures = () => {
           <ChromeText as="h2" className="text-3xl md:text-5xl font-bold mb-6">
             Key Features
           </ChromeText>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             A powerful datastore built for modern analytical applications
           </p>
         </div>

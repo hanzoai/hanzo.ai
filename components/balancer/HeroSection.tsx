@@ -11,19 +11,19 @@ const HeroSection = () => {
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <a href="/pricing" className="flex items-center text-neutral-300 hover:text-[var(--white)] transition-colors">
+            <a href="/pricing" className="flex items-center text-foreground/80 hover:text-[var(--white)] transition-colors">
               <Button variant="ghost" size="sm" className="gap-2 rounded-full">
                 <FileText className="h-4 w-4" />
                 Pricing
               </Button>
             </a>
-            <a href="https://docs.hanzo.ai/balancer" className="flex items-center text-neutral-300 hover:text-[var(--white)] transition-colors">
+            <a href="https://docs.hanzo.ai/balancer" className="flex items-center text-foreground/80 hover:text-[var(--white)] transition-colors">
               <Button variant="ghost" size="sm" className="gap-2 rounded-full">
                 <BookOpen className="h-4 w-4" />
                 Docs
@@ -32,8 +32,8 @@ const HeroSection = () => {
           </div>
 
           <div className="mb-4">
-            <span className="text-white font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available!
-              <a href="#learn-more" className="ml-2 text-white/70 underline">Learn More</a>
+            <span className="text-foreground font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available!
+              <a href="#learn-more" className="ml-2 text-foreground/70 underline">Learn More</a>
             </span>
           </div>
 
@@ -44,14 +44,14 @@ const HeroSection = () => {
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           >
             The Cloud Native<br />
-            <span className="text-white">Application Proxy</span>
+            <span className="text-foreground">Application Proxy</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             Simplify and automate the discovery, routing, and load balancing of microservices.
           </motion.p>
@@ -64,7 +64,7 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
-              className="bg-white hover:bg-[#cccccc] text-[var(--white)] rounded-full py-6"
+              className="bg-primary hover:bg-[#cccccc] text-[var(--white)] rounded-full py-6"
             >
               <span className="py-1 leading-relaxed">GET STARTED</span>
             </Button>
@@ -87,19 +87,19 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">3.2B+</h3>
-              <p className="text-neutral-400">Downloads</p>
+              <p className="text-muted-foreground">Downloads</p>
             </div>
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">47K+</h3>
-              <p className="text-neutral-400">Stars on Github</p>
+              <p className="text-muted-foreground">Stars on Github</p>
             </div>
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">900+</h3>
-              <p className="text-neutral-400">Contributors</p>
+              <p className="text-muted-foreground">Contributors</p>
             </div>
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">Top 15</h3>
-              <p className="text-neutral-400">on Docker hub</p>
+              <p className="text-muted-foreground">on Docker hub</p>
             </div>
           </div>
         </div>

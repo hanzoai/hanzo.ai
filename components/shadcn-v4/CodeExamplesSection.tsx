@@ -26,8 +26,8 @@ const CodeExamplesSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Code Examples</h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Code Examples</h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             See how to implement shadcn/ui components with Tailwind v4 and React 19.
           </p>
         </motion.div>
@@ -40,17 +40,17 @@ const CodeExamplesSection = () => {
           </TabsList>
           
           <TabsContent value="css-variables" className="rounded-lg overflow-hidden">
-            <div className="bg-black/50 border border-gray-800 rounded-lg p-4">
+            <div className="bg-background/50 border border-gray-800 rounded-lg p-4">
               <div className="flex justify-between items-center mb-2">
-                <div className="text-sm text-neutral-400">globals.css</div>
+                <div className="text-sm text-muted-foreground">globals.css</div>
                 <Button
                   variant="ghost" 
                   size="sm"
                   onClick={() => handleCopy(cssVariablesCode, "css")}
-                  className="h-8 px-2 text-neutral-400"
+                  className="h-8 px-2 text-muted-foreground"
                 >
                   {copied === "css" ? (
-                    <Check className="h-4 w-4 text-white/70" />
+                    <Check className="h-4 w-4 text-foreground/70" />
                   ) : (
                     <Copy className="h-4 w-4" />
                   )}
@@ -81,17 +81,17 @@ const CodeExamplesSection = () => {
           </TabsContent>
           
           <TabsContent value="components" className="rounded-lg overflow-hidden">
-            <div className="bg-black/50 border border-gray-800 rounded-lg p-4">
+            <div className="bg-background/50 border border-gray-800 rounded-lg p-4">
               <div className="flex justify-between items-center mb-2">
-                <div className="text-sm text-neutral-400">Button.tsx</div>
+                <div className="text-sm text-muted-foreground">Button.tsx</div>
                 <Button
                   variant="ghost" 
                   size="sm"
                   onClick={() => handleCopy(componentCode, "component")}
-                  className="h-8 px-2 text-neutral-400"
+                  className="h-8 px-2 text-muted-foreground"
                 >
                   {copied === "component" ? (
-                    <Check className="h-4 w-4 text-white/70" />
+                    <Check className="h-4 w-4 text-foreground/70" />
                   ) : (
                     <Copy className="h-4 w-4" />
                   )}
@@ -122,17 +122,17 @@ const CodeExamplesSection = () => {
           </TabsContent>
           
           <TabsContent value="tailwind-config" className="rounded-lg overflow-hidden">
-            <div className="bg-black/50 border border-gray-800 rounded-lg p-4">
+            <div className="bg-background/50 border border-gray-800 rounded-lg p-4">
               <div className="flex justify-between items-center mb-2">
-                <div className="text-sm text-neutral-400">tailwind.config.ts</div>
+                <div className="text-sm text-muted-foreground">tailwind.config.ts</div>
                 <Button
                   variant="ghost" 
                   size="sm"
                   onClick={() => handleCopy(tailwindConfigCode, "tailwind")}
-                  className="h-8 px-2 text-neutral-400"
+                  className="h-8 px-2 text-muted-foreground"
                 >
                   {copied === "tailwind" ? (
-                    <Check className="h-4 w-4 text-white/70" />
+                    <Check className="h-4 w-4 text-foreground/70" />
                   ) : (
                     <Copy className="h-4 w-4" />
                   )}

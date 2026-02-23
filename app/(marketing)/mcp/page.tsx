@@ -52,10 +52,10 @@ export default function MCPPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-8"
           >
-            <Plug className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-neutral-300">
+            <Plug className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground/80">
               Model Context Protocol
             </span>
           </motion.div>
@@ -67,7 +67,7 @@ export default function MCPPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-white">MCP</span>{" "}
+            <span className="text-foreground">MCP</span>{" "}
             <span className="bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent">
               as a Service
             </span>
@@ -77,7 +77,7 @@ export default function MCPPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-2xl md:text-3xl font-medium text-white mb-4"
+            className="text-2xl md:text-3xl font-medium text-foreground mb-4"
           >
             Launch any MCP server with one command
           </motion.p>
@@ -86,7 +86,7 @@ export default function MCPPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-8 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
             Deploy MCP servers from any npx, uvx, or custom package. 260+
             tools available. Instant scaling, zero infrastructure management.
@@ -100,21 +100,21 @@ export default function MCPPage() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">260+</div>
-              <div className="text-sm text-neutral-400">MCP tools</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">260+</div>
+              <div className="text-sm text-muted-foreground">MCP tools</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">1-click</div>
-              <div className="text-sm text-neutral-400">Deploy</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">1-click</div>
+              <div className="text-sm text-muted-foreground">Deploy</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">Auto</div>
-              <div className="text-sm text-neutral-400">Scaling</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">Auto</div>
+              <div className="text-sm text-muted-foreground">Scaling</div>
             </div>
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-white">$0</div>
-              <div className="text-sm text-neutral-400">Idle cost</div>
+            <div className="bg-secondary/50 border border-border rounded-xl p-4">
+              <div className="text-2xl font-bold text-foreground">$0</div>
+              <div className="text-sm text-muted-foreground">Idle cost</div>
             </div>
           </motion.div>
 
@@ -127,21 +127,21 @@ export default function MCPPage() {
           >
             <a
               href="https://docs.hanzo.ai/mcp"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-neutral-200 text-black font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
               href="/zap"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               <Zap className="w-4 h-4" />
               See ZAP (next-gen)
             </Link>
             <a
               href="https://github.com/hanzoai/mcp"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               GitHub
             </a>
@@ -150,7 +150,7 @@ export default function MCPPage() {
       </section>
 
       {/* Launch Methods */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -159,10 +159,10 @@ export default function MCPPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Launch MCP Servers Your Way
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From npx packages to custom Python tools, deploy any MCP
               server instantly
             </p>
@@ -175,20 +175,20 @@ export default function MCPPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+              className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/10">
-                <Package className="h-6 w-6 text-white" />
+              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
+                <Package className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 NPX Packages
               </h3>
-              <p className="text-neutral-400 text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4">
                 Launch any npx-compatible MCP server package directly from
                 npm
               </p>
-              <div className="bg-neutral-950 rounded-lg p-3 font-mono text-xs text-neutral-300">
-                <span className="text-white">hanzo mcp launch</span> npx
+              <div className="bg-background rounded-lg p-3 font-mono text-xs text-foreground/80">
+                <span className="text-foreground">hanzo mcp launch</span> npx
                 @modelcontextprotocol/server-filesystem
               </div>
             </motion.div>
@@ -199,19 +199,19 @@ export default function MCPPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+              className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/10">
-                <Terminal className="h-6 w-6 text-white" />
+              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
+                <Terminal className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 UVX / Python
               </h3>
-              <p className="text-neutral-400 text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4">
                 Deploy Python-based MCP servers with uv package management
               </p>
-              <div className="bg-neutral-950 rounded-lg p-3 font-mono text-xs text-neutral-300">
-                <span className="text-white">hanzo mcp launch</span> uvx
+              <div className="bg-background rounded-lg p-3 font-mono text-xs text-foreground/80">
+                <span className="text-foreground">hanzo mcp launch</span> uvx
                 mcp-server-sqlite
               </div>
             </motion.div>
@@ -222,20 +222,20 @@ export default function MCPPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+              className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/10">
-                <Code className="h-6 w-6 text-white" />
+              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
+                <Code className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 Custom Servers
               </h3>
-              <p className="text-neutral-400 text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4">
                 Deploy your own MCP server from a Git repository or Docker
                 image
               </p>
-              <div className="bg-neutral-950 rounded-lg p-3 font-mono text-xs text-neutral-300">
-                <span className="text-white">hanzo mcp launch</span>{" "}
+              <div className="bg-background rounded-lg p-3 font-mono text-xs text-foreground/80">
+                <span className="text-foreground">hanzo mcp launch</span>{" "}
                 git://github.com/you/mcp-server
               </div>
             </motion.div>
@@ -253,10 +253,10 @@ export default function MCPPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Enterprise-Ready MCP Infrastructure
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Everything you need to run MCP at scale
             </p>
           </motion.div>
@@ -318,15 +318,15 @@ export default function MCPPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
+                className="bg-secondary/50 border border-border rounded-xl p-6 hover:border-border transition-colors"
               >
-                <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/10">
-                  <feature.icon className="h-6 w-6 text-white" />
+                <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
+                  <feature.icon className="h-6 w-6 text-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-neutral-400 text-sm">
+                <p className="text-muted-foreground text-sm">
                   {feature.description}
                 </p>
               </motion.div>
@@ -336,7 +336,7 @@ export default function MCPPage() {
       </section>
 
       {/* Popular MCP Servers */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -345,10 +345,10 @@ export default function MCPPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               260+ MCP Tools Available
             </h2>
-            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Pre-built servers for every use case. Deploy with one click.
             </p>
           </motion.div>
@@ -374,15 +374,15 @@ export default function MCPPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.03 }}
-                className="bg-neutral-900/30 border border-neutral-800 rounded-lg p-4 hover:border-white/20 transition-colors"
+                className="bg-secondary/30 border border-border rounded-lg p-4 hover:border-border transition-colors"
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <CheckCircle className="w-4 h-4 text-white" />
-                  <span className="font-medium text-white">
+                  <CheckCircle className="w-4 h-4 text-foreground" />
+                  <span className="font-medium text-foreground">
                     {server.name}
                   </span>
                 </div>
-                <p className="text-xs text-neutral-500">{server.desc}</p>
+                <p className="text-xs text-muted-foreground">{server.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -396,7 +396,7 @@ export default function MCPPage() {
           >
             <a
               href="https://github.com/hanzoai/mcp"
-              className="text-white hover:text-neutral-300 font-medium"
+              className="text-foreground hover:text-foreground/80 font-medium"
             >
               View all 260+ tools &rarr;
             </a>
@@ -405,7 +405,7 @@ export default function MCPPage() {
       </section>
 
       {/* Code Example */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -414,7 +414,7 @@ export default function MCPPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Simple API, Powerful Tools
             </h2>
           </motion.div>
@@ -424,20 +424,20 @@ export default function MCPPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden"
+            className="bg-secondary border border-border rounded-xl overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-neutral-800">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-border">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
                 <div className="w-3 h-3 rounded-full bg-neutral-700" />
               </div>
-              <span className="text-xs text-neutral-500 ml-2">
+              <span className="text-xs text-muted-foreground ml-2">
                 mcp-config.yaml
               </span>
             </div>
             <pre className="p-4 overflow-x-auto text-sm">
-              <code className="text-neutral-300">{`# Hanzo MCP as a Service configuration
+              <code className="text-foreground/80">{`# Hanzo MCP as a Service configuration
 version: "1"
 servers:
   filesystem:
@@ -469,17 +469,17 @@ servers:
       </section>
 
       {/* ZAP Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-800 bg-gradient-to-b from-neutral-900/50 to-transparent">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-border bg-gradient-to-b from-neutral-900/50 to-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-8"
           >
-            <Zap className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-neutral-300">
+            <Zap className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground/80">
               Next Evolution
             </span>
           </motion.div>
@@ -489,7 +489,7 @@ servers:
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
           >
             Ready for the Future? Meet ZAP
           </motion.h2>
@@ -499,10 +499,10 @@ servers:
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-neutral-400 mb-8 max-w-2xl mx-auto"
+            className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
             MCP made tool integration easy. ZAP makes it{" "}
-            <strong className="text-white">fast</strong>. Zero-Copy Agent
+            <strong className="text-foreground">fast</strong>. Zero-Copy Agent
             Protocol is the next evolution: zero-copy serialization, 40-50x
             lower overhead, built for agent swarms at scale.
           </motion.p>
@@ -516,7 +516,7 @@ servers:
           >
             <Link
               href="/zap"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-neutral-200 text-black font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-medium rounded-full transition-colors"
             >
               Explore ZAP
               <ArrowRight className="w-4 h-4" />
@@ -528,7 +528,7 @@ servers:
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-8 text-sm text-neutral-500"
+            className="mt-8 text-sm text-muted-foreground"
           >
             ZAP includes MCP Gateway Mode for seamless migration
           </motion.div>
@@ -543,32 +543,32 @@ servers:
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 md:p-12 text-center overflow-hidden"
+            className="relative bg-secondary/50 border border-border rounded-2xl p-8 md:p-12 text-center overflow-hidden"
           >
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Start Building with MCP
               </h2>
-              <p className="text-xl text-neutral-400 mb-8 max-w-xl mx-auto">
+              <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
                 Deploy your first MCP server in under 60 seconds
               </p>
 
-              <div className="bg-neutral-950 rounded-lg p-4 font-mono text-sm text-neutral-300 mb-8 max-w-md mx-auto text-left">
-                <div className="text-neutral-500"># Install Hanzo CLI</div>
+              <div className="bg-background rounded-lg p-4 font-mono text-sm text-foreground/80 mb-8 max-w-md mx-auto text-left">
+                <div className="text-muted-foreground"># Install Hanzo CLI</div>
                 <div>
-                  <span className="text-white">curl</span> -fsSL hanzo.sh |
+                  <span className="text-foreground">curl</span> -fsSL hanzo.sh |
                   sh
                 </div>
-                <div className="mt-2 text-neutral-500">
+                <div className="mt-2 text-muted-foreground">
                   # Launch an MCP server
                 </div>
                 <div>
-                  <span className="text-white">hanzo mcp launch</span> npx
+                  <span className="text-foreground">hanzo mcp launch</span> npx
                   @mcp/server-filesystem
                 </div>
               </div>
@@ -576,14 +576,14 @@ servers:
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="https://docs.hanzo.ai/mcp"
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-neutral-200 text-black font-medium rounded-full transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-medium rounded-full transition-colors"
                 >
                   Read the Docs
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="https://github.com/hanzoai/mcp"
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-medium rounded-full transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
                 >
                   View on GitHub
                 </a>

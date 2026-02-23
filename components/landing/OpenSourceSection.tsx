@@ -60,7 +60,7 @@ const OpenSourceSection = () => {
   const templates = repos["hanzo-apps"].slice(0, 3);
 
   return (
-    <section className="py-24 px-4 md:px-8 bg-black relative">
+    <section className="py-24 px-4 md:px-8 bg-background relative">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -84,10 +84,10 @@ const OpenSourceSection = () => {
             <Github className="w-4 h-4" />
             Open Source
           </div>
-          <h2 className="text-3xl md:text-5xl font-medium text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-medium text-foreground mb-6">
             Built in the open
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We believe the future of AI infrastructure should be open. View our code, contribute, or self-host the entire platform.
           </p>
         </motion.div>
@@ -106,14 +106,14 @@ const OpenSourceSection = () => {
               href={org.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-5 py-3 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 hover:border-neutral-700 transition-all group"
+              className="flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-secondary/50 hover:bg-secondary hover:border-border transition-all group"
             >
-              <Github className="w-5 h-5 text-neutral-400" />
+              <Github className="w-5 h-5 text-muted-foreground" />
               <div>
-                <div className="text-sm font-medium text-white group-hover:text-white transition-colors">{org.label}</div>
-                <div className="text-xs text-neutral-500">{org.description}</div>
+                <div className="text-sm font-medium text-foreground group-hover:text-foreground transition-colors">{org.label}</div>
+                <div className="text-xs text-muted-foreground">{org.description}</div>
               </div>
-              <ExternalLink className="w-3.5 h-3.5 text-neutral-600 group-hover:text-neutral-400 transition-colors" />
+              <ExternalLink className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-muted-foreground transition-colors" />
             </a>
           ))}
         </motion.div>
@@ -135,18 +135,18 @@ const OpenSourceSection = () => {
               transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
               className="text-center p-6"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4 text-white font-bold">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-foreground font-bold">
                 {typeof feature.icon === "string" ? feature.icon : feature.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-              <p className="text-sm text-neutral-400">{feature.description}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Featured Repos grid - 3x2 on desktop */}
         <div className="mb-16">
-          <h3 className="text-xl font-medium text-white mb-6 text-center">Core Infrastructure</h3>
+          <h3 className="text-xl font-medium text-foreground mb-6 text-center">Core Infrastructure</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {featuredRepos.map((repo, index) => (
               <motion.a
@@ -158,22 +158,22 @@ const OpenSourceSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 + (index % 3) * 0.1 }}
-                className={`group p-5 rounded-xl border bg-neutral-900/50 hover:bg-neutral-900 transition-all ${
+                className={`group p-5 rounded-xl border bg-secondary/50 hover:bg-secondary transition-all ${
                   repo.featured
                     ? "border-white/30 hover:border-white/30/50"
-                    : "border-neutral-800 hover:border-neutral-700"
+                    : "border-border hover:border-border"
                 }`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <Github className="w-4 h-4 text-neutral-400" />
-                    <span className="font-mono text-sm text-white">hanzoai/{repo.name}</span>
+                    <Github className="w-4 h-4 text-muted-foreground" />
+                    <span className="font-mono text-sm text-foreground">hanzoai/{repo.name}</span>
                   </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-neutral-600 group-hover:text-neutral-400 transition-colors" />
+                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-muted-foreground transition-colors" />
                 </div>
-                <p className="text-sm text-neutral-400 mb-3 line-clamp-2">{repo.description}</p>
+                <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{repo.description}</p>
                 <div className="flex items-center gap-3">
-                  <span className="text-[11px] px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-500">{repo.language}</span>
+                  <span className="text-[11px] px-1.5 py-0.5 rounded bg-neutral-800 text-muted-foreground">{repo.language}</span>
                 </div>
               </motion.a>
             ))}
@@ -183,12 +183,12 @@ const OpenSourceSection = () => {
         {/* Templates Section */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-medium text-white">Templates &amp; Starters</h3>
+            <h3 className="text-xl font-medium text-foreground">Templates &amp; Starters</h3>
             <a
               href="https://github.com/hanzo-apps"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-1"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
             >
               View all templates
               <ExternalLink className="w-3.5 h-3.5" />
@@ -202,21 +202,21 @@ const OpenSourceSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
-                className="group p-5 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 hover:border-neutral-700 transition-all"
+                className="group p-5 rounded-xl border border-border bg-secondary/50 hover:bg-secondary hover:border-border transition-all"
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <Rocket className="w-4 h-4 text-white" />
-                    <span className="font-mono text-sm text-white">{template.name}</span>
+                    <Rocket className="w-4 h-4 text-foreground" />
+                    <span className="font-mono text-sm text-foreground">{template.name}</span>
                   </div>
                 </div>
-                <p className="text-sm text-neutral-400 mb-4 line-clamp-2">{template.description}</p>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{template.description}</p>
                 <div className="flex items-center gap-2">
                   <a
                     href={`https://hanzo.app/new?template=${template.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-3 py-2 rounded-lg bg-white hover:bg-white/90 text-white text-xs font-medium transition-colors"
+                    className="flex-1 text-center px-3 py-2 rounded-lg bg-primary hover:bg-primary/90 text-foreground text-xs font-medium transition-colors"
                   >
                     Launch in Hanzo
                   </a>
@@ -224,7 +224,7 @@ const OpenSourceSection = () => {
                     href={`https://github.com/hanzo-apps/${template.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 text-neutral-400 text-xs transition-colors"
+                    className="px-3 py-2 rounded-lg border border-border hover:bg-accent text-muted-foreground text-xs transition-colors"
                   >
                     <Github className="w-4 h-4" />
                   </a>
@@ -249,10 +249,10 @@ const OpenSourceSection = () => {
                 <Network className="w-4 h-4" />
                 Hanzo Network
               </div>
-              <h3 className="text-2xl md:text-3xl font-medium text-white mb-4">
+              <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-4">
                 Decentralized AI compute
               </h3>
-              <p className="text-neutral-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Join the Hanzo Network to contribute GPU power for AI inference and training. Earn rewards while powering the next generation of AI applications.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -260,7 +260,7 @@ const OpenSourceSection = () => {
                   href="https://hanzo.network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:opacity-90 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 transition-colors"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4" />
@@ -269,7 +269,7 @@ const OpenSourceSection = () => {
                   href="https://github.com/hanzoai/network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border border-neutral-700 text-white hover:bg-neutral-900 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border border-border text-foreground hover:bg-secondary transition-colors"
                 >
                   <Github className="w-4 h-4" />
                   View source
@@ -278,7 +278,7 @@ const OpenSourceSection = () => {
             </div>
             <div className="flex items-center justify-center">
               <div className="w-32 h-32 rounded-2xl bg-neutral-800/50 flex items-center justify-center">
-                <Network className="w-16 h-16 text-white" />
+                <Network className="w-16 h-16 text-foreground" />
               </div>
             </div>
           </div>
@@ -292,14 +292,14 @@ const OpenSourceSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mb-12"
         >
-          <p className="text-neutral-400 mb-4">
+          <p className="text-muted-foreground mb-4">
             Read our research papers and technical specifications
           </p>
           <a
             href="https://zenlm.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white hover:underline"
+            className="inline-flex items-center gap-2 text-foreground hover:underline"
           >
             zenlm.org - AI Research &amp; Philosophy
             <ExternalLink className="w-4 h-4" />
@@ -316,7 +316,7 @@ const OpenSourceSection = () => {
         >
           <Link
             href="/open-source"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white bg-white hover:bg-white/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-foreground bg-primary hover:bg-primary/90 transition-colors"
           >
             Browse all projects
             <ArrowRight className="w-4 h-4" />
@@ -325,7 +325,7 @@ const OpenSourceSection = () => {
             href="https://github.com/hanzoai"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white border border-neutral-700 hover:bg-neutral-900 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-foreground border border-border hover:bg-secondary transition-colors"
           >
             <Github className="w-5 h-5" />
             View on GitHub

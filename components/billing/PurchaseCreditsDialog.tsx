@@ -67,7 +67,7 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
 
         <div className="space-y-6 py-4">
           <div>
-            <Label className="text-neutral-400 mb-2 block">Select an amount</Label>
+            <Label className="text-muted-foreground mb-2 block">Select an amount</Label>
             <div className="grid grid-cols-2 gap-3">
               {PREDEFINED_AMOUNTS.map((amount) => (
                 <Button
@@ -77,7 +77,7 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
                   onClick={() => handleSelectAmount(amount)}
                   className={`${
                     selectedAmount === amount
-                      ? "bg-white hover:bg-[#cccccc] text-[var(--white)]"
+                      ? "bg-primary hover:bg-[#cccccc] text-[var(--white)]"
                       : "border-gray-700 text-[var(--white)]"
                   }`}
                 >
@@ -88,11 +88,11 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
           </div>
 
           <div>
-            <Label htmlFor="custom-amount" className="text-neutral-400 mb-2 block">
+            <Label htmlFor="custom-amount" className="text-muted-foreground mb-2 block">
               Or enter a custom amount
             </Label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400">$</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
               <Input
                 id="custom-amount"
                 placeholder="Enter amount"
@@ -108,11 +108,11 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
 
           <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-neutral-400">Amount:</span>
+              <span className="text-muted-foreground">Amount:</span>
               <span>${getEffectiveAmount().toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm font-medium">
-              <span className="text-neutral-400">Total:</span>
+              <span className="text-muted-foreground">Total:</span>
               <span>${getEffectiveAmount().toFixed(2)}</span>
             </div>
           </div>
@@ -123,14 +123,14 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
             type="button"
             variant="ghost"
             onClick={() => onOpenChange(false)}
-            className="text-neutral-400 hover:text-[var(--white)] hover:bg-gray-800"
+            className="text-muted-foreground hover:text-[var(--white)] hover:bg-gray-800"
             disabled={isProcessing}
           >
             Cancel
           </Button>
           <Button
             type="button"
-            className="bg-[var(--white)] hover:bg-gray-200 text-black"
+            className="bg-[var(--white)] hover:bg-gray-200 text-primary-foreground"
             onClick={handlePurchase}
             disabled={isProcessing || getEffectiveAmount() <= 0}
           >

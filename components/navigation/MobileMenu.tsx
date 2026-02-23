@@ -162,7 +162,7 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
           variant="ghost"
           size="icon"
           onClick={onOpenSearch}
-          className="text-neutral-400 hover:text-white"
+          className="text-muted-foreground hover:text-foreground"
         >
           <Search className="h-5 w-5" />
         </Button>
@@ -172,7 +172,7 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
           variant="ghost"
           size="icon"
           onClick={onToggle}
-          className="text-white"
+          className="text-foreground"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
@@ -180,9 +180,9 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
 
       {isOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
-          <div className="fixed inset-0 bg-black/95 backdrop-blur-md" onClick={onToggle} />
+          <div className="fixed inset-0 bg-background/95 backdrop-blur-md" onClick={onToggle} />
 
-          <div className="fixed inset-0 w-full bg-black pt-[var(--header-height)] h-screen overflow-y-auto">
+          <div className="fixed inset-0 w-full bg-background pt-[var(--header-height)] h-screen overflow-y-auto">
             {/* Search / Command palette widget at top */}
             <div className="px-4 pt-4 pb-2">
               <button
@@ -190,11 +190,11 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                   onToggle();
                   onOpenSearch?.();
                 }}
-                className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-neutral-700 transition-all"
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-secondary border border-border text-muted-foreground hover:text-foreground hover:bg-accent hover:border-border transition-all"
               >
                 <Search className="h-5 w-5" />
                 <span className="flex-1 text-left text-sm">Search docs, products, pages...</span>
-                <kbd className="inline-flex items-center gap-0.5 px-2 py-1 text-[11px] font-mono bg-neutral-800 border border-neutral-700 rounded text-neutral-500">
+                <kbd className="inline-flex items-center gap-0.5 px-2 py-1 text-[11px] font-mono bg-neutral-800 border border-border rounded text-muted-foreground">
                   <span className="text-xs">⌘</span>K
                 </kbd>
               </button>
@@ -202,11 +202,11 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
 
             <div className="px-4 py-4 space-y-1">
               {mobileNav.map((item) => (
-                <div key={item.title} className="border-b border-neutral-800/50 pb-2 mb-2">
+                <div key={item.title} className="border-b border-border/50 pb-2 mb-2">
                   {item.href ? (
                     <Link
                       href={item.href || "#"}
-                      className="block px-3 py-2.5 text-base font-medium text-neutral-300 hover:text-white hover:bg-neutral-800/50 rounded-lg transition-colors"
+                      className="block px-3 py-2.5 text-base font-medium text-foreground/80 hover:text-foreground hover:bg-accent/50 rounded-lg transition-colors"
                       onClick={handleLinkClick}
                     >
                       {item.title}
@@ -214,7 +214,7 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                   ) : (
                     <>
                       <button
-                        className="w-full flex justify-between items-center px-3 py-2.5 text-base font-medium text-neutral-300 hover:text-white hover:bg-neutral-800/50 rounded-lg transition-colors"
+                        className="w-full flex justify-between items-center px-3 py-2.5 text-base font-medium text-foreground/80 hover:text-foreground hover:bg-accent/50 rounded-lg transition-colors"
                         onClick={() => toggleSection(item.title)}
                       >
                         {item.title}
@@ -225,10 +225,10 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                       </button>
 
                       {expandedSections[item.title] && item.sections && (
-                        <div className="mt-2 ml-2 space-y-4 bg-neutral-900/50 rounded-lg p-3">
+                        <div className="mt-2 ml-2 space-y-4 bg-secondary/50 rounded-lg p-3">
                           {item.sections.map((section) => (
                             <div key={section.title}>
-                              <div className="px-2 py-1 text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                              <div className="px-2 py-1 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                                 {section.title}
                               </div>
                               <div className="space-y-0.5 mt-1">
@@ -239,7 +239,7 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                                       href={subItem.href || "#"}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="block px-2 py-1.5 text-sm text-neutral-400 hover:text-white hover:bg-neutral-800/50 rounded transition-colors"
+                                      className="block px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded transition-colors"
                                       onClick={handleLinkClick}
                                     >
                                       {subItem.title}
@@ -248,7 +248,7 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                                     <Link
                                       key={subItem.title}
                                       href={subItem.href || "#"}
-                                      className="block px-2 py-1.5 text-sm text-neutral-400 hover:text-white hover:bg-neutral-800/50 rounded transition-colors"
+                                      className="block px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded transition-colors"
                                       onClick={handleLinkClick}
                                     >
                                       {subItem.title}
@@ -267,15 +267,15 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
             </div>
 
             {/* Bottom buttons */}
-            <div className="px-4 py-4 space-y-3 border-t border-neutral-800">
+            <div className="px-4 py-4 space-y-3 border-t border-border">
               <Link href="/contact" onClick={handleLinkClick}>
-                <Button variant="ghost" className="w-full text-neutral-300 hover:text-white hover:bg-neutral-800/50 justify-center">
+                <Button variant="ghost" className="w-full text-foreground/80 hover:text-foreground hover:bg-accent/50 justify-center">
                   Contact sales
                 </Button>
               </Link>
               <a
                 href="https://cloud.hanzo.ai"
-                className="block w-full bg-white text-black hover:bg-neutral-200 active:bg-neutral-300 rounded-full h-10 flex items-center justify-center text-sm font-medium transition-all duration-200"
+                className="block w-full bg-primary text-primary-foreground hover:bg-accent active:bg-neutral-300 rounded-full h-10 flex items-center justify-center text-sm font-medium transition-all duration-200"
               >
                 Try Hanzo
               </a>

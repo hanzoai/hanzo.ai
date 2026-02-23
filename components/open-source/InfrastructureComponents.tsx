@@ -20,7 +20,7 @@ const InfrastructureComponents = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Infrastructure Components
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             The building blocks of the Hanzo Platform
           </p>
         </motion.div>
@@ -32,16 +32,16 @@ const InfrastructureComponents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Database className="h-8 w-8 text-white/70 mr-3" />
+              <Database className="h-8 w-8 text-foreground/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Vector DB</h3>
             </div>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               High-performance vector database designed for AI applications with local and distributed modes.
             </p>
-            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>3.4k stars</span>
@@ -57,7 +57,7 @@ const InfrastructureComponents = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-white/10 hover:bg-white/10"
+              className="w-full bg-primary/10 hover:bg-primary/10"
             >
               <a href="https://github.com/hanzoai/vector-db" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -71,16 +71,16 @@ const InfrastructureComponents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Brain className="h-8 w-8 text-white/70 mr-3" />
+              <Brain className="h-8 w-8 text-foreground/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">LLM Runtime</h3>
             </div>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               Optimized inference engine for running large language models locally with minimal resource usage.
             </p>
-            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>4.1k stars</span>
@@ -96,7 +96,7 @@ const InfrastructureComponents = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-white/10 hover:bg-white/10"
+              className="w-full bg-primary/10 hover:bg-primary/10"
             >
               <a href="https://github.com/hanzoai/llm-runtime" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -110,16 +110,16 @@ const InfrastructureComponents = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-border transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Zap className="h-8 w-8 text-white/70 mr-3" />
+              <Zap className="h-8 w-8 text-foreground/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">API Gateway</h3>
             </div>
-            <p className="text-neutral-300 mb-6">
+            <p className="text-foreground/80 mb-6">
               High-performance API Gateway for routing, authentication, and rate limiting in AI applications.
             </p>
-            <div className="flex items-center justify-between text-sm text-neutral-400 mb-5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground mb-5">
               <div className="flex items-center">
                 <Star className="h-4 w-4 mr-1" />
                 <span>2.8k stars</span>
@@ -135,7 +135,7 @@ const InfrastructureComponents = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-white/10 hover:bg-white/10"
+              className="w-full bg-primary/10 hover:bg-primary/10"
             >
               <a href="https://github.com/hanzoai/gateway" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository

@@ -221,7 +221,7 @@ const Logo = () => {
         {/* Wordmark - absolute positioned so it doesn't shift other content */}
         <div className="absolute left-8 overflow-hidden">
           <span
-            className={`font-bold text-xl text-white whitespace-nowrap block transition-transform duration-300 ease-out ${
+            className={`font-bold text-xl text-foreground whitespace-nowrap block transition-transform duration-300 ease-out ${
               shouldShowWordmark ? "translate-x-0" : "-translate-x-full"
             }`}
           >
@@ -239,26 +239,26 @@ const Logo = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.1 }}
-            className="fixed z-[200] rounded-lg shadow-2xl py-1 min-w-[180px] border bg-black border-neutral-800"
+            className="fixed z-[200] rounded-lg shadow-2xl py-1 min-w-[180px] border bg-background border-border"
             style={{ left: contextMenu.x, top: contextMenu.y }}
           >
             {contextMenuItems.map((item, index) =>
               'divider' in item ? (
-                <div key={index} className="border-t my-1 border-neutral-800" />
+                <div key={index} className="border-t my-1 border-border" />
               ) : (
                 <button
                   key={item.label}
                   onClick={() => handleMenuItemClick(item)}
-                  className="w-full text-left px-3 py-2 text-sm transition-colors flex items-center justify-between text-neutral-300 hover:bg-neutral-800 hover:text-white"
+                  className="w-full text-left px-3 py-2 text-sm transition-colors flex items-center justify-between text-foreground/80 hover:bg-accent hover:text-foreground"
                 >
                   {item.label}
                   {'action' in item && item.action === 'copy-svg' && (
-                    <svg className="w-3 h-3 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-3 h-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
                   {'external' in item && item.external && (
-                    <svg className="w-3 h-3 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-3 h-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   )}

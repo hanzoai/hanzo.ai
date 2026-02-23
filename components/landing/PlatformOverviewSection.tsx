@@ -18,8 +18,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const BRAND_COLOR = "#ffffff";
-
 // AI providers we support for multi-agent execution
 const aiProviders = [
   { name: "OpenAI", logo: "/logos/openai.svg" },
@@ -86,7 +84,7 @@ const PlatformOverviewSection = () => {
   const [activeMode, setActiveMode] = useState("plan");
 
   return (
-    <section className="py-24 px-4 md:px-8 bg-black">
+    <section className="py-24 px-4 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Multi-Agent Remote Execution */}
         <motion.div
@@ -98,25 +96,25 @@ const PlatformOverviewSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `#ffffff4d` }}
+            style={{ color: "var(--primary)", borderColor: `#ffffff4d` }}
           >
             Why Hanzo Wins
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
             Ship code that actually works.
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mb-8">
+          <p className="text-lg text-muted-foreground max-w-2xl mb-8">
             Stop gambling on single-model outputs. Race multiple AI agents against each other,
             and let test results pick the winner. Evidence over vibes.
           </p>
 
           {/* AI Provider logos */}
-          <div className="flex flex-wrap items-center gap-6 mb-12 p-4 rounded-xl bg-neutral-900/30 border border-neutral-800">
-            <span className="text-xs text-neutral-500 uppercase tracking-wider font-medium">Supported agents:</span>
+          <div className="flex flex-wrap items-center gap-6 mb-12 p-4 rounded-xl bg-secondary/30 border border-border">
+            <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Supported agents:</span>
             {aiProviders.map((provider) => (
               <div
                 key={provider.name}
-                className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                 title={provider.name}
               >
                 <img
@@ -140,16 +138,16 @@ const PlatformOverviewSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/50"
+                  className="p-5 rounded-xl border border-border bg-secondary/50"
                 >
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
                     style={{ backgroundColor: `#ffffff15` }}
                   >
-                    <Icon className="w-5 h-5" style={{ color: BRAND_COLOR }} />
+                    <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-sm text-neutral-400">{feature.description}</p>
+                  <h3 className="text-base font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -157,8 +155,8 @@ const PlatformOverviewSection = () => {
 
           <Link
             href="/dev"
-            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors text-black"
-            style={{ backgroundColor: BRAND_COLOR }}
+            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors text-primary-foreground"
+
           >
             Start building now
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -174,14 +172,14 @@ const PlatformOverviewSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: BRAND_COLOR, borderColor: `#ffffff4d` }}
+            style={{ color: "var(--primary)", borderColor: `#ffffff4d` }}
           >
             Your Wedge
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
             Autonomy you can dial. Evidence you can trust.
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mb-12">
+          <p className="text-lg text-muted-foreground max-w-2xl mb-12">
             Move fast without giving agents the keys. Every step is explicit, reviewable, and enforceable.
           </p>
 
@@ -200,29 +198,29 @@ const PlatformOverviewSection = () => {
                   onClick={() => setActiveMode(mode.id)}
                   className={`p-5 rounded-xl border text-left transition-all ${
                     isActive
-                      ? "border-white bg-white/10"
-                      : "border-neutral-800 bg-neutral-900/50 hover:border-neutral-700"
+                      ? "border-white bg-primary/10"
+                      : "border-border bg-secondary/50 hover:border-border"
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        isActive ? "bg-white/20" : "bg-neutral-800"
+                        isActive ? "bg-primary/20" : "bg-neutral-800"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-neutral-400"}`} />
+                      <Icon className={`w-4 h-4 ${isActive ? "text-foreground" : "text-muted-foreground"}`} />
                     </div>
                     <div>
-                      <h3 className={`text-sm font-semibold mb-1 ${isActive ? "text-white" : "text-neutral-300"}`}>
+                      <h3 className={`text-sm font-semibold mb-1 ${isActive ? "text-foreground" : "text-foreground/80"}`}>
                         {mode.title}
                       </h3>
-                      <p className="text-xs text-neutral-500">{mode.description}</p>
+                      <p className="text-xs text-muted-foreground">{mode.description}</p>
                     </div>
                   </div>
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="mt-3 flex items-center text-white text-xs font-medium"
+                      className="mt-3 flex items-center text-foreground text-xs font-medium"
                     >
                       <ChevronRight className="w-3 h-3 mr-1" />
                       Selected
@@ -239,13 +237,13 @@ const PlatformOverviewSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center gap-3 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 max-w-md"
+            className="flex items-center gap-3 p-4 rounded-xl border border-border bg-secondary/30 max-w-md"
           >
             <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
-              <Lock className="w-5 h-5 text-neutral-400" />
+              <Lock className="w-5 h-5 text-muted-foreground" />
             </div>
-            <p className="text-sm text-neutral-300">
-              <span className="font-medium text-white">Agents don't get admin.</span>{" "}
+            <p className="text-sm text-foreground/80">
+              <span className="font-medium text-foreground">Agents don't get admin.</span>{" "}
               They get policies.
             </p>
           </motion.div>

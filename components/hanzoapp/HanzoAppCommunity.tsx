@@ -21,11 +21,11 @@ const TweetCard = ({ username, handle, content, date, replies }) => {
         </div>
         <div className="ml-3">
           <div className="font-bold">{username}</div>
-          <div className="text-neutral-500">@{handle}</div>
+          <div className="text-muted-foreground">@{handle}</div>
         </div>
       </div>
-      <div className="text-neutral-300 mb-4">{content}</div>
-      <div className="flex items-center justify-between text-sm text-neutral-500">
+      <div className="text-foreground/80 mb-4">{content}</div>
+      <div className="flex items-center justify-between text-sm text-muted-foreground">
         <div>{date}</div>
         <div className="flex items-center">
           <MessageSquare className="h-4 w-4 mr-1" /> {replies}
@@ -92,12 +92,12 @@ const HanzoAppCommunity = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">Community 🫶</h2>
-          <p className="text-xl text-neutral-300 mb-8">
+          <p className="text-xl text-foreground/80 mb-8">
             Open source community is the heart of Hanzo AI. See why developers love and build using Hanzo AI
           </p>
           <Button 
             size="lg"
-            className="bg-white hover:bg-[#cccccc] text-[var(--white)]"
+            className="bg-primary hover:bg-[#cccccc] text-[var(--white)]"
           >
             Join Discord
           </Button>

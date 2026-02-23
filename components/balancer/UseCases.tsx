@@ -45,12 +45,12 @@ const UseCaseCard = ({ useCase }) => {
       transition={{ duration: 0.5 }}
       className="bg-gray-800/30 border border-gray-700 rounded-lg p-6"
     >
-      <div className="bg-white/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-        <useCase.icon className="h-6 w-6 text-white" />
+      <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+        <useCase.icon className="h-6 w-6 text-foreground" />
       </div>
       <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
-      <p className="text-neutral-300 mb-4">{useCase.description}</p>
-      <a href={useCase.learnMoreLink || "#"} className="text-white hover:text-white/70">
+      <p className="text-foreground/80 mb-4">{useCase.description}</p>
+      <a href={useCase.learnMoreLink || "#"} className="text-foreground hover:text-foreground/70">
         Learn more
       </a>
     </motion.div>

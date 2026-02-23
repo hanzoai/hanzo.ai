@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { Rocket, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const BRAND_COLOR = "#ffffff";
-
 const SolutionsHero: React.FC = () => {
   return (
     <div className="relative pb-16 overflow-hidden">
@@ -15,7 +13,7 @@ const SolutionsHero: React.FC = () => {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-15"
           style={{
-            background: `radial-gradient(circle, ${BRAND_COLOR} 0%, transparent 70%)`,
+            background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
             filter: "blur(100px)",
           }}
         />
@@ -34,7 +32,7 @@ const SolutionsHero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
-          style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
+          style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
         >
           <Rocket className="w-3.5 h-3.5" />
           Enterprise Solutions
@@ -46,16 +44,16 @@ const SolutionsHero: React.FC = () => {
           transition={{ duration: 0.4, delay: 0.05 }}
           className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6"
         >
-          <span className="text-white">AI Solutions</span>
+          <span className="text-foreground">AI Solutions</span>
           <br />
-          <span className="text-neutral-400">for every industry.</span>
+          <span className="text-muted-foreground">for every industry.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="text-base lg:text-lg text-neutral-400 leading-relaxed mb-10"
+          className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10"
         >
           Hanzo delivers a unified ecosystem of AI Cloud infrastructure, developer platforms,
           and expert consulting to transform how enterprises build, deploy, and scale
@@ -70,15 +68,15 @@ const SolutionsHero: React.FC = () => {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-            style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
+            className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+
           >
             Talk to Sales
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <Link
             href="/solutions/capabilities"
-            className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-neutral-700 bg-transparent hover:bg-neutral-900 text-sm text-white"
+            className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
           >
             Explore Capabilities
           </Link>

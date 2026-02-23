@@ -11,25 +11,25 @@ const quickApps = [{
   title: "AI Chat Assistant",
   description: "Launch your own ChatGPT-style AI assistant",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.15)]",
-  borderColor: "group-hover:border-white/20"
+  borderColor: "group-hover:border-border"
 }, {
   icon: <ShoppingCart className="h-6 w-6 text-[var(--white)]" />,
   title: "E-commerce Store",
   description: "Start selling products online in minutes",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.15)]",
-  borderColor: "group-hover:border-white/20"
+  borderColor: "group-hover:border-border"
 }, {
   icon: <AppWindow className="h-6 w-6 text-[var(--white)]" />,
   title: "Web3 dApp",
   description: "Build a decentralized application",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.15)]",
-  borderColor: "group-hover:border-white/20"
+  borderColor: "group-hover:border-border"
 }, {
   icon: <Rocket className="h-6 w-6 text-[var(--white)]" />,
   title: "Custom App",
   description: "Start from scratch with our App Builder",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.15)]",
-  borderColor: "group-hover:border-white/20"
+  borderColor: "group-hover:border-border"
 }];
 
 const QuickStart = () => {
@@ -52,7 +52,7 @@ const QuickStart = () => {
     >
       {/* Parallax background */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black bg-black/[0.12] z-0"
+        className="absolute inset-0 bg-gradient-to-b from-background via-gray-900/50 to-background bg-background/[0.12] z-0"
         style={{ y: backgroundY }}
       />
       
@@ -76,7 +76,7 @@ const QuickStart = () => {
             Quick Launch Apps
           </h2>
           <motion.p 
-            className="text-lg text-neutral-400"
+            className="text-lg text-muted-foreground"
             style={{ y: descriptionY }}
           >
             Get started quickly with our pre-built templates
@@ -123,15 +123,15 @@ const QuickStart = () => {
                 duration: 0.02
               }
             }} 
-            className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-black to-gray-900/30 backdrop-blur-sm rounded-xl 
-                border border-white/5 transition-all duration-50 hover:border-white/10 ${app.glowColor} ${app.borderColor}`}>
+            className={`group relative p-6 bg-gradient-to-br from-gray-900/50 via-background to-gray-900/30 backdrop-blur-sm rounded-xl 
+                border border-border transition-all duration-50 hover:border-border ${app.glowColor} ${app.borderColor}`}>
               <div className="p-3 rounded-lg w-fit bg-[var(--white)]/5 text-[var(--white)] mx-auto">
                 {app.icon}
               </div>
               
-              <p className="mt-2 text-neutral-400 text-center">{app.description}</p>
-              <Button className="mt-4 w-full bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)] border border-white/10
-                  transition-all duration-300 hover:border-white/20" variant="outline">
+              <p className="mt-2 text-muted-foreground text-center">{app.description}</p>
+              <Button className="mt-4 w-full bg-[var(--white)]/5 hover:bg-[var(--white)]/10 text-[var(--white)] border border-border
+                  transition-all duration-300 hover:border-border" variant="outline">
                 Launch App
                 <Rocket className="ml-2 h-4 w-4" />
               </Button>

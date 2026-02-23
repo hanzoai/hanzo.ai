@@ -46,18 +46,18 @@ const DesktopAppBanner = ({ variant = "floating" }: DesktopAppBannerProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="bg-gradient-to-r from-neutral-900 to-neutral-800 border-b border-neutral-800"
+            className="bg-gradient-to-r from-neutral-900 to-neutral-800 border-b border-border"
           >
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Monitor className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Monitor className="w-4 h-4 text-foreground" />
                 </div>
                 <div>
-                  <p className="text-sm text-white font-medium">
+                  <p className="text-sm text-foreground font-medium">
                     Hanzo Dev Desktop App
                   </p>
-                  <p className="text-xs text-neutral-400">
+                  <p className="text-xs text-muted-foreground">
                     Native performance. All your tools in one place.
                   </p>
                 </div>
@@ -67,14 +67,14 @@ const DesktopAppBanner = ({ variant = "floating" }: DesktopAppBannerProps) => {
                   href={downloadUrl || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-neutral-200 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-accent transition-colors"
                 >
                   <Download className="w-4 h-4" />
                   {isMac ? "Download for Mac" : "Download"}
                 </a>
                 <button
                   onClick={handleDismiss}
-                  className="p-2 rounded-full text-neutral-500 hover:text-white hover:bg-neutral-800 transition-colors"
+                  className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -96,27 +96,27 @@ const DesktopAppBanner = ({ variant = "floating" }: DesktopAppBannerProps) => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-24 left-6 z-40 max-w-sm"
         >
-          <div className="bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800">
+          <div className="bg-secondary border border-border rounded-2xl shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
-                  <Monitor className="w-3.5 h-3.5 text-white" />
+                <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
+                  <Monitor className="w-3.5 h-3.5 text-foreground" />
                 </div>
-                <span className="text-xs font-medium text-white">NEW</span>
+                <span className="text-xs font-medium text-foreground">NEW</span>
               </div>
               <button
                 onClick={handleDismiss}
-                className="p-1 rounded-md text-neutral-500 hover:text-white hover:bg-neutral-800 transition-colors"
+                className="p-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             <div className="p-4">
-              <h3 className="text-base font-semibold text-white mb-1">
+              <h3 className="text-base font-semibold text-foreground mb-1">
                 Get Hanzo Dev for Desktop
               </h3>
-              <p className="text-sm text-neutral-400 mb-4">
+              <p className="text-sm text-muted-foreground mb-4">
                 Native app with faster performance, offline access, and system integrations.
               </p>
 
@@ -125,20 +125,20 @@ const DesktopAppBanner = ({ variant = "floating" }: DesktopAppBannerProps) => {
                   href={downloadUrl || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white text-black text-sm font-medium hover:bg-neutral-200 transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-accent transition-colors"
                 >
                   <Download className="w-4 h-4" />
                   {isMac ? "Download for Mac" : "Download"}
                 </a>
                 <a
                   href="/dev"
-                  className="px-4 py-2.5 rounded-lg border border-neutral-700 text-neutral-300 text-sm font-medium hover:bg-neutral-800 hover:text-white transition-colors"
+                  className="px-4 py-2.5 rounded-lg border border-border text-foreground/80 text-sm font-medium hover:bg-accent hover:text-foreground transition-colors"
                 >
                   Learn more
                 </a>
               </div>
 
-              <p className="mt-3 text-xs text-neutral-500 flex items-center gap-1">
+              <p className="mt-3 text-xs text-muted-foreground flex items-center gap-1">
                 {isMac ? (
                   <>Apple Silicon & Intel supported</>
                 ) : (
