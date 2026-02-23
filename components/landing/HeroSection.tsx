@@ -341,7 +341,7 @@ const HeroSection = () => {
           onClick={() => setMobileTab(tab)}
           className={`flex-1 px-3 py-2 text-xs font-medium rounded-md transition-colors capitalize ${
             mobileTab === tab
-              ? "bg-white text-white"
+              ? "bg-white text-black"
               : "text-neutral-400 hover:text-white"
           }`}
         >
@@ -458,7 +458,7 @@ const HeroSection = () => {
                 <Link
                   href="/products"
                   className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: '#ffffff' }}
+                  style={{ backgroundColor: BRAND_COLOR, color: '#000000' }}
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -575,7 +575,7 @@ const HeroSection = () => {
                 <Link
                   href="/products"
                   className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: '#ffffff' }}
+                  style={{ backgroundColor: BRAND_COLOR, color: '#000000' }}
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -688,7 +688,7 @@ const HeroSection = () => {
                 <Link
                   href="/products"
                   className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm w-full max-w-[200px]"
-                  style={{ backgroundColor: BRAND_COLOR, color: '#ffffff' }}
+                  style={{ backgroundColor: BRAND_COLOR, color: '#000000' }}
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />

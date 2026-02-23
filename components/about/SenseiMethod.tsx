@@ -73,7 +73,7 @@ const SenseiMethod = () => {
 
             <Button
               className="rounded-full"
-              style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+              style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
             >
               <a href="https://sensei.group" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 Visit Sensei Group

@@ -165,7 +165,7 @@ const MultiAgentSection = () => {
           </p>
           <Button
             size="lg"
-            className="mt-8 text-white"
+            className="mt-8 text-black"
             style={{ backgroundColor: BRAND_COLOR }}
             asChild
           >
@@ -227,7 +227,7 @@ const MultiAgentSection = () => {
           </p>
           <Button
             size="lg"
-            className="text-white"
+            className="text-black"
             style={{ backgroundColor: BRAND_COLOR }}
             asChild
           >

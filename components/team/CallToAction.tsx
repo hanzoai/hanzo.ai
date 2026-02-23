@@ -15,7 +15,7 @@ const CallToAction = () => {
       <div className="flex flex-wrap justify-center gap-4">
         <Button
           size="lg"
-          className="text-white"
+          className="text-black"
           style={{ backgroundColor: BRAND_COLOR }}
           onClick={() => window.open('https://hanzo.chat', '_blank')}
         >

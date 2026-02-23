@@ -95,7 +95,7 @@ const HeroSection = () => {
               />
               <Button
                 type="submit"
-                className="absolute right-2 px-5 py-2 rounded-lg text-sm font-medium flex items-center gap-2"
+                className="absolute right-2 px-5 py-2 rounded-lg text-sm font-medium flex items-center gap-2 text-black"
                 style={{ backgroundColor: BRAND_COLOR }}
               >
                 Ask Hanzo
@@ -177,7 +177,7 @@ const HeroSection = () => {
                     <Link href="/dev">
                       <Button
                         size="sm"
-                        className="text-white"
+                        className="text-black"
                         style={{ backgroundColor: BRAND_COLOR }}
                       >
                         Learn more

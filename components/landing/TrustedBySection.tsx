@@ -71,7 +71,7 @@ const TrustedBySection = () => {
         <div className="flex justify-center mb-16">
           <Link
             href="/signup"
-            className="inline-flex items-center px-6 py-3 rounded-full font-medium text-sm bg-white text-white hover:bg-[#cccccc] transition-colors"
+            className="inline-flex items-center px-6 py-3 rounded-full font-medium text-sm bg-white text-black hover:bg-[#cccccc] transition-colors"
           >
             Create account & get started free
           </Link>

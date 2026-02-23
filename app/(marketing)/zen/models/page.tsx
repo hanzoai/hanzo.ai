@@ -388,7 +388,7 @@ const ZenModels = () => {
               <a
                 href="#zen4"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
               >
                 Explore Models
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -513,7 +513,7 @@ print(response.choices[0].message.content)`}</code>
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                  style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />

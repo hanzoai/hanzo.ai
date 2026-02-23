@@ -381,7 +381,7 @@ const GlobalChatWidget = () => {
                   <div
                     className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm ${
                       message.role === "user"
-                        ? "bg-white text-white rounded-br-md"
+                        ? "bg-white text-black rounded-br-md"
                         : "bg-neutral-800 text-neutral-200 rounded-bl-md"
                     }`}
                   >
@@ -442,7 +442,7 @@ const GlobalChatWidget = () => {
                   className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center transition-all disabled:opacity-50"
                   style={{ backgroundColor: input.trim() ? BRAND_COLOR : "transparent" }}
                 >
-                  <Send className={`w-4 h-4 ${input.trim() ? "text-white" : "text-neutral-500"}`} />
+                  <Send className={`w-4 h-4 ${input.trim() ? "text-black" : "text-neutral-500"}`} />
                 </button>
               </div>
               <div className="mt-2 text-center">

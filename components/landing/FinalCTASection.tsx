@@ -147,7 +147,7 @@ const FinalCTASection = () => {
                 }`}
               >
                 {entry.primary && (
-                  <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full text-[10px] font-medium bg-white text-white">
+                  <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full text-[10px] font-medium bg-white text-black">
                     RECOMMENDED
                   </div>
                 )}
@@ -269,7 +269,7 @@ const FinalCTASection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/products"
-              className="inline-flex items-center px-6 py-3 rounded-full font-medium text-white transition-all hover:opacity-90"
+              className="inline-flex items-center px-6 py-3 rounded-full font-medium text-black transition-all hover:opacity-90"
               style={{ backgroundColor: BRAND_COLOR }}
             >
               View all products

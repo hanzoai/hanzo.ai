@@ -28,7 +28,7 @@ const CallToAction = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-white hover:bg-[#cccccc] text-white"
+              className="bg-white hover:bg-[#cccccc] text-black"
             >
               Get Started Guide
             </Button>

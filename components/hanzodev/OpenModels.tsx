@@ -47,7 +47,7 @@ const OpenModels = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center px-5 py-2.5 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
               >
                 View leaderboard
                 <ArrowRight className="ml-2 h-4 w-4" />

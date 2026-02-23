@@ -260,7 +260,7 @@ const OpenSourceSection = () => {
                   href="https://hanzo.network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-white text-white hover:opacity-90 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:opacity-90 transition-colors"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4" />

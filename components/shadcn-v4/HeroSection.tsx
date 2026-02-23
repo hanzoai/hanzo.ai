@@ -49,7 +49,7 @@ const HeroSection = () => {
         >
           <Button 
             size="lg"
-            className="bg-white hover:bg-[#cccccc] text-white rounded-md py-6"
+            className="bg-white hover:bg-[#cccccc] text-black rounded-md py-6"
           >
             Get Started <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

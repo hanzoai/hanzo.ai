@@ -104,7 +104,7 @@ export const ProductsMenu = () => {
               </Button>
               <Button
                 size="sm"
-                className="bg-white text-white hover:bg-white/90 h-7 text-xs px-3"
+                className="bg-white text-black hover:bg-white/90 h-7 text-xs px-3"
                 asChild
               >
                 <Link href="/products" onClick={closeMenu}>

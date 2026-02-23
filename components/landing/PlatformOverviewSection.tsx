@@ -157,7 +157,7 @@ const PlatformOverviewSection = () => {
 
           <Link
             href="/dev"
-            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors text-white"
+            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors text-black"
             style={{ backgroundColor: BRAND_COLOR }}
           >
             Start building now

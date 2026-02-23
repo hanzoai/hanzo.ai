@@ -155,7 +155,7 @@ const ChatWidget = () => {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: 90 }}
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-black" />
             </motion.div>
           ) : (
             <motion.div
@@ -164,7 +164,7 @@ const ChatWidget = () => {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: -90 }}
             >
-              <MessageSquare className="w-6 h-6 text-white" />
+              <MessageSquare className="w-6 h-6 text-black" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -184,7 +184,7 @@ const ChatWidget = () => {
             <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800 bg-neutral-900">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: BRAND_COLOR }}>
-                  <Bot className="w-4 h-4 text-white" />
+                  <Bot className="w-4 h-4 text-black" />
                 </div>
                 <div>
                   <div className="text-sm font-medium text-white">Hanzo AI</div>
@@ -212,7 +212,7 @@ const ChatWidget = () => {
                   <div
                     className={`max-w-[85%] rounded-xl px-3 py-2 text-sm ${
                       message.role === "user"
-                        ? "bg-white text-white"
+                        ? "bg-white text-black"
                         : "bg-neutral-900 text-neutral-300 border border-neutral-800"
                     }`}
                   >
@@ -273,7 +273,7 @@ const ChatWidget = () => {
                   className="p-2 rounded-lg transition-colors disabled:opacity-50"
                   style={{ backgroundColor: BRAND_COLOR }}
                 >
-                  <Send className="w-4 h-4 text-white" />
+                  <Send className="w-4 h-4 text-black" />
                 </button>
               </form>
             </div>

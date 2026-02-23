@@ -117,7 +117,7 @@ const EnterpriseReadiness = () => {
           </p>
           <Button
             size="lg"
-            className="text-white"
+            className="text-black"
             style={{ backgroundColor: BRAND_COLOR }}
           >
             Contact Enterprise Sales

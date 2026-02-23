@@ -48,7 +48,7 @@ const TeamChatCard = () => {
             </div>
 
             <div className="flex">
-              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-white mr-3" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-black mr-3" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
               <div>
                 <div className="flex items-center">
                   <span className="font-medium text-foreground">DesignBot</span>
@@ -59,7 +59,7 @@ const TeamChatCard = () => {
             </div>
 
             <div className="flex">
-              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-white mr-3" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
+              <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs text-black mr-3" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
               <div>
                 <div className="flex items-center">
                   <span className="font-medium text-foreground">DesignBot</span>

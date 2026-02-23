@@ -88,7 +88,7 @@ const ZenPrinciples = () => {
           <Button
             size="lg"
             className="px-8 py-6 rounded-full text-lg font-medium"
-            style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+            style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
           >
             <Link href="/philosophy" className="flex items-center">
               Explore The Full Zen Manifesto

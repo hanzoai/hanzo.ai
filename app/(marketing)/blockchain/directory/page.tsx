@@ -403,7 +403,7 @@ const ChainDirectory = () => {
                 onClick={() => setSelectedCategory("all")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   selectedCategory === "all"
-                    ? "bg-white text-white"
+                    ? "bg-white text-black"
                     : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-neutral-700"
                 }`}
               >
@@ -415,7 +415,7 @@ const ChainDirectory = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedCategory === cat.id
-                      ? "bg-white text-white"
+                      ? "bg-white text-black"
                       : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-neutral-700"
                   }`}
                 >

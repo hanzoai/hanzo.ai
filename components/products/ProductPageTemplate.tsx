@@ -313,7 +313,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
                   {product.docs && (
                     <Button
                       size="lg"
-                      className="bg-white text-white hover:bg-white/90 border-0"
+                      className="bg-white text-black hover:bg-white/90 border-0"
                       asChild
                     >
                       <a href={product.docs || "#"} target="_blank" rel="noopener noreferrer">
@@ -376,23 +376,23 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
               <Tabs defaultValue={installMethods[0]} className="w-full">
                 <TabsList className={`grid w-full grid-cols-${Math.min(installMethods.length, 4)} bg-neutral-900/50 border border-neutral-800 p-1 rounded-xl`}>
                   {product.install.cli && (
-                    <TabsTrigger value="cli" className="data-[state=active]:bg-white data-[state=active]:text-white rounded-lg">
+                    <TabsTrigger value="cli" className="data-[state=active]:bg-white data-[state=active]:text-black rounded-lg">
                       <Terminal className="h-4 w-4 mr-2" />
                       CLI
                     </TabsTrigger>
                   )}
                   {product.install.docker && (
-                    <TabsTrigger value="docker" className="data-[state=active]:bg-white data-[state=active]:text-white rounded-lg">
+                    <TabsTrigger value="docker" className="data-[state=active]:bg-white data-[state=active]:text-black rounded-lg">
                       Docker
                     </TabsTrigger>
                   )}
                   {product.install.npm && (
-                    <TabsTrigger value="npm" className="data-[state=active]:bg-white data-[state=active]:text-white rounded-lg">
+                    <TabsTrigger value="npm" className="data-[state=active]:bg-white data-[state=active]:text-black rounded-lg">
                       npm
                     </TabsTrigger>
                   )}
                   {product.install.pip && (
-                    <TabsTrigger value="pip" className="data-[state=active]:bg-white data-[state=active]:text-white rounded-lg">
+                    <TabsTrigger value="pip" className="data-[state=active]:bg-white data-[state=active]:text-black rounded-lg">
                       pip
                     </TabsTrigger>
                   )}
@@ -667,7 +667,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-white hover:bg-white/90 border-0 text-lg px-8"
+                className="bg-white text-black hover:bg-white/90 border-0 text-lg px-8"
                 asChild
               >
                 <Link href="/pricing">

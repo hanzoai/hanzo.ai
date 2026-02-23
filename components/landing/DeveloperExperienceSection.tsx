@@ -149,7 +149,7 @@ const DeveloperExperienceSection = () => {
             </p>
             <Link
               href="/extensions"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-white hover:opacity-90"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-black hover:opacity-90"
             >
               Install the IDE extension
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -400,7 +400,7 @@ const DeveloperExperienceSection = () => {
           <div className="text-center">
             <Link
               href="/products"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-white hover:opacity-90"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-black hover:opacity-90"
             >
               Explore all capabilities
               <ArrowRight className="ml-2 h-4 w-4" />

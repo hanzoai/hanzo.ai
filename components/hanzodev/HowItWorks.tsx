@@ -208,7 +208,7 @@ const HowItWorks = () => {
                     {i === 0 && (
                       <div
                         className="mt-2 text-xs font-medium px-2 py-1 rounded-full inline-block"
-                        style={{ backgroundColor: BRAND_COLOR, color: "#fff" }}
+                        style={{ backgroundColor: BRAND_COLOR, color: "#000" }}
                       >
                         Best result
                       </div>

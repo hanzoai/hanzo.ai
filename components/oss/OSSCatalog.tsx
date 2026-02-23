@@ -588,7 +588,7 @@ const OSSCatalog: React.FC = () => {
                 className={cn(
                   'whitespace-nowrap',
                   quickFilter === filter.value
-                    ? 'bg-white text-white hover:bg-white/90'
+                    ? 'bg-white text-black hover:bg-white/90'
                     : 'border-neutral-700 hover:bg-neutral-800'
                 )}
               >
@@ -648,7 +648,7 @@ const OSSCatalog: React.FC = () => {
                   <Filter className="w-4 h-4 mr-2" />
                   Filters
                   {hasActiveFilters && (
-                    <span className="ml-2 w-5 h-5 rounded-full bg-white text-white text-xs flex items-center justify-center">
+                    <span className="ml-2 w-5 h-5 rounded-full bg-white text-black text-xs flex items-center justify-center">
                       {selectedTypes.length + selectedCategories.length + selectedLanguages.length}
                     </span>
                   )}

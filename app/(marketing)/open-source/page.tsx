@@ -79,7 +79,7 @@ const OpenSource = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                  style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                  style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
                 >
                   <Github className="w-4 h-4 mr-2" />
                   View on GitHub
@@ -171,7 +171,7 @@ const OpenSource = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base"
-                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
               >
                 Start Contributing
                 <ArrowRight className="ml-2 h-5 w-5" />

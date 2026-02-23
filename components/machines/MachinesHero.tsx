@@ -33,7 +33,7 @@ const MachinesHero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="text-white px-8 py-6 text-lg"
+              className="text-black px-8 py-6 text-lg"
               style={{ backgroundColor: BRAND_COLOR }}
             >
               Get Started

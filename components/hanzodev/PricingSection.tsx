@@ -93,7 +93,7 @@ const PricingSection = () => {
             >
               {plan.highlight && (
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium text-white"
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium text-black"
                   style={{ backgroundColor: BRAND_COLOR }}
                 >
                   Most Popular
@@ -115,7 +115,7 @@ const PricingSection = () => {
               <Button
                 className={`w-full mb-6 ${
                   plan.highlight
-                    ? "text-white"
+                    ? "text-black"
                     : "bg-white/10 hover:bg-white/20 text-white"
                 }`}
                 style={plan.highlight ? { backgroundColor: BRAND_COLOR } : {}}

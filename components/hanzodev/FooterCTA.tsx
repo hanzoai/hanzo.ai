@@ -55,7 +55,7 @@ const FooterCTA = () => {
           <Link
             href="/get-started"
             className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base"
-            style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+            style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
           >
             Start free
             <ArrowRight className="ml-2 h-5 w-5" />

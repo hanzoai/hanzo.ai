@@ -177,7 +177,7 @@ export default function Products() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-white hover:bg-white/20"
+                className="bg-white text-black hover:bg-white/20"
                 asChild
               >
                 <Link href="/pricing">
@@ -360,7 +360,7 @@ export default function Products() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-white hover:bg-white/20"
+              className="bg-white text-black hover:bg-white/20"
               asChild
             >
               <Link href="/pricing">

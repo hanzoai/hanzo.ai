@@ -122,7 +122,7 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
             <div className="flex justify-center">
               <Link
                 href={`/team/${agent.name.toLowerCase()}`}
-                className="inline-flex items-center px-4 py-2 rounded-xl text-white"
+                className="inline-flex items-center px-4 py-2 rounded-xl text-black"
                 style={{ backgroundColor: BRAND_COLOR }}
               >
                 View Full Profile

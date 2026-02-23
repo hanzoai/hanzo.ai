@@ -202,7 +202,7 @@ const HeroSection = () => {
               <Link
                 href="/signup"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-                style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+                style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
               >
                 Start building
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -251,7 +251,7 @@ const HeroSection = () => {
                     onClick={() => setActiveTab(feature.id)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       isActive
-                        ? "bg-white text-white"
+                        ? "bg-white text-black"
                         : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700"
                     }`}
                   >

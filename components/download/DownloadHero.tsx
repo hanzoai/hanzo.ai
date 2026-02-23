@@ -82,7 +82,7 @@ const DownloadHero = () => {
           >
             <button
               className="inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm"
-              style={{ backgroundColor: BRAND_COLOR, color: "#ffffff" }}
+              style={{ backgroundColor: BRAND_COLOR, color: "#000000" }}
             >
               <Apple className="mr-2 h-4 w-4" />
               Download (Apple Silicon)

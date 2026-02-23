@@ -13,7 +13,7 @@ const CodebaseDemo = () => {
       <div className="p-6">
         {/* User message */}
         <div className="flex gap-3 mb-6">
-          <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+          <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black text-sm font-medium flex-shrink-0">
             &gt;
           </div>
           <div className="bg-neutral-800 rounded-lg px-4 py-3 max-w-lg">
@@ -24,7 +24,7 @@ const CodebaseDemo = () => {
         {/* AI response */}
         <div className="flex gap-3">
           <div
-            className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0"
+            className="w-8 h-8 rounded-full flex items-center justify-center text-black text-sm font-medium flex-shrink-0"
             style={{ backgroundColor: BRAND_COLOR }}
           >
             ⏺

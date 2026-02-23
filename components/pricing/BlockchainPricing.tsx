@@ -195,7 +195,7 @@ const BlockchainPricing = () => {
               <Button
                 className={`w-full ${
                   plan.highlighted
-                    ? "bg-white hover:bg-[#cccccc] text-white"
+                    ? "bg-white hover:bg-[#cccccc] text-black"
                     : "bg-white text-black hover:bg-gray-100"
                 }`}
               >
@@ -302,7 +302,7 @@ const BlockchainPricing = () => {
           Start free and scale as you grow. No credit card required.
         </p>
         <div className="flex justify-center gap-4">
-          <Button size="lg" className="bg-white hover:bg-[#cccccc] text-white px-8">
+          <Button size="lg" className="bg-white hover:bg-[#cccccc] text-black px-8">
             Start Building Free
           </Button>
           <Button size="lg" variant="outline" className="border-neutral-700 hover:border-neutral-600">

@@ -61,7 +61,7 @@ const CLISection = () => {
           </h2>
           <Button
             size="lg"
-            className="mt-4 text-white"
+            className="mt-4 text-black"
             style={{ backgroundColor: BRAND_COLOR }}
             asChild
           >
