@@ -8,8 +8,6 @@ import DeveloperExperienceSection from "@/components/landing/DeveloperExperience
 import OpenSourceSection from "@/components/landing/OpenSourceSection"
 import PricingPreviewSection from "@/components/landing/PricingPreviewSection"
 import FinalCTASection from "@/components/landing/FinalCTASection"
-import ChatWidget from "@/components/chat/ChatWidget"
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -23,7 +21,6 @@ export default function HomePage() {
         <PricingPreviewSection />
         <FinalCTASection />
       </main>
-      <ChatWidget />
     </div>
   )
 }

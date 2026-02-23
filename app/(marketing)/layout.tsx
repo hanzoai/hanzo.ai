@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import GlobalChatWidget from '@/components/GlobalChatWidget'
 import { AccountProvider } from '@/contexts/AccountContext'
 import { BillingProvider } from '@/contexts/BillingContext'
 
@@ -14,6 +15,7 @@ export default function MarketingLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <GlobalChatWidget />
       </BillingProvider>
     </AccountProvider>
   )
