@@ -19,7 +19,7 @@ const TeamEnterprisePlans = () => {
       setFromProPlan(true);
       setFromMaxPlan(false);
     }
-    window.history.replaceState({}, '', window.pathname);
+    window.history.replaceState({}, '', window.location.pathname);
   }, []);
 
   const plans = [

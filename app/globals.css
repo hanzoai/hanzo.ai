@@ -43,6 +43,8 @@
   --border: #e5e5e5;
   --input: #e5e5e5;
   --ring: #d4d4d4;
+  --black: #0a0a0a;
+  --white: #ffffff;
   --radius: 0.5rem;
   --header-height: 4rem;
   --font-scale: 100%;
@@ -70,6 +72,8 @@
   --border: #1a1a1a;
   --input: #1a1a1a;
   --ring: #333333;
+  --black: #000000;
+  --white: #f5f5f5;
 }
 
 @layer base {

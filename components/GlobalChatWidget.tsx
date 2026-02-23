@@ -294,7 +294,7 @@ const GlobalChatWidget = () => {
                     <div className="text-left">
                       <div className="text-foreground text-sm font-medium flex items-center gap-1.5">
                         {selectedModel.name}
-                        <span className="text-[10px] font-mono text-muted-foreground bg-neutral-800 px-1 py-0.5 rounded">
+                        <span className="text-[10px] font-mono text-muted-foreground bg-secondary px-1 py-0.5 rounded">
                           {selectedModel.params}
                         </span>
                       </div>
@@ -319,7 +319,7 @@ const GlobalChatWidget = () => {
                               setIsModelDropdownOpen(false);
                             }}
                             className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-accent transition-colors ${
-                              selectedModel.id === model.id ? 'bg-neutral-800/50' : ''
+                              selectedModel.id === model.id ? 'bg-accent/50' : ''
                             }`}
                           >
                             <div>
@@ -380,7 +380,7 @@ const GlobalChatWidget = () => {
                     className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm ${
                       message.role === "user"
                         ? "bg-primary text-primary-foreground rounded-br-md"
-                        : "bg-neutral-800 text-neutral-200 rounded-bl-md"
+                        : "bg-secondary text-secondary-foreground rounded-bl-md"
                     }`}
                   >
                     {message.content}
@@ -389,7 +389,7 @@ const GlobalChatWidget = () => {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-neutral-800 px-4 py-2 rounded-2xl rounded-bl-md">
+                  <div className="bg-secondary px-4 py-2 rounded-2xl rounded-bl-md">
                     <div className="flex gap-1">
                       <span className="w-2 h-2 bg-neutral-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                       <span className="w-2 h-2 bg-neutral-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -445,7 +445,7 @@ const GlobalChatWidget = () => {
               </div>
               <div className="mt-2 text-center">
                 <span className="text-muted-foreground/60 text-[10px]">
-                  Press Enter to send • <kbd className="px-1 py-0.5 bg-neutral-800 rounded text-muted-foreground">⌘K</kbd> for quick navigation
+                  Press Enter to send • <kbd className="px-1 py-0.5 bg-secondary rounded text-muted-foreground">⌘K</kbd> for quick navigation
                 </span>
               </div>
             </div>

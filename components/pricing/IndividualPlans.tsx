@@ -20,7 +20,7 @@ const IndividualPlans = () => {
       setFromDevPlan(true);
       setFromProPlan(false);
     }
-    window.history.replaceState({}, '', window.pathname);
+    window.history.replaceState({}, '', window.location.pathname);
   }, []);
 
   const plans = [

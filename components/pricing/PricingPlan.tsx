@@ -77,7 +77,7 @@ const PricingPlan = ({
           onClick={() => {
             const teamConfigSection = document.getElementById('team-config-section');
             if (teamConfigSection) {
-              window.history.pushState({}, '', window.pathname + '?from=pro');
+              window.history.pushState({}, '', window.location.pathname + '?from=pro');
               teamConfigSection.scrollIntoView({ behavior: 'smooth' });
             }
           }}
