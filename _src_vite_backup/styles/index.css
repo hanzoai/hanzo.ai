@@ -1,7 +1,0 @@
-@import 'tailwindcss';
-
-/* Main CSS file that imports all other CSS files */
-@import "./base.css";
-@import "./typography.css";
-@import "./themes.css";
-@import "./utilities.css";
