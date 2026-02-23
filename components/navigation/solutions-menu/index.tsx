@@ -5,69 +5,38 @@ import Link from "next/link";
 import NavMenu from "../NavMenu";
 import { Users, Shield, Building2, ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 
 // Show all items - no truncation
 const ITEMS_PER_CATEGORY = 20;
 
 export const SolutionsMenu = () => {
-  const { isDarkMode } = useTheme();
-
   return (
     <NavMenu label="Solutions">
       {(closeMenu) => (
         <div className="w-full">
           {/* Featured Row */}
-          <div className={cn(
-            "mb-4 pb-4 border-b",
-            isDarkMode ? "border-neutral-800" : "border-neutral-200"
-          )}>
+          <div className="mb-4 pb-4 border-b border-neutral-800">
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="h-3.5 w-3.5 text-[#ffffff]" />
-              <span className={cn(
-                "text-xs font-medium uppercase tracking-wider",
-                isDarkMode ? "text-neutral-400" : "text-neutral-500"
-              )}>Featured Solutions</span>
+              <span className="text-xs font-medium uppercase tracking-wider text-neutral-400">Featured Solutions</span>
             </div>
             <div className="flex flex-wrap gap-2">
               <Link
                 href="/agency"
                 onClick={closeMenu}
-                className={cn(
-                  "flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group",
-                  isDarkMode
-                    ? "bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
-                    : "bg-neutral-100 border-neutral-200 hover:border-[#ffffff]/50 hover:bg-neutral-50"
-                )}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
               >
-                <Shield className={cn(
-                  "h-3.5 w-3.5 group-hover:text-[#ffffff]",
-                  isDarkMode ? "text-neutral-400" : "text-neutral-500"
-                )} />
-                <span className={cn(
-                  "text-sm font-medium group-hover:text-[#ffffff]",
-                  isDarkMode ? "text-neutral-300" : "text-neutral-700"
-                )}>Hanzo Agency</span>
+                <Shield className="h-3.5 w-3.5 group-hover:text-[#ffffff] text-neutral-400" />
+                <span className="text-sm font-medium group-hover:text-[#ffffff] text-neutral-300">Hanzo Agency</span>
               </Link>
               <Link
                 href="/enterprise"
                 onClick={closeMenu}
-                className={cn(
-                  "flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group",
-                  isDarkMode
-                    ? "bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
-                    : "bg-neutral-100 border-neutral-200 hover:border-[#ffffff]/50 hover:bg-neutral-50"
-                )}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
               >
-                <Building2 className={cn(
-                  "h-3.5 w-3.5 group-hover:text-[#ffffff]",
-                  isDarkMode ? "text-neutral-400" : "text-neutral-500"
-                )} />
-                <span className={cn(
-                  "text-sm font-medium group-hover:text-[#ffffff]",
-                  isDarkMode ? "text-neutral-300" : "text-neutral-700"
-                )}>Enterprise</span>
+                <Building2 className="h-3.5 w-3.5 group-hover:text-[#ffffff] text-neutral-400" />
+                <span className="text-sm font-medium group-hover:text-[#ffffff] text-neutral-300">Enterprise</span>
               </Link>
             </div>
           </div>
@@ -76,10 +45,7 @@ export const SolutionsMenu = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
             {/* Capabilities */}
             <div className="space-y-1.5">
-              <h3 className={cn(
-                "text-[10px] font-semibold uppercase tracking-wider mb-2",
-                isDarkMode ? "text-neutral-500" : "text-neutral-400"
-              )}>
+              <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">
                 Capabilities
               </h3>
               <div className="space-y-0.5">
@@ -92,14 +58,8 @@ export const SolutionsMenu = () => {
                       onClick={closeMenu}
                       className="flex items-center gap-1.5 py-0.5 group"
                     >
-                      {Icon && <Icon className={cn(
-                        "h-3 w-3 group-hover:text-[#ffffff]",
-                        isDarkMode ? "text-neutral-500" : "text-neutral-400"
-                      )} />}
-                      <span className={cn(
-                        "text-xs transition-colors group-hover:text-[#ffffff]",
-                        isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                      )}>
+                      {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
+                      <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                         {item.title}
                       </span>
                     </Link>
@@ -109,10 +69,7 @@ export const SolutionsMenu = () => {
                   <Link
                     href="/solutions"
                     onClick={closeMenu}
-                    className={cn(
-                      "flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff]",
-                      isDarkMode ? "text-neutral-600" : "text-neutral-500"
-                    )}
+                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff] text-neutral-600"
                   >
                     +{capabilitiesNav[0].items.length - ITEMS_PER_CATEGORY} more
                     <ArrowRight className="h-2.5 w-2.5" />
@@ -123,10 +80,7 @@ export const SolutionsMenu = () => {
 
             {/* Industries - split into two columns */}
             <div className="space-y-1.5">
-              <h3 className={cn(
-                "text-[10px] font-semibold uppercase tracking-wider mb-2",
-                isDarkMode ? "text-neutral-500" : "text-neutral-400"
-              )}>
+              <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">
                 Industries
               </h3>
               <div className="space-y-0.5">
@@ -139,14 +93,8 @@ export const SolutionsMenu = () => {
                       onClick={closeMenu}
                       className="flex items-center gap-1.5 py-0.5 group"
                     >
-                      {Icon && <Icon className={cn(
-                        "h-3 w-3 group-hover:text-[#ffffff]",
-                        isDarkMode ? "text-neutral-500" : "text-neutral-400"
-                      )} />}
-                      <span className={cn(
-                        "text-xs transition-colors group-hover:text-[#ffffff]",
-                        isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                      )}>
+                      {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
+                      <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                         {item.title}
                       </span>
                     </Link>
@@ -156,10 +104,7 @@ export const SolutionsMenu = () => {
                   <Link
                     href="/industries"
                     onClick={closeMenu}
-                    className={cn(
-                      "flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff]",
-                      isDarkMode ? "text-neutral-600" : "text-neutral-500"
-                    )}
+                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff] text-neutral-600"
                   >
                     +{industriesNav[0].items.length - ITEMS_PER_CATEGORY} more
                     <ArrowRight className="h-2.5 w-2.5" />
@@ -170,10 +115,7 @@ export const SolutionsMenu = () => {
 
             {/* More Industries */}
             <div className="space-y-1.5">
-              <h3 className={cn(
-                "text-[10px] font-semibold uppercase tracking-wider mb-2",
-                isDarkMode ? "text-neutral-500" : "text-neutral-400"
-              )}>
+              <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">
                 More Industries
               </h3>
               <div className="space-y-0.5">
@@ -186,14 +128,8 @@ export const SolutionsMenu = () => {
                       onClick={closeMenu}
                       className="flex items-center gap-1.5 py-0.5 group"
                     >
-                      {Icon && <Icon className={cn(
-                        "h-3 w-3 group-hover:text-[#ffffff]",
-                        isDarkMode ? "text-neutral-500" : "text-neutral-400"
-                      )} />}
-                      <span className={cn(
-                        "text-xs transition-colors group-hover:text-[#ffffff]",
-                        isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                      )}>
+                      {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
+                      <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                         {item.title}
                       </span>
                     </Link>
@@ -204,10 +140,7 @@ export const SolutionsMenu = () => {
 
             {/* Use Cases */}
             <div className="space-y-1.5">
-              <h3 className={cn(
-                "text-[10px] font-semibold uppercase tracking-wider mb-2",
-                isDarkMode ? "text-neutral-500" : "text-neutral-400"
-              )}>
+              <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">
                 Use Cases
               </h3>
               <div className="space-y-0.5">
@@ -216,10 +149,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className={cn(
-                    "text-xs transition-colors group-hover:text-[#ffffff]",
-                    isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                  )}>
+                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                     Automation
                   </span>
                 </Link>
@@ -228,10 +158,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className={cn(
-                    "text-xs transition-colors group-hover:text-[#ffffff]",
-                    isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                  )}>
+                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                     Analytics
                   </span>
                 </Link>
@@ -240,10 +167,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className={cn(
-                    "text-xs transition-colors group-hover:text-[#ffffff]",
-                    isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                  )}>
+                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                     Content Generation
                   </span>
                 </Link>
@@ -252,10 +176,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className={cn(
-                    "text-xs transition-colors group-hover:text-[#ffffff]",
-                    isDarkMode ? "text-neutral-400" : "text-neutral-600"
-                  )}>
+                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
                     Customer Support
                   </span>
                 </Link>
@@ -264,26 +185,15 @@ export const SolutionsMenu = () => {
           </div>
 
           {/* Footer */}
-          <div className={cn(
-            "mt-4 pt-4 border-t flex items-center justify-between",
-            isDarkMode ? "border-neutral-800" : "border-neutral-200"
-          )}>
+          <div className="mt-4 pt-4 border-t border-neutral-800 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <span className={cn(
-                "text-[10px]",
-                isDarkMode ? "text-neutral-500" : "text-neutral-400"
-              )}>Need custom solutions?</span>
+              <span className="text-[10px] text-neutral-500">Need custom solutions?</span>
             </div>
             <div className="flex gap-2">
               <Button
                 size="sm"
                 variant="outline"
-                className={cn(
-                  "h-7 text-xs px-3",
-                  isDarkMode
-                    ? "bg-transparent border-neutral-700 text-neutral-300 hover:bg-neutral-800 hover:text-white"
-                    : "bg-transparent border-neutral-300 text-neutral-700 hover:bg-neutral-100 hover:text-black"
-                )}
+                className="h-7 text-xs px-3 bg-transparent border-neutral-700 text-neutral-300 hover:bg-neutral-800 hover:text-white"
                 asChild
               >
                 <Link href="/contact" onClick={closeMenu}>

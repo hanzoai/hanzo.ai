@@ -9,7 +9,6 @@ import TeamSlack from "@/components/TeamSlack";
 import { Button } from "@hanzo/ui";
 import { toast } from "@/hooks/use-toast";
 import { teamMembers, TeamMemberId } from "@/lib/constants/team-members";
-import { useTheme } from "@/contexts/ThemeContext";
 
 interface TeamMemberPageProps {
   memberId: TeamMemberId;
@@ -18,7 +17,6 @@ interface TeamMemberPageProps {
 const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
   const member = teamMembers[memberId];
   const MainIcon = member.mainIcon;
-  const { isDarkMode, getRoundingClass, getGlassClass } = useTheme();
 
   const handleContactSensei = () => {
     window.location.href = "https://sensei.group";
@@ -68,7 +66,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 <motion.div 
                   key={index}
                   whileHover={{ y: -5 }}
-                  className={`p-6 rounded-2xl border border-gray-800 ${getGlassClass()}`}
+                  className="p-6 rounded-2xl border border-gray-800 bg-black/50 backdrop-blur-lg"
                 >
                   <FeatureIcon className={`h-8 w-8 ${feature.color} mb-4`} />
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
@@ -86,7 +84,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {/* Hanzo Agency Card */}
-              <div className="p-6 bg-gradient-to-br from-red-900/50 to-neutral-900/30 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40 transition-colors">
+              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40 transition-colors">
                 <div className="p-3 rounded-lg bg-[#ffffff]/20 self-start inline-block mb-4">
                   <Users className="h-6 w-6 text-[#ffffff]" strokeWidth={1.5} />
                 </div>
@@ -103,7 +101,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                     Work with Hanzo Agency
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
-                  <a href="/contact" className="flex items-center gap-2 px-5 py-2.5 border border-[#ffffff]/40 hover:border-[#ffffff] rounded-md text-[#ffffff] hover:text-[#ff6b6b] transition-colors">
+                  <a href="/contact" className="flex items-center gap-2 px-5 py-2.5 border border-[#ffffff]/40 hover:border-[#ffffff] rounded-md text-[#ffffff] hover:text-white/70 transition-colors">
                     <span>Learn more</span>
                     <Mail size={14} />
                   </a>
@@ -111,9 +109,9 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
               </div>
               
               {/* Sensei Group Card */}
-              <div className="p-6 bg-gradient-to-br from-green-900/50 to-neutral-900/30 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-colors">
-                <div className="p-3 rounded-lg bg-green-500/20 self-start inline-block mb-4">
-                  <Shield className="h-6 w-6 text-green-400" strokeWidth={1.5} />
+              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-white/20 hover:border-white/20 transition-colors">
+                <div className="p-3 rounded-lg bg-white/10 self-start inline-block mb-4">
+                  <Shield className="h-6 w-6 text-white/70" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
                 <p className="text-neutral-300 mb-5">
@@ -123,12 +121,12 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 <div className="flex flex-wrap gap-4">
                   <Button 
                     onClick={handleContactSensei}
-                    className="bg-green-600 hover:bg-green-500 text-[var(--white)]"
+                    className="bg-white/10 hover:bg-white/10 text-[var(--white)]"
                   >
                     Contact Sensei Group
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
-                  <a href="tel:+1234567890" className="flex items-center gap-2 px-5 py-2.5 border border-green-500/40 hover:border-green-500 rounded-md text-green-400 hover:text-green-300 transition-colors">
+                  <a href="tel:+1234567890" className="flex items-center gap-2 px-5 py-2.5 border border-white/20 hover:border-white/20 rounded-md text-white/70 hover:text-white/70 transition-colors">
                     <span>Schedule a call</span>
                     <Phone size={14} />
                   </a>
@@ -147,14 +145,14 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Button 
                 onClick={handleContactAgency}
-                className={`bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:opacity-90 ${getRoundingClass()}`}
+                className="bg-gradient-to-r from-[#ffffff] to-white/10 hover:opacity-90 rounded-lg"
               >
                 Creative Services
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
               <Button 
                 onClick={handleContactSensei}
-                className={`bg-gradient-to-r from-green-600 to-green-500 hover:opacity-90 ${getRoundingClass()}`}
+                className="bg-gradient-to-r from-white/20 to-white/10 hover:opacity-90 rounded-lg"
               >
                 Enterprise Solutions
                 <ExternalLink className="ml-2 h-4 w-4" />

@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@hanzo/ui";
 import { Search, ChevronDown, ExternalLink, Brain, Video, Music, Box, Cpu, Sparkles, Zap } from "lucide-react";
-import { useTheme } from "@/contexts/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface User {
@@ -69,7 +68,6 @@ const loginItems = [
 ];
 
 const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
-  const { isDarkMode } = useTheme();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -158,7 +156,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
               <div className="p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-amber-400" />
+                    <Zap className="w-4 h-4 text-white/60" />
                     <span className="text-xs font-semibold text-white uppercase tracking-wider">
                       Zen AI Models
                     </span>

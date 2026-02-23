@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import ProductsMenu from "./products-menu";
 import { SolutionsMenu } from "./solutions-menu";
-import { useTheme } from "@/contexts/ThemeContext";
 import { NavMenu } from "./NavMenu";
 
 // Meet Hanzo dropdown content
@@ -128,8 +127,6 @@ const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
 );
 
 const DesktopNav = () => {
-  const { isDarkMode } = useTheme();
-
   return (
     <div className="hidden md:flex items-center space-x-6">
       {/* Meet Hanzo dropdown */}

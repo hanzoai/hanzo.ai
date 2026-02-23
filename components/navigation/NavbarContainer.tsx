@@ -1,7 +1,6 @@
 'use client'
 
 import React, { ReactNode } from "react";
-import { useTheme } from "@/contexts/ThemeContext";
 import { cn } from "@/lib/utils";
 
 interface NavbarContainerProps {
@@ -10,14 +9,12 @@ interface NavbarContainerProps {
 }
 
 const NavbarContainer = ({ children, isScrolled }: NavbarContainerProps) => {
-  const { isDarkMode, getGlassClass } = useTheme();
-  
   return (
     <nav
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         isScrolled ? "backdrop-blur-md shadow-sm" : "backdrop-blur-sm",
-        getGlassClass()
+        "bg-black/50 backdrop-blur-lg"
       )}
     >
       <div className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">
