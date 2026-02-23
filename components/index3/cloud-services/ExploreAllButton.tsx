@@ -1,0 +1,20 @@
+
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+
+const ExploreAllButton: React.FC = () => {
+  return (
+    <div className="text-center mt-8">
+      <Button variant="outline" className="group" asChild>
+        <Link href="/cloud">
+          View all Cloud 
+          <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </Button>
+    </div>
+  );
+};
+
+export default ExploreAllButton;

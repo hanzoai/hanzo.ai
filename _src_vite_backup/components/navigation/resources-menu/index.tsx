@@ -1,0 +1,2 @@
+
+export { ResourcesMenu } from "../ResourcesMenu";

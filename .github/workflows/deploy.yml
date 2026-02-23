@@ -35,10 +35,13 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Create 404.html for SPA routing
+        run: cp out/index.html out/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: out
 
   deploy:
     environment:

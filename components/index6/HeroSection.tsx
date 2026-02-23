@@ -1,0 +1,104 @@
+'use client'
+
+
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@hanzo/ui";
+import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import HeroTitle from "@/components/hero/HeroTitle";
+
+interface HeroSectionProps {
+  onAnimationComplete: () => void;
+  animationComplete: boolean;
+  onTitleAnimationComplete: () => void;
+  titleAnimationComplete: boolean;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({
+  onAnimationComplete,
+  animationComplete,
+  onTitleAnimationComplete,
+  titleAnimationComplete
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const router = useRouter();
+
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const handleGetStarted = () => {
+    router.push('/signup');
+  };
+
+  return (
+    <section ref={containerRef} className="pt-32 pb-20 px-4 md:px-8 min-h-[90vh] flex flex-col justify-center relative">
+      <motion.div
+        style={{ scale, opacity }}
+        className="max-w-6xl mx-auto text-center"
+      >
+        <HeroTitle 
+          mousePosition={mousePosition}
+          containerRef={containerRef}
+          onAnimationComplete={onAnimationComplete}
+          animationComplete={animationComplete}
+          onTitleAnimationComplete={onTitleAnimationComplete}
+        />
+
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-6 mb-8 text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto"
+        >
+          Your AI future belongs in your hands. With Hanzo, pioneer a new era of intelligence with customizable, private, transparent, and trusted AI solutions.
+        </motion.p>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: titleAnimationComplete ? 1 : 0, y: titleAnimationComplete ? 0 : 20 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-8 flex flex-wrap justify-center gap-4"
+        >
+          <Button 
+            size="lg" 
+            className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg"
+            onClick={handleGetStarted}
+          >
+            Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+          
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="border-[#ffffff]/30 hover:border-[#ffffff]/70 text-[var(--white)] hover:text-[var(--white)] px-8 py-6 text-lg"
+            onClick={() => router.push('/platform')}
+          >
+            Explore Platform
+          </Button>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default HeroSection;

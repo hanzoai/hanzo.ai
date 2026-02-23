@@ -1,0 +1,33 @@
+
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+interface SectionHeaderProps {
+  title: string;
+  link: string;
+  linkText: string;
+}
+
+const SectionHeader = ({ title, link, linkText }: SectionHeaderProps) => {
+  return (
+    <div className="flex items-center justify-between mb-4">
+      <Link href={link || "#"}>
+        <h3 className="text-xl font-semibold text-[var(--white)] hover:text-neutral-300 transition-colors">
+          {title}
+        </h3>
+      </Link>
+      <Link 
+        href={link || "#"} 
+        className={cn(
+          "text-sm text-red-400 hover:text-red-300 flex items-center group"
+        )}
+      >
+        {linkText}
+        <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+      </Link>
+    </div>
+  );
+};
+
+export default SectionHeader;
