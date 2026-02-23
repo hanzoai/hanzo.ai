@@ -23,6 +23,8 @@ dist-ssr
 out
 tsconfig.tsbuildinfo
 next-env.d.ts
+playwright-report
+test-results
 
 # Editor directories and files
 .vscode/*

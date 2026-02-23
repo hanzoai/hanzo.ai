@@ -52,7 +52,7 @@ const HeroSection = () => {
               <Github className="mr-2 h-5 w-5" />
               GitHub
               <div className="ml-2 flex items-center">
-                <Star className="h-4 w-4 fill-yellow-400 text-white/60 mr-1" />
+                <Star className="h-4 w-4 fill-white text-white/60 mr-1" />
                 <span className="text-neutral-300 text-sm">Star</span>
               </div>
             </Button>

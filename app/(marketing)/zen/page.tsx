@@ -352,6 +352,77 @@ const Zen = () => {
           </div>
         </section>
 
+        {/* Zen5 Teaser */}
+        <section className="py-20 px-4 md:px-8 bg-gradient-to-r from-white/[0.02] via-white/[0.06] to-white/[0.02]">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative p-8 md:p-12 rounded-2xl border border-neutral-700 bg-neutral-950/80 overflow-hidden"
+            >
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black">
+                Coming Soon
+              </div>
+              <div className="flex items-center gap-2 mb-4">
+                <Zap className="w-6 h-6 text-white" />
+                <span className="text-sm font-medium uppercase tracking-wider text-neutral-500">Next Generation</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Zen 5 Ultra
+              </h2>
+              <p className="text-xl text-neutral-400 mb-6 max-w-2xl">
+                2T+ parameter MoDE (Mixture of Distilled Experts). The largest open-weight model in history — trained on-chain via NVIDIA TEE confidential compute on{" "}
+                <a href="https://hanzo.network" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline text-white">hanzo.network</a>.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div className="p-4 rounded-lg bg-white/5">
+                  <div className="text-2xl font-bold text-white mb-1">2T+</div>
+                  <div className="text-sm text-neutral-500">Parameters</div>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5">
+                  <div className="text-2xl font-bold text-white mb-1">MoDE</div>
+                  <div className="text-sm text-neutral-500">Mixture of Distilled Experts</div>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5">
+                  <div className="text-2xl font-bold text-white mb-1">TEE</div>
+                  <div className="text-sm text-neutral-500">On-Chain Verifiable Training</div>
+                </div>
+              </div>
+              <p className="text-sm text-neutral-500 mb-6">
+                Private beta available. Researchers can request early access to preprints and weights under a special research license.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium bg-white text-black hover:bg-white/90 transition-all text-sm gap-2"
+                >
+                  Request Research Access
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="https://hanzo.network"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-neutral-700 bg-transparent hover:bg-neutral-900 transition-colors text-sm text-white gap-2"
+                >
+                  <Globe className="w-4 h-4" />
+                  On-Chain Training
+                </a>
+                <a
+                  href="https://zenlm.org/docs/models#zen5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-neutral-700 bg-transparent hover:bg-neutral-900 transition-colors text-sm text-white gap-2"
+                >
+                  Learn More
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Get Started Section */}
         <section className="py-20 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">

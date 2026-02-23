@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hanzo.ai'),
   title: 'Hanzo AI - AI Infrastructure Platform',
   description: 'Comprehensive AI platform for enterprise. Models, APIs, compute, and developer tools.',
 }
