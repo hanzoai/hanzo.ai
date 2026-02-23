@@ -7,7 +7,7 @@ import ChromeText from "@/components/ui/chrome-text";
 
 const TeamChatHero: React.FC = () => {
   return (
-    <div className="bg-gradient-to-r from-red-900/20 to-red-900/20 py-10 px-4">
+    <div className="bg-gradient-to-r from-white/20 to-white/10 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

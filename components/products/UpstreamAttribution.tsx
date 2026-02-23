@@ -29,7 +29,7 @@ export function UpstreamAttribution({ upstream, productName }: UpstreamAttributi
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-2 mb-6">
-          <GitFork className="w-5 h-5 text-[#ffffff]" />
+          <GitFork className="w-5 h-5 text-white" />
           <span className="text-sm font-medium text-neutral-400 uppercase tracking-wider">
             Built on Open Source
           </span>
@@ -59,7 +59,7 @@ export function UpstreamAttribution({ upstream, productName }: UpstreamAttributi
                   Powered by {upstream.name}
                 </h3>
                 {upstream.stars && (
-                  <span className="inline-flex items-center gap-1 text-sm text-yellow-500">
+                  <span className="inline-flex items-center gap-1 text-sm text-white/60">
                     <Star className="w-4 h-4 fill-current" />
                     {upstream.stars}
                   </span>
@@ -107,7 +107,7 @@ export function UpstreamAttribution({ upstream, productName }: UpstreamAttributi
           {/* Thank you message */}
           <div className="mt-6 pt-6 border-t border-neutral-800">
             <p className="flex items-center gap-2 text-sm text-neutral-400">
-              <Heart className="w-4 h-4 text-[#ffffff]" />
+              <Heart className="w-4 h-4 text-white" />
               We're grateful to the {upstream.name} maintainers and community for their incredible work.
             </p>
           </div>

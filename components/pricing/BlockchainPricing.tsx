@@ -163,12 +163,12 @@ const BlockchainPricing = () => {
               key={plan.name}
               className={`rounded-xl p-6 border ${
                 plan.highlighted
-                  ? "border-[#ffffff] bg-[#ffffff]/5"
+                  ? "border-white bg-white/5"
                   : "border-gray-800 bg-gray-900/30"
               }`}
             >
               {plan.highlighted && (
-                <div className="text-xs font-semibold text-[#ffffff] uppercase tracking-wider mb-2">
+                <div className="text-xs font-semibold text-white uppercase tracking-wider mb-2">
                   Most Popular
                 </div>
               )}
@@ -186,7 +186,7 @@ const BlockchainPricing = () => {
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-neutral-300">
-                    <Check className="w-4 h-4 text-[#ffffff] shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
@@ -195,7 +195,7 @@ const BlockchainPricing = () => {
               <Button
                 className={`w-full ${
                   plan.highlighted
-                    ? "bg-[#ffffff] hover:bg-[#cccccc] text-white"
+                    ? "bg-white hover:bg-[#cccccc] text-white"
                     : "bg-white text-black hover:bg-gray-100"
                 }`}
               >
@@ -207,7 +207,7 @@ const BlockchainPricing = () => {
 
         <p className="text-sm text-neutral-500 text-center">
           All plans include WebSocket support, JSON-RPC & REST APIs, and auto-scaling.
-          <a href="/blockchain" className="text-[#ffffff] hover:underline ml-1">Compare all features →</a>
+          <a href="/blockchain" className="text-white hover:underline ml-1">Compare all features →</a>
         </p>
       </div>
 
@@ -224,8 +224,8 @@ const BlockchainPricing = () => {
             return (
               <div key={api.name} className="rounded-xl p-6 border border-gray-800 bg-gray-900/30">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-[#ffffff]" />
+                  <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">{api.name}</h3>
@@ -260,8 +260,8 @@ const BlockchainPricing = () => {
             const Icon = feature.icon;
             return (
               <div key={feature.name} className="rounded-xl p-6 border border-gray-800 bg-gray-900/30">
-                <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-[#ffffff]" />
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{feature.name}</h3>
                 <p className="text-neutral-500 text-sm mb-4">{feature.description}</p>
@@ -289,7 +289,7 @@ const BlockchainPricing = () => {
               {chain}
             </div>
           ))}
-          <div className="px-4 py-2 rounded-full border border-[#ffffff]/30 bg-[#ffffff]/10 text-sm text-[#ffffff]">
+          <div className="px-4 py-2 rounded-full border border-white/30 bg-white/10 text-sm text-white">
             +80 more
           </div>
         </div>
@@ -302,7 +302,7 @@ const BlockchainPricing = () => {
           Start free and scale as you grow. No credit card required.
         </p>
         <div className="flex justify-center gap-4">
-          <Button size="lg" className="bg-[#ffffff] hover:bg-[#cccccc] text-white px-8">
+          <Button size="lg" className="bg-white hover:bg-[#cccccc] text-white px-8">
             Start Building Free
           </Button>
           <Button size="lg" variant="outline" className="border-neutral-700 hover:border-neutral-600">

@@ -15,9 +15,9 @@ const AgentCodeDemo = () => {
       <div className="flex items-center justify-between px-4 py-2 border-b border-neutral-800 bg-neutral-900/50">
         <div className="flex items-center gap-4">
           <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-red-500" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-            <div className="w-3 h-3 rounded-full bg-green-500" />
+            <div className="w-3 h-3 rounded-full bg-white/10" />
+            <div className="w-3 h-3 rounded-full bg-white/10" />
+            <div className="w-3 h-3 rounded-full bg-white/10" />
           </div>
           <span className="text-xs text-neutral-500">Hanzo AI</span>
         </div>
@@ -46,13 +46,13 @@ const AgentCodeDemo = () => {
         <div className="col-span-5 border-r border-neutral-800 p-4 font-mono text-xs">
           <div className="text-neutral-500 mb-2">package service.limits;</div>
           <div className="space-y-1">
-            <div><span className="text-[#ffffff]">import</span> java.time.Instant;</div>
-            <div><span className="text-[#ffffff]">import</span> java.util.concurrent.*;</div>
-            <div className="mt-3"><span className="text-[#ffffff]">public class</span> <span className="text-yellow-400">RateLimitMetrics</span> {"{"}</div>
-            <div className="ml-4 text-green-400">// allowedCount, blockedCount, resetCount</div>
-            <div className="ml-4"><span className="text-[#ffffff]">private final</span> AtomicLong allowed = <span className="text-[#ffffff]">new</span> AtomicLong();</div>
-            <div className="ml-4"><span className="text-[#ffffff]">private final</span> AtomicLong blocked = <span className="text-[#ffffff]">new</span> AtomicLong();</div>
-            <div className="mt-3 ml-4"><span className="text-[#ffffff]">public void</span> <span className="text-[#ff6b6b]">markAllowed</span>() {"{"}</div>
+            <div><span className="text-white">import</span> java.time.Instant;</div>
+            <div><span className="text-white">import</span> java.util.concurrent.*;</div>
+            <div className="mt-3"><span className="text-white">public class</span> <span className="text-white/60">RateLimitMetrics</span> {"{"}</div>
+            <div className="ml-4 text-white/70">// allowedCount, blockedCount, resetCount</div>
+            <div className="ml-4"><span className="text-white">private final</span> AtomicLong allowed = <span className="text-white">new</span> AtomicLong();</div>
+            <div className="ml-4"><span className="text-white">private final</span> AtomicLong blocked = <span className="text-white">new</span> AtomicLong();</div>
+            <div className="mt-3 ml-4"><span className="text-white">public void</span> <span className="text-white/70">markAllowed</span>() {"{"}</div>
             <div className="ml-8">allowed.incrementAndGet();</div>
             <div className="ml-8">lastAllowed.set(Instant.now());</div>
             <div className="ml-4">{"}"}</div>
@@ -70,7 +70,7 @@ const AgentCodeDemo = () => {
             <div className="text-xs text-neutral-300">I'll proceed with implementing all the improvements starting with Enhanced Metrics and Observability...</div>
           </div>
           <div className="flex items-center gap-2 text-xs">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-white/10 animate-pulse" />
             <span className="text-neutral-400">Hanzo AI thinking...</span>
           </div>
         </div>
@@ -197,7 +197,7 @@ const MultiAgentSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
               >
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -249,7 +249,7 @@ const MultiAgentSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+                className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
               >
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"

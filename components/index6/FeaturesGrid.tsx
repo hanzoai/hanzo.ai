@@ -94,7 +94,7 @@ const FeaturesGrid: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-24 h-1 bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] rounded-full mx-auto mb-12"
+          className="w-24 h-1 bg-gradient-to-r from-white to-white/10 rounded-full mx-auto mb-12"
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

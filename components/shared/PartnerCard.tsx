@@ -32,22 +32,22 @@ const PartnerCard: React.FC<PartnerCardProps> = ({
   const isPrimary = color === "primary";
 
   const cardClass = isPrimary
-    ? "bg-gradient-to-br from-[#ffffff]/30 to-[#ffffff]/10 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40"
-    : "bg-gradient-to-br from-[#ff6b6b]/30 to-[#ff6b6b]/10 rounded-xl border border-[#ff6b6b]/20 hover:border-[#ff6b6b]/40";
+    ? "bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-white/20 hover:border-white/40"
+    : "bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-white/20 hover:border-white/40";
 
   const iconWrapperClass = isPrimary
-    ? "p-3 rounded-lg bg-[#ffffff]/20"
-    : "p-3 rounded-lg bg-[#ff6b6b]/20";
+    ? "p-3 rounded-lg bg-white/20"
+    : "p-3 rounded-lg bg-white/20";
 
-  const iconClass = isPrimary ? "text-[#ffffff]" : "text-[#ff6b6b]";
+  const iconClass = isPrimary ? "text-white" : "text-white/70";
 
   const primaryBtnClass = isPrimary
-    ? "bg-[#ffffff] hover:bg-[#cccccc]"
-    : "bg-[#ff6b6b] hover:bg-[#ffffff]";
+    ? "bg-white hover:bg-[#cccccc]"
+    : "bg-white/10 hover:bg-white";
 
   const outlineBtnClass = isPrimary
-    ? "border border-[#ffffff]/40 hover:border-[#ffffff] text-[#ffffff] hover:text-[#ff6b6b]"
-    : "border border-[#ff6b6b]/40 hover:border-[#ff6b6b] text-[#ff6b6b] hover:text-[#ffffff]";
+    ? "border border-white/40 hover:border-white/30 text-white hover:text-white/70"
+    : "border border-white/40 hover:border-white/20 text-white/70 hover:text-white";
 
   const getSecondaryIcon = () => {
     switch (secondaryAction?.type) {

@@ -149,7 +149,7 @@ const DeveloperExperienceSection = () => {
             </p>
             <Link
               href="/extensions"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-[#ffffff] text-white hover:opacity-90"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-white hover:opacity-90"
             >
               Install the IDE extension
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -160,24 +160,24 @@ const DeveloperExperienceSection = () => {
           <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
               </div>
               <span className="ml-2 text-xs text-neutral-500">VS Code - Hanzo Extension</span>
             </div>
             <div className="p-4 space-y-3 bg-neutral-950">
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
-                <MonitorUp className="w-4 h-4 text-[#ffffff]" />
+                <MonitorUp className="w-4 h-4 text-white" />
                 <span className="text-sm text-neutral-300">Reading repo structure...</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
-                <Check className="w-4 h-4 text-green-500" />
+                <Check className="w-4 h-4 text-white/70" />
                 <span className="text-sm text-neutral-300">Edited 4 files cohesively</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-green-500/10 border border-green-500/30">
-                <Check className="w-4 h-4 text-green-500" />
-                <span className="text-sm text-green-400">All tests passing</span>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/20">
+                <Check className="w-4 h-4 text-white/70" />
+                <span className="text-sm text-white/70">All tests passing</span>
               </div>
             </div>
           </div>
@@ -195,9 +195,9 @@ const DeveloperExperienceSection = () => {
           <div className="order-2 lg:order-1 rounded-xl border border-neutral-800 bg-neutral-900/80 overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
               </div>
               <span className="ml-2 text-xs text-neutral-500 font-mono">terminal</span>
               <button
@@ -205,7 +205,7 @@ const DeveloperExperienceSection = () => {
                 className="ml-auto p-1 rounded hover:bg-neutral-800 transition-colors"
               >
                 {copied ? (
-                  <Check className="h-3 w-3 text-green-500" />
+                  <Check className="h-3 w-3 text-white/70" />
                 ) : (
                   <Copy className="h-3 w-3 text-neutral-500" />
                 )}
@@ -214,29 +214,29 @@ const DeveloperExperienceSection = () => {
             <div className="p-4 font-mono text-sm bg-neutral-950">
               <div className="mb-2">
                 <span className="text-neutral-500">$ </span>
-                <span className="text-[#ffffff]">curl</span>
+                <span className="text-white">curl</span>
                 <span className="text-neutral-300"> -fsSL </span>
-                <span className="text-[#ff6b6b]">hanzo.sh</span>
+                <span className="text-white/70">hanzo.sh</span>
                 <span className="text-neutral-300"> | </span>
-                <span className="text-[#ffffff]">bash</span>
+                <span className="text-white">bash</span>
               </div>
               <div className="mb-4">
                 <span className="text-neutral-500">$ </span>
-                <span className="text-[#ffffff]">hanzo</span>
-                <span className="text-orange-300"> dev</span>
-                <span className="text-green-400"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
+                <span className="text-white">hanzo</span>
+                <span className="text-white/70"> dev</span>
+                <span className="text-white/70"> "Fix rate limiting. Add metrics. Add tests. Open a PR."</span>
               </div>
-              <div className="text-green-400 mb-1">
-                <span className="text-green-500">✓ </span>Plan created
+              <div className="text-white/70 mb-1">
+                <span className="text-white/70">✓ </span>Plan created
               </div>
-              <div className="text-green-400 mb-1">
-                <span className="text-green-500">✓ </span>Implementation complete
+              <div className="text-white/70 mb-1">
+                <span className="text-white/70">✓ </span>Implementation complete
               </div>
-              <div className="text-green-400 mb-1">
-                <span className="text-green-500">✓ </span>Tests passing (12/12)
+              <div className="text-white/70 mb-1">
+                <span className="text-white/70">✓ </span>Tests passing (12/12)
               </div>
-              <div className="text-[#ffffff]">
-                <span className="text-green-500">✓ </span>PR opened: #247
+              <div className="text-white">
+                <span className="text-white/70">✓ </span>PR opened: #247
               </div>
             </div>
           </div>
@@ -378,10 +378,10 @@ const DeveloperExperienceSection = () => {
               </div>
 
               {/* Core */}
-              <div className="col-span-2 md:col-span-2 p-4 rounded-xl border-2 border-[#ffffff]/30 bg-[#ffffff]/5">
+              <div className="col-span-2 md:col-span-2 p-4 rounded-xl border-2 border-white/30 bg-white/5">
                 <div className="text-center">
-                  <div className="w-12 h-12 rounded-xl bg-[#ffffff]/20 flex items-center justify-center mx-auto mb-3">
-                    <Brain className="w-6 h-6 text-[#ffffff]" />
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-3">
+                    <Brain className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-white mb-1">Hanzo Core</h4>
                   <p className="text-xs text-neutral-500 mb-3">Unified memory • Vector index • Tool registry</p>
@@ -400,7 +400,7 @@ const DeveloperExperienceSection = () => {
           <div className="text-center">
             <Link
               href="/products"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-[#ffffff] text-white hover:opacity-90"
+              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-white text-white hover:opacity-90"
             >
               Explore all capabilities
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -471,7 +471,7 @@ const DeveloperExperienceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border border-[#ffffff]/30 bg-gradient-to-br from-[#ffffff]/10 to-transparent p-8 md:p-12"
+          className="rounded-2xl border border-white/30 bg-gradient-to-br from-white/10 to-transparent p-8 md:p-12"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-start">
             <div>

@@ -184,7 +184,7 @@ const Security = () => {
                     key={badge.name}
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800"
                   >
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <CheckCircle className="w-4 h-4 text-white/70" />
                     <span className="text-sm font-medium text-white">{badge.name}</span>
                   </div>
                 ))}
@@ -325,7 +325,7 @@ const Security = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="order-2 lg:order-1"
               >
-                <div className="bg-gradient-to-br from-[#ffffff]/10 to-transparent rounded-xl p-8 border border-[#ffffff]/20">
+                <div className="bg-gradient-to-br from-white/10 to-transparent rounded-xl p-8 border border-white/20">
                   <Shield className="w-10 h-10 mb-6" style={{ color: BRAND_COLOR }} />
                   <h3 className="text-xl font-bold text-white mb-4">
                     Enterprise Security Program
@@ -338,7 +338,7 @@ const Security = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {ENTERPRISE_FEATURES.map((feature) => (
                       <div key={feature} className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-white/70 mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-neutral-300">{feature}</span>
                       </div>
                     ))}
@@ -392,11 +392,11 @@ const Security = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-yellow-900/20 to-transparent rounded-xl p-8 border border-yellow-500/20"
+              className="bg-gradient-to-br from-white/20 to-transparent rounded-xl p-8 border border-white/20"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
-                  <Bug className="w-6 h-6 text-yellow-500" />
+                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <Bug className="w-6 h-6 text-white/60" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">
@@ -409,7 +409,7 @@ const Security = () => {
                   </p>
                   <a
                     href="mailto:security@hanzo.ai"
-                    className="inline-flex items-center text-sm font-medium text-yellow-500 hover:text-yellow-400 transition-colors"
+                    className="inline-flex items-center text-sm font-medium text-white/60 hover:text-white/60 transition-colors"
                   >
                     security@hanzo.ai
                     <ExternalLink className="ml-2 h-4 w-4" />
@@ -422,8 +422,8 @@ const Security = () => {
 
         {/* CTA Section */}
         <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h2

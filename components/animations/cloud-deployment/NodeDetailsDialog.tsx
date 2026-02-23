@@ -30,9 +30,9 @@ const NodeDetailsDialog: React.FC<NodeDetailsDialogProps> = ({ isOpen, onOpenCha
           <div className="grid grid-cols-2 gap-y-2 text-sm">
             <div className="text-neutral-400">Status</div>
             <div className="text-neutral-200">
-              {selectedNode.status === 'deployed' && <span className="text-green-400">Deployed</span>}
-              {selectedNode.status === 'pending' && <span className="text-orange-400">Pending</span>}
-              {selectedNode.status === 'error' && <span className="text-red-400">Failed</span>}
+              {selectedNode.status === 'deployed' && <span className="text-white/70">Deployed</span>}
+              {selectedNode.status === 'pending' && <span className="text-white/70">Pending</span>}
+              {selectedNode.status === 'error' && <span className="text-white/70">Failed</span>}
             </div>
             
             <div className="text-neutral-400">Type</div>
@@ -51,7 +51,7 @@ const NodeDetailsDialog: React.FC<NodeDetailsDialogProps> = ({ isOpen, onOpenCha
             Close
           </button>
           <button 
-            className="px-3 py-1.5 rounded bg-red-600 hover:bg-red-700 text-[var(--white)] text-sm"
+            className="px-3 py-1.5 rounded bg-white/10 hover:bg-white/10 text-[var(--white)] text-sm"
             onClick={() => onOpenChange(false)}
           >
             View Details

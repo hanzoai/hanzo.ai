@@ -14,7 +14,7 @@ const WebinarCard = ({ title, partner }: { title: string; partner: string }) => 
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden group hover:border-gray-700 transition-colors"
     >
-      <div className="h-48 bg-gradient-to-br from-[#ffffff]/25 via-black/40 to-[#ff6b6b]/20 relative">
+      <div className="h-48 bg-gradient-to-br from-white/25 via-black/40 to-white/10 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_55%)]" />
         <div className="absolute bottom-4 left-4 right-4">
           <div className="text-sm uppercase tracking-widest text-neutral-400">Webinar</div>

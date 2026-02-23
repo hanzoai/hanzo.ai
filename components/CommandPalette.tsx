@@ -345,12 +345,12 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                           >
                             <div
                               className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                                isSelected ? "bg-[#ffffff]/20" : "bg-neutral-800"
+                                isSelected ? "bg-white/20" : "bg-neutral-800"
                               }`}
                             >
                               <Icon
                                 className={`w-4 h-4 ${
-                                  isSelected ? "text-[#ffffff]" : "text-neutral-500"
+                                  isSelected ? "text-white" : "text-neutral-500"
                                 }`}
                               />
                             </div>

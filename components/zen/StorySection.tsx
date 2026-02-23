@@ -16,7 +16,7 @@ const StorySection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
-          <div className="h-1 w-20 bg-[#ffffff] mx-auto"></div>
+          <div className="h-1 w-20 bg-white mx-auto"></div>
         </motion.div>
         
         <motion.div
@@ -24,7 +24,7 @@ const StorySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[var(--black)]/30 backdrop-blur-sm border border-[#ffffff]/20 rounded-lg p-8 space-y-4"
+          className="bg-[var(--black)]/30 backdrop-blur-sm border border-white/20 rounded-lg p-8 space-y-4"
         >
           <p className="text-neutral-300 md:text-lg leading-relaxed">
             Hanzo began as Crowdstart, a small, hungry team driving explosive product launches—most notably, 

@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[var(--black)]" />
       
       {/* Enhanced background with subtle animated gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/15 via-[#ff6b6b]/10 to-black opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/10 to-black opacity-40"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(253,68,68,0.12),transparent_50%)] opacity-60"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -23,7 +23,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ffffff] text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium mb-6">
             Hanzo Cloud - Built for Production
           </div>
           <ChromeText as="h1" className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
@@ -41,14 +41,14 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
         >
-          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] border-none">
+          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white border-none">
             <a href="https://dashboard.hanzo.cloud">Deploy Now</a>
           </Button>
           
           <Button 
             variant="outline"
             size="lg" 
-            className="text-lg px-8 text-[var(--white)] border-[#ffffff]/30 hover:bg-[#ffffff]/10"
+            className="text-lg px-8 text-[var(--white)] border-white/30 hover:bg-white/10"
           >
             <a href="/platform">Try Open Source</a>
           </Button>
@@ -61,20 +61,20 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
-          <div className="bg-gray-900/30 border border-[#ffffff]/20 rounded-xl p-6 text-center">
-            <Server className="h-8 w-8 text-[#ffffff] mx-auto mb-4" />
+          <div className="bg-gray-900/30 border border-white/20 rounded-xl p-6 text-center">
+            <Server className="h-8 w-8 text-white mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Global Infrastructure</h3>
             <p className="text-neutral-400 text-sm">35+ regions worldwide for ultra-low latency at the edge</p>
           </div>
           
-          <div className="bg-gray-900/30 border border-[#ffffff]/20 rounded-xl p-6 text-center">
-            <Zap className="h-8 w-8 text-[#ffffff] mx-auto mb-4" />
+          <div className="bg-gray-900/30 border border-white/20 rounded-xl p-6 text-center">
+            <Zap className="h-8 w-8 text-white mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Instant Deployment</h3>
             <p className="text-neutral-400 text-sm">Deploy in seconds with push-button simplicity</p>
           </div>
           
-          <div className="bg-gray-900/30 border border-[#ffffff]/20 rounded-xl p-6 text-center">
-            <Globe className="h-8 w-8 text-[#ffffff] mx-auto mb-4" />
+          <div className="bg-gray-900/30 border border-white/20 rounded-xl p-6 text-center">
+            <Globe className="h-8 w-8 text-white mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">AI-Optimized</h3>
             <p className="text-neutral-400 text-sm">Purpose-built for complex AI workloads and inference</p>
           </div>

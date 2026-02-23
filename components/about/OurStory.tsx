@@ -15,7 +15,7 @@ const OurStory = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Story</h2>
-          <div className="h-1 w-20 bg-[#ffffff] mx-auto"></div>
+          <div className="h-1 w-20 bg-white mx-auto"></div>
         </motion.div>
 
         <motion.div

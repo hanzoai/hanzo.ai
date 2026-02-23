@@ -74,9 +74,9 @@ interface CategoryPageTemplateProps {
 
 const StatusBadge = ({ status }: { status: Product['status'] }) => {
   const variants = {
-    ga: { label: 'GA', className: 'bg-green-500/20 text-green-400 border-green-500/30' },
-    beta: { label: 'Beta', className: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
-    alpha: { label: 'Alpha', className: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+    ga: { label: 'GA', className: 'bg-white/10 text-white/70 border-white/20' },
+    beta: { label: 'Beta', className: 'bg-white/10 text-white/60 border-white/20' },
+    alpha: { label: 'Alpha', className: 'bg-white/10 text-white/70 border-white/20' },
     coming: { label: 'Coming Soon', className: 'bg-neutral-500/20 text-neutral-400 border-neutral-500/30' }
   };
   return (
@@ -209,7 +209,7 @@ export const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
 
           <div className="bg-black rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-between font-mono text-sm">
-              <code className="text-green-400">curl -fsSL hanzo.sh | bash</code>
+              <code className="text-white/70">curl -fsSL hanzo.sh | bash</code>
               <Button variant="ghost" size="sm" className="text-neutral-400 hover:text-white">
                 Copy
               </Button>

@@ -44,7 +44,7 @@ const GettingStarted = () => {
               <ul className="space-y-3">
                 {prerequisites.map((req, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-white/70 mr-2 mt-0.5" />
                     <span className="text-neutral-300">{req}</span>
                   </li>
                 ))}
@@ -83,7 +83,7 @@ const GettingStarted = () => {
           >
             <div className="bg-gray-900/20 border border-gray-800 rounded-xl p-8 flex flex-col h-full">
               <div className="mb-6 text-center">
-                <Terminal className="h-12 w-12 text-[#ffffff] mx-auto mb-4" />
+                <Terminal className="h-12 w-12 text-white mx-auto mb-4" />
                 <h3 className="text-2xl font-semibold text-[var(--white)]">Quickstart Guide</h3>
                 <p className="text-neutral-400 mt-2">
                   For a more detailed guide, check out our comprehensive documentation
@@ -98,7 +98,7 @@ const GettingStarted = () => {
                   
                   <Button 
                     size="lg"
-                    className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)] px-8 w-full"
+                    className="bg-white hover:bg-[#cccccc] text-[var(--white)] px-8 w-full"
                   >
                     View Quickstart Guide
                   </Button>

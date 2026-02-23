@@ -154,7 +154,7 @@ const Leadership = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-8 hover:border-[#ffffff]/30 transition-colors"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-8 hover:border-white/30 transition-colors"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
                     <div
@@ -258,7 +258,7 @@ const Leadership = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors text-center"
+                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors text-center"
                   >
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto"
@@ -277,8 +277,8 @@ const Leadership = () => {
 
         {/* CTA Section */}
         <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h2

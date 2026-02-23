@@ -47,10 +47,10 @@ const languageLogos: Record<string, JSX.Element> = {
 };
 
 const registryColors: Record<string, string> = {
-  npm: "bg-red-500/10 text-red-400 border-red-500/30",
-  pypi: "bg-[#ffffff]/10 text-[#ffffff] border-[#ffffff]/30",
-  "crates.io": "bg-orange-500/10 text-orange-400 border-orange-500/30",
-  "go modules": "bg-orange-400/10 text-orange-300 border-orange-400/30",
+  npm: "bg-white/5 text-white/70 border-white/20",
+  pypi: "bg-white/10 text-white border-white/30",
+  "crates.io": "bg-white/5 text-white/70 border-white/20",
+  "go modules": "bg-white/5 text-white/70 border-white/20",
 };
 
 export function SDKSection({ productName, sdks }: SDKSectionProps) {
@@ -64,8 +64,8 @@ export function SDKSection({ productName, sdks }: SDKSectionProps) {
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-2 mb-2">
-          <Package className="w-5 h-5 text-[#ffffff]" />
-          <span className="text-sm font-medium text-[#ffffff] uppercase tracking-wider">
+          <Package className="w-5 h-5 text-white" />
+          <span className="text-sm font-medium text-white uppercase tracking-wider">
             SDKs & Libraries
           </span>
         </div>
@@ -110,7 +110,7 @@ export function SDKSection({ productName, sdks }: SDKSectionProps) {
                   href={sdk.url || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-[#ffffff] hover:text-[#ffffff]/80 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-white hover:text-white/80 transition-colors"
                 >
                   <Package className="w-3.5 h-3.5" />
                   {sdk.package}

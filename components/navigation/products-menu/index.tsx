@@ -18,7 +18,7 @@ export const ProductsMenu = () => {
           {/* Featured Products Row */}
           <div className="mb-4 pb-4 border-b border-neutral-800">
             <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="h-3.5 w-3.5 text-[#ffffff]" />
+              <Sparkles className="h-3.5 w-3.5 text-white" />
               <span className="text-xs font-medium uppercase tracking-wider text-neutral-400">Featured</span>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -29,10 +29,10 @@ export const ProductsMenu = () => {
                     key={product.title}
                     href={product.href || "#"}
                     onClick={closeMenu}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-white/30/50 hover:bg-neutral-800/50"
                   >
-                    {Icon && <Icon className="h-3.5 w-3.5 group-hover:text-[#ffffff] text-neutral-400" />}
-                    <span className="text-sm font-medium group-hover:text-[#ffffff] text-neutral-300">{product.title}</span>
+                    {Icon && <Icon className="h-3.5 w-3.5 group-hover:text-white text-neutral-400" />}
+                    <span className="text-sm font-medium group-hover:text-white text-neutral-300">{product.title}</span>
                   </Link>
                 );
               })}
@@ -60,8 +60,8 @@ export const ProductsMenu = () => {
                           onClick={closeMenu}
                           className="flex items-center gap-1.5 py-0.5 group"
                         >
-                          {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
-                          <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                          {Icon && <Icon className="h-3 w-3 group-hover:text-white text-neutral-500" />}
+                          <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                             {item.title}
                           </span>
                         </Link>
@@ -71,7 +71,7 @@ export const ProductsMenu = () => {
                       <Link
                         href="/products"
                         onClick={closeMenu}
-                        className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff] text-neutral-600"
+                        className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-white text-neutral-600"
                       >
                         +{section.items.length - MAX_ITEMS_PER_CATEGORY} more
                         <ArrowRight className="h-2.5 w-2.5" />
@@ -86,7 +86,7 @@ export const ProductsMenu = () => {
           {/* Footer - More compact */}
           <div className="mt-4 pt-4 border-t border-neutral-800 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="rounded-md px-2.5 py-1 font-mono text-[10px] bg-neutral-900 text-[#ffffff]">
+              <div className="rounded-md px-2.5 py-1 font-mono text-[10px] bg-neutral-900 text-white">
                 curl -fsSL hanzo.sh | sh
               </div>
               <span className="text-[10px] text-neutral-500">Install Hanzo CLI</span>
@@ -104,7 +104,7 @@ export const ProductsMenu = () => {
               </Button>
               <Button
                 size="sm"
-                className="bg-[#ffffff] text-white hover:bg-[#ffffff]/90 h-7 text-xs px-3"
+                className="bg-white text-white hover:bg-white/90 h-7 text-xs px-3"
                 asChild
               >
                 <Link href="/products" onClick={closeMenu}>

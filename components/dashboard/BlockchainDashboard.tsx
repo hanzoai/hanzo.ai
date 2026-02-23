@@ -84,7 +84,7 @@ const BlockchainDashboard = () => {
           <h2 className="text-xl font-semibold">Blockchain Infrastructure</h2>
           <p className="text-neutral-400 text-sm">RPC, APIs, and Web3 services</p>
         </div>
-        <Button className="bg-[#ffffff] hover:bg-[#cccccc] text-white">
+        <Button className="bg-white hover:bg-[#cccccc] text-white">
           <Key className="w-4 h-4 mr-2" />
           Create API Key
         </Button>
@@ -94,13 +94,13 @@ const BlockchainDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-2">
-            <Zap className="w-4 h-4 text-[#ffffff]" />
+            <Zap className="w-4 h-4 text-white" />
             <span className="text-sm text-neutral-400">Compute Units</span>
           </div>
           <p className="text-2xl font-bold">{formatNumber(usage.currentPeriod.computeUnits)}</p>
           <div className="mt-2 h-2 bg-neutral-800 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#ffffff] rounded-full transition-all"
+              className="h-full bg-white rounded-full transition-all"
               style={{ width: `${usage.percentUsed}%` }}
             />
           </div>
@@ -109,7 +109,7 @@ const BlockchainDashboard = () => {
 
         <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-2">
-            <Activity className="w-4 h-4 text-[#ffffff]" />
+            <Activity className="w-4 h-4 text-white" />
             <span className="text-sm text-neutral-400">Total Requests</span>
           </div>
           <p className="text-2xl font-bold">{formatNumber(usage.currentPeriod.requests)}</p>
@@ -118,7 +118,7 @@ const BlockchainDashboard = () => {
 
         <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-2">
-            <Webhook className="w-4 h-4 text-[#ffffff]" />
+            <Webhook className="w-4 h-4 text-white" />
             <span className="text-sm text-neutral-400">Webhook Deliveries</span>
           </div>
           <p className="text-2xl font-bold">{formatNumber(usage.currentPeriod.webhookDeliveries)}</p>
@@ -127,11 +127,11 @@ const BlockchainDashboard = () => {
 
         <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-2">
-            <TrendingUp className="w-4 h-4 text-green-500" />
+            <TrendingUp className="w-4 h-4 text-white/70" />
             <span className="text-sm text-neutral-400">Avg Latency</span>
           </div>
           <p className="text-2xl font-bold">42ms</p>
-          <p className="text-xs text-green-500 mt-1">-12% vs last week</p>
+          <p className="text-xs text-white/70 mt-1">-12% vs last week</p>
         </div>
       </div>
 
@@ -139,10 +139,10 @@ const BlockchainDashboard = () => {
       <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-semibold flex items-center gap-2">
-            <Globe className="w-4 h-4 text-[#ffffff]" />
+            <Globe className="w-4 h-4 text-white" />
             Chain Status
           </h3>
-          <a href="/status" className="text-sm text-[#ffffff] hover:underline flex items-center gap-1">
+          <a href="/status" className="text-sm text-white hover:underline flex items-center gap-1">
             View all <ExternalLink className="w-3 h-3" />
           </a>
         </div>
@@ -155,8 +155,8 @@ const BlockchainDashboard = () => {
               <div className="flex items-center justify-between mb-2">
                 <span className="font-medium text-sm">{chain.name}</span>
                 <span className={`w-2 h-2 rounded-full ${
-                  chain.status === "operational" ? "bg-green-500" :
-                  chain.status === "degraded" ? "bg-yellow-500" : "bg-red-500"
+                  chain.status === "operational" ? "bg-white/10" :
+                  chain.status === "degraded" ? "bg-white/10" : "bg-white/10"
                 }`} />
               </div>
               <div className="text-xs text-neutral-400">
@@ -178,7 +178,7 @@ const BlockchainDashboard = () => {
       <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-semibold flex items-center gap-2">
-            <Key className="w-4 h-4 text-[#ffffff]" />
+            <Key className="w-4 h-4 text-white" />
             API Keys
           </h3>
           <Button variant="outline" size="sm" className="border-neutral-700">
@@ -216,7 +216,7 @@ const BlockchainDashboard = () => {
                       onClick={() => copyToClipboard(key.prefix)}
                     >
                       {copiedKey === key.prefix ? (
-                        <Check className="w-4 h-4 text-green-500" />
+                        <Check className="w-4 h-4 text-white/70" />
                       ) : (
                         <Copy className="w-4 h-4" />
                       )}
@@ -231,18 +231,18 @@ const BlockchainDashboard = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="/blockchain/chains" className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-[#ffffff]/50 transition-colors group">
-          <Server className="w-6 h-6 text-[#ffffff] mb-2" />
+        <a href="/blockchain/chains" className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/30/50 transition-colors group">
+          <Server className="w-6 h-6 text-white mb-2" />
           <h4 className="font-medium mb-1">RPC Endpoints</h4>
           <p className="text-sm text-neutral-400">Configure chain connections and endpoints</p>
         </a>
-        <a href="/blockchain/webhooks" className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-[#ffffff]/50 transition-colors group">
-          <Webhook className="w-6 h-6 text-[#ffffff] mb-2" />
+        <a href="/blockchain/webhooks" className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/30/50 transition-colors group">
+          <Webhook className="w-6 h-6 text-white mb-2" />
           <h4 className="font-medium mb-1">Webhooks</h4>
           <p className="text-sm text-neutral-400">Set up event notifications</p>
         </a>
-        <a href="/blockchain/wallets" className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-[#ffffff]/50 transition-colors group">
-          <Shield className="w-6 h-6 text-[#ffffff] mb-2" />
+        <a href="/blockchain/wallets" className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/30/50 transition-colors group">
+          <Shield className="w-6 h-6 text-white mb-2" />
           <h4 className="font-medium mb-1">Smart Wallets</h4>
           <p className="text-sm text-neutral-400">ERC-4337 account abstraction</p>
         </a>

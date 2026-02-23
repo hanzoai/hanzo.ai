@@ -117,12 +117,12 @@ const BillingPlans = () => {
             <Card 
               key={plan.id} 
               className={`bg-gray-900/30 border ${
-                plan.popular ? 'border-[#ffffff]' : 'border-gray-800'
+                plan.popular ? 'border-white' : 'border-gray-800'
               } relative`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-[#ffffff] text-[var(--white)] px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-white text-[var(--white)] px-3 py-1 rounded-full text-xs font-medium">
                     Most Popular
                   </span>
                 </div>
@@ -141,7 +141,7 @@ const BillingPlans = () => {
                 <ul className="space-y-2">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                      <Check className="h-5 w-5 text-white/70 mr-2 shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
@@ -151,7 +151,7 @@ const BillingPlans = () => {
               <CardFooter>
                 <Button 
                   className={`w-full ${
-                    plan.popular ? 'bg-[#ffffff] hover:bg-[#e03e3e]' : ''
+                    plan.popular ? 'bg-white hover:bg-white/20' : ''
                   }`}
                   variant={plan.popular ? 'default' : 'outline'}
                   onClick={() => handleUpgrade(plan.id)}

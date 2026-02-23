@@ -53,8 +53,8 @@ export function CodeExamplesSection({
     >
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-2 mb-2">
-          <Terminal className="w-5 h-5 text-[#ffffff]" />
-          <span className="text-sm font-medium text-[#ffffff] uppercase tracking-wider">
+          <Terminal className="w-5 h-5 text-white" />
+          <span className="text-sm font-medium text-white uppercase tracking-wider">
             Code Examples
           </span>
         </div>
@@ -96,7 +96,7 @@ export function CodeExamplesSection({
                   >
                     {copiedIndex === example.language ? (
                       <>
-                        <Check className="w-3 h-3 text-green-500" />
+                        <Check className="w-3 h-3 text-white/70" />
                         Copied!
                       </>
                     ) : (

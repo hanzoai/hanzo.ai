@@ -43,37 +43,37 @@ const allFeatures = [{
 
 const industriesData = [{
   name: "Cloud",
-  icon: <Globe className="h-5 w-5 text-orange-400 mb-2" />,
+  icon: <Globe className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
   description: "Cloud orchestration with rapid deployment"
 }, {
   name: "Cybersecurity",
-  icon: <Shield className="h-5 w-5 text-red-400 mb-2" />,
+  icon: <Shield className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/97902904-f9ea-475e-9c65-5664eab422e5.png",
   description: "Advanced security solutions for business"
 }, {
   name: "Data and Artificial Intelligence",
-  icon: <Brain className="h-5 w-5 text-red-400 mb-2" />,
+  icon: <Brain className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
   description: "Cutting-edge AI solutions for business transformation"
 }, {
   name: "Digital Engineering and Manufacturing",
-  icon: <Code className="h-5 w-5 text-green-400 mb-2" />,
+  icon: <Code className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/a1e0f18b-41a7-4f58-ac3b-7272aa8e7a77.png",
   description: "Engineering solutions for manufacturing"
 }, {
   name: "Emerging Technology",
-  icon: <Cpu className="h-5 w-5 text-yellow-400 mb-2" />,
+  icon: <Cpu className="h-5 w-5 text-white/60 mb-2" />,
   image: "/lovable-uploads/41fa31ba-8c5b-4553-afeb-ba51591f7024.png",
   description: "Frontier technology solutions"
 }, {
   name: "Ecosystem Partners",
-  icon: <Network className="h-5 w-5 text-orange-400 mb-2" />,
+  icon: <Network className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
   description: "Collaborative partnership networks"
 }, {
   name: "Finance and Risk Management",
-  icon: <DollarSign className="h-5 w-5 text-green-400 mb-2" />,
+  icon: <DollarSign className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/22f3cbb5-8cd9-48e2-92bc-8b084da1f4ff.png",
   description: "Financial solutions and risk assessment"
 }, {
@@ -83,22 +83,22 @@ const industriesData = [{
   description: "Infrastructure development and capital management"
 }, {
   name: "Learning",
-  icon: <GraduationCap className="h-5 w-5 text-orange-400 mb-2" />,
+  icon: <GraduationCap className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
   description: "Educational technology and learning solutions"
 }, {
   name: "Marketing and Experience",
-  icon: <Newspaper className="h-5 w-5 text-pink-400 mb-2" />,
+  icon: <Newspaper className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/96d1e3da-614a-4809-98e4-30d8a868dc11.png",
   description: "Marketing solutions and experience design"
 }, {
   name: "Metaverse",
-  icon: <LineChart className="h-5 w-5 text-orange-300 mb-2" />,
+  icon: <LineChart className="h-5 w-5 text-white/70 mb-2" />,
   image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
   description: "Metaverse development and integration"
 }, {
   name: "Sales and Commerce",
-  icon: <ShoppingCart className="h-5 w-5 text-orange-400 mb-2" />,
+  icon: <ShoppingCart className="h-5 w-5 text-white/70 mb-2" />,
   description: "Sales enablement and commerce solutions"
 }];
 
@@ -140,16 +140,16 @@ const Features = () => {
   const hasMoreFeatures = allFeatures.length > 16;
   const isRealImage = (src?: string) => Boolean(src && !src.includes("placeholder"));
   const industryIcons = {
-    "Artificial Intelligence": <Brain className="h-5 w-5 text-red-400 mb-2" />,
-    "Adtech": <Target className="h-5 w-5 text-orange-400 mb-2" />,
-    "Blockchain": <Blocks className="h-5 w-5 text-orange-400 mb-2" />,
-    "Cloud Computing": <Cloud className="h-5 w-5 text-orange-300 mb-2" />,
-    "GPU": <Cpu className="h-5 w-5 text-red-400 mb-2" />,
+    "Artificial Intelligence": <Brain className="h-5 w-5 text-white/70 mb-2" />,
+    "Adtech": <Target className="h-5 w-5 text-white/70 mb-2" />,
+    "Blockchain": <Blocks className="h-5 w-5 text-white/70 mb-2" />,
+    "Cloud Computing": <Cloud className="h-5 w-5 text-white/70 mb-2" />,
+    "GPU": <Cpu className="h-5 w-5 text-white/70 mb-2" />,
     "Hardware": <HardDrive className="h-5 w-5 text-neutral-400 mb-2" />,
-    "Machine Learning": <Brain className="h-5 w-5 text-green-400 mb-2" />,
-    "Software": <Code className="h-5 w-5 text-yellow-400 mb-2" />,
-    "Cyber Security": <Shield className="h-5 w-5 text-pink-400 mb-2" />,
-    "Confidential Computing": <KeyRound className="h-5 w-5 text-orange-400 mb-2" />
+    "Machine Learning": <Brain className="h-5 w-5 text-white/70 mb-2" />,
+    "Software": <Code className="h-5 w-5 text-white/60 mb-2" />,
+    "Cyber Security": <Shield className="h-5 w-5 text-white/70 mb-2" />,
+    "Confidential Computing": <KeyRound className="h-5 w-5 text-white/70 mb-2" />
   };
   const containerVariants = {
     hidden: {
@@ -312,7 +312,7 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="mt-12 text-center">
-            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-red-400 transition-colors">
+            <Button variant="ghost" onClick={() => window.location.href = '/solutions'} className="text-[var(--white)] hover:text-white/70 transition-colors">
               View All Solutions
             </Button>
           </motion.div>}
@@ -330,7 +330,7 @@ const Features = () => {
           }} transition={{
             duration: 0.5
           }} className="text-center mb-12">
-            <h2 className="font-display text-[var(--white)] bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent text-4xl">
+            <h2 className="font-display text-[var(--white)] bg-gradient-to-r from-white/20 via-white/15 to-white/10 bg-clip-text text-transparent text-4xl">
               Hanzo has an impressive track record...
             </h2>
           </motion.div>
@@ -390,7 +390,7 @@ const Features = () => {
           <div className="text-center mb-6">
             <motion.h3 style={{
               y: industriesTitleY
-            }} className="text-[#de8e3d] font-medium text-lg mb-2">
+            }} className="text-white/70 font-medium text-lg mb-2">
               Industries we serve
             </motion.h3>
             <motion.h2 style={{
@@ -420,7 +420,7 @@ const Features = () => {
                       {isRealImage(industry.image) ? (
                         <img src={industry.image} alt={industry.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                       ) : (
-                        <div className="h-full w-full bg-gradient-to-br from-[#ffffff]/20 via-black/50 to-[#ff6b6b]/15" />
+                        <div className="h-full w-full bg-gradient-to-br from-white/20 via-black/50 to-white/10" />
                       )}
                       <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                         <div className="flex items-center mb-2">

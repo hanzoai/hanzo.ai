@@ -188,7 +188,7 @@ const Brand = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
                   >
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -228,7 +228,7 @@ const Brand = () => {
               >
                 <h3 className="text-xl font-medium mb-6 text-white">Brand Colors</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                  <ColorSwatch name="Hanzo Red" hex="#FD4444" className="bg-[#ffffff]" />
+                  <ColorSwatch name="Hanzo Red" hex="#FD4444" className="bg-white" />
                   <ColorSwatch name="Pure Black" hex="#000000" className="bg-black" />
                   <ColorSwatch name="Pure White" hex="#FFFFFF" className="bg-white" />
                   <ColorSwatch name="Deep Gray" hex="#171717" className="bg-[#171717]" />
@@ -261,7 +261,7 @@ const Brand = () => {
                   <ColorSwatch
                     name="Brand Glow"
                     hex="Radial"
-                    className="bg-gradient-to-br from-[#ffffff]/30 to-transparent"
+                    className="bg-gradient-to-br from-white/30 to-transparent"
                   />
                   <ColorSwatch
                     name="White Fade"
@@ -373,7 +373,7 @@ const Brand = () => {
                   <Button variant="ghost" className="text-white hover:bg-neutral-900">
                     Ghost Button
                   </Button>
-                  <Button variant="link" className="text-[#ffffff]">
+                  <Button variant="link" className="text-white">
                     Link Button
                   </Button>
                 </ComponentShowcase>
@@ -385,7 +385,7 @@ const Brand = () => {
                 viewport={{ once: true }}
               >
                 <ComponentShowcase title="Cards">
-                  <div className="w-full max-w-md p-6 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-[#ffffff]/30 transition-colors">
+                  <div className="w-full max-w-md p-6 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-white/30 transition-colors">
                     <h3 className="text-xl font-medium mb-2 text-white">Card Title</h3>
                     <p className="text-neutral-400 mb-4">This is a standard card component with hover states and consistent styling.</p>
                     <Button variant="outline" size="sm" className="border-neutral-700 text-white hover:bg-neutral-900">
@@ -410,7 +410,7 @@ const Brand = () => {
                   <div className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 text-sm font-medium">
                     Default Badge
                   </div>
-                  <div className="px-3 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-400 text-sm font-medium">
+                  <div className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm font-medium">
                     Success Badge
                   </div>
                 </ComponentShowcase>
@@ -447,7 +447,7 @@ const Brand = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors group"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors group"
                 >
                   <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -455,7 +455,7 @@ const Brand = () => {
                   >
                     <Download className="w-6 h-6" style={{ color: BRAND_COLOR }} />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#ffffff] transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-white transition-colors">
                     {asset.title}
                   </h3>
                   <p className="text-sm text-neutral-400 mb-2">{asset.description}</p>
@@ -468,8 +468,8 @@ const Brand = () => {
 
         {/* CTA Section */}
         <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-neutral-900/30 to-black relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h2

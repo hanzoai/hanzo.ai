@@ -14,32 +14,32 @@ const principles = [
   {
     title: "Empower the Underdog",
     description: "Enable others to win. Democratize technology so small businesses and startups can compete with industry giants.",
-    icon: <Users className="h-10 w-10 text-[#ffffff]" />,
+    icon: <Users className="h-10 w-10 text-white" />,
   },
   {
     title: "Data-Driven Everything",
     description: "Let data be your guide. Embrace analytics and AI as the foundation of decision-making.",
-    icon: <Database className="h-10 w-10 text-[#ffffff]" />,
+    icon: <Database className="h-10 w-10 text-white" />,
   },
   {
     title: "Open Innovation",
     description: "Be open, share often. Openness accelerates growth—both for the company and its community.",
-    icon: <Share2 className="h-10 w-10 text-[#ffffff]" />,
+    icon: <Share2 className="h-10 w-10 text-white" />,
   },
   {
     title: "Adaptability",
     description: "Pivot with purpose. There is no failure, only feedback. Move quickly and strike in new directions when opportunity calls.",
-    icon: <RefreshCcw className="h-10 w-10 text-[#ffffff]" />,
+    icon: <RefreshCcw className="h-10 w-10 text-white" />,
   },
   {
     title: "Customer-Centric Growth",
     description: "Coach clients like a sensei. Treat each client as a long-term partner and guide them to success.",
-    icon: <Heart className="h-10 w-10 text-[#ffffff]" />,
+    icon: <Heart className="h-10 w-10 text-white" />,
   },
   {
     title: "First Principles Thinking",
     description: "See the invisible, do the impossible. Boil problems down to their essence and solve them in fundamentally better ways.",
-    icon: <BookOpen className="h-10 w-10 text-[#ffffff]" />,
+    icon: <BookOpen className="h-10 w-10 text-white" />,
   }
 ];
 
@@ -55,7 +55,7 @@ const ZenPrinciples = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">The Zen of Hanzo</h2>
-          <div className="h-1 w-20 bg-[#ffffff] mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-white mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our guiding philosophy - a set of first principles and laws that act as our north star.
           </p>

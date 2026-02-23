@@ -142,12 +142,12 @@ const FinalCTASection = () => {
                 transition={{ duration: 0.4, delay: 0.1 * index }}
                 className={`relative p-5 rounded-xl border transition-all group ${
                   entry.primary
-                    ? "border-[#ffffff]/50 bg-[#ffffff]/5 hover:bg-[#ffffff]/10"
+                    ? "border-white/50 bg-white/5 hover:bg-white/10"
                     : "border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 hover:border-neutral-700"
                 }`}
               >
                 {entry.primary && (
-                  <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#ffffff] text-white">
+                  <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full text-[10px] font-medium bg-white text-white">
                     RECOMMENDED
                   </div>
                 )}
@@ -155,12 +155,12 @@ const FinalCTASection = () => {
                 <div className="flex items-start gap-3 mb-4">
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                      entry.primary ? "bg-[#ffffff]/20" : "bg-neutral-800"
+                      entry.primary ? "bg-white/20" : "bg-neutral-800"
                     }`}
                   >
                     <Icon
                       className={`w-5 h-5 ${
-                        entry.primary ? "text-[#ffffff]" : "text-neutral-400"
+                        entry.primary ? "text-white" : "text-neutral-400"
                       }`}
                     />
                   </div>
@@ -175,13 +175,13 @@ const FinalCTASection = () => {
                     onClick={() => handleCopy(entry.id, entry.action.command!)}
                     className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-mono transition-colors ${
                       entry.primary
-                        ? "bg-[#ffffff]/10 hover:bg-[#ffffff]/20 text-white"
+                        ? "bg-white/10 hover:bg-white/20 text-white"
                         : "bg-neutral-800 hover:bg-neutral-700 text-neutral-300"
                     }`}
                   >
                     <span className="truncate text-xs">{entry.action.command}</span>
                     {isCopied ? (
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 ml-2" />
+                      <Check className="w-4 h-4 text-white/70 flex-shrink-0 ml-2" />
                     ) : (
                       <Copy className="w-4 h-4 text-neutral-500 flex-shrink-0 ml-2" />
                     )}
@@ -222,23 +222,23 @@ const FinalCTASection = () => {
             {/* Terminal header */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
+                <div className="w-3 h-3 rounded-full bg-white/10" />
               </div>
               <span className="text-xs text-neutral-500 font-mono ml-2">terminal</span>
             </div>
             {/* Terminal content */}
             <div className="p-4 font-mono text-sm">
               <div className="text-neutral-400">
-                <span className="text-green-500">$</span> curl -fsSL hanzo.sh | bash
+                <span className="text-white/70">$</span> curl -fsSL hanzo.sh | bash
               </div>
               <div className="text-neutral-500 mt-1">✓ Installed hanzo CLI, MCP, and agents</div>
               <div className="text-neutral-400 mt-3">
-                <span className="text-green-500">$</span> dev
+                <span className="text-white/70">$</span> dev
               </div>
               <div className="text-neutral-500 mt-1">
-                <span className="text-[#ffffff]">◆</span> Hanzo Dev v2.1.0
+                <span className="text-white">◆</span> Hanzo Dev v2.1.0
               </div>
               <div className="text-neutral-500">
                 <span className="text-neutral-600">│</span>
@@ -247,7 +247,7 @@ const FinalCTASection = () => {
                 <span className="text-neutral-600">│</span> What would you like to build?
               </div>
               <div className="text-neutral-400 mt-2 flex items-center">
-                <span className="text-green-500">$</span>
+                <span className="text-white/70">$</span>
                 <span className="ml-1 text-white">"Add user auth with OAuth2 and session management"</span>
                 <span className="w-2 h-4 bg-white/80 animate-pulse ml-1" />
               </div>

@@ -104,10 +104,10 @@ function generateUptimeBars(): { day: number; status: ServiceStatus }[] {
 const uptimeBars = generateUptimeBars();
 
 const statusConfig: Record<ServiceStatus, { color: string; bg: string; label: string; icon: React.ElementType }> = {
-  operational: { color: "text-green-400", bg: "bg-green-500", label: "Operational", icon: CheckCircle },
-  degraded: { color: "text-yellow-400", bg: "bg-yellow-500", label: "Degraded", icon: AlertTriangle },
-  outage: { color: "text-red-400", bg: "bg-red-500", label: "Major Outage", icon: XCircle },
-  maintenance: { color: "text-orange-400", bg: "bg-orange-500", label: "Maintenance", icon: Clock },
+  operational: { color: "text-white/70", bg: "bg-white/30", label: "Operational", icon: CheckCircle },
+  degraded: { color: "text-white/50", bg: "bg-white/20", label: "Degraded", icon: AlertTriangle },
+  outage: { color: "text-white/40", bg: "bg-white/10", label: "Major Outage", icon: XCircle },
+  maintenance: { color: "text-white/50", bg: "bg-white/15", label: "Maintenance", icon: Clock },
 };
 
 const StatusPage = () => {
@@ -145,8 +145,8 @@ const StatusPage = () => {
                 transition={{ duration: 0.4 }}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 ${
                   allOperational
-                    ? "bg-green-500/20 text-green-400"
-                    : "bg-yellow-500/20 text-yellow-400"
+                    ? "bg-white/10 text-white/70"
+                    : "bg-white/10 text-white/60"
                 }`}
               >
                 <StatusIcon className="w-4 h-4" />
@@ -189,7 +189,7 @@ const StatusPage = () => {
                 transition={{ duration: 0.4, delay: 0.15 }}
                 className="flex flex-wrap items-center justify-center gap-4"
               >
-                <button className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all text-sm bg-green-500/20 text-green-400 border border-green-500/30 hover:bg-green-500/30">
+                <button className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all text-sm bg-white/10 text-white/70 border border-white/20 hover:bg-white/10">
                   <Bell className="w-4 h-4 mr-2" />
                   Subscribe to Updates
                 </button>
@@ -218,7 +218,7 @@ const StatusPage = () => {
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-sm font-medium text-neutral-300">90-Day Uptime</h3>
-                <span className="text-sm font-mono text-green-400">99.999%</span>
+                <span className="text-sm font-mono text-white/70">99.999%</span>
               </div>
               <div className="flex gap-[2px]">
                 {uptimeBars.map((bar, i) => (
@@ -226,12 +226,12 @@ const StatusPage = () => {
                     key={i}
                     className={`flex-1 h-8 rounded-sm transition-colors ${
                       bar.status === "operational"
-                        ? "bg-green-500/80 hover:bg-green-400"
+                        ? "bg-white/30 hover:bg-white/40"
                         : bar.status === "degraded"
-                        ? "bg-yellow-500/80 hover:bg-yellow-400"
+                        ? "bg-white/20 hover:bg-white/25"
                         : bar.status === "outage"
-                        ? "bg-red-500/80 hover:bg-red-400"
-                        : "bg-orange-500/80 hover:bg-orange-400"
+                        ? "bg-white/10 hover:bg-white/15"
+                        : "bg-white/15 hover:bg-white/20"
                     }`}
                     title={`Day ${90 - i}: ${statusConfig[bar.status].label}`}
                   />
@@ -396,7 +396,7 @@ const StatusPage = () => {
                     <span className="text-sm font-medium text-white">{chain.name}</span>
                     <p className="text-xs text-neutral-500 mt-0.5">{chain.networks.join(", ")}</p>
                   </div>
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
+                  <div className="w-2 h-2 rounded-full bg-white/30" />
                 </div>
               ))}
             </motion.div>
@@ -408,7 +408,7 @@ const StatusPage = () => {
               className="text-sm text-neutral-500 mt-4 text-center"
             >
               Showing 8 of 100+ supported chains.{" "}
-              <Link href="/blockchain" className="text-green-400 hover:text-green-300">
+              <Link href="/blockchain" className="text-white/70 hover:text-white/70">
                 View all chains →
               </Link>
             </motion.p>
@@ -434,7 +434,7 @@ const StatusPage = () => {
               viewport={{ once: true }}
               className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-8 text-center"
             >
-              <Activity className="h-12 w-12 text-green-500 mx-auto mb-4" />
+              <Activity className="h-12 w-12 text-white/70 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-white mb-2">No Recent Incidents</h3>
               <p className="text-neutral-400">
                 All systems have been operating normally for the past 90 days.
@@ -453,7 +453,7 @@ const StatusPage = () => {
               className="grid md:grid-cols-3 gap-6"
             >
               <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 text-center">
-                <p className="text-3xl font-bold text-green-400 font-mono mb-2">99.999%</p>
+                <p className="text-3xl font-bold text-white/70 font-mono mb-2">99.999%</p>
                 <p className="text-sm text-neutral-400">Uptime SLA</p>
                 <p className="text-xs text-neutral-500 mt-1">&lt; 5.26 min downtime/year</p>
               </div>
@@ -473,8 +473,8 @@ const StatusPage = () => {
 
         {/* CTA */}
         <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-black to-neutral-900/30 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h2
@@ -505,7 +505,7 @@ const StatusPage = () => {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base bg-green-500 text-white"
+                className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base bg-white/10 text-white"
               >
                 Contact Support
                 <ArrowRight className="ml-2 h-5 w-5" />

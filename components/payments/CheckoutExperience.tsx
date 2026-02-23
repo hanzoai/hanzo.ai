@@ -34,15 +34,15 @@ const CheckoutExperience = () => {
               <h3 className="text-2xl font-bold mb-4">Global Payment Methods</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#ffffff]">•</span>
+                  <span className="text-white">•</span>
                   <span>Over 200 currencies and local payment methods</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#ffffff]">•</span>
+                  <span className="text-white">•</span>
                   <span>Optimized global payment acceptance with Adaptive Acceptance</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#ffffff]">•</span>
+                  <span className="text-white">•</span>
                   <span>Smart routing for higher authorization rates</span>
                 </li>
               </ul>
@@ -77,7 +77,7 @@ const CheckoutExperience = () => {
                   <div className="h-10 bg-gray-800 rounded"></div>
                 </div>
                 <div className="h-10 bg-gray-800 rounded mb-3"></div>
-                <div className="h-10 bg-[#ffffff] rounded"></div>
+                <div className="h-10 bg-white rounded"></div>
               </div>
               
               <div className="text-sm text-neutral-400 mt-2 text-center">Customizable checkout flow</div>
@@ -94,7 +94,7 @@ const CheckoutExperience = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Globe className="h-6 w-6 text-[#ffffff]" />
+              <Globe className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Global Reach</h3>
             <p className="text-neutral-400">
@@ -110,7 +110,7 @@ const CheckoutExperience = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Smartphone className="h-6 w-6 text-[#ffffff]" />
+              <Smartphone className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Mobile Optimized</h3>
             <p className="text-neutral-400">
@@ -126,7 +126,7 @@ const CheckoutExperience = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Paintbrush className="h-6 w-6 text-[#ffffff]" />
+              <Paintbrush className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Fully Customizable</h3>
             <p className="text-neutral-400">

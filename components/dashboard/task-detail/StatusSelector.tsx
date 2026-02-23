@@ -24,7 +24,7 @@ const StatusSelector: React.FC<StatusSelectorProps> = ({ status, onChange }) => 
             key={option.value}
             className={`px-3 py-2 rounded cursor-pointer ${
               status === option.value 
-                ? 'bg-red-900/30 border border-red-800' 
+                ? 'bg-white/10 border border-white/20' 
                 : 'hover:bg-gray-800'
             }`}
             onClick={() => onChange(option.value)}

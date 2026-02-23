@@ -10,9 +10,9 @@ const OperativeHero = () => {
   return (
     <section className="py-32 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/20 to-transparent"></div>
-      <div className="absolute top-1/3 -left-1/4 w-1/2 h-1/2 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
+      <div className="absolute top-1/3 -left-1/4 w-1/2 h-1/2 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
@@ -21,11 +21,11 @@ const OperativeHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium mb-6">
               AI Engineering Framework
             </span>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--white)] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-[#ff6b6b]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--white)] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/10">
               Hanzo Operative
             </h1>
 
@@ -54,26 +54,26 @@ const OperativeHero = () => {
             className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             <div className="flex flex-col items-center">
-              <div className="h-12 w-12 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mb-4">
-                <Eye className="h-6 w-6 text-[#ffffff]" />
+              <div className="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4">
+                <Eye className="h-6 w-6 text-white" />
               </div>
               <p className="text-sm font-medium text-neutral-300">Screen Vision</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="h-12 w-12 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mb-4">
-                <Cpu className="h-6 w-6 text-[#ffffff]" />
+              <div className="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4">
+                <Cpu className="h-6 w-6 text-white" />
               </div>
               <p className="text-sm font-medium text-neutral-300">Multimodal Models</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="h-12 w-12 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mb-4">
-                <MousePointer className="h-6 w-6 text-[#ffffff]" />
+              <div className="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4">
+                <MousePointer className="h-6 w-6 text-white" />
               </div>
               <p className="text-sm font-medium text-neutral-300">Cursor Control</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="h-12 w-12 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mb-4">
-                <Keyboard className="h-6 w-6 text-[#ffffff]" />
+              <div className="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4">
+                <Keyboard className="h-6 w-6 text-white" />
               </div>
               <p className="text-sm font-medium text-neutral-300">Keyboard Actions</p>
             </div>

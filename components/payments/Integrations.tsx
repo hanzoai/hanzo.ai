@@ -31,7 +31,7 @@ const Integrations = () => {
             className="lg:col-span-2 bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Plug className="h-6 w-6 text-[#ffffff]" />
+              <Plug className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Pre-built Integrations</h3>
             <p className="text-neutral-400 mb-6">
@@ -93,7 +93,7 @@ const { paymentIntent, error } = await stripe.confirmCardPayment(
               <span className="text-sm text-neutral-400">API Reference</span>
               <div className="flex space-x-2">
                 <button className="px-3 py-1 bg-gray-800 rounded text-sm">Copy</button>
-                <button className="px-3 py-1 bg-[#ffffff] rounded text-sm">Try it</button>
+                <button className="px-3 py-1 bg-white rounded text-sm">Try it</button>
               </div>
             </div>
           </motion.div>
@@ -108,7 +108,7 @@ const { paymentIntent, error } = await stripe.confirmCardPayment(
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Code className="h-6 w-6 text-[#ffffff]" />
+              <Code className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Easy to Implement</h3>
             <p className="text-neutral-400">
@@ -124,7 +124,7 @@ const { paymentIntent, error } = await stripe.confirmCardPayment(
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <FileText className="h-6 w-6 text-[#ffffff]" />
+              <FileText className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Comprehensive Documentation</h3>
             <p className="text-neutral-400">
@@ -145,7 +145,7 @@ const { paymentIntent, error } = await stripe.confirmCardPayment(
                 Get started with quickstart guides, examples, and developer tools.
               </p>
             </div>
-            <button className="w-full py-2 bg-[#ffffff] hover:bg-[#cccccc] rounded-md transition duration-200">
+            <button className="w-full py-2 bg-white hover:bg-[#cccccc] rounded-md transition duration-200">
               API Reference
             </button>
           </motion.div>

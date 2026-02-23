@@ -33,9 +33,9 @@ const HeroSection = () => {
       className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/10 to-[#ff6b6b]/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/10 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.div
@@ -44,7 +44,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ffffff] text-sm font-medium">
+          <span className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium">
             Open Source
           </span>
         </motion.div>
@@ -83,7 +83,7 @@ const HeroSection = () => {
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
+            className="bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
           >
             <Github className="mr-2 h-5 w-5" />
             <a href="https://github.com/hanzo/platform" className="flex-1">Get on GitHub</a>

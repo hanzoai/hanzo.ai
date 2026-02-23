@@ -32,7 +32,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <FileText className="h-6 w-6 text-[#ffffff]" />
+              <FileText className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">API Reference</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -52,7 +52,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <BookOpen className="h-6 w-6 text-[#ffffff]" />
+              <BookOpen className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Hanzo App Marketplace</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -72,7 +72,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <MessageSquare className="h-6 w-6 text-[#ffffff]" />
+              <MessageSquare className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Checkout Integration</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -92,7 +92,7 @@ const CallToAction = () => {
             className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 flex flex-col"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <BookOpen className="h-6 w-6 text-[#ffffff]" />
+              <BookOpen className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Case Studies</h3>
             <p className="text-neutral-400 mb-6 flex-grow">
@@ -110,7 +110,7 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-red-900/30 to-red-900/20 border border-[#ffffff]/20 rounded-lg p-8 text-center"
+          className="bg-gradient-to-r from-white/20 to-white/10 border border-white/20 rounded-lg p-8 text-center"
         >
           <h2 className="text-3xl font-bold mb-4">Start Building Your Financial Future Today</h2>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
@@ -119,7 +119,7 @@ const CallToAction = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff]"
+              className="bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white"
             >
               Get Started Now
             </Button>

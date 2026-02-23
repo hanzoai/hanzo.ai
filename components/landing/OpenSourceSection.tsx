@@ -110,7 +110,7 @@ const OpenSourceSection = () => {
             >
               <Github className="w-5 h-5 text-neutral-400" />
               <div>
-                <div className="text-sm font-medium text-white group-hover:text-[#ffffff] transition-colors">{org.label}</div>
+                <div className="text-sm font-medium text-white group-hover:text-white transition-colors">{org.label}</div>
                 <div className="text-xs text-neutral-500">{org.description}</div>
               </div>
               <ExternalLink className="w-3.5 h-3.5 text-neutral-600 group-hover:text-neutral-400 transition-colors" />
@@ -135,7 +135,7 @@ const OpenSourceSection = () => {
               transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
               className="text-center p-6"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#ffffff]/10 flex items-center justify-center mx-auto mb-4 text-[#ffffff] font-bold">
+              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 {typeof feature.icon === "string" ? feature.icon : feature.icon}
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
@@ -160,7 +160,7 @@ const OpenSourceSection = () => {
                 transition={{ duration: 0.4, delay: 0.1 + (index % 3) * 0.1 }}
                 className={`group p-5 rounded-xl border bg-neutral-900/50 hover:bg-neutral-900 transition-all ${
                   repo.featured
-                    ? "border-[#ffffff]/30 hover:border-[#ffffff]/50"
+                    ? "border-white/30 hover:border-white/30/50"
                     : "border-neutral-800 hover:border-neutral-700"
                 }`}
               >
@@ -206,7 +206,7 @@ const OpenSourceSection = () => {
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <Rocket className="w-4 h-4 text-[#ffffff]" />
+                    <Rocket className="w-4 h-4 text-white" />
                     <span className="font-mono text-sm text-white">{template.name}</span>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ const OpenSourceSection = () => {
                     href={`https://hanzo.app/new?template=${template.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-3 py-2 rounded-lg bg-[#ffffff] hover:bg-[#ffffff]/90 text-white text-xs font-medium transition-colors"
+                    className="flex-1 text-center px-3 py-2 rounded-lg bg-white hover:bg-white/90 text-white text-xs font-medium transition-colors"
                   >
                     Launch in Hanzo
                   </a>
@@ -240,7 +240,7 @@ const OpenSourceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-2xl border border-[#ffffff]/30 bg-gradient-to-br from-[#ffffff]/10 to-transparent p-8 mb-12"
+          className="rounded-2xl border border-white/30 bg-gradient-to-br from-white/10 to-transparent p-8 mb-12"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -260,7 +260,7 @@ const OpenSourceSection = () => {
                   href="https://hanzo.network"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-[#ffffff] text-white hover:opacity-90 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-white text-white hover:opacity-90 transition-colors"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4" />
@@ -278,7 +278,7 @@ const OpenSourceSection = () => {
             </div>
             <div className="flex items-center justify-center">
               <div className="w-32 h-32 rounded-2xl bg-neutral-800/50 flex items-center justify-center">
-                <Network className="w-16 h-16 text-[#ffffff]" />
+                <Network className="w-16 h-16 text-white" />
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@ const OpenSourceSection = () => {
             href="https://zenlm.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#ffffff] hover:underline"
+            className="inline-flex items-center gap-2 text-white hover:underline"
           >
             zenlm.org - AI Research &amp; Philosophy
             <ExternalLink className="w-4 h-4" />
@@ -316,7 +316,7 @@ const OpenSourceSection = () => {
         >
           <Link
             href="/open-source"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white bg-[#ffffff] hover:bg-[#ffffff]/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white bg-white hover:bg-white/90 transition-colors"
           >
             Browse all projects
             <ArrowRight className="w-4 h-4" />

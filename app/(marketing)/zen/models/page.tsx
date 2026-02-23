@@ -38,10 +38,10 @@ function extractContext(features: string[]): string {
 
 // Tier badge colors
 const TIER_STYLES: Record<string, { bg: string; text: string; border: string }> = {
-  "ultra max": { bg: "bg-[#ffffff]/15", text: "text-[#ffffff]", border: "border-[#ffffff]/30" },
-  ultra: { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30" },
-  "pro max": { bg: "bg-violet-500/15", text: "text-violet-400", border: "border-violet-500/30" },
-  pro: { bg: "bg-sky-500/15", text: "text-sky-400", border: "border-sky-500/30" },
+  "ultra max": { bg: "bg-white/15", text: "text-white", border: "border-white/30" },
+  ultra: { bg: "bg-white/10", text: "text-white/60", border: "border-white/20" },
+  "pro max": { bg: "bg-white/10", text: "text-white/70", border: "border-white/20" },
+  pro: { bg: "bg-white/10", text: "text-white/70", border: "border-white/20" },
 };
 
 function TierBadge({ tier }: { tier: string }) {
@@ -126,7 +126,7 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
     <>
       <tr
         className={`border-t border-neutral-800 hover:bg-neutral-900/50 transition-colors cursor-pointer ${
-          isUltraMax ? "bg-[#ffffff]/5" : ""
+          isUltraMax ? "bg-white/5" : ""
         }`}
         onClick={() => setExpanded(!expanded)}
       >
@@ -189,7 +189,7 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
                 <div className="space-y-1">
                   {model.features.map((f, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white" />
                       <span className="text-neutral-300">{f}</span>
                     </div>
                   ))}
@@ -232,8 +232,8 @@ const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
   return (
     <section id={group.id} className="mb-16">
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[#ffffff]/10 border border-[#ffffff]/20">
-          <Icon className="w-6 h-6 text-[#ffffff]" />
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/20">
+          <Icon className="w-6 h-6 text-white" />
         </div>
         <div>
           <h2 className="text-2xl font-bold text-white">{group.title}</h2>
@@ -314,7 +314,7 @@ const ZenModels = () => {
               transition={{ duration: 0.4 }}
               className="mb-6 text-center"
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[#ffffff]/10 text-[#ffffff] border border-[#ffffff]/20">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/20">
                 <Zap className="w-3 h-3" />
                 {totalModels} Models -- Zen3 & Zen4
               </span>
@@ -430,7 +430,7 @@ const ZenModels = () => {
                   <a
                     key={group.id}
                     href={`#${group.id}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-[#ffffff]/30 transition-colors text-sm text-neutral-400 hover:text-white"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 hover:border-white/30 transition-colors text-sm text-neutral-400 hover:text-white"
                   >
                     <Icon className="w-4 h-4" />
                     {group.title.split(" -- ")[0]}
@@ -467,9 +467,9 @@ const ZenModels = () => {
             <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-white/10" />
+                  <div className="w-3 h-3 rounded-full bg-white/10" />
+                  <div className="w-3 h-3 rounded-full bg-white/10" />
                 </div>
                 <span className="text-xs text-neutral-500 font-mono ml-2">
                   python

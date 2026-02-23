@@ -8,7 +8,7 @@ export const initialNodes: NodeType[] = [
     type: "app",
     position: { x: 50, y: 50 },
     iconType: "cloud",
-    iconProps: { className: "h-7 w-7 text-red-400" },
+    iconProps: { className: "h-7 w-7 text-white/70" },
     label: "Hanzo Cloud",
     active: true,
     status: "deployed",

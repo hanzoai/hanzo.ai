@@ -73,9 +73,9 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 hover:bg-gray-900/30 hover:border-[#ffffff]/30 transition-colors"
+              className="bg-gray-900/20 border border-gray-800 rounded-xl p-6 hover:bg-gray-900/30 hover:border-white/30 transition-colors"
             >
-              <feature.icon className="h-10 w-10 text-[#ffffff] mb-4" />
+              <feature.icon className="h-10 w-10 text-white mb-4" />
               <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{feature.title}</h3>
               <p className="text-neutral-400">{feature.description}</p>
             </motion.div>

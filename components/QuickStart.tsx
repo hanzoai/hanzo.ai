@@ -11,25 +11,25 @@ const quickApps = [{
   title: "AI Chat Assistant",
   description: "Launch your own ChatGPT-style AI assistant",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(96,165,250,0.3)]",
-  borderColor: "group-hover:border-orange-400/30"
+  borderColor: "group-hover:border-white/20"
 }, {
   icon: <ShoppingCart className="h-6 w-6 text-[var(--white)]" />,
   title: "E-commerce Store",
   description: "Start selling products online in minutes",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(74,222,128,0.3)]",
-  borderColor: "group-hover:border-green-400/30"
+  borderColor: "group-hover:border-white/20"
 }, {
   icon: <AppWindow className="h-6 w-6 text-[var(--white)]" />,
   title: "Web3 dApp",
   description: "Build a decentralized application",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.3)]",
-  borderColor: "group-hover:border-red-400/30"
+  borderColor: "group-hover:border-white/20"
 }, {
   icon: <Rocket className="h-6 w-6 text-[var(--white)]" />,
   title: "Custom App",
   description: "Start from scratch with our App Builder",
   glowColor: "group-hover:shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",
-  borderColor: "group-hover:border-orange-400/30"
+  borderColor: "group-hover:border-white/20"
 }];
 
 const QuickStart = () => {
@@ -52,7 +52,7 @@ const QuickStart = () => {
     >
       {/* Parallax background */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black bg-[#000a00]/[0.12] z-0"
+        className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black bg-black/[0.12] z-0"
         style={{ y: backgroundY }}
       />
       

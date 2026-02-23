@@ -49,8 +49,8 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
   const priorityOptions = [
     { value: "low", label: "Low", color: "bg-gray-500" },
-    { value: "medium", label: "Medium", color: "bg-yellow-500" },
-    { value: "high", label: "High", color: "bg-red-500" }
+    { value: "medium", label: "Medium", color: "bg-white/10" },
+    { value: "high", label: "High", color: "bg-white/10" }
   ];
 
   const statusOptions = [
@@ -90,7 +90,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
             <div className="mb-6">
               <div className="flex justify-between mb-2">
                 <label className="block text-sm font-medium text-neutral-400">Assignees</label>
-                <Button size="sm" variant="ghost" className="text-[#ffffff] hover:text-[#ff6b6b] h-6 px-2">
+                <Button size="sm" variant="ghost" className="text-white hover:text-white/70 h-6 px-2">
                   <PlusCircle className="h-3.5 w-3.5 mr-1" />
                   Add
                 </Button>
@@ -101,7 +101,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
                     key={assignee.id}
                     className="flex items-center gap-2 bg-gray-800 px-2 py-1 rounded text-sm"
                   >
-                    <div className="w-5 h-5 rounded-full bg-red-900 flex items-center justify-center text-xs">
+                    <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-xs">
                       {assignee.name.charAt(0)}
                     </div>
                     <span>{assignee.name}</span>
@@ -119,7 +119,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
             <div className="mb-6">
               <div className="flex justify-between mb-2">
                 <label className="block text-sm font-medium text-neutral-400">Labels</label>
-                <Button size="sm" variant="ghost" className="text-[#ffffff] hover:text-[#ff6b6b] h-6 px-2">
+                <Button size="sm" variant="ghost" className="text-white hover:text-white/70 h-6 px-2">
                   <PlusCircle className="h-3.5 w-3.5 mr-1" />
                   Add
                 </Button>
@@ -153,7 +153,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
                     key={option.value}
                     className={`px-3 py-2 rounded cursor-pointer ${
                       editedTask.status === option.value 
-                        ? 'bg-red-900/30 border border-red-800' 
+                        ? 'bg-white/10 border border-white/20' 
                         : 'hover:bg-gray-800'
                     }`}
                     onClick={() => setEditedTask(prev => ({ ...prev, status: option.value }))}

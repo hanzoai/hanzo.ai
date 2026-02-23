@@ -49,7 +49,7 @@ const HanzoDev = () => {
 
   return (
     <section ref={containerRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#ffffff]/20 to-[#ff6b6b]/20 opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-30"></div>
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           className="text-center"
@@ -74,7 +74,7 @@ const HanzoDev = () => {
           {/* Main install command */}
           <div className="flex justify-center mb-8">
             <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-4 flex items-center">
-              <Terminal className="h-5 w-5 text-[#ffffff] mr-3 flex-shrink-0" />
+              <Terminal className="h-5 w-5 text-white mr-3 flex-shrink-0" />
               <code className="text-neutral-300 font-mono text-lg">curl -fsSL hanzo.sh | bash</code>
               <Button
                 variant="ghost"
@@ -97,9 +97,9 @@ const HanzoDev = () => {
                   href={`https://hanzo.sh${s.path}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 hover:border-[#ffffff]/50 transition-colors text-left"
+                  className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 hover:border-white/30/50 transition-colors text-left"
                 >
-                  <Icon className="h-5 w-5 text-[#ffffff] mb-2" />
+                  <Icon className="h-5 w-5 text-white mb-2" />
                   <div className="font-mono text-sm text-neutral-300">{s.name}</div>
                   <div className="text-xs text-neutral-500">{s.desc}</div>
                   <div className="text-xs text-neutral-600 mt-1">hanzo.sh{s.path}</div>
@@ -113,7 +113,7 @@ const HanzoDev = () => {
               href="https://hanzo.sh"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] text-[var(--white)] px-8 py-4 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white text-[var(--white)] px-8 py-4 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Visit hanzo.sh
               <ArrowRight className="ml-2 h-5 w-5" />

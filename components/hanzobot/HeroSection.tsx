@@ -10,9 +10,9 @@ import ChromeText from "@/components/ui/chrome-text";
 const HeroSection = () => {
   return (
     <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/10 to-black"></div>
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -21,7 +21,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-block px-4 py-1 mb-6 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/50 text-[#ff6b6b] text-sm font-medium">
+          <div className="inline-block px-4 py-1 mb-6 rounded-full bg-white/10 border border-white/50 text-white/70 text-sm font-medium">
             Multi-Agent Simulation Framework
           </div>
           
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] text-[var(--white)] rounded-lg"
+              className="bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white text-[var(--white)] rounded-lg"
             >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -52,7 +52,7 @@ const HeroSection = () => {
               <Github className="mr-2 h-5 w-5" />
               GitHub
               <div className="ml-2 flex items-center">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 mr-1" />
+                <Star className="h-4 w-4 fill-yellow-400 text-white/60 mr-1" />
                 <span className="text-neutral-300 text-sm">Star</span>
               </div>
             </Button>
@@ -60,9 +60,9 @@ const HeroSection = () => {
           
           <div className="text-neutral-500 text-sm">
             As seen powering 
-            <a href="https://twitter.com/DegenSpartanAI" target="_blank" rel="noopener noreferrer" className="text-[#ffffff] hover:text-[#ff6b6b] mx-1">@DegenSpartanAI</a> 
+            <a href="https://twitter.com/DegenSpartanAI" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/70 mx-1">@DegenSpartanAI</a> 
             and 
-            <a href="https://twitter.com/aixvc_agent" target="_blank" rel="noopener noreferrer" className="text-[#ffffff] hover:text-[#ff6b6b] mx-1">@aixvc_agent</a>
+            <a href="https://twitter.com/aixvc_agent" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/70 mx-1">@aixvc_agent</a>
           </div>
         </motion.div>
       </div>

@@ -9,7 +9,7 @@ const FeatureShowcaseHeader: React.FC = () => {
   return (
     <div className="text-center mb-16">
       <motion.div 
-        className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium mb-6"
+        className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium mb-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

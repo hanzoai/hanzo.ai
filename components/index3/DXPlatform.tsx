@@ -12,8 +12,8 @@ const DXPlatform = () => {
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-[#ffffff]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-[#ff6b6b]/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-white/5 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -24,7 +24,7 @@ const DXPlatform = () => {
             transition={{ duration: 0.5 }}
             className="mb-4"
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium">
+            <span className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium">
               Developer Experience
             </span>
           </motion.div>

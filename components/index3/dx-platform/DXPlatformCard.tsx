@@ -21,58 +21,58 @@ interface DXPlatformCardProps {
 const getColorClasses = (color: string = "brand", isHovered: boolean) => {
   const colorMap: Record<string, { bg: string, hoverBg: string, text: string, hoverText: string }> = {
     brand: {
-      bg: "bg-[#ffffff]/20",
+      bg: "bg-white/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-[#ffffff]",
-      hoverText: "text-[#ff6b6b]"
+      text: "text-white",
+      hoverText: "text-white/70"
     },
     indigo: {
-      bg: "bg-[#ffffff]/20",
+      bg: "bg-white/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-[#ffffff]",
-      hoverText: "text-[#ff6b6b]"
+      text: "text-white",
+      hoverText: "text-white/70"
     },
     purple: {
-      bg: "bg-[#ffffff]/20",
+      bg: "bg-white/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-[#ffffff]",
-      hoverText: "text-[#ff6b6b]"
+      text: "text-white",
+      hoverText: "text-white/70"
     },
     blue: {
-      bg: "bg-[#ff6b6b]/20",
-      hoverBg: "bg-[#ffffff]/30",
-      text: "text-[#ff6b6b]",
-      hoverText: "text-[#ffffff]"
+      bg: "bg-white/20",
+      hoverBg: "bg-white/30",
+      text: "text-white/70",
+      hoverText: "text-white"
     },
     green: {
-      bg: "bg-green-900/30",
-      hoverBg: "bg-green-600/30",
-      text: "text-green-400",
-      hoverText: "text-green-300"
+      bg: "bg-white/10",
+      hoverBg: "bg-white/10",
+      text: "text-white/70",
+      hoverText: "text-white/70"
     },
     amber: {
-      bg: "bg-amber-900/30",
-      hoverBg: "bg-amber-600/30",
-      text: "text-amber-400",
-      hoverText: "text-amber-300"
+      bg: "bg-white/10",
+      hoverBg: "bg-white/10",
+      text: "text-white/60",
+      hoverText: "text-white/60"
     },
     teal: {
-      bg: "bg-[#ffffff]/20",
+      bg: "bg-white/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-[#ffffff]",
-      hoverText: "text-[#ff6b6b]"
+      text: "text-white",
+      hoverText: "text-white/70"
     },
     rose: {
-      bg: "bg-[#ffffff]/20",
+      bg: "bg-white/20",
       hoverBg: "bg-[#cccccc]/30",
-      text: "text-[#ffffff]",
-      hoverText: "text-[#ff6b6b]"
+      text: "text-white",
+      hoverText: "text-white/70"
     },
     cyan: {
-      bg: "bg-[#ff6b6b]/20",
-      hoverBg: "bg-[#ffffff]/30",
-      text: "text-[#ff6b6b]",
-      hoverText: "text-[#ffffff]"
+      bg: "bg-white/20",
+      hoverBg: "bg-white/30",
+      text: "text-white/70",
+      hoverText: "text-white"
     },
     gray: {
       bg: "bg-gray-900/30",

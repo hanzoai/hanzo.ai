@@ -51,7 +51,7 @@ const OperativeDemo = () => {
                   <SkipBack className="h-5 w-5" />
                 </Button>
                 <div className="w-full bg-gray-700/30 h-1 rounded-full overflow-hidden">
-                  <div className="bg-[#ffffff] h-full w-1/3 rounded-full"></div>
+                  <div className="bg-white h-full w-1/3 rounded-full"></div>
                 </div>
                 <Button size="sm" variant="ghost" className="text-neutral-400 hover:text-[var(--white)]">
                   <SkipForward className="h-5 w-5" />
@@ -64,7 +64,7 @@ const OperativeDemo = () => {
         <div className="mt-12 text-center">
           <a 
             href="https://docs.hanzo.ai/operative/examples"
-            className="text-[#ffffff] hover:text-[#ff6b6b] transition-colors"
+            className="text-white hover:text-white/70 transition-colors"
           >
             View more examples →
           </a>

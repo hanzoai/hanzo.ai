@@ -31,7 +31,7 @@ const Compliance = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <ShieldCheck className="h-6 w-6 text-[#ffffff]" />
+              <ShieldCheck className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Automated Tax Management</h3>
             <p className="text-neutral-400 mb-4">
@@ -39,15 +39,15 @@ const Compliance = () => {
             </p>
             <ul className="space-y-2 text-neutral-400">
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Real-time tax rate calculation</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Tax exemption handling</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Automated tax reporting</span>
               </li>
             </ul>
@@ -61,7 +61,7 @@ const Compliance = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <Receipt className="h-6 w-6 text-[#ffffff]" />
+              <Receipt className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Merchant of Record</h3>
             <p className="text-neutral-400 mb-4">
@@ -69,15 +69,15 @@ const Compliance = () => {
             </p>
             <ul className="space-y-2 text-neutral-400">
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Simplified global expansion</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Legal entity management</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Compliant invoicing worldwide</span>
               </li>
             </ul>
@@ -91,7 +91,7 @@ const Compliance = () => {
             className="bg-gray-900/30 border border-gray-800 p-6 rounded-lg"
           >
             <div className="bg-gray-800/50 p-3 rounded-full w-fit mb-4">
-              <AlertTriangle className="h-6 w-6 text-[#ffffff]" />
+              <AlertTriangle className="h-6 w-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Fraud Protection</h3>
             <p className="text-neutral-400 mb-4">
@@ -99,15 +99,15 @@ const Compliance = () => {
             </p>
             <ul className="space-y-2 text-neutral-400">
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Machine learning fraud detection</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Adaptive risk rules</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#ffffff]">•</span>
+                <span className="text-white">•</span>
                 <span>Chargeback protection</span>
               </li>
             </ul>

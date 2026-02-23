@@ -23,7 +23,7 @@ interface FeatureProps {
 const Feature = ({ icon, title, description }: FeatureProps) => (
   <motion.div
     variants={featureCardVariant}
-    className="bg-gray-900/40 border border-gray-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+    className="bg-gray-900/40 border border-gray-800 rounded-xl p-6 hover:border-white/30 transition-colors"
     whileHover={{
       y: -5,
       boxShadow: "0 10px 25px -5px rgba(253, 68, 68, 0.1)",
@@ -31,7 +31,7 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
     }}
     transition={{ duration: 0.2 }}
   >
-    <div className="h-12 w-12 bg-red-900/50 rounded-lg flex items-center justify-center mb-4">
+    <div className="h-12 w-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
       {icon}
     </div>
     <ChromeText as="h3" className="text-xl font-bold mb-2">
@@ -46,32 +46,32 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
 const Features = () => {
   const features = [
     {
-      icon: <Database className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Database className="h-6 w-6 text-white" />,
       title: "Vector Storage",
       description: "Store and index millions of vector embeddings with automatic sharding and high-throughput capabilities."
     },
     {
-      icon: <Search className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Search className="h-6 w-6 text-white" />,
       title: "Similarity Search",
       description: "Ultra-fast nearest neighbor search using HNSW, IVF, and other algorithms for maximum performance."
     },
     {
-      icon: <Zap className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Zap className="h-6 w-6 text-white" />,
       title: "Real-time Indexing",
       description: "Index new vectors instantly with zero downtime and minimal performance impact on queries."
     },
     {
-      icon: <Shield className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Shield className="h-6 w-6 text-white" />,
       title: "Secure Access",
       description: "Role-based access control, end-to-end encryption, and audit logging for enterprise-grade security."
     },
     {
-      icon: <Code className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Code className="h-6 w-6 text-white" />,
       title: "API & SDKs",
       description: "Well-documented REST API and client libraries for Python, JavaScript, Go, and more."
     },
     {
-      icon: <BarChart className="h-6 w-6 text-[#ffffff]" />,
+      icon: <BarChart className="h-6 w-6 text-white" />,
       title: "Analytics",
       description: "Monitor performance metrics, query patterns, and usage statistics through a built-in dashboard."
     }

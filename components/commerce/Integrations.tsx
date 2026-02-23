@@ -9,7 +9,7 @@ const IntegrationCategory = ({ title, items }: { title: string, items: string[] 
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" />
+            <CheckCircle className="h-5 w-5 text-white/60 mr-2 flex-shrink-0" />
             <span className="text-neutral-300">{item}</span>
           </li>
         ))}

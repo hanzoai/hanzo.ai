@@ -24,9 +24,9 @@ export const featureData: AIFeature[] = [
       { text: "Performance optimization for inference workloads" }
     ],
     delay: 0.1,
-    iconBgClass: "bg-[#ffffff]/20",
-    iconTextClass: "text-[#ffffff]",
-    bulletColor: "text-[#ffffff]"
+    iconBgClass: "bg-white/20",
+    iconTextClass: "text-white",
+    bulletColor: "text-white"
   },
   {
     icon: React.createElement(Search, { className: "h-6 w-6" }),
@@ -38,9 +38,9 @@ export const featureData: AIFeature[] = [
       { text: "Hybrid search combining vector and traditional queries" }
     ],
     delay: 0.2,
-    iconBgClass: "bg-[#ff6b6b]/20",
-    iconTextClass: "text-[#ff6b6b]",
-    bulletColor: "text-[#ff6b6b]"
+    iconBgClass: "bg-white/20",
+    iconTextClass: "text-white/70",
+    bulletColor: "text-white/70"
   },
   {
     icon: React.createElement(Database, { className: "h-6 w-6" }),
@@ -52,9 +52,9 @@ export const featureData: AIFeature[] = [
       { text: "Scalable batch and stream processing" }
     ],
     delay: 0.3,
-    iconBgClass: "bg-green-900/30",
-    iconTextClass: "text-green-400",
-    bulletColor: "text-green-400"
+    iconBgClass: "bg-white/10",
+    iconTextClass: "text-white/70",
+    bulletColor: "text-white/70"
   },
   {
     icon: React.createElement(Sparkles, { className: "h-6 w-6" }),
@@ -66,8 +66,8 @@ export const featureData: AIFeature[] = [
       { text: "Real-time anomaly detection and predictive analytics" }
     ],
     delay: 0.4,
-    iconBgClass: "bg-amber-900/30",
-    iconTextClass: "text-amber-400",
-    bulletColor: "text-amber-400"
+    iconBgClass: "bg-white/10",
+    iconTextClass: "text-white/60",
+    bulletColor: "text-white/60"
   }
 ];

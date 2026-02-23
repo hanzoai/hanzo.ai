@@ -8,17 +8,17 @@ import { Scale, Network, Shield } from "lucide-react";
 const PlatformVision = () => {
   const visionPoints = [
     {
-      icon: <Scale className="h-10 w-10 text-[#ffffff]" />,
+      icon: <Scale className="h-10 w-10 text-white" />,
       title: "Intelligent Load Distribution",
       description: "Hanzo Balancer dynamically routes traffic based on real-time service health, load, and AI-driven insights to ensure optimal performance and resource utilization."
     },
     {
-      icon: <Network className="h-10 w-10 text-[#ffffff]" />,
+      icon: <Network className="h-10 w-10 text-white" />,
       title: "Global Edge Network",
       description: "Deploy your services globally with our planetary-scale edge network, providing ultra-low latency and instant scaling for AI workloads anywhere in the world."
     },
     {
-      icon: <Shield className="h-10 w-10 text-[#ffffff]" />,
+      icon: <Shield className="h-10 w-10 text-white" />,
       title: "Always-On Security",
       description: "Built-in Web Application Firewall (WAF), DDoS protection, and AI-powered threat detection ensure your services are secured against evolving cyber threats."
     }

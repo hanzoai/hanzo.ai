@@ -65,9 +65,9 @@ const DeploymentOptions = () => {
   const getColorClasses = (color: string, isHovered: boolean = false) => {
     const colorMap: Record<string, { bg: string, text: string, border: string }> = {
       red: {
-        bg: isHovered ? "bg-red-900/40" : "bg-red-900/20",
-        text: "text-[#ffffff]",
-        border: isHovered ? "border-[#ffffff]/50" : "border-red-800/50"
+        bg: isHovered ? "bg-white/10" : "bg-white/10",
+        text: "text-white",
+        border: isHovered ? "border-white/50" : "border-white/20"
       }
     };
 
@@ -103,7 +103,7 @@ const DeploymentOptions = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`${bg} border ${border} rounded-xl p-6 flex flex-col h-full transition-all duration-300 hover:transform hover:translate-y-[-4px] hover:shadow-lg hover:shadow-red-900/20`}
+                className={`${bg} border ${border} rounded-xl p-6 flex flex-col h-full transition-all duration-300 hover:transform hover:translate-y-[-4px] hover:shadow-lg hover:shadow-white/10`}
               >
                 <div className={`h-12 w-12 rounded-lg ${bg} flex items-center justify-center mb-4`}>
                   <option.icon className={`h-6 w-6 ${text}`} />

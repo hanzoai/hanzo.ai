@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   icon, 
   title, 
   description, 
-  color = "bg-[#ffffff]/20",
+  color = "bg-white/20",
   hoverColor = "bg-[#cccccc]/40",
   link = "#"
 }) => {
@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-900/90 to-gray-900/70 opacity-50 z-0"></div>
       
       {/* Hover background effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/10 to-[#ff6b6b]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
       
       <div className="relative z-10">
         {/* Icon container with dynamic color and hover effect - now with bigger icons */}
@@ -54,14 +54,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {React.cloneElement(icon as React.ReactElement, { className: "h-12 w-12" })}
         </div>
         
-        <h3 className="text-xl font-bold mb-3 text-[var(--white)] group-hover:text-[#ff6b6b] transition-colors">{title}</h3>
+        <h3 className="text-xl font-bold mb-3 text-[var(--white)] group-hover:text-white/70 transition-colors">{title}</h3>
         <p className="text-neutral-400 mb-5 group-hover:text-neutral-300 transition-colors">{description}</p>
         
         {/* Learn more button - now more visible with improved styling */}
         <Button 
           variant="ghost" 
           size="sm" 
-          className="text-[#ffffff] hover:text-[#ff6b6b] hover:bg-[#ffffff]/20 p-2 flex items-center gap-1 transition-all opacity-80 group-hover:opacity-100"
+          className="text-white hover:text-white/70 hover:bg-white/20 p-2 flex items-center gap-1 transition-all opacity-80 group-hover:opacity-100"
           asChild
         >
           <a href={link || "#"}>

@@ -17,7 +17,7 @@ const SenseiMethodSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">The Sensei Method</h2>
-          <div className="h-px w-20 bg-[#ffffff] mx-auto"></div>
+          <div className="h-px w-20 bg-white mx-auto"></div>
         </motion.div>
 
         <motion.div
@@ -25,10 +25,10 @@ const SenseiMethodSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[var(--black)]/20 backdrop-blur-sm border border-[#ffffff]/10 rounded-lg p-10 mb-10"
+          className="bg-[var(--black)]/20 backdrop-blur-sm border border-white/10 rounded-lg p-10 mb-10"
         >
           <div className="flex justify-center mb-8">
-            <HexagonIcon className="h-16 w-16 text-[#ffffff] opacity-70" />
+            <HexagonIcon className="h-16 w-16 text-white opacity-70" />
           </div>
           
           <p className="text-neutral-300 md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto text-center">
@@ -42,10 +42,10 @@ const SenseiMethodSection = () => {
               href="https://hanzo.agency"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between px-8 py-6 bg-gradient-to-r from-[#ffffff]/20 to-[#ffffff]/10 hover:from-[#ffffff]/30 hover:to-[#ffffff]/20 rounded-lg text-[var(--white)] transition-all group"
+              className="flex items-center justify-between px-8 py-6 bg-gradient-to-r from-white/20 to-white/10 hover:from-white/30 hover:to-white/20 rounded-lg text-[var(--white)] transition-all group"
             >
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-[#ffffff] mr-3" />
+                <BookOpen className="h-5 w-5 text-white mr-3" />
                 <div>
                   <h3 className="text-xl font-medium mb-2">Hanzo Agency</h3>
                   <p className="text-sm text-neutral-300">AI-powered creative & marketing</p>
@@ -58,10 +58,10 @@ const SenseiMethodSection = () => {
               href="https://sensei.group"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between px-8 py-6 bg-gradient-to-r from-[#ff6b6b]/20 to-[#ff6b6b]/10 hover:from-[#ff6b6b]/30 hover:to-[#ff6b6b]/20 rounded-lg text-[var(--white)] transition-all group"
+              className="flex items-center justify-between px-8 py-6 bg-gradient-to-r from-white/20 to-white/10 hover:from-white/20 hover:to-white/10 rounded-lg text-[var(--white)] transition-all group"
             >
               <div className="flex items-center">
-                <HexagonIcon className="h-5 w-5 text-[#ff6b6b] mr-3" />
+                <HexagonIcon className="h-5 w-5 text-white/70 mr-3" />
                 <div>
                   <h3 className="text-xl font-medium mb-2">Sensei Group</h3>
                   <p className="text-sm text-neutral-300">Enterprise transformation experts</p>

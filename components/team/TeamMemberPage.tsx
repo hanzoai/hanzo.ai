@@ -84,9 +84,9 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {/* Hanzo Agency Card */}
-              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40 transition-colors">
-                <div className="p-3 rounded-lg bg-[#ffffff]/20 self-start inline-block mb-4">
-                  <Users className="h-6 w-6 text-[#ffffff]" strokeWidth={1.5} />
+              <div className="p-6 bg-gradient-to-br from-white/20 to-neutral-900/30 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+                <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
+                  <Users className="h-6 w-6 text-white" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
                 <p className="text-neutral-300 mb-5">
@@ -96,12 +96,12 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
                 <div className="flex flex-wrap gap-4">
                   <Button
                     onClick={handleContactAgency}
-                    className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]"
+                    className="bg-white hover:bg-[#cccccc] text-[var(--white)]"
                   >
                     Work with Hanzo Agency
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
-                  <a href="/contact" className="flex items-center gap-2 px-5 py-2.5 border border-[#ffffff]/40 hover:border-[#ffffff] rounded-md text-[#ffffff] hover:text-white/70 transition-colors">
+                  <a href="/contact" className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-white hover:text-white/70 transition-colors">
                     <span>Learn more</span>
                     <Mail size={14} />
                   </a>
@@ -145,7 +145,7 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Button 
                 onClick={handleContactAgency}
-                className="bg-gradient-to-r from-[#ffffff] to-white/10 hover:opacity-90 rounded-lg"
+                className="bg-gradient-to-r from-white to-white/10 hover:opacity-90 rounded-lg"
               >
                 Creative Services
                 <ExternalLink className="ml-2 h-4 w-4" />

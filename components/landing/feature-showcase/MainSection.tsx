@@ -19,7 +19,7 @@ const MainSection: React.FC<MainSectionProps> = ({ children }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium mb-6">
+            <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium mb-6">
               Open Source AI Engineering
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--white)] mb-6">

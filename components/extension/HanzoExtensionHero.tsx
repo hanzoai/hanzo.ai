@@ -11,9 +11,9 @@ const HanzoExtensionHero = () => {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/10 to-[#ff6b6b]/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/10 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
@@ -23,7 +23,7 @@ const HanzoExtensionHero = () => {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Hanzo <span className="text-[#ffffff]">Extension</span>
+            Hanzo <span className="text-white">Extension</span>
           </h1>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Access Hanzo AI directly in your browser
@@ -33,7 +33,7 @@ const HanzoExtensionHero = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
+              className="bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#browsers" className="flex items-center">
                 <Chrome className="mr-2 h-5 w-5" />
@@ -45,7 +45,7 @@ const HanzoExtensionHero = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-[#ffffff] text-[var(--white)] hover:bg-[#ffffff]/10 px-8 py-6 rounded-lg text-lg font-medium"
+              className="border-white text-[var(--white)] hover:bg-white/10 px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#browsers" className="flex items-center">
                 <Globe className="mr-2 h-5 w-5" />
@@ -60,7 +60,7 @@ const HanzoExtensionHero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
-              <div className="h-[360px] md:h-[440px] w-full bg-gradient-to-br from-[#ffffff]/25 via-black/40 to-[#ff6b6b]/20">
+              <div className="h-[360px] md:h-[440px] w-full bg-gradient-to-br from-white/25 via-black/40 to-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.14),transparent_50%)]" />
                 <div className="relative z-10 h-full flex items-center justify-center">
                   <div className="text-center">

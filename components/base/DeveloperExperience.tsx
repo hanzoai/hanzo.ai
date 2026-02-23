@@ -50,7 +50,7 @@ const DeveloperExperience = () => {
               {features.map((feature, index) => (
                 <div key={index} className="flex">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-[#ffffff]/20 text-[#ffffff]">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/20 text-white">
                       <feature.icon className="h-6 w-6" />
                     </div>
                   </div>
@@ -73,21 +73,21 @@ const DeveloperExperience = () => {
             <div className="bg-gray-900/30 rounded-xl border border-gray-800 p-1 shadow-xl overflow-hidden">
               <div className="flex items-center bg-gray-900 rounded-t-lg px-4 py-2">
                 <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
                 </div>
                 <div className="mx-auto text-neutral-400 text-sm">Terminal</div>
               </div>
               <div className="bg-gray-950 p-4 rounded-b-lg overflow-hidden">
                 <div className="font-mono text-sm">
                   <p className="text-neutral-400 mb-2">$ npx create-hanzo-app my-project</p>
-                  <p className="text-green-400 mb-2">Initializing Hanzo Base project...</p>
+                  <p className="text-white/70 mb-2">Initializing Hanzo Base project...</p>
                   <p className="text-neutral-400 mb-2">$ cd my-project && npm run dev</p>
-                  <p className="text-green-400 mb-2">✓ Hanzo Base server started on http://localhost:3000</p>
-                  <p className="text-green-400 mb-2">✓ Admin UI available at http://localhost:3000/admin</p>
+                  <p className="text-white/70 mb-2">✓ Hanzo Base server started on http://localhost:3000</p>
+                  <p className="text-white/70 mb-2">✓ Admin UI available at http://localhost:3000/admin</p>
                   <p className="text-neutral-400 mb-2">$ hanzo deploy</p>
-                  <p className="text-green-400">✓ Project deployed to https://my-project.hanzo.app</p>
+                  <p className="text-white/70">✓ Project deployed to https://my-project.hanzo.app</p>
                 </div>
               </div>
             </div>

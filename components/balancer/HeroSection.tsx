@@ -10,9 +10,9 @@ const HeroSection = () => {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 to-red-900/5 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/10 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
@@ -32,8 +32,8 @@ const HeroSection = () => {
           </div>
 
           <div className="mb-4">
-            <span className="text-[#ffffff] font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available!
-              <a href="#learn-more" className="ml-2 text-[#ff6b6b] underline">Learn More</a>
+            <span className="text-white font-medium leading-relaxed">Hanzo Balancer v3.3 Is Now Available!
+              <a href="#learn-more" className="ml-2 text-white/70 underline">Learn More</a>
             </span>
           </div>
 
@@ -44,7 +44,7 @@ const HeroSection = () => {
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           >
             The Cloud Native<br />
-            <span className="text-[#ffffff]">Application Proxy</span>
+            <span className="text-white">Application Proxy</span>
           </motion.h1>
           
           <motion.p
@@ -64,7 +64,7 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
-              className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)] rounded-full py-6"
+              className="bg-white hover:bg-[#cccccc] text-[var(--white)] rounded-full py-6"
             >
               <span className="py-1 leading-relaxed">GET STARTED</span>
             </Button>

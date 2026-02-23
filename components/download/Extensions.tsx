@@ -74,26 +74,26 @@ const Extensions = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* VS Code & AI Editors */}
           <motion.div
-            className="bg-gradient-to-br from-[#ffffff]/30 to-gray-900/50 p-8 rounded-xl border border-[#ffffff]/30"
+            className="bg-gradient-to-br from-white/30 to-gray-900/50 p-8 rounded-xl border border-white/30"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mr-4">
-                <Sparkles className="h-5 w-5 text-[#ffffff]" />
+              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mr-4">
+                <Sparkles className="h-5 w-5 text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[var(--white)]">VS Code & AI Editors</h3>
-                <p className="text-sm text-[#ffffff]">All VS Code-compatible editors</p>
+                <p className="text-sm text-white">All VS Code-compatible editors</p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3 mb-6">
               {vsCodeEditors.map((editor) => (
                 <div key={editor.name} className="flex items-start gap-2 p-2 rounded-lg bg-black/30">
-                  <Check className="h-4 w-4 text-[#ffffff] mt-0.5 flex-shrink-0" />
+                  <Check className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                   <div>
                     <span className="font-medium text-white text-sm">{editor.name}</span>
                     <p className="text-xs text-neutral-500">{editor.description}</p>
@@ -102,7 +102,7 @@ const Extensions = () => {
               ))}
             </div>
 
-            <Button className="w-full bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]">
+            <Button className="w-full bg-white hover:bg-[#cccccc] text-[var(--white)]">
               <Code className="mr-2 h-4 w-4" />
               Install VS Code Extension
             </Button>
@@ -110,31 +110,31 @@ const Extensions = () => {
 
           {/* JetBrains IDEs */}
           <motion.div
-            className="bg-gradient-to-br from-[#ff6b6b]/20 to-gray-900/50 p-8 rounded-xl border border-[#ff6b6b]/30"
+            className="bg-gradient-to-br from-white/20 to-gray-900/50 p-8 rounded-xl border border-white/30"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#ff6b6b]/20 flex items-center justify-center mr-4">
-                <Code className="h-5 w-5 text-[#ff6b6b]" />
+              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mr-4">
+                <Code className="h-5 w-5 text-white/70" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[var(--white)]">JetBrains IDEs</h3>
-                <p className="text-sm text-[#ff6b6b]">All JetBrains products supported</p>
+                <p className="text-sm text-white/70">All JetBrains products supported</p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {jetbrainsIDEs.map((ide) => (
-                <span key={ide} className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-[#ff6b6b]/20">
+                <span key={ide} className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-white/20">
                   {ide}
                 </span>
               ))}
             </div>
 
-            <Button className="w-full bg-[#ff6b6b] hover:bg-[#ffffff] text-[var(--white)]">
+            <Button className="w-full bg-white/10 hover:bg-white text-[var(--white)]">
               <Code className="mr-2 h-4 w-4" />
               Install JetBrains Plugin
             </Button>
@@ -151,7 +151,7 @@ const Extensions = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-center mb-6">
-              <Globe className="h-10 w-10 text-[#ffffff] mr-4" />
+              <Globe className="h-10 w-10 text-white mr-4" />
               <div>
                 <h3 className="text-xl font-bold text-[var(--white)]">Browser Extensions</h3>
                 <p className="text-sm text-neutral-400">All major browsers supported</p>
@@ -161,7 +161,7 @@ const Extensions = () => {
             <div className="grid grid-cols-3 gap-2 mb-6">
               {browsers.map((browser) => (
                 <div key={browser.name} className="flex items-center gap-2 p-2 rounded-lg bg-black/30">
-                  <Check className="h-4 w-4 text-[#ffffff] flex-shrink-0" />
+                  <Check className="h-4 w-4 text-white flex-shrink-0" />
                   <span className="text-sm text-neutral-300">{browser.name}</span>
                 </div>
               ))}
@@ -183,19 +183,19 @@ const Extensions = () => {
 
           {/* Desktop App */}
           <motion.div
-            className="bg-gradient-to-br from-[#ffffff]/20 to-gray-900/50 p-8 rounded-xl border border-[#ffffff]/30"
+            className="bg-gradient-to-br from-white/20 to-gray-900/50 p-8 rounded-xl border border-white/30"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mr-4">
-                <Laptop className="h-5 w-5 text-[#ffffff]" />
+              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mr-4">
+                <Laptop className="h-5 w-5 text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[var(--white)]">Desktop App</h3>
-                <p className="text-sm text-[#ffffff]">Native performance on all platforms</p>
+                <p className="text-sm text-white">Native performance on all platforms</p>
               </div>
             </div>
 
@@ -204,18 +204,18 @@ const Extensions = () => {
             </p>
 
             <div className="flex flex-wrap gap-2 mb-6">
-              <span className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-[#ffffff]/20 flex items-center gap-1">
+              <span className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-white/20 flex items-center gap-1">
                 <Monitor className="h-3 w-3" /> macOS
               </span>
-              <span className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-[#ffffff]/20 flex items-center gap-1">
+              <span className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-white/20 flex items-center gap-1">
                 <Monitor className="h-3 w-3" /> Windows
               </span>
-              <span className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-[#ffffff]/20 flex items-center gap-1">
+              <span className="px-3 py-1.5 rounded-full bg-black/30 text-sm text-neutral-300 border border-white/20 flex items-center gap-1">
                 <Monitor className="h-3 w-3" /> Linux
               </span>
             </div>
 
-            <Button className="w-full bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]">
+            <Button className="w-full bg-white hover:bg-[#cccccc] text-[var(--white)]">
               <Laptop className="mr-2 h-4 w-4" />
               Download Desktop App
             </Button>
@@ -224,27 +224,27 @@ const Extensions = () => {
 
         {/* AI Model Providers - Full Width */}
         <motion.div
-          className="mt-8 bg-gradient-to-br from-[#ffffff]/20 via-[#ff6b6b]/20 to-[#ffffff]/10 p-8 rounded-xl border border-[#ffffff]/30"
+          className="mt-8 bg-gradient-to-br from-white/20 via-white/15 to-white/10 p-8 rounded-xl border border-white/30"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mr-4">
-              <Brain className="h-5 w-5 text-[#ffffff]" />
+            <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mr-4">
+              <Brain className="h-5 w-5 text-white" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-[var(--white)]">100+ AI Models Supported</h3>
-              <p className="text-sm text-[#ffffff]">All major AI providers through unified gateway</p>
+              <p className="text-sm text-white">All major AI providers through unified gateway</p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-6">
             {aiProviders.map((provider) => (
-              <div key={provider.name} className="p-3 rounded-lg bg-black/30 border border-[#ffffff]/10 hover:border-[#ffffff]/30 transition-colors">
+              <div key={provider.name} className="p-3 rounded-lg bg-black/30 border border-white/10 hover:border-white/30 transition-colors">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Zap className="h-3 w-3 text-[#ffffff]" />
+                  <Zap className="h-3 w-3 text-white" />
                   <span className="font-medium text-white text-sm">{provider.name}</span>
                 </div>
                 <p className="text-xs text-neutral-500">{provider.models}</p>
@@ -258,7 +258,7 @@ const Extensions = () => {
                 Unified API for all providers. Switch models without changing code.
               </p>
             </div>
-            <Button className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)] whitespace-nowrap">
+            <Button className="bg-white hover:bg-[#cccccc] text-[var(--white)] whitespace-nowrap">
               <Brain className="mr-2 h-4 w-4" />
               View All Models
             </Button>

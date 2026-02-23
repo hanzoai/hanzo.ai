@@ -77,7 +77,7 @@ const PurchaseCreditsDialog = ({ open, onOpenChange }: PurchaseCreditsDialogProp
                   onClick={() => handleSelectAmount(amount)}
                   className={`${
                     selectedAmount === amount
-                      ? "bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]"
+                      ? "bg-white hover:bg-[#cccccc] text-[var(--white)]"
                       : "border-gray-700 text-[var(--white)]"
                   }`}
                 >

@@ -86,7 +86,7 @@ const PricingSection = () => {
               transition={{ delay: index * 0.1 }}
               className={`relative rounded-2xl p-8 ${
                 plan.highlight
-                  ? "bg-gradient-to-b from-[#ffffff]/20 to-transparent border-2"
+                  ? "bg-gradient-to-b from-white/20 to-transparent border-2"
                   : "bg-neutral-900/50 border"
               } border-neutral-800`}
               style={plan.highlight ? { borderColor: BRAND_COLOR } : {}}
@@ -130,7 +130,7 @@ const PricingSection = () => {
               <ul className="space-y-3">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-white/70 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-neutral-300">{feature}</span>
                   </li>
                 ))}

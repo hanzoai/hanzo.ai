@@ -129,10 +129,10 @@ const HanzoExchange = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
           >
-            <TrendingUp className="w-4 h-4 text-[#ffffff]" />
-            <span className="text-sm font-medium text-[#ff6b6b]">Exchange Infrastructure</span>
+            <TrendingUp className="w-4 h-4 text-white" />
+            <span className="text-sm font-medium text-white/70">Exchange Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -142,7 +142,7 @@ const HanzoExchange = () => {
             className="text-5xl md:text-7xl font-bold mb-6"
           >
             <span className="text-white">Hanzo</span>{" "}
-            <span className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               Exchange
             </span>
           </motion.h1>
@@ -175,7 +175,7 @@ const HanzoExchange = () => {
           >
             <a
               href="https://docs.hanzo.ai/exchange"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] hover:bg-[#e03e3e] text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
@@ -215,7 +215,7 @@ const HanzoExchange = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
                 >
                   <div className="flex items-start gap-4 mb-4">
                     <div
@@ -233,7 +233,7 @@ const HanzoExchange = () => {
                   <ul className="grid grid-cols-2 gap-2 mb-4">
                     {product.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-neutral-300">
-                        <Check className="w-4 h-4 text-[#ffffff]" />
+                        <Check className="w-4 h-4 text-white" />
                         {feature}
                       </li>
                     ))}
@@ -241,7 +241,7 @@ const HanzoExchange = () => {
 
                   <Link
                     href={product.href || "#"}
-                    className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#ff6b6b] text-sm font-medium"
+                    className="inline-flex items-center gap-2 text-white hover:text-white/70 text-sm font-medium"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -276,8 +276,8 @@ const HanzoExchange = () => {
                 transition={{ delay: index * 0.05 }}
                 className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-center"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center mx-auto mb-3">
-                  <cap.icon className="w-5 h-5 text-[#ffffff]" />
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-3">
+                  <cap.icon className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="font-semibold text-white text-sm mb-1">{cap.title}</h3>
                 <p className="text-xs text-neutral-500">{cap.description}</p>
@@ -348,7 +348,7 @@ await exchange.orderbook.placeLimitOrder({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-[#ffffff]/20 to-transparent border border-[#ffffff]/30 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/30 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Build Your Exchange
@@ -360,7 +360,7 @@ await exchange.orderbook.placeLimitOrder({
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://docs.hanzo.ai/exchange"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] hover:bg-[#e03e3e] text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
               >
                 Read the Docs
                 <ArrowRight className="w-4 h-4" />

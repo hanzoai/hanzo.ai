@@ -128,9 +128,9 @@ export default function ContactPage() {
                 </h2>
 
                 {submitted ? (
-                  <div className="p-8 rounded-xl border border-green-500/30 bg-green-500/10 text-center">
-                    <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                      <Send className="w-6 h-6 text-green-500" />
+                  <div className="p-8 rounded-xl border border-white/20 bg-white/5 text-center">
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
+                      <Send className="w-6 h-6 text-white/70" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">
                       Message Sent!

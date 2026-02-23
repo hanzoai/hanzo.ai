@@ -364,9 +364,9 @@ const ChainDirectory = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#ffffff]/30 bg-[#ffffff]/10 mb-6">
-              <Globe className="w-4 h-4 text-[#ffffff]" />
-              <span className="text-sm font-medium text-[#ffffff]">Chain Resource Directory</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 mb-6">
+              <Globe className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">Chain Resource Directory</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -393,7 +393,7 @@ const ChainDirectory = () => {
                 placeholder="Search chains..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-[#ffffff]/50"
+                className="w-full pl-10 pr-4 py-3 rounded-lg bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-white/50"
               />
             </div>
 
@@ -403,7 +403,7 @@ const ChainDirectory = () => {
                 onClick={() => setSelectedCategory("all")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   selectedCategory === "all"
-                    ? "bg-[#ffffff] text-white"
+                    ? "bg-white text-white"
                     : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-neutral-700"
                 }`}
               >
@@ -415,7 +415,7 @@ const ChainDirectory = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedCategory === cat.id
-                      ? "bg-[#ffffff] text-white"
+                      ? "bg-white text-white"
                       : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-neutral-700"
                   }`}
                 >
@@ -455,8 +455,8 @@ const ChainDirectory = () => {
                   className="w-full p-4 flex items-center justify-between hover:bg-neutral-800/50 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center">
-                      <Globe className="w-5 h-5 text-[#ffffff]" />
+                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                      <Globe className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-left">
                       <h3 className="font-semibold text-white">{chain.name}</h3>
@@ -476,7 +476,7 @@ const ChainDirectory = () => {
                           <div
                             key={product.key}
                             className={`w-6 h-6 rounded flex items-center justify-center ${
-                              supported ? "bg-green-500/20 text-green-500" : "bg-neutral-800 text-neutral-600"
+                              supported ? "bg-white/10 text-white/70" : "bg-neutral-800 text-neutral-600"
                             }`}
                             title={product.name}
                           >
@@ -499,12 +499,12 @@ const ChainDirectory = () => {
                         <div className="space-y-2">
                           <div className="p-3 rounded-lg bg-neutral-950 font-mono text-xs">
                             <span className="text-neutral-500">RPC:</span>{" "}
-                            <span className="text-[#ffffff]">{chain.rpcEndpoint}</span>
+                            <span className="text-white">{chain.rpcEndpoint}</span>
                           </div>
                           {chain.wsEndpoint && (
                             <div className="p-3 rounded-lg bg-neutral-950 font-mono text-xs">
                               <span className="text-neutral-500">WS:</span>{" "}
-                              <span className="text-[#ffffff]">{chain.wsEndpoint}</span>
+                              <span className="text-white">{chain.wsEndpoint}</span>
                             </div>
                           )}
                         </div>
@@ -569,7 +569,7 @@ const ChainDirectory = () => {
                             <div
                               key={product.key}
                               className={`p-2 rounded-lg text-center ${
-                                supported ? "bg-green-500/10 text-green-500" : "bg-neutral-800 text-neutral-600"
+                                supported ? "bg-white/5 text-white/70" : "bg-neutral-800 text-neutral-600"
                               }`}
                             >
                               <Icon className="w-4 h-4 mx-auto mb-1" />

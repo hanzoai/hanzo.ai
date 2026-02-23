@@ -78,7 +78,7 @@ const CuratedEntryPointsSection = () => {
               >
                 <Link href={entry.link || "#"} className="block h-full group">
                   <motion.div
-                    className="h-full p-6 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-[#ffffff]/50 transition-all duration-300 relative overflow-hidden"
+                    className="h-full p-6 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-white/30/50 transition-all duration-300 relative overflow-hidden"
                     whileHover={{
                       y: -4,
                       boxShadow: "0 0 40px -10px rgba(253, 68, 68, 0.3)",
@@ -97,7 +97,7 @@ const CuratedEntryPointsSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#ffffff] transition-colors">
+                    <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-white transition-colors">
                       {entry.title}
                     </h3>
 
@@ -136,7 +136,7 @@ const CuratedEntryPointsSection = () => {
         >
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-[#ffffff] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors"
           >
             View all products
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

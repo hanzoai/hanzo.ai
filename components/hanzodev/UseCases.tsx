@@ -42,7 +42,7 @@ const UseCases = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Use cases</h2>
           <div className="max-w-3xl mx-auto">
-            <p className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#ff6b6b]">
+            <p className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/10">
               The Ultimate Developer Experience, Powered by AI
             </p>
             <p className="text-lg text-neutral-300">
@@ -64,7 +64,7 @@ const UseCases = () => {
               className="bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 flex items-center gap-3 hover:bg-gray-800/50 transition-colors"
               variants={item}
             >
-              <div className="p-2 bg-[#ffffff]/20 rounded-lg text-[#ff6b6b]">
+              <div className="p-2 bg-white/20 rounded-lg text-white/70">
                 {useCase.icon}
               </div>
               <span className="font-medium">{useCase.name}</span>
@@ -98,7 +98,7 @@ const UseCases = () => {
               Included in one subscription are dozens of built-in AI agentic workflows, carefully planned to perform developer tasks for you. Full-stack engineer? Of course. Bug fixes? Sure. Adding tests to existing code? No problem. UX/UI Improvements? Included. Generating user docs? That too.
             </p>
             <div className="text-right">
-              <a href="#learn-more" className="text-[#ffffff] hover:text-[#ff6b6b] inline-flex items-center">
+              <a href="#learn-more" className="text-white hover:text-white/70 inline-flex items-center">
                 Learn more <span className="ml-1">→</span>
               </a>
             </div>

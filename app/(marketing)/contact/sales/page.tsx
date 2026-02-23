@@ -143,8 +143,8 @@ export default function ContactSalesPage() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="flex items-center gap-4 p-5 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-neutral-700 hover:bg-neutral-800/50 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-[#5865F2]/20 transition-colors">
-                  <MessageSquare className="w-5 h-5 text-neutral-400 group-hover:text-[#5865F2] transition-colors" />
+                <div className="w-12 h-12 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                  <MessageSquare className="w-5 h-5 text-neutral-400 group-hover:text-white/70 transition-colors" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral-400">Community</p>

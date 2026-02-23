@@ -20,7 +20,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
       transition={{ duration: 0.5 }}
       className="bg-gray-900/30 border border-gray-800 rounded-xl p-6"
     >
-      <Icon className="h-10 w-10 text-[#ffffff] mb-4" />
+      <Icon className="h-10 w-10 text-white mb-4" />
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-neutral-300">{description}</p>
     </motion.div>
@@ -70,7 +70,7 @@ const HanzoCodeAgents: React.FC = () => {
           />
         </div>
         
-        <div className="bg-gradient-to-br from-[#ffffff]/10 to-[#ff6b6b]/10 rounded-2xl p-8 border border-[#ffffff]/20">
+        <div className="bg-gradient-to-br from-white/10 to-white/10 rounded-2xl p-8 border border-white/20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-6">Massively Parallel Development</h3>
@@ -80,22 +80,22 @@ const HanzoCodeAgents: React.FC = () => {
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <Users className="h-5 w-5 text-[#ffffff] mr-3 mt-1" />
+                  <Users className="h-5 w-5 text-white mr-3 mt-1" />
                   <p className="text-neutral-300">True pair programming with agents that have full system access</p>
                 </div>
                 
                 <div className="flex items-start">
-                  <Brain className="h-5 w-5 text-[#ffffff] mr-3 mt-1" />
+                  <Brain className="h-5 w-5 text-white mr-3 mt-1" />
                   <p className="text-neutral-300">Agents learn your coding style and project patterns over time</p>
                 </div>
                 
                 <div className="flex items-start">
-                  <Server className="h-5 w-5 text-[#ffffff] mr-3 mt-1" />
+                  <Server className="h-5 w-5 text-white mr-3 mt-1" />
                   <p className="text-neutral-300">Scale from a single helper to a massive distributed workforce</p>
                 </div>
                 
                 <div className="flex items-start">
-                  <Maximize className="h-5 w-5 text-[#ffffff] mr-3 mt-1" />
+                  <Maximize className="h-5 w-5 text-white mr-3 mt-1" />
                   <p className="text-neutral-300">Tackle enterprise-scale projects that would normally require entire teams</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const HanzoCodeAgents: React.FC = () => {
             
             <div className="bg-[var(--black)]/40 rounded-xl p-6 border border-gray-800">
               <div className="text-sm font-mono text-neutral-300 space-y-2">
-                <div className="text-[#ffffff]">// Creating a team of agents to refactor an entire codebase</div>
+                <div className="text-white">// Creating a team of agents to refactor an entire codebase</div>
                 <div className="text-[var(--white)]">const project = await HanzoCode.createProject('./my-app');</div>
                 <div className="text-[var(--white)]">const agents = await project.createAgentTeam({"{"}</div>
                 <div className="text-[var(--white)] ml-4">size: 12,</div>

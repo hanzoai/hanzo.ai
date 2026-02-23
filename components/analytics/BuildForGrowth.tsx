@@ -25,19 +25,19 @@ const BuildForGrowth = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: <TrendingUp className="h-8 w-8 text-[#ffffff]" />,
+              icon: <TrendingUp className="h-8 w-8 text-white" />,
               title: "Conversion Optimization",
               description: "Identify and fix bottlenecks in your user journey to improve conversion rates.",
               metrics: "+27% average increase in conversions"
             },
             {
-              icon: <Users className="h-8 w-8 text-[#ff6b6b]" />,
+              icon: <Users className="h-8 w-8 text-white/70" />,
               title: "Audience Insights",
               description: "Understand your users better with detailed demographics and behavior analysis.",
               metrics: "15M+ user profiles analyzed daily"
             },
             {
-              icon: <CreditCard className="h-8 w-8 text-green-400" />,
+              icon: <CreditCard className="h-8 w-8 text-white/70" />,
               title: "Revenue Impact",
               description: "See the direct financial impact of your optimization efforts in real-time.",
               metrics: "$1.2B+ in tracked revenue"
@@ -54,7 +54,7 @@ const BuildForGrowth = () => {
               <div className="mb-5">{item.icon}</div>
               <h3 className="text-xl font-bold mb-3">{item.title}</h3>
               <p className="text-neutral-400 mb-5">{item.description}</p>
-              <div className="text-sm font-medium px-3 py-1 bg-gray-800 rounded-full inline-block text-[#ff6b6b]">
+              <div className="text-sm font-medium px-3 py-1 bg-gray-800 rounded-full inline-block text-white/70">
                 {item.metrics}
               </div>
             </motion.div>
@@ -68,7 +68,7 @@ const BuildForGrowth = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <a href="#learn-more" className="inline-flex items-center text-[#ffffff] hover:text-[#ff6b6b] transition-colors">
+          <a href="#learn-more" className="inline-flex items-center text-white hover:text-white/70 transition-colors">
             Learn how our customers achieved growth <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </motion.div>

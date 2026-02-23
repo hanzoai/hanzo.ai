@@ -219,7 +219,7 @@ const Features = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/50 transition-all group"
+                  className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 hover:border-white/30/50 transition-all group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div
@@ -228,17 +228,17 @@ const Features = () => {
                     >
                       <Icon className="w-6 h-6" style={{ color: BRAND_COLOR }} />
                     </div>
-                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-green-500/20 text-green-400">
+                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-white/10 text-white/70">
                       New
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#ffffff] transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-white transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-sm text-neutral-400 mb-4">
                     {feature.description}
                   </p>
-                  <span className="text-sm text-[#ffffff] flex items-center gap-1">
+                  <span className="text-sm text-white flex items-center gap-1">
                     View Documentation
                     <ExternalLink className="w-3.5 h-3.5" />
                   </span>

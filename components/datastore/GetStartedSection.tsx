@@ -26,7 +26,7 @@ const GetStartedSection = () => {
           <div className="flex flex-col items-center justify-center space-y-8 mb-12">
             <div className="bg-gray-900/50 p-6 rounded-xl border border-gray-800 w-full max-w-2xl">
               <div className="flex items-center mb-3">
-                <Terminal className="h-5 w-5 text-[#fd4444] mr-2" />
+                <Terminal className="h-5 w-5 text-white/70 mr-2" />
                 <span className="text-sm text-neutral-400">Installation Command</span>
               </div>
               <div className="font-mono text-lg bg-black/40 p-4 rounded-lg text-neutral-200 overflow-x-auto">
@@ -37,7 +37,7 @@ const GetStartedSection = () => {
             <div className="flex flex-wrap justify-center gap-6">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
+                className="bg-gradient-to-r from-white/20 to-white/10 hover:from-white/20 hover:to-white/10 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all flex items-center"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download
@@ -62,7 +62,7 @@ const GetStartedSection = () => {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#fd4444] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#fd4444] text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              className="bg-gradient-to-r from-white/20 to-white/10 hover:from-white/20 hover:to-white/10 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Deploy Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

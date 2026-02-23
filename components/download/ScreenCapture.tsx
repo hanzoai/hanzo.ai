@@ -33,11 +33,11 @@ const ScreenCapture = () => {
             </p>
             
             <div className="flex items-center space-x-4 text-neutral-400">
-              <Crop className="h-6 w-6 text-[#ffffff]" />
+              <Crop className="h-6 w-6 text-white" />
               <span>Select any region of your screen</span>
             </div>
             <div className="flex items-center space-x-4 text-neutral-400 mt-3">
-              <MonitorSmartphone className="h-6 w-6 text-[#ffffff]" />
+              <MonitorSmartphone className="h-6 w-6 text-white" />
               <span>Ask questions without leaving your workflow</span>
             </div>
           </div>

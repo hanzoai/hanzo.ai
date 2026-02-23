@@ -43,11 +43,11 @@ const StarRating = ({ rating }) => {
   const stars = [];
 
   for (let i = 0; i < fullStars; i++) {
-    stars.push(<span key={`full-${i}`} className="text-yellow-400">★</span>);
+    stars.push(<span key={`full-${i}`} className="text-white/60">★</span>);
   }
 
   if (halfStar) {
-    stars.push(<span key="half" className="text-yellow-400">★</span>);
+    stars.push(<span key="half" className="text-white/60">★</span>);
   }
 
   const emptyStars = 5 - stars.length;
@@ -61,8 +61,8 @@ const StarRating = ({ rating }) => {
 const Testimonials = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30 relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div

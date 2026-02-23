@@ -49,9 +49,9 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+              className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-white/30 transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mb-4">
+              <div className="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>

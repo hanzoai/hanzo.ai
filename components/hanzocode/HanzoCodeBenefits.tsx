@@ -36,7 +36,7 @@ const HanzoCodeBenefits = () => {
               Hanzo Code isn't just an assistant—it's a force multiplier that can scale your productivity by orders of magnitude.
             </p>
             
-            <a href="#features" className="text-[#ffffff] hover:text-[#ff6b6b] font-medium">
+            <a href="#features" className="text-white hover:text-white/70 font-medium">
               See how we compare
             </a>
           </motion.div>
@@ -50,16 +50,16 @@ const HanzoCodeBenefits = () => {
           >
             <div className="h-96 bg-gray-900 flex items-center justify-center p-8">
               <div className="space-y-4 text-left w-full">
-                <div className="border-l-4 border-[#ffffff] pl-4 py-2">
+                <div className="border-l-4 border-white pl-4 py-2">
                   <h3 className="font-semibold text-[var(--white)]">What Cursor/Windsurf Users Say:</h3>
                   <p className="text-neutral-300 italic">"I switched to Hanzo Code and my productivity jumped 3x. The agent capabilities are on another level."</p>
                 </div>
                 
-                <div className="border-l-4 border-[#ff6b6b] pl-4 py-2">
+                <div className="border-l-4 border-white/20 pl-4 py-2">
                   <p className="text-neutral-300 italic">"Using my favorite VS Code setup with Hanzo's AI has transformed how I approach complex programming tasks."</p>
                 </div>
                 
-                <div className="border-l-4 border-green-500 pl-4 py-2">
+                <div className="border-l-4 border-white/20 pl-4 py-2">
                   <p className="text-neutral-300 italic">"Running parallel agent instances to solve different parts of the same problem simultaneously is a game-changer."</p>
                 </div>
               </div>

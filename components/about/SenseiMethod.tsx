@@ -18,7 +18,7 @@ const SenseiMethod = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/30 text-[#ffffff] text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/30 text-white text-sm font-medium mb-4">
               Principles in Practice
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -31,8 +31,8 @@ const SenseiMethod = () => {
 
             <div className="space-y-6 mb-8">
               <div className="flex items-start">
-                <div className="p-2 bg-[#ffffff]/10 rounded-lg mr-4">
-                  <Target className="h-6 w-6 text-[#ffffff]" />
+                <div className="p-2 bg-white/10 rounded-lg mr-4">
+                  <Target className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-1">Identify First-Principle Goals</h3>
@@ -41,8 +41,8 @@ const SenseiMethod = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="p-2 bg-[#ffffff]/10 rounded-lg mr-4">
-                  <Zap className="h-6 w-6 text-[#ffffff]" />
+                <div className="p-2 bg-white/10 rounded-lg mr-4">
+                  <Zap className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-1">Rapid Prototyping</h3>
@@ -51,8 +51,8 @@ const SenseiMethod = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="p-2 bg-[#ffffff]/10 rounded-lg mr-4">
-                  <BarChart3 className="h-6 w-6 text-[#ffffff]" />
+                <div className="p-2 bg-white/10 rounded-lg mr-4">
+                  <BarChart3 className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-1">Data-Driven Decisions</h3>
@@ -61,8 +61,8 @@ const SenseiMethod = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="p-2 bg-[#ffffff]/10 rounded-lg mr-4">
-                  <Users className="h-6 w-6 text-[#ffffff]" />
+                <div className="p-2 bg-white/10 rounded-lg mr-4">
+                  <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-1">Sensei Mentorship</h3>
@@ -89,9 +89,9 @@ const SenseiMethod = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-[#ffffff]/20 to-transparent rounded-2xl p-1">
+            <div className="bg-gradient-to-br from-white/20 to-transparent rounded-2xl p-1">
               <div className="bg-card backdrop-blur-sm rounded-xl overflow-hidden border border-border">
-                <div className="w-full h-56 rounded-t-xl bg-gradient-to-br from-[#ffffff]/25 via-black/40 to-[#ff6b6b]/20 border-b border-border flex items-center justify-center">
+                <div className="w-full h-56 rounded-t-xl bg-gradient-to-br from-white/25 via-black/40 to-white/10 border-b border-border flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-xs uppercase tracking-widest text-neutral-400">Sensei Method</div>
                     <div className="text-xl font-semibold text-[var(--white)] mt-2">Strategy → Execution</div>
@@ -104,16 +104,16 @@ const SenseiMethod = () => {
                     launch groundbreaking products, and build scalable businesses.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <div className="bg-[#ffffff]/10 px-4 py-2 rounded-lg">
-                      <span className="text-2xl font-bold text-[#ffffff]">$1B+</span>
+                    <div className="bg-white/10 px-4 py-2 rounded-lg">
+                      <span className="text-2xl font-bold text-white">$1B+</span>
                       <p className="text-sm text-muted-foreground">Client Revenue</p>
                     </div>
-                    <div className="bg-[#ffffff]/10 px-4 py-2 rounded-lg">
-                      <span className="text-2xl font-bold text-[#ffffff]">100+</span>
+                    <div className="bg-white/10 px-4 py-2 rounded-lg">
+                      <span className="text-2xl font-bold text-white">100+</span>
                       <p className="text-sm text-muted-foreground">Product Launches</p>
                     </div>
-                    <div className="bg-[#ffffff]/10 px-4 py-2 rounded-lg">
-                      <span className="text-2xl font-bold text-[#ffffff]">10+</span>
+                    <div className="bg-white/10 px-4 py-2 rounded-lg">
+                      <span className="text-2xl font-bold text-white">10+</span>
                       <p className="text-sm text-muted-foreground">Years Experience</p>
                     </div>
                   </div>

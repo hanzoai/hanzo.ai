@@ -10,61 +10,61 @@ export const getColorClasses = (color: string, type: 'gradient' | 'border' | 'te
   const colorMap: Record<string, Record<string, string>> = {
     // Primary brand color
     brand: {
-      gradient: isHovered ? 'from-[#ffffff]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ffffff]/20' : 'border-gray-700/20',
-      text: 'text-[#ffffff]'
+      gradient: isHovered ? 'from-white/30 to-white/10' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white'
     },
     primary: {
-      gradient: isHovered ? 'from-[#ffffff]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ffffff]/20' : 'border-gray-700/20',
-      text: 'text-[#ffffff]'
+      gradient: isHovered ? 'from-white/30 to-white/10' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white'
     },
     // Secondary brand color
     secondary: {
-      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#ffffff]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
-      text: 'text-[#ff6b6b]'
+      gradient: isHovered ? 'from-white/20 to-white/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white/70'
     },
     // Legacy color mappings - all redirect to brand colors
     red: {
-      gradient: isHovered ? 'from-[#ffffff]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ffffff]/20' : 'border-gray-700/20',
-      text: 'text-[#ffffff]'
+      gradient: isHovered ? 'from-white/30 to-white/10' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white'
     },
     purple: {
-      gradient: isHovered ? 'from-[#ffffff]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ffffff]/20' : 'border-gray-700/20',
-      text: 'text-[#ffffff]'
+      gradient: isHovered ? 'from-white/30 to-white/10' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white'
     },
     blue: {
-      gradient: isHovered ? 'from-[#ffffff]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ffffff]/20' : 'border-gray-700/20',
-      text: 'text-[#ffffff]'
+      gradient: isHovered ? 'from-white/30 to-white/10' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white'
     },
     indigo: {
-      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#ffffff]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
-      text: 'text-[#ff6b6b]'
+      gradient: isHovered ? 'from-white/20 to-white/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white/70'
     },
     cyan: {
-      gradient: isHovered ? 'from-[#ffffff]/30 to-[#ff6b6b]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ffffff]/20' : 'border-gray-700/20',
-      text: 'text-[#ffffff]'
+      gradient: isHovered ? 'from-white/30 to-white/10' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white'
     },
     amber: {
-      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#ffffff]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
-      text: 'text-[#ff6b6b]'
+      gradient: isHovered ? 'from-white/20 to-white/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white/70'
     },
     rose: {
-      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#ffffff]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
-      text: 'text-[#ff6b6b]'
+      gradient: isHovered ? 'from-white/20 to-white/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white/70'
     },
     orange: {
-      gradient: isHovered ? 'from-[#ff6b6b]/30 to-[#ffffff]/30' : 'from-gray-900/30 to-gray-800/30',
-      border: isHovered ? 'border-[#ff6b6b]/20' : 'border-gray-700/20',
-      text: 'text-[#ff6b6b]'
+      gradient: isHovered ? 'from-white/20 to-white/30' : 'from-gray-900/30 to-gray-800/30',
+      border: isHovered ? 'border-white/20' : 'border-gray-700/20',
+      text: 'text-white/70'
     }
   };
 

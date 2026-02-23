@@ -8,21 +8,21 @@ import { Button } from "@hanzo/ui";
 
 const statsItems = [
   { 
-    icon: <Download className="h-6 w-6 text-green-400" />,
+    icon: <Download className="h-6 w-6 text-white/70" />,
     value: 17,
     suffix: "M+",
     label: "Downloads",
     countUpDuration: 2
   },
   { 
-    icon: <Star className="h-6 w-6 text-yellow-400" />,
+    icon: <Star className="h-6 w-6 text-white/60" />,
     value: 25,
     suffix: "K+",
     label: "GitHub Stars",
     countUpDuration: 2.2
   },
   { 
-    icon: <Users className="h-6 w-6 text-[#ff6b6b]" />,
+    icon: <Users className="h-6 w-6 text-white/70" />,
     value: 280,
     suffix: "+",
     label: "Contributors",
@@ -117,9 +117,9 @@ const OpenSource = () => {
           >
             <div className="flex items-center p-4 bg-gray-900 border-b border-gray-800">
               <div className="flex space-x-2 mr-4">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="w-3 h-3 rounded-full bg-white/10"></div>
               </div>
               <div className="flex-1 text-center text-neutral-300 text-sm">analytics.js</div>
             </div>
@@ -128,7 +128,7 @@ const OpenSource = () => {
               <div className="flex">
                 <div className="mr-4 text-neutral-600">1</div>
                 <div>
-                  <span className="text-[#ffffff]">import</span> <span className="text-green-400">{'{'}</span> <span className="text-yellow-300">HanzoAnalytics</span> <span className="text-green-400">{'}'}</span> <span className="text-[#ffffff]">from</span> <span className="text-orange-400">'hanzo-analytics'</span>;
+                  <span className="text-white">import</span> <span className="text-white/70">{'{'}</span> <span className="text-white/60">HanzoAnalytics</span> <span className="text-white/70">{'}'}</span> <span className="text-white">from</span> <span className="text-white/70">'hanzo-analytics'</span>;
                 </div>
               </div>
               <div className="flex">
@@ -142,7 +142,7 @@ const OpenSource = () => {
               <div className="flex">
                 <div className="mr-4 text-neutral-600">4</div>
                 <div>
-                  <span className="text-[#ffffff]">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-[#ffffff]">new</span> <span className="text-yellow-300">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-orange-400">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
+                  <span className="text-white">const</span> analytics <span className="text-[var(--white)]">=</span> <span className="text-white">new</span> <span className="text-white/60">HanzoAnalytics</span><span className="text-[var(--white)]">(</span><span className="text-white/70">'YOUR_PROJECT_ID'</span><span className="text-[var(--white)]">);</span>
                 </div>
               </div>
               <div className="flex">
@@ -170,19 +170,19 @@ const OpenSource = () => {
               <div className="flex">
                 <div className="mr-4 text-neutral-600">10</div>
                 <div>
-                  <span className="text-[var(--white)]">analytics.track(</span><span className="text-orange-400">'button_click'</span><span className="text-[var(--white)]">, {'{'}</span>
+                  <span className="text-[var(--white)]">analytics.track(</span><span className="text-white/70">'button_click'</span><span className="text-[var(--white)]">, {'{'}</span>
                 </div>
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">11</div>
                 <div>
-                  <span className="text-[var(--white)]">  buttonId: </span><span className="text-orange-400">'signup_button'</span><span className="text-[var(--white)]">,</span>
+                  <span className="text-[var(--white)]">  buttonId: </span><span className="text-white/70">'signup_button'</span><span className="text-[var(--white)]">,</span>
                 </div>
               </div>
               <div className="flex">
                 <div className="mr-4 text-neutral-600">12</div>
                 <div>
-                  <span className="text-[var(--white)]">  page: </span><span className="text-orange-400">'/home'</span>
+                  <span className="text-[var(--white)]">  page: </span><span className="text-white/70">'/home'</span>
                 </div>
               </div>
               <div className="flex">

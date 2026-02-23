@@ -60,10 +60,10 @@ const fmt = (val: number | null) => {
 
 // Tier badge colors
 const TIER_STYLES: Record<string, { bg: string; text: string; border: string }> = {
-  "ultra max": { bg: "bg-[#ffffff]/15", text: "text-[#ffffff]", border: "border-[#ffffff]/30" },
-  ultra: { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30" },
-  "pro max": { bg: "bg-violet-500/15", text: "text-violet-400", border: "border-violet-500/30" },
-  pro: { bg: "bg-sky-500/15", text: "text-sky-400", border: "border-sky-500/30" },
+  "ultra max": { bg: "bg-white/15", text: "text-white", border: "border-white/30" },
+  ultra: { bg: "bg-white/10", text: "text-white/60", border: "border-white/20" },
+  "pro max": { bg: "bg-white/10", text: "text-white/70", border: "border-white/20" },
+  pro: { bg: "bg-white/10", text: "text-white/70", border: "border-white/20" },
 };
 
 function TierBadge({ tier }: { tier: string }) {
@@ -79,7 +79,7 @@ function TierBadge({ tier }: { tier: string }) {
 
 function FreeBadge() {
   return (
-    <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+    <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-white/10 text-white/70 border border-white/20">
       Free
     </span>
   );
@@ -87,7 +87,7 @@ function FreeBadge() {
 
 function FeaturedBadge() {
   return (
-    <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30">
+    <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-white/10 text-white/60 border border-white/20">
       <Star className="w-2.5 h-2.5" />
       Featured
     </span>
@@ -201,7 +201,7 @@ const APIPricing = () => {
             <div className="mb-4">
               {model.features.map((feature, index) => (
                 <div key={index} className="flex items-center text-sm text-neutral-400 mb-1.5">
-                  <span className="w-1.5 h-1.5 bg-[#ffffff] rounded-full mr-2.5"></span>
+                  <span className="w-1.5 h-1.5 bg-white rounded-full mr-2.5"></span>
                   {feature}
                 </div>
               ))}
@@ -294,7 +294,7 @@ const APIPricing = () => {
           </div>
           <Link
             to="/zen/models"
-            className="inline-flex items-center px-4 py-2 rounded-full font-medium text-sm bg-[#ffffff]/10 text-[#ffffff] border border-[#ffffff]/20 hover:bg-[#ffffff]/20 transition-colors"
+            className="inline-flex items-center px-4 py-2 rounded-full font-medium text-sm bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors"
           >
             Full Model Catalog
           </Link>
@@ -324,7 +324,7 @@ const APIPricing = () => {
 
         <div className="text-sm text-neutral-500 mb-8">
           Prompt caching pricing is for our standard 5-minute TTL;{" "}
-          <a href="#" className="text-[#ffffff] hover:underline">
+          <a href="#" className="text-white hover:underline">
             extended prompt caching
           </a>{" "}
           is available at an additional cost
@@ -370,7 +370,7 @@ const APIPricing = () => {
             {featuredModels.map((model) => (
               <div
                 key={model.id || model.name}
-                className="bg-gray-900/30 rounded-xl p-5 border border-gray-800/50 hover:border-amber-500/20 transition-colors"
+                className="bg-gray-900/30 rounded-xl p-5 border border-gray-800/50 hover:border-white/20 transition-colors"
               >
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -450,7 +450,7 @@ const APIPricing = () => {
               onClick={() => { setShowFreeOnly(!showFreeOnly); setShowCount(MODELS_PER_PAGE); }}
               className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
                 showFreeOnly
-                  ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+                  ? "bg-white/10 text-white/70 border-white/20"
                   : "bg-neutral-900 text-neutral-400 border-neutral-800 hover:border-neutral-600"
               }`}
             >
@@ -490,7 +490,7 @@ const APIPricing = () => {
                   <tr
                     key={model.id || model.name}
                     className={`border-t border-neutral-800/50 hover:bg-neutral-900/50 transition-colors ${
-                      model.featured ? "bg-amber-500/5" : ""
+                      model.featured ? "bg-white/5" : ""
                     }`}
                   >
                     <td className="px-4 py-3">
@@ -514,12 +514,12 @@ const APIPricing = () => {
                         : "N/A"}
                     </td>
                     <td className="px-4 py-3 text-right text-sm">
-                      <span className={model.isFree ? "text-emerald-400" : "text-white"}>
+                      <span className={model.isFree ? "text-white/70" : "text-white"}>
                         {fmt(model.pricing.input)}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-right text-sm">
-                      <span className={model.isFree ? "text-emerald-400" : "text-white"}>
+                      <span className={model.isFree ? "text-white/70" : "text-white"}>
                         {fmt(model.pricing.output)}
                       </span>
                     </td>

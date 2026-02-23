@@ -15,7 +15,7 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       transition={{ duration: 0.5 }}
       className={`border rounded-xl p-8 h-full ${
         highlight
-          ? "border-[#ffffff] bg-gradient-to-b from-[#ffffff]/10 to-black"
+          ? "border-white bg-gradient-to-b from-white/10 to-black"
           : "border-gray-800 bg-gray-900/20"
       }`}
     >
@@ -28,7 +28,7 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-2">
-            <Check className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
+            <Check className="h-5 w-5 text-white/70 mt-1 flex-shrink-0" />
             <span className="text-neutral-300">{feature}</span>
           </li>
         ))}
@@ -37,7 +37,7 @@ const PricingTier = ({ title, price, description, features, highlight = false, c
       <Button
         className={`w-full ${
           highlight
-            ? "bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]"
+            ? "bg-white hover:bg-[#cccccc] text-[var(--white)]"
             : "bg-gray-800 text-[var(--white)] hover:bg-gray-700"
         }`}
       >

@@ -92,10 +92,10 @@ const ZapFeatures = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-green-500/30 transition-colors"
+              className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/20 transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-green-500/10">
-                <feature.icon className="h-6 w-6 text-green-500" />
+              <div className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 bg-white/5">
+                <feature.icon className="h-6 w-6 text-white/70" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">
                 {feature.title}

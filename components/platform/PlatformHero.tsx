@@ -110,9 +110,9 @@ hanzo deploy --prod`,
     <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl">
       <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
         <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="w-3 h-3 rounded-full bg-white/10" />
+          <div className="w-3 h-3 rounded-full bg-white/10" />
+          <div className="w-3 h-3 rounded-full bg-white/10" />
         </div>
         <AnimatePresence mode="wait">
           <motion.span
@@ -242,7 +242,7 @@ const PlatformHero = () => {
                   onClick={handleCopy}
                   className="text-neutral-500 hover:text-white transition-colors"
                 >
-                  {copied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
+                  {copied ? <Check className="h-3.5 w-3.5 text-white/70" /> : <Copy className="h-3.5 w-3.5" />}
                 </button>
               </div>
             </motion.div>
@@ -263,7 +263,7 @@ const PlatformHero = () => {
                     onClick={() => setActiveFeature(feature.id)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       isActive
-                        ? "bg-[#ffffff] text-white"
+                        ? "bg-white text-white"
                         : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700"
                     }`}
                   >

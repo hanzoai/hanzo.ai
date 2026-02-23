@@ -86,7 +86,7 @@ const Login = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <Label htmlFor="password">Password</Label>
-                <a href="/forgot-password" className="text-sm text-[#ffffff] hover:underline">
+                <a href="/forgot-password" className="text-sm text-white hover:underline">
                   Forgot password?
                 </a>
               </div>
@@ -106,7 +106,7 @@ const Login = () => {
             
             <Button 
               type="submit" 
-              className="w-full mt-6 bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]"
+              className="w-full mt-6 bg-white hover:bg-[#cccccc] text-[var(--white)]"
             >
               Sign In
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -116,7 +116,7 @@ const Login = () => {
         
         <div className="text-center text-sm text-neutral-400">
           Don't have an account?{" "}
-          <a href="/signup" className="text-[#ffffff] hover:underline">
+          <a href="/signup" className="text-white hover:underline">
             Sign up
           </a>
         </div>

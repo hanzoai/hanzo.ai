@@ -32,10 +32,10 @@ const DeveloperTools = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-green-500/40 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Code className="h-8 w-8 text-green-400 mr-3" />
+              <Code className="h-8 w-8 text-white/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo Dev</h3>
             </div>
             <p className="text-neutral-300 mb-6">
@@ -57,7 +57,7 @@ const DeveloperTools = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-green-600/70 hover:bg-green-600"
+              className="w-full bg-white/10 hover:bg-white/10"
             >
               <a href="https://github.com/hanzoai/dev" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -71,10 +71,10 @@ const DeveloperTools = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-green-500/40 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Users className="h-8 w-8 text-green-400 mr-3" />
+              <Users className="h-8 w-8 text-white/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo Team</h3>
             </div>
             <p className="text-neutral-300 mb-6">
@@ -96,7 +96,7 @@ const DeveloperTools = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-green-600/70 hover:bg-green-600"
+              className="w-full bg-white/10 hover:bg-white/10"
             >
               <a href="https://github.com/hanzoai/team" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -110,10 +110,10 @@ const DeveloperTools = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-green-500/40 transition-colors"
+            className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 hover:border-white/20 transition-colors"
           >
             <div className="flex items-center mb-4">
-              <Terminal className="h-8 w-8 text-green-400 mr-3" />
+              <Terminal className="h-8 w-8 text-white/70 mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Hanzo CLI</h3>
             </div>
             <p className="text-neutral-300 mb-6">
@@ -135,7 +135,7 @@ const DeveloperTools = () => {
             </div>
             <Button 
               size="sm" 
-              className="w-full bg-green-600/70 hover:bg-green-600"
+              className="w-full bg-white/10 hover:bg-white/10"
             >
               <a href="https://github.com/hanzoai/cli" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 <Github className="mr-2 h-4 w-4" /> View Repository
@@ -145,7 +145,7 @@ const DeveloperTools = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-green-500/30 text-[var(--white)] hover:bg-green-800/30">
+          <Button size="lg" variant="outline" className="border-white/20 text-[var(--white)] hover:bg-white/10">
             <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Github className="mr-2 h-5 w-5" /> View All Projects
             </a>

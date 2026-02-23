@@ -12,22 +12,22 @@ import {
 
 const benefits = [
   {
-    icon: <Zap className="h-6 w-6 text-yellow-400" />,
+    icon: <Zap className="h-6 w-6 text-white/60" />,
     title: "Precision Monitoring",
     description: "Identify exactly where and why issues occur in real-time."
   },
   {
-    icon: <Target className="h-6 w-6 text-red-400" />,
+    icon: <Target className="h-6 w-6 text-white/70" />,
     title: "Faster Debugging",
     description: "Detailed traces and logs provide the clarity needed for rapid resolution."
   },
   {
-    icon: <Lightbulb className="h-6 w-6 text-amber-400" />,
+    icon: <Lightbulb className="h-6 w-6 text-white/60" />,
     title: "Optimized User Experiences",
     description: "Understand user behavior deeply, driving improvements that matter."
   },
   {
-    icon: <BarChart4 className="h-6 w-6 text-green-400" />,
+    icon: <BarChart4 className="h-6 w-6 text-white/70" />,
     title: "Informed Decisions",
     description: "Reliable analytics and predictive insights empower smarter product and operational decisions."
   }

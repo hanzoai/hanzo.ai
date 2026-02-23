@@ -19,24 +19,24 @@ const UnifiedAISection = () => {
             className="relative aspect-square max-w-[500px] mx-auto lg:mx-0"
           >
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full h-full max-w-[400px] max-h-[400px] rounded-2xl border border-[#ffffff]/20 rotate-45 transform-gpu" />
-              <div className="absolute w-[90%] h-[90%] rounded-2xl border border-[#ff6b6b]/20 rotate-[30deg] transform-gpu" />
+              <div className="w-full h-full max-w-[400px] max-h-[400px] rounded-2xl border border-white/20 rotate-45 transform-gpu" />
+              <div className="absolute w-[90%] h-[90%] rounded-2xl border border-white/20 rotate-[30deg] transform-gpu" />
               <div className="absolute w-[80%] h-[80%] rounded-2xl border border-neutral-500/20 rotate-[15deg] transform-gpu" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2/3 h-2/3 bg-gradient-to-r from-[#ffffff]/10 to-[#ff6b6b]/10 rounded-xl blur-lg" />
+                <div className="w-2/3 h-2/3 bg-gradient-to-r from-white/10 to-white/10 rounded-xl blur-lg" />
               </div>
 
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 z-10">
                 <div className="bg-[#030014]/80 backdrop-blur-sm border border-white/10 rounded-xl p-3 w-full max-w-[300px] flex items-center">
-                  <div className="p-2 rounded-lg bg-[#ffffff]/20 mr-3">
-                    <Layers className="h-5 w-5 text-[#ffffff]" />
+                  <div className="p-2 rounded-lg bg-white/20 mr-3">
+                    <Layers className="h-5 w-5 text-white" />
                   </div>
                   <span className="text-white">AI Cloud</span>
                 </div>
                 <div className="bg-[#030014]/80 backdrop-blur-sm border border-white/10 rounded-xl p-3 w-full max-w-[300px] flex items-center">
-                  <div className="p-2 rounded-lg bg-[#ff6b6b]/20 mr-3">
-                    <Code className="h-5 w-5 text-[#ff6b6b]" />
+                  <div className="p-2 rounded-lg bg-white/20 mr-3">
+                    <Code className="h-5 w-5 text-white/70" />
                   </div>
                   <span className="text-white">Developer Tools</span>
                 </div>
@@ -63,8 +63,8 @@ const UnifiedAISection = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-medium text-white mb-2 flex items-center">
-                  <div className="p-1 rounded-lg bg-[#ffffff]/20 mr-2 flex items-center justify-center">
-                    <Puzzle className="h-4 w-4 text-[#ffffff]" />
+                  <div className="p-1 rounded-lg bg-white/20 mr-2 flex items-center justify-center">
+                    <Puzzle className="h-4 w-4 text-white" />
                   </div>
                   Human + AI Collaboration
                 </h3>
@@ -76,8 +76,8 @@ const UnifiedAISection = () => {
 
               <div>
                 <h3 className="text-xl font-medium text-white mb-2 flex items-center">
-                  <div className="p-1 rounded-lg bg-[#ff6b6b]/20 mr-2 flex items-center justify-center">
-                    <Layers className="h-4 w-4 text-[#ff6b6b]" />
+                  <div className="p-1 rounded-lg bg-white/20 mr-2 flex items-center justify-center">
+                    <Layers className="h-4 w-4 text-white/70" />
                   </div>
                   Modular & Open
                 </h3>
@@ -104,7 +104,7 @@ const UnifiedAISection = () => {
             <div className="mt-10">
               <Link
                 href="/platform"
-                className="inline-flex items-center text-[#ffffff] hover:text-[#ff6b6b] font-medium transition-colors"
+                className="inline-flex items-center text-white hover:text-white/70 font-medium transition-colors"
               >
                 Explore the Platform
                 <ArrowRight className="ml-2 h-4 w-4" />

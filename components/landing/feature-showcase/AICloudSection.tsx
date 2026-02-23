@@ -16,7 +16,7 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
     <div className="mb-20">
       <SectionHeader
         badge="AI Cloud"
-        badgeColor="bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ff6b6b]"
+        badgeColor="bg-white/20 border border-white/30 text-white/70"
         title="Scalable Infrastructure for AI Applications"
         description="Build high-performance AI applications with our suite of cloud services designed for AI workloads."
       />
@@ -35,10 +35,10 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <div className="h-full">
                   <ProductCard
-                    icon={<product.icon className="text-[#ffffff]" />}
+                    icon={<product.icon className="text-white" />}
                     title={product.name}
                     description={product.description}
-                    color="bg-[#ffffff]/20"
+                    color="bg-white/20"
                     hoverColor="bg-[#cccccc]/40"
                     link={product.link || "#"}
                   />
@@ -60,10 +60,10 @@ const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
             {products.map((product, index) => (
               <div key={index} className="w-[300px] flex-shrink-0">
                 <ProductCard
-                  icon={<product.icon className="text-[#ffffff]" />}
+                  icon={<product.icon className="text-white" />}
                   title={product.name}
                   description={product.description}
-                  color="bg-[#ffffff]/20"
+                  color="bg-white/20"
                   hoverColor="bg-[#cccccc]/40"
                   link={product.link || "#"}
                 />

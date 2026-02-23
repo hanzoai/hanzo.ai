@@ -22,10 +22,10 @@ const UnifiedAICloud: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="bg-gradient-to-br from-[#ffffff]/20 to-[#ffffff]/5 p-6 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40 transition-all duration-300"
+          className="bg-gradient-to-br from-white/20 to-white/5 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
         >
-          <div className="bg-[#ffffff]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <Users className="h-6 w-6 text-[#ffffff]" />
+          <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <Users className="h-6 w-6 text-white" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Enterprise Infrastructure</h3>
           <p className="text-neutral-300">
@@ -39,10 +39,10 @@ const UnifiedAICloud: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="bg-gradient-to-br from-[#ffffff]/15 to-[#ffffff]/5 p-6 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40 transition-all duration-300"
+          className="bg-gradient-to-br from-white/15 to-white/5 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
         >
-          <div className="bg-[#ffffff]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <BookOpen className="h-6 w-6 text-[#ffffff]" />
+          <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <BookOpen className="h-6 w-6 text-white" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Developer Experience</h3>
           <p className="text-neutral-300">
@@ -56,10 +56,10 @@ const UnifiedAICloud: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="bg-gradient-to-br from-[#ff6b6b]/20 to-[#ff6b6b]/5 p-6 rounded-xl border border-[#ff6b6b]/20 hover:border-[#ff6b6b]/40 transition-all duration-300"
+          className="bg-gradient-to-br from-white/20 to-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
         >
-          <div className="bg-[#ff6b6b]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <Shield className="h-6 w-6 text-[#ff6b6b]" />
+          <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <Shield className="h-6 w-6 text-white/70" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-[var(--white)]">Expert Services</h3>
           <p className="text-neutral-300">
@@ -70,7 +70,7 @@ const UnifiedAICloud: React.FC = () => {
       </div>
       
       <div className="text-center">
-        <Button asChild size="lg" className="bg-[#ffffff] hover:bg-[#cccccc]">
+        <Button asChild size="lg" className="bg-white hover:bg-[#cccccc]">
           <Link href="/cloud">
             Explore Our AI Cloud Platform <ChevronRight className="ml-2 h-5 w-5" />
           </Link>

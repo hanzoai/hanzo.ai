@@ -92,7 +92,7 @@ const DeveloperFirst = () => {
   
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--tw-gradient-stops))] from-[#ffffff]/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -117,27 +117,27 @@ const DeveloperFirst = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center mb-5">
-                <Layers className="h-6 w-6 text-[#ffffff] mr-3" />
+                <Layers className="h-6 w-6 text-white mr-3" />
                 <h3 className="text-2xl font-bold">Designed for Developers</h3>
               </div>
               
               <ul className="space-y-4 mb-8">
                 <li className="flex">
-                  <div className="mr-3 text-[#ffffff]">•</div>
+                  <div className="mr-3 text-white">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">OpenTelemetry Integration</span>
                     <p className="text-neutral-400 mt-1">Seamlessly integrate with your existing observability stack.</p>
                   </div>
                 </li>
                 <li className="flex">
-                  <div className="mr-3 text-[#ffffff]">•</div>
+                  <div className="mr-3 text-white">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">API-first, highly customizable</span>
                     <p className="text-neutral-400 mt-1">Build exactly what you need with our flexible API.</p>
                   </div>
                 </li>
                 <li className="flex">
-                  <div className="mr-3 text-[#ffffff]">•</div>
+                  <div className="mr-3 text-white">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">Robust documentation and code examples</span>
                     <p className="text-neutral-400 mt-1">Comprehensive guides and examples to get you started quickly.</p>

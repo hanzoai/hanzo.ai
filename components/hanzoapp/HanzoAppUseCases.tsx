@@ -30,8 +30,8 @@ const HanzoAppUseCases = () => {
             transition={{ duration: 0.5 }}
             className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 h-full"
           >
-            <div className="h-14 w-14 rounded-xl bg-[#ffffff]/20 flex items-center justify-center mb-6">
-              <ShoppingCart className="h-7 w-7 text-[#ffffff]" />
+            <div className="h-14 w-14 rounded-xl bg-white/20 flex items-center justify-center mb-6">
+              <ShoppingCart className="h-7 w-7 text-white" />
             </div>
             <h3 className="text-2xl font-semibold mb-4">ProductCatalog</h3>
             <p className="text-neutral-300">

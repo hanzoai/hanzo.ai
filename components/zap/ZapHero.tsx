@@ -33,10 +33,10 @@ const ZapHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 mb-8"
         >
-          <Zap className="w-4 h-4 text-green-500" />
-          <span className="text-sm font-medium text-green-400">Zero-Copy Agent Protocol</span>
+          <Zap className="w-4 h-4 text-white/70" />
+          <span className="text-sm font-medium text-white/70">Zero-Copy Agent Protocol</span>
         </motion.div>
 
         {/* Headline */}
@@ -46,7 +46,7 @@ const ZapHero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold mb-6"
         >
-          <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-white/20 to-white/10 bg-clip-text text-transparent">
             ZAP
           </span>
         </motion.h1>
@@ -78,19 +78,19 @@ const ZapHero = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
         >
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-            <div className="text-2xl font-bold text-green-500">40–50×</div>
+            <div className="text-2xl font-bold text-white/70">40–50×</div>
             <div className="text-sm text-neutral-400">Lower overhead</div>
           </div>
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-            <div className="text-2xl font-bold text-green-500">↓ Infra</div>
+            <div className="text-2xl font-bold text-white/70">↓ Infra</div>
             <div className="text-sm text-neutral-400">RAM + CPU</div>
           </div>
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-            <div className="text-2xl font-bold text-green-500">&lt; 1 μs</div>
+            <div className="text-2xl font-bold text-white/70">&lt; 1 μs</div>
             <div className="text-sm text-neutral-400">Local hop</div>
           </div>
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-            <div className="text-2xl font-bold text-green-500">0</div>
+            <div className="text-2xl font-bold text-white/70">0</div>
             <div className="text-sm text-neutral-400">JSON parsing</div>
           </div>
         </motion.div>
@@ -104,7 +104,7 @@ const ZapHero = () => {
         >
           <a
             href="https://zap-proto.github.io/zap/docs"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text-black font-medium rounded-full transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-black font-medium rounded-full transition-colors"
           >
             Get Started
             <ArrowRight className="w-4 h-4" />

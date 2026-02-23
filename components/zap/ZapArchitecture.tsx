@@ -40,7 +40,7 @@ const ZapArchitecture = () => {
 │                          │                                       │
 │                          ▼                                       │
 │              ┌───────────────────────┐                           │
-│              │      `}<span className="text-green-400">ZAP Gateway</span>{`       │                           │
+│              │      `}<span className="text-white/70">ZAP Gateway</span>{`       │                           │
 │              │   zap://localhost:9999│                           │
 │              │                       │                           │
 │              │  • Schema Federation  │                           │
@@ -52,7 +52,7 @@ const ZapArchitecture = () => {
 │       │                  │                  │                    │
 │       ▼                  ▼                  ▼                    │
 │  ┌─────────┐       ┌─────────┐       ┌─────────┐                │
-│  │`}<span className="text-blue-400">MCP Srv</span>{` │       │`}<span className="text-green-400">ZAP Srv</span>{` │       │`}<span className="text-blue-400">MCP Srv</span>{` │                │
+│  │`}<span className="text-white/70">MCP Srv</span>{` │       │`}<span className="text-white/70">ZAP Srv</span>{` │       │`}<span className="text-white/70">MCP Srv</span>{` │                │
 │  │ GitHub  │       │ Native  │       │ Slack   │    ...         │
 │  └─────────┘       └─────────┘       └─────────┘                │
 └─────────────────────────────────────────────────────────────────┘`}
@@ -67,15 +67,15 @@ const ZapArchitecture = () => {
           className="grid md:grid-cols-3 gap-6 mt-8"
         >
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-500 mb-2">N:1</div>
+            <div className="text-3xl font-bold text-white/70 mb-2">N:1</div>
             <div className="text-neutral-400">Agents share one connection</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-500 mb-2">1:M</div>
+            <div className="text-3xl font-bold text-white/70 mb-2">1:M</div>
             <div className="text-neutral-400">Gateway fans out to backends</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-500 mb-2">0</div>
+            <div className="text-3xl font-bold text-white/70 mb-2">0</div>
             <div className="text-neutral-400">Duplicate tool processes</div>
           </div>
         </motion.div>

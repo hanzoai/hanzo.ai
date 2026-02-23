@@ -16,7 +16,7 @@ const PlatformTabs: React.FC<PlatformTabsProps> = ({ activeTab, setActiveTab }) 
         onClick={() => setActiveTab("platform")}
         className={`px-4 py-2 rounded-t-lg whitespace-nowrap ${
           activeTab === "platform"
-            ? "text-[var(--white)] border-b-2 border-[#ffffff]"
+            ? "text-[var(--white)] border-b-2 border-white"
             : "text-neutral-400 hover:text-[var(--white)]"
         }`}
       >
@@ -26,7 +26,7 @@ const PlatformTabs: React.FC<PlatformTabsProps> = ({ activeTab, setActiveTab }) 
         onClick={() => setActiveTab("capabilities")}
         className={`px-4 py-2 rounded-t-lg whitespace-nowrap ${
           activeTab === "capabilities"
-            ? "text-[var(--white)] border-b-2 border-[#ffffff]"
+            ? "text-[var(--white)] border-b-2 border-white"
             : "text-neutral-400 hover:text-[var(--white)]"
         }`}
       >
@@ -36,7 +36,7 @@ const PlatformTabs: React.FC<PlatformTabsProps> = ({ activeTab, setActiveTab }) 
         onClick={() => setActiveTab("solutions")}
         className={`px-4 py-2 rounded-t-lg whitespace-nowrap ${
           activeTab === "solutions"
-            ? "text-[var(--white)] border-b-2 border-[#ffffff]"
+            ? "text-[var(--white)] border-b-2 border-white"
             : "text-neutral-400 hover:text-[var(--white)]"
         }`}
       >

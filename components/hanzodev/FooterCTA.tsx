@@ -88,7 +88,7 @@ const FooterCTA = () => {
               className="text-neutral-500 hover:text-white transition-colors"
             >
               {copied ? (
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-white/70" />
               ) : (
                 <Copy className="h-4 w-4" />
               )}

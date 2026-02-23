@@ -82,15 +82,15 @@ const HowItWorks = () => {
                   <div className="bg-neutral-900/80 border border-neutral-800 rounded-xl p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-white/10" />
+                        <div className="w-3 h-3 rounded-full bg-white/10" />
+                        <div className="w-3 h-3 rounded-full bg-white/10" />
                       </div>
                       <span className="text-xs text-neutral-500 font-mono">terminal</span>
                     </div>
                     <div className="font-mono text-sm">
                       <span className="text-neutral-500">$ </span>
-                      <span className="text-green-400">{step.code}</span>
+                      <span className="text-white/70">{step.code}</span>
                     </div>
                   </div>
                 </div>

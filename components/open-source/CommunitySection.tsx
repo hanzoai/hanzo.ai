@@ -33,14 +33,14 @@ const CommunitySection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 text-center"
           >
-            <div className="bg-green-500/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Users className="h-8 w-8 text-green-400" />
+            <div className="bg-white/5 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Users className="h-8 w-8 text-white/70" />
             </div>
             <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Discord Community</h3>
             <p className="text-neutral-300 mb-6">
               Join 12,000+ developers discussing Hanzo projects and AI development.
             </p>
-            <Button className="w-full bg-[#ffffff] hover:bg-[#cccccc]" size="sm">
+            <Button className="w-full bg-white hover:bg-[#cccccc]" size="sm">
               <a href="https://discord.gg/XthHQQj" target="_blank" rel="noopener noreferrer">Join Discord</a>
             </Button>
           </motion.div>
@@ -52,8 +52,8 @@ const CommunitySection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 text-center"
           >
-            <div className="bg-green-500/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Github className="h-8 w-8 text-green-400" />
+            <div className="bg-white/5 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Github className="h-8 w-8 text-white/70" />
             </div>
             <h3 className="text-xl font-semibold text-[var(--white)] mb-3">GitHub Discussions</h3>
             <p className="text-neutral-300 mb-6">
@@ -71,14 +71,14 @@ const CommunitySection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-gray-900/60 rounded-xl border border-gray-800 p-6 text-center"
           >
-            <div className="bg-green-500/10 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Code className="h-8 w-8 text-green-400" />
+            <div className="bg-white/5 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Code className="h-8 w-8 text-white/70" />
             </div>
             <h3 className="text-xl font-semibold text-[var(--white)] mb-3">Contribute</h3>
             <p className="text-neutral-300 mb-6">
               Help us improve Hanzo by contributing code, documentation, or ideas.
             </p>
-            <Button className="w-full bg-green-600 hover:bg-green-700" size="sm">
+            <Button className="w-full bg-white/10 hover:bg-white/10" size="sm">
               <a href="https://github.com/hanzoai/platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributor Guide</a>
             </Button>
           </motion.div>

@@ -40,7 +40,7 @@ const DeploymentOptions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
           >
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -54,20 +54,20 @@ const DeploymentOptions = () => {
             </p>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> Docker & Kubernetes ready
+                <span className="text-white">✓</span> Docker & Kubernetes ready
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> Air-gapped deployments
+                <span className="text-white">✓</span> Air-gapped deployments
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> No external dependencies
+                <span className="text-white">✓</span> No external dependencies
               </li>
             </ul>
             <a
               href="https://github.com/hanzoai/platform"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center mt-6 text-sm text-[#ffffff] hover:text-[#fd6666]"
+              className="inline-flex items-center mt-6 text-sm text-white hover:text-white/70"
             >
               <Github className="w-4 h-4 mr-2" />
               View on GitHub
@@ -80,7 +80,7 @@ const DeploymentOptions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
           >
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -94,18 +94,18 @@ const DeploymentOptions = () => {
             </p>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> 35+ global regions
+                <span className="text-white">✓</span> 35+ global regions
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> Zero-config deployments
+                <span className="text-white">✓</span> Zero-config deployments
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> 99.999% SLA
+                <span className="text-white">✓</span> 99.999% SLA
               </li>
             </ul>
             <Link
               href="/cloud"
-              className="inline-flex items-center mt-6 text-sm text-[#ffffff] hover:text-[#ff6b6b]"
+              className="inline-flex items-center mt-6 text-sm text-white hover:text-white/70"
             >
               Explore Cloud
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -118,7 +118,7 @@ const DeploymentOptions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+            className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
           >
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -132,18 +132,18 @@ const DeploymentOptions = () => {
             </p>
             <ul className="space-y-2 text-sm text-neutral-500">
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> Data residency compliance
+                <span className="text-white">✓</span> Data residency compliance
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> Edge + origin architecture
+                <span className="text-white">✓</span> Edge + origin architecture
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#ffffff]">✓</span> Unified management
+                <span className="text-white">✓</span> Unified management
               </li>
             </ul>
             <Link
               href="/enterprise"
-              className="inline-flex items-center mt-6 text-sm text-[#ffffff] hover:text-[#ff6b6b]"
+              className="inline-flex items-center mt-6 text-sm text-white hover:text-white/70"
             >
               Contact Sales
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -175,7 +175,7 @@ const OpenSourceBenefits = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <Code2 className="h-10 w-10 text-[#ffffff]" />
+              <Code2 className="h-10 w-10 text-white" />
               <h4 className="text-lg font-bold text-white">MIT Licensed</h4>
               <p className="text-neutral-400 text-sm">
                 Use it commercially, modify it freely. No vendor lock-in, no surprise licensing changes.
@@ -183,7 +183,7 @@ const OpenSourceBenefits = () => {
             </div>
 
             <div className="space-y-4">
-              <Lock className="h-10 w-10 text-[#ffffff]" />
+              <Lock className="h-10 w-10 text-white" />
               <h4 className="text-lg font-bold text-white">Data Sovereignty</h4>
               <p className="text-neutral-400 text-sm">
                 Your code, your data, your infrastructure. Complete control over your stack.
@@ -191,7 +191,7 @@ const OpenSourceBenefits = () => {
             </div>
 
             <div className="space-y-4">
-              <Terminal className="h-10 w-10 text-[#ffffff]" />
+              <Terminal className="h-10 w-10 text-white" />
               <h4 className="text-lg font-bold text-white">Developer First</h4>
               <p className="text-neutral-400 text-sm">
                 Built by developers, for developers. Extensive docs, active community, responsive maintainers.

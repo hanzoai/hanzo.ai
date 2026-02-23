@@ -15,12 +15,12 @@ const CloudInfrastructure = () => {
       
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div 
-          className="relative h-20 w-20 rounded-xl bg-gray-900/70 border border-[#ffffff]/30 flex items-center justify-center z-30"
+          className="relative h-20 w-20 rounded-xl bg-gray-900/70 border border-white/30 flex items-center justify-center z-30"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <BrainCog className="h-8 w-8 text-[#ffffff]" />
+          <BrainCog className="h-8 w-8 text-white" />
         </motion.div>
         
         {[...Array(6)].map((_, i) => {
@@ -29,12 +29,12 @@ const CloudInfrastructure = () => {
           const x = Math.cos(angle) * distance;
           const y = Math.sin(angle) * distance;
           const icons = [
-            <Cloud key={0} className="h-5 w-5 text-[#ffffff]" />,
-            <Server key={1} className="h-5 w-5 text-[#ffffff]" />,
-            <Database key={2} className="h-5 w-5 text-[#ffffff]" />,
-            <Monitor key={3} className="h-5 w-5 text-[#ffffff]" />,
-            <Network key={4} className="h-5 w-5 text-[#ffffff]" />,
-            <Activity key={5} className="h-5 w-5 text-[#ffffff]" />
+            <Cloud key={0} className="h-5 w-5 text-white" />,
+            <Server key={1} className="h-5 w-5 text-white" />,
+            <Database key={2} className="h-5 w-5 text-white" />,
+            <Monitor key={3} className="h-5 w-5 text-white" />,
+            <Network key={4} className="h-5 w-5 text-white" />,
+            <Activity key={5} className="h-5 w-5 text-white" />
           ];
           
           return (
@@ -75,7 +75,7 @@ const CloudInfrastructure = () => {
           return (
             <motion.div
               key={`line-${i}`}
-              className="absolute h-0.5 bg-gradient-to-r from-[#ffffff]/60 to-[#ffffff]/10"
+              className="absolute h-0.5 bg-gradient-to-r from-white/60 to-white/10"
               style={{
                 width: 80,
                 transformOrigin: "left center",
@@ -107,7 +107,7 @@ const CloudInfrastructure = () => {
           return (
             <motion.div
               key={`particle-${i}`}
-              className="absolute h-1.5 w-1.5 rounded-full bg-[#ffffff]"
+              className="absolute h-1.5 w-1.5 rounded-full bg-white"
               style={{
                 left: "50%",
                 top: "50%",

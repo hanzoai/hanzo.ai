@@ -109,10 +109,10 @@ const ZenManifesto: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-[#ffffff]/20 rounded-lg p-6"
+              className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-white/20 rounded-lg p-6"
             >
               <div className="flex items-center mb-3">
-                <div className="text-3xl text-[#ffffff] font-semibold mr-3">{principle.japaneseSymbol}</div>
+                <div className="text-3xl text-white font-semibold mr-3">{principle.japaneseSymbol}</div>
                 <h3 className="text-xl text-[var(--white)] font-bold">{principle.title}</h3>
               </div>
               <p className="text-neutral-300">{principle.description}</p>
@@ -127,7 +127,7 @@ const ZenManifesto: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-6 bg-[var(--black)]/30 backdrop-blur-sm border border-[#ffffff]/20 rounded-lg">
+          <div className="inline-block p-6 bg-[var(--black)]/30 backdrop-blur-sm border border-white/20 rounded-lg">
             <h3 className="text-xl text-[var(--white)] font-bold mb-2">Crafted by Innovators, Proven by Scale</h3>
             <p className="text-neutral-300">
               The Zen of Hanzo is our battle-tested ethos. Born from the crucible of high-stakes launches,

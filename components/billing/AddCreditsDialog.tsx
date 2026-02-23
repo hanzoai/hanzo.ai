@@ -77,7 +77,7 @@ const AddCreditsDialog = ({ isOpen, onClose }: AddCreditsDialogProps) => {
               type="button"
               variant="outline"
               className={`${
-                creditAmount === amount ? 'border-[#ffffff] bg-red-900/20' : ''
+                creditAmount === amount ? 'border-white bg-white/10' : ''
               }`}
               onClick={() => setCreditAmount(amount)}
             >

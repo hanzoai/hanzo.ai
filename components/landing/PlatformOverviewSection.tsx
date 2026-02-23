@@ -200,17 +200,17 @@ const PlatformOverviewSection = () => {
                   onClick={() => setActiveMode(mode.id)}
                   className={`p-5 rounded-xl border text-left transition-all ${
                     isActive
-                      ? "border-[#ffffff] bg-[#ffffff]/10"
+                      ? "border-white bg-white/10"
                       : "border-neutral-800 bg-neutral-900/50 hover:border-neutral-700"
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        isActive ? "bg-[#ffffff]/20" : "bg-neutral-800"
+                        isActive ? "bg-white/20" : "bg-neutral-800"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${isActive ? "text-[#ffffff]" : "text-neutral-400"}`} />
+                      <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-neutral-400"}`} />
                     </div>
                     <div>
                       <h3 className={`text-sm font-semibold mb-1 ${isActive ? "text-white" : "text-neutral-300"}`}>
@@ -222,7 +222,7 @@ const PlatformOverviewSection = () => {
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="mt-3 flex items-center text-[#ffffff] text-xs font-medium"
+                      className="mt-3 flex items-center text-white text-xs font-medium"
                     >
                       <ChevronRight className="w-3 h-3 mr-1" />
                       Selected

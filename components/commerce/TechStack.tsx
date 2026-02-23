@@ -10,7 +10,7 @@ interface TechCardProps {
 
 const TechCard = ({ icon, title, description }: TechCardProps) => {
   return (
-    <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 hover:border-amber-500/30 transition-all duration-300">
+    <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 hover:border-white/20 transition-all duration-300">
       <div className="mb-4">
         {icon}
       </div>
@@ -23,32 +23,32 @@ const TechCard = ({ icon, title, description }: TechCardProps) => {
 const TechStack = () => {
   const techItems = [
     {
-      icon: <Server className="h-8 w-8 text-amber-400" />,
+      icon: <Server className="h-8 w-8 text-white/60" />,
       title: "Cloud-Native Architecture",
       description: "Built on serverless infrastructure that scales automatically with your business demands."
     },
     {
-      icon: <Database className="h-8 w-8 text-amber-400" />,
+      icon: <Database className="h-8 w-8 text-white/60" />,
       title: "Real-time Data",
       description: "Access to real-time inventory, pricing, and customer data across all sales channels."
     },
     {
-      icon: <Shield className="h-8 w-8 text-amber-400" />,
+      icon: <Shield className="h-8 w-8 text-white/60" />,
       title: "Enterprise Security",
       description: "Payment-grade security with encryption at rest and in transit for all sensitive data."
     },
     {
-      icon: <Zap className="h-8 w-8 text-amber-400" />,
+      icon: <Zap className="h-8 w-8 text-white/60" />,
       title: "High Performance",
       description: "Low latency APIs with global CDN distribution for lightning-fast experiences."
     },
     {
-      icon: <Layers className="h-8 w-8 text-amber-400" />,
+      icon: <Layers className="h-8 w-8 text-white/60" />,
       title: "Composable Architecture",
       description: "Mix and match components to create custom solutions tailored to your specific needs."
     },
     {
-      icon: <GitBranch className="h-8 w-8 text-amber-400" />,
+      icon: <GitBranch className="h-8 w-8 text-white/60" />,
       title: "Developer Workflow",
       description: "Full CI/CD support with staging environments and version control integration."
     }

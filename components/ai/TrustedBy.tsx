@@ -66,7 +66,7 @@ const TrustedBy = () => {
                 {[...Array(5)].map((_, i) => (
                   <svg 
                     key={i} 
-                    className="h-5 w-5 text-yellow-400" 
+                    className="h-5 w-5 text-white/60" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -80,7 +80,7 @@ const TrustedBy = () => {
               "Hanzo's AI platform has transformed our ability to ship AI features quickly. What used to take months now takes days."
             </p>
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-[#ffffff]/30 flex items-center justify-center text-[#ff6b6b] font-bold">JD</div>
+              <div className="h-10 w-10 rounded-full bg-white/30 flex items-center justify-center text-white/70 font-bold">JD</div>
               <div className="ml-3">
                 <div className="text-[var(--white)] font-medium">Jane Doe</div>
                 <div className="text-neutral-400 text-sm">CTO, TechInnovate</div>
@@ -94,7 +94,7 @@ const TrustedBy = () => {
                 {[...Array(5)].map((_, i) => (
                   <svg 
                     key={i} 
-                    className="h-5 w-5 text-yellow-400" 
+                    className="h-5 w-5 text-white/60" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -108,7 +108,7 @@ const TrustedBy = () => {
               "The observability features are game-changing. We finally have full visibility into our AI systems in production."
             </p>
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-[#ffffff]/30 flex items-center justify-center text-[#ff6b6b] font-bold">MS</div>
+              <div className="h-10 w-10 rounded-full bg-white/30 flex items-center justify-center text-white/70 font-bold">MS</div>
               <div className="ml-3">
                 <div className="text-[var(--white)] font-medium">Michael Smith</div>
                 <div className="text-neutral-400 text-sm">AI Lead, EnterpriseAI</div>
@@ -122,7 +122,7 @@ const TrustedBy = () => {
                 {[...Array(5)].map((_, i) => (
                   <svg 
                     key={i} 
-                    className="h-5 w-5 text-yellow-400" 
+                    className="h-5 w-5 text-white/60" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -136,7 +136,7 @@ const TrustedBy = () => {
               "Our team went from prototype to production in just days. The SDK is intuitive and the documentation is excellent."
             </p>
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-[#ffffff]/30 flex items-center justify-center text-[#ff6b6b] font-bold">EJ</div>
+              <div className="h-10 w-10 rounded-full bg-white/30 flex items-center justify-center text-white/70 font-bold">EJ</div>
               <div className="ml-3">
                 <div className="text-[var(--white)] font-medium">Emma Johnson</div>
                 <div className="text-neutral-400 text-sm">VP Engineering, StartupX</div>

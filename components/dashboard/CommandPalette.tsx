@@ -187,7 +187,7 @@ const CommandPalette: React.FC = () => {
                     <span className="text-neutral-500 text-xs">{`(${agent.type})`}</span>
                   </div>
                   {agent.status === "running" ? (
-                    <PauseCircle className="h-4 w-4 text-green-500" />
+                    <PauseCircle className="h-4 w-4 text-white/70" />
                   ) : (
                     <PlayCircle className="h-4 w-4 text-neutral-400" />
                   )}

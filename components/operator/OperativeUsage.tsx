@@ -10,7 +10,7 @@ const OperativeUsage = () => {
   return (
     <section className="py-24 bg-gray-950 relative overflow-hidden" id="get-started">
       {/* Background gradient */}
-      <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">

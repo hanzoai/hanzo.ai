@@ -32,13 +32,13 @@ const KanbanBoard = () => {
     {
       id: "in-progress",
       title: "In Progress",
-      icon: <Zap className="h-4 w-4 text-yellow-500" />,
+      icon: <Zap className="h-4 w-4 text-white/60" />,
       tasks: tasks.filter(task => task.status === "in-progress")
     },
     {
       id: "done",
       title: "Done",
-      icon: <CheckCircle className="h-4 w-4 text-green-500" />,
+      icon: <CheckCircle className="h-4 w-4 text-white/70" />,
       tasks: tasks.filter(task => task.status === "done")
     }
   ];

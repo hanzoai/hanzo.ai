@@ -15,10 +15,10 @@ const HanzoCodeFrontier = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-[#ffffff]/20 via-[#ff6b6b]/10 to-[#ffffff]/15 rounded-xl overflow-hidden border border-[#ffffff]/20"
+            className="bg-gradient-to-br from-white/20 via-white/10 to-white/15 rounded-xl overflow-hidden border border-white/20"
           >
             <div className="p-8 flex flex-col items-center justify-center h-full min-h-80">
-              <Brain className="h-16 w-16 text-[#ffffff] mb-6" />
+              <Brain className="h-16 w-16 text-white mb-6" />
               <div className="text-3xl font-bold text-center mb-4">
                 Frontier Intelligence
               </div>
@@ -27,19 +27,19 @@ const HanzoCodeFrontier = () => {
               </div>
               <div className="grid grid-cols-2 gap-4 mt-8 w-full">
                 <div className="bg-[var(--black)]/30 rounded-lg p-4 flex items-center">
-                  <Cpu className="h-5 w-5 text-[#ffffff] mr-3" />
+                  <Cpu className="h-5 w-5 text-white mr-3" />
                   <span className="text-sm">Specialized Code Models</span>
                 </div>
                 <div className="bg-[var(--black)]/30 rounded-lg p-4 flex items-center">
-                  <FlaskConical className="h-5 w-5 text-[#ffffff] mr-3" />
+                  <FlaskConical className="h-5 w-5 text-white mr-3" />
                   <span className="text-sm">Research-Grade AI</span>
                 </div>
                 <div className="bg-[var(--black)]/30 rounded-lg p-4 flex items-center">
-                  <Sparkles className="h-5 w-5 text-[#ffffff] mr-3" />
+                  <Sparkles className="h-5 w-5 text-white mr-3" />
                   <span className="text-sm">Fine-tuned Reasoning</span>
                 </div>
                 <div className="bg-[var(--black)]/30 rounded-lg p-4 flex items-center">
-                  <Brain className="h-5 w-5 text-[#ffffff] mr-3" />
+                  <Brain className="h-5 w-5 text-white mr-3" />
                   <span className="text-sm">Continuous Learning</span>
                 </div>
               </div>
@@ -59,28 +59,28 @@ const HanzoCodeFrontier = () => {
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[#ffffff]">Multi-Model Architecture</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">Multi-Model Architecture</h3>
                 <p className="text-neutral-300">
                   Specialized models for different tasks: code generation, refactoring, debugging, testing, and optimization.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[#ffffff]">Coding-Specific Training</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">Coding-Specific Training</h3>
                 <p className="text-neutral-300">
                   Trained on billions of lines of code across all major languages, frameworks, and architectural patterns.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[#ffffff]">Adaptive Intelligence</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">Adaptive Intelligence</h3>
                 <p className="text-neutral-300">
                   Learns from your codebase and coding style, becoming more personalized and effective over time.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-[#ffffff]">Edge Computing</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">Edge Computing</h3>
                 <p className="text-neutral-300">
                   Powerful models that can run locally for privacy, or leverage cloud infrastructure for more complex tasks.
                 </p>

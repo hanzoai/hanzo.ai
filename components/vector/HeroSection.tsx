@@ -18,13 +18,13 @@ const fadeInUpVariant = createAnimationVariant("fadeInBlur", {
 const HeroSection = () => {
   return (
     <AnimatedSection className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 to-red-900/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
       <AnimatedStaggerContainer className="max-w-5xl mx-auto text-center relative z-10" delayFactor={0.07}>
         <AnimatedHeading>
-          <div className="inline-block px-4 py-1 rounded-full bg-red-900/30 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/30 text-white/70 text-sm font-medium mb-6">
             Vector Database for AI
           </div>
         </AnimatedHeading>
@@ -44,7 +44,7 @@ const HeroSection = () => {
           variants={buttonAnimation}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] border-none">
+          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white border-none">
             Get Started
           </Button>
           <Button size="lg" variant="outline" className="text-lg px-8">

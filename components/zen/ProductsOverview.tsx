@@ -12,7 +12,7 @@ import {
 
 const AICloudSVG = () => (
   <svg 
-    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-[#ffffff]" 
+    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-white" 
     viewBox="0 0 200 200" 
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ const AICloudSVG = () => (
 
 const DxPlatformSVG = () => (
   <svg 
-    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-[#ffffff]" 
+    className="absolute -bottom-10 -right-10 opacity-10 w-40 h-40 text-white" 
     viewBox="0 0 200 200" 
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
               <>
                 <div className="mb-6">
                   <h3 className="text-2xl font-medium text-white mb-2 flex items-center">
-                    <Cloud className="mr-2 h-6 w-6 text-[#ffffff]" />
+                    <Cloud className="mr-2 h-6 w-6 text-white" />
                     Hanzo AI Cloud
                   </h3>
                   <p className="text-neutral-400">
@@ -96,7 +96,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Brain className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Brain className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">AI Model Hub</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -111,7 +111,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Database className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Database className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">Vector Database</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -126,7 +126,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Bot className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Bot className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">Agent Framework</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -141,7 +141,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Lock className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Lock className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">Enterprise Security</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -156,7 +156,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                   </div>
                   <Link 
                     href="/ai" 
-                    className="text-[#ffffff] hover:text-[#ff6b6b] transition-colors text-sm flex items-center"
+                    className="text-white hover:text-white/70 transition-colors text-sm flex items-center"
                   >
                     <span>Learn more about AI Cloud</span>
                     <ArrowRight className="ml-2 h-3 w-3" />
@@ -167,7 +167,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
               <>
                 <div className="mb-6">
                   <h3 className="text-2xl font-medium text-white mb-2 flex items-center">
-                    <Code className="mr-2 h-6 w-6 text-[#ffffff]" />
+                    <Code className="mr-2 h-6 w-6 text-white" />
                     Developer Experience Platform
                   </h3>
                   <p className="text-neutral-400">
@@ -183,7 +183,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <GitBranch className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <GitBranch className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">CI/CD Pipeline</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -198,7 +198,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Terminal className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Terminal className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">Dev Tools</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -213,7 +213,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Zap className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Zap className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">Edge Computing</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -228,7 +228,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center mb-2">
-                      <Network className="h-5 w-5 text-[#ffffff] mr-2" />
+                      <Network className="h-5 w-5 text-white mr-2" />
                       <h4 className="text-white font-medium">Observability</h4>
                     </div>
                     <p className="text-neutral-400 text-sm">
@@ -243,7 +243,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                   </div>
                   <Link 
                     href="/platform" 
-                    className="text-[#ffffff] hover:text-[#ff6b6b] transition-colors text-sm flex items-center"
+                    className="text-white hover:text-white/70 transition-colors text-sm flex items-center"
                   >
                     <span>Learn more about DX Platform</span>
                     <ArrowRight className="ml-2 h-3 w-3" />
@@ -325,13 +325,13 @@ const ProductsOverview = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="relative overflow-hidden rounded-2xl border border-[#ffffff]/20 bg-gradient-to-br from-red-950/20 to-black p-6 cursor-pointer group"
+            className="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 to-black p-6 cursor-pointer group"
             onClick={() => setSelectedSystem('cloud')}
           >
             <div className="relative z-10">
               <div className="flex items-center mb-4">
-                <div className="p-2 rounded-xl bg-[#ffffff]/10 mr-4">
-                  <Cloud className="h-8 w-8 text-[#ffffff]" />
+                <div className="p-2 rounded-xl bg-white/10 mr-4">
+                  <Cloud className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white">AI Cloud</h3>
               </div>
@@ -342,13 +342,13 @@ const ProductsOverview = () => {
               </p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Vector DB</span>
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Multi-Model</span>
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Agents</span>
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Enterprise Ready</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Vector DB</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Multi-Model</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Agents</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Enterprise Ready</span>
               </div>
               
-              <button className="flex items-center text-[#ffffff] group-hover:text-[#ff6b6b] transition">
+              <button className="flex items-center text-white group-hover:text-white/70 transition">
                 <span>Explore AI Cloud</span>
                 <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </button>
@@ -357,7 +357,7 @@ const ProductsOverview = () => {
             <AICloudSVG />
             
             <motion.div 
-              className="absolute inset-0 bg-[#ffffff]/5 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
               initial={false}
               whileHover={{ opacity: 0.1 }}
             />
@@ -369,13 +369,13 @@ const ProductsOverview = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="relative overflow-hidden rounded-2xl border border-[#ffffff]/20 bg-gradient-to-br from-red-950/20 to-black p-6 cursor-pointer group"
+            className="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 to-black p-6 cursor-pointer group"
             onClick={() => setSelectedSystem('dx')}
           >
             <div className="relative z-10">
               <div className="flex items-center mb-4">
-                <div className="p-2 rounded-xl bg-[#ffffff]/10 mr-4">
-                  <Code className="h-8 w-8 text-[#ffffff]" />
+                <div className="p-2 rounded-xl bg-white/10 mr-4">
+                  <Code className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white">DX Platform</h3>
               </div>
@@ -386,13 +386,13 @@ const ProductsOverview = () => {
               </p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">CI/CD</span>
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Dev Tools</span>
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Edge</span>
-                <span className="px-2 py-1 bg-[#ffffff]/10 rounded-full text-xs text-[#ff6b6b]">Observability</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">CI/CD</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Dev Tools</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Edge</span>
+                <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/70">Observability</span>
               </div>
               
-              <button className="flex items-center text-[#ffffff] group-hover:text-[#ff6b6b] transition">
+              <button className="flex items-center text-white group-hover:text-white/70 transition">
                 <span>Explore DX Platform</span>
                 <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </button>
@@ -401,7 +401,7 @@ const ProductsOverview = () => {
             <DxPlatformSVG />
             
             <motion.div 
-              className="absolute inset-0 bg-[#ffffff]/5 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
               initial={false}
               whileHover={{ opacity: 0.1 }}
             />
@@ -454,7 +454,7 @@ const ProductsOverview = () => {
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex items-center px-6 py-3 bg-[var(--white)]/5 hover:bg-[var(--white)]/10 border border-white/10 rounded-xl text-[var(--white)] transition-all duration-300 hover:shadow-lg hover:shadow-red-900/10"
+            className="inline-flex items-center px-6 py-3 bg-[var(--white)]/5 hover:bg-[var(--white)]/10 border border-white/10 rounded-xl text-[var(--white)] transition-all duration-300 hover:shadow-lg hover:shadow-white/10"
           >
             Request Sensei Consultation
           </Link>

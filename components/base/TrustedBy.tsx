@@ -22,7 +22,7 @@ const TrustedBy = () => {
           className="text-center mb-10"
         >
           <h2 className="text-2xl font-semibold text-[var(--white)] mb-2">Trusted Worldwide</h2>
-          <div className="w-20 h-1 bg-[#ffffff] mx-auto"></div>
+          <div className="w-20 h-1 bg-white mx-auto"></div>
         </motion.div>
         
         <motion.div 
@@ -35,7 +35,7 @@ const TrustedBy = () => {
           {companies.map((company, index) => (
             <div 
               key={index} 
-              className="text-neutral-400 font-medium text-lg transition-colors hover:text-[#ffffff]"
+              className="text-neutral-400 font-medium text-lg transition-colors hover:text-white"
             >
               {company}
             </div>

@@ -7,7 +7,7 @@ import { Activity, Users, Zap, Cpu, Server, Network } from "lucide-react";
 
 const Scaling = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-red-950/10">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-white/10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,9 +30,9 @@ const Scaling = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gradient-to-br from-red-900/20 to-transparent rounded-xl border border-[#ffffff]/20 p-6"
+            className="bg-gradient-to-br from-white/20 to-transparent rounded-xl border border-white/20 p-6"
           >
-            <Activity className="h-8 w-8 text-[#ffffff] mb-4" />
+            <Activity className="h-8 w-8 text-white mb-4" />
             <h3 className="text-xl font-semibold text-[var(--white)] mb-2">High Throughput</h3>
             <p className="text-neutral-300">
               Process millions of messages per second with sub-millisecond latency.
@@ -45,7 +45,7 @@ const Scaling = () => {
                 <span className="text-[var(--white)] font-medium">Unlimited</span>
               </div>
               <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                <div className="bg-[#ffffff] h-full rounded-full" style={{ width: "100%" }}></div>
+                <div className="bg-white h-full rounded-full" style={{ width: "100%" }}></div>
               </div>
             </div>
           </motion.div>
@@ -55,9 +55,9 @@ const Scaling = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gradient-to-br from-red-900/20 to-transparent rounded-xl border border-[#ffffff]/20 p-6"
+            className="bg-gradient-to-br from-white/20 to-transparent rounded-xl border border-white/20 p-6"
           >
-            <Users className="h-8 w-8 text-[#ffffff] mb-4" />
+            <Users className="h-8 w-8 text-white mb-4" />
             <h3 className="text-xl font-semibold text-[var(--white)] mb-2">Concurrent Connections</h3>
             <p className="text-neutral-300">
               Support millions of simultaneous client connections with automatic
@@ -70,7 +70,7 @@ const Scaling = () => {
                 <span className="text-[var(--white)] font-medium">Millions+</span>
               </div>
               <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                <div className="bg-[#ffffff] h-full rounded-full" style={{ width: "95%" }}></div>
+                <div className="bg-white h-full rounded-full" style={{ width: "95%" }}></div>
               </div>
             </div>
           </motion.div>
@@ -80,9 +80,9 @@ const Scaling = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-gradient-to-br from-red-900/20 to-transparent rounded-xl border border-[#ffffff]/20 p-6"
+            className="bg-gradient-to-br from-white/20 to-transparent rounded-xl border border-white/20 p-6"
           >
-            <Network className="h-8 w-8 text-[#ffffff] mb-4" />
+            <Network className="h-8 w-8 text-white mb-4" />
             <h3 className="text-xl font-semibold text-[var(--white)] mb-2">Global Edge Network</h3>
             <p className="text-neutral-300">
               Deployed at the edge across 200+ locations worldwide, ensuring
@@ -95,7 +95,7 @@ const Scaling = () => {
                 <span className="text-[var(--white)] font-medium">200+ regions</span>
               </div>
               <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                <div className="bg-[#ffffff] h-full rounded-full" style={{ width: "90%" }}></div>
+                <div className="bg-white h-full rounded-full" style={{ width: "90%" }}></div>
               </div>
             </div>
           </motion.div>
@@ -109,7 +109,7 @@ const Scaling = () => {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           <div className="bg-[var(--black)]/40 rounded-lg border border-gray-800 p-4 flex items-center">
-            <Zap className="h-8 w-8 text-[#ffffff] mr-4" />
+            <Zap className="h-8 w-8 text-white mr-4" />
             <div>
               <h4 className="text-[var(--white)] font-medium">Auto-scaling</h4>
               <p className="text-neutral-400 text-sm">Scales automatically based on demand</p>
@@ -117,7 +117,7 @@ const Scaling = () => {
           </div>
 
           <div className="bg-[var(--black)]/40 rounded-lg border border-gray-800 p-4 flex items-center">
-            <Cpu className="h-8 w-8 text-[#ffffff] mr-4" />
+            <Cpu className="h-8 w-8 text-white mr-4" />
             <div>
               <h4 className="text-[var(--white)] font-medium">High Availability</h4>
               <p className="text-neutral-400 text-sm">99.999% uptime SLA guarantee</p>
@@ -125,7 +125,7 @@ const Scaling = () => {
           </div>
 
           <div className="bg-[var(--black)]/40 rounded-lg border border-gray-800 p-4 flex items-center">
-            <Server className="h-8 w-8 text-[#ffffff] mr-4" />
+            <Server className="h-8 w-8 text-white mr-4" />
             <div>
               <h4 className="text-[var(--white)] font-medium">Zero Management</h4>
               <p className="text-neutral-400 text-sm">No servers or infrastructure to manage</p>

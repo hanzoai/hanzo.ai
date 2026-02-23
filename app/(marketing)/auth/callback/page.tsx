@@ -66,12 +66,12 @@ const AuthCallbackInner = () => {
       <div className="text-center space-y-6">
         {error ? (
           <>
-            <div className="text-red-500 text-xl font-medium">{error}</div>
+            <div className="text-white/70 text-xl font-medium">{error}</div>
             <p className="text-neutral-400">Redirecting to login...</p>
           </>
         ) : (
           <>
-            <Loader2 className="w-12 h-12 animate-spin text-[#ffffff] mx-auto" />
+            <Loader2 className="w-12 h-12 animate-spin text-white mx-auto" />
             <h1 className="text-xl font-medium text-white">
               Completing authentication...
             </h1>

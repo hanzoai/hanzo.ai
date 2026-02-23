@@ -7,27 +7,27 @@ import { CreditCard, Calendar, Send, CreditCard as CardIcon, Coins } from "lucid
 
 const suiteItems = [
   {
-    icon: <CreditCard className="h-6 w-6 text-[#ffffff]" />,
+    icon: <CreditCard className="h-6 w-6 text-white" />,
     title: "Online Payments",
     description: "Flexible integration with any website, optimized checkouts, and local payment methods."
   },
   {
-    icon: <Calendar className="h-6 w-6 text-[#ffffff]" />,
+    icon: <Calendar className="h-6 w-6 text-white" />,
     title: "Subscriptions & Billing",
     description: "Automated subscription management, recurring billing, and multilingual invoicing."
   },
   {
-    icon: <Send className="h-6 w-6 text-[#ffffff]" />,
+    icon: <Send className="h-6 w-6 text-white" />,
     title: "Embedded Finance (Connect)",
     description: "Integrate end-to-end payment experiences for marketplaces and platforms, including streamlined payouts."
   },
   {
-    icon: <CardIcon className="h-6 w-6 text-[#ffffff]" />,
+    icon: <CardIcon className="h-6 w-6 text-white" />,
     title: "Issuing",
     description: "Create and manage physical and virtual cards for your teams or customers."
   },
   {
-    icon: <Coins className="h-6 w-6 text-[#ffffff]" />,
+    icon: <Coins className="h-6 w-6 text-white" />,
     title: "Capital",
     description: "Access financing options to fuel your growth."
   }
@@ -84,7 +84,7 @@ const PaymentsSuite = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative bg-gradient-to-br from-gray-900/50 to-red-900/20 border border-gray-800 rounded-xl p-8 overflow-hidden"
+          className="relative bg-gradient-to-br from-gray-900/50 to-white/10 border border-gray-800 rounded-xl p-8 overflow-hidden"
         >
           <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
@@ -92,15 +92,15 @@ const PaymentsSuite = () => {
               <h3 className="text-2xl font-bold mb-4">Optimized for Growth</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#ffffff]">•</span>
+                  <span className="text-white">•</span>
                   <span>Real-time analytics and detailed financial reporting.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#ffffff]">•</span>
+                  <span className="text-white">•</span>
                   <span>Forecast and predict revenues with built-in AI-driven analytics.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#ffffff]">•</span>
+                  <span className="text-white">•</span>
                   <span>Transparent pricing with no hidden fees.</span>
                 </li>
               </ul>
@@ -112,7 +112,7 @@ const PaymentsSuite = () => {
                   {[20, 35, 28, 45, 60, 75, 90].map((height, i) => (
                     <div 
                       key={i} 
-                      className="bg-gradient-to-t from-[#ffffff] to-[#ff6b6b] rounded-t w-6"
+                      className="bg-gradient-to-t from-white to-white/10 rounded-t w-6"
                       style={{height: `${height}%`}}
                     ></div>
                   ))}

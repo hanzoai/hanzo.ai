@@ -19,7 +19,7 @@ export const SolutionCategory = ({ title, items, onItemClick }: SolutionCategory
         <h3 className="text-lg font-semibold text-[var(--white)]">{title}</h3>
         <Link
           href="/solutions"
-          className="text-[#ffffff] hover:text-[#ff6b6b] text-sm font-medium"
+          className="text-white hover:text-white/70 text-sm font-medium"
           onClick={onItemClick}
         >
           View all

@@ -25,7 +25,7 @@ const CallToAction = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" radius="full" className="text-lg px-8 bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]">
+            <Button size="lg" radius="full" className="text-lg px-8 bg-white hover:bg-[#cccccc] text-[var(--white)]">
               <span className="py-1 leading-relaxed">Start Building</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

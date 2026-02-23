@@ -17,7 +17,7 @@ const Security = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <Shield className="w-16 h-16 text-[#ffffff] mx-auto mb-6" />
+          <Shield className="w-16 h-16 text-white mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Enterprise-Ready
           </h2>
@@ -44,7 +44,7 @@ const Security = () => {
                 "CI/CD Integration"
               ].map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-[#ffffff] mr-3 mt-1" />
+                  <CheckCircle className="w-5 h-5 text-white mr-3 mt-1" />
                   <span className="text-neutral-300">{feature}</span>
                 </li>
               ))}
@@ -58,8 +58,8 @@ const Security = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex-1"
           >
-            <div className="bg-gradient-to-br from-[#ffffff]/10 to-[#ff6b6b]/10 rounded-xl p-8 border border-[#ffffff]/30">
-              <Lock className="w-12 h-12 text-[#ffffff] mb-6" />
+            <div className="bg-gradient-to-br from-white/10 to-white/10 rounded-xl p-8 border border-white/30">
+              <Lock className="w-12 h-12 text-white mb-6" />
               <h3 className="text-xl font-bold mb-4">Hanzo.io Security</h3>
               <p className="text-neutral-300 mb-8">
                 Our security team works around the clock to ensure your applications and data are protected. We employ industry-leading practices and regularly undergo independent security audits.

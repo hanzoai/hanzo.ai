@@ -55,9 +55,9 @@ const ScalabilitySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-gray-900/50 to-gray-900/30 border border-gray-800 rounded-xl p-8 hover:border-[#ffffff]/30 transition-colors"
+              className="bg-gradient-to-br from-gray-900/50 to-gray-900/30 border border-gray-800 rounded-xl p-8 hover:border-white/30 transition-colors"
             >
-              <feature.icon className="h-10 w-10 text-[#ffffff] mb-6" />
+              <feature.icon className="h-10 w-10 text-white mb-6" />
               <h3 className="text-xl font-semibold text-[var(--white)] mb-3">{feature.title}</h3>
               <p className="text-neutral-400">{feature.description}</p>
             </motion.div>

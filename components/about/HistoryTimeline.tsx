@@ -13,7 +13,7 @@ const timelineEvents = [
     year: "2014-2016",
     title: "Origins: Verus Media & Crowdstart",
     description: "Zach Kelling founded Verus Media and launched Crowdstart, a platform to harness crowd-driven data and AI to help businesses grow.",
-    icon: <Rocket className="text-[#ffffff]" />,
+    icon: <Rocket className="text-white" />,
     highlight: "Record-breaking product launches and significant crowdfunding success.",
     link: { text: "Learn about our platform", url: "/platform" }
   },
@@ -21,7 +21,7 @@ const timelineEvents = [
     year: "2016",
     title: "Reimagining as Hanzo",
     description: "The company formally incorporated as Hanzo AI, Inc., focusing on AI-powered marketing and development platforms.",
-    icon: <Stars className="text-[#ffffff]" />,
+    icon: <Stars className="text-white" />,
     highlight: "Helped launch some of the most successful crowdsales in history.",
     link: { text: "View Hanzo AI", url: "/ai" }
   },
@@ -29,7 +29,7 @@ const timelineEvents = [
     year: "2017",
     title: "Techstars Acceleration",
     description: "Selected for the inaugural Techstars Kansas City accelerator cohort, sharpening focus on e-commerce SaaS.",
-    icon: <Trophy className="text-[#ffffff]" />,
+    icon: <Trophy className="text-white" />,
     highlight: "23 beta users and $42M in client sales by Demo Day.",
     link: { text: "Explore Commerce", url: "/commerce" }
   },
@@ -37,7 +37,7 @@ const timelineEvents = [
     year: "2018-2020",
     title: "AI Marketing & Blockchain",
     description: "Pivoted to AI marketing platform and blockchain technology, supporting tokenized crowdfunding.",
-    icon: <Coins className="text-[#ffffff]" />,
+    icon: <Coins className="text-white" />,
     highlight: "Co-founded the first SEC-approved crowdfunding token offering.",
     link: { text: "See our analytics", url: "/analytics" }
   },
@@ -45,7 +45,7 @@ const timelineEvents = [
     year: "2021-2023",
     title: "Product Innovation",
     description: "Launched Hanzo Dev, an AI-powered code editor and app builder translating natural language to live software.",
-    icon: <Code className="text-[#ffffff]" />,
+    icon: <Code className="text-white" />,
     highlight: "Open-sourced Hanzo Base, a powerful backend framework.",
     link: { text: "Try Hanzo Dev", url: "/dev" }
   },
@@ -53,7 +53,7 @@ const timelineEvents = [
     year: "2024-Present",
     title: "Strategic Partnerships",
     description: "Formed key alliances like Personas Social Inc. partnership to expand Keek's user base using Hanzo's AI.",
-    icon: <User2 className="text-[#ffffff]" />,
+    icon: <User2 className="text-white" />,
     highlight: "Driven over $1B in revenues to clients using AI-powered marketing.",
     link: { text: "Meet Hanzo Bot", url: "/bot" }
   },
@@ -77,13 +77,13 @@ const TimelineEvent = ({ event, index }) => {
               {event.icon}
             </div>
             <div>
-              <span className="text-sm text-[#ffffff] font-semibold">{event.year}</span>
+              <span className="text-sm text-white font-semibold">{event.year}</span>
               <h3 className="text-2xl font-bold text-foreground">{event.title}</h3>
             </div>
           </div>
           <p className="text-muted-foreground mb-4">{event.description}</p>
-          <div className="bg-[#ffffff]/10 border border-[#ffffff]/20 rounded-lg p-4 mb-6">
-            <p className="text-[#ffffff]/80 italic">"{event.highlight}"</p>
+          <div className="bg-white/10 border border-white/20 rounded-lg p-4 mb-6">
+            <p className="text-white/80 italic">"{event.highlight}"</p>
           </div>
           <Button variant="outline" className="border-border text-foreground hover:bg-accent">
             <a href={event.link.url || "#"}>{event.link.text}</a>
@@ -93,10 +93,10 @@ const TimelineEvent = ({ event, index }) => {
 
       <div className="hidden md:block md:w-1/2 relative">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-1 h-full bg-[#ffffff]/30"></div>
+          <div className="w-1 h-full bg-white/30"></div>
         </div>
         <div className="relative flex justify-center">
-          <div className="w-12 h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
             <span className="text-white font-bold">{index + 1}</span>
           </div>
         </div>
@@ -117,7 +117,7 @@ const HistoryTimeline = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Journey Through Time</h2>
-          <div className="h-1 w-20 bg-[#ffffff] mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-white mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From crowd-powered marketing to AI innovation, explore the key milestones
             that shaped Hanzo Industries.

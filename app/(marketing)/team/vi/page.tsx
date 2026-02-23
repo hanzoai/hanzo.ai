@@ -28,7 +28,7 @@ const TeamVi = () => {
         >
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-[#ffffff] to-[#ff6b6b] mb-4">
+            <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-white to-white/10 mb-4">
               <Lightbulb className="h-8 w-8 text-[var(--white)]" />
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -46,7 +46,7 @@ const TeamVi = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <MessagesSquare className="h-8 w-8 text-[#ffffff] mb-4" />
+              <MessagesSquare className="h-8 w-8 text-white mb-4" />
               <h3 className="text-xl font-semibold mb-2">Strategic Vision</h3>
               <p className="text-neutral-400">
                 Develops comprehensive strategies and roadmaps for sustainable growth
@@ -58,7 +58,7 @@ const TeamVi = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <Bot className="h-8 w-8 text-[#ffffff] mb-4" />
+              <Bot className="h-8 w-8 text-white mb-4" />
               <h3 className="text-xl font-semibold mb-2">Team Leadership</h3>
               <p className="text-neutral-400">
                 Coordinates and guides the AI team to achieve optimal performance
@@ -70,7 +70,7 @@ const TeamVi = () => {
               whileHover={{ y: -5 }}
               className="p-6 rounded-2xl border border-gray-800 bg-[var(--black)]/50"
             >
-              <Lock className="h-8 w-8 text-[#ffffff] mb-4" />
+              <Lock className="h-8 w-8 text-white mb-4" />
               <h3 className="text-xl font-semibold mb-2">Innovation Drive</h3>
               <p className="text-neutral-400">
                 Promotes cutting-edge solutions and encourages creative problem-solving
@@ -91,7 +91,7 @@ const TeamVi = () => {
             </p>
             <Button 
               onClick={handleContactSensei}
-              className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#e03e3e] hover:to-[#ffffff]"
+              className="bg-gradient-to-r from-white to-white/10 hover:from-white/20 hover:to-white"
             >
               Contact Sensei Group
             </Button>

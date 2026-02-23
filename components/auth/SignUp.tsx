@@ -150,7 +150,7 @@ const SignUp = () => {
                     onCheckedChange={handleCheckboxChange}
                   />
                   <Label htmlFor="terms" className="text-sm">
-                    I agree to the <a href="/terms" className="text-[#ffffff] hover:underline">Terms of Service</a> and <a href="/privacy" className="text-[#ffffff] hover:underline">Privacy Policy</a>
+                    I agree to the <a href="/terms" className="text-white hover:underline">Terms of Service</a> and <a href="/privacy" className="text-white hover:underline">Privacy Policy</a>
                   </Label>
                 </div>
               </>
@@ -201,7 +201,7 @@ const SignUp = () => {
             
             <Button 
               type="submit" 
-              className="w-full mt-6 bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]"
+              className="w-full mt-6 bg-white hover:bg-[#cccccc] text-[var(--white)]"
             >
               {step === 1 ? 'Continue' : 'Create Account'}
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -211,7 +211,7 @@ const SignUp = () => {
         
         <div className="text-center text-sm text-neutral-400">
           Already have an account?{" "}
-          <a href="/login" className="text-[#ffffff] hover:underline">
+          <a href="/login" className="text-white hover:underline">
             Sign in
           </a>
         </div>

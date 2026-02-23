@@ -58,8 +58,8 @@ const PricingPreviewSection = () => {
               {/* Left: Free tier info */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
-                  <Sparkles className="w-5 h-5 text-[#ffffff]" />
-                  <span className="text-sm font-medium text-[#ffffff]">Free Forever</span>
+                  <Sparkles className="w-5 h-5 text-white" />
+                  <span className="text-sm font-medium text-white">Free Forever</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
                   $0<span className="text-lg font-normal text-neutral-500">/month</span>
@@ -71,8 +71,8 @@ const PricingPreviewSection = () => {
                 <ul className="space-y-3">
                   {freeFeatures.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#ffffff]/20 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-[#ffffff]" />
+                      <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-neutral-300 text-sm">{feature}</span>
                     </li>
@@ -121,7 +121,7 @@ const PricingPreviewSection = () => {
             Need custom limits, SLAs, or dedicated support?{" "}
             <Link
               href="/enterprise"
-              className="text-[#ffffff] hover:underline"
+              className="text-white hover:underline"
             >
               Talk to sales
             </Link>

@@ -50,7 +50,7 @@ const TeamSlack = () => {
             className="col-span-1 border-r border-gray-800 p-4"
           >
             <div className="flex items-center justify-between p-2 mb-4">
-              <h3 className="text-red-400 font-semibold">Hanzo Team</h3>
+              <h3 className="text-white/70 font-semibold">Hanzo Team</h3>
               <ChevronDown className="w-4 h-4 text-neutral-400" />
             </div>
             <div className="space-y-2">
@@ -99,7 +99,7 @@ const TeamSlack = () => {
                   transition={{ duration: 0.4, delay: 0.7 + (idx * 0.2) }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-500 to-red-500 flex items-center justify-center text-[var(--white)] text-sm">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center text-[var(--white)] text-sm">
                     {msg.user[0]}
                   </div>
                   <div>

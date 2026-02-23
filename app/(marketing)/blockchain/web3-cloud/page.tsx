@@ -146,10 +146,10 @@ const HanzoWeb3Cloud = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
           >
-            <Cloud className="w-4 h-4 text-[#ffffff]" />
-            <span className="text-sm font-medium text-[#ff6b6b]">Blockchain Infrastructure</span>
+            <Cloud className="w-4 h-4 text-white" />
+            <span className="text-sm font-medium text-white/70">Blockchain Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -159,7 +159,7 @@ const HanzoWeb3Cloud = () => {
             className="text-5xl md:text-7xl font-bold mb-6"
           >
             <span className="text-white">Hanzo</span>{" "}
-            <span className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               Nodes
             </span>
           </motion.h1>
@@ -191,19 +191,19 @@ const HanzoWeb3Cloud = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">100+</div>
+              <div className="text-2xl font-bold text-white">100+</div>
               <div className="text-sm text-neutral-400">Chains Supported</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">99.999%</div>
+              <div className="text-2xl font-bold text-white">99.999%</div>
               <div className="text-sm text-neutral-400">Uptime SLA</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">&lt;50ms</div>
+              <div className="text-2xl font-bold text-white">&lt;50ms</div>
               <div className="text-sm text-neutral-400">Global Latency</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">ERC-4337</div>
+              <div className="text-2xl font-bold text-white">ERC-4337</div>
               <div className="text-sm text-neutral-400">Account Abstraction</div>
             </div>
           </motion.div>
@@ -217,7 +217,7 @@ const HanzoWeb3Cloud = () => {
           >
             <a
               href="https://web3.hanzo.ai"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] hover:bg-[#e03e3e] text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
             >
               Launch Console
               <ArrowRight className="w-4 h-4" />
@@ -257,10 +257,10 @@ const HanzoWeb3Cloud = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[#ffffff]/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#ffffff]" />
+                  <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{api.name}</h3>
                   <p className="text-neutral-400 text-sm mb-4">{api.description}</p>
@@ -290,9 +290,9 @@ const HanzoWeb3Cloud = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/20 mb-6">
-              <Wallet className="w-4 h-4 text-[#ffffff]" />
-              <span className="text-sm font-medium text-[#ff6b6b]">ERC-4337</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
+              <Wallet className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white/70">ERC-4337</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Account Abstraction
@@ -315,10 +315,10 @@ const HanzoWeb3Cloud = () => {
                 >
                   <Link
                     href={product.href || "#"}
-                    className="block bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors h-full"
+                    className="block bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors h-full"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-[#ffffff]/10 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-[#ffffff]" />
+                    <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
                     <p className="text-neutral-400">{product.description}</p>
@@ -361,7 +361,7 @@ const HanzoWeb3Cloud = () => {
                 <ul className="space-y-2">
                   {chains.map((chain, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-neutral-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
                       {chain}
                     </li>
                   ))}
@@ -378,7 +378,7 @@ const HanzoWeb3Cloud = () => {
           >
             <Link
               href="/blockchain/directory"
-              className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#ff6b6b] font-medium"
+              className="inline-flex items-center gap-2 text-white hover:text-white/70 font-medium"
             >
               View All Chains & Endpoints <ArrowRight className="w-4 h-4" />
             </Link>
@@ -413,11 +413,11 @@ const HanzoWeb3Cloud = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-[#ffffff]/30 transition-colors"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-white/30 transition-colors"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#ffffff]" />
+                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="font-semibold text-white">{product.name}</h3>
                   </div>
@@ -456,11 +456,11 @@ const HanzoWeb3Cloud = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-[#ffffff]/30 transition-colors"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/30 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#ffffff]" />
+                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-white">{option.name}</h3>
@@ -555,7 +555,7 @@ await smartWallet.execute({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-[#ffffff]/20 to-transparent border border-[#ffffff]/30 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/30 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Start Building on Hanzo Web3 Cloud
@@ -567,7 +567,7 @@ await smartWallet.execute({
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://web3.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] hover:bg-[#e03e3e] text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
               >
                 Get Free API Key
                 <ArrowRight className="w-4 h-4" />

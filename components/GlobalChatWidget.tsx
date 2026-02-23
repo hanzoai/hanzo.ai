@@ -332,7 +332,7 @@ const GlobalChatWidget = () => {
                               <div className="text-[10px] text-neutral-500">{model.description}</div>
                             </div>
                             {selectedModel.id === model.id && (
-                              <Check className="w-4 h-4 text-green-500" />
+                              <Check className="w-4 h-4 text-white/70" />
                             )}
                           </button>
                         ))}
@@ -381,7 +381,7 @@ const GlobalChatWidget = () => {
                   <div
                     className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm ${
                       message.role === "user"
-                        ? "bg-[#ffffff] text-white rounded-br-md"
+                        ? "bg-white text-white rounded-br-md"
                         : "bg-neutral-800 text-neutral-200 rounded-bl-md"
                     }`}
                   >

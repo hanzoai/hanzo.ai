@@ -80,12 +80,12 @@ export default function IntegrationsPage() {
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 border-red-500/50 text-red-400">
+            <Badge variant="outline" className="mb-4 border-white/20 text-white/70">
               <Plug className="w-3 h-3 mr-1" />
               280+ Integrations
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Connect to <span className="text-red-400">Everything</span>
+              Connect to <span className="text-white/70">Everything</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
               Hanzo Auto comes with 280+ pre-built integrations to connect your favorite apps and services.
@@ -109,7 +109,7 @@ export default function IntegrationsPage() {
                 variant={selectedCategory === null ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(null)}
-                className={selectedCategory === null ? "bg-red-600 hover:bg-red-700" : ""}
+                className={selectedCategory === null ? "bg-white/10 hover:bg-white/10" : ""}
               >
                 All
               </Button>
@@ -119,7 +119,7 @@ export default function IntegrationsPage() {
                   variant={selectedCategory === category ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
-                  className={selectedCategory === category ? "bg-red-600 hover:bg-red-700" : ""}
+                  className={selectedCategory === category ? "bg-white/10 hover:bg-white/10" : ""}
                 >
                   {category}
                 </Button>
@@ -132,10 +132,10 @@ export default function IntegrationsPage() {
             {filteredIntegrations.map((integration, index) => (
               <div
                 key={index}
-                className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-red-500/50 transition-colors group cursor-pointer"
+                className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-white/20 transition-colors group cursor-pointer"
               >
                 <div className="text-3xl mb-2">{integration.logo}</div>
-                <h3 className="font-semibold text-white group-hover:text-red-400 transition-colors">
+                <h3 className="font-semibold text-white group-hover:text-white/70 transition-colors">
                   {integration.name}
                 </h3>
                 <p className="text-sm text-neutral-500">{integration.description}</p>
@@ -147,7 +147,7 @@ export default function IntegrationsPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-b from-red-900/30 to-red-900/30 border border-red-500/20">
+          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-b from-white/20 to-white/10 border border-white/20">
             <h2 className="text-2xl font-bold mb-4">Need a custom integration?</h2>
             <p className="text-neutral-400 mb-6">
               All integrations are built with TypeScript and are open source.

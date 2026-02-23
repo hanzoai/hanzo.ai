@@ -16,7 +16,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-red-900/30 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/30 text-white/70 text-sm font-medium mb-4">
             Integrated Global Payments Platform
           </span>
           <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
@@ -34,7 +34,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff]"
+              className="bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white"
             >
               Get Started Now
             </Button>
@@ -55,10 +55,10 @@ const HeroSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
         >
           {[
-            { icon: <CreditCard className="h-6 w-6 text-[#ffffff]" />, title: "200+ Currencies", text: "Accept payments in local currencies worldwide" },
-            { icon: <Lock className="h-6 w-6 text-[#ffffff]" />, title: "Automatic Compliance", text: "Global tax and regulatory compliance built-in" },
-            { icon: <Globe className="h-6 w-6 text-[#ffffff]" />, title: "Global Reach", text: "Scale your business to new markets instantly" },
-            { icon: <Zap className="h-6 w-6 text-[#ffffff]" />, title: "Instant Setup", text: "Go live with payments in minutes" }
+            { icon: <CreditCard className="h-6 w-6 text-white" />, title: "200+ Currencies", text: "Accept payments in local currencies worldwide" },
+            { icon: <Lock className="h-6 w-6 text-white" />, title: "Automatic Compliance", text: "Global tax and regulatory compliance built-in" },
+            { icon: <Globe className="h-6 w-6 text-white" />, title: "Global Reach", text: "Scale your business to new markets instantly" },
+            { icon: <Zap className="h-6 w-6 text-white" />, title: "Instant Setup", text: "Go live with payments in minutes" }
           ].map((item, index) => (
             <motion.div
               key={index}

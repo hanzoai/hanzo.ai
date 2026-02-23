@@ -17,7 +17,7 @@ const UseCaseCard = ({ title, description, image, color, index }: UseCaseCardPro
       <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
         <h3 className={`text-2xl font-bold mb-4 text-${color}-400`}>{title}</h3>
         <p className="text-neutral-400 mb-4">{description}</p>
-        <Button variant="link" size="sm" className="text-amber-400 hover:text-amber-300 p-0 w-fit">
+        <Button variant="link" size="sm" className="text-white/60 hover:text-white/60 p-0 w-fit">
           Learn more <ArrowRight className="ml-1 h-4 w-4" />
         </Button>
       </div>

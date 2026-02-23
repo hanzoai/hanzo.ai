@@ -29,14 +29,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   const isPrimary = color === "primary";
 
   const cardClass = isPrimary
-    ? "bg-gradient-to-br from-[#ffffff]/20 to-[#ffffff]/5 border border-[#ffffff]/20 hover:border-[#ffffff]/40"
-    : "bg-gradient-to-br from-[#ff6b6b]/20 to-[#ff6b6b]/5 border border-[#ff6b6b]/20 hover:border-[#ff6b6b]/40";
+    ? "bg-gradient-to-br from-white/20 to-white/5 border border-white/20 hover:border-white/40"
+    : "bg-gradient-to-br from-white/20 to-white/10 border border-white/20 hover:border-white/40";
 
   const iconWrapperClass = isPrimary
-    ? "bg-[#ffffff]/10"
-    : "bg-[#ff6b6b]/10";
+    ? "bg-white/10"
+    : "bg-white/10";
 
-  const iconClass = isPrimary ? "text-[#ffffff]" : "text-[#ff6b6b]";
+  const iconClass = isPrimary ? "text-white" : "text-white/70";
 
   return (
     <motion.div
@@ -96,8 +96,8 @@ export const FeatureListItem: React.FC<FeatureListItemProps> = ({
 }) => {
   return (
     <div className="flex items-start">
-      <div className="p-2 bg-[#ffffff]/10 rounded-lg mr-4">
-        <Icon className="h-6 w-6 text-[#ffffff]" />
+      <div className="p-2 bg-white/10 rounded-lg mr-4">
+        <Icon className="h-6 w-6 text-white" />
       </div>
       <div>
         <h3 className="text-xl font-semibold text-foreground mb-1">{title}</h3>

@@ -117,7 +117,7 @@ const TrustedBy = () => {
               
               <div className="flex items-center">
                 <div className="mr-4">
-                  <div className="h-12 w-12 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[var(--white)] flex items-center justify-center font-semibold">
+                  <div className="h-12 w-12 rounded-full bg-white/20 border border-white/30 text-[var(--white)] flex items-center justify-center font-semibold">
                     {getInitials(testimonial.author)}
                   </div>
                 </div>

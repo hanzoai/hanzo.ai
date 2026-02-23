@@ -46,49 +46,49 @@ const HanzoCodeFeatures = () => {
           <FeatureCard 
             title="Holistic Understanding"
             description="Unlike others, we analyze your entire codebase, not just the current file or context window"
-            icon={<Code className="h-10 w-10 text-[#ffffff]" />}
+            icon={<Code className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Parallel Execution"
             description="Run multiple autonomous agents simultaneously to solve different parts of your project"
-            icon={<Zap className="h-10 w-10 text-[#ffffff]" />}
+            icon={<Zap className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Advanced Reasoning"
             description="Complex problem solving with multi-step reasoning that other AI tools can't match"
-            icon={<MessageSquare className="h-10 w-10 text-[#ffffff]" />}
+            icon={<MessageSquare className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Multi-repo Context"
             description="Understand dependencies across multiple repositories and codebases simultaneously"
-            icon={<Globe className="h-10 w-10 text-[#ffffff]" />}
+            icon={<Globe className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Complete Autonomy"
             description="Agents can work independently, making decisions without constant human guidance"
-            icon={<Bot className="h-10 w-10 text-[#ffffff]" />}
+            icon={<Bot className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Full System Access"
             description="Agents have controlled access to your file system, dev environment, and tooling"
-            icon={<FileCode className="h-10 w-10 text-[#ffffff]" />}
+            icon={<FileCode className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Unlimited Context"
             description="No token limits or context windows - process entire codebases at once"
-            icon={<Infinity className="h-10 w-10 text-[#ffffff]" />}
+            icon={<Infinity className="h-10 w-10 text-white" />}
           />
           
           <FeatureCard 
             title="Agent Collaboration"
             description="Multiple agents working together with different roles and responsibilities"
-            icon={<Network className="h-10 w-10 text-[#ffffff]" />}
+            icon={<Network className="h-10 w-10 text-white" />}
           />
         </div>
       </div>

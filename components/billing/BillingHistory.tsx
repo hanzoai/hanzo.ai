@@ -24,11 +24,11 @@ const BillingHistory = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Paid':
-        return 'bg-green-900/20 text-green-400';
+        return 'bg-white/10 text-white/70';
       case 'Pending':
-        return 'bg-yellow-900/20 text-yellow-400';
+        return 'bg-white/10 text-white/60';
       case 'Failed':
-        return 'bg-red-900/20 text-red-400';
+        return 'bg-white/10 text-white/70';
       default:
         return 'bg-gray-900/20 text-neutral-400';
     }

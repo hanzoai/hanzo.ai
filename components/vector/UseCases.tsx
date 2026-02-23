@@ -36,7 +36,7 @@ const UseCase = ({ icon, title, description }: UseCaseProps) => (
   >
     <motion.div 
       variants={iconVariant}
-      className="h-14 w-14 rounded-full bg-red-900/30 border border-[#ffffff]/30 flex items-center justify-center mb-4 mx-auto"
+      className="h-14 w-14 rounded-full bg-white/10 border border-white/30 flex items-center justify-center mb-4 mx-auto"
     >
       {icon}
     </motion.div>
@@ -48,32 +48,32 @@ const UseCase = ({ icon, title, description }: UseCaseProps) => (
 const UseCases = () => {
   const useCases = [
     {
-      icon: <Bot className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Bot className="h-6 w-6 text-white" />,
       title: "Chatbots & RAG",
       description: "Build powerful retrieval-augmented generation systems that search across your knowledge base."
     },
     {
-      icon: <Search className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Search className="h-6 w-6 text-white" />,
       title: "Semantic Search",
       description: "Implement intuitive search that understands user intent beyond simple keyword matching."
     },
     {
-      icon: <BrainCircuit className="h-6 w-6 text-[#ffffff]" />,
+      icon: <BrainCircuit className="h-6 w-6 text-white" />,
       title: "Recommendation Systems",
       description: "Create personalized recommendations based on user preferences and behavior."
     },
     {
-      icon: <Image className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Image className="h-6 w-6 text-white" />,
       title: "Visual Search",
       description: "Enable users to search for visually similar images or products in your catalog."
     },
     {
-      icon: <FileText className="h-6 w-6 text-[#ffffff]" />,
+      icon: <FileText className="h-6 w-6 text-white" />,
       title: "Document Intelligence",
       description: "Extract insights from documents and connect related information across sources."
     },
     {
-      icon: <Tag className="h-6 w-6 text-[#ffffff]" />,
+      icon: <Tag className="h-6 w-6 text-white" />,
       title: "Automated Tagging",
       description: "Automatically categorize and tag content based on semantic understanding."
     }

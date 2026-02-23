@@ -18,25 +18,25 @@ export const SolutionsMenu = () => {
           {/* Featured Row */}
           <div className="mb-4 pb-4 border-b border-neutral-800">
             <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="h-3.5 w-3.5 text-[#ffffff]" />
+              <Sparkles className="h-3.5 w-3.5 text-white" />
               <span className="text-xs font-medium uppercase tracking-wider text-neutral-400">Featured Solutions</span>
             </div>
             <div className="flex flex-wrap gap-2">
               <Link
                 href="/agency"
                 onClick={closeMenu}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-white/30/50 hover:bg-neutral-800/50"
               >
-                <Shield className="h-3.5 w-3.5 group-hover:text-[#ffffff] text-neutral-400" />
-                <span className="text-sm font-medium group-hover:text-[#ffffff] text-neutral-300">Hanzo Agency</span>
+                <Shield className="h-3.5 w-3.5 group-hover:text-white text-neutral-400" />
+                <span className="text-sm font-medium group-hover:text-white text-neutral-300">Hanzo Agency</span>
               </Link>
               <Link
                 href="/enterprise"
                 onClick={closeMenu}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-[#ffffff]/50 hover:bg-neutral-800/50"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-neutral-900/50 border-neutral-800 hover:border-white/30/50 hover:bg-neutral-800/50"
               >
-                <Building2 className="h-3.5 w-3.5 group-hover:text-[#ffffff] text-neutral-400" />
-                <span className="text-sm font-medium group-hover:text-[#ffffff] text-neutral-300">Enterprise</span>
+                <Building2 className="h-3.5 w-3.5 group-hover:text-white text-neutral-400" />
+                <span className="text-sm font-medium group-hover:text-white text-neutral-300">Enterprise</span>
               </Link>
             </div>
           </div>
@@ -58,8 +58,8 @@ export const SolutionsMenu = () => {
                       onClick={closeMenu}
                       className="flex items-center gap-1.5 py-0.5 group"
                     >
-                      {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
-                      <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                      {Icon && <Icon className="h-3 w-3 group-hover:text-white text-neutral-500" />}
+                      <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                         {item.title}
                       </span>
                     </Link>
@@ -69,7 +69,7 @@ export const SolutionsMenu = () => {
                   <Link
                     href="/solutions"
                     onClick={closeMenu}
-                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff] text-neutral-600"
+                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-white text-neutral-600"
                   >
                     +{capabilitiesNav[0].items.length - ITEMS_PER_CATEGORY} more
                     <ArrowRight className="h-2.5 w-2.5" />
@@ -93,8 +93,8 @@ export const SolutionsMenu = () => {
                       onClick={closeMenu}
                       className="flex items-center gap-1.5 py-0.5 group"
                     >
-                      {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
-                      <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                      {Icon && <Icon className="h-3 w-3 group-hover:text-white text-neutral-500" />}
+                      <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                         {item.title}
                       </span>
                     </Link>
@@ -104,7 +104,7 @@ export const SolutionsMenu = () => {
                   <Link
                     href="/industries"
                     onClick={closeMenu}
-                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-[#ffffff] text-neutral-600"
+                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-white text-neutral-600"
                   >
                     +{industriesNav[0].items.length - ITEMS_PER_CATEGORY} more
                     <ArrowRight className="h-2.5 w-2.5" />
@@ -128,8 +128,8 @@ export const SolutionsMenu = () => {
                       onClick={closeMenu}
                       className="flex items-center gap-1.5 py-0.5 group"
                     >
-                      {Icon && <Icon className="h-3 w-3 group-hover:text-[#ffffff] text-neutral-500" />}
-                      <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                      {Icon && <Icon className="h-3 w-3 group-hover:text-white text-neutral-500" />}
+                      <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                         {item.title}
                       </span>
                     </Link>
@@ -149,7 +149,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                  <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                     Automation
                   </span>
                 </Link>
@@ -158,7 +158,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                  <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                     Analytics
                   </span>
                 </Link>
@@ -167,7 +167,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                  <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                     Content Generation
                   </span>
                 </Link>
@@ -176,7 +176,7 @@ export const SolutionsMenu = () => {
                   onClick={closeMenu}
                   className="flex items-center gap-1.5 py-0.5 group"
                 >
-                  <span className="text-xs transition-colors group-hover:text-[#ffffff] text-neutral-400">
+                  <span className="text-xs transition-colors group-hover:text-white text-neutral-400">
                     Customer Support
                   </span>
                 </Link>
@@ -202,7 +202,7 @@ export const SolutionsMenu = () => {
               </Button>
               <Button
                 size="sm"
-                className="bg-[#ffffff] text-white hover:bg-[#ffffff]/90 h-7 text-xs px-3"
+                className="bg-white text-white hover:bg-white/90 h-7 text-xs px-3"
                 asChild
               >
                 <Link href="/solutions" onClick={closeMenu}>

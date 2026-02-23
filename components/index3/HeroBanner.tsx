@@ -11,8 +11,8 @@ const HeroBanner = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black to-gray-900/30 pointer-events-none"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-6xl mx-auto text-center relative z-10 mb-16">
         <motion.div
@@ -41,7 +41,7 @@ const HeroBanner = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
         >
-          <Button size="lg" className="text-lg px-8 bg-[#ffffff] hover:bg-[#cccccc] border-none">
+          <Button size="lg" className="text-lg px-8 bg-white hover:bg-[#cccccc] border-none">
             Get Started
           </Button>
           <Button size="lg" variant="outline" className="text-lg px-8 text-[var(--white)] border-white/20 bg-[var(--white)]/5 hover:bg-[var(--white)]/10">

@@ -149,10 +149,10 @@ const HanzoDeFiStack = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
           >
-            <TrendingUp className="w-4 h-4 text-[#ffffff]" />
-            <span className="text-sm font-medium text-[#ff6b6b]">DeFi Infrastructure</span>
+            <TrendingUp className="w-4 h-4 text-white" />
+            <span className="text-sm font-medium text-white/70">DeFi Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -162,7 +162,7 @@ const HanzoDeFiStack = () => {
             className="text-5xl md:text-7xl font-bold mb-6"
           >
             <span className="text-white">Hanzo</span>{" "}
-            <span className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               DeFi
             </span>
           </motion.h1>
@@ -194,19 +194,19 @@ const HanzoDeFiStack = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
           >
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">709</div>
+              <div className="text-2xl font-bold text-white">709</div>
               <div className="text-sm text-neutral-400">Tests Passing</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">50+</div>
+              <div className="text-2xl font-bold text-white">50+</div>
               <div className="text-sm text-neutral-400">Contracts</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">PQ</div>
+              <div className="text-2xl font-bold text-white">PQ</div>
               <div className="text-sm text-neutral-400">Quantum-Safe</div>
             </div>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4">
-              <div className="text-2xl font-bold text-[#ffffff]">BSD-3</div>
+              <div className="text-2xl font-bold text-white">BSD-3</div>
               <div className="text-sm text-neutral-400">Open Source</div>
             </div>
           </motion.div>
@@ -220,7 +220,7 @@ const HanzoDeFiStack = () => {
           >
             <a
               href="https://www.npmjs.com/package/@luxfi/contracts"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
             >
               npm install @luxfi/contracts
             </a>
@@ -261,11 +261,11 @@ const HanzoDeFiStack = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-green-500/30 transition-colors"
+                    className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 hover:border-white/20 transition-colors"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
-                        <Icon className="w-4 h-4 text-[#ffffff]" />
+                      <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                        <Icon className="w-4 h-4 text-white" />
                       </div>
                       <h3 className="font-semibold text-white">{product.name}</h3>
                     </div>
@@ -287,9 +287,9 @@ const HanzoDeFiStack = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6">
-              <Shield className="w-4 h-4 text-red-500" />
-              <span className="text-sm font-medium text-red-400">Post-Quantum Ready</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 mb-6">
+              <Shield className="w-4 h-4 text-white/70" />
+              <span className="text-sm font-medium text-white/70">Post-Quantum Ready</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Quantum-Resistant Cryptography
@@ -309,7 +309,7 @@ const HanzoDeFiStack = () => {
                 transition={{ delay: index * 0.05 }}
                 className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4"
               >
-                <h3 className="font-semibold text-red-400 mb-1">{scheme.name}</h3>
+                <h3 className="font-semibold text-white/70 mb-1">{scheme.name}</h3>
                 <p className="text-sm text-neutral-400">{scheme.description}</p>
               </motion.div>
             ))}
@@ -383,7 +383,7 @@ contract QuantumSafe {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-green-500/20 to-transparent border border-green-500/30 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/20 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Build DeFi with Confidence
@@ -395,7 +395,7 @@ contract QuantumSafe {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://github.com/luxfi/standard"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/10 text-white font-medium rounded-full transition-colors"
               >
                 View on GitHub
                 <ArrowRight className="w-4 h-4" />

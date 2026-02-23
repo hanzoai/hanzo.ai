@@ -10,9 +10,9 @@ const HeroSection = () => {
   return (
     <section className="pt-36 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/10 to-[#ff6b6b]/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/5 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/10 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
@@ -21,7 +21,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-6 text-center"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ff6b6b] text-sm font-medium">
+          <span className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white/70 text-sm font-medium">
             New Release
           </span>
         </motion.div>
@@ -49,7 +49,7 @@ const HeroSection = () => {
         >
           <Button 
             size="lg"
-            className="bg-[#ffffff] hover:bg-[#cccccc] text-white rounded-md py-6"
+            className="bg-white hover:bg-[#cccccc] text-white rounded-md py-6"
           >
             Get Started <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
@@ -57,7 +57,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="border-[#ffffff]/30 text-white hover:border-[#ffffff]/50 rounded-md py-6"
+            className="border-white/30 text-white hover:border-white/30/50 rounded-md py-6"
           >
             <Code2 className="mr-2 h-5 w-5" /> View Demo
           </Button>
@@ -73,7 +73,7 @@ const HeroSection = () => {
         
         <div className="bg-black/30 border border-white/10 rounded-xl p-6 mx-auto max-w-4xl backdrop-blur-sm">
           <code className="text-sm text-neutral-300 block overflow-x-auto">
-            <span className="text-[#ffffff]">npm</span> <span className="text-[#ff6b6b]">install</span> @shadcn/ui <span className="text-green-400">--force</span>
+            <span className="text-white">npm</span> <span className="text-white/70">install</span> @shadcn/ui <span className="text-white/70">--force</span>
           </code>
         </div>
       </div>

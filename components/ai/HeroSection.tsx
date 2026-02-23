@@ -47,7 +47,7 @@ const HeroSection = () => {
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#ffffff]/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-neutral-800/30 rounded-full blur-[100px]"></div>
       </div>
 
@@ -187,9 +187,9 @@ const HeroSection = () => {
                 </div>
 
                 {/* Visual - Checklist illustration */}
-                <div className="w-24 h-24 bg-[#ffffff]/10 rounded-xl flex flex-col items-start justify-center p-3 shrink-0">
+                <div className="w-24 h-24 bg-white/10 rounded-xl flex flex-col items-start justify-center p-3 shrink-0">
                   <div className="flex items-center gap-2 mb-2">
-                    <CheckSquare className="w-4 h-4 text-[#ffffff]" />
+                    <CheckSquare className="w-4 h-4 text-white" />
                     <div className="w-10 h-1.5 bg-neutral-700 rounded"></div>
                   </div>
                   <div className="flex items-center gap-2 mb-2">

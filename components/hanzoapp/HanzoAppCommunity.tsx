@@ -97,7 +97,7 @@ const HanzoAppCommunity = () => {
           </p>
           <Button 
             size="lg"
-            className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)]"
+            className="bg-white hover:bg-[#cccccc] text-[var(--white)]"
           >
             Join Discord
           </Button>

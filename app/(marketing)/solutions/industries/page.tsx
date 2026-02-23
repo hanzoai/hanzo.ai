@@ -65,13 +65,13 @@ const SolutionIndustries: React.FC = () => {
                   whileHover={{ y: -5 }}
                   className="relative group rounded-xl border border-gray-800 bg-[var(--black)]/50 p-6 backdrop-blur-sm overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff]/10 to-[#ff6b6b]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative">
                     <div className="flex items-center justify-between mb-4">
-                      <Icon className="h-6 w-6 text-[#ffffff]" strokeWidth={1.5} />
-                      <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-[#ffffff] transition-colors" />
+                      <Icon className="h-6 w-6 text-white" strokeWidth={1.5} />
+                      <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-[#ffffff] transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors">
                       {typeof item === 'string' ? item : item.name}
                     </h3>
                     <p className="text-neutral-400 text-sm mb-4">
@@ -84,14 +84,14 @@ const SolutionIndustries: React.FC = () => {
                     <div className="flex flex-wrap gap-2 mt-4">
                       <button
                         onClick={() => setActiveIndustry(itemName)}
-                        className="text-xs flex items-center text-[#ffffff] hover:text-[#ff6b6b]"
+                        className="text-xs flex items-center text-white hover:text-white/70"
                       >
                         <LinkIcon className="h-3 w-3 mr-1" /> Learn more
                       </button>
-                      <a href="#" className="text-xs flex items-center text-[#ffffff] hover:text-[#ff6b6b]">
+                      <a href="#" className="text-xs flex items-center text-white hover:text-white/70">
                         <FileText className="h-3 w-3 mr-1" /> Case study
                       </a>
-                      <a href="#" className="text-xs flex items-center text-[#ff6b6b] hover:text-[#ffffff]">
+                      <a href="#" className="text-xs flex items-center text-white/70 hover:text-white">
                         <BookOpen className="h-3 w-3 mr-1" /> White paper
                       </a>
                     </div>
@@ -110,7 +110,7 @@ const SolutionIndustries: React.FC = () => {
           >
             <button
               onClick={() => toggleSection("Industries")}
-              className="inline-flex items-center px-6 py-3 rounded-lg border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff]/10 transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-white hover:bg-white/10 transition-colors"
             >
               View More Industries
               <ChevronRight className="ml-2 h-5 w-5" />
@@ -135,7 +135,7 @@ const SolutionIndustries: React.FC = () => {
       }
     }> = {
       "Financial Services": {
-        icon: <Building className="h-10 w-10 text-[#ffffff]" />,
+        icon: <Building className="h-10 w-10 text-white" />,
         color: "brand",
         description: "We help banks, insurance companies, and investment firms transform their digital infrastructure, improve security, and deliver innovative customer experiences.",
         challenges: [
@@ -164,7 +164,7 @@ const SolutionIndustries: React.FC = () => {
         }
       },
       "Healthcare": {
-        icon: <Heart className="h-10 w-10 text-[#ff6b6b]" />,
+        icon: <Heart className="h-10 w-10 text-white/70" />,
         color: "brand",
         description: "Our healthcare solutions help providers, payers, and life sciences companies improve patient outcomes, optimize operations, and ensure security and compliance.",
         challenges: [
@@ -193,7 +193,7 @@ const SolutionIndustries: React.FC = () => {
         }
       },
       "Retail": {
-        icon: <ShoppingBag className="h-10 w-10 text-[#ffffff]" />,
+        icon: <ShoppingBag className="h-10 w-10 text-white" />,
         color: "brand",
         description: "We help retailers create seamless omnichannel experiences, optimize supply chains, and leverage data for personalized customer engagement.",
         challenges: [
@@ -222,7 +222,7 @@ const SolutionIndustries: React.FC = () => {
         }
       },
       "Technology": {
-        icon: <ServerCrash className="h-10 w-10 text-[#ff6b6b]" />,
+        icon: <ServerCrash className="h-10 w-10 text-white/70" />,
         color: "brand",
         description: "We help technology companies innovate faster, scale efficiently, and deliver secure, high-performance products and services.",
         challenges: [
@@ -254,11 +254,11 @@ const SolutionIndustries: React.FC = () => {
 
     const industry = industryData[activeIndustry] || industryData["Financial Services"];
     const colorClasses = {
-      brand: "from-[#ffffff]/20 to-[#ffffff]/10 border-[#ffffff]/20",
-      blue: "from-[#ffffff]/20 to-[#ffffff]/10 border-[#ffffff]/20",
-      pink: "from-[#ff6b6b]/20 to-[#ff6b6b]/10 border-[#ff6b6b]/20",
-      green: "from-[#ffffff]/20 to-[#ffffff]/10 border-[#ffffff]/20",
-      indigo: "from-[#ff6b6b]/20 to-[#ff6b6b]/10 border-[#ff6b6b]/20"
+      brand: "from-white/20 to-white/10 border-white/20",
+      blue: "from-white/20 to-white/10 border-white/20",
+      pink: "from-white/20 to-white/10 border-white/20",
+      green: "from-white/20 to-white/10 border-white/20",
+      indigo: "from-white/20 to-white/10 border-white/20"
     };
     
     return (
@@ -290,7 +290,7 @@ const SolutionIndustries: React.FC = () => {
             <ul className="space-y-4">
               {industry.challenges.map((challenge, idx) => (
                 <li key={idx} className="flex items-start gap-3 bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
-                  <CheckCircle className="h-5 w-5 text-[#ffffff] flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
                   <span className="text-neutral-300">{challenge}</span>
                 </li>
               ))}
@@ -305,7 +305,7 @@ const SolutionIndustries: React.FC = () => {
             <ul className="space-y-4">
               {industry.solutions.map((solution, idx) => (
                 <li key={idx} className="flex items-start gap-3 bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
-                  <ArrowRight className="h-5 w-5 text-[#ffffff] flex-shrink-0 mt-0.5" />
+                  <ArrowRight className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
                   <span className="text-neutral-300">{solution}</span>
                 </li>
               ))}
@@ -323,7 +323,7 @@ const SolutionIndustries: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {industry.caseStudy.results.map((result, idx) => (
                   <div key={idx} className="bg-[var(--black)]/40 p-4 rounded-lg border border-gray-800">
-                    <CheckCircle className="h-5 w-5 text-[#ffffff] mb-2" />
+                    <CheckCircle className="h-5 w-5 text-white mb-2" />
                     <p className="text-neutral-300">{result}</p>
                   </div>
                 ))}
@@ -331,9 +331,9 @@ const SolutionIndustries: React.FC = () => {
             </div>
             <div className="lg:col-span-2 flex items-center justify-center">
               <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-xl border border-gray-700 flex flex-col items-center">
-                <Briefcase className="h-16 w-16 text-[#ffffff] mb-4" />
+                <Briefcase className="h-16 w-16 text-white mb-4" />
                 <span className="text-3xl font-bold text-[var(--white)] mb-2">25+</span>
-                <span className="text-[#ffffff]">{activeIndustry} Clients</span>
+                <span className="text-white">{activeIndustry} Clients</span>
               </div>
             </div>
           </div>
@@ -342,32 +342,32 @@ const SolutionIndustries: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <a
             href="#"
-            className="block p-6 bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 hover:border-[#ffffff]/30 transition-colors"
+            className="block p-6 bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 hover:border-white/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-3">
-              <FileText className="h-5 w-5 text-[#ffffff]" />
+              <FileText className="h-5 w-5 text-white" />
               <h4 className="font-medium">White Paper</h4>
             </div>
             <p className="text-neutral-400">
               Download our industry trends report: The Future of {activeIndustry} Technology
             </p>
-            <div className="mt-4 text-[#ffffff] flex items-center gap-1.5">
+            <div className="mt-4 text-white flex items-center gap-1.5">
               Download Now <ArrowRight size={16} />
             </div>
           </a>
 
           <a
             href="#"
-            className="block p-6 bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 hover:border-[#ff6b6b]/30 transition-colors"
+            className="block p-6 bg-gradient-to-br from-gray-900/70 to-black/90 rounded-xl border border-gray-800 hover:border-white/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-3">
-              <BookOpen className="h-5 w-5 text-[#ff6b6b]" />
+              <BookOpen className="h-5 w-5 text-white/70" />
               <h4 className="font-medium">Webinar</h4>
             </div>
             <p className="text-neutral-400">
               Register for our upcoming webinar: Digital Transformation in {activeIndustry}
             </p>
-            <div className="mt-4 text-[#ff6b6b] flex items-center gap-1.5">
+            <div className="mt-4 text-white/70 flex items-center gap-1.5">
               Register Now <ArrowRight size={16} />
             </div>
           </a>
@@ -384,7 +384,7 @@ const SolutionIndustries: React.FC = () => {
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
-        <div className="bg-gradient-to-br from-[#ffffff]/20 to-[#ffffff]/10 p-8 rounded-xl border border-[#ffffff]/20">
+        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-white/20">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">Case Studies</h3>
           <p className="text-neutral-300 mb-6">
             See how we've helped organizations like yours achieve their goals through innovative solutions.
@@ -392,34 +392,34 @@ const SolutionIndustries: React.FC = () => {
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-[#ffffff] mr-3" />
+                <FileText className="h-5 w-5 text-white mr-3" />
                 <span className="text-[var(--white)]">Financial Services Digital Transformation</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-[#ffffff] mr-3" />
+                <FileText className="h-5 w-5 text-white mr-3" />
                 <span className="text-[var(--white)]">Healthcare AI Implementation</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <FileText className="h-5 w-5 text-[#ffffff] mr-3" />
+                <FileText className="h-5 w-5 text-white mr-3" />
                 <span className="text-[var(--white)]">Retail Analytics Platform</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-[#ffffff]/40 text-[#ffffff] hover:bg-[#ffffff]/10">
+            <Button variant="outline" className="border-white/40 text-white hover:bg-white/10">
               View all case studies <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-[#ff6b6b]/20 to-[#ff6b6b]/10 p-8 rounded-xl border border-[#ff6b6b]/20">
+        <div className="bg-gradient-to-br from-white/20 to-white/10 p-8 rounded-xl border border-white/20">
           <h3 className="text-2xl font-bold mb-4 text-[var(--white)]">White Papers</h3>
           <p className="text-neutral-300 mb-6">
             Access our thought leadership and research on the latest industry trends and technologies.
@@ -427,28 +427,28 @@ const SolutionIndustries: React.FC = () => {
           <div className="space-y-4">
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-[#ff6b6b] mr-3" />
+                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
                 <span className="text-[var(--white)]">The Future of AI in Financial Services</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-[#ff6b6b] mr-3" />
+                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
                 <span className="text-[var(--white)]">Healthcare Interoperability Challenges</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
             <a href="#" className="flex items-center justify-between p-3 rounded-lg bg-[var(--black)]/40 hover:bg-[var(--black)]/60 transition-colors">
               <div className="flex items-center">
-                <BookOpen className="h-5 w-5 text-[#ff6b6b] mr-3" />
+                <BookOpen className="h-5 w-5 text-white/70 mr-3" />
                 <span className="text-[var(--white)]">Digital Transformation in Retail</span>
               </div>
               <ExternalLink className="h-4 w-4 text-neutral-400" />
             </a>
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" className="border-[#ff6b6b]/40 text-[#ff6b6b] hover:bg-[#ff6b6b]/10">
+            <Button variant="outline" className="border-white/40 text-white/70 hover:bg-white/10">
               View all white papers <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -465,9 +465,9 @@ const SolutionIndustries: React.FC = () => {
       />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="p-6 bg-gradient-to-br from-[#ffffff]/30 to-[#ffffff]/10 rounded-xl border border-[#ffffff]/20 hover:border-[#ffffff]/40 transition-colors">
-          <div className="p-3 rounded-lg bg-[#ffffff]/20 self-start inline-block mb-4">
-            <Users className="h-6 w-6 text-[#ffffff]" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-white/30 to-white/10 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+          <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
+            <Users className="h-6 w-6 text-white" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Hanzo Agency</h3>
           <p className="text-neutral-300 mb-5">
@@ -479,23 +479,23 @@ const SolutionIndustries: React.FC = () => {
               href="https://hanzo.agency"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-[#ffffff] hover:bg-[#e03e3e] rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-white/20 rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Hanzo Agency</span>
               <ExternalLink size={14} />
             </a>
             <a
               href="/contact"
-              className="flex items-center gap-2 px-5 py-2.5 border border-[#ffffff]/40 hover:border-[#ffffff] rounded-md text-[#ffffff] hover:text-[#ff6b6b] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/30 rounded-md text-white hover:text-white/70 transition-colors"
             >
               <span>Contact us</span>
               <Mail size={14} />
             </a>
           </div>
         </div>
-        <div className="p-6 bg-gradient-to-br from-[#ff6b6b]/30 to-[#ff6b6b]/10 rounded-xl border border-[#ff6b6b]/20 hover:border-[#ff6b6b]/40 transition-colors">
-          <div className="p-3 rounded-lg bg-[#ff6b6b]/20 self-start inline-block mb-4">
-            <Shield className="h-6 w-6 text-[#ff6b6b]" strokeWidth={1.5} />
+        <div className="p-6 bg-gradient-to-br from-white/20 to-white/10 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+          <div className="p-3 rounded-lg bg-white/20 self-start inline-block mb-4">
+            <Shield className="h-6 w-6 text-white/70" strokeWidth={1.5} />
           </div>
           <h3 className="text-2xl font-bold text-[var(--white)] mb-3">Sensei Group</h3>
           <p className="text-neutral-300 mb-5">
@@ -507,14 +507,14 @@ const SolutionIndustries: React.FC = () => {
               href="https://sensei.group"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-[#ff6b6b] hover:bg-[#ffffff] rounded-md text-[var(--white)] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white rounded-md text-[var(--white)] transition-colors"
             >
               <span>Visit Sensei Group</span>
               <ExternalLink size={14} />
             </a>
             <a
               href="tel:+1234567890"
-              className="flex items-center gap-2 px-5 py-2.5 border border-[#ff6b6b]/40 hover:border-[#ff6b6b] rounded-md text-[#ff6b6b] hover:text-[#ffffff] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 border border-white/40 hover:border-white/20 rounded-md text-white/70 hover:text-white transition-colors"
             >
               <span>Schedule a call</span>
               <Phone size={14} />
@@ -554,7 +554,7 @@ const SolutionIndustries: React.FC = () => {
                   onClick={() => setActiveIndustry(industry)}
                   className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
                     activeIndustry === industry
-                      ? "bg-[#ffffff] text-[var(--white)]"
+                      ? "bg-white text-[var(--white)]"
                       : "bg-gray-900 text-neutral-300 hover:bg-gray-800"
                   }`}
                 >
@@ -592,14 +592,14 @@ const SolutionIndustries: React.FC = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg bg-[#ffffff] hover:bg-[#e03e3e] text-[var(--white)] font-medium transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-white hover:bg-white/20 text-[var(--white)] font-medium transition-colors"
                 >
                   Get Started
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </a>
                 <a
                   href="mailto:solutions@hanzo.ai"
-                  className="inline-flex items-center px-6 py-3 rounded-lg border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff]/10 transition-colors"
+                  className="inline-flex items-center px-6 py-3 rounded-lg border border-white text-white hover:bg-white/10 transition-colors"
                 >
                   Email Us
                   <Mail className="ml-2 h-5 w-5" />

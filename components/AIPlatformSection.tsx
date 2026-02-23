@@ -18,7 +18,7 @@ const AIPlatformSection = () => {
     <section className="relative py-20 sm:py-32 overflow-hidden">
       {/* Background elements - simplified */}
       <div className="absolute inset-0 bg-[var(--black)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-red-900/5 to-black/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/90"></div>
       
       <GridLines spacing={60} opacity={0.2} color="rgba(147, 51, 234, 0.15)" />
       
@@ -31,7 +31,7 @@ const AIPlatformSection = () => {
           className="text-center mb-16"
         >
           <div className="flex justify-center mb-4">
-            <span className="inline-block px-4 py-1 rounded-full bg-red-900/30 border border-red-500/30 text-red-300 text-sm font-medium">
+            <span className="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm font-medium">
               Unified AI Development
             </span>
           </div>
@@ -99,7 +99,7 @@ const AIPlatformSection = () => {
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-red-700 to-orange-700 hover:from-red-600 hover:to-orange-600 rounded-full"
+            className="bg-gradient-to-r from-white/20 to-white/10 hover:from-white/20 hover:to-white/10 rounded-full"
           >
             <a href="/ai" className="flex items-center">
               Explore the Platform <ArrowRight className="ml-2 h-5 w-5" />

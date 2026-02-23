@@ -21,8 +21,8 @@ interface TaskCardProps {
 const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   const priorityColors = {
     low: "bg-gray-500",
-    medium: "bg-yellow-500",
-    high: "bg-red-500"
+    medium: "bg-white/10",
+    high: "bg-white/10"
   };
 
   return (
@@ -80,10 +80,10 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
           
           {task.agentCount && task.agentCount > 0 && (
             <div 
-              className="h-6 w-6 rounded-full bg-red-900 border-2 border-gray-900 flex items-center justify-center"
+              className="h-6 w-6 rounded-full bg-white/10 border-2 border-gray-900 flex items-center justify-center"
               title={`${task.agentCount} AI agents`}
             >
-              <Bot className="h-3 w-3 text-[#ffffff]" />
+              <Bot className="h-3 w-3 text-white" />
             </div>
           )}
         </div>

@@ -39,19 +39,19 @@ const Regions = () => {
             
             <div className="rounded-lg bg-gray-900/50 border border-gray-800 overflow-hidden">
               <div className="bg-gray-800 py-2 px-4 flex items-center space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                <div className="w-3 h-3 rounded-full bg-white/10"></div>
                 <div className="text-neutral-400 text-sm">Terminal</div>
               </div>
               <div className="p-4 font-mono text-sm text-neutral-300">
-                <div className="text-green-400">$ hanzo deploy</div>
+                <div className="text-white/70">$ hanzo deploy</div>
                 <div className="text-neutral-400">Initializing deployment...</div>
                 <div className="text-neutral-400">Deploying to region: us-east-1</div>
                 <div className="text-neutral-400">Building container image...</div>
                 <div className="text-neutral-400">Pushing to registry...</div>
-                <div className="text-[#ffffff]">✓ Deployed in 250ms</div>
-                <div className="text-neutral-400">Your app is live at: <span className="text-[#ffffff]">https://myapp.hanzo.cloud</span></div>
+                <div className="text-white">✓ Deployed in 250ms</div>
+                <div className="text-neutral-400">Your app is live at: <span className="text-white">https://myapp.hanzo.cloud</span></div>
               </div>
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ const Regions = () => {
               JavaScript, TypeScript, Bun, Deno—whatever your flavor, Hanzo Launch automatically detects your runtime and generates a VM with everything you need to run your app.
             </p>
             
-            <div className="p-6 rounded-lg bg-gradient-to-br from-[#ffffff]/10 to-[#ff6b6b]/10 border border-[#ffffff]/30">
+            <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/10 border border-white/30">
               <h4 className="text-xl font-bold mb-4">Real GPUs & CPUs on the Edge</h4>
               <p className="text-neutral-300">
                 Run workloads that require GPUs or lots of CPUs, memory, and storage in over 30 regions around the world—all interconnected by a private, encrypted WireGuard network that works out of the box.

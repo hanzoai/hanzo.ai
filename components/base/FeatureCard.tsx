@@ -24,39 +24,39 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   const colorClasses: Record<string, { bg: string, text: string, border: string }> = {
     blue: {
-      bg: "bg-[#ffffff]/10",
-      text: "text-[#ffffff]",
-      border: "border-[#ffffff]/30"
+      bg: "bg-white/10",
+      text: "text-white",
+      border: "border-white/30"
     },
     purple: {
-      bg: "bg-[#ffffff]/10",
-      text: "text-[#ffffff]",
-      border: "border-[#ffffff]/30"
+      bg: "bg-white/10",
+      text: "text-white",
+      border: "border-white/30"
     },
     green: {
-      bg: "bg-green-900/20",
-      text: "text-green-400",
-      border: "border-green-800/50"
+      bg: "bg-white/10",
+      text: "text-white/70",
+      border: "border-white/20"
     },
     amber: {
-      bg: "bg-amber-900/20",
-      text: "text-amber-400",
-      border: "border-amber-800/50"
+      bg: "bg-white/10",
+      text: "text-white/60",
+      border: "border-white/20"
     },
     indigo: {
-      bg: "bg-[#ffffff]/10",
-      text: "text-[#ffffff]",
-      border: "border-[#ffffff]/30"
+      bg: "bg-white/10",
+      text: "text-white",
+      border: "border-white/30"
     },
     cyan: {
-      bg: "bg-[#ff6b6b]/10",
-      text: "text-[#ff6b6b]",
-      border: "border-[#ff6b6b]/30"
+      bg: "bg-white/10",
+      text: "text-white/70",
+      border: "border-white/30"
     },
     rose: {
-      bg: "bg-rose-900/20",
-      text: "text-rose-400",
-      border: "border-rose-800/50"
+      bg: "bg-white/10",
+      text: "text-white/70",
+      border: "border-white/20"
     },
   };
 

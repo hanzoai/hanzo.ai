@@ -31,7 +31,7 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
         
         {/* Glowing underline */}
         <motion.div 
-          className="h-[2px] bg-gradient-to-r from-[#ffffff]/0 via-[#ffffff] to-[#ffffff]/0 mx-auto"
+          className="h-[2px] bg-gradient-to-r from-white/0 via-[#ffffff] to-white/0 mx-auto"
           style={{ width: '60%' }}
           animate={{
             opacity: [0.5, 1, 0.5],
@@ -64,7 +64,7 @@ const AITunnelContent: React.FC<AITunnelContentProps> = ({
           <Button 
             size="lg"
             radius="full"
-            className="text-lg px-8 bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] border-none"
+            className="text-lg px-8 bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white border-none"
           >
             Start Building
           </Button>

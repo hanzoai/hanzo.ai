@@ -90,7 +90,7 @@ const WebAnalytics = () => {
 
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative">
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#ffffff] via-transparent to-transparent"></div>
+      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -117,7 +117,7 @@ const WebAnalytics = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex"
               >
-                <div className="mr-4 mt-1 bg-[#ffffff]/10 p-2 rounded-lg text-[#ffffff]">
+                <div className="mr-4 mt-1 bg-white/10 p-2 rounded-lg text-white">
                   {feature.icon}
                 </div>
                 <div>
@@ -139,7 +139,7 @@ const WebAnalytics = () => {
             <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-medium">Live User Activity</h3>
-                <div className="bg-green-500 animate-pulse h-2 w-2 rounded-full"></div>
+                <div className="bg-white/10 animate-pulse h-2 w-2 rounded-full"></div>
               </div>
               
               <div className="h-80 w-full relative">
@@ -219,7 +219,7 @@ const WebAnalytics = () => {
                     <span>Users</span>
                     <span className="font-bold">876</span>
                   </div>
-                  <div className="text-green-400 text-right mt-1">+24.5%</div>
+                  <div className="text-white/70 text-right mt-1">+24.5%</div>
                 </motion.div>
               </div>
               

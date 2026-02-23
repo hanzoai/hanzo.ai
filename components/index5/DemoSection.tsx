@@ -69,9 +69,9 @@ const DemoSection: React.FC = () => {
             <div className="bg-[var(--black)]/70 rounded-lg overflow-hidden shadow-xl">
               <div className="flex items-center bg-gray-900 py-2 px-4 border-b border-gray-800">
                 <div className="flex space-x-2 mr-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/10"></div>
                 </div>
                 <div className="text-neutral-400 text-sm font-mono">
                   hanzo-ai-terminal
@@ -101,9 +101,9 @@ const DemoSection: React.FC = () => {
               
               <div className="p-6 font-mono text-sm h-[300px] overflow-hidden">
                 <div className="flex items-start">
-                  <Terminal className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <Terminal className="h-5 w-5 text-white/70 mr-2 mt-1 flex-shrink-0" />
                   <div className="text-neutral-400">
-                    <span className="text-green-400">hanzo@ai</span>:<span className="text-[#ff6b6b]">~/projects/demo</span>$ <span className="text-[var(--white)]"> {isPlaying ? "node demo.js" : "node demo.js"}</span>
+                    <span className="text-white/70">hanzo@ai</span>:<span className="text-white/70">~/projects/demo</span>$ <span className="text-[var(--white)]"> {isPlaying ? "node demo.js" : "node demo.js"}</span>
                   </div>
                 </div>
                 
@@ -113,7 +113,7 @@ const DemoSection: React.FC = () => {
                     animate={{ opacity: 1 }}
                     className="mt-4 border border-gray-800 rounded-md p-3 bg-gray-900/50"
                   >
-                    <div className="text-[#ffffff] mb-2">// Execute code</div>
+                    <div className="text-white mb-2">// Execute code</div>
                     <div className="text-[var(--white)] whitespace-pre">{demoSteps[demoStep].code}</div>
                   </motion.div>
                 )}
@@ -128,7 +128,7 @@ const DemoSection: React.FC = () => {
                     <div className="flex">
                       <span className="text-neutral-500">// Output:</span>
                     </div>
-                    <div className="mt-2 text-green-300 italic">
+                    <div className="mt-2 text-white/70 italic">
                       {demoSteps[demoStep].output}
                     </div>
                   </motion.div>
@@ -139,8 +139,8 @@ const DemoSection: React.FC = () => {
           
           {/* Decorative glows */}
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#ffffff]/20 rounded-full blur-[100px]"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#ff6b6b]/20 rounded-full blur-[100px]"></div>
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/20 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white/20 rounded-full blur-[100px]"></div>
           </div>
         </motion.div>
       </div>

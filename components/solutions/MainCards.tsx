@@ -16,9 +16,9 @@ const MainCards: React.FC = () => {
         viewport={{ once: true }}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
-        className="bg-gradient-to-br from-[#ffffff]/30 to-[#ffffff]/10 rounded-2xl border border-[#ffffff]/20 overflow-hidden"
+        className="bg-gradient-to-br from-white/30 to-white/10 rounded-2xl border border-white/20 overflow-hidden"
       >
-        <div className="h-64 bg-gradient-to-r from-[#ffffff]/30 to-[#ff6b6b]/30 flex items-center justify-center">
+        <div className="h-64 bg-gradient-to-r from-white/30 to-white/10 flex items-center justify-center">
           <ChromeText as="h2" className="text-3xl font-bold">
             Capabilities
           </ChromeText>
@@ -30,20 +30,20 @@ const MainCards: React.FC = () => {
             you need to stay ahead.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
-            <span className="px-3 py-1 bg-[#ffffff]/20 rounded-full text-sm text-[#ffffff] border border-[#ffffff]/30">
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white border border-white/30">
               AI Engineering
             </span>
-            <span className="px-3 py-1 bg-[#ff6b6b]/20 rounded-full text-sm text-[#ff6b6b] border border-[#ff6b6b]/30">
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white/70 border border-white/30">
               Cloud Infrastructure
             </span>
-            <span className="px-3 py-1 bg-[#ffffff]/15 rounded-full text-sm text-[#ffffff] border border-[#ffffff]/25">
+            <span className="px-3 py-1 bg-white/15 rounded-full text-sm text-white border border-white/25">
               Data Analytics
             </span>
-            <span className="px-3 py-1 bg-[#ff6b6b]/15 rounded-full text-sm text-[#ff6b6b] border border-[#ff6b6b]/25">
+            <span className="px-3 py-1 bg-white/15 rounded-full text-sm text-white/70 border border-white/25">
               Digital Experiences
             </span>
           </div>
-          <Button asChild className="w-full bg-[#ffffff] hover:bg-[#cccccc]">
+          <Button asChild className="w-full bg-white hover:bg-[#cccccc]">
             <Link href="/solutions/capabilities">
               Explore Our Capabilities <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
@@ -57,9 +57,9 @@ const MainCards: React.FC = () => {
         viewport={{ once: true }}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3, delay: 0.1 }}
-        className="bg-gradient-to-br from-[#ff6b6b]/30 to-[#ff6b6b]/10 rounded-2xl border border-[#ff6b6b]/20 overflow-hidden"
+        className="bg-gradient-to-br from-white/20 to-white/10 rounded-2xl border border-white/20 overflow-hidden"
       >
-        <div className="h-64 bg-gradient-to-r from-[#ff6b6b]/30 to-[#ffffff]/30 flex items-center justify-center">
+        <div className="h-64 bg-gradient-to-r from-white/20 to-white/30 flex items-center justify-center">
           <ChromeText as="h2" className="text-3xl font-bold">
             Industries
           </ChromeText>
@@ -71,20 +71,20 @@ const MainCards: React.FC = () => {
             solutions for your business.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
-            <span className="px-3 py-1 bg-[#ff6b6b]/20 rounded-full text-sm text-[#ff6b6b] border border-[#ff6b6b]/30">
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white/70 border border-white/30">
               Financial Services
             </span>
-            <span className="px-3 py-1 bg-[#ffffff]/20 rounded-full text-sm text-[#ffffff] border border-[#ffffff]/30">
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white border border-white/30">
               Healthcare
             </span>
-            <span className="px-3 py-1 bg-[#ff6b6b]/15 rounded-full text-sm text-[#ff6b6b] border border-[#ff6b6b]/25">
+            <span className="px-3 py-1 bg-white/15 rounded-full text-sm text-white/70 border border-white/25">
               Retail
             </span>
-            <span className="px-3 py-1 bg-[#ffffff]/15 rounded-full text-sm text-[#ffffff] border border-[#ffffff]/25">
+            <span className="px-3 py-1 bg-white/15 rounded-full text-sm text-white border border-white/25">
               Technology
             </span>
           </div>
-          <Button asChild className="w-full bg-[#ff6b6b] hover:bg-[#ffffff]">
+          <Button asChild className="w-full bg-white/10 hover:bg-white">
             <Link href="/solutions/industries">
               Explore Our Industry Solutions <ChevronRight className="ml-2 h-5 w-5" />
             </Link>

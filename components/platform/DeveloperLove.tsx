@@ -68,7 +68,7 @@ const DeveloperLove = () => {
               href="https://twitter.com/search?q=hanzo" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center text-[#ffffff] hover:text-[#ff6b6b] transition-colors"
+              className="inline-flex items-center text-white hover:text-white/70 transition-colors"
             >
               Join nearly 1M developers building with Hanzo <ArrowRight className="ml-2 h-4 w-4" />
             </a>
@@ -86,7 +86,7 @@ const DeveloperLove = () => {
               className="bg-gray-900/50 rounded-xl p-4 border border-gray-800"
             >
               <div className="flex items-center mb-3">
-                <div className="h-10 w-10 rounded-full mr-3 bg-[#ffffff]/20 border border-[#ffffff]/30 text-[var(--white)] flex items-center justify-center text-sm font-semibold">
+                <div className="h-10 w-10 rounded-full mr-3 bg-white/20 border border-white/30 text-[var(--white)] flex items-center justify-center text-sm font-semibold">
                   {getInitials(tweet.name)}
                 </div>
                 <div>

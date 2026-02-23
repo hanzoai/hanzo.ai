@@ -8,7 +8,7 @@ import { Button } from "@hanzo/ui";
 const Base = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#000a00]/0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent">
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           whileInView={{ opacity: 1, y: 0 }} 

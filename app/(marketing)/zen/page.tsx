@@ -116,7 +116,7 @@ const Zen = () => {
                   transition={{ duration: 0.4 }}
                   className="mb-6"
                 >
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[#ffffff]/10 text-[#ffffff] border border-[#ffffff]/20">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/20">
                     <Zap className="w-3 h-3" />
                     14 Foundation Models
                   </span>
@@ -214,9 +214,9 @@ const Zen = () => {
                 <div className="rounded-xl border border-neutral-700 bg-neutral-900/95 backdrop-blur-sm overflow-hidden shadow-2xl">
                   <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950">
                     <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-white/10" />
+                      <div className="w-3 h-3 rounded-full bg-white/10" />
+                      <div className="w-3 h-3 rounded-full bg-white/10" />
                     </div>
                     <span className="text-xs text-neutral-500 font-mono ml-2">
                       zen-models
@@ -240,19 +240,19 @@ const Zen = () => {
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm">
-                        <Brain className="w-4 h-4 text-[#ffffff]" />
+                        <Brain className="w-4 h-4 text-white" />
                         <span className="text-neutral-300">
                           Language + Code + Vision + Multimodal
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <Code2 className="w-4 h-4 text-[#ffffff]" />
+                        <Code2 className="w-4 h-4 text-white" />
                         <span className="text-neutral-300">
                           Zen MoDE architecture
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <Shield className="w-4 h-4 text-[#ffffff]" />
+                        <Shield className="w-4 h-4 text-white" />
                         <span className="text-neutral-300">
                           OpenAI-compatible API
                         </span>
@@ -289,15 +289,15 @@ const Zen = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#ffffff]/30 transition-all hover:-translate-y-1"
+                    className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
                   >
-                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-[#ffffff]/10 border border-[#ffffff]/20">
-                      <Icon className="w-6 h-6 text-[#ffffff]" />
+                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-white/10 border border-white/20">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-1">
                       {category.title}
                     </h3>
-                    <p className="text-sm text-[#ffffff] mb-2">
+                    <p className="text-sm text-white mb-2">
                       {category.count}
                     </p>
                     <p className="text-neutral-500 text-sm">
@@ -334,10 +334,10 @@ const Zen = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-[#ffffff]/30 transition-all"
+                    className="p-6 bg-black border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all"
                   >
-                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-[#ffffff]/10 border border-[#ffffff]/20">
-                      <Icon className="w-6 h-6 text-[#ffffff]" />
+                    <div className="mx-auto w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-white/10 border border-white/20">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">
                       {benefit.title}
@@ -371,10 +371,10 @@ const Zen = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#ffffff]/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
               >
                 <Link href="/zen/models" className="block">
-                  <Brain className="w-8 h-8 mx-auto mb-4 text-[#ffffff]" />
+                  <Brain className="w-8 h-8 mx-auto mb-4 text-white" />
                   <h3 className="text-xl font-semibold text-white mb-2">
                     Model Catalog
                   </h3>
@@ -389,10 +389,10 @@ const Zen = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#ffffff]/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
               >
                 <Link href="/pricing" className="block">
-                  <Layers className="w-8 h-8 mx-auto mb-4 text-[#ffffff]" />
+                  <Layers className="w-8 h-8 mx-auto mb-4 text-white" />
                   <h3 className="text-xl font-semibold text-white mb-2">
                     API Pricing
                   </h3>
@@ -410,9 +410,9 @@ const Zen = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-[#ffffff]/30 transition-all hover:-translate-y-1"
+                className="p-6 bg-neutral-950 border border-neutral-800 rounded-xl text-center hover:border-white/30 transition-all hover:-translate-y-1"
               >
-                <Globe className="w-8 h-8 mx-auto mb-4 text-[#ffffff]" />
+                <Globe className="w-8 h-8 mx-auto mb-4 text-white" />
                 <h3 className="text-xl font-semibold text-white mb-2">
                   API Access
                 </h3>

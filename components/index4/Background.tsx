@@ -10,8 +10,8 @@ const Background = () => {
       
       {/* Subtle gradient accents */}
       <div className="fixed inset-0 -z-10 opacity-20">
-        <div className="absolute -top-80 -right-80 w-96 h-96 bg-[#ffffff]/10 rounded-full blur-[120px]"></div>
-        <div className="absolute top-1/3 left-1/4 w-[30rem] h-[30rem] bg-[#ff6b6b]/5 rounded-full blur-[100px]"></div>
+        <div className="absolute -top-80 -right-80 w-96 h-96 bg-white/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/3 left-1/4 w-[30rem] h-[30rem] bg-white/5 rounded-full blur-[100px]"></div>
       </div>
     </>
   );

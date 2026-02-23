@@ -122,7 +122,7 @@ const Background: React.FC = () => {
         className="absolute inset-0 w-full h-full"
       />
       
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/10 to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black"></div>
       
       {/* Animated grid overlay */}
       <motion.div 
@@ -138,7 +138,7 @@ const Background: React.FC = () => {
       
       {/* Animated glow spots */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[100px] bg-[#ffffff]/10"
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[100px] bg-white/10"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.15, 0.1],
@@ -147,7 +147,7 @@ const Background: React.FC = () => {
       />
 
       <motion.div
-        className="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full blur-[100px] bg-[#ff6b6b]/10"
+        className="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full blur-[100px] bg-white/10"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.08, 0.12, 0.08],

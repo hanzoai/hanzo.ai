@@ -21,17 +21,17 @@ const Compliance = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-8 md:mb-0">
               <div className="flex items-center">
-                <Shield className="h-6 w-6 text-[#ffffff] mr-3" />
+                <Shield className="h-6 w-6 text-white mr-3" />
                 <h2 className="text-2xl font-semibold text-[var(--white)]">Secure & Compliant</h2>
               </div>
               <div className="mt-4 flex flex-wrap gap-4">
-                <div className="flex items-center bg-[#ffffff]/10 border border-[#ffffff]/30 rounded-md px-3 py-1">
-                  <Lock className="h-4 w-4 text-[#ffffff] mr-2" />
-                  <span className="text-[#ff6b6b] text-sm">SOC 2 Audit in Progress</span>
+                <div className="flex items-center bg-white/10 border border-white/30 rounded-md px-3 py-1">
+                  <Lock className="h-4 w-4 text-white mr-2" />
+                  <span className="text-white/70 text-sm">SOC 2 Audit in Progress</span>
                 </div>
-                <div className="flex items-center bg-[#ffffff]/10 border border-[#ffffff]/30 rounded-md px-3 py-1">
-                  <Lock className="h-4 w-4 text-[#ffffff] mr-2" />
-                  <span className="text-[#ff6b6b] text-sm">HIPAA BAA Available</span>
+                <div className="flex items-center bg-white/10 border border-white/30 rounded-md px-3 py-1">
+                  <Lock className="h-4 w-4 text-white mr-2" />
+                  <span className="text-white/70 text-sm">HIPAA BAA Available</span>
                 </div>
               </div>
             </div>
@@ -60,35 +60,35 @@ const Compliance = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gradient-to-r from-[#ffffff]/10 to-[#ff6b6b]/10 rounded-xl p-6 border border-[#ffffff]/30"
+            className="bg-gradient-to-r from-white/10 to-white/10 rounded-xl p-6 border border-white/30"
           >
             <div className="flex items-center mb-4">
-              <Server className="h-6 w-6 text-[#ffffff] mr-3" />
+              <Server className="h-6 w-6 text-white mr-3" />
               <h3 className="text-xl font-semibold text-[var(--white)]">Global High-Performance Edge</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-              <div className="bg-[#ffffff]/10 border border-[#ffffff]/30 rounded-lg p-4">
-                <h4 className="font-medium text-[#ff6b6b] mb-2">15+ Regions</h4>
+              <div className="bg-white/10 border border-white/30 rounded-lg p-4">
+                <h4 className="font-medium text-white/70 mb-2">15+ Regions</h4>
                 <p className="text-neutral-300 text-sm mb-1">Global Coverage</p>
                 <p className="text-neutral-400 text-xs">Deploy close to your users worldwide</p>
               </div>
 
-              <div className="bg-[#ffffff]/10 border border-[#ffffff]/30 rounded-lg p-4">
-                <h4 className="font-medium text-[#ff6b6b] mb-2">Auto-scaling</h4>
+              <div className="bg-white/10 border border-white/30 rounded-lg p-4">
+                <h4 className="font-medium text-white/70 mb-2">Auto-scaling</h4>
                 <p className="text-neutral-300 text-sm mb-1">Scale to Zero</p>
                 <p className="text-neutral-400 text-xs">Pay only for what you use</p>
               </div>
 
-              <div className="bg-[#ffffff]/10 border border-[#ffffff]/30 rounded-lg p-4">
-                <h4 className="font-medium text-[#ff6b6b] mb-2">Data Residency</h4>
+              <div className="bg-white/10 border border-white/30 rounded-lg p-4">
+                <h4 className="font-medium text-white/70 mb-2">Data Residency</h4>
                 <p className="text-neutral-300 text-sm mb-1">You Choose</p>
                 <p className="text-neutral-400 text-xs">Control where your data lives</p>
               </div>
             </div>
             
             <div className="mt-6 text-center">
-              <Button variant="outline" className="bg-[#ffffff]/20 border-[#ffffff]/50 hover:bg-[#ffffff]/30 text-[var(--white)]">
+              <Button variant="outline" className="bg-white/20 border-white/50 hover:bg-white/30 text-[var(--white)]">
                 <Link href="/security">Learn More About Our Security</Link>
               </Button>
             </div>

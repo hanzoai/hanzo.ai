@@ -77,7 +77,7 @@ const Account = () => {
               <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5">
                 Upload New Picture
               </Button>
-              <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5 text-red-400 hover:text-red-300 hover:bg-red-900/10">
+              <Button variant="outline" size="sm" className="bg-[var(--black)] border-white/10 hover:bg-[var(--white)]/5 text-white/70 hover:text-white/70 hover:bg-white/5">
                 Remove
               </Button>
             </div>

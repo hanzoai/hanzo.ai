@@ -33,7 +33,7 @@ const KnowledgeBaseCard = () => {
           <div className="mb-4 flex items-center justify-between">
             <h3 className="font-medium text-foreground">Company Wiki</h3>
             <div className="flex items-center space-x-2">
-              <div className="text-xs text-green-400 flex items-center">
+              <div className="text-xs text-white/70 flex items-center">
                 <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs mr-1 text-white" style={{ backgroundColor: BRAND_COLOR }}>AI</div>
                 <span>Updating</span>
               </div>

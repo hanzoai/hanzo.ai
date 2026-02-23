@@ -12,8 +12,8 @@ interface EndpointProps {
 
 const EndpointCard = ({ path, description }: EndpointProps) => {
   return (
-    <div className="bg-gray-900/40 border border-gray-800 rounded-lg p-4 hover:border-amber-500/30 transition-all duration-300">
-      <div className="font-mono text-sm text-amber-400 mb-2">{path}</div>
+    <div className="bg-gray-900/40 border border-gray-800 rounded-lg p-4 hover:border-white/20 transition-all duration-300">
+      <div className="font-mono text-sm text-white/60 mb-2">{path}</div>
       <p className="text-neutral-400 text-sm">{description}</p>
     </div>
   );
@@ -109,7 +109,7 @@ const APIEndpoints = () => {
     ]
   };
 
-  const tabClasses = "data-[state=active]:bg-amber-500/10 data-[state=active]:text-amber-400 border-b-0";
+  const tabClasses = "data-[state=active]:bg-white/5 data-[state=active]:text-white/60 border-b-0";
 
   return (
     <section className="py-16 bg-gradient-to-b from-black to-gray-900/30">
@@ -144,7 +144,7 @@ const APIEndpoints = () => {
             {Object.keys(endpointCategories).map((category) => (
               <TabsContent key={category} value={category} className="mt-0">
                 <div className="bg-gray-900/20 border border-gray-800 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-amber-400">
+                  <h3 className="text-xl font-semibold mb-4 text-white/60">
                     Hanzo {category.charAt(0).toUpperCase() + category.slice(1)} API Endpoints
                   </h3>
                   

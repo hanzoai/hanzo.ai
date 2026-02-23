@@ -7,22 +7,22 @@ import { ShoppingCart, Repeat, LayoutGrid, CreditCard } from "lucide-react";
 
 const useCases = [
   {
-    icon: <ShoppingCart className="h-6 w-6 text-[#ffffff]" />,
+    icon: <ShoppingCart className="h-6 w-6 text-white" />,
     title: "Ecommerce",
     description: "Sell directly to consumers worldwide with optimized, secure checkout experiences."
   },
   {
-    icon: <Repeat className="h-6 w-6 text-[#ffffff]" />,
+    icon: <Repeat className="h-6 w-6 text-white" />,
     title: "SaaS & Subscription",
     description: "Automate recurring billing and manage complex pricing tiers."
   },
   {
-    icon: <LayoutGrid className="h-6 w-6 text-[#ffffff]" />,
+    icon: <LayoutGrid className="h-6 w-6 text-white" />,
     title: "Marketplaces",
     description: "Integrate multi-party payments and payouts for buyers and sellers."
   },
   {
-    icon: <CreditCard className="h-6 w-6 text-[#ffffff]" />,
+    icon: <CreditCard className="h-6 w-6 text-white" />,
     title: "Embedded Finance",
     description: "Seamlessly embed financial services into your product, from cards to loans."
   }
@@ -66,7 +66,7 @@ const UseCases = () => {
                 <div className="grid grid-cols-2 gap-3">
                   {[...Array(4)].map((_, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-[#ffffff]"></div>
+                      <div className="w-2 h-2 rounded-full bg-white"></div>
                       <span className="text-sm text-neutral-400">
                         {index === 0 && ['Optimized checkout', 'Global shipping', 'Inventory sync', 'Tax compliance'][i]}
                         {index === 1 && ['Recurring billing', 'Trials & coupons', 'Revenue recovery', 'Usage metering'][i]}
@@ -86,14 +86,14 @@ const UseCases = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-16 p-8 bg-gradient-to-r from-gray-900/50 to-red-900/20 border border-gray-800 rounded-lg text-center"
+          className="mt-16 p-8 bg-gradient-to-r from-gray-900/50 to-white/10 border border-gray-800 rounded-lg text-center"
         >
           <h3 className="text-2xl font-bold mb-4">Start Quickly, Scale Instantly</h3>
           <p className="text-neutral-300 max-w-2xl mx-auto mb-6">
             No-code solutions available, with setup completed in minutes. Scalable from startup to enterprise-level with consistent reliability.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-6 py-3 bg-[#ffffff] hover:bg-[#cccccc] rounded-md transition duration-200">
+            <button className="px-6 py-3 bg-white hover:bg-[#cccccc] rounded-md transition duration-200">
               Get Started
             </button>
             <button className="px-6 py-3 bg-transparent border border-gray-600 hover:border-gray-400 rounded-md transition duration-200">

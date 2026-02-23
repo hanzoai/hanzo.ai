@@ -44,9 +44,9 @@ const ZapCodeExample = () => {
           {/* Terminal header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-t-xl">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
             </div>
             <div className="flex-1 flex items-center justify-center gap-2 text-sm text-neutral-500">
               <Terminal className="w-4 h-4" />
@@ -65,14 +65,14 @@ const ZapCodeExample = () => {
                   <span className="text-neutral-500">{line.text}</span>
                 )}
                 {line.type === "command" && (
-                  <span className="text-green-400">{line.text}</span>
+                  <span className="text-white/70">{line.text}</span>
                 )}
               </div>
             ))}
           </div>
 
           {/* Decorative glow */}
-          <div className="absolute -inset-4 bg-green-500/5 rounded-2xl blur-2xl -z-10" />
+          <div className="absolute -inset-4 bg-white/5 rounded-2xl blur-2xl -z-10" />
         </motion.div>
 
         <motion.p
@@ -82,7 +82,7 @@ const ZapCodeExample = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center mt-8 text-neutral-400"
         >
-          <span className="text-green-500 font-mono">zapd</span> multiplexes tools/resources
+          <span className="text-white/70 font-mono">zapd</span> multiplexes tools/resources
           across MCP servers (or ZAP-native servers).
         </motion.p>
       </div>

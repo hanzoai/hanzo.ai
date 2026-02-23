@@ -15,10 +15,10 @@ const CallToAction = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center px-3 py-1 rounded-full bg-red-900/30 border border-[#ffffff]/30 mb-6"
+          className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/30 mb-6"
         >
-          <Activity className="h-4 w-4 text-[#ffffff] mr-2" />
-          <span className="text-sm text-[#ff6b6b]">Get Started Today</span>
+          <Activity className="h-4 w-4 text-white mr-2" />
+          <span className="text-sm text-white/70">Get Started Today</span>
         </motion.div>
         
         <motion.h2
@@ -51,7 +51,7 @@ const CallToAction = () => {
         >
           <Button
             size="lg"
-            className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg w-full sm:w-auto"
+            className="bg-white hover:bg-[#cccccc] text-[var(--white)] px-8 py-6 text-lg w-full sm:w-auto"
           >
             Start Building <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

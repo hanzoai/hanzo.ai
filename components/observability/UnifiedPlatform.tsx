@@ -8,7 +8,7 @@ import { Cpu, Clock, Users, LineChart } from "lucide-react";
 const UnifiedPlatform = () => {
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900/20 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#ffffff]/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -18,8 +18,8 @@ const UnifiedPlatform = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          <div className="inline-flex items-center justify-center mb-6 bg-[#ffffff]/10 p-3 rounded-full">
-            <Cpu className="h-7 w-7 text-[#ffffff]" />
+          <div className="inline-flex items-center justify-center mb-6 bg-white/10 p-3 rounded-full">
+            <Cpu className="h-7 w-7 text-white" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Unified Intelligence Platform</h2>
           <p className="text-xl text-neutral-300">
@@ -30,17 +30,17 @@ const UnifiedPlatform = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: <Clock className="h-7 w-7 text-[#ffffff]" />,
+              icon: <Clock className="h-7 w-7 text-white" />,
               title: "Real-time System Tracing",
               description: "Capture and analyze every event in your AI system with microsecond precision."
             },
             {
-              icon: <Users className="h-7 w-7 text-[#ff6b6b]" />,
+              icon: <Users className="h-7 w-7 text-white/70" />,
               title: "Cross-team Collaboration",
               description: "Unite your engineering, data science, and product teams with role-based views and controls."
             },
             {
-              icon: <LineChart className="h-7 w-7 text-[#ffffff]" />,
+              icon: <LineChart className="h-7 w-7 text-white" />,
               title: "Intelligent Event Analytics",
               description: "Reveal patterns and insights that would otherwise remain hidden in your operational data."
             }
@@ -53,7 +53,7 @@ const UnifiedPlatform = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gradient-to-br from-gray-900 to-black/80 rounded-xl p-8 border border-gray-800 hover:border-gray-700 transition-colors"
             >
-              <div className="bg-[#ffffff]/10 p-3 rounded-lg w-fit mb-5">
+              <div className="bg-white/10 p-3 rounded-lg w-fit mb-5">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>

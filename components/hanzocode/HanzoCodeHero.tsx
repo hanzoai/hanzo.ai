@@ -11,9 +11,9 @@ const HanzoCodeHero = () => {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff]/10 to-[#ff6b6b]/5 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/10 opacity-30"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
@@ -23,7 +23,7 @@ const HanzoCodeHero = () => {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            The <span className="text-[#ffffff]">Ultimate AI-Powered</span> Code Editor
+            The <span className="text-white">Ultimate AI-Powered</span> Code Editor
           </h1>
           <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
             Beyond Cursor and Windsurf, Hanzo Code supercharges your favorite VS Code-compatible editor 
@@ -33,7 +33,7 @@ const HanzoCodeHero = () => {
           <div className="mb-12">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] hover:from-[#cccccc] hover:to-[#ffffff] text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
+              className="bg-gradient-to-r from-white to-white/10 hover:from-[#cccccc] hover:to-white text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
             >
               <a href="#" className="flex items-center">
                 Get Hanzo Code

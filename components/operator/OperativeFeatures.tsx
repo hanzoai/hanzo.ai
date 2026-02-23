@@ -42,7 +42,7 @@ const OperativeFeatures = () => {
   return (
     <section className="py-24 bg-gray-950 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 bg-[#ffffff]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -72,8 +72,8 @@ const OperativeFeatures = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 hover:bg-gray-900/50 transition-colors"
             >
-              <div className="h-12 w-12 rounded-lg bg-[#ffffff]/20 flex items-center justify-center mb-4">
-                <feature.icon className="h-6 w-6 text-[#ffffff]" />
+              <div className="h-12 w-12 rounded-lg bg-white/20 flex items-center justify-center mb-4">
+                <feature.icon className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--white)] mb-2">{feature.title}</h3>
               <p className="text-neutral-400">{feature.description}</p>
@@ -91,7 +91,7 @@ const OperativeFeatures = () => {
           >
             <Github className="h-5 w-5 text-neutral-400" />
             <span className="text-neutral-300">Open Source on</span>
-            <a href="https://github.com/hanzo-ai/operative" className="text-[var(--white)] font-semibold hover:text-[#ffffff] transition-colors">GitHub</a>
+            <a href="https://github.com/hanzo-ai/operative" className="text-[var(--white)] font-semibold hover:text-white transition-colors">GitHub</a>
           </motion.div>
         </div>
       </div>

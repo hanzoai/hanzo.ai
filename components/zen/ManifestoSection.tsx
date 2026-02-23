@@ -7,7 +7,7 @@ import { manifestoDescription } from "./data/manifestoText";
 
 const ManifestoSection = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-red-900/10">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-white/10">
       <div className="max-w-7xl mx-auto">
         <SectionHeader 
           title="Our Manifesto" 

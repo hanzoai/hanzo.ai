@@ -20,10 +20,10 @@ const UseCaseCard: React.FC<UseCaseCardProps> = ({ icon: Icon, title, descriptio
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1 * index }}
-      className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+      className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6 hover:border-white/30 transition-colors"
     >
-      <div className="bg-red-900/20 h-10 w-10 rounded-full flex items-center justify-center mb-4">
-        <Icon className="h-5 w-5 text-[#ffffff]" />
+      <div className="bg-white/10 h-10 w-10 rounded-full flex items-center justify-center mb-4">
+        <Icon className="h-5 w-5 text-white" />
       </div>
       <h3 className="text-lg font-semibold text-[var(--white)] mb-2">{title}</h3>
       <p className="text-neutral-400 text-sm">{description}</p>
@@ -66,7 +66,7 @@ const UseCases = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-red-950/10">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-white/10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,9 +75,9 @@ const UseCases = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-red-900/30 border border-[#ffffff]/30 mb-6">
-            <Heart className="h-4 w-4 text-[#ffffff] mr-2" />
-            <span className="text-sm text-[#ff6b6b]">Popular Use Cases</span>
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/30 mb-6">
+            <Heart className="h-4 w-4 text-white mr-2" />
+            <span className="text-sm text-white/70">Popular Use Cases</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-4">
             Build Interactive Experiences
@@ -106,7 +106,7 @@ const UseCases = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center"
         >
-          <Button className="bg-[#ffffff] hover:bg-[#cccccc]">
+          <Button className="bg-white hover:bg-[#cccccc]">
             Explore All Use Cases <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </motion.div>

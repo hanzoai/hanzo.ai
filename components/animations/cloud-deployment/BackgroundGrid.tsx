@@ -38,7 +38,7 @@ const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
       {scanPoints.map((point, idx) => (
         <motion.div
           key={`point-${idx}`}
-          className="absolute h-1 w-1 rounded-full bg-[#ffffff]/10" // Reduced opacity
+          className="absolute h-1 w-1 rounded-full bg-white/10" // Reduced opacity
           style={{ 
             left: `${point.x}%`, 
             top: `${point.y}%`,
@@ -63,7 +63,7 @@ const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
         <React.Fragment key={`connection-${idx}`}>
           {/* Static connection line - more subtle */}
           <div
-            className="absolute h-px bg-[#ffffff]/5" // Reduced opacity
+            className="absolute h-px bg-white/5" // Reduced opacity
             style={{
               left: `${pair.from.x}%`,
               top: `${pair.from.y}%`,
@@ -75,7 +75,7 @@ const BackgroundGrid: React.FC<BackgroundGridProps> = ({ scanPoints }) => {
           
           {/* Animated traffic pulse - less frequent */}
           <motion.div
-            className="absolute h-1 w-1 rounded-full bg-[#ffffff]/30" // Smaller and reduced opacity
+            className="absolute h-1 w-1 rounded-full bg-white/30" // Smaller and reduced opacity
             style={{
               left: `${pair.from.x}%`,
               top: `${pair.from.y}%`,

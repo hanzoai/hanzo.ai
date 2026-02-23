@@ -140,10 +140,10 @@ const DigitalAssets = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8"
           >
-            <Building2 className="w-4 h-4 text-[#ffffff]" />
-            <span className="text-sm font-medium text-[#ff6b6b]">Digital Asset Infrastructure</span>
+            <Building2 className="w-4 h-4 text-white" />
+            <span className="text-sm font-medium text-white/70">Digital Asset Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -154,7 +154,7 @@ const DigitalAssets = () => {
           >
             <span className="text-white">Move. Hold.</span>
             <br />
-            <span className="bg-gradient-to-r from-[#ffffff] to-[#ff6b6b] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-white/10 bg-clip-text text-transparent">
               Manage. Issue.
             </span>
           </motion.h1>
@@ -178,7 +178,7 @@ const DigitalAssets = () => {
           >
             <a
               href="https://cloud.hanzo.ai/signup"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] hover:bg-[#e03e3e] text-white font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
             >
               Start Building
               <ArrowRight className="w-4 h-4" />
@@ -223,12 +223,12 @@ const DigitalAssets = () => {
                   >
                     <Link
                       href={product.href || "#"}
-                      className="block bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-[#ffffff]/30 transition-colors group h-full"
+                      className="block bg-neutral-900/50 border border-neutral-800 rounded-xl p-5 hover:border-white/30 transition-colors group h-full"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#ffffff]/10 flex items-center justify-center mb-3">
-                        <Icon className="w-5 h-5 text-[#ffffff]" />
+                      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-3">
+                        <Icon className="w-5 h-5 text-white" />
                       </div>
-                      <h3 className="font-semibold text-white mb-1 group-hover:text-[#ffffff] transition-colors">
+                      <h3 className="font-semibold text-white mb-1 group-hover:text-white transition-colors">
                         {product.name}
                       </h3>
                       <p className="text-sm text-neutral-500">{product.description}</p>
@@ -250,9 +250,9 @@ const DigitalAssets = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/10 border border-[#ffffff]/20 mb-6">
-              <Sparkles className="w-4 h-4 text-[#ffffff]" />
-              <span className="text-sm font-medium text-[#ff6b6b]">White-Label Solutions</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white/70">White-Label Solutions</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Launch Your Own Products
@@ -273,17 +273,17 @@ const DigitalAssets = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-[#ffffff]/30 transition-colors"
+                  className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-white/30 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ffffff]/20 to-[#ff6b6b]/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#ffffff]" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
                   <p className="text-neutral-400 text-sm mb-4">{product.description}</p>
                   <ul className="space-y-1">
                     {product.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-neutral-500">
-                        <Check className="w-3 h-3 text-[#ffffff]" />
+                        <Check className="w-3 h-3 text-white" />
                         {feature}
                       </li>
                     ))}
@@ -304,7 +304,7 @@ const DigitalAssets = () => {
             </p>
             <Link
               href="/contact/sales"
-              className="inline-flex items-center gap-2 text-[#ffffff] hover:text-[#ff6b6b] font-medium"
+              className="inline-flex items-center gap-2 text-white hover:text-white/70 font-medium"
             >
               Contact sales for white-label pricing <ArrowRight className="w-4 h-4" />
             </Link>
@@ -319,7 +319,7 @@ const DigitalAssets = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-[#ffffff]/20 to-transparent border border-[#ffffff]/30 rounded-2xl p-8 md:p-12 text-center"
+            className="relative bg-gradient-to-br from-white/20 to-transparent border border-white/30 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Build?
@@ -331,7 +331,7 @@ const DigitalAssets = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://cloud.hanzo.ai/signup"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] hover:bg-[#e03e3e] text-white font-medium rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-white/20 text-white font-medium rounded-full transition-colors"
               >
                 Get Started Free
                 <ArrowRight className="w-4 h-4" />

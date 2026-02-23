@@ -27,7 +27,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
       className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"} mb-4`}
     >
       {message.sender === "ai" && (
-        <div className="bg-[#ffffff]/40 h-8 w-8 rounded-full flex items-center justify-center mr-2 mt-1">
+        <div className="bg-white/40 h-8 w-8 rounded-full flex items-center justify-center mr-2 mt-1">
           <Bot className="h-4 w-4 text-[var(--white)]" />
         </div>
       )}
@@ -35,7 +35,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
       <div
         className={`max-w-3xl p-3 rounded-lg ${
           message.sender === "user"
-            ? "bg-[#ffffff]/30 border border-[#ffffff]/30"
+            ? "bg-white/30 border border-white/30"
             : "bg-gray-800/60 border border-gray-700/50"
         }`}
       >
@@ -55,7 +55,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, formatTimestamp }) =
       </div>
       
       {message.sender === "user" && (
-        <div className="bg-[#ffffff]/40 h-8 w-8 rounded-full flex items-center justify-center ml-2 mt-1">
+        <div className="bg-white/40 h-8 w-8 rounded-full flex items-center justify-center ml-2 mt-1">
           <User className="h-4 w-4 text-[var(--white)]" />
         </div>
       )}

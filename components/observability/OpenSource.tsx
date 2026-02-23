@@ -8,21 +8,21 @@ import { Button } from "@hanzo/ui";
 
 const statsItems = [
   { 
-    icon: <Download className="h-6 w-6 text-green-400" />,
+    icon: <Download className="h-6 w-6 text-white/70" />,
     value: 17,
     suffix: "M+",
     label: "Downloads",
     countUpDuration: 2
   },
   { 
-    icon: <Star className="h-6 w-6 text-yellow-400" />,
+    icon: <Star className="h-6 w-6 text-white/60" />,
     value: 25,
     suffix: "K+",
     label: "GitHub Stars",
     countUpDuration: 2.2
   },
   { 
-    icon: <Users className="h-6 w-6 text-[#ff6b6b]" />,
+    icon: <Users className="h-6 w-6 text-white/70" />,
     value: 280,
     suffix: "+",
     label: "Contributors",
@@ -43,8 +43,8 @@ const OpenSource = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center mb-6 bg-[#ffffff]/10 p-3 rounded-full">
-            <Github className="h-7 w-7 text-[#ffffff]" />
+          <div className="inline-flex items-center justify-center mb-6 bg-white/10 p-3 rounded-full">
+            <Github className="h-7 w-7 text-white" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Proudly Open Source</h2>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto">

@@ -21,7 +21,7 @@ const PhilosophyItem: React.FC<PhilosophyItemProps> = ({ icon, title, descriptio
       transition={{ duration: 0.5, delay }}
       className="flex flex-col items-center text-center"
     >
-      <div className="w-16 h-16 rounded-full bg-[#ffffff]/20 flex items-center justify-center mb-4">
+      <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-2 text-[var(--white)]">{title}</h3>
@@ -33,17 +33,17 @@ const PhilosophyItem: React.FC<PhilosophyItemProps> = ({ icon, title, descriptio
 const PhilosophySection: React.FC = () => {
   const items = [
     {
-      icon: <Shield className="h-8 w-8 text-[#ffffff]" />,
+      icon: <Shield className="h-8 w-8 text-white" />,
       title: "Developer-First",
       description: "Built by developers for developers, with a focus on exceptional DX and intuitive APIs."
     },
     {
-      icon: <Zap className="h-8 w-8 text-[#ffffff]" />,
+      icon: <Zap className="h-8 w-8 text-white" />,
       title: "Open Source",
       description: "Complete transparency with our core tools open source and free forever."
     },
     {
-      icon: <Code className="h-8 w-8 text-[#ffffff]" />,
+      icon: <Code className="h-8 w-8 text-white" />,
       title: "Complete Control",
       description: "No black boxes. You own your data, models, and infrastructure with full control."
     }
@@ -53,7 +53,7 @@ const PhilosophySection: React.FC = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1 rounded-full bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ffffff] text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium mb-6">
             Our Philosophy
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] mb-6">

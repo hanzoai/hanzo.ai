@@ -21,7 +21,7 @@ const HanzoAppEnterprise = () => {
           </p>
           <Button 
             size="lg"
-            className="bg-[#ffffff] hover:bg-[#cccccc] text-[var(--white)] px-8"
+            className="bg-white hover:bg-[#cccccc] text-[var(--white)] px-8"
           >
             Let's Chat
           </Button>
