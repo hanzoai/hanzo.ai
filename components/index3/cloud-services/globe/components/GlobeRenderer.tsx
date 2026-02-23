@@ -22,7 +22,7 @@ const GlobeRenderer: React.FC<GlobeRendererProps> = ({ width, height }) => {
       ref={containerRef} 
       className="w-full h-full rounded-lg overflow-hidden"
       style={{ 
-        background: 'radial-gradient(circle at center, rgba(25, 34, 55, 0.4) 0%, rgba(10, 14, 25, 0.8) 70%)',
+        background: 'radial-gradient(circle at center, rgba(30, 30, 30, 0.4) 0%, rgba(10, 10, 10, 0.8) 70%)',
       }}
     />
   );

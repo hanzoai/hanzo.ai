@@ -27,7 +27,7 @@ const PricingPreviewSection = () => {
         >
           <p
             className="inline-flex text-xs font-medium rounded-full px-4 py-2 border mb-6"
-            style={{ color: "#ffffff", borderColor: "rgba(253, 68, 68, 0.3)" }}
+            style={{ color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.3)" }}
           >
             Pricing
           </p>

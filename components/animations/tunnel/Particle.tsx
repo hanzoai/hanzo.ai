@@ -35,7 +35,7 @@ const Particle: React.FC<ParticleProps> = ({
         top: `${y}%`,
         transform: `translateZ(${z}px)`,
         // Add a trail effect with a gradient
-        background: `radial-gradient(circle, rgba(255, 255, 255, ${brightness}) 0%, rgba(160, 120, 255, ${brightness * 0.5}) 70%, rgba(100, 80, 255, 0) 100%)`,
+        background: `radial-gradient(circle, rgba(255, 255, 255, ${brightness}) 0%, rgba(200, 200, 200, ${brightness * 0.5}) 70%, rgba(150, 150, 150, 0) 100%)`,
       }}
       animate={{
         translateZ: [z, z + 2500],

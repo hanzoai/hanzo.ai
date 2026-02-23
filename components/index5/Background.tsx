@@ -21,10 +21,10 @@ const Background: React.FC<BackgroundProps> = ({ mousePosition }) => {
       <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/10 opacity-40"></div>
 
       {/* Dynamic blueprint lines */}
-      <BlueprintLine orientation="vertical" position="20%" color="rgba(253, 68, 68, 0.1)" />
-      <BlueprintLine orientation="vertical" position="80%" color="rgba(253, 68, 68, 0.1)" />
-      <BlueprintLine orientation="horizontal" position="25%" color="rgba(255, 107, 107, 0.1)" />
-      <BlueprintLine orientation="horizontal" position="75%" color="rgba(255, 107, 107, 0.1)" />
+      <BlueprintLine orientation="vertical" position="20%" color="rgba(255, 255, 255, 0.1)" />
+      <BlueprintLine orientation="vertical" position="80%" color="rgba(255, 255, 255, 0.1)" />
+      <BlueprintLine orientation="horizontal" position="25%" color="rgba(255, 255, 255, 0.1)" />
+      <BlueprintLine orientation="horizontal" position="75%" color="rgba(255, 255, 255, 0.1)" />
     </div>
   );
 };

@@ -156,7 +156,7 @@ const Analytics = () => {
   // Fixed icon variants - now using predefined color states rather than functions in the hidden state
   const iconVariantsFirst = {
     hidden: {
-      color: "#9333EA"
+      color: "#a3a3a3"
     },
     visible: {
       color: "#FFFFFF",
@@ -168,7 +168,7 @@ const Analytics = () => {
   };
   const iconVariantsSecond = {
     hidden: {
-      color: "#3B82F6"
+      color: "#a3a3a3"
     },
     visible: {
       color: "#FFFFFF",
@@ -180,7 +180,7 @@ const Analytics = () => {
   };
   const iconVariantsThird = {
     hidden: {
-      color: "#06B6D4"
+      color: "#a3a3a3"
     },
     visible: {
       color: "#FFFFFF",

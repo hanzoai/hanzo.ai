@@ -81,14 +81,14 @@ const CuratedEntryPointsSection = () => {
                     className="h-full p-6 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-white/30/50 transition-all duration-300 relative overflow-hidden"
                     whileHover={{
                       y: -4,
-                      boxShadow: "0 0 40px -10px rgba(253, 68, 68, 0.3)",
+                      boxShadow: "0 0 40px -10px rgba(255, 255, 255, 0.15)",
                     }}
                     transition={{ duration: 0.2 }}
                   >
                     {/* Icon */}
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                      style={{ backgroundColor: "rgba(253, 68, 68, 0.1)" }}
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                     >
                       <Icon
                         className="w-6 h-6"

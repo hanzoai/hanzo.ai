@@ -65,7 +65,7 @@ const CherryBlossom: React.FC<CherryBlossomProps> = ({
           >
             <path
               d="M50 0 C60 30 70 50 100 50 C70 60 60 70 50 100 C40 70 30 60 0 50 C30 40 40 30 50 0Z"
-              fill="rgba(255, 192, 203, 0.7)"
+              fill="rgba(255, 255, 255, 0.7)"
             />
           </svg>
         </motion.div>

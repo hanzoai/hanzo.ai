@@ -9,7 +9,7 @@ const CloudInfrastructure = () => {
   return (
     <div className="relative h-64 w-full rounded-xl bg-gradient-to-br from-black to-gray-900 overflow-hidden">
       <div className="absolute inset-0" style={{
-        backgroundImage: "radial-gradient(rgba(253, 68, 68, 0.07) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px)",
         backgroundSize: "20px 20px",
       }}></div>
       

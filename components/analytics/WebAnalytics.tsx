@@ -165,7 +165,7 @@ const WebAnalytics = () => {
                     />
                     <motion.path
                       d="M0,90 C15,80 25,75 35,70 C45,65 55,60 65,50 C75,70 85,60 95,40 L100,50"
-                      stroke="#ff6b6b"
+                      stroke="#a3a3a3"
                       strokeWidth="2"
                       fill="none"
                       variants={lineVariants}
@@ -178,9 +178,9 @@ const WebAnalytics = () => {
                       { x: 30, y: 60, color: "#ffffff" },
                       { x: 60, y: 30, color: "#ffffff" },
                       { x: 90, y: 10, color: "#ffffff" },
-                      { x: 35, y: 70, color: "#ff6b6b" },
-                      { x: 65, y: 50, color: "#ff6b6b" },
-                      { x: 95, y: 40, color: "#ff6b6b" }
+                      { x: 35, y: 70, color: "#a3a3a3" },
+                      { x: 65, y: 50, color: "#a3a3a3" },
+                      { x: 95, y: 40, color: "#a3a3a3" }
                     ].map((point, i) => (
                       <motion.circle
                         key={i}

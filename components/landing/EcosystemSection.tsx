@@ -29,7 +29,7 @@ const EcosystemBadge: React.FC<{ item: CompatibilityItem; index: number }> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
-      whileHover={{ scale: 1.02, backgroundColor: "rgba(253, 68, 68, 0.08)" }}
+      whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/50 cursor-default transition-colors"
     >
       <span className="text-sm font-medium text-white">{item.name}</span>

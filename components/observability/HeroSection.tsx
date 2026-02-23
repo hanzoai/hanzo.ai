@@ -84,11 +84,11 @@ const HeroSection = () => {
                     <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="w-full h-full">
                       <path
                         d="M0,150 L0,40 Q125,10 250,40 T500,40 L500,150 Z"
-                        fill="rgba(253, 68, 68, 0.5)"
+                        fill="rgba(255, 255, 255, 0.5)"
                       ></path>
                       <path
                         d="M0,150 L0,60 Q125,30 250,60 T500,60 L500,150 Z"
-                        fill="rgba(255, 107, 107, 0.4)"
+                        fill="rgba(200, 200, 200, 0.4)"
                       ></path>
                     </svg>
                   </div>

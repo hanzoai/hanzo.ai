@@ -15,7 +15,7 @@ interface JapaneseWaveProps {
 }
 
 const JapaneseWave: React.FC<JapaneseWaveProps> = ({
-  color = "#9b87f5",
+  color = "#a3a3a3",
   height = 30,
   width = "100%",
   delay = 0,

@@ -270,7 +270,7 @@ export const ProductPageTemplate: React.FC<ProductPageTemplateProps> = ({ produc
             showCorners={true}
             showGrid={false}
             cornerSize={50}
-            cornerColor="rgba(253, 68, 68, 0.15)"
+            cornerColor="rgba(255, 255, 255, 0.15)"
           >
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Product Info */}

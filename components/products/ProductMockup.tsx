@@ -131,9 +131,9 @@ const VectorMockup: React.FC<{ product: Product }> = ({ product }) => (
 
         {/* Similarity lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none">
-          <line x1="47%" y1="42%" x2="52%" y2="37%" stroke="#22d3ee" strokeWidth="1" strokeOpacity="0.5" />
-          <line x1="47%" y1="42%" x2="42%" y2="47%" stroke="#22d3ee" strokeWidth="1" strokeOpacity="0.5" />
-          <line x1="47%" y1="42%" x2="50%" y2="52%" stroke="#22d3ee" strokeWidth="1" strokeOpacity="0.5" />
+          <line x1="47%" y1="42%" x2="52%" y2="37%" stroke="#a3a3a3" strokeWidth="1" strokeOpacity="0.5" />
+          <line x1="47%" y1="42%" x2="42%" y2="47%" stroke="#a3a3a3" strokeWidth="1" strokeOpacity="0.5" />
+          <line x1="47%" y1="42%" x2="50%" y2="52%" stroke="#a3a3a3" strokeWidth="1" strokeOpacity="0.5" />
         </svg>
       </div>
 
@@ -306,7 +306,7 @@ const MLMockup: React.FC<{ product: Product }> = ({ product }) => (
           {/* Validation curve */}
           <motion.path
             d="M 0 85 Q 20 75 40 55 T 80 42 T 120 36 T 160 32 T 200 30"
-            stroke="#22d3ee"
+            stroke="#a3a3a3"
             strokeWidth="2"
             fill="none"
             strokeDasharray="4"

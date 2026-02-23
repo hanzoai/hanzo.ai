@@ -22,8 +22,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Ico
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{
         y: -5,
-        boxShadow: "0 10px 30px -15px rgba(253, 68, 68, 0.5)",
-        borderColor: "rgba(253, 68, 68, 0.5)"
+        boxShadow: "0 10px 30px -15px rgba(255, 255, 255, 0.15)",
+        borderColor: "rgba(255, 255, 255, 0.3)"
       }}
       className="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-gray-800 transition-all duration-300"
     >

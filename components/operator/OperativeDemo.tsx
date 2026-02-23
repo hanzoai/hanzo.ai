@@ -34,7 +34,7 @@ const OperativeDemo = () => {
         
         <div className="relative mx-auto w-full max-w-5xl aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-tr from-gray-950 to-gray-900 flex items-center justify-center">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(253,68,68,0.18),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.08),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.1),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.08),transparent_50%)]" />
             
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3 className="text-2xl md:text-3xl font-bold text-[var(--white)] mb-4">Demo Video</h3>

@@ -22,7 +22,7 @@ export function useGlobeDrawing() {
     
     // Draw main globe circle - perfectly round top hemisphere
     ctx.beginPath();
-    ctx.strokeStyle = 'rgba(100, 150, 200, 0.15)'; // Reduced opacity
+    ctx.strokeStyle = 'rgba(200, 200, 200, 0.1)'; // Reduced opacity
     ctx.lineWidth = 0.8; // Thinner line
     
     // Draw semi-circle for top hemisphere (perfectly round)
@@ -30,7 +30,7 @@ export function useGlobeDrawing() {
     ctx.stroke();
     
     // Draw continents with subtle outlines - using a neutral gray-blue with reduced opacity
-    ctx.strokeStyle = 'rgba(140, 160, 190, 0.12)'; // Reduced opacity
+    ctx.strokeStyle = 'rgba(180, 180, 180, 0.1)'; // Reduced opacity
     ctx.lineWidth = 0.5; // Thinner line
     
     continents.forEach(continent => {
@@ -71,7 +71,7 @@ export function useGlobeDrawing() {
           ctx.stroke();
           
           // Fill with very subtle blue-gray color - even more subtle
-          ctx.fillStyle = 'rgba(120, 140, 180, 0.015)'; // Reduced opacity
+          ctx.fillStyle = 'rgba(160, 160, 160, 0.015)'; // Reduced opacity
           ctx.fill();
         }
       }
@@ -80,7 +80,7 @@ export function useGlobeDrawing() {
     // Draw fewer latitude lines for cleaner look - more subtle
     for (let i = 0; i < 2; i++) { // Reduced from 3 to 2 lines
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(130, 150, 180, 0.08)'; // Reduced opacity
+      ctx.strokeStyle = 'rgba(180, 180, 180, 0.08)'; // Reduced opacity
       ctx.lineWidth = 0.4; // Thinner line
       
       // Only draw latitude lines in top hemisphere
@@ -93,7 +93,7 @@ export function useGlobeDrawing() {
     // Draw fewer longitude lines for cleaner look - more subtle
     for (let i = 0; i < 5; i++) { // Reduced from 6 to 5 lines
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(130, 150, 180, 0.08)'; // Reduced opacity
+      ctx.strokeStyle = 'rgba(180, 180, 180, 0.08)'; // Reduced opacity
       ctx.lineWidth = 0.4; // Thinner line
       
       const angle = (i * Math.PI) / 4;
@@ -118,8 +118,8 @@ export function useGlobeDrawing() {
           point.x, point.y, 0,
           point.x, point.y, size * 2
         );
-        gradient.addColorStop(0, `rgba(140, 200, 230, ${0.3 * intensity})`); // Reduced opacity
-        gradient.addColorStop(1, 'rgba(100, 150, 200, 0)');
+        gradient.addColorStop(0, `rgba(220, 220, 220, ${0.3 * intensity})`); // Reduced opacity
+        gradient.addColorStop(1, 'rgba(180, 180, 180, 0)');
         
         ctx.beginPath();
         ctx.fillStyle = gradient;
@@ -128,7 +128,7 @@ export function useGlobeDrawing() {
         
         // Center point - brighter blue with reduced opacity
         ctx.beginPath();
-        ctx.fillStyle = `rgba(160, 220, 255, ${0.5 * intensity})`; // Reduced opacity
+        ctx.fillStyle = `rgba(240, 240, 240, ${0.5 * intensity})`; // Reduced opacity
         ctx.arc(point.x, point.y, size * 0.5, 0, 2 * Math.PI);
         ctx.fill();
       }

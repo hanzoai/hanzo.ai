@@ -24,7 +24,7 @@ const MachinesHero = () => {
           </div>
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent"
-            style={{ backgroundImage: `linear-gradient(to right, ${BRAND_COLOR}, #ff6b6b)` }}
+            style={{ backgroundImage: `linear-gradient(to right, ${BRAND_COLOR}, #a3a3a3)` }}
           >
             Hanzo Machines
           </h1>

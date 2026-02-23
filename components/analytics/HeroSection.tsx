@@ -109,7 +109,7 @@ const HeroSection = () => {
                     <motion.path
                       d="M0,50 L10,42 L20,40 L30,38 L40,30 L50,32 L60,25 L70,28 L80,20 L90,18 L100,15"
                       fill="none"
-                      stroke="#ff6b6b"
+                      stroke="#a3a3a3"
                       strokeWidth="1"
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}

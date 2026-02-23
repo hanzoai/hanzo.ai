@@ -23,7 +23,7 @@ const CallToAction: React.FC = () => {
         animate={{ backgroundPosition: "100% 100%" }}
         transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
         style={{
-          backgroundImage: "radial-gradient(circle at 30% 50%, #ffffff 0%, transparent 20%), radial-gradient(circle at 70% 50%, #ff6b6b 0%, transparent 20%)",
+          backgroundImage: "radial-gradient(circle at 30% 50%, #ffffff 0%, transparent 20%), radial-gradient(circle at 70% 50%, #a3a3a3 0%, transparent 20%)",
           backgroundSize: "100% 100%",
         }}
       />

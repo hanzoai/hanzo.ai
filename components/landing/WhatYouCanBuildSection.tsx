@@ -77,7 +77,7 @@ const WhatYouCanBuildSection: React.FC = () => {
                   {/* Icon */}
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                    style={{ backgroundColor: "rgba(253, 68, 68, 0.1)" }}
+                    style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                   >
                     <Icon className="w-6 h-6" style={{ color: "#ffffff" }} />
                   </div>

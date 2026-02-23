@@ -80,7 +80,7 @@ const OpenSourceSection = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 text-xs font-medium rounded-full px-4 py-2 border mb-6"
-               style={{ color: "#ffffff", borderColor: "rgba(253, 68, 68, 0.3)" }}>
+               style={{ color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.3)" }}>
             <Github className="w-4 h-4" />
             Open Source
           </div>
@@ -245,7 +245,7 @@ const OpenSourceSection = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-medium rounded-full px-4 py-2 border mb-4"
-                   style={{ color: "#ffffff", borderColor: "rgba(253, 68, 68, 0.3)" }}>
+                   style={{ color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.3)" }}>
                 <Network className="w-4 h-4" />
                 Hanzo Network
               </div>

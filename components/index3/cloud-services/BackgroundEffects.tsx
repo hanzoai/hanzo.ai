@@ -17,7 +17,7 @@ const BackgroundEffects: React.FC<BackgroundEffectsProps> = ({ scanPoints }) => 
       
       {/* Grid pattern - very subtle */}
       <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: "radial-gradient(rgba(100, 150, 200, 0.1) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px)",
         backgroundSize: "30px 30px",
       }}></div>
       

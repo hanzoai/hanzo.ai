@@ -109,7 +109,7 @@ const CATEGORIES: Category[] = [
     name: "Developer Tools",
     description: "Everything you need to build, test, and deploy applications",
     icon: Terminal,
-    color: "#f97316",
+    color: "#d4d4d4",
     products: [
       { name: "Hanzo Dev", description: "AI coding assistant", icon: Terminal, href: "/dev" },
       { name: "CLI", description: "Command line tools", icon: Terminal, href: "/download" },
@@ -127,7 +127,7 @@ const CATEGORIES: Category[] = [
     name: "App Platform",
     description: "Build and scale applications with managed backend services",
     icon: Layers,
-    color: "#10b981",
+    color: "#a3a3a3",
     products: [
       { name: "Hanzo Base", description: "Backend-as-a-Service", icon: Database, href: "/base" },
       { name: "Auth", description: "Authentication & SSO", icon: Shield, href: "/identity" },
@@ -145,7 +145,7 @@ const CATEGORIES: Category[] = [
     name: "Cloud Infrastructure",
     description: "Global infrastructure for compute, networking, and storage",
     icon: CloudCog,
-    color: "#f97316",
+    color: "#d4d4d4",
     products: [
       { name: "Edge", description: "Edge computing", icon: Globe, href: "/edge" },
       { name: "Gateway", description: "API gateway", icon: Router },
@@ -163,7 +163,7 @@ const CATEGORIES: Category[] = [
     name: "Databases & Search",
     description: "Managed databases, vector stores, and search engines",
     icon: Database,
-    color: "#06b6d4",
+    color: "#a3a3a3",
     products: [
       { name: "SQL", description: "PostgreSQL managed", icon: Table },
       { name: "SQL Vector", description: "pgvector enabled", icon: Table, href: "/vector" },
@@ -181,7 +181,7 @@ const CATEGORIES: Category[] = [
     name: "Integrations & Automation",
     description: "Connect systems and automate workflows across your stack",
     icon: Workflow,
-    color: "#ec4899",
+    color: "#d4d4d4",
     products: [
       { name: "Automations", description: "Workflow automation", icon: Workflow, href: "/automations" },
       { name: "Connectors", description: "Pre-built integrations", icon: Puzzle },
@@ -199,7 +199,7 @@ const CATEGORIES: Category[] = [
     name: "Security & Governance",
     description: "Enterprise security, compliance, and access management",
     icon: Shield,
-    color: "#ef4444",
+    color: "#a3a3a3",
     products: [
       { name: "IAM", description: "Identity & access", icon: Users },
       { name: "Policy", description: "Policy engine", icon: FileCheck },
@@ -217,7 +217,7 @@ const CATEGORIES: Category[] = [
     name: "Observability & Operations",
     description: "Monitor, debug, and operate your applications at scale",
     icon: Activity,
-    color: "#f59e0b",
+    color: "#d4d4d4",
     products: [
       { name: "Telemetry", description: "OpenTelemetry", icon: Activity, href: "/analytics" },
       { name: "Metrics", description: "Time-series metrics", icon: LineChart },
@@ -235,7 +235,7 @@ const CATEGORIES: Category[] = [
     name: "Hosting & Delivery",
     description: "Deploy and deliver applications globally with zero config",
     icon: Rocket,
-    color: "#14b8a6",
+    color: "#a3a3a3",
     products: [
       { name: "Deploy", description: "Git deployments", icon: Rocket },
       { name: "Containers", description: "Container hosting", icon: Container },

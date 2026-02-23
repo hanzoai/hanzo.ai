@@ -48,8 +48,8 @@ const FeatureSlide: React.FC<FeatureSlideProps> = ({
       className="feature-card backdrop-blur-sm bg-[var(--black)]/30 border border-gray-800 p-6 rounded-xl relative group"
       whileHover={{
         y: -5,
-        borderColor: "rgba(253, 68, 68, 0.5)",
-        boxShadow: "0 10px 25px -5px rgba(253, 68, 68, 0.15)"
+        borderColor: "rgba(255, 255, 255, 0.3)",
+        boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.1)"
       }}
       transition={{ duration: 0.2 }}
     >

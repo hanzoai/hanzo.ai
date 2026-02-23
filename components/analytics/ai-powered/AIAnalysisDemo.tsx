@@ -44,7 +44,7 @@ const AIAnalysisDemo = () => {
                   <motion.path
                     d="M200,80 C206,65 212,40 218,20 C224,30 230,45 236,50"
                     fill="none"
-                    stroke="#FF5733"
+                    stroke="#a3a3a3"
                     strokeWidth="3"
                     strokeDasharray="2,2"
                     initial={{ opacity: 0 }}
@@ -58,7 +58,7 @@ const AIAnalysisDemo = () => {
                     cx="218"
                     cy="20"
                     r="5"
-                    fill="#FF5733"
+                    fill="#a3a3a3"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}

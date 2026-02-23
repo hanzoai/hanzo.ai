@@ -19,7 +19,7 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
     <div className="space-y-8 relative">
       {/* Add architectural grid lines */}
       <div className="absolute inset-0 -z-10">
-        <GridLines spacing={60} opacity={0.15} color="rgba(59, 130, 246, 0.2)" />
+        <GridLines spacing={60} opacity={0.15} color="rgba(255, 255, 255, 0.1)" />
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">

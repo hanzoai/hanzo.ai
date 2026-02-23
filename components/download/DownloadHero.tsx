@@ -29,7 +29,7 @@ const DownloadHero = () => {
         <div
           className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full opacity-10"
           style={{
-            background: `radial-gradient(circle, #f97316 0%, transparent 70%)`,
+            background: `radial-gradient(circle, #a3a3a3 0%, transparent 70%)`,
             filter: "blur(80px)",
           }}
         />

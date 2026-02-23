@@ -20,7 +20,7 @@ const AIPlatformSection = () => {
       <div className="absolute inset-0 bg-[var(--black)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/90"></div>
       
-      <GridLines spacing={60} opacity={0.2} color="rgba(147, 51, 234, 0.15)" />
+      <GridLines spacing={60} opacity={0.2} color="rgba(255, 255, 255, 0.08)" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -72,7 +72,7 @@ const AIPlatformSection = () => {
                       className={`h-full bg-gradient-to-br ${gradientClasses} ${borderClasses} backdrop-blur-sm border p-6 rounded-2xl transition-colors duration-300`}
                       showCorners={true}
                       cornerSize={16}
-                      cornerColor={isFeatureHovered ? `rgba(147, 51, 234, 0.4)` : "rgba(147, 51, 234, 0.2)"}
+                      cornerColor={isFeatureHovered ? `rgba(255, 255, 255, 0.3)` : "rgba(255, 255, 255, 0.15)"}
                     >
                       <div className="mb-4">
                         {React.createElement(feature.icon, { 

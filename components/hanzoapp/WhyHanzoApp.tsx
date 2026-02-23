@@ -31,7 +31,7 @@ const modes = [
       { icon: Users, text: "Real-time collaboration" },
       { icon: RefreshCw, text: "Auto-save and versioning" },
     ],
-    color: "#f97316", // blue
+    color: "#d4d4d4",
   },
   {
     id: "desktop",
@@ -44,7 +44,7 @@ const modes = [
       { icon: Wifi, text: "Works offline" },
       { icon: HardDrive, text: "Local file access" },
     ],
-    color: "#10b981", // green
+    color: "#a3a3a3",
   },
   {
     id: "local",

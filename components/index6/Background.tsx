@@ -35,11 +35,9 @@ const Background: React.FC = () => {
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
         
-        // Random brand red hue
-        const hue = Math.random() * 20 + 0; // 0-20 is red range
-        const saturation = Math.random() * 20 + 80; // 80-100%
-        const lightness = Math.random() * 20 + 45; // 45-65%
-        this.color = `hsla(${hue}, ${saturation}%, ${lightness}%, 0.3)`;
+        // Neutral grayscale particles
+        const lightness = Math.random() * 30 + 50; // 50-80%
+        this.color = `hsla(0, 0%, ${lightness}%, 0.3)`;
       }
       
       update() {
@@ -75,7 +73,7 @@ const Background: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw connections
-      ctx.strokeStyle = 'rgba(253, 68, 68, 0.05)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
       ctx.lineWidth = 0.3;
       
       for (let a = 0; a < particles.length; a++) {

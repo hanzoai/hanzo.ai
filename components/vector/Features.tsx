@@ -26,8 +26,8 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
     className="bg-gray-900/40 border border-gray-800 rounded-xl p-6 hover:border-white/30 transition-colors"
     whileHover={{
       y: -5,
-      boxShadow: "0 10px 25px -5px rgba(253, 68, 68, 0.1)",
-      borderColor: "rgba(253, 68, 68, 0.4)"
+      boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.1)",
+      borderColor: "rgba(255, 255, 255, 0.3)"
     }}
     transition={{ duration: 0.2 }}
   >

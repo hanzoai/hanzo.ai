@@ -90,7 +90,7 @@ const ChromeText = ({
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, rgba(253, 68, 68, 0), rgba(253, 68, 68, 0.3), rgba(253, 68, 68, 0));
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
             background-size: 200% 100%;
             animation: glow 2s ease-in-out infinite;
             pointer-events: none;

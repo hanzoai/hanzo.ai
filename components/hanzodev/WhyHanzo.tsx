@@ -23,7 +23,7 @@ const VALUE_PROPS = [
   {
     title: "Stay in your flow",
     subtitle: "The all-in-one agentic engineering platform",
-    color: "#f97316",
+    color: "#d4d4d4",
     features: [
       {
         icon: Smartphone,
@@ -54,7 +54,7 @@ const VALUE_PROPS = [
   {
     title: "1000x every dev",
     subtitle: "Multiply your engineering output",
-    color: "#10b981",
+    color: "#a3a3a3",
     features: [
       {
         icon: Users,

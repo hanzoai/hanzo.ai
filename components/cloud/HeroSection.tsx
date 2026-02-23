@@ -14,7 +14,7 @@ const HeroSection = () => {
       
       {/* Enhanced background with subtle animated gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/10 to-black opacity-40"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(253,68,68,0.12),transparent_50%)] opacity-60"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.06),transparent_50%)] opacity-60"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
