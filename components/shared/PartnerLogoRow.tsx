@@ -14,7 +14,7 @@ const PartnerLogoRow: React.FC<PartnerLogoRowProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-wrap justify-center items-center gap-x-10 gap-y-6 ${className}`}
+      className={`flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:flex-nowrap ${className}`}
     >
       {logos.map((logo) => {
         const img = (
