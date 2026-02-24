@@ -2,6 +2,7 @@ export type PartnerLogo = {
   name: string;
   src: string;
   className?: string;
+  href?: string;
 };
 
 export const partnerLogos: PartnerLogo[] = [
@@ -14,6 +15,7 @@ export const partnerLogos: PartnerLogo[] = [
     name: "Lux",
     src: "/logos/partners/lux.svg",
     className: "h-8",
+    href: "https://lux.network",
   },
   {
     name: "NVIDIA",

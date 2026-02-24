@@ -16,8 +16,8 @@ const PartnerLogoRow: React.FC<PartnerLogoRowProps> = ({
     <div
       className={`flex flex-wrap justify-center items-center gap-x-10 gap-y-6 ${className}`}
     >
-      {logos.map((logo) => (
-        <div key={logo.name} className="flex items-center justify-center">
+      {logos.map((logo) => {
+        const img = (
           <img
             src={logo.src}
             alt={`${logo.name} logo`}
@@ -26,8 +26,15 @@ const PartnerLogoRow: React.FC<PartnerLogoRowProps> = ({
               invert ? "invert" : ""
             }`}
           />
-        </div>
-      ))}
+        );
+        return (
+          <div key={logo.name} className="flex items-center justify-center">
+            {logo.href ? (
+              <a href={logo.href} target="_blank" rel="noopener noreferrer">{img}</a>
+            ) : img}
+          </div>
+        );
+      })}
     </div>
   );
 };
