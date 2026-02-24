@@ -26,10 +26,8 @@ const trustedBrands = [
   ...clients,
   "AdNexus",
   "Bootnode",
-  "Zoo Labs Foundation Inc",
-  "Lux Industries Inc",
+  "Zoo Labs Foundation",
   "Lux Network",
-  "Lux Partners",
 ];
 
 const TrustedBySection = () => {

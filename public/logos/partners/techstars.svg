@@ -1,12 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" fill="#000000">
-  <g transform="translate(0,12)">
-    <path d="M0,8 L0,0 L48,0 L48,8 L28,8 L28,56 L20,56 L20,8 Z"/>
-    <path d="M56,0 L96,0 L96,8 L64,8 L64,24 L92,24 L92,32 L64,32 L64,48 L96,48 L96,56 L56,56 Z"/>
-    <path d="M104,28 C104,12.536 115.088,0 132,0 C144.2,0 152.4,7 156,16 L148,19 C145.2,12 139.6,8 132,8 C119.6,8 112,17.6 112,28 C112,38.4 119.6,48 132,48 C139.6,48 145.2,44 148,37 L156,40 C152.4,49 144.2,56 132,56 C115.088,56 104,43.464 104,28 Z"/>
-    <path d="M164,0 L172,0 L172,24 L204,24 L204,0 L212,0 L212,56 L204,56 L204,32 L172,32 L172,56 L164,56 Z"/>
-    <path d="M236,16 C236,10 241,4 250,4 C259,4 264,10 264,16 C264,22 259,28 250,28 C241,28 236,22 236,16 Z M244,16 C244,20 246.4,24 250,24 C253.6,24 256,20 256,16 C256,12 253.6,8 250,8 C246.4,8 244,12 244,16 Z" transform="translate(0,-8) scale(0.5)" opacity="0"/>
-    <path d="M224,28 C224,44 234,56 250,56 C258,56 264,53 268,49 L268,56 L276,56 L276,16 C276,7 268,0 256,0 L248,0 L248,8 L256,8 C264,8 268,12 268,16 L268,41 C264,46 258,48 250,48 C238,48 232,39 232,28 C232,17 238,8 250,8 L250,0 C234,0 224,12 224,28 Z" transform="translate(0,0)" opacity="0"/>
-    <text x="220" y="56" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="58" letter-spacing="-1" fill="#000000">stars</text>
-    <text x="0" y="56" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="58" letter-spacing="-1" fill="#000000">tech</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 60">
+  <text x="0" y="50" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="56" letter-spacing="-1" fill="#000000">techstars</text>
 </svg>

@@ -41,16 +41,6 @@ export const partnerLogos: PartnerLogo[] = [
     className: "h-6",
   },
   {
-    name: "Bootnode",
-    src: "/logos/partners/bootnode.svg",
-    className: "h-8",
-  },
-  {
-    name: "AdNexus",
-    src: "/logos/partners/adnexus.svg",
-    className: "h-8",
-  },
-  {
     name: "Zoo Labs Foundation",
     src: "/logos/partners/zoo-labs-foundation.svg",
     className: "h-6",
