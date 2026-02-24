@@ -23,11 +23,14 @@ const aiProviders = [
   { name: "OpenAI", logo: "/logos/openai.svg" },
   { name: "Anthropic", logo: "/logos/anthropic.svg" },
   { name: "Google", logo: "/logos/google.svg" },
-  { name: "Qwen", logo: "/logos/qwen.svg" },
   { name: "Gemini", logo: "/logos/gemini.svg" },
+  { name: "Qwen", logo: "/logos/qwen.svg" },
   { name: "Mistral", logo: "/logos/mistral.svg" },
   { name: "Kimi", logo: "/logos/kimi.svg" },
   { name: "Moonshot", logo: "/logos/moonshot.svg" },
+  { name: "Fireworks", logo: "/logos/fireworks.svg" },
+  { name: "OpenRouter", logo: "/logos/openrouter.svg" },
+  { name: "DigitalOcean", logo: "/logos/digitalocean.svg" },
 ];
 
 const multiAgentFeatures = [

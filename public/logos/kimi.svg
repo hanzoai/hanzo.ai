@@ -1,6 +1,1 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-  <circle cx="9" cy="10" r="1.5"/>
-  <circle cx="15" cy="10" r="1.5"/>
-  <path d="M12 17c-2.33 0-4.31-1.46-5.11-3.5h1.5c.69 1.19 1.97 2 3.61 2s2.92-.81 3.61-2h1.5c-.8 2.04-2.78 3.5-5.11 3.5z"/>
-</svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M4 4h4v6.34L12 6l4 4.34V4h4v16h-4v-6.34L12 18l-4-4.34V20H4V4z"/></svg>
