@@ -277,7 +277,7 @@ export const MobileMenu = ({ isOpen, onToggle, onOpenSearch }: MobileMenuProps) 
                 href="https://cloud.hanzo.ai"
                 className="block w-full bg-primary text-primary-foreground hover:bg-accent active:bg-neutral-300 rounded-full h-10 flex items-center justify-center text-sm font-medium transition-all duration-200"
               >
-                Try Hanzo
+                Try Zen
               </a>
             </div>
           </div>

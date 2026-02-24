@@ -11,7 +11,8 @@ const PersonalPlans = () => {
       billingPeriod: " forever",
       description: "Open source tools, run locally and privately",
       features: [
-        "Access to Zen and Sho foundational models",
+        "Zen family of frontier AI models",
+        "300+ open-source and proprietary models",
         "Local deployment on your infrastructure", 
         "Full source code access",
         "Community support",

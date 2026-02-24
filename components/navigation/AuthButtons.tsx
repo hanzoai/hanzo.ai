@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@hanzo/ui";
-import { Search, ChevronDown, ExternalLink, Brain, Video, Music, Box, Cpu, Sparkles, Zap } from "lucide-react";
+import { Search, ChevronDown, ExternalLink, Brain, Video, Music, Box, Cpu, Sparkles, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface User {
@@ -55,6 +55,7 @@ const zenModels = [
 
 // Quick access items
 const quickAccess = [
+  { label: "Hanzo Bot", href: "https://hanzo.bot", external: true },
   { label: "Hanzo Dev", href: "/dev", external: false },
   { label: "Hanzo Cloud", href: "https://cloud.hanzo.ai", external: true },
   { label: "All Zen Models", href: "/zen", external: false },
@@ -129,7 +130,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         </Button>
       </Link>
 
-      {/* Try Hanzo dropdown - hover activated */}
+      {/* Try Zen dropdown - hover activated */}
       <div
         className="relative"
         ref={dropdownRef}
@@ -139,7 +140,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         <button
           className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-accent active:bg-neutral-300 rounded-full h-9 px-4 text-sm font-medium transition-all duration-200"
         >
-          Try Hanzo
+          Try Zen
           <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
         </button>
 
@@ -156,7 +157,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
               <div className="p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-foreground/60" />
+                    <Brain className="w-4 h-4 text-foreground/60" />
                     <span className="text-xs font-semibold text-foreground uppercase tracking-wider">
                       Zen AI Models
                     </span>
