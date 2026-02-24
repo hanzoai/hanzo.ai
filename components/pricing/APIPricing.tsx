@@ -14,7 +14,9 @@ interface HanzoModel {
   features: string[];
   tier: string;
   specs: { params: string; arch: string };
-  pricing: { input: number; output: number; cacheRead: number | null; cacheWrite: number | null };
+  pricing: { input?: number; output?: number; cacheRead?: number | null; cacheWrite?: number | null; perUnit?: number };
+  pricingUnit?: string;
+  endpoint?: string;
 }
 
 interface ThirdPartyModel {
@@ -93,6 +95,17 @@ function FeaturedBadge() {
     </span>
   );
 }
+
+const UNIT_LABELS: Record<string, string> = {
+  image: "/ image",
+  step: "/ step",
+  minute: "/ minute",
+};
+
+const fmtUnit = (val: number | undefined, unit?: string) => {
+  if (val == null) return "N/A";
+  return `$${val} ${UNIT_LABELS[unit || ""] || ""}`.trim();
+};
 
 const MODELS_PER_PAGE = 50;
 
@@ -176,6 +189,13 @@ const APIPricing = () => {
   const summary = data.summary;
   const visibleModels = filteredModels.slice(0, showCount);
 
+  // Group hanzo models by category
+  const llmModels = hanzoModels.filter((m: any) => !m.pricingUnit && !m.endpoint);
+  const embeddingModels = hanzoModels.filter((m: any) => m.endpoint === "/v1/embeddings");
+  const rerankerModels = hanzoModels.filter((m: any) => m.endpoint === "/v1/rerank");
+  const imageModels = hanzoModels.filter((m: any) => m.endpoint === "/v1/images/generations");
+  const audioModels = hanzoModels.filter((m: any) => m.endpoint === "/v1/audio/transcriptions");
+
   const HanzoModelCard = ({ model }: { model: HanzoModel }) => (
     <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50 mb-4">
       <div className="flex justify-between items-start mb-4">
@@ -221,24 +241,38 @@ const APIPricing = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm bg-background/20 rounded-lg p-4">
-        <div>
-          <span className="text-muted-foreground block mb-1">Input</span>
-          <div className="font-medium text-lg">{fmt(model.pricing.input)}</div>
+      {model.pricingUnit ? (
+        <div className="flex items-center gap-4 text-sm bg-background/20 rounded-lg p-4">
+          <div>
+            <span className="text-muted-foreground block mb-1">Price</span>
+            <div className="font-medium text-lg">{fmtUnit(model.pricing.perUnit, model.pricingUnit)}</div>
+          </div>
+          {model.endpoint && (
+            <div className="ml-auto">
+              <code className="text-xs text-muted-foreground bg-background/30 rounded px-2 py-1">{model.endpoint}</code>
+            </div>
+          )}
         </div>
-        <div>
-          <span className="text-muted-foreground block mb-1">Output</span>
-          <div className="font-medium text-lg">{fmt(model.pricing.output)}</div>
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm bg-background/20 rounded-lg p-4">
+          <div>
+            <span className="text-muted-foreground block mb-1">Input</span>
+            <div className="font-medium text-lg">{fmt(model.pricing.input ?? null)}</div>
+          </div>
+          <div>
+            <span className="text-muted-foreground block mb-1">Output</span>
+            <div className="font-medium text-lg">{fmt(model.pricing.output ?? null)}</div>
+          </div>
+          <div>
+            <span className="text-muted-foreground block mb-1">Cache Write</span>
+            <div className="font-medium text-lg">{fmt(model.pricing.cacheWrite ?? null)}</div>
+          </div>
+          <div>
+            <span className="text-muted-foreground block mb-1">Cache Read</span>
+            <div className="font-medium text-lg">{fmt(model.pricing.cacheRead ?? null)}</div>
+          </div>
         </div>
-        <div>
-          <span className="text-muted-foreground block mb-1">Cache Write</span>
-          <div className="font-medium text-lg">{fmt(model.pricing.cacheWrite)}</div>
-        </div>
-        <div>
-          <span className="text-muted-foreground block mb-1">Cache Read</span>
-          <div className="font-medium text-lg">{fmt(model.pricing.cacheRead)}</div>
-        </div>
-      </div>
+      )}
     </div>
   );
 
@@ -284,7 +318,7 @@ const APIPricing = () => {
           <div>
             <h2 className="text-3xl font-bold">Hanzo Zen Models</h2>
             <p className="text-muted-foreground text-lg mt-2">
-              {hanzoModels.length} foundation models across 4 tiers — Zen MoDE architecture
+              {hanzoModels.length} models across LLM, embedding, reranker, image, and audio
               {data.updated && (
                 <span className="ml-2 text-xs text-muted-foreground/60">
                   Updated {new Date(data.updated).toLocaleDateString()}
@@ -307,16 +341,69 @@ const APIPricing = () => {
           ))}
         </div>
 
+        {/* LLM Models */}
         <div className="space-y-4 mb-8">
-          {hanzoModels.map((model) => (
+          {llmModels.map((model) => (
             <HanzoModelCard key={model.name} model={model} />
           ))}
         </div>
 
         <div className="text-sm text-muted-foreground mb-6">
-          All Zen models available via OpenAI-compatible API at{" "}
+          All Zen LLMs available via OpenAI-compatible API at{" "}
           <code className="text-foreground/80">api.hanzo.ai/v1/chat/completions</code>
         </div>
+
+        {/* Embedding Models */}
+        {embeddingModels.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-2">Embedding Models</h3>
+            <p className="text-muted-foreground mb-4">High-quality text embeddings via <code className="text-foreground/80">/v1/embeddings</code></p>
+            <div className="space-y-4">
+              {embeddingModels.map((model) => (
+                <HanzoModelCard key={model.name} model={model} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Reranker Models */}
+        {rerankerModels.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-2">Reranker Models</h3>
+            <p className="text-muted-foreground mb-4">Improve retrieval quality via <code className="text-foreground/80">/v1/rerank</code></p>
+            <div className="space-y-4">
+              {rerankerModels.map((model) => (
+                <HanzoModelCard key={model.name} model={model} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Image Generation Models */}
+        {imageModels.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-2">Image Generation</h3>
+            <p className="text-muted-foreground mb-4">FLUX, Stable Diffusion, and more via <code className="text-foreground/80">/v1/images/generations</code></p>
+            <div className="space-y-4">
+              {imageModels.map((model) => (
+                <HanzoModelCard key={model.name} model={model} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Audio Transcription Models */}
+        {audioModels.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-2">Audio Transcription</h3>
+            <p className="text-muted-foreground mb-4">Speech-to-text via <code className="text-foreground/80">/v1/audio/transcriptions</code></p>
+            <div className="space-y-4">
+              {audioModels.map((model) => (
+                <HanzoModelCard key={model.name} model={model} />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="text-sm text-muted-foreground mb-6">
           Customers can purchase prioritized API capacity with Priority Tier
