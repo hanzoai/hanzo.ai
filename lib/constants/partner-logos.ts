@@ -9,7 +9,7 @@ export const partnerLogos: PartnerLogo[] = [
   {
     name: "Techstars",
     src: "/logos/partners/techstars.svg",
-    className: "h-8",
+    className: "h-7",
     href: "https://www.techstars.com",
   },
   {
@@ -25,20 +25,20 @@ export const partnerLogos: PartnerLogo[] = [
     href: "https://www.nvidia.com",
   },
   {
-    name: "Google Cloud",
-    src: "/logos/partners/googlecloud.svg",
+    name: "Google",
+    src: "/logos/partners/google.svg",
     className: "h-7",
     href: "https://cloud.google.com",
   },
   {
-    name: "AWS",
-    src: "/logos/partners/aws.svg",
-    className: "h-8",
+    name: "Amazon",
+    src: "/logos/partners/amazon.svg",
+    className: "h-7",
     href: "https://aws.amazon.com",
   },
   {
-    name: "Azure",
-    src: "/logos/partners/azure.svg",
+    name: "Microsoft",
+    src: "/logos/partners/microsoft.svg",
     className: "h-7",
     href: "https://azure.microsoft.com",
   },
@@ -57,7 +57,7 @@ export const partnerLogos: PartnerLogo[] = [
   {
     name: "Zoo Labs Foundation",
     src: "/logos/partners/zoo-labs-foundation.svg",
-    className: "h-6",
+    className: "h-7",
     href: "https://zoo.ngo",
   },
 ];

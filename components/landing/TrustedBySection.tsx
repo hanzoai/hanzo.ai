@@ -64,7 +64,7 @@ const TrustedBySection = () => {
           <PartnerLogoRow
             logos={partnerLogos}
             invert
-            className="gap-x-10 gap-y-6"
+            className="gap-x-8 gap-y-4"
           />
         </motion.div>
 
