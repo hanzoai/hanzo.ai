@@ -130,6 +130,14 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         </Button>
       </Link>
 
+      {/* Log in button */}
+      <a
+        href="https://app.hanzo.bot"
+        className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200"
+      >
+        Log in
+      </a>
+
       {/* Try Zen dropdown - hover activated */}
       <div
         className="relative"
