@@ -24,6 +24,8 @@ const clients = [
 
 const trustedBrands = [
   ...clients,
+  "AdNexus",
+  "Bootnode",
   "Zoo Labs Foundation Inc",
   "Lux Industries Inc",
   "Lux Network",

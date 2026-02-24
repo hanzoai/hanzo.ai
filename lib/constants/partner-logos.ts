@@ -7,8 +7,13 @@ export type PartnerLogo = {
 export const partnerLogos: PartnerLogo[] = [
   {
     name: "Techstars",
-    src: "/logos/partners/techstars.png",
-    className: "h-6",
+    src: "/logos/partners/techstars.svg",
+    className: "h-10",
+  },
+  {
+    name: "Lux",
+    src: "/logos/partners/lux.svg",
+    className: "h-8",
   },
   {
     name: "NVIDIA",
@@ -36,13 +41,18 @@ export const partnerLogos: PartnerLogo[] = [
     className: "h-6",
   },
   {
-    name: "Zoo Labs Foundation Inc",
-    src: "/logos/partners/zoo-labs-foundation.svg",
-    className: "h-6",
+    name: "Bootnode",
+    src: "/logos/partners/bootnode.svg",
+    className: "h-8",
   },
   {
-    name: "Lux Network",
-    src: "/logos/partners/lux-network.svg",
+    name: "AdNexus",
+    src: "/logos/partners/adnexus.svg",
+    className: "h-8",
+  },
+  {
+    name: "Zoo Labs Foundation",
+    src: "/logos/partners/zoo-labs-foundation.svg",
     className: "h-6",
   },
 ];
