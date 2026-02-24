@@ -140,6 +140,11 @@ const DesktopNav = () => {
       {/* Solutions dropdown */}
       <SolutionsMenu />
 
+      {/* Learn dropdown */}
+      <NavMenu label="Learn">
+        {(closeMenu) => <LearnContent closeMenu={closeMenu} />}
+      </NavMenu>
+
       {/* Pricing direct link */}
       <Link
         href="/pricing"
@@ -147,11 +152,6 @@ const DesktopNav = () => {
       >
         Pricing
       </Link>
-
-      {/* Learn dropdown */}
-      <NavMenu label="Learn">
-        {(closeMenu) => <LearnContent closeMenu={closeMenu} />}
-      </NavMenu>
     </div>
   );
 };

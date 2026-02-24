@@ -20,6 +20,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
   --radius: 0.5rem;
 }
 
@@ -43,6 +45,8 @@
   --border: #e5e5e5;
   --input: #e5e5e5;
   --ring: #d4d4d4;
+  --brand: #EF4444;
+  --brand-foreground: #ffffff;
   --black: #0a0a0a;
   --white: #ffffff;
   --radius: 0.5rem;
@@ -72,6 +76,8 @@
   --border: #1a1a1a;
   --input: #1a1a1a;
   --ring: #333333;
+  --brand: #EF4444;
+  --brand-foreground: #ffffff;
   --black: #000000;
   --white: #f5f5f5;
 }

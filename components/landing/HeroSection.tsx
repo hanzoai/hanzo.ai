@@ -416,7 +416,7 @@ const HeroSection = () => {
                 {/* Badge */}
                 <p
                   className="inline-flex text-xs font-medium rounded-full px-4 py-2 border w-fit mb-6"
-                  style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
+                  style={{ color: "var(--brand)", borderColor: "color-mix(in srgb, var(--brand) 35%, transparent)" }}
                 >
                   Open-source AI Cloud for builders.
                 </p>
@@ -431,7 +431,7 @@ const HeroSection = () => {
                 <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6">
                   <span className="text-foreground">A vertically integrated</span>
                   <br />
-                  <span>AI platform.</span>
+                  <span className="text-brand">AI platform.</span>
                 </h1>
               </motion.div>
 
@@ -454,7 +454,7 @@ const HeroSection = () => {
               >
                 <Link
                   href="/products"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm bg-brand text-brand-foreground"
 
                 >
                   Get Started
@@ -535,7 +535,7 @@ const HeroSection = () => {
               >
                 <p
                   className="inline-flex text-xs font-medium rounded-full px-4 py-2 border w-fit mb-6"
-                  style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
+                  style={{ color: "var(--brand)", borderColor: "color-mix(in srgb, var(--brand) 25%, transparent)" }}
                 >
                   Open-source AI Cloud for builders.
                 </p>
@@ -549,7 +549,7 @@ const HeroSection = () => {
                 <h1 className="text-4xl font-medium tracking-tight leading-[1.1] mb-6">
                   <span className="text-foreground">A vertically integrated</span>
                   <br />
-                  <span>AI platform.</span>
+                  <span className="text-brand">AI platform.</span>
                 </h1>
               </motion.div>
 
@@ -571,7 +571,7 @@ const HeroSection = () => {
               >
                 <Link
                   href="/products"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm bg-brand text-brand-foreground"
 
                 >
                   Get Started
@@ -648,7 +648,7 @@ const HeroSection = () => {
               >
                 <p
                   className="inline-flex text-[11px] font-medium rounded-full px-3 py-1.5 border w-fit mb-4"
-                  style={{ color: "var(--primary)", borderColor: "color-mix(in srgb, var(--primary) 25%, transparent)" }}
+                  style={{ color: "var(--brand)", borderColor: "color-mix(in srgb, var(--brand) 25%, transparent)" }}
                 >
                   Open-source AI Cloud for builders.
                 </p>
@@ -662,7 +662,7 @@ const HeroSection = () => {
                 <h1 className="text-2xl font-medium tracking-tight leading-[1.1] mb-4">
                   <span className="text-foreground">A vertically integrated</span>
                   <br />
-                  <span>AI platform.</span>
+                  <span className="text-brand">AI platform.</span>
                 </h1>
               </motion.div>
 
@@ -684,7 +684,7 @@ const HeroSection = () => {
               >
                 <Link
                   href="/products"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm w-full max-w-[200px] bg-primary text-primary-foreground"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-all hover:opacity-90 text-sm w-full max-w-[200px] bg-brand text-brand-foreground"
 
                 >
                   Get Started

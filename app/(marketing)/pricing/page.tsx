@@ -68,8 +68,8 @@ export default function PricingPage() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
                     activeTab === tab.id
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "bg-white text-black"
+                      : "text-neutral-400 hover:text-white"
                   }`}
                 >
                   {tab.label}

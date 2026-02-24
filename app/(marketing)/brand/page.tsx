@@ -226,7 +226,7 @@ const Brand = () => {
               >
                 <h3 className="text-xl font-medium mb-6 text-foreground">Brand Colors</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                  <ColorSwatch name="Hanzo Red" hex="#FD4444" className="bg-primary" />
+                  <ColorSwatch name="Hanzo Red" hex="#FD4444" className="bg-[#FD4444]" />
                   <ColorSwatch name="Pure Black" hex="#000000" className="bg-background" />
                   <ColorSwatch name="Pure White" hex="#FFFFFF" className="bg-primary" />
                   <ColorSwatch name="Deep Gray" hex="#171717" className="bg-[#171717]" />
