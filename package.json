@@ -14,6 +14,7 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
+    "@hanzo/logo": "^1.0.5",
     "@hanzo/ui": "^5.3.34",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-slot": "^1.2.4",

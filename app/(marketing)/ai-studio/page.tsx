@@ -33,7 +33,7 @@ export default function AIStudioPage() {
     { id: "claude-3-opus", name: "Claude 3 Opus", provider: "Anthropic" },
     { id: "llama-3-70b", name: "Llama 3 70B", provider: "Meta" },
     { id: "gemini-pro", name: "Gemini Pro", provider: "Google" },
-    { id: "mixtral-8x7b", name: "Mixtral 8x7B", provider: "Mistral" },
+    { id: "zen4", name: "zen4", provider: "Hanzo" },
   ]
 
   const handleSubmit = (e: React.FormEvent) => {

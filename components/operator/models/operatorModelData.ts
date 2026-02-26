@@ -30,11 +30,11 @@ export const operatorModels: OperatorModel[] = [
     command: "operative -m gemini-pro-vision"
   },
   {
-    name: "Qwen-VL",
-    provider: "Alibaba Cloud",
-    features: ["Strong visual capabilities", "Growing feature set", "Good for basic tasks", "Alternative API option"],
+    name: "zen3-vl",
+    provider: "Hanzo Cloud",
+    features: ["Strong visual capabilities", "30B MoE architecture", "Good for basic tasks", "Native API support"],
     recommended: false,
-    command: "operative -m qwen-vl"
+    command: "operative -m zen3-vl"
   },
   {
     name: "LLaVA",

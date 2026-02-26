@@ -87,7 +87,7 @@ const AppDemo = ({ activeTab }: { activeTab: string }) => {
           </div>
           <div className="bg-secondary/50 rounded-lg p-3 font-mono text-xs">
             <div className="text-muted-foreground">$ hanzo local start</div>
-            <div className="text-foreground/70 mt-1">✓ Qwen3-32B loaded (16GB VRAM)</div>
+            <div className="text-foreground/70 mt-1">✓ zen4-mini loaded (16GB VRAM)</div>
             <div className="text-foreground/70">✓ MCP tools connected</div>
             <div className="text-foreground/70">✓ Ready on localhost:8080</div>
           </div>

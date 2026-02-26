@@ -109,7 +109,7 @@ output = query({
             icon={<ServerIcon className="h-10 w-10 text-foreground" />}
             list={[
               "HuggingFace, Ollama, LocalAI, Replicate", 
-              "Llama2, Mistral, Vicuna, Orca, Llava", 
+              "Zen, Llama, open-weight models, vision models",
               "Self host on AWS, Azure, GCP"
             ]}
           />

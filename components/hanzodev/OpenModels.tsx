@@ -8,7 +8,7 @@ const SUPPORTED_PROVIDERS = [
   "OpenAI",
   "Anthropic",
   "Google",
-  "Mistral",
+  "Zen",
   "Cohere",
   "Together AI",
   "Groq",

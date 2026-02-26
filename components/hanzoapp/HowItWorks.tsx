@@ -17,7 +17,7 @@ const steps = [
     icon: Settings,
     title: "Configure your mode",
     description: "Choose web, desktop, local AI, or node mode. Connect your accounts and preferences.",
-    code: "hanzo config --mode local --model qwen3-32b",
+    code: "hanzo config --mode local --model zen4-mini",
   },
   {
     number: "03",
