@@ -1,32 +1,41 @@
 'use client'
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@hanzo/ui";
 
 const InfrastructurePricing = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const cloudPlans = [
-    { name: "Nano", vcpus: 1, ram: "1 GB", storage: "20 GB SSD", transfer: "500 GB", maxVMs: 1, price: "$5/mo", hourly: "$0.007/hr", description: "Cheapest single VM for lightweight bots and scripts", highlight: false },
-    { name: "Bot", vcpus: 2, ram: "2 GB", storage: "40 GB SSD", transfer: "1 TB", maxVMs: 5, price: "$10/mo", hourly: "$0.014/hr", description: "Standard bot runner for most automation tasks", highlight: false },
-    { name: "Standard", vcpus: 2, ram: "8 GB", storage: "25 GB SSD", transfer: "3 TB", maxVMs: 25, price: "$15/mo", hourly: "$0.021/hr", description: "Default plan — run bots, agents, and services", highlight: true },
-    { name: "Pro", vcpus: 2, ram: "8 GB", storage: "80 GB SSD", transfer: "2 TB", maxVMs: 25, price: "$25/mo", hourly: "$0.035/hr", description: "Dedicated CPU for consistent performance", highlight: false },
-    { name: "Power", vcpus: 4, ram: "16 GB", storage: "160 GB SSD", transfer: "4 TB", maxVMs: 25, price: "$39/mo", hourly: "$0.054/hr", description: "High performance for demanding workloads", highlight: false },
-    { name: "Power Dedicated", vcpus: 4, ram: "16 GB", storage: "160 GB SSD", transfer: "4 TB", maxVMs: 25, price: "$49/mo", hourly: "$0.068/hr", description: "Maximum dedicated CPU performance", highlight: false },
+    { name: "Starter", vcpus: 1, cpuType: "shared", ram: "1 GB", storage: "20 GB", transfer: "500 GB", maxVMs: 1, price: 5, description: "Side projects, bots, and learning", badge: "Free $5 Credit" },
+    { name: "Builder", vcpus: 2, cpuType: "shared", ram: "2 GB", storage: "40 GB", transfer: "1 TB", maxVMs: 5, price: 10, description: "Ship real products and automation" },
+    { name: "Dev", vcpus: 2, cpuType: "shared", ram: "8 GB", storage: "25 GB", transfer: "3 TB", maxVMs: 25, price: 15, description: "Full dev environment with room to grow", popular: true },
+    { name: "Pro", vcpus: 2, cpuType: "dedicated", ram: "8 GB", storage: "80 GB", transfer: "2 TB", maxVMs: 25, price: 25, description: "Dedicated CPU. Zero noisy neighbors" },
+    { name: "Turbo", vcpus: 4, cpuType: "shared", ram: "16 GB", storage: "160 GB", transfer: "4 TB", maxVMs: 25, price: 39, description: "Browser automation and CI/CD" },
+    { name: "Turbo Dedicated", vcpus: 4, cpuType: "dedicated", ram: "16 GB", storage: "160 GB", transfer: "4 TB", maxVMs: 25, price: 49, description: "Production-grade performance" },
+    { name: "Business", vcpus: 8, cpuType: "dedicated", ram: "32 GB", storage: "240 GB", transfer: "20 TB", maxVMs: 50, price: 219, description: "Team-scale production services" },
+    { name: "Enterprise", vcpus: 16, cpuType: "dedicated", ram: "64 GB", storage: "360 GB", transfer: "40 TB", maxVMs: 100, price: 429, description: "Mission-critical infrastructure" },
+    { name: "Scale", vcpus: 32, cpuType: "dedicated", ram: "128 GB", storage: "600 GB", transfer: "50 TB", maxVMs: 250, price: 849, description: "Platform-scale global compute" },
+    { name: "Mega", vcpus: 48, cpuType: "dedicated", ram: "192 GB", storage: "960 GB", transfer: "60 TB", maxVMs: 500, price: 1299, description: "ML inference and HPC workloads" },
+    { name: "Ultra", vcpus: 96, cpuType: "dedicated", ram: "384 GB", storage: "1.9 TB", transfer: "120 TB", maxVMs: 1000, price: 3999, description: "Extreme multi-node compute" },
   ];
 
+  const visiblePlans = showAll ? cloudPlans : cloudPlans.slice(0, 6);
+
   const cloudRegions = [
-    { name: "US East", location: "Ashburn, VA" },
-    { name: "US West", location: "Hillsboro, OR" },
-    { name: "Europe Central", location: "Germany" },
-    { name: "Asia Pacific", location: "Singapore" },
+    { name: "US East", location: "Ashburn, VA", flag: "us" },
+    { name: "US West", location: "Hillsboro, OR", flag: "us" },
+    { name: "Europe", location: "Frankfurt, DE", flag: "de" },
+    { name: "Asia Pacific", location: "Singapore", flag: "sg" },
   ];
 
   const computeTiers = [
-    { name: "Starter", slug: "s-1vcpu-1gb", vcpus: 1, ram: "1 GB", storage: "25 GB SSD", transfer: "1 TB", price: "$8.40/mo", hourly: "$0.0125/hr" },
-    { name: "Basic", slug: "s-1vcpu-2gb", vcpus: 1, ram: "2 GB", storage: "50 GB SSD", transfer: "2 TB", price: "$14.40/mo", hourly: "$0.0214/hr" },
-    { name: "Standard", slug: "s-2vcpu-4gb", vcpus: 2, ram: "4 GB", storage: "80 GB SSD", transfer: "4 TB", price: "$28.80/mo", hourly: "$0.0429/hr" },
-    { name: "Performance", slug: "s-4vcpu-8gb", vcpus: 4, ram: "8 GB", storage: "160 GB SSD", transfer: "5 TB", price: "$57.60/mo", hourly: "$0.0857/hr" },
-    { name: "Professional", slug: "s-8vcpu-16gb", vcpus: 8, ram: "16 GB", storage: "320 GB SSD", transfer: "6 TB", price: "$115.20/mo", hourly: "$0.1714/hr" },
-    { name: "Enterprise", slug: "s-16vcpu-32gb", vcpus: 16, ram: "32 GB", storage: "640 GB SSD", transfer: "7 TB", price: "$230.40/mo", hourly: "$0.3429/hr" },
+    { name: "Starter", vcpus: 1, ram: "1 GB", storage: "25 GB SSD", transfer: "1 TB", price: "$8.40/mo", hourly: "$0.0125/hr" },
+    { name: "Basic", vcpus: 1, ram: "2 GB", storage: "50 GB SSD", transfer: "2 TB", price: "$14.40/mo", hourly: "$0.0214/hr" },
+    { name: "Standard", vcpus: 2, ram: "4 GB", storage: "80 GB SSD", transfer: "4 TB", price: "$28.80/mo", hourly: "$0.0429/hr" },
+    { name: "Performance", vcpus: 4, ram: "8 GB", storage: "160 GB SSD", transfer: "5 TB", price: "$57.60/mo", hourly: "$0.0857/hr" },
+    { name: "Professional", vcpus: 8, ram: "16 GB", storage: "320 GB SSD", transfer: "6 TB", price: "$115.20/mo", hourly: "$0.1714/hr" },
+    { name: "Enterprise", vcpus: 16, ram: "32 GB", storage: "640 GB SSD", transfer: "7 TB", price: "$230.40/mo", hourly: "$0.3429/hr" },
   ];
 
   const gpuTiers = [
@@ -43,46 +52,76 @@ const InfrastructurePricing = () => {
     { name: "Kubernetes Cluster", description: "Managed K8s with auto-scaling node pools", startingAt: "$14.40/mo per node" },
   ];
 
+  function formatPrice(cents: number) {
+    if (cents >= 100) return `$${cents.toLocaleString()}`;
+    return `$${cents}`;
+  }
+
   return (
     <div className="max-w-7xl mx-auto mb-16">
       <div className="mb-4">
-        <h2 className="text-3xl font-bold mb-2">Hanzo Infrastructure</h2>
+        <h2 className="text-3xl font-bold mb-2">Hanzo Cloud</h2>
         <p className="text-muted-foreground text-lg mb-8">
-          Deploy AI applications, bots, agents, and services on fully managed infrastructure.
-          Per-org isolation with zero-trust networking, KMS-managed secrets, and IAM SSO.
+          The developer cloud that doesn't nickel-and-dime you.
+          No egress fees. No hidden costs. DDoS protection included.
         </p>
       </div>
 
       {/* Cloud VM Plans */}
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold mb-2">Cloud VMs</h3>
+        <h3 className="text-2xl font-semibold mb-2">Cloud Compute</h3>
         <p className="text-muted-foreground text-sm mb-6">
-          Deploy virtual machines across 4 global regions. Consistent pricing regardless of provider.
+          From $5/mo to $3,999/mo. 4 global regions. Consistent pricing everywhere.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-          {cloudPlans.map((plan) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+          {visiblePlans.map((plan) => (
             <div key={plan.name} className={`rounded-xl p-6 border transition-colors ${
-              plan.highlight
+              plan.popular
                 ? "bg-primary/5 border-primary/30"
                 : "bg-gray-900/30 border-gray-800/50"
             }`}>
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-semibold text-lg">{plan.name}</h4>
-                {plan.highlight && (
-                  <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Most Popular</span>
-                )}
+                <div className="flex gap-1.5">
+                  {plan.popular && (
+                    <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Most Popular</span>
+                  )}
+                  {plan.badge && (
+                    <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">{plan.badge}</span>
+                  )}
+                </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
-              <div className="text-2xl font-bold mb-1">{plan.price}</div>
-              <div className="text-xs text-muted-foreground mb-4">{plan.hourly}</div>
+              <div className="text-2xl font-bold mb-1">{formatPrice(plan.price)}<span className="text-base font-normal text-muted-foreground">/mo</span></div>
+              <div className="text-xs text-muted-foreground mb-4">${(plan.price / 720).toFixed(4)}/hr</div>
               <div className="space-y-1 text-sm text-muted-foreground">
-                <div>{plan.vcpus} vCPU &middot; {plan.ram} RAM</div>
-                <div>{plan.storage} &middot; {plan.transfer}</div>
-                <div>Up to {plan.maxVMs} VM{plan.maxVMs > 1 ? 's' : ''}</div>
+                <div>{plan.vcpus} {plan.cpuType === "dedicated" ? "dedicated " : ""}vCPU &middot; {plan.ram} RAM</div>
+                <div>{plan.storage} SSD &middot; {plan.transfer}</div>
+                <div>Up to {plan.maxVMs.toLocaleString()} VM{plan.maxVMs > 1 ? 's' : ''}</div>
               </div>
             </div>
           ))}
         </div>
+        {!showAll && cloudPlans.length > 6 && (
+          <div className="flex justify-center mb-6">
+            <button
+              onClick={() => setShowAll(true)}
+              className="text-sm text-primary hover:text-primary/80 transition-colors underline underline-offset-4"
+            >
+              Show all {cloudPlans.length} plans (up to {cloudPlans[cloudPlans.length - 1].vcpus} vCPU / {cloudPlans[cloudPlans.length - 1].ram})
+            </button>
+          </div>
+        )}
+        {showAll && (
+          <div className="flex justify-center mb-6">
+            <button
+              onClick={() => setShowAll(false)}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+            >
+              Show fewer plans
+            </button>
+          </div>
+        )}
         <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
           <span className="font-medium text-foreground">Regions:</span>
           {cloudRegions.map((r) => (
@@ -97,11 +136,11 @@ const InfrastructurePricing = () => {
       <div className="mb-12">
         <h3 className="text-2xl font-semibold mb-2">Block Storage</h3>
         <p className="text-muted-foreground text-sm mb-6">
-          Attach additional SSD volumes to any cloud VM. Resize on the fly.
+          Attach additional SSD volumes to any VM. Resize on the fly.
         </p>
         <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50 inline-block">
           <div className="text-3xl font-bold mb-1">$0.08<span className="text-lg font-normal text-muted-foreground">/GB/mo</span></div>
-          <p className="text-muted-foreground text-sm">1 GB — 16 TB per volume. Attach to any VM. SSD-backed, all regions.</p>
+          <p className="text-muted-foreground text-sm">1 GB to 16 TB per volume. SSD-backed, all regions.</p>
         </div>
       </div>
 
@@ -123,7 +162,7 @@ const InfrastructurePricing = () => {
             </thead>
             <tbody>
               {computeTiers.map((tier) => (
-                <tr key={tier.slug} className="border-b border-gray-800/50 hover:bg-gray-900/30 transition-colors">
+                <tr key={tier.name} className="border-b border-gray-800/50 hover:bg-gray-900/30 transition-colors">
                   <td className="py-4 px-4 font-medium">{tier.name}</td>
                   <td className="py-4 px-4 text-muted-foreground">{tier.vcpus}</td>
                   <td className="py-4 px-4 text-muted-foreground">{tier.ram}</td>
@@ -184,17 +223,17 @@ const InfrastructurePricing = () => {
         </div>
       </div>
 
-      {/* Included with every deployment */}
+      {/* Included */}
       <div className="mb-12 bg-gray-900/30 rounded-xl p-8 border border-gray-800/50">
         <h3 className="text-xl font-semibold mb-4">Included with every deployment</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
+          <div>DDoS protection</div>
+          <div>Automated backups</div>
+          <div>IPv4 + IPv6</div>
           <div>Zero-trust networking</div>
           <div>KMS-managed secrets</div>
           <div>IAM SSO authentication</div>
           <div>Automated TLS certificates</div>
-          <div>Rolling deployments</div>
-          <div>Health monitoring</div>
-          <div>Usage metering</div>
           <div>Git-based CI/CD</div>
         </div>
       </div>
@@ -203,7 +242,7 @@ const InfrastructurePricing = () => {
         <Button
           size="lg"
           className="bg-primary text-primary-foreground hover:bg-gray-100 px-8 py-3"
-          onClick={() => window.open('https://platform.hanzo.ai', '_blank')}
+          onClick={() => window.open('https://cloud.hanzo.ai', '_blank')}
         >
           Deploy Now
         </Button>
