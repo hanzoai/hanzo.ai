@@ -313,7 +313,7 @@ const DeveloperExperienceSection = () => {
               { icon: History, title: "Unified History", desc: "Every prompt, every response, searchable" },
               { icon: Share2, title: "Team Sync", desc: "Share context and memory across your team" },
               { icon: Layers, title: "260+ MCP Tools", desc: "Browser, file, code, git, and more built-in" },
-              { icon: Cpu, title: "Any Model", desc: "100+ models from all major providers, plus local" },
+              { icon: Cpu, title: "Any Model", desc: "GPT-4, Claude, Gemini, Zen, Qwen, Mistral, Llama, local" },
             ].map((item, index) => {
               const Icon = item.icon;
               return (

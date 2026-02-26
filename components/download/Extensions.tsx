@@ -7,17 +7,20 @@ import { Chrome, Code, Sparkles, Check, Monitor, Globe, Laptop, Brain, Zap } fro
 import { Button } from "@hanzo/ui";
 
 const aiProviders = [
+  { name: "Zen", models: "zen4, zen4-max, zen4-coder" },
   { name: "OpenAI", models: "GPT-4o, o1, o3" },
   { name: "Anthropic", models: "Claude 4, Opus, Sonnet" },
   { name: "Google", models: "Gemini 2.0, Ultra, Flash" },
   { name: "xAI", models: "Grok 3, Grok 2" },
-  { name: "Zen", models: "zen4, zen4-max, zen4-coder" },
+  { name: "Qwen", models: "Qwen3, QwQ, Coder" },
+  { name: "Mistral", models: "Large, Medium, Codestral" },
+  { name: "DeepSeek", models: "V3, R1, Coder" },
   { name: "Meta", models: "Llama 4, 3.3, 3.2" },
   { name: "Cohere", models: "Command R+, Embed" },
+  { name: "Moonshot", models: "Kimi K2.5, v1" },
   { name: "Together", models: "Open Models" },
   { name: "Perplexity", models: "Sonar, Online" },
-  { name: "Groq", models: "Fast Inference" },
-  { name: "AWS Bedrock", models: "All Models" },
+  { name: "Groq", models: "Llama, Mixtral" },
   { name: "Fireworks", models: "All Models" },
   { name: "Replicate", models: "All Models" },
   { name: "Ollama", models: "Local Models" },

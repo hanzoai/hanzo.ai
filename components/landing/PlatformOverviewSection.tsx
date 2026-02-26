@@ -18,26 +18,29 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-// AI providers we support for multi-agent execution
+// AI providers we support — all available through Hanzo Cloud gateway
 const aiProviders = [
   { name: "OpenAI", logo: "/logos/openai.svg" },
   { name: "Anthropic", logo: "/logos/anthropic.svg" },
   { name: "Google", logo: "/logos/google.svg" },
   { name: "Gemini", logo: "/logos/gemini.svg" },
+  { name: "Qwen", logo: "/logos/qwen.svg" },
+  { name: "Mistral", logo: "/logos/mistral.svg" },
+  { name: "Kimi", logo: "/logos/kimi.svg" },
+  { name: "Moonshot", logo: "/logos/moonshot.svg" },
+  { name: "DeepSeek", logo: "/logos/deepseek.svg" },
   { name: "Fireworks", logo: "/logos/fireworks.svg" },
   { name: "OpenRouter", logo: "/logos/openrouter.svg" },
-  { name: "DigitalOcean", logo: "/logos/digitalocean.svg" },
   { name: "Together", logo: "/logos/together.svg" },
   { name: "Groq", logo: "/logos/groq.svg" },
   { name: "Replicate", logo: "/logos/replicate.svg" },
-  { name: "AWS Bedrock", logo: "/logos/aws.svg" },
 ];
 
 const multiAgentFeatures = [
   {
     icon: Zap,
     title: "Race multiple agents",
-    description: "One task, multiple agents racing. Best-of-N execution across providers in parallel.",
+    description: "One task, multiple agents racing. GPT-4, Claude, Gemini, Zen, and Qwen compete in parallel.",
   },
   {
     icon: Users,

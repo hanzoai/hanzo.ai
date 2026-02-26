@@ -5,10 +5,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 const SUPPORTED_PROVIDERS = [
+  "Zen",
   "OpenAI",
   "Anthropic",
   "Google",
-  "Zen",
+  "Qwen",
+  "Mistral",
+  "DeepSeek",
+  "Moonshot",
   "Cohere",
   "Together AI",
   "Groq",

@@ -31,9 +31,11 @@ export default function AIStudioPage() {
   const models: ModelInterface[] = [
     { id: "gpt-4o", name: "GPT-4o", provider: "OpenAI" },
     { id: "claude-3-opus", name: "Claude 3 Opus", provider: "Anthropic" },
+    { id: "zen4", name: "zen4", provider: "Hanzo" },
     { id: "llama-3-70b", name: "Llama 3 70B", provider: "Meta" },
     { id: "gemini-pro", name: "Gemini Pro", provider: "Google" },
-    { id: "zen4", name: "zen4", provider: "Hanzo" },
+    { id: "qwen3-32b", name: "Qwen3 32B", provider: "Qwen" },
+    { id: "mixtral-8x7b", name: "Mixtral 8x7B", provider: "Mistral" },
   ]
 
   const handleSubmit = (e: React.FormEvent) => {
