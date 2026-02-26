@@ -4,6 +4,22 @@ import React from "react";
 import { Button } from "@hanzo/ui";
 
 const InfrastructurePricing = () => {
+  const cloudPlans = [
+    { name: "Nano", vcpus: 1, ram: "1 GB", storage: "20 GB SSD", transfer: "500 GB", maxVMs: 1, price: "$5/mo", hourly: "$0.007/hr", description: "Cheapest single VM for lightweight bots and scripts", highlight: false },
+    { name: "Bot", vcpus: 2, ram: "2 GB", storage: "40 GB SSD", transfer: "1 TB", maxVMs: 5, price: "$10/mo", hourly: "$0.014/hr", description: "Standard bot runner for most automation tasks", highlight: false },
+    { name: "Standard", vcpus: 2, ram: "8 GB", storage: "25 GB SSD", transfer: "3 TB", maxVMs: 25, price: "$15/mo", hourly: "$0.021/hr", description: "Default plan — run bots, agents, and services", highlight: true },
+    { name: "Pro", vcpus: 2, ram: "8 GB", storage: "80 GB SSD", transfer: "2 TB", maxVMs: 25, price: "$25/mo", hourly: "$0.035/hr", description: "Dedicated CPU for consistent performance", highlight: false },
+    { name: "Power", vcpus: 4, ram: "16 GB", storage: "160 GB SSD", transfer: "4 TB", maxVMs: 25, price: "$39/mo", hourly: "$0.054/hr", description: "High performance for demanding workloads", highlight: false },
+    { name: "Power Dedicated", vcpus: 4, ram: "16 GB", storage: "160 GB SSD", transfer: "4 TB", maxVMs: 25, price: "$49/mo", hourly: "$0.068/hr", description: "Maximum dedicated CPU performance", highlight: false },
+  ];
+
+  const cloudRegions = [
+    { name: "US East", location: "Ashburn, VA" },
+    { name: "US West", location: "Hillsboro, OR" },
+    { name: "Europe Central", location: "Germany" },
+    { name: "Asia Pacific", location: "Singapore" },
+  ];
+
   const computeTiers = [
     { name: "Starter", slug: "s-1vcpu-1gb", vcpus: 1, ram: "1 GB", storage: "25 GB SSD", transfer: "1 TB", price: "$8.40/mo", hourly: "$0.0125/hr" },
     { name: "Basic", slug: "s-1vcpu-2gb", vcpus: 1, ram: "2 GB", storage: "50 GB SSD", transfer: "2 TB", price: "$14.40/mo", hourly: "$0.0214/hr" },
@@ -30,16 +46,68 @@ const InfrastructurePricing = () => {
   return (
     <div className="max-w-7xl mx-auto mb-16">
       <div className="mb-4">
-        <h2 className="text-3xl font-bold mb-2">Hanzo PaaS Infrastructure</h2>
+        <h2 className="text-3xl font-bold mb-2">Hanzo Infrastructure</h2>
         <p className="text-muted-foreground text-lg mb-8">
-          Deploy AI applications, workflows, and agents on fully managed infrastructure.
+          Deploy AI applications, bots, agents, and services on fully managed infrastructure.
           Per-org isolation with zero-trust networking, KMS-managed secrets, and IAM SSO.
         </p>
       </div>
 
-      {/* Compute */}
+      {/* Cloud VM Plans */}
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold mb-6">Compute Instances</h3>
+        <h3 className="text-2xl font-semibold mb-2">Cloud VMs</h3>
+        <p className="text-muted-foreground text-sm mb-6">
+          Deploy virtual machines across 4 global regions. Consistent pricing regardless of provider.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+          {cloudPlans.map((plan) => (
+            <div key={plan.name} className={`rounded-xl p-6 border transition-colors ${
+              plan.highlight
+                ? "bg-primary/5 border-primary/30"
+                : "bg-gray-900/30 border-gray-800/50"
+            }`}>
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="font-semibold text-lg">{plan.name}</h4>
+                {plan.highlight && (
+                  <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Most Popular</span>
+                )}
+              </div>
+              <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
+              <div className="text-2xl font-bold mb-1">{plan.price}</div>
+              <div className="text-xs text-muted-foreground mb-4">{plan.hourly}</div>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <div>{plan.vcpus} vCPU &middot; {plan.ram} RAM</div>
+                <div>{plan.storage} &middot; {plan.transfer}</div>
+                <div>Up to {plan.maxVMs} VM{plan.maxVMs > 1 ? 's' : ''}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+          <span className="font-medium text-foreground">Regions:</span>
+          {cloudRegions.map((r) => (
+            <span key={r.name} className="bg-gray-900/50 px-3 py-1 rounded-full border border-gray-800/50">
+              {r.name} ({r.location})
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Block Storage */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold mb-2">Block Storage</h3>
+        <p className="text-muted-foreground text-sm mb-6">
+          Attach additional SSD volumes to any cloud VM. Resize on the fly.
+        </p>
+        <div className="bg-gray-900/30 rounded-xl p-6 border border-gray-800/50 inline-block">
+          <div className="text-3xl font-bold mb-1">$0.08<span className="text-lg font-normal text-muted-foreground">/GB/mo</span></div>
+          <p className="text-muted-foreground text-sm">1 GB — 16 TB per volume. Attach to any VM. SSD-backed, all regions.</p>
+        </div>
+      </div>
+
+      {/* PaaS Compute */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold mb-6">PaaS Compute Instances</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
