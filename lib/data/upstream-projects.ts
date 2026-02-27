@@ -123,11 +123,11 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
   },
 
   // Analytics & Growth
-  posthog: {
-    name: 'PostHog',
+  'hanzo-insights': {
+    name: 'Hanzo Insights',
     description: 'Product analytics, session recordings, feature flags, A/B testing, and more.',
-    url: 'https://posthog.com',
-    github: 'https://github.com/PostHog/posthog',
+    url: 'https://insights.hanzo.ai',
+    github: 'https://github.com/hanzoai/insights',
     license: 'MIT',
     stars: '22k+'
   },
@@ -230,7 +230,7 @@ export const productUpstreamMap: Record<string, string> = {
   'tasks': 'temporal',
 
   // Growth & analytics
-  'insights': 'posthog',
+  'insights': 'hanzo-insights',
   'web-analytics': 'umami',
   'experiments': 'growthbook',
   'engage': 'dittofeed',
