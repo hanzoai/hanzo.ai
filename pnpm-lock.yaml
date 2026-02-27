@@ -26,9 +26,6 @@ importers:
       '@xyflow/react':
         specifier: ^12.4.4
         version: 12.6.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@zenlm/models':
-        specifier: ^1.0.0
-        version: 1.0.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1390,9 +1387,6 @@ packages:
 
   '@xyflow/system@0.0.57':
     resolution: {integrity: sha512-1YpBo0WgmZLR5wQw9Jvk3Tu0gISi/oYc4uSimrDuAsA/G2rGleulLrKkM59uuT/QU5m6DYC2VdBDAzjSNMGuBA==}
-
-  '@zenlm/models@1.0.0':
-    resolution: {integrity: sha512-F7IErOK3iTXkwV+qMqPALTWlwdu2ag29pmyT+0UVKLRcUUf4ft3iWoDfW212Lq4vCy1/DEMLH3zm3wRcidSQlQ==}
 
   aria-hidden@1.2.4:
     resolution: {integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==}
@@ -3273,8 +3267,6 @@ snapshots:
       d3-drag: 3.0.0
       d3-selection: 3.0.0
       d3-zoom: 3.0.0
-
-  '@zenlm/models@1.0.0': {}
 
   aria-hidden@1.2.4:
     dependencies:
