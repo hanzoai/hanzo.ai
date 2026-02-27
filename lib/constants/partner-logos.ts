@@ -51,13 +51,13 @@ export const partnerLogos: PartnerLogo[] = [
   {
     name: "Techstars",
     src: "/logos/partners/techstars.svg",
-    className: "h-6",
+    className: "h-9",
     href: "https://www.techstars.com",
   },
   {
     name: "Zoo Labs Foundation",
     src: "/logos/partners/zoo-labs-foundation.svg",
-    className: "h-6",
+    className: "h-9",
     href: "https://zoo.ngo",
   },
 ];

@@ -60,15 +60,9 @@ const Navbar = () => {
     <>
       <NavbarContainer isScrolled={isScrolled}>
         <div className="flex items-center w-full">
-          {/* Left: Logo + Try Hanzo CTA */}
-          <div className="flex-shrink-0 flex items-center gap-3">
+          {/* Left: Logo */}
+          <div className="flex-shrink-0">
             <Logo />
-            <a
-              href="https://app.hanzo.bot"
-              className="hidden md:inline-flex items-center gap-2 bg-brand text-brand-foreground hover:bg-brand/90 rounded-full h-8 px-4 text-sm font-medium transition-all duration-200"
-            >
-              Try Hanzo
-            </a>
           </div>
 
           {/* Center: Navigation */}
