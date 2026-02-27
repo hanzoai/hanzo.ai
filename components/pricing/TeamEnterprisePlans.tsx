@@ -12,12 +12,13 @@ interface SubscriptionPlan {
   id: string;
   name: string;
   description: string;
-  priceMonthly: number;
-  priceAnnual?: number;
+  priceMonthly: number | null;
+  priceAnnual?: number | null;
   category: string;
   popular?: boolean;
+  contactSales?: boolean;
   features: string[];
-  limits?: Record<string, number>;
+  limits?: Record<string, number | null>;
   payouts?: { idleResalePercent: number; description: string };
 }
 
@@ -77,13 +78,13 @@ const TeamEnterprisePlans = () => {
   }
 
   function formatPrice(plan: SubscriptionPlan) {
+    if (plan.contactSales || plan.priceMonthly == null) return "Custom";
     if (plan.priceMonthly === 0) return "Free";
-    if (plan.priceMonthly >= 9999) return "Custom";
-    return `$${plan.priceMonthly}`;
+    return `$${plan.priceMonthly.toLocaleString()}`;
   }
 
   function billingPeriod(plan: SubscriptionPlan) {
-    if (plan.priceMonthly === 0 || plan.priceMonthly >= 9999) return undefined;
+    if (plan.contactSales || plan.priceMonthly == null || plan.priceMonthly === 0) return undefined;
     return "/month";
   }
 
@@ -91,7 +92,7 @@ const TeamEnterprisePlans = () => {
 
   return (
     <div className="max-w-7xl mx-auto mb-16">
-      <div className={`grid grid-cols-1 md:grid-cols-${Math.min(plans.length, 2)} gap-8 mb-8`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {plans.map((plan) => (
           <PricingPlan
             key={plan.id}
