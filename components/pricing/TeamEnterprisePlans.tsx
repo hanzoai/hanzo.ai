@@ -2,12 +2,35 @@
 
 import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
-import { Users, Shield, Code } from "lucide-react";
+import { Users, Shield, Building2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import TeamPlanDetails from "./TeamPlanDetails";
+
+const PLANS_API = "https://pricing.hanzo.ai/v1/plans";
+
+interface SubscriptionPlan {
+  id: string;
+  name: string;
+  description: string;
+  priceMonthly: number;
+  priceAnnual?: number;
+  category: string;
+  popular?: boolean;
+  features: string[];
+  limits?: Record<string, number>;
+  payouts?: { idleResalePercent: number; description: string };
+}
+
+const PLAN_ICONS: Record<string, React.ReactNode> = {
+  team: <Users className="h-6 w-6 text-muted-foreground" />,
+  enterprise: <Shield className="h-6 w-6 text-muted-foreground" />,
+};
 
 const TeamEnterprisePlans = () => {
   const [fromMaxPlan, setFromMaxPlan] = useState(false);
   const [fromProPlan, setFromProPlan] = useState(false);
+  const [plans, setPlans] = useState<SubscriptionPlan[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,64 +45,68 @@ const TeamEnterprisePlans = () => {
     window.history.replaceState({}, '', window.location.pathname);
   }, []);
 
-  const plans = [
-    {
-      name: "Team",
-      icon: <Users className="h-6 w-6 text-muted-foreground" />,
-      price: "$30",
-      billingPeriod: "/user/month",
-      description: "Collaborative teams requiring unified billing",
-      popular: true,
-      features: [
-        "Everything in the Max plan",
-        "Higher message limits",
-        "Advanced collaborative workspace",
-        "Secure workspace with admin console",
-        "Unified team billing",
-        "Team data excluded from training",
-        "Custom GPT creation and sharing",
-        "Up to 10 AI Credits per user (Adjustable)"
-      ],
-      showDetails: true
-    },
-    {
-      name: "Enterprise",
-      icon: <Shield className="h-6 w-6 text-muted-foreground" />,
-      price: "Custom",
-      description: "For large businesses requiring enterprise-grade security",
-      features: [
-        "Everything in the Team plan",
-        "Expanded context window",
-        "Highest limits on messaging & features",
-        "Enhanced security (GDPR, CCPA controls)",
-        "User management via SCIM and SSO",
-        "Domain verification, user analytics",
-        "Custom data retention policies",
-        "Dedicated support & account management",
-        "Customizable AI Credits"
-      ]
-    }
-  ];
+  useEffect(() => {
+    fetch(PLANS_API)
+      .then((r) => r.json())
+      .then((d) => {
+        const teamEnterprise = (d.plans || []).filter(
+          (p: SubscriptionPlan) => p.category === "team" || p.category === "enterprise"
+        );
+        setPlans(teamEnterprise);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch plans:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-24">
+        <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
+        <span className="text-muted-foreground">Loading plans...</span>
+      </div>
+    );
+  }
+
+  if (!plans.length) {
+    return (
+      <div className="text-center py-24 text-muted-foreground">Failed to load plans.</div>
+    );
+  }
+
+  function formatPrice(plan: SubscriptionPlan) {
+    if (plan.priceMonthly === 0) return "Free";
+    if (plan.priceMonthly >= 9999) return "Custom";
+    return `$${plan.priceMonthly}`;
+  }
+
+  function billingPeriod(plan: SubscriptionPlan) {
+    if (plan.priceMonthly === 0 || plan.priceMonthly >= 9999) return undefined;
+    return "/month";
+  }
+
+  const iconFallback = <Building2 className="h-6 w-6 text-muted-foreground" />;
 
   return (
     <div className="max-w-7xl mx-auto mb-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div className={`grid grid-cols-1 md:grid-cols-${Math.min(plans.length, 2)} gap-8 mb-8`}>
         {plans.map((plan) => (
           <PricingPlan
-            key={plan.name}
+            key={plan.id}
             name={plan.name}
-            icon={plan.icon}
-            price={plan.price}
-            billingPeriod={plan.billingPeriod}
+            icon={PLAN_ICONS[plan.id] || iconFallback}
+            price={formatPrice(plan)}
+            billingPeriod={billingPeriod(plan)}
             description={plan.description}
             features={plan.features}
-            popular={plan.popular}
-            showDetails={plan.showDetails}
-            customColor={plan.customColor}
+            popular={plan.popular || plan.category === "team"}
+            showDetails={plan.category === "team"}
           />
         ))}
       </div>
-      
+
       <TeamPlanDetails fromMaxPlan={fromMaxPlan} fromProPlan={fromProPlan} />
     </div>
   );

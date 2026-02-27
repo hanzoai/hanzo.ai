@@ -5,7 +5,7 @@ import { Button } from "@hanzo/ui";
 import Link from "next/link";
 import { Loader2, Search, ChevronDown, ChevronUp, Star, Filter } from "lucide-react";
 
-const PRICING_API = "https://api.hanzo.ai/v1/pricing";
+const PRICING_API = "https://pricing.hanzo.ai/v1/pricing";
 
 interface HanzoModel {
   name: string;
