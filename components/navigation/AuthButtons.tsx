@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@hanzo/ui";
 import { Search, ChevronDown, ExternalLink, Sparkles, Code, Zap, Eye, MessageSquare, Terminal, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -106,20 +105,17 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
       </button>
 
       {/* Contact sales button */}
-      <Link href="/contact">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="text-foreground/80 hover:text-foreground hover:bg-transparent text-sm font-medium h-9"
-        >
-          Contact sales
-        </Button>
+      <Link
+        href="/contact"
+        className="inline-flex items-center justify-center rounded-full h-9 px-4 text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-200 cursor-pointer"
+      >
+        Contact sales
       </Link>
 
       {/* Log in button */}
       <a
         href="https://app.hanzo.bot"
-        className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200"
+        className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200 cursor-pointer"
       >
         Log in
       </a>

@@ -60,8 +60,8 @@ const Navbar = () => {
     <>
       <NavbarContainer isScrolled={isScrolled}>
         <div className="flex items-center w-full">
-          {/* Left: Logo */}
-          <div className="flex-shrink-0">
+          {/* Left: Logo — min-width balances right side for centered nav */}
+          <div className="flex-shrink-0 min-w-[120px]">
             <Logo />
           </div>
 

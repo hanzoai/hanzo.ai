@@ -98,7 +98,7 @@ const Logo = () => {
     <>
       <Link
         href="/"
-        className="relative flex items-center group"
+        className="relative flex items-center group cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onContextMenu={handleContextMenu}
@@ -107,7 +107,7 @@ const Logo = () => {
           initial={{ opacity: 0, rotateY: 180, scale: 0.6 }}
           animate={{ opacity: 1, rotateY: 0, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-6 h-6 relative flex-shrink-0"
+          className="w-5 h-5 relative flex-shrink-0"
           onAnimationComplete={() => setAnimationComplete(true)}
           style={{ transformOrigin: "center center" }}
         >
@@ -115,9 +115,9 @@ const Logo = () => {
         </motion.div>
 
         {/* Wordmark - absolute positioned so it doesn't shift other content */}
-        <div className="absolute left-8 overflow-hidden">
+        <div className="absolute left-7 overflow-hidden">
           <span
-            className={`font-bold text-xl text-foreground whitespace-nowrap block transition-transform duration-300 ease-out ${
+            className={`font-bold text-lg text-foreground whitespace-nowrap block transition-transform duration-300 ease-out ${
               shouldShowWordmark ? "translate-x-0" : "-translate-x-full"
             }`}
           >

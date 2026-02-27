@@ -5,6 +5,53 @@ import Link from "next/link";
 import ProductsMenu from "./products-menu";
 import { SolutionsMenu } from "./solutions-menu";
 import { NavMenu } from "./NavMenu";
+import {
+  Users, Lightbulb, Palette, Newspaper, Brain, Layers, FileText, ExternalLink,
+  GitBranch, Cpu, Cloud, Server, ArrowRight, Mail, Building2, Gift, Shield,
+  Activity, BookOpen, GraduationCap, Code, MessageCircle, PenLine, LifeBuoy,
+  Briefcase
+} from "lucide-react";
+
+// Reusable icon link component for menu items
+const IconLink = ({
+  href,
+  icon: Icon,
+  label,
+  description,
+  external,
+  closeMenu,
+}: {
+  href: string;
+  icon: React.ElementType;
+  label: string;
+  description?: string;
+  external?: boolean;
+  closeMenu: () => void;
+}) => {
+  const content = (
+    <div className="group flex items-start gap-2 py-1">
+      <Icon className="h-3.5 w-3.5 mt-0.5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+      <div>
+        <span className="text-sm text-foreground/80 group-hover:text-foreground transition-colors">{label}</span>
+        {description && <p className="text-xs text-muted-foreground">{description}</p>}
+      </div>
+    </div>
+  );
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} onClick={closeMenu} className="block">
+      {content}
+    </Link>
+  );
+};
 
 // Meet Hanzo dropdown content
 const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
@@ -24,75 +71,51 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
           Meet the team →
         </Link>
       </div>
-      <ul className="space-y-2">
-        <li><Link href="/philosophy" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Philosophy</Link></li>
-        <li><Link href="/leadership" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Leadership</Link></li>
-        <li><Link href="/brand" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Brand</Link></li>
-        <li><Link href="/press" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Press</Link></li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="/philosophy" icon={Lightbulb} label="Philosophy" closeMenu={closeMenu} />
+        <IconLink href="/leadership" icon={Users} label="Leadership" closeMenu={closeMenu} />
+        <IconLink href="/brand" icon={Palette} label="Brand" closeMenu={closeMenu} />
+        <IconLink href="/press" icon={Newspaper} label="Press" closeMenu={closeMenu} />
+      </div>
     </div>
 
     {/* Research & Models */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Research</h3>
-      <ul className="space-y-2">
-        <li>
-          <Link href="/zen" onClick={closeMenu} className="group flex items-start gap-2">
-            <span className="text-foreground text-lg">🧠</span>
-            <div>
-              <span className="text-sm text-foreground font-medium group-hover:text-foreground transition-colors">Zen LM</span>
-              <p className="text-xs text-muted-foreground">30+ open foundation models</p>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link href="/zen/models" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">All Models</Link>
-        </li>
-        <li>
-          <a href="https://zenlm.org/research" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Papers</a>
-        </li>
-        <li>
-          <a href="https://huggingface.co/zenlm" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">HuggingFace</a>
-        </li>
-        <li>
-          <Link href="/open-source" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Open Source</Link>
-        </li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="/zen" icon={Brain} label="Zen LM" description="30+ open foundation models" closeMenu={closeMenu} />
+        <IconLink href="/zen/models" icon={Layers} label="All Models" closeMenu={closeMenu} />
+        <IconLink href="https://zenlm.org/research" icon={FileText} label="Papers" external closeMenu={closeMenu} />
+        <IconLink href="https://huggingface.co/zenlm" icon={ExternalLink} label="HuggingFace" external closeMenu={closeMenu} />
+        <IconLink href="/open-source" icon={GitBranch} label="Open Source" closeMenu={closeMenu} />
+      </div>
     </div>
 
     {/* Products */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Products</h3>
-      <ul className="space-y-2">
-        <li>
-          <Link href="/dev" onClick={closeMenu} className="group flex items-start gap-2">
-            <span className="text-foreground text-lg">⚡</span>
-            <div>
-              <span className="text-sm text-foreground font-medium group-hover:text-foreground transition-colors">Hanzo Dev</span>
-              <p className="text-xs text-muted-foreground">AI coding assistant</p>
-            </div>
-          </Link>
-        </li>
-        <li><Link href="/ai" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">AI Platform</Link></li>
-        <li><Link href="/cloud" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Cloud</Link></li>
-        <li><Link href="/platform" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Infrastructure</Link></li>
-        <li><Link href="/products" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">All Products →</Link></li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="/dev" icon={Code} label="Hanzo Dev" description="AI coding assistant" closeMenu={closeMenu} />
+        <IconLink href="/ai" icon={Cpu} label="AI Platform" closeMenu={closeMenu} />
+        <IconLink href="/cloud" icon={Cloud} label="Cloud" closeMenu={closeMenu} />
+        <IconLink href="/platform" icon={Server} label="Infrastructure" closeMenu={closeMenu} />
+        <IconLink href="/products" icon={ArrowRight} label="All Products →" closeMenu={closeMenu} />
+      </div>
     </div>
 
     {/* Connect & Trust */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Connect</h3>
-      <ul className="space-y-2 mb-6">
-        <li><Link href="/contact" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Contact Us</Link></li>
-        <li><Link href="/enterprise" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Enterprise</Link></li>
-        <li><Link href="/referrals" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Referral Program</Link></li>
-      </ul>
+      <div className="space-y-0.5 mb-6">
+        <IconLink href="/contact" icon={Mail} label="Contact Us" closeMenu={closeMenu} />
+        <IconLink href="/enterprise" icon={Building2} label="Enterprise" closeMenu={closeMenu} />
+        <IconLink href="/referrals" icon={Gift} label="Referral Program" closeMenu={closeMenu} />
+      </div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Trust</h3>
-      <ul className="space-y-2">
-        <li><Link href="/security" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Security</Link></li>
-        <li><Link href="/status" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">System Status</Link></li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="/security" icon={Shield} label="Security" closeMenu={closeMenu} />
+        <IconLink href="/status" icon={Activity} label="System Status" closeMenu={closeMenu} />
+      </div>
     </div>
   </div>
 );
@@ -102,33 +125,33 @@ const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
   <div className="grid grid-cols-3 gap-6">
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Documentation</h3>
-      <ul className="space-y-2">
-        <li><a href="https://docs.hanzo.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Docs</a></li>
-        <li><a href="https://docs.hanzo.ai/tutorials" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Tutorials</a></li>
-        <li><a href="https://docs.hanzo.ai/api" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">API Reference</a></li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="https://docs.hanzo.ai" icon={BookOpen} label="Docs" external closeMenu={closeMenu} />
+        <IconLink href="https://docs.hanzo.ai/tutorials" icon={GraduationCap} label="Tutorials" external closeMenu={closeMenu} />
+        <IconLink href="https://docs.hanzo.ai/api" icon={Code} label="API Reference" external closeMenu={closeMenu} />
+      </div>
     </div>
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Community</h3>
-      <ul className="space-y-2">
-        <li><a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">GitHub</a></li>
-        <li><a href="https://discord.gg/hanzo" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Discord</a></li>
-        <li><Link href="/blog" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Blog</Link></li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="https://github.com/hanzoai" icon={GitBranch} label="GitHub" external closeMenu={closeMenu} />
+        <IconLink href="https://discord.gg/hanzo" icon={MessageCircle} label="Discord" external closeMenu={closeMenu} />
+        <IconLink href="/blog" icon={PenLine} label="Blog" closeMenu={closeMenu} />
+      </div>
     </div>
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Support</h3>
-      <ul className="space-y-2">
-        <li><Link href="/contact" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Support Center</Link></li>
-        <li><Link href="/status" onClick={closeMenu} className="text-sm text-foreground/80 hover:text-foreground transition-colors">Status</Link></li>
-      </ul>
+      <div className="space-y-0.5">
+        <IconLink href="/contact" icon={LifeBuoy} label="Support Center" closeMenu={closeMenu} />
+        <IconLink href="/status" icon={Activity} label="Status" closeMenu={closeMenu} />
+      </div>
     </div>
   </div>
 );
 
 const DesktopNav = () => {
   return (
-    <div className="hidden md:flex items-center space-x-6">
+    <div className="hidden md:flex items-center space-x-4">
       {/* Meet Hanzo dropdown */}
       <NavMenu label="Meet Hanzo">
         {(closeMenu) => <MeetHanzoContent closeMenu={closeMenu} />}
@@ -140,10 +163,28 @@ const DesktopNav = () => {
       {/* Solutions dropdown */}
       <SolutionsMenu />
 
+      {/* Agency - direct prominent link */}
+      <Link
+        href="/agency"
+        className="text-foreground hover:text-foreground/80 transition-colors text-sm font-semibold"
+      >
+        Agency
+      </Link>
+
       {/* Learn dropdown */}
       <NavMenu label="Learn">
         {(closeMenu) => <LearnContent closeMenu={closeMenu} />}
       </NavMenu>
+
+      {/* Docs - direct link for easy access */}
+      <a
+        href="https://docs.hanzo.ai"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+      >
+        Docs
+      </a>
 
       {/* Pricing direct link */}
       <Link
