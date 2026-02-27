@@ -96,11 +96,20 @@ const mobileNav = [
     title: "Solutions",
     sections: [
       {
+        title: "Featured",
+        items: [
+          { title: "Hanzo Agency", href: "/agency" },
+          { title: "Enterprise", href: "/enterprise" },
+        ]
+      },
+      {
         title: "Use Cases",
         items: [
-          { title: "AI Agents", href: "/solutions/capabilities" },
-          { title: "Code Modernization", href: "/solutions/capabilities" },
-          { title: "Customer Support", href: "/solutions/capabilities" },
+          { title: "AI Agents", href: "/solutions/automation" },
+          { title: "Automation", href: "/solutions/automation" },
+          { title: "Analytics", href: "/solutions/analytics" },
+          { title: "Content Generation", href: "/solutions/content" },
+          { title: "Customer Support", href: "/solutions/customer-support" },
         ]
       },
       {
@@ -108,7 +117,6 @@ const mobileNav = [
         items: [
           { title: "Financial Services", href: "/solutions/industries" },
           { title: "Healthcare", href: "/solutions/industries" },
-          { title: "Enterprise", href: "/enterprise" },
         ]
       }
     ]
@@ -134,6 +142,14 @@ const mobileNav = [
           { title: "GitHub", href: "https://github.com/hanzoai", external: true },
           { title: "Discord", href: "https://discord.gg/hanzo", external: true },
           { title: "Blog", href: "/blog" },
+        ]
+      },
+      {
+        title: "Resources",
+        items: [
+          { title: "Brand", href: "/brand" },
+          { title: "Press", href: "/press" },
+          { title: "Open Source", href: "/open-source" },
         ]
       }
     ]

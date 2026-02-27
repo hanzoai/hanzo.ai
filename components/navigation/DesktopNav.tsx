@@ -6,10 +6,10 @@ import ProductsMenu from "./products-menu";
 import { SolutionsMenu } from "./solutions-menu";
 import { NavMenu } from "./NavMenu";
 import {
-  Users, Lightbulb, Palette, Newspaper, Brain, Layers, FileText, ExternalLink,
+  Users, Lightbulb, Brain, Layers, FileText, ExternalLink,
   GitBranch, Cpu, Cloud, Server, ArrowRight, Mail, Building2, Gift, Shield,
   Activity, BookOpen, GraduationCap, Code, MessageCircle, PenLine, LifeBuoy,
-  Briefcase
+  Palette, Newspaper
 } from "lucide-react";
 
 // Reusable icon link component for menu items
@@ -55,27 +55,32 @@ const IconLink = ({
 
 // Meet Hanzo dropdown content
 const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
-  <div className="grid grid-cols-4 gap-8">
-    {/* Featured - About Hanzo */}
+  <div className="grid grid-cols-4 gap-6">
+    {/* Featured - About Hanzo (grey panel with Philosophy, Leadership, Blog inside) */}
     <div className="col-span-1">
-      <div className="p-4 rounded-xl bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 border border-border/50 mb-4">
-        <h3 className="text-foreground font-semibold mb-2">Hanzo AI</h3>
+      <div className="p-4 rounded-xl bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 border border-border/50 h-full">
+        <h3 className="text-foreground font-semibold mb-1">Hanzo AI</h3>
         <p className="text-muted-foreground text-xs mb-3 leading-relaxed">
           Building frontier AI infrastructure since 2017. Techstars-backed.
         </p>
-        <Link
-          href="/team"
-          onClick={closeMenu}
-          className="inline-flex items-center text-xs font-medium text-foreground hover:text-foreground transition-colors"
-        >
-          Meet the team →
-        </Link>
-      </div>
-      <div className="space-y-0.5">
-        <IconLink href="/philosophy" icon={Lightbulb} label="Philosophy" closeMenu={closeMenu} />
-        <IconLink href="/leadership" icon={Users} label="Leadership" closeMenu={closeMenu} />
-        <IconLink href="/brand" icon={Palette} label="Brand" closeMenu={closeMenu} />
-        <IconLink href="/press" icon={Newspaper} label="Press" closeMenu={closeMenu} />
+        <div className="space-y-1.5 border-t border-border/30 pt-3">
+          <Link href="/team" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
+            <Users className="h-3 w-3 text-muted-foreground" />
+            Meet the Team
+          </Link>
+          <Link href="/philosophy" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
+            <Lightbulb className="h-3 w-3 text-muted-foreground" />
+            Philosophy
+          </Link>
+          <Link href="/leadership" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
+            <Users className="h-3 w-3 text-muted-foreground" />
+            Leadership
+          </Link>
+          <Link href="/blog" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
+            <PenLine className="h-3 w-3 text-muted-foreground" />
+            Blog
+          </Link>
+        </div>
       </div>
     </div>
 
@@ -106,7 +111,7 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
     {/* Connect & Trust */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Connect</h3>
-      <div className="space-y-0.5 mb-6">
+      <div className="space-y-0.5 mb-5">
         <IconLink href="/contact" icon={Mail} label="Contact Us" closeMenu={closeMenu} />
         <IconLink href="/enterprise" icon={Building2} label="Enterprise" closeMenu={closeMenu} />
         <IconLink href="/referrals" icon={Gift} label="Referral Program" closeMenu={closeMenu} />
@@ -120,9 +125,9 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
   </div>
 );
 
-// Learn dropdown content
+// Learn dropdown content (includes Brand, Press in Resources)
 const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
-  <div className="grid grid-cols-3 gap-6">
+  <div className="grid grid-cols-4 gap-6">
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Documentation</h3>
       <div className="space-y-0.5">
@@ -137,6 +142,14 @@ const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
         <IconLink href="https://github.com/hanzoai" icon={GitBranch} label="GitHub" external closeMenu={closeMenu} />
         <IconLink href="https://discord.gg/hanzo" icon={MessageCircle} label="Discord" external closeMenu={closeMenu} />
         <IconLink href="/blog" icon={PenLine} label="Blog" closeMenu={closeMenu} />
+      </div>
+    </div>
+    <div>
+      <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Resources</h3>
+      <div className="space-y-0.5">
+        <IconLink href="/brand" icon={Palette} label="Brand" closeMenu={closeMenu} />
+        <IconLink href="/press" icon={Newspaper} label="Press" closeMenu={closeMenu} />
+        <IconLink href="/open-source" icon={GitBranch} label="Open Source" closeMenu={closeMenu} />
       </div>
     </div>
     <div>
@@ -162,14 +175,6 @@ const DesktopNav = () => {
 
       {/* Solutions dropdown */}
       <SolutionsMenu />
-
-      {/* Agency - direct prominent link */}
-      <Link
-        href="/agency"
-        className="text-foreground hover:text-foreground/80 transition-colors text-sm font-semibold"
-      >
-        Agency
-      </Link>
 
       {/* Learn dropdown */}
       <NavMenu label="Learn">

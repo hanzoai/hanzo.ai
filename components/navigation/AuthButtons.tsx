@@ -128,7 +128,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         onMouseLeave={() => setIsDropdownOpen(false)}
       >
         <button
-          className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-accent active:bg-neutral-300 rounded-full h-9 px-4 text-sm font-medium transition-all duration-200"
+          className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-accent active:bg-neutral-300 rounded-full h-9 px-4 text-sm font-medium transition-all duration-200 cursor-pointer"
         >
           Try Zen
           <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />

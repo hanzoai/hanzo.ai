@@ -3,7 +3,7 @@
 import { capabilitiesNav, industriesNav } from "@/lib/constants/navigation-data";
 import Link from "next/link";
 import NavMenu from "../NavMenu";
-import { Users, Shield, Building2, ArrowRight, Sparkles } from "lucide-react";
+import { Shield, Building2, ArrowRight, Sparkles, Bot, Wrench, HeadphonesIcon, BarChart3, FileEdit, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -14,35 +14,50 @@ export const SolutionsMenu = () => {
   return (
     <NavMenu label="Solutions">
       {(closeMenu) => (
-        <div className="w-full">
-          {/* Featured Row */}
-          <div className="mb-4 pb-4 border-b border-border">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="h-3.5 w-3.5 text-foreground" />
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Featured Solutions</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <Link
-                href="/contact"
-                onClick={closeMenu}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-secondary/50 border-border hover:border-white/30/50 hover:bg-accent/50"
-              >
-                <Shield className="h-3.5 w-3.5 group-hover:text-foreground text-muted-foreground" />
-                <span className="text-sm font-medium group-hover:text-foreground text-foreground/80">Hanzo Agency</span>
-              </Link>
-              <Link
-                href="/enterprise"
-                onClick={closeMenu}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-secondary/50 border-border hover:border-white/30/50 hover:bg-accent/50"
-              >
-                <Building2 className="h-3.5 w-3.5 group-hover:text-foreground text-muted-foreground" />
-                <span className="text-sm font-medium group-hover:text-foreground text-foreground/80">Enterprise</span>
-              </Link>
-            </div>
+        <div className="w-full flex gap-6">
+          {/* Left: Big Agency + Enterprise panels stacked */}
+          <div className="w-64 flex-shrink-0 space-y-3">
+            <Link
+              href="/agency"
+              onClick={closeMenu}
+              className="block p-4 rounded-xl bg-gradient-to-br from-neutral-800/60 to-neutral-900/60 border border-border/50 hover:border-border transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+                  <Shield className="h-4 w-4 text-foreground" />
+                </div>
+                <h3 className="text-foreground font-semibold text-sm">Hanzo Agency</h3>
+              </div>
+              <p className="text-muted-foreground text-xs leading-relaxed mb-2">
+                Full-service AI implementation. Strategy, design, and engineering.
+              </p>
+              <span className="text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors inline-flex items-center gap-1">
+                Learn more <ArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
+
+            <Link
+              href="/enterprise"
+              onClick={closeMenu}
+              className="block p-4 rounded-xl bg-gradient-to-br from-neutral-800/60 to-neutral-900/60 border border-border/50 hover:border-border transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+                  <Building2 className="h-4 w-4 text-foreground" />
+                </div>
+                <h3 className="text-foreground font-semibold text-sm">Enterprise</h3>
+              </div>
+              <p className="text-muted-foreground text-xs leading-relaxed mb-2">
+                Dedicated support, SLAs, and custom infrastructure for scale.
+              </p>
+              <span className="text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors inline-flex items-center gap-1">
+                Contact sales <ArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
           </div>
 
-          {/* Two Column Grid - Capabilities & Industries */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+          {/* Right: Columns for Capabilities, Industries, Use Cases */}
+          <div className="flex-1 grid grid-cols-3 gap-x-6 gap-y-4">
             {/* Capabilities */}
             <div className="space-y-1.5">
               <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-muted-foreground">
@@ -65,61 +80,16 @@ export const SolutionsMenu = () => {
                     </Link>
                   );
                 })}
-                {capabilitiesNav[0].items.length > ITEMS_PER_CATEGORY && (
-                  <Link
-                    href="/solutions"
-                    onClick={closeMenu}
-                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-foreground text-muted-foreground/60"
-                  >
-                    +{capabilitiesNav[0].items.length - ITEMS_PER_CATEGORY} more
-                    <ArrowRight className="h-2.5 w-2.5" />
-                  </Link>
-                )}
               </div>
             </div>
 
-            {/* Industries - split into two columns */}
+            {/* Industries */}
             <div className="space-y-1.5">
               <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-muted-foreground">
                 Industries
               </h3>
               <div className="space-y-0.5">
                 {industriesNav[0].items.slice(0, ITEMS_PER_CATEGORY).map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.title}
-                      href={item.href || "#"}
-                      onClick={closeMenu}
-                      className="flex items-center gap-1.5 py-0.5 group"
-                    >
-                      {Icon && <Icon className="h-3 w-3 group-hover:text-foreground text-muted-foreground" />}
-                      <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">
-                        {item.title}
-                      </span>
-                    </Link>
-                  );
-                })}
-                {industriesNav[0].items.length > ITEMS_PER_CATEGORY && (
-                  <Link
-                    href="/industries"
-                    onClick={closeMenu}
-                    className="flex items-center gap-1 py-0.5 text-[10px] transition-colors hover:text-foreground text-muted-foreground/60"
-                  >
-                    +{industriesNav[0].items.length - ITEMS_PER_CATEGORY} more
-                    <ArrowRight className="h-2.5 w-2.5" />
-                  </Link>
-                )}
-              </div>
-            </div>
-
-            {/* More Industries */}
-            <div className="space-y-1.5">
-              <h3 className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-muted-foreground">
-                More Industries
-              </h3>
-              <div className="space-y-0.5">
-                {industriesNav[0].items.slice(ITEMS_PER_CATEGORY, ITEMS_PER_CATEGORY * 2).map((item) => {
                   const Icon = item.icon;
                   return (
                     <Link
@@ -144,72 +114,27 @@ export const SolutionsMenu = () => {
                 Use Cases
               </h3>
               <div className="space-y-0.5">
-                <Link
-                  href="/solutions/automation"
-                  onClick={closeMenu}
-                  className="flex items-center gap-1.5 py-0.5 group"
-                >
-                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">
-                    Automation
-                  </span>
+                <Link href="/solutions/automation" onClick={closeMenu} className="flex items-center gap-1.5 py-0.5 group">
+                  <Bot className="h-3 w-3 group-hover:text-foreground text-muted-foreground" />
+                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">AI Agents</span>
                 </Link>
-                <Link
-                  href="/solutions/analytics"
-                  onClick={closeMenu}
-                  className="flex items-center gap-1.5 py-0.5 group"
-                >
-                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">
-                    Analytics
-                  </span>
+                <Link href="/solutions/automation" onClick={closeMenu} className="flex items-center gap-1.5 py-0.5 group">
+                  <Wrench className="h-3 w-3 group-hover:text-foreground text-muted-foreground" />
+                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">Automation</span>
                 </Link>
-                <Link
-                  href="/solutions/content"
-                  onClick={closeMenu}
-                  className="flex items-center gap-1.5 py-0.5 group"
-                >
-                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">
-                    Content Generation
-                  </span>
+                <Link href="/solutions/analytics" onClick={closeMenu} className="flex items-center gap-1.5 py-0.5 group">
+                  <BarChart3 className="h-3 w-3 group-hover:text-foreground text-muted-foreground" />
+                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">Analytics</span>
                 </Link>
-                <Link
-                  href="/solutions/customer-support"
-                  onClick={closeMenu}
-                  className="flex items-center gap-1.5 py-0.5 group"
-                >
-                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">
-                    Customer Support
-                  </span>
+                <Link href="/solutions/content" onClick={closeMenu} className="flex items-center gap-1.5 py-0.5 group">
+                  <FileEdit className="h-3 w-3 group-hover:text-foreground text-muted-foreground" />
+                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">Content Generation</span>
+                </Link>
+                <Link href="/solutions/customer-support" onClick={closeMenu} className="flex items-center gap-1.5 py-0.5 group">
+                  <HeadphonesIcon className="h-3 w-3 group-hover:text-foreground text-muted-foreground" />
+                  <span className="text-xs transition-colors group-hover:text-foreground text-muted-foreground">Customer Support</span>
                 </Link>
               </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] text-muted-foreground">Need custom solutions?</span>
-            </div>
-            <div className="flex gap-2">
-              <Button
-                size="sm"
-                variant="outline"
-                className="h-7 text-xs px-3 bg-transparent border-border text-foreground/80 hover:bg-accent hover:text-foreground"
-                asChild
-              >
-                <Link href="/contact" onClick={closeMenu}>
-                  Contact Sales
-                </Link>
-              </Button>
-              <Button
-                size="sm"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 h-7 text-xs px-3"
-                asChild
-              >
-                <Link href="/solutions" onClick={closeMenu}>
-                  All Solutions
-                  <ArrowRight className="ml-1 h-3 w-3" />
-                </Link>
-              </Button>
             </div>
           </div>
         </div>
