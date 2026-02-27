@@ -25,9 +25,12 @@ const companyFacts = [
 ]
 
 const pressReleases = [
-  { date: "January 2025", title: "Hanzo Launches Next-Generation AI Platform", description: "Hanzo Industries Inc announces the launch of its comprehensive AI platform for enterprises.", link: "/blog" },
-  { date: "December 2024", title: "Hanzo Reaches 10,000 Customer Milestone", description: "The company celebrates serving over 10,000 customers worldwide with its AI solutions.", link: "/blog" },
-  { date: "November 2024", title: "Hanzo Dev 2.0 Released", description: "Major update to Hanzo Dev brings advanced AI coding capabilities and improved developer experience.", link: "/blog" },
+  { date: "February 27, 2026", title: "Hanzo Launches Unified AI Gateway — 100+ Models, Zero Markup", description: "Hanzo AI Gateway provides access to over 100 models from every major provider through a single API key with zero markup on third-party pricing.", link: "/blog/2026-02-27-unified-ai-gateway" },
+  { date: "February 27, 2026", title: "Hanzo Cloud Launches with 10-54% Lower Pricing Than Competitors", description: "Hanzo Cloud offers developer VMs starting at $5/mo with 2x the RAM of DigitalOcean at the same price, zero egress fees, and global multi-cloud routing.", link: "/blog/2026-02-27-hanzo-network-cloud-launch" },
+  { date: "February 27, 2026", title: "Hanzo Bot: Full-Stack AI Agent Hosting from $5/mo", description: "Deploy AI agents with built-in access to 100+ models, 260+ MCP tools, GPU compute, and multimodal capabilities — audio transcription 85% cheaper than OpenAI.", link: "/blog/2026-02-27-hanzo-bot-launch" },
+  { date: "February 27, 2026", title: "Zen4 Coder 480B: The Largest Open-Source Code Model", description: "Zen4 Coder 480B MoE delivers frontier-class code generation with only 22B active parameters, available through the Hanzo AI Gateway.", link: "/blog/2026-02-27-zen4-coder-launch" },
+  { date: "February 9, 2026", title: "Zen4 Model Family Launch — 14 Models from 600M to 480B Parameters", description: "Hanzo releases the Zen4 model family built on Mixture of Distilled Experts architecture, spanning chat, code, vision, and audio.", link: "/blog/2026-02-09-zen4-launch" },
+  { date: "February 27, 2026", title: "Complete AI Pricing Breakdown: Models, Cloud, GPU, and Audio", description: "A comprehensive reference for all Hanzo AI pricing across the gateway, cloud infrastructure, GPU compute, and multimodal services.", link: "/blog/2026-02-27-pricing-deep-dive" },
 ]
 
 const logoAssets = [
