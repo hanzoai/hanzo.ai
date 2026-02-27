@@ -1,16 +1,24 @@
 
 export interface ReferralStats {
-  totalInvited: number;
-  signedUp: number;
-  creditsEarned: number;
-  pending: number;
+  totalInvited: number
+  signedUp: number
+  creditsEarned: number
+  pending: number
 }
 
 export interface ReferralRecord {
-  id: number;
-  name: string;
-  email: string;
-  status: string;
-  date: string;
-  credits: number;
+  id: string | number
+  name: string
+  email: string
+  status: string
+  date: string
+  credits: number
+}
+
+export interface CouponReward {
+  type: 'bot-trial' | 'compute-credits'
+  description: string
+  value: number
+  duration?: string
+  redeemUrl: string
 }

@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { Gift } from 'lucide-react';
+import React from 'react'
+import { Gift } from 'lucide-react'
 
 const ReferralHeader = () => {
   return (
@@ -11,11 +11,14 @@ const ReferralHeader = () => {
         </div>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-2">Referral Program</h1>
-          <p className="text-lg text-foreground/80">Get $5 in credits for every friend who signs up and pays for any plan</p>
+          <p className="text-lg text-foreground/80">
+            Earn $5 per referral. New users get a free Hanzo Bot trial + $5 compute credits with code{' '}
+            <span className="font-mono font-bold text-white">TRYFREE</span>
+          </p>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ReferralHeader;
+export default ReferralHeader
