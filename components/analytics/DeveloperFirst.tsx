@@ -126,7 +126,7 @@ const DeveloperFirst = () => {
                   <div className="mr-3 text-foreground">•</div>
                   <div>
                     <span className="font-medium text-[var(--white)]">OpenTelemetry Integration</span>
-                    <p className="text-muted-foreground mt-1">Seamlessly integrate with your existing observability stack.</p>
+                    <p className="text-muted-foreground mt-1">Integrate with your existing observability stack.</p>
                   </div>
                 </li>
                 <li className="flex">
@@ -139,7 +139,7 @@ const DeveloperFirst = () => {
                 <li className="flex">
                   <div className="mr-3 text-foreground">•</div>
                   <div>
-                    <span className="font-medium text-[var(--white)]">Robust documentation and code examples</span>
+                    <span className="font-medium text-[var(--white)]">Comprehensive documentation and code examples</span>
                     <p className="text-muted-foreground mt-1">Comprehensive guides and examples to get you started quickly.</p>
                   </div>
                 </li>

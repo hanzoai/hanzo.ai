@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const principles = [
   {
-    title: "Empower the Underdog",
+    title: "Enable the Underdog",
     description: "Enable others to win. Democratize technology so small businesses and startups can compete with industry giants.",
     icon: <Users className="h-10 w-10 text-foreground" />,
   },

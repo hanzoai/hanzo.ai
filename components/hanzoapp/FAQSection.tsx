@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "How does Local AI mode work?",
-    answer: "Local AI mode runs models entirely on your machine using your GPU. We support Zen, Qwen3, Llama, and other open models. Your code and prompts never leave your computer - perfect for sensitive projects or air-gapped environments.",
+    answer: "Local AI mode runs models entirely on your machine using your GPU. We support Zen, Llama, Mistral, and other open models. Your code and prompts never leave your computer - perfect for sensitive projects or air-gapped environments.",
   },
   {
     question: "What is Hanzo Node?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "What models are supported?",
-    answer: "Cloud mode supports 100+ models including Zen, GPT-4o, Claude, Gemini, Qwen3, Mistral, DeepSeek, and more. Local mode supports Zen (4B-744B), Qwen3 (8B-72B), Llama 3, and other open models that run on consumer hardware — fully private, no data leaves your machine.",
+    answer: "Cloud mode supports 100+ models including Zen, GPT-4o, Claude, Gemini, Mistral, and more. Local mode supports Zen (4B-480B), Llama 3, Mistral, and other open models that run on consumer hardware — fully private, no data leaves your machine.",
   },
   {
     question: "Is my code private?",

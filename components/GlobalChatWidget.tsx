@@ -19,10 +19,10 @@ import {
 
 // Available Zen models for the dropdown
 const zenModels = [
-  { id: "zen-eco-4b", name: "Zen Eco", params: "4B", description: "Fast general-purpose" },
-  { id: "zen-omni-8b", name: "Zen Omni", params: "8B", description: "Multimodal vision + audio" },
-  { id: "zen-coder-flash", name: "Zen Coder Flash", params: "31B MoE", description: "Code generation" },
-  { id: "zen-coder-plus", name: "Zen Coder Plus", params: "72B", description: "Advanced coding" },
+  { id: "zen3-nano", name: "Zen Nano", params: "4B", description: "Fast general-purpose" },
+  { id: "zen4-mini", name: "Zen Mini", params: "8B", description: "General-purpose" },
+  { id: "zen4-coder-flash", name: "Zen Coder Flash", params: "30B MoE", description: "Fast code generation" },
+  { id: "zen4-coder", name: "Zen Coder", params: "480B MoE", description: "Advanced coding" },
 ];
 
 // Chat action presets - matching footer order

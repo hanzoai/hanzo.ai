@@ -43,7 +43,7 @@ const features = [
   {
     icon: <Database className="h-7 w-7 text-foreground" />,
     title: "Datasets",
-    description: "Generate robust datasets from live production data to enhance model training and evaluation."
+    description: "Generate reliable datasets from live production data to enhance model training and evaluation."
   },
   {
     icon: <Users className="h-7 w-7 text-foreground/70" />,

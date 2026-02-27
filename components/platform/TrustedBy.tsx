@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     company: "Damon Motorcycles",
-    quote: "Hanzo has revolutionized our approach to electric motorcycle development. Their platform gives us the tools to innovate at a pace that would be impossible with traditional infrastructure.",
+    quote: "Hanzo has transformed our approach to electric motorcycle development. Their platform gives us the tools to innovate at a pace that would be impossible with traditional infrastructure.",
     author: "Jay Giraud",
     role: "Founder & CEO at Damon Motorcycles"
   },
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     company: "Karma",
-    quote: "Hanzo's platform revolutionized our growth strategy and catalyzed sales for our crowdfunding campaign. Their AI-driven insights helped us connect with our audience in ways we never thought possible, making our latest collection launch our most successful to date.",
+    quote: "Hanzo's platform transformed our growth strategy and catalyzed sales for our crowdfunding campaign. Their AI-driven insights helped us connect with our audience in ways we never thought possible, making our latest collection launch our most successful to date.",
     author: "Antje Worring",
     role: "CEO at Karma Fashion"
   },

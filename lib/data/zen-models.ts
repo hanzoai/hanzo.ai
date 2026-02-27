@@ -1,37 +1,11 @@
 /**
- * Zen model data for hanzo.ai — imported from @zenlm/models.
+ * Zen model data — fetched at runtime from api.hanzo.ai.
  *
- * This file re-exports the canonical model definitions.
- * Do NOT define model specs here. Edit @zenlm/models instead.
+ * All model data is now served dynamically via the API.
+ * Do NOT hardcode model definitions here.
  *
- * @see ~/work/hanzo/docs/packages/zen-models/src/models.ts
+ * Frontend components should use useModelStats() or fetch from api.hanzo.ai.
  */
 
-export {
-  allModels,
-  apiModels,
-  localModels,
-  zen4Models,
-  zen3Models,
-  foundationModels,
-  getModel,
-  modelById,
-} from '@zenlm/models'
-
-export { families } from '@zenlm/models'
-
-export {
-  MARKUP,
-  ZEN_MULTIPLIER,
-  tools,
-  compute,
-  gpu,
-  thirdPartyModels,
-} from '@zenlm/models'
-
-export type {
-  ZenModel,
-  ModelFamily,
-  ModelPricing,
-  ModelSpec,
-} from '@zenlm/models'
+export const PRICING_API = 'https://api.hanzo.ai/v1/pricing'
+export const MODELS_API  = 'https://api.hanzo.ai/v1/models'

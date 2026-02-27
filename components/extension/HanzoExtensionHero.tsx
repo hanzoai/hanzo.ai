@@ -27,7 +27,7 @@ const HanzoExtensionHero = () => {
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-12">
             Access Hanzo AI directly in your browser
-            <br />for a seamless web experience
+            <br />for an integrated web experience
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-12">

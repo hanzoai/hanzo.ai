@@ -84,7 +84,7 @@ const channel = hanzo
   .channel('room-1')
   .on('postgres_changes',
     { event: '*', schema: 'public', table: 'messages' },
-    (payload) => console.log(payload)
+    (payload) => handleChange(payload)
   )
   .subscribe()
 

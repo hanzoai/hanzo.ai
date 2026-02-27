@@ -49,7 +49,7 @@ const zenModels = [
 ];
 
 const products = [
-  { label: "Hanzo Chat", description: "Chat with 14 Zen + 100+ models", href: "https://hanzo.chat", icon: MessageSquare, external: true },
+  { label: "Hanzo Chat", description: "Chat with Zen + 100+ models", href: "https://hanzo.chat", icon: MessageSquare, external: true },
   { label: "Hanzo Dev", description: "AI coding agent for your IDE", href: "/dev", icon: Terminal, external: false },
   { label: "API Console", description: "Keys, usage, billing", href: "https://console.hanzo.ai", icon: Code, external: true },
 ];
@@ -158,7 +158,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
                     onClick={() => setIsDropdownOpen(false)}
                     className="text-[10px] text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    All 14 models →
+                    All models →
                   </Link>
                 </div>
 

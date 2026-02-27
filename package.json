@@ -20,7 +20,7 @@
     "@radix-ui/react-slot": "^1.2.4",
     "@tanstack/react-query": "^5.56.2",
     "@xyflow/react": "^12.4.4",
-    "@zenlm/models": "^1.0.0",
+
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

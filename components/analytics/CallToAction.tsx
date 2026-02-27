@@ -24,7 +24,7 @@ const CallToAction = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Start Analyzing Smarter, Today</h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto mb-10">
-            Empower your business decisions with Hanzo Analytics—start for free and scale effortlessly.
+            Enable better business decisions with Hanzo Analytics—start for free and scale effortlessly.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

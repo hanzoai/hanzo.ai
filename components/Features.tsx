@@ -44,57 +44,57 @@ const allFeatures = [{
 const industriesData = [{
   name: "Cloud",
   icon: <Globe className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/a6b76d5c-59a9-4ba8-897e-69558005b6ed.png",
+  image: "/brand/industry-cloud.png",
   description: "Cloud orchestration with rapid deployment"
 }, {
   name: "Cybersecurity",
   icon: <Shield className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/97902904-f9ea-475e-9c65-5664eab422e5.png",
+  image: "/brand/industry-cybersecurity.png",
   description: "Advanced security solutions for business"
 }, {
   name: "Data and Artificial Intelligence",
   icon: <Brain className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
-  description: "Cutting-edge AI solutions for business transformation"
+  image: "/brand/industry-ai.png",
+  description: "Frontier AI solutions for business transformation"
 }, {
   name: "Digital Engineering and Manufacturing",
   icon: <Code className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/a1e0f18b-41a7-4f58-ac3b-7272aa8e7a77.png",
+  image: "/brand/industry-engineering.png",
   description: "Engineering solutions for manufacturing"
 }, {
   name: "Emerging Technology",
   icon: <Cpu className="h-5 w-5 text-foreground/60 mb-2" />,
-  image: "/lovable-uploads/41fa31ba-8c5b-4553-afeb-ba51591f7024.png",
+  image: "/brand/industry-emerging-tech.png",
   description: "Frontier technology solutions"
 }, {
   name: "Ecosystem Partners",
   icon: <Network className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/96a9379c-acc3-4170-a96f-964fb8773dd3.png",
+  image: "/brand/industry-ecosystem.png",
   description: "Collaborative partnership networks"
 }, {
   name: "Finance and Risk Management",
   icon: <DollarSign className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/22f3cbb5-8cd9-48e2-92bc-8b084da1f4ff.png",
+  image: "/brand/industry-finance.png",
   description: "Financial solutions and risk assessment"
 }, {
   name: "Infrastructure and Capital Projects",
   icon: <Building2 className="h-5 w-5 text-muted-foreground mb-2" />,
-  image: "/lovable-uploads/f1241c85-7df8-45b5-a92a-263554ff10cd.png",
+  image: "/brand/industry-infrastructure.png",
   description: "Infrastructure development and capital management"
 }, {
   name: "Learning",
   icon: <GraduationCap className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/37d6bc13-a83a-4de2-a8d4-a67f2339598e.png",
+  image: "/brand/industry-learning.png",
   description: "Educational technology and learning solutions"
 }, {
   name: "Marketing and Experience",
   icon: <Newspaper className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/96d1e3da-614a-4809-98e4-30d8a868dc11.png",
+  image: "/brand/industry-marketing.png",
   description: "Marketing solutions and experience design"
 }, {
   name: "Metaverse",
   icon: <LineChart className="h-5 w-5 text-foreground/70 mb-2" />,
-  image: "/lovable-uploads/65ace6da-40cf-401a-9f0a-e3e757f00633.png",
+  image: "/brand/industry-metaverse.png",
   description: "Metaverse development and integration"
 }, {
   name: "Sales and Commerce",
@@ -104,8 +104,8 @@ const industriesData = [{
 
 const industriesSectors = [{
   name: "Artificial Intelligence",
-  image: "/lovable-uploads/a31568fe-aa1f-4933-add1-b981564f25b9.png",
-  description: "Cutting-edge AI solutions for business transformation"
+  image: "/brand/industry-ai.png",
+  description: "Frontier AI solutions for business transformation"
 }, {
   name: "Financial Services",
   description: "Innovative solutions for banking and finance sectors"
@@ -120,7 +120,7 @@ const industriesSectors = [{
   description: "Creating exceptional customer experiences"
 }, {
   name: "Technology",
-  description: "Empowering the tech industry with advanced solutions"
+  description: "Enabling the tech industry with advanced solutions"
 }, {
   name: "Energy & Utilities",
   description: "Smart solutions for sustainable energy management"
@@ -178,7 +178,7 @@ const Features = () => {
       }
     }
   };
-  const testimonialText = "We've helped businesses and individuals harness the power of AI to drive growth, efficiency, and innovation.";
+  const testimonialText = "We've helped businesses and individuals deploy AI to drive growth, efficiency, and innovation.";
   const testimonialCharacters = testimonialText.split("");
   const textContainerVariants = {
     hidden: {
@@ -238,7 +238,7 @@ const Features = () => {
             className="w-full overflow-hidden rounded-xl"
           >
             <img 
-              src="/lovable-uploads/684632bf-21ce-4823-b54d-aad69037446f.png" 
+              src="/brand/hero-visualization.png" 
               alt="AI Human Interface Visualization" 
               className="w-full h-auto object-cover"
             />
@@ -352,8 +352,8 @@ const Features = () => {
               once: true,
               amount: 0.8
             }} className="text-lg text-foreground/80 overflow-hidden">
-                  <span>We've helped businesses and individuals harness the </span> 
-                  <span className="text-[var(--white)] font-bold">power of AI</span>
+                  <span>We've helped businesses and individuals deploy </span>
+                  <span className="text-[var(--white)] font-bold">AI</span>
                   <span> to drive growth, efficiency, and innovation.</span>
                 </motion.div>
                 <Button variant="outline" className="mt-6 bg-[var(--white)] text-primary-foreground border-white hover:bg-gray-100 hover:text-primary-foreground">
@@ -380,7 +380,7 @@ const Features = () => {
               
               <div className="p-6 backdrop-blur-sm rounded-xl ring-1 ring-border flex flex-col items-center text-center">
                 <h3 className="text-4xl font-medium text-[var(--white)]">99<sup>%</sup></h3>
-                <p className="mt-2 text-foreground/80">Uptime guarantee for seamless AI experience</p>
+                <p className="mt-2 text-foreground/80">Uptime guarantee for uninterrupted AI experience</p>
               </div>
             </div>
           </motion.div>

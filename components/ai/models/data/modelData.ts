@@ -99,8 +99,8 @@ const modelCategories = [
       { name: "Claude Haiku 4.5", provider: "Anthropic", features: ["200K context window", "Fastest Anthropic model", "Cost efficient", "Low latency"], description: "Fastest and most affordable Claude model for high-throughput tasks." },
       { name: "GPT-5", provider: "OpenAI", features: ["400K context window", "Multimodal", "Advanced reasoning", "Tool use"], description: "OpenAI's flagship model with advanced reasoning capabilities." },
       { name: "GPT-5 Mini", provider: "OpenAI", features: ["400K context window", "Fast and affordable", "Good quality", "Low latency"], description: "Cost-efficient OpenAI model for everyday tasks." },
-      { name: "DeepSeek R1", provider: "DeepSeek", features: ["64K context window", "Reasoning model", "Chain-of-thought", "Math and code"], description: "Specialized reasoning model excelling at math and code." },
-      { name: "DeepSeek V3", provider: "DeepSeek", features: ["164K context window", "Fast and efficient", "Strong general performance", "Open-weight"], description: "Fast general-purpose model with strong benchmarks." },
+      { name: "Zen4 Ultra", provider: "Hanzo", features: ["202K context window", "Reasoning model", "Chain-of-thought", "Math and code"], description: "Advanced reasoning model with extended chain-of-thought." },
+      { name: "Zen4", provider: "Hanzo", features: ["202K context window", "744B MoE", "Strong general performance", "Open-weight"], description: "Flagship general-purpose model with strong benchmarks." },
       { name: "Gemini 2.5 Pro", provider: "Google", features: ["1M context window", "Multimodal", "Long-context reasoning", "Code generation"], description: "Google's flagship with the longest context window." },
     ]
   },

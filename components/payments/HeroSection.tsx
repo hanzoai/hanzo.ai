@@ -28,7 +28,7 @@ const HeroSection = () => {
           <p className="text-foreground/80 max-w-3xl mx-auto mb-10">
             Hanzo Payments is a unified financial infrastructure that simplifies and automates payments, 
             subscriptions, and global financial compliance. From innovative startups to enterprise giants, 
-            Hanzo Payments delivers customizable checkout experiences, seamless integrations, and powerful 
+            Hanzo Payments delivers customizable checkout experiences, native integrations, and powerful
             analytics to drive revenue growth.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

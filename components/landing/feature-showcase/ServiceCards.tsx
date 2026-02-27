@@ -27,9 +27,9 @@ const ServiceCards: React.FC = () => {
           <h3 className="text-2xl font-bold text-[var(--white)]">Hanzo Agency</h3>
         </div>
         <p className="text-foreground/80 mb-6">
-          Elevate your brand with our AI-powered creative agency. We craft cutting-edge digital experiences that captivate audiences and deliver measurable business results.
+          Elevate your brand with our AI-powered creative agency. We craft advanced digital experiences that captivate audiences and deliver measurable business results.
         </p>
-        <a href="/agency" className="inline-flex items-center text-foreground/70 hover:text-foreground transition-colors group">
+        <a href="/contact" className="inline-flex items-center text-foreground/70 hover:text-foreground transition-colors group">
           <span className="mr-2">Learn more</span>
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </a>
@@ -55,7 +55,7 @@ const ServiceCards: React.FC = () => {
         <p className="text-foreground/80 mb-6">
           Accelerate enterprise transformation with our elite collective of CXOs and technology experts. We guide organizations through digital evolution with strategic implementation.
         </p>
-        <a href="/sensei" className="inline-flex items-center text-foreground/70 hover:text-foreground/70 transition-colors group">
+        <a href="/contact" className="inline-flex items-center text-foreground/70 hover:text-foreground/70 transition-colors group">
           <span className="mr-2">Learn more</span>
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </a>

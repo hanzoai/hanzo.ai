@@ -9,13 +9,6 @@ import AuthButtons from "./navigation/AuthButtons";
 import NavbarContainer from "./navigation/NavbarContainer";
 import CommandPalette from "./CommandPalette";
 
-const isAccountRoute = () => {
-  return window.location.pathname.startsWith('/account') ||
-    window.location.pathname === '/dashboard' ||
-    window.location.pathname === '/user-profile' ||
-    window.location.pathname === '/organization-profile';
-};
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,10 +17,15 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!isAccountRoute()) {
+    const isAccountRoute =
+      pathname.startsWith('/account') ||
+      pathname === '/dashboard' ||
+      pathname === '/user-profile' ||
+      pathname === '/organization-profile';
+    if (!isAccountRoute) {
       setUser(null);
     }
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {

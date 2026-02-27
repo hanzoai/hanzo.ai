@@ -25,7 +25,7 @@ const MainCards: React.FC = () => {
         </div>
         <div className="p-8">
           <p className="text-foreground/80 mb-6">
-            Discover our comprehensive suite of technical capabilities that empower your organization to innovate
+            Discover our comprehensive suite of technical capabilities that enable your organization to innovate
             and transform. From AI and cloud infrastructure to custom development solutions, we provide everything
             you need to stay ahead.
           </p>
@@ -67,7 +67,7 @@ const MainCards: React.FC = () => {
         <div className="p-8">
           <p className="text-foreground/80 mb-6">
             Our industry-specific expertise helps organizations across sectors overcome unique challenges and seize
-            opportunities. We combine deep domain knowledge with cutting-edge technology to deliver tailored
+            opportunities. We combine deep domain knowledge with advanced technology to deliver tailored
             solutions for your business.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">

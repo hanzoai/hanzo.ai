@@ -58,7 +58,7 @@ const Community = () => {
                   </div>
                   <div>
                     <span className="text-[var(--white)] font-medium">Explore Advanced Features</span>
-                    <p className="text-muted-foreground text-sm mt-1">Discover how to leverage the full potential of your agents</p>
+                    <p className="text-muted-foreground text-sm mt-1">Discover how to use the full potential of your agents</p>
                   </div>
                 </li>
               </ul>

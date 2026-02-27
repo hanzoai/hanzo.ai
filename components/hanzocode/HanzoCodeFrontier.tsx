@@ -54,7 +54,7 @@ const HanzoCodeFrontier = () => {
           >
             <h2 className="text-3xl font-bold mb-6">Beyond Standard AI Models</h2>
             <p className="text-xl text-foreground/80 mb-8">
-              Hanzo Code leverages custom-built AI models designed specifically for software development, not just repurposed general-purpose models.
+              Hanzo Code uses custom-built AI models designed specifically for software development, not just repurposed general-purpose models.
             </p>
             
             <div className="space-y-6">
@@ -82,7 +82,7 @@ const HanzoCodeFrontier = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">Edge Computing</h3>
                 <p className="text-foreground/80">
-                  Powerful models that can run locally for privacy, or leverage cloud infrastructure for more complex tasks.
+                  Powerful models that can run locally for privacy, or use cloud infrastructure for more complex tasks.
                 </p>
               </div>
             </div>

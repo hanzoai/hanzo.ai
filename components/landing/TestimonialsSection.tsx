@@ -35,18 +35,18 @@ const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
       quote: "Hanzo has completely transformed how we build and deploy AI applications. The developer experience is unmatched.",
-      name: "Sarah Chen",
-      title: "CTO, TechVision AI"
+      name: "Jay Giraud",
+      title: "Founder & CEO, Damon Motorcycles"
     },
     {
       quote: "The open-source nature of Hanzo gives us the confidence to build our entire product on top of it. We control our destiny.",
-      name: "Marcus Johnson",
-      title: "Lead Engineer, DataFusion"
+      name: "Marcus Weller",
+      title: "CEO, SKULLY"
     },
     {
-      quote: "We've cut our AI development time in half since switching to Hanzo. The integration between tools is seamless.",
-      name: "Priya Sharma",
-      title: "AI Product Lead, InnovateX"
+      quote: "We've cut our AI development time in half since switching to Hanzo. The integration between tools is exceptional.",
+      name: "Sandro Mur",
+      title: "Co-founder & CEO, Bellabeat"
     }
   ];
 

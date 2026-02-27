@@ -23,7 +23,7 @@ export const AgencyCard = ({ onCardClick }: AgencyCardProps) => {
           <h3 className="text-sm font-semibold text-[var(--white)]">Hanzo Agency</h3>
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Elevate your brand with our AI-powered creative agency. We craft cutting-edge digital experiences that captivate audiences and deliver measurable business results.
+          Elevate your brand with our AI-powered creative agency. We craft advanced digital experiences that captivate audiences and deliver measurable business results.
         </p>
       </div>
       <div className="flex items-center text-xs text-foreground font-medium group">

@@ -19,7 +19,7 @@ const TeamChatHero: React.FC = () => {
             Hanzo Chat
           </ChromeText>
           <p className="text-foreground/80 max-w-2xl mx-auto">
-            Connect with state-of-the-art AI models through our intuitive chat interface.
+            Connect with production-grade AI models through our intuitive chat interface.
             Get answers, generate content, and solve problems with natural language.
           </p>
         </motion.div>

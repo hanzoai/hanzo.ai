@@ -6,19 +6,19 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Hanzo AI has cut our development time in half. The platform is incredibly intuitive and powerful.",
-    author: "Sarah Chen",
-    title: "CTO, TechVision Inc."
+    quote: "Hanzo has revolutionized our approach to electric motorcycle development. Their platform gives us the tools to innovate at a pace that would be impossible with traditional infrastructure.",
+    author: "Jay Giraud",
+    title: "Founder & CEO, Damon Motorcycles"
   },
   {
-    quote: "We've tried many AI platforms, but nothing compares to the reliability and performance of Hanzo.",
-    author: "Michael Rodriguez",
-    title: "Lead Engineer, DataStream"
+    quote: "With Trillerfest reaching over 169M people, Hanzo's platform has been essential to our success. Their scalable solutions have allowed us to deliver exceptional user experiences at a global scale.",
+    author: "Vincent Butta",
+    title: "Board Member, Triller"
   },
   {
-    quote: "The support team is phenomenal. Any issues we've had were resolved quickly and efficiently.",
-    author: "David Kim",
-    title: "AI Director, FutureLabs"
+    quote: "Hanzo's AI Cloud and DX Platform have been transformative for our healthcare AI initiatives. Their solution enables us to deploy sophisticated ML models with confidence.",
+    author: "Matthew Joynes",
+    title: "Co-founder, Lifemed AI"
   }
 ];
 
@@ -60,7 +60,7 @@ const Testimonials = () => {
         </div>
         
         <div className="flex flex-wrap justify-center gap-8 mt-20">
-          {['Acme Inc', 'GlobalTech', 'FutureCorp', 'DataStream', 'TechVision'].map((company, index) => (
+          {['Damon', 'Bellabeat', 'SKULLY', 'Triller', 'Lifemed AI'].map((company, index) => (
             <div key={index} className="text-muted-foreground text-xl font-bold opacity-70">{company}</div>
           ))}
         </div>

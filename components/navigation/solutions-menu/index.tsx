@@ -23,7 +23,7 @@ export const SolutionsMenu = () => {
             </div>
             <div className="flex flex-wrap gap-2">
               <Link
-                href="/agency"
+                href="/contact"
                 onClick={closeMenu}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-secondary/50 border-border hover:border-white/30/50 hover:bg-accent/50"
               >

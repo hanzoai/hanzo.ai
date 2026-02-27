@@ -24,7 +24,7 @@ const useCases = [
   {
     icon: <CreditCard className="h-6 w-6 text-foreground" />,
     title: "Embedded Finance",
-    description: "Seamlessly embed financial services into your product, from cards to loans."
+    description: "Embed financial services directly into your product, from cards to loans."
   }
 ];
 

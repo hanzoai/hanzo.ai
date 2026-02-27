@@ -323,7 +323,7 @@ const Analytics = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} whileHover="hover" whileTap="tap" className="p-4 md:p-6 bg-gradient-to-br from-gray-900/20 to-transparent rounded-xl transition-all duration-300 flex flex-col items-center text-center">
-            <p className="text-xs xs:text-sm md:text-base text-foreground/80">Leverage machine learning to predict trends, detect anomalies, and optimize performance.</p>
+            <p className="text-xs xs:text-sm md:text-base text-foreground/80">Use machine learning to predict trends, detect anomalies, and optimize performance.</p>
           </motion.div>
         </motion.div>
 

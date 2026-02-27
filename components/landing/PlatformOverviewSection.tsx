@@ -24,11 +24,7 @@ const aiProviders = [
   { name: "Anthropic", logo: "/logos/anthropic.svg" },
   { name: "Google", logo: "/logos/google.svg" },
   { name: "Gemini", logo: "/logos/gemini.svg" },
-  { name: "Qwen", logo: "/logos/qwen.svg" },
   { name: "Mistral", logo: "/logos/mistral.svg" },
-  { name: "Kimi", logo: "/logos/kimi.svg" },
-  { name: "Moonshot", logo: "/logos/moonshot.svg" },
-  { name: "DeepSeek", logo: "/logos/deepseek.svg" },
   { name: "Fireworks", logo: "/logos/fireworks.svg" },
   { name: "OpenRouter", logo: "/logos/openrouter.svg" },
   { name: "Together", logo: "/logos/together.svg" },
@@ -40,7 +36,7 @@ const multiAgentFeatures = [
   {
     icon: Zap,
     title: "Race multiple agents",
-    description: "One task, multiple agents racing. GPT-4, Claude, Gemini, Zen, and Qwen compete in parallel.",
+    description: "One task, multiple agents racing. GPT-4, Claude, Gemini, and Zen compete in parallel.",
   },
   {
     icon: Users,

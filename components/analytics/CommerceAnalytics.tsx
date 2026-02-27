@@ -53,7 +53,7 @@ const CommerceAnalytics = () => {
               },
               {
                 icon: <CreditCard className="h-6 w-6" />,
-                title: "Seamless Payments & Omnichannel Insights",
+                title: "Integrated Payments & Omnichannel Insights",
                 description: "Unified tracking across web, mobile, in-store, and global commerce channels."
               }
             ].map((feature, index) => (

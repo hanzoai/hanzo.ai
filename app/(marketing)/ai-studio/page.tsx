@@ -30,11 +30,11 @@ export default function AIStudioPage() {
 
   const models: ModelInterface[] = [
     { id: "gpt-4o", name: "GPT-4o", provider: "OpenAI" },
-    { id: "claude-3-opus", name: "Claude 3 Opus", provider: "Anthropic" },
+    { id: "claude-sonnet-4-6", name: "Claude Sonnet 4.6", provider: "Anthropic" },
     { id: "zen4", name: "zen4", provider: "Hanzo" },
     { id: "llama-3-70b", name: "Llama 3 70B", provider: "Meta" },
     { id: "gemini-pro", name: "Gemini Pro", provider: "Google" },
-    { id: "qwen3-32b", name: "Qwen3 32B", provider: "Qwen" },
+    { id: "zen", name: "Zen 32B", provider: "Zen" },
     { id: "mixtral-8x7b", name: "Mixtral 8x7B", provider: "Mistral" },
   ]
 
@@ -52,7 +52,7 @@ export default function AIStudioPage() {
         ...prev,
         {
           role: "assistant",
-          content: `I received your message: "${promptText}". This is a placeholder response from the AI Studio demo.`,
+          content: `AI Studio demo — connect your API key to get started.`,
         },
       ])
     }, 1000)

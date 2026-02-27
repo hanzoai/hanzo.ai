@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@hanzo/ui";
 import { Loader2 } from "lucide-react";
 
-const CLOUD_API = "https://pricing.hanzo.ai/v1/cloud";
-const GPU_API = "https://pricing.hanzo.ai/v1/gpu";
+const CLOUD_API = "https://api.hanzo.ai/v1/cloud";
+const GPU_API = "https://api.hanzo.ai/v1/gpu";
 
 interface CloudPlan {
   id: string;

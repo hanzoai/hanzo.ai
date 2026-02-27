@@ -3,7 +3,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Twitter } from "lucide-react";
 
 const HanzoCodeTestimonials = () => {
   return (
@@ -36,14 +35,13 @@ const HanzoCodeTestimonials = () => {
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 rounded-full bg-gray-700"></div>
               <div>
-                <div className="font-medium">Sarah Chen</div>
+                <div className="font-medium">Enterprise Developer</div>
                 <div className="text-muted-foreground flex items-center">
-                  <Twitter className="h-3.5 w-3.5 mr-1 text-foreground" />
-                  @sarahcodes
+                  Fortune 500 Engineering Team
                 </div>
               </div>
             </div>
-            <p className="text-foreground/80">Hanzo Code has completely changed how I approach coding. The AI suggestions are spot-on and save me hours every day.</p>
+            <p className="text-foreground/80">Hanzo Code has completely changed how we approach coding. The AI suggestions are spot-on and save our team hours every day.</p>
           </motion.div>
         </div>
       </div>

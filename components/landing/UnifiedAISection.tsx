@@ -69,7 +69,7 @@ const UnifiedAISection = () => {
                   Human + AI Collaboration
                 </h3>
                 <p className="text-muted-foreground">
-                  Seamless synergy between automated intelligence and human creativity,
+                  Deep synergy between automated intelligence and human creativity,
                   enabling teams to achieve more together than either could alone.
                 </p>
               </div>

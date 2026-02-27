@@ -145,13 +145,15 @@ const DeveloperExperienceSection = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Hanzo reads your repo structure first, edits across files coherently, and executes tasks step-by-step—locally or in isolated remote sandboxes.
             </p>
-            <Link
-              href="/extensions"
+            <a
+              href="https://github.com/hanzoai/mcp"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium transition-colors bg-primary text-primary-foreground hover:opacity-90"
             >
               Install the IDE extension
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </div>
 
           {/* IDE Preview */}
@@ -313,7 +315,7 @@ const DeveloperExperienceSection = () => {
               { icon: History, title: "Unified History", desc: "Every prompt, every response, searchable" },
               { icon: Share2, title: "Team Sync", desc: "Share context and memory across your team" },
               { icon: Layers, title: "260+ MCP Tools", desc: "Browser, file, code, git, and more built-in" },
-              { icon: Cpu, title: "Any Model", desc: "GPT-4, Claude, Gemini, Zen, Qwen, Mistral, Llama, local" },
+              { icon: Cpu, title: "Any Model", desc: "GPT-4, Claude, Gemini, Zen, Mistral, Llama, local" },
             ].map((item, index) => {
               const Icon = item.icon;
               return (

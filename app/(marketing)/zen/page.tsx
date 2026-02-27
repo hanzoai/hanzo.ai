@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -18,37 +18,64 @@ import {
   Clock,
 } from "lucide-react";
 
-// Model categories overview -- matches the 14 models in pricing.json
-const MODEL_CATEGORIES = [
-  {
-    icon: Brain,
-    title: "Flagship Language",
-    count: "6 models",
-    description:
-      "Zen4, Zen4 Ultra, Zen4 Pro, Zen4 Max, Zen4 Mini, Zen4 Thinking. From 8B to ~400B parameters across Dense and MoE architectures.",
-  },
-  {
-    icon: Code2,
-    title: "Code Generation",
-    count: "3 models",
-    description:
-      "Zen4 Coder, Zen4 Coder Pro, Zen4 Coder Flash. Up to 480B parameters with 262K context for full-codebase understanding.",
-  },
-  {
-    icon: Eye,
-    title: "Multimodal & Vision",
-    count: "2 models",
-    description:
-      "Zen3 Omni for hypermodal text+vision+audio. Zen3 VL for vision-language reasoning and image understanding.",
-  },
-  {
-    icon: Shield,
-    title: "Specialized",
-    count: "3 models",
-    description:
-      "Zen3 Nano for edge deployment, Zen3 Guard for content safety, Zen3 Embedding for high-quality text embeddings.",
-  },
-];
+const PRICING_API = 'https://api.hanzo.ai/v1/pricing'
+
+interface ModelStats {
+  total: number
+  maxContext: string
+  cheapest: string
+  families: { name: string; count: number; icon: any; description: string }[]
+}
+
+function useModelStats(): ModelStats {
+  const [stats, setStats] = useState<ModelStats>({
+    total: 0,
+    maxContext: '—',
+    cheapest: '—',
+    families: [],
+  })
+
+  useEffect(() => {
+    fetch(PRICING_API)
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
+      .then(data => {
+        const zen = data.hanzoModels || []
+        const chat = zen.filter((m: any) => !m.endpoint && !m.pricingUnit && !m.contactSales)
+
+        // Find cheapest input price
+        const cheapest = chat.reduce((min: number, m: any) => {
+          const p = m.pricing?.input ?? Infinity
+          return p < min ? p : min
+        }, Infinity)
+
+        // Find max context
+        const maxCtx = zen.reduce((max: number, m: any) => Math.max(max, m.context || 0), 0)
+        const maxCtxStr = maxCtx >= 1_000_000 ? `${Math.round(maxCtx / 1_000_000)}M` : `${Math.round(maxCtx / 1000)}K`
+
+        // Build family counts from API families
+        const iconMap: Record<string, any> = { Sparkles: Brain, Code: Code2, Eye: Eye, Shield: Shield, Search: Brain, Image: Eye, Mic: Brain, Brain: Brain, Rocket: Zap, Network: Cpu }
+        const families = (data.families || [])
+          .filter((f: any) => f.models?.length > 0)
+          .map((f: any) => ({
+            name: f.name,
+            count: f.models.filter((id: string) => zen.some((m: any) => m.name === id)).length,
+            icon: iconMap[f.icon] || Brain,
+            description: f.description,
+          }))
+          .filter((f: any) => f.count > 0)
+
+        setStats({
+          total: zen.length,
+          maxContext: maxCtxStr,
+          cheapest: cheapest < Infinity ? `$${cheapest >= 1 ? cheapest.toFixed(2) : cheapest.toFixed(cheapest >= 0.01 ? 2 : 3)}` : '—',
+          families,
+        })
+      })
+      .catch(() => {})
+  }, [])
+
+  return stats
+}
 
 // Key benefits
 const BENEFITS = [
@@ -78,14 +105,16 @@ const BENEFITS = [
   },
 ];
 
-const QUICK_STATS = [
-  { label: "Models", value: "14" },
-  { label: "Max Params", value: "480B" },
-  { label: "Max Context", value: "262K" },
-  { label: "From", value: "$0.30" },
-];
-
 const Zen = () => {
+  const stats = useModelStats()
+
+  const QUICK_STATS = [
+    { label: "Models", value: stats.total > 0 ? `${stats.total}` : '—' },
+    { label: "Max Params", value: "480B" },
+    { label: "Max Context", value: stats.maxContext },
+    { label: "From", value: stats.cheapest },
+  ]
+
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
             
@@ -116,7 +145,7 @@ const Zen = () => {
                 >
                   <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-foreground border border-border">
                     <Zap className="w-3 h-3" />
-                    14 Foundation Models
+                    {stats.total || '—'} Zen Models
                   </span>
                 </motion.div>
 
@@ -139,9 +168,9 @@ const Zen = () => {
                   transition={{ duration: 0.4, delay: 0.1 }}
                   className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl"
                 >
-                  14 foundation models across four tiers. Zen MoDE (Mixture of
-                  Distilled Experts) architecture. From $0.30/MTok for edge
-                  models to flagship reasoning at $9.60/MTok.
+                  {stats.total || '—'} Zen models across four tiers. Zen MoDE (Mixture of
+                  Distilled Experts) architecture. From {stats.cheapest}/MTok for edge
+                  models to flagship reasoning.
                 </motion.p>
 
                 {/* CTAs */}
@@ -156,7 +185,7 @@ const Zen = () => {
                     className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
 
                   >
-                    Explore All 14 Models
+                    Explore All Models
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                   <Link
@@ -273,16 +302,16 @@ const Zen = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-                14 Models Across 4 Categories
+                {stats.total || '—'} Models Across {stats.families.length || '—'} Families
               </h2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {MODEL_CATEGORIES.map((category, idx) => {
-                const Icon = category.icon;
+              {stats.families.slice(0, 8).map((family, idx) => {
+                const Icon = family.icon;
                 return (
                   <motion.div
-                    key={category.title}
+                    key={family.name}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -293,13 +322,13 @@ const Zen = () => {
                       <Icon className="w-6 h-6 text-foreground" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">
-                      {category.title}
+                      {family.name}
                     </h3>
                     <p className="text-sm text-foreground mb-2">
-                      {category.count}
+                      {family.count} {family.count === 1 ? 'model' : 'models'}
                     </p>
                     <p className="text-muted-foreground text-sm">
-                      {category.description}
+                      {family.description}
                     </p>
                   </motion.div>
                 );
@@ -448,7 +477,7 @@ const Zen = () => {
                     Model Catalog
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    All 14 models with specs, tiers, and pricing
+                    All {stats.total || ''} models with specs, tiers, and pricing
                   </p>
                 </Link>
               </motion.div>
@@ -506,7 +535,7 @@ const Zen = () => {
                 Ready to build with Zen?
               </h2>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                14 models, four tiers, one API. Start building today.
+                {stats.total || '—'} models, four tiers, one API. Start building today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

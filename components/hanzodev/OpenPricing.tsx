@@ -18,7 +18,7 @@ const GATEWAY_FEATURES = [
 const ALTERNATIVE_FEATURES = [
   "Other Gateways (OpenRouter, Vercel, Requesty)",
   "Managed Services (AWS Bedrock, Azure OpenAI, Google AI Studio)",
-  "Free, stealth, and budget models (Llama, Mistral, Qwen, etc.)",
+  "Free, stealth, and budget models (Llama, Mistral, Zen, etc.)",
   "Fallback when you hit a quota limit with our virtual provider",
   "Bring your own API keys (BYOK) for any provider/subscription",
   "Run models locally (Ollama, LM Studio)",

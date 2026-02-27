@@ -17,7 +17,7 @@ const buildCards: BuildCard[] = [
   {
     icon: Bot,
     title: "AI Apps",
-    sentence: "Build intelligent applications with cutting-edge AI.",
+    sentence: "Build intelligent applications with frontier AI.",
     bullets: ["RAG APIs", "Agent backends", "Multimodal pipelines"],
     linkText: "View templates",
     linkHref: "/templates?category=ai",

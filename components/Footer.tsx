@@ -32,7 +32,7 @@ const footerLinks = {
       { title: "CLI", href: "/download" },
       { title: "Browser Extension", href: "/extension" },
       { title: "IDE Extensions", href: "https://marketplace.visualstudio.com/items?itemName=hanzo.hanzo-dev", external: true },
-      { title: "Slack", href: "https://hanzo.ai/slack", external: true },
+      { title: "Discord", href: "https://discord.gg/hanzo", external: true },
       { title: "GitHub App", href: "https://github.com/apps/hanzo-ai", external: true },
       { title: "Agents", href: "/operative" },
     ],
@@ -55,7 +55,7 @@ const footerLinks = {
     items: [
       { title: "Zen Coder Flash", href: "/zen" },
       { title: "Zen Coder", href: "/zen" },
-      { title: "Zen Coder Max", href: "/zen" },
+      { title: "Zen4 Coder", href: "/zen" },
       { title: "Zen Ultra", href: "/zen" },
       { title: "View All Models", href: "/zen", highlight: true },
     ],
@@ -184,6 +184,29 @@ const FooterColumn = ({
 
 const Footer = () => {
   const [chatInput, setChatInput] = useState("");
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail.trim()) return;
+    setNewsletterStatus("loading");
+    try {
+      const res = await fetch("https://api.hanzo.ai/v1/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+      if (!res.ok) throw new Error(`Subscribe failed (${res.status})`);
+      setNewsletterStatus("success");
+      setNewsletterMessage("Subscribed successfully.");
+      setNewsletterEmail("");
+    } catch (err) {
+      setNewsletterStatus("error");
+      setNewsletterMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
+  };
 
   const handleChatSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -202,7 +225,7 @@ const Footer = () => {
           <div className="lg:col-span-3 space-y-6">
             <Link href="/" className="flex items-center space-x-2">
               <img
-                src="/lovable-uploads/28d53ec4-328f-4812-862b-b9a760bbabae.png"
+                src="/brand/hanzo-logo.png"
                 alt="Hanzo"
                 className="h-6 w-6"
               />
@@ -272,19 +295,28 @@ const Footer = () => {
             <div className="flex-1 max-w-md">
               <h4 className="text-sm font-semibold text-foreground mb-2">Stay updated</h4>
               <p className="text-xs text-muted-foreground mb-3">Get the latest news, product updates, and AI insights.</p>
-              <form className="flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <input
                   type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="Enter your email"
+                  required
                   className="flex-1 bg-secondary border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-ring transition-colors"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground bg-primary transition-colors hover:opacity-90"
+                  disabled={newsletterStatus === "loading"}
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground bg-primary transition-colors hover:opacity-90 disabled:opacity-50"
                 >
-                  Subscribe
+                  {newsletterStatus === "loading" ? "..." : "Subscribe"}
                 </button>
               </form>
+              {newsletterMessage && (
+                <p className={`text-xs mt-1 ${newsletterStatus === "error" ? "text-red-400" : "text-green-400"}`}>
+                  {newsletterMessage}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col items-start md:items-end gap-3">
@@ -307,13 +339,13 @@ const Footer = () => {
                   Referral Program
                 </Link>
                 <span className="text-muted-foreground/50">&#8226;</span>
-                <Link href="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Affiliates
+                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Contact
                 </Link>
                 <span className="text-muted-foreground/50">&#8226;</span>
-                <Link href="/share" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Share & Earn
-                </Link>
+                <a href="https://github.com/hanzoai" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  GitHub
+                </a>
               </div>
             </div>
           </div>

@@ -9,18 +9,18 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: "Hanzo's AI Engineering Platform has completely transformed how we build and deploy AI applications. What used to take us weeks now takes days.",
-      author: "Sarah Chen",
-      title: "CTO, Quantum Innovations"
+      author: "Enterprise Client",
+      title: "CTO, Fortune 500 Company"
     },
     {
       quote: "The unified approach to model deployment, monitoring, and scaling has allowed our team to focus on building great AI experiences instead of wrestling with infrastructure.",
-      author: "James Wilson",
-      title: "Head of AI, GlobalTech"
+      author: "Engineering Lead",
+      title: "Head of AI, Enterprise Client"
     },
     {
       quote: "We evaluated several AI platforms, but Hanzo stood out for its developer experience and comprehensive observability features. It's made monitoring our AI in production so much easier.",
-      author: "Maria Rodriguez",
-      title: "Principal Engineer, TechFlow"
+      author: "Senior Engineer",
+      title: "Principal Engineer, Enterprise Client"
     }
   ];
 

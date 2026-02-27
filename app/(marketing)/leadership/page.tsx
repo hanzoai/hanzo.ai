@@ -22,13 +22,13 @@ import { Toaster } from "@hanzo/ui";
 
 const leaders = [
   {
-    name: "Michael Kelling",
-    title: "Chief Executive Officer",
-    bio: "As CEO, Michael leads Hanzo's mission to democratize access to AI with a focus on sustainable, responsible technology that empowers developers worldwide.",
+    name: "Zach Kelling",
+    title: "Founding CTO",
+    bio: "Zach drives Hanzo's technical vision and engineering culture, architecting the AI infrastructure platform from the ground up.",
     tags: [
-      { icon: Briefcase, text: "20+ years experience", color: "#ffffff" },
+      { icon: Briefcase, text: "Founding Team", color: "#ffffff" },
       { icon: Database, text: "AI Infrastructure", color: "#f97316" },
-      { icon: BookOpen, text: "3x Startup Founder", color: "#22c55e" }
+      { icon: BookOpen, text: "Systems Architecture", color: "#22c55e" }
     ],
     social: {
       linkedin: "https://linkedin.com/company/hanzo-ai",
@@ -37,13 +37,178 @@ const leaders = [
     }
   },
   {
-    name: "Sarah Chen",
-    title: "Chief Technology Officer",
-    bio: "Sarah drives Hanzo's technical vision and engineering culture, bringing expertise from her background at leading AI research labs and tech companies.",
+    name: "Dave Lorenzini",
+    title: "Chief Strategy Officer",
+    bio: "Dave leads Hanzo's strategic direction, bringing decades of experience in technology strategy and business development.",
     tags: [
-      { icon: Briefcase, text: "15+ years experience", color: "#ffffff" },
-      { icon: Database, text: "ML Systems", color: "#f97316" },
-      { icon: BookOpen, text: "Ph.D. in Computer Science", color: "#22c55e" }
+      { icon: Briefcase, text: "Strategy & Growth", color: "#ffffff" },
+      { icon: Database, text: "Business Development", color: "#f97316" },
+      { icon: BookOpen, text: "Technology Strategy", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Michael Kelling",
+    title: "President",
+    bio: "As President, Michael leads Hanzo's mission to democratize access to AI with a focus on sustainable, responsible technology that empowers developers worldwide.",
+    tags: [
+      { icon: Briefcase, text: "Executive Leadership", color: "#ffffff" },
+      { icon: Database, text: "AI Infrastructure", color: "#f97316" },
+      { icon: BookOpen, text: "Startup Founder", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Antje Worring",
+    title: "Chief Operating Officer",
+    bio: "Antje oversees Hanzo's day-to-day operations, ensuring the company delivers on its promise of world-class AI infrastructure at scale.",
+    tags: [
+      { icon: Briefcase, text: "Operations", color: "#ffffff" },
+      { icon: Database, text: "Scaling Organizations", color: "#f97316" },
+      { icon: BookOpen, text: "Process Excellence", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Vincent Butta",
+    title: "Chief Revenue Officer",
+    bio: "Vincent leads Hanzo's revenue strategy and go-to-market efforts, driving enterprise adoption of the AI platform.",
+    tags: [
+      { icon: Briefcase, text: "Revenue & Sales", color: "#ffffff" },
+      { icon: Database, text: "Enterprise Growth", color: "#f97316" },
+      { icon: BookOpen, text: "Go-to-Market", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: 'Major "Dream" Williams',
+    title: "Chief Visionary Officer",
+    bio: "Dream shapes Hanzo's long-term vision, bridging the gap between cutting-edge AI research and real-world impact.",
+    tags: [
+      { icon: Briefcase, text: "Vision & Innovation", color: "#ffffff" },
+      { icon: Database, text: "AI Strategy", color: "#f97316" },
+      { icon: BookOpen, text: "Future Technologies", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Danielle Savage",
+    title: "Chief Business Officer",
+    bio: "Danielle leads Hanzo's business development and partnership strategy, expanding the platform's reach across industries.",
+    tags: [
+      { icon: Briefcase, text: "Business Development", color: "#ffffff" },
+      { icon: Database, text: "Partnerships", color: "#f97316" },
+      { icon: BookOpen, text: "Strategic Growth", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Ashley Kathleen Christie",
+    title: "Chief of Staff",
+    bio: "Ashley coordinates cross-functional initiatives and ensures organizational alignment across Hanzo's global operations.",
+    tags: [
+      { icon: Briefcase, text: "Operations", color: "#ffffff" },
+      { icon: Database, text: "Cross-functional", color: "#f97316" },
+      { icon: BookOpen, text: "Program Management", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Anastasia Zacharaoff",
+    title: "VP Engineering",
+    bio: "Anastasia leads engineering teams building Hanzo's core AI platform, driving technical excellence and innovation.",
+    tags: [
+      { icon: Briefcase, text: "Engineering Leadership", color: "#ffffff" },
+      { icon: Database, text: "Platform Engineering", color: "#f97316" },
+      { icon: BookOpen, text: "Technical Management", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Rob Ruiz",
+    title: "VP Strategy",
+    bio: "Rob drives Hanzo's strategic planning and market positioning, identifying opportunities for growth and differentiation.",
+    tags: [
+      { icon: Briefcase, text: "Strategy", color: "#ffffff" },
+      { icon: Database, text: "Market Analysis", color: "#f97316" },
+      { icon: BookOpen, text: "Strategic Planning", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Marcus White",
+    title: "VP Research",
+    bio: "Marcus leads Hanzo's research initiatives, pushing the boundaries of AI and machine learning capabilities.",
+    tags: [
+      { icon: Briefcase, text: "Research", color: "#ffffff" },
+      { icon: Database, text: "AI/ML Research", color: "#f97316" },
+      { icon: BookOpen, text: "Frontier Models", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Jackson Mori",
+    title: "VP Engineering",
+    bio: "Jackson leads engineering efforts across Hanzo's product portfolio, ensuring reliable and scalable AI infrastructure.",
+    tags: [
+      { icon: Briefcase, text: "Engineering", color: "#ffffff" },
+      { icon: Database, text: "Product Engineering", color: "#f97316" },
+      { icon: BookOpen, text: "Scalable Systems", color: "#22c55e" }
+    ],
+    social: {
+      linkedin: "https://linkedin.com/company/hanzo-ai",
+      twitter: "https://twitter.com/hanzoai",
+      github: "https://github.com/hanzoai"
+    }
+  },
+  {
+    name: "Ole Brereton",
+    title: "Executive VP",
+    bio: "Ole provides executive leadership across Hanzo's operations, supporting growth and organizational development.",
+    tags: [
+      { icon: Briefcase, text: "Executive Leadership", color: "#ffffff" },
+      { icon: Database, text: "Operations", color: "#f97316" },
+      { icon: BookOpen, text: "Organizational Growth", color: "#22c55e" }
     ],
     social: {
       linkedin: "https://linkedin.com/company/hanzo-ai",
@@ -57,7 +222,7 @@ const stats = [
   { value: "2017", label: "Techstars" },
   { value: "100+", label: "Team Members" },
   { value: "30+", label: "Countries" },
-  { value: "260+", label: "Open Source Projects" }
+  { value: "2,500+", label: "Open Source Projects" }
 ];
 
 const Leadership = () => {
@@ -144,7 +309,7 @@ const Leadership = () => {
         {/* Leadership Cards */}
         <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-background to-neutral-900/30">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {leaders.map((leader, index) => (
                 <motion.div
                   key={leader.name}

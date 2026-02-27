@@ -81,7 +81,7 @@ const HanzoCodeCompatibility = () => {
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
                 <PanelLeft className="h-10 w-10 text-foreground mb-4" />
                 <h4 className="text-lg font-semibold mb-2">Extension API</h4>
-                <p className="text-foreground/80 text-sm">Seamless integration with standard VS Code extension API</p>
+                <p className="text-foreground/80 text-sm">Full integration with standard VS Code extension API</p>
               </div>
               
               <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
