@@ -45,7 +45,7 @@ const EfficiencySection = () => {
     },
     {
       title: "Maximizes CPU Efficiency",
-      mainText: "Vectorized query execution leverages SIMD processor instructions and runtime code generation.",
+      mainText: "Vectorized query execution uses SIMD processor instructions and runtime code generation.",
       subText: "Processing data in columns increases CPU cache line hit rate.",
       initialY: 30,
       delay: 0.2

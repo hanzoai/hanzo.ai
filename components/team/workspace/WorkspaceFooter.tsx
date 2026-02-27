@@ -16,7 +16,7 @@ const WorkspaceFooter = () => {
     >
       <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
         All workspace tools are fully integrated, allowing AI agents to work across platforms
-        seamlessly while maintaining a complete audit trail of all actions.
+        natively while maintaining a complete audit trail of all actions.
       </p>
 
       <div className="inline-flex flex-wrap justify-center gap-4">
@@ -36,7 +36,7 @@ const WorkspaceFooter = () => {
           className="px-3 py-2"
           style={{ backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)", borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)", color: "var(--primary)" }}
         >
-          Seamless integrations
+          Native integrations
         </Badge>
         <Badge
           className="px-3 py-2"

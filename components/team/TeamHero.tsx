@@ -77,7 +77,7 @@ const TeamHero = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto"
           >
-            Autonomous AI agents working seamlessly alongside humans.
+            Autonomous AI agents working directly alongside humans.
             Train them with a simple Zoom call, monitor their work in real-time,
             and benefit from enterprise-grade security and audit features.
           </motion.p>

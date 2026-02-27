@@ -15,7 +15,7 @@ const DeveloperExperience = () => {
     {
       icon: Code,
       title: "Rich SDKs & Libraries",
-      description: "SDKs supporting JavaScript, React, Ruby, Node, Flutter, and more for seamless integration."
+      description: "SDKs supporting JavaScript, React, Ruby, Node, Flutter, and more for native integration."
     },
     {
       icon: Users,

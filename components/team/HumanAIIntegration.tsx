@@ -27,7 +27,7 @@ const HumanAIIntegration = () => {
     },
     {
       icon: <MessageSquare className="h-10 w-10" />,
-      title: "Seamless Communication",
+      title: "Integrated Communication",
       description: "Chat with your AI team members through your existing communication channels like Slack, Teams, or email."
     },
     {
@@ -68,7 +68,7 @@ const HumanAIIntegration = () => {
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               Our AI agents are designed to work alongside your human team,
-              creating a seamless integration that enhances productivity and creativity.
+              creating a natural integration that enhances productivity and creativity.
             </p>
 
             <div

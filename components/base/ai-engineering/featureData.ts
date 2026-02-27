@@ -17,7 +17,7 @@ export const featureData: AIFeature[] = [
   {
     icon: React.createElement(Brain, { className: "h-6 w-6" }),
     title: "Model Integration",
-    description: "Seamlessly integrate with OpenAI, Hugging Face, and other machine learning platforms. Deploy and serve custom ML models with built-in scaling and monitoring.",
+    description: "Integrate with OpenAI, Hugging Face, and other machine learning platforms. Deploy and serve custom ML models with built-in scaling and monitoring.",
     featurePoints: [
       { text: "One-click API connections to popular ML services" },
       { text: "Simple deployment of custom models with containerization" },

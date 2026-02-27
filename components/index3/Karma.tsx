@@ -45,7 +45,7 @@ const Karma = () => {
               </ChromeText>
               <div className="text-xl text-foreground/80 mb-8 space-y-4">
                 <p>
-                  At Hanzo, we believe AI should empower humanity while respecting our planet. Our commitment to sustainable AI development is reflected in every product we build.
+                  At Hanzo, we believe AI should serve humanity while respecting our planet. Our commitment to sustainable AI development is reflected in every product we build.
                 </p>
                 <p>
                   From energy-efficient infrastructure to carbon-neutral operations, we're creating AI that's as sustainable as it is powerful.
@@ -157,7 +157,7 @@ const Karma = () => {
             </blockquote>
             
             <blockquote className="text-xl text-foreground/80 italic">
-              "By optimizing our infrastructure and operations, we're proving that cutting-edge AI and environmental responsibility can go hand in hand. This isn't just good karma—it's good business."
+              "By optimizing our infrastructure and operations, we're proving that frontier AI and environmental responsibility can go hand in hand. This isn't just good karma—it's good business."
             </blockquote>
           </motion.div>
         </div>

@@ -84,7 +84,7 @@ const EcosystemDetail: React.FC<EcosystemDetailProps> = ({ isOpen, onClose, type
                     Hanzo AI Cloud
                   </h3>
                   <p className="text-muted-foreground">
-                    Our comprehensive AI platform providing seamless access to cutting-edge AI capabilities with enterprise-grade reliability and security.
+                    Our comprehensive AI platform providing direct access to frontier AI capabilities with enterprise-grade reliability and security.
                   </p>
                 </div>
 

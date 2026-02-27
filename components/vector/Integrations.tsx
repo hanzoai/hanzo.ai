@@ -25,7 +25,7 @@ const Integrations = () => {
             Plays Nicely With Your Favorite AI Dev Tools
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Seamlessly integrate Hanzo Vector with popular AI frameworks, libraries, and platforms.
+            Integrate Hanzo Vector with popular AI frameworks, libraries, and platforms.
           </p>
         </motion.div>
         

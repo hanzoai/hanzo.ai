@@ -21,7 +21,7 @@ const features = [
     replaces: ["proprietary AI services", "closed APIs", "vendor lock-in"]
   },
   {
-    title: "Seamless Cloud Transition",
+    title: "Smooth Cloud Transition",
     description: "Develop locally, deploy to Hanzo Cloud when you're ready",
     details: "The same configuration that runs your local Platform can be used to deploy to Hanzo Cloud with zero changes, giving you flexibility and scalability.",
     icon: Cloud,

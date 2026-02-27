@@ -38,7 +38,7 @@ const Integrations = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Integrated Across Your Development Workflow</h2>
           <p className="text-xl text-foreground/80">
-            Hanzo Observability seamlessly integrates with your existing stack, supporting your AI operations from prototype to production.
+            Hanzo Observability integrates with your existing stack, supporting your AI operations from prototype to production.
           </p>
         </motion.div>
         

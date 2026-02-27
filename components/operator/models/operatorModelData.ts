@@ -9,25 +9,25 @@ export interface OperatorModel {
 
 export const operatorModels: OperatorModel[] = [
   {
-    name: "GPT-4o",
+    name: "GPT-5",
     provider: "OpenAI",
     features: ["Highest accuracy", "Fast response time", "Best for complex tasks", "Excellent UI understanding"],
     recommended: true,
     command: "operative"
   },
   {
-    name: "Claude 3",
+    name: "Claude",
     provider: "Anthropic",
     features: ["Strong screen analysis", "Detailed reasoning", "Long context window", "Good UI navigation"],
     recommended: false,
-    command: "operative -m claude-3"
+    command: "operative -m claude"
   },
   {
-    name: "Gemini Pro Vision",
+    name: "Gemini 2.5 Pro",
     provider: "Google",
-    features: ["Good general performance", "Robust screen analysis", "Accessible API", "Improving rapidly"],
+    features: ["Good general performance", "Reliable screen analysis", "Accessible API", "Improving rapidly"],
     recommended: false,
-    command: "operative -m gemini-pro-vision"
+    command: "operative -m gemini-2.5-pro"
   },
   {
     name: "zen3-vl",
@@ -44,10 +44,10 @@ export const operatorModels: OperatorModel[] = [
     command: "operative -m llava"
   },
   {
-    name: "o1-with-ocr",
+    name: "o3-with-ocr",
     provider: "OpenAI (Experimental)",
     features: ["Advanced OCR", "Element detection", "Highest precision", "Best for complex UIs"],
     recommended: false,
-    command: "operative -m o1-with-ocr"
+    command: "operative -m o3-with-ocr"
   }
 ];

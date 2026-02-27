@@ -61,7 +61,7 @@ export const DummyTaskData: Task[] = [
     status: "todo",
     priority: "medium",
     assignees: [
-      { id: "u4", name: "Priya Sharma" }
+      { id: "u4", name: "Dev Four" }
     ],
     labels: [
       { id: "l6", name: "Optimization", color: "#d4d4d4" }
@@ -116,7 +116,7 @@ export const DummyTaskData: Task[] = [
     priority: "high",
     assignees: [
       { id: "u2", name: "Sarah Kim" },
-      { id: "u4", name: "Priya Sharma" }
+      { id: "u4", name: "Dev Four" }
     ],
     labels: [
       { id: "l11", name: "DevOps", color: "#525252" }

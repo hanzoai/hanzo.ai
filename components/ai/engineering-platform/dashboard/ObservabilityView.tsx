@@ -74,9 +74,9 @@ const ObservabilityView = () => {
         <div className="text-xs text-muted-foreground mb-2">Recent Traces</div>
         <div className="space-y-2">
           {[
-            { id: "t1", model: "GPT-4o", time: "2m ago", status: "success", duration: "92ms" },
-            { id: "t2", model: "Llama 3", time: "5m ago", status: "success", duration: "84ms" },
-            { id: "t3", model: "Claude 3", time: "12m ago", status: "error", duration: "176ms" },
+            { id: "t1", model: "GPT-5", time: "2m ago", status: "success", duration: "92ms" },
+            { id: "t2", model: "Llama 4", time: "5m ago", status: "success", duration: "84ms" },
+            { id: "t3", model: "Claude", time: "12m ago", status: "error", duration: "176ms" },
             { id: "t4", model: "Mixtral", time: "18m ago", status: "success", duration: "78ms" },
           ].map((trace) => (
             <div key={trace.id} className="flex items-center justify-between text-xs p-1.5 rounded hover:bg-gray-700/30">

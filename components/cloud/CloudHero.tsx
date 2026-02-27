@@ -54,7 +54,7 @@ curl https://api.hanzo.cloud/v1/predict \\
   -d '{"input": "Hello world"}'
 
 # Fine-tuning jobs
-hanzo ai train --base llama-3 --data ./dataset`,
+hanzo ai train --base llama-4 --data ./dataset`,
     },
     database: {
       title: "Managed Databases",

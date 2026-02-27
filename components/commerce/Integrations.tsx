@@ -44,7 +44,7 @@ const Integrations = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Integrations</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Connect seamlessly with your existing technology stack and third-party services.
+            Connect directly with your existing technology stack and third-party services.
           </p>
         </div>
         

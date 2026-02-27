@@ -208,7 +208,7 @@ const { cid } = await ipfs.pin({
 const metadata = await ipfs.pinJSON({
   name: "Cool NFT #1",
   description: "A very cool NFT",
-  image: "ipfs://QmXxx...",
+  image: "ipfs://YOUR_IPFS_HASH",
   attributes: [
     { trait_type: "Background", value: "Blue" },
   ],

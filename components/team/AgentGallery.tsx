@@ -111,7 +111,7 @@ const AgentDetailModal: React.FC<AgentDetailModalProps> = ({ agent, isOpen, onCl
               <div className="bg-secondary/50 rounded-xl p-4 border border-border">
                 <h4 className="text-lg font-medium text-foreground mb-2">Integration</h4>
                 <p className="text-muted-foreground">
-                  Works seamlessly with human teams via natural language interfaces,
+                  Works directly with human teams via natural language interfaces,
                   and integrates with all major productivity tools and platforms.
                 </p>
               </div>
@@ -196,7 +196,7 @@ const AgentGallery = () => {
     {
       name: "Core",
       role: "Core Engineer",
-      description: "Your expert AI core engineer, building robust system foundations and architecture.",
+      description: "Your expert AI core engineer, building reliable system foundations and architecture.",
       icon: BrainCircuit,
       gradient: "from-gray-500 to-slate-500"
     },

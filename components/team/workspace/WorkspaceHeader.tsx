@@ -24,7 +24,7 @@ const WorkspaceHeader = () => {
         One Workspace for Humans & AI
       </h2>
       <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-        Seamlessly integrate your AI team members into your existing workflows with our
+        Integrate your AI team members into your existing workflows with our
         unified workspace platform, featuring project management, chat, video calls, and
         knowledge base tools.
       </p>

@@ -12,7 +12,7 @@ const testimonials = [{
   author: "Jennifer Smith",
   role: "Founder & CEO, Damon Motorcycles"
 }, {
-  quote: "Hanzo's digital solutions have empowered us to redefine success. Their platform has provided us with the tools we need to accelerate our growth and expand our reach.",
+  quote: "Hanzo's digital solutions have enabled us to redefine success. Their platform has provided us with the tools we need to accelerate our growth and expand our reach.",
   author: "Marcus Chen",
   role: "Product Lead, Skully AR-1"
 }, {
@@ -23,7 +23,7 @@ const testimonials = [{
 
 
 const caseStudies = [{
-  title: "Damon Motorcycles: Revolutionizing Electric Mobility",
+  title: "Damon Motorcycles: Transforming Electric Mobility",
   description: "How we helped Damon Motorcycles achieve unprecedented growth in their electric motorcycle platform through innovative digital solutions.",
   stats: {
     growth: "300%",
@@ -34,7 +34,7 @@ const caseStudies = [{
   learnMoreUrl: "https://sensei.group"
 }, {
   title: "Skully AR-1: Transforming Motorcycle Safety",
-  description: "A comprehensive digital transformation that revolutionized the AR helmet industry and had a record breaking crowdfunding campaign in first 24 hours.",
+  description: "A comprehensive digital transformation that changed the AR helmet industry and had a record breaking crowdfunding campaign in first 24 hours.",
   stats: {
     efficiency: "200%",
     timeframe: "12 months",

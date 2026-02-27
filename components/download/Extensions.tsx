@@ -8,12 +8,12 @@ import { Button } from "@hanzo/ui";
 
 const aiProviders = [
   { name: "Zen", models: "zen4, zen4-max, zen4-coder" },
-  { name: "OpenAI", models: "GPT-4o, o1, o3" },
-  { name: "Anthropic", models: "Claude 4, Opus, Sonnet" },
-  { name: "Google", models: "Gemini 2.0, Ultra, Flash" },
-  { name: "xAI", models: "Grok 3, Grok 2" },
-  { name: "Mistral", models: "Large, Medium, Codestral" },
-  { name: "Meta", models: "Llama 4, 3.3, 3.2" },
+  { name: "OpenAI", models: "GPT-5, o4 Mini, o3 Pro" },
+  { name: "Anthropic", models: "Claude Opus, Sonnet, Haiku" },
+  { name: "Google", models: "Gemini 2.5 Pro, Flash" },
+  { name: "xAI", models: "Grok 4, Grok 4.1 Fast" },
+  { name: "Mistral", models: "Large 3, Medium, Codestral" },
+  { name: "Meta", models: "Llama 4 Maverick, Scout" },
   { name: "Cohere", models: "Command R+, Embed" },
   { name: "Together", models: "Open Models" },
   { name: "Perplexity", models: "Sonar, Online" },

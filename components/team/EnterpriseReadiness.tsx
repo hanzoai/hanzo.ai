@@ -45,7 +45,7 @@ const EnterpriseReadiness = () => {
     {
       icon: <Briefcase className="h-8 w-8" />,
       title: "Implementation Services",
-      description: "Professional services for seamless integration, migration, and onboarding with your existing systems."
+      description: "Professional services for integration, migration, and onboarding with your existing systems."
     }
   ];
 

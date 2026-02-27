@@ -40,7 +40,7 @@ const Features = () => {
     {
       icon: <CreditCard className="h-6 w-6 text-foreground/60" />,
       title: "Payment Processing",
-      description: "Seamless integration with multiple payment gateways and subscription billing."
+      description: "Native integration with multiple payment gateways and subscription billing."
     },
     {
       icon: <Gift className="h-6 w-6 text-foreground/60" />,

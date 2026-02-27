@@ -17,7 +17,7 @@ const DXPlatformSection: React.FC = () => {
     { icon: <Cpu className="h-6 w-6 text-foreground" />, title: "Hanzo App", description: "Low-code platform for building AI applications" },
     { icon: <Rocket className="h-6 w-6 text-foreground" />, title: "Hanzo Bot", description: "Framework for building advanced AI agents and assistants" },
     { icon: <Server className="h-6 w-6 text-foreground" />, title: "Operative", description: "AI agents that automate your development workflow" },
-    { icon: <Zap className="h-6 w-6 text-foreground" />, title: "Extension", description: "Browser and IDE plugins for seamless integration" }
+    { icon: <Zap className="h-6 w-6 text-foreground" />, title: "Extension", description: "Browser and IDE plugins for native integration" }
   ];
   
   return (

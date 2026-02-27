@@ -51,7 +51,7 @@ export const cloudServiceData: CloudServiceItem[] = [
       "High-performance data storage with automatic indexing",
       "Optimized for AI workloads with built-in caching",
       "Real-time synchronization across clients",
-      "Seamless integration with Hanzo AI services"
+      "Native integration with Hanzo AI services"
     ],
     color: "blue"
   },
@@ -128,7 +128,7 @@ export const cloudServiceData: CloudServiceItem[] = [
     features: [
       "One-line store creation with automated checkout and cart",
       "Dynamic pricing, subscription management, and analytics",
-      "Seamless Web2 and Web3 payment integrations",
+      "Unified Web2 and Web3 payment integrations",
       "AI-powered recommendation engines and inventory forecasting"
     ],
     color: "amber"

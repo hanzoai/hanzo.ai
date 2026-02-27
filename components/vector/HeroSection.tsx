@@ -37,7 +37,7 @@ const HeroSection = () => {
         
         <motion.p variants={fadeInUpVariant} className="text-xl text-foreground/80 max-w-3xl mx-auto mb-10">
           Hanzo Vector is a high-performance vector database designed for AI applications,
-          with advanced similarity search and seamless integrations with popular ML frameworks.
+          with advanced similarity search and native integrations with popular ML frameworks.
         </motion.p>
         
         <motion.div 

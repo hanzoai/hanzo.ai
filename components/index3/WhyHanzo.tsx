@@ -21,7 +21,7 @@ const WhyHanzo = () => {
     {
       icon: <Scale className="h-6 w-6 text-foreground" />,
       title: "Scalable",
-      description: "Grow seamlessly from startup to enterprise-level demands."
+      description: "Scale from startup to enterprise-level demands."
     },
     {
       icon: <Leaf className="h-6 w-6 text-foreground" />,

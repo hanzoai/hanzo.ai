@@ -17,7 +17,7 @@ const useCases = [
     id: "waf",
     icon: Shield,
     title: "Web Application Firewall",
-    description: "Leverage Hanzo Balancer as your WAF to protect your microservices and APIs against a myriad of online threats, such as SQL injection and cross-site scripting, thus enhancing security and ensuring data integrity.",
+    description: "Deploy Hanzo Balancer as your WAF to protect your microservices and APIs against a myriad of online threats, such as SQL injection and cross-site scripting, thus enhancing security and ensuring data integrity.",
     learnMoreLink: "#waf"
   },
   {

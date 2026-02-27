@@ -46,7 +46,7 @@ const hanzo = new Hanzo({
 });
 
 const response = await hanzo.chat.completions.create({
-  model: "claude-sonnet-4-20250514",
+  model: "claude-sonnet-4-6",
   messages: [{ role: "user", content: "Hello!" }],
 });
 
@@ -61,7 +61,7 @@ import os
 client = Hanzo(api_key=os.environ["HANZO_API_KEY"])
 
 response = client.chat.completions.create(
-    model="claude-sonnet-4-20250514",
+    model="claude-sonnet-4-6",
     messages=[{"role": "user", "content": "Hello!"}],
 )
 
@@ -86,7 +86,7 @@ func main() {
     resp, _ := client.Chat.Completions.Create(
         context.Background(),
         hanzo.ChatCompletionRequest{
-            Model: "claude-sonnet-4-20250514",
+            Model: "claude-sonnet-4-6",
             Messages: []hanzo.Message{
                 {Role: "user", Content: "Hello!"},
             },
@@ -103,7 +103,7 @@ func main() {
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer $HANZO_API_KEY" \\
   -d '{
-    "model": "claude-sonnet-4-20250514",
+    "model": "claude-sonnet-4-6",
     "messages": [
       {"role": "user", "content": "Hello!"}
     ]
@@ -315,7 +315,7 @@ const DeveloperExperienceSection = () => {
               { icon: History, title: "Unified History", desc: "Every prompt, every response, searchable" },
               { icon: Share2, title: "Team Sync", desc: "Share context and memory across your team" },
               { icon: Layers, title: "260+ MCP Tools", desc: "Browser, file, code, git, and more built-in" },
-              { icon: Cpu, title: "Any Model", desc: "GPT-4, Claude, Gemini, Zen, Mistral, Llama, local" },
+              { icon: Cpu, title: "Any Model", desc: "GPT-5, Claude, Gemini, Zen, Mistral, Llama, local" },
             ].map((item, index) => {
               const Icon = item.icon;
               return (

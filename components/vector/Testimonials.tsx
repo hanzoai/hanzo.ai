@@ -20,7 +20,7 @@ const Testimonials = () => {
       company: "TechGlobal"
     },
     {
-      quote: "Hanzo Vector's ability to handle hybrid search across both vectors and metadata has been a game-changer for our recommendation system. The integration was seamless and the performance boost was immediate.",
+      quote: "Hanzo Vector's ability to handle hybrid search across both vectors and metadata has been a game-changer for our recommendation system. The integration was smooth and the performance boost was immediate.",
       author: "Michael Rodriguez",
       position: "Senior Data Scientist",
       company: "RecoAI"

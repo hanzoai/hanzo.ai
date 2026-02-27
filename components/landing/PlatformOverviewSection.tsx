@@ -36,7 +36,7 @@ const multiAgentFeatures = [
   {
     icon: Zap,
     title: "Race multiple agents",
-    description: "One task, multiple agents racing. GPT-4, Claude, Gemini, and Zen compete in parallel.",
+    description: "One task, multiple agents racing. GPT-5, Claude, Gemini, and Zen compete in parallel.",
   },
   {
     icon: Users,

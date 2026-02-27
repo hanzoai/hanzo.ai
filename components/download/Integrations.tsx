@@ -49,7 +49,7 @@ const Integrations = () => {
           <IntegrationCard 
             icon={<FileEdit className="h-8 w-8 text-foreground" />}
             title="Notion"
-            description="Seamlessly sync notes and tasks with your Notion workspace"
+            description="Sync notes and tasks with your Notion workspace"
           />
           
           <IntegrationCard 

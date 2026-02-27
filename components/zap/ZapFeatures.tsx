@@ -30,7 +30,7 @@ const features = [
     icon: Network,
     title: "Built for ZAP↔ZAP",
     description:
-      "Run pure ZAP for maximum efficiency, or bridge MCP while migrating. Seamless interoperability.",
+      "Run pure ZAP for maximum efficiency, or bridge MCP while migrating. Full interoperability.",
   },
   {
     icon: Blocks,

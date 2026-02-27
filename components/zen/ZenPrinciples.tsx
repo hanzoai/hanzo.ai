@@ -18,7 +18,7 @@ const principles = [
   {
     title: "Completeness",
     japanese: "完全性",
-    description: "No half-measures. Batteries always included. Meticulously crafted to empower ambitious creators instantly."
+    description: "No half-measures. Batteries always included. Meticulously crafted to enable ambitious creators instantly."
   },
   {
     title: "Dimensionality",

@@ -65,7 +65,7 @@ const Features = () => {
             <div className="flex-1 mb-8 md:mb-0 md:mr-8">
               <h3 className="text-2xl font-bold mb-4">Simple API. Powerful Results.</h3>
               <p className="text-foreground/80 mb-4">
-                Just a few lines of code to integrate state-of-the-art AI into your applications.
+                Just a few lines of code to integrate production-grade AI into your applications.
               </p>
             </div>
             <div className="flex-1 bg-gray-950 p-4 rounded-lg font-mono text-sm overflow-auto">
@@ -78,7 +78,7 @@ const ai = new HanzoAI({
 });
 
 const response = await ai.complete({
-  model: 'gpt-4',
+  model: 'gpt-5',
   prompt: 'Explain quantum computing',
   temperature: 0.7
 });`}

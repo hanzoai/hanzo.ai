@@ -15,8 +15,8 @@ const clients = [
 
 const testimonial = {
   quote: "Hanzo accelerated our innovation beyond what we thought possible, helping us launch groundbreaking AI applications at scale.",
-  author: "Sarah Chen",
-  role: "CTO, Damon Motorcycles"
+  author: "Jay Giraud",
+  role: "Founder & CEO, Damon Motorcycles"
 };
 
 const TrustedBy = () => {

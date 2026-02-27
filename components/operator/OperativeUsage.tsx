@@ -97,7 +97,7 @@ const OperativeUsage = () => {
             
             <div className="space-y-6">
               <div>
-                <p className="text-muted-foreground mb-2">Running with default settings (GPT-4o)</p>
+                <p className="text-muted-foreground mb-2">Running with default settings (GPT-5)</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
                   operative
                 </div>
@@ -113,14 +113,14 @@ const OperativeUsage = () => {
               <div>
                 <p className="text-muted-foreground mb-2">Using OCR mode for enhanced element detection</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
-                  operative -m gpt-4-with-ocr
+                  operative -m gpt-5-with-ocr
                 </div>
               </div>
               
               <div>
                 <p className="text-muted-foreground mb-2">Using Set-of-Mark (SoM) prompting</p>
                 <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-[var(--white)] overflow-x-auto">
-                  operative -m gpt-4-with-som
+                  operative -m gpt-5-with-som
                 </div>
               </div>
               

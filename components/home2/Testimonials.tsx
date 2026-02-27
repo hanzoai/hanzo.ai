@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Hanzo has revolutionized our approach to electric motorcycle development. Their platform gives us the tools to innovate at a pace that would be impossible with traditional infrastructure.",
+    quote: "Hanzo has transformed our approach to electric motorcycle development. Their platform gives us the tools to innovate at a pace that would be impossible with traditional infrastructure.",
     author: "Jay Giraud",
     title: "Founder & CEO, Damon Motorcycles"
   },

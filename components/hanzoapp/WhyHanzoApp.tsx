@@ -86,7 +86,7 @@ const WhyHanzoApp = () => {
             Four ways to Hanzo
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose how you want to work. All modes sync seamlessly when connected.
+            Choose how you want to work. All modes sync automatically when connected.
           </p>
         </motion.div>
 

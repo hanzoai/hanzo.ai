@@ -106,7 +106,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ className = ""
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <PartnerCard
           name="Hanzo Agency"
-          description="Our AI-powered creative agency helps brands transform their digital presence with cutting-edge design, content, and marketing strategies powered by artificial intelligence."
+          description="Our AI-powered creative agency helps brands transform their digital presence with advanced design, content, and marketing strategies powered by artificial intelligence."
           url="https://hanzo.agency"
           icon={Users}
           color="primary"

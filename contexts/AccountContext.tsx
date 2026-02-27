@@ -76,12 +76,12 @@ const MOCK_ORGANIZATIONS: Organization[] = [
   },
   { 
     id: 'org-3', 
-    name: 'Quantum Innovations', 
+    name: 'Example Organization',
     role: 'member',
     plan: 'Team',
     memberCount: 12,
-    description: 'Next-generation quantum computing solutions',
-    website: 'https://quantum-innovations.co',
+    description: 'Demo organization for account management',
+    website: 'https://example.com',
     location: 'Austin, TX'
   }
 ];

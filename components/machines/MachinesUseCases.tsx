@@ -65,7 +65,7 @@ const MachinesUseCases = () => {
       features: [
         "Optimized for LLaMA, Falcon, and other open LLMs",
         "LoRA and QLoRA fine-tuning support",
-        "Seamless integration with Hanzo AI endpoints"
+        "Native integration with Hanzo AI endpoints"
       ]
     }
   ];

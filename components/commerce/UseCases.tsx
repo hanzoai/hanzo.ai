@@ -40,7 +40,7 @@ const UseCases = () => {
     },
     {
       title: "Multi-channel Retailers",
-      description: "Sell seamlessly across web, mobile, social media, and marketplaces with a unified backend for inventory and orders.",
+      description: "Sell across web, mobile, social media, and marketplaces with a unified backend for inventory and orders.",
       color: "amber"
     },
     {
@@ -61,7 +61,7 @@ const UseCases = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Use Cases</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            See how businesses leverage Hanzo Commerce to create exceptional shopping experiences.
+            See how businesses use Hanzo Commerce to create exceptional shopping experiences.
           </p>
         </div>
         

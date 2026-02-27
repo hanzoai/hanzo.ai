@@ -28,7 +28,7 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({ titleAnimationComplet
       className="mt-8 text-lg sm:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed tracking-wide"
     >
       Your AI future belongs in your hands. With Hanzo, pioneer a new era of intelligence with customizable, 
-      private, transparent, and trusted AI solutions that empower all humans to build what was once impossible.
+      private, transparent, and trusted AI solutions that enable all humans to build what was once impossible.
     </motion.p>
   );
 };

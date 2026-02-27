@@ -38,7 +38,7 @@ const VoiceFeature = () => {
             </div>
             <div className="flex items-center space-x-4 text-muted-foreground mt-3">
               <Mic className="h-6 w-6 text-foreground" />
-              <span>Seamless voice recognition</span>
+              <span>Real-time voice recognition</span>
             </div>
           </div>
         </motion.div>

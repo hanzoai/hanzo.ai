@@ -46,10 +46,10 @@ const Organization = () => {
   
   // Mock team members for demonstration
   const teamMembers = [
-    { id: '1', name: 'Alex Johnson', email: 'alex@hanzo.ai', role: 'Owner' },
-    { id: '2', name: 'Sarah Chen', email: 'sarah@hanzo.ai', role: 'Admin' },
-    { id: '3', name: 'Miguel Rodriguez', email: 'miguel@hanzo.ai', role: 'Member' },
-    { id: '4', name: 'Leila Patel', email: 'leila@hanzo.ai', role: 'Member' },
+    { id: '1', name: 'Team Owner', email: 'owner@example.com', role: 'Owner' },
+    { id: '2', name: 'Team Admin', email: 'admin@example.com', role: 'Admin' },
+    { id: '3', name: 'Team Member', email: 'member1@example.com', role: 'Member' },
+    { id: '4', name: 'Team Member', email: 'member2@example.com', role: 'Member' },
   ];
   
   const handleSubmit = (e: React.FormEvent) => {

@@ -55,10 +55,10 @@ const products = [
   {
     icon: <Cpu className="h-8 w-8" />,
     title: "Hanzo MCPs",
-    description: "Server and gateway for multimodal conversational processors with robust tooling.",
+    description: "Server and gateway for multimodal conversational processors with production-grade tooling.",
     code: "import { useMCP } from '@hanzo/mcps';",
     features: [
-      { icon: <Zap className="h-4 w-4" />, text: "Unified interface for GPT-4o, Claude 3, Gemini and more" },
+      { icon: <Zap className="h-4 w-4" />, text: "Unified interface for GPT-5, Claude, Gemini and more" },
       { icon: <Lock className="h-4 w-4" />, text: "Tool-use capabilities with custom tool integration" },
       { icon: <Globe className="h-4 w-4" />, text: "Distributed MCP deployment across edge and cloud" },
       { icon: <Github className="h-4 w-4" />, text: "Comprehensive observability and monitoring" }

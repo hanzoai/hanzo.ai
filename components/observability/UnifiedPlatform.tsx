@@ -23,7 +23,7 @@ const UnifiedPlatform = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Unified Intelligence Platform</h2>
           <p className="text-xl text-foreground/80">
-            Bring all your AI observability needs under one seamless platform. Hanzo integrates monitoring, analytics, debugging, and evaluation into a single powerful toolkit.
+            Bring all your AI observability needs under one unified platform. Hanzo integrates monitoring, analytics, debugging, and evaluation into a single powerful toolkit.
           </p>
         </motion.div>
         

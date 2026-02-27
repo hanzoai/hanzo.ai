@@ -34,7 +34,7 @@ const OurStory = () => {
           <p className="text-muted-foreground md:text-lg leading-relaxed mb-6">
             Along the way, Hanzo has achieved notable milestones in product development, fundraising, and partnerships,
             while navigating pivots and challenges that shaped its guiding philosophy. Our journey demonstrates the power
-            of adaptability, resilience, and first-principles thinking in building technology that empowers others.
+            of adaptability, resilience, and first-principles thinking in building technology that enables others.
           </p>
 
           <p className="text-muted-foreground md:text-lg leading-relaxed">

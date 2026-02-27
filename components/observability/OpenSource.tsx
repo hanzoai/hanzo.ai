@@ -48,7 +48,7 @@ const OpenSource = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Proudly Open Source</h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Transparency is at the core of Hanzo Observability. Deploy it locally, self-host on your own infrastructure, or leverage our managed cloud solution.
+            Transparency is at the core of Hanzo Observability. Deploy it locally, self-host on your own infrastructure, or use our managed cloud solution.
           </p>
         </motion.div>
         

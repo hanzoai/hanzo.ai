@@ -29,7 +29,7 @@ const benefits = [
   {
     icon: <BarChart4 className="h-6 w-6 text-foreground/70" />,
     title: "Informed Decisions",
-    description: "Reliable analytics and predictive insights empower smarter product and operational decisions."
+    description: "Reliable analytics and predictive insights enable smarter product and operational decisions."
   }
 ];
 

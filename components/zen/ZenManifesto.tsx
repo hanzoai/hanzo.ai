@@ -25,7 +25,7 @@ const principles: Principle[] = [
   {
     title: "Completeness",
     japaneseSymbol: "完全性",
-    description: "No half-measures. Batteries always included. Meticulously crafted to empower creators."
+    description: "No half-measures. Batteries always included. Meticulously crafted to enable creators."
   },
   {
     title: "Dimensionality",
@@ -95,7 +95,7 @@ const ZenManifesto: React.FC = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--white)]">Our AI Engineering Manifesto</h2>
           <p className="text-foreground/80 md:text-lg max-w-3xl mx-auto">
-            Hanzo began as a spark—an intuition that AI was the next great leverage. Since then, 
+            Hanzo began as a spark—an intuition that AI was the next great multiplier. Since then,
             we've honed our craft: a fusion of relentless experimentation, bold creativity, and disciplined 
             engineering, forging principles that guide our quest for radical innovation.
           </p>

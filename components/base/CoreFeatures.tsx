@@ -29,7 +29,7 @@ const CoreFeatures = () => {
       features: [
         "Lightweight, embedded SQLite for rapid local development and testing",
         "Instant real-time synchronization on the user side",
-        "Seamlessly scalable to Hanzo's planetary-scale Datastore"
+        "Scales directly to Hanzo's planetary-scale Datastore"
       ],
       color: "green"
     },

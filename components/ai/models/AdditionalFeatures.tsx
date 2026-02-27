@@ -11,7 +11,7 @@ const AdditionalFeatures = () => {
     <div className="bg-gradient-to-r from-white/10 to-white/10 rounded-2xl p-8 border border-white/30 mt-12">
       <h3 className="text-2xl font-bold text-[var(--white)] mb-4">Single API for Everything</h3>
       <p className="text-lg text-foreground/80 mb-8">
-        Our unified API provides seamless access to all AI capabilities through a consistent, developer-friendly interface
+        Our unified API provides direct access to all AI capabilities through a consistent, developer-friendly interface
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

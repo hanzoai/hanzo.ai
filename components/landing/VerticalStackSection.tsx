@@ -182,7 +182,7 @@ const VerticalStackSection = () => {
           className="text-center mt-16"
         >
           <p className="text-muted-foreground text-sm">
-            From identity management to edge deployment, every layer works together seamlessly.
+            From identity management to edge deployment, every layer works together natively.
           </p>
         </motion.div>
       </div>
