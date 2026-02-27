@@ -28,7 +28,7 @@ export const partnerLogos: PartnerLogo[] = [
     name: "Lux",
     src: "/logos/partners/lux.svg",
     className: "h-6",
-    href: "https://lux.network",
+    href: "https://lux.fund",
   },
   {
     name: "Microsoft",
@@ -51,13 +51,13 @@ export const partnerLogos: PartnerLogo[] = [
   {
     name: "Techstars",
     src: "/logos/partners/techstars.svg",
-    className: "h-9",
+    className: "h-11",
     href: "https://www.techstars.com",
   },
   {
     name: "Zoo Labs Foundation",
     src: "/logos/partners/zoo-labs-foundation.svg",
-    className: "h-9",
+    className: "h-11",
     href: "https://zoo.ngo",
   },
 ];

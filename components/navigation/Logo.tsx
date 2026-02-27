@@ -155,7 +155,7 @@ const Logo = () => {
           onAnimationComplete={() => setAnimationComplete(true)}
           style={{ transformOrigin: "center center" }}
         >
-          <HanzoLogo variant="white" className="w-full h-full" />
+          <HanzoLogo variant="white" size={20} />
         </motion.div>
 
         {/* Wordmark - absolute positioned so it doesn't shift other content */}
