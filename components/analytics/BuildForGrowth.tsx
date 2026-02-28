@@ -28,19 +28,19 @@ const BuildForGrowth = () => {
               icon: <TrendingUp className="h-8 w-8 text-foreground" />,
               title: "Conversion Optimization",
               description: "Identify and fix bottlenecks in your user journey to improve conversion rates.",
-              metrics: "+27% average increase in conversions"
+              metrics: "Funnel analysis & A/B testing"
             },
             {
               icon: <Users className="h-8 w-8 text-foreground/70" />,
               title: "Audience Insights",
               description: "Understand your users better with detailed demographics and behavior analysis.",
-              metrics: "15M+ user profiles analyzed daily"
+              metrics: "Cohort & segment analytics"
             },
             {
               icon: <CreditCard className="h-8 w-8 text-foreground/70" />,
               title: "Revenue Impact",
               description: "See the direct financial impact of your optimization efforts in real-time.",
-              metrics: "$1.2B+ in tracked revenue"
+              metrics: "Revenue attribution tracking"
             }
           ].map((item, index) => (
             <motion.div

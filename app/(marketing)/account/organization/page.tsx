@@ -44,13 +44,8 @@ const Organization = () => {
     }
   }, [currentOrganization]);
   
-  // Mock team members for demonstration
-  const teamMembers = [
-    { id: '1', name: 'Team Owner', email: 'owner@example.com', role: 'Owner' },
-    { id: '2', name: 'Team Admin', email: 'admin@example.com', role: 'Admin' },
-    { id: '3', name: 'Team Member', email: 'member1@example.com', role: 'Member' },
-    { id: '4', name: 'Team Member', email: 'member2@example.com', role: 'Member' },
-  ];
+  // Team members from real organization context
+  const teamMembers = currentOrganization?.members || [];
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -180,55 +175,63 @@ const Organization = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {teamMembers.map((member) => (
-                  <TableRow key={member.id} className="border-gray-800/10">
-                    <TableCell>
-                      <div className="flex items-center space-x-3">
-                        <Avatar className="h-8 w-8">
-                          {member.avatar ? <AvatarImage src={member.avatar} /> : null}
-                          <AvatarFallback className="bg-gray-900/50">
-                            {member.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <div className="font-medium">{member.name}</div>
-                          <div className="text-sm text-muted-foreground">{member.email}</div>
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <span className={`px-2 py-1 rounded-full text-xs ${
-                        member.role === 'Owner' 
-                          ? 'bg-primary/10 text-foreground' 
-                          : member.role === 'Admin' 
-                            ? 'bg-primary/10 text-foreground/70' 
-                            : 'bg-gray-900/20 text-foreground/80'
-                      }`}>
-                        {member.role}
-                      </span>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                            <MoreVertical className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-[var(--black)] border-gray-800/30">
-                          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
-                            View Profile
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
-                            Change Role
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="text-foreground/70 hover:bg-primary/5 hover:text-foreground/70">
-                            Remove
-                          </DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
+                {teamMembers.length === 0 ? (
+                  <TableRow>
+                    <TableCell colSpan={3} className="text-center py-8 text-muted-foreground">
+                      No team members yet. Invite someone to get started.
                     </TableCell>
                   </TableRow>
-                ))}
+                ) : (
+                  teamMembers.map((member: { id: string; name: string; email: string; role: string; avatar?: string }) => (
+                    <TableRow key={member.id} className="border-gray-800/10">
+                      <TableCell>
+                        <div className="flex items-center space-x-3">
+                          <Avatar className="h-8 w-8">
+                            {member.avatar ? <AvatarImage src={member.avatar} /> : null}
+                            <AvatarFallback className="bg-gray-900/50">
+                              {member.name.split(" ").map((part: string) => part[0]).slice(0, 2).join("")}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <div className="font-medium">{member.name}</div>
+                            <div className="text-sm text-muted-foreground">{member.email}</div>
+                          </div>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <span className={`px-2 py-1 rounded-full text-xs ${
+                          member.role === 'Owner'
+                            ? 'bg-primary/10 text-foreground'
+                            : member.role === 'Admin'
+                              ? 'bg-primary/10 text-foreground/70'
+                              : 'bg-gray-900/20 text-foreground/80'
+                        }`}>
+                          {member.role}
+                        </span>
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className="bg-[var(--black)] border-gray-800/30">
+                            <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
+                              View Profile
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
+                              Change Role
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="text-foreground/70 hover:bg-primary/5 hover:text-foreground/70">
+                              Remove
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                )}
               </TableBody>
             </Table>
           </div>

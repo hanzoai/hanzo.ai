@@ -6,34 +6,34 @@ import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
-    company: "Ramp",
-    logo: "R",
-    quote: "Hanzo Dev has dramatically accelerated our team's coding efficiency. I can now write EDA code in a notebook—pulling data, training a model, and evaluating it with basic metrics—and then ask Hanzo to convert that into a Metaflow pipeline. This process saves 1-2 days of routine (and often boring!) work per model.",
-    author: "Anton Biryukov",
-    title: "Staff Software Engineer",
-    link: "/customers/ramp",
+    company: "Damon Motorcycles",
+    logo: "D",
+    quote: "Hanzo Dev accelerated our engineering velocity dramatically. Having an AI coding agent that understands our entire codebase meant our team could focus on product decisions instead of boilerplate.",
+    author: "Jay Giraud",
+    title: "CEO, Damon Motorcycles",
+    link: "/customers",
   },
   {
-    company: "Intercom",
-    logo: "I",
-    quote: "With Hanzo, we're not just automating customer service—we're elevating it to truly human quality. This lets support teams think more strategically about customer experience and what makes interactions genuinely valuable.",
-    author: "Fergal Reid",
-    title: "VP of AI",
-    link: "/customers/intercom",
+    company: "Bellabeat",
+    logo: "B",
+    quote: "We went from idea to working prototype in days instead of weeks. Hanzo Dev understands context across our entire stack and keeps our team shipping fast without technical debt.",
+    author: "Sandro Mur",
+    title: "CEO, Bellabeat",
+    link: "/customers",
   },
   {
-    company: "Notion",
-    logo: "N",
-    quote: "Hanzo Dev is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Hanzo Dev busy as possible.",
-    author: "Simon Last",
-    title: "Co-founder",
-    link: "/customers/notion",
+    company: "SKULLY",
+    logo: "S",
+    quote: "Hanzo Dev is like having a senior engineer pair-programming with every developer on the team simultaneously. The productivity gains are real and measurable.",
+    author: "Marcus Weller",
+    title: "CEO, SKULLY Technologies",
+    link: "/customers",
   },
 ];
 
 const companyLogos = [
-  "Ramp", "Intercom", "Notion", "Stripe", "Shopify", "Vercel",
-  "Linear", "Figma", "Pitch", "Loom", "Discord", "Slack",
+  "Triller", "Damon", "Bellabeat", "Unikrn", "Cover", "Casper",
+  "SKULLY", "Aura", "KANOA", "Myle", "Cove", "Zoo Labs",
 ];
 
 const Testimonials = () => {

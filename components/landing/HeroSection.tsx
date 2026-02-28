@@ -59,19 +59,19 @@ const DASHBOARD_NAV = [
   { label: "Settings", icon: Settings },
 ];
 
-// Terminal lines - demonstrates the vertical stack in one story
-const TERMINAL_LINES = [
+// Terminal lines — brand name is injected dynamically
+const getTerminalLines = (brand: string) => [
   { text: "$ curl -fsSL hanzo.sh | bash", type: "command" },
-  { text: "$ hanzo team create acme", type: "command" },
+  { text: `$ hanzo team create ${brand}`, type: "command" },
   { text: "$ hanzo login", type: "command" },
-  { text: "$ hanzo iam role bind --role engineer --to dev@acme.com", type: "command" },
+  { text: `$ hanzo iam role bind --role engineer --to dev@${brand}.com`, type: "command" },
   { text: "$ hanzo kms key create dev-secrets", type: "command" },
   { text: '$ hanzo dev "Ship a RAG API for ./docs. Expose /chat. Write tests."', type: "command" },
-  { text: "✓ Plan created • policy=engineer • kms=dev-secrets", type: "success" },
+  { text: `✓ Plan created • policy=engineer • kms=dev-secrets`, type: "success" },
   { text: "✓ Implemented: api/ tests/", type: "success" },
   { text: "✓ Ready to deploy as docs-api → target=k8s", type: "success" },
   { text: "? Approve deploy? (y/N) y", type: "prompt" },
-  { text: "✓ Live: https://docs-api.acme.dev", type: "success", highlight: true },
+  { text: `✓ Live: https://docs-api.${brand}.hanzo.run`, type: "success", highlight: true },
 ];
 
 // Mobile view tabs
@@ -83,6 +83,7 @@ const HeroSection = () => {
   const [mobileTab, setMobileTab] = useState<MobileTab>("dashboard");
   const [terminalStep, setTerminalStep] = useState(0);
   const [brandIdx, setBrandIdx] = useState(0);
+  const [terminalBrand, setTerminalBrand] = useState("lux");
 
   useEffect(() => {
     setMounted(true);
@@ -96,17 +97,30 @@ const HeroSection = () => {
     return () => clearInterval(t);
   }, []);
 
-  // Terminal typing animation
+  // Memoize terminal lines for current brand
+  const terminalLines = React.useMemo(() => getTerminalLines(terminalBrand), [terminalBrand]);
+
+  // Terminal typing animation — loops and updates brand on each cycle
   useEffect(() => {
     if (!mounted) return;
     const timer = setInterval(() => {
       setTerminalStep((prev) => {
-        if (prev < TERMINAL_LINES.length) return prev + 1;
+        if (prev < terminalLines.length) return prev + 1;
         return prev;
       });
-    }, 600);
+    }, 550);
     return () => clearInterval(timer);
-  }, [mounted]);
+  }, [mounted, terminalLines.length]);
+
+  // When terminal finishes, reset with current brand after a pause
+  useEffect(() => {
+    if (terminalStep < terminalLines.length) return;
+    const t = setTimeout(() => {
+      setTerminalBrand(ROTATING_BRANDS[brandIdx].name.toLowerCase());
+      setTerminalStep(0);
+    }, 2800);
+    return () => clearTimeout(t);
+  }, [terminalStep, terminalLines.length, brandIdx]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("curl -fsSL hanzo.sh | bash");
@@ -275,7 +289,7 @@ const HeroSection = () => {
       </div>
       {/* Terminal content - fixed height with scroll */}
       <div className="p-4 font-mono text-xs bg-background h-[220px] overflow-y-auto">
-        {TERMINAL_LINES.slice(0, terminalStep).map((line, idx) => (
+        {terminalLines.slice(0, terminalStep).map((line, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0 }}
@@ -298,13 +312,13 @@ const HeroSection = () => {
             </span>
           </motion.div>
         ))}
-        {terminalStep < TERMINAL_LINES.length && (
+        {terminalStep < terminalLines.length && (
           <div className="flex items-center gap-1">
             <span className="text-muted-foreground">$</span>
             <span className="w-2 h-4 bg-primary/80 animate-pulse" />
           </div>
         )}
-        {terminalStep >= TERMINAL_LINES.length && (
+        {terminalStep >= terminalLines.length && (
           <div className="flex items-center gap-1 mt-2">
             <span className="text-muted-foreground">$</span>
             <span className="w-2 h-4 bg-primary/80 animate-pulse" />
@@ -366,7 +380,7 @@ const HeroSection = () => {
             <span className="text-[9px] text-foreground/70 font-medium">Deploy Complete</span>
           </div>
           <div className="text-[10px] text-foreground">docs-api is now live</div>
-          <div className="text-[8px] text-muted-foreground mt-0.5 truncate">https://docs-api.acme.dev</div>
+          <div className="text-[8px] text-muted-foreground mt-0.5 truncate">https://docs-api.{ROTATING_BRANDS[brandIdx].name.toLowerCase()}.hanzo.run</div>
         </motion.div>
 
         <div className="space-y-1.5 flex-1 overflow-hidden">

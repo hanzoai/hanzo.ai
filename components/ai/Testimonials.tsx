@@ -8,19 +8,19 @@ import { Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Hanzo's AI Engineering Platform has completely transformed how we build and deploy AI applications. What used to take us weeks now takes days.",
-      author: "Enterprise Client",
-      title: "CTO, Fortune 500 Company"
+      quote: "Hanzo gave us the infrastructure backbone to move fast without rebuilding from scratch. The platform let our team focus on the product, not the plumbing.",
+      author: "Jay Giraud",
+      title: "CEO, Damon Motorcycles"
     },
     {
-      quote: "The unified approach to model deployment, monitoring, and scaling has allowed our team to focus on building great AI experiences instead of wrestling with infrastructure.",
-      author: "Engineering Lead",
-      title: "Head of AI, Enterprise Client"
+      quote: "We needed a platform that could handle real-time data at scale without sacrificing developer experience. Hanzo delivered on both fronts.",
+      author: "Marcus Weller",
+      title: "CEO, SKULLY Technologies"
     },
     {
-      quote: "We evaluated several AI platforms, but Hanzo stood out for its developer experience and comprehensive observability features. It's made monitoring our AI in production so much easier.",
-      author: "Senior Engineer",
-      title: "Principal Engineer, Enterprise Client"
+      quote: "Hanzo's AI infrastructure helped us personalize experiences for millions of users while keeping our stack lean and our team focused on what matters.",
+      author: "Sandro Mur",
+      title: "CEO, Bellabeat"
     }
   ];
 
@@ -93,7 +93,7 @@ const Testimonials = () => {
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
                   <div className="w-2 h-2 rounded-full bg-primary/10 mr-2"></div>
-                  <span className="text-foreground/80 text-sm">4,500+ community members</span>
+                  <span className="text-foreground/80 text-sm">Active developer community</span>
                 </div>
                 <div className="flex items-center bg-gray-800/50 rounded-full px-4 py-2">
                   <div className="w-2 h-2 rounded-full bg-primary/10 mr-2"></div>
@@ -116,7 +116,7 @@ const Testimonials = () => {
                   </div>
                 ))}
                 <div className="h-12 w-12 rounded-full bg-primary/20 border-2 border-gray-900 flex items-center justify-center text-[var(--white)] text-sm font-medium">
-                  +2.5k
+                  +
                 </div>
               </div>
             </div>

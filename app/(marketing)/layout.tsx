@@ -14,11 +14,13 @@ export const metadata: Metadata = {
     url: 'https://hanzo.ai',
     siteName: 'Hanzo AI',
     type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Hanzo AI — Vertically Integrated AI Platform' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hanzo AI — Vertically Integrated AI Platform',
     description: '390+ models, agent SDK, LLM gateway, MCP tools. Open source AI cloud.',
+    images: ['/opengraph-image'],
   },
 }
 

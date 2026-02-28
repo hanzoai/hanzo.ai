@@ -1,19 +1,48 @@
 'use client'
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { Github, Star, GitFork, Heart, ArrowRight, ExternalLink, Code, Users } from "lucide-react";
+import { Github, Star, Heart, ArrowRight, ExternalLink, Code, Building2, Scale, Sparkles } from "lucide-react";
 import OSSCatalog from "@/components/oss/OSSCatalog";
 
-const stats = [
-  { label: "Open Source Projects", value: "260+", icon: Code },
-  { label: "GitHub Stars", value: "50K+", icon: Star },
-  { label: "Contributors", value: "500+", icon: Users },
-  { label: "Forks", value: "10K+", icon: GitFork },
-];
+// Real org repo counts (fallbacks verified 2026-02-27; refreshed dynamically)
+const ORG_NAMES = ["hanzoai", "luxfi", "zenlm", "hanzo-js", "hanzo-apps", "zoo-labs"];
+const ORG_DEFAULTS: Record<string, number> = {
+  hanzoai: 303, luxfi: 289, zenlm: 83, "hanzo-js": 15, "hanzo-apps": 8, "zoo-labs": 25,
+};
+
+function useOSSStats() {
+  const [totalRepos, setTotalRepos] = useState(
+    Object.values(ORG_DEFAULTS).reduce((a, b) => a + b, 0)
+  );
+  useEffect(() => {
+    let sum = 0;
+    let fetched = 0;
+    ORG_NAMES.forEach(org => {
+      fetch(`https://api.github.com/orgs/${org}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(d => {
+          if (d?.public_repos) sum += d.public_repos;
+          else sum += ORG_DEFAULTS[org];
+          fetched++;
+          if (fetched === ORG_NAMES.length) setTotalRepos(sum);
+        })
+        .catch(() => { fetched++; sum += ORG_DEFAULTS[org]; if (fetched === ORG_NAMES.length) setTotalRepos(sum); });
+    });
+  }, []);
+  return totalRepos;
+}
 
 const OpenSource = () => {
+  const totalRepos = useOSSStats();
+  const stats = [
+    { label: "Public Repositories", value: `${totalRepos}+`, icon: Code },
+    { label: "GitHub Organizations", value: "6", icon: Building2 },
+    { label: "Open License", value: "MIT/Apache", icon: Scale },
+    { label: "Open-Weight Models", value: "90+", icon: Sparkles },
+  ];
+
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
       

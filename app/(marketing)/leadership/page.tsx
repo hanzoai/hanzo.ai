@@ -220,9 +220,9 @@ const leaders = [
 
 const stats = [
   { value: "2017", label: "Techstars" },
-  { value: "100+", label: "Team Members" },
-  { value: "30+", label: "Countries" },
-  { value: "2,500+", label: "Open Source Projects" }
+  { value: "700+", label: "Open Source Repos" },
+  { value: "6", label: "GitHub Orgs" },
+  { value: "MIT/Apache", label: "Open License" }
 ];
 
 const Leadership = () => {

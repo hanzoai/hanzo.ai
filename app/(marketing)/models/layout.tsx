@@ -10,11 +10,13 @@ export const metadata: Metadata = {
     url: 'https://hanzo.ai/models',
     siteName: 'Hanzo AI',
     type: 'website',
+    images: [{ url: '/models/opengraph-image', width: 1200, height: 630, alt: '390+ AI Models on Hanzo AI' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Models — Hanzo AI | 390+ LLMs',
     description: 'Access 390+ AI models through one OpenAI-compatible API.',
+    images: ['/models/opengraph-image'],
   },
 }
 

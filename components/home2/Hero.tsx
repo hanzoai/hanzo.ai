@@ -50,10 +50,10 @@ const Hero = () => {
             </div>
             
             <div className="mt-16 text-sm text-muted-foreground flex flex-wrap justify-center gap-x-8 gap-y-2">
-              <div>3.2B+ Downloads</div>
-              <div>47k+ GitHub Stars</div>
-              <div>900+ Contributors</div>
-              <div>10k+ Active Developers</div>
+              <div>700+ Open Source Repos</div>
+              <div>6 GitHub Orgs</div>
+              <div>MIT/Apache Licensed</div>
+              <div>90+ Open-Weight Models</div>
             </div>
           </motion.div>
         </div>

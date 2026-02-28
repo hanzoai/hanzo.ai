@@ -84,22 +84,18 @@ const HeroSection = () => {
             </Button>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-2">3.2B+</h3>
-              <p className="text-muted-foreground">Downloads</p>
+              <h3 className="text-3xl font-bold mb-2">L4/L7</h3>
+              <p className="text-muted-foreground">Load Balancing</p>
             </div>
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-2">47K+</h3>
-              <p className="text-muted-foreground">Stars on Github</p>
+              <h3 className="text-3xl font-bold mb-2">mTLS</h3>
+              <p className="text-muted-foreground">Zero-Trust Security</p>
             </div>
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-2">900+</h3>
-              <p className="text-muted-foreground">Contributors</p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-3xl font-bold mb-2">Top 15</h3>
-              <p className="text-muted-foreground">on Docker hub</p>
+              <h3 className="text-3xl font-bold mb-2">sub-ms</h3>
+              <p className="text-muted-foreground">Routing Latency</p>
             </div>
           </div>
         </div>
