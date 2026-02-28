@@ -62,27 +62,55 @@ interface ZenModel {
 }
 
 const ZEN_MODELS: ZenModel[] = [
-  // zen4 — the main family
-  { id: "zen4-mini",         label: "zen4-mini",         params: "4B",      tier: "edge",      tag: "abliterated", hf: "zenlm/zen4-mini" },
-  { id: "zen4",              label: "zen4",              params: "8B",      tier: "edge",      tag: "abliterated", hf: "zenlm/zen4" },
-  { id: "zen4-pro",          label: "zen4-pro",          params: "14B",     tier: "pro",       tag: "abliterated", hf: "zenlm/zen4-pro" },
-  { id: "zen4-max",          label: "zen4-max",          params: "30B MoE", active: "3B",  tier: "pro",       tag: "abliterated", hf: "zenlm/zen4-max" },
-  { id: "zen4-coder-flash",  label: "zen4-coder-flash",  params: "31B MoE", active: "3B",  ctx: "131K",  tier: "pro",       tag: "code", hf: "zenlm/zen4-coder-flash" },
-  { id: "zen4-pro-max",      label: "zen4-pro-max",      params: "80B MoE", active: "3B",  tier: "max",       tag: "abliterated", hf: "zenlm/zen4-pro-max" },
-  { id: "zen4-coder",        label: "zen4-coder",        params: "80B MoE", tier: "max",       tag: "code", hf: "zenlm/zen4-coder" },
-  { id: "zen4-ultra",        label: "zen4-ultra",        params: "1.04T",   active: "32B", ctx: "256K",  tier: "ultra",     hf: "zenlm/zen4-ultra" },
-  { id: "zen4-ultra-gguf",   label: "zen4-ultra GGUF",   params: "1.04T",   active: "32B", tier: "ultra",     tag: "GGUF", hf: "zenlm/zen4-ultra-gguf" },
-  // vision-language
-  { id: "zen-vl-4b-instruct",label: "zen-vl-4b",        params: "4B",      ctx: "256K",  tier: "vision",    tag: "instruct", hf: "zenlm/zen-vl-4b-instruct" },
-  { id: "zen-vl-4b-agent",   label: "zen-vl-4b-agent",  params: "4B",      ctx: "256K",  tier: "vision",    tag: "agent", hf: "zenlm/zen-vl-4b-agent" },
-  { id: "zen-vl-8b-instruct",label: "zen-vl-8b",        params: "8B",      ctx: "256K",  tier: "vision",    tag: "instruct", hf: "zenlm/zen-vl-8b-instruct" },
-  { id: "zen-vl-8b-agent",   label: "zen-vl-8b-agent",  params: "8B",      ctx: "256K",  tier: "vision",    tag: "agent", hf: "zenlm/zen-vl-8b-agent" },
-  { id: "zen-vl-30b-instruct",label:"zen-vl-30b",       params: "30B MoE", ctx: "256K",  tier: "vision",    tag: "instruct", hf: "zenlm/zen-vl-30b-instruct" },
-  { id: "zen-vl-30b-agent",  label: "zen-vl-30b-agent", params: "30B MoE", ctx: "256K",  tier: "vision",    tag: "agent", hf: "zenlm/zen-vl-30b-agent" },
-  // other
-  { id: "zen-nano",          label: "zen-nano",          params: "0.6B",    ctx: "40K",   tier: "edge",      hf: "zenlm/zen-nano" },
-  { id: "zen-omni",          label: "zen-omni",          params: "30B MoE", active: "3B", tier: "multimodal", tag: "text+vision+audio", hf: "zenlm/zen-omni" },
-  { id: "zen-max",           label: "zen-max",           params: "671B",    active: "14B",ctx: "256K",  tier: "ultra",     tag: "agentic", hf: "zenlm/zen-max" },
+  // Zen5 — preview
+  { id: "zen5",              label: "zen5",              params: "TBA",                        ctx: "1M+",  tier: "ultra", tag: "preview",          hf: "zenlm/zen5" },
+  { id: "zen5-pro",          label: "zen5-pro",          params: "TBA",                        ctx: "512K", tier: "ultra", tag: "preview",          hf: "zenlm/zen5-pro" },
+  { id: "zen5-max",          label: "zen5-max",          params: "TBA",                        ctx: "2M",   tier: "ultra", tag: "preview",          hf: "zenlm/zen5-max" },
+  { id: "zen5-ultra",        label: "zen5-ultra",        params: "TBA",                        ctx: "1M",   tier: "ultra", tag: "preview",          hf: "zenlm/zen5-ultra" },
+  { id: "zen5-mini",         label: "zen5-mini",         params: "TBA",                        ctx: "256K", tier: "pro",   tag: "preview",          hf: "zenlm/zen5-mini" },
+  // Zen4 — language
+  { id: "zen4",              label: "zen4",              params: "744B MoE", active: "40B",    ctx: "202K", tier: "ultra",                           hf: "zenlm/zen4" },
+  { id: "zen4-ultra",        label: "zen4-ultra",        params: "744B MoE", active: "40B",    ctx: "262K", tier: "ultra", tag: "CoT",              hf: "zenlm/zen4-ultra" },
+  { id: "zen4-pro",          label: "zen4-pro",          params: "80B MoE",  active: "3B",     ctx: "131K", tier: "max",                             hf: "zenlm/zen4-pro" },
+  { id: "zen4-max",          label: "zen4-max",          params: "Dense",                      ctx: "1M",   tier: "ultra", tag: "agentic",          hf: "zenlm/zen4-max" },
+  { id: "zen4.6",            label: "zen4.6",            params: "Dense",                      ctx: "1M",   tier: "max",   tag: "agentic",          hf: "zenlm/zen4.6" },
+  { id: "zen4-mini",         label: "zen4-mini",         params: "Dense",                      ctx: "128K", tier: "edge",  tag: "free tier",        hf: "zenlm/zen4-mini" },
+  { id: "zen4-thinking",     label: "zen4-thinking",     params: "80B MoE",  active: "3B",     ctx: "131K", tier: "pro",   tag: "CoT",              hf: "zenlm/zen4-thinking" },
+  // Zen4 — coder
+  { id: "zen4-coder",        label: "zen4-coder",        params: "480B MoE", active: "35B",    ctx: "163K", tier: "max",   tag: "code",             hf: "zenlm/zen4-coder" },
+  { id: "zen4-coder-pro",    label: "zen4-coder-pro",    params: "480B Dense",                 ctx: "131K", tier: "ultra", tag: "BF16",             hf: "zenlm/zen4-coder-pro" },
+  { id: "zen4-coder-flash",  label: "zen4-coder-flash",  params: "30B MoE",  active: "3B",     ctx: "262K", tier: "pro",   tag: "code",             hf: "zenlm/zen4-coder-flash" },
+  // Zen3 — core
+  { id: "zen3-omni",         label: "zen3-omni",         params: "~200B Dense",                ctx: "202K", tier: "multimodal", tag: "text+vision+audio", hf: "zenlm/zen3-omni" },
+  { id: "zen3-vl",           label: "zen3-vl",           params: "30B MoE",  active: "3B",     ctx: "262K", tier: "vision",                          hf: "zenlm/zen3-vl" },
+  { id: "zen3-nano",         label: "zen3-nano",         params: "8B Dense",                   ctx: "128K", tier: "edge",  tag: "free tier",        hf: "zenlm/zen3-nano" },
+  { id: "zen3-guard",        label: "zen3-guard",        params: "4B Dense",                   ctx: "65K",  tier: "pro",   tag: "safety",           hf: "zenlm/zen3-guard" },
+  // Zen3 — embedding
+  { id: "zen3-embedding",        label: "zen3-embedding",        params: "N/A",                ctx: "8K",   tier: "pro",   tag: "3072d",            hf: "zenlm/zen3-embedding" },
+  { id: "zen3-embedding-medium", label: "zen3-embedding-medium", params: "4B",                 ctx: "40K",  tier: "pro",                             hf: "zenlm/zen3-embedding-medium" },
+  { id: "zen3-embedding-small",  label: "zen3-embedding-small",  params: "0.6B",               ctx: "32K",  tier: "edge",                            hf: "zenlm/zen3-embedding-small" },
+  { id: "zen3-embedding-openai", label: "zen3-embedding-openai", params: "N/A",                ctx: "8K",   tier: "pro",   tag: "OpenAI compat",    hf: "zenlm/zen3-embedding-openai" },
+  // Zen3 — reranker
+  { id: "zen3-reranker",         label: "zen3-reranker",         params: "8B",                 ctx: "40K",  tier: "pro",                             hf: "zenlm/zen3-reranker" },
+  { id: "zen3-reranker-medium",  label: "zen3-reranker-medium",  params: "4B",                 ctx: "40K",  tier: "pro",                             hf: "zenlm/zen3-reranker-medium" },
+  { id: "zen3-reranker-small",   label: "zen3-reranker-small",   params: "0.6B",               ctx: "40K",  tier: "edge",                            hf: "zenlm/zen3-reranker-small" },
+  // Zen3 — image
+  { id: "zen3-image",             label: "zen3-image",             params: "N/A",              tier: "pro",   tag: "diffusion",    hf: "zenlm/zen3-image" },
+  { id: "zen3-image-max",         label: "zen3-image-max",         params: "N/A",              tier: "ultra", tag: "max quality",  hf: "zenlm/zen3-image-max" },
+  { id: "zen3-image-dev",         label: "zen3-image-dev",         params: "N/A",              tier: "pro",   tag: "development",  hf: "zenlm/zen3-image-dev" },
+  { id: "zen3-image-fast",        label: "zen3-image-fast",        params: "N/A",              tier: "edge",  tag: "fast",         hf: "zenlm/zen3-image-fast" },
+  { id: "zen3-image-sdxl",        label: "zen3-image-sdxl",        params: "N/A",              tier: "pro",   tag: "1024px",       hf: "zenlm/zen3-image-sdxl" },
+  { id: "zen3-image-playground",  label: "zen3-image-playground",  params: "N/A",              tier: "pro",   tag: "aesthetic",    hf: "zenlm/zen3-image-playground" },
+  { id: "zen3-image-ssd",         label: "zen3-image-ssd",         params: "1B",               tier: "edge",  tag: "fastest",      hf: "zenlm/zen3-image-ssd" },
+  { id: "zen3-image-jp",          label: "zen3-image-jp",          params: "N/A",              tier: "pro",   tag: "Japanese",     hf: "zenlm/zen3-image-jp" },
+  // Zen3 — audio
+  { id: "zen3-audio",        label: "zen3-audio",        params: "1.5B",                       tier: "pro",   tag: "100+ langs",   hf: "zenlm/zen3-audio" },
+  { id: "zen3-audio-fast",   label: "zen3-audio-fast",   params: "809M",                       tier: "edge",  tag: "fast",         hf: "zenlm/zen3-audio-fast" },
+  { id: "zen3-asr",          label: "zen3-asr",          params: "N/A",                        tier: "pro",   tag: "streaming",    hf: "zenlm/zen3-asr" },
+  { id: "zen3-asr-v1",       label: "zen3-asr-v1",       params: "N/A",                        tier: "edge",  tag: "legacy",       hf: "zenlm/zen3-asr-v1" },
+  { id: "zen3-tts",          label: "zen3-tts",          params: "82M",                        tier: "pro",   tag: "40+ voices",   hf: "zenlm/zen3-tts" },
+  { id: "zen3-tts-hd",       label: "zen3-tts-hd",       params: "N/A",                        tier: "ultra", tag: "broadcast",    hf: "zenlm/zen3-tts-hd" },
+  { id: "zen3-tts-fast",     label: "zen3-tts-fast",     params: "82M",                        tier: "edge",  tag: "low latency",  hf: "zenlm/zen3-tts-fast" },
 ]
 
 const TIER_STYLE: Record<string, string> = {
@@ -100,7 +128,7 @@ const TIER_LABEL: Record<string, string> = {
 const BENEFITS = [
   { icon: Clock,  title: "OpenAI-Compatible API",  description: "Drop-in replacement for GPT/Claude. Same SDK, same format, lower cost." },
   { icon: Globe,  title: "Open Weight",             description: "All Zen models are open-weight on HuggingFace. Run them yourself." },
-  { icon: Layers, title: "Full Spectrum",           description: "0.6B edge to 1T+ frontier. Text, code, vision, audio — one API." },
+  { icon: Layers, title: "Full Spectrum",           description: "82M edge to 1T+ frontier. Text, code, vision, audio, image — one API." },
   { icon: Cpu,    title: "MoE Efficiency",          description: "Mixture-of-Experts activates only a fraction of params per token." },
 ]
 
@@ -214,7 +242,7 @@ const Zen = () => {
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Full Model Catalog</h2>
-                  <p className="text-muted-foreground text-sm">{ZEN_MODELS.length} open-weight models · Available via API and HuggingFace</p>
+                  <p className="text-muted-foreground text-sm">{ZEN_MODELS.length}+ models · Available via API and HuggingFace</p>
                 </div>
                 <a href="https://huggingface.co/zenlm" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-border text-muted-foreground hover:text-foreground transition-colors">
