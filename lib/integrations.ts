@@ -5,6 +5,10 @@ export interface Integration {
   category: 'sdk' | 'framework' | 'platform' | 'infra' | 'language'
   icon: string
   examples: { lang: string; label: string; code: string }[]
+  upstream: string
+  creator: string
+  creatorUrl: string
+  license: string
 }
 
 export const INTEGRATIONS: Integration[] = [
@@ -14,6 +18,10 @@ export const INTEGRATIONS: Integration[] = [
     description: 'Use the official OpenAI Python SDK with Hanzo AI by pointing it to our OpenAI-compatible API endpoint. Access 390+ models with your existing OpenAI code — no refactor needed.',
     category: 'sdk',
     icon: '🐍',
+    upstream: 'https://github.com/openai/openai-python',
+    creator: 'OpenAI',
+    creatorUrl: 'https://openai.com',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -73,6 +81,10 @@ export OPENAI_BASE_URL="https://api.hanzo.ai/v1"`,
     description: 'Use the Anthropic Python or TypeScript SDK with Hanzo AI to access Claude models alongside 390+ other models through a single API key and billing account.',
     category: 'sdk',
     icon: '🤖',
+    upstream: 'https://github.com/anthropics/anthropic-sdk-python',
+    creator: 'Anthropic',
+    creatorUrl: 'https://anthropic.com',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -137,6 +149,10 @@ const message = await client.messages.create({
     description: 'Integrate LangChain with Hanzo AI to build chains, agents, and RAG pipelines using any of our 390+ models. Hanzo is OpenAI-compatible so ChatOpenAI just works.',
     category: 'framework',
     icon: '⛓️',
+    upstream: 'https://github.com/langchain-ai/langchain',
+    creator: 'LangChain AI',
+    creatorUrl: 'https://langchain.com',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -209,6 +225,10 @@ llm = ChatOpenAI(
     description: 'Use LlamaIndex with Hanzo AI to build powerful RAG applications, data agents, and query pipelines. Drop in Hanzo as your LLM provider with zero friction.',
     category: 'framework',
     icon: '🦙',
+    upstream: 'https://github.com/run-llama/llama_index',
+    creator: 'LlamaIndex',
+    creatorUrl: 'https://llamaindex.ai',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -272,6 +292,10 @@ streaming_response.print_response_stream()`,
     description: 'Use the Vercel AI SDK with Hanzo AI to build streaming AI UIs, chatbots, and generative interfaces in Next.js, React, and other frameworks.',
     category: 'framework',
     icon: '▲',
+    upstream: 'https://github.com/vercel/ai',
+    creator: 'Vercel',
+    creatorUrl: 'https://vercel.com',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'typescript',
@@ -349,6 +373,10 @@ export default function Chat() {
     description: 'Access Hugging Face models and use the HF Inference API through Hanzo\'s unified gateway. Also use Hanzo AI models with HuggingFace Hub tooling.',
     category: 'sdk',
     icon: '🤗',
+    upstream: 'https://github.com/huggingface/transformers',
+    creator: 'Hugging Face',
+    creatorUrl: 'https://huggingface.co',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'python',
@@ -410,6 +438,10 @@ const chatCompletion = await client.chatCompletion({
     description: 'Build multi-agent systems with Microsoft AutoGen using Hanzo AI as the LLM backend. Hanzo\'s OpenAI-compatible API works seamlessly with AutoGen\'s agent orchestration.',
     category: 'framework',
     icon: '🤝',
+    upstream: 'https://github.com/microsoft/autogen',
+    creator: 'Microsoft Research',
+    creatorUrl: 'https://microsoft.com/en-us/research',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -478,6 +510,10 @@ manager = autogen.GroupChatManager(groupchat=groupchat, llm_config={"config_list
     description: 'Use CrewAI to build collaborative AI agent teams powered by Hanzo AI models. CrewAI\'s role-based agents work with any OpenAI-compatible provider.',
     category: 'framework',
     icon: '🚢',
+    upstream: 'https://github.com/crewAIInc/crewAI',
+    creator: 'CrewAI / João Moura',
+    creatorUrl: 'https://crewai.com',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -555,6 +591,10 @@ crewai create my-crew`,
     description: 'Use DSPy to program (not prompt) Hanzo AI models. DSPy\'s systematic approach to LM prompting works with any OpenAI-compatible provider.',
     category: 'framework',
     icon: '🔬',
+    upstream: 'https://github.com/stanfordnlp/dspy',
+    creator: 'Stanford NLP / Omar Khattab',
+    creatorUrl: 'https://dspy.ai',
+    license: 'MIT',
     examples: [
       {
         lang: 'python',
@@ -610,6 +650,10 @@ optimized = teleprompter.compile(program, trainset=train_data)`,
     description: 'Build production-ready NLP pipelines and RAG systems with Haystack using Hanzo AI as the LLM provider. Haystack\'s OpenAI integration works seamlessly.',
     category: 'framework',
     icon: '🌾',
+    upstream: 'https://github.com/deepset-ai/haystack',
+    creator: 'deepset.ai',
+    creatorUrl: 'https://haystack.deepset.ai',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'python',
@@ -675,6 +719,10 @@ export HANZO_API_KEY="your-hanzo-api-key"`,
     description: 'Use Hanzo AI models inside Cursor IDE by adding a custom API provider. Access Zen, GPT-4.1, Claude Sonnet, and 390+ other models directly in your editor.',
     category: 'platform',
     icon: '🖱️',
+    upstream: 'https://github.com/getcursor/cursor',
+    creator: 'Anysphere',
+    creatorUrl: 'https://cursor.com',
+    license: 'Proprietary',
     examples: [
       {
         lang: 'json',
@@ -720,6 +768,10 @@ curl https://api.hanzo.ai/v1/models \\
     description: 'Configure Continue.dev VS Code / JetBrains extension to use Hanzo AI as your coding assistant. Add Hanzo as a custom OpenAI-compatible provider in your config.',
     category: 'platform',
     icon: '🔄',
+    upstream: 'https://github.com/continuedev/continue',
+    creator: 'Continue.dev',
+    creatorUrl: 'https://continue.dev',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'json',
@@ -786,6 +838,10 @@ code --install-extension Continue.continue
     description: 'Extend your GitHub Copilot workflow with Hanzo AI for access to additional models and capabilities via the API. Use Hanzo for tasks Copilot can\'t handle.',
     category: 'platform',
     icon: '🐙',
+    upstream: 'https://github.com/features/copilot',
+    creator: 'GitHub / Microsoft',
+    creatorUrl: 'https://github.com',
+    license: 'Proprietary',
     examples: [
       {
         lang: 'python',
@@ -857,6 +913,10 @@ jobs:
     description: 'Deploy Hanzo AI-powered services in Docker containers. Use the Hanzo API from any containerized application with proper environment configuration.',
     category: 'infra',
     icon: '🐳',
+    upstream: 'https://github.com/moby/moby',
+    creator: 'Docker / Moby Project',
+    creatorUrl: 'https://docker.com',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'dockerfile',
@@ -918,6 +978,10 @@ client = OpenAI(
     description: 'Deploy Hanzo AI-powered workloads on Kubernetes. Securely manage your Hanzo API key as a K8s secret and inject it into pods.',
     category: 'infra',
     icon: '⚓',
+    upstream: 'https://github.com/kubernetes/kubernetes',
+    creator: 'CNCF / Google',
+    creatorUrl: 'https://kubernetes.io',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'yaml',
@@ -996,6 +1060,10 @@ spec:
     description: 'Use Hanzo AI in Python with the official OpenAI SDK (fully compatible), the Anthropic SDK, or via HTTP with httpx/requests. Zero lock-in, standard interfaces.',
     category: 'language',
     icon: '🐍',
+    upstream: 'https://github.com/python/cpython',
+    creator: 'Python Software Foundation',
+    creatorUrl: 'https://python.org',
+    license: 'PSF License',
     examples: [
       {
         lang: 'python',
@@ -1076,6 +1144,10 @@ client = OpenAI(
     description: 'Use Hanzo AI in TypeScript and Node.js with the OpenAI SDK, Vercel AI SDK, or raw fetch. Full type safety and async/streaming support.',
     category: 'language',
     icon: '🟦',
+    upstream: 'https://github.com/microsoft/TypeScript',
+    creator: 'Microsoft',
+    creatorUrl: 'https://typescriptlang.org',
+    license: 'Apache-2.0',
     examples: [
       {
         lang: 'typescript',
@@ -1144,6 +1216,10 @@ models.data.slice(0, 5).forEach((m) => console.log(m.id));`,
     description: 'Use Hanzo AI in Go using the official OpenAI Go client or any OpenAI-compatible Go library. Hanzo\'s standard REST API works with all HTTP clients.',
     category: 'language',
     icon: '🐹',
+    upstream: 'https://github.com/golang/go',
+    creator: 'Go Authors / Google',
+    creatorUrl: 'https://go.dev',
+    license: 'BSD-3-Clause',
     examples: [
       {
         lang: 'go',
@@ -1240,6 +1316,10 @@ go run main.go`,
     description: 'Use Hanzo AI in Rust via the async-openai crate or raw reqwest HTTP calls. Full async support with Tokio, streaming, and type-safe API access.',
     category: 'language',
     icon: '🦀',
+    upstream: 'https://github.com/rust-lang/rust',
+    creator: 'Rust Foundation',
+    creatorUrl: 'https://rust-lang.org',
+    license: 'MIT / Apache-2.0',
     examples: [
       {
         lang: 'toml',

@@ -63,9 +63,14 @@ export default async function IntegrationPage({ params }: Props) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'HowTo',
+    '@type': ['HowTo', 'SoftwareApplication'],
     name: `Use Hanzo AI with ${integration.name}`,
     description: integration.description,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Any',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    author: { '@type': 'Organization', name: integration.creator, url: integration.creatorUrl },
+    license: integration.upstream,
     step: integration.examples.map((ex, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
@@ -120,6 +125,40 @@ export default async function IntegrationPage({ params }: Props) {
               </Link>{' '}
               · Fully OpenAI-compatible · 390+ models available
             </p>
+          </div>
+
+          {/* Attribution */}
+          <div className="mb-10 rounded-xl border border-border bg-muted/30 p-5 flex items-start gap-4">
+            <div className="text-2xl">{integration.icon}</div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-foreground mb-0.5">
+                Created by{' '}
+                <a
+                  href={integration.creatorUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red-400 hover:underline"
+                >
+                  {integration.creator}
+                </a>
+              </p>
+              <p className="text-xs text-muted-foreground mb-2">
+                License:{' '}
+                <span className="font-mono bg-muted px-1.5 py-0.5 rounded text-foreground">{integration.license}</span>
+                {' · '}
+                <a
+                  href={integration.upstream}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  View source on GitHub →
+                </a>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Hanzo AI is OpenAI-compatible, so existing {integration.name} code works with zero refactoring. We deeply appreciate the {integration.creator} team for building and maintaining this open-source project.
+              </p>
+            </div>
           </div>
 
           {/* Code examples */}

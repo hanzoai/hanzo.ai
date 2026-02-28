@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-import { Github, Star, Heart, ArrowRight, ExternalLink, Code, Building2, Scale, Sparkles } from "lucide-react";
+import { Github, GitBranch, Star, Heart, ArrowRight, ExternalLink, Code, Building2, Scale, Sparkles, Check, Wallet, DollarSign, Coins, ShieldCheck, Eye, Users } from "lucide-react";
 import OSSCatalog from "@/components/oss/OSSCatalog";
 
 // Real org repo counts (fallbacks verified 2026-02-27; refreshed dynamically)
@@ -34,6 +33,48 @@ function useOSSStats() {
   return totalRepos;
 }
 
+const OSS_FOUNDATIONS = [
+  { name: "Python", description: "The language powering our ML/AI stack", url: "https://python.org", github: "https://github.com/python/cpython", creator: "Python Software Foundation", license: "PSF", emoji: "🐍" },
+  { name: "Rust", description: "Systems language for our high-performance runtimes", url: "https://rust-lang.org", github: "https://github.com/rust-lang/rust", creator: "Rust Foundation", license: "MIT/Apache-2.0", emoji: "⚙️" },
+  { name: "Go", description: "Powers our gateway, blockchain, and infra tooling", url: "https://go.dev", github: "https://github.com/golang/go", creator: "Go Authors / Google", license: "BSD-3-Clause", emoji: "🐹" },
+  { name: "TypeScript", description: "The backbone of our developer SDKs and web apps", url: "https://typescriptlang.org", github: "https://github.com/microsoft/TypeScript", creator: "Microsoft", license: "Apache-2.0", emoji: "🔷" },
+  { name: "React", description: "Powering every UI we ship", url: "https://react.dev", github: "https://github.com/facebook/react", creator: "Meta Open Source", license: "MIT", emoji: "⚛️" },
+  { name: "Next.js", description: "Every hanzo.ai product is built on Next.js", url: "https://nextjs.org", github: "https://github.com/vercel/next.js", creator: "Vercel", license: "MIT", emoji: "▲" },
+  { name: "PostgreSQL", description: "The database underlying all our stateful services", url: "https://postgresql.org", github: "https://github.com/postgres/postgres", creator: "PostgreSQL Global Development Group", license: "PostgreSQL License", emoji: "🐘" },
+  { name: "Redis", description: "Fast caching and pub/sub throughout our platform", url: "https://redis.io", github: "https://github.com/redis/redis", creator: "Redis Ltd. / Salvatore Sanfilippo", license: "BSD-3-Clause", emoji: "🔴" },
+  { name: "PyTorch", description: "Foundation of our ML training and inference", url: "https://pytorch.org", github: "https://github.com/pytorch/pytorch", creator: "Meta AI Research", license: "BSD-3-Clause", emoji: "🔥" },
+  { name: "Kubernetes", description: "Orchestrates every workload in production", url: "https://kubernetes.io", github: "https://github.com/kubernetes/kubernetes", creator: "CNCF / Google", license: "Apache-2.0", emoji: "☸️" },
+  { name: "Docker", description: "Containers make our 260+ MCP tools portable", url: "https://docker.com", github: "https://github.com/moby/moby", creator: "Docker / Moby Project", license: "Apache-2.0", emoji: "🐳" },
+  { name: "OpenTelemetry", description: "Observability across every service", url: "https://opentelemetry.io", github: "https://github.com/open-telemetry/opentelemetry-specification", creator: "CNCF", license: "Apache-2.0", emoji: "📊" },
+]
+
+const COMMITMENTS = [
+  {
+    title: "We ship open source first",
+    body: "Every tool we build for ourselves gets published. If it's useful to us, it belongs to the community. No internal-only forks."
+  },
+  {
+    title: "We contribute upstream",
+    body: "When we find bugs or missing features in projects we depend on, we fix them upstream — not in private patches."
+  },
+  {
+    title: "We never lock in what we open",
+    body: "Anything published under MIT or Apache-2.0 stays that way. We will never relicense open repos to extract commercial value."
+  },
+  {
+    title: "We credit our foundations",
+    body: "Our platform is built on hundreds of open-source projects. We acknowledge, link to, and financially support the communities and maintainers who make this possible."
+  },
+  {
+    title: "We fund what we depend on",
+    body: "Through GitHub Sponsors, Open Collective, and direct partnerships, we invest back into the projects that power Hanzo."
+  },
+  {
+    title: "We welcome all contributors",
+    body: "Good code can come from anywhere. We maintain a contributor-friendly CONTRIBUTING.md, respond to PRs within 48 hours on active repos, and recognize every contributor."
+  },
+]
+
 const OpenSource = () => {
   const totalRepos = useOSSStats();
   const stats = [
@@ -45,9 +86,6 @@ const OpenSource = () => {
 
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
-      
-      
-
       <main>
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 px-4 md:px-8 lg:px-12 overflow-hidden">
@@ -91,8 +129,8 @@ const OpenSource = () => {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto"
               >
-                We believe in the power of open source. Our tools, libraries, and infrastructure
-                are freely available for the developer community.
+                Open source isn&apos;t a strategy for us &mdash; it&apos;s how we work. We publish everything we build,
+                contribute upstream, and stand on the shoulders of the incredible engineers who came before us.
               </motion.p>
 
               <motion.div
@@ -106,7 +144,6 @@ const OpenSource = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
-
                 >
                   <Github className="w-4 h-4 mr-2" />
                   View on GitHub
@@ -147,6 +184,238 @@ const OpenSource = () => {
           </div>
         </section>
 
+        {/* Standing on the Shoulders of Giants */}
+        <section className="py-20 px-4 md:px-8 border-t border-border">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                Standing on the Shoulders of Giants
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Hanzo is built on top of extraordinary open-source work. We owe a debt to every one of these projects and their maintainers.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {OSS_FOUNDATIONS.map((foundation, i) => (
+                <motion.a
+                  key={foundation.name}
+                  href={foundation.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.04 }}
+                  className="group block rounded-xl border border-border bg-secondary/30 p-4 hover:border-primary/50 hover:bg-secondary/60 transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{foundation.emoji}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors truncate">
+                        {foundation.name}
+                      </div>
+                      <div className="text-xs text-muted-foreground truncate">
+                        <a
+                          href={foundation.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-foreground transition-colors"
+                          onClick={e => e.stopPropagation()}
+                        >
+                          {foundation.creator}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-2 leading-relaxed">
+                    {foundation.description}
+                  </p>
+                  <span className="inline-block font-mono text-xs bg-muted px-1.5 py-0.5 rounded text-foreground/70">
+                    {foundation.license}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stewardship Commitments */}
+        <section className="py-20 px-4 md:px-8 border-t border-border">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                Our Stewardship Commitments
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We hold ourselves to explicit, public commitments — not vague marketing language.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {COMMITMENTS.map((commitment, i) => (
+                <motion.div
+                  key={commitment.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
+                  className="rounded-xl border border-border bg-secondary/30 p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <div
+                      className="mt-0.5 flex-shrink-0 rounded-full p-1"
+                      style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
+                    >
+                      <Check className="w-3.5 h-3.5" style={{ color: "var(--primary)" }} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground text-sm mb-1">{commitment.title}</h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{commitment.body}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* OSS Revenue Sharing */}
+        <section className="py-20 px-4 md:px-8 border-t border-border">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="text-center mb-12"
+            >
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6"
+                style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}
+              >
+                <Coins className="w-3.5 h-3.5" />
+                Revenue Sharing Program
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                Earn from Open Source
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Hanzo dedicates up to <span className="text-foreground font-semibold">25% of compute costs</span> back
+                to the open-source contributors who make our platform possible. Connect your code, connect your wallet, get paid.
+              </p>
+            </motion.div>
+
+            {/* How it works — 3 steps */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+              {[
+                {
+                  step: "01",
+                  icon: GitBranch,
+                  title: "Connect Your Git",
+                  body: "Sign in with GitHub or GitLab. We scan your contributions to Hanzo repos and the upstream projects we depend on.",
+                },
+                {
+                  step: "02",
+                  icon: Wallet,
+                  title: "Connect Your Wallet",
+                  body: "Link any wallet on Ethereum, Solana, Polygon, or other major chains. Or choose direct USD payout.",
+                },
+                {
+                  step: "03",
+                  icon: DollarSign,
+                  title: "Earn Revenue Share",
+                  body: "Every billing cycle, contributors receive a share of compute revenue proportional to their merged contributions.",
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.step}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
+                  className="relative rounded-xl border border-border bg-secondary/30 p-6"
+                >
+                  <span className="absolute top-4 right-4 text-xs font-mono text-muted-foreground/50">
+                    {card.step}
+                  </span>
+                  <div
+                    className="flex-shrink-0 rounded-full p-2 w-fit mb-4"
+                    style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)" }}
+                  >
+                    <card.icon className="w-5 h-5" style={{ color: "var(--primary)" }} />
+                  </div>
+                  <h3 className="font-semibold text-foreground text-sm mb-2">{card.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{card.body}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Payout options */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="rounded-xl border border-border bg-secondary/30 p-6 mb-10"
+            >
+              <h3 className="text-sm font-semibold text-foreground mb-4 text-center">
+                Choose Your Payout
+              </h3>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {[
+                  { label: "USD", sub: "Direct bank transfer", icon: DollarSign },
+                  { label: "Hanzo Network", sub: "Native network tokens", icon: Coins },
+                  { label: "AI Coin", sub: "AI compute credits", icon: Sparkles },
+                ].map((option) => (
+                  <div
+                    key={option.label}
+                    className="flex items-center gap-3 px-5 py-3 rounded-lg border border-border bg-background/50 min-w-[180px]"
+                  >
+                    <option.icon className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-foreground">{option.label}</div>
+                      <div className="text-xs text-muted-foreground">{option.sub}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-4">
+                Works across Ethereum, Solana, Polygon, and other major chains.
+              </p>
+            </motion.div>
+
+            {/* Section CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.25 }}
+              className="text-center"
+            >
+              <a
+                href="/oss/connect"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
+              >
+                Connect &amp; Start Earning
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
         {/* OSS Catalog */}
         <OSSCatalog />
 
@@ -172,7 +441,7 @@ const OpenSource = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold text-foreground mb-4"
             >
-              Contribute to open source
+              Contribute &amp; Earn
             </motion.h2>
 
             <motion.p
@@ -182,8 +451,8 @@ const OpenSource = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto"
             >
-              We welcome contributions of all kinds - code, documentation, bug reports, and feature requests.
-              Join our community of developers building the future of AI.
+              We welcome contributions of all kinds &mdash; code, documentation, bug reports, and feature requests.
+              Every contribution earns a share of compute revenue through our OSS Revenue Sharing program.
             </motion.p>
 
             <motion.div
@@ -198,7 +467,6 @@ const OpenSource = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 text-base bg-primary text-primary-foreground"
-
               >
                 Start Contributing
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -216,8 +484,6 @@ const OpenSource = () => {
           </div>
         </section>
       </main>
-
-      
     </div>
   );
 };
