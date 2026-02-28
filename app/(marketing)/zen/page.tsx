@@ -109,7 +109,7 @@ const Zen = () => {
   const QUICK_STATS = [
     { label: "Models",      value: stats.total > 0 ? `${stats.total}+` : `${ZEN_MODELS.length}+` },
     { label: "Max Params",  value: "1.04T" },
-    { label: "Max Context", value: stats.maxContext !== '—' ? stats.maxContext : "256K" },
+    { label: "Max Context", value: stats.maxContext !== '—' ? stats.maxContext : "2M" },
     { label: "From",        value: stats.cheapest },
   ]
 

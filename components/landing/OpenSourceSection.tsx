@@ -1,17 +1,22 @@
 'use client'
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Github, ExternalLink, Heart, ArrowRight, Network, Star } from "lucide-react";
+import { Github, ExternalLink, Heart, ArrowRight, Network } from "lucide-react";
 
-const githubOrgs = [
-  { name: "hanzoai",    label: "Hanzo AI",    description: "AI platform & infrastructure",    url: "https://github.com/hanzoai",    count: "140+" },
-  { name: "luxfi",      label: "Lux",          description: "L1 blockchain & consensus",        url: "https://github.com/luxfi",      count: "30+"  },
-  { name: "zenlm",      label: "Zen LM",       description: "Open frontier AI models",          url: "https://github.com/zenlm",      count: "20+"  },
-  { name: "hanzo-js",   label: "Hanzo JS",     description: "TypeScript / JavaScript SDKs",    url: "https://github.com/hanzo-js",   count: "15+"  },
-  { name: "hanzo-apps", label: "Hanzo Apps",   description: "Templates & starters",            url: "https://github.com/hanzo-apps", count: "10+"  },
-  { name: "zoo-labs",   label: "Zoo Labs",     description: "DeAI research foundation",        url: "https://github.com/zoo-labs",   count: "25+"  },
+// Real verified counts as of 2026-02-27 — refreshed dynamically on mount
+const ORG_DEFAULTS: Record<string, number> = {
+  hanzoai: 303, luxfi: 289, zenlm: 83, "hanzo-js": 15, "hanzo-apps": 8, "zoo-labs": 25,
+};
+
+const githubOrgsBase = [
+  { name: "hanzoai",    label: "Hanzo AI",    description: "AI platform & infrastructure",    url: "https://github.com/hanzoai"    },
+  { name: "luxfi",      label: "Lux",          description: "L1 blockchain & consensus",        url: "https://github.com/luxfi"      },
+  { name: "zenlm",      label: "Zen LM",       description: "Open frontier AI models",          url: "https://github.com/zenlm"      },
+  { name: "hanzo-js",   label: "Hanzo JS",     description: "TypeScript / JavaScript SDKs",    url: "https://github.com/hanzo-js"   },
+  { name: "hanzo-apps", label: "Hanzo Apps",   description: "Templates & starters",            url: "https://github.com/hanzo-apps" },
+  { name: "zoo-labs",   label: "Zoo Labs",     description: "DeAI research foundation",        url: "https://github.com/zoo-labs"   },
 ];
 
 interface Repo {
@@ -19,7 +24,6 @@ interface Repo {
   name: string;
   description: string;
   language: string;
-  stars?: string;
   tag?: string;
 }
 
@@ -34,44 +38,63 @@ const LANG_COLOR: Record<string, string> = {
 
 const repos: Repo[] = [
   // hanzoai — AI infra
-  { org: "hanzoai",    name: "hanzo",        description: "The complete AI platform — deploy anywhere, any model",         language: "TypeScript", stars: "2.1k", tag: "platform" },
-  { org: "hanzoai",    name: "mcp",          description: "260+ Model Context Protocol tools and servers",                  language: "TypeScript", stars: "1.8k", tag: "mcp"      },
-  { org: "hanzoai",    name: "llm",          description: "Unified gateway to 100+ AI models via one OpenAI-compatible API", language: "Python",     stars: "3.2k", tag: "infra"    },
-  { org: "hanzoai",    name: "dev",          description: "AI coding agent for the terminal and IDE",                       language: "TypeScript", stars: "980"               },
-  { org: "hanzoai",    name: "auto",         description: "Workflow automation with AI agents",                             language: "TypeScript"                              },
-  { org: "hanzoai",    name: "flow",         description: "Visual LLM workflow builder",                                    language: "TypeScript"                              },
-  { org: "hanzoai",    name: "agent",        description: "Multi-agent orchestration framework",                            language: "TypeScript"                              },
-  { org: "hanzoai",    name: "candle",       description: "High-performance ML framework in Rust",                          language: "Rust",       stars: "450"               },
-  { org: "hanzoai",    name: "jin",          description: "Unified multimodal AI framework (vision + language + audio)",    language: "Rust"                                    },
-  { org: "hanzoai",    name: "aci",          description: "AI Chain Infrastructure — decentralized compute and inference",  language: "Go"                                      },
-  { org: "hanzoai",    name: "ui",           description: "React component library for AI applications",                    language: "TypeScript"                              },
-  { org: "hanzoai",    name: "evals",        description: "Model evaluation harness and benchmark suite",                   language: "Python"                                  },
+  { org: "hanzoai",    name: "hanzo",        description: "The complete AI platform — deploy anywhere, any model",         language: "TypeScript", tag: "platform" },
+  { org: "hanzoai",    name: "mcp",          description: "260+ Model Context Protocol tools and servers",                  language: "TypeScript", tag: "mcp"      },
+  { org: "hanzoai",    name: "llm",          description: "Unified gateway to 100+ AI models via one OpenAI-compatible API", language: "Python",    tag: "infra"    },
+  { org: "hanzoai",    name: "dev",          description: "AI coding agent for the terminal and IDE",                       language: "TypeScript"                  },
+  { org: "hanzoai",    name: "auto",         description: "Workflow automation with AI agents",                             language: "TypeScript"                  },
+  { org: "hanzoai",    name: "flow",         description: "Visual LLM workflow builder",                                    language: "TypeScript"                  },
+  { org: "hanzoai",    name: "agent",        description: "Multi-agent orchestration framework",                            language: "TypeScript"                  },
+  { org: "hanzoai",    name: "candle",       description: "High-performance ML framework in Rust",                          language: "Rust"                        },
+  { org: "hanzoai",    name: "jin",          description: "Unified multimodal AI framework (vision + language + audio)",    language: "Rust"                        },
+  { org: "hanzoai",    name: "aci",          description: "AI Chain Infrastructure — decentralized compute and inference",  language: "Go"                          },
+  { org: "hanzoai",    name: "ui",           description: "React component library for AI applications",                    language: "TypeScript"                  },
+  { org: "hanzoai",    name: "evals",        description: "Model evaluation harness and benchmark suite",                   language: "Python"                      },
   // luxfi — Lux blockchain
-  { org: "luxfi",      name: "node",         description: "Lux blockchain node — multi-consensus, post-quantum ready",      language: "Go",         stars: "820"               },
-  { org: "luxfi",      name: "sdk",          description: "Client SDK for Lux — Go, TypeScript, Python",                   language: "Go"                                      },
-  { org: "luxfi",      name: "cli",          description: "Command-line interface for Lux network operations",              language: "Go"                                      },
-  { org: "luxfi",      name: "wallet",       description: "HD wallet with multi-chain support and hardware wallet integration", language: "Go"                                  },
-  { org: "luxfi",      name: "netrunner",    description: "Blockchain network testing and simulation tool",                  language: "Go"                                      },
-  { org: "luxfi",      name: "genesis",      description: "Genesis block configuration and validator bootstrapping",         language: "Go"                                      },
+  { org: "luxfi",      name: "node",         description: "Lux blockchain node — multi-consensus, post-quantum ready",      language: "Go"                          },
+  { org: "luxfi",      name: "sdk",          description: "Client SDK for Lux — Go, TypeScript, Python",                   language: "Go"                          },
+  { org: "luxfi",      name: "cli",          description: "Command-line interface for Lux network operations",              language: "Go"                          },
+  { org: "luxfi",      name: "wallet",       description: "HD wallet with multi-chain support and hardware wallet integration", language: "Go"                      },
+  { org: "luxfi",      name: "netrunner",    description: "Blockchain network testing and simulation tool",                  language: "Go"                          },
+  { org: "luxfi",      name: "genesis",      description: "Genesis block configuration and validator bootstrapping",         language: "Go"                          },
   // zenlm — Zen models
-  { org: "zenlm",      name: "zen",          description: "Zen AI model family — nano to 1T+ frontier, Qwen3 + Kimi-based", language: "Python",     stars: "1.4k", tag: "models" },
-  { org: "zenlm",      name: "zen-max-trainer", description: "QLoRA cloud training for zen-max (671B MoE)",                language: "Python"                                  },
-  { org: "zenlm",      name: "zen4-ultra-trainer", description: "GT-QLoRA gate-targeted training for 1T MoE",              language: "Python"                                  },
+  { org: "zenlm",      name: "zen",          description: "Zen AI model family — nano to 1T+ frontier, Zen MoDE architecture", language: "Python",    tag: "models"   },
+  { org: "zenlm",      name: "zen-max-trainer", description: "QLoRA cloud training for zen-max (671B MoE)",                language: "Python"                      },
+  { org: "zenlm",      name: "zen4-ultra-trainer", description: "GT-QLoRA gate-targeted training for 1T MoE",              language: "Python"                      },
   // hanzo-js
-  { org: "hanzo-js",   name: "hanzo.js",     description: "Core JavaScript SDK for the Hanzo platform",                    language: "TypeScript"                              },
-  { org: "hanzo-js",   name: "ui",           description: "@hanzo/ui — React components with unified analytics",            language: "TypeScript", stars: "340"               },
-  { org: "hanzo-js",   name: "commerce",     description: "Headless commerce engine with AI recommendations",               language: "TypeScript"                              },
+  { org: "hanzo-js",   name: "hanzo.js",     description: "Core JavaScript SDK for the Hanzo platform",                    language: "TypeScript"                  },
+  { org: "hanzo-js",   name: "ui",           description: "@hanzo/ui — React components with unified analytics",            language: "TypeScript"                  },
+  { org: "hanzo-js",   name: "commerce",     description: "Headless commerce engine with AI recommendations",               language: "TypeScript"                  },
   // hanzo-apps
-  { org: "hanzo-apps", name: "ai-chat",      description: "Full-featured AI chat — streaming, tools, memory",              language: "TypeScript", tag: "template"            },
-  { org: "hanzo-apps", name: "rag-starter",  description: "RAG application with vector search and reranking",              language: "TypeScript", tag: "template"            },
-  { org: "hanzo-apps", name: "agent-toolkit", description: "Multi-agent application starter with MCP tools",              language: "TypeScript", tag: "template"            },
+  { org: "hanzo-apps", name: "ai-chat",      description: "Full-featured AI chat — streaming, tools, memory",              language: "TypeScript", tag: "template" },
+  { org: "hanzo-apps", name: "rag-starter",  description: "RAG application with vector search and reranking",              language: "TypeScript", tag: "template" },
+  { org: "hanzo-apps", name: "agent-toolkit", description: "Multi-agent application starter with MCP tools",              language: "TypeScript", tag: "template" },
   // zoo-labs
-  { org: "zoo-labs",   name: "zoo",          description: "Zoo ecosystem — DeAI research and DeSci governance",            language: "TypeScript"                              },
-  { org: "zoo-labs",   name: "zips",         description: "Zoo Improvement Proposals — open AI governance (zips.zoo.ngo)", language: "MDX"                                     },
-  { org: "zoo-labs",   name: "contracts",    description: "Smart contracts — ERC20/721/1155, staking, governance",         language: "Solidity"                                },
+  { org: "zoo-labs",   name: "zoo",          description: "Zoo ecosystem — DeAI research and DeSci governance",            language: "TypeScript"                  },
+  { org: "zoo-labs",   name: "zips",         description: "Zoo Improvement Proposals — open AI governance (zips.zoo.ngo)", language: "MDX"                         },
+  { org: "zoo-labs",   name: "contracts",    description: "Smart contracts — ERC20/721/1155, staking, governance",         language: "Solidity"                    },
 ];
 
 const OpenSourceSection = () => {
+  const [orgCounts, setOrgCounts] = useState<Record<string, number>>(ORG_DEFAULTS);
+
+  useEffect(() => {
+    const orgs = githubOrgsBase.map(o => o.name);
+    orgs.forEach(org => {
+      fetch(`https://api.github.com/orgs/${org}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(d => {
+          if (d?.public_repos) {
+            setOrgCounts(prev => ({ ...prev, [org]: d.public_repos }));
+          }
+        })
+        .catch(() => {});
+    });
+  }, []);
+
+  const totalRepos = Object.values(orgCounts).reduce((a, b) => a + b, 0);
+  const githubOrgs = githubOrgsBase.map(o => ({ ...o, count: `${orgCounts[o.name] ?? ORG_DEFAULTS[o.name]}` }));
+
   return (
     <section className="py-24 px-4 md:px-8 bg-background relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.025]" style={{
@@ -95,7 +118,7 @@ const OpenSourceSection = () => {
             Built in the open
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            200+ open-source repositories across AI infrastructure, blockchain, frontier models, and developer tools.
+            {totalRepos}+ open-source repositories across AI infrastructure, blockchain, frontier models, and developer tools.
             View, fork, or self-host anything.
           </p>
         </motion.div>
@@ -166,11 +189,6 @@ const OpenSourceSection = () => {
                   <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${LANG_COLOR[repo.language] ?? "bg-neutral-700/50 text-neutral-400"}`}>
                     {repo.language}
                   </span>
-                  {repo.stars && (
-                    <span className="flex items-center gap-0.5 text-[10px] text-muted-foreground/60">
-                      <Star className="w-2.5 h-2.5" />{repo.stars}
-                    </span>
-                  )}
                   {repo.tag && (
                     <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-foreground/60 font-medium">
                       {repo.tag}
