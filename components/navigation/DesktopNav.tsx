@@ -90,7 +90,7 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
       <div className="space-y-0.5">
         <IconLink href="/zen" icon={Brain} label="Zen LM" description="30+ open foundation models" closeMenu={closeMenu} />
         <IconLink href="/zen/models" icon={Layers} label="All Models" closeMenu={closeMenu} />
-        <IconLink href="https://zenlm.org/research" icon={FileText} label="Papers" external closeMenu={closeMenu} />
+        <IconLink href="https://hanzo.blog" icon={FileText} label="Papers & Blog" external closeMenu={closeMenu} />
         <IconLink href="https://huggingface.co/zenlm" icon={ExternalLink} label="HuggingFace" external closeMenu={closeMenu} />
         <IconLink href="/open-source" icon={GitBranch} label="Open Source" closeMenu={closeMenu} />
       </div>

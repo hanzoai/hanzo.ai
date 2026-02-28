@@ -8,6 +8,20 @@ export const metadata = {
   title: "About Hanzo Industries - Our Story and Evolution",
   description:
     "Learn about Hanzo Industries' journey from a crowd-powered marketing platform to a Techstars-backed AI venture, and our guiding philosophy.",
+  openGraph: {
+    title: "About Hanzo Industries - Our Story and Evolution",
+    description:
+      "Learn about Hanzo Industries' journey from a crowd-powered marketing platform to a Techstars-backed AI venture, and our guiding philosophy.",
+    url: "https://hanzo.ai/about",
+    siteName: "Hanzo AI",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Hanzo Industries - Our Story and Evolution",
+    description:
+      "Learn about Hanzo Industries' journey from a crowd-powered marketing platform to a Techstars-backed AI venture, and our guiding philosophy.",
+  },
 }
 
 export default function AboutPage() {

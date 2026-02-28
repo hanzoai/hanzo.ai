@@ -78,7 +78,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
 
   return (
     <div className="hidden md:flex items-center space-x-3">
-      {/* Search / Command palette trigger - unified widget */}
+      {/* Search / Command palette trigger */}
       <button
         onClick={onOpenCommandPalette}
         className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-800/50 border border-border/50 text-muted-foreground hover:text-foreground hover:bg-accent hover:border-neutral-600 transition-all text-sm cursor-pointer"
@@ -91,15 +91,37 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         </kbd>
       </button>
 
-      {/* Contact sales button */}
-      <Link
-        href="/contact"
-        className="inline-flex items-center justify-center rounded-full h-9 px-4 text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-200 cursor-pointer"
-      >
-        Contact sales
-      </Link>
+      {/* When logged out: Contact Sales */}
+      {!user && (
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center rounded-full h-9 px-4 text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-200 cursor-pointer"
+        >
+          Contact sales
+        </Link>
+      )}
 
-      {/* Log in / User name */}
+      {/* When logged in: Pricing + Docs quick links */}
+      {user && (
+        <>
+          <Link
+            href="/pricing"
+            className="inline-flex items-center justify-center rounded-full h-9 px-4 text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-200 cursor-pointer"
+          >
+            Pricing
+          </Link>
+          <a
+            href="https://docs.hanzo.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full h-9 px-4 text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-200 cursor-pointer"
+          >
+            Docs
+          </a>
+        </>
+      )}
+
+      {/* Log in / User account */}
       {user ? (
         <a
           href="https://hanzo.id/account"
@@ -119,7 +141,8 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         </a>
       )}
 
-      {/* Try Zen dropdown - hover activated */}
+      {/* Try Zen dropdown — only shown when logged out */}
+      {!user && (
       <div
         className="relative"
         ref={dropdownRef}
@@ -249,6 +272,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
           )}
         </AnimatePresence>
       </div>
+      )}
     </div>
   );
 };

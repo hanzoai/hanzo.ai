@@ -16,8 +16,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hanzo.ai'),
-  title: 'Hanzo AI - AI Infrastructure Platform',
-  description: 'Comprehensive AI platform for enterprise. Models, APIs, compute, and developer tools.',
+  title: 'Hanzo AI — Vertically Integrated AI Platform',
+  description: 'Complete AI infrastructure: 390+ models, agent SDK, LLM gateway, 260+ MCP tools, vector database, IAM, KMS, and deploy-anywhere cloud. Open source. Techstars-backed.',
+  openGraph: {
+    title: 'Hanzo AI',
+    description: '390+ models, agent SDK, LLM gateway, MCP tools, vector DB, IAM, KMS. Open source AI cloud.',
+    url: 'https://hanzo.ai',
+    siteName: 'Hanzo AI',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hanzo AI',
+    description: '390+ models, agent SDK, LLM gateway, MCP tools. Open source AI cloud.',
+  },
 }
 
 export default function RootLayout({

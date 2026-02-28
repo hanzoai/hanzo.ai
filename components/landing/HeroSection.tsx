@@ -22,6 +22,18 @@ import {
   Brain
 } from "lucide-react";
 
+// Rotating brands — shows Hanzo powering real customers
+const ROTATING_BRANDS = [
+  { name: "Lux",       initial: "L" },
+  { name: "Triller",   initial: "T" },
+  { name: "Damon",     initial: "D" },
+  { name: "Bellabeat", initial: "B" },
+  { name: "Unikrn",    initial: "U" },
+  { name: "Cover",     initial: "C" },
+  { name: "Casper",    initial: "C" },
+  { name: "Zoo",       initial: "Z" },
+] as const;
+
 // Proof chips data - communicates the vertical stack
 const PROOF_CHIPS = [
   { label: "Agents", icon: Bot },
@@ -70,9 +82,18 @@ const HeroSection = () => {
   const [mounted, setMounted] = useState(false);
   const [mobileTab, setMobileTab] = useState<MobileTab>("dashboard");
   const [terminalStep, setTerminalStep] = useState(0);
+  const [brandIdx, setBrandIdx] = useState(0);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Rotate brand every 3s — smooth social proof effect
+  useEffect(() => {
+    const t = setInterval(() => {
+      setBrandIdx(prev => (prev + 1) % ROTATING_BRANDS.length);
+    }, 3000);
+    return () => clearInterval(t);
   }, []);
 
   // Terminal typing animation
@@ -115,10 +136,30 @@ const HeroSection = () => {
         {/* Left nav */}
         <div className="w-[140px] lg:w-[160px] border-r border-border bg-background p-2 hidden sm:block">
           <div className="flex items-center gap-2 px-2 py-2 mb-3">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-white to-white/60 flex items-center justify-center">
-              <span className="text-foreground text-[10px] font-bold">H</span>
-            </div>
-            <span className="text-foreground text-xs font-medium">Hanzo</span>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={ROTATING_BRANDS[brandIdx].name}
+                className="w-6 h-6 rounded-md bg-gradient-to-br from-white to-white/60 flex items-center justify-center flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.25 }}
+              >
+                <span className="text-black text-[10px] font-bold">{ROTATING_BRANDS[brandIdx].initial}</span>
+              </motion.div>
+            </AnimatePresence>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={ROTATING_BRANDS[brandIdx].name}
+                className="text-foreground text-xs font-medium"
+                initial={{ opacity: 0, x: -6 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 6 }}
+                transition={{ duration: 0.25 }}
+              >
+                {ROTATING_BRANDS[brandIdx].name}
+              </motion.span>
+            </AnimatePresence>
           </div>
           <nav className="space-y-0.5">
             {DASHBOARD_NAV.map((item) => (
@@ -285,10 +326,30 @@ const HeroSection = () => {
       <div className="bg-background p-2.5 flex-1 overflow-hidden flex flex-col">
         <div className="flex items-center justify-between mb-2 shrink-0">
           <div className="flex items-center gap-1.5">
-            <div className="w-5 h-5 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-foreground text-[7px] font-bold">H</span>
-            </div>
-            <span className="text-foreground text-[10px] font-medium">Hanzo</span>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={`mob-icon-${ROTATING_BRANDS[brandIdx].name}`}
+                className="w-5 h-5 rounded-md bg-white flex items-center justify-center flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.7 }}
+                transition={{ duration: 0.22 }}
+              >
+                <span className="text-black text-[7px] font-bold">{ROTATING_BRANDS[brandIdx].initial}</span>
+              </motion.div>
+            </AnimatePresence>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={`mob-name-${ROTATING_BRANDS[brandIdx].name}`}
+                className="text-foreground text-[10px] font-medium"
+                initial={{ opacity: 0, x: -4 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 4 }}
+                transition={{ duration: 0.22 }}
+              >
+                {ROTATING_BRANDS[brandIdx].name}
+              </motion.span>
+            </AnimatePresence>
           </div>
           <Bell className="w-3.5 h-3.5 text-muted-foreground" />
         </div>
@@ -464,7 +525,7 @@ const HeroSection = () => {
                   href="https://docs.hanzo.ai"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-border bg-transparent hover:bg-secondary hover:border-neutral-600 text-sm"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-white/25 bg-transparent hover:bg-white/10 hover:border-white/50 text-sm"
                 >
                   Documentation
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -581,7 +642,7 @@ const HeroSection = () => {
                   href="https://docs.hanzo.ai"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-border bg-transparent hover:bg-secondary hover:border-neutral-600 text-sm"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-white/25 bg-transparent hover:bg-white/10 hover:border-white/50 text-sm"
                 >
                   Documentation
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -694,7 +755,7 @@ const HeroSection = () => {
                   href="https://docs.hanzo.ai"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-border bg-transparent hover:bg-secondary hover:border-neutral-600 text-sm w-full max-w-[200px]"
+                  className="inline-flex justify-center items-center px-6 py-3 rounded-full font-medium tracking-tight transition-colors border border-white/25 bg-transparent hover:bg-white/10 hover:border-white/50 text-sm w-full max-w-[200px]"
                 >
                   Documentation
                   <ExternalLink className="ml-2 h-4 w-4" />
