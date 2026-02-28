@@ -83,6 +83,7 @@ const TrustedBySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-6xl mx-auto"
         >
           <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 text-center">
             Trusted By

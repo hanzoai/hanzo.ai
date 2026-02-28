@@ -23,13 +23,18 @@ const aiProviders = [
   { name: "OpenAI", logo: "/logos/openai.svg" },
   { name: "Anthropic", logo: "/logos/anthropic.svg" },
   { name: "Google", logo: "/logos/google.svg" },
-  { name: "Gemini", logo: "/logos/gemini.svg" },
+  { name: "xAI", logo: "/logos/xai.svg" },
   { name: "Mistral", logo: "/logos/mistral.svg" },
+  { name: "Groq", logo: "/logos/groq.svg" },
+  { name: "Together", logo: "/logos/together.svg" },
   { name: "Fireworks", logo: "/logos/fireworks.svg" },
   { name: "OpenRouter", logo: "/logos/openrouter.svg" },
-  { name: "Together", logo: "/logos/together.svg" },
-  { name: "Groq", logo: "/logos/groq.svg" },
   { name: "Replicate", logo: "/logos/replicate.svg" },
+  { name: "HuggingFace", logo: "/logos/huggingface.svg" },
+  { name: "DeepSeek", logo: "/logos/deepseek.svg" },
+  { name: "Qwen", logo: "/logos/qwen.svg" },
+  { name: "Kimi", logo: "/logos/kimi.svg" },
+  { name: "DigitalOcean", logo: "/logos/digitalocean.svg" },
 ];
 
 const multiAgentFeatures = [
