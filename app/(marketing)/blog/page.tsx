@@ -89,11 +89,39 @@ const posts = [
     tag: 'Origin Story',
   },
   {
+    slug: 'zen4-abliterated-models',
+    title: 'Zen4: Open Abliterated Models from 4B to 1T',
+    description: 'The Zen4 family brings abliterated open-weight models from 4B to 1T+ parameters, removing refusal bias while preserving full capability.',
+    date: 'February 9, 2026',
+    tag: 'Launch',
+  },
+  {
+    slug: 'zen-pro-professional-ai',
+    title: 'Zen Pro: Professional 8B AI with Instruct, Thinking, and Agent Modes',
+    description: 'Zen Pro is an 8B professional model with three specialized variants for chat, reasoning, and tool use — runs on a single 16GB GPU.',
+    date: 'September 15, 2025',
+    tag: 'Launch',
+  },
+  {
     slug: 'zen-mode-model-architecture',
     title: 'Zen MoDE: 47 Models, One Architecture',
     description: 'Inside Zen — Mixture of Distilled Experts (MoDE) architecture that activates only the parameters it needs. 47 models spanning text, code, vision, audio, video, 3D, and agents.',
     date: 'September 15, 2025',
     tag: 'Research',
+  },
+  {
+    slug: 'zen-max-frontier-reasoning',
+    title: 'Zen Max: Frontier Reasoning at 671B',
+    description: 'Zen Max is a 671B MoE reasoning model achieving AIME 99.1%, SWE-Bench 71.3%, and 200-300 sequential tool calls without human intervention.',
+    date: 'June 15, 2025',
+    tag: 'Launch',
+  },
+  {
+    slug: 'zen-coder-code-ai',
+    title: 'Zen Coder: Code AI from 4B to 480B',
+    description: 'Zen Coder is a family of code-specialized models from edge to frontier with 128K context, 512K thinking tokens, and MCP integration.',
+    date: 'May 1, 2025',
+    tag: 'Launch',
   },
   {
     slug: 'agent-sdk-multi-agent-orchestration',
@@ -107,6 +135,13 @@ const posts = [
     title: 'Operative: Giving AI Eyes and Hands',
     description: 'We built a full computer-use stack — Operative, CUA, ACI, and Overlord — so AI agents can see screens, click buttons, type text, and automate browsers. Open source.',
     date: 'March 20, 2025',
+    tag: 'Launch',
+  },
+  {
+    slug: 'zen-nano-edge-ai',
+    title: 'Zen Nano: 0.6B Edge AI Model',
+    description: 'Zen Nano is a 0.6B on-device AI model built for mobile and embedded deployment, achieving 44K tokens/sec on M3 Max with a 40K context window.',
+    date: 'February 15, 2025',
     tag: 'Launch',
   },
   {
