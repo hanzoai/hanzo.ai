@@ -237,7 +237,7 @@ const ModelRow = ({ model, pricingMode }: { model: HanzoModel; pricingMode?: str
             </span>
             <TierBadge tier={model.tier} />
             {model.contactSales && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-medium">Preview</span>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-medium">Research Preview</span>
             )}
           </div>
           <p className="text-xs text-muted-foreground mt-1 hidden md:block">

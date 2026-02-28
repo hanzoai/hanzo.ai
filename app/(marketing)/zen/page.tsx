@@ -63,11 +63,11 @@ interface ZenModel {
 
 const ZEN_MODELS: ZenModel[] = [
   // Zen5 — preview
-  { id: "zen5",              label: "zen5",              params: "TBA",                        ctx: "1M+",  tier: "ultra", tag: "preview",          hf: "zenlm/zen5" },
-  { id: "zen5-pro",          label: "zen5-pro",          params: "TBA",                        ctx: "512K", tier: "ultra", tag: "preview",          hf: "zenlm/zen5-pro" },
-  { id: "zen5-max",          label: "zen5-max",          params: "TBA",                        ctx: "2M",   tier: "ultra", tag: "preview",          hf: "zenlm/zen5-max" },
-  { id: "zen5-ultra",        label: "zen5-ultra",        params: "TBA",                        ctx: "1M",   tier: "ultra", tag: "preview",          hf: "zenlm/zen5-ultra" },
-  { id: "zen5-mini",         label: "zen5-mini",         params: "TBA",                        ctx: "256K", tier: "pro",   tag: "preview",          hf: "zenlm/zen5-mini" },
+  { id: "zen5",              label: "zen5",              params: "TBA",                        ctx: "1M+",  tier: "ultra", tag: "research preview",  hf: "zenlm/zen5" },
+  { id: "zen5-pro",          label: "zen5-pro",          params: "TBA",                        ctx: "512K", tier: "ultra", tag: "research preview",  hf: "zenlm/zen5-pro" },
+  { id: "zen5-max",          label: "zen5-max",          params: "TBA",                        ctx: "2M",   tier: "ultra", tag: "research preview",  hf: "zenlm/zen5-max" },
+  { id: "zen5-ultra",        label: "zen5-ultra",        params: "TBA",                        ctx: "1M",   tier: "ultra", tag: "research preview",  hf: "zenlm/zen5-ultra" },
+  { id: "zen5-mini",         label: "zen5-mini",         params: "TBA",                        ctx: "256K", tier: "pro",   tag: "research preview",  hf: "zenlm/zen5-mini" },
   // Zen4 — language
   { id: "zen4",              label: "zen4",              params: "744B MoE", active: "40B",    ctx: "202K", tier: "ultra",                           hf: "zenlm/zen4" },
   { id: "zen4-ultra",        label: "zen4-ultra",        params: "744B MoE", active: "40B",    ctx: "262K", tier: "ultra", tag: "CoT",              hf: "zenlm/zen4-ultra" },
@@ -260,11 +260,11 @@ const Zen = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {ZEN_MODELS.map((m, i) => {
-                const isPreview = m.tag === "preview";
+                const isPreview = m.tag === "research preview";
                 return (
                 <motion.a
                   key={m.id}
-                  href={isPreview ? "/contact" : `https://huggingface.co/${m.hf}`}
+                  href={isPreview ? "/research-access" : `https://huggingface.co/${m.hf}`}
                   target={isPreview ? undefined : "_blank"}
                   rel={isPreview ? undefined : "noopener noreferrer"}
                   initial={{ opacity: 0, y: 10 }}
@@ -276,7 +276,7 @@ const Zen = () => {
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <span className="font-mono text-sm font-semibold text-foreground">{m.label}</span>
                     {isPreview ? (
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-medium flex-shrink-0">Request Access</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-medium flex-shrink-0">Research Preview</span>
                     ) : (
                       <ExternalLink className="w-3 h-3 text-muted-foreground/40 group-hover:text-muted-foreground flex-shrink-0 transition-colors mt-0.5" />
                     )}
@@ -428,7 +428,7 @@ const Zen = () => {
                 ))}
               </div>
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact"
+                <Link href="/research-access"
                   className="inline-flex items-center px-5 py-2.5 rounded-full font-medium bg-primary text-primary-foreground hover:opacity-90 text-sm gap-2">
                   Request Research Access <ArrowRight className="w-4 h-4" />
                 </Link>
