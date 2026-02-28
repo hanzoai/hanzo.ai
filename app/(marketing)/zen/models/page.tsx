@@ -23,14 +23,18 @@ import {
   Cpu,
   Search,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Image,
+  Mic,
+  Volume2,
+  Sparkles,
 } from "lucide-react";
 
 // Derive context window from features string (e.g. "202k context window" -> "202K")
 function extractContext(features: string[]): string {
   const ctx = features.find((f) => f.toLowerCase().includes("context"));
   if (!ctx) return "N/A";
-  const match = ctx.match(/(\d+[kK]?)/);
+  const match = ctx.match(/(\d+[kKmM]+)/);
   return match ? match[1].toUpperCase() : ctx;
 }
 
@@ -40,6 +44,7 @@ const TIER_STYLES: Record<string, { bg: string; text: string; border: string }> 
   ultra: { bg: "bg-primary/10", text: "text-foreground/60", border: "border-border" },
   "pro max": { bg: "bg-primary/10", text: "text-foreground/70", border: "border-border" },
   pro: { bg: "bg-primary/10", text: "text-foreground/70", border: "border-border" },
+  starter: { bg: "bg-green-500/10", text: "text-green-400", border: "border-green-500/20" },
 };
 
 function TierBadge({ tier }: { tier: string }) {
@@ -53,7 +58,7 @@ function TierBadge({ tier }: { tier: string }) {
   );
 }
 
-const fmt = (val: number | null) => {
+const fmt = (val: number | null | undefined) => {
   if (val == null) return "N/A";
   return `$${val}`;
 };
@@ -66,7 +71,10 @@ interface HanzoModel {
   features: string[];
   tier: string;
   specs: { params: string; arch: string };
-  pricing: { input: number; output: number; cacheRead: number | null; cacheWrite: number | null };
+  pricing: { input: number | null; output: number | null; cacheRead: number | null; cacheWrite: number | null; perUnit?: number } | null;
+  pricingUnit?: string;
+  endpoint?: string;
+  contactSales?: boolean;
 }
 
 interface ModelGroup {
@@ -75,50 +83,144 @@ interface ModelGroup {
   description: string;
   icon: React.ElementType;
   models: HanzoModel[];
+  pricingMode?: "token" | "unit" | "contact";
 }
 
 function groupModels(models: HanzoModel[]): ModelGroup[] {
+  const zen5 = models.filter((m) => m.name.startsWith("zen5"));
   const zen4General = models.filter(
     (m) =>
-      m.name.startsWith("zen4") &&
+      (m.name.startsWith("zen4") || m.name.startsWith("zen4.")) &&
       !m.name.includes("coder") &&
       !m.name.includes("thinking")
   );
   const zen4Thinking = models.filter((m) => m.name === "zen4-thinking");
   const zen4Coder = models.filter((m) => m.name.startsWith("zen4-coder"));
-  const zen3 = models.filter((m) => m.name.startsWith("zen3"));
+  const zen3Core = models.filter(
+    (m) =>
+      m.name.startsWith("zen3") &&
+      !m.name.includes("image") &&
+      !m.name.includes("audio") &&
+      !m.name.includes("asr") &&
+      !m.name.includes("tts") &&
+      !m.name.includes("embedding") &&
+      !m.name.includes("reranker")
+  );
+  const zen3Image = models.filter((m) => m.name.startsWith("zen3-image"));
+  const zen3Audio = models.filter(
+    (m) =>
+      m.name.startsWith("zen3-audio") ||
+      m.name.startsWith("zen3-asr") ||
+      m.name.startsWith("zen3-tts")
+  );
+  const zen3Retrieval = models.filter(
+    (m) =>
+      m.name.startsWith("zen3-embedding") ||
+      m.name.startsWith("zen3-reranker")
+  );
 
-  return [
-    {
+  const groups: ModelGroup[] = [];
+
+  if (zen5.length > 0) {
+    groups.push({
+      id: "zen5",
+      title: "Zen5 -- Next Generation",
+      description: "Agentic frontier models trained on 10B+ tokens of real-world tool use and multi-step reasoning.",
+      icon: Sparkles,
+      models: zen5,
+      pricingMode: "contact",
+    });
+  }
+
+  if (zen4General.length > 0 || zen4Thinking.length > 0) {
+    groups.push({
       id: "zen4",
       title: "Zen4 -- Flagship Language Models",
-      description:
-        "Flagship and high-capability language models for general reasoning, analysis, and generation.",
+      description: "Flagship and high-capability language models for general reasoning, analysis, and generation.",
       icon: Brain,
       models: [...zen4General, ...zen4Thinking],
-    },
-    {
+    });
+  }
+
+  if (zen4Coder.length > 0) {
+    groups.push({
       id: "zen4-coder",
       title: "Zen4 Coder -- Code Generation",
-      description:
-        "Specialized code models for generation, review, debugging, and full-precision analysis.",
+      description: "Specialized code models for generation, review, debugging, and full-precision analysis.",
       icon: Code2,
       models: zen4Coder,
-    },
-    {
+    });
+  }
+
+  if (zen3Core.length > 0) {
+    groups.push({
       id: "zen3",
       title: "Zen3 -- Multimodal & Specialized",
-      description:
-        "Multimodal, vision-language, edge, safety, and embedding models.",
+      description: "Multimodal, vision-language, edge, and safety models.",
       icon: Eye,
-      models: zen3,
-    },
-  ];
+      models: zen3Core,
+    });
+  }
+
+  if (zen3Image.length > 0) {
+    groups.push({
+      id: "zen3-image",
+      title: "Zen3 Image -- Generation",
+      description: "Text-to-image generation from fast prototyping to broadcast quality.",
+      icon: Image,
+      models: zen3Image,
+      pricingMode: "unit",
+    });
+  }
+
+  if (zen3Audio.length > 0) {
+    groups.push({
+      id: "zen3-audio",
+      title: "Zen3 Audio -- Speech & Voice",
+      description: "Speech-to-text, text-to-speech, and real-time streaming ASR.",
+      icon: Volume2,
+      models: zen3Audio,
+      pricingMode: "unit",
+    });
+  }
+
+  if (zen3Retrieval.length > 0) {
+    groups.push({
+      id: "zen3-retrieval",
+      title: "Zen3 Retrieval -- Embedding & Reranking",
+      description: "High-quality embeddings and rerankers for RAG, search, and classification.",
+      icon: Search,
+      models: zen3Retrieval,
+    });
+  }
+
+  return groups;
 }
 
-const ModelRow = ({ model }: { model: HanzoModel }) => {
+const ModelRow = ({ model, pricingMode }: { model: HanzoModel; pricingMode?: string }) => {
   const [expanded, setExpanded] = useState(false);
   const isUltraMax = model.tier === "ultra max";
+
+  const renderPricing = () => {
+    if (model.contactSales || model.pricing == null) {
+      return <span className="text-muted-foreground text-xs italic">Contact Sales</span>;
+    }
+    if (pricingMode === "unit" && model.pricing.perUnit != null) {
+      return (
+        <span className="text-foreground font-medium">
+          ${model.pricing.perUnit}
+          <span className="text-muted-foreground text-xs">/{model.pricingUnit || "unit"}</span>
+        </span>
+      );
+    }
+    return (
+      <>
+        <span className="text-foreground font-medium">{fmt(model.pricing.input)}</span>
+        <span className="text-muted-foreground"> / </span>
+        <span className="text-foreground font-medium">{fmt(model.pricing.output)}</span>
+      </>
+    );
+  };
 
   return (
     <>
@@ -131,9 +233,12 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
         <td className="px-4 md:px-6 py-4">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-semibold text-foreground text-sm md:text-base">
-              {model.fullName?.split(" -- ")[0] || model.name}
+              {model.fullName?.split(" — ")[0] || model.fullName?.split(" -- ")[0] || model.name}
             </span>
             <TierBadge tier={model.tier} />
+            {model.contactSales && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-medium">Preview</span>
+            )}
           </div>
           <p className="text-xs text-muted-foreground mt-1 hidden md:block">
             {model.description}
@@ -149,13 +254,7 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
           {model.specs.arch}
         </td>
         <td className="px-4 md:px-6 py-4 text-right text-sm">
-          <span className="text-foreground font-medium">
-            {fmt(model.pricing.input)}
-          </span>
-          <span className="text-muted-foreground"> / </span>
-          <span className="text-foreground font-medium">
-            {fmt(model.pricing.output)}
-          </span>
+          {renderPricing()}
         </td>
         <td className="px-2 py-4 text-muted-foreground">
           {expanded ? (
@@ -179,6 +278,9 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
                   </span>
                 </p>
                 <p className="text-muted-foreground">{model.specs.arch}</p>
+                {model.endpoint && (
+                  <p className="text-muted-foreground mt-1 font-mono text-xs">{model.endpoint}</p>
+                )}
               </div>
               <div>
                 <h4 className="text-[10px] text-muted-foreground uppercase tracking-wider mb-2">
@@ -195,26 +297,31 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
               </div>
               <div>
                 <h4 className="text-[10px] text-muted-foreground uppercase tracking-wider mb-2">
-                  Pricing per MTok
+                  Pricing
                 </h4>
-                <div className="grid grid-cols-2 gap-2">
+                {model.contactSales || model.pricing == null ? (
+                  <p className="text-muted-foreground italic">Contact sales for pricing</p>
+                ) : pricingMode === "unit" && model.pricing.perUnit != null ? (
                   <div className="p-2 bg-secondary rounded border border-border">
                     <span className="text-[10px] text-muted-foreground block">
-                      Input
+                      Per {model.pricingUnit || "unit"}
                     </span>
                     <span className="text-foreground font-medium">
-                      {fmt(model.pricing.input)}
+                      ${model.pricing.perUnit}
                     </span>
                   </div>
-                  <div className="p-2 bg-secondary rounded border border-border">
-                    <span className="text-[10px] text-muted-foreground block">
-                      Output
-                    </span>
-                    <span className="text-foreground font-medium">
-                      {fmt(model.pricing.output)}
-                    </span>
+                ) : (
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="p-2 bg-secondary rounded border border-border">
+                      <span className="text-[10px] text-muted-foreground block">Input</span>
+                      <span className="text-foreground font-medium">{fmt(model.pricing.input)}</span>
+                    </div>
+                    <div className="p-2 bg-secondary rounded border border-border">
+                      <span className="text-[10px] text-muted-foreground block">Output</span>
+                      <span className="text-foreground font-medium">{fmt(model.pricing.output)}</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </td>
@@ -226,6 +333,7 @@ const ModelRow = ({ model }: { model: HanzoModel }) => {
 
 const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
   const Icon = group.icon;
+  const pricingLabel = group.pricingMode === "unit" ? "Price" : group.pricingMode === "contact" ? "Availability" : "Input / Output";
 
   return (
     <section id={group.id} className="mb-16">
@@ -256,14 +364,14 @@ const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
                 Arch
               </th>
               <th className="px-4 md:px-6 py-3 text-right text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Input / Output
+                {pricingLabel}
               </th>
               <th className="px-2 py-3 w-8"></th>
             </tr>
           </thead>
           <tbody>
             {group.models.map((model) => (
-              <ModelRow key={model.name} model={model} />
+              <ModelRow key={model.name} model={model} pricingMode={group.pricingMode} />
             ))}
           </tbody>
         </table>
@@ -272,25 +380,74 @@ const ModelGroupSection = ({ group }: { group: ModelGroup }) => {
   );
 };
 
+// Static fallback data — matches API schema exactly
+const FALLBACK_MODELS: HanzoModel[] = [
+  { name: "zen4", fullName: "Zen4 \u2014 Flagship", description: "Flagship MoE model for complex reasoning and multi-domain tasks.", features: ["202K context window", "Flagship intelligence", "100+ languages"], tier: "ultra max", specs: { params: "744B (40B active)", arch: "MoE" }, pricing: { input: 3, output: 9.6, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-ultra", fullName: "Zen4 Ultra \u2014 Maximum Reasoning", description: "Maximum reasoning capability with extended chain-of-thought on MoE architecture.", features: ["262K context window", "Deep reasoning", "Chain-of-thought"], tier: "ultra max", specs: { params: "744B (40B active)", arch: "MoE + CoT" }, pricing: { input: 2.7, output: 2.7, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-pro", fullName: "Zen4 Pro \u2014 High Capability", description: "Efficient MoE model for demanding workloads with strong reasoning at production-grade cost.", features: ["131K context window", "MoE architecture"], tier: "ultra", specs: { params: "80B (3B active)", arch: "MoE" }, pricing: { input: 3.6, output: 3.6, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-max", fullName: "Zen4 Max \u2014 Maximum Intelligence", description: "Most capable model for complex reasoning, analysis, and agentic tasks. 1M token context window.", features: ["1M context window", "Maximum intelligence", "Agentic coding"], tier: "ultra max", specs: { params: "N/A", arch: "Dense" }, pricing: { input: 15, output: 75, cacheRead: null, cacheWrite: null } },
+  { name: "zen4.6", fullName: "Zen4.6 \u2014 Extended Context", description: "High-performance 1M context model for long-document analysis, large codebase reasoning, and agentic workflows.", features: ["1M context window", "Agentic coding", "Long-document analysis", "Cost efficient"], tier: "ultra", specs: { params: "N/A", arch: "Dense" }, pricing: { input: 5, output: 25, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-mini", fullName: "Zen4 Mini \u2014 Fast & Efficient", description: "Ultra-fast lightweight model optimized for speed and cost efficiency. Ideal for free tier.", features: ["128K context window", "Ultra-fast inference", "Free tier"], tier: "starter", specs: { params: "N/A", arch: "Dense" }, pricing: { input: 0.15, output: 1.2, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-thinking", fullName: "Zen4 Thinking \u2014 Deep Reasoning", description: "Dedicated reasoning model with explicit chain-of-thought capabilities.", features: ["131K context window", "Chain-of-thought"], tier: "pro max", specs: { params: "80B (3B active)", arch: "MoE + CoT" }, pricing: { input: 2.7, output: 2.7, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-coder", fullName: "Zen4 Coder \u2014 Code Generation", description: "Code-specialized MoE model for generation, review, debugging, and agentic programming.", features: ["163K context window", "All major languages"], tier: "ultra", specs: { params: "480B (35B active)", arch: "MoE" }, pricing: { input: 2.7, output: 2.7, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-coder-pro", fullName: "Zen4 Coder Pro \u2014 Premium Code", description: "Full-precision BF16 code model for maximum accuracy on complex codebases.", features: ["131K context window", "BF16 full precision"], tier: "ultra max", specs: { params: "480B", arch: "Dense BF16" }, pricing: { input: 2.7, output: 2.7, cacheRead: null, cacheWrite: null } },
+  { name: "zen4-coder-flash", fullName: "Zen4 Coder Flash \u2014 Fast Code", description: "Lightweight code model optimized for speed and inline completions.", features: ["262K context window", "Fast inference"], tier: "pro max", specs: { params: "30B (3B active)", arch: "MoE" }, pricing: { input: 2.7, output: 2.7, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-omni", fullName: "Zen3 Omni \u2014 Hypermodal", description: "Multimodal model supporting text, vision, audio, and structured output.", features: ["202K context window", "Text + Vision + Audio"], tier: "pro max", specs: { params: "~200B", arch: "Dense Multimodal" }, pricing: { input: 1.8, output: 6.6, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-vl", fullName: "Zen3 VL \u2014 Vision-Language", description: "Vision-language model for image understanding and visual reasoning.", features: ["262K context window", "Vision + Language"], tier: "pro max", specs: { params: "30B (3B active)", arch: "MoE Vision-Language" }, pricing: { input: 0.45, output: 1.8, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-nano", fullName: "Zen3 Nano \u2014 Edge", description: "Ultra-lightweight model for edge deployment and low-latency tasks. Available on free tier.", features: ["128K context window", "8B parameters", "Free tier"], tier: "starter", specs: { params: "8B", arch: "Dense" }, pricing: { input: 0.6, output: 0.6, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-guard", fullName: "Zen3 Guard \u2014 Content Safety", description: "Content safety classifier for moderation and guardrails. 9 safety categories, 119 languages.", features: ["65K context window", "Safety classifier"], tier: "pro", specs: { params: "4B", arch: "Dense" }, pricing: { input: 3.6, output: 3.6, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-embedding", fullName: "Zen3 Embedding", description: "High-quality text embeddings for RAG, search, and classification.", features: ["8K context window", "3072 dimensions"], tier: "pro max", specs: { params: "N/A", arch: "Embedding" }, endpoint: "/v1/embeddings", pricing: { input: 0.39, output: 0.39, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-embedding-medium", fullName: "Zen3 Embedding Medium", description: "Balanced embedding model for cost-effective retrieval workloads.", features: ["40K context window", "4B parameters"], tier: "pro", specs: { params: "4B", arch: "Embedding" }, endpoint: "/v1/embeddings", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-embedding-small", fullName: "Zen3 Embedding Small", description: "Lightweight embedding model for high-throughput, low-cost applications.", features: ["32K context window", "0.6B parameters"], tier: "starter", specs: { params: "0.6B", arch: "Embedding" }, endpoint: "/v1/embeddings", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-embedding-openai", fullName: "Zen3 Embedding \u2014 OpenAI Compatible", description: "OpenAI-compatible embedding endpoint for drop-in migration.", features: ["8K context window", "3072 dimensions"], tier: "pro max", specs: { params: "N/A", arch: "Embedding" }, endpoint: "/v1/embeddings", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-reranker", fullName: "Zen3 Reranker", description: "High-quality reranker for improving retrieval accuracy in RAG pipelines.", features: ["40K context window", "8B parameters"], tier: "pro max", specs: { params: "8B", arch: "Reranker" }, endpoint: "/v1/rerank", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-reranker-medium", fullName: "Zen3 Reranker Medium", description: "Balanced reranker for cost-effective retrieval quality improvement.", features: ["40K context window", "4B parameters"], tier: "pro", specs: { params: "4B", arch: "Reranker" }, endpoint: "/v1/rerank", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-reranker-small", fullName: "Zen3 Reranker Small", description: "Lightweight reranker for high-throughput reranking at minimal cost.", features: ["40K context window", "0.6B parameters"], tier: "starter", specs: { params: "0.6B", arch: "Reranker" }, endpoint: "/v1/rerank", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null } },
+  { name: "zen3-image", fullName: "Zen3 Image", description: "Best general-purpose image generation.", features: ["Text-to-image", "Image editing"], tier: "pro max", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "image", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.04 } },
+  { name: "zen3-image-max", fullName: "Zen3 Image Max", description: "Maximum quality image generation for professional creative work.", features: ["Text-to-image", "Maximum quality"], tier: "ultra max", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "image", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.08 } },
+  { name: "zen3-image-dev", fullName: "Zen3 Image Dev", description: "Development model for experimentation and iteration.", features: ["Text-to-image", "Development"], tier: "pro", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "step", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.0005 } },
+  { name: "zen3-image-fast", fullName: "Zen3 Image Fast", description: "Fastest image model for real-time generation.", features: ["Text-to-image", "Ultra-fast"], tier: "pro", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "step", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.00035 } },
+  { name: "zen3-image-sdxl", fullName: "Zen3 Image SDXL", description: "High-resolution image generation at 1024px.", features: ["Text-to-image", "1024px"], tier: "pro", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "step", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.00013 } },
+  { name: "zen3-image-playground", fullName: "Zen3 Image Playground", description: "Aesthetic model for artistic image generation.", features: ["Text-to-image", "Aesthetic"], tier: "pro", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "step", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.00013 } },
+  { name: "zen3-image-ssd", fullName: "Zen3 Image SSD", description: "Fastest diffusion model for real-time generation.", features: ["Text-to-image", "Fastest"], tier: "starter", specs: { params: "1B", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "step", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.00013 } },
+  { name: "zen3-image-jp", fullName: "Zen3 Image JP", description: "Japanese-specialized image generation model.", features: ["Text-to-image", "Japanese"], tier: "pro", specs: { params: "N/A", arch: "Diffusion" }, endpoint: "/v1/images/generations", pricingUnit: "step", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.00013 } },
+  { name: "zen3-audio", fullName: "Zen3 Audio", description: "Best quality speech-to-text transcription. 100+ languages.", features: ["Multi-language", "Best accuracy", "100+ languages"], tier: "pro max", specs: { params: "1.5B", arch: "ASR" }, endpoint: "/v1/audio/transcriptions", pricingUnit: "minute", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.002 } },
+  { name: "zen3-audio-fast", fullName: "Zen3 Audio Fast", description: "Fastest speech-to-text transcription for high-throughput workloads.", features: ["Multi-language", "Fastest", "Batch optimized"], tier: "pro", specs: { params: "809M", arch: "ASR" }, endpoint: "/v1/audio/transcriptions", pricingUnit: "minute", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.0012 } },
+  { name: "zen3-asr", fullName: "Zen3 ASR", description: "Real-time streaming speech recognition for live transcription and voice agents.", features: ["Streaming", "Real-time", "Sub-500ms latency"], tier: "pro max", specs: { params: "N/A", arch: "Streaming ASR" }, endpoint: "/v1/audio/transcriptions", pricingUnit: "minute", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.004 } },
+  { name: "zen3-asr-v1", fullName: "Zen3 ASR v1", description: "First-generation streaming ASR for legacy compatibility.", features: ["Streaming", "Legacy"], tier: "pro", specs: { params: "N/A", arch: "Streaming ASR" }, endpoint: "/v1/audio/transcriptions", pricingUnit: "minute", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 0.0035 } },
+  { name: "zen3-tts", fullName: "Zen3 TTS", description: "High-quality text-to-speech with natural prosody. 40+ voices, 8 languages.", features: ["40+ voices", "8 languages", "Natural prosody"], tier: "pro max", specs: { params: "82M", arch: "TTS" }, endpoint: "/v1/audio/speech", pricingUnit: "1M characters", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 5 } },
+  { name: "zen3-tts-hd", fullName: "Zen3 TTS HD", description: "Maximum fidelity text-to-speech for broadcast-quality audio production.", features: ["HD quality", "Broadcast-grade", "48kHz output"], tier: "ultra max", specs: { params: "N/A", arch: "TTS HD" }, endpoint: "/v1/audio/speech", pricingUnit: "1M characters", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 15 } },
+  { name: "zen3-tts-fast", fullName: "Zen3 TTS Fast", description: "Low-latency text-to-speech for real-time voice agents and interactive applications.", features: ["Low latency", "Real-time", "Voice agents"], tier: "pro", specs: { params: "82M", arch: "TTS" }, endpoint: "/v1/audio/speech", pricingUnit: "1M characters", pricing: { input: null, output: null, cacheRead: null, cacheWrite: null, perUnit: 2 } },
+  { name: "zen5", fullName: "Zen5 \u2014 Next Generation", description: "Next-generation agentic frontier model trained on 10B+ tokens of real-world tool use, multi-step reasoning, and production workflows.", features: ["1M+ context window", "Agentic-trained", "Native CoT", "Tool use", "Multimodal native"], tier: "ultra max", specs: { params: "TBA", arch: "MoDE + CoT" }, contactSales: true, pricing: null },
+  { name: "zen5-pro", fullName: "Zen5 Pro \u2014 Advanced", description: "High-throughput agentic model for demanding production workloads.", features: ["512K context window", "Agentic-trained", "Native CoT", "Production optimized"], tier: "ultra", specs: { params: "TBA", arch: "MoDE + CoT" }, contactSales: true, pricing: null },
+  { name: "zen5-max", fullName: "Zen5 Max \u2014 Extended", description: "Maximum context agentic model for document-scale analysis.", features: ["2M context window", "Agentic-trained", "Extended CoT", "Document-scale"], tier: "ultra max", specs: { params: "TBA", arch: "MoDE + CoT" }, contactSales: true, pricing: null },
+  { name: "zen5-ultra", fullName: "Zen5 Ultra \u2014 Deep Reasoning", description: "Deepest reasoning model in the Zen family. Multi-pass chain-of-thought with self-verification.", features: ["1M context window", "Agentic-trained", "Deep CoT", "Self-verification", "Multi-pass reasoning"], tier: "ultra max", specs: { params: "TBA", arch: "MoDE + Deep CoT" }, contactSales: true, pricing: null },
+  { name: "zen5-mini", fullName: "Zen5 Mini \u2014 Efficient", description: "Efficient agentic model delivering zen5-class intelligence at a fraction of the cost.", features: ["256K context window", "Agentic-trained", "Native CoT", "Cost efficient", "Fast inference"], tier: "pro", specs: { params: "TBA", arch: "MoDE + CoT" }, contactSales: true, pricing: null },
+];
+
 const ZenModels = () => {
-  const [hanzoModels, setHanzoModels] = useState<HanzoModel[]>([]);
+  const [hanzoModels, setHanzoModels] = useState<HanzoModel[]>(FALLBACK_MODELS);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(PRICING_API)
       .then((res) => res.json())
-      .then((data) => { setHanzoModels(data.hanzoModels || []); setLoading(false); })
+      .then((data) => {
+        const models = data.hanzoModels || [];
+        if (models.length > 0) setHanzoModels(models);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, []);
 
   const groups = groupModels(hanzoModels);
   const totalModels = hanzoModels.length;
-  const minPrice = hanzoModels.length > 0 ? Math.min(...hanzoModels.map((m) => m.pricing.input)) : 0.30;
-  const maxCtx = "262K";
+  const tokenModels = hanzoModels.filter((m) => m.pricing?.input != null && m.pricing.input > 0);
+  const minPrice = tokenModels.length > 0 ? Math.min(...tokenModels.map((m) => m.pricing!.input!)) : 0.15;
+  const maxCtx = "2M";
 
   return (
     <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
-            
 
       <main>
         {/* Hero Section */}
@@ -314,7 +471,7 @@ const ZenModels = () => {
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-foreground border border-border">
                 <Zap className="w-3 h-3" />
-                {totalModels} Models -- Zen3 & Zen4
+                {totalModels} Models — Zen3, Zen4 & Zen5
               </span>
             </motion.div>
 
@@ -335,9 +492,8 @@ const ZenModels = () => {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto text-center"
             >
-              {totalModels} foundation models across language, code, vision,
-              multimodal, and specialized tasks. Zen MoDE (Mixture of Distilled
-              Experts) architecture. From ${minPrice}/MTok.
+              {totalModels} foundation models across language, code, vision, image, audio, and retrieval.
+              Zen MoDE (Mixture of Distilled Experts) architecture. From ${minPrice}/MTok.
             </motion.p>
 
             {/* Quick stats */}
@@ -352,6 +508,7 @@ const ZenModels = () => {
                 { label: "Max Context", value: maxCtx },
                 { label: "From", value: `$${minPrice}/MTok` },
                 { label: "Architectures", value: "MoE + Dense" },
+                { label: "Modalities", value: "7" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-xl font-bold text-foreground">
@@ -384,9 +541,8 @@ const ZenModels = () => {
               className="flex flex-wrap justify-center items-center gap-4"
             >
               <a
-                href="#zen4"
+                href="#zen5"
                 className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
-
               >
                 Explore Models
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -511,7 +667,6 @@ print(response.choices[0].message.content)`}</code>
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 text-sm bg-primary text-primary-foreground"
-
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -534,7 +689,6 @@ print(response.choices[0].message.content)`}</code>
         </section>
       </main>
 
-      
     </div>
   );
 };
