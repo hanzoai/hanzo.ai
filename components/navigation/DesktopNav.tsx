@@ -9,7 +9,7 @@ import {
   Users, Lightbulb, Brain, Layers, FileText, ExternalLink,
   GitBranch, Cpu, Cloud, Server, ArrowRight, Mail, Building2, Gift, Shield,
   Activity, BookOpen, GraduationCap, Code, MessageCircle, PenLine, LifeBuoy,
-  Palette, Newspaper
+  Palette, Newspaper, HeartHandshake, HelpCircle
 } from "lucide-react";
 
 // Reusable icon link component for menu items
@@ -64,20 +64,20 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
           Building frontier AI infrastructure since 2017. Techstars-backed.
         </p>
         <div className="space-y-1.5 border-t border-border/30 pt-3">
-          <Link href="/team" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
-            <Users className="h-3 w-3 text-muted-foreground" />
+          <Link href="/team" onClick={closeMenu} className="flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors">
+            <Users className="h-3.5 w-3.5 text-muted-foreground" />
             Meet the Team
           </Link>
-          <Link href="/philosophy" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
-            <Lightbulb className="h-3 w-3 text-muted-foreground" />
+          <Link href="/philosophy" onClick={closeMenu} className="flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors">
+            <Lightbulb className="h-3.5 w-3.5 text-muted-foreground" />
             Philosophy
           </Link>
-          <Link href="/leadership" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
-            <Users className="h-3 w-3 text-muted-foreground" />
+          <Link href="/leadership" onClick={closeMenu} className="flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors">
+            <Users className="h-3.5 w-3.5 text-muted-foreground" />
             Leadership
           </Link>
-          <Link href="/blog" onClick={closeMenu} className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground transition-colors">
-            <PenLine className="h-3 w-3 text-muted-foreground" />
+          <Link href="/blog" onClick={closeMenu} className="flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors">
+            <PenLine className="h-3.5 w-3.5 text-muted-foreground" />
             Blog
           </Link>
         </div>
@@ -146,6 +146,33 @@ const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
     </div>
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Resources</h3>
+      <div className="space-y-2 mb-3">
+        {/* Big featured links */}
+        <a
+          href="https://hanzo.community"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-start gap-2 p-2.5 rounded-xl bg-neutral-800/40 hover:bg-accent border border-border/30 hover:border-border/60 transition-all"
+        >
+          <HeartHandshake className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+          <div>
+            <div className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">Hanzo Community</div>
+            <div className="text-xs text-muted-foreground">Discord, forums & events</div>
+          </div>
+        </a>
+        <a
+          href="https://hanzo.help"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-start gap-2 p-2.5 rounded-xl bg-neutral-800/40 hover:bg-accent border border-border/30 hover:border-border/60 transition-all"
+        >
+          <HelpCircle className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+          <div>
+            <div className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">Hanzo Help</div>
+            <div className="text-xs text-muted-foreground">Guides, docs & support</div>
+          </div>
+        </a>
+      </div>
       <div className="space-y-0.5">
         <IconLink href="/brand" icon={Palette} label="Brand" closeMenu={closeMenu} />
         <IconLink href="/press" icon={Newspaper} label="Press" closeMenu={closeMenu} />

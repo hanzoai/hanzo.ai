@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Search, ChevronDown, ExternalLink, Sparkles, Code, Zap, Eye, MessageSquare, Terminal, ArrowRight } from "lucide-react";
+import { Search, ChevronDown, Sparkles, Zap, MessageSquare, Terminal, ArrowRight, Bot, AppWindow, LayoutDashboard } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface User {
@@ -16,41 +16,28 @@ interface AuthButtonsProps {
   onOpenCommandPalette?: () => void;
 }
 
-const zenModels = [
+const zenFamilies = [
   {
-    name: "Zen4 Max",
-    tag: "Frontier",
-    description: "Most capable — reasoning, analysis, agentic coding",
+    name: "Zen4",
+    tag: "Current",
+    description: "30+ open models — nano to 1T frontier. Abliterated, multimodal, agentic.",
     icon: Sparkles,
-    href: "https://cloud.hanzo.ai",
+    href: "/zen",
   },
   {
-    name: "Zen4 Coder",
-    tag: "Code",
-    description: "Code generation, review, and debugging",
-    icon: Code,
-    href: "https://cloud.hanzo.ai",
-  },
-  {
-    name: "Zen4 Mini",
-    tag: "Free",
-    description: "Ultra-fast — $5 free credit on signup",
+    name: "Zen5",
+    tag: "Coming Soon",
+    description: "Next-gen architecture. Faster inference, longer context, deeper reasoning.",
     icon: Zap,
-    href: "https://cloud.hanzo.ai",
-  },
-  {
-    name: "Zen3 Omni",
-    tag: "Multimodal",
-    description: "Text, vision, audio in one model",
-    icon: Eye,
-    href: "https://cloud.hanzo.ai",
+    href: "/zen#zen5",
   },
 ];
 
-const products = [
+const apps = [
+  { label: "Hanzo App", description: "Your AI workspace", href: "https://hanzo.app", icon: AppWindow, external: true },
+  { label: "Hanzo Bot", description: "AI agent platform", href: "https://hanzo.bot", icon: Bot, external: true },
   { label: "Hanzo Chat", description: "Chat with Zen + 100+ models", href: "https://hanzo.chat", icon: MessageSquare, external: true },
   { label: "Hanzo Dev", description: "AI coding agent for your IDE", href: "/dev", icon: Terminal, external: false },
-  { label: "API Console", description: "Keys, usage, billing", href: "https://console.hanzo.ai", icon: Code, external: true },
 ];
 
 const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
@@ -94,7 +81,7 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
       {/* Search / Command palette trigger - unified widget */}
       <button
         onClick={onOpenCommandPalette}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-800/50 border border-border/50 text-muted-foreground hover:text-foreground hover:bg-accent hover:border-neutral-600 transition-all text-sm"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-800/50 border border-border/50 text-muted-foreground hover:text-foreground hover:bg-accent hover:border-neutral-600 transition-all text-sm cursor-pointer"
         aria-label="Search (⌘K)"
       >
         <Search className="h-4 w-4" />
@@ -112,13 +99,25 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         Contact sales
       </Link>
 
-      {/* Log in button */}
-      <a
-        href="https://app.hanzo.bot"
-        className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200 cursor-pointer"
-      >
-        Log in
-      </a>
+      {/* Log in / User name */}
+      {user ? (
+        <a
+          href="https://hanzo.id/account"
+          className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200 cursor-pointer gap-2"
+        >
+          <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+            {(user.name || user.email).charAt(0).toUpperCase()}
+          </span>
+          <span className="max-w-[100px] truncate">{user.name || user.email}</span>
+        </a>
+      ) : (
+        <a
+          href={`https://hanzo.id/login?redirect_uri=${encodeURIComponent("https://hanzo.ai")}`}
+          className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200 cursor-pointer"
+        >
+          Log in
+        </a>
+      )}
 
       {/* Try Zen dropdown - hover activated */}
       <div
@@ -141,13 +140,13 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.96 }}
               transition={{ duration: 0.15 }}
-              className="absolute right-0 mt-2 w-[400px] bg-secondary/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden z-[100]"
+              className="absolute right-0 mt-2 w-[380px] bg-secondary/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden z-[100]"
             >
-              {/* Zen Models */}
+              {/* Zen Model Families */}
               <div className="p-3">
                 <div className="flex items-center justify-between mb-2 px-1">
                   <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
-                    Zen AI Models
+                    Zen AI
                   </span>
                   <Link
                     href="/zen"
@@ -158,31 +157,30 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-2 gap-1.5">
-                  {zenModels.map((model) => {
-                    const ModelIcon = model.icon;
+                <div className="space-y-1.5">
+                  {zenFamilies.map((family) => {
+                    const FamilyIcon = family.icon;
                     return (
-                      <a
-                        key={model.name}
-                        href={model.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        key={family.name}
+                        href={family.href}
                         onClick={() => setIsDropdownOpen(false)}
-                        className="group flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-accent transition-colors"
+                        className="group flex items-start gap-3 p-3 rounded-xl hover:bg-accent transition-colors"
                       >
-                        <div className="w-7 h-7 rounded-lg bg-neutral-800/80 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-700/80 transition-colors">
-                          <ModelIcon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                        <div className="w-8 h-8 rounded-lg bg-neutral-800/80 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-700/80 transition-colors">
+                          <FamilyIcon className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                         </div>
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-1.5">
-                            <span className="text-[13px] font-medium text-foreground">{model.name}</span>
-                            <span className="text-[9px] font-semibold tracking-wider uppercase text-muted-foreground bg-neutral-800/60 px-1 py-px rounded">
-                              {model.tag}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-semibold text-foreground">{family.name}</span>
+                            <span className="text-[9px] font-semibold tracking-wider uppercase text-muted-foreground bg-neutral-800/60 px-1.5 py-px rounded">
+                              {family.tag}
                             </span>
                           </div>
-                          <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">{model.description}</p>
+                          <p className="text-xs text-muted-foreground leading-tight mt-0.5">{family.description}</p>
                         </div>
-                      </a>
+                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-muted-foreground mt-2 flex-shrink-0 transition-colors" />
+                      </Link>
                     );
                   })}
                 </div>
@@ -190,49 +188,50 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
 
               <div className="border-t border-border" />
 
-              {/* Products */}
+              {/* Apps */}
               <div className="p-3">
                 <div className="px-1 mb-1.5">
                   <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
-                    Products
+                    Apps
                   </span>
                 </div>
-                {products.map((item) => {
-                  const ItemIcon = item.icon;
-                  const content = (
-                    <div className="flex items-center gap-2.5 py-2 px-2.5 rounded-lg hover:bg-accent transition-colors">
-                      <ItemIcon className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                      <div className="flex-1 min-w-0">
-                        <span className="text-[13px] font-medium text-foreground">{item.label}</span>
-                        <span className="text-[11px] text-muted-foreground ml-2">{item.description}</span>
+                <div className="grid grid-cols-2 gap-1">
+                  {apps.map((item) => {
+                    const ItemIcon = item.icon;
+                    const content = (
+                      <div className="group flex items-center gap-2 py-2 px-2.5 rounded-lg hover:bg-accent transition-colors">
+                        <ItemIcon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground flex-shrink-0 transition-colors" />
+                        <div className="min-w-0">
+                          <div className="text-[13px] font-medium text-foreground">{item.label}</div>
+                          <div className="text-[10px] text-muted-foreground truncate">{item.description}</div>
+                        </div>
                       </div>
-                      {item.external && <ExternalLink className="w-3 h-3 text-muted-foreground flex-shrink-0" />}
-                    </div>
-                  );
-
-                  if (item.external) {
-                    return (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        {content}
-                      </a>
                     );
-                  }
 
-                  return (
-                    <Link key={item.label} href={item.href} onClick={() => setIsDropdownOpen(false)}>
-                      {content}
-                    </Link>
-                  );
-                })}
+                    if (item.external) {
+                      return (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setIsDropdownOpen(false)}
+                        >
+                          {content}
+                        </a>
+                      );
+                    }
+
+                    return (
+                      <Link key={item.label} href={item.href} onClick={() => setIsDropdownOpen(false)}>
+                        {content}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* CTA */}
+              {/* CTA — Cloud Console */}
               <div className="p-3 pt-0">
                 <a
                   href="https://console.hanzo.ai"
@@ -241,7 +240,8 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
                   onClick={() => setIsDropdownOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition"
                 >
-                  Get API Key — $5 free credit
+                  <LayoutDashboard className="w-3.5 h-3.5" />
+                  Cloud Console
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

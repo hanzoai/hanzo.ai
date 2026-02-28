@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useCallback } from "react";
-import { usePathname } from "next/navigation";
 import { MobileMenu } from "./navigation/MobileMenu";
 import Logo from "./navigation/Logo";
 import DesktopNav from "./navigation/DesktopNav";
@@ -9,23 +8,43 @@ import AuthButtons from "./navigation/AuthButtons";
 import NavbarContainer from "./navigation/NavbarContainer";
 import CommandPalette from "./CommandPalette";
 
+interface User {
+  id: string;
+  email: string;
+  name?: string;
+}
+
+// Fetch user info from hanzo.id using the session token stored in cookies.
+// hanzo.id sets a cookie named `hanzo_token` (or we fall back to localStorage `hanzo_token`).
+async function fetchHanzoUser(): Promise<User | null> {
+  try {
+    const res = await fetch("https://hanzo.id/api/userinfo", {
+      credentials: "include", // send cookies cross-origin
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data || data.error) return null;
+    return {
+      id: data.sub || data.id || "",
+      email: data.email || "",
+      name: data.name || data.preferred_username || data.displayName || undefined,
+    };
+  } catch {
+    return null;
+  }
+}
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
-  const [user, setUser] = useState(null);
-  const pathname = usePathname();
+  const [user, setUser] = useState<User | null>(null);
 
+  // Check for logged-in session from hanzo.id on mount
   useEffect(() => {
-    const isAccountRoute =
-      pathname.startsWith('/account') ||
-      pathname === '/dashboard' ||
-      pathname === '/user-profile' ||
-      pathname === '/organization-profile';
-    if (!isAccountRoute) {
-      setUser(null);
-    }
-  }, [pathname]);
+    fetchHanzoUser().then(setUser);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

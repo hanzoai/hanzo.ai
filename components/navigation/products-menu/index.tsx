@@ -1,11 +1,10 @@
 'use client'
 
-import { productsNav, featuredProducts } from "@/lib/constants/navigation-data";
+import { productsNav } from "@/lib/constants/navigation-data";
 import Link from "next/link";
 import NavMenu from "../NavMenu";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Bot, Terminal, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 // Show all items - no truncation
 const MAX_ITEMS_PER_CATEGORY = 20;
@@ -15,27 +14,43 @@ export const ProductsMenu = () => {
     <NavMenu label="Products">
       {(closeMenu) => (
         <div className="w-full">
-          {/* Featured Products Row */}
+          {/* Featured — Hanzo Bot + Hanzo Dev hero cards */}
           <div className="mb-4 pb-4 border-b border-border">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="h-3.5 w-3.5 text-foreground" />
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Featured</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {featuredProducts.map((product) => {
-                const Icon = product.icon;
-                return (
-                  <Link
-                    key={product.title}
-                    href={product.href || "#"}
-                    onClick={closeMenu}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all group bg-secondary/50 border-border hover:border-white/30/50 hover:bg-accent/50"
-                  >
-                    {Icon && <Icon className="h-3.5 w-3.5 group-hover:text-foreground text-muted-foreground" />}
-                    <span className="text-sm font-medium group-hover:text-foreground text-foreground/80">{product.title}</span>
-                  </Link>
-                );
-              })}
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href="https://hanzo.bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-br from-neutral-800/60 to-neutral-900/60 border border-border hover:border-white/20 hover:bg-neutral-800/80 transition-all"
+              >
+                <div className="w-9 h-9 rounded-lg bg-neutral-700/60 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600/60 transition-colors">
+                  <Bot className="h-5 w-5 text-foreground/80 group-hover:text-foreground transition-colors" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold text-foreground">Hanzo Bot</span>
+                    <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-snug mt-0.5">AI agent platform for any workflow</p>
+                </div>
+              </a>
+              <Link
+                href="/dev"
+                onClick={closeMenu}
+                className="group flex items-start gap-3 p-3 rounded-xl bg-gradient-to-br from-neutral-800/60 to-neutral-900/60 border border-border hover:border-white/20 hover:bg-neutral-800/80 transition-all"
+              >
+                <div className="w-9 h-9 rounded-lg bg-neutral-700/60 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600/60 transition-colors">
+                  <Terminal className="h-5 w-5 text-foreground/80 group-hover:text-foreground transition-colors" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold text-foreground">Hanzo Dev</span>
+                    <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors" />
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-snug mt-0.5">AI coding agent for your IDE</p>
+                </div>
+              </Link>
             </div>
           </div>
 
