@@ -259,12 +259,14 @@ const Zen = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {ZEN_MODELS.map((m, i) => (
+              {ZEN_MODELS.map((m, i) => {
+                const isPreview = m.tag === "preview";
+                return (
                 <motion.a
                   key={m.id}
-                  href={`https://huggingface.co/${m.hf}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={isPreview ? "/contact" : `https://huggingface.co/${m.hf}`}
+                  target={isPreview ? undefined : "_blank"}
+                  rel={isPreview ? undefined : "noopener noreferrer"}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -273,7 +275,11 @@ const Zen = () => {
                 >
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <span className="font-mono text-sm font-semibold text-foreground">{m.label}</span>
-                    <ExternalLink className="w-3 h-3 text-muted-foreground/40 group-hover:text-muted-foreground flex-shrink-0 transition-colors mt-0.5" />
+                    {isPreview ? (
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-medium flex-shrink-0">Request Access</span>
+                    ) : (
+                      <ExternalLink className="w-3 h-3 text-muted-foreground/40 group-hover:text-muted-foreground flex-shrink-0 transition-colors mt-0.5" />
+                    )}
                   </div>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${TIER_STYLE[m.tier]}`}>
@@ -282,10 +288,11 @@ const Zen = () => {
                     <span className="text-xs text-muted-foreground font-mono">{m.params}</span>
                     {m.active && <span className="text-[10px] text-muted-foreground/60">{m.active} active</span>}
                     {m.ctx && <span className="text-[10px] text-muted-foreground/60">{m.ctx} ctx</span>}
-                    {m.tag && <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-muted-foreground">{m.tag}</span>}
+                    {m.tag && !isPreview && <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-muted-foreground">{m.tag}</span>}
                   </div>
                 </motion.a>
-              ))}
+                );
+              })}
             </div>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
