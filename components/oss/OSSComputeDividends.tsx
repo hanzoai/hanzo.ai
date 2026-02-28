@@ -90,7 +90,7 @@ export default function OSSComputeDividends({ variant = "full" }: OSSComputeDivi
                   Connect GitHub
                 </a>
                 <a
-                  href="/open-source#dividends"
+                  href="/open-source/dividends"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-full font-medium text-sm transition-colors border border-border bg-transparent hover:bg-secondary text-foreground whitespace-nowrap"
                 >
                   How payouts work
@@ -209,7 +209,7 @@ export default function OSSComputeDividends({ variant = "full" }: OSSComputeDivi
             Connect GitHub
           </a>
           <a
-            href="/open-source#dividends"
+            href="/open-source/dividends"
             className="inline-flex items-center px-6 py-3 rounded-full font-medium text-sm transition-colors border border-border bg-transparent hover:bg-secondary text-foreground"
           >
             See how payouts work

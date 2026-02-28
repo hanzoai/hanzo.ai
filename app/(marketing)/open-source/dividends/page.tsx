@@ -58,7 +58,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can a project set their own distribution rules?",
-    a: "Yes. Project maintainers can create a .hanzo-dividends.json at the repo root specifying how to split (e.g., 70% pro-rata to all contributors, 20% to maintainers, 10% to a foundation).",
+    a: "Yes. Project maintainers can create a .hanzo.json at the repo root specifying how to split (e.g., 70% pro-rata to all contributors, 20% to maintainers, 10% to a foundation).",
   },
   {
     q: "What chains are supported?",
@@ -261,7 +261,7 @@ export default function DividendsPage() {
                 to customize their split &mdash; for example, 10% to founder, 5% to maintainers, 85% to all
                 contributors. Configure via{" "}
                 <code className="text-xs font-mono bg-muted px-1.5 py-0.5 rounded text-foreground/80">
-                  .hanzo-dividends.json
+                  .hanzo.json
                 </code>{" "}
                 at your repo root.
               </p>
