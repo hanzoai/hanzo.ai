@@ -120,7 +120,7 @@ const hanzo = new Hanzo({
 
 // Create a conversation with memory
 const conversation = hanzo.conversation({
-  model: 'gpt-5',
+  model: 'gpt-5.3',
   memory: true,
   system: 'You are a helpful assistant'
 });

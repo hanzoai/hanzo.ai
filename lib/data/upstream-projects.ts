@@ -308,7 +308,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gpt-4o",  # or claude-3-5-sonnet, gemini-pro, etc.
+    model="gpt-5.3",  # or claude-sonnet-4-6, gemini-3.1-pro, etc.
     messages=[{"role": "user", "content": "Hello!"}]
 )
 print(response.choices[0].message.content)`
@@ -325,7 +325,7 @@ const client = new OpenAI({
 });
 
 const response = await client.chat.completions.create({
-  model: 'gpt-4o',
+  model: 'gpt-5.3',
   messages: [{ role: 'user', content: 'Hello!' }]
 });
 
@@ -339,7 +339,7 @@ console.log(response.choices[0].message.content);`
   -H "Authorization: Bearer $HANZO_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
-    "model": "gpt-4o",
+    "model": "gpt-5.3",
     "messages": [{"role": "user", "content": "Hello!"}]
   }'`
     }
@@ -387,13 +387,13 @@ console.log(\`Available tools: \${tools.tools.length}\`);`
 researcher = Agent(
     name="Researcher",
     instructions="You research topics thoroughly.",
-    model="gpt-4o"
+    model="gpt-5.3"
 )
 
 writer = Agent(
     name="Writer",
     instructions="You write clear, engaging content.",
-    model="claude-3-5-sonnet"
+    model="claude-sonnet-4-6"
 )
 
 # Create swarm and run

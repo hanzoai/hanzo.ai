@@ -58,7 +58,7 @@ const products = [
     description: "Server and gateway for multimodal conversational processors with production-grade tooling.",
     code: "import { useMCP } from '@hanzo/mcps';",
     features: [
-      { icon: <Zap className="h-4 w-4" />, text: "Unified interface for GPT-5, Claude, Gemini and more" },
+      { icon: <Zap className="h-4 w-4" />, text: "Unified interface for GPT-5.3.3, Claude, Gemini and more" },
       { icon: <Lock className="h-4 w-4" />, text: "Tool-use capabilities with custom tool integration" },
       { icon: <Globe className="h-4 w-4" />, text: "Distributed MCP deployment across edge and cloud" },
       { icon: <Github className="h-4 w-4" />, text: "Comprehensive observability and monitoring" }

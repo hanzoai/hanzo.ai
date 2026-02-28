@@ -9,7 +9,7 @@ export interface OperatorModel {
 
 export const operatorModels: OperatorModel[] = [
   {
-    name: "GPT-5",
+    name: "GPT-5.3.3",
     provider: "OpenAI",
     features: ["Highest accuracy", "Fast response time", "Best for complex tasks", "Excellent UI understanding"],
     recommended: true,
@@ -23,11 +23,11 @@ export const operatorModels: OperatorModel[] = [
     command: "operative -m claude"
   },
   {
-    name: "Gemini 2.5 Pro",
+    name: "Gemini 3.1 Pro",
     provider: "Google",
     features: ["Good general performance", "Reliable screen analysis", "Accessible API", "Improving rapidly"],
     recommended: false,
-    command: "operative -m gemini-2.5-pro"
+    command: "operative -m gemini-3.1-pro"
   },
   {
     name: "zen3-vl",

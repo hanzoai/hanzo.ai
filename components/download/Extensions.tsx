@@ -8,9 +8,9 @@ import { Button } from "@hanzo/ui";
 
 const aiProviders = [
   { name: "Zen", models: "zen4, zen4-max, zen4-coder" },
-  { name: "OpenAI", models: "GPT-5, o4 Mini, o3 Pro" },
+  { name: "OpenAI", models: "GPT-5.3.3, o4 Mini, o3 Pro" },
   { name: "Anthropic", models: "Claude Opus, Sonnet, Haiku" },
-  { name: "Google", models: "Gemini 2.5 Pro, Flash" },
+  { name: "Google", models: "Gemini 3.1 Pro, Flash" },
   { name: "xAI", models: "Grok 4, Grok 4.1 Fast" },
   { name: "Mistral", models: "Large 3, Medium, Codestral" },
   { name: "Meta", models: "Llama 4 Maverick, Scout" },

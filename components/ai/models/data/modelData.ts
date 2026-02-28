@@ -97,11 +97,11 @@ const modelCategories = [
       { name: "Claude Opus 4.6", provider: "Anthropic", features: ["1M context window", "Most capable model", "Complex reasoning", "Extended thinking"], description: "Anthropic's most powerful model for the hardest tasks." },
       { name: "Claude Sonnet 4.6", provider: "Anthropic", features: ["1M context window", "Best balance of speed and intelligence", "Strong coding", "Fast inference"], description: "Ideal balance of capability and speed for production workloads." },
       { name: "Claude Haiku 4.5", provider: "Anthropic", features: ["200K context window", "Fastest Anthropic model", "Cost efficient", "Low latency"], description: "Fastest and most affordable Claude model for high-throughput tasks." },
-      { name: "GPT-5", provider: "OpenAI", features: ["400K context window", "Multimodal", "Advanced reasoning", "Tool use"], description: "OpenAI's flagship model with advanced reasoning capabilities." },
-      { name: "GPT-5 Mini", provider: "OpenAI", features: ["400K context window", "Fast and affordable", "Good quality", "Low latency"], description: "Cost-efficient OpenAI model for everyday tasks." },
+      { name: "GPT-5.3.3", provider: "OpenAI", features: ["400K context window", "Multimodal", "Advanced reasoning", "Tool use"], description: "OpenAI's flagship model with advanced reasoning capabilities." },
+      { name: "GPT-5.3.3 Mini", provider: "OpenAI", features: ["400K context window", "Fast and affordable", "Good quality", "Low latency"], description: "Cost-efficient OpenAI model for everyday tasks." },
       { name: "Zen4 Ultra", provider: "Hanzo", features: ["202K context window", "Reasoning model", "Chain-of-thought", "Math and code"], description: "Advanced reasoning model with extended chain-of-thought." },
       { name: "Zen4", provider: "Hanzo", features: ["202K context window", "744B MoE", "Strong general performance", "Open-weight"], description: "Flagship general-purpose model with strong benchmarks." },
-      { name: "Gemini 2.5 Pro", provider: "Google", features: ["1M context window", "Multimodal", "Long-context reasoning", "Code generation"], description: "Google's flagship with the longest context window." },
+      { name: "Gemini 3.1 Pro", provider: "Google", features: ["1M context window", "Multimodal", "Long-context reasoning", "Code generation"], description: "Google's flagship with the longest context window." },
     ]
   },
   {

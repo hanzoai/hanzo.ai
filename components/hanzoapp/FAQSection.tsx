@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "What models are supported?",
-    answer: "Cloud mode supports 100+ models including Zen, GPT-4o, Claude, Gemini, Mistral, and more. Local mode supports Zen (4B-480B), Llama 3, Mistral, and other open models that run on consumer hardware — fully private, no data leaves your machine.",
+    answer: "Cloud mode supports 100+ models including Zen, GPT-5.3.3, Claude, Gemini, Mistral, and more. Local mode supports Zen (4B-480B), Llama 3, Mistral, and other open models that run on consumer hardware — fully private, no data leaves your machine.",
   },
   {
     question: "Is my code private?",

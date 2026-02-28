@@ -8,7 +8,7 @@ import { MessageInterface, ModelInterface } from "@/components/ai-studio/types"
 export default function AIStudioPage() {
   const [activeTab, setActiveTab] = useState("chat")
   const [promptText, setPromptText] = useState("")
-  const [modelSelection, setModelSelection] = useState("gpt-5")
+  const [modelSelection, setModelSelection] = useState("gpt-5.3")
   const [showSidebar, setShowSidebar] = useState(true)
 
   const [conversation, setConversation] = useState<MessageInterface[]>([
@@ -29,11 +29,11 @@ export default function AIStudioPage() {
   ])
 
   const models: ModelInterface[] = [
-    { id: "gpt-5", name: "GPT-5", provider: "OpenAI" },
+    { id: "gpt-5.3", name: "GPT-5.3.3", provider: "OpenAI" },
     { id: "claude-sonnet-4-6", name: "Claude Sonnet 4.6", provider: "Anthropic" },
     { id: "zen4", name: "zen4", provider: "Hanzo" },
     { id: "llama-4-maverick", name: "Llama 4 Maverick", provider: "Meta" },
-    { id: "gemini-2.5-pro", name: "Gemini 2.5 Pro", provider: "Google" },
+    { id: "gemini-3.1-pro", name: "Gemini 3.1 Pro", provider: "Google" },
     { id: "zen", name: "Zen 32B", provider: "Zen" },
     { id: "mistral-large", name: "Mistral Large", provider: "Mistral" },
   ]

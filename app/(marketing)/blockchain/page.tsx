@@ -513,7 +513,7 @@ const Blockchain = () => {
 import { Wallet } from "@hanzo/blockchain";
 
 const agent = new Hanzo.Agent({
-  model: "claude-sonnet-4-20250514",
+  model: "claude-sonnet-4-6",
   tools: [Wallet.tools],
 });
 

@@ -35,7 +35,7 @@ const OperativeFeatures = () => {
     {
       icon: Cpu,
       title: "Model Flexibility",
-      description: "Compatible with various multimodal models including GPT-5, Claude, Gemini 2.5 Pro."
+      description: "Compatible with various multimodal models including GPT-5.3.3, Claude, Gemini 3.1 Pro."
     }
   ];
 
