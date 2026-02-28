@@ -83,7 +83,7 @@ export const NavMenu = ({ label, children }: NavMenuProps) => {
       <button
         onClick={toggleMenu}
         className={cn(
-          "inline-flex items-center outline-none focus:outline-none transition-colors text-sm font-medium",
+          "inline-flex items-center outline-none focus:outline-none transition-colors text-sm font-medium cursor-pointer",
           isOpen
             ? "text-foreground"
             : "text-muted-foreground hover:text-foreground"
