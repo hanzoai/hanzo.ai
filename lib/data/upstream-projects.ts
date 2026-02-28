@@ -13,6 +13,11 @@ export interface UpstreamProject {
   logo?: string;
   license: string;
   stars?: string;
+  creator: string;
+  creatorUrl?: string;
+  gratitude: string;
+  sbomPackages?: string[];
+  revenueShareEligible: boolean;
 }
 
 export interface ProductSDK {
@@ -53,7 +58,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://litellm.ai',
     github: 'https://github.com/BerriAI/litellm',
     license: 'MIT',
-    stars: '18k+'
+    stars: '18k+',
+    creator: 'BerriAI / Ishaan & Krrish',
+    creatorUrl: 'https://github.com/BerriAI',
+    gratitude: 'LiteLLM is the backbone of our AI Gateway — Ishaan and Krrish built the most elegant LLM proxy we\'ve ever seen.',
+    sbomPackages: ['litellm'],
+    revenueShareEligible: true,
   },
   librechat: {
     name: 'LibreChat',
@@ -61,7 +71,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://librechat.ai',
     github: 'https://github.com/danny-avila/LibreChat',
     license: 'MIT',
-    stars: '20k+'
+    stars: '20k+',
+    creator: 'Danny Avila',
+    creatorUrl: 'https://github.com/danny-avila',
+    gratitude: 'Danny\'s vision for LibreChat gave us the foundation for Hanzo Chat — a truly open alternative to ChatGPT.',
+    sbomPackages: ['librechat'],
+    revenueShareEligible: true,
   },
   langflow: {
     name: 'Langflow',
@@ -69,7 +84,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://langflow.org',
     github: 'https://github.com/langflow-ai/langflow',
     license: 'MIT',
-    stars: '35k+'
+    stars: '35k+',
+    creator: 'Langflow AI / Gabriel Luiz',
+    creatorUrl: 'https://github.com/langflow-ai',
+    gratitude: 'Langflow\'s visual workflow approach transformed how we think about AI pipeline composition.',
+    sbomPackages: ['langflow'],
+    revenueShareEligible: true,
   },
   comfyui: {
     name: 'ComfyUI',
@@ -77,7 +97,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://www.comfy.org',
     github: 'https://github.com/comfyanonymous/ComfyUI',
     license: 'GPL-3.0',
-    stars: '60k+'
+    stars: '60k+',
+    creator: 'comfyanonymous',
+    creatorUrl: 'https://github.com/comfyanonymous',
+    gratitude: 'ComfyUI\'s node-based architecture is the most powerful creative AI tool ever built. We\'re honored to build on it.',
+    sbomPackages: ['comfyui'],
+    revenueShareEligible: true,
   },
   langfuse: {
     name: 'Langfuse',
@@ -85,7 +110,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://langfuse.com',
     github: 'https://github.com/langfuse/langfuse',
     license: 'MIT',
-    stars: '8k+'
+    stars: '8k+',
+    creator: 'Langfuse Team / Max & Marc',
+    creatorUrl: 'https://github.com/langfuse',
+    gratitude: 'Langfuse brought real observability to LLM applications. Essential infrastructure for anyone running AI at scale.',
+    sbomPackages: ['langfuse'],
+    revenueShareEligible: true,
   },
   anthropic_computer_use: {
     name: 'Anthropic Computer Use',
@@ -93,7 +123,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://docs.anthropic.com/en/docs/agents-and-tools/computer-use',
     github: 'https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo',
     license: 'MIT',
-    stars: '5k+'
+    stars: '5k+',
+    creator: 'Anthropic',
+    creatorUrl: 'https://github.com/anthropics',
+    gratitude: 'Anthropic\'s pioneering work on computer use capabilities opened an entirely new paradigm for AI agents.',
+    sbomPackages: ['anthropic'],
+    revenueShareEligible: true,
   },
 
   // Automation & Workflows
@@ -103,7 +138,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://activepieces.com',
     github: 'https://github.com/activepieces/activepieces',
     license: 'MIT',
-    stars: '10k+'
+    stars: '10k+',
+    creator: 'Activepieces Team',
+    creatorUrl: 'https://github.com/activepieces',
+    gratitude: 'Activepieces proved that workflow automation doesn\'t need to be a walled garden. Open, extensible, and beautiful.',
+    sbomPackages: ['@activepieces/shared'],
+    revenueShareEligible: true,
   },
   temporal: {
     name: 'Temporal',
@@ -111,7 +151,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://temporal.io',
     github: 'https://github.com/temporalio/temporal',
     license: 'MIT',
-    stars: '12k+'
+    stars: '12k+',
+    creator: 'Temporal Technologies / Maxim Fateev',
+    creatorUrl: 'https://github.com/temporalio',
+    gratitude: 'Temporal\'s durable execution model fundamentally changed how we think about reliability. Mission-critical code deserves nothing less.',
+    sbomPackages: ['temporalio'],
+    revenueShareEligible: true,
   },
   bullmq: {
     name: 'BullMQ',
@@ -119,7 +164,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://bullmq.io',
     github: 'https://github.com/taskforcesh/bullmq',
     license: 'MIT',
-    stars: '6k+'
+    stars: '6k+',
+    creator: 'Taskforce.sh / Manuel Astorga',
+    creatorUrl: 'https://github.com/taskforcesh',
+    gratitude: 'BullMQ is the most reliable message queue in the Node.js ecosystem. Simple, fast, and battle-tested.',
+    sbomPackages: ['bullmq'],
+    revenueShareEligible: true,
   },
 
   // Analytics & Growth
@@ -129,7 +179,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://insights.hanzo.ai',
     github: 'https://github.com/hanzoai/insights',
     license: 'MIT',
-    stars: '22k+'
+    stars: '22k+',
+    creator: 'Hanzo AI (PostHog fork)',
+    creatorUrl: 'https://github.com/hanzoai',
+    gratitude: 'Built on PostHog\'s incredible analytics foundation — James and Tim created the definitive open-source analytics platform.',
+    sbomPackages: ['posthog-js'],
+    revenueShareEligible: true,
   },
   umami: {
     name: 'Umami',
@@ -137,7 +192,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://umami.is',
     github: 'https://github.com/umami-software/umami',
     license: 'MIT',
-    stars: '23k+'
+    stars: '23k+',
+    creator: 'Mike Cao',
+    creatorUrl: 'https://github.com/mikecao',
+    gratitude: 'Mike proved you can have powerful analytics without surveillance. Privacy-first, lightweight, elegant.',
+    sbomPackages: ['@umami/node'],
+    revenueShareEligible: true,
   },
   growthbook: {
     name: 'GrowthBook',
@@ -145,7 +205,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://growthbook.io',
     github: 'https://github.com/growthbook/growthbook',
     license: 'MIT',
-    stars: '6k+'
+    stars: '6k+',
+    creator: 'GrowthBook / Jeremy Dorn',
+    creatorUrl: 'https://github.com/growthbook',
+    gratitude: 'GrowthBook brought proper Bayesian experimentation to everyone. No more guessing if features work.',
+    sbomPackages: ['@growthbook/growthbook'],
+    revenueShareEligible: true,
   },
   dittofeed: {
     name: 'Dittofeed',
@@ -153,7 +218,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://dittofeed.com',
     github: 'https://github.com/dittofeed/dittofeed',
     license: 'MIT',
-    stars: '2k+'
+    stars: '2k+',
+    creator: 'Dittofeed Team',
+    creatorUrl: 'https://github.com/dittofeed',
+    gratitude: 'Dittofeed is building the open-source Braze we all needed. Customer engagement without vendor lock-in.',
+    sbomPackages: ['dittofeed'],
+    revenueShareEligible: true,
   },
 
   // CX & Business
@@ -163,7 +233,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://chatwoot.com',
     github: 'https://github.com/chatwoot/chatwoot',
     license: 'MIT',
-    stars: '21k+'
+    stars: '21k+',
+    creator: 'Chatwoot / Pranav Rajs & Sojan Jose',
+    creatorUrl: 'https://github.com/chatwoot',
+    gratitude: 'Chatwoot built the Intercom alternative the world deserved — open, omnichannel, and community-driven.',
+    sbomPackages: ['@chatwoot/sdk'],
+    revenueShareEligible: true,
   },
   twenty: {
     name: 'Twenty',
@@ -171,7 +246,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://twenty.com',
     github: 'https://github.com/twentyhq/twenty',
     license: 'AGPL-3.0',
-    stars: '24k+'
+    stars: '24k+',
+    creator: 'Twenty / Charles Bochet',
+    creatorUrl: 'https://github.com/twentyhq',
+    gratitude: 'Charles and the Twenty team are building the most beautiful CRM ever made. Salesforce, but actually enjoyable.',
+    sbomPackages: ['twenty'],
+    revenueShareEligible: true,
   },
   erpnext: {
     name: 'ERPNext',
@@ -179,7 +259,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://erpnext.com',
     github: 'https://github.com/frappe/erpnext',
     license: 'GPL-3.0',
-    stars: '21k+'
+    stars: '21k+',
+    creator: 'Frappe / Rushabh Mehta',
+    creatorUrl: 'https://github.com/frappe',
+    gratitude: 'Rushabh\'s decade-long commitment to open-source ERP changed business software forever. ERPNext proves enterprise doesn\'t have to mean expensive.',
+    sbomPackages: ['frappe', 'erpnext'],
+    revenueShareEligible: true,
   },
 
   // Search & Data
@@ -189,7 +274,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://meilisearch.com',
     github: 'https://github.com/meilisearch/meilisearch',
     license: 'MIT',
-    stars: '48k+'
+    stars: '48k+',
+    creator: 'Meili / Quentin de Quelen',
+    creatorUrl: 'https://github.com/meilisearch',
+    gratitude: 'Meilisearch made search fast, relevant, and delightfully simple. The Algolia alternative we always wanted.',
+    sbomPackages: ['meilisearch'],
+    revenueShareEligible: true,
   },
 
   // ML Frameworks
@@ -199,7 +289,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://huggingface.github.io/candle',
     github: 'https://github.com/huggingface/candle',
     license: 'MIT/Apache-2.0',
-    stars: '16k+'
+    stars: '16k+',
+    creator: 'Hugging Face / Laurent Mazare',
+    creatorUrl: 'https://github.com/huggingface',
+    gratitude: 'Laurent\'s work on Candle brought ML to Rust with elegance. Minimalist, performant, and a joy to use.',
+    sbomPackages: ['candle-core'],
+    revenueShareEligible: true,
   },
   vllm: {
     name: 'vLLM',
@@ -207,7 +302,12 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     url: 'https://vllm.ai',
     github: 'https://github.com/vllm-project/vllm',
     license: 'Apache-2.0',
-    stars: '32k+'
+    stars: '32k+',
+    creator: 'vLLM Project / Woosuk Kwon',
+    creatorUrl: 'https://github.com/vllm-project',
+    gratitude: 'vLLM\'s PagedAttention revolutionized LLM serving. The single most important inference optimization of the generation.',
+    sbomPackages: ['vllm'],
+    revenueShareEligible: true,
   },
 };
 
@@ -458,4 +558,24 @@ export function getCodeExamplesForProduct(productId: string): CodeExample[] {
 
 export function getCommunityForProduct(productId: string): ProductCommunity {
   return productCommunityLinks[productId] || productCommunityLinks.default;
+}
+
+// =============================================================================
+// SBOM REVENUE SHARING CONFIGURATION
+// =============================================================================
+
+export const sbomRevenueConfig = {
+  sharePercentage: 25,
+  payoutOptions: ['USD', 'Hanzo Network', 'AI Coin'] as const,
+  supportedChains: ['Ethereum', 'Solana', 'Polygon', 'Base', 'Arbitrum'] as const,
+  dashboardUrl: '/oss/dashboard',
+  connectUrl: '/oss/connect',
+  description: 'Hanzo dedicates 25% of all compute costs to open source contributors, distributed transparently based on verified SBOMs.',
+};
+
+export function getSBOMPackagesForProduct(productId: string): string[] {
+  const upstreamKey = productUpstreamMap[productId];
+  if (!upstreamKey) return [];
+  const project = upstreamProjects[upstreamKey];
+  return project?.sbomPackages || [];
 }

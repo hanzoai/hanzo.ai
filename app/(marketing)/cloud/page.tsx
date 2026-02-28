@@ -1,5 +1,7 @@
 import ZenBackground from "@/components/zen/ZenBackground"
 import ZenQuoteSection from "@/components/zen/ZenQuoteSection"
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 import CloudHero from "@/components/cloud/CloudHero"
 import Features from "@/components/cloud/Features"
 import ProductCatalog from "@/components/cloud/ProductCatalog"
@@ -29,6 +31,8 @@ export default function CloudPage() {
       <Regions />
       <Security />
       <TechStack />
+      <OSSRevenueBanner />
+      <OSSComputeDividends variant="banner" />
       <CallToAction />
       <DesktopAppBanner />
     </>

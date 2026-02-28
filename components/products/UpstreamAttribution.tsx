@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { ExternalLink, GitFork, Heart, Star } from "lucide-react";
+import { ExternalLink, GitFork, Heart, Star, Wallet } from "lucide-react";
 
 interface UpstreamProject {
   name: string;
@@ -109,6 +109,11 @@ export function UpstreamAttribution({ upstream, productName }: UpstreamAttributi
             <p className="flex items-center gap-2 text-sm text-muted-foreground">
               <Heart className="w-4 h-4 text-foreground" />
               We're grateful to the {upstream.name} maintainers and community for their incredible work.
+            </p>
+            <p className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
+              <Wallet className="w-4 h-4 text-foreground" />
+              Contributors to {upstream.name} earn a share of Hanzo compute revenue through our{' '}
+              <a href="/open-source" className="text-foreground underline hover:no-underline">SBOM-verified revenue sharing program</a>.
             </p>
           </div>
         </div>

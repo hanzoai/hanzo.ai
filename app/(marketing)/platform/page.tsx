@@ -10,6 +10,8 @@ import DeveloperLove from "@/components/platform/DeveloperLove";
 import CallToAction from "@/components/platform/CallToAction";
 import ZenBackground from "@/components/zen/ZenBackground";
 import ZenQuoteSection from "@/components/zen/ZenQuoteSection";
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends";
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner";
 import { motion } from "framer-motion";
 import { Github, Cloud, Server, Lock, Code2, Network, Terminal, ArrowRight } from "lucide-react";
 
@@ -232,6 +234,8 @@ const Platform = () => {
         <OpenSourceBenefits />
         <TrustedBy />
         <DeveloperLove />
+        <OSSRevenueBanner upstreamName="Dokploy" />
+        <OSSComputeDividends variant="banner" />
         <CallToAction />
       </main>
 

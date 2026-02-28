@@ -4,6 +4,7 @@ import { useState } from "react"
 import Hero from "@/components/ai-studio/Hero"
 import StudioLayout from "@/components/ai-studio/StudioLayout"
 import { MessageInterface, ModelInterface } from "@/components/ai-studio/types"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function AIStudioPage() {
   const [activeTab, setActiveTab] = useState("chat")
@@ -76,6 +77,7 @@ export default function AIStudioPage() {
         setPromptText={setPromptText}
         handleSubmit={handleSubmit}
       />
+      <OSSRevenueBanner upstreamName="ComfyUI" compact />
     </div>
   )
 }

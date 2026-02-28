@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, GitBranch, Star, Heart, ArrowRight, ExternalLink, Code, Building2, Scale, Sparkles, Check, Wallet, DollarSign, Coins, ShieldCheck, Eye, Users } from "lucide-react";
-import OSSCatalog from "@/components/oss/OSSCatalog";
+import OSSCatalog from "@/components/oss/OSSCatalog"
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends";
 
 // Real org repo counts (fallbacks verified 2026-02-27; refreshed dynamically)
 const ORG_NAMES = ["hanzoai", "luxfi", "zenlm", "hanzo-js", "hanzo-apps", "zoo-labs"];
@@ -313,31 +314,37 @@ const OpenSource = () => {
                 Earn from Open Source
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Hanzo dedicates up to <span className="text-foreground font-semibold">25% of compute costs</span> back
-                to the open-source contributors who make our platform possible. Connect your code, connect your wallet, get paid.
+                We dedicate <span className="text-foreground font-semibold">25% of all compute costs</span> to
+                open source &mdash; distributed transparently based on verified Software Bills of Materials (SBOMs).
               </p>
             </motion.div>
 
-            {/* How it works — 3 steps */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+            {/* How it works — 4 steps */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
               {[
                 {
                   step: "01",
                   icon: GitBranch,
                   title: "Connect Your Git",
-                  body: "Sign in with GitHub or GitLab. We scan your contributions to Hanzo repos and the upstream projects we depend on.",
+                  body: "Sign in with GitHub or GitLab to verify your contributions across Hanzo repos and the upstream projects we depend on.",
                 },
                 {
                   step: "02",
                   icon: Wallet,
                   title: "Connect Your Wallet",
-                  body: "Link any wallet on Ethereum, Solana, Polygon, or other major chains. Or choose direct USD payout.",
+                  body: "Link a wallet on any major chain (Ethereum, Solana, Polygon, etc.) or choose direct USD payout.",
                 },
                 {
                   step: "03",
+                  icon: ShieldCheck,
+                  title: "SBOM Verification",
+                  body: "We trace every OSS dependency running in production and match it to contributors via Software Bills of Materials.",
+                },
+                {
+                  step: "04",
                   icon: DollarSign,
-                  title: "Earn Revenue Share",
-                  body: "Every billing cycle, contributors receive a share of compute revenue proportional to their merged contributions.",
+                  title: "Transparent Payouts",
+                  body: "Earn proportional to your code's actual usage. All distributions are public and auditable on-chain.",
                 },
               ].map((card, i) => (
                 <motion.div
@@ -363,47 +370,59 @@ const OpenSource = () => {
               ))}
             </div>
 
-            {/* Payout options */}
+            {/* Feature badges */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="rounded-xl border border-border bg-secondary/30 p-6 mb-10"
+              className="flex flex-wrap items-center justify-center gap-3 mb-10"
             >
-              <h3 className="text-sm font-semibold text-foreground mb-4 text-center">
-                Choose Your Payout
-              </h3>
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                {[
-                  { label: "USD", sub: "Direct bank transfer", icon: DollarSign },
-                  { label: "Hanzo Network", sub: "Native network tokens", icon: Coins },
-                  { label: "AI Coin", sub: "AI compute credits", icon: Sparkles },
-                ].map((option) => (
-                  <div
-                    key={option.label}
-                    className="flex items-center gap-3 px-5 py-3 rounded-lg border border-border bg-background/50 min-w-[180px]"
-                  >
-                    <option.icon className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{option.label}</div>
-                      <div className="text-xs text-muted-foreground">{option.sub}</div>
-                    </div>
+              {[
+                { icon: ShieldCheck, label: "SBOM-Verified", sub: "Every payout traced to actual production usage" },
+                { icon: Eye, label: "Fully Transparent", sub: "All distributions are public and auditable" },
+                { icon: Users, label: "Community Governed", sub: "Projects can customize their own payout splits" },
+                { icon: Coins, label: "Multi-Chain", sub: "Payout in USD, Hanzo Network, or AI coin" },
+              ].map((badge, i) => (
+                <motion.div
+                  key={badge.label}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.25, delay: 0.25 + i * 0.04 }}
+                  className="group flex items-center gap-2.5 px-4 py-2.5 rounded-lg border border-border bg-secondary/30 hover:border-primary/40 transition-colors"
+                >
+                  <badge.icon className="w-4 h-4 flex-shrink-0" style={{ color: "var(--primary)" }} />
+                  <div>
+                    <div className="text-xs font-semibold text-foreground">{badge.label}</div>
+                    <div className="text-[11px] text-muted-foreground leading-tight">{badge.sub}</div>
                   </div>
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground text-center mt-4">
-                Works across Ethereum, Solana, Polygon, and other major chains.
-              </p>
+                </motion.div>
+              ))}
             </motion.div>
 
-            {/* Section CTA */}
+            {/* Outreach callout */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.25 }}
-              className="text-center"
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="rounded-xl border border-primary/20 p-5 mb-10 text-center"
+              style={{ backgroundColor: "color-mix(in srgb, var(--primary) 5%, transparent)" }}
+            >
+              <p className="text-sm text-foreground">
+                If your code powers Hanzo infrastructure, <span className="font-semibold">we want to pay you</span>.
+                Connect your git credentials to claim your share.
+              </p>
+            </motion.div>
+
+            {/* Section CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.35 }}
+              className="flex flex-wrap items-center justify-center gap-4"
             >
               <a
                 href="/oss/connect"
@@ -412,9 +431,21 @@ const OpenSource = () => {
                 Connect &amp; Start Earning
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
+              <a
+                href="/oss/dashboard"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-sm text-foreground"
+              >
+                View Payout Dashboard
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </motion.div>
           </div>
         </section>
+
+        {/* OSS Compute Dividends */}
+        <div id="dividends">
+          <OSSComputeDividends />
+        </div>
 
         {/* OSS Catalog */}
         <OSSCatalog />

@@ -9,6 +9,8 @@ import UseCases from "@/components/hanzobot/UseCases";
 import GettingStarted from "@/components/hanzobot/GettingStarted";
 import Documentation from "@/components/hanzobot/Documentation";
 import Community from "@/components/hanzobot/Community";
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends";
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner";
 
 const HanzoBot = () => {
   return (
@@ -21,6 +23,8 @@ const HanzoBot = () => {
         <UseCases />
         <GettingStarted />
         <Documentation />
+        <OSSRevenueBanner upstreamName="LibreChat" />
+        <OSSComputeDividends variant="banner" />
         <Community />
       </main>
       

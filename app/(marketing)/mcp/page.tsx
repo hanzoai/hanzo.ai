@@ -19,6 +19,7 @@ import {
   Settings
 } from "lucide-react";
 import Link from "next/link"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function MCPPage() {
   return (
@@ -534,6 +535,8 @@ servers:
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
