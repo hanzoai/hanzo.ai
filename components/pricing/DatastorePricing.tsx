@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@hanzo/ui";
 import { Loader2 } from "lucide-react";
 
@@ -91,7 +92,7 @@ const FALLBACK: DatastorePricingData = {
     "IAM SSO","KMS-managed secrets","OpenTelemetry native","DDoS protection",
     "Real-time query metrics","Hanzo Console UI",
   ],
-  endpoints: { signup: "https://console.hanzo.ai", sales: "mailto:sales@hanzo.ai?subject=Hanzo Datastore Enterprise" },
+  endpoints: { signup: "https://console.hanzo.ai", sales: "/contact/sales" },
 };
 
 function supportLabel(r: string) {
@@ -102,6 +103,7 @@ function supportLabel(r: string) {
 }
 
 export default function DatastorePricing() {
+  const router = useRouter();
   const [data, setData] = useState<DatastorePricingData>(FALLBACK);
   const [annual, setAnnual] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -123,7 +125,7 @@ export default function DatastorePricing() {
   }
 
   const signup = data.endpoints?.signup ?? "https://console.hanzo.ai";
-  const sales = data.endpoints?.sales ?? "mailto:sales@hanzo.ai";
+  const sales = data.endpoints?.sales ?? "/contact/sales";
 
   return (
     <div className="max-w-7xl mx-auto mb-16">
@@ -198,9 +200,9 @@ export default function DatastorePricing() {
                   size="lg"
                   variant={tier.popular ? "default" : "outline"}
                   className="w-full"
-                  onClick={() => window.open(tier.contactSales ? sales : signup, "_blank")}
+                  onClick={() => tier.contactSales ? router.push(sales) : window.open(signup, "_blank")}
                 >
-                  {tier.contactSales ? "Contact sales" : "Start now"}
+                  {tier.contactSales ? "Book a call" : "Start now"}
                 </Button>
               </div>
             ))}
@@ -282,9 +284,9 @@ export default function DatastorePricing() {
           size="lg"
           variant="outline"
           className="px-8"
-          onClick={() => window.open(sales, "_blank")}
+          onClick={() => router.push(sales)}
         >
-          Talk to sales
+          Book a call
         </Button>
       </div>
     </div>
