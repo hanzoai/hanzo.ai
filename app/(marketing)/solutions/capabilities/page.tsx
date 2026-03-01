@@ -37,7 +37,7 @@ const SolutionCapabilities: React.FC = () => {
   };
   
   // Get capabilities and industries from the solutions array
-  const capabilities = solutions.find(s => s.title === "Capabilities")?.items || [];
+  const capabilities = solutions.find(s => s.title === "Use Cases")?.items || [];
 
   const renderCapabilityGrid = () => {
     const displayCount = expandedSections["Capabilities"] || 8;
@@ -49,10 +49,13 @@ const SolutionCapabilities: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence initial={false}>
             {displayItems.map((item, index) => {
-              const Icon = getIcon(item);
+              const name = typeof item === 'string' ? item : (item as { name: string }).name;
+              const href = typeof item === 'string' ? `/solutions/${item.toLowerCase().replace(/\s+/g, '-')}` : (item as { href: string }).href;
+              const description = typeof item === 'string' ? null : (item as { description?: string }).description;
+              const Icon = getIcon(name);
               return (
                 <motion.div
-                  key={item}
+                  key={name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -67,15 +70,14 @@ const SolutionCapabilities: React.FC = () => {
                       <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2 group-hover:text-foreground transition-colors">
-                      {item}
+                      {name}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4">
-                      Our specialists deliver comprehensive {item.toLowerCase()} solutions tailored to your 
-                      organization's unique challenges and goals.
+                      {description || `Our specialists deliver comprehensive ${name.toLowerCase()} solutions tailored to your organization's unique challenges and goals.`}
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-2 mt-4">
-                      <Link href={`/solutions/${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-xs flex items-center text-foreground hover:text-foreground/70">
+                      <Link href={href} className="text-xs flex items-center text-foreground hover:text-foreground/70">
                         <LinkIcon className="h-3 w-3 mr-1" /> Learn more
                       </Link>
                       <a href="#" className="text-xs flex items-center text-foreground hover:text-foreground/70">
