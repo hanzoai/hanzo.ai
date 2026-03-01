@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
 import { Github, Code, Users, Rocket } from "lucide-react";
-import { Loader2 } from "lucide-react";
 
 const PLANS_API = "https://api.hanzo.ai/v1/plans";
 
@@ -88,8 +87,8 @@ const STATIC_PLANS: SubscriptionPlan[] = [
 ];
 
 const PersonalPlans = () => {
-  const [plans, setPlans] = useState<SubscriptionPlan[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize with static plans immediately — no loading flash
+  const [plans, setPlans] = useState<SubscriptionPlan[]>(STATIC_PLANS);
 
   useEffect(() => {
     fetch(PLANS_API)
@@ -101,27 +100,12 @@ const PersonalPlans = () => {
         const personal = (d.plans || []).filter(
           (p: SubscriptionPlan) => p.category === "personal"
         );
-        setPlans(personal.length ? personal : STATIC_PLANS);
-        setLoading(false);
+        if (personal.length) setPlans(personal);
       })
       .catch(() => {
-        setPlans(STATIC_PLANS);
-        setLoading(false);
+        // keep STATIC_PLANS already set
       });
   }, []);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-24">
-        <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
-        <span className="text-muted-foreground">Loading plans...</span>
-      </div>
-    );
-  }
-
-  if (!plans.length) {
-    return null;
-  }
 
   function formatPrice(plan: SubscriptionPlan) {
     if (plan.contactSales || plan.priceMonthly == null) return "Custom";

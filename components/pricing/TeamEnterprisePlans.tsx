@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
 import { Users, Shield, Building2 } from "lucide-react";
-import { Loader2 } from "lucide-react";
 import TeamPlanDetails from "./TeamPlanDetails";
 
 const PLANS_API = "https://api.hanzo.ai/v1/plans";
@@ -25,41 +24,48 @@ interface SubscriptionPlan {
 const PLAN_ICONS: Record<string, React.ReactNode> = {
   team: <Users className="h-6 w-6 text-muted-foreground" />,
   enterprise: <Shield className="h-6 w-6 text-muted-foreground" />,
+  agency: <Shield className="h-6 w-6 text-muted-foreground" />,
 };
 
 const STATIC_PLANS: SubscriptionPlan[] = [
   {
     id: 'team',
     name: 'Team',
-    description: 'For teams building production AI together.',
-    priceMonthly: 500,
-    priceAnnual: 5000,
+    description: 'Collaborate with your team. Includes hanzo.team workspace access.',
+    priceMonthly: 25,
     category: 'team',
     popular: true,
     features: [
-      '$500 credits/month pooled',
-      'All Zen frontier models',
-      'Up to 20 seats',
-      'Shared usage dashboard',
-      'SSO via Hanzo Identity',
-      'Priority support SLA',
+      'Everything in Unified AI',
+      'hanzo.team workspace included',
+      'Shared team credits & billing',
+      'Up to 25 members',
+      'Team usage analytics',
+      'SSO / SAML',
+      'Priority support',
+      'Custom model fine-tuning',
+      '5M tokens/min',
+      '$25/mo per seat',
     ],
   },
   {
-    id: 'enterprise',
-    name: 'Enterprise',
-    description: 'Private cloud AI for the most demanding organizations.',
+    id: 'agency',
+    name: 'Agency',
+    description: 'Full-scale AI infrastructure for agencies and enterprises. Dedicated support and SLA.',
     priceMonthly: null,
     category: 'enterprise',
     contactSales: true,
     features: [
-      'Custom credit allocation',
+      'Everything in Team',
+      'Unlimited members',
       'Dedicated inference capacity',
-      'VPC / on-premise deployment',
-      'Air-gapped option',
-      'SAML 2.0 / SCIM',
+      'Custom rate limits',
+      'On-premise / VPC deployment',
+      'SOC 2 compliance',
+      'Custom model fine-tuning',
       '99.99% uptime SLA',
-      'Dedicated support engineer',
+      'Dedicated account manager',
+      '24/7 engineering support',
     ],
   },
 ];
@@ -67,8 +73,8 @@ const STATIC_PLANS: SubscriptionPlan[] = [
 const TeamEnterprisePlans = () => {
   const [fromMaxPlan, setFromMaxPlan] = useState(false);
   const [fromProPlan, setFromProPlan] = useState(false);
-  const [plans, setPlans] = useState<SubscriptionPlan[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize with static plans immediately — no loading flash
+  const [plans, setPlans] = useState<SubscriptionPlan[]>(STATIC_PLANS);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -93,37 +99,22 @@ const TeamEnterprisePlans = () => {
         const teamEnterprise = (d.plans || []).filter(
           (p: SubscriptionPlan) => p.category === "team" || p.category === "enterprise"
         );
-        setPlans(teamEnterprise.length ? teamEnterprise : STATIC_PLANS);
-        setLoading(false);
+        if (teamEnterprise.length) setPlans(teamEnterprise);
       })
       .catch(() => {
-        setPlans(STATIC_PLANS);
-        setLoading(false);
+        // keep STATIC_PLANS already set
       });
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-24">
-        <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
-        <span className="text-muted-foreground">Loading plans...</span>
-      </div>
-    );
-  }
-
-  if (!plans.length) {
-    return null;
-  }
-
   function formatPrice(plan: SubscriptionPlan) {
-    if (plan.contactSales || plan.priceMonthly == null) return "Custom";
+    if (plan.contactSales || plan.priceMonthly == null) return "Contact Sales";
     if (plan.priceMonthly === 0) return "Free";
     return `$${plan.priceMonthly.toLocaleString()}`;
   }
 
   function billingPeriod(plan: SubscriptionPlan) {
     if (plan.contactSales || plan.priceMonthly == null || plan.priceMonthly === 0) return undefined;
-    return "/month";
+    return "/mo per seat";
   }
 
   const iconFallback = <Building2 className="h-6 w-6 text-muted-foreground" />;
@@ -142,6 +133,7 @@ const TeamEnterprisePlans = () => {
             features={plan.features}
             popular={plan.popular || plan.category === "team"}
             showDetails={plan.category === "team"}
+            contactSalesUrl={plan.contactSales ? "https://cal.com/hanzo" : undefined}
           />
         ))}
       </div>

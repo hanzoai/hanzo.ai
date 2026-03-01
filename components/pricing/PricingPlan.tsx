@@ -3,7 +3,6 @@
 import React from "react";
 import { Button } from "@hanzo/ui";
 import { Check } from "lucide-react";
-import { Dialog, DialogTrigger } from "@hanzo/ui";
 
 interface PricingPlanProps {
   name: string;
@@ -16,6 +15,7 @@ interface PricingPlanProps {
   customColor?: string;
   showDetails?: boolean;
   githubLink?: boolean;
+  contactSalesUrl?: string;
 }
 
 const PricingPlan = ({
@@ -28,7 +28,8 @@ const PricingPlan = ({
   popular = false,
   customColor,
   showDetails = false,
-  githubLink = false
+  githubLink = false,
+  contactSalesUrl,
 }: PricingPlanProps) => {
   // Use monochrome design
   const borderColor = popular 
@@ -45,7 +46,18 @@ const PricingPlan = ({
     : "bg-transparent border border-border text-foreground hover:bg-[var(--white)] hover:text-primary-foreground transition-all duration-300";
 
   const renderButton = () => {
-    if (githubLink || name === "Dev") {
+    if (contactSalesUrl) {
+      return (
+        <Button
+          className={`w-full mb-8 ${buttonClass}`}
+          onClick={() => {
+            window.open(contactSalesUrl, '_blank');
+          }}
+        >
+          Contact Sales
+        </Button>
+      );
+    } else if (githubLink || name === "Dev") {
       return (
         <Button
           className={`w-full mb-8 ${buttonClass}`}
