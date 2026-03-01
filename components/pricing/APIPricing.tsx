@@ -327,7 +327,7 @@ const APIPricing = () => {
             </p>
           </div>
           <Link
-            to="/zen/models"
+            href="/zen/models"
             className="inline-flex items-center px-4 py-2 rounded-full font-medium text-sm bg-primary/10 text-foreground border border-border hover:bg-primary/20 transition-colors"
           >
             Full Model Catalog

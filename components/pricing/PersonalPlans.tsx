@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
-import { Github, Code, Zap, Rocket } from "lucide-react";
+import { Github, Code, Users, Rocket } from "lucide-react";
 import { Loader2 } from "lucide-react";
 
 const PLANS_API = "https://api.hanzo.ai/v1/plans";
@@ -23,56 +23,66 @@ interface SubscriptionPlan {
 
 const PLAN_ICONS: Record<string, React.ReactNode> = {
   developer: <Github className="h-6 w-6 text-muted-foreground" />,
-  pro: <Code className="h-6 w-6 text-muted-foreground" />,
-  max: <Zap className="h-6 w-6 text-muted-foreground" />,
+  'unified-ai': <Code className="h-6 w-6 text-muted-foreground" />,
+  team: <Users className="h-6 w-6 text-muted-foreground" />,
 };
 
+// Plans shown on hanzo.ai/pricing — no agency (agency is at hanzo.agency)
 const STATIC_PLANS: SubscriptionPlan[] = [
   {
     id: 'developer',
     name: 'Developer',
-    description: 'For individuals exploring AI development.',
+    description: 'Free to start. $5 credit included — no card required.',
     priceMonthly: 0,
     category: 'personal',
     features: [
-      '$5 free credits to start',
-      'Access to Zen models',
-      '100+ third-party models',
-      'API access',
+      '$5 free AI credit to start',
+      'Access to all Zen AI models',
+      '60 requests/min',
+      '100K tokens/min',
+      'API + chat access',
       'Community support',
+      'Pay-as-you-go after credit',
     ],
   },
   {
-    id: 'pro',
-    name: 'Pro',
-    description: 'For professionals building with AI daily.',
+    id: 'unified-ai',
+    name: 'Unified AI',
+    description: 'Full access to all Hanzo AI — chat, API, agents, and models. 7-day free trial.',
     priceMonthly: 20,
     priceAnnual: 200,
     category: 'personal',
     popular: true,
     features: [
-      '$20 credits/month included',
-      'All Zen frontier models',
-      'Priority inference routing',
-      'MCP tools access',
+      '7-day free trial + $5 credit',
+      'All 14+ Zen AI models (up to 1M ctx)',
+      'Unlimited chat at chat.hanzo.ai',
+      'MCP tools + agent access',
+      '500 requests/min',
+      '2M tokens/min',
+      'Priority inference',
       'Email support',
-      'Usage dashboard',
+      'Usage analytics',
+      '$200/yr (save $40)',
     ],
   },
   {
-    id: 'max',
-    name: 'Max',
-    description: 'Unlimited power for ambitious builders.',
-    priceMonthly: 100,
-    priceAnnual: 1000,
+    id: 'team',
+    name: 'Team',
+    description: 'Collaborate with your team. Includes hanzo.team workspace access.',
+    priceMonthly: 25,
     category: 'personal',
     features: [
-      '$100 credits/month included',
-      'All models including Zen5',
-      'Faster inference SLA',
-      'Fine-tuning access',
-      'Advanced analytics',
+      'Everything in Unified AI',
+      'hanzo.team workspace included',
+      'Shared team credits & billing',
+      'Up to 25 members',
+      'Team usage analytics',
+      'SSO / SAML',
       'Priority support',
+      'Custom model fine-tuning',
+      '5M tokens/min',
+      '$25/mo per seat',
     ],
   },
 ];
