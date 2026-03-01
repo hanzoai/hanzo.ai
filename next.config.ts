@@ -2,6 +2,7 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   output: 'export',
+  transpilePackages: ['@hanzo/og'],
   images: {
     unoptimized: true,
   },

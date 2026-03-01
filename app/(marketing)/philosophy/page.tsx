@@ -5,10 +5,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ZenBackground from "@/components/zen/ZenBackground";
 import HeroSection from "@/components/zen/HeroSection";
-
 import SenseiMethodSection from "@/components/zen/SenseiMethodSection";
 import FinalQuoteSection from "@/components/zen/FinalQuoteSection";
 import ZenOfHanzoPrinciples from "@/components/zen/ZenOfHanzoPrinciples";
+import ZenManifesto from "@/components/zen/ZenManifesto";
 
 const ZenOfHanzo = () => {
   const [showContent, setShowContent] = useState(false);
@@ -54,6 +54,7 @@ const ZenOfHanzo = () => {
             >
               <ZenOfHanzoPrinciples />
               <SenseiMethodSection />
+              <ZenManifesto />
               <FinalQuoteSection />
             </motion.div>
           )}

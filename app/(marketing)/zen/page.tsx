@@ -479,6 +479,29 @@ const Zen = () => {
           </div>
         </section>
 
+        {/* Philosophy Bridge */}
+        <section className="py-16 px-4 md:px-8 border-t border-border">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <div className="text-4xl tracking-widest text-foreground/20 mb-6 select-none">
+                ䷀ ䷸ ䷹ ䷺ ䷻ ䷼ ䷽ ䷾ ䷿ ䷡
+              </div>
+              <h2 className="text-2xl font-bold text-foreground mb-3">The Philosophy Behind the Models</h2>
+              <p className="text-muted-foreground mb-6 max-w-xl mx-auto text-sm">
+                These models are built on ten engineering principles drawn from the 64 hexagrams of the I-Ching.
+                Orthogonality. Smallness. Completeness. Clarity. Composability.
+                Ancient pattern language for systems that last.
+              </p>
+              <Link
+                href="/philosophy"
+                className="inline-flex items-center px-6 py-3 rounded-full font-medium border border-border bg-transparent hover:bg-secondary text-sm text-foreground transition-colors gap-2"
+              >
+                易經 · Explore the Full Philosophy <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-16 px-4 md:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto">
