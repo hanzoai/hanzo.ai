@@ -27,22 +27,75 @@ const PLAN_ICONS: Record<string, React.ReactNode> = {
   max: <Zap className="h-6 w-6 text-muted-foreground" />,
 };
 
+const STATIC_PLANS: SubscriptionPlan[] = [
+  {
+    id: 'developer',
+    name: 'Developer',
+    description: 'For individuals exploring AI development.',
+    priceMonthly: 0,
+    category: 'personal',
+    features: [
+      '$5 free credits to start',
+      'Access to Zen models',
+      '100+ third-party models',
+      'API access',
+      'Community support',
+    ],
+  },
+  {
+    id: 'pro',
+    name: 'Pro',
+    description: 'For professionals building with AI daily.',
+    priceMonthly: 20,
+    priceAnnual: 200,
+    category: 'personal',
+    popular: true,
+    features: [
+      '$20 credits/month included',
+      'All Zen frontier models',
+      'Priority inference routing',
+      'MCP tools access',
+      'Email support',
+      'Usage dashboard',
+    ],
+  },
+  {
+    id: 'max',
+    name: 'Max',
+    description: 'Unlimited power for ambitious builders.',
+    priceMonthly: 100,
+    priceAnnual: 1000,
+    category: 'personal',
+    features: [
+      '$100 credits/month included',
+      'All models including Zen5',
+      'Faster inference SLA',
+      'Fine-tuning access',
+      'Advanced analytics',
+      'Priority support',
+    ],
+  },
+];
+
 const PersonalPlans = () => {
   const [plans, setPlans] = useState<SubscriptionPlan[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(PLANS_API)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
       .then((d) => {
         const personal = (d.plans || []).filter(
           (p: SubscriptionPlan) => p.category === "personal"
         );
-        setPlans(personal);
+        setPlans(personal.length ? personal : STATIC_PLANS);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("Failed to fetch plans:", err);
+      .catch(() => {
+        setPlans(STATIC_PLANS);
         setLoading(false);
       });
   }, []);
@@ -57,9 +110,7 @@ const PersonalPlans = () => {
   }
 
   if (!plans.length) {
-    return (
-      <div className="text-center py-24 text-muted-foreground">Failed to load plans.</div>
-    );
+    return null;
   }
 
   function formatPrice(plan: SubscriptionPlan) {

@@ -27,6 +27,43 @@ const PLAN_ICONS: Record<string, React.ReactNode> = {
   enterprise: <Shield className="h-6 w-6 text-muted-foreground" />,
 };
 
+const STATIC_PLANS: SubscriptionPlan[] = [
+  {
+    id: 'team',
+    name: 'Team',
+    description: 'For teams building production AI together.',
+    priceMonthly: 500,
+    priceAnnual: 5000,
+    category: 'team',
+    popular: true,
+    features: [
+      '$500 credits/month pooled',
+      'All Zen frontier models',
+      'Up to 20 seats',
+      'Shared usage dashboard',
+      'SSO via Hanzo Identity',
+      'Priority support SLA',
+    ],
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise',
+    description: 'Private cloud AI for the most demanding organizations.',
+    priceMonthly: null,
+    category: 'enterprise',
+    contactSales: true,
+    features: [
+      'Custom credit allocation',
+      'Dedicated inference capacity',
+      'VPC / on-premise deployment',
+      'Air-gapped option',
+      'SAML 2.0 / SCIM',
+      '99.99% uptime SLA',
+      'Dedicated support engineer',
+    ],
+  },
+];
+
 const TeamEnterprisePlans = () => {
   const [fromMaxPlan, setFromMaxPlan] = useState(false);
   const [fromProPlan, setFromProPlan] = useState(false);
@@ -48,16 +85,19 @@ const TeamEnterprisePlans = () => {
 
   useEffect(() => {
     fetch(PLANS_API)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
       .then((d) => {
         const teamEnterprise = (d.plans || []).filter(
           (p: SubscriptionPlan) => p.category === "team" || p.category === "enterprise"
         );
-        setPlans(teamEnterprise);
+        setPlans(teamEnterprise.length ? teamEnterprise : STATIC_PLANS);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("Failed to fetch plans:", err);
+      .catch(() => {
+        setPlans(STATIC_PLANS);
         setLoading(false);
       });
   }, []);
@@ -72,9 +112,7 @@ const TeamEnterprisePlans = () => {
   }
 
   if (!plans.length) {
-    return (
-      <div className="text-center py-24 text-muted-foreground">Failed to load plans.</div>
-    );
+    return null;
   }
 
   function formatPrice(plan: SubscriptionPlan) {
