@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Button } from "@hanzo/ui";
 import Link from "next/link";
-import { Loader2, Search, ChevronDown, ChevronUp, Star, Filter } from "lucide-react";
-
-const PRICING_API = "https://api.hanzo.ai/v1/pricing";
+import { Search, ChevronDown, ChevronUp, Star, Filter } from "lucide-react";
+import { allModels } from "@hanzo/zen-models";
+import type { ZenModel } from "@hanzo/zen-models";
+import pricingData from "@/lib/data/pricing.json";
 
 interface HanzoModel {
   name: string;
@@ -109,32 +110,51 @@ const fmtUnit = (val: number | undefined, unit?: string) => {
 
 const MODELS_PER_PAGE = 50;
 
-const APIPricing = () => {
-  const [data, setData] = useState<PricingResponse | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+function zenToHanzo(m: ZenModel): HanzoModel {
+  const params =
+    m.spec.params && !["N/A", "TBA", "TBD"].includes(m.spec.params)
+      ? m.spec.activeParams
+        ? `${m.spec.params} (${m.spec.activeParams} active)`
+        : m.spec.params
+      : m.spec.params || "TBA";
+  return {
+    name: m.id,
+    fullName: m.fullName,
+    description: m.description,
+    features: m.features,
+    tier: m.tier,
+    specs: { params, arch: m.spec.arch || "" },
+    pricing: m.pricing ?? { input: null, output: null, cacheRead: null, cacheWrite: null },
+    endpoint: m.id.includes("embedding")
+      ? "/v1/embeddings"
+      : m.id.includes("reranker")
+        ? "/v1/rerank"
+        : m.id.includes("image")
+          ? "/v1/images/generations"
+          : m.id.includes("audio") || m.id.includes("asr") || m.id.includes("tts")
+            ? "/v1/audio/transcriptions"
+            : "/v1/chat/completions",
+  };
+}
 
+// Build static data at module level — zero fetch, zero loading state
+const STATIC_DATA: PricingResponse = {
+  updated: (pricingData as { updated?: string }).updated ?? new Date().toISOString(),
+  summary: (pricingData as unknown as PricingResponse).summary,
+  hanzoModels: allModels.map(zenToHanzo),
+  thirdPartyModels: (pricingData as unknown as PricingResponse).thirdPartyModels ?? [],
+  tools: (pricingData as unknown as PricingResponse).tools ?? [],
+  providers: (pricingData as unknown as PricingResponse).providers,
+};
+
+const APIPricing = () => {
   // Third-party filters
   const [search, setSearch] = useState("");
   const [selectedProvider, setSelectedProvider] = useState<string>("all");
   const [showFreeOnly, setShowFreeOnly] = useState(false);
   const [showCount, setShowCount] = useState(MODELS_PER_PAGE);
 
-  useEffect(() => {
-    fetch(PRICING_API)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((d) => { setData(d); setLoading(false); })
-      .catch((err) => {
-        console.error("Failed to fetch pricing:", err);
-        // Fall back to static data
-        import("@/lib/data/pricing.json")
-          .then((mod) => { setData(mod.default as unknown as PricingResponse); setLoading(false); })
-          .catch(() => { setError("Unable to load pricing data."); setLoading(false); });
-      });
-  }, []);
+  const data = STATIC_DATA;
 
   // Derive providers list and filter models
   const providers = useMemo(() => {
@@ -169,21 +189,6 @@ const APIPricing = () => {
     if (!data?.thirdPartyModels) return [];
     return data.thirdPartyModels.filter((m) => m.featured);
   }, [data]);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-24">
-        <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
-        <span className="text-muted-foreground">Loading live pricing...</span>
-      </div>
-    );
-  }
-
-  if (error || !data) {
-    return (
-      <div className="text-center py-24 text-muted-foreground">{error || "Failed to load pricing."}</div>
-    );
-  }
 
   const { hanzoModels, tools } = data;
   const summary = data.summary;

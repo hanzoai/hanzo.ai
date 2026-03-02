@@ -15,8 +15,11 @@ importers:
         specifier: file:../ui/packages/og
         version: file:../ui/packages/og(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@hanzo/ui':
-        specifier: ^5.3.34
-        version: 5.3.34(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)
+        specifier: file:../ui/pkg/ui
+        version: file:../ui/pkg/ui(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)
+      '@hanzo/zen-models':
+        specifier: file:../docs/packages/zen-models
+        version: file:../docs/packages/zen-models
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.10.0(react-hook-form@7.55.0(react@19.2.4))
@@ -175,8 +178,8 @@ packages:
       next: '>=14.0.0'
       react: '>=18.0.0'
 
-  '@hanzo/ui@5.3.34':
-    resolution: {integrity: sha512-iFMZLT8L5BNFYNJec8cBSHeSH3ookWq3am3RsJauyGOnel4faGF2tv9p81Yt7ZiJQkH6qyqCtJ/1avvI5oQaNg==}
+  '@hanzo/ui@file:../ui/pkg/ui':
+    resolution: {directory: ../ui/pkg/ui, type: directory}
     hasBin: true
     peerDependencies:
       '@dnd-kit/core': ^6.0.0
@@ -205,6 +208,7 @@ packages:
       react-resizable-panels: ^1.0.0
       recharts: ^2.0.0
       sql.js: ^1.0.0
+      styled-components: ^6.0.0
       validator: ^13.11.0
     peerDependenciesMeta:
       '@dnd-kit/core':
@@ -245,6 +249,11 @@ packages:
         optional: true
       sql.js:
         optional: true
+      styled-components:
+        optional: true
+
+  '@hanzo/zen-models@file:../docs/packages/zen-models':
+    resolution: {directory: ../docs/packages/zen-models, type: directory}
 
   '@hookform/resolvers@3.10.0':
     resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
@@ -2104,7 +2113,7 @@ snapshots:
       next: 15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
 
-  '@hanzo/ui@5.3.34(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)':
+  '@hanzo/ui@file:../ui/pkg/ui(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)':
     dependencies:
       '@hookform/resolvers': 3.10.0(react-hook-form@7.55.0(react@19.2.4))
       '@next/third-parties': 15.5.12(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
@@ -2179,6 +2188,8 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
       - tailwindcss
+
+  '@hanzo/zen-models@file:../docs/packages/zen-models': {}
 
   '@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4))':
     dependencies:
