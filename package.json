@@ -17,7 +17,7 @@
     "@hanzo/og": "file:../ui/packages/og",
     "@hanzo/logo": "^1.0.5",
     "@hanzo/ui": "file:../ui/pkg/ui",
-    "@hanzo/zen-models": "file:../docs/packages/zen-models",
+    "@zenlm/models": "file:../docs/packages/zen-models",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-slot": "^1.2.4",
     "@tanstack/react-query": "^5.56.2",

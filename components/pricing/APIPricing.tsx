@@ -4,8 +4,8 @@ import React, { useState, useMemo } from "react";
 import { Button } from "@hanzo/ui";
 import Link from "next/link";
 import { Search, ChevronDown, ChevronUp, Star, Filter } from "lucide-react";
-import { allModels } from "@hanzo/zen-models";
-import type { ZenModel } from "@hanzo/zen-models";
+import { allModels } from "@zenlm/models";
+import type { ZenModel } from "@zenlm/models";
 import pricingData from "@/lib/data/pricing.json";
 
 interface HanzoModel {

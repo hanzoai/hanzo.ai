@@ -6,8 +6,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { Loader2 } from "lucide-react";
-import { allModels } from "@hanzo/zen-models";
-import type { ZenModel } from "@hanzo/zen-models";
+import { allModels } from "@zenlm/models";
+import type { ZenModel } from "@zenlm/models";
 
 const PRICING_API = "https://api.hanzo.ai/v1/pricing";
 import {
@@ -475,7 +475,7 @@ const ZenModels = () => {
               className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto text-center"
             >
               {totalModels} foundation models across language, code, vision, image, audio, and retrieval.
-              Zen MoDE (Mixture of Distilled Experts) architecture. From ${minPrice}/MTok.
+              Zen MoDE (Mixture of Diverse Experts) architecture. From ${minPrice}/MTok.
             </motion.p>
 
             {/* Quick stats */}
