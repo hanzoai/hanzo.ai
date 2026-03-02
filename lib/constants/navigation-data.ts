@@ -135,14 +135,14 @@ export const productsNav: NavSection[] = [
   {
     title: "Databases & Search",
     items: [
+      { title: "Search", href: "/search", icon: Search, featured: true },
+      { title: "Crawl", href: "/crawl", icon: Globe, featured: true },
+      { title: "Vector", href: "/vector", icon: Sparkles, featured: true },
       { title: "SQL", href: "/products/data/sql", icon: Database },
       { title: "SQL Vector", href: "/products/data/sql-vector", icon: Sparkles },
       { title: "DocumentDB", href: "/products/data/documentdb", icon: FileText },
       { title: "KV", href: "/products/data/kv", icon: Key },
-      { title: "Vector", href: "/products/data/vector", icon: Sparkles, featured: true },
       { title: "Storage", href: "/products/data/storage", icon: HardDrive },
-      { title: "Search", href: "/search", icon: Search, featured: true },
-      { title: "Datastore", href: "/products/data/datastore", icon: Database },
     ]
   },
   {
@@ -217,10 +217,11 @@ export const featuredProducts: NavItem[] = [
   { title: "Hanzo Dev", href: "/dev", icon: Terminal, description: "Multi-agent coding workspace", featured: true },
   { title: "Models", href: "/products/ml/zen", icon: Brain, description: "100+ LLMs via unified API", featured: true },
   { title: "Agent", href: "/products/apps/agent", icon: Bot, description: "Multi-agent SDK", featured: true },
-  { title: "Vector", href: "/products/data/vector", icon: Sparkles, description: "High-performance vector DB", featured: true },
+  { title: "Search", href: "/search", icon: Search, description: "Hybrid search + RAG chat", featured: true },
+  { title: "Crawl", href: "/crawl", icon: Globe, description: "AI-ready web crawler", featured: true },
+  { title: "Vector", href: "/vector", icon: Sparkles, description: "High-performance vector DB", featured: true },
   { title: "Functions", href: "/products/compute/functions", icon: Zap, description: "Serverless compute", featured: true },
   { title: "Cloud", href: "/cloud", icon: Cloud, description: "AI Cloud infrastructure", featured: true },
-  { title: "Web3", href: "/blockchain", icon: Blocks, description: "Chains, DeFi & Payments", featured: true },
 ];
 
 export const capabilitiesNav: NavSection[] = [
@@ -302,7 +303,9 @@ export const footerNav = [
       { title: "Hanzo Dev", href: "/dev" },
       { title: "Models", href: "/products/ml/zen" },
       { title: "Agent", href: "/products/apps/agent" },
-      { title: "Vector DB", href: "/products/data/vector" },
+      { title: "Search", href: "/search" },
+      { title: "Crawl", href: "/crawl" },
+      { title: "Vector", href: "/vector" },
       { title: "Functions", href: "/products/compute/functions" }
     ]
   },

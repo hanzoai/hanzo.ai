@@ -16,9 +16,10 @@ export const products = [
       { name: "DocumentDB", href: "/products/data/documentdb", description: "MongoDB-compatible" },
       { name: "KV", href: "/products/data/kv", description: "Redis-compatible key-value" },
       { name: "Datastore", href: "/products/data/datastore", description: "Real-time analytics warehouse" },
-      { name: "Vector", href: "/products/data/vector", description: "High-performance vector database" },
+      { name: "Vector", href: "/vector", description: "High-performance vector database" },
       { name: "Storage", href: "/products/data/storage", description: "S3-compatible object storage" },
-      { name: "Search", href: "/products/data/search", description: "Lightning-fast full-text search" }
+      { name: "Search", href: "/search", description: "Hybrid search + RAG chat" },
+      { name: "Crawl", href: "/crawl", description: "AI-ready web crawler" }
     ]
   },
   {
