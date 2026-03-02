@@ -30,12 +30,22 @@ export interface ModelsResponse {
   models: ModelData[]
 }
 
+const EMPTY_RESPONSE: ModelsResponse = { updated: '', total: 0, models: [] }
+
 export async function fetchModels(): Promise<ModelsResponse> {
-  const res = await fetch('https://models.hanzo.ai/v1/models', {
-    next: { revalidate: 3600 },
-  })
-  if (!res.ok) throw new Error('Failed to fetch models')
-  return res.json()
+  try {
+    const res = await fetch('https://models.hanzo.ai/v1/models', {
+      next: { revalidate: 3600 },
+    })
+    if (!res.ok) {
+      console.warn(`[models] API returned ${res.status}, using empty fallback`)
+      return EMPTY_RESPONSE
+    }
+    return res.json()
+  } catch (err) {
+    console.warn(`[models] API unreachable, using empty fallback:`, err)
+    return EMPTY_RESPONSE
+  }
 }
 
 export function getOrgAndSlug(modelId: string): { org: string; slug: string } {
