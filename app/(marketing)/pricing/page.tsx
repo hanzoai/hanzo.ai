@@ -5,6 +5,7 @@ import PricingHeader from "@/components/pricing/PricingHeader"
 import PersonalPlans from "@/components/pricing/PersonalPlans"
 import TeamEnterprisePlans from "@/components/pricing/TeamEnterprisePlans"
 import APIPricing from "@/components/pricing/APIPricing"
+import SearchDataPricing from "@/components/pricing/SearchDataPricing"
 import BlockchainPricing from "@/components/pricing/BlockchainPricing"
 import InfrastructurePricing from "@/components/pricing/InfrastructurePricing"
 import FeatureComparison from "@/components/pricing/FeatureComparison"
@@ -15,6 +16,7 @@ const tabs = [
   { id: "personal", label: "Personal" },
   { id: "team", label: "Team & Enterprise" },
   { id: "api", label: "API" },
+  { id: "search", label: "Search & Data" },
   { id: "infrastructure", label: "Infrastructure" },
   { id: "blockchain", label: "Blockchain" },
 ]
@@ -44,6 +46,8 @@ export default function PricingPage() {
         )
       case "api":
         return <APIPricing />
+      case "search":
+        return <SearchDataPricing />
       case "infrastructure":
         return <InfrastructurePricing />
       case "blockchain":
