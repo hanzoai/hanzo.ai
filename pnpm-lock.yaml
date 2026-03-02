@@ -11,15 +11,9 @@ importers:
       '@hanzo/logo':
         specifier: ^1.0.5
         version: 1.0.5(react@19.2.4)
-      '@hanzo/og':
-        specifier: file:../ui/packages/og
-        version: file:../ui/packages/og(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@hanzo/ui':
-        specifier: file:../ui/pkg/ui
-        version: file:../ui/pkg/ui(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)
-      '@zenlm/models':
-        specifier: file:../docs/packages/zen-models
-        version: file:../docs/packages/zen-models
+        specifier: ^5.3.34
+        version: 5.3.36(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.10.0(react-hook-form@7.55.0(react@19.2.4))
@@ -32,6 +26,9 @@ importers:
       '@xyflow/react':
         specifier: ^12.4.4
         version: 12.6.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@zenlm/models':
+        specifier: ^1.0.2
+        version: 1.0.2
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -172,14 +169,8 @@ packages:
       react:
         optional: true
 
-  '@hanzo/og@file:../ui/packages/og':
-    resolution: {directory: ../ui/packages/og, type: directory}
-    peerDependencies:
-      next: '>=14.0.0'
-      react: '>=18.0.0'
-
-  '@hanzo/ui@file:../ui/pkg/ui':
-    resolution: {directory: ../ui/pkg/ui, type: directory}
+  '@hanzo/ui@5.3.36':
+    resolution: {integrity: sha512-x4PqPFbaNmWl9t5nLnfHEcIf4Vx+XUSYYKGaSqIYjjf+lR5ZFqBFRdyIeO4ksxRJ2vLjvzm45ssWGfvAKMeiog==}
     hasBin: true
     peerDependencies:
       '@dnd-kit/core': ^6.0.0
@@ -251,9 +242,6 @@ packages:
         optional: true
       styled-components:
         optional: true
-
-  '@zenlm/models@file:../docs/packages/zen-models':
-    resolution: {directory: ../docs/packages/zen-models, type: directory}
 
   '@hookform/resolvers@3.10.0':
     resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
@@ -1406,6 +1394,9 @@ packages:
   '@xyflow/system@0.0.57':
     resolution: {integrity: sha512-1YpBo0WgmZLR5wQw9Jvk3Tu0gISi/oYc4uSimrDuAsA/G2rGleulLrKkM59uuT/QU5m6DYC2VdBDAzjSNMGuBA==}
 
+  '@zenlm/models@1.0.2':
+    resolution: {integrity: sha512-mwheakDCwjBWhSvDEPlXssdeKgs4bbMqymLWy4sqsweLc8vvr7rnsL+2Qqs5BfGJ6e+dt13WQGci/3LPaSjxJA==}
+
   aria-hidden@1.2.4:
     resolution: {integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==}
     engines: {node: '>=10'}
@@ -2108,12 +2099,7 @@ snapshots:
     optionalDependencies:
       react: 19.2.4
 
-  '@hanzo/og@file:../ui/packages/og(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
-    dependencies:
-      next: 15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      react: 19.2.4
-
-  '@hanzo/ui@file:../ui/pkg/ui(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)':
+  '@hanzo/ui@5.3.36(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)':
     dependencies:
       '@hookform/resolvers': 3.10.0(react-hook-form@7.55.0(react@19.2.4))
       '@next/third-parties': 15.5.12(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
@@ -2188,8 +2174,6 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
       - tailwindcss
-
-  '@zenlm/models@file:../docs/packages/zen-models': {}
 
   '@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4))':
     dependencies:
@@ -3292,6 +3276,8 @@ snapshots:
       d3-drag: 3.0.0
       d3-selection: 3.0.0
       d3-zoom: 3.0.0
+
+  '@zenlm/models@1.0.2': {}
 
   aria-hidden@1.2.4:
     dependencies:

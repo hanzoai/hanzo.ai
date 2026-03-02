@@ -14,10 +14,9 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
-    "@hanzo/og": "file:../ui/packages/og",
     "@hanzo/logo": "^1.0.5",
-    "@hanzo/ui": "file:../ui/pkg/ui",
-    "@zenlm/models": "file:../docs/packages/zen-models",
+    "@hanzo/ui": "^5.3.34",
+    "@zenlm/models": "^1.0.2",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-slot": "^1.2.4",
     "@tanstack/react-query": "^5.56.2",
