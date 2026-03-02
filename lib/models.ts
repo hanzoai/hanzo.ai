@@ -65,18 +65,38 @@ const STATIC_FALLBACK: ModelsResponse = {
   models: zenModels.map(zenToModelData),
 }
 
+const FETCH_TIMEOUT_MS = 5_000
+
+let cachedResult: ModelsResponse | null = null
+
 export async function fetchModels(): Promise<ModelsResponse> {
+  if (cachedResult) return cachedResult
+
   try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
+
     const res = await fetch('https://models.hanzo.ai/v1/models', {
+      signal: controller.signal,
       next: { revalidate: 3600 },
     })
+    clearTimeout(timeout)
+
     if (!res.ok) {
       console.warn(`[models] API returned ${res.status}, using static fallback (${STATIC_FALLBACK.total} Zen models)`)
+      cachedResult = STATIC_FALLBACK
       return STATIC_FALLBACK
     }
-    return res.json()
+    const data: ModelsResponse = await res.json()
+    console.log(`[models] Fetched ${data.total} models from API`)
+    cachedResult = data
+    return data
   } catch (err) {
-    console.warn(`[models] API unreachable, using static fallback (${STATIC_FALLBACK.total} Zen models):`, err)
+    const reason = err instanceof DOMException && err.name === 'AbortError'
+      ? 'timeout'
+      : String(err)
+    console.warn(`[models] API ${reason}, using static fallback (${STATIC_FALLBACK.total} Zen models)`)
+    cachedResult = STATIC_FALLBACK
     return STATIC_FALLBACK
   }
 }
