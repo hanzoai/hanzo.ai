@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, BookOpen } from "lucide-react";
+import { ArrowRight, Globe, BookOpen } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -19,23 +19,23 @@ const CallToAction = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-8">
-            <Sparkles className="w-4 h-4 text-foreground/70" />
-            <span className="text-sm font-medium text-foreground/70">Hanzo Vector</span>
+            <Globe className="w-4 h-4 text-foreground/70" />
+            <span className="text-sm font-medium text-foreground/70">Hanzo Crawl</span>
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Give your AI applications long-term memory
+            Turn the web into structured knowledge
           </h2>
 
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Store once, search by meaning.
+            Crawl once, use everywhere.
             <br />
-            <span className="text-foreground/70">Semantic search, RAG, and recommendations -- all from one vector database.</span>
+            <span className="text-foreground/70">Clean Markdown, structured data, and direct integration with Search and Vector.</span>
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://docs.hanzo.ai/vector"
+              href="https://docs.hanzo.ai/crawl"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary/10 hover:bg-primary/20 text-primary-foreground font-medium rounded-full transition-colors"
             >
               <BookOpen className="w-5 h-5" />
@@ -43,7 +43,7 @@ const CallToAction = () => {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href="https://github.com/hanzoai/vector"
+              href="https://github.com/hanzoai/crawl"
               className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
             >
               View on GitHub

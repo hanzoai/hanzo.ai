@@ -256,7 +256,7 @@ export const dataProducts: Product[] = [
     description: 'Purpose-built vector database optimized for AI embeddings. Lightning-fast similarity search at any scale.',
     category: 'data',
     icon: 'Sparkles',
-    href: '/products/data/vector',
+    href: '/vector',
     github: 'https://github.com/hanzoai/vector',
     docs: 'https://docs.hanzo.ai/vector',
     install: {

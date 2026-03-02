@@ -353,7 +353,7 @@ export const ossCatalog: OSSRepo[] = [
       deployUrl: 'https://cloud.hanzo.ai/deploy/vector',
       docsUrl: 'https://docs.hanzo.ai/vector',
       githubUrl: 'https://github.com/hanzoai/vector',
-      learnUrl: '/products/data/vector',
+      learnUrl: '/vector',
     },
     signals: {
       updatedAt: '2026-01-15',
