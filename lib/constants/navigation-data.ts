@@ -141,7 +141,7 @@ export const productsNav: NavSection[] = [
       { title: "KV", href: "/products/data/kv", icon: Key },
       { title: "Vector", href: "/products/data/vector", icon: Sparkles, featured: true },
       { title: "Storage", href: "/products/data/storage", icon: HardDrive },
-      { title: "Search", href: "/products/data/search", icon: Search },
+      { title: "Search", href: "/search", icon: Search, featured: true },
       { title: "Datastore", href: "/products/data/datastore", icon: Database },
     ]
   },
