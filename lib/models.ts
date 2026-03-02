@@ -1,3 +1,6 @@
+import { allModels as zenModels } from '@zenlm/models'
+import type { ZenModel } from '@zenlm/models'
+
 export interface ModelSpec {
   params?: string
   activeParams?: string
@@ -30,7 +33,37 @@ export interface ModelsResponse {
   models: ModelData[]
 }
 
-const EMPTY_RESPONSE: ModelsResponse = { updated: '', total: 0, models: [] }
+function zenToModelData(z: ZenModel): ModelData {
+  return {
+    id: z.id,
+    name: z.name,
+    fullName: z.fullName,
+    provider: 'hanzo',
+    description: z.description,
+    context: z.spec?.context,
+    modalities: z.modalities as string[],
+    status: z.status,
+    category: z.category,
+    spec: z.spec ? {
+      params: z.spec.params,
+      activeParams: z.spec.activeParams ?? undefined,
+      context: z.spec.context,
+      arch: z.spec.arch,
+    } : undefined,
+    features: z.features,
+    huggingface: z.huggingface ?? undefined,
+    github: z.github ?? undefined,
+    aliases: z.aliases,
+    tier: z.tier,
+    generation: z.generation,
+  }
+}
+
+const STATIC_FALLBACK: ModelsResponse = {
+  updated: 'static',
+  total: zenModels.length,
+  models: zenModels.map(zenToModelData),
+}
 
 export async function fetchModels(): Promise<ModelsResponse> {
   try {
@@ -38,13 +71,13 @@ export async function fetchModels(): Promise<ModelsResponse> {
       next: { revalidate: 3600 },
     })
     if (!res.ok) {
-      console.warn(`[models] API returned ${res.status}, using empty fallback`)
-      return EMPTY_RESPONSE
+      console.warn(`[models] API returned ${res.status}, using static fallback (${STATIC_FALLBACK.total} Zen models)`)
+      return STATIC_FALLBACK
     }
     return res.json()
   } catch (err) {
-    console.warn(`[models] API unreachable, using empty fallback:`, err)
-    return EMPTY_RESPONSE
+    console.warn(`[models] API unreachable, using static fallback (${STATIC_FALLBACK.total} Zen models):`, err)
+    return STATIC_FALLBACK
   }
 }
 
