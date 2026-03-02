@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Globe, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -35,8 +35,8 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-border mb-8"
         >
-          <Sparkles className="w-4 h-4 text-foreground/70" />
-          <span className="text-sm font-medium text-foreground/70">Vector Database for AI</span>
+          <Globe className="w-4 h-4 text-foreground/70" />
+          <span className="text-sm font-medium text-foreground/70">AI-Ready Web Crawler</span>
         </motion.div>
 
         {/* Headline */}
@@ -47,7 +47,7 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl font-bold mb-6"
         >
           <span className="bg-gradient-to-r from-white/20 to-white/10 bg-clip-text text-transparent">
-            Hanzo Vector
+            Hanzo Crawl
           </span>
         </motion.h1>
 
@@ -57,7 +57,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-2xl md:text-3xl font-medium text-foreground mb-4"
         >
-          High-performance vector database for semantic search and RAG
+          Turn any website into clean, structured data for LLMs
         </motion.p>
 
         <motion.p
@@ -66,8 +66,8 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
         >
-          Drop-in replacement for Pinecone, Weaviate, and ChromaDB.
-          Powered by Qdrant.
+          Drop-in replacement for Firecrawl, Apify, and Scrapy.
+          Powered by crawl4ai.
         </motion.p>
 
         {/* Stats */}
@@ -78,20 +78,20 @@ const HeroSection = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
         >
           <div className="bg-secondary/50 border border-border rounded-xl p-4">
-            <div className="text-2xl font-bold text-foreground/70">HNSW</div>
-            <div className="text-sm text-muted-foreground">ANN algorithm</div>
+            <div className="text-2xl font-bold text-foreground/70">JS</div>
+            <div className="text-sm text-muted-foreground">Full rendering</div>
           </div>
           <div className="bg-secondary/50 border border-border rounded-xl p-4">
-            <div className="text-2xl font-bold text-foreground/70">3072d</div>
-            <div className="text-sm text-muted-foreground">Max dimensions</div>
+            <div className="text-2xl font-bold text-foreground/70">Parallel</div>
+            <div className="text-sm text-muted-foreground">High throughput</div>
           </div>
           <div className="bg-secondary/50 border border-border rounded-xl p-4">
-            <div className="text-2xl font-bold text-foreground/70">&lt; 10ms</div>
-            <div className="text-sm text-muted-foreground">Query latency</div>
+            <div className="text-2xl font-bold text-foreground/70">LLM</div>
+            <div className="text-sm text-muted-foreground">Structured extraction</div>
           </div>
           <div className="bg-secondary/50 border border-border rounded-xl p-4">
-            <div className="text-2xl font-bold text-foreground/70">10B+</div>
-            <div className="text-sm text-muted-foreground">Vectors at scale</div>
+            <div className="text-2xl font-bold text-foreground/70">MD</div>
+            <div className="text-sm text-muted-foreground">Clean Markdown</div>
           </div>
         </motion.div>
 
@@ -103,14 +103,14 @@ const HeroSection = () => {
           className="flex flex-wrap justify-center gap-4"
         >
           <a
-            href="https://docs.hanzo.ai/vector"
+            href="https://docs.hanzo.ai/crawl"
             className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 hover:bg-primary/20 text-primary-foreground font-medium rounded-full transition-colors"
           >
             Get Started
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="https://github.com/hanzoai/vector"
+            href="https://github.com/hanzoai/crawl"
             className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-border hover:border-neutral-500 text-foreground font-medium rounded-full transition-colors"
           >
             GitHub

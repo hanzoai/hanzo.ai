@@ -2,44 +2,32 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, Ruler, Database, Minimize2, Server } from "lucide-react";
+import { Search, Sparkles, GitMerge, MessageSquare } from "lucide-react";
 
 const features = [
   {
     icon: Search,
-    title: "High-Performance Search",
+    title: "Full-Text Search",
     description:
-      "HNSW-based approximate nearest neighbor search delivers sub-10ms queries across billions of vectors with tunable accuracy-speed tradeoffs.",
+      "Meilisearch-powered instant search with typo tolerance, faceting, filtering, and sub-50ms response times out of the box.",
   },
   {
-    icon: Filter,
-    title: "Flexible Filtering",
+    icon: Sparkles,
+    title: "Vector Search",
     description:
-      "Combine vector similarity with payload-based metadata filters in a single query. Filter by any field without sacrificing search speed.",
+      "Qdrant-powered semantic search with embeddings from 12+ providers. Find results by meaning, not just keywords.",
   },
   {
-    icon: Ruler,
-    title: "Multiple Distance Metrics",
+    icon: GitMerge,
+    title: "Hybrid Search",
     description:
-      "Choose cosine similarity, dot product, or Euclidean distance per collection. Match the metric to your embedding model for optimal results.",
+      "Reciprocal Rank Fusion merges keyword and semantic results for the best of both worlds. One query, two engines.",
   },
   {
-    icon: Database,
-    title: "Payload Storage",
+    icon: MessageSquare,
+    title: "RAG Chat",
     description:
-      "Attach arbitrary JSON metadata to every vector. Store, filter, and retrieve rich context alongside your embeddings.",
-  },
-  {
-    icon: Minimize2,
-    title: "Quantization",
-    description:
-      "Scalar, product, and binary quantization reduce memory usage by up to 32x while maintaining search quality. Fit more vectors per node.",
-  },
-  {
-    icon: Server,
-    title: "Horizontal Scaling",
-    description:
-      "Shard collections across nodes with automatic replication. Scale reads and writes independently as your data grows.",
+      "Ask questions and get AI answers grounded in your content with inline citations. Streaming responses, real sources.",
   },
 ];
 
@@ -55,15 +43,15 @@ const Features = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Built for production AI workloads
+            Four search modes, one API
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Semantic search, RAG, and recommendations --
-            all backed by a battle-tested vector engine.
+            Full-text, vector, hybrid, and conversational search --
+            all from a single endpoint.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
