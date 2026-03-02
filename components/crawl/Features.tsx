@@ -2,44 +2,44 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, Ruler, Database, Minimize2, Server } from "lucide-react";
+import { FileText, Monitor, Braces, Zap, Search, Shield } from "lucide-react";
 
 const features = [
   {
+    icon: FileText,
+    title: "LLM-Ready Output",
+    description:
+      "Converts any webpage into clean Markdown with structured metadata. Ready for ingestion by any LLM, RAG pipeline, or Hanzo Search index.",
+  },
+  {
+    icon: Monitor,
+    title: "JavaScript Rendering",
+    description:
+      "Full Playwright browser engine handles SPAs, dynamic content, lazy loading, and infinite scroll. See the page exactly as users do.",
+  },
+  {
+    icon: Braces,
+    title: "Structured Extraction",
+    description:
+      "Extract data using CSS selectors, XPath expressions, or LLM-based schemas. Get typed JSON from any page layout.",
+  },
+  {
+    icon: Zap,
+    title: "Parallel Crawling",
+    description:
+      "Crawl thousands of pages concurrently with configurable rate limiting. Respect robots.txt while maximizing throughput.",
+  },
+  {
     icon: Search,
-    title: "High-Performance Search",
+    title: "Direct Search Integration",
     description:
-      "HNSW-based approximate nearest neighbor search delivers sub-10ms queries across billions of vectors with tunable accuracy-speed tradeoffs.",
+      "Pipe crawled content directly into Hanzo Search and Hanzo Vector. One pipeline from raw web to searchable, embeddable knowledge.",
   },
   {
-    icon: Filter,
-    title: "Flexible Filtering",
+    icon: Shield,
+    title: "Anti-Detection & Stealth",
     description:
-      "Combine vector similarity with payload-based metadata filters in a single query. Filter by any field without sacrificing search speed.",
-  },
-  {
-    icon: Ruler,
-    title: "Multiple Distance Metrics",
-    description:
-      "Choose cosine similarity, dot product, or Euclidean distance per collection. Match the metric to your embedding model for optimal results.",
-  },
-  {
-    icon: Database,
-    title: "Payload Storage",
-    description:
-      "Attach arbitrary JSON metadata to every vector. Store, filter, and retrieve rich context alongside your embeddings.",
-  },
-  {
-    icon: Minimize2,
-    title: "Quantization",
-    description:
-      "Scalar, product, and binary quantization reduce memory usage by up to 32x while maintaining search quality. Fit more vectors per node.",
-  },
-  {
-    icon: Server,
-    title: "Horizontal Scaling",
-    description:
-      "Shard collections across nodes with automatic replication. Scale reads and writes independently as your data grows.",
+      "Built-in stealth mode with proxy rotation, user-agent management, and fingerprint randomization for reliable large-scale crawls.",
   },
 ];
 
@@ -55,11 +55,11 @@ const Features = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Built for production AI workloads
+            Crawl anything, extract everything
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Semantic search, RAG, and recommendations --
-            all backed by a battle-tested vector engine.
+            From static HTML to JavaScript-heavy SPAs --
+            get structured, LLM-ready data from any website.
           </p>
         </motion.div>
 

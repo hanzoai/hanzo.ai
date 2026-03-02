@@ -17,7 +17,7 @@ importers:
       '@hanzo/ui':
         specifier: file:../ui/pkg/ui
         version: file:../ui/pkg/ui(@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4)))(@tanstack/react-query@5.74.4(react@19.2.4))(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(date-fns@3.6.0)(embla-carousel@8.6.0)(framer-motion@12.7.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(lucide-react@0.462.0(react@19.2.4))(mobx@6.15.0)(next-themes@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(next@15.5.12(@playwright/test@1.58.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-day-picker@8.10.1(date-fns@3.6.0)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react-hook-form@7.55.0(react@19.2.4))(react-resizable-panels@1.0.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(recharts@2.15.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(tailwindcss@4.1.4)(validator@13.15.26)
-      '@hanzo/zen-models':
+      '@zenlm/models':
         specifier: file:../docs/packages/zen-models
         version: file:../docs/packages/zen-models
       '@hookform/resolvers':
@@ -252,7 +252,7 @@ packages:
       styled-components:
         optional: true
 
-  '@hanzo/zen-models@file:../docs/packages/zen-models':
+  '@zenlm/models@file:../docs/packages/zen-models':
     resolution: {directory: ../docs/packages/zen-models, type: directory}
 
   '@hookform/resolvers@3.10.0':
@@ -2189,7 +2189,7 @@ snapshots:
       - '@types/react-dom'
       - tailwindcss
 
-  '@hanzo/zen-models@file:../docs/packages/zen-models': {}
+  '@zenlm/models@file:../docs/packages/zen-models': {}
 
   '@hookform/resolvers@3.10.0(react-hook-form@7.55.0(react@19.2.4))':
     dependencies:
