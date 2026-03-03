@@ -195,14 +195,14 @@ export function getAuthorizationUrl(
     params.set('provider', provider);
   }
 
-  return `${IAM_BASE_URL}/login/oauth/authorize?${params.toString()}`;
+  return `${IAM_BASE_URL}/oauth/authorize?${params.toString()}`;
 }
 
 /**
  * Exchange authorization code for tokens
  */
 export async function exchangeCode(code: string): Promise<TokenResponse> {
-  const response = await fetch(`${IAM_BASE_URL}/api/login/oauth/access_token`, {
+  const response = await fetch(`${IAM_BASE_URL}/oauth/token`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -228,7 +228,7 @@ export async function exchangeCode(code: string): Promise<TokenResponse> {
  * Refresh access token using refresh token
  */
 export async function refreshAccessToken(refreshToken: string): Promise<TokenResponse> {
-  const response = await fetch(`${IAM_BASE_URL}/api/login/oauth/refresh_token`, {
+  const response = await fetch(`${IAM_BASE_URL}/oauth/token`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -429,7 +429,7 @@ export async function logout(): Promise<void> {
   // Revoke tokens on server (best effort)
   if (accessToken || refreshToken) {
     try {
-      await fetch(`${IAM_BASE_URL}/api/login/oauth/revoke`, {
+      await fetch(`${IAM_BASE_URL}/oauth/revoke`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
