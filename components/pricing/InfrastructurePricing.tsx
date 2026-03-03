@@ -3,6 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@hanzo/ui";
 import { Loader2 } from "lucide-react";
+import DatastorePricing from "@/components/pricing/DatastorePricing";
+import VectorPricing from "@/components/pricing/VectorPricing";
+import ObservabilityPricing from "@/components/pricing/ObservabilityPricing";
+import ManagedServicesPricing from "@/components/pricing/ManagedServicesPricing";
 
 const CLOUD_API = "https://api.hanzo.ai/v1/cloud";
 const GPU_API = "https://api.hanzo.ai/v1/gpu";
@@ -49,7 +53,7 @@ interface CloudData {
   blockStorage: BlockStorage;
 }
 
-const InfrastructurePricing = () => {
+function CloudComputePricing() {
   const [showAll, setShowAll] = useState(false);
   const [cloudData, setCloudData] = useState<CloudData | null>(null);
   const [gpuTiers, setGpuTiers] = useState<GpuTier[]>([]);
@@ -75,14 +79,14 @@ const InfrastructurePricing = () => {
     return (
       <div className="flex items-center justify-center py-24">
         <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
-        <span className="text-muted-foreground">Loading infrastructure pricing...</span>
+        <span className="text-muted-foreground">Loading cloud pricing...</span>
       </div>
     );
   }
 
   if (!cloudData || !cloudData.plans?.length) {
     return (
-      <div className="text-center py-24 text-muted-foreground">Failed to load infrastructure pricing.</div>
+      <div className="text-center py-12 text-muted-foreground">Failed to load cloud compute pricing.</div>
     );
   }
 
@@ -105,7 +109,7 @@ const InfrastructurePricing = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto mb-16">
+    <>
       <div className="mb-4">
         <h2 className="text-3xl font-bold mb-2">Hanzo Cloud</h2>
         <p className="text-muted-foreground text-lg mb-8">
@@ -240,7 +244,7 @@ const InfrastructurePricing = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-20">
         <Button
           size="lg"
           className="bg-primary text-primary-foreground hover:bg-gray-100 px-8 py-3"
@@ -249,6 +253,27 @@ const InfrastructurePricing = () => {
           Deploy Now
         </Button>
       </div>
+    </>
+  );
+}
+
+const InfrastructurePricing = () => {
+  return (
+    <div className="max-w-7xl mx-auto mb-16">
+      {/* Cloud Compute, Block Storage, GPUs */}
+      <CloudComputePricing />
+
+      {/* Datastore (ClickHouse) */}
+      <DatastorePricing />
+
+      {/* Vector Search */}
+      <VectorPricing />
+
+      {/* Observability / Console */}
+      <ObservabilityPricing />
+
+      {/* Managed Services */}
+      <ManagedServicesPricing />
     </div>
   );
 };
