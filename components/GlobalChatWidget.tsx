@@ -17,12 +17,12 @@ import {
   Check,
 } from "lucide-react";
 
-// Available Zen models for the dropdown
+// Available models for widget access (non-premium, allowed by hz_widget_public auth)
 const zenModels = [
-  { id: "zen3-nano", name: "Zen Nano", params: "4B", description: "Fast general-purpose" },
-  { id: "zen4-mini", name: "Zen Mini", params: "8B", description: "General-purpose" },
-  { id: "zen4-coder-flash", name: "Zen Coder Flash", params: "30B MoE", description: "Fast code generation" },
-  { id: "zen4-coder", name: "Zen Coder", params: "480B MoE", description: "Advanced coding" },
+  { id: "llama-3.3-70b", name: "Llama 70B", params: "70B", description: "Fast general-purpose" },
+  { id: "claude-3-5-haiku", name: "Haiku", params: "Claude", description: "Quick & accurate" },
+  { id: "gpt-4o-mini", name: "GPT-4o Mini", params: "GPT", description: "General-purpose" },
+  { id: "deepseek-r1-distill-70b", name: "DeepSeek R1", params: "70B", description: "Reasoning & code" },
 ];
 
 // Chat action presets - matching footer order
@@ -189,7 +189,7 @@ const GlobalChatWidget = () => {
           messages: [
             {
               role: "system",
-              content: `You are Zen AI, powered by the ${selectedModel.name} model (${selectedModel.params}). You're helping users on the Hanzo AI website. Current page context: ${pageContext}. Be helpful, concise, and knowledgeable about Hanzo's products, Zen AI models, and AI development tools. For technical questions, provide accurate information. For pricing or sales, direct users to /pricing or /contact.`,
+              content: `You are Zen AI, Hanzo's AI assistant on hanzo.ai. You're powered by ${selectedModel.name}. Current page context: ${pageContext}. Be helpful, concise, and knowledgeable about Hanzo's products, Zen AI models, and AI development tools. For technical questions, provide accurate information. For pricing or sales, direct users to /pricing or /contact.`,
             },
             ...messages.slice(-10).map((m) => ({ role: m.role, content: m.content })),
             { role: "user", content: input.trim() },
