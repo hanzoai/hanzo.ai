@@ -140,7 +140,7 @@ const mobileNav = [
         title: "Community",
         items: [
           { title: "GitHub", href: "https://github.com/hanzoai", external: true },
-          { title: "Discord", href: "https://discord.gg/hanzo", external: true },
+          { title: "Discord", href: "https://discord.gg/XthHQQj", external: true },
           { title: "Blog", href: "/blog" },
         ]
       },

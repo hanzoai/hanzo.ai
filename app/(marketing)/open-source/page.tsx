@@ -503,7 +503,7 @@ const OpenSource = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
               <a
-                href="https://discord.gg/hanzo"
+                href="https://discord.gg/XthHQQj"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 rounded-full font-medium transition-colors border border-border bg-transparent hover:bg-secondary text-base text-foreground"

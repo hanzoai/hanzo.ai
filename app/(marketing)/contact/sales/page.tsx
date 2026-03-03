@@ -134,7 +134,7 @@ export default function ContactSalesPage() {
               </motion.div>
 
               <motion.a
-                href="https://discord.gg/hanzo"
+                href="https://discord.gg/XthHQQj"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}

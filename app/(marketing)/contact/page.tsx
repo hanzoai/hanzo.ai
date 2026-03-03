@@ -23,7 +23,7 @@ const socialLinks = [
   {
     icon: MessageSquare,
     label: "Join our Discord Community",
-    href: "https://discord.gg/hanzo",
+    href: "https://discord.gg/XthHQQj",
     color: "#5865F2",
   },
   {
