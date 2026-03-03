@@ -433,34 +433,37 @@ const HeroSection = () => {
           {/* Red accent glow - center */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: mounted ? 0.15 : 0 }}
+            animate={{ opacity: 0.15 }}
             transition={{ duration: 1.5 }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
             style={{
               background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
               filter: "blur(100px)",
+              willChange: "opacity",
             }}
           />
           {/* Secondary red glow - top right */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: mounted ? 0.1 : 0 }}
+            animate={{ opacity: 0.1 }}
             transition={{ duration: 1.5, delay: 0.2 }}
             className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full"
             style={{
               background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
               filter: "blur(80px)",
+              willChange: "opacity",
             }}
           />
           {/* Subtle white glow - bottom left */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: mounted ? 0.04 : 0 }}
+            animate={{ opacity: 0.04 }}
             transition={{ duration: 1.5, delay: 0.3 }}
             className="absolute -bottom-48 -left-48 w-[600px] h-[600px] rounded-full"
             style={{
               background: "radial-gradient(circle, #ffffff 0%, transparent 70%)",
               filter: "blur(100px)",
+              willChange: "opacity",
             }}
           />
         </div>
@@ -570,7 +573,7 @@ const HeroSection = () => {
               {/* Dashboard - Primary/Large */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: mounted ? 1 : 0, x: mounted ? 0 : 20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="relative z-20"
               >
@@ -580,7 +583,7 @@ const HeroSection = () => {
               {/* Terminal - Below dashboard */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="relative z-20 mt-4 w-full max-w-[400px]"
               >
@@ -590,7 +593,7 @@ const HeroSection = () => {
               {/* Mobile Device - Floating/overlapping right */}
               <motion.div
                 initial={{ opacity: 0, x: 20, y: 20 }}
-                animate={{ opacity: mounted ? 1 : 0, x: mounted ? 0 : 20, y: mounted ? 0 : 20 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30"
               >
@@ -686,7 +689,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <DashboardMock />
@@ -695,14 +698,14 @@ const HeroSection = () => {
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
                   <TerminalMock />
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="flex justify-center"
                 >
@@ -798,7 +801,7 @@ const HeroSection = () => {
             {/* Mobile Tab Selector */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
             >
               <MobileTabSelector />

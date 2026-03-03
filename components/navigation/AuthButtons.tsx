@@ -2,13 +2,14 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Search, ChevronDown, Sparkles, Zap, MessageSquare, Terminal, ArrowRight, Bot, AppWindow, LayoutDashboard } from "lucide-react";
+import { Search, ChevronDown, Sparkles, Zap, MessageSquare, Terminal, ArrowRight, Bot, AppWindow, LayoutDashboard, User as UserIcon, CreditCard, Settings, LogOut, Key } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface User {
   id: string;
   email: string;
   name?: string;
+  avatar?: string;
 }
 
 interface AuthButtonsProps {
@@ -42,39 +43,47 @@ const apps = [
 
 const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
       }
+      if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
+        setIsProfileOpen(false);
+      }
     };
 
-    if (isDropdownOpen) {
+    if (isDropdownOpen || isProfileOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isDropdownOpen]);
+  }, [isDropdownOpen, isProfileOpen]);
 
   // Close on escape
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsDropdownOpen(false);
+      if (e.key === "Escape") {
+        setIsDropdownOpen(false);
+        setIsProfileOpen(false);
+      }
     };
 
-    if (isDropdownOpen) {
+    if (isDropdownOpen || isProfileOpen) {
       document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isDropdownOpen]);
+  }, [isDropdownOpen, isProfileOpen]);
 
   return (
     <div className="hidden md:flex items-center space-x-3">
@@ -121,17 +130,84 @@ const AuthButtons = ({ user, onOpenCommandPalette }: AuthButtonsProps) => {
         </>
       )}
 
-      {/* Log in / User account */}
+      {/* Log in / User profile dropdown */}
       {user ? (
-        <a
-          href="https://hanzo.id/account"
-          className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-4 text-sm font-medium text-foreground transition-all duration-200 cursor-pointer gap-2"
+        <div
+          className="relative"
+          ref={profileRef}
+          onMouseEnter={() => setIsProfileOpen(true)}
+          onMouseLeave={() => setIsProfileOpen(false)}
         >
-          <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center flex-shrink-0">
-            {(user.name || user.email).charAt(0).toUpperCase()}
-          </span>
-          <span className="max-w-[100px] truncate">{user.name || user.email}</span>
-        </a>
+          <button
+            className="inline-flex items-center justify-center border border-border hover:bg-accent rounded-full h-9 px-3 text-sm font-medium text-foreground transition-all duration-200 cursor-pointer gap-2"
+          >
+            {user.avatar ? (
+              <img src={user.avatar} alt="" className="w-6 h-6 rounded-full object-cover flex-shrink-0" />
+            ) : (
+              <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                {(user.name || user.email).charAt(0).toUpperCase()}
+              </span>
+            )}
+            <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-200 ${isProfileOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          <AnimatePresence>
+            {isProfileOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                transition={{ duration: 0.15 }}
+                className="absolute right-0 mt-2 w-64 bg-secondary/95 backdrop-blur-xl border border-border rounded-xl shadow-2xl overflow-hidden z-[100]"
+              >
+                {/* User info */}
+                <div className="p-3 border-b border-border">
+                  <div className="flex items-center gap-3">
+                    {user.avatar ? (
+                      <img src={user.avatar} alt="" className="w-9 h-9 rounded-full object-cover flex-shrink-0" />
+                    ) : (
+                      <span className="w-9 h-9 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center flex-shrink-0">
+                        {(user.name || user.email).charAt(0).toUpperCase()}
+                      </span>
+                    )}
+                    <div className="min-w-0">
+                      {user.name && <div className="text-sm font-medium text-foreground truncate">{user.name}</div>}
+                      <div className="text-xs text-muted-foreground truncate">{user.email}</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Account links */}
+                <div className="p-1.5">
+                  <a href="https://hanzo.id/account" className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-foreground/80 hover:text-foreground hover:bg-accent transition-colors">
+                    <UserIcon className="w-4 h-4 text-muted-foreground" />
+                    Account
+                  </a>
+                  <a href="https://console.hanzo.ai/billing" className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-foreground/80 hover:text-foreground hover:bg-accent transition-colors">
+                    <CreditCard className="w-4 h-4 text-muted-foreground" />
+                    Billing
+                  </a>
+                  <a href="https://console.hanzo.ai/settings/api-keys" className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-foreground/80 hover:text-foreground hover:bg-accent transition-colors">
+                    <Key className="w-4 h-4 text-muted-foreground" />
+                    API Keys
+                  </a>
+                  <a href="https://hanzo.id/account" className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-foreground/80 hover:text-foreground hover:bg-accent transition-colors">
+                    <Settings className="w-4 h-4 text-muted-foreground" />
+                    Settings
+                  </a>
+                </div>
+
+                {/* Sign out */}
+                <div className="p-1.5 border-t border-border">
+                  <a href="https://hanzo.id/logout" className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-foreground/80 hover:text-foreground hover:bg-accent transition-colors">
+                    <LogOut className="w-4 h-4 text-muted-foreground" />
+                    Sign out
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       ) : (
         <a
           href={`https://hanzo.id/login?redirect_uri=${encodeURIComponent("https://hanzo.ai")}`}

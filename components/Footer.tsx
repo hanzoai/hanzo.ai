@@ -32,7 +32,7 @@ const footerLinks = {
       { title: "CLI", href: "/download" },
       { title: "Browser Extension", href: "/extension" },
       { title: "IDE Extensions", href: "https://marketplace.visualstudio.com/items?itemName=hanzo.hanzo-dev", external: true },
-      { title: "Discord", href: "https://discord.gg/hanzo", external: true },
+      { title: "Discord", href: "https://discord.gg/XthHQQj", external: true },
       { title: "GitHub App", href: "https://github.com/apps/hanzo-ai", external: true },
       { title: "Agents", href: "/operative" },
     ],

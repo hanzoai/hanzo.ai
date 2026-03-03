@@ -125,9 +125,10 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
   </div>
 );
 
-// Learn dropdown content (includes Brand, Press in Resources)
+// Learn dropdown content — balanced 4-column layout
 const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
   <div className="grid grid-cols-4 gap-6">
+    {/* Col 1: Documentation */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Documentation</h3>
       <div className="space-y-0.5">
@@ -136,18 +137,32 @@ const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
         <IconLink href="https://docs.hanzo.ai/api" icon={Code} label="API Reference" external closeMenu={closeMenu} />
       </div>
     </div>
+    {/* Col 2: Community */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Community</h3>
       <div className="space-y-0.5">
         <IconLink href="https://github.com/hanzoai" icon={GitBranch} label="GitHub" external closeMenu={closeMenu} />
-        <IconLink href="https://discord.gg/hanzo" icon={MessageCircle} label="Discord" external closeMenu={closeMenu} />
+        <IconLink href="https://discord.gg/XthHQQj" icon={MessageCircle} label="Discord" external closeMenu={closeMenu} />
         <IconLink href="/blog" icon={PenLine} label="Blog" closeMenu={closeMenu} />
+        <IconLink href="/open-source" icon={GitBranch} label="Open Source" closeMenu={closeMenu} />
       </div>
     </div>
+    {/* Col 3: Featured resources — 3 balanced cards */}
     <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Resources</h3>
-      <div className="space-y-2 mb-3">
-        {/* Big featured links */}
+      <div className="space-y-2">
+        <a
+          href="https://docs.hanzo.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-start gap-2 p-2.5 rounded-xl bg-neutral-800/40 hover:bg-accent border border-border/30 hover:border-border/60 transition-all"
+        >
+          <BookOpen className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+          <div>
+            <div className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">Hanzo Docs</div>
+            <div className="text-xs text-muted-foreground">Guides, API & tutorials</div>
+          </div>
+        </a>
         <a
           href="https://hanzo.community"
           target="_blank"
@@ -169,17 +184,19 @@ const LearnContent = ({ closeMenu }: { closeMenu: () => void }) => (
           <HelpCircle className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
           <div>
             <div className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">Hanzo Help</div>
-            <div className="text-xs text-muted-foreground">Guides, docs & support</div>
+            <div className="text-xs text-muted-foreground">Support & troubleshooting</div>
           </div>
         </a>
       </div>
-      <div className="space-y-0.5">
+    </div>
+    {/* Col 4: Company + Support */}
+    <div>
+      <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Company</h3>
+      <div className="space-y-0.5 mb-4">
         <IconLink href="/brand" icon={Palette} label="Brand" closeMenu={closeMenu} />
         <IconLink href="/press" icon={Newspaper} label="Press" closeMenu={closeMenu} />
-        <IconLink href="/open-source" icon={GitBranch} label="Open Source" closeMenu={closeMenu} />
+        <IconLink href="/contact" icon={LifeBuoy} label="Contact" closeMenu={closeMenu} />
       </div>
-    </div>
-    <div>
       <h3 className="text-muted-foreground text-xs font-medium mb-3 uppercase tracking-wider">Support</h3>
       <div className="space-y-0.5">
         <IconLink href="/contact" icon={LifeBuoy} label="Support Center" closeMenu={closeMenu} />

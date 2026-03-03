@@ -21,7 +21,7 @@ const BillingManagement = () => {
         <Button 
           variant="outline" 
           className="border-border hover:bg-[var(--white)]/5 px-6 py-6"
-          onClick={() => window.open('https://discord.com/invite/XthHQQj', '_blank')}
+          onClick={() => window.open('https://discord.gg/XthHQQj', '_blank')}
         >
           Join Discord
         </Button>
