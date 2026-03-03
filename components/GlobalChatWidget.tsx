@@ -20,7 +20,7 @@ import {
 // Available models for widget access (non-premium, allowed by hz_widget_public auth)
 const zenModels = [
   { id: "llama-3.3-70b", name: "Llama 70B", params: "70B", description: "Fast general-purpose" },
-  { id: "claude-3-5-haiku", name: "Haiku", params: "Claude", description: "Quick & accurate" },
+  { id: "claude-haiku-4-5", name: "Haiku 4.5", params: "Claude", description: "Quick & accurate" },
   { id: "gpt-4o-mini", name: "GPT-4o Mini", params: "GPT", description: "General-purpose" },
   { id: "deepseek-r1-distill-70b", name: "DeepSeek R1", params: "70B", description: "Reasoning & code" },
 ];
