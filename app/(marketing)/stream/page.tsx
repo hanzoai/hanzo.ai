@@ -11,6 +11,8 @@ import {
   BarChart3,
   Layers,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends"
 
 export default function StreamPage() {
   return (
@@ -110,6 +112,9 @@ for message in consumer:
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="franz-go" />
+      <OSSComputeDividends variant="banner" />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">

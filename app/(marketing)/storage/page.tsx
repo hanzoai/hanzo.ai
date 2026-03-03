@@ -11,6 +11,7 @@ import {
   Layers,
   Shield,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function StoragePage() {
   return (
@@ -262,6 +263,8 @@ url = s3.generate_presigned_url("get_object",
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="MinIO" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

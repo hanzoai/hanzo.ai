@@ -11,6 +11,8 @@ import {
   BarChart3,
   Clock,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends"
 
 export default function PubSubPage() {
   return (
@@ -268,6 +270,9 @@ for _, msg := range msgs {
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="NATS JetStream" />
+      <OSSComputeDividends variant="banner" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

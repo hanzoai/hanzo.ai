@@ -11,6 +11,7 @@ import {
   GitBranch,
   Shield,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function FlowPage() {
   return (
@@ -208,6 +209,8 @@ export default function FlowPage() {
           </div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="Langflow" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

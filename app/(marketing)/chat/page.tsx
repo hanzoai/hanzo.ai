@@ -11,6 +11,7 @@ import {
   Zap,
   Users,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function ChatPage() {
   return (
@@ -257,6 +258,8 @@ export default function ChatPage() {
           </div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="LibreChat" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

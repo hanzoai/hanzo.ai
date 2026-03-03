@@ -11,6 +11,7 @@ import {
   BarChart3,
   Server,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function SQLPage() {
   return (
@@ -108,6 +109,8 @@ LIMIT 10;`}</code></pre>
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="PostgreSQL" />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">

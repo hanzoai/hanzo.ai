@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { User, UserCheck, Shield, Lock, UserCog, Key, Fingerprint, History } from "lucide-react";
 import { Button } from "@hanzo/ui";
 import ChromeText from "@/components/ui/chrome-text";
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner";
 
 const Identity = () => {
   return (
@@ -271,6 +272,8 @@ const Identity = () => {
         </div>
       </section>
       
+      <OSSRevenueBanner upstreamName="Casdoor" />
+
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

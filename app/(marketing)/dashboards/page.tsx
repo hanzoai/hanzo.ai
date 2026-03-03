@@ -11,6 +11,7 @@ import {
   Globe,
   Shield,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function DashboardsPage() {
   return (
@@ -208,6 +209,8 @@ export default function DashboardsPage() {
           </div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="Grafana" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

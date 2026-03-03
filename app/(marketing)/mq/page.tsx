@@ -11,6 +11,8 @@ import {
   BarChart3,
   Layers,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
+import OSSComputeDividends from "@/components/oss/OSSComputeDividends"
 
 export default function MQPage() {
   return (
@@ -268,6 +270,9 @@ const worker = new Worker("emails", async (job) => {
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="BullMQ" />
+      <OSSComputeDividends variant="banner" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

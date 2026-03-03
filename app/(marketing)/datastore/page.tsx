@@ -3,6 +3,7 @@ import KeyFeatures from "@/components/datastore/KeyFeatures"
 import EfficiencySection from "@/components/datastore/EfficiencySection"
 import UseCasesSection from "@/components/datastore/UseCasesSection"
 import GetStartedSection from "@/components/datastore/GetStartedSection"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export const metadata = {
   title: "Hanzo Datastore - Managed Database",
@@ -17,6 +18,7 @@ export default function DatastorePage() {
       <KeyFeatures />
       <EfficiencySection />
       <UseCasesSection />
+      <OSSRevenueBanner upstreamName="ClickHouse" />
       <GetStartedSection />
     </>
   )

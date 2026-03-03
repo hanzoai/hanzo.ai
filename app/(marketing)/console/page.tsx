@@ -11,6 +11,7 @@ import {
   GitBranch,
   Shield,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function ConsolePage() {
   return (
@@ -264,6 +265,8 @@ response = client.chat.completions.create(
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="Langfuse" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

@@ -5,6 +5,7 @@ import {
   SearchPricing,
   SearchCTA,
 } from "@/components/search"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export const metadata = {
   title: "Hanzo Search - Hybrid Search + RAG Chat",
@@ -19,6 +20,7 @@ export default function SearchPage() {
       <SearchFeatures />
       <SearchHowItWorks />
       <SearchPricing />
+      <OSSRevenueBanner upstreamName="Meilisearch" />
       <SearchCTA />
     </>
   )

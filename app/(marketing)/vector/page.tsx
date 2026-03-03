@@ -5,6 +5,7 @@ import {
   VectorPricing,
   VectorCTA,
 } from "@/components/vector"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export const metadata = {
   title: "Hanzo Vector - High-Performance Vector Database",
@@ -19,6 +20,7 @@ export default function VectorPage() {
       <VectorFeatures />
       <VectorHowItWorks />
       <VectorPricing />
+      <OSSRevenueBanner upstreamName="Qdrant" />
       <VectorCTA />
     </>
   )

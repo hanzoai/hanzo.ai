@@ -13,6 +13,7 @@ import AIPowered from "@/components/analytics/AIPowered";
 import Security from "@/components/analytics/Security";
 import Community from "@/components/analytics/Community";
 import CallToAction from "@/components/analytics/CallToAction";
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner";
 
 const Analytics = () => {
   return (
@@ -29,6 +30,7 @@ const Analytics = () => {
         <AIPowered />
         <Security />
         <Community />
+        <OSSRevenueBanner upstreamName="Umami" />
         <CallToAction />
       </main>
       

@@ -11,6 +11,7 @@ import {
   Shield,
   Terminal,
 } from "lucide-react"
+import { OSSRevenueBanner } from "@/components/oss/OSSRevenueBanner"
 
 export default function KMSPage() {
   return (
@@ -261,6 +262,8 @@ hanzo kms rotate DATABASE_PASSWORD --env production`}</code>
           </motion.div>
         </div>
       </section>
+
+      <OSSRevenueBanner upstreamName="Infisical" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
