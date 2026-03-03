@@ -5,7 +5,7 @@ import PricingPlan from "./PricingPlan";
 import { Users, Shield, Building2 } from "lucide-react";
 import TeamPlanDetails from "./TeamPlanDetails";
 
-const PLANS_API = "https://api.hanzo.ai/v1/plans";
+const PLANS_API = "https://pricing.hanzo.ai/v1/plans";
 
 interface SubscriptionPlan {
   id: string;
