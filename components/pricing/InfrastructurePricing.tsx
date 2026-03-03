@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@hanzo/ui";
-import { Loader2 } from "lucide-react";
 
-const CLOUD_API = "https://api.hanzo.ai/v1/cloud";
-const GPU_API = "https://api.hanzo.ai/v1/gpu";
+const CLOUD_API = "https://pricing.hanzo.ai/v1/cloud";
+const GPU_API = "https://pricing.hanzo.ai/v1/gpu";
 
 interface CloudPlan {
   id: string;
@@ -49,42 +48,134 @@ interface CloudData {
   blockStorage: BlockStorage;
 }
 
+const STATIC_CLOUD_DATA: CloudData = {
+  plans: [
+    {
+      id: 'starter',
+      name: 'Starter',
+      description: 'Lightweight workloads and development. Free $4/mo credit included.',
+      vcpus: 1,
+      memoryGB: 1,
+      diskGB: 25,
+      cpuType: 'shared',
+      maxVMs: 3,
+      priceMonthly: 4,
+      priceHourly: 0.006,
+      features: ['1 shared vCPU', '1 GB RAM', '25 GB SSD'],
+      freeTier: true,
+    },
+    {
+      id: 'builder',
+      name: 'Builder',
+      description: 'APIs, backends, and side projects.',
+      vcpus: 2,
+      memoryGB: 2,
+      diskGB: 50,
+      cpuType: 'shared',
+      maxVMs: 5,
+      priceMonthly: 12,
+      priceHourly: 0.0179,
+      features: ['2 shared vCPUs', '2 GB RAM', '50 GB SSD'],
+      popular: true,
+    },
+    {
+      id: 'pro',
+      name: 'Pro',
+      description: 'Production workloads with dedicated compute.',
+      vcpus: 4,
+      memoryGB: 8,
+      diskGB: 100,
+      cpuType: 'dedicated',
+      maxVMs: 10,
+      priceMonthly: 48,
+      priceHourly: 0.0714,
+      features: ['4 dedicated vCPUs', '8 GB RAM', '100 GB SSD'],
+    },
+    {
+      id: 'scale',
+      name: 'Scale',
+      description: 'High-traffic applications and databases.',
+      vcpus: 8,
+      memoryGB: 16,
+      diskGB: 200,
+      cpuType: 'dedicated',
+      maxVMs: 25,
+      priceMonthly: 96,
+      priceHourly: 0.1429,
+      features: ['8 dedicated vCPUs', '16 GB RAM', '200 GB SSD'],
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      description: 'Large-scale production with maximum resources.',
+      vcpus: 16,
+      memoryGB: 64,
+      diskGB: 500,
+      cpuType: 'dedicated',
+      maxVMs: 50,
+      priceMonthly: 288,
+      priceHourly: 0.4286,
+      features: ['16 dedicated vCPUs', '64 GB RAM', '500 GB SSD'],
+    },
+    {
+      id: 'mega',
+      name: 'Mega',
+      description: 'Maximum compute for demanding workloads.',
+      vcpus: 32,
+      memoryGB: 128,
+      diskGB: 1024,
+      cpuType: 'dedicated',
+      maxVMs: 100,
+      priceMonthly: 576,
+      priceHourly: 0.8571,
+      features: ['32 dedicated vCPUs', '128 GB RAM', '1 TB SSD'],
+    },
+  ],
+  regions: [
+    { id: 'us-east', name: 'US East', location: 'New York', flag: 'us' },
+    { id: 'us-west', name: 'US West', location: 'San Francisco', flag: 'us' },
+    { id: 'eu-west', name: 'EU West', location: 'Amsterdam', flag: 'nl' },
+    { id: 'ap-south', name: 'AP South', location: 'Singapore', flag: 'sg' },
+  ],
+  blockStorage: {
+    pricePerGBMonthly: 0.10,
+    minSizeGB: 1,
+    maxSizeGB: 16384,
+  },
+};
+
+const STATIC_GPU_TIERS: GpuTier[] = [
+  { name: 'GPU Basic', gpu: '1x NVIDIA L4', vram: '24 GB', price: 0.50 },
+  { name: 'GPU Pro', gpu: '1x NVIDIA A100 40G', vram: '40 GB', price: 1.89 },
+  { name: 'GPU Ultra', gpu: '1x NVIDIA A100 80G', vram: '80 GB', price: 2.79 },
+  { name: 'GPU Mega', gpu: '8x NVIDIA A100 80G', vram: '640 GB', price: 19.99 },
+];
+
 const InfrastructurePricing = () => {
   const [showAll, setShowAll] = useState(false);
-  const [cloudData, setCloudData] = useState<CloudData | null>(null);
-  const [gpuTiers, setGpuTiers] = useState<GpuTier[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize with static data immediately -- no loading flash
+  const [cloudData, setCloudData] = useState<CloudData>(STATIC_CLOUD_DATA);
+  const [gpuTiers, setGpuTiers] = useState<GpuTier[]>(STATIC_GPU_TIERS);
 
   useEffect(() => {
     Promise.all([
-      fetch(CLOUD_API).then((r) => r.json()),
-      fetch(GPU_API).then((r) => r.json()),
+      fetch(CLOUD_API).then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      }),
+      fetch(GPU_API).then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
       .then(([cloud, gpu]) => {
-        setCloudData(cloud);
-        setGpuTiers(gpu.tiers || []);
-        setLoading(false);
+        if (cloud.plans?.length) setCloudData(cloud);
+        if (gpu.tiers?.length) setGpuTiers(gpu.tiers);
       })
-      .catch((err) => {
-        console.error("Failed to fetch infrastructure pricing:", err);
-        setLoading(false);
+      .catch(() => {
+        // keep static data already set
       });
   }, []);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-24">
-        <Loader2 className="w-6 h-6 animate-spin mr-2 text-muted-foreground" />
-        <span className="text-muted-foreground">Loading infrastructure pricing...</span>
-      </div>
-    );
-  }
-
-  if (!cloudData || !cloudData.plans?.length) {
-    return (
-      <div className="text-center py-24 text-muted-foreground">Failed to load infrastructure pricing.</div>
-    );
-  }
 
   const { plans, regions, blockStorage } = cloudData;
   const visiblePlans = showAll ? plans : plans.slice(0, 6);

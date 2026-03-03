@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import PricingPlan from "./PricingPlan";
 import { Github, Code, Users, Rocket } from "lucide-react";
 
-const PLANS_API = "https://api.hanzo.ai/v1/plans";
+const PLANS_API = "https://pricing.hanzo.ai/v1/plans";
 
 interface SubscriptionPlan {
   id: string;
