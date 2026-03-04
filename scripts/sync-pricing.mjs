@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * Sync pricing from the private Hanzo pricing service.
+ * Sync pricing from the Hanzo pricing service.
  *
- * In production: fetches from http://pricing.hanzo.svc.cluster.local:8080/v1/pricing
- * In CI/dev: fetches from PRICING_API_URL env var, or copies from ../pricing/data/pricing.json
+ * Sources (tried in order):
+ *   1. PRICING_API_URL env var
+ *   2. https://pricing.hanzo.ai/v1/pricing (public endpoint)
+ *   3. Local sibling repo: ../pricing/data/pricing.json (dev only)
  *
  * Usage:
- *   node scripts/sync-pricing.mjs              # update src/data/pricing.json
+ *   node scripts/sync-pricing.mjs              # update data/pricing.json + lib/data/pricing.json
  *   node scripts/sync-pricing.mjs --dry-run    # preview without writing
  */
 
@@ -15,23 +17,32 @@ import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT_PATH = resolve(__dirname, "../src/data/pricing.json");
+const DATA_PATH = resolve(__dirname, "../data/pricing.json");
+const LIB_DATA_PATH = resolve(__dirname, "../lib/data/pricing.json");
 const LOCAL_PATH = resolve(__dirname, "../../pricing/data/pricing.json");
-const API_URL = process.env.PRICING_API_URL || "http://pricing.hanzo.svc.cluster.local:8080/v1/pricing";
+const API_URL = process.env.PRICING_API_URL || "https://pricing.hanzo.ai/v1/pricing";
 const DRY_RUN = process.argv.includes("--dry-run");
 
 async function fetchPricing() {
-  // Try local sibling repo first (for dev/CI)
+  // Try API first
+  try {
+    console.log(`Fetching from API: ${API_URL}`);
+    const res = await fetch(API_URL);
+    if (res.ok) {
+      return res.json();
+    }
+    console.warn(`API returned ${res.status}, trying fallbacks...`);
+  } catch (err) {
+    console.warn(`API fetch failed: ${err.message}, trying fallbacks...`);
+  }
+
+  // Fall back to local sibling repo (for dev)
   if (existsSync(LOCAL_PATH)) {
     console.log(`Reading from local: ${LOCAL_PATH}`);
     return JSON.parse(readFileSync(LOCAL_PATH, "utf8"));
   }
 
-  // Fall back to API
-  console.log(`Fetching from API: ${API_URL}`);
-  const res = await fetch(API_URL);
-  if (!res.ok) throw new Error(`Pricing API returned ${res.status}`);
-  return res.json();
+  throw new Error("No pricing source available (API unreachable and no local file)");
 }
 
 async function main() {
@@ -41,15 +52,15 @@ async function main() {
   console.log(`  Third-party: ${pricing.thirdPartyModels?.length || 0}`);
 
   if (DRY_RUN) {
-    console.log("\n[DRY RUN] Would write to", OUT_PATH);
-    for (const m of [...(pricing.hanzoModels || []), ...(pricing.thirdPartyModels || [])]) {
-      console.log(`  ${m.name}: in=$${m.pricing.input} out=$${m.pricing.output}`);
-    }
+    console.log("\n[DRY RUN] Would write to", DATA_PATH, "and", LIB_DATA_PATH);
     return;
   }
 
-  writeFileSync(OUT_PATH, JSON.stringify(pricing, null, 2) + "\n");
-  console.log(`\nWritten to ${OUT_PATH}`);
+  const json = JSON.stringify(pricing, null, 2) + "\n";
+  writeFileSync(DATA_PATH, json);
+  writeFileSync(LIB_DATA_PATH, json);
+  console.log(`\nWritten to ${DATA_PATH}`);
+  console.log(`Written to ${LIB_DATA_PATH}`);
 }
 
 main().catch((err) => {

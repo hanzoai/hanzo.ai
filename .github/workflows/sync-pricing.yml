@@ -2,7 +2,7 @@ name: Sync API Pricing
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # Daily at 7am UTC (after pricing service syncs at 4am)
+    - cron: '0 7 * * *'  # Daily at 7am UTC
   workflow_dispatch: {}   # Manual trigger
 
 permissions:
@@ -14,29 +14,44 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
-        with:
-          repository: hanzoai/pricing
-          token: ${{ secrets.GH_PAT }}
-          path: pricing
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Copy pricing data
-        run: cp pricing/data/pricing.json src/data/pricing.json
+      - name: Fetch pricing from API
+        id: fetch
+        run: |
+          HTTP_CODE=$(curl -s -o /tmp/pricing.json -w "%{http_code}" \
+            --max-time 30 \
+            https://pricing.hanzo.ai/v1/pricing)
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            # Validate JSON
+            if node -e "JSON.parse(require('fs').readFileSync('/tmp/pricing.json','utf8'))" 2>/dev/null; then
+              echo "Pricing API returned valid JSON"
+              cp /tmp/pricing.json data/pricing.json
+              cp /tmp/pricing.json lib/data/pricing.json
+              echo "fetched=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "::warning::Pricing API returned invalid JSON, skipping update"
+              echo "fetched=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "::warning::Pricing API returned HTTP $HTTP_CODE, skipping update"
+            echo "fetched=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Check for changes
+        if: steps.fetch.outputs.fetched == 'true'
         id: diff
         run: |
-          git diff --quiet src/data/pricing.json && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
+          git diff --quiet data/pricing.json lib/data/pricing.json && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
-        if: steps.diff.outputs.changed == 'true'
+        if: steps.fetch.outputs.fetched == 'true' && steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/pricing.json
-          git commit -m "chore: sync pricing from hanzoai/pricing"
+          git add data/pricing.json lib/data/pricing.json
+          git commit -m "chore: sync pricing from pricing.hanzo.ai"
           git push
