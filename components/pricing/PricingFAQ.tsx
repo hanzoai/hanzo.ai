@@ -55,7 +55,7 @@ const PricingFAQ = () => {
     },
     {
       question: "Is there a free trial available?",
-      answer: "Yes, we offer a 14-day free trial on our Pro plan with no credit card required. You can also start with our Free plan which is free forever, then upgrade when you need more resources or features."
+      answer: "Yes, every new account gets a $5 free credit to start — no card required. The Unified AI plan includes a 7-day free trial. After your credit or trial, you pay as you go for what you use."
     },
     {
       question: "What happens if I exceed my plan's resource limits?",

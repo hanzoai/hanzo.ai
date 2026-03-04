@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pricing — Hanzo AI',
-  description: 'Start free. Upgrade when you scale. Developer: free forever with 100K API calls/mo. Pro: $49/mo with priority access and higher limits. Enterprise: custom SLAs and dedicated support.',
+  description: 'Start with $5 free credit. Pay as you go. Developer: $5 credit included. Unified AI: $20/mo with all models and priority inference. Team: $25/mo per seat. Enterprise: custom SLAs and dedicated support.',
   openGraph: {
     title: 'Pricing — Hanzo AI',
-    description: 'Start free. Upgrade when you scale. Developer: free forever with 100K API calls/mo. Pro: $49/mo with priority access and higher limits. Enterprise: custom SLAs and dedicated support.',
+    description: 'Start with $5 free credit. Pay as you go. Developer: $5 credit included. Unified AI: $20/mo with all models and priority inference. Team: $25/mo per seat. Enterprise: custom SLAs and dedicated support.',
     url: 'https://hanzo.ai/pricing',
     siteName: 'Hanzo AI',
     type: 'website',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing — Hanzo AI',
-    description: 'Start free. Upgrade when you scale. Developer: free forever with 100K API calls/mo. Pro: $49/mo with priority access and higher limits. Enterprise: custom SLAs and dedicated support.',
+    description: 'Start with $5 free credit. Pay as you go. Developer: $5 credit included. Unified AI: $20/mo with all models and priority inference. Team: $25/mo per seat. Enterprise: custom SLAs and dedicated support.',
     images: ['/pricing/opengraph-image'],
   },
 }

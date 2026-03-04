@@ -114,7 +114,8 @@ const PersonalPlans = () => {
   }
 
   function billingPeriod(plan: SubscriptionPlan) {
-    if (plan.contactSales || plan.priceMonthly == null || plan.priceMonthly === 0) return " forever";
+    if (plan.contactSales || plan.priceMonthly == null) return "";
+    if (plan.priceMonthly === 0) return " to start";
     return "/month";
   }
 

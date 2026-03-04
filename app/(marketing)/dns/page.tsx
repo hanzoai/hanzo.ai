@@ -80,23 +80,23 @@ const useCases = [
 
 const pricingTiers = [
   {
-    name: "Free",
-    price: "$0",
-    period: "/month",
-    description: "For personal projects and experimentation",
+    name: "Starter",
+    price: "Pay-as-you-go",
+    period: "",
+    description: "Usage-based pricing for getting started",
     features: [
       "Up to 5 zones",
       "2 DNS providers",
       "CLI and API access",
-      "Community support",
+      "$0.10 per 10K queries",
     ],
     cta: "Get Started",
-    ctaHref: "https://docs.hanzo.ai/dns",
+    ctaHref: "https://hanzo.id",
     highlight: false,
   },
   {
     name: "Pro",
-    price: "$5",
+    price: "$20",
     period: "/month",
     description: "For teams managing production DNS",
     features: [
@@ -111,12 +111,28 @@ const pricingTiers = [
     highlight: true,
   },
   {
-    name: "Enterprise",
+    name: "Team",
     price: "$25",
+    period: "/month",
+    description: "For teams with shared DNS management",
+    features: [
+      "Everything in Pro",
+      "Team collaboration",
+      "Role-based access",
+      "Shared audit log",
+      "Priority support",
+    ],
+    cta: "Subscribe",
+    ctaHref: "https://hanzo.id",
+    highlight: false,
+  },
+  {
+    name: "Enterprise",
+    price: "$200",
     period: "/month",
     description: "For organizations with advanced needs",
     features: [
-      "Everything in Pro",
+      "Everything in Team",
       "Edge DNS (CoreDNS)",
       "Custom plugins",
       "SLA guarantee",
