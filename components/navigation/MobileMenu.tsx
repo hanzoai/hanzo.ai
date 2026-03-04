@@ -86,6 +86,7 @@ const mobileNav = [
         items: [
           { title: "Hanzo Cloud", href: "/cloud" },
           { title: "Edge", href: "/edge" },
+          { title: "DNS", href: "/dns" },
           { title: "Platform", href: "/platform" },
           { title: "Blockchain", href: "/blockchain" },
         ]
