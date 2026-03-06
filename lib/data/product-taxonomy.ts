@@ -1215,6 +1215,63 @@ export const appsProducts: Product[] = [
     status: 'beta',
     openSource: true,
     pricing: 'freemium'
+  },
+  {
+    id: 'sign',
+    name: 'Hanzo Sign',
+    shortName: 'Sign',
+    tagline: 'Document signing platform',
+    description: 'Secure, legally binding electronic signatures. Templates, signing fields, webhooks, and multi-tenant workspaces.',
+    category: 'apps',
+    icon: 'PenLine',
+    href: '/sign',
+    github: 'https://github.com/hanzoai/sign',
+    docs: 'https://docs.hanzo.ai/docs/services/sign',
+    install: {
+      docker: 'docker pull ghcr.io/hanzoai/sign:latest'
+    },
+    features: ['E-signatures', 'Templates', 'Signing fields', 'Webhooks', 'Teams', 'Custom branding', 'API', 'SSO'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'dataroom',
+    name: 'Hanzo Dataroom',
+    shortName: 'Dataroom',
+    tagline: 'Secure document sharing',
+    description: 'Share documents with real-time page-by-page analytics. Access controls, custom branding, and data rooms.',
+    category: 'apps',
+    icon: 'FolderLock',
+    href: '/dataroom',
+    github: 'https://github.com/hanzoai/dataroom',
+    docs: 'https://docs.hanzo.ai/docs/services/dataroom',
+    install: {
+      docker: 'docker pull ghcr.io/hanzoai/dataroom:latest'
+    },
+    features: ['Page analytics', 'Data rooms', 'Access controls', 'Custom branding', 'Watermarks', 'NDA', 'Webhooks', 'SSO'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
+  },
+  {
+    id: 'captable',
+    name: 'Hanzo Cap Table',
+    shortName: 'Cap Table',
+    tagline: 'Equity management platform',
+    description: 'Open-source alternative to Carta. Share classes, stock options, SAFEs, convertible notes, and equity plans.',
+    category: 'apps',
+    icon: 'PieChart',
+    href: '/captable',
+    github: 'https://github.com/hanzoai/captable',
+    docs: 'https://docs.hanzo.ai/docs/services/captable',
+    install: {
+      docker: 'docker pull ghcr.io/hanzoai/captable:latest'
+    },
+    features: ['Share classes', 'Stock options', 'SAFEs', 'Convertible notes', 'Vesting', 'E-signing', 'Waterfall', '409A'],
+    status: 'ga',
+    openSource: true,
+    pricing: 'freemium'
   }
 ]
 
