@@ -55,7 +55,7 @@ const STATIC_PLANS: SubscriptionPlan[] = [
     features: [
       '7-day free trial + $5 credit',
       'All 14+ Zen AI models (up to 1M ctx)',
-      'Unlimited chat at chat.hanzo.ai',
+      'Unlimited chat at hanzo.chat',
       'MCP tools + agent access',
       '500 requests/min',
       '2M tokens/min',
