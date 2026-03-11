@@ -113,14 +113,14 @@ export default async function IntegrationPage({ params }: Props) {
           </div>
 
           {/* API base info */}
-          <div className="mb-10 rounded-xl border border-red-500/20 bg-red-500/5 p-5">
+          <div className="mb-10 rounded-xl border border-brand/20 bg-brand/5 p-5">
             <p className="text-sm text-muted-foreground mb-2">
               <strong className="text-foreground">Base URL:</strong>{' '}
-              <code className="font-mono text-red-400">https://api.hanzo.ai/v1</code>
+              <code className="font-mono text-brand">https://api.hanzo.ai/v1</code>
             </p>
             <p className="text-sm text-muted-foreground">
               <strong className="text-foreground">API Key:</strong> Get yours at{' '}
-              <Link href="/signup" className="text-red-400 hover:underline">
+              <Link href="/signup" className="text-brand hover:underline">
                 hanzo.ai/signup
               </Link>{' '}
               · Fully OpenAI-compatible · 390+ models available
@@ -182,7 +182,7 @@ export default async function IntegrationPage({ params }: Props) {
             <div className="flex items-center justify-center gap-4">
               <Link
                 href="/signup"
-                className="rounded-lg bg-red-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-red-600 transition-colors"
+                className="rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-brand-foreground hover:opacity-90 transition-colors"
               >
                 Get API Key — Free
               </Link>
@@ -203,7 +203,7 @@ export default async function IntegrationPage({ params }: Props) {
                 <Link
                   key={i.slug}
                   href={`/integrations/${i.slug}`}
-                  className="rounded-full border border-border px-3 py-1.5 text-sm text-muted-foreground hover:border-red-500/50 hover:text-foreground transition-colors"
+                  className="rounded-full border border-border px-3 py-1.5 text-sm text-muted-foreground hover:border-brand/50 hover:text-foreground transition-colors"
                 >
                   {i.name}
                 </Link>

@@ -1,7 +1,7 @@
 export const OG_WIDTH = 1200
 export const OG_HEIGHT = 630
 export const OG_BG = '#0a0a0a'
-export const OG_ACCENT = '#EF4444'
+export const OG_ACCENT = '#e4e4e7'
 export const OG_TEXT = '#ffffff'
 export const OG_MUTED = '#888888'
 export const OG_BORDER = '#222222'

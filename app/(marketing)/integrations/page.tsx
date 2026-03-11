@@ -5,11 +5,11 @@ function IntegrationCard({ integration }: { integration: Integration }) {
   return (
     <Link
       href={`/integrations/${integration.slug}`}
-      className="group flex flex-col gap-2 rounded-xl border border-border bg-card p-5 hover:border-red-500/50 hover:bg-card/80 transition-colors"
+      className="group flex flex-col gap-2 rounded-xl border border-border bg-card p-5 hover:border-brand/50 hover:bg-card/80 transition-colors"
     >
       <div className="flex items-center gap-3">
         <span className="text-2xl">{integration.icon}</span>
-        <span className="font-semibold text-foreground group-hover:text-red-400 transition-colors">
+        <span className="font-semibold text-foreground group-hover:text-brand transition-colors">
           {integration.name}
         </span>
       </div>
@@ -28,7 +28,7 @@ export default function IntegrationsPage() {
         {/* Header */}
         <div className="mb-16">
           <h1 className="text-5xl font-bold text-foreground mb-4">
-            Works with <span className="text-red-500">everything</span>
+            Works with <span className="text-brand">everything</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
             Hanzo AI is fully OpenAI-compatible. Use any SDK, framework, or language you already know.
