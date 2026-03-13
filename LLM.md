@@ -11,11 +11,12 @@ Main Hanzo AI marketing site. React SPA with Vite.
 - Build: `npm run build`
 - Deploy: GitHub Pages
 
-## Brand Colors
+## Brand Colors (Monochrome)
 
-- Primary: `#fd4444`
-- Secondary: `#ff6b6b`
-- Hover: `#e03e3e`
+- Primary: `#ffffff` (white)
+- Secondary: `#d4d4d4` (neutral-300)
+- Hover: `#a3a3a3` (neutral-400)
+- Brand CSS var: `--brand: #e4e4e7`
 - Centralized in `/src/constants/brand.ts` with Tailwind class mappings
 
 ## Key Files
@@ -44,6 +45,7 @@ App.tsx                   # All routes defined here
 - Animation: framer-motion, 0.4s base, 0.05s stagger
 - Buttons: rounded-full, brand primary + neutral-700 border secondary
 - Badge pills: icon + text, rounded-full
+- Font: Geist Sans (loaded via next/font/google)
 
 ## GitHub Pages SPA
 
@@ -58,7 +60,7 @@ App.tsx                   # All routes defined here
 
 ## Gotchas
 
-- `themes.css`: `--brand` must be `#fd4444`, `--brand-muted` must be `#e03e3e`
+- `themes.css`: `--brand` is monochrome `#e4e4e7`, `--brand-muted` is `#a3a3a3`
 - Green status indicators (online dots, success states) are preserved, not replaced with brand
 - ProductsMenu uses named export (not default) for consistency
 - Open Graph/Twitter meta tags use absolute `https://hanzo.ai/` URLs
