@@ -263,7 +263,7 @@ const InfrastructurePricing = () => {
       {/* Cloud Compute, Block Storage, GPUs */}
       <CloudComputePricing />
 
-      {/* Datastore (ClickHouse) */}
+      {/* Datastore */}
       <DatastorePricing />
 
       {/* Vector Search */}

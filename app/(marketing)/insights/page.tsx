@@ -270,7 +270,7 @@ function MyApp() {
         </div>
       </section>
 
-      <OSSRevenueBanner upstreamName="PostHog" />
+      <OSSRevenueBanner upstreamName="Insights" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

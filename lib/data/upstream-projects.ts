@@ -180,10 +180,10 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     github: 'https://github.com/hanzoai/insights',
     license: 'MIT',
     stars: '22k+',
-    creator: 'Hanzo AI (PostHog fork)',
+    creator: 'Hanzo AI',
     creatorUrl: 'https://github.com/hanzoai',
-    gratitude: 'Built on PostHog\'s incredible analytics foundation — James and Tim created the definitive open-source analytics platform.',
-    sbomPackages: ['posthog-js'],
+    gratitude: 'Built on an incredible open-source analytics foundation — the definitive product analytics platform.',
+    sbomPackages: ['@hanzo/insights'],
     revenueShareEligible: true,
   },
   umami: {

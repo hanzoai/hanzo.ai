@@ -88,7 +88,7 @@ const FALLBACK: DatastorePricingData = {
   discounts: { annual: { percent: 17 } },
   included: [
     "30-day free trial","Automated backups","End-to-end encryption",
-    "ClickHouse-compatible HTTP API","JSONEachRow + Parquet","Async inserts",
+    "SQL-compatible HTTP API","JSONEachRow + Parquet","Async inserts",
     "IAM SSO","KMS-managed secrets","OpenTelemetry native","DDoS protection",
     "Real-time query metrics","Hanzo Console UI",
   ],
@@ -132,7 +132,7 @@ export default function DatastorePricing() {
       <div className="mb-10">
         <h2 className="text-3xl font-bold mb-2">Hanzo Datastore</h2>
         <p className="text-muted-foreground text-lg mb-6">
-          ClickHouse-compatible analytics database as a service.
+          Real-time analytics database as a service.
           Columnar storage, real-time inserts, petabyte-scale queries.
           {data.trial && ` ${data.trial.days}-day free trial, no credit card required.`}
         </p>

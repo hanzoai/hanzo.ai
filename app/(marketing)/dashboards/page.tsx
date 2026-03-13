@@ -166,7 +166,7 @@ export default function DashboardsPage() {
                 icon: Database,
                 title: "Data Sources",
                 description:
-                  "Prometheus, ClickHouse, PostgreSQL, Elasticsearch, CloudWatch, and 50+ integrations.",
+                  "Prometheus, Datastore, PostgreSQL, Elasticsearch, CloudWatch, and 50+ integrations.",
               },
               {
                 icon: Layers,

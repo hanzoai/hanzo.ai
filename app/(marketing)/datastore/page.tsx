@@ -18,7 +18,7 @@ export default function DatastorePage() {
       <KeyFeatures />
       <EfficiencySection />
       <UseCasesSection />
-      <OSSRevenueBanner upstreamName="ClickHouse" />
+      <OSSRevenueBanner upstreamName="Datastore" />
       <GetStartedSection />
     </>
   )

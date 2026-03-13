@@ -47,7 +47,7 @@ export default function StoragePage() {
           >
             <HardDrive className="w-4 h-4 text-foreground" />
             <span className="text-sm font-medium text-foreground/80">
-              hanzo.space
+              s3.hanzo.ai
             </span>
           </motion.div>
 
@@ -114,7 +114,7 @@ export default function StoragePage() {
             className="flex flex-wrap justify-center gap-4"
           >
             <a
-              href="https://hanzo.space"
+              href="https://s3.hanzo.ai"
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-medium rounded-full transition-colors"
             >
               Open Storage Console
@@ -246,7 +246,7 @@ export default function StoragePage() {
               <code className="text-foreground/80">{`import boto3
 
 s3 = boto3.client("s3",
-    endpoint_url="https://s3.hanzo.space",
+    endpoint_url="https://s3.s3.hanzo.ai",
     aws_access_key_id="your-access-key",
     aws_secret_access_key="your-secret-key",
 )
@@ -291,7 +291,7 @@ url = s3.generate_presigned_url("get_object",
 
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="https://hanzo.space"
+                  href="https://s3.hanzo.ai"
                   className="inline-flex items-center gap-2 px-8 py-3 bg-primary hover:bg-accent text-primary-foreground font-medium rounded-full transition-colors"
                 >
                   Get Started
