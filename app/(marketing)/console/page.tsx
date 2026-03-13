@@ -80,7 +80,7 @@ export default function ConsolePage() {
           >
             Track every LLM call across your stack. Monitor costs, latency,
             quality, and token usage. Debug production issues with full trace
-            visibility. Built on Langfuse.
+            visibility.
           </motion.p>
 
           <motion.div
@@ -266,7 +266,7 @@ response = client.chat.completions.create(
         </div>
       </section>
 
-      <OSSRevenueBanner upstreamName="Langfuse" />
+      <OSSRevenueBanner upstreamName="Console" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

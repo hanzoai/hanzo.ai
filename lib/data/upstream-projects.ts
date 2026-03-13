@@ -104,17 +104,17 @@ export const upstreamProjects: Record<string, UpstreamProject> = {
     sbomPackages: ['comfyui'],
     revenueShareEligible: true,
   },
-  langfuse: {
-    name: 'Langfuse',
+  console: {
+    name: 'Hanzo Console',
     description: 'Open source LLM engineering platform. Traces, evals, prompt management, and metrics.',
-    url: 'https://langfuse.com',
-    github: 'https://github.com/langfuse/langfuse',
+    url: 'https://console.hanzo.ai',
+    github: 'https://github.com/hanzoai/console',
     license: 'MIT',
     stars: '8k+',
-    creator: 'Langfuse Team / Max & Marc',
-    creatorUrl: 'https://github.com/langfuse',
-    gratitude: 'Langfuse brought real observability to LLM applications. Essential infrastructure for anyone running AI at scale.',
-    sbomPackages: ['langfuse'],
+    creator: 'Hanzo AI',
+    creatorUrl: 'https://github.com/hanzoai',
+    gratitude: 'Essential observability infrastructure for anyone running AI at scale.',
+    sbomPackages: ['@hanzo/console'],
     revenueShareEligible: true,
   },
   anthropic_computer_use: {
@@ -319,10 +319,10 @@ export const productUpstreamMap: Record<string, string> = {
   // Core AI products
   'gateway': 'litellm',
   'chat': 'librechat',
-  'flow': 'langfuse',
+  'flow': 'console',
   'auto': 'activepieces',
   'studio': 'comfyui',
-  'console': 'langfuse',
+  'console': 'console',
   'operative': 'anthropic_computer_use',
 
   // Async & messaging

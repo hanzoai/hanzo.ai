@@ -446,8 +446,8 @@ export const ossCatalog: OSSRepo[] = [
     },
     icon: Activity,
     upstream: {
-      name: 'Langfuse',
-      url: 'https://github.com/langfuse/langfuse',
+      name: 'Hanzo Console',
+      url: 'https://github.com/hanzoai/console',
     },
   },
   {
@@ -476,8 +476,8 @@ export const ossCatalog: OSSRepo[] = [
     },
     icon: Workflow,
     upstream: {
-      name: 'Langfuse',
-      url: 'https://github.com/langfuse/langfuse',
+      name: 'Hanzo Console',
+      url: 'https://github.com/hanzoai/console',
     },
   },
   {

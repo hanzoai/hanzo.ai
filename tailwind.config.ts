@@ -84,9 +84,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["var(--font-geist)", "Geist Sans", "sans-serif"],
+        display: ["var(--font-geist)", "Geist Sans", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "Geist Mono", "monospace"],
         serif: ["Georgia", "serif"],
       },
       fontSize: {
