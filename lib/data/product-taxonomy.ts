@@ -319,16 +319,30 @@ export const computeProducts: Product[] = [
     name: 'Hanzo Functions',
     shortName: 'Functions',
     tagline: 'Serverless compute platform',
-    description: 'Deploy functions in any language. Auto-scaling, pay-per-execution, zero cold starts with edge deployment.',
+    description: 'Deploy event-driven functions in any language with automatic scaling and scale-to-zero. Container-native, PubSub-triggered, with deep IAM, KMS, and O11y integration.',
     category: 'compute',
     icon: 'Zap',
     href: '/products/compute/functions',
     github: 'https://github.com/hanzoai/functions',
-    docs: 'https://docs.hanzo.ai/functions',
+    docs: 'https://docs.hanzo.ai/docs/services/functions',
     install: {
-      cli: 'hanzo functions deploy ./my-function'
+      cli: 'hanzo fn new --lang python my-function',
+      docker: 'docker run -d ghcr.io/hanzoai/functions:latest'
     },
-    features: ['Any language', 'Auto-scaling', 'Edge deployment', 'Event triggers', 'Zero cold starts'],
+    features: [
+      'Any language support',
+      'Auto-scaling & scale-to-zero',
+      'PubSub event triggers',
+      'Cron scheduling',
+      'Async invocation',
+      'KMS secrets integration',
+      'IAM auth & RBAC',
+      'Multi-tenant namespaces',
+      'Custom domains',
+      'OTEL observability',
+      'Container native',
+      'GitOps deployment'
+    ],
     status: 'ga',
     openSource: true,
     pricing: 'freemium'
@@ -452,17 +466,33 @@ export const asyncProducts: Product[] = [
     id: 'tasks',
     name: 'Hanzo Tasks',
     shortName: 'Tasks',
-    tagline: 'Durable workflow execution',
-    description: 'Run long-running tasks with guaranteed delivery. Retries, timeouts, and exactly-once semantics. Temporal-compatible.',
+    tagline: 'Durable workflow execution engine',
+    description: 'Build invincible applications with durable workflow execution. Define complex business logic as code with automatic retries, timeouts, saga compensation, and exactly-once semantics. Multi-tenant, IAM-integrated, and fully observable.',
     category: 'async',
     icon: 'ListTodo',
     href: '/products/async/tasks',
     github: 'https://github.com/hanzoai/tasks',
-    docs: 'https://docs.hanzo.ai/tasks',
+    docs: 'https://docs.hanzo.ai/docs/services/tasks',
     install: {
-      cli: 'hanzo tasks create mytask'
+      cli: 'hanzo tasks init myworkflow',
+      docker: 'docker run -d ghcr.io/hanzoai/tasks:latest',
+      pip: 'pip install hanzo-tasks',
+      npm: 'npm install @hanzo/tasks'
     },
-    features: ['Guaranteed delivery', 'Retries', 'Timeouts', 'Dead letter queues', 'Observability'],
+    features: [
+      'Durable workflow execution',
+      'Automatic retries with backoff',
+      'Saga compensation patterns',
+      'Multi-tenant namespace isolation',
+      'Scheduled & cron workflows',
+      'Human-in-the-loop signals',
+      'Child workflows & continue-as-new',
+      'Full execution history & replay',
+      'Go, Python, TypeScript, Java SDKs',
+      'IAM-integrated auth & RBAC',
+      'OTEL tracing & metrics',
+      'Open workflow API'
+    ],
     status: 'ga',
     openSource: true,
     pricing: 'freemium'
