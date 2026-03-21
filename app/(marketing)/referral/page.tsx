@@ -20,8 +20,8 @@ const tiers = [
     name: "Starter",
     range: "0 - 9 referrals",
     perReferral: "$20",
-    revenueShare: "5%",
-    maxCredits: "$2,000",
+    revenueShare: "—",
+    maxCredits: "$20,000",
     creditExpiry: "90 days",
     highlight: false,
   },
@@ -29,8 +29,8 @@ const tiers = [
     name: "Growth",
     range: "10 - 49 referrals",
     perReferral: "$30",
-    revenueShare: "7.5%",
-    maxCredits: "$5,000",
+    revenueShare: "2.5%",
+    maxCredits: "$20,000",
     creditExpiry: "180 days",
     highlight: true,
   },
@@ -38,8 +38,8 @@ const tiers = [
     name: "Pro",
     range: "50 - 199 referrals",
     perReferral: "$50",
-    revenueShare: "10%",
-    maxCredits: "$10,000",
+    revenueShare: "5%",
+    maxCredits: "$20,000",
     creditExpiry: "1 year",
     highlight: false,
   },
@@ -47,8 +47,8 @@ const tiers = [
     name: "Partner",
     range: "200+ referrals",
     perReferral: "$100",
-    revenueShare: "15%",
-    maxCredits: "$20,000",
+    revenueShare: "7.5%",
+    maxCredits: "$150,000",
     creditExpiry: "Never",
     highlight: false,
   },
@@ -71,7 +71,7 @@ const steps = [
     icon: DollarSign,
     title: "Both Earn Credits",
     description:
-      "You receive $20 in credits instantly, plus 5% of their usage revenue for as long as they remain active.",
+      "You receive $20 in credits instantly. Unlock revenue share as you grow — up to 7.5% lifetime at Partner tier.",
   },
 ]
 
@@ -145,8 +145,8 @@ export default function ReferralPage() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
           >
-            Refer developers to Hanzo and earn $20 in AI credits per signup,
-            plus 5% lifetime revenue share. Unlock higher tiers as you grow.
+            Refer developers to Hanzo and earn $20 in AI credits per signup.
+            Unlock revenue share up to 7.5% lifetime as you grow to Partner tier.
           </motion.p>
 
           <motion.div
@@ -160,12 +160,12 @@ export default function ReferralPage() {
               <div className="text-sm text-muted-foreground">Per Referral</div>
             </div>
             <div className="bg-secondary/50 border border-border rounded-xl p-4">
-              <div className="text-2xl font-bold text-foreground">5%</div>
-              <div className="text-sm text-muted-foreground">Revenue Share</div>
+              <div className="text-2xl font-bold text-foreground">7.5%</div>
+              <div className="text-sm text-muted-foreground">Max Rev Share</div>
             </div>
             <div className="bg-secondary/50 border border-border rounded-xl p-4">
-              <div className="text-2xl font-bold text-foreground">$20K</div>
-              <div className="text-sm text-muted-foreground">Max Credits</div>
+              <div className="text-2xl font-bold text-foreground">$150K</div>
+              <div className="text-sm text-muted-foreground">Partner Credits</div>
             </div>
             <div className="bg-secondary/50 border border-border rounded-xl p-4">
               <div className="text-2xl font-bold text-foreground">4 Tiers</div>
