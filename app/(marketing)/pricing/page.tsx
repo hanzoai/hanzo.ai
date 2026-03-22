@@ -11,6 +11,7 @@ import InfrastructurePricing from "@/components/pricing/InfrastructurePricing"
 import FeatureComparison from "@/components/pricing/FeatureComparison"
 import PricingFAQ from "@/components/pricing/PricingFAQ"
 import BillingManagement from "@/components/pricing/BillingManagement"
+import PricingCallouts from "@/components/pricing/PricingCallouts"
 
 const tabs = [
   { id: "personal", label: "Personal" },
@@ -85,6 +86,9 @@ export default function PricingPage() {
 
         {/* Tab Content */}
         {renderTabContent()}
+
+        {/* Callouts */}
+        <PricingCallouts />
       </main>
     </div>
   )
