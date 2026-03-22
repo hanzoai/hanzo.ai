@@ -50,8 +50,15 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
-        {/* Hanzo Insights analytics */}
+        {/* Hanzo Analytics (Umami) */}
         <Script
+          src="https://analytics.hanzo.ai/script.js"
+          data-website-id="a323a8ae-c811-4061-9626-22caaffc612f"
+          strategy="afterInteractive"
+        />
+        {/* Hanzo Insights (PostHog) */}
+        <Script
+          id="hanzo-insights"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -61,6 +68,18 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Sentry error reporting — enable when sentry.hanzo.ai is deployed */}
+        {process.env.NEXT_PUBLIC_SENTRY_DSN && (
+          <Script
+            id="sentry-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(n,e,t,r,i,o,a,c,s){for(var u=s=n[i]=n[i]||function(){(s.q=s.q||[]).push(arguments)},f=0;f<e.length;f++)u[e[f]]=u[e[f]]||function(n){return function(){u([n].concat(Array.prototype.slice.call(arguments)))}}(e[f]);(o=t.createElement(r)).async=1,o.src="https://browser.sentry-cdn.com/9.1.0/bundle.tracing.min.js",(a=t.getElementsByTagName(r)[0]).parentNode.insertBefore(o,a),o.addEventListener("load",function(){n.Sentry.init({dsn:"${process.env.NEXT_PUBLIC_SENTRY_DSN}"});})}(window,["captureException","captureMessage","captureEvent"],"script",document,"Sentry");
+              `,
+            }}
+          />
+        )}
       </body>
     </html>
   )
