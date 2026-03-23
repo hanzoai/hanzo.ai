@@ -83,7 +83,7 @@ export default function OSSComputeDividends({ variant = "full" }: OSSComputeDivi
               </div>
               <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:min-w-[180px]">
                 <a
-                  href="/signup?ref=oss-dividends"
+                  href="https://hanzo.id/signup?ref=oss-dividends"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-full font-medium text-sm transition-all hover:opacity-90 bg-primary text-primary-foreground whitespace-nowrap"
                 >
                   <Github className="w-4 h-4 mr-2" />
@@ -202,7 +202,7 @@ export default function OSSComputeDividends({ variant = "full" }: OSSComputeDivi
           className="flex flex-wrap items-center justify-center gap-4 mb-8"
         >
           <a
-            href="/signup?ref=oss-dividends"
+            href="https://hanzo.id/signup?ref=oss-dividends"
             className="inline-flex items-center px-6 py-3 rounded-full font-medium text-sm transition-all hover:opacity-90 bg-primary text-primary-foreground"
           >
             <Github className="w-4 h-4 mr-2" />

@@ -151,7 +151,7 @@ export default function DividendsPage() {
               className="flex flex-wrap items-center justify-center gap-4"
             >
               <a
-                href="/signup?ref=oss-dividends"
+                href="https://hanzo.id/signup?ref=oss-dividends"
                 className="inline-flex items-center px-7 py-3.5 rounded-full font-medium text-sm transition-all hover:opacity-90 bg-primary text-primary-foreground"
               >
                 <Github className="w-4 h-4 mr-2" />
@@ -376,7 +376,7 @@ export default function DividendsPage() {
               className="flex flex-wrap items-center justify-center gap-4"
             >
               <a
-                href="/signup?ref=oss-dividends"
+                href="https://hanzo.id/signup?ref=oss-dividends"
                 className="inline-flex items-center px-8 py-4 rounded-full font-medium text-base transition-all hover:opacity-90 bg-primary text-primary-foreground"
               >
                 <Github className="w-4 h-4 mr-2" />

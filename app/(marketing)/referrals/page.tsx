@@ -14,8 +14,8 @@ import ChromeText from "@/components/ui/chrome-text";
 const Referrals = () => {
   const [copied, setCopied] = useState(false);
 
-  // Example referral link
-  const referralLink = "https://hanzo.ai/signup?ref=YOUR_USERNAME";
+  // Example referral link — points to hanzo.id so ref code survives the OAuth flow
+  const referralLink = "https://hanzo.id/signup?ref=YOUR_USERNAME";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(referralLink);
@@ -206,7 +206,7 @@ const Referrals = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/20 px-8">
-                <Link href="/signup">Create Account</Link>
+                <Link href="https://hanzo.id/signup">Create Account</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-gray-700 hover:bg-gray-800 px-8">
                 <Link href="/pricing">View Pricing</Link>
