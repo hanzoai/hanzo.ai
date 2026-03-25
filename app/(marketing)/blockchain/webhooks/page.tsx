@@ -192,7 +192,7 @@ const subscription = await webhooks.create({
 // Verify webhook signature
 const isValid = webhooks.verifySignature({
   payload: req.body,
-  signature: req.headers["x-hanzo-signature"],
+  signature: req.headers["x-webhook-signature"],
   secret: process.env.WEBHOOK_SECRET,
 });`,
         },
@@ -218,7 +218,7 @@ subscription = webhooks.create(
 # Verify webhook signature
 is_valid = webhooks.verify_signature(
     payload=request.data,
-    signature=request.headers["X-Hanzo-Signature"],
+    signature=request.headers["X-Webhook-Signature"],
     secret=os.environ["WEBHOOK_SECRET"],
 )`,
         },
@@ -250,7 +250,7 @@ func main() {
     // Verify webhook signature
     isValid := webhooks.VerifySignature(
         payload,
-        r.Header.Get("X-Hanzo-Signature"),
+        r.Header.Get("X-Webhook-Signature"),
         os.Getenv("WEBHOOK_SECRET"),
     )
 }`,
@@ -280,7 +280,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Verify webhook signature
     let is_valid = webhooks.verify_signature(
         &payload,
-        &headers["x-hanzo-signature"],
+        &headers["x-webhook-signature"],
         &env::var("WEBHOOK_SECRET")?,
     );
     Ok(())
@@ -342,7 +342,7 @@ int main() {
     // Verify webhook signature
     bool is_valid = webhooks.verify_signature(
         payload,
-        headers["X-Hanzo-Signature"],
+        headers["X-Webhook-Signature"],
         std::getenv("WEBHOOK_SECRET")
     );
 
@@ -371,7 +371,7 @@ subscription = webhooks.create(
 # Verify webhook signature
 is_valid = webhooks.verify_signature(
   payload: request.body.read,
-  signature: request.headers['X-Hanzo-Signature'],
+  signature: request.headers['X-Webhook-Signature'],
   secret: ENV['WEBHOOK_SECRET']
 )`,
         },
