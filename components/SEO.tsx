@@ -45,9 +45,7 @@ const SEO: React.FC<SEOProps> = ({
   const canonicalUrl = `${BASE_URL}${path}`;
   const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`;
 
-  return (
-    
-  );
+  return null;
 };
 
 // Pre-built JSON-LD schemas

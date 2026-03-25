@@ -9,6 +9,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+} from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 
 const steps = [

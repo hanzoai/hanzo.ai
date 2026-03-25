@@ -48,14 +48,22 @@ const Code = () => {
                   <span className="text-muted-foreground">createAI</span>{" "}
                   <span className="text-foreground/80">{"}"}</span>{" "}
                   <span className="text-muted-foreground">from</span>{" "}
-                  <span className="text-foreground/70">'@hanzo/ai'</span>
+                  <span className="text-foreground/70">{"'@hanzo/ai'"}</span>
                   {"\n"}
                   <span className="text-muted-foreground">import</span>{" "}
                   <span className="text-foreground/80">{"{"}</span>{" "}
                   <span className="text-muted-foreground">Button</span>{" "}
                   <span className="text-foreground/80">{"}"}</span>{" "}
                   <span className="text-muted-foreground">from</span>{" "}
-import { "\n" } from "@hanzo/ui";
+                  <span className="text-foreground/70">{"'@hanzo/ui'"}</span>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default Code;
