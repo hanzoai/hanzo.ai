@@ -6,20 +6,20 @@ import { AccountProvider } from '@/contexts/AccountContext'
 import { BillingProvider } from '@/contexts/BillingContext'
 
 export const metadata: Metadata = {
-  title: 'Hanzo AI — Vertically Integrated AI Platform',
-  description: 'The complete AI infrastructure: 390+ models, agent SDK, LLM gateway, MCP tools, vector DB, IAM, KMS, and deploy-anywhere cloud. Open source. Backed by Techstars.',
+  title: 'Hanzo AI — The Open-Source AI Cloud',
+  description: 'The complete AI ecosystem: 390+ models, agent SDK, MCP tools, vector DB, IAM, KMS. Self-host or cloud. Earn $AI on Hanzo Network. Open source.',
   openGraph: {
-    title: 'Hanzo AI — Vertically Integrated AI Platform',
-    description: 'The complete AI infrastructure: 390+ models, agent SDK, LLM gateway, MCP tools, vector DB, IAM, KMS. Open source.',
+    title: 'Hanzo AI — The Open-Source AI Cloud',
+    description: 'The complete AI ecosystem: 390+ models, agent SDK, MCP tools, vector DB, IAM, KMS. Self-host or cloud. Earn $AI on Hanzo Network. Open source.',
     url: 'https://hanzo.ai',
     siteName: 'Hanzo AI',
     type: 'website',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Hanzo AI — Vertically Integrated AI Platform' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Hanzo AI — The Open-Source AI Cloud' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hanzo AI — Vertically Integrated AI Platform',
-    description: '390+ models, agent SDK, LLM gateway, MCP tools. Open source AI cloud.',
+    title: 'Hanzo AI — The Open-Source AI Cloud',
+    description: 'The complete AI ecosystem: 390+ models, agent SDK, MCP tools, vector DB, IAM, KMS. Self-host or cloud. Earn $AI on Hanzo Network. Open source.',
     images: ['/opengraph-image'],
   },
 }

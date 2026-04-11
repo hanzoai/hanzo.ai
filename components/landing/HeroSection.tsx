@@ -36,13 +36,14 @@ const ROTATING_BRANDS = [
 
 // Proof chips data - communicates the vertical stack
 const PROOF_CHIPS = [
-  { label: "Agents", icon: Bot },
-  { label: "Models", icon: Brain },
+  { label: "390+ Models", icon: Brain },
+  { label: "Agent SDK", icon: Bot },
+  { label: "MCP Tools", icon: Layers },
   { label: "Vector/SQL/KV", icon: Database },
-  { label: "Deploy anywhere", icon: Rocket },
+  { label: "$AI Token", icon: Link2 },
+  { label: "Self-host", icon: Rocket },
   { label: "IAM/KMS", icon: Shield },
-  { label: "Audit", icon: Activity },
-  { label: "OSS", icon: Layers },
+  { label: "OSS", icon: Activity },
 ];
 
 // Dashboard nav items
@@ -430,25 +431,25 @@ const HeroSection = () => {
 
         {/* Background gradients - z-0 */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          {/* Red accent glow - center */}
+          {/* Violet accent glow - center */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: mounted ? 0.15 : 0 }}
+            animate={{ opacity: mounted ? 0.18 : 0 }}
             transition={{ duration: 1.5 }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
             style={{
-              background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
+              background: `radial-gradient(circle, #a78bfa 0%, transparent 70%)`,
               filter: "blur(100px)",
             }}
           />
-          {/* Secondary red glow - top right */}
+          {/* Fuchsia glow - top right */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: mounted ? 0.1 : 0 }}
+            animate={{ opacity: mounted ? 0.12 : 0 }}
             transition={{ duration: 1.5, delay: 0.2 }}
             className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full"
             style={{
-              background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
+              background: `radial-gradient(circle, #e879f9 0%, transparent 70%)`,
               filter: "blur(80px)",
             }}
           />
@@ -491,9 +492,9 @@ const HeroSection = () => {
                 {/* Badge */}
                 <p
                   className="inline-flex text-xs font-medium rounded-full px-4 py-2 border w-fit mb-6"
-                  style={{ color: "var(--brand)", borderColor: "color-mix(in srgb, var(--brand) 35%, transparent)" }}
+                  style={{ color: "#c4b5fd", borderColor: "rgba(167, 139, 250, 0.3)" }}
                 >
-                  Open-source AI Cloud for builders.
+                  The open-source AI cloud.
                 </p>
               </motion.div>
 
@@ -504,9 +505,9 @@ const HeroSection = () => {
               >
                 {/* Main Headline */}
                 <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-medium tracking-tight leading-[1.1] mb-6">
-                  <span className="text-foreground">A vertically integrated</span>
+                  <span className="text-foreground">The complete AI ecosystem.</span>
                   <br />
-                  <span className="text-brand">AI platform.</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400 bg-clip-text text-transparent">Ship AI.</span>
                 </h1>
               </motion.div>
 
@@ -517,7 +518,7 @@ const HeroSection = () => {
               >
                 {/* Subhead */}
                 <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-8 max-w-[500px]">
-                  Agents, models, data, and deployment—with Team, IAM, KMS, and Audit built in. One platform from identity to production.
+                  390+ models, agent SDK, MCP tools, vector DB, IAM, KMS—self-host or cloud. Earn $AI on Hanzo Network. The cheapest, most complete AI stack. Open source.
                 </p>
               </motion.div>
 
@@ -612,7 +613,7 @@ const HeroSection = () => {
                   className="inline-flex text-xs font-medium rounded-full px-4 py-2 border w-fit mb-6"
                   style={{ color: "var(--brand)", borderColor: "color-mix(in srgb, var(--brand) 25%, transparent)" }}
                 >
-                  Open-source AI Cloud for builders.
+                  The open-source AI cloud.
                 </p>
               </motion.div>
 
@@ -622,9 +623,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <h1 className="text-4xl font-medium tracking-tight leading-[1.1] mb-6">
-                  <span className="text-foreground">A vertically integrated</span>
+                  <span className="text-foreground">The complete AI ecosystem.</span>
                   <br />
-                  <span className="text-brand">AI platform.</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400 bg-clip-text text-transparent">Ship AI.</span>
                 </h1>
               </motion.div>
 
@@ -634,7 +635,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
                 <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-[500px] mx-auto">
-                  Agents, models, data, and deployment—with Team, IAM, KMS, and Audit built in.
+                  390+ models, agent SDK, MCP tools. Self-host or cloud. Earn $AI. Open source.
                 </p>
               </motion.div>
 
@@ -725,7 +726,7 @@ const HeroSection = () => {
                   className="inline-flex text-[11px] font-medium rounded-full px-3 py-1.5 border w-fit mb-4"
                   style={{ color: "var(--brand)", borderColor: "color-mix(in srgb, var(--brand) 25%, transparent)" }}
                 >
-                  Open-source AI Cloud for builders.
+                  The open-source AI cloud.
                 </p>
               </motion.div>
 
@@ -735,9 +736,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <h1 className="text-2xl font-medium tracking-tight leading-[1.1] mb-4">
-                  <span className="text-foreground">A vertically integrated</span>
+                  <span className="text-foreground">The complete AI ecosystem.</span>
                   <br />
-                  <span className="text-brand">AI platform.</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400 bg-clip-text text-transparent">Ship AI.</span>
                 </h1>
               </motion.div>
 
@@ -747,7 +748,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Agents, models, data, and deployment—with Team, IAM, KMS, and Audit built in.
+                  390+ models, agent SDK, MCP tools. Self-host or cloud. Earn $AI. Open source.
                 </p>
               </motion.div>
 

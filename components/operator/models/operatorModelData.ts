@@ -9,7 +9,7 @@ export interface OperatorModel {
 
 export const operatorModels: OperatorModel[] = [
   {
-    name: "GPT-5.3.3",
+    name: "GPT-4o",
     provider: "OpenAI",
     features: ["Highest accuracy", "Fast response time", "Best for complex tasks", "Excellent UI understanding"],
     recommended: true,

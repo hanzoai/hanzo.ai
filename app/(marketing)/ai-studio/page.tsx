@@ -30,7 +30,7 @@ export default function AIStudioPage() {
   ])
 
   const models: ModelInterface[] = [
-    { id: "gpt-5.3", name: "GPT-5.3.3", provider: "OpenAI" },
+    { id: "gpt-4o", name: "GPT-4o", provider: "OpenAI" },
     { id: "claude-sonnet-4-6", name: "Claude Sonnet 4.6", provider: "Anthropic" },
     { id: "zen4", name: "zen4", provider: "Hanzo" },
     { id: "llama-4-maverick", name: "Llama 4 Maverick", provider: "Meta" },
