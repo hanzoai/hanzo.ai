@@ -16,7 +16,7 @@ const githubOrgsBase = [
   { name: "zenlm",      label: "Zen LM",       description: "Open frontier AI models",          url: "https://github.com/zenlm"      },
   { name: "hanzo-js",   label: "Hanzo JS",     description: "TypeScript / JavaScript SDKs",    url: "https://github.com/hanzo-js"   },
   { name: "hanzo-apps", label: "Hanzo Apps",   description: "Templates & starters",            url: "https://github.com/hanzo-apps" },
-  { name: "zoo-labs",   label: "Zoo Labs",     description: "DeAI research foundation",        url: "https://github.com/zoo-labs"   },
+  { name: "zoo-labs",   label: "Zoo Labs",     description: "DeAI research foundation",        url: "https://github.com/zooai"   },
 ];
 
 interface Repo {
