@@ -56,7 +56,7 @@ export default function RootLayout({
           data-website-id="a323a8ae-c811-4061-9626-22caaffc612f"
           strategy="afterInteractive"
         />
-        {/* Hanzo Insights (PostHog) */}
+        {/* Hanzo Insights */}
         <Script
           id="hanzo-insights"
           strategy="afterInteractive"
